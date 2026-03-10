@@ -22,6 +22,8 @@ class Edge(BaseModel):
     type: str
     description: str = ""
     weight: float = 1.0
+    polarity: int = 0
+    delay: str = "SHORT_TERM"
 
 
 class Article(BaseModel):
