@@ -1,0 +1,4223 @@
+{
+  "domain": "governance",
+  "node_count": 217,
+  "edge_count": 353,
+  "internal_edge_count": 238,
+  "cross_domain_edge_count": 115,
+  "nodes": [
+    {
+      "id": "aadhaar_kyc",
+      "aliases": [
+        "Aadhaar",
+        "UIDAI",
+        "identity verification",
+        "PAN linking"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "advertisement_tax",
+      "aliases": [
+        "hoarding tax",
+        "billboard tax",
+        "signage tax",
+        "advertisement fee"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "advertising_regulation",
+      "aliases": [
+        "misleading ads",
+        "advertising standards",
+        "ad regulation"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "air_quality_local",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "ambulance_services",
+      "aliases": [
+        "emergency medical",
+        "ambulance costs",
+        "108 service",
+        "108 ambulance",
+        "ambulance",
+        "emergency medical service",
+        "EMS"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "anti_dumping",
+      "aliases": [
+        "anti-dumping duty",
+        "dumping investigation",
+        "countervailing duty"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "aqi_levels",
+      "aliases": [
+        "AQI",
+        "air quality index",
+        "pollution level",
+        "smog",
+        "haze"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "area_safety",
+      "aliases": [
+        "neighborhood safety",
+        "safe area",
+        "crime prone area",
+        "unsafe locality"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "auto_fare",
+      "aliases": [
+        "auto fare revision",
+        "auto meter",
+        "minimum fare",
+        "auto rickshaw"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "auto_rickshaw_taxi",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "bar_license",
+      "aliases": [
+        "liquor license",
+        "bar permit",
+        "wine shop license",
+        "FL3 license"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "bbmp",
+      "aliases": [
+        "BBMP",
+        "Bruhat Bengaluru Mahanagara Palike",
+        "Bangalore corporation",
+        "Bengaluru municipality"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "beat_system",
+      "aliases": [
+        "police beat",
+        "beat constable",
+        "neighborhood policing",
+        "patrol"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "birth_death_certificate",
+      "aliases": [
+        "birth certificate",
+        "death certificate",
+        "birth registration",
+        "death registration"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "bmc_mumbai",
+      "aliases": [
+        "BMC",
+        "Brihanmumbai Municipal Corporation",
+        "Mumbai corporation",
+        "MCGM"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "building_bylaws",
+      "aliases": [
+        "building code",
+        "FAR",
+        "setback rules",
+        "building permission",
+        "BDA"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "burglary",
+      "aliases": [
+        "house break-in",
+        "theft",
+        "burglary",
+        "robbery"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "bus_frequency",
+      "aliases": [
+        "bus frequency",
+        "bus shortage",
+        "last mile connectivity"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "bus_routes",
+      "aliases": [
+        "bus route change",
+        "new bus route",
+        "BMTC",
+        "DTC",
+        "BEST bus"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "bus_service",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "cab_aggregator",
+      "aliases": [
+        "Uber surge",
+        "Ola prices",
+        "ride hailing regulation",
+        "cab strike"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "cctv_surveillance",
+      "aliases": [
+        "CCTV camera",
+        "surveillance camera",
+        "safe city project",
+        "CCTV coverage"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "chain_snatching",
+      "aliases": [
+        "chain snatching",
+        "gold chain robbery",
+        "snatching incident"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "child_safety",
+      "aliases": [
+        "child protection",
+        "child abuse",
+        "POCSO"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "citizen_grievance",
+      "aliases": [
+        "complaint portal",
+        "grievance redressal",
+        "RTI",
+        "citizen helpline",
+        "311"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "citizenship_laws",
+      "aliases": [
+        "citizenship amendment",
+        "naturalization",
+        "citizenship rules"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "city_police",
+      "aliases": [
+        "police",
+        "local police",
+        "city police force"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "city_transport",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "civic_participation",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "college_admission_state",
+      "aliases": [
+        "CET",
+        "state entrance exam",
+        "college cutoff",
+        "seat allotment"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "community_policing",
+      "aliases": [
+        "community police",
+        "janaagraha policing",
+        "police citizen engagement"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "constitutional_changes",
+      "aliases": [
+        "constitutional amendment",
+        "legal reform",
+        "supreme court ruling"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "construction_dust",
+      "aliases": [
+        "construction dust",
+        "dust pollution",
+        "site pollution"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "construction_projects",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "consumer_protection",
+      "aliases": [],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "consumer_rights",
+      "aliases": [
+        "consumer court",
+        "consumer complaint",
+        "consumer protection act"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "contractor_quality",
+      "aliases": [
+        "road contractor quality",
+        "shoddy work",
+        "contractor blacklist",
+        "deficiency period"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "corporator",
+      "aliases": [
+        "ward corporator",
+        "municipal councillor",
+        "elected representative ward"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "court_infrastructure_orders",
+      "aliases": [
+        "HC order infrastructure",
+        "court order demolition",
+        "SC order city",
+        "judicial intervention civic"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "crematorium",
+      "aliases": [
+        "crematorium",
+        "burial ground",
+        "electric crematorium",
+        "last rites facility"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "crop_insurance_implementation",
+      "aliases": [
+        "PMFBY implementation",
+        "crop insurance state",
+        "Fasal Bima claim",
+        "crop loss compensation"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "curfew_shutdown",
+      "aliases": [
+        "bandh",
+        "shutdown",
+        "curfew",
+        "section 144",
+        "protest shutdown"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "cybercrime",
+      "aliases": [
+        "online fraud",
+        "cyber crime",
+        "digital fraud",
+        "phishing",
+        "UPI fraud"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "cybersecurity",
+      "aliases": [],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "cybersecurity_law",
+      "aliases": [
+        "cyber law",
+        "hacking laws",
+        "cybercrime"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "cycling_pedestrian",
+      "aliases": [
+        "cycle lane",
+        "bike sharing",
+        "pedestrian zone",
+        "cycling infrastructure"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "data_breaches",
+      "aliases": [
+        "data leak",
+        "hack",
+        "data breach",
+        "personal data stolen"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "data_protection_law",
+      "aliases": [
+        "data privacy law",
+        "DPDP Act",
+        "GDPR compliance"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "defense_spending",
+      "aliases": [
+        "military budget",
+        "defense budget",
+        "arms procurement"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "digital_regulation",
+      "aliases": [],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "disaster_relief",
+      "aliases": [
+        "NDRF",
+        "disaster management",
+        "relief operations",
+        "evacuation"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "domestic_violence",
+      "aliases": [
+        "domestic abuse",
+        "gender violence",
+        "women safety"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "drug_trafficking",
+      "aliases": [
+        "narcotics",
+        "drug bust",
+        "drug peddling",
+        "NDPS Act",
+        "ganja seizure"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "drunk_driving",
+      "aliases": [
+        "drunk driving check",
+        "breath analyser",
+        "DUI",
+        "drink and drive fine"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "dry_days",
+      "aliases": [
+        "dry day",
+        "liquor ban day",
+        "no alcohol day",
+        "election dry day"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "eco_tourism",
+      "aliases": [
+        "eco tourism",
+        "nature tourism",
+        "forest tourism",
+        "wildlife tourism"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "education_policy_state",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "elections",
+      "aliases": [
+        "election results",
+        "voting",
+        "general election",
+        "state election"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "electoral_political",
+      "aliases": [],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "emergency_services",
+      "aliases": [],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "emission_norms",
+      "aliases": [
+        "pollution standards",
+        "emission limits",
+        "environmental clearance"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "environmental_local",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "environmental_regulation",
+      "aliases": [],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "epidemic_response",
+      "aliases": [
+        "dengue outbreak",
+        "malaria surge",
+        "local epidemic",
+        "fumigation drive"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "excise_revenue",
+      "aliases": [
+        "liquor revenue",
+        "excise duty collection",
+        "alcohol tax revenue"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "farmer_agitations",
+      "aliases": [
+        "farmer protest",
+        "kisan andolan",
+        "farmer march",
+        "agricultural protest"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "fiber_broadband",
+      "aliases": [
+        "fiber connection",
+        "broadband outage",
+        "ISP",
+        "internet speed"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "fire_services",
+      "aliases": [
+        "fire brigade",
+        "fire safety",
+        "fire response",
+        "fire department",
+        "fire station",
+        "fire engine"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "fiscal_policy",
+      "aliases": [],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "flyover_underpass",
+      "aliases": [
+        "flyover construction",
+        "underpass",
+        "elevated corridor",
+        "grade separator"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "footpath",
+      "aliases": [
+        "footpath",
+        "sidewalk",
+        "pedestrian path",
+        "pavement encroachment",
+        "footpath encroachment",
+        "pedestrian safety",
+        "walkability"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "fraud_scams",
+      "aliases": [
+        "online fraud",
+        "financial scams",
+        "phishing",
+        "identity theft"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "garbage_collection",
+      "aliases": [
+        "garbage strike",
+        "waste pickup",
+        "BBMP garbage",
+        "sanitation workers"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "gas_supply_local",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "gcc_chennai",
+      "aliases": [
+        "GCC",
+        "Greater Chennai Corporation",
+        "Chennai corporation",
+        "Chennai municipality"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "gentrification",
+      "aliases": [
+        "gentrification",
+        "displacement",
+        "neighborhood change",
+        "rising rents area"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "ghmc_hyderabad",
+      "aliases": [
+        "GHMC",
+        "Greater Hyderabad Municipal Corporation",
+        "Hyderabad corporation"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "governance_and_regulation",
+      "aliases": [],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "government_budget",
+      "aliases": [
+        "union budget",
+        "federal budget",
+        "budget announcement",
+        "fiscal deficit"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "government_hospital",
+      "aliases": [
+        "government hospital",
+        "PHC",
+        "district hospital",
+        "hospital capacity"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "granite_mining",
+      "aliases": [
+        "granite quarry",
+        "stone quarry",
+        "granite mining lease"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "health_scheme_state",
+      "aliases": [
+        "Ayushman Bharat",
+        "state health scheme",
+        "free treatment",
+        "health card"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "healthcare_policy_state",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "helmet_seatbelt",
+      "aliases": [
+        "helmet rule",
+        "seatbelt fine",
+        "helmet compulsory",
+        "no helmet challan"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "heritage_sites",
+      "aliases": [
+        "heritage conservation",
+        "ASI monument",
+        "heritage city",
+        "UNESCO site"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "high_court",
+      "aliases": [
+        "HC",
+        "High Court",
+        "High Court order",
+        "HC bench"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "hospitality_employment",
+      "aliases": [
+        "hotel jobs",
+        "tourism employment",
+        "hospitality sector jobs"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "immigration_citizenship",
+      "aliases": [],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "internet_broadband",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "it_ites_incentive",
+      "aliases": [
+        "IT park incentive",
+        "IT SEZ",
+        "software park policy",
+        "IT industry subsidy"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "labor_strikes",
+      "aliases": [
+        "worker strike",
+        "trade union strike",
+        "industrial action",
+        "labor agitation"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "lake_river_health",
+      "aliases": [
+        "lake pollution",
+        "river cleaning",
+        "lake rejuvenation",
+        "foam on lake",
+        "Bellandur"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "land_acquisition",
+      "aliases": [
+        "land acquisition act",
+        "eminent domain",
+        "land reform",
+        "land acquisition"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "land_policy",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "landfill",
+      "aliases": [
+        "dump yard",
+        "landfill site",
+        "waste disposal site",
+        "landfill fire",
+        "waste processing plant",
+        "landfill overflow"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "landfill_fires",
+      "aliases": [
+        "Ghazipur fire",
+        "Brahmapuram fire",
+        "landfill blaze",
+        "dump yard fire"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "law_and_order",
+      "aliases": [
+        "law enforcement",
+        "policing",
+        "public safety"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "liquor_policy",
+      "aliases": [
+        "excise policy",
+        "liquor regulation",
+        "alcohol policy",
+        "dry day",
+        "liquor ban",
+        "bar timing",
+        "wine shop license"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "local_courts",
+      "aliases": [
+        "district court",
+        "city civil court",
+        "sessions court"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "local_elections",
+      "aliases": [
+        "municipal election",
+        "BBMP election",
+        "corporation election",
+        "ward election",
+        "panchayat election"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "local_governance",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "local_utilities",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "manufacturing_sez",
+      "aliases": [
+        "SEZ",
+        "Special Economic Zone",
+        "manufacturing hub",
+        "industrial corridor"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "mayor",
+      "aliases": [
+        "city mayor",
+        "mayor election",
+        "municipal chairman"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "mcd_delhi",
+      "aliases": [
+        "MCD",
+        "Municipal Corporation of Delhi",
+        "Delhi municipality",
+        "Delhi corporation"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "metro_disruption",
+      "aliases": [
+        "metro breakdown",
+        "metro delay",
+        "metro shut",
+        "metro strike"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "military_conflicts",
+      "aliases": [
+        "war",
+        "armed conflict",
+        "military operation",
+        "border tension"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "mining_policy",
+      "aliases": [
+        "mining regulation",
+        "mineral extraction",
+        "mining lease"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "mobile_network_local",
+      "aliases": [
+        "network coverage",
+        "tower installation",
+        "call drop",
+        "4G 5G coverage"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "model_code_of_conduct",
+      "aliases": [
+        "MCC",
+        "election code",
+        "poll code"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "municipal_commissioner",
+      "aliases": [
+        "corporation commissioner",
+        "IAS commissioner",
+        "BBMP commissioner",
+        "BMC commissioner"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "municipal_corporation",
+      "aliases": [
+        "municipal body",
+        "city corporation",
+        "nagara palika",
+        "mahanagar palika"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "municipal_elections",
+      "aliases": [
+        "corporation election",
+        "civic body election",
+        "municipal poll",
+        "ward election"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "municipal_expenditure",
+      "aliases": [
+        "corporation spending",
+        "municipal budget",
+        "city budget allocation"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "municipal_inspection",
+      "aliases": [
+        "building inspection",
+        "site inspection municipal",
+        "quality check municipal"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "municipal_revenue",
+      "aliases": [
+        "corporation revenue",
+        "municipal income",
+        "city body revenue"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "municipal_services",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "national_security",
+      "aliases": [],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "new_development",
+      "aliases": [
+        "new township",
+        "IT park",
+        "commercial complex",
+        "mall opening"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "nuclear_threats",
+      "aliases": [
+        "nuclear weapons",
+        "nuclear proliferation",
+        "nuclear deal"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "online_harassment",
+      "aliases": [
+        "cyberbullying",
+        "online abuse",
+        "trolling",
+        "doxing"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "online_liquor",
+      "aliases": [
+        "online liquor delivery",
+        "alcohol home delivery",
+        "e-liquor permit"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "pension_scheme",
+      "aliases": [
+        "old age pension",
+        "widow pension",
+        "state pension scheme",
+        "social security pension"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "personal_safety",
+      "aliases": [],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "pil",
+      "aliases": [
+        "PIL",
+        "Public Interest Litigation",
+        "PIL filed",
+        "PIL hearing"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "piped_natural_gas",
+      "aliases": [
+        "PNG connection",
+        "piped gas tariff",
+        "city gas distribution",
+        "CNG price"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "piped_water",
+      "aliases": [
+        "water supply disruption",
+        "water cut",
+        "water shortage",
+        "tap water"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "plastic_ban",
+      "aliases": [
+        "single use plastic ban",
+        "plastic carry bag ban",
+        "SUP ban"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "platform_regulation",
+      "aliases": [
+        "Big Tech regulation",
+        "social media rules",
+        "IT Act"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "police_jurisdiction",
+      "aliases": [
+        "police station area",
+        "police district",
+        "commissionerate"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "police_policy",
+      "aliases": [
+        "police reform",
+        "night patrol",
+        "CCTV surveillance",
+        "police helpline"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "political_protests",
+      "aliases": [
+        "political rally",
+        "opposition protest",
+        "dharna",
+        "political agitation"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "political_stability",
+      "aliases": [
+        "government formation",
+        "coalition",
+        "political crisis"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "pothole",
+      "aliases": [
+        "pothole",
+        "road pothole",
+        "pothole death",
+        "pothole complaint"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "power_cuts",
+      "aliases": [
+        "load shedding",
+        "power outage",
+        "blackout",
+        "electricity cut",
+        "scheduled outage"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "price_controls",
+      "aliases": [
+        "price cap",
+        "price ceiling",
+        "MSP",
+        "minimum support price"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "product_safety_standards",
+      "aliases": [
+        "BIS standards",
+        "product recall",
+        "safety regulation"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "professional_tax",
+      "aliases": [
+        "professional tax",
+        "employment tax",
+        "state professional tax"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "property_law",
+      "aliases": [],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "property_prices_locality",
+      "aliases": [
+        "property rates",
+        "circle rate",
+        "guidance value",
+        "locality price"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "property_tax_local",
+      "aliases": [
+        "property tax hike",
+        "BBMP tax",
+        "house tax",
+        "municipal tax"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "protests_bandh",
+      "aliases": [
+        "protest",
+        "bandh",
+        "strike",
+        "agitation",
+        "hartal"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "public_debt",
+      "aliases": [
+        "national debt",
+        "government borrowing",
+        "sovereign debt",
+        "debt-to-GDP"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "public_distribution_system",
+      "aliases": [
+        "PDS",
+        "fair price shop",
+        "ration shop",
+        "government ration"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "public_parks",
+      "aliases": [
+        "city parks",
+        "municipal garden",
+        "park maintenance",
+        "public garden",
+        "public space",
+        "playground",
+        "open space"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "public_toilet",
+      "aliases": [
+        "public toilet",
+        "Swachh public toilet",
+        "community toilet",
+        "pay-and-use toilet"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "ransomware",
+      "aliases": [
+        "ransomware attack",
+        "cyber extortion",
+        "malware"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "ration_card",
+      "aliases": [
+        "ration card",
+        "BPL card",
+        "APL card",
+        "smart ration card",
+        "PDS"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "real_estate_local",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "refugee_policy",
+      "aliases": [
+        "refugee crisis",
+        "asylum",
+        "refugee resettlement"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "rental_market_local",
+      "aliases": [
+        "rent increase",
+        "rental demand",
+        "pg accommodation",
+        "rental agreement"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "rera_housing_regulation",
+      "aliases": [
+        "RERA",
+        "real estate regulation",
+        "builder accountability"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "reservation_municipal",
+      "aliases": [
+        "OBC reservation ward",
+        "SC ST reservation municipal",
+        "women reservation municipal"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "ring_road_expressway",
+      "aliases": [
+        "peripheral ring road",
+        "expressway",
+        "signal-free corridor",
+        "ORR"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "road_closures",
+      "aliases": [
+        "road block protest",
+        "traffic diversion protest",
+        "road closed rally"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "road_maintenance",
+      "aliases": [
+        "road repair",
+        "pothole filling",
+        "road resurfacing",
+        "white topping",
+        "asphalting",
+        "pothole",
+        "road damage",
+        "road condition"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "road_safety",
+      "aliases": [
+        "road accidents",
+        "traffic fatalities",
+        "road safety rules"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "road_tax",
+      "aliases": [
+        "vehicle registration tax",
+        "road tax",
+        "lifetime tax"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "rto_services",
+      "aliases": [
+        "RTO",
+        "driving license",
+        "vehicle registration",
+        "regional transport office"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "rwa_community",
+      "aliases": [
+        "RWA",
+        "residents welfare",
+        "apartment association",
+        "community meeting"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "safety_and_security",
+      "aliases": [],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "sand_mining",
+      "aliases": [
+        "sand mining",
+        "river sand",
+        "M-sand",
+        "illegal sand mining",
+        "sand mafia"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "school_fee_regulation",
+      "aliases": [
+        "school fee cap",
+        "fee hike",
+        "school fee regulation"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "sewage_drainage",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "sewage_system",
+      "aliases": [
+        "underground drainage",
+        "UGD",
+        "sewer line",
+        "sewage network"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "sewage_treatment",
+      "aliases": [
+        "STP",
+        "sewage overflow",
+        "lake pollution",
+        "untreated sewage"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "shop_shutdowns",
+      "aliases": [
+        "shop closed bandh",
+        "market shutdown",
+        "commercial establishment closed"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "signal_infrastructure",
+      "aliases": [
+        "traffic signal",
+        "signal timing",
+        "adaptive signal"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "smart_city",
+      "aliases": [
+        "smart city project",
+        "smart city mission",
+        "digital infrastructure",
+        "city wifi"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "solid_waste_management",
+      "aliases": [
+        "garbage collection",
+        "waste management",
+        "SWM",
+        "trash pickup",
+        "BBMP garbage"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "speed_cameras",
+      "aliases": [
+        "speed camera",
+        "ANPR camera",
+        "traffic camera",
+        "speed trap"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "startup_policy",
+      "aliases": [
+        "state startup policy",
+        "startup incentive",
+        "startup ecosystem",
+        "incubator policy"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "state_agriculture_policy",
+      "aliases": [
+        "state farm policy",
+        "agriculture scheme",
+        "state agriculture budget"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "state_board_exam",
+      "aliases": [
+        "board exam date",
+        "exam postponed",
+        "result date",
+        "PUC exam"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "state_economic_policy",
+      "aliases": [
+        "state economy",
+        "state industrial policy",
+        "state budget"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "state_excise",
+      "aliases": [
+        "liquor tax",
+        "excise duty",
+        "alcohol policy",
+        "bar license"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "state_industrial_policy",
+      "aliases": [
+        "industrial incentive",
+        "state industry policy",
+        "investment promotion"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "state_irrigation",
+      "aliases": [
+        "irrigation project",
+        "canal irrigation",
+        "lift irrigation",
+        "drip irrigation subsidy"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "state_msp",
+      "aliases": [
+        "state MSP",
+        "bonus on MSP",
+        "state procurement price"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "state_policy",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "state_taxation",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "state_tourism",
+      "aliases": [
+        "tourism policy",
+        "state tourism",
+        "tourist destination"
+      ],
+      "category": "state_policy"
+    },
+    {
+      "id": "stormwater_drainage",
+      "aliases": [
+        "waterlogging",
+        "urban flooding",
+        "drainage blockage",
+        "monsoon flooding"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "street_vendors",
+      "aliases": [
+        "street vendor",
+        "hawker",
+        "roadside vendor",
+        "PM SVANidhi",
+        "street vendor license"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "streetlights",
+      "aliases": [
+        "street lighting",
+        "LED streetlights",
+        "street light maintenance",
+        "dark spots",
+        "dark roads",
+        "LED streetlight"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "subsidies",
+      "aliases": [
+        "government subsidy",
+        "fuel subsidy",
+        "food subsidy",
+        "fertilizer subsidy"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "tenancy_law",
+      "aliases": [
+        "rent control act",
+        "tenant rights",
+        "landlord tenant law"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "tender_process",
+      "aliases": [
+        "municipal tender",
+        "government tender",
+        "e-procurement",
+        "tender scam",
+        "bid rigging"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "terrorism",
+      "aliases": [
+        "terror attack",
+        "terrorist threat",
+        "counter-terrorism"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "theft_burglary",
+      "aliases": [
+        "theft rates",
+        "burglary",
+        "robbery",
+        "property crime"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "trade_agreements",
+      "aliases": [
+        "FTA",
+        "free trade agreement",
+        "trade deal",
+        "WTO"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "trade_license",
+      "aliases": [
+        "trade license renewal",
+        "shop license",
+        "business license municipal"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "trade_policy",
+      "aliases": [],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "trade_wars_sanctions",
+      "aliases": [
+        "trade war",
+        "economic sanctions",
+        "tariff war",
+        "embargo"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "traffic_congestion",
+      "aliases": [
+        "traffic jam",
+        "peak hour traffic",
+        "commute time",
+        "road congestion"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "traffic_enforcement",
+      "aliases": [
+        "traffic police",
+        "traffic challan",
+        "traffic fine",
+        "traffic violation"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "traffic_fine_amount",
+      "aliases": [
+        "challan amount",
+        "traffic fine revision",
+        "e-challan",
+        "traffic penalty"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "traffic_rules",
+      "aliases": [
+        "traffic fine",
+        "challan",
+        "speed limit",
+        "one-way",
+        "odd-even"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "urban_crime",
+      "aliases": [
+        "city crime",
+        "crime rate",
+        "crime statistics"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "urban_development",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "urban_heat",
+      "aliases": [
+        "urban heat island",
+        "concrete heat",
+        "green cover loss",
+        "tree cutting"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "user_charges",
+      "aliases": [
+        "municipal user charges",
+        "SWM cess",
+        "betterment charge",
+        "development charge"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "vehicle_emission",
+      "aliases": [
+        "BS6",
+        "emission norms",
+        "PUC certificate",
+        "diesel ban"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "violent_crime",
+      "aliases": [
+        "crime rate",
+        "murder rate",
+        "assault",
+        "violent crime statistics"
+      ],
+      "category": "safety_and_security"
+    },
+    {
+      "id": "visa_policy",
+      "aliases": [
+        "visa rules",
+        "immigration policy",
+        "visa restrictions"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "ward_delimitation",
+      "aliases": [
+        "ward restructuring",
+        "ward boundary redraw",
+        "delimitation municipal"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "ward_system",
+      "aliases": [
+        "municipal ward",
+        "ward number",
+        "ward boundary",
+        "ward office"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "waste_management_regulation",
+      "aliases": [
+        "waste disposal rules",
+        "e-waste regulation",
+        "recycling mandate"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "waste_segregation",
+      "aliases": [
+        "wet waste dry waste",
+        "source segregation",
+        "waste at source",
+        "segregated collection",
+        "dry waste",
+        "wet waste",
+        "segregation rules",
+        "composting mandate"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "waste_to_energy",
+      "aliases": [
+        "WTE plant",
+        "waste to energy plant",
+        "incineration plant",
+        "waste processing"
+      ],
+      "category": "municipal_governance"
+    },
+    {
+      "id": "water_quality_local",
+      "aliases": [
+        "contaminated water",
+        "water testing",
+        "water purification",
+        "borewell water"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "water_resource_regulation",
+      "aliases": [
+        "water rights",
+        "river water sharing",
+        "groundwater regulation"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "water_supply_local",
+      "aliases": [],
+      "category": "local_governance"
+    },
+    {
+      "id": "water_tanker",
+      "aliases": [
+        "tanker water",
+        "water tanker prices",
+        "tanker mafia"
+      ],
+      "category": "local_governance"
+    },
+    {
+      "id": "welfare_schemes",
+      "aliases": [
+        "social welfare",
+        "direct benefit transfer",
+        "DBT",
+        "welfare program"
+      ],
+      "category": "governance_and_regulation"
+    },
+    {
+      "id": "women_safety",
+      "aliases": [
+        "women safety",
+        "SHE team",
+        "pink patrol",
+        "women helpline",
+        "Nirbhaya fund"
+      ],
+      "category": "law_order"
+    },
+    {
+      "id": "zoning_master_plan",
+      "aliases": [
+        "master plan",
+        "zoning change",
+        "land use",
+        "CDP",
+        "revised master plan"
+      ],
+      "category": "local_governance"
+    }
+  ],
+  "edges": [
+    {
+      "from": "municipal_corporation",
+      "to": "municipal_revenue",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "municipal_corporation",
+      "to": "mayor",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "municipal_corporation",
+      "to": "municipal_commissioner",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "municipal_corporation",
+      "to": "ward_system",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "municipal_corporation",
+      "to": "public_toilet",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "municipal_corporation",
+      "to": "crematorium",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "municipal_corporation",
+      "to": "birth_death_certificate",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "municipal_corporation",
+      "to": "street_vendors",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "bbmp",
+      "to": "municipal_revenue",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "bbmp",
+      "to": "road_maintenance",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "bbmp",
+      "to": "solid_waste_management",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "bmc_mumbai",
+      "to": "municipal_revenue",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "bmc_mumbai",
+      "to": "road_maintenance",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "mcd_delhi",
+      "to": "municipal_revenue",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "mcd_delhi",
+      "to": "solid_waste_management",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "gcc_chennai",
+      "to": "municipal_revenue",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "gcc_chennai",
+      "to": "solid_waste_management",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "ghmc_hyderabad",
+      "to": "municipal_revenue",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "ghmc_hyderabad",
+      "to": "road_maintenance",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "municipal_revenue",
+      "to": "municipal_expenditure",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "municipal_revenue",
+      "to": "road_maintenance",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "municipal_revenue",
+      "to": "sewage_system",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "municipal_revenue",
+      "to": "streetlights",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "trade_license",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "advertisement_tax",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "user_charges",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "road_maintenance",
+      "type": "FUNDS",
+      "description": "Road maintenance typically consumes 15-25% of municipal capital expenditure; underfunding leads to pothole-ridden roads that damage vehicles and cause accidents."
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "sewage_system",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "public_parks",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "streetlights",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "solid_waste_management",
+      "type": "FUNDS",
+      "description": "SWM costs Rs 1500-3000 per tonne including collection, transport, and processing; underfunding leads to open dumping and landfill fires."
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "footpath",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "fire_services",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "road_maintenance",
+      "to": "pothole",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "road_maintenance",
+      "to": "streetlights",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "road_maintenance",
+      "to": "footpath",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "road_maintenance",
+      "to": "road_maintenance",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "road_maintenance",
+      "to": "traffic_congestion",
+      "type": "PRODUCES",
+      "description": "White-topping, asphalting, and pothole repair works frequently require lane closures, causing massive peak-hour traffic jams in major Indian metros."
+    },
+    {
+      "from": "solid_waste_management",
+      "to": "waste_segregation",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "solid_waste_management",
+      "to": "landfill",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "solid_waste_management",
+      "to": "waste_to_energy",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "solid_waste_management",
+      "to": "garbage_collection",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "landfill",
+      "to": "landfill_fires",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "plastic_ban",
+      "to": "solid_waste_management",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "ward_system",
+      "to": "corporator",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "municipal_elections",
+      "to": "mayor",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "municipal_elections",
+      "to": "corporator",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "ward_delimitation",
+      "to": "municipal_elections",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "reservation_municipal",
+      "to": "municipal_elections",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "tender_process",
+      "to": "municipal_expenditure",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "tender_process",
+      "to": "contractor_quality",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "contractor_quality",
+      "to": "road_maintenance",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "municipal_inspection",
+      "to": "contractor_quality",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "law_and_order",
+      "to": "city_police",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "law_and_order",
+      "to": "police_policy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "law_and_order",
+      "to": "curfew_shutdown",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "law_and_order",
+      "to": "liquor_policy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "city_police",
+      "to": "police_jurisdiction",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "city_police",
+      "to": "beat_system",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "city_police",
+      "to": "community_policing",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "city_police",
+      "to": "urban_crime",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "city_police",
+      "to": "cctv_surveillance",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "city_police",
+      "to": "women_safety",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "urban_crime",
+      "to": "chain_snatching",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "urban_crime",
+      "to": "burglary",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "urban_crime",
+      "to": "cybercrime",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "urban_crime",
+      "to": "drug_trafficking",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "urban_crime",
+      "to": "area_safety",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "drug_trafficking",
+      "to": "area_safety",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "protests_bandh",
+      "to": "political_protests",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "protests_bandh",
+      "to": "labor_strikes",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "protests_bandh",
+      "to": "farmer_agitations",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "protests_bandh",
+      "to": "road_closures",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "protests_bandh",
+      "to": "shop_shutdowns",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "protests_bandh",
+      "to": "city_police",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "labor_strikes",
+      "to": "solid_waste_management",
+      "type": "DISRUPTS",
+      "description": ""
+    },
+    {
+      "from": "farmer_agitations",
+      "to": "road_closures",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "local_courts",
+      "to": "high_court",
+      "type": "CONNECTS",
+      "description": ""
+    },
+    {
+      "from": "high_court",
+      "to": "pil",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "pil",
+      "to": "court_infrastructure_orders",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "court_infrastructure_orders",
+      "to": "municipal_corporation",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "traffic_enforcement",
+      "to": "speed_cameras",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "traffic_enforcement",
+      "to": "drunk_driving",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "traffic_enforcement",
+      "to": "helmet_seatbelt",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "traffic_fine_amount",
+      "to": "traffic_enforcement",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "traffic_fine_amount",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": ""
+    },
+    {
+      "from": "state_economic_policy",
+      "to": "state_industrial_policy",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "state_industrial_policy",
+      "to": "it_ites_incentive",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "state_industrial_policy",
+      "to": "manufacturing_sez",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "state_industrial_policy",
+      "to": "startup_policy",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "state_tourism",
+      "to": "eco_tourism",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "state_tourism",
+      "to": "hospitality_employment",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "heritage_sites",
+      "to": "state_tourism",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "state_agriculture_policy",
+      "to": "state_msp",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "state_agriculture_policy",
+      "to": "state_irrigation",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "state_agriculture_policy",
+      "to": "crop_insurance_implementation",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "state_msp",
+      "to": "farmer_agitations",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "crop_insurance_implementation",
+      "to": "farmer_agitations",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "liquor_policy",
+      "to": "excise_revenue",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "liquor_policy",
+      "to": "bar_license",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "liquor_policy",
+      "to": "dry_days",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "liquor_policy",
+      "to": "online_liquor",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "excise_revenue",
+      "to": "municipal_revenue",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "mining_policy",
+      "to": "sand_mining",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "mining_policy",
+      "to": "granite_mining",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "cctv_surveillance",
+      "to": "urban_crime",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "cctv_surveillance",
+      "to": "area_safety",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "women_safety",
+      "to": "area_safety",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "pension_scheme",
+      "to": "municipal_elections",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "public_distribution_system",
+      "to": "ration_card",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "public_distribution_system",
+      "to": "state_msp",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "street_vendors",
+      "to": "footpath",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "street_vendors",
+      "to": "trade_license",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "governance_and_regulation",
+      "to": "fiscal_policy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "governance_and_regulation",
+      "to": "trade_policy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "governance_and_regulation",
+      "to": "consumer_protection",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "governance_and_regulation",
+      "to": "property_law",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "governance_and_regulation",
+      "to": "environmental_regulation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "governance_and_regulation",
+      "to": "digital_regulation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "governance_and_regulation",
+      "to": "electoral_political",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "governance_and_regulation",
+      "to": "immigration_citizenship",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "fiscal_policy",
+      "to": "government_budget",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "fiscal_policy",
+      "to": "public_debt",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "fiscal_policy",
+      "to": "subsidies",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "fiscal_policy",
+      "to": "welfare_schemes",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "welfare_schemes",
+      "to": "government_budget",
+      "type": "AFFECTS",
+      "description": "Direct Benefit Transfers (DBT) and freebie schemes (like free bus rides or electricity) heavily deplete state exchequers, often increasing the fiscal deficit."
+    },
+    {
+      "from": "trade_policy",
+      "to": "trade_agreements",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "trade_policy",
+      "to": "trade_wars_sanctions",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "trade_policy",
+      "to": "anti_dumping",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "consumer_protection",
+      "to": "product_safety_standards",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "consumer_protection",
+      "to": "price_controls",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "consumer_protection",
+      "to": "consumer_rights",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "consumer_protection",
+      "to": "advertising_regulation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "property_law",
+      "to": "land_acquisition",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "property_law",
+      "to": "tenancy_law",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "property_law",
+      "to": "rera_housing_regulation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environmental_regulation",
+      "to": "emission_norms",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environmental_regulation",
+      "to": "waste_management_regulation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environmental_regulation",
+      "to": "water_resource_regulation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "digital_regulation",
+      "to": "data_protection_law",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "digital_regulation",
+      "to": "platform_regulation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "digital_regulation",
+      "to": "cybersecurity_law",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "electoral_political",
+      "to": "elections",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "electoral_political",
+      "to": "political_stability",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "electoral_political",
+      "to": "constitutional_changes",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "elections",
+      "to": "dry_days",
+      "type": "PRODUCES",
+      "description": "The Election Commission of India mandates 48 hours of 'dry days' (ban on alcohol sales) prior to polling and on counting days to prevent voter bribery."
+    },
+    {
+      "from": "immigration_citizenship",
+      "to": "visa_policy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "immigration_citizenship",
+      "to": "citizenship_laws",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "immigration_citizenship",
+      "to": "refugee_policy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "safety_and_security",
+      "to": "personal_safety",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "safety_and_security",
+      "to": "cybersecurity",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "safety_and_security",
+      "to": "national_security",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "safety_and_security",
+      "to": "emergency_services",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_safety",
+      "to": "violent_crime",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_safety",
+      "to": "theft_burglary",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_safety",
+      "to": "fraud_scams",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_safety",
+      "to": "domestic_violence",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_safety",
+      "to": "road_safety",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_safety",
+      "to": "child_safety",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "cybersecurity",
+      "to": "data_breaches",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "cybersecurity",
+      "to": "ransomware",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "cybersecurity",
+      "to": "online_harassment",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "national_security",
+      "to": "military_conflicts",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "national_security",
+      "to": "terrorism",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "national_security",
+      "to": "defense_spending",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "national_security",
+      "to": "nuclear_threats",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "emergency_services",
+      "to": "fire_services",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "emergency_services",
+      "to": "ambulance_services",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "emergency_services",
+      "to": "disaster_relief",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "local_governance",
+      "to": "municipal_services",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "local_governance",
+      "to": "city_transport",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "local_governance",
+      "to": "local_utilities",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "local_governance",
+      "to": "state_policy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "local_governance",
+      "to": "urban_development",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "local_governance",
+      "to": "environmental_local",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "local_governance",
+      "to": "civic_participation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "municipal_services",
+      "to": "water_supply_local",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "municipal_services",
+      "to": "sewage_drainage",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "municipal_services",
+      "to": "public_parks",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "municipal_services",
+      "to": "road_maintenance",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "municipal_services",
+      "to": "solid_waste_management",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "water_supply_local",
+      "to": "piped_water",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "water_supply_local",
+      "to": "water_tanker",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "water_supply_local",
+      "to": "water_quality_local",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "sewage_drainage",
+      "to": "stormwater_drainage",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "sewage_drainage",
+      "to": "sewage_treatment",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "city_transport",
+      "to": "bus_service",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "city_transport",
+      "to": "auto_rickshaw_taxi",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "city_transport",
+      "to": "cycling_pedestrian",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "bus_service",
+      "to": "bus_routes",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "bus_service",
+      "to": "bus_frequency",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "auto_rickshaw_taxi",
+      "to": "auto_fare",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "auto_rickshaw_taxi",
+      "to": "cab_aggregator",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "local_utilities",
+      "to": "gas_supply_local",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "local_utilities",
+      "to": "internet_broadband",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "gas_supply_local",
+      "to": "piped_natural_gas",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "internet_broadband",
+      "to": "fiber_broadband",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "internet_broadband",
+      "to": "mobile_network_local",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "state_policy",
+      "to": "state_taxation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "state_policy",
+      "to": "land_policy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "state_policy",
+      "to": "law_and_order",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "state_policy",
+      "to": "education_policy_state",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "state_policy",
+      "to": "healthcare_policy_state",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "state_taxation",
+      "to": "state_excise",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "state_taxation",
+      "to": "road_tax",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "state_taxation",
+      "to": "property_tax_local",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "state_taxation",
+      "to": "professional_tax",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "land_policy",
+      "to": "land_acquisition",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "land_policy",
+      "to": "zoning_master_plan",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "land_policy",
+      "to": "building_bylaws",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "zoning_master_plan",
+      "to": "property_prices_locality",
+      "type": "AFFECTS",
+      "description": "Changes in city master plans, such as increasing the Floor Area Ratio (FAR) or changing land use from agricultural to commercial, drastically swing local real estate values."
+    },
+    {
+      "from": "education_policy_state",
+      "to": "school_fee_regulation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "education_policy_state",
+      "to": "state_board_exam",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "education_policy_state",
+      "to": "college_admission_state",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "healthcare_policy_state",
+      "to": "government_hospital",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "healthcare_policy_state",
+      "to": "health_scheme_state",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "healthcare_policy_state",
+      "to": "epidemic_response",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "urban_development",
+      "to": "construction_projects",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "urban_development",
+      "to": "real_estate_local",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "urban_development",
+      "to": "smart_city",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "urban_development",
+      "to": "gentrification",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "construction_projects",
+      "to": "flyover_underpass",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "construction_projects",
+      "to": "ring_road_expressway",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "real_estate_local",
+      "to": "property_prices_locality",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "real_estate_local",
+      "to": "new_development",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "real_estate_local",
+      "to": "rental_market_local",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environmental_local",
+      "to": "air_quality_local",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environmental_local",
+      "to": "urban_heat",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environmental_local",
+      "to": "lake_river_health",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "air_quality_local",
+      "to": "aqi_levels",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "air_quality_local",
+      "to": "vehicle_emission",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "air_quality_local",
+      "to": "construction_dust",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "aqi_levels",
+      "to": "construction_projects",
+      "type": "DISRUPTS",
+      "description": "Under the Graded Response Action Plan (GRAP) in cities like Delhi, severe AQI levels legally trigger immediate bans on construction and demolition activities."
+    },
+    {
+      "from": "civic_participation",
+      "to": "local_elections",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "civic_participation",
+      "to": "citizen_grievance",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "civic_participation",
+      "to": "rwa_community",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "model_code_of_conduct",
+      "to": "municipal_elections",
+      "type": "REGULATES",
+      "description": "The Model Code of Conduct halts all new government tenders, projects, and welfare announcements for months before elections."
+    },
+    {
+      "from": "aadhaar_kyc",
+      "to": "welfare_schemes",
+      "type": "AFFECTS",
+      "description": "Aadhaar-based KYC is mandatory for accessing most government welfare schemes via Direct Benefit Transfer."
+    },
+    {
+      "from": "stamp_duty",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "union_budget",
+      "to": "defense_spending",
+      "type": "FUNDS",
+      "description": "Defence receives the largest single allocation in India's Union Budget (~13% of total expenditure); budget size determines force modernisation and procurement pace.",
+      "cross": "financial"
+    },
+    {
+      "from": "property_tax",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": "Property tax is the largest own-source revenue for Indian municipal corporations, funding roads, water, and sanitation.",
+      "cross": "financial"
+    },
+    {
+      "from": "monsoon",
+      "to": "road_maintenance",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "unknown"
+    },
+    {
+      "from": "monsoon",
+      "to": "crop_insurance_implementation",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "unknown"
+    },
+    {
+      "from": "monsoon",
+      "to": "pothole",
+      "type": "PRODUCES",
+      "description": "Heavy monsoon rains wash away poor-quality bitumen, creating widespread potholes that severely damage vehicles and slow traffic.",
+      "cross": "unknown"
+    },
+    {
+      "from": "bescom",
+      "to": "bbmp",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "energy"
+    },
+    {
+      "from": "msedcl",
+      "to": "bmc_mumbai",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "energy"
+    },
+    {
+      "from": "solar_park",
+      "to": "land_acquisition",
+      "type": "DEPENDS_ON",
+      "description": "Utility-scale solar parks require massive contiguous land parcels, making land acquisition a primary bottleneck for renewable expansion in India.",
+      "cross": "energy"
+    },
+    {
+      "from": "dam_water_release",
+      "to": "state_irrigation",
+      "type": "SUPPLIES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "bwssb",
+      "to": "bbmp",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "delhi_jal_board",
+      "to": "mcd_delhi",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cmwssb",
+      "to": "gcc_chennai",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "hmwssb",
+      "to": "ghmc_hyderabad",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "metro_systems",
+      "to": "metro_disruption",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "bangalore_metro",
+      "to": "bbmp",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "delhi_metro",
+      "to": "mcd_delhi",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "mumbai_metro",
+      "to": "bmc_mumbai",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "chennai_metro",
+      "to": "gcc_chennai",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "hyderabad_metro",
+      "to": "ghmc_hyderabad",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "metro_construction",
+      "to": "road_closures",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "bmtc",
+      "to": "bbmp",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "dtc",
+      "to": "mcd_delhi",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "best_bus",
+      "to": "bmc_mumbai",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "mumbai_local",
+      "to": "bmc_mumbai",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "chennai_mrts",
+      "to": "gcc_chennai",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "traffic_management",
+      "to": "traffic_congestion",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "traffic_management",
+      "to": "traffic_rules",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "traffic_management",
+      "to": "signal_infrastructure",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "flyover_construction",
+      "to": "road_closures",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "street_parking_fees",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "towing",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "municipal_corporation",
+      "to": "stray_animals",
+      "type": "MANAGES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "bbmp",
+      "to": "stormwater_drain",
+      "type": "MANAGES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "bbmp",
+      "to": "lake_pollution",
+      "type": "MANAGES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "bmc_mumbai",
+      "to": "bmc_water",
+      "type": "MANAGES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "municipal_revenue",
+      "to": "city_water_supply",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "municipal_revenue",
+      "to": "stormwater_drain",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "local_education",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "lake_restoration",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "sewage_system",
+      "to": "stp",
+      "type": "SUPPLIES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "sewage_system",
+      "to": "sewage_overflow",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "solid_waste_management",
+      "to": "stray_animals",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "landfill_fires",
+      "to": "air_quality",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "waste_to_energy",
+      "to": "air_quality",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "municipal_elections",
+      "to": "property_tax",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "municipal_elections",
+      "to": "water_billing",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "electricity_distribution",
+      "to": "power_cuts",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "bses",
+      "to": "mcd_delhi",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "tpddl",
+      "to": "mcd_delhi",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "tangedco",
+      "to": "gcc_chennai",
+      "type": "LOCATED_IN",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "power_outage",
+      "to": "sewage_system",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "local_body_telecom_approval",
+      "to": "municipal_corporation",
+      "type": "DEPENDS_ON",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "urban_flooding",
+      "to": "road_maintenance",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "cybercrime",
+      "to": "broadband_internet",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "area_safety",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "labor_strikes",
+      "to": "city_bus_systems",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "road_closures",
+      "to": "traffic_management",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "shop_shutdowns",
+      "to": "employment_local",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "high_court",
+      "to": "encroachment",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "high_court",
+      "to": "air_quality",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "pil",
+      "to": "ngt_orders",
+      "type": "CONNECTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "court_infrastructure_orders",
+      "to": "eviction_drive",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "court_infrastructure_orders",
+      "to": "lake_encroachment",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "state_industrial_policy",
+      "to": "employment_local",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_industrial_policy",
+      "to": "skill_development",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "it_ites_incentive",
+      "to": "employment_local",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "it_ites_incentive",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "manufacturing_sez",
+      "to": "employment_local",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "manufacturing_sez",
+      "to": "industrial_effluent",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "startup_policy",
+      "to": "employment_local",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "heritage_sites",
+      "to": "building_codes",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "hospitality_employment",
+      "to": "employment_local",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_irrigation",
+      "to": "groundwater",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "state_irrigation",
+      "to": "dam_reservoir",
+      "type": "DEPENDS_ON",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "excise_revenue",
+      "to": "state_budget",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "sand_mining",
+      "to": "water_pollution",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "sand_mining",
+      "to": "ngt_orders",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "sand_mining",
+      "to": "construction_materials",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "sand_mining",
+      "to": "dam_reservoir",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "granite_mining",
+      "to": "construction_materials",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "gst_municipal",
+      "to": "municipal_revenue",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_budget",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_budget",
+      "to": "city_police",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_budget",
+      "to": "state_agriculture_policy",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_budget",
+      "to": "state_tourism",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_budget",
+      "to": "state_industrial_policy",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_budget",
+      "to": "pension_scheme",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_budget",
+      "to": "public_distribution_system",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_finance_commission",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "central_grants",
+      "to": "municipal_revenue",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "pothole",
+      "to": "traffic_management",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "footpath",
+      "to": "encroachment",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "sewage_overflow",
+      "to": "road_maintenance",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "street_vendors",
+      "to": "employment_local",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "slum_rehabilitation",
+      "to": "municipal_expenditure",
+      "type": "DEPENDS_ON",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "trade_policy",
+      "to": "import_export_policy",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "digital_regulation",
+      "to": "ai_regulation",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "emergency_services",
+      "to": "health_insurance",
+      "type": "AFFECTS",
+      "description": "Emergency hospitalisations and ambulance costs drive health insurance claim volumes, pushing up premiums across India's general insurance sector.",
+      "cross": "financial"
+    },
+    {
+      "from": "fire_services",
+      "to": "fire_safety_building",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "fire_services",
+      "to": "coaching_safety",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "ambulance_services",
+      "to": "gvk_emri",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "ambulance_services",
+      "to": "ambulance_response_time",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "water_supply_local",
+      "to": "water_rationing",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "city_transport",
+      "to": "traffic_management",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "city_transport",
+      "to": "metro_systems",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "bus_service",
+      "to": "bus_fare",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "local_utilities",
+      "to": "electricity_distribution",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "gas_supply_local",
+      "to": "lpg_distribution",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "energy"
+    },
+    {
+      "from": "state_policy",
+      "to": "state_budget",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_taxation",
+      "to": "stamp_duty",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "construction_projects",
+      "to": "road_widening",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "environmental_local",
+      "to": "noise_pollution",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "air_quality_local",
+      "to": "stubble_burning",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "rto_services",
+      "to": "consumer",
+      "type": "AFFECTS",
+      "description": "RTO services (driving licenses, vehicle registration, fitness certificates) are a frequent citizen-government touchpoint affecting vehicle ownership costs.",
+      "cross": "consumer_life"
+    }
+  ]
+}
