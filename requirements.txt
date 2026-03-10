@@ -9,3 +9,4 @@ beautifulsoup4>=4.12
 datasketch>=1.6
 python-telegram-bot>=20.0
 aiohttp>=3.9
+google-genai>=1.0

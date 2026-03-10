@@ -61,6 +61,16 @@ class TaxonomyMerger:
                 if patch_path.exists():
                     self._apply_patches(G, patch_path)
 
+        # Validate: report broken edge refs
+        node_ids = set(G.nodes())
+        broken = 0
+        for src, dst in G.edges():
+            if src not in node_ids or dst not in node_ids:
+                broken += 1
+                log.warning("Broken ref: %s -> %s", src, dst)
+        if broken:
+            log.warning("Total broken edge references: %d", broken)
+
         return G
 
     # -- flat loader -------------------------------------------------------
@@ -218,7 +228,7 @@ class TaxonomyMerger:
 
 
 def export_graph(G: nx.DiGraph, path: Path) -> None:
-    """Write merged graph to YAML."""
+    """Write merged graph to YAML compatible with graph/graph.py (ImpactGraph)."""
     nodes = []
     for nid, attrs in sorted(G.nodes(data=True)):
         nodes.append(
@@ -226,7 +236,7 @@ def export_graph(G: nx.DiGraph, path: Path) -> None:
                 "id": nid,
                 "aliases": attrs.get("aliases", []),
                 "category": attrs.get("category", ""),
-                "source_file": attrs.get("source_file", ""),
+                "is_category": attrs.get("is_category", False),
             }
         )
 
@@ -238,10 +248,11 @@ def export_graph(G: nx.DiGraph, path: Path) -> None:
                 "to": dst,
                 "type": attrs.get("type", ""),
                 "description": attrs.get("description", ""),
-                "source_file": attrs.get("source_file", ""),
+                "weight": attrs.get("weight", 1.0),
             }
         )
 
+    path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(yaml.dump({"nodes": nodes, "edges": edges}, default_flow_style=False, sort_keys=False, allow_unicode=True))
 
 
@@ -266,7 +277,7 @@ def print_stats(G: nx.DiGraph) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Merge taxonomy graphs")
-    parser.add_argument("--export", action="store_true", help="Write merged_graph.yaml")
+    parser.add_argument("--no-export", action="store_true", help="Skip writing merged_graph.yaml")
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="Project root")
     args = parser.parse_args()
 
@@ -276,8 +287,8 @@ def main() -> None:
     G = merger.merge()
     print_stats(G)
 
-    if args.export:
-        out = args.root / "taxonomy" / "merged_graph.yaml"
+    if not args.no_export:
+        out = args.root / "data" / "merged_graph.yaml"
         export_graph(G, out)
         print(f"\nExported to {out}")
 
