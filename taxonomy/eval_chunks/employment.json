@@ -1,0 +1,4719 @@
+{
+  "domain": "employment",
+  "node_count": 204,
+  "edge_count": 423,
+  "internal_edge_count": 223,
+  "cross_domain_edge_count": 200,
+  "nodes": [
+    {
+      "id": "agriculture_sector",
+      "aliases": [
+        "agriculture India",
+        "farming sector",
+        "agricultural employment",
+        "kisan",
+        "farm jobs"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "agritech",
+      "aliases": [
+        "agritech India",
+        "agricultural technology",
+        "DeHaat",
+        "Ninjacart",
+        "farm tech"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "ai_ethics_bias",
+      "aliases": [
+        "AI bias",
+        "algorithmic fairness",
+        "AI ethics"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "ai_in_education",
+      "aliases": [
+        "AI tutoring",
+        "AI in schools",
+        "educational AI"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "ai_in_healthcare",
+      "aliases": [
+        "medical AI",
+        "AI diagnostics",
+        "AI drug discovery"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "ai_job_creation",
+      "aliases": [
+        "AI new jobs",
+        "AI hiring boom",
+        "prompt engineering jobs",
+        "AI skills demand"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "ai_job_displacement",
+      "aliases": [
+        "AI replacing jobs",
+        "automation job loss",
+        "AI unemployment",
+        "AI job threat",
+        "AI disruption",
+        "automation threat",
+        "robot workers",
+        "AI impact on jobs"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "ai_ml_sector",
+      "aliases": [
+        "AI industry",
+        "machine learning jobs",
+        "artificial intelligence sector",
+        "AI companies India"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "ai_tooling",
+      "aliases": [
+        "AI developer tools",
+        "ML ops",
+        "AI infrastructure",
+        "AI platform companies"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "algorithm_changes",
+      "aliases": [
+        "algorithm change",
+        "social media algorithm",
+        "reach decline",
+        "engagement algorithm"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "amazon_india",
+      "aliases": [
+        "Amazon India",
+        "Amazon India hiring",
+        "Amazon India warehouse",
+        "Amazon seller"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "anthropic",
+      "aliases": [
+        "Anthropic",
+        "Claude AI",
+        "Anthropic funding"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "apollo_hospitals",
+      "aliases": [
+        "Apollo Hospitals",
+        "Apollo health",
+        "Apollo results"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "app_store_policy",
+      "aliases": [
+        "app store policy",
+        "Google Play policy",
+        "Apple App Store rules",
+        "app store commission"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "artificial_intelligence",
+      "aliases": [],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "auto_component",
+      "aliases": [
+        "auto components",
+        "auto ancillary",
+        "auto parts manufacturing",
+        "Bosch India",
+        "Motherson"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "auto_manufacturing",
+      "aliases": [
+        "auto sector India",
+        "automobile industry",
+        "vehicle manufacturing",
+        "auto OEM India"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "autonomous_vehicles",
+      "aliases": [
+        "self-driving cars",
+        "driverless vehicles",
+        "autonomous driving"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "b2c_tech",
+      "aliases": [
+        "B2C startups",
+        "consumer tech India",
+        "consumer internet"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "bank_strike",
+      "aliases": [
+        "bank strike",
+        "bank union strike",
+        "AIBEA strike",
+        "banking strike"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "banking_employment",
+      "aliases": [
+        "banking jobs India",
+        "bank hiring",
+        "banking sector employment"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "biosimilars",
+      "aliases": [
+        "biosimilar drugs",
+        "biologic medicines"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "biotechnology",
+      "aliases": [],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "blinkit",
+      "aliases": [
+        "Blinkit",
+        "Blinkit dark store",
+        "Blinkit delivery",
+        "Grofers"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "blockchain",
+      "aliases": [
+        "blockchain technology",
+        "DeFi",
+        "Web3",
+        "smart contracts"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "bonus_incentives",
+      "aliases": [
+        "annual bonus",
+        "performance bonus",
+        "incentive pay"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "builders_developers",
+      "aliases": [
+        "real estate developers",
+        "DLF",
+        "Godrej Properties",
+        "Prestige Estates",
+        "Lodha"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "byju",
+      "aliases": [
+        "BYJU'S",
+        "Byju Raveendran",
+        "BYJU'S crisis",
+        "BYJU'S layoffs",
+        "Think and Learn"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "campus_placement",
+      "aliases": [
+        "campus placement",
+        "campus hiring",
+        "campus recruitment",
+        "placement season"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "cbdc",
+      "aliases": [
+        "CBDC",
+        "digital rupee",
+        "digital currency",
+        "e-rupee"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "cement_industry",
+      "aliases": [
+        "cement prices India",
+        "UltraTech Cement",
+        "Ambuja Cement",
+        "ACC cement"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "certifications",
+      "aliases": [
+        "professional certifications",
+        "AWS certification",
+        "PMP certification",
+        "tech certifications"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "cipla",
+      "aliases": [
+        "Cipla",
+        "Cipla results",
+        "Cipla generic drugs"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "coaching_industry",
+      "aliases": [
+        "coaching classes India",
+        "coaching institutes",
+        "Allen",
+        "FIITJEE",
+        "Kota coaching"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "cognizant",
+      "aliases": [
+        "Cognizant Technology",
+        "Cognizant hiring",
+        "CTSH"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "commercial_real_estate",
+      "aliases": [
+        "commercial real estate India",
+        "office space demand",
+        "SEZ",
+        "IT park"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "compute_costs",
+      "aliases": [
+        "cloud compute costs",
+        "GPU rental cost",
+        "AI training cost",
+        "inference cost"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "construction_employment",
+      "aliases": [
+        "construction jobs India",
+        "construction labor",
+        "building construction"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "construction_sector",
+      "aliases": [
+        "construction jobs",
+        "building sector",
+        "real estate construction"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "consulting_firms",
+      "aliases": [
+        "consulting firms India",
+        "McKinsey India",
+        "BCG India",
+        "Deloitte India",
+        "Accenture India"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "coworking_spaces",
+      "aliases": [
+        "coworking India",
+        "WeWork India",
+        "91springboard",
+        "coworking space demand"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "creator_economy",
+      "aliases": [
+        "creator economy India",
+        "content creator",
+        "influencer economy"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "creator_monetization_policy",
+      "aliases": [
+        "creator monetization",
+        "YouTube Partner Program",
+        "Instagram bonuses",
+        "platform payout policy"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "cred",
+      "aliases": [
+        "CRED app",
+        "CRED fintech"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "cybersecurity_sector",
+      "aliases": [
+        "cybersecurity jobs India",
+        "infosec hiring",
+        "cybersecurity industry"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "data_breach_news",
+      "aliases": [
+        "data breach India",
+        "data leak",
+        "cyber attack India",
+        "ransomware India"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "data_labeling",
+      "aliases": [
+        "data labeling industry",
+        "data annotation",
+        "RLHF labeling",
+        "AI training data"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "defense_sector",
+      "aliases": [
+        "military jobs",
+        "defense employment",
+        "armed forces"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "delivery_worker_earnings",
+      "aliases": [
+        "delivery partner earnings",
+        "Swiggy rider pay",
+        "Zomato rider pay",
+        "gig worker earnings"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "diagnostics_sector",
+      "aliases": [
+        "diagnostics industry",
+        "pathology labs",
+        "Dr Lal PathLabs",
+        "Metropolis Healthcare",
+        "SRL Diagnostics"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "dmart",
+      "aliases": [
+        "DMart",
+        "Avenue Supermarts",
+        "DMart expansion"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "dr_reddys",
+      "aliases": [
+        "Dr. Reddy's Laboratories",
+        "Dr Reddys results"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "driver_earnings",
+      "aliases": [
+        "cab driver earnings",
+        "Uber driver income",
+        "Ola driver income",
+        "ride hailing commission"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "drone_technology",
+      "aliases": [
+        "drone delivery",
+        "agricultural drones",
+        "drone regulation"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "ecommerce_logistics",
+      "aliases": [
+        "e-commerce logistics",
+        "Delhivery",
+        "Ecom Express",
+        "Xpressbees",
+        "last mile delivery"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "ecommerce_sector",
+      "aliases": [
+        "e-commerce India",
+        "online retail India",
+        "e-commerce market"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "edtech_sector",
+      "aliases": [
+        "edtech India",
+        "edtech companies",
+        "online education companies"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "education_sector",
+      "aliases": [
+        "education sector India",
+        "schools India",
+        "colleges India",
+        "education industry",
+        "teaching jobs",
+        "education sector",
+        "academic employment"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "employment_and_income",
+      "aliases": [],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "employment_sectors",
+      "aliases": [],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "energy_utilities_sector",
+      "aliases": [
+        "power sector jobs",
+        "utility employment",
+        "energy jobs"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "enterprise_software",
+      "aliases": [
+        "enterprise SaaS",
+        "enterprise software India",
+        "B2B enterprise"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "epfo_data",
+      "aliases": [
+        "EPFO payroll",
+        "formal job creation",
+        "EPF registrations"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "esop_policy",
+      "aliases": [
+        "ESOP",
+        "employee stock options",
+        "ESOP taxation",
+        "ESOP liquidity",
+        "stock options"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "esports",
+      "aliases": [
+        "esports India",
+        "competitive gaming",
+        "BGMI esports",
+        "esports tournaments"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "ev_manufacturing",
+      "aliases": [
+        "EV manufacturing India",
+        "electric vehicle production",
+        "EV factory",
+        "Ola Electric",
+        "Ather Energy"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "female_labor_force_participation",
+      "aliases": [
+        "FLFP",
+        "women in workforce",
+        "female employment rate"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "financial_services_sector",
+      "aliases": [
+        "banking jobs",
+        "finance sector",
+        "BFSI employment"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "fintech",
+      "aliases": [],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "fintech_sector",
+      "aliases": [
+        "fintech India",
+        "fintech companies",
+        "financial technology",
+        "fintech startups"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "fiverr_platform",
+      "aliases": [
+        "Fiverr",
+        "Fiverr India",
+        "Fiverr gigs"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "flipkart",
+      "aliases": [
+        "Flipkart",
+        "Flipkart hiring",
+        "Flipkart sale",
+        "Flipkart Walmart"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "fmcg_sector",
+      "aliases": [
+        "FMCG sector India",
+        "consumer goods India",
+        "fast moving consumer goods"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "food_delivery",
+      "aliases": [
+        "food delivery India",
+        "Swiggy",
+        "Zomato delivery",
+        "food delivery app",
+        "food delivery",
+        "Zomato",
+        "online food ordering",
+        "cloud kitchen"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "food_processing",
+      "aliases": [
+        "food processing India",
+        "food processing industry",
+        "FPI sector",
+        "FMCG",
+        "packaged food",
+        "food manufacturing",
+        "value addition",
+        "processed food"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "fortis_healthcare",
+      "aliases": [
+        "Fortis Healthcare",
+        "Fortis hospitals"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "freelance_market",
+      "aliases": [
+        "freelancing India",
+        "freelance jobs",
+        "independent contractor",
+        "remote freelance",
+        "gig economy",
+        "freelance work",
+        "platform work",
+        "contract jobs"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "freshworks",
+      "aliases": [
+        "Freshworks Inc",
+        "Freshworks hiring",
+        "FRSH"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "gaming_sector",
+      "aliases": [
+        "gaming industry India",
+        "mobile gaming India",
+        "game development India"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "gene_therapy",
+      "aliases": [
+        "gene editing",
+        "CRISPR",
+        "genetic therapy"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "generative_ai",
+      "aliases": [
+        "ChatGPT",
+        "Gemini AI",
+        "generative AI",
+        "LLM",
+        "AI chatbot"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "generic_drugs",
+      "aliases": [
+        "generic medicines India",
+        "generic drug export",
+        "India pharmacy of the world",
+        "generic medicine",
+        "generic drug prices",
+        "drug price control"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "global_freelance_demand",
+      "aliases": [
+        "global freelance demand",
+        "offshore freelance",
+        "remote work demand global"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "gmo_crops",
+      "aliases": [
+        "GM crops",
+        "genetically modified food",
+        "biotech crops",
+        "Bt cotton"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "google_deepmind",
+      "aliases": [
+        "Google DeepMind",
+        "Gemini AI",
+        "Google AI"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "google_pay",
+      "aliases": [
+        "Google Pay",
+        "GPay India",
+        "Google Pay market share"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "government_employment",
+      "aliases": [
+        "government jobs India",
+        "sarkari naukri",
+        "central government recruitment",
+        "state government jobs"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "government_public_sector",
+      "aliases": [
+        "government jobs",
+        "public sector employment",
+        "civil service"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "gps_navigation",
+      "aliases": [
+        "GPS",
+        "NavIC",
+        "satellite navigation",
+        "location services"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "gpu_supply",
+      "aliases": [
+        "GPU shortage",
+        "GPU availability",
+        "GPU supply chain",
+        "AI chip supply"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "h1b_visa",
+      "aliases": [
+        "H-1B visa",
+        "H1B lottery",
+        "H-1B cap",
+        "H-1B policy",
+        "H1B reform",
+        "US work visa"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "hcl_tech",
+      "aliases": [
+        "HCL Technologies",
+        "HCL Tech hiring",
+        "HCL results",
+        "HCL quarterly"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "healthcare_employment",
+      "aliases": [
+        "healthcare jobs India",
+        "hospital hiring",
+        "medical jobs",
+        "healthcare sector employment",
+        "healthcare jobs",
+        "medical sector employment",
+        "pharma jobs"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "hospitality_tourism_sector",
+      "aliases": [
+        "hotel jobs",
+        "tourism sector",
+        "restaurant employment"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "hul",
+      "aliases": [
+        "Hindustan Unilever",
+        "HUL results",
+        "HUL hiring",
+        "Unilever India"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "hyundai_india",
+      "aliases": [
+        "Hyundai India",
+        "Hyundai Motor India",
+        "Hyundai IPO"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "immigration_work_permits",
+      "aliases": [
+        "work visa",
+        "H-1B",
+        "labor migration",
+        "foreign workers"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "industrial_robots",
+      "aliases": [
+        "factory automation",
+        "industrial robotics",
+        "manufacturing robots"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "informal_sector",
+      "aliases": [
+        "unorganized sector",
+        "informal economy",
+        "daily wage earners"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "infosys",
+      "aliases": [
+        "Infosys hiring",
+        "Infosys results",
+        "Infosys layoffs",
+        "Infosys quarterly",
+        "Infy"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "instagram_creators",
+      "aliases": [
+        "Instagram creator",
+        "Instagram reels monetization",
+        "Instagram influencer"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "insurance_tech",
+      "aliases": [
+        "insurtech India",
+        "insurance technology",
+        "Acko",
+        "Digit Insurance",
+        "PolicyBazaar"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "insurtech",
+      "aliases": [
+        "digital insurance",
+        "insurance technology"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "it_attrition",
+      "aliases": [
+        "IT attrition rate",
+        "IT employee turnover",
+        "tech attrition",
+        "IT resignation rate"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "it_bench_strength",
+      "aliases": [
+        "IT bench",
+        "bench utilization",
+        "IT utilization rate",
+        "billable employees"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "it_fresher_hiring",
+      "aliases": [
+        "IT campus hiring",
+        "fresher recruitment IT",
+        "IT campus placement",
+        "mass hiring IT"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "it_outsourcing_deals",
+      "aliases": [
+        "IT outsourcing contracts",
+        "large deal wins",
+        "mega deals",
+        "total contract value TCV"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "it_services_eu_client",
+      "aliases": [
+        "European IT spending",
+        "EU enterprise IT budget",
+        "UK IT spending"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "it_services_sector",
+      "aliases": [
+        "IT services",
+        "Indian IT",
+        "IT outsourcing",
+        "IT industry India"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "it_services_us_client",
+      "aliases": [
+        "US IT spending",
+        "BFSI client spending",
+        "US enterprise IT budget",
+        "US technology spending"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "it_technology_sector",
+      "aliases": [
+        "tech jobs",
+        "IT sector",
+        "software jobs",
+        "tech layoffs"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "itc_limited",
+      "aliases": [
+        "ITC Limited",
+        "ITC results",
+        "ITC FMCG",
+        "ITC hotels demerger"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "job_creation",
+      "aliases": [
+        "new jobs",
+        "hiring trends",
+        "employment generation"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "job_market_india",
+      "aliases": [
+        "job market India",
+        "employment rate India",
+        "hiring trends India",
+        "job growth"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "l1_visa",
+      "aliases": [
+        "L-1 visa",
+        "L1 intracompany transfer",
+        "L-1 blanket"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "labor_laws",
+      "aliases": [
+        "labor code",
+        "worker rights",
+        "employment law",
+        "labor reform"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "labor_market",
+      "aliases": [],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "lateral_hiring",
+      "aliases": [
+        "lateral hiring",
+        "experienced hiring",
+        "mid-level hiring",
+        "senior hiring"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "layoffs_retrenchment",
+      "aliases": [
+        "mass layoffs",
+        "job cuts",
+        "retrenchment",
+        "downsizing"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "legal_professional_services",
+      "aliases": [
+        "legal jobs",
+        "consulting jobs",
+        "professional services"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "llm_companies",
+      "aliases": [
+        "LLM companies",
+        "large language model",
+        "foundation model companies",
+        "GenAI companies"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "logistics_sector",
+      "aliases": [
+        "logistics India",
+        "logistics industry",
+        "supply chain India"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "logistics_transport_sector",
+      "aliases": [
+        "logistics jobs",
+        "transport sector employment",
+        "warehousing"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "ltimindtree",
+      "aliases": [
+        "LTIMindtree",
+        "LTI Mindtree",
+        "LTIMindtree results"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "mahindra_auto",
+      "aliases": [
+        "Mahindra & Mahindra",
+        "M&M auto",
+        "Mahindra XUV",
+        "Mahindra hiring"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "manufacturing_sector",
+      "aliases": [
+        "factory jobs",
+        "industrial employment",
+        "manufacturing PMI"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "maruti_suzuki",
+      "aliases": [
+        "Maruti Suzuki",
+        "Maruti results",
+        "Maruti sales",
+        "MSIL"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "max_healthcare",
+      "aliases": [
+        "Max Healthcare",
+        "Max hospitals"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "media_entertainment",
+      "aliases": [
+        "media industry India",
+        "entertainment sector",
+        "M&E industry",
+        "media jobs",
+        "entertainment industry",
+        "creative jobs"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "medical_devices",
+      "aliases": [
+        "medical devices India",
+        "medical equipment",
+        "medical device regulation"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "meesho",
+      "aliases": [
+        "Meesho",
+        "Meesho seller",
+        "Meesho social commerce"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "mgnrega",
+      "aliases": [
+        "NREGA",
+        "Mahatma Gandhi National Rural Employment Guarantee Act",
+        "rural employment guarantee"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "mining_sector",
+      "aliases": [
+        "mining jobs",
+        "extraction industry"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "nbfc_sector",
+      "aliases": [
+        "NBFC",
+        "non-banking financial company",
+        "Bajaj Finance",
+        "Shriram Finance",
+        "NBFC regulation",
+        "NBFC sector"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "neobanking",
+      "aliases": [
+        "digital bank",
+        "neobank",
+        "online banking"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "nestle_india",
+      "aliases": [
+        "Nestle India",
+        "Maggi",
+        "Nestle India results"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "nvidia",
+      "aliases": [
+        "NVIDIA",
+        "NVDA",
+        "NVIDIA GPU",
+        "NVIDIA earnings",
+        "NVIDIA stock",
+        "H100",
+        "B200"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "ola_cabs",
+      "aliases": [
+        "Ola Cabs",
+        "Ola driver",
+        "Ola fare",
+        "Ola Electric"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "openai",
+      "aliases": [
+        "OpenAI",
+        "ChatGPT",
+        "GPT-5",
+        "OpenAI funding",
+        "OpenAI policy"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "ott_platforms",
+      "aliases": [
+        "OTT platforms India",
+        "Netflix India",
+        "Hotstar",
+        "Amazon Prime Video",
+        "JioCinema"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "overtime_rules",
+      "aliases": [
+        "overtime pay",
+        "overtime regulation",
+        "working hours"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "paytm",
+      "aliases": [
+        "Paytm",
+        "One97 Communications",
+        "Paytm Payments Bank",
+        "Paytm crisis"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "pension_provident_fund",
+      "aliases": [
+        "EPF",
+        "PF contribution",
+        "pension fund",
+        "retirement benefit",
+        "401k"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "pharma_api_china",
+      "aliases": [
+        "API from China",
+        "active pharmaceutical ingredient",
+        "bulk drug import China",
+        "pharma raw material"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "pharma_sector",
+      "aliases": [
+        "pharma industry India",
+        "pharmaceutical sector",
+        "Indian pharma",
+        "drug manufacturing India"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "phonepe",
+      "aliases": [
+        "PhonePe",
+        "PhonePe market share",
+        "PhonePe hiring"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "physics_wallah",
+      "aliases": [
+        "Physics Wallah",
+        "PW",
+        "Alakh Pandey"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "pli_scheme",
+      "aliases": [
+        "Production Linked Incentive",
+        "manufacturing incentives"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "postman",
+      "aliases": [
+        "Postman API",
+        "Postman company"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "private_banks",
+      "aliases": [
+        "private banks India",
+        "HDFC Bank",
+        "ICICI Bank",
+        "Kotak Mahindra Bank",
+        "Axis Bank"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "psu_banks",
+      "aliases": [
+        "PSU banks",
+        "public sector banks",
+        "SBI",
+        "Bank of Baroda",
+        "PNB",
+        "government banks"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "quick_commerce",
+      "aliases": [
+        "quick commerce",
+        "Q-commerce",
+        "10-minute delivery",
+        "Blinkit",
+        "Zepto",
+        "Instamart"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "railway_recruitment",
+      "aliases": [
+        "railway jobs",
+        "RRB recruitment",
+        "Indian Railways hiring"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "razorpay",
+      "aliases": [
+        "Razorpay",
+        "Razorpay hiring",
+        "Razorpay funding"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "real_estate_sector",
+      "aliases": [
+        "real estate India",
+        "property market",
+        "housing market India",
+        "real estate employment"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "reliance_retail",
+      "aliases": [
+        "Reliance Retail",
+        "JioMart",
+        "Reliance Retail hiring"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "remote_work_policy",
+      "aliases": [
+        "remote work policy",
+        "work from home policy",
+        "hybrid work",
+        "return to office",
+        "RTO mandate",
+        "work from home"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "retail_sector",
+      "aliases": [
+        "retail sector India",
+        "organized retail",
+        "retail industry"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "retail_trade_sector",
+      "aliases": [
+        "retail jobs",
+        "shop jobs",
+        "e-commerce jobs"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "ride_hailing",
+      "aliases": [
+        "ride hailing India",
+        "cab aggregator",
+        "ride sharing"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "robotics_automation",
+      "aliases": [],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "rubber_supply",
+      "aliases": [
+        "rubber prices",
+        "natural rubber supply",
+        "rubber import"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "saas_sector",
+      "aliases": [
+        "SaaS companies India",
+        "B2B SaaS",
+        "SaaS startups",
+        "software as a service"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "salary_trends",
+      "aliases": [
+        "salary trends India",
+        "salary hike",
+        "appraisal season",
+        "pay raise",
+        "compensation trends",
+        "salary growth",
+        "wage growth",
+        "pay hike"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "satellite_internet",
+      "aliases": [
+        "Starlink",
+        "satellite broadband",
+        "LEO satellites"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "semiconductor_india",
+      "aliases": [
+        "semiconductor fab India",
+        "chip manufacturing India",
+        "India semiconductor mission",
+        "Micron India"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "semiconductor_supply",
+      "aliases": [
+        "semiconductor shortage",
+        "chip shortage",
+        "semiconductor supply chain",
+        "auto chip supply",
+        "semiconductor supply",
+        "TSMC",
+        "semiconductor geopolitics"
+      ],
+      "category": "technology"
+    },
+    {
+      "id": "service_robots",
+      "aliases": [
+        "delivery robots",
+        "cleaning robots",
+        "service automation"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "skill_demand",
+      "aliases": [
+        "skill gap",
+        "in-demand skills",
+        "job market skills"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "skill_obsolescence",
+      "aliases": [
+        "skill obsolescence",
+        "skill gap",
+        "outdated skills",
+        "automation risk"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "space_technology",
+      "aliases": [],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "ssc_recruitment",
+      "aliases": [
+        "SSC exam",
+        "SSC CGL",
+        "SSC CHSL",
+        "Staff Selection Commission"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "startup_layoffs",
+      "aliases": [
+        "startup layoffs India",
+        "tech layoffs India",
+        "startup job cuts",
+        "startup downsizing"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "steel_supply",
+      "aliases": [
+        "steel prices India",
+        "steel supply",
+        "Tata Steel",
+        "JSW Steel",
+        "SAIL"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "sun_pharma",
+      "aliases": [
+        "Sun Pharmaceutical",
+        "Sun Pharma results"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "swiggy",
+      "aliases": [
+        "Swiggy",
+        "Swiggy IPO",
+        "Swiggy hiring",
+        "Swiggy gig workers"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "synthetic_biology",
+      "aliases": [
+        "lab-grown meat",
+        "synthetic food",
+        "cultured meat"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "tata_motors",
+      "aliases": [
+        "Tata Motors",
+        "Tata Motors hiring",
+        "Tata Motors results",
+        "JLR",
+        "Jaguar Land Rover"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "tcs",
+      "aliases": [
+        "Tata Consultancy Services",
+        "TCS hiring",
+        "TCS results",
+        "TCS layoffs",
+        "TCS quarterly"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "tech_layoffs",
+      "aliases": [
+        "tech layoffs",
+        "mass layoffs",
+        "layoff announcements",
+        "job cuts tech"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "tech_mahindra",
+      "aliases": [
+        "Tech Mahindra",
+        "TechM hiring",
+        "Tech Mahindra results"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "technology_and_innovation",
+      "aliases": [],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "telecom_sector",
+      "aliases": [
+        "telecom jobs",
+        "communications sector"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "telemedicine",
+      "aliases": [
+        "telemedicine India",
+        "online doctor consultation",
+        "Practo",
+        "1mg",
+        "telehealth",
+        "telemedicine",
+        "eSanjeevani",
+        "teleconsultation"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "trade_unions",
+      "aliases": [
+        "trade unions India",
+        "labor unions",
+        "worker strikes",
+        "collective bargaining"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "transport_strike",
+      "aliases": [
+        "transport strike",
+        "truck strike",
+        "auto strike",
+        "bus strike"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "trucking",
+      "aliases": [
+        "trucking industry India",
+        "truck drivers",
+        "road freight",
+        "fleet operators",
+        "trucking rates",
+        "transport strike"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "uber_india",
+      "aliases": [
+        "Uber India",
+        "Uber driver",
+        "Uber fare",
+        "Uber India policy"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "unacademy",
+      "aliases": [
+        "Unacademy",
+        "Unacademy layoffs",
+        "Unacademy hiring"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "unemployment_rate",
+      "aliases": [
+        "jobless rate",
+        "unemployment data",
+        "job losses"
+      ],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "upgrad",
+      "aliases": [
+        "upGrad",
+        "upGrad hiring",
+        "upGrad courses"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "upsc_recruitment",
+      "aliases": [
+        "UPSC",
+        "civil services exam",
+        "IAS recruitment",
+        "UPSC results"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "upskilling",
+      "aliases": [
+        "upskilling",
+        "reskilling",
+        "skill development",
+        "learning and development",
+        "professional training"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "upwork_platform",
+      "aliases": [
+        "Upwork",
+        "Upwork India",
+        "Upwork freelance"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "variable_pay",
+      "aliases": [
+        "variable pay",
+        "bonus payout",
+        "performance bonus",
+        "incentive pay"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "wages_compensation",
+      "aliases": [],
+      "category": "employment_and_income"
+    },
+    {
+      "id": "warehouse_employment",
+      "aliases": [
+        "warehouse jobs",
+        "fulfillment center jobs",
+        "warehouse hiring",
+        "dark store jobs"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "warehousing",
+      "aliases": [
+        "warehousing India",
+        "warehouse sector",
+        "3PL India",
+        "cold chain"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "wealthtech",
+      "aliases": [
+        "wealthtech India",
+        "robo advisory",
+        "Zerodha",
+        "Groww app",
+        "investment platforms"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "weather_satellites",
+      "aliases": [
+        "weather forecasting tech",
+        "satellite imagery",
+        "remote sensing"
+      ],
+      "category": "technology_and_innovation"
+    },
+    {
+      "id": "wipro",
+      "aliases": [
+        "Wipro hiring",
+        "Wipro results",
+        "Wipro layoffs",
+        "Wipro quarterly"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "youtube_india",
+      "aliases": [
+        "YouTube India",
+        "YouTube monetization",
+        "YouTube ad rates India",
+        "YouTube creator"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "zoho",
+      "aliases": [
+        "Zoho Corporation",
+        "Zoho hiring",
+        "Zoho workplace"
+      ],
+      "category": "employment"
+    },
+    {
+      "id": "zomato",
+      "aliases": [
+        "Zomato",
+        "Zomato results",
+        "Zomato hiring",
+        "Zomato Blinkit"
+      ],
+      "category": "employment"
+    }
+  ],
+  "edges": [
+    {
+      "from": "it_services_sector",
+      "to": "it_services_us_client",
+      "type": "DEPENDS_ON",
+      "description": "~60% of Indian IT revenue comes from US clients"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "it_services_eu_client",
+      "type": "DEPENDS_ON",
+      "description": "~25% of Indian IT revenue comes from EU clients"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "it_outsourcing_deals",
+      "type": "DEPENDS_ON",
+      "description": "Revenue growth driven by large deal wins"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "h1b_visa",
+      "type": "DEPENDS_ON",
+      "description": "Onsite delivery requires H-1B and L-1 visas"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "l1_visa",
+      "type": "DEPENDS_ON",
+      "description": "Intracompany transfers for onsite work"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "it_attrition",
+      "type": "AFFECTS",
+      "description": "Sector health drives attrition patterns"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "it_fresher_hiring",
+      "type": "AFFECTS",
+      "description": "Sector growth determines fresher intake volume"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "it_bench_strength",
+      "type": "AFFECTS",
+      "description": "Deal pipeline affects bench utilization"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "commercial_real_estate",
+      "type": "AFFECTS",
+      "description": "IT sector is largest occupier of office space in India"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "ai_ml_sector",
+      "type": "COMPETES_WITH",
+      "description": "IT services and AI compete for same tech talent pool"
+    },
+    {
+      "from": "tcs",
+      "to": "it_services_sector",
+      "type": "PRODUCES",
+      "description": "TCS is India's largest IT services company"
+    },
+    {
+      "from": "infosys",
+      "to": "it_services_sector",
+      "type": "PRODUCES",
+      "description": "Infosys is a top-4 Indian IT services firm"
+    },
+    {
+      "from": "wipro",
+      "to": "it_services_sector",
+      "type": "PRODUCES",
+      "description": "Wipro is a top-4 Indian IT services firm"
+    },
+    {
+      "from": "hcl_tech",
+      "to": "it_services_sector",
+      "type": "PRODUCES",
+      "description": "HCL Tech is a top-4 Indian IT services firm"
+    },
+    {
+      "from": "tech_mahindra",
+      "to": "it_services_sector",
+      "type": "PRODUCES",
+      "description": "Tech Mahindra is a major IT services firm"
+    },
+    {
+      "from": "ltimindtree",
+      "to": "it_services_sector",
+      "type": "PRODUCES",
+      "description": "LTIMindtree is a mid-tier IT services firm"
+    },
+    {
+      "from": "cognizant",
+      "to": "it_services_sector",
+      "type": "PRODUCES",
+      "description": "Cognizant serves Indian and US IT markets"
+    },
+    {
+      "from": "it_attrition",
+      "to": "salary_trends",
+      "type": "AFFECTS",
+      "description": "High attrition forces competitive salary hikes"
+    },
+    {
+      "from": "saas_sector",
+      "to": "it_services_sector",
+      "type": "COMPETES_WITH",
+      "description": "Product companies attract talent from services companies"
+    },
+    {
+      "from": "consulting_firms",
+      "to": "it_services_sector",
+      "type": "COMPETES_WITH",
+      "description": "Consulting firms compete for strategy and tech talent"
+    },
+    {
+      "from": "enterprise_software",
+      "to": "saas_sector",
+      "type": "PRODUCES",
+      "description": "Enterprise software is a sub-segment of the broader SaaS sector"
+    },
+    {
+      "from": "zoho",
+      "to": "saas_sector",
+      "type": "PRODUCES",
+      "description": "Zoho is India's largest bootstrapped SaaS company"
+    },
+    {
+      "from": "freshworks",
+      "to": "saas_sector",
+      "type": "PRODUCES",
+      "description": "Freshworks is a publicly listed Indian SaaS company"
+    },
+    {
+      "from": "postman",
+      "to": "saas_sector",
+      "type": "PRODUCES",
+      "description": "Postman is an Indian-origin SaaS company for API development"
+    },
+    {
+      "from": "razorpay",
+      "to": "fintech_sector",
+      "type": "PRODUCES",
+      "description": "Razorpay is a major payments/fintech company"
+    },
+    {
+      "from": "razorpay",
+      "to": "saas_sector",
+      "type": "PRODUCES",
+      "description": "Razorpay also serves as B2B SaaS for merchants"
+    },
+    {
+      "from": "startup_layoffs",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "Mass startup layoffs increase job market supply"
+    },
+    {
+      "from": "ai_ml_sector",
+      "to": "llm_companies",
+      "type": "PRODUCES",
+      "description": "LLM development is the highest-growth AI sub-sector"
+    },
+    {
+      "from": "ai_ml_sector",
+      "to": "ai_tooling",
+      "type": "PRODUCES",
+      "description": "AI infrastructure and tooling companies support the ecosystem"
+    },
+    {
+      "from": "ai_ml_sector",
+      "to": "data_labeling",
+      "type": "PRODUCES",
+      "description": "Data labeling is a major employment source in AI"
+    },
+    {
+      "from": "ai_ml_sector",
+      "to": "it_services_sector",
+      "type": "DISRUPTS",
+      "description": "AI shifts IT services from labor arbitrage to AI-augmented delivery"
+    },
+    {
+      "from": "ai_ml_sector",
+      "to": "saas_sector",
+      "type": "AFFECTS",
+      "description": "AI features are becoming table stakes for SaaS products"
+    },
+    {
+      "from": "ai_ml_sector",
+      "to": "diagnostics_sector",
+      "type": "DISRUPTS",
+      "description": "AI in radiology and pathology changes diagnostic roles"
+    },
+    {
+      "from": "ai_ml_sector",
+      "to": "creator_economy",
+      "type": "DISRUPTS",
+      "description": "AI content generation competes with human creators"
+    },
+    {
+      "from": "llm_companies",
+      "to": "compute_costs",
+      "type": "DEPENDS_ON",
+      "description": "LLM training requires massive GPU compute"
+    },
+    {
+      "from": "ai_job_displacement",
+      "to": "it_services_sector",
+      "type": "DISRUPTS",
+      "description": "AI automates testing, basic coding, BPO tasks"
+    },
+    {
+      "from": "ai_job_displacement",
+      "to": "data_labeling",
+      "type": "DISRUPTS",
+      "description": "Better AI reduces need for human data labeling"
+    },
+    {
+      "from": "ai_job_displacement",
+      "to": "skill_obsolescence",
+      "type": "AFFECTS",
+      "description": "AI changes which skills are valuable"
+    },
+    {
+      "from": "ai_job_displacement",
+      "to": "freelance_market",
+      "type": "DISRUPTS",
+      "description": "AI tools reduce demand for basic freelance work (writing, design)"
+    },
+    {
+      "from": "ai_job_displacement",
+      "to": "edtech_sector",
+      "type": "AFFECTS",
+      "description": "AI disruption drives reskilling demand benefiting edtech"
+    },
+    {
+      "from": "ai_job_creation",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "AI creates new job categories and demand"
+    },
+    {
+      "from": "ai_job_creation",
+      "to": "upskilling",
+      "type": "AFFECTS",
+      "description": "AI boom drives demand for AI/ML upskilling"
+    },
+    {
+      "from": "ai_job_creation",
+      "to": "freelance_market",
+      "type": "AFFECTS",
+      "description": "AI creates new freelance niches (prompt engineering, AI training)"
+    },
+    {
+      "from": "gpu_supply",
+      "to": "nvidia",
+      "type": "DEPENDS_ON",
+      "description": "NVIDIA dominates AI GPU market (80%+ share)"
+    },
+    {
+      "from": "compute_costs",
+      "to": "gpu_supply",
+      "type": "DEPENDS_ON",
+      "description": "Compute costs driven by GPU availability"
+    },
+    {
+      "from": "openai",
+      "to": "llm_companies",
+      "type": "PRODUCES",
+      "description": "OpenAI is the leading LLM company"
+    },
+    {
+      "from": "google_deepmind",
+      "to": "llm_companies",
+      "type": "PRODUCES",
+      "description": "Google DeepMind develops Gemini models"
+    },
+    {
+      "from": "anthropic",
+      "to": "llm_companies",
+      "type": "PRODUCES",
+      "description": "Anthropic develops Claude models"
+    },
+    {
+      "from": "fintech_sector",
+      "to": "banking_employment",
+      "type": "DISRUPTS",
+      "description": "Fintech automates traditional banking roles"
+    },
+    {
+      "from": "fintech_sector",
+      "to": "it_services_sector",
+      "type": "COMPETES_WITH",
+      "description": "Fintech and IT services compete for engineering talent"
+    },
+    {
+      "from": "cred",
+      "to": "fintech_sector",
+      "type": "PRODUCES",
+      "description": "CRED is a fintech company in the credit card rewards space"
+    },
+    {
+      "from": "insurance_tech",
+      "to": "fintech_sector",
+      "type": "PRODUCES",
+      "description": "Insurtech is a growing fintech vertical"
+    },
+    {
+      "from": "wealthtech",
+      "to": "fintech_sector",
+      "type": "PRODUCES",
+      "description": "Wealthtech platforms are part of fintech ecosystem"
+    },
+    {
+      "from": "edtech_sector",
+      "to": "coaching_industry",
+      "type": "COMPETES_WITH",
+      "description": "Online edtech competes with offline coaching"
+    },
+    {
+      "from": "edtech_sector",
+      "to": "education_sector",
+      "type": "DISRUPTS",
+      "description": "Edtech disrupts traditional education models"
+    },
+    {
+      "from": "byju",
+      "to": "edtech_sector",
+      "type": "PRODUCES",
+      "description": "BYJU'S was the largest Indian edtech (now in crisis)"
+    },
+    {
+      "from": "unacademy",
+      "to": "edtech_sector",
+      "type": "PRODUCES",
+      "description": "Unacademy is a major test prep edtech"
+    },
+    {
+      "from": "upgrad",
+      "to": "edtech_sector",
+      "type": "PRODUCES",
+      "description": "upGrad focuses on higher education edtech"
+    },
+    {
+      "from": "physics_wallah",
+      "to": "edtech_sector",
+      "type": "PRODUCES",
+      "description": "Physics Wallah is a rapidly growing edtech unicorn"
+    },
+    {
+      "from": "ecommerce_sector",
+      "to": "ecommerce_logistics",
+      "type": "DEPENDS_ON",
+      "description": "E-commerce depends on logistics for delivery"
+    },
+    {
+      "from": "ecommerce_sector",
+      "to": "warehouse_employment",
+      "type": "EMPLOYS",
+      "description": "E-commerce drives warehouse and fulfillment jobs"
+    },
+    {
+      "from": "ecommerce_sector",
+      "to": "retail_sector",
+      "type": "DISRUPTS",
+      "description": "E-commerce captures share from offline retail"
+    },
+    {
+      "from": "amazon_india",
+      "to": "ecommerce_sector",
+      "type": "PRODUCES",
+      "description": "Amazon India is a top e-commerce platform"
+    },
+    {
+      "from": "flipkart",
+      "to": "ecommerce_sector",
+      "type": "PRODUCES",
+      "description": "Flipkart is India's largest homegrown e-commerce"
+    },
+    {
+      "from": "meesho",
+      "to": "ecommerce_sector",
+      "type": "PRODUCES",
+      "description": "Meesho focuses on tier-2/3 social commerce"
+    },
+    {
+      "from": "ecommerce_logistics",
+      "to": "warehousing",
+      "type": "DEPENDS_ON",
+      "description": "E-commerce fulfilment depends on warehouse infrastructure"
+    },
+    {
+      "from": "quick_commerce",
+      "to": "ecommerce_sector",
+      "type": "PRODUCES",
+      "description": "Quick commerce is the fastest-growing e-commerce segment"
+    },
+    {
+      "from": "quick_commerce",
+      "to": "delivery_worker_earnings",
+      "type": "AFFECTS",
+      "description": "Quick commerce delivery model affects gig worker pay"
+    },
+    {
+      "from": "gaming_sector",
+      "to": "ai_ml_sector",
+      "type": "DEPENDS_ON",
+      "description": "Game development increasingly uses AI for content and testing"
+    },
+    {
+      "from": "esports",
+      "to": "gaming_sector",
+      "type": "PRODUCES",
+      "description": "Esports is the competitive/professional arm of the gaming industry"
+    },
+    {
+      "from": "app_store_policy",
+      "to": "gaming_sector",
+      "type": "REGULATES",
+      "description": "App store commissions and policies affect game distribution"
+    },
+    {
+      "from": "cybersecurity_sector",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "Cybersecurity has persistent talent shortage"
+    },
+    {
+      "from": "data_breach_news",
+      "to": "cybersecurity_sector",
+      "type": "AFFECTS",
+      "description": "Major breaches increase cybersecurity hiring and budgets"
+    },
+    {
+      "from": "auto_manufacturing",
+      "to": "steel_supply",
+      "type": "CONSUMES",
+      "description": "Auto sector is a major steel consumer"
+    },
+    {
+      "from": "auto_manufacturing",
+      "to": "rubber_supply",
+      "type": "CONSUMES",
+      "description": "Tires and components need rubber"
+    },
+    {
+      "from": "auto_manufacturing",
+      "to": "semiconductor_supply",
+      "type": "DEPENDS_ON",
+      "description": "Modern vehicles need 1000+ semiconductor chips"
+    },
+    {
+      "from": "auto_manufacturing",
+      "to": "auto_component",
+      "type": "DEPENDS_ON",
+      "description": "OEMs depend on component suppliers"
+    },
+    {
+      "from": "auto_manufacturing",
+      "to": "job_market_india",
+      "type": "EMPLOYS",
+      "description": "Auto sector employs 37M+ directly and indirectly"
+    },
+    {
+      "from": "auto_manufacturing",
+      "to": "logistics_sector",
+      "type": "DEPENDS_ON",
+      "description": "Auto supply chain needs extensive logistics"
+    },
+    {
+      "from": "tata_motors",
+      "to": "auto_manufacturing",
+      "type": "PRODUCES",
+      "description": "Tata Motors is a major auto OEM"
+    },
+    {
+      "from": "mahindra_auto",
+      "to": "auto_manufacturing",
+      "type": "PRODUCES",
+      "description": "M&M is a major auto OEM (SUVs, tractors)"
+    },
+    {
+      "from": "maruti_suzuki",
+      "to": "auto_manufacturing",
+      "type": "PRODUCES",
+      "description": "Maruti Suzuki leads passenger vehicle market"
+    },
+    {
+      "from": "hyundai_india",
+      "to": "auto_manufacturing",
+      "type": "PRODUCES",
+      "description": "Hyundai India is #2 passenger vehicle maker"
+    },
+    {
+      "from": "ev_manufacturing",
+      "to": "auto_manufacturing",
+      "type": "DISRUPTS",
+      "description": "EV transition disrupts traditional auto jobs (less parts, new skills)"
+    },
+    {
+      "from": "ev_manufacturing",
+      "to": "ride_hailing",
+      "type": "AFFECTS",
+      "description": "EV adoption changes driver economics (lower fuel cost)"
+    },
+    {
+      "from": "semiconductor_india",
+      "to": "semiconductor_supply",
+      "type": "AFFECTS",
+      "description": "India semiconductor fabs reduce import dependency"
+    },
+    {
+      "from": "pharma_sector",
+      "to": "pharma_api_china",
+      "type": "DEPENDS_ON",
+      "description": "India imports ~68% of APIs from China"
+    },
+    {
+      "from": "pharma_sector",
+      "to": "generic_drugs",
+      "type": "PRODUCES",
+      "description": "India is world's largest generic drug producer"
+    },
+    {
+      "from": "pharma_sector",
+      "to": "healthcare_employment",
+      "type": "SUPPLIES",
+      "description": "Pharma supplies drugs to hospitals and clinics"
+    },
+    {
+      "from": "sun_pharma",
+      "to": "pharma_sector",
+      "type": "PRODUCES",
+      "description": "Sun Pharma is India's largest pharma company"
+    },
+    {
+      "from": "dr_reddys",
+      "to": "pharma_sector",
+      "type": "PRODUCES",
+      "description": "Dr. Reddy's is a major generics manufacturer"
+    },
+    {
+      "from": "cipla",
+      "to": "pharma_sector",
+      "type": "PRODUCES",
+      "description": "Cipla is a leading pharma company"
+    },
+    {
+      "from": "fmcg_sector",
+      "to": "job_market_india",
+      "type": "EMPLOYS",
+      "description": "FMCG employs millions in manufacturing, distribution, retail"
+    },
+    {
+      "from": "hul",
+      "to": "fmcg_sector",
+      "type": "PRODUCES",
+      "description": "HUL is India's largest FMCG company"
+    },
+    {
+      "from": "itc_limited",
+      "to": "fmcg_sector",
+      "type": "PRODUCES",
+      "description": "ITC is a diversified FMCG conglomerate"
+    },
+    {
+      "from": "nestle_india",
+      "to": "fmcg_sector",
+      "type": "PRODUCES",
+      "description": "Nestle India is a major packaged foods company"
+    },
+    {
+      "from": "psu_banks",
+      "to": "banking_employment",
+      "type": "EMPLOYS",
+      "description": "PSU banks are major employers"
+    },
+    {
+      "from": "private_banks",
+      "to": "banking_employment",
+      "type": "EMPLOYS",
+      "description": "Private banks hire aggressively for growth"
+    },
+    {
+      "from": "nbfc_sector",
+      "to": "banking_employment",
+      "type": "EMPLOYS",
+      "description": "NBFCs employ significant workforce"
+    },
+    {
+      "from": "apollo_hospitals",
+      "to": "healthcare_employment",
+      "type": "EMPLOYS",
+      "description": "Apollo is India's largest hospital chain"
+    },
+    {
+      "from": "fortis_healthcare",
+      "to": "healthcare_employment",
+      "type": "EMPLOYS",
+      "description": "Fortis is a major hospital chain"
+    },
+    {
+      "from": "max_healthcare",
+      "to": "healthcare_employment",
+      "type": "EMPLOYS",
+      "description": "Max Healthcare is a leading hospital chain"
+    },
+    {
+      "from": "diagnostics_sector",
+      "to": "healthcare_employment",
+      "type": "EMPLOYS",
+      "description": "Diagnostics chains employ technicians and pathologists"
+    },
+    {
+      "from": "medical_devices",
+      "to": "healthcare_employment",
+      "type": "AFFECTS",
+      "description": "Medical device industry creates manufacturing and service jobs"
+    },
+    {
+      "from": "telemedicine",
+      "to": "healthcare_employment",
+      "type": "DISRUPTS",
+      "description": "Telemedicine changes doctor employment patterns"
+    },
+    {
+      "from": "real_estate_sector",
+      "to": "construction_employment",
+      "type": "EMPLOYS",
+      "description": "Real estate projects create construction jobs"
+    },
+    {
+      "from": "construction_employment",
+      "to": "cement_industry",
+      "type": "CONSUMES",
+      "description": "Construction is the largest cement consumer"
+    },
+    {
+      "from": "construction_employment",
+      "to": "steel_supply",
+      "type": "CONSUMES",
+      "description": "Construction is a major steel consumer"
+    },
+    {
+      "from": "commercial_real_estate",
+      "to": "it_services_sector",
+      "type": "DEPENDS_ON",
+      "description": "Office space demand tied to IT sector health"
+    },
+    {
+      "from": "builders_developers",
+      "to": "real_estate_sector",
+      "type": "PRODUCES",
+      "description": "Developers build residential and commercial properties"
+    },
+    {
+      "from": "agriculture_sector",
+      "to": "food_processing",
+      "type": "SUPPLIES",
+      "description": "Agriculture supplies raw material to food processing"
+    },
+    {
+      "from": "agriculture_sector",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "Agriculture employs roughly 45% of India's workforce; its performance dictates the largest segment of the Indian job market."
+    },
+    {
+      "from": "agritech",
+      "to": "agriculture_sector",
+      "type": "AFFECTS",
+      "description": "Agritech improves farm productivity and market access"
+    },
+    {
+      "from": "retail_sector",
+      "to": "job_market_india",
+      "type": "EMPLOYS",
+      "description": "Retail employs ~40M in India"
+    },
+    {
+      "from": "reliance_retail",
+      "to": "retail_sector",
+      "type": "PRODUCES",
+      "description": "Reliance Retail is India's largest retailer"
+    },
+    {
+      "from": "dmart",
+      "to": "retail_sector",
+      "type": "PRODUCES",
+      "description": "DMart is a major value retail chain"
+    },
+    {
+      "from": "logistics_sector",
+      "to": "ecommerce_logistics",
+      "type": "SUPPLIES",
+      "description": "3PL firms provide e-commerce delivery"
+    },
+    {
+      "from": "logistics_sector",
+      "to": "fmcg_sector",
+      "type": "SUPPLIES",
+      "description": "Logistics enables FMCG distribution"
+    },
+    {
+      "from": "logistics_sector",
+      "to": "auto_manufacturing",
+      "type": "SUPPLIES",
+      "description": "Logistics moves auto parts and finished vehicles"
+    },
+    {
+      "from": "logistics_sector",
+      "to": "food_processing",
+      "type": "SUPPLIES",
+      "description": "Cold chain logistics for food distribution"
+    },
+    {
+      "from": "trucking",
+      "to": "job_market_india",
+      "type": "EMPLOYS",
+      "description": "Trucking employs ~8M drivers in India"
+    },
+    {
+      "from": "warehousing",
+      "to": "logistics_sector",
+      "type": "PRODUCES",
+      "description": "Warehousing and 3PL are core components of the logistics sector"
+    },
+    {
+      "from": "ott_platforms",
+      "to": "media_entertainment",
+      "type": "PRODUCES",
+      "description": "OTT is the fastest growing M&E segment"
+    },
+    {
+      "from": "education_sector",
+      "to": "job_market_india",
+      "type": "EMPLOYS",
+      "description": "Education employs millions of teachers and staff"
+    },
+    {
+      "from": "coaching_industry",
+      "to": "education_sector",
+      "type": "PRODUCES",
+      "description": "Coaching is a $10B+ parallel education industry"
+    },
+    {
+      "from": "government_employment",
+      "to": "ssc_recruitment",
+      "type": "EMPLOYS",
+      "description": "SSC recruits for central government jobs"
+    },
+    {
+      "from": "government_employment",
+      "to": "upsc_recruitment",
+      "type": "EMPLOYS",
+      "description": "UPSC recruits for elite civil services"
+    },
+    {
+      "from": "government_employment",
+      "to": "railway_recruitment",
+      "type": "EMPLOYS",
+      "description": "Railways is India's largest single employer"
+    },
+    {
+      "from": "government_employment",
+      "to": "private_banks",
+      "type": "COMPETES_WITH",
+      "description": "Government jobs compete with private sector on job security"
+    },
+    {
+      "from": "job_market_india",
+      "to": "campus_placement",
+      "type": "AFFECTS",
+      "description": "Overall job market conditions drive campus hiring volumes"
+    },
+    {
+      "from": "job_market_india",
+      "to": "lateral_hiring",
+      "type": "AFFECTS",
+      "description": "Market conditions determine lateral hiring pace"
+    },
+    {
+      "from": "campus_placement",
+      "to": "education_sector",
+      "type": "AFFECTS",
+      "description": "Placement rates affect college rankings and enrollment"
+    },
+    {
+      "from": "tech_layoffs",
+      "to": "job_market_india",
+      "type": "DISRUPTS",
+      "description": "Mass layoffs flood the job market with candidates"
+    },
+    {
+      "from": "tech_layoffs",
+      "to": "salary_trends",
+      "type": "AFFECTS",
+      "description": "Layoffs suppress salary growth due to oversupply"
+    },
+    {
+      "from": "variable_pay",
+      "to": "salary_trends",
+      "type": "AFFECTS",
+      "description": "Variable pay and bonus payouts are a key component of total compensation trends"
+    },
+    {
+      "from": "upskilling",
+      "to": "ai_job_creation",
+      "type": "DEPENDS_ON",
+      "description": "AI job capture requires active upskilling"
+    },
+    {
+      "from": "upskilling",
+      "to": "salary_trends",
+      "type": "AFFECTS",
+      "description": "In the Indian IT and corporate sectors, upskilling and certifications directly correlate with appraisal hikes and lateral jump salary increases."
+    },
+    {
+      "from": "skill_obsolescence",
+      "to": "ai_job_displacement",
+      "type": "DEPENDS_ON",
+      "description": "Obsolete skills correlate with AI displacement risk"
+    },
+    {
+      "from": "skill_obsolescence",
+      "to": "edtech_sector",
+      "type": "AFFECTS",
+      "description": "Skill obsolescence drives demand for online reskilling"
+    },
+    {
+      "from": "certifications",
+      "to": "upskilling",
+      "type": "PRODUCES",
+      "description": "Certifications are a key upskilling mechanism"
+    },
+    {
+      "from": "remote_work_policy",
+      "to": "commercial_real_estate",
+      "type": "DISRUPTS",
+      "description": "Permanent hybrid/remote reduces office demand"
+    },
+    {
+      "from": "remote_work_policy",
+      "to": "it_services_sector",
+      "type": "AFFECTS",
+      "description": "IT sector is the primary remote work adopter"
+    },
+    {
+      "from": "remote_work_policy",
+      "to": "coworking_spaces",
+      "type": "AFFECTS",
+      "description": "Hybrid policies drive coworking demand"
+    },
+    {
+      "from": "trade_unions",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "Auto sector has strong union presence"
+    },
+    {
+      "from": "bank_strike",
+      "to": "banking_employment",
+      "type": "DISRUPTS",
+      "description": "Bank strikes disrupt banking operations"
+    },
+    {
+      "from": "transport_strike",
+      "to": "logistics_sector",
+      "type": "DISRUPTS",
+      "description": "Transport strikes halt goods movement"
+    },
+    {
+      "from": "food_delivery",
+      "to": "delivery_worker_earnings",
+      "type": "AFFECTS",
+      "description": "Platform commission and order volume determine delivery earnings"
+    },
+    {
+      "from": "swiggy",
+      "to": "food_delivery",
+      "type": "PRODUCES",
+      "description": "Swiggy is a leading food delivery platform"
+    },
+    {
+      "from": "zomato",
+      "to": "food_delivery",
+      "type": "PRODUCES",
+      "description": "Zomato is a leading food delivery platform"
+    },
+    {
+      "from": "blinkit",
+      "to": "quick_commerce",
+      "type": "PRODUCES",
+      "description": "Blinkit (Zomato subsidiary) leads quick commerce"
+    },
+    {
+      "from": "ride_hailing",
+      "to": "driver_earnings",
+      "type": "AFFECTS",
+      "description": "Platform commission structure determines driver income"
+    },
+    {
+      "from": "ride_hailing",
+      "to": "job_market_india",
+      "type": "EMPLOYS",
+      "description": "Ride hailing employs millions of drivers"
+    },
+    {
+      "from": "uber_india",
+      "to": "ride_hailing",
+      "type": "PRODUCES",
+      "description": "Uber operates in major Indian cities"
+    },
+    {
+      "from": "ola_cabs",
+      "to": "ride_hailing",
+      "type": "PRODUCES",
+      "description": "Ola is India's largest ride hailing platform"
+    },
+    {
+      "from": "freelance_market",
+      "to": "global_freelance_demand",
+      "type": "DEPENDS_ON",
+      "description": "Indian freelancers serve global clients"
+    },
+    {
+      "from": "upwork_platform",
+      "to": "freelance_market",
+      "type": "PRODUCES",
+      "description": "Upwork is a major freelance marketplace"
+    },
+    {
+      "from": "fiverr_platform",
+      "to": "freelance_market",
+      "type": "PRODUCES",
+      "description": "Fiverr is a popular freelance platform"
+    },
+    {
+      "from": "youtube_india",
+      "to": "creator_economy",
+      "type": "PRODUCES",
+      "description": "YouTube is India's largest creator platform"
+    },
+    {
+      "from": "instagram_creators",
+      "to": "creator_economy",
+      "type": "PRODUCES",
+      "description": "Instagram is a major influencer/creator platform"
+    },
+    {
+      "from": "algorithm_changes",
+      "to": "creator_economy",
+      "type": "DISRUPTS",
+      "description": "Algorithm changes can destroy creator reach overnight"
+    },
+    {
+      "from": "creator_monetization_policy",
+      "to": "creator_economy",
+      "type": "REGULATES",
+      "description": "Platform monetization policies determine creator payouts"
+    },
+    {
+      "from": "employment_and_income",
+      "to": "employment_sectors",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_and_income",
+      "to": "wages_compensation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_and_income",
+      "to": "labor_market",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "agriculture_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "manufacturing_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "construction_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "it_technology_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "financial_services_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "retail_trade_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "hospitality_tourism_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "mining_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "telecom_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "logistics_transport_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "government_public_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "defense_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "energy_utilities_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "legal_professional_services",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "healthcare_employment",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "education_sector",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "media_entertainment",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "employment_sectors",
+      "to": "freelance_market",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "manufacturing_sector",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "Manufacturing is a core pillar for formal job creation in India, especially for blue-collar workers."
+    },
+    {
+      "from": "wages_compensation",
+      "to": "salary_trends",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "wages_compensation",
+      "to": "overtime_rules",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "wages_compensation",
+      "to": "bonus_incentives",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "wages_compensation",
+      "to": "pension_provident_fund",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "labor_market",
+      "to": "unemployment_rate",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "labor_market",
+      "to": "job_creation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "labor_market",
+      "to": "layoffs_retrenchment",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "labor_market",
+      "to": "labor_laws",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "labor_market",
+      "to": "skill_demand",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "labor_market",
+      "to": "immigration_work_permits",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "labor_market",
+      "to": "remote_work_policy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "labor_market",
+      "to": "ai_job_displacement",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "unemployment_rate",
+      "to": "salary_trends",
+      "type": "AFFECTS",
+      "description": "High unemployment increases labor supply, suppressing wage growth and reducing employee bargaining power."
+    },
+    {
+      "from": "technology_and_innovation",
+      "to": "artificial_intelligence",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "technology_and_innovation",
+      "to": "biotechnology",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "technology_and_innovation",
+      "to": "space_technology",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "technology_and_innovation",
+      "to": "fintech",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "technology_and_innovation",
+      "to": "robotics_automation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "artificial_intelligence",
+      "to": "generative_ai",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "artificial_intelligence",
+      "to": "ai_in_healthcare",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "artificial_intelligence",
+      "to": "ai_in_education",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "artificial_intelligence",
+      "to": "autonomous_vehicles",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "artificial_intelligence",
+      "to": "ai_ethics_bias",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "biotechnology",
+      "to": "gene_therapy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "biotechnology",
+      "to": "gmo_crops",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "biotechnology",
+      "to": "biosimilars",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "biotechnology",
+      "to": "synthetic_biology",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "space_technology",
+      "to": "satellite_internet",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "space_technology",
+      "to": "gps_navigation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "space_technology",
+      "to": "weather_satellites",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "fintech",
+      "to": "neobanking",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "fintech",
+      "to": "insurtech",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "fintech",
+      "to": "blockchain",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "fintech",
+      "to": "cbdc",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "robotics_automation",
+      "to": "industrial_robots",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "robotics_automation",
+      "to": "service_robots",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "robotics_automation",
+      "to": "drone_technology",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "informal_sector",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "The informal sector employs over 90% of India's workforce; its health determines overall employment conditions."
+    },
+    {
+      "from": "pli_scheme",
+      "to": "manufacturing_sector",
+      "type": "AFFECTS",
+      "description": "Production Linked Incentive schemes provide 4-6% cashback on incremental sales, attracting FDI and boosting domestic manufacturing capacity."
+    },
+    {
+      "from": "epfo_data",
+      "to": "employment_and_income",
+      "type": "AFFECTS",
+      "description": "EPFO payroll data is India's primary proxy for formal job creation, tracking new subscribers as a measure of organized sector employment."
+    },
+    {
+      "from": "it_services_sector",
+      "to": "rupee_exchange_rate",
+      "type": "AFFECTS",
+      "description": "IT exports are major forex earner, weak rupee boosts margins",
+      "cross": "financial"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "rental_market",
+      "type": "AFFECTS",
+      "description": "IT sector concentration drives rental prices in tech hubs (Bangalore, Hyderabad)",
+      "cross": "financial"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "nifty_it",
+      "type": "AFFECTS",
+      "description": "IT sector health drives IT index",
+      "cross": "financial"
+    },
+    {
+      "from": "it_services_sector",
+      "to": "it_export_earnings",
+      "type": "PRODUCES",
+      "description": "IT services generate forex through exports",
+      "cross": "financial"
+    },
+    {
+      "from": "it_services_us_client",
+      "to": "us_economy",
+      "type": "DEPENDS_ON",
+      "description": "US IT spending tracks US GDP and corporate earnings",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "it_services_eu_client",
+      "to": "eu_economy",
+      "type": "DEPENDS_ON",
+      "description": "EU IT spending tracks Eurozone economic health",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_immigration_policy",
+      "to": "h1b_visa",
+      "type": "REGULATES",
+      "description": "US executive orders and USCIS rules govern H-1B",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_immigration_policy",
+      "to": "l1_visa",
+      "type": "REGULATES",
+      "description": "US policy governs L-1 visa processing",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_recession_risk",
+      "to": "it_services_us_client",
+      "type": "DISRUPTS",
+      "description": "US recession cuts enterprise IT budgets",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_recession_risk",
+      "to": "it_outsourcing_deals",
+      "type": "DISRUPTS",
+      "description": "Recession delays deal pipeline and renewals",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "saas_sector",
+      "to": "vc_funding_india",
+      "type": "DEPENDS_ON",
+      "description": "SaaS startups depend on VC funding for growth",
+      "cross": "financial"
+    },
+    {
+      "from": "b2c_tech",
+      "to": "vc_funding_india",
+      "type": "DEPENDS_ON",
+      "description": "Consumer tech burns cash, needs VC backing",
+      "cross": "financial"
+    },
+    {
+      "from": "funding_winter",
+      "to": "startup_layoffs",
+      "type": "AFFECTS",
+      "description": "Funding crunch leads to startup layoffs to extend runway",
+      "cross": "financial"
+    },
+    {
+      "from": "startup_layoffs",
+      "to": "rental_market",
+      "type": "AFFECTS",
+      "description": "Layoffs in tech hubs reduce rental demand",
+      "cross": "financial"
+    },
+    {
+      "from": "startup_layoffs",
+      "to": "npa",
+      "type": "AFFECTS",
+      "description": "Layoffs increase personal loan defaults",
+      "cross": "financial"
+    },
+    {
+      "from": "ai_regulation",
+      "to": "ai_ml_sector",
+      "type": "REGULATES",
+      "description": "AI safety laws affect what AI companies can build",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "ai_regulation",
+      "to": "llm_companies",
+      "type": "REGULATES",
+      "description": "EU AI Act and India AI policy affect LLM deployment",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "fintech_sector",
+      "to": "upi",
+      "type": "DEPENDS_ON",
+      "description": "Indian fintech ecosystem built on UPI rails",
+      "cross": "financial"
+    },
+    {
+      "from": "fintech_sector",
+      "to": "vc_funding_india",
+      "type": "DEPENDS_ON",
+      "description": "Fintech startups need VC funding",
+      "cross": "financial"
+    },
+    {
+      "from": "phonepe",
+      "to": "upi",
+      "type": "DEPENDS_ON",
+      "description": "PhonePe processes ~48% of UPI transactions",
+      "cross": "financial"
+    },
+    {
+      "from": "google_pay",
+      "to": "upi",
+      "type": "DEPENDS_ON",
+      "description": "Google Pay processes ~35% of UPI transactions",
+      "cross": "financial"
+    },
+    {
+      "from": "paytm",
+      "to": "upi",
+      "type": "DEPENDS_ON",
+      "description": "Paytm uses UPI for payments",
+      "cross": "financial"
+    },
+    {
+      "from": "rbi_fintech_regulation",
+      "to": "fintech_sector",
+      "type": "REGULATES",
+      "description": "RBI circulars directly impact fintech operations",
+      "cross": "financial"
+    },
+    {
+      "from": "rbi_fintech_regulation",
+      "to": "paytm",
+      "type": "REGULATES",
+      "description": "RBI action on Paytm Payments Bank disrupted operations",
+      "cross": "financial"
+    },
+    {
+      "from": "edtech_sector",
+      "to": "edtech_funding",
+      "type": "DEPENDS_ON",
+      "description": "Edtech companies are heavily VC-funded",
+      "cross": "financial"
+    },
+    {
+      "from": "education_policy",
+      "to": "edtech_sector",
+      "type": "REGULATES",
+      "description": "NEP and UGC rules affect edtech curriculum and credentials",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "ecommerce_sector",
+      "to": "gst_policy",
+      "type": "DEPENDS_ON",
+      "description": "GST compliance affects e-commerce sellers",
+      "cross": "financial"
+    },
+    {
+      "from": "ecommerce_logistics",
+      "to": "diesel",
+      "type": "DEPENDS_ON",
+      "description": "Logistics costs driven by diesel prices",
+      "cross": "energy"
+    },
+    {
+      "from": "fdi_ecommerce",
+      "to": "ecommerce_sector",
+      "type": "REGULATES",
+      "description": "FDI policy determines foreign e-commerce operations in India",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "gst_on_gaming",
+      "to": "gaming_sector",
+      "type": "REGULATES",
+      "description": "28% GST on full face value devastated real money gaming",
+      "cross": "financial"
+    },
+    {
+      "from": "cert_in",
+      "to": "cybersecurity_sector",
+      "type": "REGULATES",
+      "description": "CERT-In mandates drive compliance hiring",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "dpdp_act",
+      "to": "cybersecurity_sector",
+      "type": "AFFECTS",
+      "description": "Data protection law increases demand for security professionals",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "dpdp_act",
+      "to": "it_services_sector",
+      "type": "AFFECTS",
+      "description": "DPDP compliance creates new IT services revenue stream",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "auto_manufacturing",
+      "to": "nifty_auto",
+      "type": "AFFECTS",
+      "description": "Auto sales drive auto index",
+      "cross": "financial"
+    },
+    {
+      "from": "vehicle_scrappage",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "Scrappage policy creates replacement demand",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "pharma_sector",
+      "to": "nifty_pharma",
+      "type": "AFFECTS",
+      "description": "Pharma earnings drive pharma index",
+      "cross": "financial"
+    },
+    {
+      "from": "drug_pricing",
+      "to": "pharma_sector",
+      "type": "REGULATES",
+      "description": "DPCO price controls affect pharma revenue",
+      "cross": "financial"
+    },
+    {
+      "from": "us_fda_inspection",
+      "to": "pharma_sector",
+      "type": "REGULATES",
+      "description": "FDA approvals/warnings affect US export revenue",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "fmcg_sector",
+      "to": "nifty_fmcg",
+      "type": "AFFECTS",
+      "description": "FMCG volume growth drives FMCG index",
+      "cross": "financial"
+    },
+    {
+      "from": "rural_demand",
+      "to": "fmcg_sector",
+      "type": "AFFECTS",
+      "description": "FMCG volume growth driven by rural demand",
+      "cross": "financial"
+    },
+    {
+      "from": "palm_oil_import",
+      "to": "fmcg_sector",
+      "type": "AFFECTS",
+      "description": "Palm oil is key input for soaps, foods",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "credit_growth",
+      "to": "banking_employment",
+      "type": "AFFECTS",
+      "description": "Strong credit growth drives hiring in banking",
+      "cross": "financial"
+    },
+    {
+      "from": "banking_regulation",
+      "to": "banking_employment",
+      "type": "REGULATES",
+      "description": "RBI regulations affect bank operations and staffing",
+      "cross": "financial"
+    },
+    {
+      "from": "healthcare_employment",
+      "to": "health_insurance_regulation",
+      "type": "DEPENDS_ON",
+      "description": "Hospital revenue partially depends on insurance coverage expansion",
+      "cross": "financial"
+    },
+    {
+      "from": "health_insurance_regulation",
+      "to": "healthcare_employment",
+      "type": "AFFECTS",
+      "description": "Health insurance expansion increases hospital patient volume",
+      "cross": "financial"
+    },
+    {
+      "from": "health_insurance_regulation",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "Employer health insurance mandates affect hiring costs",
+      "cross": "financial"
+    },
+    {
+      "from": "medical_devices",
+      "to": "medical_equipment",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "medical_devices",
+      "to": "prosthetics_implants",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "telemedicine",
+      "to": "public_healthcare",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "real_estate_sector",
+      "to": "rental_market",
+      "type": "AFFECTS",
+      "description": "Property supply/demand affects rental prices",
+      "cross": "financial"
+    },
+    {
+      "from": "real_estate_sector",
+      "to": "nifty_realty",
+      "type": "AFFECTS",
+      "description": "Real estate sector health drives realty index",
+      "cross": "financial"
+    },
+    {
+      "from": "rera",
+      "to": "real_estate_sector",
+      "type": "REGULATES",
+      "description": "RERA governs builder-buyer relationships",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "affordable_housing",
+      "to": "real_estate_sector",
+      "type": "AFFECTS",
+      "description": "PMAY subsidies boost affordable housing demand",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "agriculture_sector",
+      "to": "rural_demand",
+      "type": "AFFECTS",
+      "description": "Farm income drives rural consumption spending",
+      "cross": "financial"
+    },
+    {
+      "from": "agriculture_sector",
+      "to": "food_inflation_india",
+      "type": "AFFECTS",
+      "description": "Farm output determines food supply",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "food_processing",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Packaged and processed food consumed by households",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "msp_policy",
+      "to": "agriculture_sector",
+      "type": "AFFECTS",
+      "description": "MSP determines farmer income for key crops",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "monsoon_forecast",
+      "to": "agriculture_sector",
+      "type": "AFFECTS",
+      "description": "Monsoon determines kharif output and farmer income",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon_forecast",
+      "to": "construction_employment",
+      "type": "AFFECTS",
+      "description": "Monsoon season halts outdoor construction",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "fertilizer_subsidy",
+      "to": "agriculture_sector",
+      "type": "AFFECTS",
+      "description": "Fertilizer costs are a major farming input",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "crop_insurance",
+      "to": "agriculture_sector",
+      "type": "AFFECTS",
+      "description": "Insurance availability affects farmer risk-taking",
+      "cross": "financial"
+    },
+    {
+      "from": "fdi_retail",
+      "to": "retail_sector",
+      "type": "REGULATES",
+      "description": "FDI norms determine foreign retail presence",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "gst_impact_retail",
+      "to": "retail_sector",
+      "type": "AFFECTS",
+      "description": "GST compliance costs affect small retailers disproportionately",
+      "cross": "financial"
+    },
+    {
+      "from": "toll_charges",
+      "to": "trucking",
+      "type": "AFFECTS",
+      "description": "Toll costs are significant trucking expense",
+      "cross": "financial"
+    },
+    {
+      "from": "eway_bill",
+      "to": "logistics_sector",
+      "type": "REGULATES",
+      "description": "E-way bill compliance governs goods movement",
+      "cross": "financial"
+    },
+    {
+      "from": "advertising_spend",
+      "to": "media_entertainment",
+      "type": "FUNDS",
+      "description": "Ad revenue funds most media operations",
+      "cross": "financial"
+    },
+    {
+      "from": "advertising_spend",
+      "to": "creator_economy",
+      "type": "FUNDS",
+      "description": "Brand ad budgets fund creator monetization",
+      "cross": "financial"
+    },
+    {
+      "from": "content_regulation",
+      "to": "media_entertainment",
+      "type": "REGULATES",
+      "description": "Government rules affect content creation",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "nep_implementation",
+      "to": "education_sector",
+      "type": "REGULATES",
+      "description": "NEP 2020 restructures entire education system",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "fee_regulation",
+      "to": "education_sector",
+      "type": "REGULATES",
+      "description": "State fee committees cap school and college fees",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "pay_commission",
+      "to": "government_employment",
+      "type": "AFFECTS",
+      "description": "Pay commission determines government salary structure",
+      "cross": "financial"
+    },
+    {
+      "from": "retirement_age_policy",
+      "to": "government_employment",
+      "type": "AFFECTS",
+      "description": "Retirement age changes affect vacancies and hiring",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "psu_disinvestment",
+      "to": "psu_banks",
+      "type": "AFFECTS",
+      "description": "Bank privatization changes employment terms",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "psu_disinvestment",
+      "to": "government_employment",
+      "type": "DISRUPTS",
+      "description": "PSU privatization may change job security and terms",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "job_market_india",
+      "to": "retail_credit",
+      "type": "AFFECTS",
+      "description": "Employment drives consumer borrowing capacity",
+      "cross": "financial"
+    },
+    {
+      "from": "job_market_india",
+      "to": "sip_flows",
+      "type": "AFFECTS",
+      "description": "Employment and income drive MF investment capacity",
+      "cross": "financial"
+    },
+    {
+      "from": "salary_trends",
+      "to": "cpi_inflation",
+      "type": "DEPENDS_ON",
+      "description": "Real salary growth measured against inflation",
+      "cross": "financial"
+    },
+    {
+      "from": "salary_trends",
+      "to": "income_tax",
+      "type": "AFFECTS",
+      "description": "Salary levels determine tax liability",
+      "cross": "financial"
+    },
+    {
+      "from": "salary_trends",
+      "to": "home_loan_emi",
+      "type": "AFFECTS",
+      "description": "Income determines home loan eligibility",
+      "cross": "financial"
+    },
+    {
+      "from": "esop_policy",
+      "to": "startup_valuation",
+      "type": "DEPENDS_ON",
+      "description": "ESOP value depends on company valuation",
+      "cross": "financial"
+    },
+    {
+      "from": "new_labor_codes",
+      "to": "job_market_india",
+      "type": "REGULATES",
+      "description": "New labor codes affect hiring, firing, and working conditions",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "contract_work_regulation",
+      "to": "job_market_india",
+      "type": "REGULATES",
+      "description": "Contract labor rules affect employment formalization",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "gig_worker_rights",
+      "to": "food_delivery",
+      "type": "REGULATES",
+      "description": "Gig worker laws affect delivery platform costs",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "gig_worker_rights",
+      "to": "ride_hailing",
+      "type": "REGULATES",
+      "description": "Gig worker regulations affect cab aggregator models",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "gig_worker_rights",
+      "to": "delivery_worker_earnings",
+      "type": "AFFECTS",
+      "description": "Regulation may mandate minimum earnings guarantee",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "minimum_wage",
+      "to": "construction_employment",
+      "type": "AFFECTS",
+      "description": "Minimum wage affects construction labor costs",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "minimum_wage",
+      "to": "warehouse_employment",
+      "type": "AFFECTS",
+      "description": "Minimum wage affects warehouse and logistics labor",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "minimum_wage",
+      "to": "retail_sector",
+      "type": "AFFECTS",
+      "description": "Minimum wage affects retail staffing costs",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "remote_work_policy",
+      "to": "rental_market",
+      "type": "AFFECTS",
+      "description": "WFH shifts demand from metros to tier-2 cities",
+      "cross": "financial"
+    },
+    {
+      "from": "wfh_tax_implications",
+      "to": "remote_work_policy",
+      "type": "AFFECTS",
+      "description": "Tax rules affect where remote workers choose to live",
+      "cross": "financial"
+    },
+    {
+      "from": "trade_unions",
+      "to": "new_labor_codes",
+      "type": "AFFECTS",
+      "description": "Unions oppose/shape labor law reforms",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "epf",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "EPF mandate affects employer cost per employee",
+      "cross": "financial"
+    },
+    {
+      "from": "nps",
+      "to": "government_employment",
+      "type": "AFFECTS",
+      "description": "NPS vs OPS debate affects government employee benefits",
+      "cross": "financial"
+    },
+    {
+      "from": "food_delivery",
+      "to": "gst_policy",
+      "type": "DEPENDS_ON",
+      "description": "GST on food delivery affects platform economics",
+      "cross": "financial"
+    },
+    {
+      "from": "food_delivery",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Food delivery platforms serve urban consumers",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "fuel_cost_gig",
+      "to": "delivery_worker_earnings",
+      "type": "AFFECTS",
+      "description": "Fuel costs eat into delivery partner earnings",
+      "cross": "energy"
+    },
+    {
+      "from": "fuel_cost_gig",
+      "to": "driver_earnings",
+      "type": "AFFECTS",
+      "description": "Fuel costs are major driver expense",
+      "cross": "energy"
+    },
+    {
+      "from": "ride_hailing_regulation",
+      "to": "ride_hailing",
+      "type": "REGULATES",
+      "description": "State-level regulations affect surge pricing and commissions",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "global_freelance_demand",
+      "to": "us_economy",
+      "type": "DEPENDS_ON",
+      "description": "US is the largest freelance demand market",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "inr_usd_freelance",
+      "to": "freelance_market",
+      "type": "AFFECTS",
+      "description": "Forex rates affect freelance earning attractiveness",
+      "cross": "financial"
+    },
+    {
+      "from": "creator_economy",
+      "to": "gst_policy",
+      "type": "DEPENDS_ON",
+      "description": "Creators above threshold must register for GST",
+      "cross": "financial"
+    },
+    {
+      "from": "ad_rate_changes",
+      "to": "creator_economy",
+      "type": "AFFECTS",
+      "description": "CPM rate changes directly affect creator income",
+      "cross": "financial"
+    },
+    {
+      "from": "us_economy",
+      "to": "it_services_sector",
+      "type": "AFFECTS",
+      "description": "US health drives IT outsourcing demand",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_economy",
+      "to": "global_freelance_demand",
+      "type": "AFFECTS",
+      "description": "US clients drive global freelance demand",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "eu_economy",
+      "to": "it_services_sector",
+      "type": "AFFECTS",
+      "description": "EU is the second-largest IT outsourcing market for Indian firms",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "china_economy",
+      "to": "semiconductor_supply",
+      "type": "AFFECTS",
+      "description": "China is a major semiconductor supply chain node",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "china_economy",
+      "to": "pharma_api_china",
+      "type": "AFFECTS",
+      "description": "Chinese economic disruptions affect API supply",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "china_economy",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "China supplies auto components and raw materials",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "india_gdp",
+      "to": "government_employment",
+      "type": "AFFECTS",
+      "description": "Tax revenue from GDP determines government hiring capacity",
+      "cross": "financial"
+    },
+    {
+      "from": "india_gdp",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "GDP growth rate is the primary driver of formal job creation; sub-6% growth typically means weaker hiring cycles.",
+      "cross": "financial"
+    },
+    {
+      "from": "india_gdp",
+      "to": "real_estate_sector",
+      "type": "AFFECTS",
+      "description": "Economic growth drives property demand",
+      "cross": "financial"
+    },
+    {
+      "from": "cpi_inflation",
+      "to": "salary_trends",
+      "type": "AFFECTS",
+      "description": "Persistent inflation erodes real wages; companies adjust annual increments and DA (dearness allowance) to compensate.",
+      "cross": "financial"
+    },
+    {
+      "from": "repo_rate",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "Interest rates affect auto loan EMIs and vehicle demand",
+      "cross": "financial"
+    },
+    {
+      "from": "repo_rate",
+      "to": "real_estate_sector",
+      "type": "AFFECTS",
+      "description": "Interest rates directly affect housing demand via EMI",
+      "cross": "financial"
+    },
+    {
+      "from": "repo_rate",
+      "to": "it_services_sector",
+      "type": "AFFECTS",
+      "description": "Rate hikes slow US economy, reducing IT spend",
+      "cross": "financial"
+    },
+    {
+      "from": "crude_oil_price",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "Oil prices affect vehicle operating costs and demand mix (ICE vs EV)",
+      "cross": "energy"
+    },
+    {
+      "from": "crude_oil_price",
+      "to": "logistics_sector",
+      "type": "AFFECTS",
+      "description": "Oil prices drive transportation costs across economy",
+      "cross": "energy"
+    },
+    {
+      "from": "crude_oil_price",
+      "to": "delivery_worker_earnings",
+      "type": "AFFECTS",
+      "description": "Oil → petrol → delivery worker expenses",
+      "cross": "energy"
+    },
+    {
+      "from": "rupee_exchange_rate",
+      "to": "it_services_sector",
+      "type": "AFFECTS",
+      "description": "Weak rupee improves IT company margins in INR",
+      "cross": "financial"
+    },
+    {
+      "from": "rupee_exchange_rate",
+      "to": "pharma_sector",
+      "type": "AFFECTS",
+      "description": "Forex affects export revenue and import costs",
+      "cross": "financial"
+    },
+    {
+      "from": "rupee_exchange_rate",
+      "to": "freelance_market",
+      "type": "AFFECTS",
+      "description": "Weak rupee makes Indian freelancers more competitive globally",
+      "cross": "financial"
+    },
+    {
+      "from": "gst_policy",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "GST rates on vehicles affect pricing and demand",
+      "cross": "financial"
+    },
+    {
+      "from": "gst_policy",
+      "to": "fmcg_sector",
+      "type": "AFFECTS",
+      "description": "GST rates on FMCG products affect pricing",
+      "cross": "financial"
+    },
+    {
+      "from": "gst_policy",
+      "to": "cement_industry",
+      "type": "AFFECTS",
+      "description": "GST on cement affects construction costs",
+      "cross": "financial"
+    },
+    {
+      "from": "gst_policy",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "GST compliance burden and rate changes affect business hiring",
+      "cross": "financial"
+    },
+    {
+      "from": "fdi_policy_india",
+      "to": "ecommerce_sector",
+      "type": "REGULATES",
+      "description": "FDI rules determine Amazon/Flipkart operating model",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "fdi_policy_india",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "FDI policy determines foreign auto investment",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "fdi_policy_india",
+      "to": "retail_sector",
+      "type": "REGULATES",
+      "description": "FDI caps on multi-brand retail",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "customs_duty",
+      "to": "ecommerce_sector",
+      "type": "AFFECTS",
+      "description": "Import duties affect cross-border e-commerce pricing",
+      "cross": "financial"
+    },
+    {
+      "from": "customs_duty",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "Import duty on parts affects auto manufacturing costs",
+      "cross": "financial"
+    },
+    {
+      "from": "customs_duty",
+      "to": "pharma_api_china",
+      "type": "AFFECTS",
+      "description": "Duty on Chinese APIs affects pharma input costs",
+      "cross": "financial"
+    },
+    {
+      "from": "india_us_trade",
+      "to": "it_services_sector",
+      "type": "AFFECTS",
+      "description": "India-US trade relations affect IT outsourcing policy",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "india_us_trade",
+      "to": "h1b_visa",
+      "type": "AFFECTS",
+      "description": "Trade relations influence visa policy decisions",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "india_china_trade",
+      "to": "pharma_api_china",
+      "type": "AFFECTS",
+      "description": "India-China relations affect API supply chain",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "india_china_trade",
+      "to": "ecommerce_sector",
+      "type": "AFFECTS",
+      "description": "Chinese imports are major e-commerce product source",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "electricity_tariff",
+      "to": "it_services_sector",
+      "type": "AFFECTS",
+      "description": "Power costs affect data center and office operating costs",
+      "cross": "energy"
+    },
+    {
+      "from": "electricity_tariff",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "Power costs affect factory operating costs",
+      "cross": "energy"
+    },
+    {
+      "from": "home_loan_emi",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "EMI burden affects workforce mobility (people can't easily relocate)",
+      "cross": "financial"
+    },
+    {
+      "from": "education_loan",
+      "to": "education_sector",
+      "type": "AFFECTS",
+      "description": "Education loan availability affects enrollment",
+      "cross": "financial"
+    },
+    {
+      "from": "auto_loan_emi",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "Auto loan EMI affordability drives vehicle demand",
+      "cross": "financial"
+    },
+    {
+      "from": "npa",
+      "to": "banking_employment",
+      "type": "DISRUPTS",
+      "description": "High NPAs lead to bank restructuring and hiring freeze",
+      "cross": "financial"
+    },
+    {
+      "from": "bank_provisions",
+      "to": "psu_banks",
+      "type": "AFFECTS",
+      "description": "Provisions reduce bank profitability",
+      "cross": "financial"
+    },
+    {
+      "from": "bank_recapitalization",
+      "to": "psu_banks",
+      "type": "AFFECTS",
+      "description": "Capital infusion restores PSU bank lending capacity",
+      "cross": "financial"
+    },
+    {
+      "from": "bank_merger",
+      "to": "psu_banks",
+      "type": "DISRUPTS",
+      "description": "Bank mergers affect branch networks and staffing",
+      "cross": "financial"
+    },
+    {
+      "from": "rbi_circular",
+      "to": "psu_banks",
+      "type": "REGULATES",
+      "description": "RBI circulars govern banking operations and compliance",
+      "cross": "financial"
+    },
+    {
+      "from": "rbi_circular",
+      "to": "nbfc_sector",
+      "type": "REGULATES",
+      "description": "RBI circulars set regulatory framework for NBFCs",
+      "cross": "financial"
+    },
+    {
+      "from": "basel_iii",
+      "to": "psu_banks",
+      "type": "REGULATES",
+      "description": "Capital adequacy norms constrain PSU bank lending",
+      "cross": "financial"
+    },
+    {
+      "from": "basel_iii",
+      "to": "private_banks",
+      "type": "REGULATES",
+      "description": "Basel III applies to all scheduled commercial banks",
+      "cross": "financial"
+    },
+    {
+      "from": "nbfc_regulation",
+      "to": "nbfc_sector",
+      "type": "REGULATES",
+      "description": "RBI regulation determines NBFC operating framework",
+      "cross": "financial"
+    },
+    {
+      "from": "microfinance_regulation",
+      "to": "nbfc_sector",
+      "type": "REGULATES",
+      "description": "Microfinance rules affect NBFC-MFI operations",
+      "cross": "financial"
+    },
+    {
+      "from": "co_lending",
+      "to": "nbfc_sector",
+      "type": "AFFECTS",
+      "description": "Co-lending model expands NBFC reach",
+      "cross": "financial"
+    },
+    {
+      "from": "co_lending",
+      "to": "private_banks",
+      "type": "AFFECTS",
+      "description": "Co-lending expands bank retail exposure",
+      "cross": "financial"
+    },
+    {
+      "from": "stock_market_crash",
+      "to": "startup_layoffs",
+      "type": "AFFECTS",
+      "description": "Market crash → funding freeze → startup layoffs",
+      "cross": "financial"
+    },
+    {
+      "from": "reit",
+      "to": "real_estate_sector",
+      "type": "AFFECTS",
+      "description": "REITs provide institutional demand for commercial RE",
+      "cross": "financial"
+    },
+    {
+      "from": "property_price",
+      "to": "real_estate_sector",
+      "type": "AFFECTS",
+      "description": "Property prices determine builder revenue and sector health",
+      "cross": "financial"
+    },
+    {
+      "from": "income_tax",
+      "to": "salary_trends",
+      "type": "AFFECTS",
+      "description": "Income tax slab changes (new vs old regime) alter take-home pay; higher exemptions increase disposable income for salaried class.",
+      "cross": "financial"
+    },
+    {
+      "from": "gst",
+      "to": "fmcg_sector",
+      "type": "AFFECTS",
+      "description": "GST rates on FMCG products affect pricing",
+      "cross": "financial"
+    },
+    {
+      "from": "gst",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "GST cess on vehicles affects demand",
+      "cross": "financial"
+    },
+    {
+      "from": "gst",
+      "to": "real_estate_sector",
+      "type": "AFFECTS",
+      "description": "GST on under-construction property affects demand",
+      "cross": "financial"
+    },
+    {
+      "from": "gst_compliance",
+      "to": "job_market_india",
+      "type": "AFFECTS",
+      "description": "GST compliance burden affects small business operations",
+      "cross": "financial"
+    },
+    {
+      "from": "electronics_import_duty",
+      "to": "semiconductor_supply",
+      "type": "AFFECTS",
+      "description": "Import duties affect electronics cost",
+      "cross": "financial"
+    },
+    {
+      "from": "auto_import_duty",
+      "to": "auto_manufacturing",
+      "type": "AFFECTS",
+      "description": "CKD/CBU duty affects vehicle pricing",
+      "cross": "financial"
+    },
+    {
+      "from": "equalization_levy",
+      "to": "it_services_sector",
+      "type": "AFFECTS",
+      "description": "Digital tax affects cross-border tech services",
+      "cross": "financial"
+    },
+    {
+      "from": "inr_usd",
+      "to": "it_services_sector",
+      "type": "AFFECTS",
+      "description": "Weak rupee boosts IT margins (revenue in USD, cost in INR)",
+      "cross": "financial"
+    },
+    {
+      "from": "inr_usd",
+      "to": "pharma_sector",
+      "type": "AFFECTS",
+      "description": "Rupee affects pharma export revenue vs API import cost",
+      "cross": "financial"
+    },
+    {
+      "from": "food_inflation_india",
+      "to": "fmcg_sector",
+      "type": "AFFECTS",
+      "description": "Food inflation increases FMCG input costs",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "food_inflation_india",
+      "to": "retail_sector",
+      "type": "AFFECTS",
+      "description": "Food inflation affects grocery retail margins and volumes",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "food_inflation_india",
+      "to": "food_delivery",
+      "type": "AFFECTS",
+      "description": "Food inflation increases order values but may reduce volumes",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "food_inflation_india",
+      "to": "salary_trends",
+      "type": "AFFECTS",
+      "description": "Food price spikes create pressure for wage increases",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "palm_oil",
+      "to": "food_processing",
+      "type": "SUPPLIES",
+      "description": "Palm oil used extensively in packaged food",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "sugar",
+      "to": "food_processing",
+      "type": "SUPPLIES",
+      "description": "Sugar is major input for food processing industry",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "gig_workers",
+      "to": "food_delivery",
+      "type": "SUPPLIES",
+      "description": "Gig workers deliver food for platforms",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "food_packaging",
+      "to": "food_delivery",
+      "type": "SUPPLIES",
+      "description": "Delivery needs packaging materials",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "fssai",
+      "to": "food_processing",
+      "type": "REGULATES",
+      "description": "FSSAI regulates packaged food",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "petrol",
+      "to": "food_delivery",
+      "type": "SUPPLIES",
+      "description": "Delivery riders use petrol-powered bikes",
+      "cross": "energy"
+    },
+    {
+      "from": "petrol",
+      "to": "ride_hailing",
+      "type": "AFFECTS",
+      "description": "Fuel costs are the biggest driver expense",
+      "cross": "energy"
+    },
+    {
+      "from": "petrol",
+      "to": "logistics_sector",
+      "type": "AFFECTS",
+      "description": "Last-mile delivery and two-wheeler logistics run on petrol; price hikes raise e-commerce and FMCG distribution costs.",
+      "cross": "energy"
+    },
+    {
+      "from": "diesel",
+      "to": "trucking",
+      "type": "AFFECTS",
+      "description": "Diesel is ~60% of trucking operating cost",
+      "cross": "energy"
+    },
+    {
+      "from": "diesel",
+      "to": "logistics_sector",
+      "type": "AFFECTS",
+      "description": "Over 70% of Indian freight moves by road on diesel trucks; diesel cost is the single largest component of freight rates.",
+      "cross": "energy"
+    },
+    {
+      "from": "natural_gas",
+      "to": "food_processing",
+      "type": "SUPPLIES",
+      "description": "Gas used for heating in food processing",
+      "cross": "energy"
+    },
+    {
+      "from": "electricity",
+      "to": "food_processing",
+      "type": "SUPPLIES",
+      "description": "Food processing plants need electricity",
+      "cross": "energy"
+    },
+    {
+      "from": "us_china_trade_war",
+      "to": "semiconductor_supply",
+      "type": "DISRUPTS",
+      "description": "US-China tech war disrupts chip supply chains",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "warehouse_infrastructure",
+      "to": "food_processing",
+      "type": "SUPPLIES",
+      "description": "Warehousing needed for food storage",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "gst_food",
+      "to": "food_processing",
+      "type": "REGULATES",
+      "description": "GST rates affect packaged food prices",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "furnace_oil",
+      "to": "food_processing",
+      "type": "SUPPLIES",
+      "description": "Furnace oil used as industrial heating fuel",
+      "cross": "energy"
+    },
+    {
+      "from": "contract_farming",
+      "to": "food_processing",
+      "type": "SUPPLIES",
+      "description": "Contract farming supplies raw material to processors",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "broadband_internet",
+      "to": "telemedicine",
+      "type": "SUPPLIES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "tolls",
+      "to": "trucking",
+      "type": "AFFECTS",
+      "description": "Toll revisions (including NHAI FASTag rate hikes) directly increase road freight operational costs, which are passed down to goods pricing.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "freight_logistics",
+      "to": "trucking",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "health_and_healthcare",
+      "to": "medical_devices",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "pharmaceuticals",
+      "to": "generic_drugs",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "wages_compensation",
+      "to": "minimum_wage",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "wages_compensation",
+      "to": "gratuity",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "labor_laws",
+      "to": "gig_worker_rights",
+      "type": "AFFECTS",
+      "description": "Broad labor law reforms (like the new Labor Codes) dictate the specific legal framework and rights for gig workers.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "gold",
+      "to": "banking_employment",
+      "type": "AFFECTS",
+      "description": "Gold loan business expands with gold prices",
+      "cross": "financial"
+    },
+    {
+      "from": "fintech",
+      "to": "digital_lending",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "food_storage_distribution",
+      "to": "food_processing",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "mgnrega",
+      "to": "farm_labor",
+      "type": "COMPETES_WITH",
+      "description": "The MGNREGA rural employment guarantee scheme sets a wage floor and competes with agricultural labor availability during peak sowing/harvesting seasons.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "mgnrega",
+      "to": "minimum_wage",
+      "type": "AFFECTS",
+      "description": "MGNREGA guarantees 100 days of employment at minimum wage, setting a floor for rural agricultural wages across India.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "female_labor_force_participation",
+      "to": "india_gdp",
+      "type": "AFFECTS",
+      "description": "India's female LFPR at ~25% is among the lowest globally; increasing it could add significantly to GDP growth.",
+      "cross": "financial"
+    }
+  ]
+}

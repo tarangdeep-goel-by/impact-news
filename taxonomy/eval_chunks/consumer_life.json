@@ -1,0 +1,5671 @@
+{
+  "domain": "consumer_life",
+  "node_count": 261,
+  "edge_count": 508,
+  "internal_edge_count": 263,
+  "cross_domain_edge_count": 245,
+  "nodes": [
+    {
+      "id": "admission_policies",
+      "aliases": [
+        "admission quota",
+        "reservation policy",
+        "entrance exam",
+        "NEET",
+        "JEE"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "air_conditioner",
+      "aliases": [
+        "AC prices",
+        "air conditioning",
+        "cooling costs"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "air_quality",
+      "aliases": [
+        "air pollution",
+        "AQI",
+        "air quality index",
+        "smog",
+        "haze",
+        "AQI levels",
+        "PM2.5",
+        "stubble burning"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "air_quality_health",
+      "aliases": [
+        "air pollution health",
+        "AQI",
+        "smog",
+        "respiratory health"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "airport_noise_zone",
+      "aliases": [
+        "flight path noise",
+        "airport noise regulation",
+        "aircraft noise complaint"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "ambulance_response_time",
+      "aliases": [
+        "ambulance delay",
+        "ambulance arrival time",
+        "golden hour"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "amusement_parks",
+      "aliases": [
+        "theme park prices",
+        "amusement park tickets"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "anganwadi",
+      "aliases": [
+        "anganwadi",
+        "ICDS center",
+        "anganwadi worker",
+        "child development center"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "antibiotics",
+      "aliases": [
+        "antibiotic prices",
+        "antimicrobial drugs"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "aqi_monitoring",
+      "aliases": [
+        "AQI station",
+        "air quality monitoring",
+        "CAAQMS",
+        "pollution monitoring station"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "bda",
+      "aliases": [
+        "BDA",
+        "Bangalore Development Authority",
+        "BDA layout",
+        "BDA site",
+        "BDA allotment"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "biodiversity",
+      "aliases": [],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "books_newspapers",
+      "aliases": [
+        "book prices",
+        "newspaper subscription",
+        "magazine costs"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "bricks",
+      "aliases": [
+        "brick prices",
+        "building bricks"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "builder_compliance",
+      "aliases": [
+        "builder delay",
+        "project delay penalty",
+        "builder accountability",
+        "RERA order builder"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "building_codes",
+      "aliases": [
+        "building regulations",
+        "building bye-laws",
+        "construction norms"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "cancer_drugs",
+      "aliases": [
+        "oncology drugs",
+        "chemotherapy costs",
+        "cancer treatment prices"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "carbon_emissions_env",
+      "aliases": [
+        "greenhouse gas",
+        "CO2 emissions",
+        "Paris Agreement",
+        "net zero"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "cardiovascular_drugs",
+      "aliases": [
+        "heart medication",
+        "blood pressure drugs",
+        "statins"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "carpets_flooring",
+      "aliases": [
+        "carpet prices",
+        "flooring costs",
+        "tiles prices"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "cement",
+      "aliases": [
+        "cement prices",
+        "cement industry"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "certification_courses",
+      "aliases": [
+        "certification costs",
+        "professional certification",
+        "upskilling"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "chc",
+      "aliases": [
+        "CHC",
+        "Community Health Centre",
+        "community health center"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "chikungunya",
+      "aliases": [
+        "chikungunya cases",
+        "chikungunya outbreak"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "childrenswear",
+      "aliases": [
+        "kids clothing",
+        "children's clothes prices"
+      ],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "cinema",
+      "aliases": [
+        "movie ticket prices",
+        "cinema costs",
+        "box office"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "cleaning_supplies",
+      "aliases": [
+        "detergent prices",
+        "soap",
+        "cleaning products",
+        "disinfectant"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "climate_change",
+      "aliases": [
+        "global warming",
+        "climate crisis",
+        "climate change impact",
+        "carbon emissions"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "climate_policy",
+      "aliases": [
+        "climate regulation",
+        "green new deal",
+        "climate summit",
+        "COP"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "clothing",
+      "aliases": [],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "clothing_and_personal_care",
+      "aliases": [],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "coaching_centers",
+      "aliases": [
+        "coaching institute",
+        "tuition center",
+        "coaching class"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "coaching_regulation",
+      "aliases": [
+        "coaching center regulation",
+        "coaching institute rules",
+        "coaching safety norms"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "coaching_safety",
+      "aliases": [
+        "coaching fire safety",
+        "coaching building safety",
+        "Rajinder Nagar coaching",
+        "coaching center fire"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "coaching_tuition",
+      "aliases": [
+        "tuition fees",
+        "coaching classes",
+        "private tutor costs"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "coldwaves",
+      "aliases": [
+        "cold wave",
+        "freeze",
+        "extreme cold",
+        "frost"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "college_regulation",
+      "aliases": [
+        "college inspection",
+        "college recognition",
+        "AICTE approval",
+        "UGC recognition"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "college_university_fees",
+      "aliases": [
+        "college tuition",
+        "university fees",
+        "higher education costs"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "completion_certificate",
+      "aliases": [
+        "CC",
+        "completion certificate",
+        "building completion",
+        "occupancy certificate",
+        "OC"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "construction_ban",
+      "aliases": [
+        "construction ban pollution",
+        "construction dust",
+        "demolition ban AQI"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "construction_materials",
+      "aliases": [
+        "building material price",
+        "sand price",
+        "cement price local",
+        "aggregate cost"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "construction_noise_hours",
+      "aliases": [
+        "construction timing rules",
+        "night construction ban",
+        "construction hours regulation"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "consumer",
+      "aliases": [
+        "consumer",
+        "household",
+        "end user",
+        "you",
+        "individual"
+      ],
+      "category": "user"
+    },
+    {
+      "id": "conversion_of_land",
+      "aliases": [
+        "land conversion",
+        "agricultural to non-agricultural",
+        "land use conversion",
+        "DC conversion"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "cooking_appliances",
+      "aliases": [
+        "stove prices",
+        "microwave",
+        "oven",
+        "induction cooktop"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "cosmetics",
+      "aliases": [
+        "makeup prices",
+        "beauty products",
+        "skincare"
+      ],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "cotton_textiles",
+      "aliases": [
+        "cotton prices",
+        "cotton futures",
+        "textile prices",
+        "cotton crop"
+      ],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "cpcb",
+      "aliases": [
+        "CPCB",
+        "Central Pollution Control Board",
+        "CPCB guidelines"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "cultural_events",
+      "aliases": [
+        "festival costs",
+        "cultural festivals",
+        "celebrations"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "cyclone",
+      "aliases": [
+        "cyclone",
+        "tropical cyclone",
+        "Bay of Bengal cyclone",
+        "Arabian Sea cyclone",
+        "hurricane",
+        "typhoon",
+        "storm damage"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "daycare_creche",
+      "aliases": [
+        "daycare costs",
+        "childcare fees",
+        "creche charges"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "deforestation",
+      "aliases": [
+        "forest loss",
+        "tree cutting",
+        "deforestation rate"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "dengue",
+      "aliases": [
+        "dengue fever",
+        "dengue outbreak",
+        "dengue cases",
+        "dengue mosquito"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "dental_care",
+      "aliases": [
+        "dentist fees",
+        "dental treatment costs",
+        "dental prices"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "development_authority",
+      "aliases": [
+        "planning authority",
+        "development body",
+        "urban development authority"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "diabetes_medication",
+      "aliases": [
+        "insulin prices",
+        "diabetes drugs",
+        "metformin"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "diagnostic_tests",
+      "aliases": [
+        "lab test prices",
+        "blood test costs",
+        "diagnostic charges",
+        "MRI costs",
+        "X-ray"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "diapers_baby_care",
+      "aliases": [
+        "diaper prices",
+        "baby care products"
+      ],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "disease_surveillance",
+      "aliases": [
+        "disease monitoring",
+        "epidemic surveillance",
+        "outbreak monitoring"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "district_hospital",
+      "aliases": [
+        "district hospital",
+        "general hospital",
+        "government general hospital"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "doctor_consultation",
+      "aliases": [
+        "doctor fees",
+        "consultation charges",
+        "OPD charges"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "dog_bite_cases",
+      "aliases": [
+        "dog attack",
+        "stray dog bite",
+        "rabies",
+        "dog bite compensation"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "dog_sterilization",
+      "aliases": [
+        "ABC program",
+        "animal birth control",
+        "stray dog sterilization",
+        "dog neutering"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "domestic_help",
+      "aliases": [
+        "maid salary",
+        "domestic worker wages",
+        "household help costs"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "drought",
+      "aliases": [
+        "drought",
+        "drought conditions",
+        "water scarcity",
+        "dry spell",
+        "drought relief"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "dtcp",
+      "aliases": [
+        "DTCP",
+        "Directorate of Town and Country Planning",
+        "DTCP approval"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "e_registration",
+      "aliases": [
+        "online property registration",
+        "e-stamping",
+        "digital registration"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "earthquakes",
+      "aliases": [
+        "earthquake",
+        "seismic activity",
+        "tremor"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "edtech_platforms",
+      "aliases": [
+        "online course prices",
+        "edtech subscription",
+        "MOOC fees"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "education_and_learning",
+      "aliases": [],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "education_regulation",
+      "aliases": [
+        "NEP",
+        "education reform",
+        "UGC regulation",
+        "school board policy"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "el_nino",
+      "aliases": [
+        "El Nino",
+        "ENSO",
+        "El Nino effect on India",
+        "El Nino Southern Oscillation"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "el_nino_la_nina",
+      "aliases": [
+        "El Nino",
+        "La Nina",
+        "ENSO",
+        "Pacific oscillation"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "electrical_work",
+      "aliases": [
+        "electrician costs",
+        "wiring",
+        "electrical repair"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "electricity_regulatory_commission",
+      "aliases": [
+        "KERC",
+        "MERC",
+        "DERC",
+        "TNERC",
+        "state electricity regulatory commission",
+        "SERC"
+      ],
+      "category": ""
+    },
+    {
+      "id": "electricity_subsidies",
+      "aliases": [
+        "power subsidy",
+        "free electricity scheme",
+        "electricity rebate"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "encroachment",
+      "aliases": [
+        "illegal encroachment",
+        "unauthorized construction",
+        "land grabbing"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "entertainment",
+      "aliases": [],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "environment_and_climate",
+      "aliases": [],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "epidemics_pandemics",
+      "aliases": [
+        "disease outbreak",
+        "pandemic",
+        "epidemic",
+        "COVID",
+        "flu season"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "eviction_drive",
+      "aliases": [
+        "demolition drive",
+        "encroachment removal",
+        "unauthorized structure demolition",
+        "BBMP demolition"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "ews_quota",
+      "aliases": [
+        "EWS quota school",
+        "economically weaker section admission",
+        "EWS reservation school"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "eye_care",
+      "aliases": [
+        "optician fees",
+        "eye checkup",
+        "spectacle prices",
+        "contact lens"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "far_fsi",
+      "aliases": [
+        "FAR",
+        "FSI",
+        "Floor Area Ratio",
+        "Floor Space Index",
+        "built-up area ratio"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "feminine_hygiene",
+      "aliases": [
+        "sanitary pad prices",
+        "menstrual products",
+        "feminine care"
+      ],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "fire_safety_building",
+      "aliases": [
+        "fire NOC",
+        "fire safety norms",
+        "fire escape",
+        "fire audit building"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "flood",
+      "aliases": [
+        "flooding",
+        "flash floods",
+        "river flooding",
+        "urban flooding",
+        "flood damage"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "flood_relief",
+      "aliases": [
+        "flood compensation",
+        "flood relief camp",
+        "SDRF flood",
+        "flood damage assessment"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "food_adulteration",
+      "aliases": [
+        "milk adulteration",
+        "food adulteration",
+        "spurious food",
+        "contaminated food"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "food_safety",
+      "aliases": [
+        "food safety inspection",
+        "food hygiene",
+        "food quality",
+        "food contamination",
+        "food recall",
+        "FSSAI",
+        "food adulteration"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "footwear",
+      "aliases": [
+        "shoe prices",
+        "footwear prices",
+        "sandals",
+        "sneakers"
+      ],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "fssai_inspection",
+      "aliases": [
+        "FSSAI",
+        "food inspector",
+        "FSSAI license",
+        "food safety audit"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "furniture",
+      "aliases": [
+        "furniture prices",
+        "sofa",
+        "bed prices",
+        "table",
+        "chairs"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "gaming",
+      "aliases": [
+        "video game prices",
+        "gaming subscription",
+        "console prices"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "global_temperature",
+      "aliases": [
+        "global warming",
+        "temperature rise",
+        "climate crisis",
+        "heat records"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "government_health_schemes",
+      "aliases": [
+        "Ayushman Bharat",
+        "Medicare",
+        "Medicaid",
+        "NHS",
+        "public health insurance"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "grap_delhi",
+      "aliases": [
+        "GRAP",
+        "Graded Response Action Plan",
+        "GRAP stage 3",
+        "GRAP stage 4",
+        "Delhi pollution emergency"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "groundwater",
+      "aliases": [
+        "groundwater depletion",
+        "water table",
+        "aquifer levels",
+        "groundwater crisis",
+        "underground water",
+        "groundwater table",
+        "water table level",
+        "aquifer",
+        "borewell"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "guidance_value",
+      "aliases": [
+        "circle rate",
+        "ready reckoner rate",
+        "government valuation",
+        "guideline value",
+        "jantri rate"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "gvk_emri",
+      "aliases": [
+        "GVK EMRI",
+        "108 service",
+        "emergency response ambulance"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "gym_fitness",
+      "aliases": [
+        "gym membership",
+        "fitness costs",
+        "gym fees"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "haircare_services",
+      "aliases": [
+        "haircut prices",
+        "salon charges",
+        "barber fees"
+      ],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "hc_tree_orders",
+      "aliases": [
+        "High Court tree order",
+        "HC green cover",
+        "court order tree cutting"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "health_and_healthcare",
+      "aliases": [],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "heatwave",
+      "aliases": [
+        "heat wave",
+        "extreme heat",
+        "heat wave India",
+        "summer temperatures",
+        "heat emergency"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "height_restrictions",
+      "aliases": [
+        "building height limit",
+        "height regulation",
+        "high rise norms"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "higher_education",
+      "aliases": [],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "home_insurance",
+      "aliases": [
+        "homeowner insurance",
+        "property insurance",
+        "building insurance"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "home_maintenance_repair",
+      "aliases": [],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "home_ownership",
+      "aliases": [],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "hospital_equipment",
+      "aliases": [
+        "medical equipment shortage",
+        "ventilator",
+        "hospital bed shortage",
+        "ICU beds"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "hospital_services",
+      "aliases": [
+        "hospital bills",
+        "inpatient costs",
+        "hospital charges"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "hospital_staff_shortage",
+      "aliases": [
+        "doctor shortage government hospital",
+        "nurse vacancy",
+        "medical staff crunch"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "hostel_accommodation",
+      "aliases": [
+        "hostel fees",
+        "student housing",
+        "dormitory costs"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "hotel_accommodation",
+      "aliases": [
+        "hotel prices",
+        "hotel rates",
+        "Airbnb prices",
+        "lodging costs"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "household_appliances",
+      "aliases": [],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "household_furnishings",
+      "aliases": [],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "household_textiles",
+      "aliases": [
+        "bed linen",
+        "curtains",
+        "towels",
+        "blankets"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "housing_and_shelter",
+      "aliases": [],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "huda",
+      "aliases": [
+        "HUDA",
+        "Haryana Urban Development Authority",
+        "HUDA sector"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "india_crude_imports",
+      "aliases": [
+        "India oil imports",
+        "India crude import bill",
+        "India oil dependency",
+        "petroleum imports India"
+      ],
+      "category": ""
+    },
+    {
+      "id": "industrial_effluent",
+      "aliases": [
+        "factory discharge",
+        "industrial waste water",
+        "effluent treatment plant",
+        "ETP"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "khata_transfer",
+      "aliases": [
+        "khata transfer",
+        "khata certificate",
+        "mutation",
+        "property mutation"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "kitchenware",
+      "aliases": [
+        "utensils",
+        "cookware prices",
+        "crockery",
+        "glassware"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "la_nina",
+      "aliases": [
+        "La Nina",
+        "La Nina effect",
+        "La Nina rainfall"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "labor_wages_construction",
+      "aliases": [
+        "construction wages",
+        "mason wages",
+        "labor rates"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "lake_encroachment",
+      "aliases": [
+        "lake land grab",
+        "lake buffer zone violation",
+        "lake bed encroachment"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "lake_pollution",
+      "aliases": [
+        "lake contamination",
+        "lake froth",
+        "Bellandur lake foam",
+        "toxic lake"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "lake_restoration",
+      "aliases": [
+        "lake rejuvenation",
+        "lake desilting",
+        "lake restoration project",
+        "lake conservation"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "land_use_zoning",
+      "aliases": [
+        "zoning",
+        "land use classification",
+        "residential zone",
+        "commercial zone",
+        "industrial zone",
+        "mixed use zone"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "landslides",
+      "aliases": [
+        "landslide",
+        "mudslide",
+        "soil erosion"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "layout_approval",
+      "aliases": [
+        "layout plan approval",
+        "site approval",
+        "colony approval",
+        "plotted development approval"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "live_events",
+      "aliases": [
+        "concert tickets",
+        "event prices",
+        "festival tickets",
+        "sports tickets"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "local_education",
+      "aliases": [
+        "city education",
+        "school system",
+        "local education policy"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "locust_attack",
+      "aliases": [
+        "locust swarm",
+        "desert locust",
+        "locust invasion",
+        "crop pest attack"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "loudspeaker_rules",
+      "aliases": [
+        "DJ noise rules",
+        "loudspeaker permission",
+        "noise limit decibel",
+        "festival noise"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "malaria",
+      "aliases": [
+        "malaria cases",
+        "malaria outbreak",
+        "anti-malaria drive"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "marine_ecosystem",
+      "aliases": [
+        "ocean health",
+        "coral bleaching",
+        "overfishing"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "master_plan",
+      "aliases": [
+        "city master plan",
+        "CDP",
+        "Comprehensive Development Plan",
+        "development plan",
+        "revised master plan"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "maternity_care",
+      "aliases": [
+        "delivery costs",
+        "prenatal care",
+        "obstetric charges"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "medical_equipment",
+      "aliases": [
+        "medical device prices",
+        "BP monitor",
+        "glucose meter",
+        "oximeter"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "medical_services",
+      "aliases": [],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "menswear",
+      "aliases": [
+        "men's clothing prices",
+        "shirts",
+        "trousers"
+      ],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "mental_health_services",
+      "aliases": [
+        "therapy costs",
+        "psychiatrist fees",
+        "counseling charges"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "mid_day_meal",
+      "aliases": [
+        "mid day meal scheme",
+        "MDM",
+        "school lunch",
+        "PM Poshan",
+        "Akshaya Patra"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "monsoon",
+      "aliases": [
+        "Indian monsoon",
+        "southwest monsoon",
+        "monsoon forecast",
+        "IMD forecast",
+        "rainfall",
+        "monsoon deficit",
+        "monsoon surplus",
+        "monsoon season",
+        "IMD monsoon prediction",
+        "monsoon progress",
+        "rainfall prediction"
+      ],
+      "category": ""
+    },
+    {
+      "id": "mortgage_rates",
+      "aliases": [
+        "home loan rates",
+        "housing loan interest",
+        "mortgage market"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "music",
+      "aliases": [
+        "music subscription",
+        "Spotify",
+        "music streaming"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "natural_disasters",
+      "aliases": [],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "neighborhood_school",
+      "aliases": [
+        "neighborhood school norm",
+        "school proximity rule",
+        "school catchment area"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "ngt_orders",
+      "aliases": [
+        "NGT",
+        "National Green Tribunal",
+        "NGT order pollution",
+        "NGT fine",
+        "environmental tribunal"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "noise_pollution",
+      "aliases": [
+        "noise levels",
+        "sound pollution",
+        "noise regulation",
+        "noise pollution",
+        "honking ban",
+        "silent zone",
+        "noise limit",
+        "DJ ban"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "online_digital_learning",
+      "aliases": [],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "otc_medicines",
+      "aliases": [
+        "over-the-counter drugs",
+        "OTC medicine prices",
+        "paracetamol"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "package_tours",
+      "aliases": [
+        "tour package prices",
+        "holiday packages",
+        "travel deals"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "pain_medication",
+      "aliases": [
+        "painkiller prices",
+        "analgesics",
+        "opioid prices"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "paint",
+      "aliases": [
+        "paint prices",
+        "house paint",
+        "wall paint"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "parking_norms_building",
+      "aliases": [
+        "parking requirement building",
+        "basement parking norms",
+        "parking space per unit"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "passport",
+      "aliases": [
+        "passport fees",
+        "passport renewal"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "personal_care",
+      "aliases": [],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "pet_food",
+      "aliases": [
+        "pet food prices",
+        "dog food",
+        "cat food"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "pets",
+      "aliases": [],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "pharmaceuticals",
+      "aliases": [],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "phc",
+      "aliases": [
+        "PHC",
+        "Primary Health Centre",
+        "primary health center"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "physiotherapy",
+      "aliases": [
+        "physio charges",
+        "rehabilitation costs"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "piped_gas",
+      "aliases": [
+        "PNG prices",
+        "piped natural gas",
+        "gas bill",
+        "CNG prices"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "plastic_waste",
+      "aliases": [
+        "plastic pollution",
+        "single-use plastic ban",
+        "microplastics"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "plumbing",
+      "aliases": [
+        "plumber costs",
+        "plumbing repair",
+        "pipe fittings"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "pollution",
+      "aliases": [],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "pre_primary_education",
+      "aliases": [],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "preschool",
+      "aliases": [
+        "nursery fees",
+        "preschool admission",
+        "kindergarten fees"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "prescription_drugs",
+      "aliases": [],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "private_health_insurance",
+      "aliases": [
+        "health insurance premium",
+        "mediclaim",
+        "health cover"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "private_hospital",
+      "aliases": [
+        "private hospital",
+        "corporate hospital",
+        "private nursing home",
+        "hospital bill cap"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "professional_courses",
+      "aliases": [
+        "MBA fees",
+        "engineering fees",
+        "medical college fees",
+        "law school"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "property_registration",
+      "aliases": [
+        "property sale registration",
+        "sale deed registration",
+        "sub-registrar office"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "prosthetics_implants",
+      "aliases": [
+        "implant prices",
+        "stent prices",
+        "knee replacement cost",
+        "prosthetic limb"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "psychiatric_drugs",
+      "aliases": [
+        "antidepressants",
+        "anxiety medication",
+        "psychiatric medication"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "public_health",
+      "aliases": [],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "public_healthcare",
+      "aliases": [
+        "government hospital",
+        "public health system",
+        "state healthcare"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "rajakaluve_encroachment",
+      "aliases": [
+        "rajakaluve",
+        "stormwater drain encroachment",
+        "SWD encroachment",
+        "naala encroachment"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "recreation_and_culture",
+      "aliases": [],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "refrigerator",
+      "aliases": [
+        "fridge prices",
+        "refrigerator prices"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "religious_cultural",
+      "aliases": [],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "religious_services",
+      "aliases": [
+        "temple trust",
+        "church donations",
+        "mosque",
+        "religious institutions"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "rent_regulation",
+      "aliases": [
+        "rent control",
+        "rent cap",
+        "tenant protection",
+        "rent freeze"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "rental_housing",
+      "aliases": [],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "rera_delay_penalty",
+      "aliases": [
+        "possession delay compensation",
+        "RERA refund order",
+        "builder penalty interest"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "rera_project_registration",
+      "aliases": [
+        "RERA registered project",
+        "RERA number",
+        "builder RERA compliance"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "residential_rent",
+      "aliases": [
+        "rent prices",
+        "rental market",
+        "house rent",
+        "apartment rent"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "respiratory_drugs",
+      "aliases": [
+        "asthma inhaler",
+        "bronchodilators",
+        "respiratory medication"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "restaurant_hygiene",
+      "aliases": [
+        "restaurant inspection",
+        "kitchen hygiene",
+        "food handling",
+        "health grade restaurant"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "rte_quota",
+      "aliases": [
+        "RTE admission",
+        "Right to Education quota",
+        "25% RTE reservation",
+        "RTE lottery"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "sand_aggregate",
+      "aliases": [
+        "sand prices",
+        "river sand",
+        "aggregate prices",
+        "gravel"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "scholarships_grants",
+      "aliases": [
+        "scholarship",
+        "education grant",
+        "financial aid",
+        "fee waiver"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "school_admissions",
+      "aliases": [
+        "school admission process",
+        "school enrollment",
+        "school seat"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "school_books_supplies",
+      "aliases": [
+        "textbook prices",
+        "school supplies",
+        "stationery costs"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "school_building_safety",
+      "aliases": [
+        "school structural safety",
+        "school building audit",
+        "dilapidated school"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "school_education",
+      "aliases": [],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "school_fees",
+      "aliases": [
+        "school tuition",
+        "school fee hike",
+        "private school fees"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "school_infrastructure",
+      "aliases": [
+        "school building",
+        "school facilities",
+        "school condition"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "school_playground",
+      "aliases": [
+        "school ground",
+        "school playground space",
+        "sports facility school"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "school_transport",
+      "aliases": [
+        "school bus fees",
+        "school transport costs"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "school_uniforms",
+      "aliases": [
+        "uniform costs",
+        "school dress"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "sea_level_rise",
+      "aliases": [
+        "coastal flooding",
+        "sea level",
+        "rising seas"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "seasonal_weather",
+      "aliases": [
+        "winter forecast",
+        "summer outlook",
+        "seasonal prediction"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "security_deposits",
+      "aliases": [
+        "rental deposit",
+        "security deposit rules"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "sewage_discharge",
+      "aliases": [
+        "untreated sewage",
+        "sewage into lake",
+        "sewage into river",
+        "open sewage"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "sewage_overflow",
+      "aliases": [
+        "manhole overflow",
+        "sewage overflow",
+        "sewer burst",
+        "sewage flooding street"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "sewerage",
+      "aliases": [
+        "sewage charges",
+        "drainage tax",
+        "sewerage cess"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "skill_development",
+      "aliases": [
+        "skill training",
+        "ITI",
+        "skill development center",
+        "PMKVY",
+        "vocational training"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "slum_rehabilitation",
+      "aliases": [
+        "slum redevelopment",
+        "SRA",
+        "slum rehabilitation",
+        "slum upgrade"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "small_appliances",
+      "aliases": [
+        "mixer grinder",
+        "iron",
+        "fan prices",
+        "heater"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "soil_contamination",
+      "aliases": [
+        "soil pollution",
+        "land contamination",
+        "toxic waste"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "soil_degradation",
+      "aliases": [
+        "soil health",
+        "soil degradation",
+        "land degradation",
+        "soil fertility loss"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "spcb",
+      "aliases": [
+        "SPCB",
+        "State Pollution Control Board",
+        "KSPCB",
+        "MPCB",
+        "DPCC"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "species_endangerment",
+      "aliases": [
+        "endangered species",
+        "wildlife loss",
+        "extinction"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "sports_clubs",
+      "aliases": [
+        "club membership",
+        "sports facility fees"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "sports_equipment",
+      "aliases": [
+        "sports gear prices",
+        "equipment costs"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "sports_fitness",
+      "aliases": [],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "stamp_duty_registration",
+      "aliases": [
+        "stamp duty rates",
+        "registration charges",
+        "property registration"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "state_university",
+      "aliases": [
+        "state university",
+        "university regulation",
+        "university governance"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "steel_rebar",
+      "aliases": [
+        "TMT bar prices",
+        "rebar prices",
+        "construction steel"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "stormwater_drain",
+      "aliases": [
+        "SWD",
+        "stormwater drain",
+        "rainwater drain",
+        "naala",
+        "drainage system"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "stray_animals",
+      "aliases": [
+        "stray dog menace",
+        "stray cattle",
+        "animal nuisance"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "stubble_burning",
+      "aliases": [
+        "crop residue burning",
+        "parali burning",
+        "Punjab stubble burning",
+        "paddy straw burning",
+        "stubble fire Punjab Haryana",
+        "farm fire",
+        "stubble burning",
+        "crop burning",
+        "parali"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "study_abroad",
+      "aliases": [
+        "overseas education costs",
+        "foreign university fees",
+        "study abroad expenses"
+      ],
+      "category": "education_and_learning"
+    },
+    {
+      "id": "surgery_procedures",
+      "aliases": [
+        "surgery costs",
+        "surgical procedure prices",
+        "operation costs"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "swd_encroachment",
+      "aliases": [
+        "drain encroachment",
+        "stormwater drain blocked",
+        "naala encroachment",
+        "drain narrowing"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "swd_mapping",
+      "aliases": [
+        "drain mapping",
+        "SWD survey",
+        "stormwater drain GIS",
+        "drainage master plan"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "synthetic_textiles",
+      "aliases": [
+        "polyester prices",
+        "nylon",
+        "synthetic fabric"
+      ],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "taluk_hospital",
+      "aliases": [
+        "taluk hospital",
+        "sub-district hospital",
+        "community hospital"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "timber_lumber",
+      "aliases": [
+        "timber prices",
+        "lumber futures",
+        "wood prices",
+        "plywood"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "toiletries",
+      "aliases": [
+        "soap prices",
+        "shampoo",
+        "toothpaste",
+        "personal hygiene"
+      ],
+      "category": "clothing_and_personal_care"
+    },
+    {
+      "id": "travel_tourism",
+      "aliases": [],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "tree_census",
+      "aliases": [
+        "urban tree census",
+        "tree count",
+        "tree survey city"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "tree_cutting_permission",
+      "aliases": [
+        "tree felling permission",
+        "tree cutting order",
+        "tree removal approval"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "tree_management",
+      "aliases": [
+        "urban tree cover",
+        "green cover",
+        "tree protection"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "tsunamis",
+      "aliases": [
+        "tsunami warning",
+        "tidal wave"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "unauthorized_layout",
+      "aliases": [
+        "unauthorized layout",
+        "illegal layout",
+        "unapproved colony",
+        "BDA unauthorized"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "university_affiliation",
+      "aliases": [
+        "college affiliation",
+        "affiliated college",
+        "autonomous status"
+      ],
+      "category": "education"
+    },
+    {
+      "id": "urban_flooding",
+      "aliases": [
+        "city flooding",
+        "waterlogging",
+        "flash flood city",
+        "inundation"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "urban_planning",
+      "aliases": [
+        "city planning",
+        "town planning",
+        "urban development"
+      ],
+      "category": "property_land"
+    },
+    {
+      "id": "utilities",
+      "aliases": [],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "vaccines",
+      "aliases": [
+        "vaccine prices",
+        "immunization costs",
+        "vaccination program"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "vector_control",
+      "aliases": [
+        "mosquito control",
+        "fogging",
+        "larvicide",
+        "mosquito breeding",
+        "anti-larval operation"
+      ],
+      "category": "healthcare"
+    },
+    {
+      "id": "vehicle_restrictions_pollution",
+      "aliases": [
+        "odd even Delhi",
+        "vehicle ban pollution",
+        "BS4 ban",
+        "diesel vehicle ban"
+      ],
+      "category": "environment"
+    },
+    {
+      "id": "veterinary_care",
+      "aliases": [
+        "vet fees",
+        "animal healthcare",
+        "veterinary costs"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "visa_fees",
+      "aliases": [
+        "visa costs",
+        "visa charges",
+        "travel visa"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "volcanic_eruptions",
+      "aliases": [
+        "volcano eruption",
+        "volcanic ash",
+        "lava flow"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "washing_machine",
+      "aliases": [
+        "washing machine prices",
+        "laundry machine"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "waste_collection",
+      "aliases": [
+        "garbage collection",
+        "waste management fees",
+        "sanitation charges"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "water_pollution",
+      "aliases": [
+        "water contamination",
+        "agricultural runoff",
+        "pesticide pollution",
+        "groundwater pollution",
+        "water body pollution",
+        "effluent discharge",
+        "river pollution",
+        "lake pollution",
+        "industrial effluent"
+      ],
+      "category": "climate"
+    },
+    {
+      "id": "water_purifier",
+      "aliases": [
+        "RO purifier",
+        "water filter prices"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "water_quality_health",
+      "aliases": [
+        "water contamination",
+        "waterborne disease",
+        "drinking water safety"
+      ],
+      "category": "health_and_healthcare"
+    },
+    {
+      "id": "water_supply",
+      "aliases": [
+        "water bill",
+        "water tariff",
+        "municipal water",
+        "water charges"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "water_tanker_services",
+      "aliases": [
+        "water tankers",
+        "private water supply",
+        "tanker mafia"
+      ],
+      "category": "housing_and_shelter"
+    },
+    {
+      "id": "weather_patterns",
+      "aliases": [],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "wedding_ceremonies",
+      "aliases": [
+        "wedding costs",
+        "marriage expenses",
+        "ceremony costs"
+      ],
+      "category": "recreation_and_culture"
+    },
+    {
+      "id": "wildfires",
+      "aliases": [
+        "forest fire",
+        "wildfire",
+        "bushfire"
+      ],
+      "category": "environment_and_climate"
+    },
+    {
+      "id": "womenswear",
+      "aliases": [
+        "women's clothing prices",
+        "saree prices",
+        "dress prices"
+      ],
+      "category": "clothing_and_personal_care"
+    }
+  ],
+  "edges": [
+    {
+      "from": "monsoon",
+      "to": "flood",
+      "type": "AFFECTS",
+      "description": "Excess monsoon causes flooding"
+    },
+    {
+      "from": "monsoon",
+      "to": "groundwater",
+      "type": "AFFECTS",
+      "description": "Monsoon recharge is the primary source of India's groundwater; deficit years accelerate aquifer depletion and raise irrigation costs."
+    },
+    {
+      "from": "monsoon",
+      "to": "urban_flooding",
+      "type": "PRODUCES",
+      "description": "Intense monsoon rainfall overwhelms encroached stormwater drains and silted lakes, causing urban flooding that paralyzes traffic and damages property."
+    },
+    {
+      "from": "monsoon",
+      "to": "dengue",
+      "type": "AFFECTS",
+      "description": "Stagnant water pools from monsoon rain become Aedes mosquito breeding grounds; dengue cases spike 3-4 weeks after heavy rainfall episodes."
+    },
+    {
+      "from": "monsoon",
+      "to": "malaria",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "monsoon",
+      "to": "stormwater_drain",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "monsoon",
+      "to": "lake_pollution",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "el_nino",
+      "to": "monsoon",
+      "type": "DISRUPTS",
+      "description": "El Niño events severely disrupt the Southwest Monsoon, leading to droughts and reduced kharif crop yields in India."
+    },
+    {
+      "from": "el_nino",
+      "to": "drought",
+      "type": "AFFECTS",
+      "description": "El Nino increases drought risk in South Asia"
+    },
+    {
+      "from": "la_nina",
+      "to": "monsoon",
+      "type": "AFFECTS",
+      "description": "La Nina typically strengthens Indian monsoon"
+    },
+    {
+      "from": "climate_change",
+      "to": "monsoon",
+      "type": "AFFECTS",
+      "description": "Climate change is increasing monsoon variability — more extreme rainfall events, longer dry spells, and shifting onset dates."
+    },
+    {
+      "from": "climate_change",
+      "to": "heatwave",
+      "type": "AFFECTS",
+      "description": "Rising global temperatures are increasing heatwave frequency and intensity across India, straining power grids and agriculture."
+    },
+    {
+      "from": "climate_change",
+      "to": "cyclone",
+      "type": "AFFECTS",
+      "description": "Warmer seas intensify cyclones"
+    },
+    {
+      "from": "climate_change",
+      "to": "locust_attack",
+      "type": "AFFECTS",
+      "description": "Climate change increasing locust breeding conditions"
+    },
+    {
+      "from": "climate_change",
+      "to": "global_temperature",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "climate_change",
+      "to": "sea_level_rise",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "climate_change",
+      "to": "carbon_emissions_env",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "climate_change",
+      "to": "climate_policy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "stubble_burning",
+      "to": "climate_change",
+      "type": "AFFECTS",
+      "description": "Stubble burning causes severe air pollution"
+    },
+    {
+      "from": "stubble_burning",
+      "to": "air_quality",
+      "type": "DISRUPTS",
+      "description": ""
+    },
+    {
+      "from": "stubble_burning",
+      "to": "grap_delhi",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "water_pollution",
+      "to": "disease_surveillance",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "urban_planning",
+      "to": "master_plan",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "master_plan",
+      "to": "land_use_zoning",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "land_use_zoning",
+      "to": "building_codes",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "building_codes",
+      "to": "far_fsi",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "building_codes",
+      "to": "height_restrictions",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "building_codes",
+      "to": "parking_norms_building",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "building_codes",
+      "to": "fire_safety_building",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "building_codes",
+      "to": "completion_certificate",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "building_codes",
+      "to": "urban_flooding",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "fire_safety_building",
+      "to": "coaching_safety",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "fire_safety_building",
+      "to": "district_hospital",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "development_authority",
+      "to": "layout_approval",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "development_authority",
+      "to": "unauthorized_layout",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "bda",
+      "to": "layout_approval",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "dtcp",
+      "to": "layout_approval",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "huda",
+      "to": "layout_approval",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "layout_approval",
+      "to": "completion_certificate",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "encroachment",
+      "to": "lake_encroachment",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "encroachment",
+      "to": "rajakaluve_encroachment",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "encroachment",
+      "to": "urban_flooding",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "lake_encroachment",
+      "to": "lake_pollution",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "lake_encroachment",
+      "to": "urban_flooding",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "rajakaluve_encroachment",
+      "to": "urban_flooding",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "rajakaluve_encroachment",
+      "to": "swd_encroachment",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "eviction_drive",
+      "to": "encroachment",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "property_registration",
+      "to": "e_registration",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "property_registration",
+      "to": "khata_transfer",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "builder_compliance",
+      "to": "rera_delay_penalty",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "air_quality",
+      "to": "aqi_monitoring",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "air_quality",
+      "to": "public_healthcare",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "air_quality",
+      "to": "disease_surveillance",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "cpcb",
+      "to": "aqi_monitoring",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "spcb",
+      "to": "aqi_monitoring",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "grap_delhi",
+      "to": "vehicle_restrictions_pollution",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "grap_delhi",
+      "to": "construction_ban",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "lake_pollution",
+      "to": "ngt_orders",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "industrial_effluent",
+      "to": "water_pollution",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "industrial_effluent",
+      "to": "lake_pollution",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "industrial_effluent",
+      "to": "groundwater",
+      "type": "DISRUPTS",
+      "description": ""
+    },
+    {
+      "from": "sewage_discharge",
+      "to": "water_pollution",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "sewage_discharge",
+      "to": "lake_pollution",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "ngt_orders",
+      "to": "spcb",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "ngt_orders",
+      "to": "industrial_effluent",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "ngt_orders",
+      "to": "lake_restoration",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "noise_pollution",
+      "to": "construction_noise_hours",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "noise_pollution",
+      "to": "loudspeaker_rules",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "noise_pollution",
+      "to": "airport_noise_zone",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "urban_flooding",
+      "to": "stormwater_drain",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "urban_flooding",
+      "to": "flood_relief",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "urban_flooding",
+      "to": "disease_surveillance",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "urban_flooding",
+      "to": "ambulance_response_time",
+      "type": "DISRUPTS",
+      "description": ""
+    },
+    {
+      "from": "swd_encroachment",
+      "to": "urban_flooding",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "swd_mapping",
+      "to": "stormwater_drain",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "tree_management",
+      "to": "tree_cutting_permission",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "tree_management",
+      "to": "air_quality",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "tree_cutting_permission",
+      "to": "urban_flooding",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "tree_census",
+      "to": "tree_management",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "hc_tree_orders",
+      "to": "tree_cutting_permission",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "public_healthcare",
+      "to": "district_hospital",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "public_healthcare",
+      "to": "taluk_hospital",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "public_healthcare",
+      "to": "phc",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "public_healthcare",
+      "to": "chc",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "hospital_staff_shortage",
+      "to": "public_healthcare",
+      "type": "DISRUPTS",
+      "description": "Government hospitals in India operate at 40-60% of sanctioned doctor strength; shortage means longer wait times, referrals to private hospitals, and out-of-pocket costs."
+    },
+    {
+      "from": "hospital_equipment",
+      "to": "public_healthcare",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "disease_surveillance",
+      "to": "dengue",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "disease_surveillance",
+      "to": "malaria",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "disease_surveillance",
+      "to": "chikungunya",
+      "type": "MANAGES",
+      "description": ""
+    },
+    {
+      "from": "vector_control",
+      "to": "dengue",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "vector_control",
+      "to": "malaria",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "stray_animals",
+      "to": "dog_sterilization",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "stray_animals",
+      "to": "dog_bite_cases",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "dog_bite_cases",
+      "to": "public_healthcare",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "food_safety",
+      "to": "fssai_inspection",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "food_safety",
+      "to": "food_adulteration",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "fssai_inspection",
+      "to": "restaurant_hygiene",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "fssai_inspection",
+      "to": "food_adulteration",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "local_education",
+      "to": "school_admissions",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "local_education",
+      "to": "school_infrastructure",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "school_admissions",
+      "to": "rte_quota",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "school_admissions",
+      "to": "ews_quota",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "school_admissions",
+      "to": "neighborhood_school",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "school_infrastructure",
+      "to": "school_building_safety",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "school_infrastructure",
+      "to": "school_playground",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "school_infrastructure",
+      "to": "mid_day_meal",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "mid_day_meal",
+      "to": "school_admissions",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "state_university",
+      "to": "university_affiliation",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "college_regulation",
+      "to": "university_affiliation",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "coaching_centers",
+      "to": "coaching_regulation",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "coaching_regulation",
+      "to": "coaching_safety",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "coaching_safety",
+      "to": "fire_safety_building",
+      "type": "DEPENDS_ON",
+      "description": ""
+    },
+    {
+      "from": "conversion_of_land",
+      "to": "land_use_zoning",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "unauthorized_layout",
+      "to": "encroachment",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "unauthorized_layout",
+      "to": "eviction_drive",
+      "type": "PRODUCES",
+      "description": ""
+    },
+    {
+      "from": "sewage_overflow",
+      "to": "disease_surveillance",
+      "type": "AFFECTS",
+      "description": ""
+    },
+    {
+      "from": "lake_restoration",
+      "to": "lake_pollution",
+      "type": "REGULATES",
+      "description": ""
+    },
+    {
+      "from": "private_hospital",
+      "to": "public_healthcare",
+      "type": "CONNECTS",
+      "description": ""
+    },
+    {
+      "from": "anganwadi",
+      "to": "mid_day_meal",
+      "type": "CONNECTS",
+      "description": ""
+    },
+    {
+      "from": "housing_and_shelter",
+      "to": "rental_housing",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "housing_and_shelter",
+      "to": "home_ownership",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "housing_and_shelter",
+      "to": "utilities",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "housing_and_shelter",
+      "to": "home_maintenance_repair",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "housing_and_shelter",
+      "to": "household_furnishings",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "rental_housing",
+      "to": "residential_rent",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "rental_housing",
+      "to": "rent_regulation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "rental_housing",
+      "to": "security_deposits",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "home_ownership",
+      "to": "mortgage_rates",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "home_ownership",
+      "to": "stamp_duty_registration",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "home_ownership",
+      "to": "home_insurance",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "utilities",
+      "to": "piped_gas",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "utilities",
+      "to": "water_supply",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "utilities",
+      "to": "sewerage",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "utilities",
+      "to": "waste_collection",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "home_maintenance_repair",
+      "to": "construction_materials",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "home_maintenance_repair",
+      "to": "plumbing",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "home_maintenance_repair",
+      "to": "electrical_work",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "home_maintenance_repair",
+      "to": "labor_wages_construction",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "construction_materials",
+      "to": "cement",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "construction_materials",
+      "to": "steel_rebar",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "construction_materials",
+      "to": "bricks",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "construction_materials",
+      "to": "sand_aggregate",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "construction_materials",
+      "to": "timber_lumber",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "construction_materials",
+      "to": "paint",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_furnishings",
+      "to": "furniture",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_furnishings",
+      "to": "carpets_flooring",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_furnishings",
+      "to": "household_textiles",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_furnishings",
+      "to": "household_appliances",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_furnishings",
+      "to": "kitchenware",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_furnishings",
+      "to": "cleaning_supplies",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_furnishings",
+      "to": "domestic_help",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_appliances",
+      "to": "refrigerator",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_appliances",
+      "to": "washing_machine",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_appliances",
+      "to": "air_conditioner",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_appliances",
+      "to": "cooking_appliances",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_appliances",
+      "to": "water_purifier",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "household_appliances",
+      "to": "small_appliances",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "health_and_healthcare",
+      "to": "pharmaceuticals",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "health_and_healthcare",
+      "to": "medical_services",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "health_and_healthcare",
+      "to": "public_health",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pharmaceuticals",
+      "to": "prescription_drugs",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pharmaceuticals",
+      "to": "otc_medicines",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pharmaceuticals",
+      "to": "vaccines",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "prescription_drugs",
+      "to": "antibiotics",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "prescription_drugs",
+      "to": "cardiovascular_drugs",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "prescription_drugs",
+      "to": "diabetes_medication",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "prescription_drugs",
+      "to": "cancer_drugs",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "prescription_drugs",
+      "to": "psychiatric_drugs",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "prescription_drugs",
+      "to": "pain_medication",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "prescription_drugs",
+      "to": "respiratory_drugs",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "medical_services",
+      "to": "doctor_consultation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "medical_services",
+      "to": "hospital_services",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "medical_services",
+      "to": "surgery_procedures",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "medical_services",
+      "to": "diagnostic_tests",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "medical_services",
+      "to": "dental_care",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "medical_services",
+      "to": "eye_care",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "medical_services",
+      "to": "mental_health_services",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "medical_services",
+      "to": "physiotherapy",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "medical_services",
+      "to": "maternity_care",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "public_health",
+      "to": "epidemics_pandemics",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "public_health",
+      "to": "food_safety",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "public_health",
+      "to": "air_quality_health",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "public_health",
+      "to": "water_quality_health",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "education_and_learning",
+      "to": "pre_primary_education",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "education_and_learning",
+      "to": "school_education",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "education_and_learning",
+      "to": "higher_education",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "education_and_learning",
+      "to": "online_digital_learning",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pre_primary_education",
+      "to": "daycare_creche",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pre_primary_education",
+      "to": "preschool",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "school_education",
+      "to": "school_fees",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "school_education",
+      "to": "school_books_supplies",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "school_education",
+      "to": "school_uniforms",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "school_education",
+      "to": "school_transport",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "school_education",
+      "to": "coaching_tuition",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "higher_education",
+      "to": "college_university_fees",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "higher_education",
+      "to": "professional_courses",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "higher_education",
+      "to": "study_abroad",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "higher_education",
+      "to": "hostel_accommodation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "online_digital_learning",
+      "to": "edtech_platforms",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "online_digital_learning",
+      "to": "certification_courses",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "clothing_and_personal_care",
+      "to": "clothing",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "clothing_and_personal_care",
+      "to": "personal_care",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "clothing",
+      "to": "cotton_textiles",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "clothing",
+      "to": "synthetic_textiles",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "clothing",
+      "to": "menswear",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "clothing",
+      "to": "womenswear",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "clothing",
+      "to": "childrenswear",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "clothing",
+      "to": "footwear",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_care",
+      "to": "toiletries",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_care",
+      "to": "cosmetics",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_care",
+      "to": "haircare_services",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_care",
+      "to": "feminine_hygiene",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "personal_care",
+      "to": "diapers_baby_care",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "recreation_and_culture",
+      "to": "entertainment",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "recreation_and_culture",
+      "to": "sports_fitness",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "recreation_and_culture",
+      "to": "travel_tourism",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "recreation_and_culture",
+      "to": "religious_cultural",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "recreation_and_culture",
+      "to": "pets",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "entertainment",
+      "to": "cinema",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "entertainment",
+      "to": "live_events",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "entertainment",
+      "to": "amusement_parks",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "entertainment",
+      "to": "gaming",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "entertainment",
+      "to": "books_newspapers",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "entertainment",
+      "to": "music",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "sports_fitness",
+      "to": "gym_fitness",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "sports_fitness",
+      "to": "sports_equipment",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "sports_fitness",
+      "to": "sports_clubs",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "travel_tourism",
+      "to": "hotel_accommodation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "travel_tourism",
+      "to": "package_tours",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "travel_tourism",
+      "to": "visa_fees",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "travel_tourism",
+      "to": "passport",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "religious_cultural",
+      "to": "religious_services",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "religious_cultural",
+      "to": "cultural_events",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "religious_cultural",
+      "to": "wedding_ceremonies",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pets",
+      "to": "pet_food",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pets",
+      "to": "veterinary_care",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environment_and_climate",
+      "to": "climate_change",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environment_and_climate",
+      "to": "natural_disasters",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environment_and_climate",
+      "to": "weather_patterns",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environment_and_climate",
+      "to": "pollution",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "environment_and_climate",
+      "to": "biodiversity",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "natural_disasters",
+      "to": "earthquakes",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "natural_disasters",
+      "to": "coldwaves",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "natural_disasters",
+      "to": "wildfires",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "natural_disasters",
+      "to": "landslides",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "natural_disasters",
+      "to": "tsunamis",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "natural_disasters",
+      "to": "volcanic_eruptions",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "natural_disasters",
+      "to": "drought",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "natural_disasters",
+      "to": "flood",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "natural_disasters",
+      "to": "heatwave",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "natural_disasters",
+      "to": "cyclone",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "weather_patterns",
+      "to": "monsoon",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "weather_patterns",
+      "to": "el_nino_la_nina",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "weather_patterns",
+      "to": "seasonal_weather",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pollution",
+      "to": "water_pollution",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pollution",
+      "to": "soil_contamination",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pollution",
+      "to": "noise_pollution",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pollution",
+      "to": "plastic_waste",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "pollution",
+      "to": "air_quality",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "biodiversity",
+      "to": "deforestation",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "biodiversity",
+      "to": "species_endangerment",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "biodiversity",
+      "to": "marine_ecosystem",
+      "type": "CONTAINS",
+      "description": ""
+    },
+    {
+      "from": "water_tanker_services",
+      "to": "consumer",
+      "type": "AFFECTS",
+      "description": "When municipal water supply fails, urban consumers depend on private water tankers at 5-10x the cost of piped water."
+    },
+    {
+      "from": "education_policy",
+      "to": "admission_policies",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "education_policy",
+      "to": "education_regulation",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "education_policy",
+      "to": "scholarships_grants",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "education_policy",
+      "to": "college_regulation",
+      "type": "REGULATES",
+      "description": "National Education Policy (NEP 2020) and UGC regulations set affiliation norms, autonomy criteria, and accreditation standards that govern college operations across India.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "medical_devices",
+      "to": "medical_equipment",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "employment"
+    },
+    {
+      "from": "medical_devices",
+      "to": "prosthetics_implants",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "employment"
+    },
+    {
+      "from": "telemedicine",
+      "to": "public_healthcare",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "employment"
+    },
+    {
+      "from": "rera",
+      "to": "rera_project_registration",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "rera",
+      "to": "builder_compliance",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "food_processing",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Packaged and processed food consumed by households",
+      "cross": "employment"
+    },
+    {
+      "from": "food_delivery",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Food delivery platforms serve urban consumers",
+      "cross": "employment"
+    },
+    {
+      "from": "repo_rate",
+      "to": "mortgage_rates",
+      "type": "AFFECTS",
+      "description": "The RBI's repo rate directly determines floating home loan interest rates.",
+      "cross": "financial"
+    },
+    {
+      "from": "electricity_tariff",
+      "to": "consumer",
+      "type": "AFFECTS",
+      "description": "Tariff hikes directly increase monthly electricity bill",
+      "cross": "energy"
+    },
+    {
+      "from": "electricity_tariff",
+      "to": "private_hospital",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "energy"
+    },
+    {
+      "from": "health_insurance",
+      "to": "private_health_insurance",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "health_insurance",
+      "to": "government_health_schemes",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "gst",
+      "to": "entertainment",
+      "type": "REGULATES",
+      "description": "GST at 18-28% applies to cinema tickets, amusement parks, and live events; rate changes directly alter entertainment costs for Indian consumers.",
+      "cross": "financial"
+    },
+    {
+      "from": "gst",
+      "to": "clothing",
+      "type": "REGULATES",
+      "description": "GST on clothing varies by value (5% below Rs 1000, 12% above); rate rationalisation impacts garment prices and affordability for mass-market consumers.",
+      "cross": "financial"
+    },
+    {
+      "from": "inr_usd",
+      "to": "india_crude_imports",
+      "type": "AFFECTS",
+      "description": "Weaker rupee makes oil imports costlier",
+      "cross": "financial"
+    },
+    {
+      "from": "renewable_energy",
+      "to": "india_crude_imports",
+      "type": "AFFECTS",
+      "description": "India's renewable energy adoption reduces its crude oil import dependency",
+      "cross": "energy"
+    },
+    {
+      "from": "monsoon",
+      "to": "crop_insurance",
+      "type": "AFFECTS",
+      "description": "Actual monsoon failures trigger crop insurance claims under PMFBY; poor monsoon years see 3-5x higher claim volumes",
+      "cross": "financial"
+    },
+    {
+      "from": "monsoon",
+      "to": "india_rice_production",
+      "type": "AFFECTS",
+      "description": "Kharif rice is entirely rain-dependent; monsoon deficit of 10%+ typically cuts paddy output by 5-8%, pushing prices up.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "india_wheat_production",
+      "type": "AFFECTS",
+      "description": "Winter soil moisture from monsoon affects rabi wheat",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "india_millet_production",
+      "type": "AFFECTS",
+      "description": "Kharif millets depend on monsoon",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "india_mustard_production",
+      "type": "AFFECTS",
+      "description": "Good monsoon soil moisture benefits rabi mustard",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "fodder",
+      "type": "AFFECTS",
+      "description": "Monsoon determines green fodder availability",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "vegetable_prices",
+      "type": "AFFECTS",
+      "description": "Excess rain damages perishable crops (tomato, onion); deficit dries up supply — either extreme causes sharp price spikes.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "onion",
+      "type": "AFFECTS",
+      "description": "Kharif onion depends on monsoon timing",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "tomato",
+      "type": "AFFECTS",
+      "description": "Heavy rain damages tomato crops",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "turmeric",
+      "type": "AFFECTS",
+      "description": "Turmeric is a kharif crop depending on monsoon",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "chili",
+      "type": "AFFECTS",
+      "description": "Chili crop depends on monsoon",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "assam_tea",
+      "type": "AFFECTS",
+      "description": "Tea flush quality depends on rainfall",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "india_coffee_production",
+      "type": "AFFECTS",
+      "description": "Rainfall patterns affect coffee cherry development",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "india_sugarcane_production",
+      "type": "AFFECTS",
+      "description": "Sugarcane requires heavy water",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "india_pulse_production",
+      "type": "AFFECTS",
+      "description": "Kharif pulses depend heavily on monsoon",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "coal",
+      "type": "DISRUPTS",
+      "description": "Heavy rains flood mines and disrupt coal transport",
+      "cross": "energy"
+    },
+    {
+      "from": "monsoon",
+      "to": "hydropower",
+      "type": "AFFECTS",
+      "description": "Monsoon fills dams that generate hydroelectric power",
+      "cross": "energy"
+    },
+    {
+      "from": "monsoon",
+      "to": "cotton",
+      "type": "AFFECTS",
+      "description": "Cotton is a kharif crop dependent on monsoon",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "banana",
+      "type": "AFFECTS",
+      "description": "Monsoon affects banana farming",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "coconut",
+      "type": "AFFECTS",
+      "description": "Coconut palms need regular rainfall",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "honey",
+      "type": "AFFECTS",
+      "description": "Monsoon affects flowering patterns and honey production",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "reservoir_water_level",
+      "type": "AFFECTS",
+      "description": "Monsoon rainfall is the primary inflow source for India's reservoirs; deficit monsoon years leave reservoirs at 50-60% capacity by October, triggering water rationing.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "monsoon",
+      "to": "city_water_supply",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "monsoon",
+      "to": "road_maintenance",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "monsoon",
+      "to": "crop_insurance_implementation",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "monsoon",
+      "to": "pothole",
+      "type": "PRODUCES",
+      "description": "Heavy monsoon rains wash away poor-quality bitumen, creating widespread potholes that severely damage vehicles and slow traffic.",
+      "cross": "governance"
+    },
+    {
+      "from": "monsoon",
+      "to": "wheat",
+      "type": "AFFECTS",
+      "description": "Winter rabi wheat depends on residual soil moisture and reservoir levels from monsoon; poor monsoon reduces rabi sowing area.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "monsoon",
+      "to": "reservoir_levels",
+      "type": "AFFECTS",
+      "description": "Monsoon rainfall fills reservoirs that supply water for irrigation and urban use throughout the year.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "india_crude_imports",
+      "to": "oil_refining",
+      "type": "SUPPLIES",
+      "description": "Imported crude goes to refineries",
+      "cross": "energy"
+    },
+    {
+      "from": "india_crude_imports",
+      "to": "inr_usd",
+      "type": "AFFECTS",
+      "description": "Huge oil import bill puts pressure on rupee",
+      "cross": "financial"
+    },
+    {
+      "from": "india_rice_production",
+      "to": "stubble_burning",
+      "type": "PRODUCES",
+      "description": "Rice paddy stubble burned after harvest in Punjab/Haryana",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "wheat_flour",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Households buy atta for chapati",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "bread",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Bread is a staple food item",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "millets",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Millets are consumed as health food and traditional grain",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "fertilizer",
+      "to": "soil_degradation",
+      "type": "AFFECTS",
+      "description": "Excessive fertilizer use degrades soil health",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "pesticides",
+      "to": "water_pollution",
+      "type": "AFFECTS",
+      "description": "Pesticide runoff contaminates water",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "groundwater",
+      "to": "irrigation",
+      "type": "SUPPLIES",
+      "description": "Groundwater is major irrigation source in India",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "groundwater",
+      "to": "borewell",
+      "type": "SUPPLIES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "groundwater",
+      "to": "fluoride_contamination",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "pds",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "PDS provides subsidized grain to consumers",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "food_inflation_india",
+      "to": "consumer",
+      "type": "AFFECTS",
+      "description": "Food inflation directly impacts household spending",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "edible_oil",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Cooking oil is essential household consumption",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "indonesia_palm_oil",
+      "to": "climate_change",
+      "type": "AFFECTS",
+      "description": "Palm oil expansion drives deforestation and emissions",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "malaysia_palm_oil",
+      "to": "climate_change",
+      "type": "AFFECTS",
+      "description": "Palm plantation expansion drives deforestation",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "milk",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Milk is essential daily consumption",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "ghee",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Ghee is a staple cooking fat in India",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "chicken",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Chicken is the most consumed meat in India",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "eggs",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Eggs are a key affordable protein",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "fish",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Fish is important protein in coastal/eastern India",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "mutton",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Mutton is consumed across India",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "onion",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Onion is an essential daily cooking ingredient",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "tomato",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Tomato is essential for Indian cooking",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "potato",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Potato is the most consumed vegetable in India",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "spices",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Spices are essential for Indian food",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "tea",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Tea is India's most consumed beverage",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "coffee",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Coffee consumption growing rapidly in India",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "sugar",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Sugar is daily household consumption",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "restaurant_industry",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Restaurants are major food consumption channel",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "pulses",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Dal is daily protein for most Indian households",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "crude_oil",
+      "to": "india_crude_imports",
+      "type": "SUPPLIES",
+      "description": "India imports ~85% of crude oil needs",
+      "cross": "energy"
+    },
+    {
+      "from": "strait_of_hormuz",
+      "to": "india_crude_imports",
+      "type": "AFFECTS",
+      "description": "~60% of India's oil passes through Hormuz",
+      "cross": "energy"
+    },
+    {
+      "from": "oil_tanker_shipping",
+      "to": "india_crude_imports",
+      "type": "SUPPLIES",
+      "description": "Crude arrives by tanker at Indian ports",
+      "cross": "energy"
+    },
+    {
+      "from": "petrol",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Consumers buy petrol for personal vehicles",
+      "cross": "energy"
+    },
+    {
+      "from": "diesel",
+      "to": "consumer",
+      "type": "AFFECTS",
+      "description": "Diesel price affects transport costs of everything",
+      "cross": "energy"
+    },
+    {
+      "from": "atf",
+      "to": "consumer",
+      "type": "AFFECTS",
+      "description": "ATF prices affect flight ticket costs",
+      "cross": "energy"
+    },
+    {
+      "from": "lpg",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "LPG cylinders for cooking at home",
+      "cross": "energy"
+    },
+    {
+      "from": "cng",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "CNG used in auto-rickshaws, taxis, buses",
+      "cross": "energy"
+    },
+    {
+      "from": "png",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "PNG is piped cooking gas for homes",
+      "cross": "energy"
+    },
+    {
+      "from": "coal_power_plant",
+      "to": "air_quality",
+      "type": "PRODUCES",
+      "description": "Thermal power plants are among the largest contributors to particulate matter, SOx, and NOx emissions, severely impacting India's AQI.",
+      "cross": "energy"
+    },
+    {
+      "from": "electricity",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Electricity is essential for modern life",
+      "cross": "energy"
+    },
+    {
+      "from": "electricity",
+      "to": "electricity_subsidies",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "energy"
+    },
+    {
+      "from": "power_deficit",
+      "to": "consumer",
+      "type": "DISRUPTS",
+      "description": "Power cuts directly impact daily life",
+      "cross": "energy"
+    },
+    {
+      "from": "lpg_distribution",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Cylinders delivered to homes",
+      "cross": "energy"
+    },
+    {
+      "from": "port_infrastructure",
+      "to": "india_crude_imports",
+      "type": "SUPPLIES",
+      "description": "Ports handle crude oil imports",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "heatwave",
+      "to": "india_wheat_production",
+      "type": "DISRUPTS",
+      "description": "March-April heatwaves shrivel wheat grains, reducing yield",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "heatwave",
+      "to": "vegetable_prices",
+      "type": "DISRUPTS",
+      "description": "Extreme heat wilts vegetables, reducing supply",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "heatwave",
+      "to": "electricity",
+      "type": "AFFECTS",
+      "description": "Heatwaves spike AC demand, straining grid",
+      "cross": "energy"
+    },
+    {
+      "from": "heatwave",
+      "to": "power_deficit",
+      "type": "AFFECTS",
+      "description": "Peak summer demand causes power shortages",
+      "cross": "energy"
+    },
+    {
+      "from": "heatwave",
+      "to": "coal_power_plant",
+      "type": "AFFECTS",
+      "description": "Heatwaves push peak demand, straining coal plants",
+      "cross": "energy"
+    },
+    {
+      "from": "heatwave",
+      "to": "ev",
+      "type": "AFFECTS",
+      "description": "AC demand during heatwaves competes with EV charging load",
+      "cross": "energy"
+    },
+    {
+      "from": "heatwave",
+      "to": "mango",
+      "type": "AFFECTS",
+      "description": "Extreme heat affects mango flowering and yield",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "heatwave",
+      "to": "apple",
+      "type": "DISRUPTS",
+      "description": "Heat in hill stations damages apple crop",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "heatwave",
+      "to": "electricity_tariff",
+      "type": "AFFECTS",
+      "description": "Heatwaves spike cooling demand, pushing peak electricity load and forcing expensive peaking power purchases that raise costs.",
+      "cross": "energy"
+    },
+    {
+      "from": "flood",
+      "to": "vegetable_prices",
+      "type": "DISRUPTS",
+      "description": "Floods destroy standing vegetable crops",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "flood",
+      "to": "coal",
+      "type": "DISRUPTS",
+      "description": "Floods in mining regions disrupt coal supply",
+      "cross": "energy"
+    },
+    {
+      "from": "flood",
+      "to": "road_freight",
+      "type": "DISRUPTS",
+      "description": "Floods damage roads and halt transport",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "drought",
+      "to": "fodder",
+      "type": "DISRUPTS",
+      "description": "Drought causes severe fodder shortage",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "drought",
+      "to": "turmeric",
+      "type": "DISRUPTS",
+      "description": "Drought reduces turmeric yield",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "drought",
+      "to": "chili",
+      "type": "DISRUPTS",
+      "description": "Drought reduces chili yield",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "drought",
+      "to": "hydropower",
+      "type": "DISRUPTS",
+      "description": "Drought reduces reservoir levels, cuts hydro output",
+      "cross": "energy"
+    },
+    {
+      "from": "drought",
+      "to": "india_sugarcane_production",
+      "type": "DISRUPTS",
+      "description": "Drought devastates water-intensive sugarcane",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "drought",
+      "to": "india_rice_production",
+      "type": "DISRUPTS",
+      "description": "Drought reduces rice output",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "drought",
+      "to": "panama_canal",
+      "type": "DISRUPTS",
+      "description": "Drought reduces Panama Canal water levels, limits transit",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "drought",
+      "to": "food_inflation_india",
+      "type": "AFFECTS",
+      "description": "Drought years reduce kharif output and deplete reservoirs; the resulting food supply shock pushes up CPI food component.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "cyclone",
+      "to": "vegetable_prices",
+      "type": "DISRUPTS",
+      "description": "Cyclones destroy crops in affected regions",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "cyclone",
+      "to": "port_infrastructure",
+      "type": "DISRUPTS",
+      "description": "Cyclones damage ports and halt shipping",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cyclone",
+      "to": "marine_fishing",
+      "type": "DISRUPTS",
+      "description": "Cyclones halt fishing operations",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "climate_change",
+      "to": "solar_energy",
+      "type": "AFFECTS",
+      "description": "Climate goals drive solar adoption",
+      "cross": "energy"
+    },
+    {
+      "from": "climate_change",
+      "to": "wind_energy",
+      "type": "AFFECTS",
+      "description": "Climate goals drive wind adoption",
+      "cross": "energy"
+    },
+    {
+      "from": "climate_change",
+      "to": "ev",
+      "type": "AFFECTS",
+      "description": "Emissions targets accelerate EV adoption",
+      "cross": "energy"
+    },
+    {
+      "from": "vanaspati",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Vanaspati used as cheap cooking fat",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "packaged_milk",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Packaged milk consumed by urban households",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "curd_yogurt",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Curd is daily consumption in Indian households",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "ice_cream",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Ice cream is discretionary dairy consumption",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "pasta_noodles",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Instant noodles are popular convenience food",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "biscuits",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Biscuits are India's largest packaged food category",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "jaggery",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Jaggery is traditional sweetener in Indian households",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "honey",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Honey consumed as natural sweetener and health food",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "salt",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Salt is essential daily cooking ingredient",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "drinking_water",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Packaged water is growing consumption category",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "drinking_water",
+      "to": "groundwater",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "soft_drinks",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Soft drinks consumed by households",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "fruit_juice",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Packaged fruit juice consumed by households",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "coconut",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Coconut used in cooking across South India",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "cotton",
+      "to": "cotton_textiles",
+      "type": "SUPPLIES",
+      "description": "India is the world's largest cotton producer; domestic cotton prices and MSP directly determine raw material costs for the textile and garment industry.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "dry_fruits",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Dry fruits consumed as snacks and in cooking",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "petroleum_coke",
+      "to": "climate_change",
+      "type": "AFFECTS",
+      "description": "Petcoke burning is highly polluting",
+      "cross": "energy"
+    },
+    {
+      "from": "kerosene",
+      "to": "consumer",
+      "type": "SUPPLIES",
+      "description": "Kerosene used for lighting in remote areas",
+      "cross": "energy"
+    },
+    {
+      "from": "stubble_burning",
+      "to": "biomass_energy",
+      "type": "COMPETES_WITH",
+      "description": "Crop residue can be burned for energy instead of in fields",
+      "cross": "energy"
+    },
+    {
+      "from": "stubble_burning",
+      "to": "food_inflation_india",
+      "type": "AFFECTS",
+      "description": "Stubble burning bans can delay rabi sowing if farmers lack alternatives, potentially affecting wheat supply timing.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "soil_degradation",
+      "to": "india_wheat_production",
+      "type": "DISRUPTS",
+      "description": "Degraded soil reduces wheat yields",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "soil_degradation",
+      "to": "india_rice_production",
+      "type": "DISRUPTS",
+      "description": "Degraded soil reduces rice yields",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "water_pollution",
+      "to": "water_quality",
+      "type": "DISRUPTS",
+      "description": "Industrial effluent and untreated sewage discharge degrade source water quality, increasing treatment costs and health risks for downstream consumers.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "locust_attack",
+      "to": "vegetable_prices",
+      "type": "DISRUPTS",
+      "description": "Locust swarms destroy standing crops",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "locust_attack",
+      "to": "india_millet_production",
+      "type": "DISRUPTS",
+      "description": "Locusts devastate millet crops in Rajasthan",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "electricity_regulatory_commission",
+      "to": "electricity_tariff",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "energy"
+    },
+    {
+      "from": "ganga_river",
+      "to": "water_pollution",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "yamuna_river",
+      "to": "water_pollution",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "groundwater_depletion",
+      "to": "school_building_safety",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "city_water_supply",
+      "to": "water_tanker_services",
+      "type": "AFFECTS",
+      "description": "Municipal water shortages force households to rely on expensive private water tanker services.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "rainwater_harvesting",
+      "to": "groundwater",
+      "type": "SUPPLIES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "rwh_regulation",
+      "to": "completion_certificate",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "rwh_building_codes",
+      "to": "building_codes",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "metro_construction",
+      "to": "encroachment",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "metro_construction",
+      "to": "tree_cutting_permission",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "metro_construction",
+      "to": "noise_pollution",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "traffic_management",
+      "to": "ambulance_response_time",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "traffic_management",
+      "to": "air_quality",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "road_widening",
+      "to": "tree_cutting_permission",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "road_widening",
+      "to": "encroachment",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "road_widening",
+      "to": "eviction_drive",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cycling_infrastructure",
+      "to": "urban_planning",
+      "type": "DEPENDS_ON",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "municipal_corporation",
+      "to": "stray_animals",
+      "type": "MANAGES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "bbmp",
+      "to": "stormwater_drain",
+      "type": "MANAGES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "bbmp",
+      "to": "lake_pollution",
+      "type": "MANAGES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "municipal_revenue",
+      "to": "stormwater_drain",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "local_education",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "municipal_expenditure",
+      "to": "lake_restoration",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "sewage_system",
+      "to": "sewage_overflow",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "solid_waste_management",
+      "to": "stray_animals",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "landfill_fires",
+      "to": "air_quality",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "waste_to_energy",
+      "to": "air_quality",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "land_use_zoning",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "building_codes",
+      "to": "affordable_housing",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "far_fsi",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "far_fsi",
+      "to": "affordable_housing",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "property_registration",
+      "to": "stamp_duty",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "e_registration",
+      "to": "stamp_duty",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "guidance_value",
+      "to": "stamp_duty",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "guidance_value",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "png_supply",
+      "to": "air_quality",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "air_quality",
+      "to": "urban_health_impact",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "vehicle_restrictions_pollution",
+      "to": "metro_ridership",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "vehicle_restrictions_pollution",
+      "to": "city_bus_systems",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "construction_ban",
+      "to": "construction_industry",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "construction_ban",
+      "to": "employment_local",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "lake_pollution",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "airport_noise_zone",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "urban_flooding",
+      "to": "traffic_management",
+      "type": "DISRUPTS",
+      "description": "Waterlogged roads force diversions, strand vehicles, and overwhelm traffic police; even 50mm rainfall can gridlock Indian metro cities for hours.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "urban_flooding",
+      "to": "road_maintenance",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "flood_relief",
+      "to": "state_budget",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "food_adulteration",
+      "to": "urban_health_impact",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "local_education",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "local_education",
+      "to": "traffic_management",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "high_court",
+      "to": "encroachment",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "high_court",
+      "to": "air_quality",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "pil",
+      "to": "ngt_orders",
+      "type": "CONNECTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "court_infrastructure_orders",
+      "to": "eviction_drive",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "court_infrastructure_orders",
+      "to": "lake_encroachment",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "state_industrial_policy",
+      "to": "skill_development",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "manufacturing_sez",
+      "to": "industrial_effluent",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "heritage_sites",
+      "to": "building_codes",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "state_irrigation",
+      "to": "groundwater",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "sand_mining",
+      "to": "water_pollution",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "sand_mining",
+      "to": "ngt_orders",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "sand_mining",
+      "to": "construction_materials",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "granite_mining",
+      "to": "construction_materials",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "state_budget",
+      "to": "public_healthcare",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_budget",
+      "to": "local_education",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_budget",
+      "to": "anganwadi",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_budget",
+      "to": "skill_development",
+      "type": "FUNDS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "footpath",
+      "to": "encroachment",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "khata_transfer",
+      "to": "property_tax",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "conversion_of_land",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "diesel_generator",
+      "to": "noise_pollution",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "diesel_generator",
+      "to": "air_quality",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "sewage_overflow",
+      "to": "road_maintenance",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "lake_restoration",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "thermal_power_plant",
+      "to": "air_quality",
+      "type": "DISRUPTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "skill_development",
+      "to": "employment_local",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "slum_rehabilitation",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "slum_rehabilitation",
+      "to": "municipal_expenditure",
+      "type": "DEPENDS_ON",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "urban_health_impact",
+      "to": "public_healthcare",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "home_ownership",
+      "to": "property_tax",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "home_ownership",
+      "to": "property_price",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "utilities",
+      "to": "electricity",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "energy"
+    },
+    {
+      "from": "utilities",
+      "to": "lpg",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "energy"
+    },
+    {
+      "from": "construction_materials",
+      "to": "real_estate_prices",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "construction_materials",
+      "to": "construction_industry",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "health_and_healthcare",
+      "to": "health_insurance",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "financial"
+    },
+    {
+      "from": "health_and_healthcare",
+      "to": "medical_devices",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "employment"
+    },
+    {
+      "from": "pharmaceuticals",
+      "to": "generic_drugs",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "employment"
+    },
+    {
+      "from": "education_and_learning",
+      "to": "education_policy",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "recreation_and_culture",
+      "to": "cpi_inflation",
+      "type": "AFFECTS",
+      "description": "Recreation and culture spending forms part of the CPI miscellaneous basket (~15% weight); rising entertainment costs contribute to headline inflation.",
+      "cross": "financial"
+    },
+    {
+      "from": "fire_services",
+      "to": "fire_safety_building",
+      "type": "REGULATES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "fire_services",
+      "to": "coaching_safety",
+      "type": "AFFECTS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "ambulance_services",
+      "to": "gvk_emri",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "ambulance_services",
+      "to": "ambulance_response_time",
+      "type": "PRODUCES",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "environmental_local",
+      "to": "noise_pollution",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "air_quality_local",
+      "to": "stubble_burning",
+      "type": "CONTAINS",
+      "description": "",
+      "cross": "governance"
+    },
+    {
+      "from": "free_electricity_policy",
+      "to": "groundwater",
+      "type": "AFFECTS",
+      "description": "State-level free electricity policies for farmers incentivize excessive pumping, leading to severe groundwater depletion in Punjab and Haryana.",
+      "cross": "energy"
+    },
+    {
+      "from": "rto_services",
+      "to": "consumer",
+      "type": "AFFECTS",
+      "description": "RTO services (driving licenses, vehicle registration, fitness certificates) are a frequent citizen-government touchpoint affecting vehicle ownership costs.",
+      "cross": "governance"
+    },
+    {
+      "from": "lpg_cylinder",
+      "to": "consumer",
+      "type": "AFFECTS",
+      "description": "LPG cylinder prices directly impact household cooking fuel budgets; India has over 31 crore active LPG connections under Ujjwala and others.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "stormwater_drains",
+      "to": "urban_flooding",
+      "type": "AFFECTS",
+      "description": "Clogged or encroached stormwater drains are the primary structural cause of urban flooding in Indian cities.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "railway_fares",
+      "to": "consumer",
+      "type": "AFFECTS",
+      "description": "Indian Railways carries 8+ billion passengers annually; fare revisions directly affect travel budgets of the masses.",
+      "cross": "infrastructure"
+    }
+  ]
+}

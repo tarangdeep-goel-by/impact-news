@@ -1,0 +1,1210 @@
+# Edge Patches — Hand-written critical edges
+# Applied by graph/merge.py after loading source files
+# Created: 2026-03-10
+#
+# These are P0 cross-domain edges that connect the four source graphs:
+#   employment_domain_graph.yaml, financial_system_domain_graph.yaml,
+#   food_energy_graph.yaml, local_governance_graph.yaml
+#
+# Only references node IDs verified to exist in source files.
+
+# =============================================================================
+# EDGES (~50 cross-domain causal links)
+# =============================================================================
+edges:
+
+  # =========================================================================
+  # GROUP 1 — Energy → Consumer Prices
+  # =========================================================================
+
+  # Crude oil cascades
+  - from: crude_oil
+    to: petrol
+    type: AFFECTS
+    description: "India imports ~85% of crude oil; refinery input costs directly set petrol pump prices after OMC margin and taxes."
+
+  - from: crude_oil
+    to: diesel
+    type: AFFECTS
+    description: "Diesel pricing follows crude benchmarks with a lag; deregulated since 2014 but OMCs still smooth volatility."
+
+  - from: crude_oil
+    to: lpg
+    type: AFFECTS
+    description: "LPG is a refinery byproduct; global crude and propane/butane benchmarks determine the Saudi CP that sets Indian LPG costs."
+
+  - from: crude_oil
+    to: atf
+    type: AFFECTS
+    description: "Aviation turbine fuel is a middle distillate of crude; ATF prices revised fortnightly tracking Singapore benchmark."
+
+  - from: crude_oil
+    to: oil_import_bill
+    type: AFFECTS
+    description: "Crude accounts for ~25% of India's total import bill; every $10/bbl rise adds ~$15B to the annual oil import bill."
+
+  # Fuel → transport/logistics
+  - from: petrol
+    to: logistics_sector
+    type: AFFECTS
+    description: "Last-mile delivery and two-wheeler logistics run on petrol; price hikes raise e-commerce and FMCG distribution costs."
+
+  - from: diesel
+    to: logistics_sector
+    type: AFFECTS
+    description: "Over 70% of Indian freight moves by road on diesel trucks; diesel cost is the single largest component of freight rates."
+
+  - from: diesel
+    to: bus_fuel_cost
+    type: AFFECTS
+    description: "State transport corporations and private bus operators pass diesel cost increases into fares, affecting daily commuters."
+
+  # Natural gas cascades
+  - from: natural_gas
+    to: png_supply
+    type: AFFECTS
+    description: "PNG for household cooking depends on APM gas allocation and GAIL pipeline supply; gas price revisions flow to household bills."
+
+  - from: natural_gas
+    to: cng
+    type: AFFECTS
+    description: "CNG pricing is directly tied to domestic gas allocation under APM; PNGRB-regulated city gas distributors pass through price changes."
+
+  - from: natural_gas
+    to: electricity_tariff
+    type: AFFECTS
+    description: "Gas-based power plants (~7% of India's generation) face variable fuel costs; gas price hikes raise merit-order dispatch costs."
+
+  # Coal → electricity
+  - from: coal
+    to: thermal_power
+    type: SUPPLIES
+    description: "Coal fuels ~70% of India's electricity; Coal India supplies ~80% of thermal plant feedstock."
+
+  - from: coal
+    to: electricity_tariff
+    type: AFFECTS
+    description: "Thermal generation costs dominate tariff calculations; coal price and railway freight increases are passed through via fuel surcharge adjustments."
+
+  # =========================================================================
+  # GROUP 2 — Monetary Policy → Consumer
+  # =========================================================================
+
+  # Repo rate → retail lending
+  - from: repo_rate
+    to: home_loan
+    type: AFFECTS
+    description: "Home loans benchmarked to repo rate (post-2019 RBI mandate) see EMI changes within one reset cycle of a repo rate move."
+
+  - from: repo_rate
+    to: auto_loan
+    type: AFFECTS
+    description: "Vehicle loans linked to MCLR/repo rate; a 25bps repo hike adds ~Rs 500/month to a Rs 8L car loan EMI."
+
+  - from: repo_rate
+    to: personal_loan
+    type: AFFECTS
+    description: "Personal loan rates are repo-linked for most banks; rate hikes increase EMI burden on unsecured borrowers."
+
+  - from: repo_rate
+    to: fd_rates
+    type: AFFECTS
+    description: "Banks raise FD rates after repo hikes to attract deposits; depositors benefit with a 1-2 quarter lag."
+
+  - from: repo_rate
+    to: mclr
+    type: AFFECTS
+    description: "MCLR is derived from repo rate plus spread; legacy loans still benchmarked to MCLR reprice with each reset."
+
+  # Inflation → RBI → repo chain
+  - from: cpi_inflation
+    to: rbi_mpc
+    type: AFFECTS
+    description: "CPI is RBI's primary target (4% +/- 2%); sustained deviation triggers MPC rate action or stance change."
+
+  - from: rbi_mpc
+    to: repo_rate
+    type: REGULATES
+    description: "MPC votes on repo rate every 2 months; majority decision sets the policy rate that anchors all lending rates."
+
+  - from: food_inflation_india
+    to: cpi_inflation
+    type: AFFECTS
+    description: "India-specific food inflation (vegetables, cereals, pulses) drives CPI volatility given high basket weight."
+
+  # =========================================================================
+  # GROUP 3 — Agriculture → Food Prices
+  # =========================================================================
+
+  # Monsoon → crop → food
+  - from: monsoon
+    to: india_rice_production
+    type: AFFECTS
+    description: "Kharif rice is entirely rain-dependent; monsoon deficit of 10%+ typically cuts paddy output by 5-8%, pushing prices up."
+
+  - from: monsoon
+    to: wheat
+    type: AFFECTS
+    description: "Winter rabi wheat depends on residual soil moisture and reservoir levels from monsoon; poor monsoon reduces rabi sowing area."
+
+  - from: monsoon
+    to: vegetable_prices
+    type: AFFECTS
+    description: "Excess rain damages perishable crops (tomato, onion); deficit dries up supply — either extreme causes sharp price spikes."
+
+  - from: monsoon
+    to: groundwater
+    type: AFFECTS
+    description: "Monsoon recharge is the primary source of India's groundwater; deficit years accelerate aquifer depletion and raise irrigation costs."
+
+  - from: vegetable_prices
+    to: food_inflation_india
+    type: AFFECTS
+    description: "Vegetables carry ~6% weight in India's CPI food basket; sharp spikes in onion, tomato, and potato prices are the most common driver of food inflation surges."
+
+  - from: india_rice_production
+    to: food_inflation_india
+    type: AFFECTS
+    description: "Rice has the highest weight in India's food CPI; production shortfalls from poor monsoon directly push up retail rice prices and overall food inflation."
+
+  # MSP → farmer income and food prices
+  - from: msp_policy
+    to: india_rice_production
+    type: AFFECTS
+    description: "MSP guarantees a floor price for paddy procurement by FCI; higher MSP incentivizes more rice sowing area."
+
+  - from: msp_policy
+    to: fci
+    type: AFFECTS
+    description: "MSP determines FCI's procurement cost; higher MSP raises food subsidy bill and buffer stock carrying costs."
+
+  - from: fci
+    to: pds
+    type: SUPPLIES
+    description: "FCI procures, stores, and distributes grain through the PDS network; FCI stock levels determine PDS supply adequacy."
+
+  # Fertilizer → farming costs → food prices
+  - from: fertilizer
+    to: food_inflation_india
+    type: AFFECTS
+    description: "Fertilizer is 15-20% of Indian farming input costs; urea and DAP price rises flow through to crop production costs and food prices."
+
+  - from: urea
+    to: food_inflation_india
+    type: AFFECTS
+    description: "Urea is the most-used fertilizer in India; subsidy reductions or supply shortages directly raise farmer input costs."
+
+  # =========================================================================
+  # GROUP 4 — Forex → Economy
+  # =========================================================================
+
+  # USD-INR linkages
+  - from: inr_usd
+    to: crude_oil
+    type: AFFECTS
+    description: "A weaker rupee makes dollar-denominated crude more expensive in INR terms, amplifying the oil import bill."
+
+  - from: crude_oil
+    to: inr_usd
+    type: AFFECTS
+    description: "Rising crude widens the trade deficit and increases dollar demand for oil payments, depreciating the rupee."
+
+  - from: inr_usd
+    to: it_export_earnings
+    type: AFFECTS
+    description: "IT companies earn in USD; a 1% rupee depreciation adds ~40bps to IT sector margins in INR terms."
+
+  - from: inr_usd
+    to: gold
+    type: AFFECTS
+    description: "Gold is priced in USD; rupee depreciation makes gold costlier in India even when international prices are flat."
+
+  - from: us_fed
+    to: inr_usd
+    type: AFFECTS
+    description: "Fed rate hikes strengthen the dollar globally and widen the India-US rate differential, pulling capital out and weakening INR."
+
+  # FII/FPI flows
+  - from: fii_flows
+    to: nifty_50
+    type: AFFECTS
+    description: "FIIs own ~17% of NSE free float; sustained FII selling creates downward pressure on Nifty 50 and broader markets."
+
+  - from: fii_flows
+    to: inr_usd
+    type: AFFECTS
+    description: "FII outflows mean dollar demand as foreign investors repatriate; large outflows ($3B+/month) visibly weaken the rupee."
+
+  - from: us_fed
+    to: fii_flows
+    type: AFFECTS
+    description: "Fed tightening raises US yields, making EM carry trades less attractive and triggering FII outflows from India."
+
+  # =========================================================================
+  # GROUP 5 — Markets
+  # =========================================================================
+
+  - from: nifty_50
+    to: equity_mf
+    type: AFFECTS
+    description: "Nifty 50 is the benchmark for most large-cap equity MFs and index funds; its performance drives retail investor returns."
+
+  - from: sensex
+    to: equity_mf
+    type: AFFECTS
+    description: "Sensex tracks 30 large-caps and serves as the BSE benchmark; market sentiment flows through to MF NAVs."
+
+  - from: rbi_mpc
+    to: gsec_yield
+    type: AFFECTS
+    description: "MPC rate decisions directly impact G-Sec yields; a surprise repo hike can move 10Y yield by 10-15bps intraday."
+
+  - from: crude_oil
+    to: trade_deficit
+    type: AFFECTS
+    description: "Oil is India's largest import item; crude price swings are the primary driver of trade deficit volatility."
+
+  - from: trade_deficit
+    to: inr_usd
+    type: AFFECTS
+    description: "A widening trade deficit increases net dollar demand in the forex market, putting depreciation pressure on the rupee."
+
+  # =========================================================================
+  # GROUP 6 — Governance → Daily Life
+  # =========================================================================
+
+  - from: property_tax
+    to: municipal_revenue
+    type: FUNDS
+    description: "Property tax is the largest own-source revenue for Indian municipal corporations, funding roads, water, and sanitation."
+
+  - from: gst
+    to: gst_municipal
+    type: AFFECTS
+    description: "GST subsumed octroi and local body taxes; municipalities now depend on GST compensation from centre/state."
+
+  - from: income_tax
+    to: salary_trends
+    type: AFFECTS
+    description: "Income tax slab changes (new vs old regime) alter take-home pay; higher exemptions increase disposable income for salaried class."
+
+  - from: electricity_tariff
+    to: electricity_bill
+    type: AFFECTS
+    description: "Tariff revisions by state electricity regulatory commissions directly change monthly household electricity bills."
+
+  - from: gst
+    to: food_inflation_india
+    type: AFFECTS
+    description: "GST on packaged food items (5-18%) adds to retail food costs; rate changes on essentials impact household budgets."
+
+  # =========================================================================
+  # GROUP 7 — Cross-Domain Bridges
+  # =========================================================================
+
+  - from: cpi_inflation
+    to: salary_trends
+    type: AFFECTS
+    description: "Persistent inflation erodes real wages; companies adjust annual increments and DA (dearness allowance) to compensate."
+
+  - from: india_gdp
+    to: job_market_india
+    type: AFFECTS
+    description: "GDP growth rate is the primary driver of formal job creation; sub-6% growth typically means weaker hiring cycles."
+
+  - from: china_economy
+    to: crude_oil
+    type: AFFECTS
+    description: "China is the world's largest crude importer; its economic slowdown reduces global oil demand and prices."
+
+  - from: china_economy
+    to: gold
+    type: AFFECTS
+    description: "China is the largest gold consumer; its central bank buying and consumer demand shifts move global gold prices."
+
+  - from: geopolitical_risk
+    to: crude_oil
+    type: AFFECTS
+    description: "Middle East tensions, Russia sanctions, or Strait of Hormuz risks create supply fears that spike crude prices globally."
+
+  - from: geopolitical_risk
+    to: gold
+    type: AFFECTS
+    description: "Gold is the classic safe-haven asset; geopolitical escalation drives flight-to-safety buying and price spikes."
+
+  - from: climate_change
+    to: monsoon
+    type: AFFECTS
+    description: "Climate change is increasing monsoon variability — more extreme rainfall events, longer dry spells, and shifting onset dates."
+
+  - from: climate_change
+    to: heatwave
+    type: AFFECTS
+    description: "Rising global temperatures are increasing heatwave frequency and intensity across India, straining power grids and agriculture."
+
+  - from: heatwave
+    to: electricity_tariff
+    type: AFFECTS
+    description: "Heatwaves spike cooling demand, pushing peak electricity load and forcing expensive peaking power purchases that raise costs."
+
+  - from: drought
+    to: food_inflation_india
+    type: AFFECTS
+    description: "Drought years reduce kharif output and deplete reservoirs; the resulting food supply shock pushes up CPI food component."
+
+  - from: crude_oil
+    to: fertilizer
+    type: AFFECTS
+    description: "Natural gas (linked to crude) is the primary feedstock for urea manufacturing; crude price rises increase fertilizer production costs."
+
+  - from: inr_usd
+    to: crude_oil
+    type: AFFECTS
+    description: "Rupee depreciation against the dollar increases the effective INR cost of crude oil imports for Indian refineries."
+
+  - from: oil_import_bill
+    to: trade_deficit
+    type: AFFECTS
+    description: "Oil imports constitute ~25% of India's total import bill; oil price swings are the dominant driver of trade balance changes."
+
+  - from: renewable_energy
+    to: coal
+    type: COMPETES_WITH
+    description: "Growing solar and wind capacity displaces coal in the merit order; India targets 500GW non-fossil capacity by 2030."
+
+  - from: stubble_burning
+    to: food_inflation_india
+    type: AFFECTS
+    description: "Stubble burning bans can delay rabi sowing if farmers lack alternatives, potentially affecting wheat supply timing."
+
+  # =========================================================================
+  # GROUP 8 — Bridge edges connecting isolated components to main graph
+  # =========================================================================
+
+  # Component 2: recreation_and_culture (24 nodes)
+  - from: gst
+    to: entertainment
+    type: REGULATES
+    description: "GST at 18-28% applies to cinema tickets, amusement parks, and live events; rate changes directly alter entertainment costs for Indian consumers."
+
+  - from: recreation_and_culture
+    to: cpi_inflation
+    type: AFFECTS
+    description: "Recreation and culture spending forms part of the CPI miscellaneous basket (~15% weight); rising entertainment costs contribute to headline inflation."
+
+  # Component 3: safety_and_security (21 nodes)
+  - from: union_budget
+    to: defense_spending
+    type: FUNDS
+    description: "Defence receives the largest single allocation in India's Union Budget (~13% of total expenditure); budget size determines force modernisation and procurement pace."
+
+  - from: emergency_services
+    to: health_insurance
+    type: AFFECTS
+    description: "Emergency hospitalisations and ambulance costs drive health insurance claim volumes, pushing up premiums across India's general insurance sector."
+
+  # Component 4: demographics_and_social (16 nodes)
+  - from: urbanization
+    to: real_estate_prices
+    type: AFFECTS
+    description: "Rapid urbanization drives housing demand in tier-1 and tier-2 cities, pushing up real estate prices and rental costs for urban migrants."
+
+  - from: population_growth
+    to: india_gdp
+    type: AFFECTS
+    description: "India's demographic dividend — 65% working-age population — drives GDP growth through labor supply expansion and rising domestic consumption."
+
+  - from: housing_for_poor
+    to: affordable_housing
+    type: DEPENDS_ON
+    description: "Government housing schemes (PM Awas Yojana) depend on affordable housing policy and RERA compliance to deliver units to economically weaker sections."
+
+  # Component 5: clothing_and_personal_care (14 nodes)
+  - from: cotton
+    to: cotton_textiles
+    type: SUPPLIES
+    description: "India is the world's largest cotton producer; domestic cotton prices and MSP directly determine raw material costs for the textile and garment industry."
+
+  - from: gst
+    to: clothing
+    type: REGULATES
+    description: "GST on clothing varies by value (5% below Rs 1000, 12% above); rate rationalisation impacts garment prices and affordability for mass-market consumers."
+
+  # Component 6: education (3 nodes)
+  - from: education_policy
+    to: college_regulation
+    type: REGULATES
+    description: "National Education Policy (NEP 2020) and UGC regulations set affiliation norms, autonomy criteria, and accreditation standards that govern college operations across India."
+
+  # Component 7: financial — FEMA (2 nodes)
+  - from: rbi
+    to: fema
+    type: REGULATES
+    description: "RBI is the nodal authority administering FEMA; it issues circulars on forex limits, LRS thresholds, and capital account transaction rules."
+
+  - from: fema_limits
+    to: fii_flows
+    type: REGULATES
+    description: "FEMA prescribes sectoral caps and aggregate limits on FII/FPI investment in Indian equities and debt; limit changes alter foreign portfolio flow volumes."
+
+  # Component 8: utilities — cable/TRAI (2 nodes)
+  - from: trai_regulation
+    to: broadband_internet
+    type: REGULATES
+    description: "TRAI regulates tariffs, QoS norms, and interconnection for broadband and telecom services; its tariff orders set pricing floors and ceilings for ISPs."
+
+  # =========================================================================
+  # GROUP 9 — Edges from Gemini evaluation (energy domain)
+  # =========================================================================
+
+  - from: coal_power_plant
+    to: air_quality
+    type: PRODUCES
+    description: "Thermal power plants are among the largest contributors to particulate matter, SOx, and NOx emissions, severely impacting India's AQI."
+
+  - from: electricity
+    to: groundwater_extraction
+    type: AFFECTS
+    description: "Free or highly subsidized agricultural electricity in states like Punjab and Haryana directly drives severe groundwater depletion via continuous borewell pumping."
+
+  - from: pm_kusum_scheme
+    to: irrigation
+    type: SUPPLIES
+    description: "The PM-KUSUM scheme subsidizes solar water pumps, reducing farmer reliance on diesel and grid electricity for irrigation."
+
+  - from: solar_park
+    to: land_acquisition
+    type: DEPENDS_ON
+    description: "Utility-scale solar parks require massive contiguous land parcels, making land acquisition a primary bottleneck for renewable expansion in India."
+
+  - from: crude_oil
+    to: domestic_flights
+    type: AFFECTS
+    description: "Crude oil dictates ATF (Aviation Turbine Fuel) prices, which constitute 40-50% of an Indian airline's operating costs, directly impacting airfares."
+
+  # =========================================================================
+  # GROUP 10 — Edges from Gemini evaluation (financial domain)
+  # =========================================================================
+
+  - from: upi
+    to: income_tax
+    type: AFFECTS
+    description: "The formalization of the economy via UPI leaves a digital trail, bringing more MSMEs and individuals into the formal income tax net."
+
+  - from: cpi_inflation
+    to: fd_rates
+    type: AFFECTS
+    description: "High inflation erodes real returns on fixed deposits, eventually forcing banks to adjust rates to maintain positive real yields for depositors."
+
+  - from: nifty_50
+    to: stt
+    type: PRODUCES
+    description: "Higher equity market valuations and trading volumes directly drive Securities Transaction Tax (STT) collections for the government."
+
+  - from: crude_oil
+    to: excise_duty
+    type: AFFECTS
+    description: "The government frequently adjusts excise duty on crude oil/fuel to absorb global price shocks and manage retail inflation."
+
+  # =========================================================================
+  # GROUP 11 — Edges from Gemini evaluation (food & agriculture domain)
+  # =========================================================================
+
+  - from: el_nino
+    to: monsoon
+    type: DISRUPTS
+    description: "El Niño events severely disrupt the Southwest Monsoon, leading to droughts and reduced kharif crop yields in India."
+
+  - from: reservoir_levels
+    to: rabi_crops
+    type: AFFECTS
+    description: "Winter (Rabi) crops like wheat and mustard depend heavily on post-monsoon reservoir levels and residual soil moisture."
+
+  - from: mgnrega
+    to: farm_labor
+    type: COMPETES_WITH
+    description: "The MGNREGA rural employment guarantee scheme sets a wage floor and competes with agricultural labor availability during peak sowing/harvesting seasons."
+
+  - from: free_electricity_policy
+    to: groundwater
+    type: AFFECTS
+    description: "State-level free electricity policies for farmers incentivize excessive pumping, leading to severe groundwater depletion in Punjab and Haryana."
+
+  - from: farmer_income
+    to: rural_demand
+    type: AFFECTS
+    description: "Agricultural output and MSP directly determine farmer income, which drives rural demand for FMCG, tractors, and two-wheelers."
+
+  # =========================================================================
+  # GROUP 12 — Edges from Gemini evaluation (macro & geopolitics domain)
+  # =========================================================================
+
+  - from: us_fed
+    to: rbi_monetary_policy
+    type: AFFECTS
+    description: "The RBI Monetary Policy Committee closely tracks the US Fed rate to maintain yield differentials and prevent INR depreciation/capital flight."
+
+  - from: rbi_monetary_policy
+    to: real_estate_prices
+    type: AFFECTS
+    description: "RBI repo rate changes directly dictate home loan interest rates (EMIs), which is the primary driver of real estate housing demand in India."
+
+  - from: fii_portfolio_flows
+    to: inr_usd
+    type: AFFECTS
+    description: "Foreign Institutional Investor (FII) buying or selling of Indian equities and bonds directly impacts the Rupee-Dollar exchange rate."
+
+  - from: crude_oil
+    to: fuel_price_local
+    type: AFFECTS
+    description: "Global crude oil prices dictate the baseline cost for local petrol and diesel, even though state and central taxes buffer the final retail price."
+
+  - from: minimum_wage
+    to: cpi_inflation
+    type: AFFECTS
+    description: "Increases in minimum wages drive up labor costs across sectors, contributing to core inflation metrics."
+
+  # =========================================================================
+  # GROUP 13 — Edges from Gemini evaluation (employment domain)
+  # =========================================================================
+
+  - from: agriculture_sector
+    to: job_market_india
+    type: AFFECTS
+    description: "Agriculture employs roughly 45% of India's workforce; its performance dictates the largest segment of the Indian job market."
+
+  - from: manufacturing_sector
+    to: job_market_india
+    type: AFFECTS
+    description: "Manufacturing is a core pillar for formal job creation in India, especially for blue-collar workers."
+
+  - from: unemployment_rate
+    to: salary_trends
+    type: AFFECTS
+    description: "High unemployment increases labor supply, suppressing wage growth and reducing employee bargaining power."
+
+  - from: upskilling
+    to: salary_trends
+    type: AFFECTS
+    description: "In the Indian IT and corporate sectors, upskilling and certifications directly correlate with appraisal hikes and lateral jump salary increases."
+
+  - from: labor_laws
+    to: gig_worker_rights
+    type: AFFECTS
+    description: "Broad labor law reforms (like the new Labor Codes) dictate the specific legal framework and rights for gig workers."
+
+  # =========================================================================
+  # GROUP 14 — Edges from Gemini evaluation (governance domain)
+  # =========================================================================
+
+  - from: aqi_levels
+    to: construction_projects
+    type: DISRUPTS
+    description: "Under the Graded Response Action Plan (GRAP) in cities like Delhi, severe AQI levels legally trigger immediate bans on construction and demolition activities."
+
+  - from: zoning_master_plan
+    to: property_prices_locality
+    type: AFFECTS
+    description: "Changes in city master plans, such as increasing the Floor Area Ratio (FAR) or changing land use from agricultural to commercial, drastically swing local real estate values."
+
+  - from: welfare_schemes
+    to: government_budget
+    type: AFFECTS
+    description: "Direct Benefit Transfers (DBT) and freebie schemes (like free bus rides or electricity) heavily deplete state exchequers, often increasing the fiscal deficit."
+
+  - from: elections
+    to: dry_days
+    type: PRODUCES
+    description: "The Election Commission of India mandates 48 hours of 'dry days' (ban on alcohol sales) prior to polling and on counting days to prevent voter bribery."
+
+  - from: road_maintenance
+    to: traffic_congestion
+    type: PRODUCES
+    description: "White-topping, asphalting, and pothole repair works frequently require lane closures, causing massive peak-hour traffic jams in major Indian metros."
+
+  # =========================================================================
+  # GROUP 15 — Edges from Gemini evaluation (infrastructure domain)
+  # =========================================================================
+
+  - from: tolls
+    to: trucking
+    type: AFFECTS
+    description: "Toll revisions (including NHAI FASTag rate hikes) directly increase road freight operational costs, which are passed down to goods pricing."
+
+  - from: power_outage
+    to: broadband_internet
+    type: DISRUPTS
+    description: "Local power cuts frequently drain ISP node backup batteries, causing neighborhood-wide internet outages that disrupt remote work."
+
+  - from: coal_shortage
+    to: power_outage
+    type: PRODUCES
+    description: "Domestic coal shortages at thermal power plants trigger pre-emptive load shedding and massive power outages across states."
+
+  - from: monsoon
+    to: pothole
+    type: PRODUCES
+    description: "Heavy monsoon rains wash away poor-quality bitumen, creating widespread potholes that severely damage vehicles and slow traffic."
+
+  - from: atf
+    to: domestic_flights
+    type: AFFECTS
+    description: "ATF prices make up around 40% of airline operating costs in India; price hikes directly cause spikes in domestic airfares."
+
+  # =========================================================================
+  # GROUP 16 — Edges from Gemini evaluation (consumer life domain)
+  # =========================================================================
+  # NOTE: Edges targeting generic 'consumer' node are excluded (too vague).
+
+  - from: repo_rate
+    to: mortgage_rates
+    type: AFFECTS
+    description: "The RBI's repo rate directly determines floating home loan interest rates."
+
+  # =========================================================================
+  # GROUP 17 — Edges for new_nodes (connecting orphan nodes to graph)
+  # =========================================================================
+
+  - from: pm_kusum_scheme
+    to: solar_energy
+    type: AFFECTS
+    description: "PM-KUSUM subsidizes solar pumps and grid-connected solar for farmers, boosting rural solar adoption."
+
+  - from: groundwater_extraction
+    to: drinking_water
+    type: SUPPLIES
+    description: "Over 60% of India's irrigation and 85% of drinking water depends on groundwater extraction from borewells and tubewells."
+
+  - from: state_electricity_regulatory_commission
+    to: electricity_tariff
+    type: REGULATES
+    description: "SERCs approve electricity tariff revisions proposed by state DISCOMs, directly setting consumer electricity prices."
+
+  - from: fno_trading
+    to: equity_markets
+    type: AFFECTS
+    description: "F&O trading volumes in India dwarf cash market activity; derivatives expiry days cause significant spot market volatility."
+
+  - from: reservoir_levels
+    to: city_water_supply
+    type: AFFECTS
+    description: "Urban water supply depends on reservoir storage; low dam levels trigger water rationing and tanker dependency in cities like Bangalore and Chennai."
+
+  - from: monsoon
+    to: reservoir_levels
+    type: AFFECTS
+    description: "Monsoon rainfall fills reservoirs that supply water for irrigation and urban use throughout the year."
+
+  - from: farmer_income
+    to: rural_demand
+    type: AFFECTS
+    description: "Farm income drives rural consumption demand, which accounts for nearly half of India's FMCG market."
+
+  - from: msp_policy
+    to: farmer_income
+    type: AFFECTS
+    description: "Minimum Support Prices for crops set a floor on farm revenues, directly influencing farmer income especially for wheat and rice growers."
+
+  - from: mgnrega
+    to: minimum_wage
+    type: AFFECTS
+    description: "MGNREGA guarantees 100 days of employment at minimum wage, setting a floor for rural agricultural wages across India."
+
+  - from: informal_sector
+    to: job_market_india
+    type: AFFECTS
+    description: "The informal sector employs over 90% of India's workforce; its health determines overall employment conditions."
+
+  - from: pli_scheme
+    to: manufacturing_sector
+    type: AFFECTS
+    description: "Production Linked Incentive schemes provide 4-6% cashback on incremental sales, attracting FDI and boosting domestic manufacturing capacity."
+
+  - from: epfo_data
+    to: employment_and_income
+    type: AFFECTS
+    description: "EPFO payroll data is India's primary proxy for formal job creation, tracking new subscribers as a measure of organized sector employment."
+
+  - from: female_labor_force_participation
+    to: india_gdp
+    type: AFFECTS
+    description: "India's female LFPR at ~25% is among the lowest globally; increasing it could add significantly to GDP growth."
+
+  - from: aadhaar_kyc
+    to: welfare_schemes
+    type: AFFECTS
+    description: "Aadhaar-based KYC is mandatory for accessing most government welfare schemes via Direct Benefit Transfer."
+
+  - from: model_code_of_conduct
+    to: municipal_elections
+    type: REGULATES
+    description: "The Model Code of Conduct halts all new government tenders, projects, and welfare announcements for months before elections."
+
+  - from: lpg_cylinder
+    to: consumer
+    type: AFFECTS
+    description: "LPG cylinder prices directly impact household cooking fuel budgets; India has over 31 crore active LPG connections under Ujjwala and others."
+
+  - from: crude_oil
+    to: lpg_cylinder
+    type: AFFECTS
+    description: "LPG is a petroleum derivative; global crude oil and Saudi Aramco contract prices determine domestic LPG cylinder costs."
+
+  - from: railway_fares
+    to: consumer
+    type: AFFECTS
+    description: "Indian Railways carries 8+ billion passengers annually; fare revisions directly affect travel budgets of the masses."
+
+  - from: rto_services
+    to: consumer
+    type: AFFECTS
+    description: "RTO services (driving licenses, vehicle registration, fitness certificates) are a frequent citizen-government touchpoint affecting vehicle ownership costs."
+
+  - from: stormwater_drains
+    to: urban_flooding
+    type: AFFECTS
+    description: "Clogged or encroached stormwater drains are the primary structural cause of urban flooding in Indian cities."
+
+  - from: water_tanker_services
+    to: consumer
+    type: AFFECTS
+    description: "When municipal water supply fails, urban consumers depend on private water tankers at 5-10x the cost of piped water."
+
+  - from: city_water_supply
+    to: water_tanker_services
+    type: AFFECTS
+    description: "Municipal water shortages force households to rely on expensive private water tanker services."
+
+  - from: aviation_turbine_fuel
+    to: domestic_flights
+    type: AFFECTS
+    description: "ATF prices make up ~40% of airline operating costs in India; price hikes directly cause spikes in domestic airfares."
+
+  - from: crude_oil
+    to: aviation_turbine_fuel
+    type: AFFECTS
+    description: "ATF is refined from crude oil; global crude benchmarks determine aviation fuel costs for Indian carriers."
+
+
+# =============================================================================
+# NODE MERGES — Duplicate nodes across source files
+# =============================================================================
+# keep = canonical ID (in the primary source file for that domain)
+# merge = duplicate ID (in a cross-domain reference file)
+
+node_merges:
+
+  # crude_oil_price merged into crude_oil (already handled — same ID in source files)
+  # - keep: crude_oil
+  #   merge: crude_oil_price
+
+  # petrol (food_energy) vs petrol_price (employment)
+  - keep: petrol
+    merge: petrol_price
+
+  # diesel (food_energy) vs diesel_price (local_governance) vs diesel_prices (employment)
+  - keep: diesel
+    merge: diesel_price
+
+  - keep: diesel
+    merge: diesel_prices
+
+  # inr_usd (financial) vs rupee_dollar (food_energy)
+  - keep: inr_usd
+    merge: rupee_dollar
+
+  # inr_usd (financial) vs inr_usd_freelance (employment) — NOT a merge, different concept
+  # inr_usd_freelance is specifically about freelancer forex impact, keep separate
+
+  # --- Same-ID duplicates across source files ---
+  # These nodes appear with identical IDs in multiple source files.
+  # merge.py should deduplicate by keeping the node from the canonical source
+  # and dropping duplicates from other sources, preserving all edges.
+  #
+  # Format: canonical_source is the file whose node definition wins.
+  # duplicate_sources list the files whose duplicate node defs are dropped.
+
+  - keep: repo_rate
+    canonical_source: financial_system_domain_graph
+    duplicate_sources: [employment_domain_graph]
+
+  - keep: cpi_inflation
+    canonical_source: financial_system_domain_graph
+    duplicate_sources: [employment_domain_graph]
+
+  - keep: food_inflation
+    canonical_source: financial_system_domain_graph
+    duplicate_sources: [employment_domain_graph]
+
+  - keep: electricity_tariff
+    canonical_source: local_governance_graph
+    duplicate_sources: [food_energy_graph, employment_domain_graph]
+
+  - keep: india_gdp
+    canonical_source: financial_system_domain_graph
+    duplicate_sources: [employment_domain_graph]
+
+  - keep: monsoon
+    canonical_source: food_energy_graph
+    duplicate_sources: [local_governance_graph]
+
+  - keep: gold_price
+    canonical_source: financial_system_domain_graph
+    duplicate_sources: [employment_domain_graph]
+
+  - keep: coal_prices
+    canonical_source: local_governance_graph
+    duplicate_sources: []
+    note: "coal (food_energy) is the commodity; coal_prices (local_governance) is the price node — keep both"
+
+  - keep: msp_policy
+    canonical_source: food_energy_graph
+    duplicate_sources: [employment_domain_graph]
+
+  - keep: crop_insurance
+    canonical_source: food_energy_graph
+    duplicate_sources: [financial_system_domain_graph, employment_domain_graph]
+
+  # --- Singular/plural duplicates ---
+  - keep: ambulance_services
+    merge: ambulance_service
+  - keep: bus_fare
+    merge: bus_fares
+  - keep: drought
+    merge: droughts
+  - keep: education_loan
+    merge: education_loans
+  - keep: fertilizer
+    merge: fertilizers
+  - keep: fire_services
+    merge: fire_service
+  - keep: flood
+    merge: floods
+  - keep: fruit_juice
+    merge: fruit_juices
+  - keep: grape
+    merge: grapes
+  - keep: heatwave
+    merge: heatwaves
+  - keep: personal_loan
+    merge: personal_loans
+  - keep: smart_meter
+    merge: smart_meters
+  - keep: soybean
+    merge: soybeans
+
+  # --- Price suffix duplicates ---
+  - keep: carbon_credit
+    merge: carbon_credit_prices
+  - keep: cng
+    merge: cng_price
+  - keep: coal
+    merge: coal_prices
+  - keep: gold
+    merge: gold_price
+  - keep: natural_gas
+    merge: natural_gas_price
+  - keep: natural_gas
+    merge: natural_gas_prices
+  - keep: property_price
+    merge: property_prices
+  - keep: fruit_prices
+    merge: fruits
+  - keep: vegetable_prices
+    merge: vegetables
+  - keep: trucking
+    merge: trucking_costs
+  - keep: construction_materials
+    merge: construction_material_cost
+  - keep: desalination
+    merge: desalination_cost
+
+  # --- Rate suffix duplicates ---
+  - keep: boj
+    merge: boj_rate
+  - keep: ecb
+    merge: ecb_rate
+  - keep: gst
+    merge: gst_rate
+  - keep: home_loan
+    merge: home_loan_rate
+  - keep: home_loan
+    merge: home_loans
+  - keep: small_savings
+    merge: small_savings_rate
+  - keep: stamp_duty
+    merge: stamp_duty_rate
+  - keep: us_fed
+    merge: us_fed_rate
+  - keep: credit_cards
+    merge: credit_card_rates
+
+  # --- Duplicate merges from Gemini evaluation (energy) ---
+  - keep: petrol
+    merge: petrol_gasoline
+  - keep: coal
+    merge: thermal_coal
+  - keep: nuclear_power
+    merge: nuclear_energy
+
+  # --- Duplicate merges from Gemini evaluation (financial) ---
+  - keep: nifty_50
+    merge: nifty
+  - keep: auto_loan
+    merge: vehicle_loans
+  - keep: npa
+    merge: npa_bad_loans
+  - keep: npa
+    merge: npa_crisis
+  - keep: health_insurance
+    merge: health_insurance_financial
+  - keep: property_tax
+    merge: property_tax_financial
+  - keep: gst
+    merge: gst_vat
+  - keep: cpi_inflation
+    merge: inflation_rate
+  - keep: repo_rate
+    merge: policy_interest_rate
+
+  # --- Duplicate merges from Gemini evaluation (food & agriculture) ---
+  - keep: food_inflation_india
+    merge: food_inflation
+  - keep: food_waste
+    merge: food_wastage
+  - keep: cold_storage
+    merge: cold_chain
+  - keep: cold_storage
+    merge: cold_chain_logistics
+  - keep: poultry_industry
+    merge: poultry_farming
+  - keep: wheat
+    merge: wheat_grain
+  - keep: milk
+    merge: fresh_milk
+  - keep: corn
+    merge: corn_grain
+  - keep: corn
+    merge: maize_corn
+
+  # --- Duplicate merges from Gemini evaluation (macro & geopolitics) ---
+  - keep: us_china_trade_war
+    merge: us_china_trade
+  - keep: ukraine_war
+    merge: russia_ukraine
+  - keep: middle_east_tensions
+    merge: middle_east_conflict
+  - keep: fdi_investment_flows
+    merge: foreign_direct_investment
+
+  # --- Duplicate merges from Gemini evaluation (employment) ---
+  - keep: remote_work_policy
+    merge: remote_work
+  - keep: ai_job_displacement
+    merge: automation_ai_displacement
+  - keep: healthcare_employment
+    merge: healthcare_sector_employment
+  - keep: education_sector
+    merge: education_sector_employment
+  - keep: media_entertainment
+    merge: media_entertainment_sector
+  - keep: freelance_market
+    merge: gig_freelance_sector
+
+  # --- Duplicate merges from Gemini evaluation (governance) ---
+  - keep: public_parks
+    merge: public_parks_spaces
+  - keep: footpath
+    merge: footpath_pedestrian
+  - keep: road_maintenance
+    merge: road_repair
+  - keep: road_maintenance
+    merge: street_maintenance
+  - keep: solid_waste_management
+    merge: waste_management
+
+  # --- Duplicate merges from Gemini evaluation (infrastructure) ---
+  - keep: interstate_water_disputes
+    merge: inter_state_water_disputes
+  - keep: dam_reservoir
+    merge: reservoirs_and_dams
+  - keep: metro_systems
+    merge: metro_rail
+  - keep: auto_rickshaw
+    merge: auto_taxi
+
+  # --- Duplicate merges from Gemini evaluation (consumer life) ---
+  - keep: cyclone
+    merge: cyclones_hurricanes
+  - keep: air_quality
+    merge: air_pollution
+
+
+# =============================================================================
+# NEW NODES — Added based on evaluation feedback
+# =============================================================================
+new_nodes:
+
+  # --- Energy domain ---
+  - id: pm_kusum_scheme
+    aliases: ["PM KUSUM", "solar pump scheme", "agricultural solar"]
+    category: energy_policy
+
+  - id: groundwater_extraction
+    aliases: ["borewell pumping", "water table depletion"]
+    category: water_systems
+
+  - id: state_electricity_regulatory_commission
+    aliases: ["SERC", "CERC", "electricity regulator"]
+    category: energy_policy
+
+  # --- Financial domain ---
+  - id: fno_trading
+    aliases: ["derivatives trading", "options trading", "futures and options"]
+    category: financial
+
+  # --- Food & agriculture domain ---
+  - id: reservoir_levels
+    aliases: ["dam levels", "water reserves", "CWC reservoir data"]
+    category: water_infrastructure
+
+  - id: farmer_income
+    aliases: ["agricultural income", "farm profitability", "rural income"]
+    category: agriculture_and_farming
+
+  - id: mgnrega
+    aliases: ["NREGA", "Mahatma Gandhi National Rural Employment Guarantee Act", "rural employment guarantee"]
+    category: employment
+
+  - id: free_electricity_policy
+    aliases: ["free farm electricity", "agricultural electricity subsidy"]
+    category: energy_policy
+
+  # --- Employment domain ---
+  - id: informal_sector
+    aliases: ["unorganized sector", "informal economy", "daily wage earners"]
+    category: employment
+
+  - id: female_labor_force_participation
+    aliases: ["FLFP", "women in workforce", "female employment rate"]
+    category: employment
+
+  - id: pli_scheme
+    aliases: ["Production Linked Incentive", "manufacturing incentives"]
+    category: employment
+
+  - id: epfo_data
+    aliases: ["EPFO payroll", "formal job creation", "EPF registrations"]
+    category: employment
+
+  # --- Governance domain ---
+  - id: rto_services
+    aliases: ["RTO", "driving license", "vehicle registration", "regional transport office"]
+    category: local_governance
+
+  - id: model_code_of_conduct
+    aliases: ["MCC", "election code", "poll code"]
+    category: governance_and_regulation
+
+  - id: aadhaar_kyc
+    aliases: ["Aadhaar", "UIDAI", "identity verification", "PAN linking"]
+    category: governance_and_regulation
+
+  # --- Infrastructure domain ---
+  - id: lpg_cylinder
+    aliases: ["cooking gas", "LPG price", "commercial cylinder", "domestic cylinder"]
+    category: utilities
+
+  - id: stormwater_drains
+    aliases: ["SWD", "drainage system", "raja kaluve"]
+    category: water_infrastructure
+
+  - id: aviation_turbine_fuel
+    aliases: ["ATF", "jet fuel"]
+    category: utilities
+
+  - id: coal_shortage
+    aliases: ["coal supply deficit", "coal stock crisis"]
+    category: energy
+
+  # --- Consumer life domain ---
+  - id: water_tanker_services
+    aliases: ["water tankers", "private water supply", "tanker mafia"]
+    category: housing_and_shelter
+
+  - id: railway_fares
+    aliases: ["train tickets", "IRCTC", "passenger trains"]
+    category: transport
+
+
+# =============================================================================
+# DESCRIPTION FILLS — Edges in local_governance_graph that lack descriptions
+# =============================================================================
+# These fill in causal descriptions for 15 existing edges in the local governance graph.
+
+description_fills:
+
+  # Water system descriptions
+  - from: monsoon
+    to: reservoir_water_level
+    description: "Monsoon rainfall is the primary inflow source for India's reservoirs; deficit monsoon years leave reservoirs at 50-60% capacity by October, triggering water rationing."
+
+  - from: dam_water_release
+    to: city_water_supply
+    description: "Controlled dam releases feed intake points for municipal water treatment plants; release volume determines daily supply allocation per ward."
+
+  - from: groundwater_depletion
+    to: water_tanker_market
+    description: "When borewells run dry in summer, residential colonies depend on private tankers at Rs 500-1500 per load; depletion drives a grey-market tanker economy."
+
+  - from: water_rationing
+    to: tanker_pricing
+    description: "Municipal water rationing during scarcity creates demand spikes for private tankers; prices can triple during acute shortage periods."
+
+  - from: water_pollution
+    to: water_quality
+    description: "Industrial effluent and untreated sewage discharge degrade source water quality, increasing treatment costs and health risks for downstream consumers."
+
+  # Municipal/governance descriptions
+  - from: property_tax
+    to: municipal_revenue
+    description: "Property tax is the single largest own-source revenue for municipal corporations; collection efficiency varies from 30% (smaller ULBs) to 85% (metro cities)."
+
+  - from: municipal_expenditure
+    to: road_maintenance
+    description: "Road maintenance typically consumes 15-25% of municipal capital expenditure; underfunding leads to pothole-ridden roads that damage vehicles and cause accidents."
+
+  - from: municipal_expenditure
+    to: solid_waste_management
+    description: "SWM costs Rs 1500-3000 per tonne including collection, transport, and processing; underfunding leads to open dumping and landfill fires."
+
+  # Disaster/health descriptions
+  - from: monsoon
+    to: urban_flooding
+    description: "Intense monsoon rainfall overwhelms encroached stormwater drains and silted lakes, causing urban flooding that paralyzes traffic and damages property."
+
+  - from: urban_flooding
+    to: traffic_management
+    description: "Waterlogged roads force diversions, strand vehicles, and overwhelm traffic police; even 50mm rainfall can gridlock Indian metro cities for hours."
+
+  - from: monsoon
+    to: dengue
+    description: "Stagnant water pools from monsoon rain become Aedes mosquito breeding grounds; dengue cases spike 3-4 weeks after heavy rainfall episodes."
+
+  # Transport descriptions
+  - from: diesel
+    to: bus_fuel_cost
+    description: "State transport corporations running diesel bus fleets see operating costs rise proportionally; a Rs 2/L diesel hike adds crores to monthly fuel bills."
+
+  - from: metro_expansion
+    to: real_estate_prices
+    description: "Metro connectivity announcements cause 15-30% property price appreciation along planned corridors, even years before actual commissioning."
+
+  - from: fuel_price_local
+    to: auto_fare_meter
+    description: "Auto-rickshaw fare meters are revised by RTAs when fuel prices cross threshold levels; CNG/petrol price hikes trigger fare revision demands."
+
+  # Health description
+  - from: hospital_staff_shortage
+    to: public_healthcare
+    description: "Government hospitals in India operate at 40-60% of sanctioned doctor strength; shortage means longer wait times, referrals to private hospitals, and out-of-pocket costs."

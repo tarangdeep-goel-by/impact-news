@@ -1,0 +1,2707 @@
+
+============================================================
+CATEGORY: agriculture_and_farming (26 edges)
+============================================================
+  agricultural_inputs --[CONTAINS]--> farm_labor
+  agricultural_inputs --[CONTAINS]--> farm_machinery
+  agricultural_inputs --[CONTAINS]--> pesticides
+  agricultural_inputs --[CONTAINS]--> seeds
+  agricultural_policy --[CONTAINS]--> agri_export_import_policy
+  agricultural_policy --[CONTAINS]--> agricultural_subsidies
+  agricultural_policy --[CONTAINS]--> crop_procurement
+  agricultural_policy --[CONTAINS]--> farm_laws
+  agricultural_policy --[CONTAINS]--> minimum_support_price
+  agriculture_and_farming --[CONTAINS]--> agricultural_inputs
+  agriculture_and_farming --[CONTAINS]--> agricultural_policy
+  agriculture_and_farming --[CONTAINS]--> crop_production
+  agriculture_and_farming --[CONTAINS]--> food_storage_distribution
+  agriculture_and_farming --[CONTAINS]--> livestock
+  crop_production --[CONTAINS]--> cash_crops
+  crop_production --[CONTAINS]--> horticulture
+  crop_production --[CONTAINS]--> kharif_crops
+  crop_production --[CONTAINS]--> rabi_crops
+  food_storage_distribution --[CONTAINS]--> cold_chain
+  food_storage_distribution --[CONTAINS]--> commodity_markets_agri
+  food_storage_distribution --[CONTAINS]--> food_processing
+  food_storage_distribution --[CONTAINS]--> food_wastage
+  livestock --[CONTAINS]--> aquaculture
+  livestock --[CONTAINS]--> cattle
+  livestock --[CONTAINS]--> goat_sheep_farming
+  livestock --[CONTAINS]--> poultry_farming
+
+============================================================
+CATEGORY: climate (84 edges)
+============================================================
+  climate_change --[CONTAINS]--> carbon_emissions_env
+  climate_change --[CONTAINS]--> climate_policy
+  climate_change --[AFFECTS]--> cyclone — "Warmer seas intensify cyclones"
+  climate_change --[AFFECTS]--> ev — "Emissions targets accelerate EV adoption"
+  climate_change --[CONTAINS]--> global_temperature
+  climate_change --[AFFECTS]--> heatwave — "Rising global temperatures are increasing heatwave frequency and intensity across India, straining power grids and agriculture."
+  climate_change --[AFFECTS]--> locust_attack — "Climate change increasing locust breeding conditions"
+  climate_change --[AFFECTS]--> monsoon — "Climate change is increasing monsoon variability — more extreme rainfall events, longer dry spells, and shifting onset dates."
+  climate_change --[CONTAINS]--> sea_level_rise
+  climate_change --[AFFECTS]--> solar_energy — "Climate goals drive solar adoption"
+  climate_change --[AFFECTS]--> wind_energy — "Climate goals drive wind adoption"
+  cyclone --[DISRUPTS]--> marine_fishing — "Cyclones halt fishing operations"
+  cyclone --[DISRUPTS]--> port_infrastructure — "Cyclones damage ports and halt shipping"
+  cyclone --[DISRUPTS]--> vegetable_prices — "Cyclones destroy crops in affected regions"
+  drought --[DISRUPTS]--> chili — "Drought reduces chili yield"
+  drought --[DISRUPTS]--> fodder — "Drought causes severe fodder shortage"
+  drought --[AFFECTS]--> food_inflation_india — "Drought years reduce kharif output and deplete reservoirs; the resulting food supply shock pushes up CPI food component."
+  drought --[DISRUPTS]--> hydropower — "Drought reduces reservoir levels, cuts hydro output"
+  drought --[DISRUPTS]--> india_rice_production — "Drought reduces rice output"
+  drought --[DISRUPTS]--> india_sugarcane_production — "Drought devastates water-intensive sugarcane"
+  drought --[DISRUPTS]--> panama_canal — "Drought reduces Panama Canal water levels, limits transit"
+  drought --[DISRUPTS]--> turmeric — "Drought reduces turmeric yield"
+  el_nino --[AFFECTS]--> drought — "El Nino increases drought risk in South Asia"
+  el_nino --[DISRUPTS]--> monsoon — "El Nino typically weakens Indian monsoon"
+  flood --[DISRUPTS]--> coal — "Floods in mining regions disrupt coal supply"
+  flood --[DISRUPTS]--> road_freight — "Floods damage roads and halt transport"
+  flood --[DISRUPTS]--> vegetable_prices — "Floods destroy standing vegetable crops"
+  groundwater --[SUPPLIES]--> borewell
+  groundwater --[PRODUCES]--> fluoride_contamination
+  groundwater --[SUPPLIES]--> irrigation — "Groundwater is major irrigation source in India"
+  heatwave --[DISRUPTS]--> apple — "Heat in hill stations damages apple crop"
+  heatwave --[AFFECTS]--> coal_power_plant — "Heatwaves push peak demand, straining coal plants"
+  heatwave --[AFFECTS]--> electricity — "Heatwaves spike AC demand, straining grid"
+  heatwave --[AFFECTS]--> electricity_tariff — "Heatwaves spike cooling demand, pushing peak electricity load and forcing expensive peaking power purchases that raise costs."
+  heatwave --[AFFECTS]--> ev — "AC demand during heatwaves competes with EV charging load"
+  heatwave --[DISRUPTS]--> india_wheat_production — "March-April heatwaves shrivel wheat grains, reducing yield"
+  heatwave --[AFFECTS]--> mango — "Extreme heat affects mango flowering and yield"
+  heatwave --[AFFECTS]--> power_deficit — "Peak summer demand causes power shortages"
+  heatwave --[DISRUPTS]--> vegetable_prices — "Extreme heat wilts vegetables, reducing supply"
+  la_nina --[AFFECTS]--> monsoon — "La Nina typically strengthens Indian monsoon"
+  locust_attack --[DISRUPTS]--> india_millet_production — "Locusts devastate millet crops in Rajasthan"
+  locust_attack --[DISRUPTS]--> vegetable_prices — "Locust swarms destroy standing crops"
+  monsoon --[AFFECTS]--> assam_tea — "Tea flush quality depends on rainfall"
+  monsoon --[AFFECTS]--> banana — "Monsoon affects banana farming"
+  monsoon --[AFFECTS]--> chili — "Chili crop depends on monsoon"
+  monsoon --[AFFECTS]--> city_water_supply
+  monsoon --[DISRUPTS]--> coal — "Heavy rains flood mines and disrupt coal transport"
+  monsoon --[AFFECTS]--> coconut — "Coconut palms need regular rainfall"
+  monsoon --[AFFECTS]--> cotton — "Cotton is a kharif crop dependent on monsoon"
+  monsoon --[AFFECTS]--> crop_insurance_implementation
+  monsoon --[AFFECTS]--> dengue — "Stagnant water pools from monsoon rain become Aedes mosquito breeding grounds; dengue cases spike 3-4 weeks after heavy rainfall episodes."
+  monsoon --[AFFECTS]--> flood — "Excess monsoon causes flooding"
+  monsoon --[AFFECTS]--> fodder — "Monsoon determines green fodder availability"
+  monsoon --[AFFECTS]--> groundwater — "Monsoon recharge is the primary source of India's groundwater; deficit years accelerate aquifer depletion and raise irrigation costs."
+  monsoon --[AFFECTS]--> honey — "Monsoon affects flowering patterns and honey production"
+  monsoon --[AFFECTS]--> hydropower — "Monsoon fills dams that generate hydroelectric power"
+  monsoon --[AFFECTS]--> india_coffee_production — "Rainfall patterns affect coffee cherry development"
+  monsoon --[AFFECTS]--> india_millet_production — "Kharif millets depend on monsoon"
+  monsoon --[AFFECTS]--> india_mustard_production — "Good monsoon soil moisture benefits rabi mustard"
+  monsoon --[AFFECTS]--> india_pulse_production — "Kharif pulses depend heavily on monsoon"
+  monsoon --[AFFECTS]--> india_rice_production — "Kharif rice is entirely rain-dependent; monsoon deficit of 10%+ typically cuts paddy output by 5-8%, pushing prices up."
+  monsoon --[AFFECTS]--> india_sugarcane_production — "Sugarcane requires heavy water"
+  monsoon --[AFFECTS]--> india_wheat_production — "Winter soil moisture from monsoon affects rabi wheat"
+  monsoon --[AFFECTS]--> lake_pollution
+  monsoon --[AFFECTS]--> malaria
+  monsoon --[AFFECTS]--> onion — "Kharif onion depends on monsoon timing"
+  monsoon --[PRODUCES]--> pothole
+  monsoon --[AFFECTS]--> reservoir_water_level — "Monsoon rainfall is the primary inflow source for India's reservoirs; deficit monsoon years leave reservoirs at 50-60% capacity by October, triggering water rationing."
+  monsoon --[DISRUPTS]--> road_maintenance
+  monsoon --[AFFECTS]--> stormwater_drain
+  monsoon --[AFFECTS]--> tomato — "Heavy rain damages tomato crops"
+  monsoon --[AFFECTS]--> turmeric — "Turmeric is a kharif crop depending on monsoon"
+  monsoon --[PRODUCES]--> urban_flooding — "Intense monsoon rainfall overwhelms encroached stormwater drains and silted lakes, causing urban flooding that paralyzes traffic and damages property."
+  monsoon --[AFFECTS]--> vegetable_prices — "Excess rain damages perishable crops (tomato, onion); deficit dries up supply — either extreme causes sharp price spikes."
+  monsoon --[AFFECTS]--> wheat — "Winter rabi wheat depends on residual soil moisture and reservoir levels from monsoon; poor monsoon reduces rabi sowing area."
+  soil_degradation --[DISRUPTS]--> india_rice_production — "Degraded soil reduces rice yields"
+  soil_degradation --[DISRUPTS]--> india_wheat_production — "Degraded soil reduces wheat yields"
+  stubble_burning --[DISRUPTS]--> air_quality
+  stubble_burning --[COMPETES_WITH]--> biomass_energy — "Crop residue can be burned for energy instead of in fields"
+  stubble_burning --[AFFECTS]--> climate_change — "Stubble burning causes severe air pollution"
+  stubble_burning --[AFFECTS]--> food_inflation_india — "Stubble burning bans can delay rabi sowing if farmers lack alternatives, potentially affecting wheat supply timing."
+  stubble_burning --[PRODUCES]--> grap_delhi
+  water_pollution --[AFFECTS]--> disease_surveillance
+  water_pollution --[DISRUPTS]--> water_quality — "Industrial effluent and untreated sewage discharge degrade source water quality, increasing treatment costs and health risks for downstream consumers."
+
+============================================================
+CATEGORY: clothing_and_personal_care (13 edges)
+============================================================
+  clothing --[CONTAINS]--> childrenswear
+  clothing --[CONTAINS]--> cotton_textiles
+  clothing --[CONTAINS]--> footwear
+  clothing --[CONTAINS]--> menswear
+  clothing --[CONTAINS]--> synthetic_textiles
+  clothing --[CONTAINS]--> womenswear
+  clothing_and_personal_care --[CONTAINS]--> clothing
+  clothing_and_personal_care --[CONTAINS]--> personal_care
+  personal_care --[CONTAINS]--> cosmetics
+  personal_care --[CONTAINS]--> diapers_baby_care
+  personal_care --[CONTAINS]--> feminine_hygiene
+  personal_care --[CONTAINS]--> haircare_services
+  personal_care --[CONTAINS]--> toiletries
+
+============================================================
+CATEGORY: communication_and_information (21 edges)
+============================================================
+  communication_and_information --[CONTAINS]--> devices_equipment
+  communication_and_information --[CONTAINS]--> digital_services
+  communication_and_information --[CONTAINS]--> postal_services
+  communication_and_information --[CONTAINS]--> telecom_services
+  devices_equipment --[CONTAINS]--> laptops_computers
+  devices_equipment --[CONTAINS]--> semiconductor_chips
+  devices_equipment --[CONTAINS]--> smartphones
+  devices_equipment --[CONTAINS]--> tablets
+  devices_equipment --[CONTAINS]--> televisions
+  digital_services --[CONTAINS]--> ai_services
+  digital_services --[CONTAINS]--> cloud_storage
+  digital_services --[CONTAINS]--> data_privacy
+  digital_services --[CONTAINS]--> e_commerce
+  digital_services --[CONTAINS]--> social_media_platforms
+  digital_services --[CONTAINS]--> software_subscriptions
+  digital_services --[CONTAINS]--> streaming_subscriptions
+  postal_services --[CONTAINS]--> postal_rates
+  telecom_services --[CONTAINS]--> broadband_internet
+  telecom_services --[CONTAINS]--> mobile_plans
+  telecom_services --[CONTAINS]--> net_neutrality
+  telecom_services --[CONTAINS]--> spectrum_policy
+
+============================================================
+CATEGORY: cross_domain (35 edges)
+============================================================
+  central_grants --[FUNDS]--> municipal_revenue
+  coal_prices --[AFFECTS]--> electricity_distribution
+  coal_prices --[AFFECTS]--> electricity_tariff
+  construction_industry --[PRODUCES]--> employment_local
+  fuel_price_local --[AFFECTS]--> auto_fare_meter — "Auto-rickshaw fare meters are revised by RTAs when fuel prices cross threshold levels; CNG/petrol price hikes trigger fare revision demands."
+  fuel_price_local --[AFFECTS]--> auto_taxi
+  fuel_price_local --[AFFECTS]--> bus_fuel_cost
+  fuel_price_local --[AFFECTS]--> city_bus_systems
+  gst_municipal --[AFFECTS]--> municipal_revenue
+  gst_municipal --[AFFECTS]--> state_budget
+  real_estate_prices --[AFFECTS]--> construction_industry
+  real_estate_prices --[AFFECTS]--> property_tax
+  renewable_energy_policy --[AFFECTS]--> electricity_tariff
+  renewable_energy_policy --[REGULATES]--> rooftop_solar
+  state_budget --[FUNDS]--> affordable_housing
+  state_budget --[FUNDS]--> anganwadi
+  state_budget --[FUNDS]--> city_bus_systems
+  state_budget --[FUNDS]--> city_police
+  state_budget --[FUNDS]--> city_water_supply
+  state_budget --[FUNDS]--> local_education
+  state_budget --[FUNDS]--> metro_systems
+  state_budget --[FUNDS]--> municipal_revenue
+  state_budget --[FUNDS]--> pension_scheme
+  state_budget --[FUNDS]--> public_distribution_system
+  state_budget --[FUNDS]--> public_healthcare
+  state_budget --[FUNDS]--> renewable_energy_policy
+  state_budget --[FUNDS]--> skill_development
+  state_budget --[FUNDS]--> state_agriculture_policy
+  state_budget --[FUNDS]--> state_industrial_policy
+  state_budget --[FUNDS]--> state_tourism
+  state_finance_commission --[FUNDS]--> municipal_revenue
+  thermal_power_plant --[DISRUPTS]--> air_quality
+  thermal_power_plant --[CONSUMES]--> coal_prices
+  thermal_power_plant --[SUPPLIES]--> electricity_distribution
+  urban_health_impact --[AFFECTS]--> public_healthcare
+
+============================================================
+CATEGORY: demographics_and_social (15 edges)
+============================================================
+  demographics_and_social --[CONTAINS]--> inequality
+  demographics_and_social --[CONTAINS]--> population_dynamics
+  demographics_and_social --[CONTAINS]--> social_infrastructure
+  inequality --[CONTAINS]--> digital_divide
+  inequality --[CONTAINS]--> gender_equality
+  inequality --[CONTAINS]--> income_inequality
+  inequality --[CONTAINS]--> social_inclusion
+  population_dynamics --[CONTAINS]--> aging_population
+  population_dynamics --[CONTAINS]--> migration
+  population_dynamics --[CONTAINS]--> population_growth
+  population_dynamics --[CONTAINS]--> urbanization
+  social_infrastructure --[CONTAINS]--> housing_for_poor
+  social_infrastructure --[CONTAINS]--> public_distribution
+  social_infrastructure --[CONTAINS]--> sanitation
+  social_infrastructure --[CONTAINS]--> social_security
+
+============================================================
+CATEGORY: education (18 edges)
+============================================================
+  anganwadi --[CONNECTS]--> mid_day_meal
+  coaching_centers --[REGULATES]--> coaching_regulation
+  coaching_regulation --[REGULATES]--> coaching_safety
+  coaching_safety --[DEPENDS_ON]--> fire_safety_building
+  college_regulation --[REGULATES]--> university_affiliation
+  local_education --[AFFECTS]--> real_estate_prices
+  local_education --[PRODUCES]--> school_admissions
+  local_education --[PRODUCES]--> school_infrastructure
+  local_education --[AFFECTS]--> traffic_management
+  mid_day_meal --[AFFECTS]--> school_admissions
+  school_admissions --[DEPENDS_ON]--> ews_quota
+  school_admissions --[DEPENDS_ON]--> neighborhood_school
+  school_admissions --[DEPENDS_ON]--> rte_quota
+  school_infrastructure --[PRODUCES]--> mid_day_meal
+  school_infrastructure --[DEPENDS_ON]--> school_building_safety
+  school_infrastructure --[DEPENDS_ON]--> school_playground
+  skill_development --[AFFECTS]--> employment_local
+  state_university --[PRODUCES]--> university_affiliation
+
+============================================================
+CATEGORY: education_and_learning (18 edges)
+============================================================
+  education_and_learning --[CONTAINS]--> education_policy
+  education_and_learning --[CONTAINS]--> higher_education
+  education_and_learning --[CONTAINS]--> online_digital_learning
+  education_and_learning --[CONTAINS]--> pre_primary_education
+  education_and_learning --[CONTAINS]--> school_education
+  higher_education --[CONTAINS]--> college_university_fees
+  higher_education --[CONTAINS]--> hostel_accommodation
+  higher_education --[CONTAINS]--> professional_courses
+  higher_education --[CONTAINS]--> study_abroad
+  online_digital_learning --[CONTAINS]--> certification_courses
+  online_digital_learning --[CONTAINS]--> edtech_platforms
+  pre_primary_education --[CONTAINS]--> daycare_creche
+  pre_primary_education --[CONTAINS]--> preschool
+  school_education --[CONTAINS]--> coaching_tuition
+  school_education --[CONTAINS]--> school_books_supplies
+  school_education --[CONTAINS]--> school_fees
+  school_education --[CONTAINS]--> school_transport
+  school_education --[CONTAINS]--> school_uniforms
+
+============================================================
+CATEGORY: employment (191 edges)
+============================================================
+  agriculture_sector --[AFFECTS]--> food_inflation — "Farm output determines food supply"
+  agriculture_sector --[SUPPLIES]--> food_processing — "Agriculture supplies raw material to food processing"
+  agriculture_sector --[AFFECTS]--> rural_demand — "Farm income drives rural consumption spending"
+  agritech --[AFFECTS]--> agriculture_sector — "Agritech improves farm productivity and market access"
+  ai_job_creation --[AFFECTS]--> freelance_market — "AI creates new freelance niches (prompt engineering, AI training)"
+  ai_job_creation --[AFFECTS]--> job_market_india — "AI creates new job categories and demand"
+  ai_job_creation --[AFFECTS]--> upskilling — "AI boom drives demand for AI/ML upskilling"
+  ai_job_displacement --[DISRUPTS]--> data_labeling — "Better AI reduces need for human data labeling"
+  ai_job_displacement --[AFFECTS]--> edtech_sector — "AI disruption drives reskilling demand benefiting edtech"
+  ai_job_displacement --[DISRUPTS]--> freelance_market — "AI tools reduce demand for basic freelance work (writing, design)"
+  ai_job_displacement --[DISRUPTS]--> it_services_sector — "AI automates testing, basic coding, BPO tasks"
+  ai_job_displacement --[AFFECTS]--> skill_obsolescence — "AI changes which skills are valuable"
+  ai_ml_sector --[PRODUCES]--> ai_tooling — "AI infrastructure and tooling companies support the ecosystem"
+  ai_ml_sector --[DISRUPTS]--> creator_economy — "AI content generation competes with human creators"
+  ai_ml_sector --[PRODUCES]--> data_labeling — "Data labeling is a major employment source in AI"
+  ai_ml_sector --[DISRUPTS]--> diagnostics_sector — "AI in radiology and pathology changes diagnostic roles"
+  ai_ml_sector --[DISRUPTS]--> it_services_sector — "AI shifts IT services from labor arbitrage to AI-augmented delivery"
+  ai_ml_sector --[PRODUCES]--> llm_companies — "LLM development is the highest-growth AI sub-sector"
+  ai_ml_sector --[AFFECTS]--> saas_sector — "AI features are becoming table stakes for SaaS products"
+  amazon_india --[PRODUCES]--> ecommerce_sector — "Amazon India is a top e-commerce platform"
+  apollo_hospitals --[EMPLOYS]--> healthcare_employment — "Apollo is India's largest hospital chain"
+  auto_manufacturing --[DEPENDS_ON]--> auto_component — "OEMs depend on component suppliers"
+  auto_manufacturing --[EMPLOYS]--> job_market_india — "Auto sector employs 37M+ directly and indirectly"
+  auto_manufacturing --[DEPENDS_ON]--> logistics_sector — "Auto supply chain needs extensive logistics"
+  auto_manufacturing --[AFFECTS]--> nifty_auto — "Auto sales drive auto index"
+  auto_manufacturing --[CONSUMES]--> rubber_supply — "Tires and components need rubber"
+  auto_manufacturing --[DEPENDS_ON]--> semiconductor_supply — "Modern vehicles need 1000+ semiconductor chips"
+  auto_manufacturing --[CONSUMES]--> steel_supply — "Auto sector is a major steel consumer"
+  b2c_tech --[DEPENDS_ON]--> vc_funding_india — "Consumer tech burns cash, needs VC backing"
+  bank_strike --[DISRUPTS]--> banking_employment — "Bank strikes disrupt banking operations"
+  blinkit --[PRODUCES]--> quick_commerce — "Blinkit (Zomato subsidiary) leads quick commerce"
+  builders_developers --[PRODUCES]--> real_estate_sector — "Developers build residential and commercial properties"
+  byju --[PRODUCES]--> edtech_sector — "BYJU'S was the largest Indian edtech (now in crisis)"
+  campus_placement --[AFFECTS]--> education_sector — "Placement rates affect college rankings and enrollment"
+  certifications --[PRODUCES]--> upskilling — "Certifications are a key upskilling mechanism"
+  cipla --[PRODUCES]--> pharma_sector — "Cipla is a leading pharma company"
+  coaching_industry --[PRODUCES]--> education_sector — "Coaching is a $10B+ parallel education industry"
+  cognizant --[PRODUCES]--> it_services_sector — "Cognizant serves Indian and US IT markets"
+  commercial_real_estate --[DEPENDS_ON]--> it_services_sector — "Office space demand tied to IT sector health"
+  construction_employment --[CONSUMES]--> cement_industry — "Construction is the largest cement consumer"
+  construction_employment --[CONSUMES]--> steel_supply — "Construction is a major steel consumer"
+  consulting_firms --[COMPETES_WITH]--> it_services_sector — "Consulting firms compete for strategy and tech talent"
+  creator_economy --[DEPENDS_ON]--> gst_policy — "Creators above threshold must register for GST"
+  cred --[PRODUCES]--> fintech_sector — "CRED is a fintech company in the credit card rewards space"
+  cybersecurity_sector --[AFFECTS]--> job_market_india — "Cybersecurity has persistent talent shortage"
+  diagnostics_sector --[EMPLOYS]--> healthcare_employment — "Diagnostics chains employ technicians and pathologists"
+  dmart --[PRODUCES]--> retail_sector — "DMart is a major value retail chain"
+  dr_reddys --[PRODUCES]--> pharma_sector — "Dr. Reddy's is a major generics manufacturer"
+  ecommerce_logistics --[DEPENDS_ON]--> diesel — "Logistics costs driven by diesel prices"
+  ecommerce_logistics --[DEPENDS_ON]--> warehousing — "E-commerce fulfilment depends on warehouse infrastructure"
+  ecommerce_sector --[DEPENDS_ON]--> ecommerce_logistics — "E-commerce depends on logistics for delivery"
+  ecommerce_sector --[DEPENDS_ON]--> gst_policy — "GST compliance affects e-commerce sellers"
+  ecommerce_sector --[DISRUPTS]--> retail_sector — "E-commerce captures share from offline retail"
+  ecommerce_sector --[EMPLOYS]--> warehouse_employment — "E-commerce drives warehouse and fulfillment jobs"
+  edtech_sector --[COMPETES_WITH]--> coaching_industry — "Online edtech competes with offline coaching"
+  edtech_sector --[DEPENDS_ON]--> edtech_funding — "Edtech companies are heavily VC-funded"
+  edtech_sector --[DISRUPTS]--> education_sector — "Edtech disrupts traditional education models"
+  education_sector --[EMPLOYS]--> job_market_india — "Education employs millions of teachers and staff"
+  enterprise_software --[PRODUCES]--> saas_sector — "Enterprise software is a sub-segment of the broader SaaS sector"
+  esop_policy --[DEPENDS_ON]--> startup_valuation — "ESOP value depends on company valuation"
+  esports --[PRODUCES]--> gaming_sector — "Esports is the competitive/professional arm of the gaming industry"
+  ev_manufacturing --[DISRUPTS]--> auto_manufacturing — "EV transition disrupts traditional auto jobs (less parts, new skills)"
+  ev_manufacturing --[AFFECTS]--> ride_hailing — "EV adoption changes driver economics (lower fuel cost)"
+  fintech_sector --[DISRUPTS]--> banking_employment — "Fintech automates traditional banking roles"
+  fintech_sector --[COMPETES_WITH]--> it_services_sector — "Fintech and IT services compete for engineering talent"
+  fintech_sector --[DEPENDS_ON]--> upi — "Indian fintech ecosystem built on UPI rails"
+  fintech_sector --[DEPENDS_ON]--> vc_funding_india — "Fintech startups need VC funding"
+  fiverr_platform --[PRODUCES]--> freelance_market — "Fiverr is a popular freelance platform"
+  flipkart --[PRODUCES]--> ecommerce_sector — "Flipkart is India's largest homegrown e-commerce"
+  fmcg_sector --[EMPLOYS]--> job_market_india — "FMCG employs millions in manufacturing, distribution, retail"
+  fmcg_sector --[AFFECTS]--> nifty_fmcg — "FMCG volume growth drives FMCG index"
+  food_delivery --[SUPPLIES]--> consumer — "Food delivery platforms serve urban consumers"
+  food_delivery --[AFFECTS]--> delivery_worker_earnings — "Platform commission and order volume determine delivery earnings"
+  food_delivery --[DEPENDS_ON]--> gst_policy — "GST on food delivery affects platform economics"
+  food_processing --[SUPPLIES]--> consumer — "Packaged and processed food consumed by households"
+  fortis_healthcare --[EMPLOYS]--> healthcare_employment — "Fortis is a major hospital chain"
+  freelance_market --[DEPENDS_ON]--> global_freelance_demand — "Indian freelancers serve global clients"
+  freshworks --[PRODUCES]--> saas_sector — "Freshworks is a publicly listed Indian SaaS company"
+  gaming_sector --[DEPENDS_ON]--> ai_ml_sector — "Game development increasingly uses AI for content and testing"
+  global_freelance_demand --[DEPENDS_ON]--> us_economy — "US is the largest freelance demand market"
+  google_pay --[DEPENDS_ON]--> upi — "Google Pay processes ~35% of UPI transactions"
+  government_employment --[COMPETES_WITH]--> private_banks — "Government jobs compete with private sector on job security"
+  government_employment --[EMPLOYS]--> railway_recruitment — "Railways is India's largest single employer"
+  government_employment --[EMPLOYS]--> ssc_recruitment — "SSC recruits for central government jobs"
+  government_employment --[EMPLOYS]--> upsc_recruitment — "UPSC recruits for elite civil services"
+  hcl_tech --[PRODUCES]--> it_services_sector — "HCL Tech is a top-4 Indian IT services firm"
+  healthcare_employment --[DEPENDS_ON]--> health_insurance_regulation — "Hospital revenue partially depends on insurance coverage expansion"
+  hul --[PRODUCES]--> fmcg_sector — "HUL is India's largest FMCG company"
+  hyundai_india --[PRODUCES]--> auto_manufacturing — "Hyundai India is #2 passenger vehicle maker"
+  infosys --[PRODUCES]--> it_services_sector — "Infosys is a top-4 Indian IT services firm"
+  instagram_creators --[PRODUCES]--> creator_economy — "Instagram is a major influencer/creator platform"
+  insurance_tech --[PRODUCES]--> fintech_sector — "Insurtech is a growing fintech vertical"
+  it_attrition --[AFFECTS]--> salary_trends — "High attrition forces competitive salary hikes"
+  it_services_eu_client --[DEPENDS_ON]--> eu_economy — "EU IT spending tracks Eurozone economic health"
+  it_services_sector --[COMPETES_WITH]--> ai_ml_sector — "IT services and AI compete for same tech talent pool"
+  it_services_sector --[AFFECTS]--> commercial_real_estate — "IT sector is largest occupier of office space in India"
+  it_services_sector --[DEPENDS_ON]--> h1b_visa — "Onsite delivery requires H-1B and L-1 visas"
+  it_services_sector --[AFFECTS]--> it_attrition — "Sector health drives attrition patterns"
+  it_services_sector --[AFFECTS]--> it_bench_strength — "Deal pipeline affects bench utilization"
+  it_services_sector --[PRODUCES]--> it_export_earnings — "IT services generate forex through exports"
+  it_services_sector --[AFFECTS]--> it_fresher_hiring — "Sector growth determines fresher intake volume"
+  it_services_sector --[DEPENDS_ON]--> it_outsourcing_deals — "Revenue growth driven by large deal wins"
+  it_services_sector --[DEPENDS_ON]--> it_services_eu_client — "~25% of Indian IT revenue comes from EU clients"
+  it_services_sector --[DEPENDS_ON]--> it_services_us_client — "~60% of Indian IT revenue comes from US clients"
+  it_services_sector --[DEPENDS_ON]--> l1_visa — "Intracompany transfers for onsite work"
+  it_services_sector --[AFFECTS]--> nifty_it — "IT sector health drives IT index"
+  it_services_sector --[AFFECTS]--> rental_market — "IT sector concentration drives rental prices in tech hubs (Bangalore, Hyderabad)"
+  it_services_sector --[AFFECTS]--> rupee_exchange_rate — "IT exports are major forex earner, weak rupee boosts margins"
+  it_services_us_client --[DEPENDS_ON]--> us_economy — "US IT spending tracks US GDP and corporate earnings"
+  itc_limited --[PRODUCES]--> fmcg_sector — "ITC is a diversified FMCG conglomerate"
+  job_market_india --[AFFECTS]--> campus_placement — "Overall job market conditions drive campus hiring volumes"
+  job_market_india --[AFFECTS]--> lateral_hiring — "Market conditions determine lateral hiring pace"
+  job_market_india --[AFFECTS]--> retail_credit — "Employment drives consumer borrowing capacity"
+  job_market_india --[AFFECTS]--> sip_flows — "Employment and income drive MF investment capacity"
+  llm_companies --[DEPENDS_ON]--> compute_costs — "LLM training requires massive GPU compute"
+  logistics_sector --[SUPPLIES]--> auto_manufacturing — "Logistics moves auto parts and finished vehicles"
+  logistics_sector --[SUPPLIES]--> ecommerce_logistics — "3PL firms provide e-commerce delivery"
+  logistics_sector --[SUPPLIES]--> fmcg_sector — "Logistics enables FMCG distribution"
+  logistics_sector --[SUPPLIES]--> food_processing — "Cold chain logistics for food distribution"
+  ltimindtree --[PRODUCES]--> it_services_sector — "LTIMindtree is a mid-tier IT services firm"
+  mahindra_auto --[PRODUCES]--> auto_manufacturing — "M&M is a major auto OEM (SUVs, tractors)"
+  maruti_suzuki --[PRODUCES]--> auto_manufacturing — "Maruti Suzuki leads passenger vehicle market"
+  max_healthcare --[EMPLOYS]--> healthcare_employment — "Max Healthcare is a leading hospital chain"
+  medical_devices --[AFFECTS]--> healthcare_employment — "Medical device industry creates manufacturing and service jobs"
+  medical_devices --[CONTAINS]--> medical_equipment
+  medical_devices --[CONTAINS]--> prosthetics_implants
+  meesho --[PRODUCES]--> ecommerce_sector — "Meesho focuses on tier-2/3 social commerce"
+  nbfc_sector --[EMPLOYS]--> banking_employment — "NBFCs employ significant workforce"
+  nestle_india --[PRODUCES]--> fmcg_sector — "Nestle India is a major packaged foods company"
+  ola_cabs --[PRODUCES]--> ride_hailing — "Ola is India's largest ride hailing platform"
+  ott_platforms --[PRODUCES]--> media_entertainment — "OTT is the fastest growing M&E segment"
+  paytm --[DEPENDS_ON]--> upi — "Paytm uses UPI for payments"
+  pharma_sector --[PRODUCES]--> generic_drugs — "India is world's largest generic drug producer"
+  pharma_sector --[SUPPLIES]--> healthcare_employment — "Pharma supplies drugs to hospitals and clinics"
+  pharma_sector --[AFFECTS]--> nifty_pharma — "Pharma earnings drive pharma index"
+  pharma_sector --[DEPENDS_ON]--> pharma_api_china — "India imports ~68% of APIs from China"
+  phonepe --[DEPENDS_ON]--> upi — "PhonePe processes ~48% of UPI transactions"
+  physics_wallah --[PRODUCES]--> edtech_sector — "Physics Wallah is a rapidly growing edtech unicorn"
+  postman --[PRODUCES]--> saas_sector — "Postman is an Indian-origin SaaS company for API development"
+  private_banks --[EMPLOYS]--> banking_employment — "Private banks hire aggressively for growth"
+  psu_banks --[EMPLOYS]--> banking_employment — "PSU banks are major employers"
+  quick_commerce --[AFFECTS]--> delivery_worker_earnings — "Quick commerce delivery model affects gig worker pay"
+  quick_commerce --[PRODUCES]--> ecommerce_sector — "Quick commerce is the fastest-growing e-commerce segment"
+  razorpay --[PRODUCES]--> fintech_sector — "Razorpay is a major payments/fintech company"
+  razorpay --[PRODUCES]--> saas_sector — "Razorpay also serves as B2B SaaS for merchants"
+  real_estate_sector --[EMPLOYS]--> construction_employment — "Real estate projects create construction jobs"
+  real_estate_sector --[AFFECTS]--> nifty_realty — "Real estate sector health drives realty index"
+  real_estate_sector --[AFFECTS]--> rental_market — "Property supply/demand affects rental prices"
+  reliance_retail --[PRODUCES]--> retail_sector — "Reliance Retail is India's largest retailer"
+  remote_work_policy --[DISRUPTS]--> commercial_real_estate — "Permanent hybrid/remote reduces office demand"
+  remote_work_policy --[AFFECTS]--> coworking_spaces — "Hybrid policies drive coworking demand"
+  remote_work_policy --[AFFECTS]--> it_services_sector — "IT sector is the primary remote work adopter"
+  remote_work_policy --[AFFECTS]--> rental_market — "WFH shifts demand from metros to tier-2 cities"
+  retail_sector --[EMPLOYS]--> job_market_india — "Retail employs ~40M in India"
+  ride_hailing --[AFFECTS]--> driver_earnings — "Platform commission structure determines driver income"
+  ride_hailing --[EMPLOYS]--> job_market_india — "Ride hailing employs millions of drivers"
+  saas_sector --[COMPETES_WITH]--> it_services_sector — "Product companies attract talent from services companies"
+  saas_sector --[DEPENDS_ON]--> vc_funding_india — "SaaS startups depend on VC funding for growth"
+  salary_trends --[DEPENDS_ON]--> cpi_inflation — "Real salary growth measured against inflation"
+  salary_trends --[AFFECTS]--> home_loan_emi — "Income determines home loan eligibility"
+  salary_trends --[AFFECTS]--> income_tax — "Salary levels determine tax liability"
+  skill_obsolescence --[DEPENDS_ON]--> ai_job_displacement — "Obsolete skills correlate with AI displacement risk"
+  skill_obsolescence --[AFFECTS]--> edtech_sector — "Skill obsolescence drives demand for online reskilling"
+  startup_layoffs --[AFFECTS]--> job_market_india — "Mass startup layoffs increase job market supply"
+  startup_layoffs --[AFFECTS]--> npa — "Layoffs increase personal loan defaults"
+  startup_layoffs --[AFFECTS]--> rental_market — "Layoffs in tech hubs reduce rental demand"
+  sun_pharma --[PRODUCES]--> pharma_sector — "Sun Pharma is India's largest pharma company"
+  swiggy --[PRODUCES]--> food_delivery — "Swiggy is a leading food delivery platform"
+  tata_motors --[PRODUCES]--> auto_manufacturing — "Tata Motors is a major auto OEM"
+  tcs --[PRODUCES]--> it_services_sector — "TCS is India's largest IT services company"
+  tech_layoffs --[DISRUPTS]--> job_market_india — "Mass layoffs flood the job market with candidates"
+  tech_layoffs --[AFFECTS]--> salary_trends — "Layoffs suppress salary growth due to oversupply"
+  tech_mahindra --[PRODUCES]--> it_services_sector — "Tech Mahindra is a major IT services firm"
+  telemedicine --[DISRUPTS]--> healthcare_employment — "Telemedicine changes doctor employment patterns"
+  telemedicine --[CONNECTS]--> public_healthcare
+  trade_unions --[AFFECTS]--> auto_manufacturing — "Auto sector has strong union presence"
+  trade_unions --[AFFECTS]--> new_labor_codes — "Unions oppose/shape labor law reforms"
+  transport_strike --[DISRUPTS]--> logistics_sector — "Transport strikes halt goods movement"
+  trucking --[EMPLOYS]--> job_market_india — "Trucking employs ~8M drivers in India"
+  uber_india --[PRODUCES]--> ride_hailing — "Uber operates in major Indian cities"
+  unacademy --[PRODUCES]--> edtech_sector — "Unacademy is a major test prep edtech"
+  upgrad --[PRODUCES]--> edtech_sector — "upGrad focuses on higher education edtech"
+  upskilling --[DEPENDS_ON]--> ai_job_creation — "AI job capture requires active upskilling"
+  upwork_platform --[PRODUCES]--> freelance_market — "Upwork is a major freelance marketplace"
+  variable_pay --[AFFECTS]--> salary_trends — "Variable pay and bonus payouts are a key component of total compensation trends"
+  warehousing --[PRODUCES]--> logistics_sector — "Warehousing and 3PL are core components of the logistics sector"
+  wealthtech --[PRODUCES]--> fintech_sector — "Wealthtech platforms are part of fintech ecosystem"
+  wipro --[PRODUCES]--> it_services_sector — "Wipro is a top-4 Indian IT services firm"
+  youtube_india --[PRODUCES]--> creator_economy — "YouTube is India's largest creator platform"
+  zoho --[PRODUCES]--> saas_sector — "Zoho is India's largest bootstrapped SaaS company"
+  zomato --[PRODUCES]--> food_delivery — "Zomato is a leading food delivery platform"
+
+============================================================
+CATEGORY: employment_and_income (35 edges)
+============================================================
+  employment_and_income --[CONTAINS]--> employment_sectors
+  employment_and_income --[CONTAINS]--> labor_market
+  employment_and_income --[CONTAINS]--> wages_compensation
+  employment_sectors --[CONTAINS]--> agriculture_sector
+  employment_sectors --[CONTAINS]--> construction_sector
+  employment_sectors --[CONTAINS]--> defense_sector
+  employment_sectors --[CONTAINS]--> education_sector_employment
+  employment_sectors --[CONTAINS]--> energy_utilities_sector
+  employment_sectors --[CONTAINS]--> financial_services_sector
+  employment_sectors --[CONTAINS]--> gig_freelance_sector
+  employment_sectors --[CONTAINS]--> government_public_sector
+  employment_sectors --[CONTAINS]--> healthcare_sector_employment
+  employment_sectors --[CONTAINS]--> hospitality_tourism_sector
+  employment_sectors --[CONTAINS]--> it_technology_sector
+  employment_sectors --[CONTAINS]--> legal_professional_services
+  employment_sectors --[CONTAINS]--> logistics_transport_sector
+  employment_sectors --[CONTAINS]--> manufacturing_sector
+  employment_sectors --[CONTAINS]--> media_entertainment_sector
+  employment_sectors --[CONTAINS]--> mining_sector
+  employment_sectors --[CONTAINS]--> retail_trade_sector
+  employment_sectors --[CONTAINS]--> telecom_sector
+  labor_market --[CONTAINS]--> automation_ai_displacement
+  labor_market --[CONTAINS]--> immigration_work_permits
+  labor_market --[CONTAINS]--> job_creation
+  labor_market --[CONTAINS]--> labor_laws
+  labor_market --[CONTAINS]--> layoffs_retrenchment
+  labor_market --[CONTAINS]--> remote_work
+  labor_market --[CONTAINS]--> skill_demand
+  labor_market --[CONTAINS]--> unemployment_rate
+  wages_compensation --[CONTAINS]--> bonus_incentives
+  wages_compensation --[CONTAINS]--> gratuity
+  wages_compensation --[CONTAINS]--> minimum_wage
+  wages_compensation --[CONTAINS]--> overtime_rules
+  wages_compensation --[CONTAINS]--> pension_provident_fund
+  wages_compensation --[CONTAINS]--> salary_trends
+
+============================================================
+CATEGORY: energy (253 edges)
+============================================================
+  adani_power --[PRODUCES]--> power_generation — "Adani Power operates thermal plants"
+  agrivoltaics --[AFFECTS]--> horticulture — "Solar panels provide shade for certain crops"
+  agrivoltaics --[PRODUCES]--> solar_energy — "Agrivoltaics combines farming and solar generation"
+  atf --[AFFECTS]--> consumer — "ATF prices affect flight ticket costs"
+  australia_coal --[PRODUCES]--> imported_coal — "Australia supplies coking coal to India"
+  australia_lithium --[PRODUCES]--> lithium — "Australia is largest lithium producer"
+  bagasse_power --[SUPPLIES]--> electricity — "Bagasse cogen feeds power to grid"
+  battery_storage --[SUPPLIES]--> solar_energy — "Storage solves solar intermittency"
+  battery_storage --[SUPPLIES]--> wind_energy — "Storage solves wind intermittency"
+  bescom --[LOCATED_IN]--> bbmp
+  bescom --[SUPPLIES]--> discom — "BESCOM distributes power in Bangalore"
+  bescom --[MANAGES]--> electricity_bill
+  biogas --[COMPETES_WITH]--> lpg — "Biogas replaces LPG in rural areas"
+  biogas --[COMPETES_WITH]--> png — "Compressed biogas competes with piped natural gas"
+  biomass_energy --[SUPPLIES]--> electricity — "Biomass pellets used in power generation"
+  bitumen --[SUPPLIES]--> road_infrastructure — "Bitumen is essential for road construction"
+  bpcl --[PRODUCES]--> oil_refining — "BPCL operates multiple refineries"
+  chile_lithium --[PRODUCES]--> lithium — "Chile has world's largest lithium reserves"
+  china_polysilicon --[SUPPLIES]--> solar_cell_manufacturing — "China supplies ~80% of global polysilicon"
+  city_gas_distribution --[PRODUCES]--> cng — "CGD network supplies CNG to vehicles"
+  city_gas_distribution --[PRODUCES]--> cng_stations
+  city_gas_distribution --[PRODUCES]--> png — "CGD network supplies piped gas to homes"
+  city_gas_distribution --[PRODUCES]--> png_supply
+  cng --[SUPPLIES]--> consumer — "CNG used in auto-rickshaws, taxis, buses"
+  cng --[COMPETES_WITH]--> petrol — "CNG competes with petrol for vehicles"
+  coal --[SUPPLIES]--> coal_power_plant — "Coal is feedstock for thermal power plants"
+  coal --[CONTAINS]--> coking_coal
+  coal --[AFFECTS]--> electricity — "Coal price changes affect electricity tariffs"
+  coal --[AFFECTS]--> electricity_tariff — "Thermal generation costs dominate tariff calculations; coal price and railway freight increases are passed through via fuel surcharge adjustments."
+  coal --[CONTAINS]--> thermal_coal
+  coal --[SUPPLIES]--> thermal_power — "Coal fuels ~70% of India's electricity; Coal India supplies ~80% of thermal plant feedstock."
+  coal_india --[PRODUCES]--> coal — "Coal India produces ~80% of India's coal"
+  coal_power_plant --[PRODUCES]--> electricity — "Coal plants generate ~70% of India's electricity"
+  coal_railway_freight --[SUPPLIES]--> coal — "Railways move ~50% of India's coal"
+  coal_stock_crisis --[DISRUPTS]--> coal_power_plant — "Low coal stocks force power plant shutdowns"
+  cobalt --[SUPPLIES]--> ev_battery — "Cobalt used in battery cathodes"
+  coking_coal --[SUPPLIES]--> road_infrastructure — "Coking coal → steel → road construction"
+  congo_cobalt --[PRODUCES]--> cobalt — "DRC produces ~70% of global cobalt"
+  cooking_gas_commercial --[SUPPLIES]--> restaurant_industry — "Restaurants use 19kg commercial LPG cylinders"
+  corn_ethanol --[SUPPLIES]--> petrol — "Corn ethanol blended into gasoline"
+  crude_oil --[AFFECTS]--> atf — "Aviation turbine fuel is a middle distillate of crude; ATF prices revised fortnightly tracking Singapore benchmark."
+  crude_oil --[CONTAINS]--> brent_crude
+  crude_oil --[AFFECTS]--> cooking_gas_commercial — "Commercial LPG priced at market rates linked to crude"
+  crude_oil --[AFFECTS]--> diesel — "Diesel pricing follows crude benchmarks with a lag; deregulated since 2014 but OMCs still smooth volatility."
+  crude_oil --[AFFECTS]--> fertilizer — "Natural gas (linked to crude) is the primary feedstock for urea manufacturing; crude price rises increase fertilizer production costs."
+  crude_oil --[AFFECTS]--> global_commodity_cycle — "Oil is the bellwether commodity"
+  crude_oil --[SUPPLIES]--> india_crude_imports — "India imports ~85% of crude oil needs"
+  crude_oil --[AFFECTS]--> india_fiscal_deficit — "Oil imports are India's largest import bill item"
+  crude_oil --[AFFECTS]--> inr_usd — "Rising crude widens the trade deficit and increases dollar demand for oil payments, depreciating the rupee."
+  crude_oil --[AFFECTS]--> lpg — "LPG is a refinery byproduct; global crude and propane/butane benchmarks determine the Saudi CP that sets Indian LPG costs."
+  crude_oil --[AFFECTS]--> oil_import_bill — "Crude accounts for ~25% of India's total import bill; every $10/bbl rise adds ~$15B to the annual oil import bill."
+  crude_oil --[CONTAINS]--> opec_policy
+  crude_oil --[AFFECTS]--> petrol — "India imports ~85% of crude oil; refinery input costs directly set petrol pump prices after OMC margin and taxes."
+  crude_oil --[AFFECTS]--> trade_deficit — "Oil is India's largest import item; crude price swings are the primary driver of trade deficit volatility."
+  crude_oil --[CONTAINS]--> wti_crude
+  crude_oil_price --[AFFECTS]--> auto_manufacturing — "Oil prices affect vehicle operating costs and demand mix (ICE vs EV)"
+  crude_oil_price --[AFFECTS]--> cpi_inflation — "Oil price drives fuel and transport inflation"
+  crude_oil_price --[AFFECTS]--> delivery_worker_earnings — "Oil → petrol → delivery worker expenses"
+  crude_oil_price --[AFFECTS]--> diesel — "Diesel prices track crude oil with government pricing"
+  crude_oil_price --[AFFECTS]--> fertilizer_subsidy — "Oil prices affect fertilizer production costs"
+  crude_oil_price --[AFFECTS]--> fuel_inflation — "Oil directly determines fuel prices"
+  crude_oil_price --[AFFECTS]--> inr_usd — "High oil → high imports → rupee pressure"
+  crude_oil_price --[AFFECTS]--> logistics_sector — "Oil prices drive transportation costs across economy"
+  crude_oil_price --[AFFECTS]--> oil_import_bill — "Oil price directly drives import bill"
+  crude_oil_price --[AFFECTS]--> rbi_mpc — "Oil shock → fuel/food inflation → CPI → MPC forced to hike"
+  crude_oil_price --[AFFECTS]--> trade_deficit — "Oil is India's largest import (>$150B/year)"
+  crude_oil_price --[AFFECTS]--> wpi_inflation — "Crude oil is a major component of wholesale price index"
+  diesel --[AFFECTS]--> bus_fuel_cost — "State transport corporations and private bus operators pass diesel cost increases into fares, affecting daily commuters."
+  diesel --[SUPPLIES]--> cold_chain_logistics — "Reefer trucks run on diesel"
+  diesel --[SUPPLIES]--> cold_storage — "Diesel generators backup cold storage during outages"
+  diesel --[AFFECTS]--> consumer — "Diesel price affects transport costs of everything"
+  diesel --[SUPPLIES]--> farm_mechanization — "Tractors and harvesters run on diesel"
+  diesel --[AFFECTS]--> fish — "Fishing boats run on diesel"
+  diesel --[AFFECTS]--> food_inflation_india — "Diesel hikes raise transport costs for all goods"
+  diesel --[SUPPLIES]--> grain_transport — "Trucks carrying grain run on diesel"
+  diesel --[SUPPLIES]--> indian_railways — "Non-electrified rail routes use diesel locos"
+  diesel --[SUPPLIES]--> irrigation — "Diesel pumps used for irrigation"
+  diesel --[AFFECTS]--> logistics_sector — "Over 70% of Indian freight moves by road on diesel trucks; diesel cost is the single largest component of freight rates."
+  diesel --[SUPPLIES]--> marine_fishing — "Fishing boats run on diesel"
+  diesel --[AFFECTS]--> milk — "Milk collection trucks run on diesel"
+  diesel --[SUPPLIES]--> perishable_transport — "Vegetable transport trucks need diesel"
+  diesel --[SUPPLIES]--> restaurant_industry — "Restaurant supply chain depends on diesel transport"
+  diesel --[SUPPLIES]--> road_freight — "Trucks run on diesel"
+  diesel --[AFFECTS]--> spices — "Spice transport from farms to markets needs diesel"
+  diesel --[AFFECTS]--> trucking — "Diesel is ~60% of trucking operating cost"
+  diesel --[AFFECTS]--> water_tanker_market
+  discom --[SUPPLIES]--> electricity — "DISCOMs deliver electricity to consumers"
+  domestic_coal_mining --[PRODUCES]--> coal — "India has commercial coal mining since 2020"
+  electricity --[SUPPLIES]--> assam_tea — "Tea processing factories need electricity"
+  electricity --[SUPPLIES]--> cold_chain_logistics — "Cold chain depends on reliable electricity"
+  electricity --[SUPPLIES]--> cold_storage — "Cold storage needs reliable electricity"
+  electricity --[SUPPLIES]--> consumer — "Electricity is essential for modern life"
+  electricity --[SUPPLIES]--> dairy_industry — "Dairy processing needs refrigeration and electricity"
+  electricity --[CONTAINS]--> electricity_subsidies
+  electricity --[CONTAINS]--> electricity_tariff
+  electricity --[AFFECTS]--> food_inflation_india — "Power costs embedded in food processing/storage"
+  electricity --[SUPPLIES]--> food_processing — "Food processing plants need electricity"
+  electricity --[SUPPLIES]--> ice_cream — "Ice cream needs cold chain from factory to consumer"
+  electricity --[SUPPLIES]--> india_coffee_production — "Coffee processing needs electricity"
+  electricity --[SUPPLIES]--> irrigation — "Electric pumps used for irrigation"
+  electricity --[COMPETES_WITH]--> lpg — "Electric induction cooking replaces LPG"
+  electricity --[SUPPLIES]--> oil_refining — "Refineries need electricity to operate"
+  electricity --[SUPPLIES]--> restaurant_industry — "Restaurants need electricity for operations"
+  electricity --[SUPPLIES]--> rice_milling — "Mills need electricity for processing"
+  electricity --[SUPPLIES]--> sugar_mills — "Sugar mills need electricity (also generate bagasse power)"
+  electricity --[SUPPLIES]--> wheat_milling — "Flour mills need electricity"
+  electricity_tariff --[AFFECTS]--> auto_manufacturing — "Power costs affect factory operating costs"
+  electricity_tariff --[AFFECTS]--> consumer — "Tariff hikes directly increase monthly electricity bill"
+  electricity_tariff --[REGULATES]--> electricity — "State regulators set electricity tariffs"
+  electricity_tariff --[AFFECTS]--> electricity_bill — "Tariff revisions by state electricity regulatory commissions directly change monthly household electricity bills."
+  electricity_tariff --[AFFECTS]--> it_services_sector — "Power costs affect data center and office operating costs"
+  electricity_tariff --[AFFECTS]--> private_hospital
+  electricity_tariff --[PRODUCES]--> tariff_structure
+  ethanol_blending --[SUPPLIES]--> petrol — "Ethanol blended into petrol at 20% (E20 target)"
+  ethanol_blending --[AFFECTS]--> sugar — "Ethanol diversion can reduce sugar supply, raising prices"
+  ev --[COMPETES_WITH]--> cng — "EVs compete with CNG vehicles in urban transport"
+  ev --[COMPETES_WITH]--> diesel — "Electric trucks/buses replace diesel"
+  ev --[DEPENDS_ON]--> ev_charging — "EVs need charging infrastructure"
+  ev --[COMPETES_WITH]--> petrol — "EVs replace petrol-powered vehicles"
+  ev_battery --[SUPPLIES]--> battery_storage — "Same battery tech used for grid storage"
+  ev_battery --[SUPPLIES]--> ev — "Battery is core EV component"
+  ev_charging --[DEPENDS_ON]--> electricity — "EV chargers need grid electricity"
+  floating_solar --[PRODUCES]--> solar_energy — "Floating solar on reservoirs generates power"
+  fuel_cost_gig --[AFFECTS]--> delivery_worker_earnings — "Fuel costs eat into delivery partner earnings"
+  fuel_cost_gig --[AFFECTS]--> driver_earnings — "Fuel costs are major driver expense"
+  fuel_inflation --[AFFECTS]--> cpi_inflation — "Fuel directly and indirectly affects CPI"
+  furnace_oil --[SUPPLIES]--> food_processing — "Furnace oil used as industrial heating fuel"
+  gail --[SUPPLIES]--> city_gas_distribution
+  gail --[SUPPLIES]--> gas_pipeline_india — "GAIL operates India's gas pipeline network"
+  gail --[SUPPLIES]--> lng_regasification — "GAIL involved in LNG terminals"
+  gas_pipeline_india --[SUPPLIES]--> city_gas_distribution — "Trunk pipelines connect LNG terminals to cities"
+  green_hydrogen --[SUPPLIES]--> fertilizer — "Green hydrogen can replace gas for ammonia/urea"
+  hpcl --[PRODUCES]--> oil_refining — "HPCL operates refineries including Vizag"
+  hydropower --[PRODUCES]--> power_generation — "Hydro provides ~12% of generation"
+  imported_coal --[SUPPLIES]--> coal — "Imported coal supplements domestic supply"
+  india_crude_imports --[AFFECTS]--> inr_usd — "Huge oil import bill puts pressure on rupee"
+  india_crude_imports --[SUPPLIES]--> oil_refining — "Imported crude goes to refineries"
+  india_electricity_imports --[SUPPLIES]--> electricity — "India imports hydro power from Bhutan"
+  india_electricity_imports --[SUPPLIES]--> hydropower — "Bhutan/Nepal hydro power supplements Indian grid"
+  indonesia_coal --[PRODUCES]--> imported_coal — "Indonesia is India's top coal import source"
+  indonesia_coal --[LOCATED_IN]--> indonesia_palm_oil — "Indonesia exports both coal and palm oil — same country risk"
+  iocl --[PRODUCES]--> oil_refining — "IOCL operates India's largest refinery network"
+  iran_oil --[PRODUCES]--> crude_oil — "Iran has large reserves, output varies with sanctions"
+  iran_pakistan_pipeline --[SUPPLIES]--> natural_gas — "Proposed pipeline for gas to South Asia"
+  iraq_oil --[PRODUCES]--> crude_oil — "Iraq is OPEC's 2nd largest producer"
+  kerosene --[SUPPLIES]--> consumer — "Kerosene used for lighting in remote areas"
+  kgd6 --[PRODUCES]--> natural_gas — "KG-D6 is India's main domestic gas source"
+  lithium --[SUPPLIES]--> ev_battery — "Lithium is key battery material"
+  lng --[SUPPLIES]--> lng_regasification — "LNG ships arrive at regasification terminals"
+  lng_regasification --[SUPPLIES]--> city_gas_distribution — "Regasified LNG enters city gas network"
+  lpg --[SUPPLIES]--> consumer — "LPG cylinders for cooking at home"
+  lpg --[COMPETES_WITH]--> electricity — "Induction cooking competes with gas"
+  lpg --[SUPPLIES]--> lpg_bottling — "Bulk LPG goes to bottling plants"
+  lpg --[COMPETES_WITH]--> png — "LPG and piped gas compete for kitchen use"
+  lpg --[SUPPLIES]--> restaurant_industry — "Restaurants use LPG/PNG for cooking"
+  lpg_bottling --[SUPPLIES]--> lpg_distribution — "Bottled cylinders distributed to consumers"
+  lpg_distribution --[SUPPLIES]--> consumer — "Cylinders delivered to homes"
+  malacca_strait --[AFFECTS]--> oil_tanker_shipping — "Key route for oil to East Asia"
+  msedcl --[LOCATED_IN]--> bmc_mumbai
+  msedcl --[SUPPLIES]--> discom — "MSEDCL distributes power in Maharashtra"
+  msedcl --[MANAGES]--> electricity_bill
+  naphtha --[SUPPLIES]--> food_packaging — "Naphtha is feedstock for plastics used in food packaging"
+  natural_gas --[AFFECTS]--> cng — "Gas price hikes raise CNG prices"
+  natural_gas --[AFFECTS]--> cng_price — "CNG pricing is directly tied to domestic gas allocation under APM; PNGRB-regulated city gas distributors pass through price changes."
+  natural_gas --[AFFECTS]--> electricity_tariff — "Gas-based power plants (~7% of India's generation) face variable fuel costs; gas price hikes raise merit-order dispatch costs."
+  natural_gas --[AFFECTS]--> fertilizer — "Gas price hikes raise fertilizer costs"
+  natural_gas --[AFFECTS]--> food_inflation_india — "Gas → fertilizer → crop costs → food prices"
+  natural_gas --[SUPPLIES]--> food_processing — "Gas used for heating in food processing"
+  natural_gas --[PRODUCES]--> lng — "Gas liquefied into LNG for shipping"
+  natural_gas --[CONTAINS]--> lng_trade
+  natural_gas --[CONTAINS]--> natural_gas_prices
+  natural_gas --[AFFECTS]--> png — "Gas price hikes raise PNG prices"
+  natural_gas --[AFFECTS]--> png_supply — "PNG for household cooking depends on APM gas allocation and GAIL pipeline supply; gas price revisions flow to household bills."
+  natural_gas --[SUPPLIES]--> thermal_power — "Gas-fired power plants use natural gas"
+  natural_gas --[SUPPLIES]--> urea — "Gas is feedstock for urea fertilizer production"
+  natural_gas_price --[AFFECTS]--> cpi_inflation — "Gas price affects CNG, piped gas, power"
+  natural_gas_price --[AFFECTS]--> fuel_inflation — "Gas is an alternative fuel affecting inflation"
+  nhpc --[PRODUCES]--> hydropower — "NHPC operates major hydro projects"
+  ntpc --[PRODUCES]--> coal_power_plant — "NTPC is India's largest thermal power generator"
+  ntpc --[PRODUCES]--> solar_park — "NTPC expanding into renewable energy"
+  nuclear_power --[PRODUCES]--> power_generation — "Nuclear provides baseload power"
+  offshore_wind --[PRODUCES]--> wind_energy — "Offshore wind is new frontier"
+  oil_import_bill --[AFFECTS]--> trade_deficit — "Oil imports constitute ~25% of India's total import bill; oil price swings are the dominant driver of trade balance changes."
+  oil_refining --[PRODUCES]--> atf — "Refineries produce aviation fuel"
+  oil_refining --[PRODUCES]--> bitumen — "Bitumen is refinery product for road construction"
+  oil_refining --[PRODUCES]--> diesel — "Refineries produce diesel from crude"
+  oil_refining --[PRODUCES]--> furnace_oil — "Heavy fuel oil from refinery bottom"
+  oil_refining --[PRODUCES]--> kerosene — "Kerosene distilled from crude oil"
+  oil_refining --[PRODUCES]--> lpg — "LPG is a refinery byproduct"
+  oil_refining --[PRODUCES]--> naphtha — "Naphtha is refinery product for petrochemicals"
+  oil_refining --[PRODUCES]--> petrol — "Refineries produce petrol from crude"
+  oil_refining --[PRODUCES]--> petroleum_coke — "Petcoke is refinery byproduct"
+  oil_tanker_shipping --[SUPPLIES]--> india_crude_imports — "Crude arrives by tanker at Indian ports"
+  ongc --[PRODUCES]--> crude_oil — "ONGC is India's largest domestic oil producer"
+  ongc --[PRODUCES]--> natural_gas — "ONGC produces domestic natural gas"
+  opec --[REGULATES]--> crude_oil — "OPEC production decisions set global oil supply"
+  opec_decision --[AFFECTS]--> crude_oil_price — "OPEC production decisions set oil supply"
+  open_access_power --[AFFECTS]--> electricity — "Open access lets large consumers buy cheaper power"
+  petrol --[SUPPLIES]--> consumer — "Consumers buy petrol for personal vehicles"
+  petrol --[SUPPLIES]--> food_delivery — "Delivery riders use petrol-powered bikes"
+  petrol --[AFFECTS]--> food_inflation_india — "Petrol costs affect two-wheeler delivery costs"
+  petrol --[AFFECTS]--> fuel_cost_gig — "Petrol/CNG prices are major gig worker expense"
+  petrol --[AFFECTS]--> logistics_sector — "Last-mile delivery and two-wheeler logistics run on petrol; price hikes raise e-commerce and FMCG distribution costs."
+  petrol --[AFFECTS]--> ride_hailing — "Fuel costs are the biggest driver expense"
+  petroleum_coke --[AFFECTS]--> climate_change — "Petcoke burning is highly polluting"
+  png --[SUPPLIES]--> consumer — "PNG is piped cooking gas for homes"
+  png --[COMPETES_WITH]--> lpg — "Piped gas competes with LPG cylinders"
+  png --[SUPPLIES]--> restaurant_industry — "Piped gas used by urban restaurants"
+  power_deficit --[DISRUPTS]--> consumer — "Power cuts directly impact daily life"
+  power_exchange --[AFFECTS]--> electricity — "Spot power market prices signal supply-demand"
+  power_generation --[SUPPLIES]--> power_transmission — "Generated power enters transmission grid"
+  power_grid_corp --[SUPPLIES]--> power_transmission — "PGCIL operates India's interstate transmission"
+  power_transmission --[SUPPLIES]--> discom — "Transmitted power reaches distribution companies"
+  pumped_hydro_storage --[SUPPLIES]--> electricity — "Pumped hydro provides grid-scale energy storage"
+  qatar_gas --[PRODUCES]--> natural_gas — "Qatar is world's largest LNG exporter"
+  reliance_jamnagar --[PRODUCES]--> oil_refining — "Jamnagar is world's largest refining complex"
+  renewable_energy --[CONTAINS]--> biofuels
+  renewable_energy --[COMPETES_WITH]--> coal — "Growing solar and wind capacity displaces coal in the merit order; India targets 500GW non-fossil capacity by 2030."
+  renewable_energy --[AFFECTS]--> crude_oil_price — "Long-term renewable adoption reduces oil dependency"
+  renewable_energy --[CONTAINS]--> hydrogen
+  renewable_energy --[CONTAINS]--> hydropower
+  renewable_energy --[CONTAINS]--> nuclear_energy
+  renewable_energy --[CONTAINS]--> solar_energy
+  renewable_energy --[CONTAINS]--> wind_energy
+  russia_gas --[PRODUCES]--> natural_gas — "Russia is world's largest gas exporter"
+  russia_oil --[PRODUCES]--> crude_oil — "Russia is a top-3 global oil producer"
+  saudi_arabia_oil --[PRODUCES]--> crude_oil — "Saudi Arabia is OPEC's largest producer"
+  smart_meter --[AFFECTS]--> electricity — "Smart meters improve billing and reduce theft"
+  solar_cell_manufacturing --[PRODUCES]--> solar_panel — "Cells assembled into solar panels"
+  solar_energy --[COMPETES_WITH]--> coal_power_plant — "Solar displacing coal in merit order"
+  solar_energy --[SUPPLIES]--> electricity — "Solar feeds into the grid"
+  solar_energy --[SUPPLIES]--> green_hydrogen — "Solar powers electrolyzers for green hydrogen"
+  solar_energy --[PRODUCES]--> power_generation — "Solar capacity growing rapidly"
+  solar_panel --[SUPPLIES]--> solar_park — "Panels installed in utility-scale parks"
+  solar_panel --[SUPPLIES]--> solar_rooftop — "Panels installed on rooftops"
+  solar_park --[PRODUCES]--> solar_energy — "Solar parks generate utility-scale power"
+  solar_rooftop --[PRODUCES]--> solar_energy — "Rooftop solar generates distributed power"
+  strait_of_hormuz --[AFFECTS]--> india_crude_imports — "~60% of India's oil passes through Hormuz"
+  strategic_petroleum_reserve --[DEPENDS_ON]--> crude_oil — "SPR buffers against supply disruptions"
+  suez_canal --[AFFECTS]--> oil_tanker_shipping — "Suez disruption forces longer Cape route"
+  sugarcane_ethanol --[SUPPLIES]--> ethanol_blending — "Sugarcane ethanol blended into petrol"
+  tapi_pipeline --[SUPPLIES]--> natural_gas — "Proposed Turkmenistan-Afghanistan-Pakistan-India pipeline"
+  tata_power --[SUPPLIES]--> discom — "Tata Power distributes in Mumbai, Delhi, etc."
+  thermal_power --[PRODUCES]--> power_generation — "Thermal is the dominant generation source"
+  uae_oil --[PRODUCES]--> crude_oil — "UAE produces ~3 million bpd"
+  us_lng_exports --[PRODUCES]--> natural_gas — "US is now a major LNG exporter"
+  us_shale_oil --[PRODUCES]--> crude_oil — "US shale made America the largest oil producer"
+  vedanta_oil --[PRODUCES]--> crude_oil — "Vedanta/Cairn produces oil from Rajasthan"
+  wind_energy --[COMPETES_WITH]--> coal_power_plant — "Wind displacing coal generation"
+  wind_energy --[SUPPLIES]--> electricity — "Wind feeds into the grid"
+  wind_energy --[SUPPLIES]--> green_hydrogen — "Wind powers electrolyzers for green hydrogen"
+  wind_energy --[PRODUCES]--> power_generation — "Wind is established renewable source"
+  wind_turbine --[PRODUCES]--> wind_energy — "Turbines generate wind power"
+
+============================================================
+CATEGORY: energy_and_fuel (12 edges)
+============================================================
+  carbon_emissions --[CONTAINS]--> carbon_credit_prices
+  carbon_emissions --[CONTAINS]--> emission_standards
+  energy_and_fuel --[CONTAINS]--> carbon_emissions
+  energy_and_fuel --[CONTAINS]--> coal
+  energy_and_fuel --[CONTAINS]--> crude_oil
+  energy_and_fuel --[CONTAINS]--> natural_gas
+  energy_and_fuel --[CONTAINS]--> refined_petroleum
+  energy_and_fuel --[CONTAINS]--> renewable_energy
+  refined_petroleum --[CONTAINS]--> aviation_fuel
+  refined_petroleum --[CONTAINS]--> diesel
+  refined_petroleum --[CONTAINS]--> kerosene
+  refined_petroleum --[CONTAINS]--> petrol_gasoline
+
+============================================================
+CATEGORY: energy_policy (24 edges)
+============================================================
+  administered_gas_price --[REGULATES]--> natural_gas — "Government controls domestic gas prices"
+  administered_gas_price --[AFFECTS]--> urea — "Administered gas price sets urea production cost"
+  biofuel_policy --[REGULATES]--> ethanol_blending — "National Biofuel Policy mandates blending targets"
+  biofuel_policy --[REGULATES]--> sugarcane_ethanol — "Policy drives ethanol production from sugarcane"
+  carbon_credit --[AFFECTS]--> solar_energy — "Carbon credits incentivize solar investment"
+  carbon_credit --[AFFECTS]--> wind_energy — "Carbon credits incentivize wind investment"
+  coal_transition --[REGULATES]--> coal_power_plant — "Coal phase-down policies restrict new plants"
+  coal_transition --[AFFECTS]--> solar_energy — "Coal phase-down accelerates solar buildout"
+  cross_subsidy_electricity --[REGULATES]--> electricity_tariff — "Cross-subsidy structure distorts tariffs"
+  electricity_act_amendment --[REGULATES]--> discom — "Electricity Act reform affects DISCOM monopoly"
+  electricity_act_amendment --[REGULATES]--> open_access_power — "Reform enables easier open access"
+  ev_subsidy --[REGULATES]--> ev — "FAME scheme subsidizes EV purchase"
+  fuel_price_deregulation --[REGULATES]--> diesel — "Diesel prices revised daily by OMCs"
+  fuel_price_deregulation --[REGULATES]--> petrol — "Deregulation means OMCs set daily prices"
+  fuel_tax_india --[REGULATES]--> diesel — "Tax is major component of diesel price"
+  fuel_tax_india --[AFFECTS]--> india_fiscal_deficit — "Fuel taxes are major government revenue source"
+  fuel_tax_india --[REGULATES]--> petrol — "Central excise + state VAT make up ~50% of petrol price"
+  india_net_zero --[AFFECTS]--> coal_transition — "Net zero targets require coal phase-down"
+  lpg_subsidy --[AFFECTS]--> india_fiscal_deficit — "LPG subsidy adds to fiscal deficit"
+  lpg_subsidy --[REGULATES]--> lpg — "Government subsidy controls cylinder price"
+  rooftop_solar_subsidy --[REGULATES]--> solar_rooftop — "Subsidy drives residential solar adoption"
+  rpo --[REGULATES]--> solar_energy — "RPO mandates drive solar adoption"
+  rpo --[REGULATES]--> wind_energy — "RPO mandates drive wind adoption"
+  ujjwala_scheme --[REGULATES]--> lpg — "Ujjwala provides free connections to poor households"
+
+============================================================
+CATEGORY: environment (44 edges)
+============================================================
+  air_quality --[DEPENDS_ON]--> aqi_monitoring
+  air_quality --[AFFECTS]--> disease_surveillance
+  air_quality --[AFFECTS]--> public_healthcare
+  air_quality --[AFFECTS]--> urban_health_impact
+  airport_noise_zone --[AFFECTS]--> real_estate_prices
+  construction_ban --[DISRUPTS]--> construction_industry
+  construction_ban --[DISRUPTS]--> employment_local
+  cpcb --[MANAGES]--> aqi_monitoring
+  flood_relief --[AFFECTS]--> state_budget
+  grap_delhi --[PRODUCES]--> construction_ban
+  grap_delhi --[PRODUCES]--> vehicle_restrictions_pollution
+  hc_tree_orders --[REGULATES]--> tree_cutting_permission
+  industrial_effluent --[DISRUPTS]--> groundwater
+  industrial_effluent --[PRODUCES]--> lake_pollution
+  industrial_effluent --[PRODUCES]--> water_pollution
+  lake_pollution --[PRODUCES]--> ngt_orders
+  lake_pollution --[AFFECTS]--> real_estate_prices
+  lake_restoration --[REGULATES]--> lake_pollution
+  lake_restoration --[AFFECTS]--> real_estate_prices
+  ngt_orders --[REGULATES]--> industrial_effluent
+  ngt_orders --[PRODUCES]--> lake_restoration
+  ngt_orders --[REGULATES]--> spcb
+  noise_pollution --[PRODUCES]--> airport_noise_zone
+  noise_pollution --[REGULATES]--> construction_noise_hours
+  noise_pollution --[REGULATES]--> loudspeaker_rules
+  sewage_discharge --[PRODUCES]--> lake_pollution
+  sewage_discharge --[PRODUCES]--> water_pollution
+  sewage_overflow --[AFFECTS]--> disease_surveillance
+  sewage_overflow --[DISRUPTS]--> road_maintenance
+  spcb --[MANAGES]--> aqi_monitoring
+  swd_encroachment --[PRODUCES]--> urban_flooding
+  swd_mapping --[MANAGES]--> stormwater_drain
+  tree_census --[MANAGES]--> tree_management
+  tree_cutting_permission --[AFFECTS]--> urban_flooding
+  tree_management --[AFFECTS]--> air_quality
+  tree_management --[REGULATES]--> tree_cutting_permission
+  urban_flooding --[DISRUPTS]--> ambulance_response_time
+  urban_flooding --[AFFECTS]--> disease_surveillance
+  urban_flooding --[PRODUCES]--> flood_relief
+  urban_flooding --[DISRUPTS]--> road_maintenance
+  urban_flooding --[DEPENDS_ON]--> stormwater_drain
+  urban_flooding --[DISRUPTS]--> traffic_management — "Waterlogged roads force diversions, strand vehicles, and overwhelm traffic police; even 50mm rainfall can gridlock Indian metro cities for hours."
+  vehicle_restrictions_pollution --[AFFECTS]--> city_bus_systems
+  vehicle_restrictions_pollution --[AFFECTS]--> metro_ridership
+
+============================================================
+CATEGORY: environment_and_climate (26 edges)
+============================================================
+  biodiversity --[CONTAINS]--> deforestation
+  biodiversity --[CONTAINS]--> marine_ecosystem
+  biodiversity --[CONTAINS]--> species_endangerment
+  environment_and_climate --[CONTAINS]--> biodiversity
+  environment_and_climate --[CONTAINS]--> climate_change
+  environment_and_climate --[CONTAINS]--> natural_disasters
+  environment_and_climate --[CONTAINS]--> pollution
+  environment_and_climate --[CONTAINS]--> weather_patterns
+  natural_disasters --[CONTAINS]--> coldwaves
+  natural_disasters --[CONTAINS]--> cyclones_hurricanes
+  natural_disasters --[CONTAINS]--> droughts
+  natural_disasters --[CONTAINS]--> earthquakes
+  natural_disasters --[CONTAINS]--> floods
+  natural_disasters --[CONTAINS]--> heatwaves
+  natural_disasters --[CONTAINS]--> landslides
+  natural_disasters --[CONTAINS]--> tsunamis
+  natural_disasters --[CONTAINS]--> volcanic_eruptions
+  natural_disasters --[CONTAINS]--> wildfires
+  pollution --[CONTAINS]--> air_pollution
+  pollution --[CONTAINS]--> noise_pollution
+  pollution --[CONTAINS]--> plastic_waste
+  pollution --[CONTAINS]--> soil_contamination
+  pollution --[CONTAINS]--> water_pollution
+  weather_patterns --[CONTAINS]--> el_nino_la_nina
+  weather_patterns --[CONTAINS]--> monsoon
+  weather_patterns --[CONTAINS]--> seasonal_weather
+
+============================================================
+CATEGORY: financial (374 edges)
+============================================================
+  ad_rate_changes --[AFFECTS]--> creator_economy — "CPM rate changes directly affect creator income"
+  advance_tax --[AFFECTS]--> income_tax — "Advance tax is quarterly pre-payment of estimated income tax liability"
+  advertising_spend --[AFFECTS]--> ad_rate_changes — "Overall ad market determines CPM rates"
+  advertising_spend --[FUNDS]--> creator_economy — "Brand ad budgets fund creator monetization"
+  advertising_spend --[FUNDS]--> media_entertainment — "Ad revenue funds most media operations"
+  agri_import_duty --[AFFECTS]--> food_inflation — "Lowering edible oil duty reduces food inflation"
+  angel_tax --[AFFECTS]--> vc_funding_india — "Angel tax on startup funding created compliance burden"
+  anti_dumping_duty --[AFFECTS]--> china_economy — "Anti-dumping often targets Chinese goods"
+  auto_import_duty --[AFFECTS]--> auto_manufacturing — "CKD/CBU duty affects vehicle pricing"
+  auto_loan --[PRODUCES]--> auto_loan_emi — "Auto loan rate determines car EMI"
+  auto_loan_emi --[AFFECTS]--> auto_manufacturing — "Auto loan EMI affordability drives vehicle demand"
+  bank_fraud --[AFFECTS]--> npa — "Fraud-related NPAs damage bank balance sheets"
+  bank_liquidity --[AFFECTS]--> credit_growth — "Bank liquidity determines lending capacity"
+  bank_merger --[DISRUPTS]--> psu_banks — "Bank mergers affect branch networks and staffing"
+  bank_provisions --[AFFECTS]--> psu_banks — "Provisions reduce bank profitability"
+  bank_recapitalization --[AFFECTS]--> psu_banks — "Capital infusion restores PSU bank lending capacity"
+  bank_write_off --[AFFECTS]--> npa — "Write-offs reduce reported NPA ratios"
+  banking_regulation --[REGULATES]--> banking_employment — "RBI regulations affect bank operations and staffing"
+  basel_iii --[REGULATES]--> private_banks — "Basel III applies to all scheduled commercial banks"
+  basel_iii --[REGULATES]--> psu_banks — "Capital adequacy norms constrain PSU bank lending"
+  bitcoin --[AFFECTS]--> crypto_exchange_india — "Bitcoin price drives Indian crypto exchange volumes"
+  boj --[PRODUCES]--> boj_rate — "BOJ sets Japan interest rates"
+  boj_rate --[AFFECTS]--> global_liquidity — "BOJ policy affects yen carry trade and global flows"
+  bse --[PRODUCES]--> sensex — "BSE operates the Sensex index"
+  capital_gains_budget --[AFFECTS]--> indexation — "Budget 2024 removed indexation for most assets"
+  capital_gains_budget --[AFFECTS]--> ltcg — "Budget changes LTCG rates and exemptions"
+  capital_gains_budget --[AFFECTS]--> stcg — "Budget changes STCG rates and rules"
+  capital_gains_property --[AFFECTS]--> property_price — "Capital gains rules affect investment attractiveness"
+  circle_rate --[AFFECTS]--> property_tax — "Circle rates determine property tax base"
+  co_lending --[AFFECTS]--> nbfc_sector — "Co-lending model expands NBFC reach"
+  co_lending --[AFFECTS]--> private_banks — "Co-lending expands bank retail exposure"
+  cooperative_banks --[AFFECTS]--> npa — "Cooperative banks have historically high NPA ratios"
+  core_inflation --[AFFECTS]--> cpi_inflation — "Core inflation is the demand-driven component"
+  corporate_bonds --[PRODUCES]--> bond_market_india — "Corporate bonds are part of the overall debt market"
+  corporate_credit --[AFFECTS]--> credit_growth — "Corporate lending drives capital expenditure"
+  cpi_inflation --[AFFECTS]--> gold_price — "Gold seen as inflation hedge"
+  cpi_inflation --[AFFECTS]--> gsec_yield — "Inflation expectations drive bond yields"
+  cpi_inflation --[AFFECTS]--> health_insurance_premium — "Medical inflation drives premium hikes"
+  cpi_inflation --[AFFECTS]--> rbi_mpc — "CPI is RBI's primary target (4% +/- 2%); sustained deviation triggers MPC rate action or stance change."
+  cpi_inflation --[AFFECTS]--> repo_rate — "Persistent high inflation forces RBI rate hikes"
+  cpi_inflation --[AFFECTS]--> salary_trends — "Persistent inflation erodes real wages; companies adjust annual increments and DA (dearness allowance) to compensate."
+  credit_card_rates --[AFFECTS]--> retail_credit — "Credit card rates affect consumer revolving debt"
+  credit_growth --[AFFECTS]--> banking_employment — "Strong credit growth drives hiring in banking"
+  credit_growth --[AFFECTS]--> business_loan — "Credit availability determines business loan ease"
+  crop_insurance --[AFFECTS]--> agriculture_sector — "Insurance availability affects farmer risk-taking"
+  crop_insurance --[REGULATES]--> india_rice_production — "Crop insurance covers rice farming risk"
+  crop_insurance --[REGULATES]--> india_wheat_production — "Crop insurance covers wheat farming risk"
+  crop_insurance --[DEPENDS_ON]--> monsoon_forecast — "Crop insurance claims spike with bad monsoon"
+  crr --[AFFECTS]--> bank_liquidity — "CRR hike reduces bank liquidity (money locked with RBI)"
+  crypto_regulation_india --[REGULATES]--> crypto_exchange_india — "Regulatory uncertainty affects crypto platforms"
+  crypto_tax_india --[AFFECTS]--> crypto_exchange_india — "30% tax + 1% TDS devastated Indian crypto trading"
+  customs_duty --[PRODUCES]--> agri_import_duty — "Agricultural commodity import duties"
+  customs_duty --[PRODUCES]--> auto_import_duty — "Auto parts and CBU import duties"
+  customs_duty --[AFFECTS]--> auto_manufacturing — "Import duty on parts affects auto manufacturing costs"
+  customs_duty --[AFFECTS]--> ecommerce_sector — "Import duties affect cross-border e-commerce pricing"
+  customs_duty --[PRODUCES]--> electronics_import_duty — "Customs duty framework includes electronics"
+  customs_duty --[PRODUCES]--> gold_import_duty — "Gold import duty is a customs duty category"
+  customs_duty --[AFFECTS]--> pharma_api_china — "Duty on Chinese APIs affects pharma input costs"
+  debt_mf --[PRODUCES]--> corporate_bond_fund — "Corporate bond funds invest in company debt"
+  debt_mf --[PRODUCES]--> gilt_fund — "Gilt funds invest in government securities"
+  debt_mf --[PRODUCES]--> liquid_fund — "Liquid funds for short-term parking"
+  deposit_growth --[AFFECTS]--> bank_liquidity — "Strong deposit growth supports bank liquidity"
+  digital_rupee --[DEPENDS_ON]--> rbi — "CBDC is an RBI initiative"
+  digital_rupee --[COMPETES_WITH]--> upi — "Digital rupee may complement or compete with UPI"
+  dii_flows --[AFFECTS]--> nifty_50 — "DII flows provide market stability"
+  dollar_index --[AFFECTS]--> crude_oil — "Strong dollar typically depresses oil prices"
+  dollar_index --[AFFECTS]--> global_commodity_cycle — "Dollar strength inversely affects commodity prices"
+  dollar_index --[AFFECTS]--> gold_price — "Gold inversely correlated with dollar (mostly)"
+  dollar_index --[AFFECTS]--> inr_usd — "Strong dollar weakens rupee"
+  drug_pricing --[REGULATES]--> pharma_sector — "DPCO price controls affect pharma revenue"
+  dtaa --[AFFECTS]--> inr_usd — "Tax treaties affect cross-border investment flows"
+  eblr --[BENCHMARKED_TO]--> auto_loan — "Auto loans linked to EBLR"
+  eblr --[BENCHMARKED_TO]--> home_loan — "New home loans benchmarked to EBLR"
+  eblr --[BENCHMARKED_TO]--> personal_loan — "Personal loans linked to EBLR"
+  ecb --[PRODUCES]--> ecb_rate — "ECB sets Eurozone interest rates"
+  ecb_norms --[AFFECTS]--> corporate_credit — "ECB norms determine foreign borrowing access"
+  ecb_rate --[AFFECTS]--> global_liquidity — "ECB rates affect European capital flows"
+  education_loan --[AFFECTS]--> education_sector — "Education loan availability affects enrollment"
+  education_loan --[AFFECTS]--> remittances_outward — "Education loans fund study abroad → outward remittances"
+  electronics_import_duty --[AFFECTS]--> semiconductor_supply — "Import duties affect electronics cost"
+  emerging_market_flows --[AFFECTS]--> fii_flows — "India competes for EM allocation"
+  endowment_plan --[DEPENDS_ON]--> section_80c — "Endowment premiums qualify for 80C deduction"
+  epf --[PRODUCES]--> epf_interest_rate — "EPFO sets annual interest rate"
+  epf --[PRODUCES]--> eps — "Part of EPF contribution goes to EPS pension"
+  epf --[AFFECTS]--> job_market_india — "EPF mandate affects employer cost per employee"
+  epf_interest_rate --[BENCHMARKED_TO]--> gsec_yield — "EPF invests heavily in G-secs, rate tracks yields"
+  equalization_levy --[AFFECTS]--> it_services_sector — "Digital tax affects cross-border tech services"
+  equity_mf --[PRODUCES]--> large_cap_mf — "Large cap funds invest in top 100 stocks"
+  equity_mf --[PRODUCES]--> mid_cap_mf — "Mid cap funds invest in 101-250 ranked stocks"
+  equity_mf --[PRODUCES]--> sectoral_mf — "Sectoral/thematic funds focus on specific sectors"
+  equity_mf --[PRODUCES]--> small_cap_mf — "Small cap funds invest in 251+ ranked stocks"
+  ethereum --[AFFECTS]--> crypto_exchange_india — "ETH is #2 traded crypto on Indian exchanges"
+  eway_bill --[REGULATES]--> logistics_sector — "E-way bill compliance governs goods movement"
+  fd_rates --[AFFECTS]--> deposit_growth — "Higher FD rates attract more deposits"
+  fd_rates --[COMPETES_WITH]--> small_savings_rate — "FD and small savings compete for household savings"
+  fed_funds_rate --[AFFECTS]--> bitcoin — "Risk assets like crypto suffer in high-rate environment"
+  fed_funds_rate --[AFFECTS]--> dollar_index — "Higher Fed rate strengthens the dollar"
+  fed_funds_rate --[AFFECTS]--> fii_flows — "High US rates pull FII money from India to US"
+  fed_funds_rate --[AFFECTS]--> global_liquidity — "US rates are the single biggest global liquidity driver"
+  fed_funds_rate --[AFFECTS]--> inr_usd — "Fed hike → dollar strength → rupee weakness → import inflation → RBI response"
+  fed_funds_rate --[AFFECTS]--> us_treasury_yield — "Fed rate affects Treasury yields"
+  fed_funds_rate --[AFFECTS]--> vc_funding_india — "US rates affect LP allocations → VC dry powder globally"
+  fema --[PRODUCES]--> fema_limits — "FEMA sets foreign exchange limits"
+  fii_flows --[AFFECTS]--> inr_usd — "FII outflows mean dollar demand as foreign investors repatriate; large outflows ($3B+/month) visibly weaken the rupee."
+  fii_flows --[AFFECTS]--> nifty_50 — "FIIs own ~17% of NSE free float; sustained FII selling creates downward pressure on Nifty 50 and broader markets."
+  funding_winter --[DISRUPTS]--> edtech_funding — "Funding winter hit edtech particularly hard"
+  funding_winter --[AFFECTS]--> startup_layoffs — "Funding crunch leads to startup layoffs to extend runway"
+  funding_winter --[AFFECTS]--> startup_valuation — "Funding winter compresses startup valuations"
+  global_crypto_regulation --[AFFECTS]--> bitcoin — "US SEC actions affect global crypto prices"
+  global_liquidity --[AFFECTS]--> emerging_market_flows — "Global liquidity expansion favors EM allocation"
+  gold_import --[AFFECTS]--> trade_deficit — "Gold imports widen trade deficit"
+  gold_import_duty --[AFFECTS]--> gold_import — "Duty changes affect gold import volumes"
+  gold_import_duty --[AFFECTS]--> gold_price — "Import duty affects domestic gold price premium"
+  gold_loan --[PRODUCES]--> gold_loan_market — "Gold loan rates drive gold-backed lending market"
+  gold_price --[AFFECTS]--> banking_employment — "Gold loan business expands with gold prices"
+  gold_price --[AFFECTS]--> gold_etf — "Gold ETF NAV tracks gold price"
+  gold_price --[AFFECTS]--> gold_loan — "Higher gold price increases collateral value"
+  gold_price --[AFFECTS]--> physical_gold — "Gold price drives jewelry and investment demand"
+  gold_price --[AFFECTS]--> rbis_sovereign_gold_bond — "SGB redemption value linked to gold price"
+  gratuity --[AFFECTS]--> epf — "Gratuity and EPF together form the core employer-provided retirement benefits"
+  gratuity --[AFFECTS]--> income_tax — "Gratuity up to Rs 20L is tax-exempt; excess is taxable"
+  gsec --[PRODUCES]--> gsec_yield — "G-sec auction demand determines yields"
+  gsec_yield --[AFFECTS]--> annuity_rates — "Low yields mean lower annuity payouts"
+  gsec_yield --[AFFECTS]--> corporate_bonds — "Corporate bond spreads anchored to G-sec yield"
+  gsec_yield --[AFFECTS]--> debt_mf — "G-sec yields inversely affect debt fund NAV"
+  gsec_yield --[AFFECTS]--> home_loan_rate — "Long-term rates track government bond yields"
+  gsec_yield --[AFFECTS]--> nps — "Bond yields affect NPS debt returns"
+  gsec_yield --[AFFECTS]--> small_savings_rate — "Small savings rate formula linked to G-sec yields"
+  gsec_yield --[PRODUCES]--> yield_curve — "Term structure of G-sec yields forms yield curve"
+  gst --[PRODUCES]--> gst_collection — "GST regime generates monthly tax collections tracked as economic indicator"
+  gst --[PRODUCES]--> gst_council — "GST framework established the GST Council as its governing body"
+  gst --[AFFECTS]--> gst_municipal — "GST subsumed octroi and local body taxes; municipalities now depend on GST compensation from centre/state."
+  gst_collection --[AFFECTS]--> india_gdp — "GST collection is a proxy for economic activity"
+  gst_compliance --[AFFECTS]--> job_market_india — "GST compliance burden affects small business operations"
+  gst_council --[PRODUCES]--> gst_rate — "GST Council sets and revises rates"
+  gst_impact_retail --[AFFECTS]--> retail_sector — "GST compliance costs affect small retailers disproportionately"
+  gst_on_gaming --[REGULATES]--> gaming_sector — "28% GST on full face value devastated real money gaming"
+  gst_on_insurance --[AFFECTS]--> health_insurance_premium — "18% GST on health insurance premiums"
+  gst_on_insurance --[AFFECTS]--> term_insurance — "GST adds to term insurance premium cost"
+  gst_policy --[AFFECTS]--> auto_manufacturing — "GST rates on vehicles affect pricing and demand"
+  gst_policy --[AFFECTS]--> cement_industry — "GST on cement affects construction costs"
+  gst_policy --[AFFECTS]--> fmcg_sector — "GST rates on FMCG products affect pricing"
+  gst_policy --[AFFECTS]--> job_market_india — "GST compliance burden and rate changes affect business hiring"
+  gst_rate --[AFFECTS]--> auto_manufacturing — "GST cess on vehicles affects demand"
+  gst_rate --[AFFECTS]--> fmcg_sector — "GST rates on FMCG products affect pricing"
+  gst_rate --[AFFECTS]--> food_inflation_india — "GST on packaged food items (5-18%) adds to retail food costs; rate changes on essentials impact household budgets."
+  gst_rate --[AFFECTS]--> real_estate_sector — "GST on under-construction property affects demand"
+  health_insurance --[DEPENDS_ON]--> cashless_network — "Cashless claims need network hospitals"
+  health_insurance --[CONTAINS]--> government_health_schemes
+  health_insurance --[PRODUCES]--> health_insurance_premium — "Health insurance cost determined by premium"
+  health_insurance --[AFFECTS]--> pre_existing_condition — "PED rules determine coverage scope"
+  health_insurance --[CONTAINS]--> private_health_insurance
+  health_insurance_portability --[AFFECTS]--> health_insurance — "Portability rules allow switching insurers"
+  health_insurance_regulation --[AFFECTS]--> healthcare_employment — "Health insurance expansion increases hospital patient volume"
+  health_insurance_regulation --[AFFECTS]--> job_market_india — "Employer health insurance mandates affect hiring costs"
+  home_loan --[PRODUCES]--> home_loan_emi — "Loan rate determines EMI amount"
+  home_loan_emi --[AFFECTS]--> job_market_india — "EMI burden affects workforce mobility (people can't easily relocate)"
+  home_loan_emi --[AFFECTS]--> property_price — "EMI affordability determines property demand"
+  home_loan_rate --[AFFECTS]--> property_price — "Loan rates determine affordability and demand"
+  hra_deduction --[AFFECTS]--> old_tax_regime — "HRA deduction only in old regime"
+  imps --[DEPENDS_ON]--> npci — "IMPS is operated by NPCI for instant interbank transfers"
+  income_tax --[AFFECTS]--> salary_trends — "Income tax slab changes (new vs old regime) alter take-home pay; higher exemptions increase disposable income for salaried class."
+  income_tax_slab --[PRODUCES]--> new_tax_regime — "New regime has specific slab structure"
+  income_tax_slab --[PRODUCES]--> old_tax_regime — "Old regime has different slabs with deductions"
+  indexation --[AFFECTS]--> debt_mf — "Indexation removal makes debt MFs less tax-efficient"
+  indexation --[AFFECTS]--> gold_price — "Indexation changes affect gold investment attractiveness"
+  indexation --[AFFECTS]--> property_price — "Indexation removal affects property investment returns"
+  india_gdp --[AFFECTS]--> advertising_spend — "GDP growth → corporate profits → ad budgets → media/creator jobs"
+  india_gdp --[AFFECTS]--> credit_growth — "GDP growth drives credit demand"
+  india_gdp --[AFFECTS]--> government_employment — "Tax revenue from GDP determines government hiring capacity"
+  india_gdp --[AFFECTS]--> gst_collection — "Economic activity drives GST revenues"
+  india_gdp --[AFFECTS]--> job_market_india — "GDP growth rate is the primary driver of formal job creation; sub-6% growth typically means weaker hiring cycles."
+  india_gdp --[AFFECTS]--> nifty_50 — "GDP growth drives corporate earnings → market"
+  india_gdp --[AFFECTS]--> real_estate_sector — "Economic growth drives property demand"
+  input_tax_credit --[AFFECTS]--> gst_compliance — "ITC claims require proper compliance"
+  inr_eur --[AFFECTS]--> remittances_inward — "EUR rate affects European NRI remittance value"
+  inr_gbp --[AFFECTS]--> remittances_inward — "GBP rate affects UK NRI remittance value"
+  inr_usd --[AFFECTS]--> almond — "Almonds imported from US, priced in dollars"
+  inr_usd --[AFFECTS]--> cpi_inflation — "Weak rupee increases imported inflation"
+  inr_usd --[AFFECTS]--> crude_oil — "Rupee depreciation against the dollar increases the effective INR cost of crude oil imports for Indian refineries."
+  inr_usd --[AFFECTS]--> edible_oil — "Weaker rupee makes imported oil more expensive"
+  inr_usd --[AFFECTS]--> education_loan — "Weak rupee increases cost of foreign education"
+  inr_usd --[AFFECTS]--> fii_flows — "Rupee weakness causes FII hedging losses → selling"
+  inr_usd --[AFFECTS]--> gold_price — "Gold is priced in USD; rupee depreciation makes gold costlier in India even when international prices are flat."
+  inr_usd --[AFFECTS]--> imported_coal — "Coal imports priced in USD"
+  inr_usd --[AFFECTS]--> india_crude_imports — "Weaker rupee makes oil imports costlier"
+  inr_usd --[AFFECTS]--> inr_eur — "INR-EUR is a cross rate through USD"
+  inr_usd --[AFFECTS]--> inr_gbp — "INR-GBP is a cross rate through USD"
+  inr_usd --[AFFECTS]--> it_export_earnings — "IT companies earn in USD; a 1% rupee depreciation adds ~40bps to IT sector margins in INR terms."
+  inr_usd --[AFFECTS]--> it_services_sector — "Weak rupee boosts IT margins (revenue in USD, cost in INR)"
+  inr_usd --[AFFECTS]--> lng — "LNG imports priced in USD"
+  inr_usd --[AFFECTS]--> lpg — "LPG import parity pricing depends on exchange rate"
+  inr_usd --[AFFECTS]--> pharma_sector — "Rupee affects pharma export revenue vs API import cost"
+  inr_usd --[AFFECTS]--> remittances_outward — "Weak rupee makes foreign remittances costlier"
+  inr_usd --[AFFECTS]--> trade_deficit — "Weak rupee increases import bill in INR terms"
+  inr_usd_freelance --[AFFECTS]--> freelance_market — "Forex rates affect freelance earning attractiveness"
+  insider_trading --[AFFECTS]--> sebi — "Insider trading cases trigger SEBI enforcement"
+  interest_rates_global --[AFFECTS]--> rupee_exchange_rate — "Rate differentials drive FII flows and rupee"
+  interest_rates_global --[AFFECTS]--> us_economy — "Fed rate affects US growth"
+  interest_rates_global --[AFFECTS]--> vc_funding_india — "Global rates affect LP allocations → VC → startup employment"
+  irdai --[PRODUCES]--> bima_sugam — "IRDAI is building Bima Sugam marketplace"
+  irdai --[REGULATES]--> health_insurance — "IRDAI regulates health insurance products and pricing"
+  irdai --[REGULATES]--> motor_insurance — "IRDAI regulates motor insurance pricing"
+  irdai --[REGULATES]--> term_insurance — "IRDAI regulates life insurance products"
+  it_export_earnings --[AFFECTS]--> trade_deficit — "IT exports offset trade deficit (services surplus)"
+  lrs --[REGULATES]--> remittances_outward — "LRS caps individual foreign remittance at $250K/year"
+  ltcg --[AFFECTS]--> equity_mf — "LTCG tax reduces long-term equity returns"
+  market_volatility --[AFFECTS]--> nifty_50 — "High VIX indicates market stress"
+  mclr --[BENCHMARKED_TO]--> home_loan — "Older home loans benchmarked to MCLR"
+  mf_regulation --[REGULATES]--> mutual_fund_industry — "SEBI expense ratio caps affect AMC revenue"
+  mf_taxation --[AFFECTS]--> mutual_fund_industry — "Tax changes affect MF attractiveness"
+  microfinance_regulation --[REGULATES]--> nbfc_sector — "Microfinance rules affect NBFC-MFI operations"
+  motor_insurance --[PRODUCES]--> own_damage_insurance — "OD insurance is optional but common"
+  motor_insurance --[PRODUCES]--> third_party_insurance — "TP insurance is mandatory for all vehicles"
+  mutual_fund_industry --[PRODUCES]--> debt_mf — "Debt MFs invest in fixed income"
+  mutual_fund_industry --[PRODUCES]--> equity_mf — "Equity MFs are the largest MF category"
+  mutual_fund_industry --[PRODUCES]--> hybrid_fund — "Hybrid funds mix equity and debt"
+  mutual_fund_industry --[PRODUCES]--> index_fund — "Index/passive funds track indices"
+  nbfc_regulation --[REGULATES]--> nbfc_sector — "RBI regulation determines NBFC operating framework"
+  new_tax_regime --[COMPETES_WITH]--> old_tax_regime — "Taxpayers choose between new and old regime"
+  nifty_50 --[AFFECTS]--> equity_mf — "Nifty 50 is the benchmark for most large-cap equity MFs and index funds; its performance drives retail investor returns."
+  nifty_50 --[COMPETES_WITH]--> fd_rates — "Strong equity markets pull money away from FDs"
+  nifty_50 --[AFFECTS]--> ipo_market — "Bull market enables IPO window, crash shuts it"
+  nifty_50 --[AFFECTS]--> nifty_bank — "Banking stocks are ~33% of Nifty weight"
+  nifty_50 --[AFFECTS]--> nifty_midcap — "Broad market direction affects mid/smallcap"
+  nifty_50 --[AFFECTS]--> nifty_smallcap — "Risk appetite in large caps spills to smallcaps"
+  nifty_50 --[AFFECTS]--> nps — "Equity market performance affects NPS corpus"
+  nifty_50 --[COMPETES_WITH]--> reit — "REITs compete with equities for investor allocation"
+  nifty_50 --[AFFECTS]--> sensex — "Nifty and Sensex move in tandem (corr >0.99)"
+  nifty_smallcap --[AFFECTS]--> small_cap_mf — "Smallcap index performance drives smallcap fund returns"
+  npa --[AFFECTS]--> bank_provisions — "Rising NPAs require higher provisioning"
+  npa --[AFFECTS]--> credit_growth — "High NPAs make banks risk-averse, reducing lending"
+  npa_crisis --[DISRUPTS]--> banking_employment — "High NPAs lead to bank restructuring and hiring freeze"
+  npa_crisis --[AFFECTS]--> credit_growth — "High NPAs make banks risk-averse, reducing lending"
+  nps --[DEPENDS_ON]--> annuity_rates — "NPS mandates 40% annuity purchase at retirement"
+  nps --[AFFECTS]--> government_employment — "NPS vs OPS debate affects government employee benefits"
+  nps --[PRODUCES]--> nps_equity_allocation — "NPS allows equity allocation up to 75%"
+  nps_equity_allocation --[DEPENDS_ON]--> nifty_50 — "NPS equity returns depend on market performance"
+  nse --[PRODUCES]--> nifty_50 — "NSE operates the Nifty 50 index"
+  pay_commission --[AFFECTS]--> cpi_inflation — "DA linked to CPI; pay revision increases government spending"
+  pay_commission --[AFFECTS]--> government_employment — "Pay commission determines government salary structure"
+  payment_system_regulation --[REGULATES]--> upi — "RBI/NPCI rules govern UPI operations"
+  pboc --[REGULATES]--> china_economy — "PBOC sets China's monetary policy and interest rates"
+  pboc --[AFFECTS]--> global_liquidity — "PBOC monetary policy influences global capital flows"
+  property_price --[AFFECTS]--> real_estate_sector — "Property prices determine builder revenue and sector health"
+  property_tax --[FUNDS]--> municipal_revenue — "Property tax is the largest own-source revenue for Indian municipal corporations, funding roads, water, and sanitation."
+  property_tax --[AFFECTS]--> property_price — "Property tax is an ongoing ownership cost"
+  rbi --[PRODUCES]--> crr — "RBI mandates CRR for banks"
+  rbi --[REGULATES]--> crypto_regulation_india — "RBI has historically been against crypto"
+  rbi --[PRODUCES]--> gsec — "Government borrows via G-sec auctions managed by RBI"
+  rbi --[PRODUCES]--> rbi_mpc — "RBI's MPC is the rate-setting body"
+  rbi --[PRODUCES]--> rbi_open_market_operations — "RBI uses OMO to manage liquidity"
+  rbi --[PRODUCES]--> rbis_sovereign_gold_bond — "RBI issues SGBs on government's behalf"
+  rbi --[PRODUCES]--> reverse_repo_rate — "RBI sets the reverse repo rate"
+  rbi --[PRODUCES]--> slr — "RBI mandates SLR for banks"
+  rbi_circular --[REGULATES]--> cooperative_banks — "RBI brought cooperative banks under its regulatory purview"
+  rbi_circular --[REGULATES]--> nbfc_sector — "RBI circulars set regulatory framework for NBFCs"
+  rbi_circular --[REGULATES]--> psu_banks — "RBI circulars govern banking operations and compliance"
+  rbi_circular --[REGULATES]--> small_finance_banks — "RBI circulars govern SFB licensing and operations"
+  rbi_fintech_regulation --[REGULATES]--> digital_lending — "RBI digital lending guidelines constrain BNPL and online loans"
+  rbi_fintech_regulation --[REGULATES]--> fintech_sector — "RBI circulars directly impact fintech operations"
+  rbi_fintech_regulation --[REGULATES]--> paytm — "RBI action on Paytm Payments Bank disrupted operations"
+  rbi_forex_reserves --[DEPENDS_ON]--> rbi_intervention — "Reserves give RBI ammunition for forex intervention"
+  rbi_inflation_target --[REGULATES]--> rbi_mpc — "4% target mandates MPC response to inflation deviations"
+  rbi_intervention --[AFFECTS]--> inr_usd — "RBI buys/sells dollars to manage rupee"
+  rbi_mpc --[AFFECTS]--> gsec_yield — "MPC rate decisions directly impact G-Sec yields; a surprise repo hike can move 10Y yield by 10-15bps intraday."
+  rbi_mpc --[REGULATES]--> repo_rate — "MPC votes on repo rate every 2 months; majority decision sets the policy rate that anchors all lending rates."
+  rbi_open_market_operations --[AFFECTS]--> bank_liquidity — "Bond purchases inject liquidity, sales drain it"
+  rbi_open_market_operations --[AFFECTS]--> gsec_yield — "OMO purchases suppress G-sec yields"
+  reinsurance --[AFFECTS]--> crop_insurance — "Reinsurance rates affect crop insurance viability"
+  reinsurance --[AFFECTS]--> health_insurance_premium — "Global reinsurance rates affect Indian insurance pricing"
+  reit --[AFFECTS]--> real_estate_sector — "REITs provide institutional demand for commercial RE"
+  remittances_inward --[AFFECTS]--> inr_usd — "NRI remittances provide dollar supply"
+  rental_yield --[AFFECTS]--> reit — "Rental yield determines REIT distribution"
+  repo_rate --[AFFECTS]--> annuity_rates — "Interest rates determine annuity payout rates"
+  repo_rate --[AFFECTS]--> auto_loan — "Vehicle loans linked to MCLR/repo rate; a 25bps repo hike adds ~Rs 500/month to a Rs 8L car loan EMI."
+  repo_rate --[AFFECTS]--> auto_loan_emi — "Rate hike increases auto loan EMI"
+  repo_rate --[AFFECTS]--> auto_manufacturing — "Interest rates affect auto loan EMIs and vehicle demand"
+  repo_rate --[AFFECTS]--> business_loan — "Rate changes affect business borrowing cost"
+  repo_rate --[AFFECTS]--> credit_growth — "Repo rate changes affect lending rates and credit demand"
+  repo_rate --[AFFECTS]--> debt_mf — "Rate cuts boost debt fund NAV (bond price rise)"
+  repo_rate --[BENCHMARKED_TO]--> eblr — "EBLR is directly linked to repo rate"
+  repo_rate --[AFFECTS]--> education_loan — "Rate changes affect education loan interest"
+  repo_rate --[AFFECTS]--> epf — "Interest rate environment affects EPF interest rate decisions"
+  repo_rate --[AFFECTS]--> fd_rates — "Banks raise FD rates after repo hikes to attract deposits; depositors benefit with a 1-2 quarter lag."
+  repo_rate --[AFFECTS]--> gsec_yield — "Repo rate sets the floor for short-term yields"
+  repo_rate --[AFFECTS]--> home_loan — "Home loans benchmarked to repo rate (post-2019 RBI mandate) see EMI changes within one reset cycle of a repo rate move."
+  repo_rate --[AFFECTS]--> home_loan_emi — "Repo rate hike increases floating rate home loan EMI"
+  repo_rate --[AFFECTS]--> home_loan_rate — "Repo rate determines floating home loan rates"
+  repo_rate --[AFFECTS]--> it_services_sector — "Rate hikes slow US economy, reducing IT spend"
+  repo_rate --[AFFECTS]--> mclr — "MCLR is derived from repo rate plus spread; legacy loans still benchmarked to MCLR reprice with each reset."
+  repo_rate --[AFFECTS]--> nifty_50 — "Rate hikes compress equity valuations"
+  repo_rate --[AFFECTS]--> nps — "Bond yields affect NPS debt fund returns"
+  repo_rate --[AFFECTS]--> personal_loan — "Personal loan rates are repo-linked for most banks; rate hikes increase EMI burden on unsecured borrowers."
+  repo_rate --[AFFECTS]--> real_estate_sector — "Interest rates directly affect housing demand via EMI"
+  repo_rate --[AFFECTS]--> savings_rate — "Savings account rates loosely follow repo"
+  repo_rate --[AFFECTS]--> small_savings_rate — "Small savings rates reset quarterly linked to G-sec yields"
+  repo_rate --[AFFECTS]--> vc_funding_india — "Higher rates increase cost of capital, reduce VC risk appetite"
+  retail_credit --[AFFECTS]--> credit_growth — "Retail lending is a growing share of total credit"
+  rupee_exchange_rate --[AFFECTS]--> freelance_market — "Weak rupee makes Indian freelancers more competitive globally"
+  rupee_exchange_rate --[AFFECTS]--> inr_usd_freelance — "Rupee rate determines INR value of dollar earnings"
+  rupee_exchange_rate --[AFFECTS]--> it_services_sector — "Weak rupee improves IT company margins in INR"
+  rupee_exchange_rate --[AFFECTS]--> pharma_sector — "Forex affects export revenue and import costs"
+  rural_demand --[AFFECTS]--> fmcg_sector — "FMCG volume growth driven by rural demand"
+  sdl --[PRODUCES]--> bond_market_india — "State development loans are a significant bond segment"
+  sebi --[REGULATES]--> bse — "SEBI regulates BSE as a stock exchange"
+  sebi --[REGULATES]--> ipo_market — "SEBI approves and regulates IPOs"
+  sebi --[REGULATES]--> margin_trading — "SEBI margin rules affect F&O trading"
+  sebi --[REGULATES]--> nifty_50 — "SEBI regulations govern equity markets"
+  sebi --[REGULATES]--> nse — "SEBI regulates NSE as a stock exchange"
+  section_80c --[AFFECTS]--> epf — "EPF qualifies for 80C deduction"
+  section_80c --[AFFECTS]--> equity_mf — "ELSS funds get 80C tax benefit"
+  section_80c --[AFFECTS]--> nps — "NPS gets additional 80CCD(1B) deduction of Rs 50K"
+  section_80c --[AFFECTS]--> nsc — "NSC qualifies for 80C deduction"
+  section_80c --[AFFECTS]--> old_tax_regime — "80C available only in old regime"
+  section_80c --[AFFECTS]--> ppf — "PPF qualifies for 80C tax deduction"
+  section_80d --[AFFECTS]--> health_insurance — "80D deduction incentivizes health insurance purchase"
+  section_80d --[AFFECTS]--> old_tax_regime — "80D available only in old regime"
+  sensex --[AFFECTS]--> equity_mf — "Sensex tracks 30 large-caps and serves as the BSE benchmark; market sentiment flows through to MF NAVs."
+  sip_flows --[PRODUCES]--> dii_flows — "SIP flows make MFs the largest DII"
+  sip_flows --[FUNDS]--> equity_mf — "Monthly SIPs are the primary equity MF source"
+  slr --[AFFECTS]--> bank_liquidity — "SLR requirement locks bank funds in government securities"
+  small_finance_banks --[DEPENDS_ON]--> microfinance_regulation — "Many SFBs converted from MFIs and serve similar segments"
+  small_savings_rate --[PRODUCES]--> nsc — "NSC rate set under small savings framework"
+  small_savings_rate --[PRODUCES]--> post_office_schemes — "All post office scheme rates follow small savings"
+  small_savings_rate --[PRODUCES]--> ppf — "PPF rate set under small savings framework"
+  small_savings_rate --[PRODUCES]--> scss — "SCSS rate set under small savings framework"
+  sovereign_green_bond --[PRODUCES]--> bond_market_india — "Sovereign green bonds are a G-sec sub-category for climate projects"
+  sovereign_green_bond --[BENCHMARKED_TO]--> gsec_yield — "Green bond yields benchmarked to comparable G-sec yields"
+  stamp_duty --[FUNDS]--> municipal_revenue
+  stamp_duty --[AFFECTS]--> property_price — "Stamp duty affects transaction cost and demand"
+  stamp_duty_rate --[AFFECTS]--> property_price — "High stamp duty adds to acquisition cost"
+  stcg --[AFFECTS]--> equity_mf — "STCG tax on equity MF affects trading decisions"
+  stcg --[AFFECTS]--> nifty_50 — "STCG tax affects short-term trading behavior"
+  stock_market_crash --[AFFECTS]--> epf — "EPFO invests ~15% in equities"
+  stock_market_crash --[DISRUPTS]--> ipo_market — "Crashes freeze IPO pipeline"
+  stock_market_crash --[DISRUPTS]--> nifty_50 — "Market crashes destroy portfolio values"
+  stock_market_crash --[AFFECTS]--> nps — "Crash affects NPS equity allocation value"
+  stock_market_crash --[AFFECTS]--> startup_layoffs — "Market crash → funding freeze → startup layoffs"
+  stock_market_rally --[AFFECTS]--> ipo_market — "Market rallies open the IPO window for new listings"
+  stock_market_rally --[AFFECTS]--> nifty_50 — "Bull rallies push Nifty to new highs"
+  stt --[AFFECTS]--> margin_trading — "STT on F&O increases trading costs"
+  superannuation --[DEPENDS_ON]--> annuity_rates — "Superannuation corpus converted to annuity at retirement"
+  superannuation --[AFFECTS]--> nps — "Many employers moved from superannuation funds to NPS for retirement benefits"
+  surcharge --[AFFECTS]--> income_tax — "Surcharge increases effective tax rate for high-income taxpayers"
+  tcs_foreign_remittance --[AFFECTS]--> lrs — "TCS on remittances above Rs 7 lakh increases cost"
+  tcs_foreign_remittance --[AFFECTS]--> remittances_outward — "TCS discourages foreign remittances"
+  tds --[AFFECTS]--> income_tax — "TDS is advance tax collection at source"
+  term_insurance --[DEPENDS_ON]--> claim_settlement — "Term insurance value depends on claim settlement ratio"
+  toll_charges --[AFFECTS]--> trucking — "Toll costs are significant trucking expense"
+  trade_deficit --[AFFECTS]--> inr_usd — "A widening trade deficit increases net dollar demand in the forex market, putting depreciation pressure on the rupee."
+  ulip --[DEPENDS_ON]--> nifty_50 — "ULIP equity returns track market performance"
+  union_budget --[PRODUCES]--> capital_gains_budget — "Budget announces capital gains tax changes"
+  union_budget --[AFFECTS]--> customs_duty — "Budget announces customs duty changes"
+  union_budget --[AFFECTS]--> income_tax_slab — "Budget changes tax slabs and rates"
+  union_budget --[AFFECTS]--> new_tax_regime — "Budget updates new regime benefits"
+  union_budget --[AFFECTS]--> section_80c — "Budget can change 80C limits"
+  union_budget --[AFFECTS]--> standard_deduction — "Budget can revise standard deduction"
+  upi --[AFFECTS]--> digital_lending — "UPI data enables digital lending decisions"
+  upi --[COMPETES_WITH]--> imps — "UPI has largely replaced IMPS for instant person-to-person transfers"
+  upi --[COMPETES_WITH]--> neft_rtgs — "UPI reducing NEFT/RTGS usage for small amounts"
+  upi --[DEPENDS_ON]--> npci — "UPI is operated by NPCI"
+  upi_outage --[DISRUPTS]--> upi — "UPI outages affect millions of daily transactions"
+  us_fed --[PRODUCES]--> fed_funds_rate — "Fed sets the federal funds rate"
+  us_fed --[AFFECTS]--> fii_flows — "Fed tightening raises US yields, making EM carry trades less attractive and triggering FII outflows from India."
+  us_fed --[AFFECTS]--> inr_usd — "Fed rate hikes strengthen the dollar globally and widen the India-US rate differential, pulling capital out and weakening INR."
+  us_treasury_yield --[AFFECTS]--> gold_price — "Higher real yields reduce gold attractiveness (no yield)"
+  us_treasury_yield --[AFFECTS]--> gsec_yield — "US yield differential affects India bond demand"
+  vc_funding_india --[AFFECTS]--> ipo_market — "VC exits drive IPO pipeline"
+  vc_funding_india --[AFFECTS]--> series_a_market — "Overall VC climate determines Series A availability"
+  vc_funding_india --[AFFECTS]--> series_b_c_market — "VC climate determines growth funding"
+  wfh_tax_implications --[AFFECTS]--> remote_work_policy — "Tax rules affect where remote workers choose to live"
+  wpi_inflation --[AFFECTS]--> cpi_inflation — "WPI tracks producer prices that eventually pass through to consumer prices"
+  yield_curve --[AFFECTS]--> bond_market_india — "Yield curve shape signals economic expectations"
+
+============================================================
+CATEGORY: financial_system (57 edges)
+============================================================
+  banking --[CONTAINS]--> banking_fees
+  banking --[CONTAINS]--> credit_cards
+  banking --[CONTAINS]--> digital_payments
+  banking --[CONTAINS]--> education_loans
+  banking --[CONTAINS]--> home_loans
+  banking --[CONTAINS]--> lending_rates
+  banking --[CONTAINS]--> npa_bad_loans
+  banking --[CONTAINS]--> personal_loans
+  banking --[CONTAINS]--> savings_deposit_rates
+  banking --[CONTAINS]--> vehicle_loans
+  debt_markets --[CONTAINS]--> corporate_bonds
+  debt_markets --[CONTAINS]--> government_bonds
+  debt_markets --[CONTAINS]--> small_savings
+  debt_markets --[CONTAINS]--> sovereign_gold_bonds
+  equity_markets --[CONTAINS]--> etfs
+  equity_markets --[CONTAINS]--> ipo_market
+  equity_markets --[CONTAINS]--> mutual_funds
+  equity_markets --[CONTAINS]--> stock_indices
+  exchange_rates --[CONTAINS]--> cny_usd
+  exchange_rates --[CONTAINS]--> crypto_currencies
+  exchange_rates --[CONTAINS]--> eur_usd
+  exchange_rates --[CONTAINS]--> gbp_usd
+  exchange_rates --[CONTAINS]--> jpy_usd
+  exchange_rates --[CONTAINS]--> usd_inr
+  financial_system --[CONTAINS]--> banking
+  financial_system --[CONTAINS]--> debt_markets
+  financial_system --[CONTAINS]--> equity_markets
+  financial_system --[CONTAINS]--> exchange_rates
+  financial_system --[CONTAINS]--> insurance
+  financial_system --[CONTAINS]--> monetary_policy
+  financial_system --[CONTAINS]--> precious_metals
+  financial_system --[CONTAINS]--> taxation
+  insurance --[CONTAINS]--> crop_insurance
+  insurance --[CONTAINS]--> general_insurance
+  insurance --[CONTAINS]--> health_insurance_financial
+  insurance --[CONTAINS]--> life_insurance
+  insurance --[CONTAINS]--> travel_insurance
+  monetary_policy --[CONTAINS]--> inflation_rate
+  monetary_policy --[CONTAINS]--> money_supply
+  monetary_policy --[CONTAINS]--> policy_interest_rate
+  monetary_policy --[CONTAINS]--> quantitative_easing
+  precious_metals --[CONTAINS]--> gold
+  precious_metals --[CONTAINS]--> platinum
+  precious_metals --[CONTAINS]--> silver
+  stock_indices --[CONTAINS]--> global_indices
+  stock_indices --[CONTAINS]--> nasdaq
+  stock_indices --[CONTAINS]--> nifty
+  stock_indices --[CONTAINS]--> sensex
+  stock_indices --[CONTAINS]--> sp500
+  taxation --[CONTAINS]--> capital_gains_tax
+  taxation --[CONTAINS]--> customs_duty
+  taxation --[CONTAINS]--> excise_duty
+  taxation --[CONTAINS]--> gst_vat
+  taxation --[CONTAINS]--> income_tax
+  taxation --[CONTAINS]--> inheritance_estate_tax
+  taxation --[CONTAINS]--> property_tax_financial
+  taxation --[CONTAINS]--> tax_deductions_exemptions
+
+============================================================
+CATEGORY: food (243 edges)
+============================================================
+  almond --[SUPPLIES]--> dry_fruits — "Almonds mostly imported from California"
+  animal_feed --[SUPPLIES]--> aquaculture — "Fish/shrimp farming needs feed"
+  animal_feed --[SUPPLIES]--> chicken — "Poultry feed is mostly corn and soy"
+  animal_feed --[SUPPLIES]--> eggs — "Layer feed determines egg production cost"
+  animal_feed --[SUPPLIES]--> milk — "Dairy cattle feed includes corn"
+  animal_feed --[SUPPLIES]--> poultry_industry — "Feed is 65-70% of poultry production cost"
+  apple --[AFFECTS]--> fruit_prices — "Apple prices drive fruit inflation in winter"
+  aquaculture --[PRODUCES]--> fish — "Aquaculture supplies ~65% of India's fish"
+  argentina_soy_production --[PRODUCES]--> soybean — "Argentina is a top soy exporter"
+  assam_tea --[PRODUCES]--> tea — "Assam produces ~50% of India's tea"
+  australia_wheat_production --[PRODUCES]--> wheat — "Australia is a key wheat exporter"
+  avian_flu --[DISRUPTS]--> chicken — "Bird flu scares crash chicken demand"
+  avian_flu --[DISRUPTS]--> eggs — "Bird flu scares crash egg demand"
+  avian_flu --[DISRUPTS]--> poultry_industry — "Bird flu outbreaks cause mass culling and demand collapse"
+  banana --[AFFECTS]--> fruit_prices — "Banana is cheapest fruit, high CPI weight"
+  biotech_seeds --[SUPPLIES]--> seeds — "GM/hybrid seeds improve yields"
+  biscuits --[SUPPLIES]--> consumer — "Biscuits are India's largest packaged food category"
+  black_pepper --[SUPPLIES]--> spices — "Black pepper is the king of spices"
+  brazil_coffee_production --[PRODUCES]--> coffee — "Brazil is world's largest coffee producer"
+  brazil_corn_production --[PRODUCES]--> corn — "Brazil is a major corn exporter"
+  brazil_soy_production --[PRODUCES]--> soybean — "Brazil is world's largest soy producer"
+  bread --[SUPPLIES]--> consumer — "Bread is a staple food item"
+  cardamom --[SUPPLIES]--> spices — "Cardamom is premium spice"
+  cashew --[SUPPLIES]--> dry_fruits — "Cashew is popular Indian dry fruit"
+  cattle_feed --[SUPPLIES]--> biogas — "Cattle dung is feedstock for biogas plants"
+  cattle_feed --[SUPPLIES]--> milk — "Feed cost is ~60-70% of milk production cost"
+  chana_dal --[SUPPLIES]--> pulses — "Chana dal widely used in Indian cooking"
+  chicken --[SUPPLIES]--> consumer — "Chicken is the most consumed meat in India"
+  chicken --[AFFECTS]--> food_inflation_india — "Chicken prices are part of CPI protein basket"
+  chili --[SUPPLIES]--> spices — "Chili is essential in Indian cooking"
+  cinnamon --[SUPPLIES]--> spices — "Cinnamon used in cooking and beverages"
+  coconut --[PRODUCES]--> coconut_oil — "Copra is pressed into coconut oil"
+  coconut --[SUPPLIES]--> consumer — "Coconut used in cooking across South India"
+  coconut_oil --[SUPPLIES]--> edible_oil — "Coconut oil used for cooking in Kerala and coastal regions"
+  coconut_oil --[COMPETES_WITH]--> palm_oil — "Coconut oil and palm oil compete in tropical cooking"
+  coffee --[SUPPLIES]--> consumer — "Coffee consumption growing rapidly in India"
+  cold_chain_logistics --[SUPPLIES]--> apple — "Apples need cold chain from Kashmir/HP to markets"
+  cold_chain_logistics --[SUPPLIES]--> chicken — "Chicken needs cold storage and transport"
+  cold_chain_logistics --[SUPPLIES]--> grape — "Table grapes need refrigerated transport"
+  cold_chain_logistics --[SUPPLIES]--> mango — "Mangoes are perishable, need cold chain"
+  cold_chain_logistics --[SUPPLIES]--> milk — "Milk requires cold chain from farm to consumer"
+  cold_storage --[AFFECTS]--> food_waste — "Inadequate cold storage causes ~40% produce wastage"
+  cold_storage --[SUPPLIES]--> onion — "Cold storage extends onion shelf life"
+  cold_storage --[SUPPLIES]--> potato — "Cold storage preserves potatoes between seasons"
+  contract_farming --[SUPPLIES]--> food_processing — "Contract farming supplies raw material to processors"
+  corn --[SUPPLIES]--> animal_feed — "Corn is primary ingredient in livestock feed"
+  corn --[SUPPLIES]--> cattle_feed — "Corn is used in compound cattle feed"
+  corn --[SUPPLIES]--> corn_ethanol — "US converts ~40% of corn to ethanol"
+  corn --[COMPETES_WITH]--> sugarcane_ethanol — "Corn ethanol competes with sugarcane ethanol as biofuel source"
+  cotton --[PRODUCES]--> cottonseed_oil — "Cottonseed oil is byproduct of cotton ginning"
+  cottonseed_oil --[SUPPLIES]--> edible_oil — "Cottonseed oil used as cooking oil in Gujarat"
+  cumin --[SUPPLIES]--> spices — "Cumin (jeera) is widely used spice"
+  curd_yogurt --[SUPPLIES]--> consumer — "Curd is daily consumption in Indian households"
+  dairy_industry --[PRODUCES]--> butter — "Dairy processors produce butter"
+  dairy_industry --[PRODUCES]--> cheese — "Dairy processors produce cheese and paneer"
+  dairy_industry --[PRODUCES]--> curd_yogurt — "Dairy processors produce curd and yogurt"
+  dairy_industry --[PRODUCES]--> ghee — "Dairy processors produce ghee"
+  dairy_industry --[PRODUCES]--> ice_cream — "Dairy companies produce ice cream"
+  dairy_industry --[PRODUCES]--> infant_formula — "Dairy input for infant formula production"
+  dairy_industry --[PRODUCES]--> packaged_milk — "Dairy brands sell packaged UHT milk"
+  dap_fertilizer --[SUPPLIES]--> fertilizer — "DAP is essential phosphate fertilizer"
+  darjeeling_tea --[PRODUCES]--> tea — "Darjeeling produces premium tea"
+  drinking_water --[SUPPLIES]--> consumer — "Packaged water is growing consumption category"
+  drinking_water --[CONTAINS]--> desalination
+  drinking_water --[CONTAINS]--> groundwater
+  drinking_water --[CONTAINS]--> municipal_water_supply
+  drinking_water --[CONTAINS]--> water_purification
+  dry_fruits --[SUPPLIES]--> consumer — "Dry fruits consumed as snacks and in cooking"
+  edible_oil --[SUPPLIES]--> consumer — "Cooking oil is essential household consumption"
+  edible_oil --[AFFECTS]--> food_inflation_india — "Edible oil is ~10% of food CPI basket"
+  eggs --[CONTAINS]--> chicken_eggs
+  eggs --[SUPPLIES]--> consumer — "Eggs are a key affordable protein"
+  farm_labor --[SUPPLIES]--> assam_tea — "Tea plucking is labor-intensive"
+  farm_labor --[SUPPLIES]--> india_rice_production — "Rice transplanting/harvesting is labor-intensive"
+  farm_mechanization --[SUPPLIES]--> india_rice_production — "Mechanized transplanting and harvesting"
+  farm_mechanization --[SUPPLIES]--> india_wheat_production — "Combine harvesters for wheat"
+  fertilizer --[AFFECTS]--> food_inflation_india — "Fertilizer is 15-20% of Indian farming input costs; urea and DAP price rises flow through to crop production costs and food prices."
+  fertilizer --[SUPPLIES]--> india_pulse_production — "Pulses need fertilizer though less than cereals"
+  fertilizer --[SUPPLIES]--> india_rice_production — "Rice needs heavy fertilizer application"
+  fertilizer --[SUPPLIES]--> india_wheat_production — "Wheat requires fertilizer inputs"
+  fertilizer --[AFFECTS]--> soil_degradation — "Excessive fertilizer use degrades soil health"
+  fish --[SUPPLIES]--> consumer — "Fish is important protein in coastal/eastern India"
+  fodder --[SUPPLIES]--> cattle_feed — "Green and dry fodder are key cattle feed"
+  food_inflation --[AFFECTS]--> cpi_inflation — "Food has ~46% weight in India's CPI basket; food price spikes mechanically push headline inflation higher."
+  food_inflation --[AFFECTS]--> fmcg_sector — "Food inflation increases FMCG input costs"
+  food_inflation --[AFFECTS]--> food_delivery — "Food inflation increases order values but may reduce volumes"
+  food_inflation --[AFFECTS]--> rbi_mpc — "Food inflation spikes force hawkish MPC"
+  food_inflation --[AFFECTS]--> retail_sector — "Food inflation affects grocery retail margins and volumes"
+  food_inflation --[AFFECTS]--> salary_trends — "Food price spikes create pressure for wage increases"
+  food_inflation_india --[AFFECTS]--> consumer — "Food inflation directly impacts household spending"
+  food_inflation_india --[AFFECTS]--> cpi_inflation — "India-specific food inflation (vegetables, cereals, pulses) drives CPI volatility given high basket weight."
+  food_inflation_india --[AFFECTS]--> india_fiscal_deficit — "High food inflation triggers subsidy spending"
+  food_inflation_india --[AFFECTS]--> rbi_monetary_policy — "High food inflation triggers RBI rate action"
+  food_packaging --[SUPPLIES]--> food_delivery — "Delivery needs packaging materials"
+  food_waste --[AFFECTS]--> food_inflation_india — "Food wastage reduces effective supply, raising prices"
+  fruit_juice --[SUPPLIES]--> consumer — "Packaged fruit juice consumed by households"
+  fruit_prices --[AFFECTS]--> food_inflation_india — "Fruit prices affect CPI"
+  ghee --[SUPPLIES]--> consumer — "Ghee is a staple cooking fat in India"
+  gig_workers --[SUPPLIES]--> food_delivery — "Gig workers deliver food for platforms"
+  grain_transport --[SUPPLIES]--> rice — "Rice needs transport from farm to market"
+  grape --[AFFECTS]--> fruit_prices — "Grape prices and exports from Maharashtra"
+  groundnut_oil --[SUPPLIES]--> edible_oil — "Groundnut oil used in Western/South India"
+  honey --[SUPPLIES]--> consumer — "Honey consumed as natural sweetener and health food"
+  horticulture --[AFFECTS]--> fruit_prices — "Horticulture output determines fruit supply"
+  horticulture --[AFFECTS]--> vegetable_prices — "Horticulture output determines vegetable supply"
+  ice_cream --[SUPPLIES]--> consumer — "Ice cream is discretionary dairy consumption"
+  india_coffee_production --[PRODUCES]--> coffee — "India produces robusta and arabica coffee"
+  india_millet_production --[PRODUCES]--> millets — "India is the world's largest millet producer"
+  india_mustard_production --[PRODUCES]--> mustard_oil — "India produces mustard for domestic oil"
+  india_pulse_production --[PRODUCES]--> chana_dal — "India is largest chickpea producer"
+  india_pulse_production --[PRODUCES]--> moong_dal — "India produces moong dal"
+  india_pulse_production --[PRODUCES]--> toor_dal — "India produces toor dal domestically"
+  india_pulse_production --[PRODUCES]--> urad_dal — "India produces urad dal"
+  india_rice_production --[AFFECTS]--> food_inflation — "Rice has the highest weight in India's food CPI; production shortfalls from poor monsoon directly push up retail rice prices and overall food inflation."
+  india_rice_production --[PRODUCES]--> rice — "India is the world's 2nd largest rice producer"
+  india_rice_production --[PRODUCES]--> stubble_burning — "Rice paddy stubble burned after harvest in Punjab/Haryana"
+  india_spice_exports --[AFFECTS]--> spices — "High export demand can raise domestic prices"
+  india_sugarcane_production --[PRODUCES]--> sugarcane — "India is world's 2nd largest sugarcane producer (UP, Maharashtra)"
+  india_wheat_production --[PRODUCES]--> wheat — "India is a major wheat producer (Punjab, Haryana, MP)"
+  indonesia_palm_oil --[AFFECTS]--> climate_change — "Palm oil expansion drives deforestation and emissions"
+  indonesia_palm_oil --[PRODUCES]--> palm_oil — "Indonesia is world's largest palm oil producer"
+  irrigation --[CONTAINS]--> canal_irrigation
+  irrigation --[CONTAINS]--> dam_reservoir
+  irrigation --[CONTAINS]--> drip_irrigation
+  irrigation --[SUPPLIES]--> india_rice_production — "Paddy requires extensive irrigation"
+  irrigation --[SUPPLIES]--> india_sugarcane_production — "Sugarcane needs irrigation in low-rainfall areas"
+  jaggery --[SUPPLIES]--> consumer — "Jaggery is traditional sweetener in Indian households"
+  malaysia_palm_oil --[AFFECTS]--> climate_change — "Palm plantation expansion drives deforestation"
+  malaysia_palm_oil --[PRODUCES]--> palm_oil — "Malaysia is 2nd largest palm oil producer"
+  mandi_system --[AFFECTS]--> food_inflation_india — "Mandi prices drive retail food prices"
+  mango --[AFFECTS]--> fruit_prices — "Mango season affects summer fruit prices"
+  marine_fishing --[PRODUCES]--> fish — "Marine catch is significant fish source"
+  masoor_dal --[SUPPLIES]--> pulses — "Masoor dal is affordable protein source"
+  milk --[SUPPLIES]--> consumer — "Milk is essential daily consumption"
+  milk --[SUPPLIES]--> dairy_industry — "Raw milk goes to cooperatives and processors"
+  milk --[AFFECTS]--> food_inflation_india — "Milk and dairy products have high CPI weight"
+  milk_procurement_price --[AFFECTS]--> milk — "Higher procurement price raises retail milk price"
+  millets --[SUPPLIES]--> consumer — "Millets are consumed as health food and traditional grain"
+  millets --[AFFECTS]--> food_inflation_india — "Millet prices affect CPI food basket"
+  monsoon_forecast --[AFFECTS]--> agriculture_sector — "Monsoon determines kharif output and farmer income"
+  monsoon_forecast --[AFFECTS]--> construction_employment — "Monsoon season halts outdoor construction"
+  monsoon_forecast --[AFFECTS]--> food_inflation — "Bad monsoon causes vegetable and cereal price spikes"
+  monsoon_forecast --[AFFECTS]--> rural_demand — "Good monsoon boosts rural income and demand"
+  moong_dal --[SUPPLIES]--> pulses — "Moong dal is popular daily lentil"
+  mustard_oil --[SUPPLIES]--> edible_oil — "Mustard oil is key cooking oil in North/East India"
+  mutton --[SUPPLIES]--> consumer — "Mutton is consumed across India"
+  oil_refining_food --[SUPPLIES]--> edible_oil — "Crude vegetable oil is refined for consumption"
+  olive_oil --[SUPPLIES]--> edible_oil — "Olive oil is premium imported cooking oil"
+  onion --[SUPPLIES]--> consumer — "Onion is an essential daily cooking ingredient"
+  onion --[AFFECTS]--> food_inflation_india — "Onion prices are politically sensitive inflation indicator"
+  organic_farming --[COMPETES_WITH]--> fertilizer — "Organic farming uses natural inputs instead of chemical fertilizer"
+  organic_farming --[COMPETES_WITH]--> pesticides — "Organic farming avoids chemical pesticides"
+  packaged_milk --[SUPPLIES]--> consumer — "Packaged milk consumed by urban households"
+  palm_oil --[SUPPLIES]--> biscuits — "Palm oil used as fat in biscuit manufacturing"
+  palm_oil --[SUPPLIES]--> edible_oil — "Palm oil is cheapest and most consumed cooking oil globally"
+  palm_oil --[SUPPLIES]--> food_processing — "Palm oil used extensively in packaged food"
+  palm_oil --[COMPETES_WITH]--> soybean_oil — "Palm and soy oils are substitutes"
+  palm_oil --[COMPETES_WITH]--> sunflower_oil — "Palm and sunflower oils are substitutes"
+  palm_oil --[SUPPLIES]--> vanaspati — "Palm oil is hydrogenated to make vanaspati"
+  palm_oil_import --[AFFECTS]--> fmcg_sector — "Palm oil is key input for soaps, foods"
+  pasta_noodles --[SUPPLIES]--> consumer — "Instant noodles are popular convenience food"
+  pesticides --[SUPPLIES]--> india_rice_production — "Rice paddies need pest control"
+  pesticides --[AFFECTS]--> water_pollution — "Pesticide runoff contaminates water"
+  phosphoric_acid --[SUPPLIES]--> dap_fertilizer — "Phosphoric acid is key input for DAP"
+  potash --[SUPPLIES]--> fertilizer — "Potash provides potassium for crops"
+  potato --[SUPPLIES]--> consumer — "Potato is the most consumed vegetable in India"
+  poultry_industry --[PRODUCES]--> chicken — "Broiler farms produce chicken for market"
+  poultry_industry --[PRODUCES]--> eggs — "Layer farms produce eggs"
+  pulses --[SUPPLIES]--> consumer — "Dal is daily protein for most Indian households"
+  pulses --[AFFECTS]--> food_inflation_india — "Dal prices have significant CPI weight"
+  restaurant_industry --[SUPPLIES]--> consumer — "Restaurants are major food consumption channel"
+  rice --[CONTAINS]--> basmati_rice
+  rice --[CONTAINS]--> broken_rice
+  rice --[AFFECTS]--> food_inflation_india — "Rice is a major component of food CPI"
+  rice --[CONTAINS]--> non_basmati_rice
+  rice --[SUPPLIES]--> rice_milling — "Paddy is milled into edible rice"
+  rice --[SUPPLIES]--> rice_procurement_india — "Government procures rice at MSP"
+  rice_bran_oil --[SUPPLIES]--> edible_oil — "Rice bran oil is a healthy cooking oil option"
+  rice_milling --[SUPPLIES]--> mandi_system — "Milled rice goes to wholesale markets"
+  rice_milling --[PRODUCES]--> rice_bran_oil — "Rice bran oil extracted during milling"
+  russia_sunflower_oil --[PRODUCES]--> sunflower_oil — "Russia is 2nd largest sunflower oil producer"
+  russia_wheat_production --[PRODUCES]--> wheat — "Russia is the world's largest wheat exporter"
+  salt --[SUPPLIES]--> consumer — "Salt is essential daily cooking ingredient"
+  seeds --[SUPPLIES]--> india_rice_production — "Seed quality affects rice yield"
+  seeds --[SUPPLIES]--> india_wheat_production — "Seed variety affects wheat yield"
+  soft_drinks --[SUPPLIES]--> consumer — "Soft drinks consumed by households"
+  soybean --[SUPPLIES]--> animal_feed — "Soybean meal is key protein in feed"
+  soybean --[SUPPLIES]--> cattle_feed — "Soybean meal provides protein for cattle"
+  soybean --[PRODUCES]--> soybean_meal — "Crushing soybeans yields meal and oil"
+  soybean --[PRODUCES]--> soybean_oil — "Crushing soybeans yields oil and meal"
+  soybean_meal --[SUPPLIES]--> animal_feed — "Soy meal is protein base for animal feed"
+  soybean_oil --[SUPPLIES]--> edible_oil — "Soy oil is widely used for cooking"
+  soybean_oil --[COMPETES_WITH]--> mustard_oil — "Soy and mustard oils compete in Indian market"
+  spices --[SUPPLIES]--> consumer — "Spices are essential for Indian food"
+  spices --[AFFECTS]--> food_inflation_india — "Spice prices affect food CPI"
+  sugar --[SUPPLIES]--> biscuits — "Sugar is key ingredient in biscuits"
+  sugar --[SUPPLIES]--> consumer — "Sugar is daily household consumption"
+  sugar --[AFFECTS]--> food_inflation_india — "Sugar prices affect food CPI"
+  sugar --[SUPPLIES]--> food_processing — "Sugar is major input for food processing industry"
+  sugar --[SUPPLIES]--> fruit_juice — "Added sugar in most packaged juices"
+  sugar --[SUPPLIES]--> ice_cream — "Sugar is key ingredient in ice cream"
+  sugar --[SUPPLIES]--> soft_drinks — "Soft drinks use large quantities of sugar"
+  sugar_mills --[PRODUCES]--> bagasse_power — "Sugar mills burn bagasse for cogeneration"
+  sugar_mills --[PRODUCES]--> electricity — "Sugar mills generate power from bagasse cogeneration"
+  sugar_mills --[PRODUCES]--> sugar — "Sugar mills produce white sugar"
+  sugar_mills --[PRODUCES]--> sugarcane_ethanol — "Sugar mills divert molasses to ethanol"
+  sugarcane --[PRODUCES]--> jaggery — "Sugarcane juice boiled to make jaggery"
+  sugarcane --[SUPPLIES]--> sugar_mills — "Sugarcane is crushed in sugar mills"
+  sugarcane --[PRODUCES]--> sugarcane_ethanol — "Sugarcane juice/molasses used for ethanol"
+  sunflower_oil --[SUPPLIES]--> edible_oil — "Sunflower oil is a popular cooking oil"
+  sunflower_oil --[COMPETES_WITH]--> mustard_oil — "Consumers switch between oils based on price"
+  tea --[SUPPLIES]--> consumer — "Tea is India's most consumed beverage"
+  tea --[AFFECTS]--> food_inflation_india — "Tea prices part of beverages CPI"
+  thailand_rice_production --[PRODUCES]--> rice — "Thailand is a major rice exporter"
+  tomato --[SUPPLIES]--> consumer — "Tomato is essential for Indian cooking"
+  tomato --[AFFECTS]--> food_inflation_india — "Tomato price spikes drive headline inflation"
+  toor_dal --[SUPPLIES]--> pulses — "Toor dal is most consumed pulse in India"
+  turmeric --[SUPPLIES]--> spices — "Turmeric is a key Indian spice"
+  ukraine_sunflower_oil --[PRODUCES]--> sunflower_oil — "Ukraine is world's top sunflower oil exporter"
+  ukraine_wheat_production --[PRODUCES]--> wheat — "Ukraine is a major global wheat supplier"
+  urad_dal --[SUPPLIES]--> pulses — "Urad dal used for idli, dosa, dal makhani"
+  urea --[SUPPLIES]--> fertilizer — "Urea is the most used fertilizer in India"
+  urea --[AFFECTS]--> food_inflation_india — "Urea is the most-used fertilizer in India; subsidy reductions or supply shortages directly raise farmer input costs."
+  us_corn_production --[PRODUCES]--> corn — "US is the world's largest corn producer"
+  us_soy_production --[PRODUCES]--> soybean — "US is a major soy producer"
+  us_wheat_production --[PRODUCES]--> wheat — "US is a top wheat exporter"
+  vanaspati --[SUPPLIES]--> consumer — "Vanaspati used as cheap cooking fat"
+  vegetable_prices --[AFFECTS]--> food_inflation — "Vegetables carry ~6% weight in India's CPI food basket; sharp spikes in onion, tomato, and potato prices are the most common driver of food inflation surges."
+  vegetable_prices --[AFFECTS]--> food_inflation_india — "Vegetables have high CPI weight"
+  vietnam_coffee_production --[PRODUCES]--> coffee — "Vietnam is world's largest robusta producer"
+  vietnam_rice_production --[PRODUCES]--> rice — "Vietnam is a top rice exporter"
+  wheat --[CONTAINS]--> bread
+  wheat --[AFFECTS]--> food_inflation_india — "Wheat prices are a major CPI component"
+  wheat --[CONTAINS]--> wheat_flour
+  wheat --[CONTAINS]--> wheat_grain
+  wheat --[SUPPLIES]--> wheat_milling — "Wheat is milled into flour"
+  wheat_bran --[SUPPLIES]--> animal_feed — "Wheat bran used in livestock feed"
+  wheat_flour --[SUPPLIES]--> biscuits — "Flour is primary biscuit ingredient"
+  wheat_flour --[SUPPLIES]--> bread — "Flour is primary ingredient for bread"
+  wheat_flour --[SUPPLIES]--> consumer — "Households buy atta for chapati"
+  wheat_flour --[SUPPLIES]--> pasta_noodles — "Flour is base for pasta and noodles"
+  wheat_milling --[PRODUCES]--> wheat_bran — "Bran is byproduct of wheat milling"
+  wheat_milling --[PRODUCES]--> wheat_flour — "Mills produce atta and maida"
+
+============================================================
+CATEGORY: food_and_nutrition (102 edges)
+============================================================
+  beverages --[CONTAINS]--> alcoholic_spirits
+  beverages --[CONTAINS]--> beer
+  beverages --[CONTAINS]--> bottled_water
+  beverages --[CONTAINS]--> coffee
+  beverages --[CONTAINS]--> fruit_juices
+  beverages --[CONTAINS]--> soft_drinks
+  beverages --[CONTAINS]--> tea
+  beverages --[CONTAINS]--> wine
+  dairy --[CONTAINS]--> cheese
+  dairy --[CONTAINS]--> curd_yogurt
+  dairy --[CONTAINS]--> fresh_milk
+  dairy --[CONTAINS]--> ice_cream
+  dairy --[CONTAINS]--> infant_formula
+  dairy --[CONTAINS]--> milk_powder
+  edible_oils_fats --[CONTAINS]--> butter_ghee
+  edible_oils_fats --[CONTAINS]--> coconut_oil
+  edible_oils_fats --[CONTAINS]--> groundnut_oil
+  edible_oils_fats --[CONTAINS]--> margarine
+  edible_oils_fats --[CONTAINS]--> mustard_oil
+  edible_oils_fats --[CONTAINS]--> olive_oil
+  edible_oils_fats --[CONTAINS]--> palm_oil
+  edible_oils_fats --[CONTAINS]--> soybean_oil
+  edible_oils_fats --[CONTAINS]--> sunflower_oil
+  food_and_nutrition --[CONTAINS]--> beverages
+  food_and_nutrition --[CONTAINS]--> dairy
+  food_and_nutrition --[CONTAINS]--> edible_oils_fats
+  food_and_nutrition --[CONTAINS]--> eggs
+  food_and_nutrition --[CONTAINS]--> fruits
+  food_and_nutrition --[CONTAINS]--> meat_poultry
+  food_and_nutrition --[CONTAINS]--> prepared_packaged_food
+  food_and_nutrition --[CONTAINS]--> pulses_legumes
+  food_and_nutrition --[CONTAINS]--> seafood
+  food_and_nutrition --[CONTAINS]--> spices_condiments
+  food_and_nutrition --[CONTAINS]--> staple_grains
+  food_and_nutrition --[CONTAINS]--> sugar_sweeteners
+  food_and_nutrition --[CONTAINS]--> vegetables
+  fruits --[CONTAINS]--> apple
+  fruits --[CONTAINS]--> banana
+  fruits --[CONTAINS]--> berries
+  fruits --[CONTAINS]--> citrus
+  fruits --[CONTAINS]--> dried_fruits_nuts
+  fruits --[CONTAINS]--> frozen_canned_fruits
+  fruits --[CONTAINS]--> grapes
+  fruits --[CONTAINS]--> mango
+  fruits --[CONTAINS]--> tropical_fruits
+  maize_corn --[CONTAINS]--> corn_grain
+  maize_corn --[CONTAINS]--> cornmeal_flour
+  meat_poultry --[CONTAINS]--> beef
+  meat_poultry --[CONTAINS]--> chicken
+  meat_poultry --[CONTAINS]--> mutton_goat
+  meat_poultry --[CONTAINS]--> pork
+  meat_poultry --[CONTAINS]--> processed_meat
+  millets_coarse_grains --[CONTAINS]--> bajra
+  millets_coarse_grains --[CONTAINS]--> barley
+  millets_coarse_grains --[CONTAINS]--> jowar
+  millets_coarse_grains --[CONTAINS]--> oats
+  millets_coarse_grains --[CONTAINS]--> ragi
+  prepared_packaged_food --[CONTAINS]--> confectionery
+  prepared_packaged_food --[CONTAINS]--> ready_to_eat_meals
+  prepared_packaged_food --[CONTAINS]--> restaurant_dining
+  prepared_packaged_food --[CONTAINS]--> snacks
+  prepared_packaged_food --[CONTAINS]--> street_food_takeaway
+  processed_cereals --[CONTAINS]--> breakfast_cereals
+  processed_cereals --[CONTAINS]--> pasta_noodles
+  pulses_legumes --[CONTAINS]--> chana_dal
+  pulses_legumes --[CONTAINS]--> kidney_beans
+  pulses_legumes --[CONTAINS]--> masoor_dal
+  pulses_legumes --[CONTAINS]--> moong_dal
+  pulses_legumes --[CONTAINS]--> peas
+  pulses_legumes --[CONTAINS]--> soybeans
+  pulses_legumes --[CONTAINS]--> tur_dal
+  pulses_legumes --[CONTAINS]--> urad_dal
+  seafood --[CONTAINS]--> freshwater_fish
+  seafood --[CONTAINS]--> marine_fish
+  seafood --[CONTAINS]--> other_seafood
+  seafood --[CONTAINS]--> shrimp_prawns
+  spices_condiments --[CONTAINS]--> chili_powder
+  spices_condiments --[CONTAINS]--> cinnamon_cloves
+  spices_condiments --[CONTAINS]--> cumin
+  spices_condiments --[CONTAINS]--> pepper
+  spices_condiments --[CONTAINS]--> salt
+  spices_condiments --[CONTAINS]--> sauces_condiments
+  spices_condiments --[CONTAINS]--> turmeric
+  staple_grains --[CONTAINS]--> maize_corn
+  staple_grains --[CONTAINS]--> millets_coarse_grains
+  staple_grains --[CONTAINS]--> processed_cereals
+  staple_grains --[CONTAINS]--> rice
+  staple_grains --[CONTAINS]--> wheat
+  sugar_sweeteners --[CONTAINS]--> artificial_sweeteners
+  sugar_sweeteners --[CONTAINS]--> honey
+  sugar_sweeteners --[CONTAINS]--> jaggery
+  sugar_sweeteners --[CONTAINS]--> refined_sugar
+  vegetables --[CONTAINS]--> beans_peas_fresh
+  vegetables --[CONTAINS]--> capsicum_peppers
+  vegetables --[CONTAINS]--> cruciferous
+  vegetables --[CONTAINS]--> frozen_canned_vegetables
+  vegetables --[CONTAINS]--> gourds_squash
+  vegetables --[CONTAINS]--> leafy_greens
+  vegetables --[CONTAINS]--> onion
+  vegetables --[CONTAINS]--> potato
+  vegetables --[CONTAINS]--> root_vegetables
+  vegetables --[CONTAINS]--> tomato
+
+============================================================
+CATEGORY: food_policy (27 edges)
+============================================================
+  farmer_protest --[DISRUPTS]--> food_inflation_india — "Farm protests can disrupt supply chains"
+  farmer_protest --[AFFECTS]--> msp_policy — "Farmer protests demand MSP guarantee"
+  fci --[SUPPLIES]--> buffer_stock — "FCI maintains grain buffer stocks"
+  fci --[SUPPLIES]--> pds — "FCI procures, stores, and distributes grain through the PDS network; FCI stock levels determine PDS supply adequacy."
+  fertilizer_subsidy_india --[REGULATES]--> fertilizer — "Government subsidizes fertilizer to keep farm costs low"
+  fertilizer_subsidy_india --[AFFECTS]--> india_fiscal_deficit — "Fertilizer subsidy is a major fiscal burden"
+  food_fortification --[REGULATES]--> rice — "Government mandating fortified rice in PDS"
+  food_fortification --[REGULATES]--> wheat_flour — "Fortified flour program in some states"
+  fssai --[REGULATES]--> food_processing — "FSSAI regulates packaged food"
+  fssai --[REGULATES]--> restaurant_industry — "FSSAI regulates food safety in restaurants"
+  fssai --[REGULATES]--> spice_quality_regulation — "FSSAI sets domestic food quality standards"
+  gig_worker_regulation --[REGULATES]--> gig_workers — "Labor regulation affects gig worker costs"
+  gst_food --[AFFECTS]--> food_inflation_india — "GST changes on food items affect prices"
+  gst_food --[REGULATES]--> food_processing — "GST rates affect packaged food prices"
+  gst_food --[REGULATES]--> restaurant_industry — "GST rates affect restaurant pricing"
+  indonesia_palm_export_policy --[AFFECTS]--> indonesia_coal — "Indonesian trade policy shifts affect multiple commodities"
+  indonesia_palm_export_policy --[REGULATES]--> indonesia_palm_oil — "Indonesia's export policy controls global palm oil supply"
+  oil_import_duty_india --[REGULATES]--> edible_oil — "Import duties determine cooking oil retail prices"
+  onion_export_ban --[REGULATES]--> onion — "Government bans onion exports to control prices"
+  pds --[SUPPLIES]--> consumer — "PDS provides subsidized grain to consumers"
+  pm_kisan --[AFFECTS]--> farm_labor — "PM-KISAN provides income support to farmers"
+  pulse_import_policy --[REGULATES]--> pulses — "Import duty changes control dal prices"
+  rice_export_ban_india --[REGULATES]--> rice — "Export bans control domestic rice supply and prices"
+  rice_procurement_india --[SUPPLIES]--> fci — "FCI manages procured rice stock"
+  spice_quality_regulation --[REGULATES]--> india_spice_exports — "Quality bans by importing countries affect exports"
+  wheat_export_ban_india --[REGULATES]--> wheat — "Export bans keep wheat domestic"
+  wheat_msp --[REGULATES]--> wheat — "MSP sets floor price for wheat"
+
+============================================================
+CATEGORY: geopolitics (110 edges)
+============================================================
+  affordable_housing --[AFFECTS]--> real_estate_prices
+  affordable_housing --[AFFECTS]--> real_estate_sector — "PMAY subsidies boost affordable housing demand"
+  ai_regulation --[REGULATES]--> ai_ml_sector — "AI safety laws affect what AI companies can build"
+  ai_regulation --[REGULATES]--> llm_companies — "EU AI Act and India AI policy affect LLM deployment"
+  black_sea_grain_deal --[AFFECTS]--> sunflower_oil — "Grain deal includes sunflower oil shipments"
+  black_sea_grain_deal --[REGULATES]--> ukraine_wheat_production — "Grain deal enables/blocks Ukraine wheat export"
+  black_sea_grain_deal --[AFFECTS]--> wheat — "Grain deal collapse spikes global wheat prices"
+  cert_in --[REGULATES]--> cybersecurity_sector — "CERT-In mandates drive compliance hiring"
+  china_economy --[AFFECTS]--> auto_manufacturing — "China supplies auto components and raw materials"
+  china_economy --[AFFECTS]--> crude_oil — "China is the world's largest crude importer; its economic slowdown reduces global oil demand and prices."
+  china_economy --[AFFECTS]--> gold_price — "China is the largest gold consumer; its central bank buying and consumer demand shifts move global gold prices."
+  china_economy --[AFFECTS]--> pharma_api_china — "Chinese economic disruptions affect API supply"
+  china_economy --[AFFECTS]--> semiconductor_supply — "China is a major semiconductor supply chain node"
+  content_regulation --[REGULATES]--> media_entertainment — "Government rules affect content creation"
+  contract_work_regulation --[REGULATES]--> job_market_india — "Contract labor rules affect employment formalization"
+  dpdp_act --[AFFECTS]--> cybersecurity_sector — "Data protection law increases demand for security professionals"
+  dpdp_act --[AFFECTS]--> it_services_sector — "DPDP compliance creates new IT services revenue stream"
+  education_policy --[CONTAINS]--> admission_policies
+  education_policy --[REGULATES]--> edtech_sector — "NEP and UGC rules affect edtech curriculum and credentials"
+  education_policy --[CONTAINS]--> education_regulation
+  education_policy --[REGULATES]--> nep_implementation — "Education policy governs NEP rollout"
+  education_policy --[CONTAINS]--> scholarships_grants
+  eu_economy --[AFFECTS]--> ecb_rate — "Eurozone economic conditions drive ECB policy decisions"
+  eu_economy --[AFFECTS]--> it_services_sector — "EU is the second-largest IT outsourcing market for Indian firms"
+  fdi_ecommerce --[REGULATES]--> ecommerce_sector — "FDI policy determines foreign e-commerce operations in India"
+  fdi_policy_india --[AFFECTS]--> auto_manufacturing — "FDI policy determines foreign auto investment"
+  fdi_policy_india --[REGULATES]--> ecommerce_sector — "FDI rules determine Amazon/Flipkart operating model"
+  fdi_policy_india --[REGULATES]--> retail_sector — "FDI caps on multi-brand retail"
+  fdi_retail --[REGULATES]--> retail_sector — "FDI norms determine foreign retail presence"
+  fee_regulation --[REGULATES]--> education_sector — "State fee committees cap school and college fees"
+  fertilizer_subsidy --[AFFECTS]--> agriculture_sector — "Fertilizer costs are a major farming input"
+  geopolitical_risk --[AFFECTS]--> bitcoin — "Some view crypto as digital gold during crises"
+  geopolitical_risk --[AFFECTS]--> crude_oil — "Middle East tensions, Russia sanctions, or Strait of Hormuz risks create supply fears that spike crude prices globally."
+  geopolitical_risk --[AFFECTS]--> crude_oil_price — "Geopolitical risk includes oil supply risk premium"
+  geopolitical_risk --[AFFECTS]--> fii_flows — "High geopolitical risk reduces EM allocation"
+  geopolitical_risk --[AFFECTS]--> gold_price — "Gold is the classic safe-haven asset; geopolitical escalation drives flight-to-safety buying and price spikes."
+  geopolitical_risk --[AFFECTS]--> market_volatility — "Geopolitical events spike market volatility"
+  gig_worker_rights --[AFFECTS]--> delivery_worker_earnings — "Regulation may mandate minimum earnings guarantee"
+  gig_worker_rights --[REGULATES]--> food_delivery — "Gig worker laws affect delivery platform costs"
+  gig_worker_rights --[REGULATES]--> ride_hailing — "Gig worker regulations affect cab aggregator models"
+  houthi_red_sea --[AFFECTS]--> cape_of_good_hope — "Red Sea attacks force ships to reroute via Cape"
+  houthi_red_sea --[DISRUPTS]--> oil_tanker_shipping — "Houthi attacks disrupt Red Sea oil shipping"
+  houthi_red_sea --[DISRUPTS]--> shipping_freight — "Red Sea attacks spike shipping rates globally"
+  houthi_red_sea --[DISRUPTS]--> suez_canal — "Ships reroute away from Suez due to Houthi threat"
+  india_china_trade --[AFFECTS]--> ecommerce_sector — "Chinese imports are major e-commerce product source"
+  india_china_trade --[AFFECTS]--> pharma_api_china — "India-China relations affect API supply chain"
+  india_us_trade --[AFFECTS]--> h1b_visa — "Trade relations influence visa policy decisions"
+  india_us_trade --[AFFECTS]--> it_services_sector — "India-US trade relations affect IT outsourcing policy"
+  middle_east_conflict --[AFFECTS]--> crude_oil_price — "Middle East tension threatens oil supply routes"
+  middle_east_conflict --[AFFECTS]--> gold_price — "Conflict drives safe-haven gold demand"
+  middle_east_tensions --[DISRUPTS]--> atf — "Oil disruption affects aviation fuel"
+  middle_east_tensions --[DISRUPTS]--> crude_oil — "Gulf tensions create oil supply risk premium"
+  middle_east_tensions --[DISRUPTS]--> lpg — "Gulf disruption affects LPG supply"
+  middle_east_tensions --[DISRUPTS]--> strait_of_hormuz — "Tensions risk Hormuz closure"
+  minimum_wage --[AFFECTS]--> construction_employment — "Minimum wage affects construction labor costs"
+  minimum_wage --[AFFECTS]--> farm_labor — "Wage hikes raise farm labor costs"
+  minimum_wage --[AFFECTS]--> gig_workers — "Minimum wage rules affect delivery economics"
+  minimum_wage --[AFFECTS]--> retail_sector — "Minimum wage affects retail staffing costs"
+  minimum_wage --[AFFECTS]--> warehouse_employment — "Minimum wage affects warehouse and logistics labor"
+  msp_policy --[AFFECTS]--> agriculture_sector — "MSP determines farmer income for key crops"
+  msp_policy --[AFFECTS]--> fci — "MSP determines FCI's procurement cost; higher MSP raises food subsidy bill and buffer stock carrying costs."
+  msp_policy --[REGULATES]--> india_pulse_production — "MSP for pulses incentivizes production"
+  msp_policy --[AFFECTS]--> india_rice_production — "MSP guarantees a floor price for paddy procurement by FCI; higher MSP incentivizes more rice sowing area."
+  msp_policy --[REGULATES]--> millets — "MSP for millets supports farmer income"
+  msp_policy --[REGULATES]--> rice_procurement_india — "MSP determines procurement price"
+  nep_implementation --[REGULATES]--> education_sector — "NEP 2020 restructures entire education system"
+  new_labor_codes --[REGULATES]--> epf — "Social security code changes EPF contribution structure"
+  new_labor_codes --[REGULATES]--> gratuity — "Industrial relations code affects gratuity rules"
+  new_labor_codes --[REGULATES]--> job_market_india — "New labor codes affect hiring, firing, and working conditions"
+  pension_policy --[REGULATES]--> epf — "Pension reform affects EPF/EPS structure"
+  pension_policy --[REGULATES]--> nps — "Government pension policy determines NPS rules"
+  psu_disinvestment --[DISRUPTS]--> government_employment — "PSU privatization may change job security and terms"
+  psu_disinvestment --[AFFECTS]--> psu_banks — "Bank privatization changes employment terms"
+  rera --[REGULATES]--> builder_compliance
+  rera --[REGULATES]--> construction_industry
+  rera --[REGULATES]--> private_hospital
+  rera --[REGULATES]--> property_price — "RERA improves transparency but adds compliance cost"
+  rera --[AFFECTS]--> real_estate_prices
+  rera --[REGULATES]--> real_estate_sector — "RERA governs builder-buyer relationships"
+  rera --[REGULATES]--> rera_project_registration
+  retirement_age_policy --[AFFECTS]--> government_employment — "Retirement age changes affect vacancies and hiring"
+  ride_hailing_regulation --[REGULATES]--> ride_hailing — "State-level regulations affect surge pricing and commissions"
+  russia_ukraine --[AFFECTS]--> crude_oil_price — "Russia conflict disrupts global energy supply"
+  russia_ukraine --[AFFECTS]--> food_inflation — "Ukraine is a major wheat/sunflower oil exporter"
+  ukraine_war --[AFFECTS]--> crude_oil — "War spiked global oil prices"
+  ukraine_war --[DISRUPTS]--> fertilizer — "Russia/Belarus sanctions disrupted potash and gas for fertilizer"
+  ukraine_war --[AFFECTS]--> natural_gas — "War caused global gas price spike"
+  ukraine_war --[AFFECTS]--> palm_oil — "Sunflower oil disruption shifted demand to palm oil"
+  ukraine_war --[DISRUPTS]--> potash — "Belarus/Russia potash exports sanctioned"
+  ukraine_war --[DISRUPTS]--> russia_gas — "War disrupted Russian gas to Europe, redirected LNG markets"
+  ukraine_war --[DISRUPTS]--> russia_oil — "War led to sanctions on Russian oil"
+  ukraine_war --[DISRUPTS]--> sunflower_oil — "War cut off sunflower oil exports"
+  ukraine_war --[DISRUPTS]--> ukraine_sunflower_oil — "War disrupted Ukraine sunflower oil exports"
+  ukraine_war --[DISRUPTS]--> ukraine_wheat_production — "War disrupted Ukraine's wheat exports"
+  ukraine_war --[DISRUPTS]--> wheat — "Ukraine war disrupted global wheat supply"
+  us_china_trade --[AFFECTS]--> india_us_trade — "US-China trade war creates opportunities and risks for India"
+  us_china_trade --[DISRUPTS]--> semiconductor_supply — "US-China tech war disrupts chip supply chains"
+  us_china_trade_war --[DISRUPTS]--> china_polysilicon — "Trade tensions affect solar supply chain"
+  us_china_trade_war --[AFFECTS]--> solar_panel — "Tariffs on Chinese panels raise costs"
+  us_economy --[AFFECTS]--> ad_rate_changes — "US brands drive global digital ad CPM rates"
+  us_economy --[AFFECTS]--> fed_funds_rate — "US economic conditions drive Fed policy"
+  us_economy --[AFFECTS]--> global_freelance_demand — "US clients drive global freelance demand"
+  us_economy --[AFFECTS]--> it_services_sector — "US health drives IT outsourcing demand"
+  us_fda_inspection --[REGULATES]--> pharma_sector — "FDA approvals/warnings affect US export revenue"
+  us_immigration_policy --[REGULATES]--> h1b_visa — "US executive orders and USCIS rules govern H-1B"
+  us_immigration_policy --[REGULATES]--> l1_visa — "US policy governs L-1 visa processing"
+  us_recession_risk --[DISRUPTS]--> it_outsourcing_deals — "Recession delays deal pipeline and renewals"
+  us_recession_risk --[DISRUPTS]--> it_services_us_client — "US recession cuts enterprise IT budgets"
+  us_sanctions_russia --[REGULATES]--> russia_oil — "Sanctions and price cap restrict Russian oil trade"
+  vehicle_scrappage --[AFFECTS]--> auto_manufacturing — "Scrappage policy creates replacement demand"
+
+============================================================
+CATEGORY: global_macro_and_geopolitics (30 edges)
+============================================================
+  fdi_investment_flows --[CONTAINS]--> credit_rating
+  fdi_investment_flows --[CONTAINS]--> fii_portfolio_flows
+  fdi_investment_flows --[CONTAINS]--> foreign_direct_investment
+  fdi_investment_flows --[CONTAINS]--> sovereign_wealth_funds
+  geopolitical_events --[CONTAINS]--> global_supply_chains
+  geopolitical_events --[CONTAINS]--> india_neighbors
+  geopolitical_events --[CONTAINS]--> middle_east_tensions
+  geopolitical_events --[CONTAINS]--> russia_ukraine
+  geopolitical_events --[CONTAINS]--> suez_panama_shipping
+  geopolitical_events --[CONTAINS]--> taiwan_strait
+  geopolitical_events --[CONTAINS]--> us_china_relations
+  global_economic_indicators --[CONTAINS]--> china_economy
+  global_economic_indicators --[CONTAINS]--> commodity_supercycle
+  global_economic_indicators --[CONTAINS]--> eurozone_economy
+  global_economic_indicators --[CONTAINS]--> global_gdp_growth
+  global_economic_indicators --[CONTAINS]--> global_recession
+  global_economic_indicators --[CONTAINS]--> india_gdp
+  global_economic_indicators --[CONTAINS]--> us_economy
+  global_health --[CONTAINS]--> drug_approval
+  global_health --[CONTAINS]--> who_alerts
+  global_macro_and_geopolitics --[CONTAINS]--> fdi_investment_flows
+  global_macro_and_geopolitics --[CONTAINS]--> geopolitical_events
+  global_macro_and_geopolitics --[CONTAINS]--> global_economic_indicators
+  global_macro_and_geopolitics --[CONTAINS]--> global_health
+  global_macro_and_geopolitics --[CONTAINS]--> international_organizations
+  international_organizations --[CONTAINS]--> brics
+  international_organizations --[CONTAINS]--> g20_g7
+  international_organizations --[CONTAINS]--> imf_world_bank
+  international_organizations --[CONTAINS]--> un_actions
+  international_organizations --[CONTAINS]--> wto_trade
+
+============================================================
+CATEGORY: governance_and_regulation (36 edges)
+============================================================
+  consumer_protection --[CONTAINS]--> advertising_regulation
+  consumer_protection --[CONTAINS]--> consumer_rights
+  consumer_protection --[CONTAINS]--> price_controls
+  consumer_protection --[CONTAINS]--> product_safety_standards
+  digital_regulation --[CONTAINS]--> ai_regulation
+  digital_regulation --[CONTAINS]--> cybersecurity_law
+  digital_regulation --[CONTAINS]--> data_protection_law
+  digital_regulation --[CONTAINS]--> platform_regulation
+  electoral_political --[CONTAINS]--> constitutional_changes
+  electoral_political --[CONTAINS]--> elections
+  electoral_political --[CONTAINS]--> political_stability
+  environmental_regulation --[CONTAINS]--> emission_norms
+  environmental_regulation --[CONTAINS]--> waste_management_regulation
+  environmental_regulation --[CONTAINS]--> water_resource_regulation
+  fiscal_policy --[CONTAINS]--> government_budget
+  fiscal_policy --[CONTAINS]--> public_debt
+  fiscal_policy --[CONTAINS]--> subsidies
+  fiscal_policy --[CONTAINS]--> welfare_schemes
+  governance_and_regulation --[CONTAINS]--> consumer_protection
+  governance_and_regulation --[CONTAINS]--> digital_regulation
+  governance_and_regulation --[CONTAINS]--> electoral_political
+  governance_and_regulation --[CONTAINS]--> environmental_regulation
+  governance_and_regulation --[CONTAINS]--> fiscal_policy
+  governance_and_regulation --[CONTAINS]--> immigration_citizenship
+  governance_and_regulation --[CONTAINS]--> property_law
+  governance_and_regulation --[CONTAINS]--> trade_policy
+  immigration_citizenship --[CONTAINS]--> citizenship_laws
+  immigration_citizenship --[CONTAINS]--> refugee_policy
+  immigration_citizenship --[CONTAINS]--> visa_policy
+  property_law --[CONTAINS]--> land_acquisition
+  property_law --[CONTAINS]--> rera_housing_regulation
+  property_law --[CONTAINS]--> tenancy_law
+  trade_policy --[CONTAINS]--> anti_dumping
+  trade_policy --[CONTAINS]--> import_export_policy
+  trade_policy --[CONTAINS]--> trade_agreements
+  trade_policy --[CONTAINS]--> trade_wars_sanctions
+
+============================================================
+CATEGORY: health_and_healthcare (29 edges)
+============================================================
+  health_and_healthcare --[CONTAINS]--> health_insurance
+  health_and_healthcare --[CONTAINS]--> medical_devices
+  health_and_healthcare --[CONTAINS]--> medical_services
+  health_and_healthcare --[CONTAINS]--> pharmaceuticals
+  health_and_healthcare --[CONTAINS]--> public_health
+  medical_services --[CONTAINS]--> dental_care
+  medical_services --[CONTAINS]--> diagnostic_tests
+  medical_services --[CONTAINS]--> doctor_consultation
+  medical_services --[CONTAINS]--> eye_care
+  medical_services --[CONTAINS]--> hospital_services
+  medical_services --[CONTAINS]--> maternity_care
+  medical_services --[CONTAINS]--> mental_health_services
+  medical_services --[CONTAINS]--> physiotherapy
+  medical_services --[CONTAINS]--> surgery_procedures
+  pharmaceuticals --[CONTAINS]--> generic_drugs
+  pharmaceuticals --[CONTAINS]--> otc_medicines
+  pharmaceuticals --[CONTAINS]--> prescription_drugs
+  pharmaceuticals --[CONTAINS]--> vaccines
+  prescription_drugs --[CONTAINS]--> antibiotics
+  prescription_drugs --[CONTAINS]--> cancer_drugs
+  prescription_drugs --[CONTAINS]--> cardiovascular_drugs
+  prescription_drugs --[CONTAINS]--> diabetes_medication
+  prescription_drugs --[CONTAINS]--> pain_medication
+  prescription_drugs --[CONTAINS]--> psychiatric_drugs
+  prescription_drugs --[CONTAINS]--> respiratory_drugs
+  public_health --[CONTAINS]--> air_quality_health
+  public_health --[CONTAINS]--> epidemics_pandemics
+  public_health --[CONTAINS]--> food_safety
+  public_health --[CONTAINS]--> water_quality_health
+
+============================================================
+CATEGORY: healthcare (24 edges)
+============================================================
+  ambulance_service --[PRODUCES]--> ambulance_response_time
+  ambulance_service --[PRODUCES]--> gvk_emri
+  disease_surveillance --[MANAGES]--> chikungunya
+  disease_surveillance --[MANAGES]--> dengue
+  disease_surveillance --[MANAGES]--> malaria
+  dog_bite_cases --[AFFECTS]--> public_healthcare
+  fire_service --[AFFECTS]--> coaching_safety
+  fire_service --[REGULATES]--> fire_safety_building
+  food_adulteration --[AFFECTS]--> urban_health_impact
+  food_safety --[REGULATES]--> food_adulteration
+  food_safety --[DEPENDS_ON]--> fssai_inspection
+  fssai_inspection --[REGULATES]--> food_adulteration
+  fssai_inspection --[REGULATES]--> restaurant_hygiene
+  hospital_equipment --[AFFECTS]--> public_healthcare
+  hospital_staff_shortage --[DISRUPTS]--> public_healthcare — "Government hospitals in India operate at 40-60% of sanctioned doctor strength; shortage means longer wait times, referrals to private hospitals, and out-of-pocket costs."
+  private_hospital --[CONNECTS]--> public_healthcare
+  public_healthcare --[PRODUCES]--> chc
+  public_healthcare --[PRODUCES]--> district_hospital
+  public_healthcare --[PRODUCES]--> phc
+  public_healthcare --[PRODUCES]--> taluk_hospital
+  stray_animals --[PRODUCES]--> dog_bite_cases
+  stray_animals --[REGULATES]--> dog_sterilization
+  vector_control --[REGULATES]--> dengue
+  vector_control --[REGULATES]--> malaria
+
+============================================================
+CATEGORY: housing_and_shelter (42 edges)
+============================================================
+  construction_materials --[CONTAINS]--> bricks
+  construction_materials --[CONTAINS]--> cement
+  construction_materials --[CONTAINS]--> paint
+  construction_materials --[CONTAINS]--> sand_aggregate
+  construction_materials --[CONTAINS]--> steel_rebar
+  construction_materials --[CONTAINS]--> timber_lumber
+  home_maintenance_repair --[CONTAINS]--> construction_materials
+  home_maintenance_repair --[CONTAINS]--> electrical_work
+  home_maintenance_repair --[CONTAINS]--> labor_wages_construction
+  home_maintenance_repair --[CONTAINS]--> plumbing
+  home_ownership --[CONTAINS]--> home_insurance
+  home_ownership --[CONTAINS]--> mortgage_rates
+  home_ownership --[CONTAINS]--> property_prices
+  home_ownership --[CONTAINS]--> property_tax
+  home_ownership --[CONTAINS]--> stamp_duty_registration
+  household_appliances --[CONTAINS]--> air_conditioner
+  household_appliances --[CONTAINS]--> cooking_appliances
+  household_appliances --[CONTAINS]--> refrigerator
+  household_appliances --[CONTAINS]--> small_appliances
+  household_appliances --[CONTAINS]--> washing_machine
+  household_appliances --[CONTAINS]--> water_purifier
+  household_furnishings --[CONTAINS]--> carpets_flooring
+  household_furnishings --[CONTAINS]--> cleaning_supplies
+  household_furnishings --[CONTAINS]--> domestic_help
+  household_furnishings --[CONTAINS]--> furniture
+  household_furnishings --[CONTAINS]--> household_appliances
+  household_furnishings --[CONTAINS]--> household_textiles
+  household_furnishings --[CONTAINS]--> kitchenware
+  housing_and_shelter --[CONTAINS]--> home_maintenance_repair
+  housing_and_shelter --[CONTAINS]--> home_ownership
+  housing_and_shelter --[CONTAINS]--> household_furnishings
+  housing_and_shelter --[CONTAINS]--> rental_housing
+  housing_and_shelter --[CONTAINS]--> utilities
+  rental_housing --[CONTAINS]--> rent_regulation
+  rental_housing --[CONTAINS]--> residential_rent
+  rental_housing --[CONTAINS]--> security_deposits
+  utilities --[CONTAINS]--> electricity
+  utilities --[CONTAINS]--> lpg
+  utilities --[CONTAINS]--> piped_gas
+  utilities --[CONTAINS]--> sewerage
+  utilities --[CONTAINS]--> waste_collection
+  utilities --[CONTAINS]--> water_supply
+
+============================================================
+CATEGORY: industrial_metals_and_materials (36 edges)
+============================================================
+  agricultural_raw_materials --[CONTAINS]--> cotton_raw
+  agricultural_raw_materials --[CONTAINS]--> jute
+  agricultural_raw_materials --[CONTAINS]--> paper_pulp
+  agricultural_raw_materials --[CONTAINS]--> silk
+  agricultural_raw_materials --[CONTAINS]--> wool
+  base_metals --[CONTAINS]--> aluminum
+  base_metals --[CONTAINS]--> copper
+  base_metals --[CONTAINS]--> iron_ore
+  base_metals --[CONTAINS]--> lead
+  base_metals --[CONTAINS]--> nickel
+  base_metals --[CONTAINS]--> steel
+  base_metals --[CONTAINS]--> tin
+  base_metals --[CONTAINS]--> zinc
+  critical_minerals --[CONTAINS]--> cobalt
+  critical_minerals --[CONTAINS]--> graphite
+  critical_minerals --[CONTAINS]--> lithium
+  critical_minerals --[CONTAINS]--> manganese
+  critical_minerals --[CONTAINS]--> rare_earth_elements
+  critical_minerals --[CONTAINS]--> silicon
+  fertilizers --[CONTAINS]--> complex_fertilizers
+  fertilizers --[CONTAINS]--> dap
+  fertilizers --[CONTAINS]--> mop_potash_fertilizer
+  fertilizers --[CONTAINS]--> urea
+  industrial_metals_and_materials --[CONTAINS]--> agricultural_raw_materials
+  industrial_metals_and_materials --[CONTAINS]--> base_metals
+  industrial_metals_and_materials --[CONTAINS]--> critical_minerals
+  industrial_metals_and_materials --[CONTAINS]--> fertilizers
+  industrial_metals_and_materials --[CONTAINS]--> non_metallic_minerals
+  industrial_metals_and_materials --[CONTAINS]--> rubber_polymers
+  non_metallic_minerals --[CONTAINS]--> gypsum
+  non_metallic_minerals --[CONTAINS]--> limestone
+  non_metallic_minerals --[CONTAINS]--> phosphate
+  non_metallic_minerals --[CONTAINS]--> potash
+  rubber_polymers --[CONTAINS]--> natural_rubber
+  rubber_polymers --[CONTAINS]--> plastics_resins
+  rubber_polymers --[CONTAINS]--> synthetic_rubber
+
+============================================================
+CATEGORY: infrastructure (8 edges)
+============================================================
+  road_infrastructure --[AFFECTS]--> food_waste — "Poor roads damage perishable goods in transit"
+  road_infrastructure --[SUPPLIES]--> perishable_transport — "Roads connect farms to markets"
+  road_infrastructure --[SUPPLIES]--> road_freight — "Road quality affects freight efficiency"
+  rural_roads --[SUPPLIES]--> perishable_transport — "Rural road quality affects farm-to-market time"
+  warehouse_infrastructure --[SUPPLIES]--> fci — "FCI needs godowns for grain storage"
+  warehouse_infrastructure --[SUPPLIES]--> food_processing — "Warehousing needed for food storage"
+  warehouse_infrastructure --[SUPPLIES]--> onion — "Proper storage reduces onion spoilage"
+  warehouse_infrastructure --[SUPPLIES]--> potato — "Cold warehouses preserve potato stocks"
+
+============================================================
+CATEGORY: law_order (46 edges)
+============================================================
+  area_safety --[AFFECTS]--> real_estate_prices
+  cctv_surveillance --[AFFECTS]--> area_safety
+  cctv_surveillance --[REGULATES]--> urban_crime
+  city_police --[PRODUCES]--> beat_system
+  city_police --[MANAGES]--> cctv_surveillance
+  city_police --[PRODUCES]--> community_policing
+  city_police --[PRODUCES]--> police_jurisdiction
+  city_police --[REGULATES]--> urban_crime
+  city_police --[MANAGES]--> women_safety
+  court_infrastructure_orders --[PRODUCES]--> eviction_drive
+  court_infrastructure_orders --[REGULATES]--> lake_encroachment
+  court_infrastructure_orders --[REGULATES]--> municipal_corporation
+  cybercrime --[AFFECTS]--> broadband_internet
+  drug_trafficking --[AFFECTS]--> area_safety
+  farmer_agitations --[PRODUCES]--> road_closures
+  high_court --[REGULATES]--> air_quality
+  high_court --[REGULATES]--> encroachment
+  high_court --[PRODUCES]--> pil
+  labor_strikes --[DISRUPTS]--> city_bus_systems
+  labor_strikes --[DISRUPTS]--> solid_waste_management
+  law_and_order --[PRODUCES]--> city_police
+  law_and_order --[CONTAINS]--> curfew_shutdown
+  law_and_order --[CONTAINS]--> liquor_policy
+  law_and_order --[CONTAINS]--> police_policy
+  local_courts --[CONNECTS]--> high_court
+  pil --[PRODUCES]--> court_infrastructure_orders
+  pil --[CONNECTS]--> ngt_orders
+  protests_bandh --[AFFECTS]--> city_police
+  protests_bandh --[PRODUCES]--> farmer_agitations
+  protests_bandh --[PRODUCES]--> labor_strikes
+  protests_bandh --[PRODUCES]--> political_protests
+  protests_bandh --[PRODUCES]--> road_closures
+  protests_bandh --[PRODUCES]--> shop_shutdowns
+  road_closures --[DISRUPTS]--> traffic_management
+  shop_shutdowns --[DISRUPTS]--> employment_local
+  traffic_enforcement --[REGULATES]--> drunk_driving
+  traffic_enforcement --[REGULATES]--> helmet_seatbelt
+  traffic_enforcement --[DEPENDS_ON]--> speed_cameras
+  traffic_enforcement --[PRODUCES]--> traffic_fine_amount
+  traffic_fine_amount --[FUNDS]--> municipal_revenue
+  urban_crime --[AFFECTS]--> area_safety
+  urban_crime --[PRODUCES]--> burglary
+  urban_crime --[PRODUCES]--> chain_snatching
+  urban_crime --[PRODUCES]--> cybercrime
+  urban_crime --[PRODUCES]--> drug_trafficking
+  women_safety --[AFFECTS]--> area_safety
+
+============================================================
+CATEGORY: local_governance (82 edges)
+============================================================
+  air_quality_local --[CONTAINS]--> aqi_levels
+  air_quality_local --[CONTAINS]--> construction_dust
+  air_quality_local --[CONTAINS]--> stubble_burning
+  air_quality_local --[CONTAINS]--> vehicle_emission
+  auto_rickshaw_taxi --[CONTAINS]--> auto_fare
+  auto_rickshaw_taxi --[CONTAINS]--> cab_aggregator
+  bus_service --[CONTAINS]--> bus_fare
+  bus_service --[CONTAINS]--> bus_frequency
+  bus_service --[CONTAINS]--> bus_routes
+  city_transport --[CONTAINS]--> auto_rickshaw_taxi
+  city_transport --[CONTAINS]--> bus_service
+  city_transport --[CONTAINS]--> cycling_pedestrian
+  city_transport --[CONTAINS]--> metro_rail
+  city_transport --[CONTAINS]--> traffic_management
+  civic_participation --[CONTAINS]--> citizen_grievance
+  civic_participation --[CONTAINS]--> local_elections
+  civic_participation --[CONTAINS]--> rwa_community
+  construction_projects --[CONTAINS]--> flyover_underpass
+  construction_projects --[CONTAINS]--> ring_road_expressway
+  construction_projects --[CONTAINS]--> road_widening
+  education_policy_state --[CONTAINS]--> college_admission_state
+  education_policy_state --[CONTAINS]--> school_fee_regulation
+  education_policy_state --[CONTAINS]--> state_board_exam
+  environmental_local --[CONTAINS]--> air_quality_local
+  environmental_local --[CONTAINS]--> lake_river_health
+  environmental_local --[CONTAINS]--> noise_pollution
+  environmental_local --[CONTAINS]--> urban_heat
+  gas_supply_local --[CONTAINS]--> lpg_distribution
+  gas_supply_local --[CONTAINS]--> piped_natural_gas
+  healthcare_policy_state --[CONTAINS]--> epidemic_response
+  healthcare_policy_state --[CONTAINS]--> government_hospital
+  healthcare_policy_state --[CONTAINS]--> health_scheme_state
+  internet_broadband --[CONTAINS]--> fiber_broadband
+  internet_broadband --[CONTAINS]--> mobile_network_local
+  land_policy --[CONTAINS]--> building_bylaws
+  land_policy --[CONTAINS]--> land_acquisition
+  land_policy --[CONTAINS]--> zoning_master_plan
+  local_governance --[CONTAINS]--> city_transport
+  local_governance --[CONTAINS]--> civic_participation
+  local_governance --[CONTAINS]--> environmental_local
+  local_governance --[CONTAINS]--> local_utilities
+  local_governance --[CONTAINS]--> municipal_services
+  local_governance --[CONTAINS]--> state_policy
+  local_governance --[CONTAINS]--> urban_development
+  local_utilities --[CONTAINS]--> electricity_distribution
+  local_utilities --[CONTAINS]--> gas_supply_local
+  local_utilities --[CONTAINS]--> internet_broadband
+  municipal_services --[CONTAINS]--> public_parks_spaces
+  municipal_services --[CONTAINS]--> sewage_drainage
+  municipal_services --[CONTAINS]--> street_maintenance
+  municipal_services --[CONTAINS]--> waste_management
+  municipal_services --[CONTAINS]--> water_supply_local
+  real_estate_local --[CONTAINS]--> new_development
+  real_estate_local --[CONTAINS]--> property_prices_locality
+  real_estate_local --[CONTAINS]--> rental_market_local
+  sewage_drainage --[CONTAINS]--> sewage_treatment
+  sewage_drainage --[CONTAINS]--> stormwater_drainage
+  state_policy --[CONTAINS]--> education_policy_state
+  state_policy --[CONTAINS]--> healthcare_policy_state
+  state_policy --[CONTAINS]--> land_policy
+  state_policy --[CONTAINS]--> law_and_order
+  state_policy --[CONTAINS]--> state_budget
+  state_policy --[CONTAINS]--> state_taxation
+  state_taxation --[CONTAINS]--> professional_tax
+  state_taxation --[CONTAINS]--> property_tax_local
+  state_taxation --[CONTAINS]--> road_tax
+  state_taxation --[CONTAINS]--> stamp_duty
+  state_taxation --[CONTAINS]--> state_excise
+  street_maintenance --[CONTAINS]--> footpath_pedestrian
+  street_maintenance --[CONTAINS]--> road_repair
+  street_maintenance --[CONTAINS]--> streetlights
+  urban_development --[CONTAINS]--> construction_projects
+  urban_development --[CONTAINS]--> gentrification
+  urban_development --[CONTAINS]--> real_estate_local
+  urban_development --[CONTAINS]--> smart_city
+  waste_management --[CONTAINS]--> garbage_collection
+  waste_management --[CONTAINS]--> landfill
+  waste_management --[CONTAINS]--> waste_segregation
+  water_supply_local --[CONTAINS]--> piped_water
+  water_supply_local --[CONTAINS]--> water_quality_local
+  water_supply_local --[CONTAINS]--> water_rationing
+  water_supply_local --[CONTAINS]--> water_tanker
+
+============================================================
+CATEGORY: macro (21 edges)
+============================================================
+  china_food_imports --[AFFECTS]--> soybean — "China is world's largest soy importer, sets global prices"
+  global_commodity_cycle --[AFFECTS]--> coal — "Commodity cycle affects coal prices"
+  global_commodity_cycle --[AFFECTS]--> crude_oil — "Commodity cycle drives oil price trends"
+  global_commodity_cycle --[AFFECTS]--> lithium — "Commodity cycle affects lithium prices"
+  global_commodity_cycle --[AFFECTS]--> natural_gas — "Commodity cycle affects gas prices"
+  global_food_prices --[AFFECTS]--> food_inflation_india — "Global food prices affect Indian imports and sentiment"
+  import_export_policy --[REGULATES]--> oil_import_duty_india — "Trade policy sets edible oil import duties"
+  import_export_policy --[REGULATES]--> onion_export_ban — "DGFT controls onion export policy"
+  import_export_policy --[REGULATES]--> pulse_import_policy — "Trade policy controls pulse imports"
+  import_export_policy --[REGULATES]--> rice_export_ban_india — "DGFT issues export restriction notifications"
+  import_export_policy --[REGULATES]--> wheat_export_ban_india — "DGFT manages wheat export policy"
+  india_fiscal_deficit --[AFFECTS]--> fertilizer_subsidy_india — "Fiscal pressure may reduce fertilizer subsidy"
+  india_fiscal_deficit --[AFFECTS]--> fuel_tax_india — "Government may raise fuel taxes to manage deficit"
+  india_fiscal_deficit --[AFFECTS]--> lpg_subsidy — "Fiscal pressure may reduce LPG subsidy"
+  rbi_monetary_policy --[AFFECTS]--> food_inflation_india — "RBI targets CPI inflation which food drives"
+  rbi_monetary_policy --[AFFECTS]--> inr_usd — "RBI rate decisions affect rupee value"
+  us_farm_bill --[REGULATES]--> us_corn_production — "US Farm Bill subsidies affect global corn supply"
+  us_farm_bill --[REGULATES]--> us_soy_production — "US Farm Bill subsidies affect soy production"
+  us_farm_bill --[REGULATES]--> us_wheat_production — "US Farm Bill affects wheat subsidies"
+  us_fed_rate --[AFFECTS]--> dollar_index — "Fed rates strengthen/weaken the dollar"
+  wto_agriculture --[REGULATES]--> msp_policy — "WTO rules constrain India's farm subsidy policies"
+
+============================================================
+CATEGORY: municipal_governance (68 edges)
+============================================================
+  advertisement_tax --[FUNDS]--> municipal_revenue
+  bbmp --[MANAGES]--> lake_pollution
+  bbmp --[PRODUCES]--> municipal_revenue
+  bbmp --[MANAGES]--> road_maintenance
+  bbmp --[MANAGES]--> solid_waste_management
+  bbmp --[MANAGES]--> stormwater_drain
+  bmc_mumbai --[MANAGES]--> bmc_water
+  bmc_mumbai --[PRODUCES]--> municipal_revenue
+  bmc_mumbai --[MANAGES]--> road_maintenance
+  contractor_quality --[AFFECTS]--> road_maintenance
+  footpath --[AFFECTS]--> encroachment
+  gcc_chennai --[PRODUCES]--> municipal_revenue
+  gcc_chennai --[MANAGES]--> solid_waste_management
+  ghmc_hyderabad --[PRODUCES]--> municipal_revenue
+  ghmc_hyderabad --[MANAGES]--> road_maintenance
+  landfill --[PRODUCES]--> landfill_fires
+  landfill_fires --[DISRUPTS]--> air_quality
+  mcd_delhi --[PRODUCES]--> municipal_revenue
+  mcd_delhi --[MANAGES]--> solid_waste_management
+  municipal_corporation --[MANAGES]--> birth_death_certificate
+  municipal_corporation --[MANAGES]--> crematorium
+  municipal_corporation --[PRODUCES]--> mayor
+  municipal_corporation --[MANAGES]--> municipal_commissioner
+  municipal_corporation --[PRODUCES]--> municipal_revenue
+  municipal_corporation --[MANAGES]--> public_toilet
+  municipal_corporation --[MANAGES]--> stray_animals
+  municipal_corporation --[REGULATES]--> street_vendors
+  municipal_corporation --[PRODUCES]--> ward_system
+  municipal_elections --[PRODUCES]--> corporator
+  municipal_elections --[PRODUCES]--> mayor
+  municipal_elections --[AFFECTS]--> property_tax
+  municipal_elections --[AFFECTS]--> water_billing
+  municipal_expenditure --[FUNDS]--> fire_service
+  municipal_expenditure --[FUNDS]--> footpath
+  municipal_expenditure --[FUNDS]--> lake_restoration
+  municipal_expenditure --[FUNDS]--> local_education
+  municipal_expenditure --[FUNDS]--> public_parks
+  municipal_expenditure --[FUNDS]--> road_maintenance — "Road maintenance typically consumes 15-25% of municipal capital expenditure; underfunding leads to pothole-ridden roads that damage vehicles and cause accidents."
+  municipal_expenditure --[FUNDS]--> sewage_system
+  municipal_expenditure --[FUNDS]--> solid_waste_management — "SWM costs Rs 1500-3000 per tonne including collection, transport, and processing; underfunding leads to open dumping and landfill fires."
+  municipal_expenditure --[FUNDS]--> streetlights
+  municipal_expenditure --[PRODUCES]--> tender_process
+  municipal_inspection --[REGULATES]--> contractor_quality
+  municipal_revenue --[FUNDS]--> city_water_supply
+  municipal_revenue --[FUNDS]--> municipal_expenditure
+  municipal_revenue --[FUNDS]--> road_maintenance
+  municipal_revenue --[FUNDS]--> sewage_system
+  municipal_revenue --[FUNDS]--> stormwater_drain
+  municipal_revenue --[FUNDS]--> streetlights
+  pothole --[DISRUPTS]--> traffic_management
+  reservation_municipal --[REGULATES]--> municipal_elections
+  road_maintenance --[PRODUCES]--> pothole
+  sewage_system --[PRODUCES]--> sewage_overflow
+  sewage_system --[SUPPLIES]--> stp
+  solid_waste_management --[PRODUCES]--> landfill
+  solid_waste_management --[REGULATES]--> plastic_ban
+  solid_waste_management --[AFFECTS]--> stray_animals
+  solid_waste_management --[DEPENDS_ON]--> waste_segregation
+  solid_waste_management --[PRODUCES]--> waste_to_energy
+  street_vendors --[PRODUCES]--> employment_local
+  street_vendors --[AFFECTS]--> footpath
+  street_vendors --[DEPENDS_ON]--> trade_license
+  tender_process --[AFFECTS]--> contractor_quality
+  trade_license --[FUNDS]--> municipal_revenue
+  user_charges --[FUNDS]--> municipal_revenue
+  ward_delimitation --[AFFECTS]--> municipal_elections
+  ward_system --[PRODUCES]--> corporator
+  waste_to_energy --[AFFECTS]--> air_quality
+
+============================================================
+CATEGORY: property_land (43 edges)
+============================================================
+  bda --[MANAGES]--> layout_approval
+  builder_compliance --[PRODUCES]--> rera_delay_penalty
+  building_codes --[REGULATES]--> affordable_housing
+  building_codes --[REGULATES]--> completion_certificate
+  building_codes --[REGULATES]--> far_fsi
+  building_codes --[REGULATES]--> fire_safety_building
+  building_codes --[REGULATES]--> height_restrictions
+  building_codes --[REGULATES]--> parking_norms_building
+  building_codes --[AFFECTS]--> urban_flooding
+  conversion_of_land --[AFFECTS]--> land_use_zoning
+  conversion_of_land --[AFFECTS]--> real_estate_prices
+  development_authority --[MANAGES]--> layout_approval
+  development_authority --[REGULATES]--> unauthorized_layout
+  dtcp --[MANAGES]--> layout_approval
+  e_registration --[AFFECTS]--> stamp_duty
+  encroachment --[PRODUCES]--> lake_encroachment
+  encroachment --[PRODUCES]--> rajakaluve_encroachment
+  encroachment --[PRODUCES]--> urban_flooding
+  eviction_drive --[REGULATES]--> encroachment
+  far_fsi --[AFFECTS]--> affordable_housing
+  far_fsi --[AFFECTS]--> real_estate_prices
+  fire_safety_building --[REGULATES]--> coaching_safety
+  fire_safety_building --[AFFECTS]--> district_hospital
+  guidance_value --[AFFECTS]--> real_estate_prices
+  guidance_value --[REGULATES]--> stamp_duty
+  huda --[MANAGES]--> layout_approval
+  khata_transfer --[AFFECTS]--> property_tax
+  lake_encroachment --[PRODUCES]--> lake_pollution
+  lake_encroachment --[PRODUCES]--> urban_flooding
+  land_use_zoning --[REGULATES]--> building_codes
+  land_use_zoning --[AFFECTS]--> real_estate_prices
+  layout_approval --[PRODUCES]--> completion_certificate
+  master_plan --[PRODUCES]--> land_use_zoning
+  property_registration --[DEPENDS_ON]--> e_registration
+  property_registration --[PRODUCES]--> khata_transfer
+  property_registration --[PRODUCES]--> stamp_duty
+  rajakaluve_encroachment --[PRODUCES]--> swd_encroachment
+  rajakaluve_encroachment --[PRODUCES]--> urban_flooding
+  slum_rehabilitation --[DEPENDS_ON]--> municipal_expenditure
+  slum_rehabilitation --[AFFECTS]--> real_estate_prices
+  unauthorized_layout --[PRODUCES]--> encroachment
+  unauthorized_layout --[PRODUCES]--> eviction_drive
+  urban_planning --[PRODUCES]--> master_plan
+
+============================================================
+CATEGORY: recreation_and_culture (23 edges)
+============================================================
+  entertainment --[CONTAINS]--> amusement_parks
+  entertainment --[CONTAINS]--> books_newspapers
+  entertainment --[CONTAINS]--> cinema
+  entertainment --[CONTAINS]--> gaming
+  entertainment --[CONTAINS]--> live_events
+  entertainment --[CONTAINS]--> music
+  pets --[CONTAINS]--> pet_food
+  pets --[CONTAINS]--> veterinary_care
+  recreation_and_culture --[CONTAINS]--> entertainment
+  recreation_and_culture --[CONTAINS]--> pets
+  recreation_and_culture --[CONTAINS]--> religious_cultural
+  recreation_and_culture --[CONTAINS]--> sports_fitness
+  recreation_and_culture --[CONTAINS]--> travel_tourism
+  religious_cultural --[CONTAINS]--> cultural_events
+  religious_cultural --[CONTAINS]--> religious_services
+  religious_cultural --[CONTAINS]--> wedding_ceremonies
+  sports_fitness --[CONTAINS]--> gym_fitness
+  sports_fitness --[CONTAINS]--> sports_clubs
+  sports_fitness --[CONTAINS]--> sports_equipment
+  travel_tourism --[CONTAINS]--> hotel_accommodation
+  travel_tourism --[CONTAINS]--> package_tours
+  travel_tourism --[CONTAINS]--> passport
+  travel_tourism --[CONTAINS]--> visa_fees
+
+============================================================
+CATEGORY: safety_and_security (20 edges)
+============================================================
+  cybersecurity --[CONTAINS]--> data_breaches
+  cybersecurity --[CONTAINS]--> online_harassment
+  cybersecurity --[CONTAINS]--> ransomware
+  emergency_services --[CONTAINS]--> ambulance_services
+  emergency_services --[CONTAINS]--> disaster_relief
+  emergency_services --[CONTAINS]--> fire_services
+  national_security --[CONTAINS]--> defense_spending
+  national_security --[CONTAINS]--> military_conflicts
+  national_security --[CONTAINS]--> nuclear_threats
+  national_security --[CONTAINS]--> terrorism
+  personal_safety --[CONTAINS]--> child_safety
+  personal_safety --[CONTAINS]--> domestic_violence
+  personal_safety --[CONTAINS]--> fraud_scams
+  personal_safety --[CONTAINS]--> road_safety
+  personal_safety --[CONTAINS]--> theft_burglary
+  personal_safety --[CONTAINS]--> violent_crime
+  safety_and_security --[CONTAINS]--> cybersecurity
+  safety_and_security --[CONTAINS]--> emergency_services
+  safety_and_security --[CONTAINS]--> national_security
+  safety_and_security --[CONTAINS]--> personal_safety
+
+============================================================
+CATEGORY: state_policy (42 edges)
+============================================================
+  construction_material_cost --[AFFECTS]--> construction_industry
+  construction_material_cost --[AFFECTS]--> real_estate_prices
+  crop_insurance_implementation --[AFFECTS]--> farmer_agitations
+  excise_revenue --[AFFECTS]--> municipal_revenue
+  excise_revenue --[FUNDS]--> state_budget
+  granite_mining --[AFFECTS]--> construction_material_cost
+  heritage_sites --[REGULATES]--> building_codes
+  heritage_sites --[AFFECTS]--> state_tourism
+  hospitality_employment --[AFFECTS]--> employment_local
+  it_ites_incentive --[AFFECTS]--> employment_local
+  it_ites_incentive --[AFFECTS]--> real_estate_prices
+  liquor_policy --[REGULATES]--> bar_license
+  liquor_policy --[PRODUCES]--> dry_days
+  liquor_policy --[PRODUCES]--> excise_revenue
+  liquor_policy --[REGULATES]--> online_liquor
+  manufacturing_sez --[AFFECTS]--> employment_local
+  manufacturing_sez --[PRODUCES]--> industrial_effluent
+  mining_policy --[REGULATES]--> granite_mining
+  mining_policy --[REGULATES]--> sand_mining
+  pension_scheme --[AFFECTS]--> municipal_elections
+  public_distribution_system --[DEPENDS_ON]--> ration_card
+  public_distribution_system --[DEPENDS_ON]--> state_msp
+  sand_mining --[AFFECTS]--> construction_material_cost
+  sand_mining --[PRODUCES]--> ngt_orders
+  sand_mining --[DISRUPTS]--> reservoirs_and_dams
+  sand_mining --[PRODUCES]--> water_pollution
+  startup_policy --[AFFECTS]--> employment_local
+  state_agriculture_policy --[PRODUCES]--> crop_insurance_implementation
+  state_agriculture_policy --[PRODUCES]--> state_irrigation
+  state_agriculture_policy --[PRODUCES]--> state_msp
+  state_economic_policy --[PRODUCES]--> state_industrial_policy
+  state_industrial_policy --[AFFECTS]--> employment_local
+  state_industrial_policy --[PRODUCES]--> it_ites_incentive
+  state_industrial_policy --[PRODUCES]--> manufacturing_sez
+  state_industrial_policy --[PRODUCES]--> skill_development
+  state_industrial_policy --[PRODUCES]--> startup_policy
+  state_irrigation --[AFFECTS]--> groundwater
+  state_irrigation --[DEPENDS_ON]--> reservoirs_and_dams
+  state_msp --[AFFECTS]--> farmer_agitations
+  state_tourism --[PRODUCES]--> eco_tourism
+  state_tourism --[MANAGES]--> heritage_sites
+  state_tourism --[PRODUCES]--> hospitality_employment
+
+============================================================
+CATEGORY: technology (10 edges)
+============================================================
+  algorithm_changes --[DISRUPTS]--> creator_economy — "Algorithm changes can destroy creator reach overnight"
+  anthropic --[PRODUCES]--> llm_companies — "Anthropic develops Claude models"
+  app_store_policy --[REGULATES]--> gaming_sector — "App store commissions and policies affect game distribution"
+  compute_costs --[DEPENDS_ON]--> gpu_supply — "Compute costs driven by GPU availability"
+  creator_monetization_policy --[REGULATES]--> creator_economy — "Platform monetization policies determine creator payouts"
+  data_breach_news --[AFFECTS]--> cybersecurity_sector — "Major breaches increase cybersecurity hiring and budgets"
+  google_deepmind --[PRODUCES]--> llm_companies — "Google DeepMind develops Gemini models"
+  gpu_supply --[DEPENDS_ON]--> nvidia — "NVIDIA dominates AI GPU market (80%+ share)"
+  openai --[PRODUCES]--> llm_companies — "OpenAI is the leading LLM company"
+  semiconductor_india --[AFFECTS]--> semiconductor_supply — "India semiconductor fabs reduce import dependency"
+
+============================================================
+CATEGORY: technology_and_innovation (25 edges)
+============================================================
+  artificial_intelligence --[CONTAINS]--> ai_ethics_bias
+  artificial_intelligence --[CONTAINS]--> ai_in_education
+  artificial_intelligence --[CONTAINS]--> ai_in_healthcare
+  artificial_intelligence --[CONTAINS]--> autonomous_vehicles
+  artificial_intelligence --[CONTAINS]--> generative_ai
+  biotechnology --[CONTAINS]--> biosimilars
+  biotechnology --[CONTAINS]--> gene_therapy
+  biotechnology --[CONTAINS]--> gmo_crops
+  biotechnology --[CONTAINS]--> synthetic_biology
+  fintech --[CONTAINS]--> blockchain
+  fintech --[CONTAINS]--> cbdc
+  fintech --[CONTAINS]--> digital_lending
+  fintech --[CONTAINS]--> insurtech
+  fintech --[CONTAINS]--> neobanking
+  robotics_automation --[CONTAINS]--> drone_technology
+  robotics_automation --[CONTAINS]--> industrial_robots
+  robotics_automation --[CONTAINS]--> service_robots
+  space_technology --[CONTAINS]--> gps_navigation
+  space_technology --[CONTAINS]--> satellite_internet
+  space_technology --[CONTAINS]--> weather_satellites
+  technology_and_innovation --[CONTAINS]--> artificial_intelligence
+  technology_and_innovation --[CONTAINS]--> biotechnology
+  technology_and_innovation --[CONTAINS]--> fintech
+  technology_and_innovation --[CONTAINS]--> robotics_automation
+  technology_and_innovation --[CONTAINS]--> space_technology
+
+============================================================
+CATEGORY: transport (80 edges)
+============================================================
+  aggregator_regulation --[REGULATES]--> surge_pricing
+  auto_taxi --[REGULATES]--> auto_fare_meter
+  bangalore_metro --[LOCATED_IN]--> bbmp
+  best_bus --[LOCATED_IN]--> bmc_mumbai
+  bike_sharing --[DEPENDS_ON]--> cycling_infrastructure
+  bike_sharing --[AFFECTS]--> metro_ridership
+  black_sea_shipping --[SUPPLIES]--> ukraine_sunflower_oil — "Black Sea ports ship sunflower oil"
+  black_sea_shipping --[SUPPLIES]--> ukraine_wheat_production — "Black Sea ports ship Ukraine grain"
+  bmtc --[LOCATED_IN]--> bbmp
+  bus_fleet_modernization --[PRODUCES]--> electric_buses
+  bus_fuel_cost --[AFFECTS]--> bus_fare
+  cape_of_good_hope --[SUPPLIES]--> global_shipping_routes — "Cape route is alternative when Suez/Red Sea disrupted"
+  cape_of_good_hope --[AFFECTS]--> shipping_freight — "Cape route adds 10-15 days, raising shipping costs"
+  chennai_metro --[LOCATED_IN]--> gcc_chennai
+  chennai_mrts --[LOCATED_IN]--> gcc_chennai
+  city_bus_systems --[PRODUCES]--> bus_fare
+  cycling_infrastructure --[DEPENDS_ON]--> urban_planning
+  delhi_metro --[LOCATED_IN]--> mcd_delhi
+  dtc --[LOCATED_IN]--> mcd_delhi
+  electric_buses --[AFFECTS]--> cng_stations
+  electric_buses --[PRODUCES]--> ev_electricity_load
+  ev_charging_stations --[PRODUCES]--> ev_electricity_load
+  ev_charging_stations --[AFFECTS]--> real_estate_prices
+  ev_electricity_load --[AFFECTS]--> electricity_distribution
+  ev_electricity_load --[AFFECTS]--> electricity_tariff
+  ev_infrastructure --[PRODUCES]--> ev_charging_stations
+  flyover_construction --[AFFECTS]--> real_estate_prices
+  flyover_construction --[DISRUPTS]--> road_closures
+  hyderabad_metro --[LOCATED_IN]--> ghmc_hyderabad
+  indian_railways --[SUPPLIES]--> coal_railway_freight — "Indian Railways is primary coal transporter"
+  indian_railways --[SUPPLIES]--> grain_transport — "Railways move bulk grain across India"
+  kolkata_metro --[PRODUCES]--> metro_fare
+  kolkata_metro --[PRODUCES]--> metro_systems
+  ksrtc_karnataka --[PRODUCES]--> bus_fare
+  ksrtc_karnataka --[PRODUCES]--> city_bus_systems
+  metro_construction --[AFFECTS]--> encroachment
+  metro_construction --[PRODUCES]--> noise_pollution
+  metro_construction --[DISRUPTS]--> road_closures
+  metro_construction --[DISRUPTS]--> traffic_management
+  metro_construction --[PRODUCES]--> tree_cutting_permission
+  metro_expansion --[PRODUCES]--> metro_construction
+  metro_expansion --[AFFECTS]--> real_estate_prices — "Metro connectivity announcements cause 15-30% property price appreciation along planned corridors, even years before actual commissioning."
+  metro_fare --[AFFECTS]--> metro_ridership
+  metro_ridership --[AFFECTS]--> city_bus_systems
+  metro_systems --[PRODUCES]--> metro_expansion
+  metro_systems --[PRODUCES]--> metro_fare
+  mumbai_local --[LOCATED_IN]--> bmc_mumbai
+  mumbai_metro --[LOCATED_IN]--> bmc_mumbai
+  panama_canal --[SUPPLIES]--> global_shipping_routes — "Panama Canal is key Atlantic-Pacific route"
+  parking --[PRODUCES]--> multilevel_parking
+  parking --[PRODUCES]--> street_parking_fees
+  port_infrastructure --[SUPPLIES]--> imported_coal — "Ports handle coal imports"
+  port_infrastructure --[SUPPLIES]--> india_crude_imports — "Ports handle crude oil imports"
+  port_infrastructure --[SUPPLIES]--> lng — "LNG terminals at ports"
+  ride_aggregator --[REGULATES]--> aggregator_regulation
+  ride_aggregator --[PRODUCES]--> employment_local
+  road_freight --[AFFECTS]--> food_inflation_india — "Trucking costs embedded in all food prices"
+  road_widening --[PRODUCES]--> encroachment
+  road_widening --[PRODUCES]--> eviction_drive
+  road_widening --[PRODUCES]--> tree_cutting_permission
+  shipping_freight --[AFFECTS]--> edible_oil — "India imports 60%+ of edible oil — shipping costs matter"
+  shipping_freight --[SUPPLIES]--> global_shipping_routes — "Shipping costs determine trade economics"
+  shipping_freight --[AFFECTS]--> imported_coal — "Coal import cost includes shipping"
+  shipping_freight --[AFFECTS]--> lng — "LNG shipping costs affect delivered gas price"
+  street_parking_fees --[FUNDS]--> municipal_revenue
+  street_parking_fees --[AFFECTS]--> traffic_management
+  suburban_rail --[PRODUCES]--> suburban_rail_capacity
+  suburban_rail_capacity --[AFFECTS]--> suburban_rail_safety
+  towing --[FUNDS]--> municipal_revenue
+  traffic_management --[AFFECTS]--> air_quality
+  traffic_management --[AFFECTS]--> ambulance_response_time
+  traffic_management --[PRODUCES]--> flyover_construction
+  traffic_management --[PRODUCES]--> junction_redesign
+  traffic_management --[PRODUCES]--> one_way_systems
+  traffic_management --[CONTAINS]--> parking
+  traffic_management --[PRODUCES]--> road_widening
+  traffic_management --[CONTAINS]--> signal_infrastructure
+  traffic_management --[CONTAINS]--> traffic_congestion
+  traffic_management --[CONTAINS]--> traffic_rules
+  traffic_management --[DEPENDS_ON]--> traffic_signals
+
+============================================================
+CATEGORY: transport_and_mobility (29 edges)
+============================================================
+  air_travel --[CONTAINS]--> airline_fuel_surcharge
+  air_travel --[CONTAINS]--> domestic_flights
+  air_travel --[CONTAINS]--> international_flights
+  freight_logistics --[CONTAINS]--> courier_delivery
+  freight_logistics --[CONTAINS]--> shipping_rates
+  freight_logistics --[CONTAINS]--> trucking_costs
+  metro_rail --[CONTAINS]--> metro_disruption
+  metro_rail --[CONTAINS]--> metro_expansion
+  metro_rail --[CONTAINS]--> metro_fare
+  private_vehicles --[CONTAINS]--> electric_vehicles
+  private_vehicles --[CONTAINS]--> motor_insurance
+  private_vehicles --[CONTAINS]--> new_cars
+  private_vehicles --[CONTAINS]--> parking
+  private_vehicles --[CONTAINS]--> tolls
+  private_vehicles --[CONTAINS]--> two_wheelers
+  private_vehicles --[CONTAINS]--> used_cars
+  private_vehicles --[CONTAINS]--> vehicle_maintenance
+  private_vehicles --[CONTAINS]--> vehicle_parts_accessories
+  private_vehicles --[CONTAINS]--> vehicle_registration_tax
+  public_transport --[CONTAINS]--> auto_rickshaw
+  public_transport --[CONTAINS]--> bus_fares
+  public_transport --[CONTAINS]--> intercity_rail
+  public_transport --[CONTAINS]--> metro_rail
+  public_transport --[CONTAINS]--> suburban_rail
+  public_transport --[CONTAINS]--> taxi_ride_hailing
+  transport_and_mobility --[CONTAINS]--> air_travel
+  transport_and_mobility --[CONTAINS]--> freight_logistics
+  transport_and_mobility --[CONTAINS]--> private_vehicles
+  transport_and_mobility --[CONTAINS]--> public_transport
+
+============================================================
+CATEGORY: utilities (43 edges)
+============================================================
+  broadband_internet --[PRODUCES]--> bsnl_fiber
+  broadband_internet --[PRODUCES]--> private_isp
+  broadband_internet --[SUPPLIES]--> telemedicine
+  bses --[MANAGES]--> electricity_bill
+  bses --[LOCATED_IN]--> mcd_delhi
+  cable_tv --[REGULATES]--> trai_regulation
+  cng_price --[AFFECTS]--> auto_fare_meter
+  cng_price --[AFFECTS]--> ride_aggregator
+  cng_stations --[PRODUCES]--> cng_price
+  diesel_generator --[AFFECTS]--> air_quality
+  diesel_generator --[PRODUCES]--> noise_pollution
+  electricity_distribution --[CONTAINS]--> electricity_tariff
+  electricity_distribution --[CONTAINS]--> power_cuts
+  electricity_distribution --[PRODUCES]--> power_outage
+  electricity_distribution --[CONTAINS]--> smart_meter
+  electricity_regulatory_commission --[REGULATES]--> electricity_tariff
+  igl --[MANAGES]--> cng_stations
+  local_body_telecom_approval --[DEPENDS_ON]--> municipal_corporation
+  mgl --[MANAGES]--> cng_stations
+  mobile_towers --[DEPENDS_ON]--> right_of_way
+  net_metering --[REGULATES]--> rooftop_solar
+  png_supply --[AFFECTS]--> air_quality
+  power_outage --[DISRUPTS]--> city_water_supply
+  power_outage --[PRODUCES]--> diesel_generator
+  power_outage --[DISRUPTS]--> ev_charging_stations
+  power_outage --[PRODUCES]--> inverter_ups
+  power_outage --[DISRUPTS]--> mobile_towers
+  power_outage --[DISRUPTS]--> sewage_system
+  power_outage --[DISRUPTS]--> stp
+  power_outage --[DISRUPTS]--> traffic_signals
+  right_of_way --[DEPENDS_ON]--> local_body_telecom_approval
+  rooftop_solar --[AFFECTS]--> cross_subsidy
+  rooftop_solar --[AFFECTS]--> electricity_bill
+  smart_meters --[AFFECTS]--> cross_subsidy
+  smart_meters --[AFFECTS]--> electricity_bill
+  smart_meters --[AFFECTS]--> electricity_distribution
+  tangedco --[MANAGES]--> electricity_bill
+  tangedco --[LOCATED_IN]--> gcc_chennai
+  tariff_structure --[PRODUCES]--> cross_subsidy
+  tpddl --[MANAGES]--> electricity_bill
+  tpddl --[LOCATED_IN]--> mcd_delhi
+  transformer --[DEPENDS_ON]--> electricity_distribution
+  transformer --[PRODUCES]--> power_outage
+
+============================================================
+CATEGORY: water_infrastructure (6 edges)
+============================================================
+  water_infrastructure --[CONTAINS]--> drinking_water
+  water_infrastructure --[CONTAINS]--> irrigation
+  water_infrastructure --[CONTAINS]--> water_scarcity
+  water_scarcity --[CONTAINS]--> inter_state_water_disputes
+  water_scarcity --[CONTAINS]--> rainwater_harvesting
+  water_scarcity --[CONTAINS]--> water_crisis
+
+============================================================
+CATEGORY: water_systems (64 edges)
+============================================================
+  bhakra_nangal_dam --[SUPPLIES]--> delhi_jal_board
+  bmc_water --[MANAGES]--> water_pipe_network
+  borewell --[REGULATES]--> borewell_regulation
+  borewell --[PRODUCES]--> groundwater_depletion
+  bwssb --[LOCATED_IN]--> bbmp
+  bwssb --[MANAGES]--> water_billing
+  bwssb --[MANAGES]--> water_pipe_network
+  cauvery_river --[PRODUCES]--> cauvery_water_dispute
+  cauvery_water_allocation --[AFFECTS]--> krs_dam
+  cauvery_water_allocation --[AFFECTS]--> mettur_dam
+  cauvery_water_dispute --[PRODUCES]--> tribunal_decisions
+  chennai_desalination --[SUPPLIES]--> cmwssb
+  city_water_supply --[PRODUCES]--> water_atm
+  city_water_supply --[DEPENDS_ON]--> water_pipe_network
+  city_water_supply --[PRODUCES]--> water_rationing
+  city_water_supply --[DEPENDS_ON]--> water_treatment
+  city_water_supply --[DEPENDS_ON]--> wtp
+  cmwssb --[LOCATED_IN]--> gcc_chennai
+  cmwssb --[MANAGES]--> water_pipe_network
+  dam_water_release --[SUPPLIES]--> city_water_supply — "Controlled dam releases feed intake points for municipal water treatment plants; release volume determines daily supply allocation per ward."
+  dam_water_release --[SUPPLIES]--> state_irrigation
+  delhi_jal_board --[LOCATED_IN]--> mcd_delhi
+  delhi_jal_board --[MANAGES]--> water_billing
+  delhi_jal_board --[MANAGES]--> water_pipe_network
+  desalination --[SUPPLIES]--> city_water_supply
+  desalination --[PRODUCES]--> desalination_cost
+  desalination --[CONSUMES]--> electricity_distribution
+  desalination_cost --[DEPENDS_ON]--> electricity_tariff
+  fluoride_contamination --[AFFECTS]--> urban_health_impact
+  ganga_river --[AFFECTS]--> water_pollution
+  godavari_river --[PRODUCES]--> interstate_water_disputes
+  groundwater_depletion --[AFFECTS]--> borewell_regulation
+  groundwater_depletion --[AFFECTS]--> school_building_safety
+  groundwater_depletion --[PRODUCES]--> water_tanker_market — "When borewells run dry in summer, residential colonies depend on private tankers at Rs 500-1500 per load; depletion drives a grey-market tanker economy."
+  hmwssb --[LOCATED_IN]--> ghmc_hyderabad
+  hmwssb --[MANAGES]--> water_pipe_network
+  interstate_water_disputes --[AFFECTS]--> city_water_supply
+  krishna_river --[PRODUCES]--> krishna_water_dispute
+  krishna_water_dispute --[PRODUCES]--> tribunal_decisions
+  krs_dam --[SUPPLIES]--> bwssb
+  mettur_dam --[SUPPLIES]--> cmwssb
+  rainwater_harvesting --[SUPPLIES]--> groundwater
+  reservoir_water_level --[AFFECTS]--> dam_water_release
+  reservoirs_and_dams --[PRODUCES]--> reservoir_water_level
+  river_systems --[PRODUCES]--> interstate_water_disputes
+  rwh_building_codes --[AFFECTS]--> building_codes
+  rwh_regulation --[AFFECTS]--> completion_certificate
+  rwh_regulation --[REGULATES]--> rainwater_harvesting
+  stp --[AFFECTS]--> water_quality
+  tanker_pricing --[REGULATES]--> tanker_regulation
+  tribunal_decisions --[REGULATES]--> cauvery_water_allocation
+  water_pipe_network --[PRODUCES]--> water_billing
+  water_privatization --[MANAGES]--> city_water_supply
+  water_privatization --[AFFECTS]--> water_billing
+  water_quality --[AFFECTS]--> desalination
+  water_quality --[AFFECTS]--> urban_health_impact
+  water_rationing --[AFFECTS]--> tanker_pricing — "Municipal water rationing during scarcity creates demand spikes for private tankers; prices can triple during acute shortage periods."
+  water_rationing --[PRODUCES]--> water_tanker_market
+  water_tanker_market --[CONSUMES]--> diesel
+  water_tanker_market --[PRODUCES]--> tanker_pricing
+  water_treatment --[PRODUCES]--> stp
+  water_treatment --[PRODUCES]--> wtp
+  wtp --[PRODUCES]--> water_quality
+  yamuna_river --[AFFECTS]--> water_pollution
