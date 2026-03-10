@@ -2713,12 +2713,12 @@ edges:
 
   - from: fuel_tax_india
     to: petrol
-    type: REGULATES
+    type: AFFECTS
     description: "Central excise + state VAT make up ~50% of petrol price"
 
   - from: fuel_tax_india
     to: diesel
-    type: REGULATES
+    type: AFFECTS
     description: "Tax is major component of diesel price"
 
   - from: fuel_price_deregulation
@@ -2989,15 +2989,8 @@ edges:
     type: SUPPLIES
     description: "Coking coal subset used for steel making"
 
-  - from: indonesia_coal
-    to: indonesia_palm_oil
-    type: LOCATED_IN
-    description: "Indonesia exports both coal and palm oil — same country risk"
-
-  - from: indonesia_palm_export_policy
-    to: indonesia_coal
-    type: AFFECTS
-    description: "Indonesian trade policy shifts affect multiple commodities"
+  # REMOVED: indonesia_coal → indonesia_palm_oil (geographic co-location, not causal)
+  # REMOVED: indonesia_palm_export_policy → indonesia_coal (not a direct causal link)
 
   - from: shipping_freight
     to: imported_coal
@@ -3073,10 +3066,10 @@ edges:
     type: PRODUCES
     description: "Adani Power operates thermal plants"
 
-  - from: electricity_tariff
-    to: electricity
+  - from: electricity_regulatory_commission
+    to: electricity_tariff
     type: REGULATES
-    description: "State regulators set electricity tariffs"
+    description: "State electricity regulatory commissions set and revise electricity tariffs"
 
   - from: cross_subsidy_electricity
     to: electricity_tariff

@@ -98,6 +98,10 @@ nodes:
     aliases: ["B2C startups", "consumer tech India", "consumer internet"]
     category: employment
 
+  - id: consulting_firms
+    aliases: ["consulting firms India", "McKinsey India", "BCG India", "Deloitte India", "Accenture India"]
+    category: employment
+
   - id: enterprise_software
     aliases: ["enterprise SaaS", "enterprise software India", "B2B enterprise"]
     category: employment
@@ -2730,11 +2734,6 @@ edges:
     type: COMPETES_WITH
     description: "Government jobs compete with private sector on job security"
 
-  # Missing node for consulting_firms
-  - id: consulting_firms
-    aliases: ["consulting firms India", "McKinsey India", "BCG India", "Deloitte India", "Accenture India"]
-    category: employment
-
   # ---------------------------------------------------------------------------
   # US INTEREST RATE CASCADE → INDIAN EMPLOYMENT
   # ---------------------------------------------------------------------------
@@ -2777,3 +2776,41 @@ edges:
     to: real_estate_sector
     type: AFFECTS
     description: "Economic growth drives property demand"
+
+  # ---------------------------------------------------------------------------
+  # ORPHAN FIXES
+  # ---------------------------------------------------------------------------
+  - from: cred
+    to: fintech_sector
+    type: PRODUCES
+    description: "CRED is a fintech company in the credit card rewards space"
+
+  - from: enterprise_software
+    to: saas_sector
+    type: PRODUCES
+    description: "Enterprise software is a sub-segment of the broader SaaS sector"
+
+  - from: esports
+    to: gaming_sector
+    type: PRODUCES
+    description: "Esports is the competitive/professional arm of the gaming industry"
+
+  - from: postman
+    to: saas_sector
+    type: PRODUCES
+    description: "Postman is an Indian-origin SaaS company for API development"
+
+  - from: variable_pay
+    to: salary_trends
+    type: AFFECTS
+    description: "Variable pay and bonus payouts are a key component of total compensation trends"
+
+  - from: warehousing
+    to: logistics_sector
+    type: PRODUCES
+    description: "Warehousing and 3PL are core components of the logistics sector"
+
+  - from: ecommerce_logistics
+    to: warehousing
+    type: DEPENDS_ON
+    description: "E-commerce fulfilment depends on warehouse infrastructure"
