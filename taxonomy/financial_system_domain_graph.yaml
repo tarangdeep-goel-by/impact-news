@@ -1159,6 +1159,16 @@ edges:
     type: AFFECTS
     description: "Core inflation is the demand-driven component"
 
+  - from: wpi_inflation
+    to: cpi_inflation
+    type: AFFECTS
+    description: "WPI tracks producer prices that eventually pass through to consumer prices"
+
+  - from: crude_oil_price
+    to: wpi_inflation
+    type: AFFECTS
+    description: "Crude oil is a major component of wholesale price index"
+
   - from: rbi
     to: rbi_open_market_operations
     type: PRODUCES
@@ -1241,6 +1251,16 @@ edges:
     to: global_liquidity
     type: AFFECTS
     description: "BOJ policy affects yen carry trade and global flows"
+
+  - from: pboc
+    to: global_liquidity
+    type: AFFECTS
+    description: "PBOC monetary policy influences global capital flows"
+
+  - from: pboc
+    to: china_economy
+    type: REGULATES
+    description: "PBOC sets China's monetary policy and interest rates"
 
   - from: global_liquidity
     to: emerging_market_flows
@@ -1406,6 +1426,16 @@ edges:
     type: AFFECTS
     description: "Fraud-related NPAs damage bank balance sheets"
 
+  - from: rbi_circular
+    to: psu_banks
+    type: REGULATES
+    description: "RBI circulars govern banking operations and compliance"
+
+  - from: rbi_circular
+    to: nbfc_sector
+    type: REGULATES
+    description: "RBI circulars set regulatory framework for NBFCs"
+
   - from: nbfc_regulation
     to: nbfc_sector
     type: REGULATES
@@ -1415,6 +1445,26 @@ edges:
     to: nbfc_sector
     type: REGULATES
     description: "Microfinance rules affect NBFC-MFI operations"
+
+  - from: rbi_circular
+    to: small_finance_banks
+    type: REGULATES
+    description: "RBI circulars govern SFB licensing and operations"
+
+  - from: small_finance_banks
+    to: microfinance_regulation
+    type: DEPENDS_ON
+    description: "Many SFBs converted from MFIs and serve similar segments"
+
+  - from: rbi_circular
+    to: cooperative_banks
+    type: REGULATES
+    description: "RBI brought cooperative banks under its regulatory purview"
+
+  - from: cooperative_banks
+    to: npa
+    type: AFFECTS
+    description: "Cooperative banks have historically high NPA ratios"
 
   - from: co_lending
     to: nbfc_sector
@@ -1464,6 +1514,16 @@ edges:
     type: COMPETES_WITH
     description: "Digital rupee may complement or compete with UPI"
 
+  - from: imps
+    to: npci
+    type: DEPENDS_ON
+    description: "IMPS is operated by NPCI for instant interbank transfers"
+
+  - from: upi
+    to: imps
+    type: COMPETES_WITH
+    description: "UPI has largely replaced IMPS for instant person-to-person transfers"
+
   - from: upi
     to: neft_rtgs
     type: COMPETES_WITH
@@ -1487,10 +1547,7 @@ edges:
     type: AFFECTS
     description: "GDP growth underpins corporate earnings"
 
-  - from: nifty_50
-    to: sensex
-    type: AFFECTS
-    description: "Nifty and Sensex move in tandem (corr >0.99)"
+  # Nifty and Sensex are parallel indices (corr >0.99), not causally related — no edge
 
   - from: nifty_50
     to: nifty_bank
@@ -1531,6 +1588,36 @@ edges:
     to: nifty_realty
     type: AFFECTS
     description: "Real estate sector health drives realty index"
+
+  - from: nse
+    to: nifty_50
+    type: PRODUCES
+    description: "NSE operates the Nifty 50 index"
+
+  - from: bse
+    to: sensex
+    type: PRODUCES
+    description: "BSE operates the Sensex index"
+
+  - from: sebi
+    to: nse
+    type: REGULATES
+    description: "SEBI regulates NSE as a stock exchange"
+
+  - from: sebi
+    to: bse
+    type: REGULATES
+    description: "SEBI regulates BSE as a stock exchange"
+
+  - from: stock_market_rally
+    to: nifty_50
+    type: AFFECTS
+    description: "Bull rallies push Nifty to new highs"
+
+  - from: stock_market_rally
+    to: ipo_market
+    type: AFFECTS
+    description: "Market rallies open the IPO window for new listings"
 
   - from: sebi
     to: nifty_50
@@ -1752,6 +1839,16 @@ edges:
     to: home_loan_rate
     type: AFFECTS
     description: "Long-term rates track government bond yields"
+
+  - from: sovereign_green_bond
+    to: bond_market_india
+    type: PRODUCES
+    description: "Sovereign green bonds are a G-sec sub-category for climate projects"
+
+  - from: sovereign_green_bond
+    to: gsec_yield
+    type: BENCHMARKED_TO
+    description: "Green bond yields benchmarked to comparable G-sec yields"
 
   - from: sdl
     to: bond_market_india
@@ -1980,10 +2077,10 @@ edges:
     type: DEPENDS_ON
     description: "ULIP equity returns track market performance"
 
-  - from: crop_insurance
-    to: monsoon_forecast
-    type: DEPENDS_ON
-    description: "Crop insurance claims spike with bad monsoon"
+  - from: monsoon
+    to: crop_insurance
+    type: AFFECTS
+    description: "Actual monsoon failures trigger crop insurance claims under PMFBY; poor monsoon years see 3-5x higher claim volumes"
 
   - from: crop_insurance
     to: agriculture_sector
@@ -2078,6 +2175,16 @@ edges:
     type: AFFECTS
     description: "HRA deduction only in old regime"
 
+  - from: advance_tax
+    to: income_tax
+    type: AFFECTS
+    description: "Advance tax is quarterly pre-payment of estimated income tax liability"
+
+  - from: surcharge
+    to: income_tax
+    type: AFFECTS
+    description: "Surcharge increases effective tax rate for high-income taxpayers"
+
   - from: tds
     to: income_tax
     type: AFFECTS
@@ -2139,6 +2246,16 @@ edges:
   # ---------------------------------------------------------------------------
   # GST
   # ---------------------------------------------------------------------------
+  - from: gst
+    to: gst_council
+    type: PRODUCES
+    description: "GST framework established the GST Council as its governing body"
+
+  - from: gst
+    to: gst_collection
+    type: PRODUCES
+    description: "GST regime generates monthly tax collections tracked as economic indicator"
+
   - from: gst_council
     to: gst_rate
     type: PRODUCES
@@ -2230,7 +2347,7 @@ edges:
   - from: us_china_trade
     to: india_us_trade
     type: AFFECTS
-    description: "US-China trade war creates opportunities and risks for India"
+    description: "US-China trade war shifts supply chains via China+1 strategy, boosting India's bilateral trade volumes in electronics, pharma, and textiles"
 
   # ---------------------------------------------------------------------------
   # PROPERTY TAX
@@ -2399,10 +2516,10 @@ edges:
     type: PRODUCES
     description: "EPFO sets annual interest rate"
 
-  - from: epf_interest_rate
-    to: gsec_yield
-    type: BENCHMARKED_TO
-    description: "EPF invests heavily in G-secs, rate tracks yields"
+  - from: gsec_yield
+    to: epf_interest_rate
+    type: AFFECTS
+    description: "G-sec yields determine EPF corpus earnings; EPFO invests ~50% in government securities, so yield levels directly constrain the annual interest rate declaration"
 
   - from: epf
     to: eps
@@ -2454,6 +2571,26 @@ edges:
     type: AFFECTS
     description: "Low yields mean lower annuity payouts"
 
+  - from: gratuity
+    to: epf
+    type: AFFECTS
+    description: "Gratuity and EPF together form the core employer-provided retirement benefits"
+
+  - from: gratuity
+    to: income_tax
+    type: AFFECTS
+    description: "Gratuity up to Rs 20L is tax-exempt; excess is taxable"
+
+  - from: superannuation
+    to: nps
+    type: AFFECTS
+    description: "Many employers moved from superannuation funds to NPS for retirement benefits"
+
+  - from: superannuation
+    to: annuity_rates
+    type: DEPENDS_ON
+    description: "Superannuation corpus converted to annuity at retirement"
+
   # ---------------------------------------------------------------------------
   # CROSS-DOMAIN: GEOPOLITICS → FINANCIAL
   # ---------------------------------------------------------------------------
@@ -2466,6 +2603,16 @@ edges:
     to: it_services_sector
     type: AFFECTS
     description: "US health drives IT outsourcing demand"
+
+  - from: eu_economy
+    to: ecb_rate
+    type: AFFECTS
+    description: "Eurozone economic conditions drive ECB policy decisions"
+
+  - from: eu_economy
+    to: it_services_sector
+    type: AFFECTS
+    description: "EU is the second-largest IT outsourcing market for Indian firms"
 
   - from: russia_ukraine
     to: crude_oil_price
@@ -2541,9 +2688,9 @@ edges:
     description: "Gas is an alternative fuel affecting inflation"
 
   - from: renewable_energy
-    to: crude_oil_price
+    to: india_crude_imports
     type: AFFECTS
-    description: "Long-term renewable adoption reduces oil dependency"
+    description: "India's renewable energy adoption reduces its crude oil import dependency"
 
   # ---------------------------------------------------------------------------
   # CROSS-DOMAIN: FOOD → FINANCIAL

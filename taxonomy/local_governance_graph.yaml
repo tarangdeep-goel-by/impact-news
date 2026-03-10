@@ -1591,6 +1591,18 @@ edges:
     type: MANAGES
 
   # Water treatment
+  - from: wtp
+    to: water_treatment
+    type: PRODUCES
+
+  - from: stp
+    to: water_treatment
+    type: PRODUCES
+
+  - from: city_water_supply
+    to: water_treatment
+    type: DEPENDS_ON
+
   - from: city_water_supply
     to: wtp
     type: DEPENDS_ON
@@ -1719,6 +1731,14 @@ edges:
     to: traffic_management
     type: DISRUPTS
 
+  - from: kolkata_metro
+    to: metro_systems
+    type: PRODUCES
+
+  - from: kolkata_metro
+    to: metro_fare
+    type: PRODUCES
+
   # Bus system chains
   - from: city_bus_systems
     to: bus_fare
@@ -1751,6 +1771,14 @@ edges:
   - from: best_bus
     to: bmc_mumbai
     type: LOCATED_IN
+
+  - from: ksrtc_karnataka
+    to: city_bus_systems
+    type: PRODUCES
+
+  - from: ksrtc_karnataka
+    to: bus_fare
+    type: PRODUCES
 
   - from: fuel_price_local
     to: bus_fuel_cost
@@ -1952,8 +1980,8 @@ edges:
     to: waste_to_energy
     type: PRODUCES
 
-  - from: solid_waste_management
-    to: plastic_ban
+  - from: plastic_ban
+    to: solid_waste_management
     type: REGULATES
 
   # Specific corporations → city
@@ -2019,9 +2047,9 @@ edges:
     type: REGULATES
 
   # Tender/procurement
-  - from: municipal_expenditure
-    to: tender_process
-    type: PRODUCES
+  - from: tender_process
+    to: municipal_expenditure
+    type: REGULATES
 
   - from: tender_process
     to: contractor_quality
@@ -2270,13 +2298,13 @@ edges:
     type: AFFECTS
 
   # Internet/telecom chain
-  - from: broadband_internet
-    to: bsnl_fiber
-    type: PRODUCES
+  - from: bsnl_fiber
+    to: broadband_internet
+    type: SUPPLIES
 
-  - from: broadband_internet
-    to: private_isp
-    type: PRODUCES
+  - from: private_isp
+    to: broadband_internet
+    type: SUPPLIES
 
   - from: mobile_towers
     to: right_of_way
@@ -2698,9 +2726,9 @@ edges:
     to: helmet_seatbelt
     type: REGULATES
 
-  - from: traffic_enforcement
-    to: traffic_fine_amount
-    type: PRODUCES
+  - from: traffic_fine_amount
+    to: traffic_enforcement
+    type: REGULATES
 
   - from: traffic_fine_amount
     to: municipal_revenue
@@ -2739,9 +2767,9 @@ edges:
     type: AFFECTS
 
   # Tourism
-  - from: state_tourism
-    to: heritage_sites
-    type: MANAGES
+  - from: heritage_sites
+    to: state_tourism
+    type: AFFECTS
 
   - from: state_tourism
     to: eco_tourism
@@ -3551,9 +3579,9 @@ edges:
     to: electricity_distribution
     type: SUPPLIES
 
-  - from: thermal_power_plant
-    to: coal_prices
-    type: CONSUMES
+  - from: coal_prices
+    to: thermal_power_plant
+    type: AFFECTS
 
   - from: thermal_power_plant
     to: air_quality
@@ -3610,9 +3638,7 @@ edges:
     to: public_healthcare
     type: CONNECTS
 
-  - from: rera
-    to: private_hospital
-    type: REGULATES
+  # REMOVED: rera → private_hospital (RERA regulates real estate, not hospitals)
 
   - from: electricity_tariff
     to: private_hospital
@@ -3620,7 +3646,7 @@ edges:
 
   - from: telemedicine
     to: public_healthcare
-    type: CONNECTS
+    type: AFFECTS
 
   - from: broadband_internet
     to: telemedicine
