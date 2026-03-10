@@ -35,6 +35,8 @@ class ImpactGraph:
                 type=e.get("type", ""),
                 description=e.get("description", ""),
                 weight=e.get("weight", 1.0),
+                polarity=e.get("polarity", 0),
+                delay=e.get("delay", "SHORT_TERM"),
             )
 
     def get_node(self, node_id: str) -> Node | None:
@@ -105,6 +107,8 @@ class ImpactGraph:
                     type=attrs.get("type", ""),
                     description=attrs.get("description", ""),
                     weight=attrs.get("weight", 1.0),
+                    polarity=attrs.get("polarity", 0),
+                    delay=attrs.get("delay", "SHORT_TERM"),
                 )
             )
         return edges
