@@ -102,6 +102,9 @@ class TaxonomyMerger:
                 edge["to"],
                 type=edge.get("type", ""),
                 description=edge.get("description", ""),
+                weight=edge.get("weight", 1.0),
+                polarity=edge.get("polarity", 0),
+                delay=edge.get("delay", "SHORT_TERM"),
                 source_file=source,
             )
 
@@ -113,11 +116,20 @@ class TaxonomyMerger:
             return
         source = path.name
 
+        # Walk each top-level domain (L1 nodes)
+        l1_ids: list[str] = []
         for key, value in data.items():
             if key == "meta":
                 continue
             if isinstance(value, dict) and "id" in value:
+                l1_ids.append(value["id"])
                 self._walk_tree(G, value, parent_id=None, category=key, source=source)
+
+        # Mark L1 nodes as containers/categories
+        for nid in l1_ids:
+            if G.has_node(nid):
+                G.nodes[nid]["is_category"] = True
+                G.nodes[nid]["is_container"] = True
 
     def _walk_tree(
         self,
@@ -135,10 +147,14 @@ class TaxonomyMerger:
             merged_aliases = list(dict.fromkeys(existing.get("aliases", []) + aliases))
             existing["aliases"] = merged_aliases
         else:
-            G.add_node(nid, aliases=aliases, category=category, source_file=source)
+            node_attrs: dict[str, Any] = dict(aliases=aliases, category=category, source_file=source)
+            if node.get("level") is not None and node["level"] <= 2:
+                node_attrs["is_category"] = True
+            G.add_node(nid, **node_attrs)
 
         if parent_id is not None:
-            G.add_edge(parent_id, nid, type="CONTAINS", description="", source_file=source)
+            G.add_edge(parent_id, nid, type="CONTAINS", description="", weight=0.9, polarity=1, delay="IMMEDIATE", source_file=source)
+            G.add_edge(nid, parent_id, type="IS_A", description="", weight=0.2, polarity=1, delay="IMMEDIATE", source_file=source)
 
         # Recurse into child dicts
         for key, value in node.items():
@@ -210,6 +226,9 @@ class TaxonomyMerger:
                 dst,
                 type=edge.get("type", ""),
                 description=edge.get("description", ""),
+                weight=edge.get("weight", 1.0),
+                polarity=edge.get("polarity", 0),
+                delay=edge.get("delay", "SHORT_TERM"),
                 source_file=patch_path.name,
             )
 
@@ -249,6 +268,8 @@ def export_graph(G: nx.DiGraph, path: Path) -> None:
                 "type": attrs.get("type", ""),
                 "description": attrs.get("description", ""),
                 "weight": attrs.get("weight", 1.0),
+                "polarity": attrs.get("polarity", 0),
+                "delay": attrs.get("delay", "SHORT_TERM"),
             }
         )
 
