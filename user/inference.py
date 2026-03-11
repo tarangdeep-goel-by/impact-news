@@ -228,7 +228,7 @@ INDUSTRY_MAP: dict[str, list[tuple[str, str, float]]] = {
 HOUSING_MAP: dict[str, list[tuple[str, str, float]]] = {
     "own_loan": [("home_loan", "has", 1.0), ("repo_rate", "sensitive_to", 0.9), ("property_tax", "pays", 0.7), ("real_estate_sector", "owns", 0.6)],
     "own_clear": [("property_tax", "pays", 0.7), ("real_estate_sector", "owns", 0.6)],
-    "rent": [("rental_market", "uses", 0.8), ("rent_inflation", "affected_by", 0.7)],
+    "rent": [("rental_market", "uses", 0.8), ("rental_housing", "affected_by", 0.7)],
     "family": [],
 }
 
@@ -304,7 +304,7 @@ TIER2_INVESTMENTS_MAP = {
         "individual_stocks": [("equity_markets", "invests_in", 0.9), ("nifty_50", "tracks", 0.8), ("capital_gains_tax", "pays", 0.7), ("sebi", "regulated_by", 0.6)],
         "equity_mf": [("mutual_funds", "invests_in", 0.8), ("equity_markets", "exposed_to", 0.7), ("sebi", "regulated_by", 0.6)],
         "debt_mf": [("mutual_funds", "invests_in", 0.7), ("repo_rate", "affected_by", 0.7)],
-        "index_funds": [("nifty_50", "tracks", 0.8), ("passive_investing", "uses", 0.7)],
+        "index_funds": [("nifty_50", "tracks", 0.8), ("index_fund", "uses", 0.7)],
         "bonds": [("corporate_bonds", "invests_in", 0.8), ("repo_rate", "affected_by", 0.7)],
         "gold_physical_digital": [("gold", "tracks", 0.9), ("gold_import_duty", "affected_by", 0.7)],
         "crypto": [("crypto_currencies", "invests_in", 0.8), ("crypto_regulation_india", "regulated_by", 0.9)],
@@ -313,7 +313,7 @@ TIER2_INVESTMENTS_MAP = {
     "inv_alternative": {
         "reits": [("real_estate_sector", "invests_in", 0.7), ("reit", "invests_in", 0.8)],
         "startup_vc_angel": [("vc_funding_india", "invests_in", 0.8), ("angel_tax", "affected_by", 0.7), ("startup_policy", "supports", 0.6)],
-        "p2p_lending": [("p2p_lending", "uses", 0.7)],
+        "p2p_lending": [("digital_lending", "uses", 0.7)],
         "commodities": [("global_commodity_cycle", "tracks", 0.8), ("crude_oil", "trades", 0.6)],
         "foreign_stocks": [("us_economy", "exposed_to", 0.7), ("usd_inr", "affected_by", 0.8), ("fii_flows", "affected_by", 0.6)],
         "none": [],
@@ -327,7 +327,7 @@ TIER2_INVESTMENTS_MAP = {
 
 TIER2_HEALTH_MAP = {
     "health_insurance": {
-        "employer_provided": [("health_insurance", "has", 0.8), ("employer_benefits", "receives", 0.6)],
+        "employer_provided": [("health_insurance", "has", 0.8), ("superannuation", "receives", 0.6)],
         "private_self_bought": [("health_insurance", "has", 0.9)],
         "government": [("health_scheme_state", "eligible_for", 0.8), ("public_healthcare", "uses", 0.7)],
         "none": [("uninsured", "is", 0.9)],
@@ -354,7 +354,7 @@ TIER2_EDUCATION_MAP = {
     "edu_pursuing": {
         "school_k12": [("school_fees", "pays", 0.9), ("education_policy", "affected_by", 0.8)],
         "college_university": [("college_university_fees", "pays", 0.9), ("education_loan", "may_need", 0.7), ("college_regulation", "regulated_by", 0.5)],
-        "professional_courses": [("professional_education", "pursuing", 0.8)],
+        "professional_courses": [("professional_courses", "pursuing", 0.8)],
         "competitive_exams": [("coaching_industry", "preparing_for", 0.8), ("coaching_industry", "uses", 0.7)],
         "online_upskilling": [("edtech_sector", "uses", 0.7), ("ai_job_displacement", "adapting_to", 0.6)],
         "none": [],
