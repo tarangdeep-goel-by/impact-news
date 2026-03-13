@@ -98,6 +98,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: startup_ecosystem
   aliases:
   - Startup Ecosystem
@@ -117,6 +118,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: startup_layoffs
   aliases:
   - Startup Layoffs
@@ -126,6 +128,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: manufacturing_and_core
   aliases:
   - Manufacturing & Core Sector
@@ -145,6 +148,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: bfsi_sector
   aliases:
   - BFSI Sector
@@ -164,6 +168,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: central_government
   aliases:
   - Central Government
@@ -183,6 +188,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: railway_rrb_jobs
   aliases:
   - Railway RRB Jobs
@@ -220,6 +226,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: government_teacher_jobs
   aliases:
   - Government Teacher Jobs
@@ -229,6 +236,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: public_sector_undertakings
   aliases:
   - Public Sector Undertakings
@@ -248,6 +256,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: delivery_and_logistics
   aliases:
   - Delivery & Logistics
@@ -267,6 +276,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: quick_commerce_payouts
   aliases:
   - Quick Commerce Payouts
@@ -276,6 +286,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: ride_hailing
   aliases:
   - Ride Hailing
@@ -295,6 +306,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: auto_driver_earnings
   aliases:
   - Auto Driver Earnings
@@ -304,6 +316,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: freelance_and_services
   aliases:
   - Freelance & Services
@@ -323,6 +336,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: gig_worker_payouts
   aliases:
   - Gig Worker Payouts
@@ -332,6 +346,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: agriculture_and_allied
   aliases:
   - Agriculture & Allied Labor
@@ -351,6 +366,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: construction_and_manual
   aliases:
   - Construction & Manual Labor
@@ -370,6 +386,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: domestic_and_care
   aliases:
   - Domestic & Care Work
@@ -389,6 +406,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: rural_employment_schemes
   aliases:
   - Rural Employment Schemes
@@ -427,6 +445,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: street_vendor_income
   aliases:
   - Street Vendor Income
@@ -436,6 +455,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: msme_manufacturing
   aliases:
   - MSME Manufacturing
@@ -455,6 +475,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: statutory_wages
   aliases:
   - Statutory Wages
@@ -474,6 +495,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: unemployment_levels
   aliases:
   - Unemployment Levels
@@ -493,6 +515,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: rural_unemployment_rate
   aliases:
   - Rural Unemployment Rate
@@ -521,6 +544,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 - id: maternity_leave_benefits
   aliases:
   - Maternity Leave Benefits
@@ -530,6 +554,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  portal: true
 edges:
 - from: i4
   to: corporate_employment
@@ -921,3 +946,412 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Workplace conditions contains maternity leave benefits and duration
+- from: startup_layoffs
+  to: startup_jobs
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Widespread layoffs in the startup ecosystem signal funding winters,
+    directly reducing new hiring and available startup jobs.
+- from: startup_layoffs
+  to: urban_unemployment_rate
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Mass downsizing in tech and startup sectors dumps skilled workers into
+    the job market, temporarily spiking urban unemployment rates.
+- from: it_sector_jobs
+  to: it_sector_salary
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: A boom in IT sector job creation increases competition for tech talent,
+    driving up average salary packages and retention bonuses.
+- from: it_sector_jobs
+  to: urban_unemployment_rate
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Robust hiring in the IT sector, a major urban employer, absorbs a large
+    portion of engineering graduates, reducing overall urban joblessness.
+- from: factory_worker_jobs
+  to: urban_unemployment_rate
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Expansion of manufacturing and shop-floor jobs absorbs semi-skilled
+    urban and migrant labor, lowering the urban unemployment rate.
+- from: small_factory_owner_income
+  to: factory_worker_jobs
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: When MSME manufacturing owners see higher profits, they expand production
+    capacity and hire more factory workers.
+- from: minimum_wage
+  to: farm_labor_wages
+  type: REGULATES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increases in statutory minimum wages set a higher baseline expectation
+    for daily wage labor, pushing up agricultural farm labor wages.
+- from: minimum_wage
+  to: construction_worker_wages
+  type: REGULATES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Hikes in the legal minimum wage directly force contractors to increase
+    the daily payouts for construction and manual laborers.
+- from: minimum_wage
+  to: domestic_help_wages
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Rising statutory minimum wages alter the broader informal labor market's
+    wage expectations, gradually increasing the asking price for domestic help.
+- from: minimum_wage
+  to: kirana_store_income
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Higher minimum wages put more disposable income into the hands of the
+    working class, boosting sales and income for local kirana stores.
+- from: rural_unemployment_rate
+  to: urban_unemployment_rate
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: High rural unemployment forces distress migration to cities, swelling
+    the urban labor pool and increasing urban joblessness.
+- from: rural_unemployment_rate
+  to: mgnrega_wages
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: A lack of private rural jobs drives massive demand for the MGNREGA
+    scheme, increasing the total wage allocations and payouts under the program.
+- from: mgnrega_wages
+  to: farm_labor_wages
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher MGNREGA payouts create a competitive floor for rural labor,
+    forcing private farm owners to pay higher wages to attract workers during harvest.
+- from: urban_unemployment_rate
+  to: gig_worker_payouts
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: High urban unemployment floods gig platforms with desperate labor,
+    allowing algorithms to lower per-task payouts due to oversupply of workers.
+- from: food_delivery_payouts
+  to: gig_worker_payouts
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Earnings from food delivery form a massive component of the overall
+    gig economy, directly driving the aggregate gig worker payout metrics.
+- from: quick_commerce_payouts
+  to: gig_worker_payouts
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: The boom in 10-minute delivery services adds a lucrative new earning
+    stream, boosting overall platform worker incomes.
+- from: cab_driver_earnings
+  to: gig_worker_payouts
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ride-hailing earnings are a foundational pillar of the platform economy;
+    higher cab driver pay lifts the aggregate gig worker payout average.
+- from: auto_driver_earnings
+  to: gig_worker_payouts
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: As auto rickshaws integrate into aggregator apps, their earnings increasingly
+    contribute to the overall gig economy payout pool.
+- from: defense_agniveer_roles
+  to: rural_unemployment_rate
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Large-scale recruitment rallies for Agniveer roles absorb significant
+    numbers of rural youth, temporarily lowering rural unemployment.
+- from: it_sector_salary
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: High disposable incomes and aggressive increments among IT professionals
+    drive up demand and prices for premium rental housing in tech hubs.
+- from: it_sector_salary
+  to: personal_income_tax
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Rising salaries in the formal IT sector push more employees into higher
+    tax brackets, directly increasing personal income tax collections.
+- from: it_sector_salary
+  to: four_wheeler_price
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Strong tech compensation fuels demand for personal vehicles, giving
+    automakers the pricing power to raise four-wheeler prices.
+- from: startup_jobs
+  to: pg_and_hostel_fees
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: An influx of young, unmarried professionals taking up startup jobs
+    in metro cities drives up demand and fees for PG and co-living accommodations.
+- from: startup_layoffs
+  to: therapy_consultation
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Sudden job losses and financial insecurity in the high-pressure startup
+    sector drive affected employees to seek mental health counseling.
+- from: startup_layoffs
+  to: credit_card_dues
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Loss of income from startup layoffs forces individuals to rely on revolving
+    credit, leading to a spike in unpaid credit card dues.
+- from: factory_worker_jobs
+  to: epf_balance
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Growth in formal factory employment increases the number of workers
+    making mandatory contributions to the Employee Provident Fund.
+- from: private_bank_jobs
+  to: personal_loan_emi
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Aggressive hiring of sales executives in private banks leads to a push
+    in retail credit distribution, increasing the volume of personal loans and EMIs.
+- from: upsc_civil_services
+  to: coaching_fees
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The intense competition and prestige associated with UPSC civil service
+    roles allow test prep institutes to charge exorbitant coaching fees.
+- from: state_police_jobs
+  to: police_response_time
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Adequate hiring and filling of vacancies in state police forces improves
+    patrol density, thereby reducing the time taken to respond to citizen emergencies.
+- from: government_teacher_jobs
+  to: private_tutors
+  type: COMPETES_WITH
+  weight: 0.6
+  polarity: -1
+  delay: LONG_TERM
+  description: Robust hiring of qualified government teachers improves public school
+    quality, marginally reducing the reliance of lower-income families on private
+    tutors.
+- from: psu_bank_jobs
+  to: bank_deposits
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Increased staffing in PSU banks improves outreach and customer service
+    in semi-urban areas, driving higher mobilization of bank deposits.
+- from: food_delivery_payouts
+  to: food_delivery_services
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher per-order payouts to delivery partners increase the operational
+    costs for platforms, which are passed on to consumers as higher delivery fees.
+- from: quick_commerce_payouts
+  to: road_traffic_accidents
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Aggressive incentive structures for 10-minute deliveries push gig workers
+    to speed and violate traffic rules, increasing road accident rates.
+- from: cab_driver_earnings
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: When platforms increase driver earnings or incentives to retain supply,
+    they simultaneously raise consumer fares to protect their margins.
+- from: auto_driver_earnings
+  to: auto_rickshaw_fare
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Higher earning expectations and union demands from auto drivers lead
+    to official hikes in base meter fares for passengers.
+- from: urban_company_partner_earnings
+  to: repair_service_charges
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increases in the payouts demanded by home service professionals directly
+    translate to higher repair and maintenance charges for households.
+- from: gig_worker_payouts
+  to: two_wheeler_price
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Steady gig worker payouts make two-wheeler EMIs affordable for delivery
+    partners, sustaining high demand and pricing power for entry-level bikes.
+- from: farm_labor_wages
+  to: retail_tomato
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Rising daily wages for agricultural labor increase the cost of harvesting,
+    which is passed down the supply chain to retail vegetable prices.
+- from: construction_worker_wages
+  to: construction_labor_wages
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Increases in the daily wages of informal construction workers directly
+    raise the labor costs incurred by citizens building or modifying homes.
+- from: domestic_help_wages
+  to: domestic_help_cost
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Rising wage expectations among domestic workers directly increase the
+    monthly household expense for maids and cooks.
+- from: kirana_store_income
+  to: upi_transaction_success
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher sales volumes and income at local kirana stores drive a massive
+    increase in the frequency of merchant UPI transactions.
+- from: street_vendor_income
+  to: street_food
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased income for street vendors often correlates with higher sales
+    volumes and gradual price increases for roadside street food.
+- from: small_factory_owner_income
+  to: investment_property_value
+  type: FUNDS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: Prosperous MSME owners frequently park their surplus business income
+    in real estate, driving up local commercial and residential property values.
+- from: minimum_wage
+  to: retail_tomato
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Broad increases in statutory minimum wages raise labor costs across
+    the agricultural supply chain, contributing to food inflation.
+- from: urban_unemployment_rate
+  to: investment_and_job_scams
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: High urban joblessness makes desperate job seekers highly vulnerable
+    to Telegram task frauds and fake employment scams.
+- from: urban_unemployment_rate
+  to: depression
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Chronic joblessness and the resulting financial stress are major triggers
+    for clinical depression and anxiety disorders among the youth.
+- from: urban_unemployment_rate
+  to: burglary_and_theft
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Spikes in urban unemployment can lead to increased desperation, correlating
+    with a rise in petty property crimes like theft and chain snatching.
+- from: working_hours
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Extended working hours and long commutes leave citizens with less time
+    to cook, driving up reliance on restaurant dining and food delivery.
+- from: working_hours
+  to: hypertension
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Prolonged working hours, high stress, and sedentary corporate jobs
+    are primary contributors to lifestyle diseases like hypertension.
+- from: maternity_leave_benefits
+  to: childhood_malnutrition
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Adequate paid maternity leave allows mothers to exclusively breastfeed
+    for the recommended six months, directly reducing infant malnutrition rates.
+- from: maternity_leave_benefits
+  to: pediatric_vaccines
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Paid time off ensures working mothers have the schedule flexibility
+    to adhere strictly to their child's pediatric vaccination timetable.

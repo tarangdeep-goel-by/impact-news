@@ -79,6 +79,7 @@ nodes:
   level: 3
   status: active
   is_category: false
+  portal: true
 - id: particulate_matter_levels
   aliases:
   - PM 2.5
@@ -101,6 +102,7 @@ nodes:
   level: 3
   status: active
   is_category: false
+  portal: true
 - id: ambient_temperature
   aliases:
   - Outdoor Temperature
@@ -121,6 +123,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: outdoor_cold
   aliases:
   - Winter chill
@@ -132,6 +135,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: outdoor_humidity
   aliases:
   - Humidity
@@ -143,6 +147,7 @@ nodes:
   level: 3
   status: active
   is_category: false
+  portal: true
 - id: urban_flooding
   aliases:
   - City Flooding
@@ -163,6 +168,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: basement_flooding
   aliases:
   - Flooded basements
@@ -173,6 +179,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: local_water_bodies
   aliases:
   - Neighborhood Lakes
@@ -194,6 +201,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: solid_waste_environment
   aliases:
   - Solid Waste
@@ -215,6 +223,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: urban_landfills
   aliases:
   - Garbage mountains
@@ -226,6 +235,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: sanitation_environment
   aliases:
   - Sanitation Environment
@@ -258,6 +268,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: noise_pollution
   aliases:
   - Noise Pollution
@@ -279,6 +290,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: event_and_construction_noise
   aliases:
   - Loudspeaker noise
@@ -290,6 +302,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: light_pollution
   aliases:
   - Light Pollution
@@ -322,6 +335,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: urban_fauna
   aliases:
   - City Fauna
@@ -343,6 +357,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 - id: stagnant_water_pools
   aliases:
   - Mosquito breeding grounds
@@ -354,6 +369,7 @@ nodes:
   level: 4
   status: active
   is_category: false
+  portal: true
 edges:
 - from: i9
   to: air_quality_environment
@@ -605,3 +621,411 @@ edges:
   delay: IMMEDIATE
   description: Urban fauna contains stagnant water pools that act as breeding grounds
     for mosquitoes and pests.
+- from: ambient_aqi
+  to: asthma
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: High ambient Air Quality Index (AQI) directly triggers and worsens
+    asthma attacks in vulnerable populations.
+- from: ambient_aqi
+  to: copd
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Severe air pollution exacerbates Chronic Obstructive Pulmonary Disease
+    (COPD) symptoms, leading to breathing distress.
+- from: ambient_aqi
+  to: doctor_consultation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Spikes in toxic air quality drive a surge in outpatient clinic visits
+    for respiratory and allergic conditions.
+- from: ambient_aqi
+  to: street_food
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Severe air pollution warnings and visible smog deter citizens from
+    eating at outdoor street food stalls.
+- from: particulate_matter_levels
+  to: ambient_aqi
+  type: PRODUCES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Increases in PM 2.5 and PM 10 concentrations mathematically and physically
+    drive up the overall Air Quality Index.
+- from: particulate_matter_levels
+  to: winter_smog
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: High concentrations of particulate matter accumulate in the lower atmosphere
+    during temperature inversions, forming dense winter smog.
+- from: winter_smog
+  to: domestic_flight_ticket
+  type: DISRUPTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Dense winter smog reduces runway visibility, causing flight cancellations
+    and driving up last-minute ticket prices.
+- from: winter_smog
+  to: road_traffic_accidents
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Near-zero visibility caused by thick winter smog leads to multi-vehicle
+    pile-ups and highway accidents.
+- from: winter_smog
+  to: pediatric_vaccines
+  type: DISRUPTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: Severe smog episodes force schools and clinics to close, delaying routine
+    pediatric immunization schedules.
+- from: outdoor_heat
+  to: residential_power_supply
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Extreme summer heatwaves cause massive spikes in AC usage, overloading
+    local transformers and triggering power cuts.
+- from: outdoor_heat
+  to: electricity_tariff
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Prolonged outdoor heat forces households to run air conditioners longer,
+    significantly increasing monthly electricity bills.
+- from: outdoor_heat
+  to: construction_worker_wages
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Severe heatwaves halt daytime outdoor construction work, directly reducing
+    the daily earnings of manual laborers.
+- from: outdoor_heat
+  to: street_vendor_income
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Scorching outdoor temperatures reduce pedestrian footfall, hurting
+    the daily sales and income of street vendors.
+- from: outdoor_heat
+  to: private_water_tanker
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Summer heat depletes municipal reservoirs and borewells, driving desperate
+    households to expensive private water tankers.
+- from: outdoor_heat
+  to: retail_tomato
+  type: DISRUPTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Extreme heatwaves spoil fresh produce like tomatoes during transit
+    and storage, reducing supply and spiking retail prices.
+- from: outdoor_cold
+  to: electricity_tariff
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Severe winter cold waves increase the use of energy-intensive room
+    heaters and geysers, raising electricity bills.
+- from: outdoor_cold
+  to: winter_smog
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cold air creates temperature inversions that trap vehicular and industrial
+    emissions close to the ground, exacerbating smog.
+- from: outdoor_humidity
+  to: outdoor_heat
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: High humidity prevents sweat evaporation, drastically increasing the
+    perceived heat index (wet-bulb temperature) for citizens.
+- from: outdoor_humidity
+  to: electricity_tariff
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Muggy, humid conditions force air conditioners to work harder to dehumidify
+    rooms, increasing power consumption.
+- from: street_waterlogging
+  to: traffic_congestion
+  type: DISRUPTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Flooded streets force vehicles to crawl or detour, causing severe bottlenecks
+    and bumper-to-bumper traffic jams.
+- from: street_waterlogging
+  to: road_potholes
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Stagnant water seeps into asphalt, weakening the road surface and causing
+    it to break apart into potholes under traffic weight.
+- from: street_waterlogging
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Waterlogged roads reduce the availability of active cabs, triggering
+    massive surge pricing on ride-hailing apps.
+- from: street_waterlogging
+  to: food_delivery_payouts
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Navigating flooded streets triggers rain and hazard surge incentives,
+    temporarily increasing payouts for food delivery partners.
+- from: street_waterlogging
+  to: electrocution_hazard
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Waterlogged streets combined with exposed underground cables or fallen
+    poles create deadly electrocution hazards for pedestrians.
+- from: basement_flooding
+  to: repair_service_charges
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Flooded residential basements require emergency water pumping and electrical
+    repairs, driving up demand and rates for handymen.
+- from: basement_flooding
+  to: vehicle_servicing_cost
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Cars and bikes submerged in flooded basement parkings suffer hydrostatic
+    lock and electrical failure, leading to massive repair bills.
+- from: polluted_surface_water
+  to: municipal_water_supply
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: High ammonia or toxic froth in rivers and lakes forces municipal water
+    treatment plants to halt operations, cutting off city water supply.
+- from: polluted_surface_water
+  to: cholera_and_diarrhea
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Contaminated surface water that breaches drinking water supply lines
+    leads directly to outbreaks of cholera and severe diarrhea.
+- from: polluted_surface_water
+  to: freshwater_fish
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Industrial effluents and depleted oxygen in local lakes cause mass
+    fish die-offs, reducing the supply of freshwater fish to local markets.
+- from: street_garbage
+  to: stray_animals
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Overflowing street garbage bins provide a constant food source, attracting
+    and sustaining large populations of stray dogs and cattle.
+- from: street_garbage
+  to: open_drains
+  type: DISRUPTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Uncollected plastic and solid waste from streets wash into open drains
+    during rains, causing severe blockages.
+- from: street_garbage
+  to: pest_control_services
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Accumulating neighborhood garbage breeds rodents and cockroaches, forcing
+    residents to hire private pest control services.
+- from: urban_landfills
+  to: ambient_aqi
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Frequent methane-triggered fires at massive urban landfills release
+    toxic smoke plumes that severely degrade city-wide AQI.
+- from: urban_landfills
+  to: fire_hazards
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Decomposing organic waste in garbage mountains generates highly combustible
+    methane gas, creating persistent fire hazards.
+- from: urban_landfills
+  to: investment_property_value
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: The expansion of foul-smelling, toxic urban landfills permanently depreciates
+    the real estate value of surrounding residential properties.
+- from: open_drains
+  to: stagnant_water_pools
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Clogged and poorly graded open drains overflow onto streets and empty
+    plots, creating persistent stagnant water pools.
+- from: open_drains
+  to: public_urination_odour
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sewage gases from open drains compound with local public urination,
+    creating an unbearable olfactory environment for pedestrians.
+- from: public_urination_odour
+  to: public_park
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: IMMEDIATE
+  description: Overpowering stench from public urination along boundary walls deters
+    citizens from utilizing neighborhood public parks.
+- from: traffic_noise
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Relentless vehicular honking and highway noise lower the desirability
+    and rental yield of apartments facing major arterial roads.
+- from: traffic_noise
+  to: anxiety_disorders
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Chronic exposure to high-decibel traffic noise elevates cortisol levels,
+    contributing to stress and anxiety disorders in urban residents.
+- from: event_and_construction_noise
+  to: therapy_consultation
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Persistent sleep deprivation caused by late-night DJ music and heavy
+    construction noise drives residents to seek mental health therapy.
+- from: light_pollution
+  to: neighborhood_greenery
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: LONG_TERM
+  description: Excessive artificial light at night disrupts the photoperiods of urban
+    trees, leading to premature leaf drop and weakened neighborhood greenery.
+- from: neighborhood_greenery
+  to: ambient_temperature
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Mature tree canopies provide shade and evaporative cooling, significantly
+    reducing the localized urban heat island effect.
+- from: neighborhood_greenery
+  to: particulate_matter_levels
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Urban foliage acts as a physical sink, trapping airborne dust and lowering
+    particulate matter levels in the immediate vicinity.
+- from: neighborhood_greenery
+  to: public_park
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Dense, well-maintained greenery directly enhances the aesthetic and
+    recreational value of neighborhood public parks.
+- from: stray_animals
+  to: stray_animal_attacks
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Unchecked populations of territorial stray dogs and aggressive monkeys
+    directly increase the incidence of bites and attacks on citizens.
+- from: stray_animals
+  to: road_traffic_accidents
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Stray cattle resting on highways or dogs darting across roads force
+    drivers to swerve, causing fatal vehicular accidents.
+- from: stray_animals
+  to: vehicle_insurance_premium
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: High rates of vehicle damage caused by collisions with stray animals
+    drive up local motor insurance claim ratios and subsequent premiums.
+- from: stagnant_water_pools
+  to: dengue
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Stagnant puddles of clean water serve as the primary breeding ground
+    for Aedes mosquitoes, triggering seasonal dengue outbreaks.
+- from: stagnant_water_pools
+  to: malaria
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Swampy plots and stagnant water pools breed Anopheles mosquitoes, facilitating
+    the transmission of malaria in urban slums.
+- from: stagnant_water_pools
+  to: pest_control_services
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: The proliferation of mosquitoes from stagnant water drives housing
+    societies to frequently hire pest control and fogging services.

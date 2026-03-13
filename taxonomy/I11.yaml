@@ -99,6 +99,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: theatre_play
   aliases:
   - Theatre Play
@@ -119,6 +120,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: video_game
   aliases:
   - Video Game
@@ -129,6 +131,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: concert_ticket
   aliases:
   - Concert Ticket
@@ -139,6 +142,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: spectator_sports
   aliases:
   - Spectator Sports
@@ -169,6 +173,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: football_match_ticket
   aliases:
   - Football Match Ticket
@@ -239,6 +244,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: firecracker
   aliases:
   - Firecracker
@@ -249,6 +255,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: festive_idol
   aliases:
   - Festive Idol
@@ -259,6 +266,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: wedding_venue
   aliases:
   - Wedding Venue
@@ -269,6 +277,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: wedding_planning_service
   aliases:
   - Wedding Planning Service
@@ -279,6 +288,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: pilgrimage_package
   aliases:
   - Pilgrimage Package
@@ -289,6 +299,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: temple_donation
   aliases:
   - Temple Donation
@@ -329,6 +340,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: community_gathering
   aliases:
   - Community Gathering
@@ -349,6 +361,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: community_hall
   aliases:
   - Community Hall
@@ -389,6 +402,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 - id: tour_package
   aliases:
   - Tour Package
@@ -409,6 +423,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  portal: true
 edges:
 - from: i11
   to: entertainment_and_media
@@ -690,3 +705,291 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Tourism Services contains Tourist Attraction Ticket
+- from: ott_subscription
+  to: cinema_ticket
+  type: COMPETES_WITH
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Increased adoption and content availability on OTT platforms reduces
+    the frequency of purchasing cinema tickets for theatrical releases.
+- from: concert_ticket
+  to: hotel_room
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major live concerts and music festivals drive massive influxes of out-of-town
+    visitors, spiking local hotel room tariffs.
+- from: cricket_match_ticket
+  to: hotel_room
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: High-profile cricket matches (like IPL or World Cup games) create localized
+    demand shocks that significantly increase hotel room rates near stadiums.
+- from: puja_pandal_contribution
+  to: festive_idol
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Community contributions and chanda collections directly fund the commissioning
+    and purchase of large festive idols for public pandals.
+- from: wedding_venue
+  to: wedding_planning_service
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Booking large wedding venues necessitates hiring wedding planners and
+    decorators to manage the scale of the event.
+- from: wedding_venue
+  to: hotel_room
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Destination weddings and large marriage functions block significant
+    hotel inventory, driving up average room rates in the area.
+- from: pilgrimage_package
+  to: temple_donation
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Increased sales of pilgrimage tour packages lead to higher footfall
+    at religious sites, proportionally increasing temple donations and hundi collections.
+- from: rwa_regulation
+  to: community_gathering
+  type: REGULATES
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Stricter RWA bylaws regarding noise, timing, and guest limits reduce
+    the frequency and scale of community gatherings within housing societies.
+- from: community_gathering
+  to: community_hall
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local resident get-togethers and mohalla meetings drive the booking
+    and utilization of community halls and panchayat bhavans.
+- from: hotel_room
+  to: tour_package
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Increases in hotel room tariffs directly inflate the overall cost of
+    curated holiday and tour packages.
+- from: tour_package
+  to: tourist_attraction_ticket
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Travel agency tour packages bundle and pre-fund entry tickets to local
+    monuments, museums, and tourist attractions.
+- from: cinema_ticket
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Crowds exiting multiplexes after popular movie shows trigger localized
+    surge pricing on ride-hailing apps.
+- from: cinema_ticket
+  to: fine_dining_restaurants
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Movie outings frequently co-occur with dining out, driving footfall
+    and revenue for nearby fine dining and sit-down restaurants.
+- from: ott_subscription
+  to: broadband_network_quality
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: High-definition streaming on OTT platforms requires stable, high-speed
+    broadband network quality to prevent buffering.
+- from: video_game
+  to: broadband_network_quality
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Multiplayer online video games and esports titles depend heavily on
+    low-latency broadband network quality.
+- from: concert_ticket
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Massive crowds arriving at and leaving live concert venues cause severe
+    traffic bottlenecks and extreme surge pricing on cab aggregators.
+- from: concert_ticket
+  to: event_and_construction_noise
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Live music gigs and outdoor concerts produce significant localized
+    noise pollution affecting surrounding neighborhoods.
+- from: cricket_match_ticket
+  to: domestic_flight_ticket
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Traveling fans attending major cricket matches drive up demand and
+    prices for domestic flight tickets to the host city.
+- from: puja_pandal_contribution
+  to: event_and_construction_noise
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Well-funded puja pandals utilize heavy loudspeaker setups, significantly
+    increasing festival-related noise pollution.
+- from: puja_pandal_contribution
+  to: street_garbage
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Large community festivals and pandals generate substantial temporary
+    solid waste and street garbage in the immediate vicinity.
+- from: firecracker
+  to: winter_smog
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The mass bursting of firecrackers releases heavy particulate matter,
+    directly spiking AQI levels and exacerbating winter smog.
+- from: firecracker
+  to: asthma
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Toxic smoke and chemical emissions from firecrackers trigger acute
+    respiratory distress and asthma attacks in vulnerable populations.
+- from: firecracker
+  to: fire_hazards
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: The use of aerial fireworks and firecrackers in dense urban areas significantly
+    increases the incidence of building and structural fires.
+- from: firecracker
+  to: event_and_construction_noise
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Explosive firecrackers generate extreme decibel levels, causing severe
+    acute noise pollution during festival seasons.
+- from: festive_idol
+  to: polluted_surface_water
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The immersion of festive idols made with Plaster of Paris and synthetic
+    paints introduces toxic chemicals into local lakes and rivers.
+- from: wedding_venue
+  to: retail_gold_investment
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The booking of wedding venues correlates with the broader marriage
+    season, which drives massive retail gold and jewelry purchases.
+- from: wedding_venue
+  to: event_and_construction_noise
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Baraat processions and loud DJ setups at wedding venues contribute
+    heavily to neighborhood noise pollution.
+- from: wedding_planning_service
+  to: gig_worker_payouts
+  type: EMPLOYS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Wedding planners rely heavily on informal gig workers for catering,
+    decoration, and event logistics, driving temporary wage payouts.
+- from: pilgrimage_package
+  to: irctc_train_ticket
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Group bookings for pilgrimage packages consume significant railway
+    inventory, affecting the availability of IRCTC train tickets on specific routes.
+- from: pilgrimage_package
+  to: stampedes
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Mass influxes of tourists via pilgrimage packages to constrained religious
+    sites increase the risk of crowd crushes and stampedes.
+- from: rwa_regulation
+  to: rwa_maintenance_fees
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The enforcement of stricter RWA regulations and the addition of society
+    amenities drive up monthly maintenance fees for residents.
+- from: rwa_regulation
+  to: stray_animals
+  type: REGULATES
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Strict RWA guidelines regarding pet ownership and the feeding of strays
+    reduce the presence of stray animals within gated communities.
+- from: public_park
+  to: neighborhood_greenery
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: The maintenance and expansion of public parks directly increases the
+    tree canopy and overall neighborhood greenery.
+- from: public_park
+  to: outdoor_heat
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: LONG_TERM
+  description: The presence of well-maintained public parks mitigates the urban heat
+    island effect, lowering localized ambient outdoor temperatures.
+- from: hotel_room
+  to: domestic_flight_ticket
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: High occupancy rates and rising hotel room tariffs in tourist destinations
+    correlate with increased demand and pricing for domestic flights to those locations.
+- from: tourist_attraction_ticket
+  to: street_vendor_income
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: High footfall at monuments and tourist attractions creates a captive
+    market, directly boosting the daily income of nearby street vendors.

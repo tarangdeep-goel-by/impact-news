@@ -58,6 +58,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: surgical_procedures
   aliases:
   - Surgical Procedures
@@ -67,6 +68,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: doctor_consultation
   aliases:
   - Doctor Consultation
@@ -76,6 +78,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: dental_care
   aliases:
   - Dental Care
@@ -85,6 +88,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: vision_care
   aliases:
   - Vision Care
@@ -95,6 +99,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: blood_tests
   aliases:
   - Blood Tests
@@ -114,6 +119,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: pharmaceuticals_and_supplies
   aliases:
   - Pharmaceuticals & Supplies
@@ -164,6 +170,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: antibiotics
   aliases:
   - Antibiotics
@@ -183,6 +190,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: painkillers_and_antipyretics
   aliases:
   - Painkillers & Antipyretics
@@ -261,6 +269,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: malaria
   aliases:
   - Malaria
@@ -305,6 +314,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: influenza_and_viral_fever
   aliases:
   - Influenza & Viral Fever
@@ -324,6 +334,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: chronic_and_lifestyle_conditions
   aliases:
   - Chronic & Lifestyle Conditions
@@ -434,6 +445,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: mental_health_and_wellbeing
   aliases:
   - Mental Health & Wellbeing
@@ -470,6 +482,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: anxiety_disorders
   aliases:
   - Anxiety Disorders
@@ -489,6 +502,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: therapy_consultation
   aliases:
   - Therapy Consultation
@@ -498,6 +512,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: psychiatric_medication
   aliases:
   - Psychiatric Medication
@@ -507,6 +522,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: maternal_and_child_health
   aliases:
   - Maternal & Child Health
@@ -553,6 +569,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  portal: true
 - id: pediatric_vaccines
   aliases:
   - Pediatric Vaccines
@@ -1060,3 +1077,427 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: AYUSH Treatments contains Homeopathic Medicines
+- from: dengue
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Outbreaks of dengue fever rapidly increase the demand for and occupancy
+    of hospital beds due to severe platelet drops and dehydration.
+- from: dengue
+  to: blood_tests
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Suspected dengue cases require immediate platelet count and NS1 antigen
+    blood tests for clinical confirmation.
+- from: dengue
+  to: working_hours
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Prolonged recovery from vector-borne diseases like dengue causes significant
+    absenteeism, reducing active working hours.
+- from: malaria
+  to: blood_tests
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Fever symptoms in malaria-endemic areas trigger immediate diagnostic
+    blood smears to detect the presence of the parasite.
+- from: chikungunya
+  to: painkillers_and_antipyretics
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Severe and prolonged joint pain resulting from chikungunya infections
+    requires the heavy use of strong analgesics.
+- from: typhoid
+  to: antibiotics
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Enteric fever caused by typhoid requires specific courses of antibiotics
+    for bacterial eradication.
+- from: cholera_and_diarrhea
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Severe dehydration resulting from acute diarrhea necessitates immediate
+    IV fluid administration in hospital wards.
+- from: tuberculosis
+  to: antibiotics
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: TB infections necessitate long-term, multi-month courses of specialized
+    antibiotic treatments to prevent drug resistance.
+- from: tuberculosis
+  to: working_hours
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: The prolonged fatigue and highly infectious nature of tuberculosis
+    force patients to take extended leave from work.
+- from: covid_19
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Surges in COVID-19 cases directly drive up ICU and general ward bed
+    occupancy for respiratory support.
+- from: covid_19
+  to: medical_imaging
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Severe respiratory infections like COVID-19 increase the need for chest
+    CT scans and X-rays to assess lung damage.
+- from: covid_19
+  to: term_insurance_premium
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Increased mortality rates and claims during severe viral pandemics
+    prompt insurers to raise term life insurance premiums.
+- from: diabetes
+  to: chronic_disease_medication
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Rising diabetes prevalence increases the lifelong consumption of insulin
+    and oral hypoglycemic drugs.
+- from: diabetes
+  to: home_monitoring_devices
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Diabetic patients require glucometers and test strips for regular at-home
+    blood sugar tracking.
+- from: diabetes
+  to: vision_care
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: Long-term diabetes often leads to diabetic retinopathy, necessitating
+    regular eye checkups and vision care.
+- from: obesity
+  to: diabetes
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Prolonged obesity and high visceral fat significantly increase the
+    risk of developing type 2 diabetes.
+- from: obesity
+  to: hypertension
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Excess body weight places higher strain on the cardiovascular system,
+    elevating resting blood pressure.
+- from: hypertension
+  to: chronic_disease_medication
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: High blood pressure diagnoses lead to the sustained, daily use of anti-hypertensive
+    medications.
+- from: hypertension
+  to: heart_disease
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Uncontrolled high blood pressure damages arterial walls over time,
+    leading to severe cardiovascular events.
+- from: heart_disease
+  to: surgical_procedures
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Advanced cardiovascular diseases often necessitate invasive interventions
+    like bypass surgeries or stent placements.
+- from: asthma
+  to: chronic_disease_medication
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Asthma flare-ups require the regular use of inhalers, corticosteroids,
+    and bronchodilators.
+- from: asthma
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Severe asthmatic attacks can cause acute respiratory distress, requiring
+    emergency room admissions and oxygen support.
+- from: copd
+  to: home_monitoring_devices
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Patients with chronic obstructive pulmonary disease often need pulse
+    oximeters to monitor oxygen saturation at home.
+- from: cancer
+  to: surgical_procedures
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Oncology treatments frequently involve complex tumor excision surgeries
+    as a primary line of defense.
+- from: cancer
+  to: painkillers_and_antipyretics
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Oncology patients frequently require strong prescription analgesics
+    for chronic pain management.
+- from: cancer
+  to: health_insurance_premium
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: The exorbitant and rising cost of oncology care drives up overall claims,
+    forcing hikes in health insurance pool premiums.
+- from: depression
+  to: therapy_consultation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Diagnoses of clinical depression drive patients to seek regular psychological
+    counseling and cognitive behavioral therapy.
+- from: depression
+  to: psychiatric_medication
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Moderate to severe depression often requires long-term prescriptions
+    for antidepressants and mood stabilizers.
+- from: depression
+  to: working_hours
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Severe depressive episodes lead to decreased cognitive function and
+    increased workplace absenteeism.
+- from: anxiety_disorders
+  to: therapy_consultation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Frequent panic attacks and generalized anxiety lead to an increased
+    demand for professional therapy sessions.
+- from: substance_abuse
+  to: therapy_consultation
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: De-addiction and rehabilitation programs heavily rely on psychological
+    counseling and behavioral therapy.
+- from: substance_abuse
+  to: domestic_violence
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Alcoholism and drug addiction are major catalysts that trigger and
+    exacerbate intimate partner violence.
+- from: substance_abuse
+  to: road_traffic_accidents
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Driving under the influence of alcohol or narcotics directly causes
+    severe and fatal road crashes.
+- from: maternity_services
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Institutional deliveries and C-sections require multi-day occupancy
+    of maternity ward beds.
+- from: maternity_services
+  to: pediatric_vaccines
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Institutional childbirth facilitates the immediate administration of
+    essential birth doses of pediatric vaccines.
+- from: fertility_treatments
+  to: maternity_services
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Successful IVF and fertility interventions eventually lead to pregnancies
+    that utilize maternity and delivery services.
+- from: fertility_treatments
+  to: personal_loan_emi
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The high out-of-pocket cost of multiple IVF cycles frequently drives
+    couples to take personal medical loans.
+- from: childhood_malnutrition
+  to: nutritional_supplements
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Diagnosed undernutrition and stunting in children necessitates the
+    use of therapeutic food and vitamin supplements.
+- from: pediatric_vaccines
+  to: influenza_and_viral_fever
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Widespread childhood immunization reduces the overall incidence and
+    severity of preventable viral infections.
+- from: hospital_beds
+  to: savings_account_balance
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: The high out-of-pocket costs of inpatient hospitalization rapidly deplete
+    liquid household bank savings.
+- from: surgical_procedures
+  to: personal_loan_emi
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Uninsured or underinsured patients often take personal medical loans
+    to fund expensive surgeries, increasing their EMI burdens.
+- from: doctor_consultation
+  to: blood_tests
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Outpatient clinical visits frequently result in pathology lab test
+    prescriptions to confirm diagnoses.
+- from: doctor_consultation
+  to: savings_account_balance
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Out-of-pocket payments for private OPD fees and specialist consultations
+    reduce liquid bank balances.
+- from: dental_care
+  to: savings_account_balance
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Expensive, rarely-insured dental procedures like root canals and implants
+    drain household savings.
+- from: medical_imaging
+  to: savings_account_balance
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: The high out-of-pocket costs of advanced diagnostics like MRI and CT
+    scans reduce patient bank balances.
+- from: chronic_disease_medication
+  to: savings_account_balance
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Recurring monthly expenses on lifelong medications for conditions like
+    diabetes and hypertension steadily drain household savings.
+- from: generic_medicines
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Substituting expensive branded drugs with affordable generic medicines
+    helps preserve household savings.
+- from: ayurvedic_medicines
+  to: generic_medicines
+  type: COMPETES_WITH
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Increased reliance on traditional AYUSH remedies can reduce the consumption
+    of allopathic generic drugs.
+- from: homeopathic_medicines
+  to: doctor_consultation
+  type: COMPETES_WITH
+  weight: 0.5
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Patients opting for homeopathic treatments often bypass standard allopathic
+    doctor consultations.
+- from: therapy_consultation
+  to: savings_account_balance
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Regular out-of-pocket payments for mental health therapy sessions reduce
+    discretionary household savings.
+- from: psychiatric_medication
+  to: savings_account_balance
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: The ongoing cost of psychiatric drugs for chronic mental health conditions
+    depletes personal savings.
+- from: influenza_and_viral_fever
+  to: doctor_consultation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Seasonal flu outbreaks drive high volumes of patients to seek outpatient
+    medical consultations.
+- from: vision_care
+  to: road_traffic_accidents
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Proper vision correction through spectacles or cataract surgery reduces
+    the likelihood of driving accidents.

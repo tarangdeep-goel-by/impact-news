@@ -150,6 +150,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: pg_and_hostel_fees
   aliases:
   - pg rent
@@ -160,6 +161,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: building_materials_cost
   aliases:
   - cement price
@@ -170,6 +172,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: construction_labor_wages
   aliases:
   - mason wages
@@ -180,6 +183,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: lpg_cylinder
   aliases:
   - gas cylinder
@@ -190,6 +194,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: piped_natural_gas
   aliases:
   - png
@@ -210,6 +215,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: residential_power_supply
   aliases:
   - power cut
@@ -220,6 +226,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: municipal_water_supply
   aliases:
   - kaveri water
@@ -230,6 +237,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: private_water_tanker
   aliases:
   - water tanker
@@ -250,6 +258,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: sewage_infrastructure
   aliases:
   - drainage system
@@ -260,6 +269,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: rwa_maintenance_fees
   aliases:
   - society charges
@@ -270,6 +280,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: domestic_help_cost
   aliases:
   - domestic help cost
@@ -280,6 +291,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: repair_service_charges
   aliases:
   - plumber charges
@@ -290,6 +302,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 - id: pest_control_services
   aliases:
   - pest control
@@ -300,6 +313,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  portal: true
 edges:
 - from: i2
   to: shelter_and_accommodation
@@ -505,3 +519,264 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Home upkeep contains pest control services entity
+- from: building_materials_cost
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Higher costs for construction materials like steel and cement increase
+    the capital expenditure for new housing projects, leading to higher rental prices
+    for new units to ensure return on investment.
+- from: construction_labor_wages
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.4
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Increased wages for construction workers raise the overall cost of
+    building new properties, which developers pass on to tenants through higher rents.
+- from: construction_labor_wages
+  to: repair_service_charges
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: The labor pool for new construction and home repairs (plumbers, electricians,
+    carpenters) is often the same. A rise in general construction wages directly increases
+    the rates charged for home repair services.
+- from: residential_rent
+  to: pg_and_hostel_fees
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The formal residential rental market sets a benchmark for all forms
+    of accommodation. When apartment rents rise, operators of PGs and hostels increase
+    their fees accordingly.
+- from: lpg_cylinder
+  to: piped_natural_gas
+  type: COMPETES_WITH
+  weight: 0.4
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: LPG and PNG are substitute cooking fuels. A sustained increase in the
+    price of LPG cylinders makes piped gas more economically attractive, driving up
+    demand for new PNG connections in areas where it is available.
+- from: electricity_tariff
+  to: rwa_maintenance_fees
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Housing societies pay for electricity for common areas, lifts, and
+    water pumps. An increase in the commercial electricity tariff directly raises
+    RWA operational costs, which are passed on to residents as higher maintenance
+    fees.
+- from: residential_power_supply
+  to: private_water_tanker
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Frequent power cuts (axis up = more cuts) disable electric water pumps
+    in buildings, forcing residents and societies to rely on expensive private water
+    tankers to fill their sumps, thus increasing demand.
+- from: residential_power_supply
+  to: municipal_water_supply
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: IMMEDIATE
+  description: Municipal water distribution networks rely on large electric pumps
+    to maintain pressure and supply. Frequent power cuts (axis up = more cuts) disrupt
+    pumping schedules, leading to reduced or unreliable municipal water supply (axis
+    down).
+- from: municipal_water_supply
+  to: private_water_tanker
+  type: COMPETES_WITH
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: Reliable municipal water supply (axis up) reduces the need for households
+    and societies to purchase water from private tankers, thus decreasing demand for
+    them (axis down).
+- from: private_water_tanker
+  to: rwa_maintenance_fees
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: When housing societies are forced to buy water from private tankers
+    due to shortages, the cost is added to the monthly operational expenditure, directly
+    increasing RWA maintenance fees for residents.
+- from: rwa_maintenance_fees
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.4
+  polarity: 1
+  delay: SHORT_TERM
+  description: Landlords often factor in the total cost of a property, including high
+    maintenance fees, when setting the rental price for tenants.
+- from: building_materials_cost
+  to: home_loan_emi
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher costs for building materials increase the ticket price of new
+    homes and apartments, forcing buyers to take out larger home loans, which results
+    in higher monthly EMIs.
+- from: building_materials_cost
+  to: investment_property_value
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: The replacement cost of a property is a key component of its value.
+    An increase in material costs raises the cost to build, thereby increasing the
+    market value of existing and new properties.
+- from: residential_rent
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: For a majority of urban households, rent is the single largest monthly
+    expenditure. An increase in rent directly reduces the amount of disposable income
+    available for savings.
+- from: pg_and_hostel_fees
+  to: street_food
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: Students and young professionals in PGs are a primary consumer base
+    for street food. A rise in their accommodation costs reduces their discretionary
+    spending, leading to lower sales for street food vendors.
+- from: lpg_cylinder
+  to: street_food
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Street food vendors heavily rely on commercial LPG cylinders for cooking.
+    An increase in the price of LPG directly raises their input costs, forcing them
+    to increase the prices of their food items.
+- from: lpg_cylinder
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: IMMEDIATE
+  description: LPG cylinders are a non-discretionary energy expense for millions of
+    households. A price hike immediately reduces the household's capacity to save
+    money.
+- from: electricity_tariff
+  to: small_factory_owner_income
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Electricity is a major operational expense for MSMEs and small factories.
+    An increase in power tariffs squeezes their profit margins, directly reducing
+    the net income of the owner.
+- from: electricity_tariff
+  to: metro_fare
+  type: AFFECTS
+  weight: 0.4
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Metro rail networks are massive consumers of electricity. A significant
+    and sustained hike in electricity tariffs increases their operational costs, creating
+    pressure to increase passenger fares.
+- from: residential_power_supply
+  to: it_sector_jobs
+  type: DISRUPTS
+  weight: 0.3
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: In an era of remote work, unreliable power supply (axis up = more cuts)
+    hinders productivity for IT professionals, potentially impacting company performance
+    and, in the long term, hiring sentiment.
+- from: municipal_water_supply
+  to: cholera_and_diarrhea
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: A reliable and clean municipal water supply (axis up) is critical for
+    public health. Its absence or contamination forces people to use unsafe water
+    sources, increasing the incidence of water-borne diseases like cholera (axis down).
+- from: waste_collection_services
+  to: street_garbage
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: More efficient and regular municipal waste collection (axis up) directly
+    leads to a reduction in the amount of garbage piled up on streets and in public
+    spaces (axis down).
+- from: waste_collection_services
+  to: dengue
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: Inefficient waste collection (axis down) leads to garbage accumulation,
+    which can collect rainwater and create breeding grounds for Aedes mosquitoes,
+    thereby increasing the risk of dengue outbreaks (axis up).
+- from: sewage_infrastructure
+  to: street_waterlogging
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Well-maintained and high-capacity sewage and stormwater drain infrastructure
+    (axis up) effectively channels away rainwater, preventing street waterlogging
+    (axis down) during monsoons.
+- from: sewage_infrastructure
+  to: investment_property_value
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: Neighborhoods with modern, functional sewage infrastructure that prevents
+    waterlogging and contamination are considered more livable and command higher
+    real estate valuations.
+- from: rwa_maintenance_fees
+  to: rwa_regulation
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Sharp or non-transparent increases in RWA maintenance fees often lead
+    to disputes between residents and management, prompting calls for government intervention
+    and stricter regulation of housing societies.
+- from: domestic_help_cost
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: IMMEDIATE
+  description: For many urban middle-class households, the salary for domestic help
+    is a significant monthly expense. An increase in this cost directly reduces their
+    disposable income and ability to save.
+- from: repair_service_charges
+  to: urban_company_partner_earnings
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The service charges paid by customers for home repairs (plumbing, electrical
+    work) directly constitute the earnings and payouts for gig workers and professionals
+    on platforms like Urban Company.
+- from: pest_control_services
+  to: dengue
+  type: AFFECTS
+  weight: 0.4
+  polarity: -1
+  delay: SHORT_TERM
+  description: Effective pest control services, particularly mosquito fogging and
+    treatment of breeding sites, reduce the local mosquito population, thereby lowering
+    the risk and incidence of dengue fever.

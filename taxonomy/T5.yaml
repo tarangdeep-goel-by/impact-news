@@ -59,6 +59,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: india_aging_population
   aliases:
   - India Aging Population
@@ -69,6 +70,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: female_labor_force_participation
   aliases:
   - Female Labor Force Participation
@@ -79,6 +81,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: urban_population_density
   aliases:
   - Urban Population Density
@@ -89,6 +92,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: tier_2_3_city_expansion
   aliases:
   - Tier 2/3 City Expansion
@@ -99,6 +103,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: migration_and_mobility
   aliases:
   - Migration & Mobility
@@ -138,6 +143,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: seasonal_migrant_labor
   aliases:
   - Seasonal Migrant Labor
@@ -148,6 +154,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: indian_diaspora_nri
   aliases:
   - Indian Diaspora
@@ -158,6 +165,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: skilled_emigration
   aliases:
   - Skilled Emigration
@@ -168,6 +176,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: social_movements_and_collectives
   aliases:
   - Social Movements & Collectives
@@ -218,6 +227,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: gig_worker_unions
   aliases:
   - Gig Worker Unions
@@ -227,6 +237,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: transport_worker_unions
   aliases:
   - Transport Worker Unions
@@ -237,6 +248,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: farmer_unions
   aliases:
   - Farmer Unions
@@ -247,6 +259,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: caste_reservation_movements
   aliases:
   - Caste Reservation Movements
@@ -256,6 +269,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: student_unions
   aliases:
   - Student Unions
@@ -265,6 +279,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: cultural_and_religious_forces
   aliases:
   - Cultural & Religious Forces
@@ -315,6 +330,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: spring_harvest_festivals
   aliases:
   - Spring Harvest Festivals
@@ -325,6 +341,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: islamic_festivals
   aliases:
   - Islamic Festivals
@@ -355,6 +372,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: major_temple_trusts
   aliases:
   - Major Temple Trusts
@@ -365,6 +383,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: waqf_boards
   aliases:
   - Waqf Boards
@@ -374,6 +393,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: regional_language_movements
   aliases:
   - Regional Language Movements
@@ -383,6 +403,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: macro_behavioral_shifts
   aliases:
   - Macro Behavioral Shifts
@@ -423,6 +444,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: mass_boycott_movements
   aliases:
   - Mass Boycott Movements
@@ -433,6 +455,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 - id: voter_turnout_aggregates
   aliases:
   - Voter Turnout Aggregates
@@ -442,6 +465,7 @@ nodes:
   category: T5
   level: 4
   status: active
+  portal: true
 edges:
 - from: t5
   to: demographics_and_population
@@ -752,3 +776,243 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Civic Participation contains Voter Turnout Aggregates
+- from: india_working_age_population
+  to: india_gdp_growth
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: An expanding working-age population increases the aggregate labor supply,
+    which drives higher national economic output and GDP growth.
+- from: india_working_age_population
+  to: national_unemployment_rate
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: When the working-age population grows faster than job creation, the
+    surplus labor force directly increases the national unemployment rate.
+- from: india_aging_population
+  to: epfo
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: A rising elderly demographic increases the volume of pension withdrawals
+    and financial liabilities managed by the EPFO.
+- from: female_labor_force_participation
+  to: india_gdp_growth
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Higher female participation in the workforce expands the productive
+    labor pool, directly boosting national economic output.
+- from: rural_urban_migration_corridors
+  to: urban_population_density
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Sustained inflows of rural migrants into urban centers directly increase
+    city population density and housing congestion.
+- from: urban_population_density
+  to: municipal_water_grid
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Surging urban population density overloads existing municipal water
+    infrastructure, reducing per-capita water availability and grid pressure.
+- from: urban_population_density
+  to: sewage_drainage_network
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Increased urban density strains underground drainage systems, leading
+    to reduced capacity and higher risk of urban flooding.
+- from: tier_2_3_city_expansion
+  to: commercial_airports
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: The economic expansion of tier 2 and 3 cities drives demand for regional
+    connectivity, accelerating the development of commercial airports.
+- from: rural_urban_migration_corridors
+  to: indian_railways_network
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Mass movement of rural migrants to urban centers heavily relies on
+    and increases passenger load on the Indian Railways network.
+- from: seasonal_migrant_labor
+  to: global_food_grain_supply
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: The availability of seasonal migrant labor ensures timely agricultural
+    harvesting, directly boosting the supply of food grains.
+- from: indian_diaspora_nri
+  to: india_forex_reserves
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Remittances sent by the growing Indian diaspora directly increase the
+    country's foreign exchange reserves.
+- from: skilled_emigration
+  to: indian_diaspora_nri
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: The outflow of skilled professionals to foreign countries directly
+    expands the size and economic footprint of the Indian diaspora.
+- from: organized_labor_unions
+  to: epfo_payroll_additions
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Pressure from organized labor unions forces companies to formalize
+    employment, leading to higher EPFO payroll additions.
+- from: gig_worker_unions
+  to: ondc_platform
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Collective bargaining by gig worker unions pushes for fairer digital
+    commerce frameworks, accelerating the adoption of the ONDC platform.
+- from: transport_worker_unions
+  to: highway_network
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Strikes and blockades by transport worker unions disrupt logistics,
+    leading to a decrease in highway network throughput.
+- from: farmer_unions
+  to: global_food_grain_supply
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Agitations by farmer unions disrupt agricultural procurement and supply
+    chains, reducing the volume of food grains available for export.
+- from: farmer_unions
+  to: ministry_of_agriculture
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Farmer union protests compel the Ministry of Agriculture to alter procurement
+    policies and subsidy frameworks.
+- from: caste_reservation_movements
+  to: state_governments
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Caste-based reservation movements force state governments to implement
+    new quota policies in education and public employment.
+- from: student_unions
+  to: ministry_of_education
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Campus agitations by student unions compel the Ministry of Education
+    to intervene in university administration and exam policies.
+- from: autumn_festive_season
+  to: aggregate_consumer_confidence
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The autumn festive season triggers a surge in retail spending and cultural
+    celebration, directly boosting aggregate consumer confidence.
+- from: autumn_festive_season
+  to: index_of_industrial_production
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Heightened consumer demand during the autumn festive season drives
+    a temporary spike in factory output and the IIP.
+- from: spring_harvest_festivals
+  to: rural_urban_migration_corridors
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Workers returning to their villages for spring harvest festivals temporarily
+    reduce the flow of rural-urban migration corridors.
+- from: wedding_season_aggregate
+  to: international_gold_prices
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Massive demand for gold jewelry during the Indian wedding season creates
+    upward price pressure on international gold markets.
+- from: major_temple_trusts
+  to: dii_flows
+  type: FUNDS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Large temple trusts channel surplus devotee donations into domestic
+    mutual funds, increasing DII flows into the equity market.
+- from: waqf_boards
+  to: state_governments
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Disputes over the administration of Islamic endowments require direct
+    legal and administrative intervention from state governments.
+- from: regional_language_movements
+  to: state_governments
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Linguistic pride movements pressure state governments to mandate the
+    use of regional languages in local commerce and education.
+- from: aggregate_consumer_confidence
+  to: pmi_services
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher aggregate consumer confidence translates into increased discretionary
+    spending, driving growth in the services PMI.
+- from: aggregate_consumer_confidence
+  to: india_gdp_growth
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Sustained consumer optimism and willingness to spend drive aggregate
+    demand, contributing to higher national GDP growth.
+- from: mass_boycott_movements
+  to: fii_fpi_flows
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Large-scale consumer boycotts of multinational brands create market
+    uncertainty, leading to a decrease in foreign portfolio investment flows.
+- from: voter_turnout_aggregates
+  to: union_budget_framework
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: High voter turnout aggregates signal strong democratic engagement,
+    which influences the Union Budget framework toward more populist allocations.

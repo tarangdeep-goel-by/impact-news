@@ -93,6 +93,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: assault_and_battery
   aliases:
   - Assault & Battery
@@ -102,6 +103,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: burglary_and_theft
   aliases:
   - Burglary & Theft
@@ -112,6 +114,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: vehicle_theft
   aliases:
   - Vehicle Theft
@@ -121,6 +124,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: police_response_time
   aliases:
   - Police Response Time
@@ -149,6 +153,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: women_safety
   aliases:
   - Women Safety
@@ -176,6 +181,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: domestic_violence
   aliases:
   - Domestic Violence
@@ -185,6 +191,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: sexual_assault
   aliases:
   - Sexual Assault
@@ -194,6 +201,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: child_abuse_and_pocso
   aliases:
   - Child Abuse & POCSO
@@ -203,6 +211,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: child_kidnapping
   aliases:
   - Child Kidnapping
@@ -212,6 +221,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: financial_cyber_fraud
   aliases:
   - Financial Cyber Fraud
@@ -240,6 +250,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: investment_and_job_scams
   aliases:
   - Investment & Job Scams
@@ -249,6 +260,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: cyberbullying_and_trolling
   aliases:
   - Cyberbullying & Trolling
@@ -258,6 +270,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: deepfake_and_identity_theft
   aliases:
   - Deepfake & Identity Theft
@@ -267,6 +280,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: transit_accidents
   aliases:
   - Transit Accidents
@@ -303,6 +317,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: railway_accidents
   aliases:
   - Railway Accidents
@@ -312,6 +327,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: fire_hazards
   aliases:
   - Fire Hazards
@@ -322,6 +338,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: structural_collapse
   aliases:
   - Structural Collapse
@@ -332,6 +349,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: electrocution_hazard
   aliases:
   - Electrocution Hazard
@@ -341,6 +359,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: stray_animal_attacks
   aliases:
   - Stray Animal Attacks
@@ -351,6 +370,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: wildlife_encounters
   aliases:
   - Wildlife Encounters
@@ -361,6 +381,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: civil_unrest
   aliases:
   - Civil Unrest
@@ -389,6 +410,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: curfews_and_section_144
   aliases:
   - Curfews & Section 144
@@ -398,6 +420,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 - id: stampedes
   aliases:
   - Stampedes
@@ -408,6 +431,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  portal: true
 edges:
 - from: i8
   to: physical_crime_and_law_enforcement
@@ -710,3 +734,595 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Crowd emergencies contains stampedes
+- from: homicide
+  to: term_insurance_premium
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: High homicide rates in a region increase actuarial risk, leading to
+    higher term life insurance premiums for residents.
+- from: homicide
+  to: fir_registration
+  type: PRODUCES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Homicides mandate immediate police investigation and the filing of
+    a First Information Report (FIR).
+- from: homicide
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Severe violent crimes like murder drastically reduce neighborhood desirability,
+    driving down local residential rents.
+- from: assault_and_battery
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Victims of severe physical altercations and grievous hurt require immediate
+    admission to hospital trauma wards.
+- from: assault_and_battery
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical assaults lead to victims filing formal police complaints for
+    protection and justice.
+- from: assault_and_battery
+  to: criminal_litigation_risk
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Assault charges trigger criminal court proceedings, bail hearings,
+    and potential litigation for the accused.
+- from: burglary_and_theft
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Victims of housebreaking and theft must file an FIR to initiate police
+    recovery and claim insurance.
+- from: burglary_and_theft
+  to: rwa_maintenance_fees
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Spikes in neighborhood burglaries force Housing Societies to hire more
+    security guards and install cameras, raising maintenance fees.
+- from: burglary_and_theft
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Frequent thefts give a locality a poor safety reputation, suppressing
+    the rental value of properties.
+- from: vehicle_theft
+  to: vehicle_insurance_premium
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: High rates of auto and bike theft in a specific pin code cause insurers
+    to raise comprehensive motor insurance premiums.
+- from: vehicle_theft
+  to: fir_registration
+  type: PRODUCES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: A police FIR is a mandatory legal requirement before a citizen can
+    file a vehicle theft insurance claim.
+- from: vehicle_theft
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: Victims of vehicle theft are forced to rely on ride-hailing services
+    for their daily commute while awaiting insurance payouts.
+- from: police_response_time
+  to: homicide
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Longer police response times reduce the deterrence of law enforcement,
+    emboldening criminals and increasing violent crime rates.
+- from: police_response_time
+  to: burglary_and_theft
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Delayed PCR van arrivals allow burglars to escape crime scenes, directly
+    increasing the success rate of property crimes.
+- from: police_response_time
+  to: street_harassment
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Slow police patrolling and delayed emergency responses create environments
+    where street harassment goes unchecked.
+- from: fir_registration
+  to: criminal_litigation_risk
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The formal registration of an FIR is the legal trigger that initiates
+    court summons, bail applications, and criminal trials.
+- from: criminal_litigation_risk
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Defending against criminal charges requires expensive legal counsel
+    and bail bonds, rapidly depleting personal savings.
+- from: criminal_litigation_risk
+  to: anxiety_disorders
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The prolonged stress, social stigma, and uncertainty of criminal trials
+    frequently trigger severe anxiety and panic disorders.
+- from: street_harassment
+  to: working_hours
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Rampant eve-teasing and unsafe streets force women to decline late
+    shifts and restrict their overall working hours.
+- from: street_harassment
+  to: public_park
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Harassment in public spaces deters women and families from utilizing
+    neighborhood parks and community areas.
+- from: street_harassment
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Fear of harassment on public transit forces citizens to book expensive
+    private cabs for safe point-to-point travel.
+- from: domestic_violence
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Severe domestic abuse leads victims to file formal police complaints
+    under dowry harassment and domestic violence laws.
+- from: domestic_violence
+  to: depression
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Prolonged intimate partner violence causes deep psychological trauma,
+    leading to chronic clinical depression.
+- from: domestic_violence
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Victims fleeing abusive households often need to urgently secure new,
+    independent rental accommodations.
+- from: sexual_assault
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Survivors of sexual assault require immediate medical examination,
+    trauma care, and forensic evidence collection at hospitals.
+- from: sexual_assault
+  to: criminal_litigation_risk
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Sexual assault charges trigger immediate, severe, and often non-bailable
+    criminal court proceedings.
+- from: sexual_assault
+  to: therapy_consultation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Survivors frequently require long-term psychological counseling and
+    therapy to process severe PTSD and trauma.
+- from: child_abuse_and_pocso
+  to: criminal_litigation_risk
+  type: PRODUCES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: POCSO (Protection of Children from Sexual Offences) cases mandate immediate
+    arrests and fast-tracked criminal trials.
+- from: child_abuse_and_pocso
+  to: therapy_consultation
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Child victims of abuse require specialized pediatric psychology and
+    long-term trauma counseling.
+- from: child_kidnapping
+  to: fir_registration
+  type: PRODUCES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Child abduction triggers immediate FIR registration and the activation
+    of emergency missing child protocols.
+- from: child_kidnapping
+  to: public_park
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Localized kidnapping scares cause parents to immediately restrict their
+    children from playing in public parks.
+- from: upi_and_bank_scams
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Phishing links and OTP frauds directly and instantly drain funds from
+    the victim's bank accounts.
+- from: upi_and_bank_scams
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Victims of financial cyber fraud must file complaints with the cyber
+    police to attempt fund recovery.
+- from: upi_and_bank_scams
+  to: anxiety_disorders
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: The sudden and irreversible loss of hard-earned savings to scammers
+    triggers acute panic and anxiety attacks.
+- from: investment_and_job_scams
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Fraudulent crypto schemes and Telegram task scams slowly drain accumulated
+    wealth from victims over weeks.
+- from: investment_and_job_scams
+  to: personal_loan_emi
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Victims are often manipulated into taking high-interest personal loans
+    to "unlock" their trapped funds in scam platforms.
+- from: investment_and_job_scams
+  to: urban_unemployment_rate
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Job scams prey on the unemployed, wasting their time and resources,
+    thereby prolonging their period of joblessness.
+- from: cyberbullying_and_trolling
+  to: depression
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Relentless online harassment, doxxing, and trolling lead to severe
+    social isolation and clinical depression.
+- from: cyberbullying_and_trolling
+  to: social_media_accounts
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Severe cyberbullying forces victims to deactivate, lock, or abandon
+    their social media profiles for mental peace.
+- from: deepfake_and_identity_theft
+  to: personal_data_privacy
+  type: DISRUPTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The creation of deepfakes and fake profiles represents a catastrophic
+    breach of an individual's digital privacy and identity.
+- from: deepfake_and_identity_theft
+  to: credit_card_dues
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Identity thieves use stolen credentials to open credit lines and rack
+    up fraudulent credit card debt in the victim's name.
+- from: deepfake_and_identity_theft
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Victims must file IT Act FIRs to legally disown fraudulent actions
+    and force platforms to remove morphed content.
+- from: road_traffic_accidents
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Severe highway crashes and hit-and-runs require immediate emergency
+    admission to trauma and ICU beds.
+- from: road_traffic_accidents
+  to: traffic_congestion
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle collisions block arterial roads and highways, instantly creating
+    massive traffic bottlenecks.
+- from: road_traffic_accidents
+  to: vehicle_insurance_premium
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: A high frequency of accidents and subsequent claims in a region drives
+    up the cost of motor insurance renewals.
+- from: road_traffic_accidents
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accidents involving grievous injury, death, or severe property damage
+    mandate the filing of a police FIR.
+- from: railway_accidents
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Train derailments and collisions are mass-casualty events that instantly
+    overwhelm local hospital infrastructure.
+- from: railway_accidents
+  to: irctc_train_ticket
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Track damage from accidents leads to mass train cancellations, drastically
+    reducing ticket availability on affected routes.
+- from: railway_accidents
+  to: domestic_flight_ticket
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Sudden train cancellations due to accidents force stranded passengers
+    to book expensive last-minute domestic flights.
+- from: fire_hazards
+  to: structural_collapse
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Intense building or industrial fires weaken steel and concrete supports,
+    frequently leading to roof or building collapses.
+- from: fire_hazards
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Victims of severe fires require specialized admission to hospital burn
+    wards and intensive care units.
+- from: fire_hazards
+  to: particulate_matter_levels
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Large-scale industrial or landfill fires release massive plumes of
+    toxic smoke, instantly spiking local PM 2.5 and PM 10 levels.
+- from: structural_collapse
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Building and bridge collapses cause severe crush injuries, requiring
+    mass emergency medical admissions.
+- from: structural_collapse
+  to: road_traffic_accidents
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: The collapse of overpasses, bridges, or roadside hoardings directly
+    crushes vehicles and causes severe traffic accidents.
+- from: structural_collapse
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: LONG_TERM
+  description: A history of building collapses in a neighborhood destroys trust in
+    local construction quality, permanently depressing rents.
+- from: electrocution_hazard
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accidental contact with open high-tension wires causes severe electrical
+    burns and cardiac arrest, requiring ICU care.
+- from: electrocution_hazard
+  to: residential_power_supply
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Transformer blasts and snapped power lines instantly cut off electricity
+    supply to surrounding residential areas.
+- from: stray_animal_attacks
+  to: doctor_consultation
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Dog and monkey bites require immediate outpatient doctor visits for
+    wound cleaning and medical assessment.
+- from: stray_animal_attacks
+  to: pediatric_vaccines
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Children attacked by stray animals require immediate and mandatory
+    courses of anti-rabies vaccines.
+- from: stray_animal_attacks
+  to: road_traffic_accidents
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Packs of stray dogs chasing two-wheelers at night frequently cause
+    riders to panic, skid, and crash.
+- from: wildlife_encounters
+  to: farm_labor_wages
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The presence of leopards or elephants near agricultural fields makes
+    farming highly dangerous, forcing landowners to pay premium wages to laborers.
+- from: wildlife_encounters
+  to: railway_accidents
+  type: PRODUCES
+  weight: 0.5
+  polarity: 1
+  delay: IMMEDIATE
+  description: Elephant herds crossing railway tracks in forest corridors frequently
+    lead to train collisions and derailments.
+- from: wildlife_encounters
+  to: doctor_consultation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Snake bites and wild animal attacks require emergency medical intervention
+    and anti-venom administration.
+- from: riots_and_clashes
+  to: curfews_and_section_144
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Severe communal violence and mob clashes force district administrations
+    to immediately impose curfews and Section 144 to restore order.
+- from: riots_and_clashes
+  to: burglary_and_theft
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Breakdown of law and order during riots provides cover for mobs to
+    loot shops and burglarize abandoned homes.
+- from: riots_and_clashes
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Stone pelting, arson, and physical violence during riots result in
+    mass casualties that flood local hospitals.
+- from: riots_and_clashes
+  to: building_materials_cost
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The aftermath of widespread arson and vandalism creates a sudden local
+    surge in demand for cement, glass, and steel for rebuilding.
+- from: curfews_and_section_144
+  to: gig_worker_payouts
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Strict movement restrictions prevent food and grocery delivery partners
+    from operating, instantly halting their daily earnings.
+- from: curfews_and_section_144
+  to: street_vendor_income
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Police enforcement of curfews forces street hawkers and thela owners
+    to shut down, causing a total loss of daily income.
+- from: curfews_and_section_144
+  to: broadband_network_quality
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Prohibitory orders are frequently accompanied by state-mandated internet
+    shutdowns, severely degrading or cutting off broadband access.
+- from: stampedes
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Crowd crushes at festivals or stations cause mass asphyxiation and
+    trampling injuries, requiring immediate ICU admissions.
+- from: stampedes
+  to: puja_pandal_contribution
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Fatal stampedes at religious gatherings create widespread fear, significantly
+    reducing future attendance and community donations.
+- from: stampedes
+  to: tourist_attraction_ticket
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Safety concerns following a stampede at a major monument or pilgrimage
+    site lead to a prolonged drop in tourist ticket sales.
+- from: stampedes
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mass casualty stampedes trigger mandatory police FIRs against event
+    organizers for criminal negligence.
