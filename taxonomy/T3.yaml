@@ -1,0 +1,815 @@
+nodes:
+- id: t3
+  aliases:
+  - Macroeconomic & Global Markets
+  - Global Markets
+  - Macro Indicators
+  - T3
+  category: T3
+  level: 1
+  status: active
+  is_category: true
+- id: global_commodity_markets
+  aliases:
+  - Global Commodity Markets
+  - International Commodities
+  - vishwa commodity bazar
+  category: T3
+  level: 2
+  status: active
+  is_category: true
+- id: indian_macroeconomic_indicators
+  aliases:
+  - Indian Macroeconomic Indicators
+  - Domestic Macro
+  - rashtriya arthik ankde
+  category: T3
+  level: 2
+  status: active
+  is_category: true
+- id: financial_and_capital_markets
+  aliases:
+  - Financial & Capital Markets
+  - Market Indices
+  - vittiya bazar
+  category: T3
+  level: 2
+  status: active
+  is_category: true
+- id: international_trade_and_supply_chains
+  aliases:
+  - International Trade & Supply Chains
+  - Global Trade
+  - antarrashtriya vyapar
+  category: T3
+  level: 2
+  status: active
+  is_category: true
+- id: energy_commodities
+  aliases:
+  - Energy Commodities
+  - Global Energy Markets
+  - urja bazar
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: agricultural_commodities
+  aliases:
+  - Agricultural Commodities
+  - Global Agri Markets
+  - krishi utpad bazar
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: precious_and_industrial_metals
+  aliases:
+  - Precious & Industrial Metals
+  - Global Metals Market
+  - dhatu bazar
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: brent_crude
+  aliases:
+  - Brent Crude
+  - kachcha tel
+  - global oil prices
+  - crude oil
+  category: T3
+  level: 4
+  status: active
+- id: global_natural_gas
+  aliases:
+  - Global Natural Gas
+  - Henry Hub
+  - LNG prices
+  - prakritik gas bhaw
+  category: T3
+  level: 4
+  status: active
+- id: international_coal_prices
+  aliases:
+  - International Coal Prices
+  - Newcastle coal
+  - thermal coal prices
+  - koyla bhaw
+  category: T3
+  level: 4
+  status: active
+- id: global_edible_oil_supply
+  aliases:
+  - Global Edible Oil Supply
+  - Palm oil prices
+  - sunflower oil imports
+  - khadya tel market
+  category: T3
+  level: 4
+  status: active
+- id: global_food_grain_supply
+  aliases:
+  - Global Food Grain Supply
+  - Chicago wheat
+  - international grain prices
+  - gehun market
+  category: T3
+  level: 4
+  status: active
+- id: global_sugar_supply
+  aliases:
+  - Global Sugar Supply
+  - International sugar prices
+  - chini market
+  - global sweetener supply
+  category: T3
+  level: 4
+  status: active
+- id: international_gold_prices
+  aliases:
+  - International Gold Prices
+  - Spot gold
+  - sona bhaw
+  - global gold market
+  category: T3
+  level: 4
+  status: active
+- id: international_silver_prices
+  aliases:
+  - International Silver Prices
+  - Spot silver
+  - chandi bhaw
+  - global silver market
+  category: T3
+  level: 4
+  status: active
+- id: industrial_metals_index
+  aliases:
+  - Industrial Metals Index
+  - LME copper
+  - global steel prices
+  - base metals
+  category: T3
+  level: 4
+  status: active
+- id: inflation_indices
+  aliases:
+  - Inflation Indices
+  - Macro Inflation Metrics
+  - mehengai dar ankde
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: national_output_and_growth
+  aliases:
+  - National Output & Growth
+  - Economic Growth Metrics
+  - arthik vikas dar
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: employment_aggregates
+  aliases:
+  - Employment Aggregates
+  - Macro Job Metrics
+  - berozgari ankde
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: wpi
+  aliases:
+  - Wholesale Price Index
+  - WPI
+  - thok mehengai
+  - wholesale inflation
+  category: T3
+  level: 4
+  status: active
+- id: india_gdp_growth
+  aliases:
+  - India GDP Growth
+  - Gross Domestic Product
+  - arthvyavastha
+  - national growth rate
+  category: T3
+  level: 4
+  status: active
+- id: index_of_industrial_production
+  aliases:
+  - Index of Industrial Production
+  - IIP
+  - factory output
+  - audyogik utpadan
+  category: T3
+  level: 4
+  status: active
+- id: pmi_manufacturing
+  aliases:
+  - PMI Manufacturing
+  - Purchasing Managers Index
+  - manufacturing activity
+  - factory orders
+  category: T3
+  level: 4
+  status: active
+- id: pmi_services
+  aliases:
+  - PMI Services
+  - Services PMI
+  - service sector growth
+  - business activity index
+  category: T3
+  level: 4
+  status: active
+- id: national_unemployment_rate
+  aliases:
+  - National Unemployment Rate
+  - berozgari dar
+  - aggregate joblessness
+  - CMIE unemployment data
+  category: T3
+  level: 4
+  status: active
+- id: epfo_payroll_additions
+  aliases:
+  - EPFO Payroll Additions
+  - formal job creation
+  - EPFO data
+  - provident fund subscriptions
+  category: T3
+  level: 4
+  status: active
+- id: equity_markets
+  aliases:
+  - Equity Markets
+  - Stock Indices
+  - share bazar
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: currency_and_forex_markets
+  aliases:
+  - Currency & Forex Markets
+  - Foreign Exchange
+  - mudra bazar
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: debt_and_bond_markets
+  aliases:
+  - Debt & Bond Markets
+  - Fixed Income Markets
+  - bond bazar
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: institutional_investment_flows
+  aliases:
+  - Institutional Investment Flows
+  - Market Liquidity
+  - sansthagat nivesh
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: nifty_50
+  aliases:
+  - Nifty 50
+  - NSE benchmark
+  - share bazar
+  - National Stock Exchange index
+  category: T3
+  level: 4
+  status: active
+- id: sensex
+  aliases:
+  - Sensex
+  - BSE benchmark
+  - stock market index
+  - Bombay Stock Exchange
+  category: T3
+  level: 4
+  status: active
+- id: global_equity_indices
+  aliases:
+  - Global Equity Indices
+  - S&P 500
+  - Nasdaq
+  - Dow Jones
+  - wall street
+  category: T3
+  level: 4
+  status: active
+- id: usd_inr_exchange
+  aliases:
+  - USD-INR Exchange Rate
+  - rupee dollar rate
+  - dollar bhaw
+  - rupee depreciation
+  category: T3
+  level: 4
+  status: active
+- id: india_forex_reserves
+  aliases:
+  - India Forex Reserves
+  - FX reserves
+  - videshi mudra bhandar
+  - foreign exchange reserves
+  category: T3
+  level: 4
+  status: active
+- id: us_dollar_index
+  aliases:
+  - US Dollar Index
+  - DXY
+  - dollar strength
+  - global dollar value
+  category: T3
+  level: 4
+  status: active
+- id: india_10yr_bond_yield
+  aliases:
+  - India 10-Year Bond Yield
+  - G-sec yields
+  - sovereign yield
+  - government bond rates
+  category: T3
+  level: 4
+  status: active
+- id: us_treasury_yields
+  aliases:
+  - US Treasury Yields
+  - US 10-year yield
+  - treasury bonds
+  - US debt market
+  category: T3
+  level: 4
+  status: active
+- id: fii_fpi_flows
+  aliases:
+  - FII/FPI Flows
+  - Foreign institutional investors
+  - videshi nivesh
+  - foreign portfolio investment
+  category: T3
+  level: 4
+  status: active
+- id: dii_flows
+  aliases:
+  - DII Flows
+  - Domestic institutional investors
+  - mutual fund inflows
+  - gharelu nivesh
+  category: T3
+  level: 4
+  status: active
+- id: trade_balance_metrics
+  aliases:
+  - Trade Balance Metrics
+  - Import Export Data
+  - vyapar ghata ankde
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: global_supply_chains
+  aliases:
+  - Global Supply Chains
+  - International Logistics
+  - v वैश्विक aapurti shrinkhala
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: global_macro_demand
+  aliases:
+  - Global Macro Demand
+  - International Consumption
+  - vishwa mang
+  category: T3
+  level: 3
+  status: active
+  is_category: true
+- id: india_trade_deficit
+  aliases:
+  - India Trade Deficit
+  - vyapar ghata
+  - import-export gap
+  - merchandise trade balance
+  category: T3
+  level: 4
+  status: active
+- id: india_current_account_deficit
+  aliases:
+  - India Current Account Deficit
+  - CAD
+  - current account balance
+  - external deficit
+  category: T3
+  level: 4
+  status: active
+- id: global_semiconductor_supply_chain
+  aliases:
+  - Global Semiconductor Supply Chain
+  - chip shortage
+  - microchips
+  - semiconductor supply
+  category: T3
+  level: 4
+  status: active
+- id: global_shipping_freight_rates
+  aliases:
+  - Global Shipping Freight Rates
+  - Baltic Dry Index
+  - container costs
+  - shipping rates
+  category: T3
+  level: 4
+  status: active
+- id: active_pharmaceutical_ingredients_supply
+  aliases:
+  - API Supply
+  - bulk drugs
+  - pharma raw materials
+  - active pharmaceutical ingredients
+  category: T3
+  level: 4
+  status: active
+- id: china_manufacturing_output
+  aliases:
+  - China Manufacturing Output
+  - China factory output
+  - Chinese industrial production
+  - cheen audyogik utpadan
+  category: T3
+  level: 4
+  status: active
+- id: us_consumer_demand
+  aliases:
+  - US Consumer Demand
+  - US retail sales
+  - American consumer spending
+  - US market demand
+  category: T3
+  level: 4
+  status: active
+edges:
+- from: t3
+  to: global_commodity_markets
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macroeconomic & Global Markets contains global commodity markets
+- from: t3
+  to: indian_macroeconomic_indicators
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macroeconomic & Global Markets contains Indian macroeconomic indicators
+- from: t3
+  to: financial_and_capital_markets
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macroeconomic & Global Markets contains financial and capital markets
+- from: t3
+  to: international_trade_and_supply_chains
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macroeconomic & Global Markets contains international trade and supply
+    chains
+- from: global_commodity_markets
+  to: energy_commodities
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global commodity markets contains energy commodities
+- from: global_commodity_markets
+  to: agricultural_commodities
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global commodity markets contains agricultural commodities
+- from: global_commodity_markets
+  to: precious_and_industrial_metals
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global commodity markets contains precious and industrial metals
+- from: energy_commodities
+  to: brent_crude
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy commodities contains Brent crude oil
+- from: energy_commodities
+  to: global_natural_gas
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy commodities contains global natural gas markets
+- from: energy_commodities
+  to: international_coal_prices
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy commodities contains international coal prices
+- from: agricultural_commodities
+  to: global_edible_oil_supply
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Agricultural commodities contains global edible oil supply
+- from: agricultural_commodities
+  to: global_food_grain_supply
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Agricultural commodities contains global food grain supply
+- from: agricultural_commodities
+  to: global_sugar_supply
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Agricultural commodities contains global sugar supply
+- from: precious_and_industrial_metals
+  to: international_gold_prices
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Precious and industrial metals contains international gold prices
+- from: precious_and_industrial_metals
+  to: international_silver_prices
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Precious and industrial metals contains international silver prices
+- from: precious_and_industrial_metals
+  to: industrial_metals_index
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Precious and industrial metals contains industrial metals indices
+- from: indian_macroeconomic_indicators
+  to: inflation_indices
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian macroeconomic indicators contains inflation indices
+- from: indian_macroeconomic_indicators
+  to: national_output_and_growth
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian macroeconomic indicators contains national output and growth
+    metrics
+- from: indian_macroeconomic_indicators
+  to: employment_aggregates
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian macroeconomic indicators contains employment aggregates
+- from: inflation_indices
+  to: wpi
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Inflation indices contains the wholesale price index
+- from: national_output_and_growth
+  to: india_gdp_growth
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: National output and growth contains India GDP growth
+- from: national_output_and_growth
+  to: index_of_industrial_production
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: National output and growth contains the index of industrial production
+- from: national_output_and_growth
+  to: pmi_manufacturing
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: National output and growth contains PMI manufacturing
+- from: national_output_and_growth
+  to: pmi_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: National output and growth contains PMI services
+- from: employment_aggregates
+  to: national_unemployment_rate
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Employment aggregates contains the national unemployment rate
+- from: employment_aggregates
+  to: epfo_payroll_additions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Employment aggregates contains EPFO payroll additions
+- from: financial_and_capital_markets
+  to: equity_markets
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial and capital markets contains equity markets
+- from: financial_and_capital_markets
+  to: currency_and_forex_markets
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial and capital markets contains currency and forex markets
+- from: financial_and_capital_markets
+  to: debt_and_bond_markets
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial and capital markets contains debt and bond markets
+- from: financial_and_capital_markets
+  to: institutional_investment_flows
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial and capital markets contains institutional investment flows
+- from: equity_markets
+  to: nifty_50
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Equity markets contains the Nifty 50 index
+- from: equity_markets
+  to: sensex
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Equity markets contains the Sensex index
+- from: equity_markets
+  to: global_equity_indices
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Equity markets contains global equity indices
+- from: currency_and_forex_markets
+  to: usd_inr_exchange
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Currency and forex markets contains the USD-INR exchange rate
+- from: currency_and_forex_markets
+  to: india_forex_reserves
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Currency and forex markets contains India forex reserves
+- from: currency_and_forex_markets
+  to: us_dollar_index
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Currency and forex markets contains the US Dollar Index
+- from: debt_and_bond_markets
+  to: india_10yr_bond_yield
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Debt and bond markets contains the India 10-year bond yield
+- from: debt_and_bond_markets
+  to: us_treasury_yields
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Debt and bond markets contains US treasury yields
+- from: institutional_investment_flows
+  to: fii_fpi_flows
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Institutional investment flows contains FII and FPI flows
+- from: institutional_investment_flows
+  to: dii_flows
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Institutional investment flows contains DII flows
+- from: international_trade_and_supply_chains
+  to: trade_balance_metrics
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: International trade and supply chains contains trade balance metrics
+- from: international_trade_and_supply_chains
+  to: global_supply_chains
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: International trade and supply chains contains global supply chains
+- from: international_trade_and_supply_chains
+  to: global_macro_demand
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: International trade and supply chains contains global macro demand
+- from: trade_balance_metrics
+  to: india_trade_deficit
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Trade balance metrics contains the India trade deficit
+- from: trade_balance_metrics
+  to: india_current_account_deficit
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Trade balance metrics contains the India current account deficit
+- from: global_supply_chains
+  to: global_semiconductor_supply_chain
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global supply chains contains the global semiconductor supply chain
+- from: global_supply_chains
+  to: global_shipping_freight_rates
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global supply chains contains global shipping freight rates
+- from: global_supply_chains
+  to: active_pharmaceutical_ingredients_supply
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global supply chains contains active pharmaceutical ingredients supply
+- from: global_macro_demand
+  to: china_manufacturing_output
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global macro demand contains China manufacturing output
+- from: global_macro_demand
+  to: us_consumer_demand
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global macro demand contains US consumer demand
