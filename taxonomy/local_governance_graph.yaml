@@ -1,3737 +1,3725 @@
-# Local Governance Impact Graph
-# Domain: City-level, district-level, and state-level governance affecting daily life
-# Focus: India-specific with universal structure
-# Depth: 6-7 levels | Nodes: 300+ | Edges: 450+
-# Edge types: PRODUCES, CONSUMES, AFFECTS, REGULATES, DISRUPTS, SUPPLIES,
-#             DEPENDS_ON, LOCATED_IN, MANAGES, FUNDS, CONNECTS
-
 meta:
-  version: "1.0.0"
+  version: 1.0.0
   domain: local_governance
   focus: india
-  created: "2026-03-09"
+  created: '2026-03-09'
   node_count_target: 300
   edge_count_target: 450
   max_depth: 7
-
-# =============================================================================
-# NODES
-# =============================================================================
 nodes:
-
-  # ===========================================================================
-  # 1. WATER SYSTEMS
-  # ===========================================================================
-
-  # --- River systems ---
-  - id: river_systems
-    aliases: ["river water", "river basin", "surface water"]
-    category: water_systems
-
-  - id: cauvery_river
-    aliases: ["Kaveri river", "Cauvery basin", "Cauvery water"]
-    category: water_systems
-
-  - id: cauvery_water_dispute
-    aliases: ["Cauvery tribunal", "Karnataka TN water dispute", "Cauvery water sharing", "Cauvery Management Authority", "CMA"]
-    category: water_systems
-
-  - id: cauvery_water_allocation
-    aliases: ["Cauvery TMC allocation", "Cauvery release order", "Cauvery quota"]
-    category: water_systems
-
-  - id: ganga_river
-    aliases: ["Ganges", "Ganga basin", "Namami Gange", "Ganga rejuvenation"]
-    category: water_systems
-
-  - id: yamuna_river
-    aliases: ["Yamuna pollution", "Yamuna water", "Yamuna basin"]
-    category: water_systems
-
-  - id: krishna_river
-    aliases: ["Krishna basin", "Krishna water disputes", "Krishna river water"]
-    category: water_systems
-
-  - id: krishna_water_dispute
-    aliases: ["Krishna Water Disputes Tribunal", "KWDT", "Andhra Karnataka water", "Telangana water sharing"]
-    category: water_systems
-
-  - id: godavari_river
-    aliases: ["Godavari basin", "Godavari water", "Godavari river dispute"]
-    category: water_systems
-
-  - id: interstate_water_disputes
-    aliases: ["river water sharing", "water tribunal", "Inter-State River Water Disputes Act", "water dispute tribunal"]
-    category: water_systems
-
-  - id: tribunal_decisions
-    aliases: ["water tribunal order", "SC water order", "Supreme Court water verdict"]
-    category: water_systems
-
-  # --- Reservoirs and dams ---
-  - id: reservoirs_and_dams
-    aliases: ["dam water level", "reservoir storage", "dam capacity"]
-    category: water_systems
-
-  - id: krs_dam
-    aliases: ["Krishna Raja Sagara", "KRS water level", "Mysore dam", "KRS reservoir"]
-    category: water_systems
-
-  - id: mettur_dam
-    aliases: ["Mettur dam water level", "Stanley Reservoir", "Mettur release"]
-    category: water_systems
-
-  - id: bhakra_nangal_dam
-    aliases: ["Bhakra dam", "Gobind Sagar", "Bhakra water level"]
-    category: water_systems
-
-  - id: reservoir_water_level
-    aliases: ["dam water storage", "reservoir capacity percentage", "dam inflow outflow"]
-    category: water_systems
-
-  - id: dam_water_release
-    aliases: ["water release from dam", "dam discharge", "flood gates opened"]
-    category: water_systems
-
-  # --- Groundwater ---
-  - id: groundwater
-    aliases: ["underground water", "groundwater table", "water table level", "aquifer"]
-    category: water_systems
-
-  - id: borewell
-    aliases: ["borewell drilling", "tubewell", "borewell depth", "borewell registration"]
-    category: water_systems
-
-  - id: borewell_regulation
-    aliases: ["borewell permit", "groundwater extraction regulation", "CGWA", "Central Ground Water Authority"]
-    category: water_systems
-
-  - id: groundwater_depletion
-    aliases: ["water table falling", "groundwater crisis", "aquifer depletion", "over-extraction"]
-    category: water_systems
-
-  # --- City water supply ---
-  - id: city_water_supply
-    aliases: ["urban water supply", "municipal water", "piped water supply", "tap water"]
-    category: water_systems
-
-  - id: bwssb
-    aliases: ["Bangalore Water Supply", "Bangalore Water Supply and Sewerage Board", "BWSSB bill", "BWSSB connection"]
-    category: water_systems
-
-  - id: delhi_jal_board
-    aliases: ["DJB", "Delhi water supply", "Delhi Jal Board bill", "DJB connection"]
-    category: water_systems
-
-  - id: bmc_water
-    aliases: ["Mumbai water supply", "BMC water department", "Mumbai water cut"]
-    category: water_systems
-
-  - id: cmwssb
-    aliases: ["Chennai Metro Water", "Chennai water supply", "Chennai Metropolitan Water Supply and Sewerage Board"]
-    category: water_systems
-
-  - id: hmwssb
-    aliases: ["Hyderabad water supply", "Hyderabad Metropolitan Water Supply", "HMWSSB"]
-    category: water_systems
-
-  - id: water_pipe_network
-    aliases: ["water pipeline", "water distribution network", "pipe burst", "water main", "water leakage"]
-    category: water_systems
-
-  - id: water_billing
-    aliases: ["water bill", "water tariff", "water meter", "water charges", "volumetric water pricing"]
-    category: water_systems
-
-  - id: water_rationing
-    aliases: ["water cut", "water supply schedule", "alternate day water", "water tanker dependency"]
-    category: water_systems
-
-  # --- Water treatment ---
-  - id: water_treatment
-    aliases: ["water purification", "water filtration", "drinking water treatment"]
-    category: water_systems
-
-  - id: stp
-    aliases: ["sewage treatment plant", "STP", "wastewater treatment", "sewage processing"]
-    category: water_systems
-
-  - id: wtp
-    aliases: ["water treatment plant", "WTP", "drinking water plant", "water purification plant"]
-    category: water_systems
-
-  - id: water_quality
-    aliases: ["drinking water quality", "water contamination", "water testing", "TDS level", "water purity"]
-    category: water_systems
-
-  - id: water_pollution
-    aliases: ["water body pollution", "effluent discharge", "river pollution", "lake pollution"]
-    category: water_systems
-
-  # --- Water tanker market ---
-  - id: water_tanker_market
-    aliases: ["water tanker", "tanker water", "private water supply", "water tanker mafia"]
-    category: water_systems
-
-  - id: tanker_pricing
-    aliases: ["water tanker rates", "tanker cost", "water tanker price per load"]
-    category: water_systems
-
-  - id: tanker_regulation
-    aliases: ["water tanker license", "tanker regulation", "authorized water tanker"]
-    category: water_systems
-
-  # --- Desalination ---
-  - id: desalination
-    aliases: ["desalination plant", "seawater desalination", "RO plant", "reverse osmosis plant"]
-    category: water_systems
-
-  - id: chennai_desalination
-    aliases: ["Chennai desalination plant", "Nemmeli desalination", "Minjur desalination"]
-    category: water_systems
-
-  - id: desalination_cost
-    aliases: ["desalination per litre cost", "desalination energy cost", "desal operating cost"]
-    category: water_systems
-
-  # --- Rainwater harvesting ---
-  - id: rainwater_harvesting
-    aliases: ["RWH", "rainwater collection", "rooftop rainwater harvesting", "rain water recharge"]
-    category: water_systems
-
-  - id: rwh_regulation
-    aliases: ["rainwater harvesting mandatory", "RWH building code", "rainwater harvesting norms"]
-    category: water_systems
-
-  - id: rwh_building_codes
-    aliases: ["RWH compliance", "building plan rainwater harvesting", "occupancy certificate RWH"]
-    category: water_systems
-
-  # ===========================================================================
-  # 2. CITY TRANSPORT
-  # ===========================================================================
-
-  # --- Metro systems ---
-  - id: metro_systems
-    aliases: ["city metro", "metro rail", "urban metro", "rapid transit"]
-    category: transport
-
-  - id: bangalore_metro
-    aliases: ["Namma Metro", "BMRCL", "Bangalore Metro Rail", "Bengaluru Metro", "purple line", "green line"]
-    category: transport
-
-  - id: delhi_metro
-    aliases: ["DMRC", "Delhi Metro Rail Corporation", "Delhi Metro"]
-    category: transport
-
-  - id: mumbai_metro
-    aliases: ["Mumbai Metro", "MMRC", "Mumbai Metro Rail", "Metro 3 Mumbai"]
-    category: transport
-
-  - id: chennai_metro
-    aliases: ["Chennai Metro Rail", "CMRL", "Chennai Metro"]
-    category: transport
-
-  - id: hyderabad_metro
-    aliases: ["Hyderabad Metro Rail", "L&T Metro Hyderabad", "HMR"]
-    category: transport
-
-  - id: kolkata_metro
-    aliases: ["Kolkata Metro", "Kolkata Metro Rail Corporation"]
-    category: transport
-
-  - id: metro_expansion
-    aliases: ["metro phase 2", "new metro line", "metro extension", "metro route expansion"]
-    category: transport
-
-  - id: metro_fare
-    aliases: ["metro ticket price", "metro fare hike", "metro pass", "metro card", "metro token"]
-    category: transport
-
-  - id: metro_ridership
-    aliases: ["metro passenger count", "metro daily ridership", "metro footfall"]
-    category: transport
-
-  - id: metro_construction
-    aliases: ["metro civil work", "metro tunneling", "metro station construction", "metro land acquisition"]
-    category: transport
-
-  # --- Bus systems ---
-  - id: city_bus_systems
-    aliases: ["public bus", "city bus service", "state transport bus"]
-    category: transport
-
-  - id: bmtc
-    aliases: ["BMTC", "Bangalore Metropolitan Transport Corporation", "BMTC bus", "Bangalore bus"]
-    category: transport
-
-  - id: dtc
-    aliases: ["DTC", "Delhi Transport Corporation", "DTC bus", "Delhi bus"]
-    category: transport
-
-  - id: best_bus
-    aliases: ["BEST", "BEST bus Mumbai", "Brihanmumbai Electric Supply and Transport"]
-    category: transport
-
-  - id: ksrtc_karnataka
-    aliases: ["KSRTC Karnataka", "Karnataka State Road Transport", "KSRTC bus"]
-    category: transport
-
-  - id: bus_fleet_modernization
-    aliases: ["new buses", "bus fleet renewal", "bus procurement", "AC bus induction"]
-    category: transport
-
-  - id: electric_buses
-    aliases: ["e-bus", "electric bus", "EV bus", "battery bus", "FAME electric bus"]
-    category: transport
-
-  - id: bus_fuel_cost
-    aliases: ["diesel cost bus", "bus operating cost", "bus fuel subsidy"]
-    category: transport
-
-  - id: bus_fare
-    aliases: ["bus ticket price", "bus fare hike", "bus pass", "student bus pass"]
-    category: transport
-
-  # --- Suburban rail ---
-  - id: suburban_rail
-    aliases: ["suburban railway", "commuter rail", "local train"]
-    category: transport
-
-  - id: mumbai_local
-    aliases: ["Mumbai suburban railway", "Mumbai local train", "Western Railway Mumbai", "Central Railway Mumbai", "Harbour line"]
-    category: transport
-
-  - id: chennai_mrts
-    aliases: ["MRTS Chennai", "Chennai suburban rail", "Mass Rapid Transit System Chennai"]
-    category: transport
-
-  - id: suburban_rail_capacity
-    aliases: ["train overcrowding", "suburban train frequency", "peak hour trains"]
-    category: transport
-
-  - id: suburban_rail_safety
-    aliases: ["railway accident", "track crossing death", "platform safety", "rail track trespass"]
-    category: transport
-
-  # --- Auto/taxi ---
-  - id: auto_taxi
-    aliases: ["auto rickshaw", "taxi", "cab service", "ride hailing"]
-    category: transport
-
-  - id: auto_fare_meter
-    aliases: ["auto meter", "auto fare revision", "minimum auto fare", "auto fare card"]
-    category: transport
-
-  - id: ride_aggregator
-    aliases: ["Uber", "Ola", "Rapido", "ride hailing app", "cab aggregator"]
-    category: transport
-
-  - id: aggregator_regulation
-    aliases: ["cab aggregator regulation", "ride hailing rules", "motor vehicle aggregator guidelines", "Ola Uber regulation"]
-    category: transport
-
-  - id: surge_pricing
-    aliases: ["surge charge", "dynamic pricing cab", "peak pricing Uber Ola", "price surge"]
-    category: transport
-
-  # --- Traffic ---
-  - id: traffic_management
-    aliases: ["traffic control", "traffic congestion", "traffic management system"]
-    category: transport
-
-  - id: traffic_signals
-    aliases: ["traffic signal optimization", "adaptive traffic signals", "ITMS", "intelligent traffic management"]
-    category: transport
-
-  - id: junction_redesign
-    aliases: ["junction improvement", "intersection redesign", "grade separator"]
-    category: transport
-
-  - id: one_way_systems
-    aliases: ["one way road", "one way traffic", "traffic flow optimization"]
-    category: transport
-
-  - id: flyover_construction
-    aliases: ["flyover", "overpass", "elevated road", "grade separator construction"]
-    category: transport
-
-  - id: road_widening
-    aliases: ["road widening project", "road expansion", "carriageway widening"]
-    category: transport
-
-  # --- Parking ---
-  - id: parking
-    aliases: ["vehicle parking", "parking management", "parking problem"]
-    category: transport
-
-  - id: multilevel_parking
-    aliases: ["multi-level parking", "parking garage", "automated parking"]
-    category: transport
-
-  - id: street_parking_fees
-    aliases: ["pay and park", "parking meter", "street parking charge", "parking fee revision"]
-    category: transport
-
-  - id: towing
-    aliases: ["vehicle towing", "tow away zone", "towing charges", "illegally parked vehicle"]
-    category: transport
-
-  # --- Cycling and micro-mobility ---
-  - id: cycling_infrastructure
-    aliases: ["cycle lane", "cycling track", "dedicated cycle path", "bicycle infrastructure"]
-    category: transport
-
-  - id: bike_sharing
-    aliases: ["Yulu", "cycle sharing", "bike rental", "dockless bicycle", "Bounce bike"]
-    category: transport
-
-  # --- EV infrastructure ---
-  - id: ev_infrastructure
-    aliases: ["EV charging", "electric vehicle infrastructure", "charging network"]
-    category: transport
-
-  - id: ev_charging_stations
-    aliases: ["EV charger", "charging point", "fast charger", "DC fast charging", "EVSE"]
-    category: transport
-
-  - id: ev_electricity_load
-    aliases: ["EV grid load", "charging station power demand", "EV electricity consumption"]
-    category: transport
-
-  # ===========================================================================
-  # 3. MUNICIPAL CORPORATIONS
-  # ===========================================================================
-
-  - id: municipal_corporation
-    aliases: ["municipal body", "city corporation", "nagara palika", "mahanagar palika"]
-    category: municipal_governance
-
-  - id: bbmp
-    aliases: ["BBMP", "Bruhat Bengaluru Mahanagara Palike", "Bangalore corporation", "Bengaluru municipality"]
-    category: municipal_governance
-
-  - id: bmc_mumbai
-    aliases: ["BMC", "Brihanmumbai Municipal Corporation", "Mumbai corporation", "MCGM"]
-    category: municipal_governance
-
-  - id: mcd_delhi
-    aliases: ["MCD", "Municipal Corporation of Delhi", "Delhi municipality", "Delhi corporation"]
-    category: municipal_governance
-
-  - id: gcc_chennai
-    aliases: ["GCC", "Greater Chennai Corporation", "Chennai corporation", "Chennai municipality"]
-    category: municipal_governance
-
-  - id: ghmc_hyderabad
-    aliases: ["GHMC", "Greater Hyderabad Municipal Corporation", "Hyderabad corporation"]
-    category: municipal_governance
-
-  # --- Municipal revenue ---
-  - id: municipal_revenue
-    aliases: ["corporation revenue", "municipal income", "city body revenue"]
-    category: municipal_governance
-
-  - id: property_tax
-    aliases: ["house tax", "property tax assessment", "property tax payment", "property tax hike", "SAS property tax"]
-    category: municipal_governance
-
-  - id: trade_license
-    aliases: ["trade license renewal", "shop license", "business license municipal"]
-    category: municipal_governance
-
-  - id: advertisement_tax
-    aliases: ["hoarding tax", "billboard tax", "signage tax", "advertisement fee"]
-    category: municipal_governance
-
-  - id: user_charges
-    aliases: ["municipal user charges", "SWM cess", "betterment charge", "development charge"]
-    category: municipal_governance
-
-  # --- Municipal expenditure ---
-  - id: municipal_expenditure
-    aliases: ["corporation spending", "municipal budget", "city budget allocation"]
-    category: municipal_governance
-
-  - id: road_maintenance
-    aliases: ["road repair", "pothole filling", "road resurfacing", "white topping", "asphalting"]
-    category: municipal_governance
-
-  - id: sewage_system
-    aliases: ["underground drainage", "UGD", "sewer line", "sewage network"]
-    category: municipal_governance
-
-  - id: public_parks
-    aliases: ["city parks", "municipal garden", "park maintenance", "public garden"]
-    category: municipal_governance
-
-  - id: streetlights
-    aliases: ["street lighting", "LED streetlights", "street light maintenance", "dark spots"]
-    category: municipal_governance
-
-  - id: solid_waste_management
-    aliases: ["garbage collection", "waste management", "SWM", "trash pickup", "BBMP garbage"]
-    category: municipal_governance
-
-  - id: waste_segregation
-    aliases: ["wet waste dry waste", "source segregation", "waste at source", "segregated collection"]
-    category: municipal_governance
-
-  - id: landfill
-    aliases: ["dump yard", "landfill site", "waste disposal site"]
-    category: municipal_governance
-
-  - id: landfill_fires
-    aliases: ["Ghazipur fire", "Brahmapuram fire", "landfill blaze", "dump yard fire"]
-    category: municipal_governance
-
-  - id: waste_to_energy
-    aliases: ["WTE plant", "waste to energy plant", "incineration plant", "waste processing"]
-    category: municipal_governance
-
-  - id: plastic_ban
-    aliases: ["single use plastic ban", "plastic carry bag ban", "SUP ban"]
-    category: municipal_governance
-
-  # --- Municipal governance structure ---
-  - id: mayor
-    aliases: ["city mayor", "mayor election", "municipal chairman"]
-    category: municipal_governance
-
-  - id: municipal_commissioner
-    aliases: ["corporation commissioner", "IAS commissioner", "BBMP commissioner", "BMC commissioner"]
-    category: municipal_governance
-
-  - id: ward_system
-    aliases: ["municipal ward", "ward number", "ward boundary", "ward office"]
-    category: municipal_governance
-
-  - id: corporator
-    aliases: ["ward corporator", "municipal councillor", "elected representative ward"]
-    category: municipal_governance
-
-  - id: municipal_elections
-    aliases: ["corporation election", "civic body election", "municipal poll", "ward election"]
-    category: municipal_governance
-
-  - id: ward_delimitation
-    aliases: ["ward restructuring", "ward boundary redraw", "delimitation municipal"]
-    category: municipal_governance
-
-  - id: reservation_municipal
-    aliases: ["OBC reservation ward", "SC ST reservation municipal", "women reservation municipal"]
-    category: municipal_governance
-
-  # --- Tender and procurement ---
-  - id: tender_process
-    aliases: ["municipal tender", "government tender", "e-procurement", "tender scam", "bid rigging"]
-    category: municipal_governance
-
-  - id: contractor_quality
-    aliases: ["road contractor quality", "shoddy work", "contractor blacklist", "deficiency period"]
-    category: municipal_governance
-
-  - id: municipal_inspection
-    aliases: ["building inspection", "site inspection municipal", "quality check municipal"]
-    category: municipal_governance
-
-  # ===========================================================================
-  # 4. PROPERTY AND LAND
-  # ===========================================================================
-
-  - id: urban_planning
-    aliases: ["city planning", "town planning", "urban development"]
-    category: property_land
-
-  - id: master_plan
-    aliases: ["city master plan", "CDP", "Comprehensive Development Plan", "development plan", "revised master plan"]
-    category: property_land
-
-  - id: land_use_zoning
-    aliases: ["zoning", "land use classification", "residential zone", "commercial zone", "industrial zone", "mixed use zone"]
-    category: property_land
-
-  - id: building_codes
-    aliases: ["building regulations", "building bye-laws", "construction norms"]
-    category: property_land
-
-  - id: far_fsi
-    aliases: ["FAR", "FSI", "Floor Area Ratio", "Floor Space Index", "built-up area ratio"]
-    category: property_land
-
-  - id: height_restrictions
-    aliases: ["building height limit", "height regulation", "high rise norms"]
-    category: property_land
-
-  - id: parking_norms_building
-    aliases: ["parking requirement building", "basement parking norms", "parking space per unit"]
-    category: property_land
-
-  - id: fire_safety_building
-    aliases: ["fire NOC", "fire safety norms", "fire escape", "fire audit building"]
-    category: property_land
-
-  # --- Layout and development authority ---
-  - id: development_authority
-    aliases: ["planning authority", "development body", "urban development authority"]
-    category: property_land
-
-  - id: bda
-    aliases: ["BDA", "Bangalore Development Authority", "BDA layout", "BDA site", "BDA allotment"]
-    category: property_land
-
-  - id: dtcp
-    aliases: ["DTCP", "Directorate of Town and Country Planning", "DTCP approval"]
-    category: property_land
-
-  - id: huda
-    aliases: ["HUDA", "Haryana Urban Development Authority", "HUDA sector"]
-    category: property_land
-
-  - id: layout_approval
-    aliases: ["layout plan approval", "site approval", "colony approval", "plotted development approval"]
-    category: property_land
-
-  - id: completion_certificate
-    aliases: ["CC", "completion certificate", "building completion", "occupancy certificate", "OC"]
-    category: property_land
-
-  # --- Encroachment ---
-  - id: encroachment
-    aliases: ["illegal encroachment", "unauthorized construction", "land grabbing"]
-    category: property_land
-
-  - id: lake_encroachment
-    aliases: ["lake land grab", "lake buffer zone violation", "lake bed encroachment"]
-    category: property_land
-
-  - id: rajakaluve_encroachment
-    aliases: ["rajakaluve", "stormwater drain encroachment", "SWD encroachment", "naala encroachment"]
-    category: property_land
-
-  - id: eviction_drive
-    aliases: ["demolition drive", "encroachment removal", "unauthorized structure demolition", "BBMP demolition"]
-    category: property_land
-
-  # --- Property registration ---
-  - id: property_registration
-    aliases: ["property sale registration", "sale deed registration", "sub-registrar office"]
-    category: property_land
-
-  - id: stamp_duty
-    aliases: ["stamp duty rates", "registration charges", "stamp duty reduction", "stamp duty exemption"]
-    category: property_land
-
-  - id: e_registration
-    aliases: ["online property registration", "e-stamping", "digital registration"]
-    category: property_land
-
-  - id: guidance_value
-    aliases: ["circle rate", "ready reckoner rate", "government valuation", "guideline value", "jantri rate"]
-    category: property_land
-
-  # --- RERA ---
-  - id: rera
-    aliases: ["RERA", "Real Estate Regulatory Authority", "RERA complaint", "RERA registration"]
-    category: property_land
-
-  - id: rera_project_registration
-    aliases: ["RERA registered project", "RERA number", "builder RERA compliance"]
-    category: property_land
-
-  - id: builder_compliance
-    aliases: ["builder delay", "project delay penalty", "builder accountability", "RERA order builder"]
-    category: property_land
-
-  - id: rera_delay_penalty
-    aliases: ["possession delay compensation", "RERA refund order", "builder penalty interest"]
-    category: property_land
-
-  # ===========================================================================
-  # 5. UTILITIES
-  # ===========================================================================
-
-  # --- Electricity ---
-  - id: electricity_distribution
-    aliases: ["power distribution", "electricity supply", "DISCOM", "distribution company"]
-    category: utilities
-
-  - id: bescom
-    aliases: ["BESCOM", "Bangalore Electricity Supply", "BESCOM bill", "BESCOM outage"]
-    category: utilities
-
-  - id: msedcl
-    aliases: ["MSEDCL", "Maharashtra State Electricity Distribution", "MSEDCL bill", "Mahavitaran"]
-    category: utilities
-
-  - id: bses
-    aliases: ["BSES", "BSES Delhi", "BSES Rajdhani", "BSES Yamuna"]
-    category: utilities
-
-  - id: tpddl
-    aliases: ["TPDDL", "Tata Power Delhi", "Tata Power DDL", "North Delhi electricity"]
-    category: utilities
-
-  - id: tangedco
-    aliases: ["TANGEDCO", "Tamil Nadu electricity", "TNEB", "TANGEDCO bill"]
-    category: utilities
-
-  - id: electricity_tariff
-    aliases: ["power tariff", "electricity rate", "unit rate electricity", "per unit cost", "electricity price"]
-    category: utilities
-
-  - id: tariff_structure
-    aliases: ["domestic tariff", "commercial tariff", "industrial tariff", "slab rate electricity", "telescopic tariff"]
-    category: utilities
-
-  - id: cross_subsidy
-    aliases: ["cross subsidy electricity", "industrial subsidizing domestic", "electricity subsidy"]
-    category: utilities
-
-  - id: electricity_bill
-    aliases: ["power bill", "electricity bill payment", "ESCOMS bill", "monthly electricity bill"]
-    category: utilities
-
-  - id: smart_meters
-    aliases: ["smart electricity meter", "prepaid meter", "AMI meter", "advanced metering"]
-    category: utilities
-
-  - id: net_metering
-    aliases: ["solar net metering", "rooftop solar billing", "net metering policy", "grid connected solar"]
-    category: utilities
-
-  - id: rooftop_solar
-    aliases: ["rooftop solar panel", "residential solar", "solar subsidy", "PM Surya Ghar"]
-    category: utilities
-
-  - id: power_outage
-    aliases: ["power cut", "load shedding", "electricity outage", "blackout", "power failure"]
-    category: utilities
-
-  - id: electricity_regulatory_commission
-    aliases: ["KERC", "MERC", "DERC", "TNERC", "state electricity regulatory commission", "SERC"]
-    category: utilities
-
-  # --- Gas ---
-  - id: city_gas_distribution
-    aliases: ["CGD", "city gas", "piped natural gas", "PNG", "CNG distribution"]
-    category: utilities
-
-  - id: igl
-    aliases: ["IGL", "Indraprastha Gas Limited", "IGL Delhi", "IGL CNG"]
-    category: utilities
-
-  - id: mgl
-    aliases: ["MGL", "Mahanagar Gas Limited", "MGL Mumbai", "Mumbai gas"]
-    category: utilities
-
-  - id: gail
-    aliases: ["GAIL", "Gas Authority of India", "GAIL pipeline", "natural gas transmission"]
-    category: utilities
-
-  - id: cng_stations
-    aliases: ["CNG pump", "CNG station", "CNG filling station", "CNG queue"]
-    category: utilities
-
-  - id: cng_price
-    aliases: ["CNG rate", "CNG price revision", "CNG cost per kg"]
-    category: utilities
-
-  - id: png_supply
-    aliases: ["piped gas supply", "PNG connection", "cooking gas pipeline", "piped natural gas home"]
-    category: utilities
-
-  # --- Internet and telecom ---
-  - id: broadband_internet
-    aliases: ["internet service", "broadband connection", "fiber internet", "home internet"]
-    category: utilities
-
-  - id: bsnl_fiber
-    aliases: ["BSNL FTTH", "BSNL fiber", "BSNL broadband", "Bharat Fiber"]
-    category: utilities
-
-  - id: private_isp
-    aliases: ["Airtel Xstream", "JioFiber", "ACT Fibernet", "Hathway", "local ISP"]
-    category: utilities
-
-  - id: mobile_towers
-    aliases: ["cell tower", "telecom tower", "mobile network tower", "BTS tower"]
-    category: utilities
-
-  - id: right_of_way
-    aliases: ["RoW permission", "Right of Way telecom", "fiber laying permission", "road cutting permission"]
-    category: utilities
-
-  - id: local_body_telecom_approval
-    aliases: ["tower installation permission", "municipal tower approval", "cell tower NOC"]
-    category: utilities
-
-  # --- Cable/DTH ---
-  - id: cable_tv
-    aliases: ["cable operator", "local cable", "cable TV", "DTH", "set top box"]
-    category: utilities
-
-  - id: trai_regulation
-    aliases: ["TRAI", "Telecom Regulatory Authority", "TRAI tariff order", "channel pricing TRAI"]
-    category: utilities
-
-  # ===========================================================================
-  # 6. ENVIRONMENT AND POLLUTION
-  # ===========================================================================
-
-  # --- Air quality ---
-  - id: air_quality
-    aliases: ["air pollution", "AQI", "air quality index", "smog", "haze"]
-    category: environment
-
-  - id: aqi_monitoring
-    aliases: ["AQI station", "air quality monitoring", "CAAQMS", "pollution monitoring station"]
-    category: environment
-
-  - id: cpcb
-    aliases: ["CPCB", "Central Pollution Control Board", "CPCB guidelines"]
-    category: environment
-
-  - id: spcb
-    aliases: ["SPCB", "State Pollution Control Board", "KSPCB", "MPCB", "DPCC"]
-    category: environment
-
-  - id: grap_delhi
-    aliases: ["GRAP", "Graded Response Action Plan", "GRAP stage 3", "GRAP stage 4", "Delhi pollution emergency"]
-    category: environment
-
-  - id: vehicle_restrictions_pollution
-    aliases: ["odd even Delhi", "vehicle ban pollution", "BS4 ban", "diesel vehicle ban"]
-    category: environment
-
-  - id: construction_ban
-    aliases: ["construction ban pollution", "construction dust", "demolition ban AQI"]
-    category: environment
-
-  - id: stubble_burning
-    aliases: ["parali burning", "crop residue burning", "stubble fire Punjab Haryana", "farm fire"]
-    category: environment
-
-  # --- Lake and river pollution ---
-  - id: lake_pollution
-    aliases: ["lake contamination", "lake froth", "Bellandur lake foam", "toxic lake"]
-    category: environment
-
-  - id: industrial_effluent
-    aliases: ["factory discharge", "industrial waste water", "effluent treatment plant", "ETP"]
-    category: environment
-
-  - id: sewage_discharge
-    aliases: ["untreated sewage", "sewage into lake", "sewage into river", "open sewage"]
-    category: environment
-
-  - id: ngt_orders
-    aliases: ["NGT", "National Green Tribunal", "NGT order pollution", "NGT fine", "environmental tribunal"]
-    category: environment
-
-  # --- Noise pollution ---
-  - id: noise_pollution
-    aliases: ["noise levels", "sound pollution", "noise regulation"]
-    category: environment
-
-  - id: construction_noise_hours
-    aliases: ["construction timing rules", "night construction ban", "construction hours regulation"]
-    category: environment
-
-  - id: loudspeaker_rules
-    aliases: ["DJ noise rules", "loudspeaker permission", "noise limit decibel", "festival noise"]
-    category: environment
-
-  - id: airport_noise_zone
-    aliases: ["flight path noise", "airport noise regulation", "aircraft noise complaint"]
-    category: environment
-
-  # --- Urban flooding ---
-  - id: urban_flooding
-    aliases: ["city flooding", "waterlogging", "flash flood city", "inundation"]
-    category: environment
-
-  - id: stormwater_drain
-    aliases: ["SWD", "stormwater drain", "rainwater drain", "naala", "drainage system"]
-    category: environment
-
-  - id: swd_encroachment
-    aliases: ["drain encroachment", "stormwater drain blocked", "naala encroachment", "drain narrowing"]
-    category: environment
-
-  - id: swd_mapping
-    aliases: ["drain mapping", "SWD survey", "stormwater drain GIS", "drainage master plan"]
-    category: environment
-
-  - id: flood_relief
-    aliases: ["flood compensation", "flood relief camp", "SDRF flood", "flood damage assessment"]
-    category: environment
-
-  # --- Tree cover ---
-  - id: tree_management
-    aliases: ["urban tree cover", "green cover", "tree protection"]
-    category: environment
-
-  - id: tree_cutting_permission
-    aliases: ["tree felling permission", "tree cutting order", "tree removal approval"]
-    category: environment
-
-  - id: tree_census
-    aliases: ["urban tree census", "tree count", "tree survey city"]
-    category: environment
-
-  - id: hc_tree_orders
-    aliases: ["High Court tree order", "HC green cover", "court order tree cutting"]
-    category: environment
-
-  # ===========================================================================
-  # 7. HEALTHCARE (LOCAL)
-  # ===========================================================================
-
-  - id: public_healthcare
-    aliases: ["government hospital", "public health system", "state healthcare"]
-    category: healthcare
-
-  - id: district_hospital
-    aliases: ["district hospital", "general hospital", "government general hospital"]
-    category: healthcare
-
-  - id: taluk_hospital
-    aliases: ["taluk hospital", "sub-district hospital", "community hospital"]
-    category: healthcare
-
-  - id: phc
-    aliases: ["PHC", "Primary Health Centre", "primary health center"]
-    category: healthcare
-
-  - id: chc
-    aliases: ["CHC", "Community Health Centre", "community health center"]
-    category: healthcare
-
-  - id: hospital_staff_shortage
-    aliases: ["doctor shortage government hospital", "nurse vacancy", "medical staff crunch"]
-    category: healthcare
-
-  - id: hospital_equipment
-    aliases: ["medical equipment shortage", "ventilator", "hospital bed shortage", "ICU beds"]
-    category: healthcare
-
-  # --- Ambulance ---
-  - id: ambulance_service
-    aliases: ["108 ambulance", "ambulance", "emergency medical service", "EMS"]
-    category: healthcare
-
-  - id: gvk_emri
-    aliases: ["GVK EMRI", "108 service", "emergency response ambulance"]
-    category: healthcare
-
-  - id: ambulance_response_time
-    aliases: ["ambulance delay", "ambulance arrival time", "golden hour"]
-    category: healthcare
-
-  # --- Disease surveillance ---
-  - id: disease_surveillance
-    aliases: ["disease monitoring", "epidemic surveillance", "outbreak monitoring"]
-    category: healthcare
-
-  - id: dengue
-    aliases: ["dengue fever", "dengue outbreak", "dengue cases", "dengue mosquito"]
-    category: healthcare
-
-  - id: malaria
-    aliases: ["malaria cases", "malaria outbreak", "anti-malaria drive"]
-    category: healthcare
-
-  - id: chikungunya
-    aliases: ["chikungunya cases", "chikungunya outbreak"]
-    category: healthcare
-
-  - id: vector_control
-    aliases: ["mosquito control", "fogging", "larvicide", "mosquito breeding", "anti-larval operation"]
-    category: healthcare
-
-  # --- Stray animals ---
-  - id: stray_animals
-    aliases: ["stray dog menace", "stray cattle", "animal nuisance"]
-    category: healthcare
-
-  - id: dog_sterilization
-    aliases: ["ABC program", "animal birth control", "stray dog sterilization", "dog neutering"]
-    category: healthcare
-
-  - id: dog_bite_cases
-    aliases: ["dog attack", "stray dog bite", "rabies", "dog bite compensation"]
-    category: healthcare
-
-  # --- Food safety ---
-  - id: food_safety
-    aliases: ["food safety inspection", "food hygiene", "food quality"]
-    category: healthcare
-
-  - id: fssai_inspection
-    aliases: ["FSSAI", "food inspector", "FSSAI license", "food safety audit"]
-    category: healthcare
-
-  - id: restaurant_hygiene
-    aliases: ["restaurant inspection", "kitchen hygiene", "food handling", "health grade restaurant"]
-    category: healthcare
-
-  - id: food_adulteration
-    aliases: ["milk adulteration", "food adulteration", "spurious food", "contaminated food"]
-    category: healthcare
-
-  # ===========================================================================
-  # 8. EDUCATION (LOCAL)
-  # ===========================================================================
-
-  - id: local_education
-    aliases: ["city education", "school system", "local education policy"]
-    category: education
-
-  # --- School admissions ---
-  - id: school_admissions
-    aliases: ["school admission process", "school enrollment", "school seat"]
-    category: education
-
-  - id: rte_quota
-    aliases: ["RTE admission", "Right to Education quota", "25% RTE reservation", "RTE lottery"]
-    category: education
-
-  - id: ews_quota
-    aliases: ["EWS quota school", "economically weaker section admission", "EWS reservation school"]
-    category: education
-
-  - id: neighborhood_school
-    aliases: ["neighborhood school norm", "school proximity rule", "school catchment area"]
-    category: education
-
-  # --- School infrastructure ---
-  - id: school_infrastructure
-    aliases: ["school building", "school facilities", "school condition"]
-    category: education
-
-  - id: school_building_safety
-    aliases: ["school structural safety", "school building audit", "dilapidated school"]
-    category: education
-
-  - id: school_playground
-    aliases: ["school ground", "school playground space", "sports facility school"]
-    category: education
-
-  - id: mid_day_meal
-    aliases: ["mid day meal scheme", "MDM", "school lunch", "PM Poshan", "Akshaya Patra"]
-    category: education
-
-  # --- Higher education ---
-  - id: state_university
-    aliases: ["state university", "university regulation", "university governance"]
-    category: education
-
-  - id: university_affiliation
-    aliases: ["college affiliation", "affiliated college", "autonomous status"]
-    category: education
-
-  - id: college_regulation
-    aliases: ["college inspection", "college recognition", "AICTE approval", "UGC recognition"]
-    category: education
-
-  # --- Coaching centers ---
-  - id: coaching_centers
-    aliases: ["coaching institute", "tuition center", "coaching class"]
-    category: education
-
-  - id: coaching_regulation
-    aliases: ["coaching center regulation", "coaching institute rules", "coaching safety norms"]
-    category: education
-
-  - id: coaching_safety
-    aliases: ["coaching fire safety", "coaching building safety", "Rajinder Nagar coaching", "coaching center fire"]
-    category: education
-
-  # ===========================================================================
-  # 9. LAW AND ORDER
-  # ===========================================================================
-
-  - id: law_and_order
-    aliases: ["law enforcement", "policing", "public safety"]
-    category: law_order
-
-  # --- Police ---
-  - id: city_police
-    aliases: ["police", "local police", "city police force"]
-    category: law_order
-
-  - id: police_jurisdiction
-    aliases: ["police station area", "police district", "commissionerate"]
-    category: law_order
-
-  - id: beat_system
-    aliases: ["police beat", "beat constable", "neighborhood policing", "patrol"]
-    category: law_order
-
-  - id: community_policing
-    aliases: ["community police", "janaagraha policing", "police citizen engagement"]
-    category: law_order
-
-  # --- Crime ---
-  - id: urban_crime
-    aliases: ["city crime", "crime rate", "crime statistics"]
-    category: law_order
-
-  - id: chain_snatching
-    aliases: ["chain snatching", "gold chain robbery", "snatching incident"]
-    category: law_order
-
-  - id: burglary
-    aliases: ["house break-in", "theft", "burglary", "robbery"]
-    category: law_order
-
-  - id: cybercrime
-    aliases: ["online fraud", "cyber crime", "digital fraud", "phishing", "UPI fraud"]
-    category: law_order
-
-  - id: drug_trafficking
-    aliases: ["narcotics", "drug bust", "drug peddling", "NDPS Act", "ganja seizure"]
-    category: law_order
-
-  - id: area_safety
-    aliases: ["neighborhood safety", "safe area", "crime prone area", "unsafe locality"]
-    category: law_order
-
-  # --- Protests and bandh ---
-  - id: protests_bandh
-    aliases: ["protest", "bandh", "strike", "agitation", "hartal"]
-    category: law_order
-
-  - id: political_protests
-    aliases: ["political rally", "opposition protest", "dharna", "political agitation"]
-    category: law_order
-
-  - id: labor_strikes
-    aliases: ["worker strike", "trade union strike", "industrial action", "labor agitation"]
-    category: law_order
-
-  - id: farmer_agitations
-    aliases: ["farmer protest", "kisan andolan", "farmer march", "agricultural protest"]
-    category: law_order
-
-  - id: road_closures
-    aliases: ["road block protest", "traffic diversion protest", "road closed rally"]
-    category: law_order
-
-  - id: shop_shutdowns
-    aliases: ["shop closed bandh", "market shutdown", "commercial establishment closed"]
-    category: law_order
-
-  # --- Courts ---
-  - id: local_courts
-    aliases: ["district court", "city civil court", "sessions court"]
-    category: law_order
-
-  - id: high_court
-    aliases: ["HC", "High Court", "High Court order", "HC bench"]
-    category: law_order
-
-  - id: pil
-    aliases: ["PIL", "Public Interest Litigation", "PIL filed", "PIL hearing"]
-    category: law_order
-
-  - id: court_infrastructure_orders
-    aliases: ["HC order infrastructure", "court order demolition", "SC order city", "judicial intervention civic"]
-    category: law_order
-
-  # --- Traffic enforcement ---
-  - id: traffic_enforcement
-    aliases: ["traffic police", "traffic challan", "traffic fine", "traffic violation"]
-    category: law_order
-
-  - id: speed_cameras
-    aliases: ["speed camera", "ANPR camera", "traffic camera", "speed trap"]
-    category: law_order
-
-  - id: drunk_driving
-    aliases: ["drunk driving check", "breath analyser", "DUI", "drink and drive fine"]
-    category: law_order
-
-  - id: helmet_seatbelt
-    aliases: ["helmet rule", "seatbelt fine", "helmet compulsory", "no helmet challan"]
-    category: law_order
-
-  - id: traffic_fine_amount
-    aliases: ["challan amount", "traffic fine revision", "e-challan", "traffic penalty"]
-    category: law_order
-
-  # ===========================================================================
-  # 10. STATE-LEVEL ECONOMIC POLICY
-  # ===========================================================================
-
-  - id: state_economic_policy
-    aliases: ["state economy", "state industrial policy", "state budget"]
-    category: state_policy
-
-  # --- Industrial policy ---
-  - id: state_industrial_policy
-    aliases: ["industrial incentive", "state industry policy", "investment promotion"]
-    category: state_policy
-
-  - id: it_ites_incentive
-    aliases: ["IT park incentive", "IT SEZ", "software park policy", "IT industry subsidy"]
-    category: state_policy
-
-  - id: manufacturing_sez
-    aliases: ["SEZ", "Special Economic Zone", "manufacturing hub", "industrial corridor"]
-    category: state_policy
-
-  - id: startup_policy
-    aliases: ["state startup policy", "startup incentive", "startup ecosystem", "incubator policy"]
-    category: state_policy
-
-  # --- Tourism ---
-  - id: state_tourism
-    aliases: ["tourism policy", "state tourism", "tourist destination"]
-    category: state_policy
-
-  - id: heritage_sites
-    aliases: ["heritage conservation", "ASI monument", "heritage city", "UNESCO site"]
-    category: state_policy
-
-  - id: eco_tourism
-    aliases: ["eco tourism", "nature tourism", "forest tourism", "wildlife tourism"]
-    category: state_policy
-
-  - id: hospitality_employment
-    aliases: ["hotel jobs", "tourism employment", "hospitality sector jobs"]
-    category: state_policy
-
-  # --- Agriculture policy ---
-  - id: state_agriculture_policy
-    aliases: ["state farm policy", "agriculture scheme", "state agriculture budget"]
-    category: state_policy
-
-  - id: state_msp
-    aliases: ["state MSP", "bonus on MSP", "state procurement price"]
-    category: state_policy
-
-  - id: state_irrigation
-    aliases: ["irrigation project", "canal irrigation", "lift irrigation", "drip irrigation subsidy"]
-    category: state_policy
-
-  - id: crop_insurance_implementation
-    aliases: ["PMFBY implementation", "crop insurance state", "Fasal Bima claim", "crop loss compensation"]
-    category: state_policy
-
-  # --- Liquor policy ---
-  - id: liquor_policy
-    aliases: ["excise policy", "liquor regulation", "alcohol policy"]
-    category: state_policy
-
-  - id: excise_revenue
-    aliases: ["liquor revenue", "excise duty collection", "alcohol tax revenue"]
-    category: state_policy
-
-  - id: bar_license
-    aliases: ["liquor license", "bar permit", "wine shop license", "FL3 license"]
-    category: state_policy
-
-  - id: dry_days
-    aliases: ["dry day", "liquor ban day", "no alcohol day", "election dry day"]
-    category: state_policy
-
-  - id: online_liquor
-    aliases: ["online liquor delivery", "alcohol home delivery", "e-liquor permit"]
-    category: state_policy
-
-  # --- Mining ---
-  - id: mining_policy
-    aliases: ["mining regulation", "mineral extraction", "mining lease"]
-    category: state_policy
-
-  - id: sand_mining
-    aliases: ["sand mining", "river sand", "M-sand", "illegal sand mining", "sand mafia"]
-    category: state_policy
-
-  - id: granite_mining
-    aliases: ["granite quarry", "stone quarry", "granite mining lease"]
-    category: state_policy
-
-  - id: construction_material_cost
-    aliases: ["building material price", "sand price", "cement price local", "aggregate cost"]
-    category: state_policy
-
-  # ===========================================================================
-  # CROSS-DOMAIN CONNECTOR NODES
-  # These nodes exist at domain boundaries and enable cross-domain edges
-  # ===========================================================================
-
-  - id: monsoon
-    aliases: ["monsoon season", "southwest monsoon", "rainfall", "monsoon forecast", "IMD monsoon prediction"]
-    category: cross_domain
-
-  - id: coal_prices
-    aliases: ["coal cost", "thermal coal price", "Coal India price", "coal shortage"]
-    category: cross_domain
-
-  - id: diesel_price
-    aliases: ["diesel rate", "diesel cost", "diesel price revision"]
-    category: cross_domain
-
-  - id: real_estate_prices
-    aliases: ["property price", "housing price", "real estate market", "flat price", "apartment rate"]
-    category: cross_domain
-
-  - id: gst_municipal
-    aliases: ["GST on municipal", "GST revenue share", "GST compensation states"]
-    category: cross_domain
-
-  - id: fuel_price_local
-    aliases: ["petrol price city", "fuel rate", "petrol diesel price today"]
-    category: cross_domain
-
-  - id: state_budget
-    aliases: ["state budget allocation", "state finance", "state budget announcement"]
-    category: cross_domain
-
-  - id: state_finance_commission
-    aliases: ["state finance commission", "municipal fund allocation", "local body grants"]
-    category: cross_domain
-
-  - id: central_grants
-    aliases: ["central government grant", "15th Finance Commission", "central scheme funding"]
-    category: cross_domain
-
-  - id: employment_local
-    aliases: ["local employment", "city job market", "urban employment"]
-    category: cross_domain
-
-  - id: construction_industry
-    aliases: ["construction sector", "real estate construction", "building industry"]
-    category: cross_domain
-
-  # --- Additional granular nodes for depth ---
-
-  - id: water_atm
-    aliases: ["water ATM", "water vending machine", "purified water kiosk"]
-    category: water_systems
-
-  - id: fluoride_contamination
-    aliases: ["fluoride in water", "fluorosis", "groundwater fluoride"]
-    category: water_systems
-
-  - id: water_privatization
-    aliases: ["water privatization", "private water utility", "PPP water"]
-    category: water_systems
-
-  - id: pothole
-    aliases: ["pothole", "road pothole", "pothole death", "pothole complaint"]
-    category: municipal_governance
-
-  - id: footpath
-    aliases: ["footpath", "sidewalk", "pedestrian path", "pavement encroachment"]
-    category: municipal_governance
-
-  - id: public_toilet
-    aliases: ["public toilet", "Swachh public toilet", "community toilet", "pay-and-use toilet"]
-    category: municipal_governance
-
-  - id: crematorium
-    aliases: ["crematorium", "burial ground", "electric crematorium", "last rites facility"]
-    category: municipal_governance
-
-  - id: birth_death_certificate
-    aliases: ["birth certificate", "death certificate", "birth registration", "death registration"]
-    category: municipal_governance
-
-  - id: khata_transfer
-    aliases: ["khata transfer", "khata certificate", "mutation", "property mutation"]
-    category: property_land
-
-  - id: conversion_of_land
-    aliases: ["land conversion", "agricultural to non-agricultural", "land use conversion", "DC conversion"]
-    category: property_land
-
-  - id: unauthorized_layout
-    aliases: ["unauthorized layout", "illegal layout", "unapproved colony", "BDA unauthorized"]
-    category: property_land
-
-  - id: inverter_ups
-    aliases: ["inverter", "UPS", "power backup", "home inverter", "battery backup"]
-    category: utilities
-
-  - id: diesel_generator
-    aliases: ["DG set", "diesel generator", "backup generator", "generator noise"]
-    category: utilities
-
-  - id: transformer
-    aliases: ["electricity transformer", "transformer failure", "transformer overload", "distribution transformer"]
-    category: utilities
-
-  - id: sewage_overflow
-    aliases: ["manhole overflow", "sewage overflow", "sewer burst", "sewage flooding street"]
-    category: environment
-
-  - id: lake_restoration
-    aliases: ["lake rejuvenation", "lake desilting", "lake restoration project", "lake conservation"]
-    category: environment
-
-  - id: thermal_power_plant
-    aliases: ["thermal plant", "coal power plant", "thermal power station"]
-    category: cross_domain
-
-  - id: renewable_energy_policy
-    aliases: ["state renewable policy", "solar policy", "wind energy policy", "RPO"]
-    category: cross_domain
-
-  - id: cctv_surveillance
-    aliases: ["CCTV camera", "surveillance camera", "safe city project", "CCTV coverage"]
-    category: law_order
-
-  - id: women_safety
-    aliases: ["women safety", "SHE team", "pink patrol", "women helpline", "Nirbhaya fund"]
-    category: law_order
-
-  - id: fire_service
-    aliases: ["fire brigade", "fire department", "fire station", "fire engine"]
-    category: healthcare
-
-  - id: private_hospital
-    aliases: ["private hospital", "corporate hospital", "private nursing home", "hospital bill cap"]
-    category: healthcare
-
-  - id: telemedicine
-    aliases: ["telemedicine", "eSanjeevani", "online doctor consultation", "teleconsultation"]
-    category: healthcare
-
-  - id: anganwadi
-    aliases: ["anganwadi", "ICDS center", "anganwadi worker", "child development center"]
-    category: education
-
-  - id: skill_development
-    aliases: ["skill training", "ITI", "skill development center", "PMKVY", "vocational training"]
-    category: education
-
-  - id: pension_scheme
-    aliases: ["old age pension", "widow pension", "state pension scheme", "social security pension"]
-    category: state_policy
-
-  - id: ration_card
-    aliases: ["ration card", "BPL card", "APL card", "smart ration card", "PDS"]
-    category: state_policy
-
-  - id: public_distribution_system
-    aliases: ["PDS", "fair price shop", "ration shop", "government ration"]
-    category: state_policy
-
-  - id: street_vendors
-    aliases: ["street vendor", "hawker", "roadside vendor", "PM SVANidhi", "street vendor license"]
-    category: municipal_governance
-
-  - id: slum_rehabilitation
-    aliases: ["slum redevelopment", "SRA", "slum rehabilitation", "slum upgrade"]
-    category: property_land
-
-  - id: affordable_housing
-    aliases: ["affordable housing", "PMAY", "EWS housing", "LIG housing", "housing for all"]
-    category: property_land
-
-  - id: urban_health_impact
-    aliases: ["pollution health impact", "city health", "urban lifestyle disease"]
-    category: cross_domain
-
-# =============================================================================
-# EDGES
-# =============================================================================
+- id: river_systems
+  aliases:
+  - river water
+  - river basin
+  - surface water
+  category: infrastructure
+- id: cauvery_river
+  aliases:
+  - Kaveri river
+  - Cauvery basin
+  - Cauvery water
+  category: infrastructure
+- id: cauvery_water_dispute
+  aliases:
+  - Cauvery tribunal
+  - Karnataka TN water dispute
+  - Cauvery water sharing
+  - Cauvery Management Authority
+  - CMA
+  category: infrastructure
+- id: cauvery_water_allocation
+  aliases:
+  - Cauvery TMC allocation
+  - Cauvery release order
+  - Cauvery quota
+  category: infrastructure
+- id: ganga_river
+  aliases:
+  - Ganges
+  - Ganga basin
+  - Namami Gange
+  - Ganga rejuvenation
+  category: infrastructure
+- id: yamuna_river
+  aliases:
+  - Yamuna pollution
+  - Yamuna water
+  - Yamuna basin
+  category: infrastructure
+- id: krishna_river
+  aliases:
+  - Krishna basin
+  - Krishna water disputes
+  - Krishna river water
+  category: infrastructure
+- id: krishna_water_dispute
+  aliases:
+  - Krishna Water Disputes Tribunal
+  - KWDT
+  - Andhra Karnataka water
+  - Telangana water sharing
+  category: infrastructure
+- id: godavari_river
+  aliases:
+  - Godavari basin
+  - Godavari water
+  - Godavari river dispute
+  category: infrastructure
+- id: interstate_water_disputes
+  aliases:
+  - river water sharing
+  - water tribunal
+  - Inter-State River Water Disputes Act
+  - water dispute tribunal
+  category: infrastructure
+- id: tribunal_decisions
+  aliases:
+  - water tribunal order
+  - SC water order
+  - Supreme Court water verdict
+  category: infrastructure
+- id: reservoirs_and_dams
+  aliases:
+  - dam water level
+  - reservoir storage
+  - dam capacity
+  category: infrastructure
+- id: krs_dam
+  aliases:
+  - Krishna Raja Sagara
+  - KRS water level
+  - Mysore dam
+  - KRS reservoir
+  category: infrastructure
+- id: mettur_dam
+  aliases:
+  - Mettur dam water level
+  - Stanley Reservoir
+  - Mettur release
+  category: infrastructure
+- id: bhakra_nangal_dam
+  aliases:
+  - Bhakra dam
+  - Gobind Sagar
+  - Bhakra water level
+  category: infrastructure
+- id: reservoir_water_level
+  aliases:
+  - dam water storage
+  - reservoir capacity percentage
+  - dam inflow outflow
+  category: infrastructure
+- id: dam_water_release
+  aliases:
+  - water release from dam
+  - dam discharge
+  - flood gates opened
+  category: infrastructure
+- id: groundwater
+  aliases:
+  - underground water
+  - groundwater table
+  - water table level
+  - aquifer
+  category: infrastructure
+- id: borewell
+  aliases:
+  - borewell drilling
+  - tubewell
+  - borewell depth
+  - borewell registration
+  category: infrastructure
+- id: borewell_regulation
+  aliases:
+  - borewell permit
+  - groundwater extraction regulation
+  - CGWA
+  - Central Ground Water Authority
+  category: infrastructure
+- id: groundwater_depletion
+  aliases:
+  - water table falling
+  - groundwater crisis
+  - aquifer depletion
+  - over-extraction
+  category: infrastructure
+- id: city_water_supply
+  aliases:
+  - urban water supply
+  - municipal water
+  - piped water supply
+  - tap water
+  category: infrastructure
+- id: bwssb
+  aliases:
+  - Bangalore Water Supply
+  - Bangalore Water Supply and Sewerage Board
+  - BWSSB bill
+  - BWSSB connection
+  category: infrastructure
+- id: delhi_jal_board
+  aliases:
+  - DJB
+  - Delhi water supply
+  - Delhi Jal Board bill
+  - DJB connection
+  category: infrastructure
+- id: bmc_water
+  aliases:
+  - Mumbai water supply
+  - BMC water department
+  - Mumbai water cut
+  category: infrastructure
+- id: cmwssb
+  aliases:
+  - Chennai Metro Water
+  - Chennai water supply
+  - Chennai Metropolitan Water Supply and Sewerage Board
+  category: infrastructure
+- id: hmwssb
+  aliases:
+  - Hyderabad water supply
+  - Hyderabad Metropolitan Water Supply
+  - HMWSSB
+  category: infrastructure
+- id: water_pipe_network
+  aliases:
+  - water pipeline
+  - water distribution network
+  - pipe burst
+  - water main
+  - water leakage
+  category: infrastructure
+- id: water_billing
+  aliases:
+  - water bill
+  - water tariff
+  - water meter
+  - water charges
+  - volumetric water pricing
+  category: infrastructure
+- id: water_rationing
+  aliases:
+  - water cut
+  - water supply schedule
+  - alternate day water
+  - water tanker dependency
+  category: infrastructure
+- id: water_treatment
+  aliases:
+  - water purification
+  - water filtration
+  - drinking water treatment
+  category: infrastructure
+- id: stp
+  aliases:
+  - sewage treatment plant
+  - STP
+  - wastewater treatment
+  - sewage processing
+  category: infrastructure
+- id: wtp
+  aliases:
+  - water treatment plant
+  - WTP
+  - drinking water plant
+  - water purification plant
+  category: infrastructure
+- id: water_quality
+  aliases:
+  - drinking water quality
+  - water contamination
+  - water testing
+  - TDS level
+  - water purity
+  category: infrastructure
+- id: water_pollution
+  aliases:
+  - water body pollution
+  - effluent discharge
+  - river pollution
+  - lake pollution
+  category: infrastructure
+- id: water_tanker_market
+  aliases:
+  - water tanker
+  - tanker water
+  - private water supply
+  - water tanker mafia
+  category: infrastructure
+- id: tanker_pricing
+  aliases:
+  - water tanker rates
+  - tanker cost
+  - water tanker price per load
+  category: infrastructure
+- id: tanker_regulation
+  aliases:
+  - water tanker license
+  - tanker regulation
+  - authorized water tanker
+  category: infrastructure
+- id: desalination
+  aliases:
+  - desalination plant
+  - seawater desalination
+  - RO plant
+  - reverse osmosis plant
+  category: infrastructure
+- id: chennai_desalination
+  aliases:
+  - Chennai desalination plant
+  - Nemmeli desalination
+  - Minjur desalination
+  category: infrastructure
+- id: desalination_cost
+  aliases:
+  - desalination per litre cost
+  - desalination energy cost
+  - desal operating cost
+  category: infrastructure
+- id: rainwater_harvesting
+  aliases:
+  - RWH
+  - rainwater collection
+  - rooftop rainwater harvesting
+  - rain water recharge
+  category: infrastructure
+- id: rwh_regulation
+  aliases:
+  - rainwater harvesting mandatory
+  - RWH building code
+  - rainwater harvesting norms
+  category: infrastructure
+- id: rwh_building_codes
+  aliases:
+  - RWH compliance
+  - building plan rainwater harvesting
+  - occupancy certificate RWH
+  category: infrastructure
+- id: metro_systems
+  aliases:
+  - city metro
+  - metro rail
+  - urban metro
+  - rapid transit
+  category: transport
+- id: bangalore_metro
+  aliases:
+  - Namma Metro
+  - BMRCL
+  - Bangalore Metro Rail
+  - Bengaluru Metro
+  - purple line
+  - green line
+  category: transport
+- id: delhi_metro
+  aliases:
+  - DMRC
+  - Delhi Metro Rail Corporation
+  - Delhi Metro
+  category: transport
+- id: mumbai_metro
+  aliases:
+  - Mumbai Metro
+  - MMRC
+  - Mumbai Metro Rail
+  - Metro 3 Mumbai
+  category: transport
+- id: chennai_metro
+  aliases:
+  - Chennai Metro Rail
+  - CMRL
+  - Chennai Metro
+  category: transport
+- id: hyderabad_metro
+  aliases:
+  - Hyderabad Metro Rail
+  - L&T Metro Hyderabad
+  - HMR
+  category: transport
+- id: kolkata_metro
+  aliases:
+  - Kolkata Metro
+  - Kolkata Metro Rail Corporation
+  category: transport
+- id: metro_expansion
+  aliases:
+  - metro phase 2
+  - new metro line
+  - metro extension
+  - metro route expansion
+  category: transport
+- id: metro_fare
+  aliases:
+  - metro ticket price
+  - metro fare hike
+  - metro pass
+  - metro card
+  - metro token
+  category: transport
+- id: metro_ridership
+  aliases:
+  - metro passenger count
+  - metro daily ridership
+  - metro footfall
+  category: transport
+- id: metro_construction
+  aliases:
+  - metro civil work
+  - metro tunneling
+  - metro station construction
+  - metro land acquisition
+  category: transport
+- id: city_bus_systems
+  aliases:
+  - public bus
+  - city bus service
+  - state transport bus
+  category: transport
+- id: bmtc
+  aliases:
+  - BMTC
+  - Bangalore Metropolitan Transport Corporation
+  - BMTC bus
+  - Bangalore bus
+  category: transport
+- id: dtc
+  aliases:
+  - DTC
+  - Delhi Transport Corporation
+  - DTC bus
+  - Delhi bus
+  category: transport
+- id: best_bus
+  aliases:
+  - BEST
+  - BEST bus Mumbai
+  - Brihanmumbai Electric Supply and Transport
+  category: transport
+- id: ksrtc_karnataka
+  aliases:
+  - KSRTC Karnataka
+  - Karnataka State Road Transport
+  - KSRTC bus
+  category: transport
+- id: bus_fleet_modernization
+  aliases:
+  - new buses
+  - bus fleet renewal
+  - bus procurement
+  - AC bus induction
+  category: transport
+- id: electric_buses
+  aliases:
+  - e-bus
+  - electric bus
+  - EV bus
+  - battery bus
+  - FAME electric bus
+  category: transport
+- id: bus_fuel_cost
+  aliases:
+  - diesel cost bus
+  - bus operating cost
+  - bus fuel subsidy
+  category: transport
+- id: bus_fare
+  aliases:
+  - bus ticket price
+  - bus fare hike
+  - bus pass
+  - student bus pass
+  category: transport
+- id: suburban_rail
+  aliases:
+  - suburban railway
+  - commuter rail
+  - local train
+  category: transport
+- id: mumbai_local
+  aliases:
+  - Mumbai suburban railway
+  - Mumbai local train
+  - Western Railway Mumbai
+  - Central Railway Mumbai
+  - Harbour line
+  category: transport
+- id: chennai_mrts
+  aliases:
+  - MRTS Chennai
+  - Chennai suburban rail
+  - Mass Rapid Transit System Chennai
+  category: transport
+- id: suburban_rail_capacity
+  aliases:
+  - train overcrowding
+  - suburban train frequency
+  - peak hour trains
+  category: transport
+- id: suburban_rail_safety
+  aliases:
+  - railway accident
+  - track crossing death
+  - platform safety
+  - rail track trespass
+  category: transport
+- id: auto_taxi
+  aliases:
+  - auto rickshaw
+  - taxi
+  - cab service
+  - ride hailing
+  category: transport
+- id: auto_fare_meter
+  aliases:
+  - auto meter
+  - auto fare revision
+  - minimum auto fare
+  - auto fare card
+  category: transport
+- id: ride_aggregator
+  aliases:
+  - Uber
+  - Ola
+  - Rapido
+  - ride hailing app
+  - cab aggregator
+  category: transport
+- id: aggregator_regulation
+  aliases:
+  - cab aggregator regulation
+  - ride hailing rules
+  - motor vehicle aggregator guidelines
+  - Ola Uber regulation
+  category: transport
+- id: surge_pricing
+  aliases:
+  - surge charge
+  - dynamic pricing cab
+  - peak pricing Uber Ola
+  - price surge
+  category: transport
+- id: traffic_management
+  aliases:
+  - traffic control
+  - traffic congestion
+  - traffic management system
+  category: transport
+- id: traffic_signals
+  aliases:
+  - traffic signal optimization
+  - adaptive traffic signals
+  - ITMS
+  - intelligent traffic management
+  category: transport
+- id: junction_redesign
+  aliases:
+  - junction improvement
+  - intersection redesign
+  - grade separator
+  category: transport
+- id: one_way_systems
+  aliases:
+  - one way road
+  - one way traffic
+  - traffic flow optimization
+  category: transport
+- id: flyover_construction
+  aliases:
+  - flyover
+  - overpass
+  - elevated road
+  - grade separator construction
+  category: transport
+- id: road_widening
+  aliases:
+  - road widening project
+  - road expansion
+  - carriageway widening
+  category: transport
+- id: parking
+  aliases:
+  - vehicle parking
+  - parking management
+  - parking problem
+  category: transport
+- id: multilevel_parking
+  aliases:
+  - multi-level parking
+  - parking garage
+  - automated parking
+  category: transport
+- id: street_parking_fees
+  aliases:
+  - pay and park
+  - parking meter
+  - street parking charge
+  - parking fee revision
+  category: transport
+- id: towing
+  aliases:
+  - vehicle towing
+  - tow away zone
+  - towing charges
+  - illegally parked vehicle
+  category: transport
+- id: cycling_infrastructure
+  aliases:
+  - cycle lane
+  - cycling track
+  - dedicated cycle path
+  - bicycle infrastructure
+  category: transport
+- id: bike_sharing
+  aliases:
+  - Yulu
+  - cycle sharing
+  - bike rental
+  - dockless bicycle
+  - Bounce bike
+  category: transport
+- id: ev_infrastructure
+  aliases:
+  - EV charging
+  - electric vehicle infrastructure
+  - charging network
+  category: transport
+- id: ev_charging_stations
+  aliases:
+  - EV charger
+  - charging point
+  - fast charger
+  - DC fast charging
+  - EVSE
+  category: transport
+- id: ev_electricity_load
+  aliases:
+  - EV grid load
+  - charging station power demand
+  - EV electricity consumption
+  category: transport
+- id: municipal_corporation
+  aliases:
+  - municipal body
+  - city corporation
+  - nagara palika
+  - mahanagar palika
+  category: governance_and_regulation
+- id: bbmp
+  aliases:
+  - BBMP
+  - Bruhat Bengaluru Mahanagara Palike
+  - Bangalore corporation
+  - Bengaluru municipality
+  category: governance_and_regulation
+- id: bmc_mumbai
+  aliases:
+  - BMC
+  - Brihanmumbai Municipal Corporation
+  - Mumbai corporation
+  - MCGM
+  category: governance_and_regulation
+- id: mcd_delhi
+  aliases:
+  - MCD
+  - Municipal Corporation of Delhi
+  - Delhi municipality
+  - Delhi corporation
+  category: governance_and_regulation
+- id: gcc_chennai
+  aliases:
+  - GCC
+  - Greater Chennai Corporation
+  - Chennai corporation
+  - Chennai municipality
+  category: governance_and_regulation
+- id: ghmc_hyderabad
+  aliases:
+  - GHMC
+  - Greater Hyderabad Municipal Corporation
+  - Hyderabad corporation
+  category: governance_and_regulation
+- id: municipal_revenue
+  aliases:
+  - corporation revenue
+  - municipal income
+  - city body revenue
+  category: governance_and_regulation
+- id: trade_license
+  aliases:
+  - trade license renewal
+  - shop license
+  - business license municipal
+  category: governance_and_regulation
+- id: advertisement_tax
+  aliases:
+  - hoarding tax
+  - billboard tax
+  - signage tax
+  - advertisement fee
+  category: governance_and_regulation
+- id: user_charges
+  aliases:
+  - municipal user charges
+  - SWM cess
+  - betterment charge
+  - development charge
+  category: governance_and_regulation
+- id: municipal_expenditure
+  aliases:
+  - corporation spending
+  - municipal budget
+  - city budget allocation
+  category: governance_and_regulation
+- id: road_maintenance
+  aliases:
+  - road repair
+  - pothole filling
+  - road resurfacing
+  - white topping
+  - asphalting
+  category: governance_and_regulation
+- id: sewage_system
+  aliases:
+  - underground drainage
+  - UGD
+  - sewer line
+  - sewage network
+  category: governance_and_regulation
+- id: public_parks
+  aliases:
+  - city parks
+  - municipal garden
+  - park maintenance
+  - public garden
+  category: governance_and_regulation
+- id: streetlights
+  aliases:
+  - street lighting
+  - LED streetlights
+  - street light maintenance
+  - dark spots
+  category: governance_and_regulation
+- id: solid_waste_management
+  aliases:
+  - garbage collection
+  - waste management
+  - SWM
+  - trash pickup
+  - BBMP garbage
+  category: governance_and_regulation
+- id: waste_segregation
+  aliases:
+  - wet waste dry waste
+  - source segregation
+  - waste at source
+  - segregated collection
+  category: governance_and_regulation
+- id: landfill
+  aliases:
+  - dump yard
+  - landfill site
+  - waste disposal site
+  category: governance_and_regulation
+- id: landfill_fires
+  aliases:
+  - Ghazipur fire
+  - Brahmapuram fire
+  - landfill blaze
+  - dump yard fire
+  category: governance_and_regulation
+- id: waste_to_energy
+  aliases:
+  - WTE plant
+  - waste to energy plant
+  - incineration plant
+  - waste processing
+  category: governance_and_regulation
+- id: plastic_ban
+  aliases:
+  - single use plastic ban
+  - plastic carry bag ban
+  - SUP ban
+  category: governance_and_regulation
+- id: mayor
+  aliases:
+  - city mayor
+  - mayor election
+  - municipal chairman
+  category: governance_and_regulation
+- id: municipal_commissioner
+  aliases:
+  - corporation commissioner
+  - IAS commissioner
+  - BBMP commissioner
+  - BMC commissioner
+  category: governance_and_regulation
+- id: ward_system
+  aliases:
+  - municipal ward
+  - ward number
+  - ward boundary
+  - ward office
+  category: governance_and_regulation
+- id: corporator
+  aliases:
+  - ward corporator
+  - municipal councillor
+  - elected representative ward
+  category: governance_and_regulation
+- id: municipal_elections
+  aliases:
+  - corporation election
+  - civic body election
+  - municipal poll
+  - ward election
+  category: governance_and_regulation
+- id: ward_delimitation
+  aliases:
+  - ward restructuring
+  - ward boundary redraw
+  - delimitation municipal
+  category: governance_and_regulation
+- id: reservation_municipal
+  aliases:
+  - OBC reservation ward
+  - SC ST reservation municipal
+  - women reservation municipal
+  category: governance_and_regulation
+- id: tender_process
+  aliases:
+  - municipal tender
+  - government tender
+  - e-procurement
+  - tender scam
+  - bid rigging
+  category: governance_and_regulation
+- id: contractor_quality
+  aliases:
+  - road contractor quality
+  - shoddy work
+  - contractor blacklist
+  - deficiency period
+  category: governance_and_regulation
+- id: municipal_inspection
+  aliases:
+  - building inspection
+  - site inspection municipal
+  - quality check municipal
+  category: governance_and_regulation
+- id: urban_planning
+  aliases:
+  - city planning
+  - town planning
+  - urban development
+  category: housing
+- id: master_plan
+  aliases:
+  - city master plan
+  - CDP
+  - Comprehensive Development Plan
+  - development plan
+  - revised master plan
+  category: housing
+- id: land_use_zoning
+  aliases:
+  - zoning
+  - land use classification
+  - residential zone
+  - commercial zone
+  - industrial zone
+  - mixed use zone
+  category: housing
+- id: building_codes
+  aliases:
+  - building regulations
+  - building bye-laws
+  - construction norms
+  category: housing
+- id: far_fsi
+  aliases:
+  - FAR
+  - FSI
+  - Floor Area Ratio
+  - Floor Space Index
+  - built-up area ratio
+  category: housing
+- id: height_restrictions
+  aliases:
+  - building height limit
+  - height regulation
+  - high rise norms
+  category: housing
+- id: parking_norms_building
+  aliases:
+  - parking requirement building
+  - basement parking norms
+  - parking space per unit
+  category: housing
+- id: fire_safety_building
+  aliases:
+  - fire NOC
+  - fire safety norms
+  - fire escape
+  - fire audit building
+  category: housing
+- id: development_authority
+  aliases:
+  - planning authority
+  - development body
+  - urban development authority
+  category: housing
+- id: bda
+  aliases:
+  - BDA
+  - Bangalore Development Authority
+  - BDA layout
+  - BDA site
+  - BDA allotment
+  category: housing
+- id: dtcp
+  aliases:
+  - DTCP
+  - Directorate of Town and Country Planning
+  - DTCP approval
+  category: housing
+- id: huda
+  aliases:
+  - HUDA
+  - Haryana Urban Development Authority
+  - HUDA sector
+  category: housing
+- id: layout_approval
+  aliases:
+  - layout plan approval
+  - site approval
+  - colony approval
+  - plotted development approval
+  category: housing
+- id: completion_certificate
+  aliases:
+  - CC
+  - completion certificate
+  - building completion
+  - occupancy certificate
+  - OC
+  category: housing
+- id: encroachment
+  aliases:
+  - illegal encroachment
+  - unauthorized construction
+  - land grabbing
+  category: housing
+- id: lake_encroachment
+  aliases:
+  - lake land grab
+  - lake buffer zone violation
+  - lake bed encroachment
+  category: housing
+- id: rajakaluve_encroachment
+  aliases:
+  - rajakaluve
+  - stormwater drain encroachment
+  - SWD encroachment
+  - naala encroachment
+  category: housing
+- id: eviction_drive
+  aliases:
+  - demolition drive
+  - encroachment removal
+  - unauthorized structure demolition
+  - BBMP demolition
+  category: housing
+- id: property_registration
+  aliases:
+  - property sale registration
+  - sale deed registration
+  - sub-registrar office
+  category: housing
+- id: e_registration
+  aliases:
+  - online property registration
+  - e-stamping
+  - digital registration
+  category: housing
+- id: guidance_value
+  aliases:
+  - circle rate
+  - ready reckoner rate
+  - government valuation
+  - guideline value
+  - jantri rate
+  category: housing
+- id: rera_project_registration
+  aliases:
+  - RERA registered project
+  - RERA number
+  - builder RERA compliance
+  category: housing
+- id: builder_compliance
+  aliases:
+  - builder delay
+  - project delay penalty
+  - builder accountability
+  - RERA order builder
+  category: housing
+- id: rera_delay_penalty
+  aliases:
+  - possession delay compensation
+  - RERA refund order
+  - builder penalty interest
+  category: housing
+- id: electricity_distribution
+  aliases:
+  - power distribution
+  - electricity supply
+  - DISCOM
+  - distribution company
+  category: infrastructure
+- id: bses
+  aliases:
+  - BSES
+  - BSES Delhi
+  - BSES Rajdhani
+  - BSES Yamuna
+  category: infrastructure
+- id: tpddl
+  aliases:
+  - TPDDL
+  - Tata Power Delhi
+  - Tata Power DDL
+  - North Delhi electricity
+  category: infrastructure
+- id: tangedco
+  aliases:
+  - TANGEDCO
+  - Tamil Nadu electricity
+  - TNEB
+  - TANGEDCO bill
+  category: infrastructure
+- id: tariff_structure
+  aliases:
+  - domestic tariff
+  - commercial tariff
+  - industrial tariff
+  - slab rate electricity
+  - telescopic tariff
+  category: infrastructure
+- id: cross_subsidy
+  aliases:
+  - cross subsidy electricity
+  - industrial subsidizing domestic
+  - electricity subsidy
+  category: infrastructure
+- id: electricity_bill
+  aliases:
+  - power bill
+  - electricity bill payment
+  - ESCOMS bill
+  - monthly electricity bill
+  category: infrastructure
+- id: smart_meters
+  aliases:
+  - smart electricity meter
+  - prepaid meter
+  - AMI meter
+  - advanced metering
+  category: infrastructure
+- id: net_metering
+  aliases:
+  - solar net metering
+  - rooftop solar billing
+  - net metering policy
+  - grid connected solar
+  category: infrastructure
+- id: rooftop_solar
+  aliases:
+  - rooftop solar panel
+  - residential solar
+  - solar subsidy
+  - PM Surya Ghar
+  category: infrastructure
+- id: power_outage
+  aliases:
+  - power cut
+  - load shedding
+  - electricity outage
+  - blackout
+  - power failure
+  category: infrastructure
+- id: electricity_regulatory_commission
+  aliases:
+  - KERC
+  - MERC
+  - DERC
+  - TNERC
+  - state electricity regulatory commission
+  - SERC
+  category: infrastructure
+- id: igl
+  aliases:
+  - IGL
+  - Indraprastha Gas Limited
+  - IGL Delhi
+  - IGL CNG
+  category: infrastructure
+- id: mgl
+  aliases:
+  - MGL
+  - Mahanagar Gas Limited
+  - MGL Mumbai
+  - Mumbai gas
+  category: infrastructure
+- id: cng_stations
+  aliases:
+  - CNG pump
+  - CNG station
+  - CNG filling station
+  - CNG queue
+  category: infrastructure
+- id: cng_price
+  aliases:
+  - CNG rate
+  - CNG price revision
+  - CNG cost per kg
+  category: infrastructure
+- id: png_supply
+  aliases:
+  - piped gas supply
+  - PNG connection
+  - cooking gas pipeline
+  - piped natural gas home
+  category: infrastructure
+- id: broadband_internet
+  aliases:
+  - internet service
+  - broadband connection
+  - fiber internet
+  - home internet
+  category: infrastructure
+- id: bsnl_fiber
+  aliases:
+  - BSNL FTTH
+  - BSNL fiber
+  - BSNL broadband
+  - Bharat Fiber
+  category: infrastructure
+- id: private_isp
+  aliases:
+  - Airtel Xstream
+  - JioFiber
+  - ACT Fibernet
+  - Hathway
+  - local ISP
+  category: infrastructure
+- id: mobile_towers
+  aliases:
+  - cell tower
+  - telecom tower
+  - mobile network tower
+  - BTS tower
+  category: infrastructure
+- id: right_of_way
+  aliases:
+  - RoW permission
+  - Right of Way telecom
+  - fiber laying permission
+  - road cutting permission
+  category: infrastructure
+- id: local_body_telecom_approval
+  aliases:
+  - tower installation permission
+  - municipal tower approval
+  - cell tower NOC
+  category: infrastructure
+- id: cable_tv
+  aliases:
+  - cable operator
+  - local cable
+  - cable TV
+  - DTH
+  - set top box
+  category: infrastructure
+- id: trai_regulation
+  aliases:
+  - TRAI
+  - Telecom Regulatory Authority
+  - TRAI tariff order
+  - channel pricing TRAI
+  category: infrastructure
+- id: air_quality
+  aliases:
+  - air pollution
+  - AQI
+  - air quality index
+  - smog
+  - haze
+  category: environment_and_climate
+- id: aqi_monitoring
+  aliases:
+  - AQI station
+  - air quality monitoring
+  - CAAQMS
+  - pollution monitoring station
+  category: environment_and_climate
+- id: cpcb
+  aliases:
+  - CPCB
+  - Central Pollution Control Board
+  - CPCB guidelines
+  category: environment_and_climate
+- id: spcb
+  aliases:
+  - SPCB
+  - State Pollution Control Board
+  - KSPCB
+  - MPCB
+  - DPCC
+  category: environment_and_climate
+- id: grap_delhi
+  aliases:
+  - GRAP
+  - Graded Response Action Plan
+  - GRAP stage 3
+  - GRAP stage 4
+  - Delhi pollution emergency
+  category: environment_and_climate
+- id: vehicle_restrictions_pollution
+  aliases:
+  - odd even Delhi
+  - vehicle ban pollution
+  - BS4 ban
+  - diesel vehicle ban
+  category: environment_and_climate
+- id: construction_ban
+  aliases:
+  - construction ban pollution
+  - construction dust
+  - demolition ban AQI
+  category: environment_and_climate
+- id: stubble_burning
+  aliases:
+  - parali burning
+  - crop residue burning
+  - stubble fire Punjab Haryana
+  - farm fire
+  category: environment_and_climate
+- id: lake_pollution
+  aliases:
+  - lake contamination
+  - lake froth
+  - Bellandur lake foam
+  - toxic lake
+  category: environment_and_climate
+- id: industrial_effluent
+  aliases:
+  - factory discharge
+  - industrial waste water
+  - effluent treatment plant
+  - ETP
+  category: environment_and_climate
+- id: sewage_discharge
+  aliases:
+  - untreated sewage
+  - sewage into lake
+  - sewage into river
+  - open sewage
+  category: environment_and_climate
+- id: ngt_orders
+  aliases:
+  - NGT
+  - National Green Tribunal
+  - NGT order pollution
+  - NGT fine
+  - environmental tribunal
+  category: environment_and_climate
+- id: noise_pollution
+  aliases:
+  - noise levels
+  - sound pollution
+  - noise regulation
+  category: environment_and_climate
+- id: construction_noise_hours
+  aliases:
+  - construction timing rules
+  - night construction ban
+  - construction hours regulation
+  category: environment_and_climate
+- id: loudspeaker_rules
+  aliases:
+  - DJ noise rules
+  - loudspeaker permission
+  - noise limit decibel
+  - festival noise
+  category: environment_and_climate
+- id: airport_noise_zone
+  aliases:
+  - flight path noise
+  - airport noise regulation
+  - aircraft noise complaint
+  category: environment_and_climate
+- id: urban_flooding
+  aliases:
+  - city flooding
+  - waterlogging
+  - flash flood city
+  - inundation
+  category: environment_and_climate
+- id: stormwater_drain
+  aliases:
+  - SWD
+  - stormwater drain
+  - rainwater drain
+  - naala
+  - drainage system
+  category: environment_and_climate
+- id: swd_encroachment
+  aliases:
+  - drain encroachment
+  - stormwater drain blocked
+  - naala encroachment
+  - drain narrowing
+  category: environment_and_climate
+- id: swd_mapping
+  aliases:
+  - drain mapping
+  - SWD survey
+  - stormwater drain GIS
+  - drainage master plan
+  category: environment_and_climate
+- id: flood_relief
+  aliases:
+  - flood compensation
+  - flood relief camp
+  - SDRF flood
+  - flood damage assessment
+  category: environment_and_climate
+- id: tree_management
+  aliases:
+  - urban tree cover
+  - green cover
+  - tree protection
+  category: environment_and_climate
+- id: tree_cutting_permission
+  aliases:
+  - tree felling permission
+  - tree cutting order
+  - tree removal approval
+  category: environment_and_climate
+- id: tree_census
+  aliases:
+  - urban tree census
+  - tree count
+  - tree survey city
+  category: environment_and_climate
+- id: hc_tree_orders
+  aliases:
+  - High Court tree order
+  - HC green cover
+  - court order tree cutting
+  category: environment_and_climate
+- id: public_healthcare
+  aliases:
+  - government hospital
+  - public health system
+  - state healthcare
+  category: health_and_healthcare
+- id: district_hospital
+  aliases:
+  - district hospital
+  - general hospital
+  - government general hospital
+  category: health_and_healthcare
+- id: taluk_hospital
+  aliases:
+  - taluk hospital
+  - sub-district hospital
+  - community hospital
+  category: health_and_healthcare
+- id: phc
+  aliases:
+  - PHC
+  - Primary Health Centre
+  - primary health center
+  category: health_and_healthcare
+- id: chc
+  aliases:
+  - CHC
+  - Community Health Centre
+  - community health center
+  category: health_and_healthcare
+- id: hospital_staff_shortage
+  aliases:
+  - doctor shortage government hospital
+  - nurse vacancy
+  - medical staff crunch
+  category: health_and_healthcare
+- id: hospital_equipment
+  aliases:
+  - medical equipment shortage
+  - ventilator
+  - hospital bed shortage
+  - ICU beds
+  category: health_and_healthcare
+- id: ambulance_service
+  aliases:
+  - 108 ambulance
+  - ambulance
+  - emergency medical service
+  - EMS
+  category: health_and_healthcare
+- id: gvk_emri
+  aliases:
+  - GVK EMRI
+  - 108 service
+  - emergency response ambulance
+  category: health_and_healthcare
+- id: ambulance_response_time
+  aliases:
+  - ambulance delay
+  - ambulance arrival time
+  - golden hour
+  category: health_and_healthcare
+- id: disease_surveillance
+  aliases:
+  - disease monitoring
+  - epidemic surveillance
+  - outbreak monitoring
+  category: health_and_healthcare
+- id: dengue
+  aliases:
+  - dengue fever
+  - dengue outbreak
+  - dengue cases
+  - dengue mosquito
+  category: health_and_healthcare
+- id: malaria
+  aliases:
+  - malaria cases
+  - malaria outbreak
+  - anti-malaria drive
+  category: health_and_healthcare
+- id: chikungunya
+  aliases:
+  - chikungunya cases
+  - chikungunya outbreak
+  category: health_and_healthcare
+- id: vector_control
+  aliases:
+  - mosquito control
+  - fogging
+  - larvicide
+  - mosquito breeding
+  - anti-larval operation
+  category: health_and_healthcare
+- id: stray_animals
+  aliases:
+  - stray dog menace
+  - stray cattle
+  - animal nuisance
+  category: health_and_healthcare
+- id: dog_sterilization
+  aliases:
+  - ABC program
+  - animal birth control
+  - stray dog sterilization
+  - dog neutering
+  category: health_and_healthcare
+- id: dog_bite_cases
+  aliases:
+  - dog attack
+  - stray dog bite
+  - rabies
+  - dog bite compensation
+  category: health_and_healthcare
+- id: fssai_inspection
+  aliases:
+  - FSSAI
+  - food inspector
+  - FSSAI license
+  - food safety audit
+  category: health_and_healthcare
+- id: restaurant_hygiene
+  aliases:
+  - restaurant inspection
+  - kitchen hygiene
+  - food handling
+  - health grade restaurant
+  category: health_and_healthcare
+- id: food_adulteration
+  aliases:
+  - milk adulteration
+  - food adulteration
+  - spurious food
+  - contaminated food
+  category: health_and_healthcare
+- id: local_education
+  aliases:
+  - city education
+  - school system
+  - local education policy
+  category: education
+- id: school_admissions
+  aliases:
+  - school admission process
+  - school enrollment
+  - school seat
+  category: education
+- id: rte_quota
+  aliases:
+  - RTE admission
+  - Right to Education quota
+  - 25% RTE reservation
+  - RTE lottery
+  category: education
+- id: ews_quota
+  aliases:
+  - EWS quota school
+  - economically weaker section admission
+  - EWS reservation school
+  category: education
+- id: neighborhood_school
+  aliases:
+  - neighborhood school norm
+  - school proximity rule
+  - school catchment area
+  category: education
+- id: school_infrastructure
+  aliases:
+  - school building
+  - school facilities
+  - school condition
+  category: education
+- id: school_building_safety
+  aliases:
+  - school structural safety
+  - school building audit
+  - dilapidated school
+  category: education
+- id: school_playground
+  aliases:
+  - school ground
+  - school playground space
+  - sports facility school
+  category: education
+- id: mid_day_meal
+  aliases:
+  - mid day meal scheme
+  - MDM
+  - school lunch
+  - PM Poshan
+  - Akshaya Patra
+  category: education
+- id: state_university
+  aliases:
+  - state university
+  - university regulation
+  - university governance
+  category: education
+- id: university_affiliation
+  aliases:
+  - college affiliation
+  - affiliated college
+  - autonomous status
+  category: education
+- id: college_regulation
+  aliases:
+  - college inspection
+  - college recognition
+  - AICTE approval
+  - UGC recognition
+  category: education
+- id: coaching_centers
+  aliases:
+  - coaching institute
+  - tuition center
+  - coaching class
+  category: education
+- id: coaching_regulation
+  aliases:
+  - coaching center regulation
+  - coaching institute rules
+  - coaching safety norms
+  category: education
+- id: coaching_safety
+  aliases:
+  - coaching fire safety
+  - coaching building safety
+  - Rajinder Nagar coaching
+  - coaching center fire
+  category: education
+- id: law_and_order
+  aliases:
+  - law enforcement
+  - policing
+  - public safety
+  category: governance_and_regulation
+- id: city_police
+  aliases:
+  - police
+  - local police
+  - city police force
+  category: governance_and_regulation
+- id: police_jurisdiction
+  aliases:
+  - police station area
+  - police district
+  - commissionerate
+  category: governance_and_regulation
+- id: beat_system
+  aliases:
+  - police beat
+  - beat constable
+  - neighborhood policing
+  - patrol
+  category: governance_and_regulation
+- id: community_policing
+  aliases:
+  - community police
+  - janaagraha policing
+  - police citizen engagement
+  category: governance_and_regulation
+- id: urban_crime
+  aliases:
+  - city crime
+  - crime rate
+  - crime statistics
+  category: governance_and_regulation
+- id: chain_snatching
+  aliases:
+  - chain snatching
+  - gold chain robbery
+  - snatching incident
+  category: governance_and_regulation
+- id: burglary
+  aliases:
+  - house break-in
+  - theft
+  - burglary
+  - robbery
+  category: governance_and_regulation
+- id: cybercrime
+  aliases:
+  - online fraud
+  - cyber crime
+  - digital fraud
+  - phishing
+  - UPI fraud
+  category: governance_and_regulation
+- id: drug_trafficking
+  aliases:
+  - narcotics
+  - drug bust
+  - drug peddling
+  - NDPS Act
+  - ganja seizure
+  category: governance_and_regulation
+- id: area_safety
+  aliases:
+  - neighborhood safety
+  - safe area
+  - crime prone area
+  - unsafe locality
+  category: governance_and_regulation
+- id: protests_bandh
+  aliases:
+  - protest
+  - bandh
+  - strike
+  - agitation
+  - hartal
+  category: governance_and_regulation
+- id: political_protests
+  aliases:
+  - political rally
+  - opposition protest
+  - dharna
+  - political agitation
+  category: governance_and_regulation
+- id: labor_strikes
+  aliases:
+  - worker strike
+  - trade union strike
+  - industrial action
+  - labor agitation
+  category: governance_and_regulation
+- id: farmer_agitations
+  aliases:
+  - farmer protest
+  - kisan andolan
+  - farmer march
+  - agricultural protest
+  category: governance_and_regulation
+- id: road_closures
+  aliases:
+  - road block protest
+  - traffic diversion protest
+  - road closed rally
+  category: governance_and_regulation
+- id: shop_shutdowns
+  aliases:
+  - shop closed bandh
+  - market shutdown
+  - commercial establishment closed
+  category: governance_and_regulation
+- id: local_courts
+  aliases:
+  - district court
+  - city civil court
+  - sessions court
+  category: governance_and_regulation
+- id: high_court
+  aliases:
+  - HC
+  - High Court
+  - High Court order
+  - HC bench
+  category: governance_and_regulation
+- id: pil
+  aliases:
+  - PIL
+  - Public Interest Litigation
+  - PIL filed
+  - PIL hearing
+  category: governance_and_regulation
+- id: court_infrastructure_orders
+  aliases:
+  - HC order infrastructure
+  - court order demolition
+  - SC order city
+  - judicial intervention civic
+  category: governance_and_regulation
+- id: traffic_enforcement
+  aliases:
+  - traffic police
+  - traffic challan
+  - traffic fine
+  - traffic violation
+  category: governance_and_regulation
+- id: speed_cameras
+  aliases:
+  - speed camera
+  - ANPR camera
+  - traffic camera
+  - speed trap
+  category: governance_and_regulation
+- id: drunk_driving
+  aliases:
+  - drunk driving check
+  - breath analyser
+  - DUI
+  - drink and drive fine
+  category: governance_and_regulation
+- id: helmet_seatbelt
+  aliases:
+  - helmet rule
+  - seatbelt fine
+  - helmet compulsory
+  - no helmet challan
+  category: governance_and_regulation
+- id: traffic_fine_amount
+  aliases:
+  - challan amount
+  - traffic fine revision
+  - e-challan
+  - traffic penalty
+  category: governance_and_regulation
+- id: state_economic_policy
+  aliases:
+  - state economy
+  - state industrial policy
+  - state budget
+  category: governance_and_regulation
+- id: state_industrial_policy
+  aliases:
+  - industrial incentive
+  - state industry policy
+  - investment promotion
+  category: governance_and_regulation
+- id: it_ites_incentive
+  aliases:
+  - IT park incentive
+  - IT SEZ
+  - software park policy
+  - IT industry subsidy
+  category: governance_and_regulation
+- id: manufacturing_sez
+  aliases:
+  - SEZ
+  - Special Economic Zone
+  - manufacturing hub
+  - industrial corridor
+  category: governance_and_regulation
+- id: startup_policy
+  aliases:
+  - state startup policy
+  - startup incentive
+  - startup ecosystem
+  - incubator policy
+  category: governance_and_regulation
+- id: state_tourism
+  aliases:
+  - tourism policy
+  - state tourism
+  - tourist destination
+  category: governance_and_regulation
+- id: heritage_sites
+  aliases:
+  - heritage conservation
+  - ASI monument
+  - heritage city
+  - UNESCO site
+  category: governance_and_regulation
+- id: eco_tourism
+  aliases:
+  - eco tourism
+  - nature tourism
+  - forest tourism
+  - wildlife tourism
+  category: governance_and_regulation
+- id: hospitality_employment
+  aliases:
+  - hotel jobs
+  - tourism employment
+  - hospitality sector jobs
+  category: governance_and_regulation
+- id: state_agriculture_policy
+  aliases:
+  - state farm policy
+  - agriculture scheme
+  - state agriculture budget
+  category: governance_and_regulation
+- id: state_msp
+  aliases:
+  - state MSP
+  - bonus on MSP
+  - state procurement price
+  category: governance_and_regulation
+- id: state_irrigation
+  aliases:
+  - irrigation project
+  - canal irrigation
+  - lift irrigation
+  - drip irrigation subsidy
+  category: governance_and_regulation
+- id: crop_insurance_implementation
+  aliases:
+  - PMFBY implementation
+  - crop insurance state
+  - Fasal Bima claim
+  - crop loss compensation
+  category: governance_and_regulation
+- id: liquor_policy
+  aliases:
+  - excise policy
+  - liquor regulation
+  - alcohol policy
+  category: governance_and_regulation
+- id: excise_revenue
+  aliases:
+  - liquor revenue
+  - excise duty collection
+  - alcohol tax revenue
+  category: governance_and_regulation
+- id: bar_license
+  aliases:
+  - liquor license
+  - bar permit
+  - wine shop license
+  - FL3 license
+  category: governance_and_regulation
+- id: dry_days
+  aliases:
+  - dry day
+  - liquor ban day
+  - no alcohol day
+  - election dry day
+  category: governance_and_regulation
+- id: online_liquor
+  aliases:
+  - online liquor delivery
+  - alcohol home delivery
+  - e-liquor permit
+  category: governance_and_regulation
+- id: mining_policy
+  aliases:
+  - mining regulation
+  - mineral extraction
+  - mining lease
+  category: governance_and_regulation
+- id: sand_mining
+  aliases:
+  - sand mining
+  - river sand
+  - M-sand
+  - illegal sand mining
+  - sand mafia
+  category: governance_and_regulation
+- id: granite_mining
+  aliases:
+  - granite quarry
+  - stone quarry
+  - granite mining lease
+  category: governance_and_regulation
+- id: construction_material_cost
+  aliases:
+  - building material price
+  - sand price
+  - cement price local
+  - aggregate cost
+  category: governance_and_regulation
+- id: monsoon
+  aliases:
+  - monsoon season
+  - southwest monsoon
+  - rainfall
+  - monsoon forecast
+  - IMD monsoon prediction
+  category: global_economy
+- id: coal_prices
+  aliases:
+  - coal cost
+  - thermal coal price
+  - Coal India price
+  - coal shortage
+  category: global_economy
+- id: diesel_price
+  aliases:
+  - diesel rate
+  - diesel cost
+  - diesel price revision
+  category: global_economy
+- id: real_estate_prices
+  aliases:
+  - property price
+  - housing price
+  - real estate market
+  - flat price
+  - apartment rate
+  category: global_economy
+- id: gst_municipal
+  aliases:
+  - GST on municipal
+  - GST revenue share
+  - GST compensation states
+  category: global_economy
+- id: fuel_price_local
+  aliases:
+  - petrol price city
+  - fuel rate
+  - petrol diesel price today
+  category: global_economy
+- id: state_budget
+  aliases:
+  - state budget allocation
+  - state finance
+  - state budget announcement
+  category: global_economy
+- id: state_finance_commission
+  aliases:
+  - state finance commission
+  - municipal fund allocation
+  - local body grants
+  category: global_economy
+- id: central_grants
+  aliases:
+  - central government grant
+  - 15th Finance Commission
+  - central scheme funding
+  category: global_economy
+- id: employment_local
+  aliases:
+  - local employment
+  - city job market
+  - urban employment
+  category: global_economy
+- id: construction_industry
+  aliases:
+  - construction sector
+  - real estate construction
+  - building industry
+  category: global_economy
+- id: water_atm
+  aliases:
+  - water ATM
+  - water vending machine
+  - purified water kiosk
+  category: infrastructure
+- id: fluoride_contamination
+  aliases:
+  - fluoride in water
+  - fluorosis
+  - groundwater fluoride
+  category: infrastructure
+- id: water_privatization
+  aliases:
+  - water privatization
+  - private water utility
+  - PPP water
+  category: infrastructure
+- id: pothole
+  aliases:
+  - pothole
+  - road pothole
+  - pothole death
+  - pothole complaint
+  category: governance_and_regulation
+- id: footpath
+  aliases:
+  - footpath
+  - sidewalk
+  - pedestrian path
+  - pavement encroachment
+  category: governance_and_regulation
+- id: public_toilet
+  aliases:
+  - public toilet
+  - Swachh public toilet
+  - community toilet
+  - pay-and-use toilet
+  category: governance_and_regulation
+- id: crematorium
+  aliases:
+  - crematorium
+  - burial ground
+  - electric crematorium
+  - last rites facility
+  category: governance_and_regulation
+- id: birth_death_certificate
+  aliases:
+  - birth certificate
+  - death certificate
+  - birth registration
+  - death registration
+  category: governance_and_regulation
+- id: khata_transfer
+  aliases:
+  - khata transfer
+  - khata certificate
+  - mutation
+  - property mutation
+  category: housing
+- id: conversion_of_land
+  aliases:
+  - land conversion
+  - agricultural to non-agricultural
+  - land use conversion
+  - DC conversion
+  category: housing
+- id: unauthorized_layout
+  aliases:
+  - unauthorized layout
+  - illegal layout
+  - unapproved colony
+  - BDA unauthorized
+  category: housing
+- id: inverter_ups
+  aliases:
+  - inverter
+  - UPS
+  - power backup
+  - home inverter
+  - battery backup
+  category: infrastructure
+- id: diesel_generator
+  aliases:
+  - DG set
+  - diesel generator
+  - backup generator
+  - generator noise
+  category: infrastructure
+- id: transformer
+  aliases:
+  - electricity transformer
+  - transformer failure
+  - transformer overload
+  - distribution transformer
+  category: infrastructure
+- id: sewage_overflow
+  aliases:
+  - manhole overflow
+  - sewage overflow
+  - sewer burst
+  - sewage flooding street
+  category: environment_and_climate
+- id: lake_restoration
+  aliases:
+  - lake rejuvenation
+  - lake desilting
+  - lake restoration project
+  - lake conservation
+  category: environment_and_climate
+- id: thermal_power_plant
+  aliases:
+  - thermal plant
+  - coal power plant
+  - thermal power station
+  category: global_economy
+- id: renewable_energy_policy
+  aliases:
+  - state renewable policy
+  - solar policy
+  - wind energy policy
+  - RPO
+  category: global_economy
+- id: cctv_surveillance
+  aliases:
+  - CCTV camera
+  - surveillance camera
+  - safe city project
+  - CCTV coverage
+  category: governance_and_regulation
+- id: women_safety
+  aliases:
+  - women safety
+  - SHE team
+  - pink patrol
+  - women helpline
+  - Nirbhaya fund
+  category: governance_and_regulation
+- id: fire_service
+  aliases:
+  - fire brigade
+  - fire department
+  - fire station
+  - fire engine
+  category: health_and_healthcare
+- id: private_hospital
+  aliases:
+  - private hospital
+  - corporate hospital
+  - private nursing home
+  - hospital bill cap
+  category: health_and_healthcare
+- id: anganwadi
+  aliases:
+  - anganwadi
+  - ICDS center
+  - anganwadi worker
+  - child development center
+  category: education
+- id: skill_development
+  aliases:
+  - skill training
+  - ITI
+  - skill development center
+  - PMKVY
+  - vocational training
+  category: education
+- id: pension_scheme
+  aliases:
+  - old age pension
+  - widow pension
+  - state pension scheme
+  - social security pension
+  category: governance_and_regulation
+- id: ration_card
+  aliases:
+  - ration card
+  - BPL card
+  - APL card
+  - smart ration card
+  - PDS
+  category: governance_and_regulation
+- id: public_distribution_system
+  aliases:
+  - PDS
+  - fair price shop
+  - ration shop
+  - government ration
+  category: governance_and_regulation
+- id: street_vendors
+  aliases:
+  - street vendor
+  - hawker
+  - roadside vendor
+  - PM SVANidhi
+  - street vendor license
+  category: governance_and_regulation
+- id: slum_rehabilitation
+  aliases:
+  - slum redevelopment
+  - SRA
+  - slum rehabilitation
+  - slum upgrade
+  category: housing
+- id: urban_health_impact
+  aliases:
+  - pollution health impact
+  - city health
+  - urban lifestyle disease
+  category: global_economy
 edges:
-
-  # ===========================================================================
-  # WATER SYSTEM EDGES
-  # ===========================================================================
-
-  # River systems → disputes → allocation
-  - from: river_systems
-    to: interstate_water_disputes
-    type: PRODUCES
-
-  - from: cauvery_river
-    to: cauvery_water_dispute
-    type: PRODUCES
-
-  - from: cauvery_water_dispute
-    to: tribunal_decisions
-    type: PRODUCES
-
-  - from: tribunal_decisions
-    to: cauvery_water_allocation
-    type: REGULATES
-
-  - from: cauvery_water_allocation
-    to: krs_dam
-    type: AFFECTS
-
-  - from: cauvery_water_allocation
-    to: mettur_dam
-    type: AFFECTS
-
-  - from: krishna_river
-    to: krishna_water_dispute
-    type: PRODUCES
-
-  - from: krishna_water_dispute
-    to: tribunal_decisions
-    type: PRODUCES
-
-  - from: ganga_river
-    to: water_pollution
-    type: AFFECTS
-
-  - from: yamuna_river
-    to: water_pollution
-    type: AFFECTS
-
-  - from: godavari_river
-    to: interstate_water_disputes
-    type: PRODUCES
-
-  # Reservoirs → water level → supply
-  - from: reservoirs_and_dams
-    to: reservoir_water_level
-    type: PRODUCES
-
-  - from: reservoir_water_level
-    to: dam_water_release
-    type: AFFECTS
-
-  - from: dam_water_release
-    to: city_water_supply
-    type: SUPPLIES
-
-  - from: krs_dam
-    to: bwssb
-    type: SUPPLIES
-
-  - from: mettur_dam
-    to: cmwssb
-    type: SUPPLIES
-
-  - from: bhakra_nangal_dam
-    to: delhi_jal_board
-    type: SUPPLIES
-
-  - from: monsoon
-    to: reservoir_water_level
-    type: AFFECTS
-
-  - from: monsoon
-    to: groundwater
-    type: AFFECTS
-
-  # Groundwater chain
-  - from: groundwater
-    to: borewell
-    type: SUPPLIES
-
-  - from: borewell
-    to: borewell_regulation
-    type: REGULATES
-
-  - from: borewell
-    to: groundwater_depletion
-    type: PRODUCES
-
-  - from: groundwater_depletion
-    to: water_tanker_market
-    type: PRODUCES
-
-  - from: groundwater_depletion
-    to: borewell_regulation
-    type: AFFECTS
-
-  # City water supply chains
-  - from: city_water_supply
-    to: water_pipe_network
-    type: DEPENDS_ON
-
-  - from: water_pipe_network
-    to: water_billing
-    type: PRODUCES
-
-  - from: city_water_supply
-    to: water_rationing
-    type: PRODUCES
-
-  - from: water_rationing
-    to: water_tanker_market
-    type: PRODUCES
-
-  - from: bwssb
-    to: water_pipe_network
-    type: MANAGES
-
-  - from: bwssb
-    to: water_billing
-    type: MANAGES
-
-  - from: delhi_jal_board
-    to: water_pipe_network
-    type: MANAGES
-
-  - from: delhi_jal_board
-    to: water_billing
-    type: MANAGES
-
-  - from: bmc_water
-    to: water_pipe_network
-    type: MANAGES
-
-  - from: cmwssb
-    to: water_pipe_network
-    type: MANAGES
-
-  - from: hmwssb
-    to: water_pipe_network
-    type: MANAGES
-
-  # Water treatment
-  - from: wtp
-    to: water_treatment
-    type: PRODUCES
-
-  - from: stp
-    to: water_treatment
-    type: PRODUCES
-
-  - from: city_water_supply
-    to: water_treatment
-    type: DEPENDS_ON
-
-  - from: city_water_supply
-    to: wtp
-    type: DEPENDS_ON
-
-  - from: wtp
-    to: water_quality
-    type: PRODUCES
-
-  - from: sewage_system
-    to: stp
-    type: SUPPLIES
-
-  - from: stp
-    to: water_quality
-    type: AFFECTS
-
-  - from: water_pollution
-    to: water_quality
-    type: DISRUPTS
-
-  - from: industrial_effluent
-    to: water_pollution
-    type: PRODUCES
-
-  - from: sewage_discharge
-    to: water_pollution
-    type: PRODUCES
-
-  # Tanker market
-  - from: water_tanker_market
-    to: tanker_pricing
-    type: PRODUCES
-
-  - from: tanker_pricing
-    to: tanker_regulation
-    type: REGULATES
-
-  - from: water_rationing
-    to: tanker_pricing
-    type: AFFECTS
-
-  # Desalination
-  - from: desalination
-    to: city_water_supply
-    type: SUPPLIES
-
-  - from: chennai_desalination
-    to: cmwssb
-    type: SUPPLIES
-
-  - from: desalination
-    to: desalination_cost
-    type: PRODUCES
-
-  - from: desalination_cost
-    to: electricity_tariff
-    type: DEPENDS_ON
-
-  # Rainwater harvesting
-  - from: rainwater_harvesting
-    to: groundwater
-    type: SUPPLIES
-
-  - from: rwh_regulation
-    to: rainwater_harvesting
-    type: REGULATES
-
-  - from: rwh_building_codes
-    to: building_codes
-    type: AFFECTS
-
-  - from: rwh_regulation
-    to: completion_certificate
-    type: AFFECTS
-
-  # ===========================================================================
-  # TRANSPORT EDGES
-  # ===========================================================================
-
-  # Metro chains
-  - from: metro_systems
-    to: metro_expansion
-    type: PRODUCES
-
-  - from: metro_expansion
-    to: metro_construction
-    type: PRODUCES
-
-  - from: metro_construction
-    to: road_closures
-    type: DISRUPTS
-
-  - from: metro_expansion
-    to: real_estate_prices
-    type: AFFECTS
-
-  - from: metro_systems
-    to: metro_fare
-    type: PRODUCES
-
-  - from: metro_fare
-    to: metro_ridership
-    type: AFFECTS
-
-  - from: bangalore_metro
-    to: bbmp
-    type: LOCATED_IN
-
-  - from: delhi_metro
-    to: mcd_delhi
-    type: LOCATED_IN
-
-  - from: mumbai_metro
-    to: bmc_mumbai
-    type: LOCATED_IN
-
-  - from: chennai_metro
-    to: gcc_chennai
-    type: LOCATED_IN
-
-  - from: hyderabad_metro
-    to: ghmc_hyderabad
-    type: LOCATED_IN
-
-  - from: metro_construction
-    to: traffic_management
-    type: DISRUPTS
-
-  - from: kolkata_metro
-    to: metro_systems
-    type: PRODUCES
-
-  - from: kolkata_metro
-    to: metro_fare
-    type: PRODUCES
-
-  # Bus system chains
-  - from: city_bus_systems
-    to: bus_fare
-    type: PRODUCES
-
-  - from: bus_fuel_cost
-    to: bus_fare
-    type: AFFECTS
-
-  - from: diesel_price
-    to: bus_fuel_cost
-    type: AFFECTS
-
-  - from: bus_fleet_modernization
-    to: electric_buses
-    type: PRODUCES
-
-  - from: electric_buses
-    to: ev_electricity_load
-    type: PRODUCES
-
-  - from: bmtc
-    to: bbmp
-    type: LOCATED_IN
-
-  - from: dtc
-    to: mcd_delhi
-    type: LOCATED_IN
-
-  - from: best_bus
-    to: bmc_mumbai
-    type: LOCATED_IN
-
-  - from: ksrtc_karnataka
-    to: city_bus_systems
-    type: PRODUCES
-
-  - from: ksrtc_karnataka
-    to: bus_fare
-    type: PRODUCES
-
-  - from: fuel_price_local
-    to: bus_fuel_cost
-    type: AFFECTS
-
-  # Suburban rail
-  - from: suburban_rail
-    to: suburban_rail_capacity
-    type: PRODUCES
-
-  - from: suburban_rail_capacity
-    to: suburban_rail_safety
-    type: AFFECTS
-
-  - from: mumbai_local
-    to: bmc_mumbai
-    type: LOCATED_IN
-
-  - from: chennai_mrts
-    to: gcc_chennai
-    type: LOCATED_IN
-
-  # Auto/taxi
-  - from: auto_taxi
-    to: auto_fare_meter
-    type: REGULATES
-
-  - from: ride_aggregator
-    to: aggregator_regulation
-    type: REGULATES
-
-  - from: aggregator_regulation
-    to: surge_pricing
-    type: REGULATES
-
-  - from: fuel_price_local
-    to: auto_fare_meter
-    type: AFFECTS
-
-  - from: cng_price
-    to: auto_fare_meter
-    type: AFFECTS
-
-  # Traffic
-  - from: traffic_management
-    to: traffic_signals
-    type: DEPENDS_ON
-
-  - from: traffic_management
-    to: junction_redesign
-    type: PRODUCES
-
-  - from: traffic_management
-    to: one_way_systems
-    type: PRODUCES
-
-  - from: traffic_management
-    to: flyover_construction
-    type: PRODUCES
-
-  - from: flyover_construction
-    to: road_closures
-    type: DISRUPTS
-
-  - from: traffic_management
-    to: road_widening
-    type: PRODUCES
-
-  - from: road_widening
-    to: tree_cutting_permission
-    type: PRODUCES
-
-  # Parking
-  - from: parking
-    to: multilevel_parking
-    type: PRODUCES
-
-  - from: parking
-    to: street_parking_fees
-    type: PRODUCES
-
-  - from: street_parking_fees
-    to: municipal_revenue
-    type: FUNDS
-
-  - from: towing
-    to: municipal_revenue
-    type: FUNDS
-
-  # Cycling
-  - from: cycling_infrastructure
-    to: urban_planning
-    type: DEPENDS_ON
-
-  - from: bike_sharing
-    to: cycling_infrastructure
-    type: DEPENDS_ON
-
-  # EV
-  - from: ev_infrastructure
-    to: ev_charging_stations
-    type: PRODUCES
-
-  - from: ev_charging_stations
-    to: ev_electricity_load
-    type: PRODUCES
-
-  - from: ev_electricity_load
-    to: electricity_distribution
-    type: AFFECTS
-
-  - from: ev_electricity_load
-    to: electricity_tariff
-    type: AFFECTS
-
-  # ===========================================================================
-  # MUNICIPAL CORPORATION EDGES
-  # ===========================================================================
-
-  # Revenue → expenditure
-  - from: municipal_corporation
-    to: municipal_revenue
-    type: PRODUCES
-
-  - from: municipal_revenue
-    to: municipal_expenditure
-    type: FUNDS
-
-  - from: property_tax
-    to: municipal_revenue
-    type: FUNDS
-
-  - from: trade_license
-    to: municipal_revenue
-    type: FUNDS
-
-  - from: advertisement_tax
-    to: municipal_revenue
-    type: FUNDS
-
-  - from: user_charges
-    to: municipal_revenue
-    type: FUNDS
-
-  - from: gst_municipal
-    to: municipal_revenue
-    type: AFFECTS
-
-  - from: central_grants
-    to: municipal_revenue
-    type: FUNDS
-
-  - from: state_finance_commission
-    to: municipal_revenue
-    type: FUNDS
-
-  - from: state_budget
-    to: municipal_revenue
-    type: FUNDS
-
-  # Expenditure → services
-  - from: municipal_expenditure
-    to: road_maintenance
-    type: FUNDS
-
-  - from: municipal_expenditure
-    to: sewage_system
-    type: FUNDS
-
-  - from: municipal_expenditure
-    to: public_parks
-    type: FUNDS
-
-  - from: municipal_expenditure
-    to: streetlights
-    type: FUNDS
-
-  - from: municipal_expenditure
-    to: solid_waste_management
-    type: FUNDS
-
-  - from: solid_waste_management
-    to: waste_segregation
-    type: DEPENDS_ON
-
-  - from: solid_waste_management
-    to: landfill
-    type: PRODUCES
-
-  - from: landfill
-    to: landfill_fires
-    type: PRODUCES
-
-  - from: landfill_fires
-    to: air_quality
-    type: DISRUPTS
-
-  - from: solid_waste_management
-    to: waste_to_energy
-    type: PRODUCES
-
-  - from: plastic_ban
-    to: solid_waste_management
-    type: REGULATES
-
-  # Specific corporations → city
-  - from: bbmp
-    to: municipal_revenue
-    type: PRODUCES
-
-  - from: bbmp
-    to: road_maintenance
-    type: MANAGES
-
-  - from: bbmp
-    to: solid_waste_management
-    type: MANAGES
-
-  - from: bmc_mumbai
-    to: municipal_revenue
-    type: PRODUCES
-
-  - from: mcd_delhi
-    to: municipal_revenue
-    type: PRODUCES
-
-  - from: gcc_chennai
-    to: municipal_revenue
-    type: PRODUCES
-
-  - from: ghmc_hyderabad
-    to: municipal_revenue
-    type: PRODUCES
-
-  # Governance structure
-  - from: municipal_corporation
-    to: mayor
-    type: PRODUCES
-
-  - from: municipal_corporation
-    to: municipal_commissioner
-    type: MANAGES
-
-  - from: municipal_corporation
-    to: ward_system
-    type: PRODUCES
-
-  - from: ward_system
-    to: corporator
-    type: PRODUCES
-
-  - from: municipal_elections
-    to: mayor
-    type: PRODUCES
-
-  - from: municipal_elections
-    to: corporator
-    type: PRODUCES
-
-  - from: ward_delimitation
-    to: municipal_elections
-    type: AFFECTS
-
-  - from: reservation_municipal
-    to: municipal_elections
-    type: REGULATES
-
-  # Tender/procurement
-  - from: tender_process
-    to: municipal_expenditure
-    type: REGULATES
-
-  - from: tender_process
-    to: contractor_quality
-    type: AFFECTS
-
-  - from: municipal_inspection
-    to: contractor_quality
-    type: REGULATES
-
-  - from: contractor_quality
-    to: road_maintenance
-    type: AFFECTS
-
-  # ===========================================================================
-  # PROPERTY AND LAND EDGES
-  # ===========================================================================
-
-  - from: urban_planning
-    to: master_plan
-    type: PRODUCES
-
-  - from: master_plan
-    to: land_use_zoning
-    type: PRODUCES
-
-  - from: land_use_zoning
-    to: real_estate_prices
-    type: AFFECTS
-
-  - from: land_use_zoning
-    to: building_codes
-    type: REGULATES
-
-  - from: building_codes
-    to: far_fsi
-    type: REGULATES
-
-  - from: building_codes
-    to: height_restrictions
-    type: REGULATES
-
-  - from: building_codes
-    to: parking_norms_building
-    type: REGULATES
-
-  - from: building_codes
-    to: fire_safety_building
-    type: REGULATES
-
-  - from: far_fsi
-    to: real_estate_prices
-    type: AFFECTS
-
-  # Development authority chains
-  - from: development_authority
-    to: layout_approval
-    type: MANAGES
-
-  - from: bda
-    to: layout_approval
-    type: MANAGES
-
-  - from: dtcp
-    to: layout_approval
-    type: MANAGES
-
-  - from: huda
-    to: layout_approval
-    type: MANAGES
-
-  - from: layout_approval
-    to: completion_certificate
-    type: PRODUCES
-
-  - from: building_codes
-    to: completion_certificate
-    type: REGULATES
-
-  # Encroachment
-  - from: encroachment
-    to: lake_encroachment
-    type: PRODUCES
-
-  - from: encroachment
-    to: rajakaluve_encroachment
-    type: PRODUCES
-
-  - from: lake_encroachment
-    to: lake_pollution
-    type: PRODUCES
-
-  - from: lake_encroachment
-    to: urban_flooding
-    type: PRODUCES
-
-  - from: rajakaluve_encroachment
-    to: urban_flooding
-    type: PRODUCES
-
-  - from: rajakaluve_encroachment
-    to: swd_encroachment
-    type: PRODUCES
-
-  - from: eviction_drive
-    to: encroachment
-    type: REGULATES
-
-  - from: court_infrastructure_orders
-    to: eviction_drive
-    type: PRODUCES
-
-  # Property registration
-  - from: property_registration
-    to: stamp_duty
-    type: PRODUCES
-
-  - from: property_registration
-    to: e_registration
-    type: DEPENDS_ON
-
-  - from: stamp_duty
-    to: municipal_revenue
-    type: FUNDS
-
-  - from: guidance_value
-    to: stamp_duty
-    type: REGULATES
-
-  - from: guidance_value
-    to: real_estate_prices
-    type: AFFECTS
-
-  # RERA
-  - from: rera
-    to: rera_project_registration
-    type: REGULATES
-
-  - from: rera
-    to: builder_compliance
-    type: REGULATES
-
-  - from: builder_compliance
-    to: rera_delay_penalty
-    type: PRODUCES
-
-  - from: rera
-    to: real_estate_prices
-    type: AFFECTS
-
-  # ===========================================================================
-  # UTILITY EDGES
-  # ===========================================================================
-
-  # Electricity chain
-  - from: electricity_distribution
-    to: electricity_tariff
-    type: PRODUCES
-
-  - from: electricity_tariff
-    to: tariff_structure
-    type: PRODUCES
-
-  - from: tariff_structure
-    to: cross_subsidy
-    type: PRODUCES
-
-  - from: electricity_tariff
-    to: electricity_bill
-    type: PRODUCES
-
-  - from: electricity_regulatory_commission
-    to: electricity_tariff
-    type: REGULATES
-
-  - from: coal_prices
-    to: electricity_tariff
-    type: AFFECTS
-
-  - from: bescom
-    to: electricity_bill
-    type: MANAGES
-
-  - from: msedcl
-    to: electricity_bill
-    type: MANAGES
-
-  - from: bses
-    to: electricity_bill
-    type: MANAGES
-
-  - from: tpddl
-    to: electricity_bill
-    type: MANAGES
-
-  - from: tangedco
-    to: electricity_bill
-    type: MANAGES
-
-  - from: smart_meters
-    to: electricity_bill
-    type: AFFECTS
-
-  - from: net_metering
-    to: rooftop_solar
-    type: REGULATES
-
-  - from: rooftop_solar
-    to: electricity_bill
-    type: AFFECTS
-
-  - from: electricity_distribution
-    to: power_outage
-    type: PRODUCES
-
-  - from: power_outage
-    to: ev_charging_stations
-    type: DISRUPTS
-
-  # Gas chain
-  - from: city_gas_distribution
-    to: cng_stations
-    type: PRODUCES
-
-  - from: city_gas_distribution
-    to: png_supply
-    type: PRODUCES
-
-  - from: cng_stations
-    to: cng_price
-    type: PRODUCES
-
-  - from: igl
-    to: cng_stations
-    type: MANAGES
-
-  - from: mgl
-    to: cng_stations
-    type: MANAGES
-
-  - from: gail
-    to: city_gas_distribution
-    type: SUPPLIES
-
-  - from: cng_price
-    to: auto_fare_meter
-    type: AFFECTS
-
-  # Internet/telecom chain
-  - from: bsnl_fiber
-    to: broadband_internet
-    type: SUPPLIES
-
-  - from: private_isp
-    to: broadband_internet
-    type: SUPPLIES
-
-  - from: mobile_towers
-    to: right_of_way
-    type: DEPENDS_ON
-
-  - from: right_of_way
-    to: local_body_telecom_approval
-    type: DEPENDS_ON
-
-  - from: local_body_telecom_approval
-    to: municipal_corporation
-    type: DEPENDS_ON
-
-  # Cable
-  - from: cable_tv
-    to: trai_regulation
-    type: REGULATES
-
-  # ===========================================================================
-  # ENVIRONMENT EDGES
-  # ===========================================================================
-
-  # Air quality chain
-  - from: air_quality
-    to: aqi_monitoring
-    type: DEPENDS_ON
-
-  - from: cpcb
-    to: aqi_monitoring
-    type: MANAGES
-
-  - from: spcb
-    to: aqi_monitoring
-    type: MANAGES
-
-  - from: grap_delhi
-    to: vehicle_restrictions_pollution
-    type: PRODUCES
-
-  - from: grap_delhi
-    to: construction_ban
-    type: PRODUCES
-
-  - from: stubble_burning
-    to: air_quality
-    type: DISRUPTS
-
-  - from: air_quality
-    to: urban_health_impact
-    type: AFFECTS
-
-  - from: landfill_fires
-    to: air_quality
-    type: DISRUPTS
-
-  # Lake/river pollution
-  - from: lake_pollution
-    to: ngt_orders
-    type: PRODUCES
-
-  - from: industrial_effluent
-    to: lake_pollution
-    type: PRODUCES
-
-  - from: sewage_discharge
-    to: lake_pollution
-    type: PRODUCES
-
-  - from: ngt_orders
-    to: spcb
-    type: REGULATES
-
-  - from: ngt_orders
-    to: industrial_effluent
-    type: REGULATES
-
-  # Noise
-  - from: noise_pollution
-    to: construction_noise_hours
-    type: REGULATES
-
-  - from: noise_pollution
-    to: loudspeaker_rules
-    type: REGULATES
-
-  - from: noise_pollution
-    to: airport_noise_zone
-    type: PRODUCES
-
-  # Urban flooding chain
-  - from: urban_flooding
-    to: stormwater_drain
-    type: DEPENDS_ON
-
-  - from: swd_encroachment
-    to: urban_flooding
-    type: PRODUCES
-
-  - from: swd_mapping
-    to: stormwater_drain
-    type: MANAGES
-
-  - from: urban_flooding
-    to: flood_relief
-    type: PRODUCES
-
-  - from: monsoon
-    to: urban_flooding
-    type: PRODUCES
-
-  - from: urban_flooding
-    to: traffic_management
-    type: DISRUPTS
-
-  - from: urban_flooding
-    to: road_maintenance
-    type: DISRUPTS
-
-  # Tree cover
-  - from: tree_management
-    to: tree_cutting_permission
-    type: REGULATES
-
-  - from: tree_census
-    to: tree_management
-    type: MANAGES
-
-  - from: hc_tree_orders
-    to: tree_cutting_permission
-    type: REGULATES
-
-  - from: tree_management
-    to: air_quality
-    type: AFFECTS
-
-  # ===========================================================================
-  # HEALTHCARE EDGES
-  # ===========================================================================
-
-  - from: public_healthcare
-    to: district_hospital
-    type: PRODUCES
-
-  - from: public_healthcare
-    to: taluk_hospital
-    type: PRODUCES
-
-  - from: public_healthcare
-    to: phc
-    type: PRODUCES
-
-  - from: public_healthcare
-    to: chc
-    type: PRODUCES
-
-  - from: hospital_staff_shortage
-    to: public_healthcare
-    type: DISRUPTS
-
-  - from: hospital_equipment
-    to: public_healthcare
-    type: AFFECTS
-
-  - from: state_budget
-    to: public_healthcare
-    type: FUNDS
-
-  # Ambulance
-  - from: ambulance_service
-    to: gvk_emri
-    type: PRODUCES
-
-  - from: ambulance_service
-    to: ambulance_response_time
-    type: PRODUCES
-
-  - from: traffic_management
-    to: ambulance_response_time
-    type: AFFECTS
-
-  # Disease surveillance
-  - from: disease_surveillance
-    to: dengue
-    type: MANAGES
-
-  - from: disease_surveillance
-    to: malaria
-    type: MANAGES
-
-  - from: disease_surveillance
-    to: chikungunya
-    type: MANAGES
-
-  - from: vector_control
-    to: dengue
-    type: REGULATES
-
-  - from: vector_control
-    to: malaria
-    type: REGULATES
-
-  - from: monsoon
-    to: dengue
-    type: AFFECTS
-
-  - from: monsoon
-    to: malaria
-    type: AFFECTS
-
-  - from: water_pollution
-    to: disease_surveillance
-    type: AFFECTS
-
-  # Stray animals
-  - from: stray_animals
-    to: dog_sterilization
-    type: REGULATES
-
-  - from: stray_animals
-    to: dog_bite_cases
-    type: PRODUCES
-
-  - from: municipal_corporation
-    to: stray_animals
-    type: MANAGES
-
-  # Food safety
-  - from: food_safety
-    to: fssai_inspection
-    type: DEPENDS_ON
-
-  - from: fssai_inspection
-    to: restaurant_hygiene
-    type: REGULATES
-
-  - from: food_safety
-    to: food_adulteration
-    type: REGULATES
-
-  # ===========================================================================
-  # EDUCATION EDGES
-  # ===========================================================================
-
-  - from: local_education
-    to: school_admissions
-    type: PRODUCES
-
-  - from: school_admissions
-    to: rte_quota
-    type: DEPENDS_ON
-
-  - from: school_admissions
-    to: ews_quota
-    type: DEPENDS_ON
-
-  - from: school_admissions
-    to: neighborhood_school
-    type: DEPENDS_ON
-
-  - from: local_education
-    to: school_infrastructure
-    type: PRODUCES
-
-  - from: school_infrastructure
-    to: school_building_safety
-    type: DEPENDS_ON
-
-  - from: school_infrastructure
-    to: school_playground
-    type: DEPENDS_ON
-
-  - from: school_infrastructure
-    to: mid_day_meal
-    type: PRODUCES
-
-  - from: state_budget
-    to: local_education
-    type: FUNDS
-
-  - from: municipal_expenditure
-    to: local_education
-    type: FUNDS
-
-  # Higher education
-  - from: state_university
-    to: university_affiliation
-    type: PRODUCES
-
-  - from: college_regulation
-    to: university_affiliation
-    type: REGULATES
-
-  # Coaching
-  - from: coaching_centers
-    to: coaching_regulation
-    type: REGULATES
-
-  - from: coaching_regulation
-    to: coaching_safety
-    type: REGULATES
-
-  - from: fire_safety_building
-    to: coaching_safety
-    type: REGULATES
-
-  # ===========================================================================
-  # LAW AND ORDER EDGES
-  # ===========================================================================
-
-  - from: law_and_order
-    to: city_police
-    type: PRODUCES
-
-  - from: city_police
-    to: police_jurisdiction
-    type: PRODUCES
-
-  - from: city_police
-    to: beat_system
-    type: PRODUCES
-
-  - from: city_police
-    to: community_policing
-    type: PRODUCES
-
-  # Crime
-  - from: urban_crime
-    to: chain_snatching
-    type: PRODUCES
-
-  - from: urban_crime
-    to: burglary
-    type: PRODUCES
-
-  - from: urban_crime
-    to: cybercrime
-    type: PRODUCES
-
-  - from: urban_crime
-    to: drug_trafficking
-    type: PRODUCES
-
-  - from: urban_crime
-    to: area_safety
-    type: AFFECTS
-
-  - from: area_safety
-    to: real_estate_prices
-    type: AFFECTS
-
-  - from: city_police
-    to: urban_crime
-    type: REGULATES
-
-  # Protests
-  - from: protests_bandh
-    to: political_protests
-    type: PRODUCES
-
-  - from: protests_bandh
-    to: labor_strikes
-    type: PRODUCES
-
-  - from: protests_bandh
-    to: farmer_agitations
-    type: PRODUCES
-
-  - from: protests_bandh
-    to: road_closures
-    type: PRODUCES
-
-  - from: protests_bandh
-    to: shop_shutdowns
-    type: PRODUCES
-
-  - from: road_closures
-    to: traffic_management
-    type: DISRUPTS
-
-  - from: shop_shutdowns
-    to: employment_local
-    type: DISRUPTS
-
-  # Courts
-  - from: local_courts
-    to: high_court
-    type: CONNECTS
-
-  - from: high_court
-    to: pil
-    type: PRODUCES
-
-  - from: pil
-    to: court_infrastructure_orders
-    type: PRODUCES
-
-  - from: court_infrastructure_orders
-    to: municipal_corporation
-    type: REGULATES
-
-  - from: court_infrastructure_orders
-    to: eviction_drive
-    type: PRODUCES
-
-  - from: court_infrastructure_orders
-    to: lake_encroachment
-    type: REGULATES
-
-  # Traffic enforcement
-  - from: traffic_enforcement
-    to: speed_cameras
-    type: DEPENDS_ON
-
-  - from: traffic_enforcement
-    to: drunk_driving
-    type: REGULATES
-
-  - from: traffic_enforcement
-    to: helmet_seatbelt
-    type: REGULATES
-
-  - from: traffic_fine_amount
-    to: traffic_enforcement
-    type: REGULATES
-
-  - from: traffic_fine_amount
-    to: municipal_revenue
-    type: FUNDS
-
-  # ===========================================================================
-  # STATE ECONOMIC POLICY EDGES
-  # ===========================================================================
-
-  - from: state_economic_policy
-    to: state_industrial_policy
-    type: PRODUCES
-
-  - from: state_industrial_policy
-    to: it_ites_incentive
-    type: PRODUCES
-
-  - from: state_industrial_policy
-    to: manufacturing_sez
-    type: PRODUCES
-
-  - from: state_industrial_policy
-    to: startup_policy
-    type: PRODUCES
-
-  - from: it_ites_incentive
-    to: employment_local
-    type: AFFECTS
-
-  - from: manufacturing_sez
-    to: employment_local
-    type: AFFECTS
-
-  - from: startup_policy
-    to: employment_local
-    type: AFFECTS
-
-  # Tourism
-  - from: heritage_sites
-    to: state_tourism
-    type: AFFECTS
-
-  - from: state_tourism
-    to: eco_tourism
-    type: PRODUCES
-
-  - from: state_tourism
-    to: hospitality_employment
-    type: PRODUCES
-
-  - from: hospitality_employment
-    to: employment_local
-    type: AFFECTS
-
-  # Agriculture
-  - from: state_agriculture_policy
-    to: state_msp
-    type: PRODUCES
-
-  - from: state_agriculture_policy
-    to: state_irrigation
-    type: PRODUCES
-
-  - from: state_agriculture_policy
-    to: crop_insurance_implementation
-    type: PRODUCES
-
-  - from: state_irrigation
-    to: reservoirs_and_dams
-    type: DEPENDS_ON
-
-  - from: dam_water_release
-    to: state_irrigation
-    type: SUPPLIES
-
-  # Liquor
-  - from: liquor_policy
-    to: excise_revenue
-    type: PRODUCES
-
-  - from: excise_revenue
-    to: state_budget
-    type: FUNDS
-
-  - from: liquor_policy
-    to: bar_license
-    type: REGULATES
-
-  - from: liquor_policy
-    to: dry_days
-    type: PRODUCES
-
-  - from: liquor_policy
-    to: online_liquor
-    type: REGULATES
-
-  # Mining
-  - from: mining_policy
-    to: sand_mining
-    type: REGULATES
-
-  - from: mining_policy
-    to: granite_mining
-    type: REGULATES
-
-  - from: sand_mining
-    to: construction_material_cost
-    type: AFFECTS
-
-  - from: granite_mining
-    to: construction_material_cost
-    type: AFFECTS
-
-  - from: construction_material_cost
-    to: real_estate_prices
-    type: AFFECTS
-
-  - from: construction_material_cost
-    to: construction_industry
-    type: AFFECTS
-
-  # ===========================================================================
-  # CROSS-DOMAIN EDGES (the critical connectors)
-  # ===========================================================================
-
-  # DISCOM tariff ← coal prices (local governance ← energy)
-  - from: coal_prices
-    to: electricity_distribution
-    type: AFFECTS
-
-  # City water ← monsoon AND interstate disputes (local governance ← climate ← geopolitics)
-  - from: monsoon
-    to: city_water_supply
-    type: AFFECTS
-
-  - from: interstate_water_disputes
-    to: city_water_supply
-    type: AFFECTS
-
-  # Municipal revenue → infrastructure quality
-  - from: municipal_revenue
-    to: road_maintenance
-    type: FUNDS
-
-  - from: municipal_revenue
-    to: city_water_supply
-    type: FUNDS
-
-  # Real estate ← metro expansion
-  - from: metro_expansion
-    to: real_estate_prices
-    type: AFFECTS
-
-  # Air quality → health
-  - from: air_quality
-    to: public_healthcare
-    type: AFFECTS
-
-  - from: air_quality
-    to: disease_surveillance
-    type: AFFECTS
-
-  # Industrial policy → employment
-  - from: state_industrial_policy
-    to: employment_local
-    type: AFFECTS
-
-  # GST → municipal revenue
-  - from: gst_municipal
-    to: state_budget
-    type: AFFECTS
-
-  # Fuel → bus/auto fares
-  - from: fuel_price_local
-    to: auto_taxi
-    type: AFFECTS
-
-  - from: fuel_price_local
-    to: city_bus_systems
-    type: AFFECTS
-
-  - from: diesel_price
-    to: water_tanker_market
-    type: AFFECTS
-
-  # State budget → multiple local services
-  - from: state_budget
-    to: city_police
-    type: FUNDS
-
-  - from: state_budget
-    to: city_water_supply
-    type: FUNDS
-
-  - from: state_budget
-    to: city_bus_systems
-    type: FUNDS
-
-  - from: state_budget
-    to: metro_systems
-    type: FUNDS
-
-  # Employment ← construction industry ← real estate
-  - from: construction_industry
-    to: employment_local
-    type: PRODUCES
-
-  - from: real_estate_prices
-    to: construction_industry
-    type: AFFECTS
-
-  # Water pollution → health
-  - from: water_quality
-    to: urban_health_impact
-    type: AFFECTS
-
-  - from: urban_health_impact
-    to: public_healthcare
-    type: AFFECTS
-
-  # Encroachment → flooding → transport
-  - from: encroachment
-    to: urban_flooding
-    type: PRODUCES
-
-  # Property tax ← real estate prices
-  - from: real_estate_prices
-    to: property_tax
-    type: AFFECTS
-
-  # Road maintenance ← monsoon damage
-  - from: monsoon
-    to: road_maintenance
-    type: DISRUPTS
-
-  # Construction ban → construction industry → employment
-  - from: construction_ban
-    to: construction_industry
-    type: DISRUPTS
-
-  - from: construction_ban
-    to: employment_local
-    type: DISRUPTS
-
-  # Farmer agitations → food supply (implicit local impact)
-  - from: farmer_agitations
-    to: road_closures
-    type: PRODUCES
-
-  # Smart meters → electricity bill accuracy
-  - from: smart_meters
-    to: cross_subsidy
-    type: AFFECTS
-
-  # Sand mining → river health
-  - from: sand_mining
-    to: water_pollution
-    type: PRODUCES
-
-  # Power outage → water supply (pumps need electricity)
-  - from: power_outage
-    to: city_water_supply
-    type: DISRUPTS
-
-  # Power outage → telecom
-  - from: power_outage
-    to: mobile_towers
-    type: DISRUPTS
-
-  # Noise pollution → real estate
-  - from: airport_noise_zone
-    to: real_estate_prices
-    type: AFFECTS
-
-  # School quality → real estate
-  - from: local_education
-    to: real_estate_prices
-    type: AFFECTS
-
-  # Crime → real estate (already have area_safety → real_estate_prices)
-
-  # Metro ridership affects bus ridership
-  - from: metro_ridership
-    to: city_bus_systems
-    type: AFFECTS
-
-  # Water crisis → tanker → diesel → emissions
-  - from: water_tanker_market
-    to: diesel_price
-    type: CONSUMES
-
-  # Heritage sites → building codes (conservation zones)
-  - from: heritage_sites
-    to: building_codes
-    type: REGULATES
-
-  # PIL → environmental orders
-  - from: pil
-    to: ngt_orders
-    type: CONNECTS
-
-  # Stray animals → waste management (garbage attracts strays)
-  - from: solid_waste_management
-    to: stray_animals
-    type: AFFECTS
-
-  # Electric buses → CNG demand reduction
-  - from: electric_buses
-    to: cng_stations
-    type: AFFECTS
-
-  # Labor strikes → municipal services
-  - from: labor_strikes
-    to: solid_waste_management
-    type: DISRUPTS
-
-  - from: labor_strikes
-    to: city_bus_systems
-    type: DISRUPTS
-
-  # Mining → environmental damage → NGT
-  - from: sand_mining
-    to: ngt_orders
-    type: PRODUCES
-
-  # Coaching safety → fire safety building
-  - from: coaching_safety
-    to: fire_safety_building
-    type: DEPENDS_ON
-
-  # State irrigation → groundwater recharge
-  - from: state_irrigation
-    to: groundwater
-    type: AFFECTS
-
-  # Dog bite → public healthcare load
-  - from: dog_bite_cases
-    to: public_healthcare
-    type: AFFECTS
-
-  # Food adulteration → public health
-  - from: food_adulteration
-    to: urban_health_impact
-    type: AFFECTS
-
-  # Traffic congestion → air quality
-  - from: traffic_management
-    to: air_quality
-    type: AFFECTS
-
-  # Mid-day meal → school admissions (attracts enrollment)
-  - from: mid_day_meal
-    to: school_admissions
-    type: AFFECTS
-
-  # CNG price → ride aggregator pricing
-  - from: cng_price
-    to: ride_aggregator
-    type: AFFECTS
-
-  # Desalination → electricity load
-  - from: desalination
-    to: electricity_distribution
-    type: CONSUMES
-
-  # Tree cutting → urban flooding (less absorption)
-  - from: tree_cutting_permission
-    to: urban_flooding
-    type: AFFECTS
-
-  # Groundwater depletion → building subsidence
-  - from: groundwater_depletion
-    to: school_building_safety
-    type: AFFECTS
-
-  # RERA → real estate prices (transparency effect)
-  - from: rera
-    to: construction_industry
-    type: REGULATES
-
-  # ===========================================================================
-  # ADDITIONAL CROSS-DOMAIN AND DEEP EDGES
-  # ===========================================================================
-
-  # City-specific corporation → service chains
-  - from: bbmp
-    to: stormwater_drain
-    type: MANAGES
-
-  - from: bbmp
-    to: lake_pollution
-    type: MANAGES
-
-  - from: bmc_mumbai
-    to: bmc_water
-    type: MANAGES
-
-  - from: bmc_mumbai
-    to: road_maintenance
-    type: MANAGES
-
-  - from: mcd_delhi
-    to: solid_waste_management
-    type: MANAGES
-
-  - from: gcc_chennai
-    to: solid_waste_management
-    type: MANAGES
-
-  - from: ghmc_hyderabad
-    to: road_maintenance
-    type: MANAGES
-
-  # DISCOM → specific city connections
-  - from: bescom
-    to: bbmp
-    type: LOCATED_IN
-
-  - from: msedcl
-    to: bmc_mumbai
-    type: LOCATED_IN
-
-  - from: bses
-    to: mcd_delhi
-    type: LOCATED_IN
-
-  - from: tpddl
-    to: mcd_delhi
-    type: LOCATED_IN
-
-  - from: tangedco
-    to: gcc_chennai
-    type: LOCATED_IN
-
-  # Water board → corporation connections
-  - from: bwssb
-    to: bbmp
-    type: LOCATED_IN
-
-  - from: delhi_jal_board
-    to: mcd_delhi
-    type: LOCATED_IN
-
-  - from: cmwssb
-    to: gcc_chennai
-    type: LOCATED_IN
-
-  - from: hmwssb
-    to: ghmc_hyderabad
-    type: LOCATED_IN
-
-  # State budget → agriculture → water
-  - from: state_budget
-    to: state_agriculture_policy
-    type: FUNDS
-
-  - from: state_budget
-    to: state_tourism
-    type: FUNDS
-
-  - from: state_budget
-    to: state_industrial_policy
-    type: FUNDS
-
-  # Power outage cascades
-  - from: power_outage
-    to: sewage_system
-    type: DISRUPTS
-
-  - from: power_outage
-    to: traffic_signals
-    type: DISRUPTS
-
-  - from: power_outage
-    to: stp
-    type: DISRUPTS
-
-  # Monsoon cascades
-  - from: monsoon
-    to: crop_insurance_implementation
-    type: AFFECTS
-
-  - from: monsoon
-    to: stormwater_drain
-    type: AFFECTS
-
-  - from: monsoon
-    to: lake_pollution
-    type: AFFECTS
-
-  # Metro construction → property/land
-  - from: metro_construction
-    to: encroachment
-    type: AFFECTS
-
-  - from: metro_construction
-    to: tree_cutting_permission
-    type: PRODUCES
-
-  - from: metro_construction
-    to: noise_pollution
-    type: PRODUCES
-
-  # Vehicle restrictions → transport mode shift
-  - from: vehicle_restrictions_pollution
-    to: metro_ridership
-    type: AFFECTS
-
-  - from: vehicle_restrictions_pollution
-    to: city_bus_systems
-    type: AFFECTS
-
-  # Flood → healthcare
-  - from: urban_flooding
-    to: disease_surveillance
-    type: AFFECTS
-
-  - from: flood_relief
-    to: state_budget
-    type: AFFECTS
-
-  # Flyover → real estate
-  - from: flyover_construction
-    to: real_estate_prices
-    type: AFFECTS
-
-  - from: road_widening
-    to: encroachment
-    type: PRODUCES
-
-  - from: road_widening
-    to: eviction_drive
-    type: PRODUCES
-
-  # Municipal election → policy changes
-  - from: municipal_elections
-    to: property_tax
-    type: AFFECTS
-
-  - from: municipal_elections
-    to: water_billing
-    type: AFFECTS
-
-  # Revenue shortfall → service degradation
-  - from: municipal_revenue
-    to: sewage_system
-    type: FUNDS
-
-  - from: municipal_revenue
-    to: streetlights
-    type: FUNDS
-
-  - from: municipal_revenue
-    to: stormwater_drain
-    type: FUNDS
-
-  # Building code violations → disasters
-  - from: fire_safety_building
-    to: district_hospital
-    type: AFFECTS
-
-  - from: building_codes
-    to: urban_flooding
-    type: AFFECTS
-
-  # Industrial effluent → groundwater
-  - from: industrial_effluent
-    to: groundwater
-    type: DISRUPTS
-
-  # E-registration → stamp duty compliance
-  - from: e_registration
-    to: stamp_duty
-    type: AFFECTS
-
-  # Gas → cooking → health
-  - from: png_supply
-    to: air_quality
-    type: AFFECTS
-
-  # Ride aggregator → employment
-  - from: ride_aggregator
-    to: employment_local
-    type: PRODUCES
-
-  # School → transport demand
-  - from: local_education
-    to: traffic_management
-    type: AFFECTS
-
-  # Cybercrime → digital infrastructure
-  - from: cybercrime
-    to: broadband_internet
-    type: AFFECTS
-
-  # Court orders → state policy
-  - from: high_court
-    to: encroachment
-    type: REGULATES
-
-  - from: high_court
-    to: air_quality
-    type: REGULATES
-
-  # Protest → police deployment
-  - from: protests_bandh
-    to: city_police
-    type: AFFECTS
-
-  # Sand mining → river → water supply
-  - from: sand_mining
-    to: reservoirs_and_dams
-    type: DISRUPTS
-
-  # Bike sharing → metro last mile
-  - from: bike_sharing
-    to: metro_ridership
-    type: AFFECTS
-
-  # Smart meters → revenue leakage
-  - from: smart_meters
-    to: electricity_distribution
-    type: AFFECTS
-
-  # EV charging → real estate (amenity value)
-  - from: ev_charging_stations
-    to: real_estate_prices
-    type: AFFECTS
-
-  # Heritage conservation → tourism revenue
-  - from: heritage_sites
-    to: state_tourism
-    type: AFFECTS
-
-  # Stubble burning → interstate governance dispute
-  - from: stubble_burning
-    to: grap_delhi
-    type: PRODUCES
-
-  # Excise revenue → state spending priority
-  - from: excise_revenue
-    to: municipal_revenue
-    type: AFFECTS
-
-  # Lake restoration → property values
-  - from: lake_pollution
-    to: real_estate_prices
-    type: AFFECTS
-
-  # Crop insurance → farmer agitation
-  - from: crop_insurance_implementation
-    to: farmer_agitations
-    type: AFFECTS
-
-  # State MSP → farmer economics → protests
-  - from: state_msp
-    to: farmer_agitations
-    type: AFFECTS
-
-  # Water quality → desalination demand
-  - from: water_quality
-    to: desalination
-    type: AFFECTS
-
-  # Waste to energy → air quality
-  - from: waste_to_energy
-    to: air_quality
-    type: AFFECTS
-
-  # Parking fees → traffic patterns
-  - from: street_parking_fees
-    to: traffic_management
-    type: AFFECTS
-
-  # Drug trafficking → area safety
-  - from: drug_trafficking
-    to: area_safety
-    type: AFFECTS
-
-  # FSSAI → food adulteration (enforcement)
-  - from: fssai_inspection
-    to: food_adulteration
-    type: REGULATES
-
-  # IT incentive → real estate demand
-  - from: it_ites_incentive
-    to: real_estate_prices
-    type: AFFECTS
-
-  # Manufacturing SEZ → industrial effluent
-  - from: manufacturing_sez
-    to: industrial_effluent
-    type: PRODUCES
-
-  # Rooftop solar → DISCOM revenue
-  - from: rooftop_solar
-    to: cross_subsidy
-    type: AFFECTS
-
-  # Ambulance response → urban flooding
-  - from: urban_flooding
-    to: ambulance_response_time
-    type: DISRUPTS
-
-  # ===========================================================================
-  # EDGES FOR ADDITIONAL NODES
-  # ===========================================================================
-
-  # Water ATM / fluoride / privatization
-  - from: city_water_supply
-    to: water_atm
-    type: PRODUCES
-
-  - from: groundwater
-    to: fluoride_contamination
-    type: PRODUCES
-
-  - from: fluoride_contamination
-    to: urban_health_impact
-    type: AFFECTS
-
-  - from: water_privatization
-    to: water_billing
-    type: AFFECTS
-
-  - from: water_privatization
-    to: city_water_supply
-    type: MANAGES
-
-  # Pothole / footpath / public facilities
-  - from: road_maintenance
-    to: pothole
-    type: PRODUCES
-
-  - from: monsoon
-    to: pothole
-    type: PRODUCES
-
-  - from: pothole
-    to: traffic_management
-    type: DISRUPTS
-
-  - from: municipal_expenditure
-    to: footpath
-    type: FUNDS
-
-  - from: footpath
-    to: encroachment
-    type: AFFECTS
-
-  - from: municipal_corporation
-    to: public_toilet
-    type: MANAGES
-
-  - from: municipal_corporation
-    to: crematorium
-    type: MANAGES
-
-  - from: municipal_corporation
-    to: birth_death_certificate
-    type: MANAGES
-
-  # Khata / land conversion / unauthorized layouts
-  - from: property_registration
-    to: khata_transfer
-    type: PRODUCES
-
-  - from: khata_transfer
-    to: property_tax
-    type: AFFECTS
-
-  - from: conversion_of_land
-    to: land_use_zoning
-    type: AFFECTS
-
-  - from: conversion_of_land
-    to: real_estate_prices
-    type: AFFECTS
-
-  - from: unauthorized_layout
-    to: encroachment
-    type: PRODUCES
-
-  - from: unauthorized_layout
-    to: eviction_drive
-    type: PRODUCES
-
-  - from: development_authority
-    to: unauthorized_layout
-    type: REGULATES
-
-  # Power backup / transformer
-  - from: power_outage
-    to: inverter_ups
-    type: PRODUCES
-
-  - from: power_outage
-    to: diesel_generator
-    type: PRODUCES
-
-  - from: diesel_generator
-    to: noise_pollution
-    type: PRODUCES
-
-  - from: diesel_generator
-    to: air_quality
-    type: AFFECTS
-
-  - from: transformer
-    to: power_outage
-    type: PRODUCES
-
-  - from: transformer
-    to: electricity_distribution
-    type: DEPENDS_ON
-
-  # Sewage overflow / lake restoration
-  - from: sewage_system
-    to: sewage_overflow
-    type: PRODUCES
-
-  - from: sewage_overflow
-    to: disease_surveillance
-    type: AFFECTS
-
-  - from: sewage_overflow
-    to: road_maintenance
-    type: DISRUPTS
-
-  - from: lake_restoration
-    to: lake_pollution
-    type: REGULATES
-
-  - from: lake_restoration
-    to: real_estate_prices
-    type: AFFECTS
-
-  - from: municipal_expenditure
-    to: lake_restoration
-    type: FUNDS
-
-  - from: ngt_orders
-    to: lake_restoration
-    type: PRODUCES
-
-  # Thermal power / renewable
-  - from: thermal_power_plant
-    to: electricity_distribution
-    type: SUPPLIES
-
-  - from: coal_prices
-    to: thermal_power_plant
-    type: AFFECTS
-
-  - from: thermal_power_plant
-    to: air_quality
-    type: DISRUPTS
-
-  - from: renewable_energy_policy
-    to: rooftop_solar
-    type: REGULATES
-
-  - from: renewable_energy_policy
-    to: electricity_tariff
-    type: AFFECTS
-
-  - from: state_budget
-    to: renewable_energy_policy
-    type: FUNDS
-
-  # CCTV / women safety
-  - from: city_police
-    to: cctv_surveillance
-    type: MANAGES
-
-  - from: cctv_surveillance
-    to: urban_crime
-    type: REGULATES
-
-  - from: cctv_surveillance
-    to: area_safety
-    type: AFFECTS
-
-  - from: city_police
-    to: women_safety
-    type: MANAGES
-
-  - from: women_safety
-    to: area_safety
-    type: AFFECTS
-
-  # Fire service
-  - from: fire_service
-    to: fire_safety_building
-    type: REGULATES
-
-  - from: fire_service
-    to: coaching_safety
-    type: AFFECTS
-
-  - from: municipal_expenditure
-    to: fire_service
-    type: FUNDS
-
-  # Private hospital / telemedicine
-  - from: private_hospital
-    to: public_healthcare
-    type: CONNECTS
-
-  # REMOVED: rera → private_hospital (RERA regulates real estate, not hospitals)
-
-  - from: electricity_tariff
-    to: private_hospital
-    type: AFFECTS
-
-  - from: telemedicine
-    to: public_healthcare
-    type: AFFECTS
-
-  - from: broadband_internet
-    to: telemedicine
-    type: SUPPLIES
-
-  # Anganwadi / skill development
-  - from: state_budget
-    to: anganwadi
-    type: FUNDS
-
-  - from: anganwadi
-    to: mid_day_meal
-    type: CONNECTS
-
-  - from: skill_development
-    to: employment_local
-    type: AFFECTS
-
-  - from: state_budget
-    to: skill_development
-    type: FUNDS
-
-  - from: state_industrial_policy
-    to: skill_development
-    type: PRODUCES
-
-  # Pension / ration / PDS
-  - from: state_budget
-    to: pension_scheme
-    type: FUNDS
-
-  - from: pension_scheme
-    to: municipal_elections
-    type: AFFECTS
-
-  - from: public_distribution_system
-    to: ration_card
-    type: DEPENDS_ON
-
-  - from: state_budget
-    to: public_distribution_system
-    type: FUNDS
-
-  - from: public_distribution_system
-    to: state_msp
-    type: DEPENDS_ON
-
-  # Street vendors
-  - from: street_vendors
-    to: footpath
-    type: AFFECTS
-
-  - from: street_vendors
-    to: trade_license
-    type: DEPENDS_ON
-
-  - from: municipal_corporation
-    to: street_vendors
-    type: REGULATES
-
-  - from: street_vendors
-    to: employment_local
-    type: PRODUCES
-
-  # Slum / affordable housing
-  - from: slum_rehabilitation
-    to: real_estate_prices
-    type: AFFECTS
-
-  - from: slum_rehabilitation
-    to: municipal_expenditure
-    type: DEPENDS_ON
-
-  - from: affordable_housing
-    to: real_estate_prices
-    type: AFFECTS
-
-  - from: state_budget
-    to: affordable_housing
-    type: FUNDS
-
-  - from: far_fsi
-    to: affordable_housing
-    type: AFFECTS
-
-  - from: building_codes
-    to: affordable_housing
-    type: REGULATES
+- from: river_systems
+  to: interstate_water_disputes
+  type: PRODUCES
+- from: cauvery_river
+  to: cauvery_water_dispute
+  type: PRODUCES
+- from: cauvery_water_dispute
+  to: tribunal_decisions
+  type: PRODUCES
+- from: tribunal_decisions
+  to: cauvery_water_allocation
+  type: REGULATES
+- from: cauvery_water_allocation
+  to: krs_dam
+  type: AFFECTS
+- from: cauvery_water_allocation
+  to: mettur_dam
+  type: AFFECTS
+- from: krishna_river
+  to: krishna_water_dispute
+  type: PRODUCES
+- from: krishna_water_dispute
+  to: tribunal_decisions
+  type: PRODUCES
+- from: ganga_river
+  to: water_pollution
+  type: AFFECTS
+- from: yamuna_river
+  to: water_pollution
+  type: AFFECTS
+- from: godavari_river
+  to: interstate_water_disputes
+  type: PRODUCES
+- from: reservoirs_and_dams
+  to: reservoir_water_level
+  type: PRODUCES
+- from: reservoir_water_level
+  to: dam_water_release
+  type: AFFECTS
+- from: dam_water_release
+  to: city_water_supply
+  type: SUPPLIES
+- from: krs_dam
+  to: bwssb
+  type: SUPPLIES
+- from: mettur_dam
+  to: cmwssb
+  type: SUPPLIES
+- from: bhakra_nangal_dam
+  to: delhi_jal_board
+  type: SUPPLIES
+- from: monsoon
+  to: reservoir_water_level
+  type: AFFECTS
+- from: monsoon
+  to: groundwater
+  type: AFFECTS
+- from: groundwater
+  to: borewell
+  type: SUPPLIES
+- from: borewell
+  to: borewell_regulation
+  type: REGULATES
+- from: borewell
+  to: groundwater_depletion
+  type: PRODUCES
+- from: groundwater_depletion
+  to: water_tanker_market
+  type: PRODUCES
+- from: groundwater_depletion
+  to: borewell_regulation
+  type: AFFECTS
+- from: city_water_supply
+  to: water_pipe_network
+  type: DEPENDS_ON
+- from: water_pipe_network
+  to: water_billing
+  type: PRODUCES
+- from: city_water_supply
+  to: water_rationing
+  type: PRODUCES
+- from: water_rationing
+  to: water_tanker_market
+  type: PRODUCES
+- from: bwssb
+  to: water_pipe_network
+  type: MANAGES
+- from: bwssb
+  to: water_billing
+  type: MANAGES
+- from: delhi_jal_board
+  to: water_pipe_network
+  type: MANAGES
+- from: delhi_jal_board
+  to: water_billing
+  type: MANAGES
+- from: bmc_water
+  to: water_pipe_network
+  type: MANAGES
+- from: cmwssb
+  to: water_pipe_network
+  type: MANAGES
+- from: hmwssb
+  to: water_pipe_network
+  type: MANAGES
+- from: wtp
+  to: water_treatment
+  type: PRODUCES
+- from: stp
+  to: water_treatment
+  type: PRODUCES
+- from: city_water_supply
+  to: water_treatment
+  type: DEPENDS_ON
+- from: city_water_supply
+  to: wtp
+  type: DEPENDS_ON
+- from: wtp
+  to: water_quality
+  type: PRODUCES
+- from: sewage_system
+  to: stp
+  type: SUPPLIES
+- from: stp
+  to: water_quality
+  type: AFFECTS
+- from: water_pollution
+  to: water_quality
+  type: DISRUPTS
+- from: industrial_effluent
+  to: water_pollution
+  type: PRODUCES
+- from: sewage_discharge
+  to: water_pollution
+  type: PRODUCES
+- from: water_tanker_market
+  to: tanker_pricing
+  type: PRODUCES
+- from: tanker_pricing
+  to: tanker_regulation
+  type: REGULATES
+- from: water_rationing
+  to: tanker_pricing
+  type: AFFECTS
+- from: desalination
+  to: city_water_supply
+  type: SUPPLIES
+- from: chennai_desalination
+  to: cmwssb
+  type: SUPPLIES
+- from: desalination
+  to: desalination_cost
+  type: PRODUCES
+- from: desalination_cost
+  to: electricity_tariff
+  type: DEPENDS_ON
+- from: rainwater_harvesting
+  to: groundwater
+  type: SUPPLIES
+- from: rwh_regulation
+  to: rainwater_harvesting
+  type: REGULATES
+- from: rwh_building_codes
+  to: building_codes
+  type: AFFECTS
+- from: rwh_regulation
+  to: completion_certificate
+  type: AFFECTS
+- from: metro_systems
+  to: metro_expansion
+  type: PRODUCES
+- from: metro_expansion
+  to: metro_construction
+  type: PRODUCES
+- from: metro_construction
+  to: road_closures
+  type: DISRUPTS
+- from: metro_expansion
+  to: real_estate_prices
+  type: AFFECTS
+- from: metro_systems
+  to: metro_fare
+  type: PRODUCES
+- from: metro_fare
+  to: metro_ridership
+  type: AFFECTS
+- from: bangalore_metro
+  to: bbmp
+  type: CONTAINS
+- from: delhi_metro
+  to: mcd_delhi
+  type: CONTAINS
+- from: mumbai_metro
+  to: bmc_mumbai
+  type: CONTAINS
+- from: chennai_metro
+  to: gcc_chennai
+  type: CONTAINS
+- from: hyderabad_metro
+  to: ghmc_hyderabad
+  type: CONTAINS
+- from: metro_construction
+  to: traffic_management
+  type: DISRUPTS
+- from: kolkata_metro
+  to: metro_systems
+  type: PRODUCES
+- from: kolkata_metro
+  to: metro_fare
+  type: PRODUCES
+- from: city_bus_systems
+  to: bus_fare
+  type: PRODUCES
+- from: bus_fuel_cost
+  to: bus_fare
+  type: AFFECTS
+- from: diesel_price
+  to: bus_fuel_cost
+  type: AFFECTS
+- from: bus_fleet_modernization
+  to: electric_buses
+  type: PRODUCES
+- from: electric_buses
+  to: ev_electricity_load
+  type: PRODUCES
+- from: bmtc
+  to: bbmp
+  type: CONTAINS
+- from: dtc
+  to: mcd_delhi
+  type: CONTAINS
+- from: best_bus
+  to: bmc_mumbai
+  type: CONTAINS
+- from: ksrtc_karnataka
+  to: city_bus_systems
+  type: PRODUCES
+- from: ksrtc_karnataka
+  to: bus_fare
+  type: PRODUCES
+- from: fuel_price_local
+  to: bus_fuel_cost
+  type: AFFECTS
+- from: suburban_rail
+  to: suburban_rail_capacity
+  type: PRODUCES
+- from: suburban_rail_capacity
+  to: suburban_rail_safety
+  type: AFFECTS
+- from: mumbai_local
+  to: bmc_mumbai
+  type: CONTAINS
+- from: chennai_mrts
+  to: gcc_chennai
+  type: CONTAINS
+- from: auto_taxi
+  to: auto_fare_meter
+  type: REGULATES
+- from: ride_aggregator
+  to: aggregator_regulation
+  type: REGULATES
+- from: aggregator_regulation
+  to: surge_pricing
+  type: REGULATES
+- from: fuel_price_local
+  to: auto_fare_meter
+  type: AFFECTS
+- from: cng_price
+  to: auto_fare_meter
+  type: AFFECTS
+- from: traffic_management
+  to: traffic_signals
+  type: DEPENDS_ON
+- from: traffic_management
+  to: junction_redesign
+  type: PRODUCES
+- from: traffic_management
+  to: one_way_systems
+  type: PRODUCES
+- from: traffic_management
+  to: flyover_construction
+  type: PRODUCES
+- from: flyover_construction
+  to: road_closures
+  type: DISRUPTS
+- from: traffic_management
+  to: road_widening
+  type: PRODUCES
+- from: road_widening
+  to: tree_cutting_permission
+  type: PRODUCES
+- from: parking
+  to: multilevel_parking
+  type: PRODUCES
+- from: parking
+  to: street_parking_fees
+  type: PRODUCES
+- from: street_parking_fees
+  to: municipal_revenue
+  type: FUNDS
+- from: towing
+  to: municipal_revenue
+  type: FUNDS
+- from: cycling_infrastructure
+  to: urban_planning
+  type: DEPENDS_ON
+- from: bike_sharing
+  to: cycling_infrastructure
+  type: DEPENDS_ON
+- from: ev_infrastructure
+  to: ev_charging_stations
+  type: PRODUCES
+- from: ev_charging_stations
+  to: ev_electricity_load
+  type: PRODUCES
+- from: ev_electricity_load
+  to: electricity_distribution
+  type: AFFECTS
+- from: ev_electricity_load
+  to: electricity_tariff
+  type: AFFECTS
+- from: municipal_corporation
+  to: municipal_revenue
+  type: PRODUCES
+- from: municipal_revenue
+  to: municipal_expenditure
+  type: FUNDS
+- from: property_tax
+  to: municipal_revenue
+  type: FUNDS
+- from: trade_license
+  to: municipal_revenue
+  type: FUNDS
+- from: advertisement_tax
+  to: municipal_revenue
+  type: FUNDS
+- from: user_charges
+  to: municipal_revenue
+  type: FUNDS
+- from: gst_municipal
+  to: municipal_revenue
+  type: AFFECTS
+- from: central_grants
+  to: municipal_revenue
+  type: FUNDS
+- from: state_finance_commission
+  to: municipal_revenue
+  type: FUNDS
+- from: state_budget
+  to: municipal_revenue
+  type: FUNDS
+- from: municipal_expenditure
+  to: road_maintenance
+  type: FUNDS
+- from: municipal_expenditure
+  to: sewage_system
+  type: FUNDS
+- from: municipal_expenditure
+  to: public_parks
+  type: FUNDS
+- from: municipal_expenditure
+  to: streetlights
+  type: FUNDS
+- from: municipal_expenditure
+  to: solid_waste_management
+  type: FUNDS
+- from: solid_waste_management
+  to: waste_segregation
+  type: DEPENDS_ON
+- from: solid_waste_management
+  to: landfill
+  type: PRODUCES
+- from: landfill
+  to: landfill_fires
+  type: PRODUCES
+- from: landfill_fires
+  to: air_quality
+  type: DISRUPTS
+- from: solid_waste_management
+  to: waste_to_energy
+  type: PRODUCES
+- from: plastic_ban
+  to: solid_waste_management
+  type: REGULATES
+- from: bbmp
+  to: municipal_revenue
+  type: PRODUCES
+- from: bbmp
+  to: road_maintenance
+  type: MANAGES
+- from: bbmp
+  to: solid_waste_management
+  type: MANAGES
+- from: bmc_mumbai
+  to: municipal_revenue
+  type: PRODUCES
+- from: mcd_delhi
+  to: municipal_revenue
+  type: PRODUCES
+- from: gcc_chennai
+  to: municipal_revenue
+  type: PRODUCES
+- from: ghmc_hyderabad
+  to: municipal_revenue
+  type: PRODUCES
+- from: municipal_corporation
+  to: mayor
+  type: PRODUCES
+- from: municipal_corporation
+  to: municipal_commissioner
+  type: MANAGES
+- from: municipal_corporation
+  to: ward_system
+  type: PRODUCES
+- from: ward_system
+  to: corporator
+  type: PRODUCES
+- from: municipal_elections
+  to: mayor
+  type: PRODUCES
+- from: municipal_elections
+  to: corporator
+  type: PRODUCES
+- from: ward_delimitation
+  to: municipal_elections
+  type: AFFECTS
+- from: reservation_municipal
+  to: municipal_elections
+  type: REGULATES
+- from: tender_process
+  to: municipal_expenditure
+  type: REGULATES
+- from: tender_process
+  to: contractor_quality
+  type: AFFECTS
+- from: municipal_inspection
+  to: contractor_quality
+  type: REGULATES
+- from: contractor_quality
+  to: road_maintenance
+  type: AFFECTS
+- from: urban_planning
+  to: master_plan
+  type: PRODUCES
+- from: master_plan
+  to: land_use_zoning
+  type: PRODUCES
+- from: land_use_zoning
+  to: real_estate_prices
+  type: AFFECTS
+- from: land_use_zoning
+  to: building_codes
+  type: REGULATES
+- from: building_codes
+  to: far_fsi
+  type: REGULATES
+- from: building_codes
+  to: height_restrictions
+  type: REGULATES
+- from: building_codes
+  to: parking_norms_building
+  type: REGULATES
+- from: building_codes
+  to: fire_safety_building
+  type: REGULATES
+- from: far_fsi
+  to: real_estate_prices
+  type: AFFECTS
+- from: development_authority
+  to: layout_approval
+  type: MANAGES
+- from: bda
+  to: layout_approval
+  type: MANAGES
+- from: dtcp
+  to: layout_approval
+  type: MANAGES
+- from: huda
+  to: layout_approval
+  type: MANAGES
+- from: layout_approval
+  to: completion_certificate
+  type: PRODUCES
+- from: building_codes
+  to: completion_certificate
+  type: REGULATES
+- from: encroachment
+  to: lake_encroachment
+  type: PRODUCES
+- from: encroachment
+  to: rajakaluve_encroachment
+  type: PRODUCES
+- from: lake_encroachment
+  to: lake_pollution
+  type: PRODUCES
+- from: lake_encroachment
+  to: urban_flooding
+  type: PRODUCES
+- from: rajakaluve_encroachment
+  to: urban_flooding
+  type: PRODUCES
+- from: rajakaluve_encroachment
+  to: swd_encroachment
+  type: PRODUCES
+- from: eviction_drive
+  to: encroachment
+  type: REGULATES
+- from: court_infrastructure_orders
+  to: eviction_drive
+  type: PRODUCES
+- from: property_registration
+  to: stamp_duty
+  type: PRODUCES
+- from: property_registration
+  to: e_registration
+  type: DEPENDS_ON
+- from: stamp_duty
+  to: municipal_revenue
+  type: FUNDS
+- from: guidance_value
+  to: stamp_duty
+  type: REGULATES
+- from: guidance_value
+  to: real_estate_prices
+  type: AFFECTS
+- from: rera
+  to: rera_project_registration
+  type: REGULATES
+- from: rera
+  to: builder_compliance
+  type: REGULATES
+- from: builder_compliance
+  to: rera_delay_penalty
+  type: PRODUCES
+- from: rera
+  to: real_estate_prices
+  type: AFFECTS
+- from: electricity_distribution
+  to: electricity_tariff
+  type: PRODUCES
+- from: electricity_tariff
+  to: tariff_structure
+  type: PRODUCES
+- from: tariff_structure
+  to: cross_subsidy
+  type: PRODUCES
+- from: electricity_tariff
+  to: electricity_bill
+  type: PRODUCES
+- from: electricity_regulatory_commission
+  to: electricity_tariff
+  type: REGULATES
+- from: coal_prices
+  to: electricity_tariff
+  type: AFFECTS
+- from: bescom
+  to: electricity_bill
+  type: MANAGES
+- from: msedcl
+  to: electricity_bill
+  type: MANAGES
+- from: bses
+  to: electricity_bill
+  type: MANAGES
+- from: tpddl
+  to: electricity_bill
+  type: MANAGES
+- from: tangedco
+  to: electricity_bill
+  type: MANAGES
+- from: smart_meters
+  to: electricity_bill
+  type: AFFECTS
+- from: net_metering
+  to: rooftop_solar
+  type: REGULATES
+- from: rooftop_solar
+  to: electricity_bill
+  type: AFFECTS
+- from: electricity_distribution
+  to: power_outage
+  type: PRODUCES
+- from: power_outage
+  to: ev_charging_stations
+  type: DISRUPTS
+- from: city_gas_distribution
+  to: cng_stations
+  type: PRODUCES
+- from: city_gas_distribution
+  to: png_supply
+  type: PRODUCES
+- from: cng_stations
+  to: cng_price
+  type: PRODUCES
+- from: igl
+  to: cng_stations
+  type: MANAGES
+- from: mgl
+  to: cng_stations
+  type: MANAGES
+- from: gail
+  to: city_gas_distribution
+  type: SUPPLIES
+- from: cng_price
+  to: auto_fare_meter
+  type: AFFECTS
+- from: bsnl_fiber
+  to: broadband_internet
+  type: SUPPLIES
+- from: private_isp
+  to: broadband_internet
+  type: SUPPLIES
+- from: mobile_towers
+  to: right_of_way
+  type: DEPENDS_ON
+- from: right_of_way
+  to: local_body_telecom_approval
+  type: DEPENDS_ON
+- from: local_body_telecom_approval
+  to: municipal_corporation
+  type: DEPENDS_ON
+- from: cable_tv
+  to: trai_regulation
+  type: REGULATES
+- from: air_quality
+  to: aqi_monitoring
+  type: DEPENDS_ON
+- from: cpcb
+  to: aqi_monitoring
+  type: MANAGES
+- from: spcb
+  to: aqi_monitoring
+  type: MANAGES
+- from: grap_delhi
+  to: vehicle_restrictions_pollution
+  type: PRODUCES
+- from: grap_delhi
+  to: construction_ban
+  type: PRODUCES
+- from: stubble_burning
+  to: air_quality
+  type: DISRUPTS
+- from: air_quality
+  to: urban_health_impact
+  type: AFFECTS
+- from: landfill_fires
+  to: air_quality
+  type: DISRUPTS
+- from: lake_pollution
+  to: ngt_orders
+  type: PRODUCES
+- from: industrial_effluent
+  to: lake_pollution
+  type: PRODUCES
+- from: sewage_discharge
+  to: lake_pollution
+  type: PRODUCES
+- from: ngt_orders
+  to: spcb
+  type: REGULATES
+- from: ngt_orders
+  to: industrial_effluent
+  type: REGULATES
+- from: noise_pollution
+  to: construction_noise_hours
+  type: REGULATES
+- from: noise_pollution
+  to: loudspeaker_rules
+  type: REGULATES
+- from: noise_pollution
+  to: airport_noise_zone
+  type: PRODUCES
+- from: urban_flooding
+  to: stormwater_drain
+  type: DEPENDS_ON
+- from: swd_encroachment
+  to: urban_flooding
+  type: PRODUCES
+- from: swd_mapping
+  to: stormwater_drain
+  type: MANAGES
+- from: urban_flooding
+  to: flood_relief
+  type: PRODUCES
+- from: monsoon
+  to: urban_flooding
+  type: PRODUCES
+- from: urban_flooding
+  to: traffic_management
+  type: DISRUPTS
+- from: urban_flooding
+  to: road_maintenance
+  type: DISRUPTS
+- from: tree_management
+  to: tree_cutting_permission
+  type: REGULATES
+- from: tree_census
+  to: tree_management
+  type: MANAGES
+- from: hc_tree_orders
+  to: tree_cutting_permission
+  type: REGULATES
+- from: tree_management
+  to: air_quality
+  type: AFFECTS
+- from: public_healthcare
+  to: district_hospital
+  type: PRODUCES
+- from: public_healthcare
+  to: taluk_hospital
+  type: PRODUCES
+- from: public_healthcare
+  to: phc
+  type: PRODUCES
+- from: public_healthcare
+  to: chc
+  type: PRODUCES
+- from: hospital_staff_shortage
+  to: public_healthcare
+  type: DISRUPTS
+- from: hospital_equipment
+  to: public_healthcare
+  type: AFFECTS
+- from: state_budget
+  to: public_healthcare
+  type: FUNDS
+- from: ambulance_service
+  to: gvk_emri
+  type: PRODUCES
+- from: ambulance_service
+  to: ambulance_response_time
+  type: PRODUCES
+- from: traffic_management
+  to: ambulance_response_time
+  type: AFFECTS
+- from: disease_surveillance
+  to: dengue
+  type: MANAGES
+- from: disease_surveillance
+  to: malaria
+  type: MANAGES
+- from: disease_surveillance
+  to: chikungunya
+  type: MANAGES
+- from: vector_control
+  to: dengue
+  type: REGULATES
+- from: vector_control
+  to: malaria
+  type: REGULATES
+- from: monsoon
+  to: dengue
+  type: AFFECTS
+- from: monsoon
+  to: malaria
+  type: AFFECTS
+- from: water_pollution
+  to: disease_surveillance
+  type: AFFECTS
+- from: stray_animals
+  to: dog_sterilization
+  type: REGULATES
+- from: stray_animals
+  to: dog_bite_cases
+  type: PRODUCES
+- from: municipal_corporation
+  to: stray_animals
+  type: MANAGES
+- from: food_safety
+  to: fssai_inspection
+  type: DEPENDS_ON
+- from: fssai_inspection
+  to: restaurant_hygiene
+  type: REGULATES
+- from: food_safety
+  to: food_adulteration
+  type: REGULATES
+- from: local_education
+  to: school_admissions
+  type: PRODUCES
+- from: school_admissions
+  to: rte_quota
+  type: DEPENDS_ON
+- from: school_admissions
+  to: ews_quota
+  type: DEPENDS_ON
+- from: school_admissions
+  to: neighborhood_school
+  type: DEPENDS_ON
+- from: local_education
+  to: school_infrastructure
+  type: PRODUCES
+- from: school_infrastructure
+  to: school_building_safety
+  type: DEPENDS_ON
+- from: school_infrastructure
+  to: school_playground
+  type: DEPENDS_ON
+- from: school_infrastructure
+  to: mid_day_meal
+  type: PRODUCES
+- from: state_budget
+  to: local_education
+  type: FUNDS
+- from: municipal_expenditure
+  to: local_education
+  type: FUNDS
+- from: state_university
+  to: university_affiliation
+  type: PRODUCES
+- from: college_regulation
+  to: university_affiliation
+  type: REGULATES
+- from: coaching_centers
+  to: coaching_regulation
+  type: REGULATES
+- from: coaching_regulation
+  to: coaching_safety
+  type: REGULATES
+- from: fire_safety_building
+  to: coaching_safety
+  type: REGULATES
+- from: law_and_order
+  to: city_police
+  type: PRODUCES
+- from: city_police
+  to: police_jurisdiction
+  type: PRODUCES
+- from: city_police
+  to: beat_system
+  type: PRODUCES
+- from: city_police
+  to: community_policing
+  type: PRODUCES
+- from: urban_crime
+  to: chain_snatching
+  type: PRODUCES
+- from: urban_crime
+  to: burglary
+  type: PRODUCES
+- from: urban_crime
+  to: cybercrime
+  type: PRODUCES
+- from: urban_crime
+  to: drug_trafficking
+  type: PRODUCES
+- from: urban_crime
+  to: area_safety
+  type: AFFECTS
+- from: area_safety
+  to: real_estate_prices
+  type: AFFECTS
+- from: city_police
+  to: urban_crime
+  type: REGULATES
+- from: protests_bandh
+  to: political_protests
+  type: PRODUCES
+- from: protests_bandh
+  to: labor_strikes
+  type: PRODUCES
+- from: protests_bandh
+  to: farmer_agitations
+  type: PRODUCES
+- from: protests_bandh
+  to: road_closures
+  type: PRODUCES
+- from: protests_bandh
+  to: shop_shutdowns
+  type: PRODUCES
+- from: road_closures
+  to: traffic_management
+  type: DISRUPTS
+- from: shop_shutdowns
+  to: employment_local
+  type: DISRUPTS
+- from: local_courts
+  to: high_court
+  type: AFFECTS
+- from: high_court
+  to: pil
+  type: PRODUCES
+- from: pil
+  to: court_infrastructure_orders
+  type: PRODUCES
+- from: court_infrastructure_orders
+  to: municipal_corporation
+  type: REGULATES
+- from: court_infrastructure_orders
+  to: eviction_drive
+  type: PRODUCES
+- from: court_infrastructure_orders
+  to: lake_encroachment
+  type: REGULATES
+- from: traffic_enforcement
+  to: speed_cameras
+  type: DEPENDS_ON
+- from: traffic_enforcement
+  to: drunk_driving
+  type: REGULATES
+- from: traffic_enforcement
+  to: helmet_seatbelt
+  type: REGULATES
+- from: traffic_fine_amount
+  to: traffic_enforcement
+  type: REGULATES
+- from: traffic_fine_amount
+  to: municipal_revenue
+  type: FUNDS
+- from: state_economic_policy
+  to: state_industrial_policy
+  type: PRODUCES
+- from: state_industrial_policy
+  to: it_ites_incentive
+  type: PRODUCES
+- from: state_industrial_policy
+  to: manufacturing_sez
+  type: PRODUCES
+- from: state_industrial_policy
+  to: startup_policy
+  type: PRODUCES
+- from: it_ites_incentive
+  to: employment_local
+  type: AFFECTS
+- from: manufacturing_sez
+  to: employment_local
+  type: AFFECTS
+- from: startup_policy
+  to: employment_local
+  type: AFFECTS
+- from: heritage_sites
+  to: state_tourism
+  type: AFFECTS
+- from: state_tourism
+  to: eco_tourism
+  type: PRODUCES
+- from: state_tourism
+  to: hospitality_employment
+  type: PRODUCES
+- from: hospitality_employment
+  to: employment_local
+  type: AFFECTS
+- from: state_agriculture_policy
+  to: state_msp
+  type: PRODUCES
+- from: state_agriculture_policy
+  to: state_irrigation
+  type: PRODUCES
+- from: state_agriculture_policy
+  to: crop_insurance_implementation
+  type: PRODUCES
+- from: state_irrigation
+  to: reservoirs_and_dams
+  type: DEPENDS_ON
+- from: dam_water_release
+  to: state_irrigation
+  type: SUPPLIES
+- from: liquor_policy
+  to: excise_revenue
+  type: PRODUCES
+- from: excise_revenue
+  to: state_budget
+  type: FUNDS
+- from: liquor_policy
+  to: bar_license
+  type: REGULATES
+- from: liquor_policy
+  to: dry_days
+  type: PRODUCES
+- from: liquor_policy
+  to: online_liquor
+  type: REGULATES
+- from: mining_policy
+  to: sand_mining
+  type: REGULATES
+- from: mining_policy
+  to: granite_mining
+  type: REGULATES
+- from: sand_mining
+  to: construction_material_cost
+  type: AFFECTS
+- from: granite_mining
+  to: construction_material_cost
+  type: AFFECTS
+- from: construction_material_cost
+  to: real_estate_prices
+  type: AFFECTS
+- from: construction_material_cost
+  to: construction_industry
+  type: AFFECTS
+- from: coal_prices
+  to: electricity_distribution
+  type: AFFECTS
+- from: monsoon
+  to: city_water_supply
+  type: AFFECTS
+- from: interstate_water_disputes
+  to: city_water_supply
+  type: AFFECTS
+- from: municipal_revenue
+  to: road_maintenance
+  type: FUNDS
+- from: municipal_revenue
+  to: city_water_supply
+  type: FUNDS
+- from: metro_expansion
+  to: real_estate_prices
+  type: AFFECTS
+- from: air_quality
+  to: public_healthcare
+  type: AFFECTS
+- from: air_quality
+  to: disease_surveillance
+  type: AFFECTS
+- from: state_industrial_policy
+  to: employment_local
+  type: AFFECTS
+- from: gst_municipal
+  to: state_budget
+  type: AFFECTS
+- from: fuel_price_local
+  to: auto_taxi
+  type: AFFECTS
+- from: fuel_price_local
+  to: city_bus_systems
+  type: AFFECTS
+- from: diesel_price
+  to: water_tanker_market
+  type: AFFECTS
+- from: state_budget
+  to: city_police
+  type: FUNDS
+- from: state_budget
+  to: city_water_supply
+  type: FUNDS
+- from: state_budget
+  to: city_bus_systems
+  type: FUNDS
+- from: state_budget
+  to: metro_systems
+  type: FUNDS
+- from: construction_industry
+  to: employment_local
+  type: PRODUCES
+- from: real_estate_prices
+  to: construction_industry
+  type: AFFECTS
+- from: water_quality
+  to: urban_health_impact
+  type: AFFECTS
+- from: urban_health_impact
+  to: public_healthcare
+  type: AFFECTS
+- from: encroachment
+  to: urban_flooding
+  type: PRODUCES
+- from: real_estate_prices
+  to: property_tax
+  type: AFFECTS
+- from: monsoon
+  to: road_maintenance
+  type: DISRUPTS
+- from: construction_ban
+  to: construction_industry
+  type: DISRUPTS
+- from: construction_ban
+  to: employment_local
+  type: DISRUPTS
+- from: farmer_agitations
+  to: road_closures
+  type: PRODUCES
+- from: smart_meters
+  to: cross_subsidy
+  type: AFFECTS
+- from: sand_mining
+  to: water_pollution
+  type: PRODUCES
+- from: power_outage
+  to: city_water_supply
+  type: DISRUPTS
+- from: power_outage
+  to: mobile_towers
+  type: DISRUPTS
+- from: airport_noise_zone
+  to: real_estate_prices
+  type: AFFECTS
+- from: local_education
+  to: real_estate_prices
+  type: AFFECTS
+- from: metro_ridership
+  to: city_bus_systems
+  type: AFFECTS
+- from: water_tanker_market
+  to: diesel_price
+  type: DEPENDS_ON
+- from: heritage_sites
+  to: building_codes
+  type: REGULATES
+- from: pil
+  to: ngt_orders
+  type: AFFECTS
+- from: solid_waste_management
+  to: stray_animals
+  type: AFFECTS
+- from: electric_buses
+  to: cng_stations
+  type: AFFECTS
+- from: labor_strikes
+  to: solid_waste_management
+  type: DISRUPTS
+- from: labor_strikes
+  to: city_bus_systems
+  type: DISRUPTS
+- from: sand_mining
+  to: ngt_orders
+  type: PRODUCES
+- from: coaching_safety
+  to: fire_safety_building
+  type: DEPENDS_ON
+- from: state_irrigation
+  to: groundwater
+  type: AFFECTS
+- from: dog_bite_cases
+  to: public_healthcare
+  type: AFFECTS
+- from: food_adulteration
+  to: urban_health_impact
+  type: AFFECTS
+- from: traffic_management
+  to: air_quality
+  type: AFFECTS
+- from: mid_day_meal
+  to: school_admissions
+  type: AFFECTS
+- from: cng_price
+  to: ride_aggregator
+  type: AFFECTS
+- from: desalination
+  to: electricity_distribution
+  type: DEPENDS_ON
+- from: tree_cutting_permission
+  to: urban_flooding
+  type: AFFECTS
+- from: groundwater_depletion
+  to: school_building_safety
+  type: AFFECTS
+- from: rera
+  to: construction_industry
+  type: REGULATES
+- from: bbmp
+  to: stormwater_drain
+  type: MANAGES
+- from: bbmp
+  to: lake_pollution
+  type: MANAGES
+- from: bmc_mumbai
+  to: bmc_water
+  type: MANAGES
+- from: bmc_mumbai
+  to: road_maintenance
+  type: MANAGES
+- from: mcd_delhi
+  to: solid_waste_management
+  type: MANAGES
+- from: gcc_chennai
+  to: solid_waste_management
+  type: MANAGES
+- from: ghmc_hyderabad
+  to: road_maintenance
+  type: MANAGES
+- from: bescom
+  to: bbmp
+  type: CONTAINS
+- from: msedcl
+  to: bmc_mumbai
+  type: CONTAINS
+- from: bses
+  to: mcd_delhi
+  type: CONTAINS
+- from: tpddl
+  to: mcd_delhi
+  type: CONTAINS
+- from: tangedco
+  to: gcc_chennai
+  type: CONTAINS
+- from: bwssb
+  to: bbmp
+  type: CONTAINS
+- from: delhi_jal_board
+  to: mcd_delhi
+  type: CONTAINS
+- from: cmwssb
+  to: gcc_chennai
+  type: CONTAINS
+- from: hmwssb
+  to: ghmc_hyderabad
+  type: CONTAINS
+- from: state_budget
+  to: state_agriculture_policy
+  type: FUNDS
+- from: state_budget
+  to: state_tourism
+  type: FUNDS
+- from: state_budget
+  to: state_industrial_policy
+  type: FUNDS
+- from: power_outage
+  to: sewage_system
+  type: DISRUPTS
+- from: power_outage
+  to: traffic_signals
+  type: DISRUPTS
+- from: power_outage
+  to: stp
+  type: DISRUPTS
+- from: monsoon
+  to: crop_insurance_implementation
+  type: AFFECTS
+- from: monsoon
+  to: stormwater_drain
+  type: AFFECTS
+- from: monsoon
+  to: lake_pollution
+  type: AFFECTS
+- from: metro_construction
+  to: encroachment
+  type: AFFECTS
+- from: metro_construction
+  to: tree_cutting_permission
+  type: PRODUCES
+- from: metro_construction
+  to: noise_pollution
+  type: PRODUCES
+- from: vehicle_restrictions_pollution
+  to: metro_ridership
+  type: AFFECTS
+- from: vehicle_restrictions_pollution
+  to: city_bus_systems
+  type: AFFECTS
+- from: urban_flooding
+  to: disease_surveillance
+  type: AFFECTS
+- from: flood_relief
+  to: state_budget
+  type: AFFECTS
+- from: flyover_construction
+  to: real_estate_prices
+  type: AFFECTS
+- from: road_widening
+  to: encroachment
+  type: PRODUCES
+- from: road_widening
+  to: eviction_drive
+  type: PRODUCES
+- from: municipal_elections
+  to: property_tax
+  type: AFFECTS
+- from: municipal_elections
+  to: water_billing
+  type: AFFECTS
+- from: municipal_revenue
+  to: sewage_system
+  type: FUNDS
+- from: municipal_revenue
+  to: streetlights
+  type: FUNDS
+- from: municipal_revenue
+  to: stormwater_drain
+  type: FUNDS
+- from: fire_safety_building
+  to: district_hospital
+  type: AFFECTS
+- from: building_codes
+  to: urban_flooding
+  type: AFFECTS
+- from: industrial_effluent
+  to: groundwater
+  type: DISRUPTS
+- from: e_registration
+  to: stamp_duty
+  type: AFFECTS
+- from: png_supply
+  to: air_quality
+  type: AFFECTS
+- from: ride_aggregator
+  to: employment_local
+  type: PRODUCES
+- from: local_education
+  to: traffic_management
+  type: AFFECTS
+- from: cybercrime
+  to: broadband_internet
+  type: AFFECTS
+- from: high_court
+  to: encroachment
+  type: REGULATES
+- from: high_court
+  to: air_quality
+  type: REGULATES
+- from: protests_bandh
+  to: city_police
+  type: AFFECTS
+- from: sand_mining
+  to: reservoirs_and_dams
+  type: DISRUPTS
+- from: bike_sharing
+  to: metro_ridership
+  type: AFFECTS
+- from: smart_meters
+  to: electricity_distribution
+  type: AFFECTS
+- from: ev_charging_stations
+  to: real_estate_prices
+  type: AFFECTS
+- from: heritage_sites
+  to: state_tourism
+  type: AFFECTS
+- from: stubble_burning
+  to: grap_delhi
+  type: PRODUCES
+- from: excise_revenue
+  to: municipal_revenue
+  type: AFFECTS
+- from: lake_pollution
+  to: real_estate_prices
+  type: AFFECTS
+- from: crop_insurance_implementation
+  to: farmer_agitations
+  type: AFFECTS
+- from: state_msp
+  to: farmer_agitations
+  type: AFFECTS
+- from: water_quality
+  to: desalination
+  type: AFFECTS
+- from: waste_to_energy
+  to: air_quality
+  type: AFFECTS
+- from: street_parking_fees
+  to: traffic_management
+  type: AFFECTS
+- from: drug_trafficking
+  to: area_safety
+  type: AFFECTS
+- from: fssai_inspection
+  to: food_adulteration
+  type: REGULATES
+- from: it_ites_incentive
+  to: real_estate_prices
+  type: AFFECTS
+- from: manufacturing_sez
+  to: industrial_effluent
+  type: PRODUCES
+- from: rooftop_solar
+  to: cross_subsidy
+  type: AFFECTS
+- from: urban_flooding
+  to: ambulance_response_time
+  type: DISRUPTS
+- from: city_water_supply
+  to: water_atm
+  type: PRODUCES
+- from: groundwater
+  to: fluoride_contamination
+  type: PRODUCES
+- from: fluoride_contamination
+  to: urban_health_impact
+  type: AFFECTS
+- from: water_privatization
+  to: water_billing
+  type: AFFECTS
+- from: water_privatization
+  to: city_water_supply
+  type: MANAGES
+- from: road_maintenance
+  to: pothole
+  type: PRODUCES
+- from: monsoon
+  to: pothole
+  type: PRODUCES
+- from: pothole
+  to: traffic_management
+  type: DISRUPTS
+- from: municipal_expenditure
+  to: footpath
+  type: FUNDS
+- from: footpath
+  to: encroachment
+  type: AFFECTS
+- from: municipal_corporation
+  to: public_toilet
+  type: MANAGES
+- from: municipal_corporation
+  to: crematorium
+  type: MANAGES
+- from: municipal_corporation
+  to: birth_death_certificate
+  type: MANAGES
+- from: property_registration
+  to: khata_transfer
+  type: PRODUCES
+- from: khata_transfer
+  to: property_tax
+  type: AFFECTS
+- from: conversion_of_land
+  to: land_use_zoning
+  type: AFFECTS
+- from: conversion_of_land
+  to: real_estate_prices
+  type: AFFECTS
+- from: unauthorized_layout
+  to: encroachment
+  type: PRODUCES
+- from: unauthorized_layout
+  to: eviction_drive
+  type: PRODUCES
+- from: development_authority
+  to: unauthorized_layout
+  type: REGULATES
+- from: power_outage
+  to: inverter_ups
+  type: PRODUCES
+- from: power_outage
+  to: diesel_generator
+  type: PRODUCES
+- from: diesel_generator
+  to: noise_pollution
+  type: PRODUCES
+- from: diesel_generator
+  to: air_quality
+  type: AFFECTS
+- from: transformer
+  to: power_outage
+  type: PRODUCES
+- from: transformer
+  to: electricity_distribution
+  type: DEPENDS_ON
+- from: sewage_system
+  to: sewage_overflow
+  type: PRODUCES
+- from: sewage_overflow
+  to: disease_surveillance
+  type: AFFECTS
+- from: sewage_overflow
+  to: road_maintenance
+  type: DISRUPTS
+- from: lake_restoration
+  to: lake_pollution
+  type: REGULATES
+- from: lake_restoration
+  to: real_estate_prices
+  type: AFFECTS
+- from: municipal_expenditure
+  to: lake_restoration
+  type: FUNDS
+- from: ngt_orders
+  to: lake_restoration
+  type: PRODUCES
+- from: thermal_power_plant
+  to: electricity_distribution
+  type: SUPPLIES
+- from: coal_prices
+  to: thermal_power_plant
+  type: AFFECTS
+- from: thermal_power_plant
+  to: air_quality
+  type: DISRUPTS
+- from: renewable_energy_policy
+  to: rooftop_solar
+  type: REGULATES
+- from: renewable_energy_policy
+  to: electricity_tariff
+  type: AFFECTS
+- from: state_budget
+  to: renewable_energy_policy
+  type: FUNDS
+- from: city_police
+  to: cctv_surveillance
+  type: MANAGES
+- from: cctv_surveillance
+  to: urban_crime
+  type: REGULATES
+- from: cctv_surveillance
+  to: area_safety
+  type: AFFECTS
+- from: city_police
+  to: women_safety
+  type: MANAGES
+- from: women_safety
+  to: area_safety
+  type: AFFECTS
+- from: fire_service
+  to: fire_safety_building
+  type: REGULATES
+- from: fire_service
+  to: coaching_safety
+  type: AFFECTS
+- from: municipal_expenditure
+  to: fire_service
+  type: FUNDS
+- from: private_hospital
+  to: public_healthcare
+  type: AFFECTS
+- from: electricity_tariff
+  to: private_hospital
+  type: AFFECTS
+- from: telemedicine
+  to: public_healthcare
+  type: AFFECTS
+- from: broadband_internet
+  to: telemedicine
+  type: SUPPLIES
+- from: state_budget
+  to: anganwadi
+  type: FUNDS
+- from: anganwadi
+  to: mid_day_meal
+  type: AFFECTS
+- from: skill_development
+  to: employment_local
+  type: AFFECTS
+- from: state_budget
+  to: skill_development
+  type: FUNDS
+- from: state_industrial_policy
+  to: skill_development
+  type: PRODUCES
+- from: state_budget
+  to: pension_scheme
+  type: FUNDS
+- from: pension_scheme
+  to: municipal_elections
+  type: AFFECTS
+- from: public_distribution_system
+  to: ration_card
+  type: DEPENDS_ON
+- from: state_budget
+  to: public_distribution_system
+  type: FUNDS
+- from: public_distribution_system
+  to: state_msp
+  type: DEPENDS_ON
+- from: street_vendors
+  to: footpath
+  type: AFFECTS
+- from: street_vendors
+  to: trade_license
+  type: DEPENDS_ON
+- from: municipal_corporation
+  to: street_vendors
+  type: REGULATES
+- from: street_vendors
+  to: employment_local
+  type: PRODUCES
+- from: slum_rehabilitation
+  to: real_estate_prices
+  type: AFFECTS
+- from: slum_rehabilitation
+  to: municipal_expenditure
+  type: DEPENDS_ON
+- from: affordable_housing
+  to: real_estate_prices
+  type: AFFECTS
+- from: state_budget
+  to: affordable_housing
+  type: FUNDS
+- from: far_fsi
+  to: affordable_housing
+  type: AFFECTS
+- from: building_codes
+  to: affordable_housing
+  type: REGULATES

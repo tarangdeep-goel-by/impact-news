@@ -1,2816 +1,2783 @@
-# Employment Domain Graph
-# Part of Impact News — Personal Impact Graph System
-# Structure: GRAPH (not tree) — nodes + typed edges with cross-domain connections
-# Target: 200+ nodes, 300+ edges
-# Created: 2026-03-09
-
-# =============================================================================
-# EDGE TYPES:
-#   PRODUCES, CONSUMES, AFFECTS, REGULATES, DISRUPTS, SUPPLIES, COMPETES_WITH,
-#   LOCATED_IN, DEPENDS_ON, EMPLOYS, FUNDS, BENCHMARKED_TO
-# =============================================================================
-
 nodes:
-
-  # ===========================================================================
-  # 1. IT SERVICES SECTOR
-  # ===========================================================================
-  - id: it_services_sector
-    aliases: ["IT services", "Indian IT", "IT outsourcing", "IT industry India"]
-    category: employment
-
-  - id: tcs
-    aliases: ["Tata Consultancy Services", "TCS hiring", "TCS results", "TCS layoffs", "TCS quarterly"]
-    category: employment
-
-  - id: infosys
-    aliases: ["Infosys hiring", "Infosys results", "Infosys layoffs", "Infosys quarterly", "Infy"]
-    category: employment
-
-  - id: wipro
-    aliases: ["Wipro hiring", "Wipro results", "Wipro layoffs", "Wipro quarterly"]
-    category: employment
-
-  - id: hcl_tech
-    aliases: ["HCL Technologies", "HCL Tech hiring", "HCL results", "HCL quarterly"]
-    category: employment
-
-  - id: tech_mahindra
-    aliases: ["Tech Mahindra", "TechM hiring", "Tech Mahindra results"]
-    category: employment
-
-  - id: ltimindtree
-    aliases: ["LTIMindtree", "LTI Mindtree", "LTIMindtree results"]
-    category: employment
-
-  - id: cognizant
-    aliases: ["Cognizant Technology", "Cognizant hiring", "CTSH"]
-    category: employment
-
-  - id: it_services_us_client
-    aliases: ["US IT spending", "BFSI client spending", "US enterprise IT budget", "US technology spending"]
-    category: employment
-
-  - id: it_services_eu_client
-    aliases: ["European IT spending", "EU enterprise IT budget", "UK IT spending"]
-    category: employment
-
-  - id: it_outsourcing_deals
-    aliases: ["IT outsourcing contracts", "large deal wins", "mega deals", "total contract value TCV"]
-    category: employment
-
-  - id: h1b_visa
-    aliases: ["H-1B visa", "H1B lottery", "H-1B cap", "H-1B policy", "H1B reform", "US work visa"]
-    category: employment
-
-  - id: l1_visa
-    aliases: ["L-1 visa", "L1 intracompany transfer", "L-1 blanket"]
-    category: employment
-
-  - id: us_immigration_policy
-    aliases: ["US immigration reform", "immigration executive order", "USCIS policy", "visa restrictions"]
-    category: geopolitics
-
-  - id: it_bench_strength
-    aliases: ["IT bench", "bench utilization", "IT utilization rate", "billable employees"]
-    category: employment
-
-  - id: it_attrition
-    aliases: ["IT attrition rate", "IT employee turnover", "tech attrition", "IT resignation rate"]
-    category: employment
-
-  - id: it_fresher_hiring
-    aliases: ["IT campus hiring", "fresher recruitment IT", "IT campus placement", "mass hiring IT"]
-    category: employment
-
-  - id: us_recession_risk
-    aliases: ["US recession", "US economic slowdown", "US GDP contraction", "US downturn"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 2. SAAS / PRODUCT TECH
-  # ===========================================================================
-  - id: saas_sector
-    aliases: ["SaaS companies India", "B2B SaaS", "SaaS startups", "software as a service"]
-    category: employment
-
-  - id: b2c_tech
-    aliases: ["B2C startups", "consumer tech India", "consumer internet"]
-    category: employment
-
-  - id: consulting_firms
-    aliases: ["consulting firms India", "McKinsey India", "BCG India", "Deloitte India", "Accenture India"]
-    category: employment
-
-  - id: enterprise_software
-    aliases: ["enterprise SaaS", "enterprise software India", "B2B enterprise"]
-    category: employment
-
-  - id: zoho
-    aliases: ["Zoho Corporation", "Zoho hiring", "Zoho workplace"]
-    category: employment
-
-  - id: freshworks
-    aliases: ["Freshworks Inc", "Freshworks hiring", "FRSH"]
-    category: employment
-
-  - id: postman
-    aliases: ["Postman API", "Postman company"]
-    category: employment
-
-  - id: razorpay
-    aliases: ["Razorpay", "Razorpay hiring", "Razorpay funding"]
-    category: employment
-
-  - id: vc_funding_india
-    aliases: ["VC funding India", "startup funding India", "venture capital India", "Indian startup investment"]
-    category: financial
-
-  - id: series_a_market
-    aliases: ["Series A funding", "Series A round", "early stage funding"]
-    category: financial
-
-  - id: series_b_c_market
-    aliases: ["Series B funding", "Series C funding", "growth stage funding", "late stage VC"]
-    category: financial
-
-  - id: startup_valuation
-    aliases: ["startup valuations", "valuation correction", "down round", "unicorn valuation"]
-    category: financial
-
-  - id: funding_winter
-    aliases: ["funding winter", "startup funding crunch", "VC pullback", "dry powder"]
-    category: financial
-
-  - id: startup_layoffs
-    aliases: ["startup layoffs India", "tech layoffs India", "startup job cuts", "startup downsizing"]
-    category: employment
-
-  # ===========================================================================
-  # 3. AI / ML SECTOR
-  # ===========================================================================
-  - id: ai_ml_sector
-    aliases: ["AI industry", "machine learning jobs", "artificial intelligence sector", "AI companies India"]
-    category: employment
-
-  - id: llm_companies
-    aliases: ["LLM companies", "large language model", "foundation model companies", "GenAI companies"]
-    category: employment
-
-  - id: ai_tooling
-    aliases: ["AI developer tools", "ML ops", "AI infrastructure", "AI platform companies"]
-    category: employment
-
-  - id: data_labeling
-    aliases: ["data labeling industry", "data annotation", "RLHF labeling", "AI training data"]
-    category: employment
-
-  - id: ai_job_displacement
-    aliases: ["AI replacing jobs", "automation job loss", "AI unemployment", "AI job threat", "AI disruption"]
-    category: employment
-
-  - id: ai_job_creation
-    aliases: ["AI new jobs", "AI hiring boom", "prompt engineering jobs", "AI skills demand"]
-    category: employment
-
-  - id: gpu_supply
-    aliases: ["GPU shortage", "GPU availability", "GPU supply chain", "AI chip supply"]
-    category: technology
-
-  - id: nvidia
-    aliases: ["NVIDIA", "NVDA", "NVIDIA GPU", "NVIDIA earnings", "NVIDIA stock", "H100", "B200"]
-    category: technology
-
-  - id: compute_costs
-    aliases: ["cloud compute costs", "GPU rental cost", "AI training cost", "inference cost"]
-    category: technology
-
-  - id: ai_regulation
-    aliases: ["AI regulation", "AI safety regulation", "EU AI Act", "AI governance", "AI policy"]
-    category: geopolitics
-
-  - id: openai
-    aliases: ["OpenAI", "ChatGPT", "GPT-5", "OpenAI funding", "OpenAI policy"]
-    category: technology
-
-  - id: google_deepmind
-    aliases: ["Google DeepMind", "Gemini AI", "Google AI"]
-    category: technology
-
-  - id: anthropic
-    aliases: ["Anthropic", "Claude AI", "Anthropic funding"]
-    category: technology
-
-  # ===========================================================================
-  # 4. FINTECH
-  # ===========================================================================
-  - id: fintech_sector
-    aliases: ["fintech India", "fintech companies", "financial technology", "fintech startups"]
-    category: employment
-
-  - id: upi
-    aliases: ["UPI", "Unified Payments Interface", "UPI transaction", "UPI volume", "UPI outage"]
-    category: financial
-
-  - id: phonepe
-    aliases: ["PhonePe", "PhonePe market share", "PhonePe hiring"]
-    category: employment
-
-  - id: google_pay
-    aliases: ["Google Pay", "GPay India", "Google Pay market share"]
-    category: employment
-
-  - id: paytm
-    aliases: ["Paytm", "One97 Communications", "Paytm Payments Bank", "Paytm crisis"]
-    category: employment
-
-  - id: cred
-    aliases: ["CRED app", "CRED fintech"]
-    category: employment
-
-  - id: digital_lending
-    aliases: ["digital lending", "online loans", "fintech lending", "BNPL India", "buy now pay later"]
-    category: financial
-
-  - id: rbi_fintech_regulation
-    aliases: ["RBI fintech regulation", "digital lending guidelines", "RBI on BNPL", "RBI fintech circular"]
-    category: financial
-
-  - id: insurance_tech
-    aliases: ["insurtech India", "insurance technology", "Acko", "Digit Insurance", "PolicyBazaar"]
-    category: employment
-
-  - id: wealthtech
-    aliases: ["wealthtech India", "robo advisory", "Zerodha", "Groww app", "investment platforms"]
-    category: employment
-
-  # ===========================================================================
-  # 5. EDTECH
-  # ===========================================================================
-  - id: edtech_sector
-    aliases: ["edtech India", "edtech companies", "online education companies"]
-    category: employment
-
-  - id: byju
-    aliases: ["BYJU'S", "Byju Raveendran", "BYJU'S crisis", "BYJU'S layoffs", "Think and Learn"]
-    category: employment
-
-  - id: unacademy
-    aliases: ["Unacademy", "Unacademy layoffs", "Unacademy hiring"]
-    category: employment
-
-  - id: upgrad
-    aliases: ["upGrad", "upGrad hiring", "upGrad courses"]
-    category: employment
-
-  - id: physics_wallah
-    aliases: ["Physics Wallah", "PW", "Alakh Pandey"]
-    category: employment
-
-  - id: edtech_funding
-    aliases: ["edtech funding", "edtech investment", "education startup funding"]
-    category: financial
-
-  - id: education_policy
-    aliases: ["education policy India", "NEP 2020", "National Education Policy", "UGC regulation"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 6. E-COMMERCE
-  # ===========================================================================
-  - id: ecommerce_sector
-    aliases: ["e-commerce India", "online retail India", "e-commerce market"]
-    category: employment
-
-  - id: amazon_india
-    aliases: ["Amazon India", "Amazon India hiring", "Amazon India warehouse", "Amazon seller"]
-    category: employment
-
-  - id: flipkart
-    aliases: ["Flipkart", "Flipkart hiring", "Flipkart sale", "Flipkart Walmart"]
-    category: employment
-
-  - id: meesho
-    aliases: ["Meesho", "Meesho seller", "Meesho social commerce"]
-    category: employment
-
-  - id: ecommerce_logistics
-    aliases: ["e-commerce logistics", "Delhivery", "Ecom Express", "Xpressbees", "last mile delivery"]
-    category: employment
-
-  - id: warehouse_employment
-    aliases: ["warehouse jobs", "fulfillment center jobs", "warehouse hiring", "dark store jobs"]
-    category: employment
-
-  - id: fdi_ecommerce
-    aliases: ["FDI in e-commerce", "FDI policy retail", "e-commerce FDI regulation", "marketplace FDI"]
-    category: geopolitics
-
-  - id: quick_commerce
-    aliases: ["quick commerce", "Q-commerce", "10-minute delivery", "Blinkit", "Zepto", "Instamart"]
-    category: employment
-
-  # ===========================================================================
-  # 7. GAMING
-  # ===========================================================================
-  - id: gaming_sector
-    aliases: ["gaming industry India", "mobile gaming India", "game development India"]
-    category: employment
-
-  - id: esports
-    aliases: ["esports India", "competitive gaming", "BGMI esports", "esports tournaments"]
-    category: employment
-
-  - id: gst_on_gaming
-    aliases: ["GST on online gaming", "28% GST gaming", "gaming tax India", "real money gaming tax"]
-    category: financial
-
-  - id: app_store_policy
-    aliases: ["app store policy", "Google Play policy", "Apple App Store rules", "app store commission"]
-    category: technology
-
-  # ===========================================================================
-  # 8. CYBERSECURITY
-  # ===========================================================================
-  - id: cybersecurity_sector
-    aliases: ["cybersecurity jobs India", "infosec hiring", "cybersecurity industry"]
-    category: employment
-
-  - id: data_breach_news
-    aliases: ["data breach India", "data leak", "cyber attack India", "ransomware India"]
-    category: technology
-
-  - id: cert_in
-    aliases: ["CERT-In", "Indian Computer Emergency Response Team", "CERT-In regulation", "CERT-In directive"]
-    category: geopolitics
-
-  - id: dpdp_act
-    aliases: ["DPDP Act", "Digital Personal Data Protection", "India data protection law", "data privacy India"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 9. MANUFACTURING — AUTO
-  # ===========================================================================
-  - id: auto_manufacturing
-    aliases: ["auto sector India", "automobile industry", "vehicle manufacturing", "auto OEM India"]
-    category: employment
-
-  - id: tata_motors
-    aliases: ["Tata Motors", "Tata Motors hiring", "Tata Motors results", "JLR", "Jaguar Land Rover"]
-    category: employment
-
-  - id: mahindra_auto
-    aliases: ["Mahindra & Mahindra", "M&M auto", "Mahindra XUV", "Mahindra hiring"]
-    category: employment
-
-  - id: maruti_suzuki
-    aliases: ["Maruti Suzuki", "Maruti results", "Maruti sales", "MSIL"]
-    category: employment
-
-  - id: hyundai_india
-    aliases: ["Hyundai India", "Hyundai Motor India", "Hyundai IPO"]
-    category: employment
-
-  - id: ev_manufacturing
-    aliases: ["EV manufacturing India", "electric vehicle production", "EV factory", "Ola Electric", "Ather Energy"]
-    category: employment
-
-  - id: auto_component
-    aliases: ["auto components", "auto ancillary", "auto parts manufacturing", "Bosch India", "Motherson"]
-    category: employment
-
-  - id: steel_supply
-    aliases: ["steel prices India", "steel supply", "Tata Steel", "JSW Steel", "SAIL"]
-    category: employment
-
-  - id: rubber_supply
-    aliases: ["rubber prices", "natural rubber supply", "rubber import"]
-    category: employment
-
-  - id: semiconductor_supply
-    aliases: ["semiconductor shortage", "chip shortage", "semiconductor supply chain", "auto chip supply"]
-    category: technology
-
-  - id: semiconductor_india
-    aliases: ["semiconductor fab India", "chip manufacturing India", "India semiconductor mission", "Micron India"]
-    category: technology
-
-  - id: vehicle_scrappage
-    aliases: ["vehicle scrappage policy", "BS-IV scrappage", "old vehicle ban"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 10. MANUFACTURING — PHARMA
-  # ===========================================================================
-  - id: pharma_sector
-    aliases: ["pharma industry India", "pharmaceutical sector", "Indian pharma", "drug manufacturing India"]
-    category: employment
-
-  - id: pharma_api_china
-    aliases: ["API from China", "active pharmaceutical ingredient", "bulk drug import China", "pharma raw material"]
-    category: employment
-
-  - id: drug_pricing
-    aliases: ["drug price control", "DPCO", "NPPA drug pricing", "essential medicines price", "medicine price cap"]
-    category: financial
-
-  - id: generic_drugs
-    aliases: ["generic medicines India", "generic drug export", "India pharmacy of the world"]
-    category: employment
-
-  - id: sun_pharma
-    aliases: ["Sun Pharmaceutical", "Sun Pharma results"]
-    category: employment
-
-  - id: dr_reddys
-    aliases: ["Dr. Reddy's Laboratories", "Dr Reddys results"]
-    category: employment
-
-  - id: cipla
-    aliases: ["Cipla", "Cipla results", "Cipla generic drugs"]
-    category: employment
-
-  - id: us_fda_inspection
-    aliases: ["US FDA inspection India", "FDA warning letter", "FDA import alert", "FDA observation"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 11. MANUFACTURING — FMCG
-  # ===========================================================================
-  - id: fmcg_sector
-    aliases: ["FMCG sector India", "consumer goods India", "fast moving consumer goods"]
-    category: employment
-
-  - id: hul
-    aliases: ["Hindustan Unilever", "HUL results", "HUL hiring", "Unilever India"]
-    category: employment
-
-  - id: itc_limited
-    aliases: ["ITC Limited", "ITC results", "ITC FMCG", "ITC hotels demerger"]
-    category: employment
-
-  - id: nestle_india
-    aliases: ["Nestle India", "Maggi", "Nestle India results"]
-    category: employment
-
-  - id: rural_demand
-    aliases: ["rural demand India", "rural consumption", "rural spending", "rural recovery"]
-    category: financial
-
-  - id: palm_oil_import
-    aliases: ["palm oil prices India", "edible oil import", "palm oil duty", "Indonesia palm oil"]
-    category: food
-
-  # ===========================================================================
-  # 12. BANKING & FINANCE EMPLOYMENT
-  # ===========================================================================
-  - id: banking_employment
-    aliases: ["banking jobs India", "bank hiring", "banking sector employment"]
-    category: employment
-
-  - id: psu_banks
-    aliases: ["PSU banks", "public sector banks", "SBI", "Bank of Baroda", "PNB", "government banks"]
-    category: employment
-
-  - id: private_banks
-    aliases: ["private banks India", "HDFC Bank", "ICICI Bank", "Kotak Mahindra Bank", "Axis Bank"]
-    category: employment
-
-  - id: nbfc_sector
-    aliases: ["NBFC", "non-banking financial company", "Bajaj Finance", "Shriram Finance", "NBFC regulation"]
-    category: employment
-
-  - id: npa_crisis
-    aliases: ["NPA", "non-performing assets", "bad loans", "bank NPA ratio", "stressed assets"]
-    category: financial
-
-  - id: credit_growth
-    aliases: ["credit growth India", "bank lending growth", "loan growth", "credit offtake"]
-    category: financial
-
-  - id: banking_regulation
-    aliases: ["RBI banking regulation", "RBI circular banks", "Basel III India", "bank capital adequacy"]
-    category: financial
-
-  # ===========================================================================
-  # 13. HEALTHCARE
-  # ===========================================================================
-  - id: healthcare_employment
-    aliases: ["healthcare jobs India", "hospital hiring", "medical jobs", "healthcare sector employment"]
-    category: employment
-
-  - id: apollo_hospitals
-    aliases: ["Apollo Hospitals", "Apollo health", "Apollo results"]
-    category: employment
-
-  - id: fortis_healthcare
-    aliases: ["Fortis Healthcare", "Fortis hospitals"]
-    category: employment
-
-  - id: max_healthcare
-    aliases: ["Max Healthcare", "Max hospitals"]
-    category: employment
-
-  - id: diagnostics_sector
-    aliases: ["diagnostics industry", "pathology labs", "Dr Lal PathLabs", "Metropolis Healthcare", "SRL Diagnostics"]
-    category: employment
-
-  - id: health_insurance_regulation
-    aliases: ["health insurance regulation", "IRDAI health insurance", "Ayushman Bharat", "PMJAY"]
-    category: financial
-
-  - id: medical_devices
-    aliases: ["medical devices India", "medical equipment", "medical device regulation"]
-    category: employment
-
-  - id: telemedicine
-    aliases: ["telemedicine India", "online doctor consultation", "Practo", "1mg", "telehealth"]
-    category: employment
-
-  # ===========================================================================
-  # 14. REAL ESTATE & CONSTRUCTION
-  # ===========================================================================
-  - id: real_estate_sector
-    aliases: ["real estate India", "property market", "housing market India", "real estate employment"]
-    category: employment
-
-  - id: construction_employment
-    aliases: ["construction jobs India", "construction labor", "building construction"]
-    category: employment
-
-  - id: cement_industry
-    aliases: ["cement prices India", "UltraTech Cement", "Ambuja Cement", "ACC cement"]
-    category: employment
-
-  - id: rera
-    aliases: ["RERA", "Real Estate Regulation Act", "RERA compliance", "RERA authority"]
-    category: geopolitics
-
-  - id: affordable_housing
-    aliases: ["affordable housing India", "PMAY", "Pradhan Mantri Awas Yojana", "housing for all"]
-    category: geopolitics
-
-  - id: commercial_real_estate
-    aliases: ["commercial real estate India", "office space demand", "SEZ", "IT park"]
-    category: employment
-
-  - id: builders_developers
-    aliases: ["real estate developers", "DLF", "Godrej Properties", "Prestige Estates", "Lodha"]
-    category: employment
-
-  # ===========================================================================
-  # 15. AGRICULTURE
-  # ===========================================================================
-  - id: agriculture_sector
-    aliases: ["agriculture India", "farming sector", "agricultural employment", "kisan"]
-    category: employment
-
-  - id: agritech
-    aliases: ["agritech India", "agricultural technology", "DeHaat", "Ninjacart", "farm tech"]
-    category: employment
-
-  - id: food_processing
-    aliases: ["food processing India", "food processing industry", "FPI sector"]
-    category: employment
-
-  - id: msp_policy
-    aliases: ["MSP", "minimum support price", "MSP hike", "MSP wheat", "MSP paddy", "farmer protest MSP"]
-    category: geopolitics
-
-  - id: monsoon_forecast
-    aliases: ["monsoon forecast", "IMD monsoon", "monsoon prediction", "southwest monsoon", "rainfall forecast"]
-    category: food
-
-  - id: fertilizer_subsidy
-    aliases: ["fertilizer subsidy", "urea subsidy", "fertilizer prices", "DAP subsidy"]
-    category: geopolitics
-
-  - id: crop_insurance
-    aliases: ["crop insurance", "PMFBY", "Pradhan Mantri Fasal Bima", "farm insurance"]
-    category: financial
-
-  # ===========================================================================
-  # 16. RETAIL
-  # ===========================================================================
-  - id: retail_sector
-    aliases: ["retail sector India", "organized retail", "retail industry"]
-    category: employment
-
-  - id: reliance_retail
-    aliases: ["Reliance Retail", "JioMart", "Reliance Retail hiring"]
-    category: employment
-
-  - id: dmart
-    aliases: ["DMart", "Avenue Supermarts", "DMart expansion"]
-    category: employment
-
-  - id: fdi_retail
-    aliases: ["FDI in retail", "retail FDI policy", "multi-brand retail FDI"]
-    category: geopolitics
-
-  - id: gst_impact_retail
-    aliases: ["GST on retail", "GST rate change", "GST compliance cost", "GST for small business"]
-    category: financial
-
-  # ===========================================================================
-  # 17. LOGISTICS
-  # ===========================================================================
-  - id: logistics_sector
-    aliases: ["logistics India", "logistics industry", "supply chain India"]
-    category: employment
-
-  - id: trucking
-    aliases: ["trucking industry India", "truck drivers", "road freight", "fleet operators"]
-    category: employment
-
-  - id: warehousing
-    aliases: ["warehousing India", "warehouse sector", "3PL India", "cold chain"]
-    category: employment
-
-  - id: diesel_prices
-    aliases: ["diesel price India", "diesel rate", "diesel price hike", "diesel cost"]
-    category: energy
-
-  - id: toll_charges
-    aliases: ["highway toll", "toll rate hike", "NHAI toll", "FASTag toll"]
-    category: financial
-
-  - id: eway_bill
-    aliases: ["e-way bill", "eway bill", "GST e-way bill", "goods movement"]
-    category: financial
-
-  # ===========================================================================
-  # 18. MEDIA & ENTERTAINMENT
-  # ===========================================================================
-  - id: media_entertainment
-    aliases: ["media industry India", "entertainment sector", "M&E industry"]
-    category: employment
-
-  - id: ott_platforms
-    aliases: ["OTT platforms India", "Netflix India", "Hotstar", "Amazon Prime Video", "JioCinema"]
-    category: employment
-
-  - id: advertising_spend
-    aliases: ["ad spend India", "advertising industry", "digital ad spending", "ad revenue"]
-    category: financial
-
-  - id: content_regulation
-    aliases: ["OTT regulation", "IT rules content", "CBFC", "content censorship", "MIB regulation"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 19. EDUCATION (non-tech)
-  # ===========================================================================
-  - id: education_sector
-    aliases: ["education sector India", "schools India", "colleges India", "education industry"]
-    category: employment
-
-  - id: coaching_industry
-    aliases: ["coaching classes India", "coaching institutes", "Allen", "FIITJEE", "Kota coaching"]
-    category: employment
-
-  - id: nep_implementation
-    aliases: ["NEP implementation", "New Education Policy rollout", "4-year UG degree", "multiple exit"]
-    category: geopolitics
-
-  - id: fee_regulation
-    aliases: ["school fee regulation", "college fee cap", "tuition fee hike", "fee committee"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 20. GOVERNMENT / PSU EMPLOYMENT
-  # ===========================================================================
-  - id: government_employment
-    aliases: ["government jobs India", "sarkari naukri", "central government recruitment", "state government jobs"]
-    category: employment
-
-  - id: ssc_recruitment
-    aliases: ["SSC exam", "SSC CGL", "SSC CHSL", "Staff Selection Commission"]
-    category: employment
-
-  - id: upsc_recruitment
-    aliases: ["UPSC", "civil services exam", "IAS recruitment", "UPSC results"]
-    category: employment
-
-  - id: railway_recruitment
-    aliases: ["railway jobs", "RRB recruitment", "Indian Railways hiring"]
-    category: employment
-
-  - id: pay_commission
-    aliases: ["pay commission", "8th pay commission", "central pay commission", "DA hike", "dearness allowance"]
-    category: financial
-
-  - id: retirement_age_policy
-    aliases: ["retirement age", "retirement age increase", "pension age", "superannuation age"]
-    category: geopolitics
-
-  - id: psu_disinvestment
-    aliases: ["PSU disinvestment", "PSU privatization", "strategic sale", "BPCL privatization", "LIC disinvestment"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 21. EMPLOYMENT MECHANICS
-  # ===========================================================================
-  - id: job_market_india
-    aliases: ["job market India", "employment rate India", "hiring trends India", "job growth"]
-    category: employment
-
-  - id: campus_placement
-    aliases: ["campus placement", "campus hiring", "campus recruitment", "placement season"]
-    category: employment
-
-  - id: lateral_hiring
-    aliases: ["lateral hiring", "experienced hiring", "mid-level hiring", "senior hiring"]
-    category: employment
-
-  - id: tech_layoffs
-    aliases: ["tech layoffs", "mass layoffs", "layoff announcements", "job cuts tech"]
-    category: employment
-
-  - id: salary_trends
-    aliases: ["salary trends India", "salary hike", "appraisal season", "pay raise", "compensation trends"]
-    category: employment
-
-  - id: esop_policy
-    aliases: ["ESOP", "employee stock options", "ESOP taxation", "ESOP liquidity", "stock options"]
-    category: employment
-
-  - id: variable_pay
-    aliases: ["variable pay", "bonus payout", "performance bonus", "incentive pay"]
-    category: employment
-
-  - id: upskilling
-    aliases: ["upskilling", "reskilling", "skill development", "learning and development", "professional training"]
-    category: employment
-
-  - id: skill_obsolescence
-    aliases: ["skill obsolescence", "skill gap", "outdated skills", "automation risk"]
-    category: employment
-
-  - id: certifications
-    aliases: ["professional certifications", "AWS certification", "PMP certification", "tech certifications"]
-    category: employment
-
-  # ===========================================================================
-  # 22. LABOR LAW
-  # ===========================================================================
-  - id: new_labor_codes
-    aliases: ["new labor codes India", "labor code 2020", "wage code", "OSH code", "industrial relations code", "social security code"]
-    category: geopolitics
-
-  - id: contract_work_regulation
-    aliases: ["contract labor", "contract worker regulation", "fixed-term employment", "temp staffing"]
-    category: geopolitics
-
-  - id: gig_worker_rights
-    aliases: ["gig worker rights", "gig worker law", "platform worker regulation", "gig economy regulation"]
-    category: geopolitics
-
-  - id: minimum_wage
-    aliases: ["minimum wage India", "minimum wage hike", "floor wage", "state minimum wage"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 23. REMOTE WORK
-  # ===========================================================================
-  - id: remote_work_policy
-    aliases: ["remote work policy", "work from home policy", "hybrid work", "return to office", "RTO mandate"]
-    category: employment
-
-  - id: coworking_spaces
-    aliases: ["coworking India", "WeWork India", "91springboard", "coworking space demand"]
-    category: employment
-
-  - id: wfh_tax_implications
-    aliases: ["work from home tax", "WFH tax deduction", "remote work across states tax", "digital nomad tax"]
-    category: financial
-
-  # ===========================================================================
-  # 24. UNIONS & COLLECTIVE ACTION
-  # ===========================================================================
-  - id: trade_unions
-    aliases: ["trade unions India", "labor unions", "worker strikes", "collective bargaining"]
-    category: employment
-
-  - id: bank_strike
-    aliases: ["bank strike", "bank union strike", "AIBEA strike", "banking strike"]
-    category: employment
-
-  - id: transport_strike
-    aliases: ["transport strike", "truck strike", "auto strike", "bus strike"]
-    category: employment
-
-  # ===========================================================================
-  # 25. RETIREMENT
-  # ===========================================================================
-  - id: epf
-    aliases: ["EPF", "Employee Provident Fund", "PF contribution", "EPFO", "EPF interest rate", "PF withdrawal"]
-    category: financial
-
-  - id: nps
-    aliases: ["NPS", "National Pension System", "NPS contribution", "NPS tier 1", "NPS tier 2"]
-    category: financial
-
-  - id: gratuity
-    aliases: ["gratuity", "gratuity calculation", "gratuity limit", "gratuity tax"]
-    category: financial
-
-  - id: pension_policy
-    aliases: ["pension India", "old pension scheme", "OPS vs NPS", "pension reform", "EPS 95"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 26. GIG ECONOMY — DELIVERY
-  # ===========================================================================
-  - id: food_delivery
-    aliases: ["food delivery India", "Swiggy", "Zomato delivery", "food delivery app"]
-    category: employment
-
-  - id: swiggy
-    aliases: ["Swiggy", "Swiggy IPO", "Swiggy hiring", "Swiggy gig workers"]
-    category: employment
-
-  - id: zomato
-    aliases: ["Zomato", "Zomato results", "Zomato hiring", "Zomato Blinkit"]
-    category: employment
-
-  - id: blinkit
-    aliases: ["Blinkit", "Blinkit dark store", "Blinkit delivery", "Grofers"]
-    category: employment
-
-  - id: delivery_worker_earnings
-    aliases: ["delivery partner earnings", "Swiggy rider pay", "Zomato rider pay", "gig worker earnings"]
-    category: employment
-
-  - id: fuel_cost_gig
-    aliases: ["petrol price gig workers", "fuel cost delivery", "CNG cost auto"]
-    category: energy
-
-  # ===========================================================================
-  # 27. GIG ECONOMY — RIDE HAILING
-  # ===========================================================================
-  - id: ride_hailing
-    aliases: ["ride hailing India", "cab aggregator", "ride sharing"]
-    category: employment
-
-  - id: uber_india
-    aliases: ["Uber India", "Uber driver", "Uber fare", "Uber India policy"]
-    category: employment
-
-  - id: ola_cabs
-    aliases: ["Ola Cabs", "Ola driver", "Ola fare", "Ola Electric"]
-    category: employment
-
-  - id: driver_earnings
-    aliases: ["cab driver earnings", "Uber driver income", "Ola driver income", "ride hailing commission"]
-    category: employment
-
-  - id: ride_hailing_regulation
-    aliases: ["cab aggregator regulation", "ride hailing policy", "motor vehicle aggregator guidelines"]
-    category: geopolitics
-
-  # ===========================================================================
-  # 28. GIG ECONOMY — FREELANCE
-  # ===========================================================================
-  - id: freelance_market
-    aliases: ["freelancing India", "freelance jobs", "independent contractor", "remote freelance"]
-    category: employment
-
-  - id: upwork_platform
-    aliases: ["Upwork", "Upwork India", "Upwork freelance"]
-    category: employment
-
-  - id: fiverr_platform
-    aliases: ["Fiverr", "Fiverr India", "Fiverr gigs"]
-    category: employment
-
-  - id: global_freelance_demand
-    aliases: ["global freelance demand", "offshore freelance", "remote work demand global"]
-    category: employment
-
-  - id: inr_usd_freelance
-    aliases: ["rupee dollar freelance", "forex freelance earnings", "international payment freelance"]
-    category: financial
-
-  # ===========================================================================
-  # 29. CREATOR ECONOMY
-  # ===========================================================================
-  - id: creator_economy
-    aliases: ["creator economy India", "content creator", "influencer economy"]
-    category: employment
-
-  - id: youtube_india
-    aliases: ["YouTube India", "YouTube monetization", "YouTube ad rates India", "YouTube creator"]
-    category: employment
-
-  - id: instagram_creators
-    aliases: ["Instagram creator", "Instagram reels monetization", "Instagram influencer"]
-    category: employment
-
-  - id: ad_rate_changes
-    aliases: ["CPM rates", "ad rate changes", "digital ad rates", "creator ad revenue"]
-    category: financial
-
-  - id: algorithm_changes
-    aliases: ["algorithm change", "social media algorithm", "reach decline", "engagement algorithm"]
-    category: technology
-
-  - id: creator_monetization_policy
-    aliases: ["creator monetization", "YouTube Partner Program", "Instagram bonuses", "platform payout policy"]
-    category: technology
-
-  # ===========================================================================
-  # 30. CROSS-DOMAIN ANCHOR NODES (referenced from financial/other domains)
-  # ===========================================================================
-  - id: us_economy
-    aliases: ["US economy", "US GDP", "American economy", "US economic growth"]
-    category: geopolitics
-
-  - id: eu_economy
-    aliases: ["European economy", "EU GDP", "Eurozone economy", "EU economic growth"]
-    category: geopolitics
-
-  - id: china_economy
-    aliases: ["China economy", "Chinese GDP", "China slowdown", "China growth"]
-    category: geopolitics
-
-  - id: india_gdp
-    aliases: ["India GDP", "Indian economy growth", "GDP growth rate India", "quarterly GDP India"]
-    category: financial
-
-  - id: cpi_inflation
-    aliases: ["CPI inflation India", "consumer price index", "retail inflation", "inflation rate India"]
-    category: financial
-
-  - id: repo_rate
-    aliases: ["repo rate", "RBI repo rate", "RBI rate decision", "policy rate", "RBI MPC"]
-    category: financial
-
-  - id: interest_rates_global
-    aliases: ["global interest rates", "Fed funds rate", "ECB rate", "BOJ rate", "central bank rates"]
-    category: financial
-
-  - id: crude_oil_price
-    aliases: ["crude oil price", "Brent crude", "WTI crude", "oil price", "petroleum price"]
-    category: energy
-
-  - id: rupee_exchange_rate
-    aliases: ["INR USD", "rupee dollar", "rupee exchange rate", "rupee depreciation", "forex INR"]
-    category: financial
-
-  - id: gst_policy
-    aliases: ["GST policy", "GST rate change", "GST Council", "goods and services tax"]
-    category: financial
-
-  - id: fdi_policy_india
-    aliases: ["FDI policy India", "foreign direct investment India", "FDI norms", "FDI cap"]
-    category: geopolitics
-
-  - id: customs_duty
-    aliases: ["customs duty India", "import duty", "tariff India", "customs tariff change"]
-    category: financial
-
-  - id: india_us_trade
-    aliases: ["India US trade", "India America trade", "bilateral trade India US", "India US tariff"]
-    category: geopolitics
-
-  - id: india_china_trade
-    aliases: ["India China trade", "India China imports", "Chinese imports India", "India China border"]
-    category: geopolitics
-
-  - id: gold_price
-    aliases: ["gold price", "gold rate today", "gold price India", "sovereign gold", "gold import"]
-    category: financial
-
-  - id: petrol_price
-    aliases: ["petrol price India", "petrol rate", "petrol price hike", "fuel price"]
-    category: energy
-
-  - id: electricity_tariff
-    aliases: ["electricity tariff", "power tariff hike", "electricity bill", "electricity rate"]
-    category: energy
-
-  - id: food_inflation
-    aliases: ["food inflation India", "food prices", "vegetable prices", "onion price", "tomato price"]
-    category: food
-
-  - id: rental_market
-    aliases: ["rent prices India", "rental market", "house rent", "rental yield", "rent hike"]
-    category: financial
-
-  - id: home_loan_emi
-    aliases: ["home loan EMI", "housing loan EMI", "mortgage EMI", "home loan interest rate"]
-    category: financial
-
-  - id: education_loan
-    aliases: ["education loan India", "student loan", "education loan interest", "Vidya Lakshmi"]
-    category: financial
-
-
-# =============================================================================
-# EDGES — 350+ typed relationships
-# =============================================================================
-
+- id: it_services_sector
+  aliases:
+  - IT services
+  - Indian IT
+  - IT outsourcing
+  - IT industry India
+  category: employment_and_income
+- id: tcs
+  aliases:
+  - Tata Consultancy Services
+  - TCS hiring
+  - TCS results
+  - TCS layoffs
+  - TCS quarterly
+  category: employment_and_income
+- id: infosys
+  aliases:
+  - Infosys hiring
+  - Infosys results
+  - Infosys layoffs
+  - Infosys quarterly
+  - Infy
+  category: employment_and_income
+- id: wipro
+  aliases:
+  - Wipro hiring
+  - Wipro results
+  - Wipro layoffs
+  - Wipro quarterly
+  category: employment_and_income
+- id: hcl_tech
+  aliases:
+  - HCL Technologies
+  - HCL Tech hiring
+  - HCL results
+  - HCL quarterly
+  category: employment_and_income
+- id: tech_mahindra
+  aliases:
+  - Tech Mahindra
+  - TechM hiring
+  - Tech Mahindra results
+  category: employment_and_income
+- id: ltimindtree
+  aliases:
+  - LTIMindtree
+  - LTI Mindtree
+  - LTIMindtree results
+  category: employment_and_income
+- id: cognizant
+  aliases:
+  - Cognizant Technology
+  - Cognizant hiring
+  - CTSH
+  category: employment_and_income
+- id: it_services_us_client
+  aliases:
+  - US IT spending
+  - BFSI client spending
+  - US enterprise IT budget
+  - US technology spending
+  category: employment_and_income
+- id: it_services_eu_client
+  aliases:
+  - European IT spending
+  - EU enterprise IT budget
+  - UK IT spending
+  category: employment_and_income
+- id: it_outsourcing_deals
+  aliases:
+  - IT outsourcing contracts
+  - large deal wins
+  - mega deals
+  - total contract value TCV
+  category: employment_and_income
+- id: h1b_visa
+  aliases:
+  - H-1B visa
+  - H1B lottery
+  - H-1B cap
+  - H-1B policy
+  - H1B reform
+  - US work visa
+  category: employment_and_income
+- id: l1_visa
+  aliases:
+  - L-1 visa
+  - L1 intracompany transfer
+  - L-1 blanket
+  category: employment_and_income
+- id: us_immigration_policy
+  aliases:
+  - US immigration reform
+  - immigration executive order
+  - USCIS policy
+  - visa restrictions
+  category: global_economy
+- id: it_bench_strength
+  aliases:
+  - IT bench
+  - bench utilization
+  - IT utilization rate
+  - billable employees
+  category: employment_and_income
+- id: it_attrition
+  aliases:
+  - IT attrition rate
+  - IT employee turnover
+  - tech attrition
+  - IT resignation rate
+  category: employment_and_income
+- id: it_fresher_hiring
+  aliases:
+  - IT campus hiring
+  - fresher recruitment IT
+  - IT campus placement
+  - mass hiring IT
+  category: employment_and_income
+- id: us_recession_risk
+  aliases:
+  - US recession
+  - US economic slowdown
+  - US GDP contraction
+  - US downturn
+  category: global_economy
+- id: saas_sector
+  aliases:
+  - SaaS companies India
+  - B2B SaaS
+  - SaaS startups
+  - software as a service
+  category: employment_and_income
+- id: b2c_tech
+  aliases:
+  - B2C startups
+  - consumer tech India
+  - consumer internet
+  category: employment_and_income
+- id: consulting_firms
+  aliases:
+  - consulting firms India
+  - McKinsey India
+  - BCG India
+  - Deloitte India
+  - Accenture India
+  category: employment_and_income
+- id: enterprise_software
+  aliases:
+  - enterprise SaaS
+  - enterprise software India
+  - B2B enterprise
+  category: employment_and_income
+- id: zoho
+  aliases:
+  - Zoho Corporation
+  - Zoho hiring
+  - Zoho workplace
+  category: employment_and_income
+- id: freshworks
+  aliases:
+  - Freshworks Inc
+  - Freshworks hiring
+  - FRSH
+  category: employment_and_income
+- id: postman
+  aliases:
+  - Postman API
+  - Postman company
+  category: employment_and_income
+- id: razorpay
+  aliases:
+  - Razorpay
+  - Razorpay hiring
+  - Razorpay funding
+  category: employment_and_income
+- id: series_a_market
+  aliases:
+  - Series A funding
+  - Series A round
+  - early stage funding
+  category: financial
+- id: series_b_c_market
+  aliases:
+  - Series B funding
+  - Series C funding
+  - growth stage funding
+  - late stage VC
+  category: financial
+- id: startup_valuation
+  aliases:
+  - startup valuations
+  - valuation correction
+  - down round
+  - unicorn valuation
+  category: financial
+- id: funding_winter
+  aliases:
+  - funding winter
+  - startup funding crunch
+  - VC pullback
+  - dry powder
+  category: financial
+- id: startup_layoffs
+  aliases:
+  - startup layoffs India
+  - tech layoffs India
+  - startup job cuts
+  - startup downsizing
+  category: employment_and_income
+- id: ai_ml_sector
+  aliases:
+  - AI industry
+  - machine learning jobs
+  - artificial intelligence sector
+  - AI companies India
+  category: employment_and_income
+- id: llm_companies
+  aliases:
+  - LLM companies
+  - large language model
+  - foundation model companies
+  - GenAI companies
+  category: employment_and_income
+- id: ai_tooling
+  aliases:
+  - AI developer tools
+  - ML ops
+  - AI infrastructure
+  - AI platform companies
+  category: employment_and_income
+- id: data_labeling
+  aliases:
+  - data labeling industry
+  - data annotation
+  - RLHF labeling
+  - AI training data
+  category: employment_and_income
+- id: ai_job_displacement
+  aliases:
+  - AI replacing jobs
+  - automation job loss
+  - AI unemployment
+  - AI job threat
+  - AI disruption
+  category: employment_and_income
+- id: ai_job_creation
+  aliases:
+  - AI new jobs
+  - AI hiring boom
+  - prompt engineering jobs
+  - AI skills demand
+  category: employment_and_income
+- id: gpu_supply
+  aliases:
+  - GPU shortage
+  - GPU availability
+  - GPU supply chain
+  - AI chip supply
+  category: technology_and_telecom
+- id: nvidia
+  aliases:
+  - NVIDIA
+  - NVDA
+  - NVIDIA GPU
+  - NVIDIA earnings
+  - NVIDIA stock
+  - H100
+  - B200
+  category: technology_and_telecom
+- id: compute_costs
+  aliases:
+  - cloud compute costs
+  - GPU rental cost
+  - AI training cost
+  - inference cost
+  category: technology_and_telecom
+- id: ai_regulation
+  aliases:
+  - AI regulation
+  - AI safety regulation
+  - EU AI Act
+  - AI governance
+  - AI policy
+  category: global_economy
+- id: openai
+  aliases:
+  - OpenAI
+  - ChatGPT
+  - GPT-5
+  - OpenAI funding
+  - OpenAI policy
+  category: technology_and_telecom
+- id: google_deepmind
+  aliases:
+  - Google DeepMind
+  - Gemini AI
+  - Google AI
+  category: technology_and_telecom
+- id: anthropic
+  aliases:
+  - Anthropic
+  - Claude AI
+  - Anthropic funding
+  category: technology_and_telecom
+- id: fintech_sector
+  aliases:
+  - fintech India
+  - fintech companies
+  - financial technology
+  - fintech startups
+  category: employment_and_income
+- id: phonepe
+  aliases:
+  - PhonePe
+  - PhonePe market share
+  - PhonePe hiring
+  category: employment_and_income
+- id: google_pay
+  aliases:
+  - Google Pay
+  - GPay India
+  - Google Pay market share
+  category: employment_and_income
+- id: paytm
+  aliases:
+  - Paytm
+  - One97 Communications
+  - Paytm Payments Bank
+  - Paytm crisis
+  category: employment_and_income
+- id: cred
+  aliases:
+  - CRED app
+  - CRED fintech
+  category: employment_and_income
+- id: digital_lending
+  aliases:
+  - digital lending
+  - online loans
+  - fintech lending
+  - BNPL India
+  - buy now pay later
+  category: financial
+- id: rbi_fintech_regulation
+  aliases:
+  - RBI fintech regulation
+  - digital lending guidelines
+  - RBI on BNPL
+  - RBI fintech circular
+  category: financial
+- id: insurance_tech
+  aliases:
+  - insurtech India
+  - insurance technology
+  - Acko
+  - Digit Insurance
+  - PolicyBazaar
+  category: employment_and_income
+- id: wealthtech
+  aliases:
+  - wealthtech India
+  - robo advisory
+  - Zerodha
+  - Groww app
+  - investment platforms
+  category: employment_and_income
+- id: edtech_sector
+  aliases:
+  - edtech India
+  - edtech companies
+  - online education companies
+  category: employment_and_income
+- id: byju
+  aliases:
+  - BYJU'S
+  - Byju Raveendran
+  - BYJU'S crisis
+  - BYJU'S layoffs
+  - Think and Learn
+  category: employment_and_income
+- id: unacademy
+  aliases:
+  - Unacademy
+  - Unacademy layoffs
+  - Unacademy hiring
+  category: employment_and_income
+- id: upgrad
+  aliases:
+  - upGrad
+  - upGrad hiring
+  - upGrad courses
+  category: employment_and_income
+- id: physics_wallah
+  aliases:
+  - Physics Wallah
+  - PW
+  - Alakh Pandey
+  category: employment_and_income
+- id: edtech_funding
+  aliases:
+  - edtech funding
+  - edtech investment
+  - education startup funding
+  category: financial
+- id: education_policy
+  aliases:
+  - education policy India
+  - NEP 2020
+  - National Education Policy
+  - UGC regulation
+  category: global_economy
+- id: ecommerce_sector
+  aliases:
+  - e-commerce India
+  - online retail India
+  - e-commerce market
+  category: employment_and_income
+- id: amazon_india
+  aliases:
+  - Amazon India
+  - Amazon India hiring
+  - Amazon India warehouse
+  - Amazon seller
+  category: employment_and_income
+- id: flipkart
+  aliases:
+  - Flipkart
+  - Flipkart hiring
+  - Flipkart sale
+  - Flipkart Walmart
+  category: employment_and_income
+- id: meesho
+  aliases:
+  - Meesho
+  - Meesho seller
+  - Meesho social commerce
+  category: employment_and_income
+- id: ecommerce_logistics
+  aliases:
+  - e-commerce logistics
+  - Delhivery
+  - Ecom Express
+  - Xpressbees
+  - last mile delivery
+  category: employment_and_income
+- id: warehouse_employment
+  aliases:
+  - warehouse jobs
+  - fulfillment center jobs
+  - warehouse hiring
+  - dark store jobs
+  category: employment_and_income
+- id: fdi_ecommerce
+  aliases:
+  - FDI in e-commerce
+  - FDI policy retail
+  - e-commerce FDI regulation
+  - marketplace FDI
+  category: global_economy
+- id: quick_commerce
+  aliases:
+  - quick commerce
+  - Q-commerce
+  - 10-minute delivery
+  - Blinkit
+  - Zepto
+  - Instamart
+  category: employment_and_income
+- id: gaming_sector
+  aliases:
+  - gaming industry India
+  - mobile gaming India
+  - game development India
+  category: employment_and_income
+- id: esports
+  aliases:
+  - esports India
+  - competitive gaming
+  - BGMI esports
+  - esports tournaments
+  category: employment_and_income
+- id: gst_on_gaming
+  aliases:
+  - GST on online gaming
+  - 28% GST gaming
+  - gaming tax India
+  - real money gaming tax
+  category: financial
+- id: app_store_policy
+  aliases:
+  - app store policy
+  - Google Play policy
+  - Apple App Store rules
+  - app store commission
+  category: technology_and_telecom
+- id: cybersecurity_sector
+  aliases:
+  - cybersecurity jobs India
+  - infosec hiring
+  - cybersecurity industry
+  category: employment_and_income
+- id: data_breach_news
+  aliases:
+  - data breach India
+  - data leak
+  - cyber attack India
+  - ransomware India
+  category: technology_and_telecom
+- id: cert_in
+  aliases:
+  - CERT-In
+  - Indian Computer Emergency Response Team
+  - CERT-In regulation
+  - CERT-In directive
+  category: global_economy
+- id: dpdp_act
+  aliases:
+  - DPDP Act
+  - Digital Personal Data Protection
+  - India data protection law
+  - data privacy India
+  category: global_economy
+- id: auto_manufacturing
+  aliases:
+  - auto sector India
+  - automobile industry
+  - vehicle manufacturing
+  - auto OEM India
+  category: employment_and_income
+- id: tata_motors
+  aliases:
+  - Tata Motors
+  - Tata Motors hiring
+  - Tata Motors results
+  - JLR
+  - Jaguar Land Rover
+  category: employment_and_income
+- id: mahindra_auto
+  aliases:
+  - Mahindra & Mahindra
+  - M&M auto
+  - Mahindra XUV
+  - Mahindra hiring
+  category: employment_and_income
+- id: maruti_suzuki
+  aliases:
+  - Maruti Suzuki
+  - Maruti results
+  - Maruti sales
+  - MSIL
+  category: employment_and_income
+- id: hyundai_india
+  aliases:
+  - Hyundai India
+  - Hyundai Motor India
+  - Hyundai IPO
+  category: employment_and_income
+- id: ev_manufacturing
+  aliases:
+  - EV manufacturing India
+  - electric vehicle production
+  - EV factory
+  - Ola Electric
+  - Ather Energy
+  category: employment_and_income
+- id: auto_component
+  aliases:
+  - auto components
+  - auto ancillary
+  - auto parts manufacturing
+  - Bosch India
+  - Motherson
+  category: employment_and_income
+- id: steel_supply
+  aliases:
+  - steel prices India
+  - steel supply
+  - Tata Steel
+  - JSW Steel
+  - SAIL
+  category: employment_and_income
+- id: rubber_supply
+  aliases:
+  - rubber prices
+  - natural rubber supply
+  - rubber import
+  category: employment_and_income
+- id: semiconductor_supply
+  aliases:
+  - semiconductor shortage
+  - chip shortage
+  - semiconductor supply chain
+  - auto chip supply
+  category: technology_and_telecom
+- id: semiconductor_india
+  aliases:
+  - semiconductor fab India
+  - chip manufacturing India
+  - India semiconductor mission
+  - Micron India
+  category: technology_and_telecom
+- id: vehicle_scrappage
+  aliases:
+  - vehicle scrappage policy
+  - BS-IV scrappage
+  - old vehicle ban
+  category: global_economy
+- id: pharma_sector
+  aliases:
+  - pharma industry India
+  - pharmaceutical sector
+  - Indian pharma
+  - drug manufacturing India
+  category: employment_and_income
+- id: pharma_api_china
+  aliases:
+  - API from China
+  - active pharmaceutical ingredient
+  - bulk drug import China
+  - pharma raw material
+  category: employment_and_income
+- id: drug_pricing
+  aliases:
+  - drug price control
+  - DPCO
+  - NPPA drug pricing
+  - essential medicines price
+  - medicine price cap
+  category: financial
+- id: generic_drugs
+  aliases:
+  - generic medicines India
+  - generic drug export
+  - India pharmacy of the world
+  category: employment_and_income
+- id: sun_pharma
+  aliases:
+  - Sun Pharmaceutical
+  - Sun Pharma results
+  category: employment_and_income
+- id: dr_reddys
+  aliases:
+  - Dr. Reddy's Laboratories
+  - Dr Reddys results
+  category: employment_and_income
+- id: cipla
+  aliases:
+  - Cipla
+  - Cipla results
+  - Cipla generic drugs
+  category: employment_and_income
+- id: us_fda_inspection
+  aliases:
+  - US FDA inspection India
+  - FDA warning letter
+  - FDA import alert
+  - FDA observation
+  category: global_economy
+- id: fmcg_sector
+  aliases:
+  - FMCG sector India
+  - consumer goods India
+  - fast moving consumer goods
+  category: employment_and_income
+- id: hul
+  aliases:
+  - Hindustan Unilever
+  - HUL results
+  - HUL hiring
+  - Unilever India
+  category: employment_and_income
+- id: itc_limited
+  aliases:
+  - ITC Limited
+  - ITC results
+  - ITC FMCG
+  - ITC hotels demerger
+  category: employment_and_income
+- id: nestle_india
+  aliases:
+  - Nestle India
+  - Maggi
+  - Nestle India results
+  category: employment_and_income
+- id: rural_demand
+  aliases:
+  - rural demand India
+  - rural consumption
+  - rural spending
+  - rural recovery
+  category: financial
+- id: palm_oil_import
+  aliases:
+  - palm oil prices India
+  - edible oil import
+  - palm oil duty
+  - Indonesia palm oil
+  category: food_and_agriculture
+- id: banking_employment
+  aliases:
+  - banking jobs India
+  - bank hiring
+  - banking sector employment
+  category: employment_and_income
+- id: psu_banks
+  aliases:
+  - PSU banks
+  - public sector banks
+  - SBI
+  - Bank of Baroda
+  - PNB
+  - government banks
+  category: employment_and_income
+- id: private_banks
+  aliases:
+  - private banks India
+  - HDFC Bank
+  - ICICI Bank
+  - Kotak Mahindra Bank
+  - Axis Bank
+  category: employment_and_income
+- id: nbfc_sector
+  aliases:
+  - NBFC
+  - non-banking financial company
+  - Bajaj Finance
+  - Shriram Finance
+  - NBFC regulation
+  category: employment_and_income
+- id: npa_crisis
+  aliases:
+  - NPA
+  - non-performing assets
+  - bad loans
+  - bank NPA ratio
+  - stressed assets
+  category: financial
+- id: banking_regulation
+  aliases:
+  - RBI banking regulation
+  - RBI circular banks
+  - Basel III India
+  - bank capital adequacy
+  category: financial
+- id: healthcare_employment
+  aliases:
+  - healthcare jobs India
+  - hospital hiring
+  - medical jobs
+  - healthcare sector employment
+  category: employment_and_income
+- id: apollo_hospitals
+  aliases:
+  - Apollo Hospitals
+  - Apollo health
+  - Apollo results
+  category: employment_and_income
+- id: fortis_healthcare
+  aliases:
+  - Fortis Healthcare
+  - Fortis hospitals
+  category: employment_and_income
+- id: max_healthcare
+  aliases:
+  - Max Healthcare
+  - Max hospitals
+  category: employment_and_income
+- id: diagnostics_sector
+  aliases:
+  - diagnostics industry
+  - pathology labs
+  - Dr Lal PathLabs
+  - Metropolis Healthcare
+  - SRL Diagnostics
+  category: employment_and_income
+- id: health_insurance_regulation
+  aliases:
+  - health insurance regulation
+  - IRDAI health insurance
+  - Ayushman Bharat
+  - PMJAY
+  category: financial
+- id: medical_devices
+  aliases:
+  - medical devices India
+  - medical equipment
+  - medical device regulation
+  category: employment_and_income
+- id: telemedicine
+  aliases:
+  - telemedicine India
+  - online doctor consultation
+  - Practo
+  - 1mg
+  - telehealth
+  category: employment_and_income
+- id: real_estate_sector
+  aliases:
+  - real estate India
+  - property market
+  - housing market India
+  - real estate employment
+  category: employment_and_income
+- id: construction_employment
+  aliases:
+  - construction jobs India
+  - construction labor
+  - building construction
+  category: employment_and_income
+- id: cement_industry
+  aliases:
+  - cement prices India
+  - UltraTech Cement
+  - Ambuja Cement
+  - ACC cement
+  category: employment_and_income
+- id: affordable_housing
+  aliases:
+  - affordable housing India
+  - PMAY
+  - Pradhan Mantri Awas Yojana
+  - housing for all
+  category: global_economy
+- id: commercial_real_estate
+  aliases:
+  - commercial real estate India
+  - office space demand
+  - SEZ
+  - IT park
+  category: employment_and_income
+- id: builders_developers
+  aliases:
+  - real estate developers
+  - DLF
+  - Godrej Properties
+  - Prestige Estates
+  - Lodha
+  category: employment_and_income
+- id: agriculture_sector
+  aliases:
+  - agriculture India
+  - farming sector
+  - agricultural employment
+  - kisan
+  category: employment_and_income
+- id: agritech
+  aliases:
+  - agritech India
+  - agricultural technology
+  - DeHaat
+  - Ninjacart
+  - farm tech
+  category: employment_and_income
+- id: food_processing
+  aliases:
+  - food processing India
+  - food processing industry
+  - FPI sector
+  category: employment_and_income
+- id: msp_policy
+  aliases:
+  - MSP
+  - minimum support price
+  - MSP hike
+  - MSP wheat
+  - MSP paddy
+  - farmer protest MSP
+  category: global_economy
+- id: monsoon_forecast
+  aliases:
+  - monsoon forecast
+  - IMD monsoon
+  - monsoon prediction
+  - southwest monsoon
+  - rainfall forecast
+  category: food_and_agriculture
+- id: fertilizer_subsidy
+  aliases:
+  - fertilizer subsidy
+  - urea subsidy
+  - fertilizer prices
+  - DAP subsidy
+  category: global_economy
+- id: retail_sector
+  aliases:
+  - retail sector India
+  - organized retail
+  - retail industry
+  category: employment_and_income
+- id: reliance_retail
+  aliases:
+  - Reliance Retail
+  - JioMart
+  - Reliance Retail hiring
+  category: employment_and_income
+- id: dmart
+  aliases:
+  - DMart
+  - Avenue Supermarts
+  - DMart expansion
+  category: employment_and_income
+- id: fdi_retail
+  aliases:
+  - FDI in retail
+  - retail FDI policy
+  - multi-brand retail FDI
+  category: global_economy
+- id: gst_impact_retail
+  aliases:
+  - GST on retail
+  - GST rate change
+  - GST compliance cost
+  - GST for small business
+  category: financial
+- id: logistics_sector
+  aliases:
+  - logistics India
+  - logistics industry
+  - supply chain India
+  category: employment_and_income
+- id: trucking
+  aliases:
+  - trucking industry India
+  - truck drivers
+  - road freight
+  - fleet operators
+  category: employment_and_income
+- id: warehousing
+  aliases:
+  - warehousing India
+  - warehouse sector
+  - 3PL India
+  - cold chain
+  category: employment_and_income
+- id: diesel_prices
+  aliases:
+  - diesel price India
+  - diesel rate
+  - diesel price hike
+  - diesel cost
+  category: energy
+- id: toll_charges
+  aliases:
+  - highway toll
+  - toll rate hike
+  - NHAI toll
+  - FASTag toll
+  category: financial
+- id: eway_bill
+  aliases:
+  - e-way bill
+  - eway bill
+  - GST e-way bill
+  - goods movement
+  category: financial
+- id: media_entertainment
+  aliases:
+  - media industry India
+  - entertainment sector
+  - M&E industry
+  category: employment_and_income
+- id: ott_platforms
+  aliases:
+  - OTT platforms India
+  - Netflix India
+  - Hotstar
+  - Amazon Prime Video
+  - JioCinema
+  category: employment_and_income
+- id: advertising_spend
+  aliases:
+  - ad spend India
+  - advertising industry
+  - digital ad spending
+  - ad revenue
+  category: financial
+- id: content_regulation
+  aliases:
+  - OTT regulation
+  - IT rules content
+  - CBFC
+  - content censorship
+  - MIB regulation
+  category: global_economy
+- id: education_sector
+  aliases:
+  - education sector India
+  - schools India
+  - colleges India
+  - education industry
+  category: employment_and_income
+- id: coaching_industry
+  aliases:
+  - coaching classes India
+  - coaching institutes
+  - Allen
+  - FIITJEE
+  - Kota coaching
+  category: employment_and_income
+- id: nep_implementation
+  aliases:
+  - NEP implementation
+  - New Education Policy rollout
+  - 4-year UG degree
+  - multiple exit
+  category: global_economy
+- id: fee_regulation
+  aliases:
+  - school fee regulation
+  - college fee cap
+  - tuition fee hike
+  - fee committee
+  category: global_economy
+- id: government_employment
+  aliases:
+  - government jobs India
+  - sarkari naukri
+  - central government recruitment
+  - state government jobs
+  category: employment_and_income
+- id: ssc_recruitment
+  aliases:
+  - SSC exam
+  - SSC CGL
+  - SSC CHSL
+  - Staff Selection Commission
+  category: employment_and_income
+- id: upsc_recruitment
+  aliases:
+  - UPSC
+  - civil services exam
+  - IAS recruitment
+  - UPSC results
+  category: employment_and_income
+- id: railway_recruitment
+  aliases:
+  - railway jobs
+  - RRB recruitment
+  - Indian Railways hiring
+  category: employment_and_income
+- id: pay_commission
+  aliases:
+  - pay commission
+  - 8th pay commission
+  - central pay commission
+  - DA hike
+  - dearness allowance
+  category: financial
+- id: retirement_age_policy
+  aliases:
+  - retirement age
+  - retirement age increase
+  - pension age
+  - superannuation age
+  category: global_economy
+- id: psu_disinvestment
+  aliases:
+  - PSU disinvestment
+  - PSU privatization
+  - strategic sale
+  - BPCL privatization
+  - LIC disinvestment
+  category: global_economy
+- id: job_market_india
+  aliases:
+  - job market India
+  - employment rate India
+  - hiring trends India
+  - job growth
+  category: employment_and_income
+- id: campus_placement
+  aliases:
+  - campus placement
+  - campus hiring
+  - campus recruitment
+  - placement season
+  category: employment_and_income
+- id: lateral_hiring
+  aliases:
+  - lateral hiring
+  - experienced hiring
+  - mid-level hiring
+  - senior hiring
+  category: employment_and_income
+- id: tech_layoffs
+  aliases:
+  - tech layoffs
+  - mass layoffs
+  - layoff announcements
+  - job cuts tech
+  category: employment_and_income
+- id: salary_trends
+  aliases:
+  - salary trends India
+  - salary hike
+  - appraisal season
+  - pay raise
+  - compensation trends
+  category: employment_and_income
+- id: esop_policy
+  aliases:
+  - ESOP
+  - employee stock options
+  - ESOP taxation
+  - ESOP liquidity
+  - stock options
+  category: employment_and_income
+- id: variable_pay
+  aliases:
+  - variable pay
+  - bonus payout
+  - performance bonus
+  - incentive pay
+  category: employment_and_income
+- id: upskilling
+  aliases:
+  - upskilling
+  - reskilling
+  - skill development
+  - learning and development
+  - professional training
+  category: employment_and_income
+- id: skill_obsolescence
+  aliases:
+  - skill obsolescence
+  - skill gap
+  - outdated skills
+  - automation risk
+  category: employment_and_income
+- id: certifications
+  aliases:
+  - professional certifications
+  - AWS certification
+  - PMP certification
+  - tech certifications
+  category: employment_and_income
+- id: new_labor_codes
+  aliases:
+  - new labor codes India
+  - labor code 2020
+  - wage code
+  - OSH code
+  - industrial relations code
+  - social security code
+  category: global_economy
+- id: contract_work_regulation
+  aliases:
+  - contract labor
+  - contract worker regulation
+  - fixed-term employment
+  - temp staffing
+  category: global_economy
+- id: gig_worker_rights
+  aliases:
+  - gig worker rights
+  - gig worker law
+  - platform worker regulation
+  - gig economy regulation
+  category: global_economy
+- id: minimum_wage
+  aliases:
+  - minimum wage India
+  - minimum wage hike
+  - floor wage
+  - state minimum wage
+  category: global_economy
+- id: remote_work_policy
+  aliases:
+  - remote work policy
+  - work from home policy
+  - hybrid work
+  - return to office
+  - RTO mandate
+  category: employment_and_income
+- id: coworking_spaces
+  aliases:
+  - coworking India
+  - WeWork India
+  - 91springboard
+  - coworking space demand
+  category: employment_and_income
+- id: wfh_tax_implications
+  aliases:
+  - work from home tax
+  - WFH tax deduction
+  - remote work across states tax
+  - digital nomad tax
+  category: financial
+- id: trade_unions
+  aliases:
+  - trade unions India
+  - labor unions
+  - worker strikes
+  - collective bargaining
+  category: employment_and_income
+- id: bank_strike
+  aliases:
+  - bank strike
+  - bank union strike
+  - AIBEA strike
+  - banking strike
+  category: employment_and_income
+- id: transport_strike
+  aliases:
+  - transport strike
+  - truck strike
+  - auto strike
+  - bus strike
+  category: employment_and_income
+- id: pension_policy
+  aliases:
+  - pension India
+  - old pension scheme
+  - OPS vs NPS
+  - pension reform
+  - EPS 95
+  category: global_economy
+- id: food_delivery
+  aliases:
+  - food delivery India
+  - Swiggy
+  - Zomato delivery
+  - food delivery app
+  category: employment_and_income
+- id: swiggy
+  aliases:
+  - Swiggy
+  - Swiggy IPO
+  - Swiggy hiring
+  - Swiggy gig workers
+  category: employment_and_income
+- id: zomato
+  aliases:
+  - Zomato
+  - Zomato results
+  - Zomato hiring
+  - Zomato Blinkit
+  category: employment_and_income
+- id: blinkit
+  aliases:
+  - Blinkit
+  - Blinkit dark store
+  - Blinkit delivery
+  - Grofers
+  category: employment_and_income
+- id: delivery_worker_earnings
+  aliases:
+  - delivery partner earnings
+  - Swiggy rider pay
+  - Zomato rider pay
+  - gig worker earnings
+  category: employment_and_income
+- id: fuel_cost_gig
+  aliases:
+  - petrol price gig workers
+  - fuel cost delivery
+  - CNG cost auto
+  category: energy
+- id: ride_hailing
+  aliases:
+  - ride hailing India
+  - cab aggregator
+  - ride sharing
+  category: employment_and_income
+- id: uber_india
+  aliases:
+  - Uber India
+  - Uber driver
+  - Uber fare
+  - Uber India policy
+  category: employment_and_income
+- id: ola_cabs
+  aliases:
+  - Ola Cabs
+  - Ola driver
+  - Ola fare
+  - Ola Electric
+  category: employment_and_income
+- id: driver_earnings
+  aliases:
+  - cab driver earnings
+  - Uber driver income
+  - Ola driver income
+  - ride hailing commission
+  category: employment_and_income
+- id: ride_hailing_regulation
+  aliases:
+  - cab aggregator regulation
+  - ride hailing policy
+  - motor vehicle aggregator guidelines
+  category: global_economy
+- id: freelance_market
+  aliases:
+  - freelancing India
+  - freelance jobs
+  - independent contractor
+  - remote freelance
+  category: employment_and_income
+- id: upwork_platform
+  aliases:
+  - Upwork
+  - Upwork India
+  - Upwork freelance
+  category: employment_and_income
+- id: fiverr_platform
+  aliases:
+  - Fiverr
+  - Fiverr India
+  - Fiverr gigs
+  category: employment_and_income
+- id: global_freelance_demand
+  aliases:
+  - global freelance demand
+  - offshore freelance
+  - remote work demand global
+  category: employment_and_income
+- id: inr_usd_freelance
+  aliases:
+  - rupee dollar freelance
+  - forex freelance earnings
+  - international payment freelance
+  category: financial
+- id: creator_economy
+  aliases:
+  - creator economy India
+  - content creator
+  - influencer economy
+  category: employment_and_income
+- id: youtube_india
+  aliases:
+  - YouTube India
+  - YouTube monetization
+  - YouTube ad rates India
+  - YouTube creator
+  category: employment_and_income
+- id: instagram_creators
+  aliases:
+  - Instagram creator
+  - Instagram reels monetization
+  - Instagram influencer
+  category: employment_and_income
+- id: ad_rate_changes
+  aliases:
+  - CPM rates
+  - ad rate changes
+  - digital ad rates
+  - creator ad revenue
+  category: financial
+- id: algorithm_changes
+  aliases:
+  - algorithm change
+  - social media algorithm
+  - reach decline
+  - engagement algorithm
+  category: technology_and_telecom
+- id: creator_monetization_policy
+  aliases:
+  - creator monetization
+  - YouTube Partner Program
+  - Instagram bonuses
+  - platform payout policy
+  category: technology_and_telecom
+- id: interest_rates_global
+  aliases:
+  - global interest rates
+  - Fed funds rate
+  - ECB rate
+  - BOJ rate
+  - central bank rates
+  category: financial
+- id: crude_oil_price
+  aliases:
+  - crude oil price
+  - Brent crude
+  - WTI crude
+  - oil price
+  - petroleum price
+  category: energy
+- id: rupee_exchange_rate
+  aliases:
+  - INR USD
+  - rupee dollar
+  - rupee exchange rate
+  - rupee depreciation
+  - forex INR
+  category: financial
+- id: gst_policy
+  aliases:
+  - GST policy
+  - GST rate change
+  - GST Council
+  - goods and services tax
+  category: financial
+- id: fdi_policy_india
+  aliases:
+  - FDI policy India
+  - foreign direct investment India
+  - FDI norms
+  - FDI cap
+  category: global_economy
+- id: india_china_trade
+  aliases:
+  - India China trade
+  - India China imports
+  - Chinese imports India
+  - India China border
+  category: global_economy
+- id: petrol_price
+  aliases:
+  - petrol price India
+  - petrol rate
+  - petrol price hike
+  - fuel price
+  category: energy
+- id: food_inflation
+  aliases:
+  - food inflation India
+  - food prices
+  - vegetable prices
+  - onion price
+  - tomato price
+  category: food_and_agriculture
+- id: rental_market
+  aliases:
+  - rent prices India
+  - rental market
+  - house rent
+  - rental yield
+  - rent hike
+  category: financial
 edges:
-
-  # ---------------------------------------------------------------------------
-  # IT SERVICES — internal structure
-  # ---------------------------------------------------------------------------
-  - from: tcs
-    to: it_services_sector
-    type: PRODUCES
-    description: "TCS is India's largest IT services company"
-
-  - from: infosys
-    to: it_services_sector
-    type: PRODUCES
-    description: "Infosys is a top-4 Indian IT services firm"
-
-  - from: wipro
-    to: it_services_sector
-    type: PRODUCES
-    description: "Wipro is a top-4 Indian IT services firm"
-
-  - from: hcl_tech
-    to: it_services_sector
-    type: PRODUCES
-    description: "HCL Tech is a top-4 Indian IT services firm"
-
-  - from: tech_mahindra
-    to: it_services_sector
-    type: PRODUCES
-    description: "Tech Mahindra is a major IT services firm"
-
-  - from: ltimindtree
-    to: it_services_sector
-    type: PRODUCES
-    description: "LTIMindtree is a mid-tier IT services firm"
-
-  - from: cognizant
-    to: it_services_sector
-    type: PRODUCES
-    description: "Cognizant serves Indian and US IT markets"
-
-  - from: it_services_sector
-    to: it_services_us_client
-    type: DEPENDS_ON
-    description: "~60% of Indian IT revenue comes from US clients"
-
-  - from: it_services_sector
-    to: it_services_eu_client
-    type: DEPENDS_ON
-    description: "~25% of Indian IT revenue comes from EU clients"
-
-  - from: it_services_us_client
-    to: us_economy
-    type: DEPENDS_ON
-    description: "US IT spending tracks US GDP and corporate earnings"
-
-  - from: it_services_eu_client
-    to: eu_economy
-    type: DEPENDS_ON
-    description: "EU IT spending tracks Eurozone economic health"
-
-  - from: it_services_sector
-    to: it_outsourcing_deals
-    type: DEPENDS_ON
-    description: "Revenue growth driven by large deal wins"
-
-  - from: us_recession_risk
-    to: it_services_us_client
-    type: DISRUPTS
-    description: "US recession cuts enterprise IT budgets"
-
-  - from: us_recession_risk
-    to: it_outsourcing_deals
-    type: DISRUPTS
-    description: "Recession delays deal pipeline and renewals"
-
-  - from: it_services_sector
-    to: h1b_visa
-    type: DEPENDS_ON
-    description: "Onsite delivery requires H-1B and L-1 visas"
-
-  - from: it_services_sector
-    to: l1_visa
-    type: DEPENDS_ON
-    description: "Intracompany transfers for onsite work"
-
-  - from: us_immigration_policy
-    to: h1b_visa
-    type: REGULATES
-    description: "US executive orders and USCIS rules govern H-1B"
-
-  - from: us_immigration_policy
-    to: l1_visa
-    type: REGULATES
-    description: "US policy governs L-1 visa processing"
-
-  - from: it_services_sector
-    to: it_attrition
-    type: AFFECTS
-    description: "Sector health drives attrition patterns"
-
-  - from: it_services_sector
-    to: it_fresher_hiring
-    type: AFFECTS
-    description: "Sector growth determines fresher intake volume"
-
-  - from: it_attrition
-    to: salary_trends
-    type: AFFECTS
-    description: "High attrition forces competitive salary hikes"
-
-  - from: it_services_sector
-    to: it_bench_strength
-    type: AFFECTS
-    description: "Deal pipeline affects bench utilization"
-
-  - from: it_services_sector
-    to: rupee_exchange_rate
-    type: AFFECTS
-    description: "IT exports are major forex earner, weak rupee boosts margins"
-
-  - from: rupee_exchange_rate
-    to: it_services_sector
-    type: AFFECTS
-    description: "Rupee depreciation increases revenue in INR terms"
-
-  - from: ai_job_displacement
-    to: it_services_sector
-    type: DISRUPTS
-    description: "AI coding tools reduce demand for low-level IT services"
-
-  - from: it_services_sector
-    to: commercial_real_estate
-    type: AFFECTS
-    description: "IT sector is largest occupier of office space in India"
-
-  # ---------------------------------------------------------------------------
-  # SAAS / PRODUCT TECH
-  # ---------------------------------------------------------------------------
-  - from: saas_sector
-    to: vc_funding_india
-    type: DEPENDS_ON
-    description: "SaaS startups depend on VC funding for growth"
-
-  - from: b2c_tech
-    to: vc_funding_india
-    type: DEPENDS_ON
-    description: "Consumer tech burns cash, needs VC backing"
-
-  - from: vc_funding_india
-    to: series_a_market
-    type: AFFECTS
-    description: "Overall VC climate determines Series A availability"
-
-  - from: vc_funding_india
-    to: series_b_c_market
-    type: AFFECTS
-    description: "VC climate determines growth funding"
-
-  - from: interest_rates_global
-    to: vc_funding_india
-    type: AFFECTS
-    description: "High global rates reduce LP allocations to VC"
-
-  - from: repo_rate
-    to: vc_funding_india
-    type: AFFECTS
-    description: "Domestic rates affect local VC fundraising"
-
-  - from: funding_winter
-    to: startup_layoffs
-    type: AFFECTS
-    description: "Funding crunch leads to startup layoffs to extend runway"
-
-  - from: funding_winter
-    to: startup_valuation
-    type: AFFECTS
-    description: "Funding winter compresses startup valuations"
-
-  - from: startup_layoffs
-    to: job_market_india
-    type: AFFECTS
-    description: "Mass startup layoffs increase job market supply"
-
-  - from: zoho
-    to: saas_sector
-    type: PRODUCES
-    description: "Zoho is India's largest bootstrapped SaaS company"
-
-  - from: freshworks
-    to: saas_sector
-    type: PRODUCES
-    description: "Freshworks is a publicly listed Indian SaaS company"
-
-  - from: razorpay
-    to: fintech_sector
-    type: PRODUCES
-    description: "Razorpay is a major payments/fintech company"
-
-  - from: razorpay
-    to: saas_sector
-    type: PRODUCES
-    description: "Razorpay also serves as B2B SaaS for merchants"
-
-  # ---------------------------------------------------------------------------
-  # AI / ML
-  # ---------------------------------------------------------------------------
-  - from: ai_ml_sector
-    to: llm_companies
-    type: PRODUCES
-    description: "LLM development is the highest-growth AI sub-sector"
-
-  - from: ai_ml_sector
-    to: ai_tooling
-    type: PRODUCES
-    description: "AI infrastructure and tooling companies support the ecosystem"
-
-  - from: ai_ml_sector
-    to: data_labeling
-    type: PRODUCES
-    description: "Data labeling is a major employment source in AI"
-
-  - from: llm_companies
-    to: compute_costs
-    type: DEPENDS_ON
-    description: "LLM training requires massive GPU compute"
-
-  - from: compute_costs
-    to: gpu_supply
-    type: DEPENDS_ON
-    description: "Compute costs driven by GPU availability"
-
-  - from: gpu_supply
-    to: nvidia
-    type: DEPENDS_ON
-    description: "NVIDIA dominates AI GPU market (80%+ share)"
-
-  - from: ai_regulation
-    to: ai_ml_sector
-    type: REGULATES
-    description: "AI safety laws affect what AI companies can build"
-
-  - from: ai_regulation
-    to: llm_companies
-    type: REGULATES
-    description: "EU AI Act and India AI policy affect LLM deployment"
-
-  - from: ai_job_displacement
-    to: it_services_sector
-    type: DISRUPTS
-    description: "AI automates testing, basic coding, BPO tasks"
-
-  - from: ai_job_displacement
-    to: data_labeling
-    type: DISRUPTS
-    description: "Better AI reduces need for human data labeling"
-
-  - from: ai_job_displacement
-    to: skill_obsolescence
-    type: AFFECTS
-    description: "AI changes which skills are valuable"
-
-  - from: ai_job_creation
-    to: job_market_india
-    type: AFFECTS
-    description: "AI creates new job categories and demand"
-
-  - from: ai_job_creation
-    to: upskilling
-    type: AFFECTS
-    description: "AI boom drives demand for AI/ML upskilling"
-
-  - from: openai
-    to: llm_companies
-    type: PRODUCES
-    description: "OpenAI is the leading LLM company"
-
-  - from: google_deepmind
-    to: llm_companies
-    type: PRODUCES
-    description: "Google DeepMind develops Gemini models"
-
-  - from: anthropic
-    to: llm_companies
-    type: PRODUCES
-    description: "Anthropic develops Claude models"
-
-  - from: ai_ml_sector
-    to: it_services_sector
-    type: DISRUPTS
-    description: "AI shifts IT services from labor arbitrage to AI-augmented delivery"
-
-  - from: ai_ml_sector
-    to: saas_sector
-    type: AFFECTS
-    description: "AI features are becoming table stakes for SaaS products"
-
-  # ---------------------------------------------------------------------------
-  # FINTECH
-  # ---------------------------------------------------------------------------
-  - from: fintech_sector
-    to: upi
-    type: DEPENDS_ON
-    description: "Indian fintech ecosystem built on UPI rails"
-
-  - from: phonepe
-    to: upi
-    type: DEPENDS_ON
-    description: "PhonePe processes ~48% of UPI transactions"
-
-  - from: google_pay
-    to: upi
-    type: DEPENDS_ON
-    description: "Google Pay processes ~35% of UPI transactions"
-
-  - from: paytm
-    to: upi
-    type: DEPENDS_ON
-    description: "Paytm uses UPI for payments"
-
-  - from: rbi_fintech_regulation
-    to: fintech_sector
-    type: REGULATES
-    description: "RBI circulars directly impact fintech operations"
-
-  - from: rbi_fintech_regulation
-    to: digital_lending
-    type: REGULATES
-    description: "RBI digital lending guidelines constrain BNPL and online loans"
-
-  - from: rbi_fintech_regulation
-    to: paytm
-    type: REGULATES
-    description: "RBI action on Paytm Payments Bank disrupted operations"
-
-  - from: fintech_sector
-    to: banking_employment
-    type: COMPETES_WITH
-    description: "Fintech disrupts traditional banking jobs"
-
-  - from: fintech_sector
-    to: vc_funding_india
-    type: DEPENDS_ON
-    description: "Fintech startups need VC funding"
-
-  - from: upi
-    to: digital_lending
-    type: AFFECTS
-    description: "UPI data enables digital lending decisions"
-
-  - from: wealthtech
-    to: fintech_sector
-    type: PRODUCES
-    description: "Wealthtech platforms are part of fintech ecosystem"
-
-  - from: insurance_tech
-    to: fintech_sector
-    type: PRODUCES
-    description: "Insurtech is a growing fintech vertical"
-
-  # ---------------------------------------------------------------------------
-  # EDTECH
-  # ---------------------------------------------------------------------------
-  - from: edtech_sector
-    to: edtech_funding
-    type: DEPENDS_ON
-    description: "Edtech companies are heavily VC-funded"
-
-  - from: funding_winter
-    to: edtech_funding
-    type: DISRUPTS
-    description: "Funding winter hit edtech particularly hard"
-
-  - from: byju
-    to: edtech_sector
-    type: PRODUCES
-    description: "BYJU'S was the largest Indian edtech (now in crisis)"
-
-  - from: unacademy
-    to: edtech_sector
-    type: PRODUCES
-    description: "Unacademy is a major test prep edtech"
-
-  - from: upgrad
-    to: edtech_sector
-    type: PRODUCES
-    description: "upGrad focuses on higher education edtech"
-
-  - from: physics_wallah
-    to: edtech_sector
-    type: PRODUCES
-    description: "Physics Wallah is a rapidly growing edtech unicorn"
-
-  - from: education_policy
-    to: edtech_sector
-    type: REGULATES
-    description: "NEP and UGC rules affect edtech curriculum and credentials"
-
-  - from: edtech_sector
-    to: coaching_industry
-    type: COMPETES_WITH
-    description: "Online edtech competes with offline coaching"
-
-  - from: edtech_sector
-    to: education_sector
-    type: DISRUPTS
-    description: "Edtech disrupts traditional education models"
-
-  # ---------------------------------------------------------------------------
-  # E-COMMERCE
-  # ---------------------------------------------------------------------------
-  - from: amazon_india
-    to: ecommerce_sector
-    type: PRODUCES
-    description: "Amazon India is a top e-commerce platform"
-
-  - from: flipkart
-    to: ecommerce_sector
-    type: PRODUCES
-    description: "Flipkart is India's largest homegrown e-commerce"
-
-  - from: meesho
-    to: ecommerce_sector
-    type: PRODUCES
-    description: "Meesho focuses on tier-2/3 social commerce"
-
-  - from: ecommerce_sector
-    to: ecommerce_logistics
-    type: DEPENDS_ON
-    description: "E-commerce depends on logistics for delivery"
-
-  - from: ecommerce_sector
-    to: warehouse_employment
-    type: EMPLOYS
-    description: "E-commerce drives warehouse and fulfillment jobs"
-
-  - from: fdi_ecommerce
-    to: ecommerce_sector
-    type: REGULATES
-    description: "FDI policy determines foreign e-commerce operations in India"
-
-  - from: quick_commerce
-    to: ecommerce_sector
-    type: PRODUCES
-    description: "Quick commerce is the fastest-growing e-commerce segment"
-
-  - from: quick_commerce
-    to: delivery_worker_earnings
-    type: AFFECTS
-    description: "Quick commerce delivery model affects gig worker pay"
-
-  - from: ecommerce_sector
-    to: retail_sector
-    type: COMPETES_WITH
-    description: "E-commerce competes with offline retail"
-
-  - from: ecommerce_logistics
-    to: diesel_prices
-    type: DEPENDS_ON
-    description: "Logistics costs driven by diesel prices"
-
-  - from: ecommerce_sector
-    to: gst_policy
-    type: DEPENDS_ON
-    description: "GST compliance affects e-commerce sellers"
-
-  - from: customs_duty
-    to: ecommerce_sector
-    type: AFFECTS
-    description: "Import duties affect cross-border e-commerce pricing"
-
-  # ---------------------------------------------------------------------------
-  # GAMING
-  # ---------------------------------------------------------------------------
-  - from: gst_on_gaming
-    to: gaming_sector
-    type: REGULATES
-    description: "28% GST on full face value devastated real money gaming"
-
-  - from: app_store_policy
-    to: gaming_sector
-    type: REGULATES
-    description: "App store commissions and policies affect game distribution"
-
-  - from: gaming_sector
-    to: ai_ml_sector
-    type: DEPENDS_ON
-    description: "Game development increasingly uses AI for content and testing"
-
-  # ---------------------------------------------------------------------------
-  # CYBERSECURITY
-  # ---------------------------------------------------------------------------
-  - from: data_breach_news
-    to: cybersecurity_sector
-    type: AFFECTS
-    description: "Major breaches increase cybersecurity hiring and budgets"
-
-  - from: cert_in
-    to: cybersecurity_sector
-    type: REGULATES
-    description: "CERT-In mandates drive compliance hiring"
-
-  - from: dpdp_act
-    to: cybersecurity_sector
-    type: AFFECTS
-    description: "Data protection law increases demand for security professionals"
-
-  - from: dpdp_act
-    to: it_services_sector
-    type: AFFECTS
-    description: "DPDP compliance creates new IT services revenue stream"
-
-  - from: cybersecurity_sector
-    to: job_market_india
-    type: AFFECTS
-    description: "Cybersecurity has persistent talent shortage"
-
-  # ---------------------------------------------------------------------------
-  # AUTO MANUFACTURING
-  # ---------------------------------------------------------------------------
-  - from: tata_motors
-    to: auto_manufacturing
-    type: PRODUCES
-    description: "Tata Motors is a major auto OEM"
-
-  - from: mahindra_auto
-    to: auto_manufacturing
-    type: PRODUCES
-    description: "M&M is a major auto OEM (SUVs, tractors)"
-
-  - from: maruti_suzuki
-    to: auto_manufacturing
-    type: PRODUCES
-    description: "Maruti Suzuki leads passenger vehicle market"
-
-  - from: hyundai_india
-    to: auto_manufacturing
-    type: PRODUCES
-    description: "Hyundai India is #2 passenger vehicle maker"
-
-  - from: auto_manufacturing
-    to: steel_supply
-    type: CONSUMES
-    description: "Auto sector is a major steel consumer"
-
-  - from: auto_manufacturing
-    to: rubber_supply
-    type: CONSUMES
-    description: "Tires and components need rubber"
-
-  - from: auto_manufacturing
-    to: semiconductor_supply
-    type: DEPENDS_ON
-    description: "Modern vehicles need 1000+ semiconductor chips"
-
-  - from: auto_manufacturing
-    to: auto_component
-    type: DEPENDS_ON
-    description: "OEMs depend on component suppliers"
-
-  - from: ev_manufacturing
-    to: auto_manufacturing
-    type: DISRUPTS
-    description: "EV transition disrupts traditional auto jobs (less parts, new skills)"
-
-  - from: vehicle_scrappage
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "Scrappage policy creates replacement demand"
-
-  - from: auto_manufacturing
-    to: job_market_india
-    type: EMPLOYS
-    description: "Auto sector employs 37M+ directly and indirectly"
-
-  - from: auto_manufacturing
-    to: logistics_sector
-    type: DEPENDS_ON
-    description: "Auto supply chain needs extensive logistics"
-
-  - from: repo_rate
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "Interest rates affect auto loan EMIs and vehicle demand"
-
-  - from: gst_policy
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "GST rates on vehicles affect pricing and demand"
-
-  - from: crude_oil_price
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "Oil prices affect vehicle operating costs and demand mix (ICE vs EV)"
-
-  - from: semiconductor_india
-    to: semiconductor_supply
-    type: AFFECTS
-    description: "India semiconductor fabs reduce import dependency"
-
-  - from: china_economy
-    to: semiconductor_supply
-    type: AFFECTS
-    description: "China is a major semiconductor supply chain node"
-
-  # ---------------------------------------------------------------------------
-  # PHARMA
-  # ---------------------------------------------------------------------------
-  - from: sun_pharma
-    to: pharma_sector
-    type: PRODUCES
-    description: "Sun Pharma is India's largest pharma company"
-
-  - from: dr_reddys
-    to: pharma_sector
-    type: PRODUCES
-    description: "Dr. Reddy's is a major generics manufacturer"
-
-  - from: cipla
-    to: pharma_sector
-    type: PRODUCES
-    description: "Cipla is a leading pharma company"
-
-  - from: pharma_sector
-    to: pharma_api_china
-    type: DEPENDS_ON
-    description: "India imports ~68% of APIs from China"
-
-  - from: india_china_trade
-    to: pharma_api_china
-    type: AFFECTS
-    description: "India-China relations affect API supply chain"
-
-  - from: drug_pricing
-    to: pharma_sector
-    type: REGULATES
-    description: "DPCO price controls affect pharma revenue"
-
-  - from: us_fda_inspection
-    to: pharma_sector
-    type: REGULATES
-    description: "FDA approvals/warnings affect US export revenue"
-
-  - from: pharma_sector
-    to: generic_drugs
-    type: PRODUCES
-    description: "India is world's largest generic drug producer"
-
-  - from: pharma_sector
-    to: healthcare_employment
-    type: SUPPLIES
-    description: "Pharma supplies drugs to hospitals and clinics"
-
-  - from: rupee_exchange_rate
-    to: pharma_sector
-    type: AFFECTS
-    description: "Weak rupee helps export revenue but increases API import cost"
-
-  # ---------------------------------------------------------------------------
-  # FMCG
-  # ---------------------------------------------------------------------------
-  - from: hul
-    to: fmcg_sector
-    type: PRODUCES
-    description: "HUL is India's largest FMCG company"
-
-  - from: itc_limited
-    to: fmcg_sector
-    type: PRODUCES
-    description: "ITC is a diversified FMCG conglomerate"
-
-  - from: nestle_india
-    to: fmcg_sector
-    type: PRODUCES
-    description: "Nestle India is a major packaged foods company"
-
-  - from: rural_demand
-    to: fmcg_sector
-    type: AFFECTS
-    description: "FMCG volume growth driven by rural demand"
-
-  - from: monsoon_forecast
-    to: rural_demand
-    type: AFFECTS
-    description: "Good monsoon boosts rural income and demand"
-
-  - from: food_inflation
-    to: fmcg_sector
-    type: AFFECTS
-    description: "Food inflation affects raw material costs and pricing power"
-
-  - from: palm_oil_import
-    to: fmcg_sector
-    type: AFFECTS
-    description: "Palm oil is key input for soaps, foods"
-
-  - from: gst_policy
-    to: fmcg_sector
-    type: AFFECTS
-    description: "GST rates on FMCG products affect pricing"
-
-  - from: fmcg_sector
-    to: job_market_india
-    type: EMPLOYS
-    description: "FMCG employs millions in manufacturing, distribution, retail"
-
-  # ---------------------------------------------------------------------------
-  # BANKING EMPLOYMENT
-  # ---------------------------------------------------------------------------
-  - from: psu_banks
-    to: banking_employment
-    type: EMPLOYS
-    description: "PSU banks are major employers"
-
-  - from: private_banks
-    to: banking_employment
-    type: EMPLOYS
-    description: "Private banks hire aggressively for growth"
-
-  - from: nbfc_sector
-    to: banking_employment
-    type: EMPLOYS
-    description: "NBFCs employ significant workforce"
-
-  - from: npa_crisis
-    to: banking_employment
-    type: DISRUPTS
-    description: "High NPAs lead to bank restructuring and hiring freeze"
-
-  - from: credit_growth
-    to: banking_employment
-    type: AFFECTS
-    description: "Strong credit growth drives hiring in banking"
-
-  - from: banking_regulation
-    to: banking_employment
-    type: REGULATES
-    description: "RBI regulations affect bank operations and staffing"
-
-  - from: repo_rate
-    to: credit_growth
-    type: AFFECTS
-    description: "Repo rate changes affect lending rates and credit demand"
-
-  - from: fintech_sector
-    to: banking_employment
-    type: DISRUPTS
-    description: "Fintech automates traditional banking roles"
-
-  - from: psu_disinvestment
-    to: psu_banks
-    type: AFFECTS
-    description: "Bank privatization changes employment terms"
-
-  - from: npa_crisis
-    to: credit_growth
-    type: AFFECTS
-    description: "High NPAs make banks risk-averse, reducing lending"
-
-  # ---------------------------------------------------------------------------
-  # HEALTHCARE
-  # ---------------------------------------------------------------------------
-  - from: apollo_hospitals
-    to: healthcare_employment
-    type: EMPLOYS
-    description: "Apollo is India's largest hospital chain"
-
-  - from: fortis_healthcare
-    to: healthcare_employment
-    type: EMPLOYS
-    description: "Fortis is a major hospital chain"
-
-  - from: max_healthcare
-    to: healthcare_employment
-    type: EMPLOYS
-    description: "Max Healthcare is a leading hospital chain"
-
-  - from: health_insurance_regulation
-    to: healthcare_employment
-    type: AFFECTS
-    description: "Health insurance expansion increases hospital patient volume"
-
-  - from: diagnostics_sector
-    to: healthcare_employment
-    type: EMPLOYS
-    description: "Diagnostics chains employ technicians and pathologists"
-
-  - from: telemedicine
-    to: healthcare_employment
-    type: DISRUPTS
-    description: "Telemedicine changes doctor employment patterns"
-
-  - from: medical_devices
-    to: healthcare_employment
-    type: AFFECTS
-    description: "Medical device industry creates manufacturing and service jobs"
-
-  - from: ai_ml_sector
-    to: diagnostics_sector
-    type: DISRUPTS
-    description: "AI in radiology and pathology changes diagnostic roles"
-
-  # ---------------------------------------------------------------------------
-  # REAL ESTATE & CONSTRUCTION
-  # ---------------------------------------------------------------------------
-  - from: repo_rate
-    to: real_estate_sector
-    type: AFFECTS
-    description: "Interest rates directly affect housing demand via EMI"
-
-  - from: repo_rate
-    to: home_loan_emi
-    type: AFFECTS
-    description: "Floating rate home loans benchmarked to repo/EBLR"
-
-  - from: rera
-    to: real_estate_sector
-    type: REGULATES
-    description: "RERA governs builder-buyer relationships"
-
-  - from: affordable_housing
-    to: real_estate_sector
-    type: AFFECTS
-    description: "PMAY subsidies boost affordable housing demand"
-
-  - from: real_estate_sector
-    to: construction_employment
-    type: EMPLOYS
-    description: "Real estate projects create construction jobs"
-
-  - from: construction_employment
-    to: cement_industry
-    type: CONSUMES
-    description: "Construction is the largest cement consumer"
-
-  - from: construction_employment
-    to: steel_supply
-    type: CONSUMES
-    description: "Construction is a major steel consumer"
-
-  - from: builders_developers
-    to: real_estate_sector
-    type: PRODUCES
-    description: "Developers build residential and commercial properties"
-
-  - from: commercial_real_estate
-    to: it_services_sector
-    type: DEPENDS_ON
-    description: "Office space demand tied to IT sector health"
-
-  - from: remote_work_policy
-    to: commercial_real_estate
-    type: AFFECTS
-    description: "Remote/hybrid work reduces office space demand"
-
-  - from: real_estate_sector
-    to: rental_market
-    type: AFFECTS
-    description: "Property supply/demand affects rental prices"
-
-  - from: gst_policy
-    to: cement_industry
-    type: AFFECTS
-    description: "GST on cement affects construction costs"
-
-  # ---------------------------------------------------------------------------
-  # AGRICULTURE
-  # ---------------------------------------------------------------------------
-  - from: monsoon_forecast
-    to: agriculture_sector
-    type: AFFECTS
-    description: "Monsoon determines kharif crop output"
-
-  - from: msp_policy
-    to: agriculture_sector
-    type: AFFECTS
-    description: "MSP determines farmer income for key crops"
-
-  - from: fertilizer_subsidy
-    to: agriculture_sector
-    type: AFFECTS
-    description: "Fertilizer costs are a major farming input"
-
-  - from: crop_insurance
-    to: agriculture_sector
-    type: AFFECTS
-    description: "Crop insurance provides safety net for farmers"
-
-  - from: agriculture_sector
-    to: food_processing
-    type: SUPPLIES
-    description: "Agriculture supplies raw material to food processing"
-
-  - from: agriculture_sector
-    to: food_inflation
-    type: AFFECTS
-    description: "Crop output directly drives food prices"
-
-  - from: agritech
-    to: agriculture_sector
-    type: AFFECTS
-    description: "Agritech improves farm productivity and market access"
-
-  - from: agriculture_sector
-    to: rural_demand
-    type: AFFECTS
-    description: "Farm income drives rural consumption spending"
-
-  - from: crude_oil_price
-    to: fertilizer_subsidy
-    type: AFFECTS
-    description: "Oil prices affect fertilizer production costs"
-
-  - from: monsoon_forecast
-    to: food_inflation
-    type: AFFECTS
-    description: "Poor monsoon causes food price spikes"
-
-  # ---------------------------------------------------------------------------
-  # RETAIL
-  # ---------------------------------------------------------------------------
-  - from: reliance_retail
-    to: retail_sector
-    type: PRODUCES
-    description: "Reliance Retail is India's largest retailer"
-
-  - from: dmart
-    to: retail_sector
-    type: PRODUCES
-    description: "DMart is a major value retail chain"
-
-  - from: fdi_retail
-    to: retail_sector
-    type: REGULATES
-    description: "FDI norms determine foreign retail presence"
-
-  - from: gst_impact_retail
-    to: retail_sector
-    type: AFFECTS
-    description: "GST compliance costs affect small retailers disproportionately"
-
-  - from: food_inflation
-    to: retail_sector
-    type: AFFECTS
-    description: "Food inflation affects grocery retail margins and volumes"
-
-  - from: ecommerce_sector
-    to: retail_sector
-    type: DISRUPTS
-    description: "E-commerce captures share from offline retail"
-
-  - from: retail_sector
-    to: job_market_india
-    type: EMPLOYS
-    description: "Retail employs ~40M in India"
-
-  # ---------------------------------------------------------------------------
-  # LOGISTICS
-  # ---------------------------------------------------------------------------
-  - from: diesel_prices
-    to: trucking
-    type: AFFECTS
-    description: "Diesel is ~60% of trucking operating cost"
-
-  - from: diesel_prices
-    to: logistics_sector
-    type: AFFECTS
-    description: "Fuel costs drive overall logistics costs"
-
-  - from: crude_oil_price
-    to: diesel_prices
-    type: AFFECTS
-    description: "Diesel prices track crude oil with government pricing"
-
-  - from: toll_charges
-    to: trucking
-    type: AFFECTS
-    description: "Toll costs are significant trucking expense"
-
-  - from: eway_bill
-    to: logistics_sector
-    type: REGULATES
-    description: "E-way bill compliance governs goods movement"
-
-  - from: logistics_sector
-    to: ecommerce_logistics
-    type: SUPPLIES
-    description: "3PL firms provide e-commerce delivery"
-
-  - from: logistics_sector
-    to: fmcg_sector
-    type: SUPPLIES
-    description: "Logistics enables FMCG distribution"
-
-  - from: logistics_sector
-    to: auto_manufacturing
-    type: SUPPLIES
-    description: "Logistics moves auto parts and finished vehicles"
-
-  - from: logistics_sector
-    to: food_processing
-    type: SUPPLIES
-    description: "Cold chain logistics for food distribution"
-
-  - from: trucking
-    to: job_market_india
-    type: EMPLOYS
-    description: "Trucking employs ~8M drivers in India"
-
-  # ---------------------------------------------------------------------------
-  # MEDIA & ENTERTAINMENT
-  # ---------------------------------------------------------------------------
-  - from: ott_platforms
-    to: media_entertainment
-    type: PRODUCES
-    description: "OTT is the fastest growing M&E segment"
-
-  - from: advertising_spend
-    to: media_entertainment
-    type: FUNDS
-    description: "Ad revenue funds most media operations"
-
-  - from: content_regulation
-    to: media_entertainment
-    type: REGULATES
-    description: "Government rules affect content creation"
-
-  - from: advertising_spend
-    to: creator_economy
-    type: FUNDS
-    description: "Brand ad budgets fund creator monetization"
-
-  - from: india_gdp
-    to: advertising_spend
-    type: AFFECTS
-    description: "GDP growth drives corporate ad spending"
-
-  # ---------------------------------------------------------------------------
-  # EDUCATION (non-tech)
-  # ---------------------------------------------------------------------------
-  - from: nep_implementation
-    to: education_sector
-    type: REGULATES
-    description: "NEP 2020 restructures entire education system"
-
-  - from: fee_regulation
-    to: education_sector
-    type: REGULATES
-    description: "State fee committees cap school and college fees"
-
-  - from: coaching_industry
-    to: education_sector
-    type: PRODUCES
-    description: "Coaching is a $10B+ parallel education industry"
-
-  - from: education_sector
-    to: job_market_india
-    type: EMPLOYS
-    description: "Education employs millions of teachers and staff"
-
-  - from: education_policy
-    to: nep_implementation
-    type: REGULATES
-    description: "Education policy governs NEP rollout"
-
-  # ---------------------------------------------------------------------------
-  # GOVERNMENT / PSU
-  # ---------------------------------------------------------------------------
-  - from: government_employment
-    to: ssc_recruitment
-    type: EMPLOYS
-    description: "SSC recruits for central government jobs"
-
-  - from: government_employment
-    to: upsc_recruitment
-    type: EMPLOYS
-    description: "UPSC recruits for elite civil services"
-
-  - from: government_employment
-    to: railway_recruitment
-    type: EMPLOYS
-    description: "Railways is India's largest single employer"
-
-  - from: pay_commission
-    to: government_employment
-    type: AFFECTS
-    description: "Pay commission determines government salary structure"
-
-  - from: retirement_age_policy
-    to: government_employment
-    type: AFFECTS
-    description: "Retirement age changes affect vacancies and hiring"
-
-  - from: psu_disinvestment
-    to: government_employment
-    type: DISRUPTS
-    description: "PSU privatization may change job security and terms"
-
-  - from: pay_commission
-    to: cpi_inflation
-    type: AFFECTS
-    description: "DA linked to CPI; pay revision increases government spending"
-
-  - from: india_gdp
-    to: government_employment
-    type: AFFECTS
-    description: "Tax revenue from GDP determines government hiring capacity"
-
-  # ---------------------------------------------------------------------------
-  # EMPLOYMENT MECHANICS
-  # ---------------------------------------------------------------------------
-  - from: job_market_india
-    to: campus_placement
-    type: AFFECTS
-    description: "Overall job market conditions drive campus hiring volumes"
-
-  - from: job_market_india
-    to: lateral_hiring
-    type: AFFECTS
-    description: "Market conditions determine lateral hiring pace"
-
-  - from: tech_layoffs
-    to: job_market_india
-    type: DISRUPTS
-    description: "Mass layoffs flood the job market with candidates"
-
-  - from: tech_layoffs
-    to: salary_trends
-    type: AFFECTS
-    description: "Layoffs suppress salary growth due to oversupply"
-
-  - from: india_gdp
-    to: job_market_india
-    type: AFFECTS
-    description: "GDP growth is the primary driver of job creation"
-
-  - from: salary_trends
-    to: cpi_inflation
-    type: DEPENDS_ON
-    description: "Real salary growth measured against inflation"
-
-  - from: esop_policy
-    to: startup_valuation
-    type: DEPENDS_ON
-    description: "ESOP value depends on company valuation"
-
-  - from: upskilling
-    to: ai_job_creation
-    type: DEPENDS_ON
-    description: "AI job capture requires active upskilling"
-
-  - from: skill_obsolescence
-    to: ai_job_displacement
-    type: DEPENDS_ON
-    description: "Obsolete skills correlate with AI displacement risk"
-
-  - from: certifications
-    to: upskilling
-    type: PRODUCES
-    description: "Certifications are a key upskilling mechanism"
-
-  - from: cpi_inflation
-    to: salary_trends
-    type: AFFECTS
-    description: "Inflation creates pressure for higher salary hikes"
-
-  # ---------------------------------------------------------------------------
-  # LABOR LAW
-  # ---------------------------------------------------------------------------
-  - from: new_labor_codes
-    to: job_market_india
-    type: REGULATES
-    description: "New labor codes affect hiring, firing, and working conditions"
-
-  - from: new_labor_codes
-    to: epf
-    type: REGULATES
-    description: "Social security code changes EPF contribution structure"
-
-  - from: new_labor_codes
-    to: gratuity
-    type: REGULATES
-    description: "Industrial relations code affects gratuity rules"
-
-  - from: contract_work_regulation
-    to: job_market_india
-    type: REGULATES
-    description: "Contract labor rules affect employment formalization"
-
-  - from: gig_worker_rights
-    to: food_delivery
-    type: REGULATES
-    description: "Gig worker laws affect delivery platform costs"
-
-  - from: gig_worker_rights
-    to: ride_hailing
-    type: REGULATES
-    description: "Gig worker regulations affect cab aggregator models"
-
-  - from: minimum_wage
-    to: construction_employment
-    type: AFFECTS
-    description: "Minimum wage affects construction labor costs"
-
-  - from: minimum_wage
-    to: warehouse_employment
-    type: AFFECTS
-    description: "Minimum wage affects warehouse and logistics labor"
-
-  - from: minimum_wage
-    to: retail_sector
-    type: AFFECTS
-    description: "Minimum wage affects retail staffing costs"
-
-  # ---------------------------------------------------------------------------
-  # REMOTE WORK
-  # ---------------------------------------------------------------------------
-  - from: remote_work_policy
-    to: it_services_sector
-    type: AFFECTS
-    description: "IT sector is the primary remote work adopter"
-
-  - from: remote_work_policy
-    to: coworking_spaces
-    type: AFFECTS
-    description: "Hybrid policies drive coworking demand"
-
-  - from: wfh_tax_implications
-    to: remote_work_policy
-    type: AFFECTS
-    description: "Tax rules affect where remote workers choose to live"
-
-  - from: remote_work_policy
-    to: rental_market
-    type: AFFECTS
-    description: "Remote work shifts rental demand from city centers to suburbs/smaller cities"
-
-  - from: remote_work_policy
-    to: commercial_real_estate
-    type: DISRUPTS
-    description: "Permanent hybrid/remote reduces office demand"
-
-  # ---------------------------------------------------------------------------
-  # UNIONS
-  # ---------------------------------------------------------------------------
-  - from: trade_unions
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "Auto sector has strong union presence"
-
-  - from: bank_strike
-    to: banking_employment
-    type: DISRUPTS
-    description: "Bank strikes disrupt banking operations"
-
-  - from: transport_strike
-    to: logistics_sector
-    type: DISRUPTS
-    description: "Transport strikes halt goods movement"
-
-  - from: trade_unions
-    to: new_labor_codes
-    type: AFFECTS
-    description: "Unions oppose/shape labor law reforms"
-
-  # ---------------------------------------------------------------------------
-  # RETIREMENT
-  # ---------------------------------------------------------------------------
-  - from: epf
-    to: job_market_india
-    type: AFFECTS
-    description: "EPF mandate affects employer cost per employee"
-
-  - from: nps
-    to: government_employment
-    type: AFFECTS
-    description: "NPS vs OPS debate affects government employee benefits"
-
-  - from: pension_policy
-    to: nps
-    type: REGULATES
-    description: "Government pension policy determines NPS rules"
-
-  - from: pension_policy
-    to: epf
-    type: REGULATES
-    description: "Pension reform affects EPF/EPS structure"
-
-  - from: repo_rate
-    to: epf
-    type: AFFECTS
-    description: "Interest rate environment affects EPF interest rate decisions"
-
-  - from: repo_rate
-    to: nps
-    type: AFFECTS
-    description: "Bond yields affect NPS debt fund returns"
-
-  # ---------------------------------------------------------------------------
-  # GIG ECONOMY — DELIVERY
-  # ---------------------------------------------------------------------------
-  - from: swiggy
-    to: food_delivery
-    type: PRODUCES
-    description: "Swiggy is a leading food delivery platform"
-
-  - from: zomato
-    to: food_delivery
-    type: PRODUCES
-    description: "Zomato is a leading food delivery platform"
-
-  - from: blinkit
-    to: quick_commerce
-    type: PRODUCES
-    description: "Blinkit (Zomato subsidiary) leads quick commerce"
-
-  - from: food_delivery
-    to: delivery_worker_earnings
-    type: AFFECTS
-    description: "Platform commission and order volume determine delivery earnings"
-
-  - from: fuel_cost_gig
-    to: delivery_worker_earnings
-    type: AFFECTS
-    description: "Fuel costs eat into delivery partner earnings"
-
-  - from: petrol_price
-    to: fuel_cost_gig
-    type: AFFECTS
-    description: "Petrol/CNG prices are major gig worker expense"
-
-  - from: gig_worker_rights
-    to: delivery_worker_earnings
-    type: AFFECTS
-    description: "Regulation may mandate minimum earnings guarantee"
-
-  - from: food_delivery
-    to: gst_policy
-    type: DEPENDS_ON
-    description: "GST on food delivery affects platform economics"
-
-  # ---------------------------------------------------------------------------
-  # GIG ECONOMY — RIDE HAILING
-  # ---------------------------------------------------------------------------
-  - from: uber_india
-    to: ride_hailing
-    type: PRODUCES
-    description: "Uber operates in major Indian cities"
-
-  - from: ola_cabs
-    to: ride_hailing
-    type: PRODUCES
-    description: "Ola is India's largest ride hailing platform"
-
-  - from: ride_hailing
-    to: driver_earnings
-    type: AFFECTS
-    description: "Platform commission structure determines driver income"
-
-  - from: fuel_cost_gig
-    to: driver_earnings
-    type: AFFECTS
-    description: "Fuel costs are major driver expense"
-
-  - from: ride_hailing_regulation
-    to: ride_hailing
-    type: REGULATES
-    description: "State-level regulations affect surge pricing and commissions"
-
-  - from: ride_hailing
-    to: job_market_india
-    type: EMPLOYS
-    description: "Ride hailing employs millions of drivers"
-
-  - from: ev_manufacturing
-    to: ride_hailing
-    type: AFFECTS
-    description: "EV adoption changes driver economics (lower fuel cost)"
-
-  # ---------------------------------------------------------------------------
-  # GIG ECONOMY — FREELANCE
-  # ---------------------------------------------------------------------------
-  - from: freelance_market
-    to: global_freelance_demand
-    type: DEPENDS_ON
-    description: "Indian freelancers serve global clients"
-
-  - from: global_freelance_demand
-    to: us_economy
-    type: DEPENDS_ON
-    description: "US is the largest freelance demand market"
-
-  - from: rupee_exchange_rate
-    to: inr_usd_freelance
-    type: AFFECTS
-    description: "Rupee rate determines INR value of dollar earnings"
-
-  - from: inr_usd_freelance
-    to: freelance_market
-    type: AFFECTS
-    description: "Forex rates affect freelance earning attractiveness"
-
-  - from: ai_job_displacement
-    to: freelance_market
-    type: DISRUPTS
-    description: "AI tools reduce demand for basic freelance work (writing, design)"
-
-  - from: ai_job_creation
-    to: freelance_market
-    type: AFFECTS
-    description: "AI creates new freelance niches (prompt engineering, AI training)"
-
-  - from: upwork_platform
-    to: freelance_market
-    type: PRODUCES
-    description: "Upwork is a major freelance marketplace"
-
-  - from: fiverr_platform
-    to: freelance_market
-    type: PRODUCES
-    description: "Fiverr is a popular freelance platform"
-
-  # ---------------------------------------------------------------------------
-  # CREATOR ECONOMY
-  # ---------------------------------------------------------------------------
-  - from: youtube_india
-    to: creator_economy
-    type: PRODUCES
-    description: "YouTube is India's largest creator platform"
-
-  - from: instagram_creators
-    to: creator_economy
-    type: PRODUCES
-    description: "Instagram is a major influencer/creator platform"
-
-  - from: ad_rate_changes
-    to: creator_economy
-    type: AFFECTS
-    description: "CPM rate changes directly affect creator income"
-
-  - from: algorithm_changes
-    to: creator_economy
-    type: DISRUPTS
-    description: "Algorithm changes can destroy creator reach overnight"
-
-  - from: creator_monetization_policy
-    to: creator_economy
-    type: REGULATES
-    description: "Platform monetization policies determine creator payouts"
-
-  - from: advertising_spend
-    to: ad_rate_changes
-    type: AFFECTS
-    description: "Overall ad market determines CPM rates"
-
-  - from: us_economy
-    to: ad_rate_changes
-    type: AFFECTS
-    description: "US brands drive global digital ad CPM rates"
-
-  - from: creator_economy
-    to: gst_policy
-    type: DEPENDS_ON
-    description: "Creators above threshold must register for GST"
-
-  - from: ai_ml_sector
-    to: creator_economy
-    type: DISRUPTS
-    description: "AI content generation competes with human creators"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: FINANCIAL → EMPLOYMENT
-  # ---------------------------------------------------------------------------
-  - from: repo_rate
-    to: it_services_sector
-    type: AFFECTS
-    description: "Rate hikes slow US economy, reducing IT spend"
-
-  - from: repo_rate
-    to: vc_funding_india
-    type: AFFECTS
-    description: "Higher rates increase cost of capital, reduce VC risk appetite"
-
-  - from: cpi_inflation
-    to: salary_trends
-    type: AFFECTS
-    description: "Inflation erodes real wages, pressuring employers for hikes"
-
-  - from: rupee_exchange_rate
-    to: freelance_market
-    type: AFFECTS
-    description: "Weak rupee makes Indian freelancers more competitive globally"
-
-  - from: gst_policy
-    to: job_market_india
-    type: AFFECTS
-    description: "GST compliance burden and rate changes affect business hiring"
-
-  - from: customs_duty
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "Import duty on parts affects auto manufacturing costs"
-
-  - from: customs_duty
-    to: pharma_api_china
-    type: AFFECTS
-    description: "Duty on Chinese APIs affects pharma input costs"
-
-  - from: gold_price
-    to: banking_employment
-    type: AFFECTS
-    description: "Gold loan business expands with gold prices"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: ENERGY → EMPLOYMENT
-  # ---------------------------------------------------------------------------
-  - from: crude_oil_price
-    to: logistics_sector
-    type: AFFECTS
-    description: "Oil prices drive transportation costs across economy"
-
-  - from: crude_oil_price
-    to: delivery_worker_earnings
-    type: AFFECTS
-    description: "Oil → petrol → delivery worker expenses"
-
-  - from: petrol_price
-    to: ride_hailing
-    type: AFFECTS
-    description: "Fuel costs are the biggest driver expense"
-
-  - from: electricity_tariff
-    to: it_services_sector
-    type: AFFECTS
-    description: "Power costs affect data center and office operating costs"
-
-  - from: electricity_tariff
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "Power costs affect factory operating costs"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: GEOPOLITICS → EMPLOYMENT
-  # ---------------------------------------------------------------------------
-  - from: us_economy
-    to: it_services_sector
-    type: AFFECTS
-    description: "US economic health is the primary IT revenue driver"
-
-  - from: us_economy
-    to: global_freelance_demand
-    type: AFFECTS
-    description: "US clients drive global freelance demand"
-
-  - from: eu_economy
-    to: it_services_sector
-    type: AFFECTS
-    description: "EU economic health affects ~25% of IT revenue"
-
-  - from: china_economy
-    to: pharma_api_china
-    type: AFFECTS
-    description: "Chinese economic disruptions affect API supply"
-
-  - from: china_economy
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "China supplies auto components and raw materials"
-
-  - from: india_us_trade
-    to: it_services_sector
-    type: AFFECTS
-    description: "India-US trade relations affect IT outsourcing policy"
-
-  - from: india_us_trade
-    to: h1b_visa
-    type: AFFECTS
-    description: "Trade relations influence visa policy decisions"
-
-  - from: india_china_trade
-    to: ecommerce_sector
-    type: AFFECTS
-    description: "Chinese imports are major e-commerce product source"
-
-  - from: fdi_policy_india
-    to: ecommerce_sector
-    type: REGULATES
-    description: "FDI rules determine Amazon/Flipkart operating model"
-
-  - from: fdi_policy_india
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "FDI policy determines foreign auto investment"
-
-  - from: fdi_policy_india
-    to: retail_sector
-    type: REGULATES
-    description: "FDI caps on multi-brand retail"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: FOOD → EMPLOYMENT
-  # ---------------------------------------------------------------------------
-  - from: food_inflation
-    to: food_delivery
-    type: AFFECTS
-    description: "Food inflation increases order values but may reduce volumes"
-
-  - from: food_inflation
-    to: fmcg_sector
-    type: AFFECTS
-    description: "Raw material inflation squeezes FMCG margins"
-
-  - from: monsoon_forecast
-    to: agriculture_sector
-    type: AFFECTS
-    description: "Monsoon is the single biggest agriculture variable"
-
-  - from: monsoon_forecast
-    to: construction_employment
-    type: AFFECTS
-    description: "Monsoon season halts outdoor construction"
-
-  - from: food_inflation
-    to: salary_trends
-    type: AFFECTS
-    description: "Food price spikes create pressure for wage increases"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: EMPLOYMENT ↔ EDUCATION
-  # ---------------------------------------------------------------------------
-  - from: ai_job_displacement
-    to: edtech_sector
-    type: AFFECTS
-    description: "AI disruption drives reskilling demand benefiting edtech"
-
-  - from: education_loan
-    to: education_sector
-    type: AFFECTS
-    description: "Education loan availability affects enrollment"
-
-  - from: repo_rate
-    to: education_loan
-    type: AFFECTS
-    description: "Interest rates affect education loan EMI"
-
-  - from: campus_placement
-    to: education_sector
-    type: AFFECTS
-    description: "Placement rates affect college rankings and enrollment"
-
-  - from: skill_obsolescence
-    to: edtech_sector
-    type: AFFECTS
-    description: "Skill obsolescence drives demand for online reskilling"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: EMPLOYMENT ↔ REAL ESTATE/HOUSING
-  # ---------------------------------------------------------------------------
-  - from: it_services_sector
-    to: rental_market
-    type: AFFECTS
-    description: "IT sector concentration drives rental prices in tech hubs (Bangalore, Hyderabad)"
-
-  - from: startup_layoffs
-    to: rental_market
-    type: AFFECTS
-    description: "Layoffs in tech hubs reduce rental demand"
-
-  - from: remote_work_policy
-    to: rental_market
-    type: AFFECTS
-    description: "WFH shifts demand from metros to tier-2 cities"
-
-  - from: home_loan_emi
-    to: job_market_india
-    type: AFFECTS
-    description: "EMI burden affects workforce mobility (people can't easily relocate)"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: EMPLOYMENT ↔ INSURANCE
-  # ---------------------------------------------------------------------------
-  - from: health_insurance_regulation
-    to: job_market_india
-    type: AFFECTS
-    description: "Employer health insurance mandates affect hiring costs"
-
-  - from: crop_insurance
-    to: agriculture_sector
-    type: AFFECTS
-    description: "Crop insurance availability affects farming risk-taking"
-
-  - from: healthcare_employment
-    to: health_insurance_regulation
-    type: DEPENDS_ON
-    description: "Hospital revenue partially depends on insurance coverage expansion"
-
-  # ---------------------------------------------------------------------------
-  # INTER-SECTOR COMPETITION & TALENT FLOW
-  # ---------------------------------------------------------------------------
-  - from: it_services_sector
-    to: ai_ml_sector
-    type: COMPETES_WITH
-    description: "IT services and AI compete for same tech talent pool"
-
-  - from: fintech_sector
-    to: it_services_sector
-    type: COMPETES_WITH
-    description: "Fintech and IT services compete for engineering talent"
-
-  - from: saas_sector
-    to: it_services_sector
-    type: COMPETES_WITH
-    description: "Product companies attract talent from services companies"
-
-  - from: consulting_firms
-    to: it_services_sector
-    type: COMPETES_WITH
-    description: "Consulting firms compete for strategy and tech talent"
-
-  - from: government_employment
-    to: private_banks
-    type: COMPETES_WITH
-    description: "Government jobs compete with private sector on job security"
-
-  # ---------------------------------------------------------------------------
-  # US INTEREST RATE CASCADE → INDIAN EMPLOYMENT
-  # ---------------------------------------------------------------------------
-  - from: interest_rates_global
-    to: us_economy
-    type: AFFECTS
-    description: "Fed rate affects US growth"
-
-  - from: interest_rates_global
-    to: vc_funding_india
-    type: AFFECTS
-    description: "Global rates affect LP allocations → VC → startup employment"
-
-  - from: interest_rates_global
-    to: rupee_exchange_rate
-    type: AFFECTS
-    description: "Rate differentials drive FII flows and rupee"
-
-  - from: rupee_exchange_rate
-    to: pharma_sector
-    type: AFFECTS
-    description: "Forex affects export revenue and import costs"
-
-  - from: rupee_exchange_rate
-    to: it_services_sector
-    type: AFFECTS
-    description: "Weak rupee improves IT company margins in INR"
-
-  - from: india_gdp
-    to: advertising_spend
-    type: AFFECTS
-    description: "GDP growth → corporate profits → ad budgets → media/creator jobs"
-
-  - from: india_gdp
-    to: credit_growth
-    type: AFFECTS
-    description: "GDP growth drives overall credit demand"
-
-  - from: india_gdp
-    to: real_estate_sector
-    type: AFFECTS
-    description: "Economic growth drives property demand"
-
-  # ---------------------------------------------------------------------------
-  # ORPHAN FIXES
-  # ---------------------------------------------------------------------------
-  - from: cred
-    to: fintech_sector
-    type: PRODUCES
-    description: "CRED is a fintech company in the credit card rewards space"
-
-  - from: enterprise_software
-    to: saas_sector
-    type: PRODUCES
-    description: "Enterprise software is a sub-segment of the broader SaaS sector"
-
-  - from: esports
-    to: gaming_sector
-    type: PRODUCES
-    description: "Esports is the competitive/professional arm of the gaming industry"
-
-  - from: postman
-    to: saas_sector
-    type: PRODUCES
-    description: "Postman is an Indian-origin SaaS company for API development"
-
-  - from: variable_pay
-    to: salary_trends
-    type: AFFECTS
-    description: "Variable pay and bonus payouts are a key component of total compensation trends"
-
-  - from: warehousing
-    to: logistics_sector
-    type: PRODUCES
-    description: "Warehousing and 3PL are core components of the logistics sector"
-
-  - from: ecommerce_logistics
-    to: warehousing
-    type: DEPENDS_ON
-    description: "E-commerce fulfilment depends on warehouse infrastructure"
+- from: tcs
+  to: it_services_sector
+  type: PRODUCES
+  description: TCS is India's largest IT services company
+- from: infosys
+  to: it_services_sector
+  type: PRODUCES
+  description: Infosys is a top-4 Indian IT services firm
+- from: wipro
+  to: it_services_sector
+  type: PRODUCES
+  description: Wipro is a top-4 Indian IT services firm
+- from: hcl_tech
+  to: it_services_sector
+  type: PRODUCES
+  description: HCL Tech is a top-4 Indian IT services firm
+- from: tech_mahindra
+  to: it_services_sector
+  type: PRODUCES
+  description: Tech Mahindra is a major IT services firm
+- from: ltimindtree
+  to: it_services_sector
+  type: PRODUCES
+  description: LTIMindtree is a mid-tier IT services firm
+- from: cognizant
+  to: it_services_sector
+  type: PRODUCES
+  description: Cognizant serves Indian and US IT markets
+- from: it_services_sector
+  to: it_services_us_client
+  type: DEPENDS_ON
+  description: ~60% of Indian IT revenue comes from US clients
+- from: it_services_sector
+  to: it_services_eu_client
+  type: DEPENDS_ON
+  description: ~25% of Indian IT revenue comes from EU clients
+- from: it_services_us_client
+  to: us_economy
+  type: DEPENDS_ON
+  description: US IT spending tracks US GDP and corporate earnings
+- from: it_services_eu_client
+  to: eu_economy
+  type: DEPENDS_ON
+  description: EU IT spending tracks Eurozone economic health
+- from: it_services_sector
+  to: it_outsourcing_deals
+  type: DEPENDS_ON
+  description: Revenue growth driven by large deal wins
+- from: us_recession_risk
+  to: it_services_us_client
+  type: DISRUPTS
+  description: US recession cuts enterprise IT budgets
+- from: us_recession_risk
+  to: it_outsourcing_deals
+  type: DISRUPTS
+  description: Recession delays deal pipeline and renewals
+- from: it_services_sector
+  to: h1b_visa
+  type: DEPENDS_ON
+  description: Onsite delivery requires H-1B and L-1 visas
+- from: it_services_sector
+  to: l1_visa
+  type: DEPENDS_ON
+  description: Intracompany transfers for onsite work
+- from: us_immigration_policy
+  to: h1b_visa
+  type: REGULATES
+  description: US executive orders and USCIS rules govern H-1B
+- from: us_immigration_policy
+  to: l1_visa
+  type: REGULATES
+  description: US policy governs L-1 visa processing
+- from: it_services_sector
+  to: it_attrition
+  type: AFFECTS
+  description: Sector health drives attrition patterns
+- from: it_services_sector
+  to: it_fresher_hiring
+  type: AFFECTS
+  description: Sector growth determines fresher intake volume
+- from: it_attrition
+  to: salary_trends
+  type: AFFECTS
+  description: High attrition forces competitive salary hikes
+- from: it_services_sector
+  to: it_bench_strength
+  type: AFFECTS
+  description: Deal pipeline affects bench utilization
+- from: it_services_sector
+  to: rupee_exchange_rate
+  type: AFFECTS
+  description: IT exports are major forex earner, weak rupee boosts margins
+- from: rupee_exchange_rate
+  to: it_services_sector
+  type: AFFECTS
+  description: Rupee depreciation increases revenue in INR terms
+- from: ai_job_displacement
+  to: it_services_sector
+  type: DISRUPTS
+  description: AI coding tools reduce demand for low-level IT services
+- from: it_services_sector
+  to: commercial_real_estate
+  type: AFFECTS
+  description: IT sector is largest occupier of office space in India
+- from: saas_sector
+  to: vc_funding_india
+  type: DEPENDS_ON
+  description: SaaS startups depend on VC funding for growth
+- from: b2c_tech
+  to: vc_funding_india
+  type: DEPENDS_ON
+  description: Consumer tech burns cash, needs VC backing
+- from: vc_funding_india
+  to: series_a_market
+  type: AFFECTS
+  description: Overall VC climate determines Series A availability
+- from: vc_funding_india
+  to: series_b_c_market
+  type: AFFECTS
+  description: VC climate determines growth funding
+- from: interest_rates_global
+  to: vc_funding_india
+  type: AFFECTS
+  description: High global rates reduce LP allocations to VC
+- from: repo_rate
+  to: vc_funding_india
+  type: AFFECTS
+  description: Domestic rates affect local VC fundraising
+- from: funding_winter
+  to: startup_layoffs
+  type: AFFECTS
+  description: Funding crunch leads to startup layoffs to extend runway
+- from: funding_winter
+  to: startup_valuation
+  type: AFFECTS
+  description: Funding winter compresses startup valuations
+- from: startup_layoffs
+  to: job_market_india
+  type: AFFECTS
+  description: Mass startup layoffs increase job market supply
+- from: zoho
+  to: saas_sector
+  type: PRODUCES
+  description: Zoho is India's largest bootstrapped SaaS company
+- from: freshworks
+  to: saas_sector
+  type: PRODUCES
+  description: Freshworks is a publicly listed Indian SaaS company
+- from: razorpay
+  to: fintech_sector
+  type: PRODUCES
+  description: Razorpay is a major payments/fintech company
+- from: razorpay
+  to: saas_sector
+  type: PRODUCES
+  description: Razorpay also serves as B2B SaaS for merchants
+- from: ai_ml_sector
+  to: llm_companies
+  type: PRODUCES
+  description: LLM development is the highest-growth AI sub-sector
+- from: ai_ml_sector
+  to: ai_tooling
+  type: PRODUCES
+  description: AI infrastructure and tooling companies support the ecosystem
+- from: ai_ml_sector
+  to: data_labeling
+  type: PRODUCES
+  description: Data labeling is a major employment source in AI
+- from: llm_companies
+  to: compute_costs
+  type: DEPENDS_ON
+  description: LLM training requires massive GPU compute
+- from: compute_costs
+  to: gpu_supply
+  type: DEPENDS_ON
+  description: Compute costs driven by GPU availability
+- from: gpu_supply
+  to: nvidia
+  type: DEPENDS_ON
+  description: NVIDIA dominates AI GPU market (80%+ share)
+- from: ai_regulation
+  to: ai_ml_sector
+  type: REGULATES
+  description: AI safety laws affect what AI companies can build
+- from: ai_regulation
+  to: llm_companies
+  type: REGULATES
+  description: EU AI Act and India AI policy affect LLM deployment
+- from: ai_job_displacement
+  to: it_services_sector
+  type: DISRUPTS
+  description: AI automates testing, basic coding, BPO tasks
+- from: ai_job_displacement
+  to: data_labeling
+  type: DISRUPTS
+  description: Better AI reduces need for human data labeling
+- from: ai_job_displacement
+  to: skill_obsolescence
+  type: AFFECTS
+  description: AI changes which skills are valuable
+- from: ai_job_creation
+  to: job_market_india
+  type: AFFECTS
+  description: AI creates new job categories and demand
+- from: ai_job_creation
+  to: upskilling
+  type: AFFECTS
+  description: AI boom drives demand for AI/ML upskilling
+- from: openai
+  to: llm_companies
+  type: PRODUCES
+  description: OpenAI is the leading LLM company
+- from: google_deepmind
+  to: llm_companies
+  type: PRODUCES
+  description: Google DeepMind develops Gemini models
+- from: anthropic
+  to: llm_companies
+  type: PRODUCES
+  description: Anthropic develops Claude models
+- from: ai_ml_sector
+  to: it_services_sector
+  type: DISRUPTS
+  description: AI shifts IT services from labor arbitrage to AI-augmented delivery
+- from: ai_ml_sector
+  to: saas_sector
+  type: AFFECTS
+  description: AI features are becoming table stakes for SaaS products
+- from: fintech_sector
+  to: upi
+  type: DEPENDS_ON
+  description: Indian fintech ecosystem built on UPI rails
+- from: phonepe
+  to: upi
+  type: DEPENDS_ON
+  description: PhonePe processes ~48% of UPI transactions
+- from: google_pay
+  to: upi
+  type: DEPENDS_ON
+  description: Google Pay processes ~35% of UPI transactions
+- from: paytm
+  to: upi
+  type: DEPENDS_ON
+  description: Paytm uses UPI for payments
+- from: rbi_fintech_regulation
+  to: fintech_sector
+  type: REGULATES
+  description: RBI circulars directly impact fintech operations
+- from: rbi_fintech_regulation
+  to: digital_lending
+  type: REGULATES
+  description: RBI digital lending guidelines constrain BNPL and online loans
+- from: rbi_fintech_regulation
+  to: paytm
+  type: REGULATES
+  description: RBI action on Paytm Payments Bank disrupted operations
+- from: fintech_sector
+  to: banking_employment
+  type: COMPETES_WITH
+  description: Fintech disrupts traditional banking jobs
+- from: fintech_sector
+  to: vc_funding_india
+  type: DEPENDS_ON
+  description: Fintech startups need VC funding
+- from: upi
+  to: digital_lending
+  type: AFFECTS
+  description: UPI data enables digital lending decisions
+- from: wealthtech
+  to: fintech_sector
+  type: PRODUCES
+  description: Wealthtech platforms are part of fintech ecosystem
+- from: insurance_tech
+  to: fintech_sector
+  type: PRODUCES
+  description: Insurtech is a growing fintech vertical
+- from: edtech_sector
+  to: edtech_funding
+  type: DEPENDS_ON
+  description: Edtech companies are heavily VC-funded
+- from: funding_winter
+  to: edtech_funding
+  type: DISRUPTS
+  description: Funding winter hit edtech particularly hard
+- from: byju
+  to: edtech_sector
+  type: PRODUCES
+  description: BYJU'S was the largest Indian edtech (now in crisis)
+- from: unacademy
+  to: edtech_sector
+  type: PRODUCES
+  description: Unacademy is a major test prep edtech
+- from: upgrad
+  to: edtech_sector
+  type: PRODUCES
+  description: upGrad focuses on higher education edtech
+- from: physics_wallah
+  to: edtech_sector
+  type: PRODUCES
+  description: Physics Wallah is a rapidly growing edtech unicorn
+- from: education_policy
+  to: edtech_sector
+  type: REGULATES
+  description: NEP and UGC rules affect edtech curriculum and credentials
+- from: edtech_sector
+  to: coaching_industry
+  type: COMPETES_WITH
+  description: Online edtech competes with offline coaching
+- from: edtech_sector
+  to: education_sector
+  type: DISRUPTS
+  description: Edtech disrupts traditional education models
+- from: amazon_india
+  to: ecommerce_sector
+  type: PRODUCES
+  description: Amazon India is a top e-commerce platform
+- from: flipkart
+  to: ecommerce_sector
+  type: PRODUCES
+  description: Flipkart is India's largest homegrown e-commerce
+- from: meesho
+  to: ecommerce_sector
+  type: PRODUCES
+  description: Meesho focuses on tier-2/3 social commerce
+- from: ecommerce_sector
+  to: ecommerce_logistics
+  type: DEPENDS_ON
+  description: E-commerce depends on logistics for delivery
+- from: ecommerce_sector
+  to: warehouse_employment
+  type: EMPLOYS
+  description: E-commerce drives warehouse and fulfillment jobs
+- from: fdi_ecommerce
+  to: ecommerce_sector
+  type: REGULATES
+  description: FDI policy determines foreign e-commerce operations in India
+- from: quick_commerce
+  to: ecommerce_sector
+  type: PRODUCES
+  description: Quick commerce is the fastest-growing e-commerce segment
+- from: quick_commerce
+  to: delivery_worker_earnings
+  type: AFFECTS
+  description: Quick commerce delivery model affects gig worker pay
+- from: ecommerce_sector
+  to: retail_sector
+  type: COMPETES_WITH
+  description: E-commerce competes with offline retail
+- from: ecommerce_logistics
+  to: diesel_prices
+  type: DEPENDS_ON
+  description: Logistics costs driven by diesel prices
+- from: ecommerce_sector
+  to: gst_policy
+  type: DEPENDS_ON
+  description: GST compliance affects e-commerce sellers
+- from: customs_duty
+  to: ecommerce_sector
+  type: AFFECTS
+  description: Import duties affect cross-border e-commerce pricing
+- from: gst_on_gaming
+  to: gaming_sector
+  type: REGULATES
+  description: 28% GST on full face value devastated real money gaming
+- from: app_store_policy
+  to: gaming_sector
+  type: REGULATES
+  description: App store commissions and policies affect game distribution
+- from: gaming_sector
+  to: ai_ml_sector
+  type: DEPENDS_ON
+  description: Game development increasingly uses AI for content and testing
+- from: data_breach_news
+  to: cybersecurity_sector
+  type: AFFECTS
+  description: Major breaches increase cybersecurity hiring and budgets
+- from: cert_in
+  to: cybersecurity_sector
+  type: REGULATES
+  description: CERT-In mandates drive compliance hiring
+- from: dpdp_act
+  to: cybersecurity_sector
+  type: AFFECTS
+  description: Data protection law increases demand for security professionals
+- from: dpdp_act
+  to: it_services_sector
+  type: AFFECTS
+  description: DPDP compliance creates new IT services revenue stream
+- from: cybersecurity_sector
+  to: job_market_india
+  type: AFFECTS
+  description: Cybersecurity has persistent talent shortage
+- from: tata_motors
+  to: auto_manufacturing
+  type: PRODUCES
+  description: Tata Motors is a major auto OEM
+- from: mahindra_auto
+  to: auto_manufacturing
+  type: PRODUCES
+  description: M&M is a major auto OEM (SUVs, tractors)
+- from: maruti_suzuki
+  to: auto_manufacturing
+  type: PRODUCES
+  description: Maruti Suzuki leads passenger vehicle market
+- from: hyundai_india
+  to: auto_manufacturing
+  type: PRODUCES
+  description: 'Hyundai India is #2 passenger vehicle maker'
+- from: auto_manufacturing
+  to: steel_supply
+  type: DEPENDS_ON
+  description: Auto sector is a major steel consumer
+- from: auto_manufacturing
+  to: rubber_supply
+  type: DEPENDS_ON
+  description: Tires and components need rubber
+- from: auto_manufacturing
+  to: semiconductor_supply
+  type: DEPENDS_ON
+  description: Modern vehicles need 1000+ semiconductor chips
+- from: auto_manufacturing
+  to: auto_component
+  type: DEPENDS_ON
+  description: OEMs depend on component suppliers
+- from: ev_manufacturing
+  to: auto_manufacturing
+  type: DISRUPTS
+  description: EV transition disrupts traditional auto jobs (less parts, new skills)
+- from: vehicle_scrappage
+  to: auto_manufacturing
+  type: AFFECTS
+  description: Scrappage policy creates replacement demand
+- from: auto_manufacturing
+  to: job_market_india
+  type: EMPLOYS
+  description: Auto sector employs 37M+ directly and indirectly
+- from: auto_manufacturing
+  to: logistics_sector
+  type: DEPENDS_ON
+  description: Auto supply chain needs extensive logistics
+- from: repo_rate
+  to: auto_manufacturing
+  type: AFFECTS
+  description: Interest rates affect auto loan EMIs and vehicle demand
+- from: gst_policy
+  to: auto_manufacturing
+  type: AFFECTS
+  description: GST rates on vehicles affect pricing and demand
+- from: crude_oil_price
+  to: auto_manufacturing
+  type: AFFECTS
+  description: Oil prices affect vehicle operating costs and demand mix (ICE vs EV)
+- from: semiconductor_india
+  to: semiconductor_supply
+  type: AFFECTS
+  description: India semiconductor fabs reduce import dependency
+- from: china_economy
+  to: semiconductor_supply
+  type: AFFECTS
+  description: China is a major semiconductor supply chain node
+- from: sun_pharma
+  to: pharma_sector
+  type: PRODUCES
+  description: Sun Pharma is India's largest pharma company
+- from: dr_reddys
+  to: pharma_sector
+  type: PRODUCES
+  description: Dr. Reddy's is a major generics manufacturer
+- from: cipla
+  to: pharma_sector
+  type: PRODUCES
+  description: Cipla is a leading pharma company
+- from: pharma_sector
+  to: pharma_api_china
+  type: DEPENDS_ON
+  description: India imports ~68% of APIs from China
+- from: india_china_trade
+  to: pharma_api_china
+  type: AFFECTS
+  description: India-China relations affect API supply chain
+- from: drug_pricing
+  to: pharma_sector
+  type: REGULATES
+  description: DPCO price controls affect pharma revenue
+- from: us_fda_inspection
+  to: pharma_sector
+  type: REGULATES
+  description: FDA approvals/warnings affect US export revenue
+- from: pharma_sector
+  to: generic_drugs
+  type: PRODUCES
+  description: India is world's largest generic drug producer
+- from: pharma_sector
+  to: healthcare_employment
+  type: SUPPLIES
+  description: Pharma supplies drugs to hospitals and clinics
+- from: rupee_exchange_rate
+  to: pharma_sector
+  type: AFFECTS
+  description: Weak rupee helps export revenue but increases API import cost
+- from: hul
+  to: fmcg_sector
+  type: PRODUCES
+  description: HUL is India's largest FMCG company
+- from: itc_limited
+  to: fmcg_sector
+  type: PRODUCES
+  description: ITC is a diversified FMCG conglomerate
+- from: nestle_india
+  to: fmcg_sector
+  type: PRODUCES
+  description: Nestle India is a major packaged foods company
+- from: rural_demand
+  to: fmcg_sector
+  type: AFFECTS
+  description: FMCG volume growth driven by rural demand
+- from: monsoon_forecast
+  to: rural_demand
+  type: AFFECTS
+  description: Good monsoon boosts rural income and demand
+- from: food_inflation
+  to: fmcg_sector
+  type: AFFECTS
+  description: Food inflation affects raw material costs and pricing power
+- from: palm_oil_import
+  to: fmcg_sector
+  type: AFFECTS
+  description: Palm oil is key input for soaps, foods
+- from: gst_policy
+  to: fmcg_sector
+  type: AFFECTS
+  description: GST rates on FMCG products affect pricing
+- from: fmcg_sector
+  to: job_market_india
+  type: EMPLOYS
+  description: FMCG employs millions in manufacturing, distribution, retail
+- from: psu_banks
+  to: banking_employment
+  type: EMPLOYS
+  description: PSU banks are major employers
+- from: private_banks
+  to: banking_employment
+  type: EMPLOYS
+  description: Private banks hire aggressively for growth
+- from: nbfc_sector
+  to: banking_employment
+  type: EMPLOYS
+  description: NBFCs employ significant workforce
+- from: npa_crisis
+  to: banking_employment
+  type: DISRUPTS
+  description: High NPAs lead to bank restructuring and hiring freeze
+- from: credit_growth
+  to: banking_employment
+  type: AFFECTS
+  description: Strong credit growth drives hiring in banking
+- from: banking_regulation
+  to: banking_employment
+  type: REGULATES
+  description: RBI regulations affect bank operations and staffing
+- from: repo_rate
+  to: credit_growth
+  type: AFFECTS
+  description: Repo rate changes affect lending rates and credit demand
+- from: fintech_sector
+  to: banking_employment
+  type: DISRUPTS
+  description: Fintech automates traditional banking roles
+- from: psu_disinvestment
+  to: psu_banks
+  type: AFFECTS
+  description: Bank privatization changes employment terms
+- from: npa_crisis
+  to: credit_growth
+  type: AFFECTS
+  description: High NPAs make banks risk-averse, reducing lending
+- from: apollo_hospitals
+  to: healthcare_employment
+  type: EMPLOYS
+  description: Apollo is India's largest hospital chain
+- from: fortis_healthcare
+  to: healthcare_employment
+  type: EMPLOYS
+  description: Fortis is a major hospital chain
+- from: max_healthcare
+  to: healthcare_employment
+  type: EMPLOYS
+  description: Max Healthcare is a leading hospital chain
+- from: health_insurance_regulation
+  to: healthcare_employment
+  type: AFFECTS
+  description: Health insurance expansion increases hospital patient volume
+- from: diagnostics_sector
+  to: healthcare_employment
+  type: EMPLOYS
+  description: Diagnostics chains employ technicians and pathologists
+- from: telemedicine
+  to: healthcare_employment
+  type: DISRUPTS
+  description: Telemedicine changes doctor employment patterns
+- from: medical_devices
+  to: healthcare_employment
+  type: AFFECTS
+  description: Medical device industry creates manufacturing and service jobs
+- from: ai_ml_sector
+  to: diagnostics_sector
+  type: DISRUPTS
+  description: AI in radiology and pathology changes diagnostic roles
+- from: repo_rate
+  to: real_estate_sector
+  type: AFFECTS
+  description: Interest rates directly affect housing demand via EMI
+- from: repo_rate
+  to: home_loan_emi
+  type: AFFECTS
+  description: Floating rate home loans benchmarked to repo/EBLR
+- from: rera
+  to: real_estate_sector
+  type: REGULATES
+  description: RERA governs builder-buyer relationships
+- from: affordable_housing
+  to: real_estate_sector
+  type: AFFECTS
+  description: PMAY subsidies boost affordable housing demand
+- from: real_estate_sector
+  to: construction_employment
+  type: EMPLOYS
+  description: Real estate projects create construction jobs
+- from: construction_employment
+  to: cement_industry
+  type: DEPENDS_ON
+  description: Construction is the largest cement consumer
+- from: construction_employment
+  to: steel_supply
+  type: DEPENDS_ON
+  description: Construction is a major steel consumer
+- from: builders_developers
+  to: real_estate_sector
+  type: PRODUCES
+  description: Developers build residential and commercial properties
+- from: commercial_real_estate
+  to: it_services_sector
+  type: DEPENDS_ON
+  description: Office space demand tied to IT sector health
+- from: remote_work_policy
+  to: commercial_real_estate
+  type: AFFECTS
+  description: Remote/hybrid work reduces office space demand
+- from: real_estate_sector
+  to: rental_market
+  type: AFFECTS
+  description: Property supply/demand affects rental prices
+- from: gst_policy
+  to: cement_industry
+  type: AFFECTS
+  description: GST on cement affects construction costs
+- from: monsoon_forecast
+  to: agriculture_sector
+  type: AFFECTS
+  description: Monsoon determines kharif crop output
+- from: msp_policy
+  to: agriculture_sector
+  type: AFFECTS
+  description: MSP determines farmer income for key crops
+- from: fertilizer_subsidy
+  to: agriculture_sector
+  type: AFFECTS
+  description: Fertilizer costs are a major farming input
+- from: crop_insurance
+  to: agriculture_sector
+  type: AFFECTS
+  description: Crop insurance provides safety net for farmers
+- from: agriculture_sector
+  to: food_processing
+  type: SUPPLIES
+  description: Agriculture supplies raw material to food processing
+- from: agriculture_sector
+  to: food_inflation
+  type: AFFECTS
+  description: Crop output directly drives food prices
+- from: agritech
+  to: agriculture_sector
+  type: AFFECTS
+  description: Agritech improves farm productivity and market access
+- from: agriculture_sector
+  to: rural_demand
+  type: AFFECTS
+  description: Farm income drives rural consumption spending
+- from: crude_oil_price
+  to: fertilizer_subsidy
+  type: AFFECTS
+  description: Oil prices affect fertilizer production costs
+- from: monsoon_forecast
+  to: food_inflation
+  type: AFFECTS
+  description: Poor monsoon causes food price spikes
+- from: reliance_retail
+  to: retail_sector
+  type: PRODUCES
+  description: Reliance Retail is India's largest retailer
+- from: dmart
+  to: retail_sector
+  type: PRODUCES
+  description: DMart is a major value retail chain
+- from: fdi_retail
+  to: retail_sector
+  type: REGULATES
+  description: FDI norms determine foreign retail presence
+- from: gst_impact_retail
+  to: retail_sector
+  type: AFFECTS
+  description: GST compliance costs affect small retailers disproportionately
+- from: food_inflation
+  to: retail_sector
+  type: AFFECTS
+  description: Food inflation affects grocery retail margins and volumes
+- from: ecommerce_sector
+  to: retail_sector
+  type: DISRUPTS
+  description: E-commerce captures share from offline retail
+- from: retail_sector
+  to: job_market_india
+  type: EMPLOYS
+  description: Retail employs ~40M in India
+- from: diesel_prices
+  to: trucking
+  type: AFFECTS
+  description: Diesel is ~60% of trucking operating cost
+- from: diesel_prices
+  to: logistics_sector
+  type: AFFECTS
+  description: Fuel costs drive overall logistics costs
+- from: crude_oil_price
+  to: diesel_prices
+  type: AFFECTS
+  description: Diesel prices track crude oil with government pricing
+- from: toll_charges
+  to: trucking
+  type: AFFECTS
+  description: Toll costs are significant trucking expense
+- from: eway_bill
+  to: logistics_sector
+  type: REGULATES
+  description: E-way bill compliance governs goods movement
+- from: logistics_sector
+  to: ecommerce_logistics
+  type: SUPPLIES
+  description: 3PL firms provide e-commerce delivery
+- from: logistics_sector
+  to: fmcg_sector
+  type: SUPPLIES
+  description: Logistics enables FMCG distribution
+- from: logistics_sector
+  to: auto_manufacturing
+  type: SUPPLIES
+  description: Logistics moves auto parts and finished vehicles
+- from: logistics_sector
+  to: food_processing
+  type: SUPPLIES
+  description: Cold chain logistics for food distribution
+- from: trucking
+  to: job_market_india
+  type: EMPLOYS
+  description: Trucking employs ~8M drivers in India
+- from: ott_platforms
+  to: media_entertainment
+  type: PRODUCES
+  description: OTT is the fastest growing M&E segment
+- from: advertising_spend
+  to: media_entertainment
+  type: FUNDS
+  description: Ad revenue funds most media operations
+- from: content_regulation
+  to: media_entertainment
+  type: REGULATES
+  description: Government rules affect content creation
+- from: advertising_spend
+  to: creator_economy
+  type: FUNDS
+  description: Brand ad budgets fund creator monetization
+- from: india_gdp
+  to: advertising_spend
+  type: AFFECTS
+  description: GDP growth drives corporate ad spending
+- from: nep_implementation
+  to: education_sector
+  type: REGULATES
+  description: NEP 2020 restructures entire education system
+- from: fee_regulation
+  to: education_sector
+  type: REGULATES
+  description: State fee committees cap school and college fees
+- from: coaching_industry
+  to: education_sector
+  type: PRODUCES
+  description: Coaching is a $10B+ parallel education industry
+- from: education_sector
+  to: job_market_india
+  type: EMPLOYS
+  description: Education employs millions of teachers and staff
+- from: education_policy
+  to: nep_implementation
+  type: REGULATES
+  description: Education policy governs NEP rollout
+- from: government_employment
+  to: ssc_recruitment
+  type: EMPLOYS
+  description: SSC recruits for central government jobs
+- from: government_employment
+  to: upsc_recruitment
+  type: EMPLOYS
+  description: UPSC recruits for elite civil services
+- from: government_employment
+  to: railway_recruitment
+  type: EMPLOYS
+  description: Railways is India's largest single employer
+- from: pay_commission
+  to: government_employment
+  type: AFFECTS
+  description: Pay commission determines government salary structure
+- from: retirement_age_policy
+  to: government_employment
+  type: AFFECTS
+  description: Retirement age changes affect vacancies and hiring
+- from: psu_disinvestment
+  to: government_employment
+  type: DISRUPTS
+  description: PSU privatization may change job security and terms
+- from: pay_commission
+  to: cpi_inflation
+  type: AFFECTS
+  description: DA linked to CPI; pay revision increases government spending
+- from: india_gdp
+  to: government_employment
+  type: AFFECTS
+  description: Tax revenue from GDP determines government hiring capacity
+- from: job_market_india
+  to: campus_placement
+  type: AFFECTS
+  description: Overall job market conditions drive campus hiring volumes
+- from: job_market_india
+  to: lateral_hiring
+  type: AFFECTS
+  description: Market conditions determine lateral hiring pace
+- from: tech_layoffs
+  to: job_market_india
+  type: DISRUPTS
+  description: Mass layoffs flood the job market with candidates
+- from: tech_layoffs
+  to: salary_trends
+  type: AFFECTS
+  description: Layoffs suppress salary growth due to oversupply
+- from: india_gdp
+  to: job_market_india
+  type: AFFECTS
+  description: GDP growth is the primary driver of job creation
+- from: salary_trends
+  to: cpi_inflation
+  type: DEPENDS_ON
+  description: Real salary growth measured against inflation
+- from: esop_policy
+  to: startup_valuation
+  type: DEPENDS_ON
+  description: ESOP value depends on company valuation
+- from: upskilling
+  to: ai_job_creation
+  type: DEPENDS_ON
+  description: AI job capture requires active upskilling
+- from: skill_obsolescence
+  to: ai_job_displacement
+  type: DEPENDS_ON
+  description: Obsolete skills correlate with AI displacement risk
+- from: certifications
+  to: upskilling
+  type: PRODUCES
+  description: Certifications are a key upskilling mechanism
+- from: cpi_inflation
+  to: salary_trends
+  type: AFFECTS
+  description: Inflation creates pressure for higher salary hikes
+- from: new_labor_codes
+  to: job_market_india
+  type: REGULATES
+  description: New labor codes affect hiring, firing, and working conditions
+- from: new_labor_codes
+  to: epf
+  type: REGULATES
+  description: Social security code changes EPF contribution structure
+- from: new_labor_codes
+  to: gratuity
+  type: REGULATES
+  description: Industrial relations code affects gratuity rules
+- from: contract_work_regulation
+  to: job_market_india
+  type: REGULATES
+  description: Contract labor rules affect employment formalization
+- from: gig_worker_rights
+  to: food_delivery
+  type: REGULATES
+  description: Gig worker laws affect delivery platform costs
+- from: gig_worker_rights
+  to: ride_hailing
+  type: REGULATES
+  description: Gig worker regulations affect cab aggregator models
+- from: minimum_wage
+  to: construction_employment
+  type: AFFECTS
+  description: Minimum wage affects construction labor costs
+- from: minimum_wage
+  to: warehouse_employment
+  type: AFFECTS
+  description: Minimum wage affects warehouse and logistics labor
+- from: minimum_wage
+  to: retail_sector
+  type: AFFECTS
+  description: Minimum wage affects retail staffing costs
+- from: remote_work_policy
+  to: it_services_sector
+  type: AFFECTS
+  description: IT sector is the primary remote work adopter
+- from: remote_work_policy
+  to: coworking_spaces
+  type: AFFECTS
+  description: Hybrid policies drive coworking demand
+- from: wfh_tax_implications
+  to: remote_work_policy
+  type: AFFECTS
+  description: Tax rules affect where remote workers choose to live
+- from: remote_work_policy
+  to: rental_market
+  type: AFFECTS
+  description: Remote work shifts rental demand from city centers to suburbs/smaller
+    cities
+- from: remote_work_policy
+  to: commercial_real_estate
+  type: DISRUPTS
+  description: Permanent hybrid/remote reduces office demand
+- from: trade_unions
+  to: auto_manufacturing
+  type: AFFECTS
+  description: Auto sector has strong union presence
+- from: bank_strike
+  to: banking_employment
+  type: DISRUPTS
+  description: Bank strikes disrupt banking operations
+- from: transport_strike
+  to: logistics_sector
+  type: DISRUPTS
+  description: Transport strikes halt goods movement
+- from: trade_unions
+  to: new_labor_codes
+  type: AFFECTS
+  description: Unions oppose/shape labor law reforms
+- from: epf
+  to: job_market_india
+  type: AFFECTS
+  description: EPF mandate affects employer cost per employee
+- from: nps
+  to: government_employment
+  type: AFFECTS
+  description: NPS vs OPS debate affects government employee benefits
+- from: pension_policy
+  to: nps
+  type: REGULATES
+  description: Government pension policy determines NPS rules
+- from: pension_policy
+  to: epf
+  type: REGULATES
+  description: Pension reform affects EPF/EPS structure
+- from: repo_rate
+  to: epf
+  type: AFFECTS
+  description: Interest rate environment affects EPF interest rate decisions
+- from: repo_rate
+  to: nps
+  type: AFFECTS
+  description: Bond yields affect NPS debt fund returns
+- from: swiggy
+  to: food_delivery
+  type: PRODUCES
+  description: Swiggy is a leading food delivery platform
+- from: zomato
+  to: food_delivery
+  type: PRODUCES
+  description: Zomato is a leading food delivery platform
+- from: blinkit
+  to: quick_commerce
+  type: PRODUCES
+  description: Blinkit (Zomato subsidiary) leads quick commerce
+- from: food_delivery
+  to: delivery_worker_earnings
+  type: AFFECTS
+  description: Platform commission and order volume determine delivery earnings
+- from: fuel_cost_gig
+  to: delivery_worker_earnings
+  type: AFFECTS
+  description: Fuel costs eat into delivery partner earnings
+- from: petrol_price
+  to: fuel_cost_gig
+  type: AFFECTS
+  description: Petrol/CNG prices are major gig worker expense
+- from: gig_worker_rights
+  to: delivery_worker_earnings
+  type: AFFECTS
+  description: Regulation may mandate minimum earnings guarantee
+- from: food_delivery
+  to: gst_policy
+  type: DEPENDS_ON
+  description: GST on food delivery affects platform economics
+- from: uber_india
+  to: ride_hailing
+  type: PRODUCES
+  description: Uber operates in major Indian cities
+- from: ola_cabs
+  to: ride_hailing
+  type: PRODUCES
+  description: Ola is India's largest ride hailing platform
+- from: ride_hailing
+  to: driver_earnings
+  type: AFFECTS
+  description: Platform commission structure determines driver income
+- from: fuel_cost_gig
+  to: driver_earnings
+  type: AFFECTS
+  description: Fuel costs are major driver expense
+- from: ride_hailing_regulation
+  to: ride_hailing
+  type: REGULATES
+  description: State-level regulations affect surge pricing and commissions
+- from: ride_hailing
+  to: job_market_india
+  type: EMPLOYS
+  description: Ride hailing employs millions of drivers
+- from: ev_manufacturing
+  to: ride_hailing
+  type: AFFECTS
+  description: EV adoption changes driver economics (lower fuel cost)
+- from: freelance_market
+  to: global_freelance_demand
+  type: DEPENDS_ON
+  description: Indian freelancers serve global clients
+- from: global_freelance_demand
+  to: us_economy
+  type: DEPENDS_ON
+  description: US is the largest freelance demand market
+- from: rupee_exchange_rate
+  to: inr_usd_freelance
+  type: AFFECTS
+  description: Rupee rate determines INR value of dollar earnings
+- from: inr_usd_freelance
+  to: freelance_market
+  type: AFFECTS
+  description: Forex rates affect freelance earning attractiveness
+- from: ai_job_displacement
+  to: freelance_market
+  type: DISRUPTS
+  description: AI tools reduce demand for basic freelance work (writing, design)
+- from: ai_job_creation
+  to: freelance_market
+  type: AFFECTS
+  description: AI creates new freelance niches (prompt engineering, AI training)
+- from: upwork_platform
+  to: freelance_market
+  type: PRODUCES
+  description: Upwork is a major freelance marketplace
+- from: fiverr_platform
+  to: freelance_market
+  type: PRODUCES
+  description: Fiverr is a popular freelance platform
+- from: youtube_india
+  to: creator_economy
+  type: PRODUCES
+  description: YouTube is India's largest creator platform
+- from: instagram_creators
+  to: creator_economy
+  type: PRODUCES
+  description: Instagram is a major influencer/creator platform
+- from: ad_rate_changes
+  to: creator_economy
+  type: AFFECTS
+  description: CPM rate changes directly affect creator income
+- from: algorithm_changes
+  to: creator_economy
+  type: DISRUPTS
+  description: Algorithm changes can destroy creator reach overnight
+- from: creator_monetization_policy
+  to: creator_economy
+  type: REGULATES
+  description: Platform monetization policies determine creator payouts
+- from: advertising_spend
+  to: ad_rate_changes
+  type: AFFECTS
+  description: Overall ad market determines CPM rates
+- from: us_economy
+  to: ad_rate_changes
+  type: AFFECTS
+  description: US brands drive global digital ad CPM rates
+- from: creator_economy
+  to: gst_policy
+  type: DEPENDS_ON
+  description: Creators above threshold must register for GST
+- from: ai_ml_sector
+  to: creator_economy
+  type: DISRUPTS
+  description: AI content generation competes with human creators
+- from: repo_rate
+  to: it_services_sector
+  type: AFFECTS
+  description: Rate hikes slow US economy, reducing IT spend
+- from: repo_rate
+  to: vc_funding_india
+  type: AFFECTS
+  description: Higher rates increase cost of capital, reduce VC risk appetite
+- from: cpi_inflation
+  to: salary_trends
+  type: AFFECTS
+  description: Inflation erodes real wages, pressuring employers for hikes
+- from: rupee_exchange_rate
+  to: freelance_market
+  type: AFFECTS
+  description: Weak rupee makes Indian freelancers more competitive globally
+- from: gst_policy
+  to: job_market_india
+  type: AFFECTS
+  description: GST compliance burden and rate changes affect business hiring
+- from: customs_duty
+  to: auto_manufacturing
+  type: AFFECTS
+  description: Import duty on parts affects auto manufacturing costs
+- from: customs_duty
+  to: pharma_api_china
+  type: AFFECTS
+  description: Duty on Chinese APIs affects pharma input costs
+- from: gold_price
+  to: banking_employment
+  type: AFFECTS
+  description: Gold loan business expands with gold prices
+- from: crude_oil_price
+  to: logistics_sector
+  type: AFFECTS
+  description: Oil prices drive transportation costs across economy
+- from: crude_oil_price
+  to: delivery_worker_earnings
+  type: AFFECTS
+  description: Oil → petrol → delivery worker expenses
+- from: petrol_price
+  to: ride_hailing
+  type: AFFECTS
+  description: Fuel costs are the biggest driver expense
+- from: electricity_tariff
+  to: it_services_sector
+  type: AFFECTS
+  description: Power costs affect data center and office operating costs
+- from: electricity_tariff
+  to: auto_manufacturing
+  type: AFFECTS
+  description: Power costs affect factory operating costs
+- from: us_economy
+  to: it_services_sector
+  type: AFFECTS
+  description: US economic health is the primary IT revenue driver
+- from: us_economy
+  to: global_freelance_demand
+  type: AFFECTS
+  description: US clients drive global freelance demand
+- from: eu_economy
+  to: it_services_sector
+  type: AFFECTS
+  description: EU economic health affects ~25% of IT revenue
+- from: china_economy
+  to: pharma_api_china
+  type: AFFECTS
+  description: Chinese economic disruptions affect API supply
+- from: china_economy
+  to: auto_manufacturing
+  type: AFFECTS
+  description: China supplies auto components and raw materials
+- from: india_us_trade
+  to: it_services_sector
+  type: AFFECTS
+  description: India-US trade relations affect IT outsourcing policy
+- from: india_us_trade
+  to: h1b_visa
+  type: AFFECTS
+  description: Trade relations influence visa policy decisions
+- from: india_china_trade
+  to: ecommerce_sector
+  type: AFFECTS
+  description: Chinese imports are major e-commerce product source
+- from: fdi_policy_india
+  to: ecommerce_sector
+  type: REGULATES
+  description: FDI rules determine Amazon/Flipkart operating model
+- from: fdi_policy_india
+  to: auto_manufacturing
+  type: AFFECTS
+  description: FDI policy determines foreign auto investment
+- from: fdi_policy_india
+  to: retail_sector
+  type: REGULATES
+  description: FDI caps on multi-brand retail
+- from: food_inflation
+  to: food_delivery
+  type: AFFECTS
+  description: Food inflation increases order values but may reduce volumes
+- from: food_inflation
+  to: fmcg_sector
+  type: AFFECTS
+  description: Raw material inflation squeezes FMCG margins
+- from: monsoon_forecast
+  to: agriculture_sector
+  type: AFFECTS
+  description: Monsoon is the single biggest agriculture variable
+- from: monsoon_forecast
+  to: construction_employment
+  type: AFFECTS
+  description: Monsoon season halts outdoor construction
+- from: food_inflation
+  to: salary_trends
+  type: AFFECTS
+  description: Food price spikes create pressure for wage increases
+- from: ai_job_displacement
+  to: edtech_sector
+  type: AFFECTS
+  description: AI disruption drives reskilling demand benefiting edtech
+- from: education_loan
+  to: education_sector
+  type: AFFECTS
+  description: Education loan availability affects enrollment
+- from: repo_rate
+  to: education_loan
+  type: AFFECTS
+  description: Interest rates affect education loan EMI
+- from: campus_placement
+  to: education_sector
+  type: AFFECTS
+  description: Placement rates affect college rankings and enrollment
+- from: skill_obsolescence
+  to: edtech_sector
+  type: AFFECTS
+  description: Skill obsolescence drives demand for online reskilling
+- from: it_services_sector
+  to: rental_market
+  type: AFFECTS
+  description: IT sector concentration drives rental prices in tech hubs (Bangalore,
+    Hyderabad)
+- from: startup_layoffs
+  to: rental_market
+  type: AFFECTS
+  description: Layoffs in tech hubs reduce rental demand
+- from: remote_work_policy
+  to: rental_market
+  type: AFFECTS
+  description: WFH shifts demand from metros to tier-2 cities
+- from: home_loan_emi
+  to: job_market_india
+  type: AFFECTS
+  description: EMI burden affects workforce mobility (people can't easily relocate)
+- from: health_insurance_regulation
+  to: job_market_india
+  type: AFFECTS
+  description: Employer health insurance mandates affect hiring costs
+- from: crop_insurance
+  to: agriculture_sector
+  type: AFFECTS
+  description: Crop insurance availability affects farming risk-taking
+- from: healthcare_employment
+  to: health_insurance_regulation
+  type: DEPENDS_ON
+  description: Hospital revenue partially depends on insurance coverage expansion
+- from: it_services_sector
+  to: ai_ml_sector
+  type: COMPETES_WITH
+  description: IT services and AI compete for same tech talent pool
+- from: fintech_sector
+  to: it_services_sector
+  type: COMPETES_WITH
+  description: Fintech and IT services compete for engineering talent
+- from: saas_sector
+  to: it_services_sector
+  type: COMPETES_WITH
+  description: Product companies attract talent from services companies
+- from: consulting_firms
+  to: it_services_sector
+  type: COMPETES_WITH
+  description: Consulting firms compete for strategy and tech talent
+- from: government_employment
+  to: private_banks
+  type: COMPETES_WITH
+  description: Government jobs compete with private sector on job security
+- from: interest_rates_global
+  to: us_economy
+  type: AFFECTS
+  description: Fed rate affects US growth
+- from: interest_rates_global
+  to: vc_funding_india
+  type: AFFECTS
+  description: Global rates affect LP allocations → VC → startup employment
+- from: interest_rates_global
+  to: rupee_exchange_rate
+  type: AFFECTS
+  description: Rate differentials drive FII flows and rupee
+- from: rupee_exchange_rate
+  to: pharma_sector
+  type: AFFECTS
+  description: Forex affects export revenue and import costs
+- from: rupee_exchange_rate
+  to: it_services_sector
+  type: AFFECTS
+  description: Weak rupee improves IT company margins in INR
+- from: india_gdp
+  to: advertising_spend
+  type: AFFECTS
+  description: GDP growth → corporate profits → ad budgets → media/creator jobs
+- from: india_gdp
+  to: credit_growth
+  type: AFFECTS
+  description: GDP growth drives overall credit demand
+- from: india_gdp
+  to: real_estate_sector
+  type: AFFECTS
+  description: Economic growth drives property demand
+- from: cred
+  to: fintech_sector
+  type: PRODUCES
+  description: CRED is a fintech company in the credit card rewards space
+- from: enterprise_software
+  to: saas_sector
+  type: PRODUCES
+  description: Enterprise software is a sub-segment of the broader SaaS sector
+- from: esports
+  to: gaming_sector
+  type: PRODUCES
+  description: Esports is the competitive/professional arm of the gaming industry
+- from: postman
+  to: saas_sector
+  type: PRODUCES
+  description: Postman is an Indian-origin SaaS company for API development
+- from: variable_pay
+  to: salary_trends
+  type: AFFECTS
+  description: Variable pay and bonus payouts are a key component of total compensation
+    trends
+- from: warehousing
+  to: logistics_sector
+  type: PRODUCES
+  description: Warehousing and 3PL are core components of the logistics sector
+- from: ecommerce_logistics
+  to: warehousing
+  type: DEPENDS_ON
+  description: E-commerce fulfilment depends on warehouse infrastructure

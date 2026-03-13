@@ -6,6 +6,8 @@ import heapq
 
 import networkx as nx
 
+from models import UserGraph
+
 CAUSAL_TYPES = {"AFFECTS", "PRODUCES", "REGULATES", "DISRUPTS", "SUPPLIES", "DEPENDS_ON"}
 TAXONOMY_TYPES = {"IS_A", "CONTAINS"}
 
@@ -112,6 +114,52 @@ def analyze_impact(
     # Sort by score descending
     results.sort(key=lambda x: x["score"], reverse=True)
     return results
+
+
+def compute_relevance(
+    article_impacts: list[dict],
+    user_graph: UserGraph,
+) -> tuple[float, list[str]]:
+    """Sparse dot product: article impact × user importance.
+
+    Returns (relevance_score, overlapping_node_ids).
+
+    Scoring:
+      For direct UserEdge nodes: article_score × user_importance
+      For reachable-only nodes:  article_score × 0.3 (indirect relevance)
+    """
+    article_vector = {impact["node"]: impact["score"] for impact in article_impacts}
+    user_direct = {edge.node_id: edge.importance for edge in user_graph.edges}
+
+    score = 0.0
+    overlap: list[str] = []
+
+    for node, article_score in article_vector.items():
+        if node in user_direct:
+            score += article_score * user_direct[node]
+            overlap.append(node)
+        elif node in user_graph.reachable_nodes:
+            score += article_score * 0.3
+            overlap.append(node)
+
+    return score, overlap
+
+
+def rank_articles(
+    articles_with_impacts: list[tuple[str, list[dict]]],
+    user_graph: UserGraph,
+    min_relevance: float = 0.01,
+) -> list[tuple[str, float, list[str]]]:
+    """Rank articles by relevance. Returns [(article_id, score, overlap_nodes)]."""
+    ranked: list[tuple[str, float, list[str]]] = []
+
+    for article_id, impacts in articles_with_impacts:
+        score, overlap = compute_relevance(impacts, user_graph)
+        if score >= min_relevance:
+            ranked.append((article_id, score, overlap))
+
+    ranked.sort(key=lambda x: x[1], reverse=True)
+    return ranked
 
 
 def main():

@@ -67,13 +67,16 @@ CREATE TABLE IF NOT EXISTS article_matches (
     score REAL,
     explanation TEXT,
     severity TEXT,
-    created_at TEXT DEFAULT (datetime('now'))
+    created_at TEXT DEFAULT (datetime('now')),
+    delivered_at TEXT,
+    feedback TEXT
 );
 
 CREATE INDEX IF NOT EXISTS idx_articles_processed ON articles(processed);
 CREATE INDEX IF NOT EXISTS idx_articles_fingerprint ON articles(fingerprint);
 CREATE INDEX IF NOT EXISTS idx_articles_url_hash ON articles(url_hash);
 CREATE INDEX IF NOT EXISTS idx_seen_hashes ON seen_hashes(hash);
+CREATE INDEX IF NOT EXISTS idx_matches_severity ON article_matches(severity, delivered_at);
 """
 
 
@@ -198,6 +201,64 @@ class Database:
         """Return all known fingerprints and url hashes."""
         rows = self.conn.execute("SELECT hash FROM seen_hashes").fetchall()
         return {row["hash"] for row in rows}
+
+    def insert_match(
+        self,
+        article_id: str,
+        user_id: str,
+        matched_nodes: list[dict],
+        score: float,
+        explanation: str,
+        severity: str,
+    ) -> int:
+        """Insert a scored match into article_matches. Returns match ID."""
+        cursor = self.conn.execute(
+            """INSERT INTO article_matches
+               (article_id, user_id, matched_nodes_json, score, explanation, severity)
+               VALUES (?, ?, ?, ?, ?, ?)""",
+            (article_id, user_id, json.dumps(matched_nodes), score, explanation, severity),
+        )
+        self.conn.commit()
+        return cursor.lastrowid
+
+    def get_pending_deliveries(
+        self, user_id: str, min_severity: str = "medium"
+    ) -> list[dict]:
+        """Get undelivered matches above severity threshold, ordered by score desc."""
+        severity_order = {"high": 3, "medium": 2, "low": 1}
+        min_rank = severity_order.get(min_severity, 2)
+
+        rows = self.conn.execute(
+            """SELECT m.*, a.title, a.url, a.source, a.published_at
+               FROM article_matches m
+               JOIN articles a ON m.article_id = a.id
+               WHERE m.user_id = ? AND m.delivered_at IS NULL
+               ORDER BY m.score DESC""",
+            (user_id,),
+        ).fetchall()
+
+        results = []
+        for row in rows:
+            sev = row["severity"] or "low"
+            if severity_order.get(sev, 1) >= min_rank:
+                results.append(dict(row))
+        return results
+
+    def mark_delivered(self, match_id: int) -> None:
+        """Set delivered_at = now for a match."""
+        self.conn.execute(
+            "UPDATE article_matches SET delivered_at = ? WHERE id = ?",
+            (datetime.utcnow().isoformat(), match_id),
+        )
+        self.conn.commit()
+
+    def save_feedback(self, match_id: int, feedback_type: str) -> None:
+        """Store user feedback (relevant/not_relevant)."""
+        self.conn.execute(
+            "UPDATE article_matches SET feedback = ? WHERE id = ?",
+            (feedback_type, match_id),
+        )
+        self.conn.commit()
 
     def close(self) -> None:
         """Close the database connection."""
