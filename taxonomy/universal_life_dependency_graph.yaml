@@ -4561,3 +4561,227 @@ local_governance:
       aliases: ["RWA", "residents welfare", "apartment association", "community meeting"]
       leaf: true
       universality: medium
+
+# =============================================================================
+# SUPPLEMENTARY USER-CENTRIC NODES
+# Added to support user profiling questionnaire inference mapping
+# These nodes are leaf-level concepts that connect to existing tree nodes via edges
+# =============================================================================
+
+supplementary_nodes:
+  # --- Health & Healthcare ---
+  - id: bp_medication
+    aliases: ["blood pressure pills", "hypertension drugs", "anti-hypertensive", "BP meds"]
+    category: health_and_healthcare
+
+  - id: cardiac_care
+    aliases: ["heart surgery", "angioplasty", "stent cost", "cardiologist consultation", "heart attack treatment"]
+    category: health_and_healthcare
+
+  - id: thyroid_medication
+    aliases: ["thyroxine", "hypothyroidism drugs", "thyroid pills"]
+    category: health_and_healthcare
+
+  - id: uninsured
+    aliases: ["no health insurance", "paying out of pocket", "medical debt", "uncovered medical expenses"]
+    category: health_and_healthcare
+
+  - id: out_of_pocket_healthcare
+    aliases: ["medical bills", "pharmacy expenses", "doctor fees", "clinic charges", "diagnostic costs"]
+    category: health_and_healthcare
+
+  - id: parental_health_support
+    aliases: ["parents medical bills", "senior citizen health insurance", "paying for parents treatment"]
+    category: health_and_healthcare
+
+  # --- Consumer Spending ---
+  - id: electronics
+    aliases: ["consumer electronics", "home appliances", "gadgets", "laptops and phones"]
+    category: consumer_spending
+
+  - id: pet_industry
+    aliases: ["pet care", "pet supplies", "dog food", "pet grooming"]
+    category: recreation_and_culture
+
+  - id: grocery_expenses
+    aliases: ["monthly groceries", "ration bill", "supermarket bill", "food expenses"]
+    category: food_and_nutrition
+
+  - id: fuel_expenses
+    aliases: ["petrol bill", "diesel costs", "commuting fuel", "tank full cost"]
+    category: energy_and_fuel
+
+  - id: domestic_help_expenses
+    aliases: ["maid salary", "cook salary", "driver pay", "nanny cost"]
+    category: housing_and_shelter
+
+  - id: digital_subscriptions
+    aliases: ["Netflix bill", "Spotify premium", "cloud storage fee", "software subscriptions"]
+    category: communication_and_information
+
+  # --- Transport & Commute ---
+  - id: daily_commute_expenses
+    aliases: ["travel to work", "metro pass", "bus tickets", "office commute cost", "cab fare to office"]
+    category: transport_and_mobility
+
+  - id: rent_escalation
+    aliases: ["rent increase", "lease renewal hike", "landlord raising rent"]
+    category: housing_and_shelter
+
+  - id: two_wheeler_emi
+    aliases: ["bike loan", "scooter emi", "motorcycle finance"]
+    category: financial
+
+  # --- Family & Dependents ---
+  - id: elderly_care
+    aliases: ["senior citizen care", "parents maintenance", "geriatric care", "old age support"]
+    category: demographics_and_social
+
+  - id: childcare_expenses
+    aliases: ["creche fees", "nanny costs", "babysitter", "daycare costs"]
+    category: education_and_learning
+
+supplementary_edges:
+  # Health edges
+  - from: bp_medication
+    to: cardiovascular_drugs
+    type: SUBSET_OF
+    description: "BP medication is a primary category of cardiovascular drugs."
+  - from: bp_medication
+    to: drug_pricing
+    type: AFFECTED_BY
+    description: "Changes in essential medicine price caps directly affect BP medication costs."
+  - from: cardiac_care
+    to: hospital_services
+    type: REQUIRES
+    description: "Cardiac care heavily relies on specialized hospital services and ICU beds."
+  - from: cardiac_care
+    to: health_insurance_premium
+    type: DRIVES
+    description: "High costs of cardiac care drive up health insurance premiums and claims."
+  - from: thyroid_medication
+    to: pharmaceuticals
+    type: SUBSET_OF
+    description: "Thyroid medication is a widely consumed pharmaceutical product."
+  - from: thyroid_medication
+    to: out_of_pocket_healthcare
+    type: CONTRIBUTES_TO
+    description: "Daily lifelong medication adds to recurring out-of-pocket healthcare expenses."
+  - from: uninsured
+    to: out_of_pocket_healthcare
+    type: INCREASES
+    description: "Being uninsured drastically increases out-of-pocket healthcare costs during emergencies."
+  - from: uninsured
+    to: government_health_schemes
+    type: RELIES_ON
+    description: "Uninsured citizens often rely on government schemes like Ayushman Bharat."
+  - from: out_of_pocket_healthcare
+    to: savings_rate
+    type: DECREASES
+    description: "High out-of-pocket medical expenses deplete household savings."
+  - from: out_of_pocket_healthcare
+    to: diagnostic_tests
+    type: INCLUDES
+    description: "Routine blood tests and scans form a large part of out-of-pocket expenses."
+  - from: parental_health_support
+    to: section_80d
+    type: PROVIDES_TAX_BENEFIT
+    description: "Paying health insurance premiums for parents offers additional Section 80D tax deductions."
+  - from: parental_health_support
+    to: hospital_services
+    type: REQUIRES
+    description: "Aging parents frequently require hospital services, impacting the user's finances."
+
+  # Consumer spending edges
+  - from: electronics
+    to: electronics_import_duty
+    type: AFFECTED_BY
+    description: "Import duties on components directly change the retail price of electronics."
+  - from: electronics
+    to: e_commerce
+    type: PURCHASED_VIA
+    description: "A massive share of consumer electronics is bought during e-commerce sales."
+  - from: pet_industry
+    to: pet_food
+    type: INCLUDES
+    description: "Pet food is the largest recurring expense in the pet industry."
+  - from: pet_industry
+    to: veterinary_care
+    type: INCLUDES
+    description: "Veterinary costs are a major component of pet ownership."
+  - from: grocery_expenses
+    to: food_inflation_india
+    type: AFFECTED_BY
+    description: "Food inflation directly increases the monthly grocery bill for households."
+  - from: grocery_expenses
+    to: fmcg_sector
+    type: DRIVES_REVENUE
+    description: "Household grocery spending is the primary revenue driver for the FMCG sector."
+  - from: fuel_expenses
+    to: petrol
+    type: AFFECTED_BY
+    description: "Retail petrol prices dictate the monthly fuel budget for car/bike owners."
+  - from: fuel_expenses
+    to: cpi_inflation
+    type: CONTRIBUTES_TO
+    description: "Household fuel expenses are a key component of consumer price inflation."
+  - from: domestic_help_expenses
+    to: domestic_help
+    type: PAYS_FOR
+    description: "This node represents the user's out-of-pocket cost for domestic help."
+  - from: domestic_help_expenses
+    to: minimum_wage
+    type: AFFECTED_BY
+    description: "State minimum wage hikes often push up the going rate for domestic workers."
+  - from: digital_subscriptions
+    to: streaming_subscriptions
+    type: INCLUDES
+    description: "OTT platforms form the bulk of consumer digital subscriptions."
+  - from: digital_subscriptions
+    to: rbi_circular
+    type: AFFECTED_BY
+    description: "RBI rules on recurring card mandates directly affect subscription renewals."
+
+  # Transport & commute edges
+  - from: daily_commute_expenses
+    to: public_transport
+    type: AFFECTED_BY
+    description: "Fare hikes in public transport directly increase daily commute expenses."
+  - from: daily_commute_expenses
+    to: fuel_expenses
+    type: AFFECTED_BY
+    description: "For private vehicle users, fuel prices dictate commute expenses."
+  - from: rent_escalation
+    to: residential_rent
+    type: INCREASES
+    description: "Annual rent escalation directly increases the residential rent burden."
+  - from: rent_escalation
+    to: rental_yield
+    type: DRIVES
+    description: "Higher rent escalations improve rental yields for property investors."
+  - from: two_wheeler_emi
+    to: auto_loan
+    type: SUBSET_OF
+    description: "Two-wheeler loans are a massive sub-category of auto loans in India."
+  - from: two_wheeler_emi
+    to: two_wheelers
+    type: ENABLES_PURCHASE_OF
+    description: "EMIs are the primary way middle-class users purchase two-wheelers."
+
+  # Family & dependents edges
+  - from: elderly_care
+    to: aging_population
+    type: DRIVEN_BY
+    description: "The macro trend of an aging population increases the need for elderly care at the household level."
+  - from: elderly_care
+    to: parental_health_support
+    type: INCLUDES
+    description: "Healthcare is the largest component of elderly care for dependents."
+  - from: childcare_expenses
+    to: daycare_creche
+    type: PAYS_FOR
+    description: "This is the user's financial outflow for daycare services."
+  - from: childcare_expenses
+    to: female_labor_force_participation
+    type: INFLUENCES
+    description: "High childcare expenses often force women to drop out of the workforce."

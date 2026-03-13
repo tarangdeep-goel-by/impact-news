@@ -198,10 +198,10 @@ CITY_GRAPH_MAP = {
 # ---------------------------------------------------------------------------
 
 EMPLOYMENT_TYPE_MAP: dict[str, list[tuple[str, str, float]]] = {
-    "salaried_private": [("income_tax", "pays", 0.7), ("epf", "contributes_to", 0.6)],
+    "salaried_private": [("salaried_employment", "has", 0.9), ("income_tax", "pays", 0.7), ("epf", "contributes_to", 0.6), ("itr_filing_compliance", "does", 0.5)],
     "salaried_govt": [("government_employment", "works_in", 0.9), ("pay_commission", "affected_by", 0.8), ("nps", "contributes_to", 0.6), ("pension_policy", "eligible_for", 0.7)],
     "self_employed": [("business_income", "earns", 0.9), ("gst", "pays", 0.8), ("business_loan", "may_need", 0.6), ("business_loan", "part_of", 0.7)],
-    "freelance": [("gig_workers", "works_in", 0.9), ("platform_economy", "depends_on", 0.7), ("income_volatility", "exposed_to", 0.8)],
+    "freelance": [("freelance_income", "earns", 0.9), ("gig_workers", "works_in", 0.9), ("platform_economy", "depends_on", 0.7), ("income_volatility", "exposed_to", 0.8)],
     "student": [("education_sector", "part_of", 0.8), ("education_loan", "may_need", 0.6), ("job_market_india", "entering", 0.7)],
     "retired": [("pension_policy", "receives", 0.9), ("fd_rates", "invests_in", 0.6)],
     "homemaker": [("consumer", "is", 0.8), ("food_inflation_india", "affected_by", 0.7)],
@@ -228,13 +228,13 @@ INDUSTRY_MAP: dict[str, list[tuple[str, str, float]]] = {
 HOUSING_MAP: dict[str, list[tuple[str, str, float]]] = {
     "own_loan": [("home_loan", "has", 1.0), ("repo_rate", "sensitive_to", 0.9), ("property_tax", "pays", 0.7), ("real_estate_sector", "owns", 0.6)],
     "own_clear": [("property_tax", "pays", 0.7), ("real_estate_sector", "owns", 0.6)],
-    "rent": [("rental_market", "uses", 0.8), ("rental_housing", "affected_by", 0.7)],
+    "rent": [("rental_market", "uses", 0.8), ("rental_housing", "affected_by", 0.7), ("rent_escalation", "exposed_to", 0.7)],
     "family": [],
 }
 
 TRANSPORT_MAP: dict[str, list[tuple[str, str, float]]] = {
     "car": [("petrol", "affected_by", 0.9), ("diesel", "affected_by", 0.8), ("road_infrastructure", "uses", 0.6)],
-    "bike": [("petrol", "affected_by", 0.7)],
+    "bike": [("petrol", "affected_by", 0.7), ("two_wheeler_emi", "may_have", 0.5)],
     "metro": [("metro_fare", "pays", 0.7)],
     "bus": [("bus_fare", "pays", 0.6)],
     "auto_cab": [("ride_hailing", "uses", 0.7), ("petrol", "affected_by", 0.5)],
@@ -247,7 +247,7 @@ LOANS_MAP: dict[str, list[tuple[str, str, float]]] = {
     "car": [("auto_loan", "has", 0.8)],
     "education": [("education_loan", "has", 0.8), ("education_loan_subsidy", "eligible_for", 0.6)],
     "personal": [("personal_loan", "has", 0.8)],
-    "credit_card": [("credit_cards", "has", 0.7)],
+    "credit_card": [("credit_cards", "has", 0.7), ("credit_card_debt", "has", 0.7)],
     "business": [("business_loan", "has", 0.9), ("business_loan", "part_of", 0.6)],
     "none": [],
 }
@@ -272,16 +272,16 @@ DEPENDENTS_MAP: dict[str, list[tuple[str, str, float]]] = {
 }
 
 TOP_EXPENSES_MAP: dict[str, list[tuple[str, str, float]]] = {
-    "groceries": [("food_inflation_india", "affected_by", 0.9), ("vegetable_prices", "affected_by", 0.8), ("pulses", "affected_by", 0.7), ("edible_oil", "consumes", 0.7), ("milk", "affected_by", 0.6), ("chicken", "affected_by", 0.5)],
-    "fuel_transport": [("petrol", "affected_by", 0.9), ("diesel", "affected_by", 0.8), ("crude_oil", "depends_on", 0.7), ("road_infrastructure", "uses", 0.5)],
-    "children_education": [("school_fees", "pays", 0.9), ("education_policy", "affected_by", 0.8), ("college_university_fees", "pays", 0.7)],
-    "healthcare_insurance": [("health_insurance", "pays", 0.8), ("pharma_sector", "depends_on", 0.6)],
+    "groceries": [("grocery_expenses", "has", 0.9), ("food_inflation_india", "affected_by", 0.9), ("vegetable_prices", "affected_by", 0.8), ("pulses", "affected_by", 0.7), ("edible_oil", "consumes", 0.7), ("milk", "affected_by", 0.6), ("chicken", "affected_by", 0.5)],
+    "fuel_transport": [("fuel_expenses", "has", 0.9), ("petrol", "affected_by", 0.9), ("diesel", "affected_by", 0.8), ("crude_oil", "depends_on", 0.7), ("daily_commute_expenses", "has", 0.7), ("road_infrastructure", "uses", 0.5)],
+    "children_education": [("school_fees", "pays", 0.9), ("education_policy", "affected_by", 0.8), ("college_university_fees", "pays", 0.7), ("childcare_expenses", "has", 0.6)],
+    "healthcare_insurance": [("health_insurance", "pays", 0.8), ("out_of_pocket_healthcare", "has", 0.7), ("pharma_sector", "depends_on", 0.6)],
     "utilities": [("electricity", "consumes", 0.8), ("electricity", "affected_by", 0.8), ("water_supply", "affected_by", 0.6), ("lpg_cylinder", "affected_by", 0.7), ("piped_gas", "uses", 0.5)],
     "eating_out": [("gst", "pays", 0.5), ("food_inflation_india", "affected_by", 0.6)],
-    "subscriptions_tech": [("broadband_internet", "depends_on", 0.7), ("telecom_sector", "uses", 0.6), ("digital_services", "subscribes_to", 0.6)],
-    "domestic_help": [("minimum_wage", "affected_by", 0.6), ("informal_sector", "depends_on", 0.5)],
-    "parents_care": [("elderly_care", "needs", 0.8)],
-    "savings_investments": [("deposit_growth", "affected_by", 0.7), ("repo_rate", "affected_by", 0.6), ("equity_markets", "invests_in", 0.5)],
+    "subscriptions_tech": [("digital_subscriptions", "has", 0.7), ("broadband_internet", "depends_on", 0.7), ("telecom_sector", "uses", 0.6), ("digital_services", "subscribes_to", 0.6)],
+    "domestic_help": [("domestic_help_expenses", "has", 0.7), ("minimum_wage", "affected_by", 0.6), ("informal_sector", "depends_on", 0.5)],
+    "parents_care": [("elderly_care", "needs", 0.8), ("parental_health_support", "provides", 0.7)],
+    "savings_investments": [("emergency_savings", "maintains", 0.7), ("deposit_growth", "affected_by", 0.7), ("repo_rate", "affected_by", 0.6), ("equity_markets", "invests_in", 0.5)],
     "entertainment_travel": [("hospitality_tourism_sector", "uses", 0.6), ("air_travel", "uses", 0.5)],
 }
 

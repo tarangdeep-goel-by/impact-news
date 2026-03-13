@@ -1006,6 +1006,33 @@ nodes:
     aliases: ["education loan India", "student loan", "education loan interest", "Vidya Lakshmi"]
     category: financial
 
+  # ---------------------------------------------------------------------------
+  # USER-CENTRIC EMPLOYMENT & INCOME
+  # ---------------------------------------------------------------------------
+  - id: business_income
+    aliases: ["business profits", "SME earnings", "shop owner income", "entrepreneur income"]
+    category: employment_and_income
+
+  - id: consulting_sector
+    aliases: ["management consulting", "advisory services", "strategy consulting", "Big 4"]
+    category: employment
+
+  - id: income_volatility
+    aliases: ["variable income", "unpredictable earnings", "pay cuts", "irregular salary"]
+    category: employment_and_income
+
+  - id: platform_economy
+    aliases: ["gig economy", "aggregator platforms", "app-based work", "task-based work"]
+    category: employment
+
+  - id: salaried_employment
+    aliases: ["fixed salary", "monthly paycheck", "corporate job", "white collar job"]
+    category: employment_and_income
+
+  - id: freelance_income
+    aliases: ["freelance earnings", "contractor pay", "upwork earnings", "client retainers"]
+    category: employment_and_income
+
 
 # =============================================================================
 # EDGES — 350+ typed relationships
@@ -2814,3 +2841,66 @@ edges:
     to: warehousing
     type: DEPENDS_ON
     description: "E-commerce fulfilment depends on warehouse infrastructure"
+
+  # ---------------------------------------------------------------------------
+  # USER-CENTRIC EMPLOYMENT & INCOME
+  # ---------------------------------------------------------------------------
+  - from: business_income
+    to: gst_compliance
+    type: AFFECTED_BY
+    description: "Changes in GST rules directly impact the net income and compliance costs of business owners."
+
+  - from: business_income
+    to: rural_demand
+    type: AFFECTED_BY
+    description: "For many retail and wholesale businesses, rural demand dictates business income."
+
+  - from: consulting_sector
+    to: freelance_market
+    type: OVERLAPS_WITH
+    description: "Many independent consultants operate within the freelance market."
+
+  - from: consulting_sector
+    to: it_services_sector
+    type: RELATED_TO
+    description: "IT and management consulting often move together in terms of hiring and layoffs."
+
+  - from: income_volatility
+    to: emergency_savings
+    type: REQUIRES
+    description: "High income volatility necessitates larger emergency savings."
+
+  - from: income_volatility
+    to: credit_card_debt
+    type: INCREASES
+    description: "Income dips often lead to increased reliance on credit cards for daily expenses."
+
+  - from: platform_economy
+    to: gig_worker_regulation
+    type: AFFECTED_BY
+    description: "New labor laws and social security mandates directly impact platform economy workers."
+
+  - from: platform_economy
+    to: delivery_worker_earnings
+    type: INCLUDES
+    description: "Delivery workers are a core component of the platform economy."
+
+  - from: salaried_employment
+    to: income_tax_slab
+    type: AFFECTED_BY
+    description: "Salaried employees are directly impacted by changes to income tax slabs and standard deductions."
+
+  - from: salaried_employment
+    to: epf
+    type: CONTRIBUTES_TO
+    description: "Salaried employment mandates EPF contributions, affecting take-home pay."
+
+  - from: freelance_income
+    to: inr_usd_freelance
+    type: AFFECTED_BY
+    description: "Exchange rate fluctuations directly impact INR earnings for global freelancers."
+
+  - from: freelance_income
+    to: tds
+    type: AFFECTED_BY
+    description: "Changes in TDS rates for professional services impact freelance cash flow."

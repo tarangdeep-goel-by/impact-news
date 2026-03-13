@@ -1437,6 +1437,15 @@ nodes:
     aliases: ["pollution health impact", "city health", "urban lifestyle disease"]
     category: cross_domain
 
+  # USER-CENTRIC CIVIC INTERACTION
+  - id: bureaucracy
+    aliases: ["red tape", "government offices", "paperwork", "official delays", "babu culture"]
+    category: governance_and_regulation
+
+  - id: government_services
+    aliases: ["RTO", "passport office", "municipal services", "certificate issuance"]
+    category: governance_and_regulation
+
 # =============================================================================
 # EDGES
 # =============================================================================
@@ -3735,3 +3744,24 @@ edges:
   - from: building_codes
     to: affordable_housing
     type: REGULATES
+
+  # USER-CENTRIC CIVIC INTERACTION
+  - from: bureaucracy
+    to: government_services
+    type: MANAGES
+    description: "Bureaucracy dictates the speed and efficiency of government service delivery."
+
+  - from: bureaucracy
+    to: citizen_grievance
+    type: IMPACTS
+    description: "Bureaucratic delays are a primary driver of citizen grievances."
+
+  - from: government_services
+    to: aadhaar_kyc
+    type: REQUIRES
+    description: "Almost all citizen-facing government services now require Aadhaar authentication."
+
+  - from: government_services
+    to: digital_services
+    type: DELIVERED_VIA
+    description: "Many government services are migrating to digital portals (e.g., DigiLocker, Umang)."
