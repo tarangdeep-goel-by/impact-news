@@ -1,0 +1,694 @@
+nodes:
+- id: i10
+  aliases:
+  - Digital Life & Connectivity
+  - Digital Access
+  - Internet & Tech
+  - Online Life
+  category: I10
+  level: 1
+  status: active
+  is_category: true
+- id: telecom_and_internet_access
+  aliases:
+  - Telecom & Internet Access
+  - Internet Connectivity
+  - Network Access
+  - Telecom Services
+  category: I10
+  level: 2
+  status: active
+  is_category: true
+- id: digital_identity_and_egovernance
+  aliases:
+  - Digital Identity & e-Governance
+  - Online KYC
+  - Digital ID
+  - Govt Portals
+  category: I10
+  level: 2
+  status: active
+  is_category: true
+- id: digital_payments_interface
+  aliases:
+  - Digital Payments Interface
+  - Online Payment Systems
+  - Digital Wallets
+  - Payment Apps
+  category: I10
+  level: 2
+  status: active
+  is_category: true
+- id: digital_communication_platforms
+  aliases:
+  - Digital Communication Platforms
+  - Messaging Apps
+  - Social Platforms
+  - Online Comms
+  category: I10
+  level: 2
+  status: active
+  is_category: true
+- id: digital_privacy_and_hygiene
+  aliases:
+  - Digital Privacy & Hygiene
+  - Data Security
+  - Online Privacy
+  - Digital Safety
+  category: I10
+  level: 2
+  status: active
+  is_category: true
+- id: consumer_tech_devices
+  aliases:
+  - Consumer Tech Devices
+  - Smart Devices
+  - Personal Electronics
+  - Hardware Interface
+  category: I10
+  level: 2
+  status: active
+  is_category: true
+- id: mobile_connectivity
+  aliases:
+  - Mobile Connectivity
+  - Cellular Network
+  - Mobile Internet
+  - 4G/5G Access
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: home_broadband
+  aliases:
+  - Home Broadband
+  - Fixed Line Internet
+  - WiFi Connection
+  - FTTH
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: core_digital_identity
+  aliases:
+  - Core Digital Identity
+  - Primary KYC
+  - Biometric ID
+  - National Digital ID
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: digital_document_storage
+  aliases:
+  - Digital Document Storage
+  - Cloud Documents
+  - e-Docs
+  - Virtual Lockers
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: online_citizen_services
+  aliases:
+  - Online Citizen Services
+  - e-Seva
+  - Digital Govt Services
+  - Citizen Portals
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: upi_ecosystem
+  aliases:
+  - UPI Ecosystem
+  - Unified Payments Interface
+  - UPI Apps
+  - Bank-to-Bank Transfer
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: transit_and_toll_payments
+  aliases:
+  - Transit & Toll Payments
+  - Mobility Wallets
+  - Travel Cards
+  - Digital Tolls
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: recurring_digital_payments
+  aliases:
+  - Recurring Digital Payments
+  - Subscription Mandates
+  - Auto-debit
+  - Standing Instructions
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: instant_messaging
+  aliases:
+  - Instant Messaging
+  - Chat Apps
+  - Texting Platforms
+  - IM Services
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: social_media_presence
+  aliases:
+  - Social Media Presence
+  - Social Profiles
+  - Networking Sites
+  - Public Timelines
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: telemarketing_and_spam
+  aliases:
+  - Telemarketing & Spam
+  - Unsolicited Comms
+  - Commercial Calls
+  - Spam Messages
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: personal_data_control
+  aliases:
+  - Personal Data Control
+  - Data Consent
+  - Information Privacy
+  - Digital Footprint
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: personal_computing_devices
+  aliases:
+  - Personal Computing Devices
+  - Personal Computers
+  - Mobile Devices
+  - Screens
+  category: I10
+  level: 3
+  status: active
+  is_category: true
+- id: mobile_data_tariff
+  aliases:
+  - Mobile Data Tariff
+  - net pack
+  - data recharge
+  - prepaid plan
+  - jio_5g_tariff
+  - internet pack
+  category: I10
+  level: 4
+  status: active
+- id: mobile_network_quality
+  aliases:
+  - Mobile Network Quality
+  - call drop
+  - signal strength
+  - network issue
+  - internet speed
+  - network nahi hai
+  category: I10
+  level: 4
+  status: active
+- id: fiber_broadband_tariff
+  aliases:
+  - Fiber Broadband Tariff
+  - wifi bill
+  - broadband plan
+  - ftth recharge
+  - jiofiber plan
+  - airtel xstream bill
+  category: I10
+  level: 4
+  status: active
+- id: broadband_network_quality
+  aliases:
+  - Broadband Network Quality
+  - wifi down
+  - broadband outage
+  - fiber cut
+  - internet buffering
+  category: I10
+  level: 4
+  status: active
+- id: public_wifi
+  aliases:
+  - Public WiFi
+  - railway wifi
+  - pm wani
+  - free wifi
+  - airport wifi
+  - municipal wifi
+  category: I10
+  level: 4
+  status: active
+- id: aadhaar_authentication
+  aliases:
+  - Aadhaar Authentication
+  - aadhaar otp
+  - biometric kyc
+  - e-kyc
+  - uidai login
+  - fingerprint scan
+  category: I10
+  level: 4
+  status: active
+- id: pan_aadhaar_linkage
+  aliases:
+  - PAN-Aadhaar Linkage
+  - pan link
+  - kyc update
+  - pan card linking
+  - aadhaar seeding
+  category: I10
+  level: 4
+  status: active
+- id: digilocker_documents
+  aliases:
+  - DigiLocker Documents
+  - digital rc
+  - e-pan
+  - digital marksheet
+  - virtual driving license
+  - digilocker app
+  category: I10
+  level: 4
+  status: active
+- id: epramaan_and_sso
+  aliases:
+  - ePramaan & SSO
+  - meri pehchaan
+  - parivahan login
+  - umang app
+  - single sign on
+  - gov.in login
+  category: I10
+  level: 4
+  status: active
+- id: upi_transaction_success
+  aliases:
+  - UPI Transaction Success
+  - upi payment
+  - gpay working
+  - phonepe transaction
+  - upi server down
+  - payment failed
+  category: I10
+  level: 4
+  status: active
+- id: upi_transaction_limits
+  aliases:
+  - UPI Transaction Limits
+  - upi daily limit
+  - wallet limit
+  - p2pm limit
+  - 1 lakh limit
+  - upi cap
+  category: I10
+  level: 4
+  status: active
+- id: fastag_wallet
+  aliases:
+  - FASTag Wallet
+  - fastag recharge
+  - toll tag
+  - nhai fastag
+  - fastag balance
+  - fastag kyc
+  category: I10
+  level: 4
+  status: active
+- id: ncmc_smart_card
+  aliases:
+  - NCMC Smart Card
+  - one nation one card
+  - metro card recharge
+  - mobility card
+  - chalo card
+  - transit pass
+  category: I10
+  level: 4
+  status: active
+- id: e_mandate_autopay
+  aliases:
+  - e-Mandate Autopay
+  - upi autopay
+  - subscription auto-debit
+  - recurring payment mandate
+  - nach mandate
+  category: I10
+  level: 4
+  status: active
+- id: whatsapp_messaging
+  aliases:
+  - WhatsApp Messaging
+  - whatsapp chat
+  - wa message
+  - telegram chat
+  - signal app
+  - whatsapp group
+  category: I10
+  level: 4
+  status: active
+- id: social_media_accounts
+  aliases:
+  - Social Media Accounts
+  - instagram profile
+  - x handle
+  - facebook account
+  - linkedin profile
+  - social media ban
+  category: I10
+  level: 4
+  status: active
+- id: spam_calls
+  aliases:
+  - Spam Calls
+  - pesky calls
+  - promotional sms
+  - dnd bypass
+  - telemarketing
+  - farzi call
+  - robocall
+  category: I10
+  level: 4
+  status: active
+- id: personal_data_privacy
+  aliases:
+  - Personal Data Privacy
+  - data leak
+  - app permissions
+  - cookie tracking
+  - data breach
+  - privacy policy
+  category: I10
+  level: 4
+  status: active
+- id: smartphone_device
+  aliases:
+  - Smartphone Device
+  - mobile phone
+  - handset
+  - cell phone
+  - smart phone
+  - android phone
+  - iphone
+  category: I10
+  level: 4
+  status: active
+- id: laptop_computer
+  aliases:
+  - Laptop Computer
+  - pc
+  - notebook
+  - desktop
+  - personal computer
+  - macbook
+  category: I10
+  level: 4
+  status: active
+edges:
+- from: i10
+  to: telecom_and_internet_access
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Connectivity contains Telecom & Internet Access
+- from: i10
+  to: digital_identity_and_egovernance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Connectivity contains Digital Identity & e-Governance
+- from: i10
+  to: digital_payments_interface
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Connectivity contains Digital Payments Interface
+- from: i10
+  to: digital_communication_platforms
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Connectivity contains Digital Communication Platforms
+- from: i10
+  to: digital_privacy_and_hygiene
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Connectivity contains Digital Privacy & Hygiene
+- from: i10
+  to: consumer_tech_devices
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Connectivity contains Consumer Tech Devices
+- from: telecom_and_internet_access
+  to: mobile_connectivity
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Internet Access contains Mobile Connectivity
+- from: telecom_and_internet_access
+  to: home_broadband
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Internet Access contains Home Broadband
+- from: digital_identity_and_egovernance
+  to: core_digital_identity
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Identity & e-Governance contains Core Digital Identity
+- from: digital_identity_and_egovernance
+  to: digital_document_storage
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Identity & e-Governance contains Digital Document Storage
+- from: digital_identity_and_egovernance
+  to: online_citizen_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Identity & e-Governance contains Online Citizen Services
+- from: digital_payments_interface
+  to: upi_ecosystem
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Payments Interface contains UPI Ecosystem
+- from: digital_payments_interface
+  to: transit_and_toll_payments
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Payments Interface contains Transit & Toll Payments
+- from: digital_payments_interface
+  to: recurring_digital_payments
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Payments Interface contains Recurring Digital Payments
+- from: digital_communication_platforms
+  to: instant_messaging
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Communication Platforms contains Instant Messaging
+- from: digital_communication_platforms
+  to: social_media_presence
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Communication Platforms contains Social Media Presence
+- from: digital_privacy_and_hygiene
+  to: telemarketing_and_spam
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Privacy & Hygiene contains Telemarketing & Spam
+- from: digital_privacy_and_hygiene
+  to: personal_data_control
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Privacy & Hygiene contains Personal Data Control
+- from: consumer_tech_devices
+  to: personal_computing_devices
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Consumer Tech Devices contains Personal Computing Devices
+- from: mobile_connectivity
+  to: mobile_data_tariff
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mobile Connectivity contains Mobile Data Tariff
+- from: mobile_connectivity
+  to: mobile_network_quality
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mobile Connectivity contains Mobile Network Quality
+- from: home_broadband
+  to: fiber_broadband_tariff
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Home Broadband contains Fiber Broadband Tariff
+- from: home_broadband
+  to: broadband_network_quality
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Home Broadband contains Broadband Network Quality
+- from: home_broadband
+  to: public_wifi
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Home Broadband contains Public WiFi
+- from: core_digital_identity
+  to: aadhaar_authentication
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Core Digital Identity contains Aadhaar Authentication
+- from: core_digital_identity
+  to: pan_aadhaar_linkage
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Core Digital Identity contains PAN-Aadhaar Linkage
+- from: digital_document_storage
+  to: digilocker_documents
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Document Storage contains DigiLocker Documents
+- from: online_citizen_services
+  to: epramaan_and_sso
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Online Citizen Services contains ePramaan & SSO
+- from: upi_ecosystem
+  to: upi_transaction_success
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: UPI Ecosystem contains UPI Transaction Success
+- from: upi_ecosystem
+  to: upi_transaction_limits
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: UPI Ecosystem contains UPI Transaction Limits
+- from: transit_and_toll_payments
+  to: fastag_wallet
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transit & Toll Payments contains FASTag Wallet
+- from: transit_and_toll_payments
+  to: ncmc_smart_card
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transit & Toll Payments contains NCMC Smart Card
+- from: recurring_digital_payments
+  to: e_mandate_autopay
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Recurring Digital Payments contains e-Mandate Autopay
+- from: instant_messaging
+  to: whatsapp_messaging
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Instant Messaging contains WhatsApp Messaging
+- from: social_media_presence
+  to: social_media_accounts
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social Media Presence contains Social Media Accounts
+- from: telemarketing_and_spam
+  to: spam_calls
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telemarketing & Spam contains Spam Calls
+- from: personal_data_control
+  to: personal_data_privacy
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Data Control contains Personal Data Privacy
+- from: personal_computing_devices
+  to: smartphone_device
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Computing Devices contains Smartphone Device
+- from: personal_computing_devices
+  to: laptop_computer
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Computing Devices contains Laptop Computer

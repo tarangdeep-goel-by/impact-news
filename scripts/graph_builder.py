@@ -38,12 +38,16 @@ log = logging.getLogger(__name__)
 TAXONOMY_DIR = PROJECT_ROOT / "taxonomy"
 TAXONOMY_MD = TAXONOMY_DIR / "TAXONOMY.md"
 
-# Gemini model fallback chain
+# Gemini model fallback chain (thinking-capable only)
 MODEL_CHAIN = [
-    "gemini-2.5-pro-preview-06-05",
-    "gemini-2.5-flash-preview-05-20",
-    "gemini-2.0-flash",
+    "gemini-3.1-pro-preview",
+    "gemini-3-pro-preview",
+    "gemini-2.5-pro",
 ]
+
+# Retry config
+MAX_RETRIES = 3
+RETRY_DELAY_SECONDS = 10
 
 # L1 definitions extracted from constitution
 TRIGGER_L1S = {
@@ -91,25 +95,33 @@ class GraphGemini:
         self.client = genai.Client(api_key=settings.gemini_api_key)
 
     def call(self, prompt: str, *, temperature: float = 0.1, thinking_budget: int = 16000) -> str:
-        """Call Gemini with thinking enabled and fallback chain."""
-        for model in MODEL_CHAIN:
-            try:
-                log.info("Trying model: %s", model)
-                response = self.client.models.generate_content(
-                    model=model,
-                    contents=prompt,
-                    config=genai.types.GenerateContentConfig(
-                        temperature=temperature,
-                        thinking_config=genai.types.ThinkingConfig(
-                            thinking_budget=thinking_budget,
+        """Call Gemini with thinking enabled. Retries on transient failures."""
+        import time
+
+        for attempt in range(1, MAX_RETRIES + 1):
+            for model in MODEL_CHAIN:
+                try:
+                    log.info("Attempt %d — model: %s", attempt, model)
+                    response = self.client.models.generate_content(
+                        model=model,
+                        contents=prompt,
+                        config=genai.types.GenerateContentConfig(
+                            temperature=temperature,
+                            thinking_config=genai.types.ThinkingConfig(
+                                thinking_budget=thinking_budget,
+                            ),
                         ),
-                    ),
-                )
-                return response.text
-            except Exception as e:
-                log.warning("Model %s failed: %s", model, e)
-                continue
-        raise RuntimeError("All Gemini models failed")
+                    )
+                    return response.text
+                except Exception as e:
+                    log.warning("Model %s failed: %s", model, e)
+                    continue
+
+            if attempt < MAX_RETRIES:
+                log.info("All models failed on attempt %d, retrying in %ds...", attempt, RETRY_DELAY_SECONDS)
+                time.sleep(RETRY_DELAY_SECONDS)
+
+        raise RuntimeError(f"All Gemini models failed after {MAX_RETRIES} attempts")
 
 
 # ---------------------------------------------------------------------------
@@ -243,9 +255,9 @@ def validate_nodes(nodes: list[dict], l1_id: str) -> list[str]:
         if len(aliases) < 3:
             issues.append(f"Node '{nid}' has only {len(aliases)} aliases (need 3+)")
 
-        # Check level
+        # Check level (1+ is valid, no upper cap)
         level = node.get("level")
-        if level not in (1, 2, 3):
+        if not isinstance(level, int) or level < 1:
             issues.append(f"Node '{nid}' has invalid level: {level}")
 
     return issues
@@ -306,14 +318,30 @@ Generate the complete vertical tree for L1 category: {l1_id} ({name})
 {l1_section}
 
 ## Requirements
-- Create 4-6 L2 subcategories under {l1_id}
-- Create 3-5 L3 leaf nodes under each L2 (~15-25 leaves total)
+
+### Tree depth — go as deep as the domain demands
+- Start with L2 broad subcategories under {l1_id}
+- Under each L2, create L3 sub-subcategories OR leaf entities — whichever fits
+- If an L3 naturally contains distinct, individually newsworthy sub-entities, go to L4 (or even L5)
+- Stop deepening when you hit entities that pass the Leaf Node Test (Rule 5)
+- Example of correct depth: `I1 → fresh_produce → vegetables → retail_tomato` (L4 leaf)
+- Example of too shallow: `I1 → fresh_produce → retail_tomato` (skips natural grouping)
+- Non-leaf nodes (any node with children) get `is_category: true`
+
+### Content coverage — be thorough for India
+- Think about what actually appears in Indian newspaper headlines, TV debates, kitchen table conversations
+- Include the obvious big entities AND the long-tail entities that matter regionally
+- Include Hindi/colloquial/regional terms as aliases (pyaaz, tamatar, atta, doodh, etc.)
+- Don't forget entities that are small nationally but massive locally (e.g., fish in Bengal/Kerala, coconut oil in Kerala)
+- For high-weight L1s, err on the side of more entities rather than fewer
+
+### Constitution rules (non-negotiable)
 - Rule 1: Entities only (things that exist), NOT events or changes
-- Rule 5: Every leaf must be Matchable (LLM can extract from headline), Mappable (user onboarding connects), Edgeable (has causal edges)
-- Rule 6: Use CONTAINS for L1→L2→L3, IS_A only for within-level specialization
+- Rule 5: Every LEAF must be Matchable (LLM can extract from headline), Mappable (user onboarding connects), Edgeable (has causal edges)
+- Rule 6: Use CONTAINS for parent→child, IS_A only for within-level specialization
 - Rule 9: Siblings should be as mutually exclusive as practical
-- Rule 10: Similar granularity depth across siblings
-- Rule 11: India-first scoping - {"Does this entity have a causal path to an Indian citizen?" if world == "Trigger" else "Would this appear in an Indian news headline in 2026?"}
+- Rule 10: Similar granularity depth across siblings at the same level
+- Rule 11: India-first scoping — {"Does this entity have a causal path to an Indian citizen?" if world == "Trigger" else "Would this plausibly appear in an Indian news headline in 2026?"}
 - Rule 16: All nodes status=active
 - Node IDs must be snake_case matching ^[a-z][a-z0-9_]*$
 - Each node needs 3+ aliases including Hindi/colloquial terms where applicable
@@ -334,10 +362,16 @@ nodes:
     level: 2
     status: active
     is_category: true
-  - id: example_l3_leaf
-    aliases: ["Example Leaf", "alias 2", "hindi term"]
+  - id: example_l3_category
+    aliases: ["Example L3 Group", "alias", "hindi term"]
     category: {l1_id}
     level: 3
+    status: active
+    is_category: true
+  - id: example_l4_leaf
+    aliases: ["Example Leaf", "alias 2", "hindi term"]
+    category: {l1_id}
+    level: 4
     status: active
 edges:
   - from: {l1_id.lower()}
@@ -348,12 +382,19 @@ edges:
     delay: IMMEDIATE
     description: "{name} contains this subcategory"
   - from: example_l2
-    to: example_l3_leaf
+    to: example_l3_category
     type: CONTAINS
     weight: 0.9
     polarity: 1
     delay: IMMEDIATE
-    description: "L2 subcategory contains this leaf entity"
+    description: "L2 contains this sub-group"
+  - from: example_l3_category
+    to: example_l4_leaf
+    type: CONTAINS
+    weight: 0.9
+    polarity: 1
+    delay: IMMEDIATE
+    description: "L3 group contains this leaf entity"
 ```"""
 
 

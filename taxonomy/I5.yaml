@@ -1,0 +1,886 @@
+nodes:
+- id: i5
+  aliases:
+  - Personal Finance & Wealth
+  - Household Finance
+  - Personal Wealth
+  - Citizen Balance Sheet
+  category: I5
+  level: 1
+  status: active
+  is_category: true
+- id: borrowing_and_credit
+  aliases:
+  - Borrowing & Credit
+  - Loans and Debt
+  - Karza
+  - Udhaar
+  - Credit Products
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: secured_loans
+  aliases:
+  - Secured Loans
+  - Collateralized Debt
+  - Asset-backed Loans
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: home_loan_emi
+  aliases:
+  - Home Loan EMI
+  - Housing Loan Installment
+  - Makan Ka Loan
+  - Ghar Ka Loan
+  - Mortgage Payment
+  category: I5
+  level: 4
+  status: active
+- id: auto_loan_emi
+  aliases:
+  - Auto Loan EMI
+  - Car Loan
+  - Two-Wheeler Loan
+  - Vehicle Finance
+  - Gaadi Ka Loan
+  category: I5
+  level: 4
+  status: active
+- id: gold_loan_interest
+  aliases:
+  - Gold Loan Interest
+  - Jewel Loan
+  - Sona Girvi Loan
+  - Muthoot Loan
+  - Manappuram Loan
+  category: I5
+  level: 4
+  status: active
+- id: unsecured_loans
+  aliases:
+  - Unsecured Loans
+  - Collateral-free Loans
+  - Personal Credit
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: personal_loan_emi
+  aliases:
+  - Personal Loan EMI
+  - Consumer Loan
+  - Instant Loan
+  - Personal Karza
+  category: I5
+  level: 4
+  status: active
+- id: credit_card_dues
+  aliases:
+  - Credit Card Dues
+  - Credit Card Bill
+  - Credit Card Outstanding
+  - Credit Card EMI
+  category: I5
+  level: 4
+  status: active
+- id: microfinance_loan
+  aliases:
+  - Microfinance Loan
+  - MFI Loan
+  - SHG Loan
+  - Samuh Loan
+  - Microcredit
+  category: I5
+  level: 4
+  status: active
+- id: bnpl_installments
+  aliases:
+  - BNPL Installments
+  - Buy Now Pay Later
+  - Pay Later Dues
+  - E-commerce EMI
+  category: I5
+  level: 4
+  status: active
+- id: savings_and_deposits
+  aliases:
+  - Savings & Deposits
+  - Bank Savings
+  - Bachat
+  - Jama Punji
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: bank_deposits
+  aliases:
+  - Bank Deposits
+  - Bank Accounts
+  - Banking Savings
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: fixed_deposits
+  aliases:
+  - Fixed Deposits
+  - Bank FD
+  - Term Deposit
+  - FD Interest
+  - Miyadi Jama
+  category: I5
+  level: 4
+  status: active
+- id: recurring_deposits
+  aliases:
+  - Recurring Deposits
+  - Bank RD
+  - RD Account
+  - Monthly Deposit
+  category: I5
+  level: 4
+  status: active
+- id: savings_account_balance
+  aliases:
+  - Savings Account Balance
+  - Bank Balance
+  - Bachat Khata
+  - CASA Balance
+  category: I5
+  level: 4
+  status: active
+- id: small_savings_schemes
+  aliases:
+  - Small Savings Schemes
+  - Post Office Savings
+  - Dak Ghar Bachat
+  - Government Savings
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: senior_citizen_savings_scheme
+  aliases:
+  - Senior Citizen Savings Scheme
+  - SCSS
+  - Senior Citizen FD
+  - Vridh Bachat Yojana
+  category: I5
+  level: 4
+  status: active
+- id: sukanya_samriddhi_yojana
+  aliases:
+  - Sukanya Samriddhi Yojana
+  - SSY Account
+  - Girl Child Savings Scheme
+  - Sukanya Samriddhi Khata
+  category: I5
+  level: 4
+  status: active
+- id: market_investments
+  aliases:
+  - Market Investments
+  - Capital Markets
+  - Nivesh
+  - Share Bazaar Investment
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: equity_investments
+  aliases:
+  - Equity Investments
+  - Stock Market
+  - Direct Equity
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: direct_equity_portfolio
+  aliases:
+  - Direct Equity Portfolio
+  - Retail Stocks
+  - Shares
+  - Demat Account Holdings
+  - Share Market Portfolio
+  category: I5
+  level: 4
+  status: active
+- id: ipo_allotment
+  aliases:
+  - IPO Allotment
+  - Initial Public Offering
+  - New Share Issue
+  - IPO Listing Gain
+  category: I5
+  level: 4
+  status: active
+- id: mutual_funds
+  aliases:
+  - Mutual Funds
+  - MFs
+  - Asset Management Companies
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: equity_mutual_funds
+  aliases:
+  - Equity Mutual Funds
+  - SIP
+  - Systematic Investment Plan
+  - Equity MF Portfolio
+  - Index Funds
+  category: I5
+  level: 4
+  status: active
+- id: debt_mutual_funds
+  aliases:
+  - Debt Mutual Funds
+  - Liquid Funds
+  - Debt SIP
+  - Fixed Income Funds
+  category: I5
+  level: 4
+  status: active
+- id: retirement_and_provident_funds
+  aliases:
+  - Retirement & Provident Funds
+  - Retirement Corpus
+  - Pension Funds
+  - Retirement Savings
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: statutory_provident_funds
+  aliases:
+  - Statutory Provident Funds
+  - PF Accounts
+  - Provident Fund
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: epf_balance
+  aliases:
+  - EPF Balance
+  - PF Account
+  - Employee Provident Fund
+  - PF Withdrawal
+  - EPFO Balance
+  category: I5
+  level: 4
+  status: active
+- id: ppf_investment
+  aliases:
+  - PPF Investment
+  - Public Provident Fund
+  - PPF Account
+  - PPF Interest Rate
+  category: I5
+  level: 4
+  status: active
+- id: pension_schemes
+  aliases:
+  - Pension Schemes
+  - Retirement Pensions
+  - Pension Yojana
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: nps_portfolio
+  aliases:
+  - NPS Portfolio
+  - National Pension System
+  - NPS Tier 1
+  - NPS Returns
+  category: I5
+  level: 4
+  status: active
+- id: atal_pension_yojana
+  aliases:
+  - Atal Pension Yojana
+  - APY
+  - Guaranteed Pension Scheme
+  - Unorganized Sector Pension
+  category: I5
+  level: 4
+  status: active
+- id: insurance_premiums
+  aliases:
+  - Insurance Premiums
+  - Bima Premium
+  - Insurance Policies
+  - Policy Renewal
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: life_insurance
+  aliases:
+  - Life Insurance
+  - Jeevan Bima
+  - Life Cover
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: term_insurance_premium
+  aliases:
+  - Term Insurance Premium
+  - Term Plan
+  - Pure Life Cover
+  - Term Policy
+  category: I5
+  level: 4
+  status: active
+- id: endowment_policy_premium
+  aliases:
+  - Endowment Policy Premium
+  - LIC Policy
+  - Money Back Policy
+  - ULIP Premium
+  - Jeevan Anand
+  category: I5
+  level: 4
+  status: active
+- id: general_insurance
+  aliases:
+  - General Insurance
+  - Non-Life Insurance
+  - General Bima
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: health_insurance_premium
+  aliases:
+  - Health Insurance Premium
+  - Mediclaim
+  - Medical Insurance
+  - Health Cover
+  - Swasthya Bima
+  category: I5
+  level: 4
+  status: active
+- id: motor_insurance_premium
+  aliases:
+  - Motor Insurance Premium
+  - Car Insurance
+  - Bike Insurance
+  - Vehicle Insurance
+  - Third Party Insurance
+  category: I5
+  level: 4
+  status: active
+- id: taxation_and_compliance
+  aliases:
+  - Taxation & Compliance
+  - Taxes
+  - Kar
+  - Tax Filing
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: direct_taxes
+  aliases:
+  - Direct Taxes
+  - Income Taxes
+  - Pratyaksh Kar
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: personal_income_tax
+  aliases:
+  - Personal Income Tax
+  - Income Tax Return
+  - ITR
+  - Tax Slab
+  - Aykar
+  category: I5
+  level: 4
+  status: active
+- id: capital_gains_tax
+  aliases:
+  - Capital Gains Tax
+  - LTCG
+  - STCG
+  - Tax on Shares
+  - Property Capital Gains
+  category: I5
+  level: 4
+  status: active
+- id: tds_deduction
+  aliases:
+  - TDS Deduction
+  - Tax Deducted at Source
+  - TDS Refund
+  - Form 16
+  category: I5
+  level: 4
+  status: active
+- id: physical_and_alternative_assets
+  aliases:
+  - Physical & Alternative Assets
+  - Tangible Assets
+  - Alternative Investments
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: precious_metals
+  aliases:
+  - Precious Metals
+  - Bullion
+  - Gold and Silver
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: retail_gold_investment
+  aliases:
+  - Retail Gold Investment
+  - Physical Gold
+  - Sovereign Gold Bonds
+  - SGB
+  - Sona
+  - Gold Jewellery Investment
+  category: I5
+  level: 4
+  status: active
+- id: retail_silver_investment
+  aliases:
+  - Retail Silver Investment
+  - Physical Silver
+  - Chandi
+  - Silver Coins
+  category: I5
+  level: 4
+  status: active
+- id: real_estate_investment
+  aliases:
+  - Real Estate Investment
+  - Property Investment
+  - Real Estate Portfolio
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: investment_property_value
+  aliases:
+  - Investment Property Value
+  - Real Estate Returns
+  - Plot Value
+  - Commercial Property Investment
+  - Zameen
+  category: I5
+  level: 4
+  status: active
+- id: informal_and_digital_alternatives
+  aliases:
+  - Informal & Digital Alternatives
+  - Non-traditional Investments
+  - Alternative Finance
+  category: I5
+  level: 3
+  status: active
+  is_category: true
+- id: chit_fund_contribution
+  aliases:
+  - Chit Fund Contribution
+  - Chitty
+  - Bishi
+  - Chit Fund
+  - Committee
+  category: I5
+  level: 4
+  status: active
+- id: cryptocurrency_portfolio
+  aliases:
+  - Cryptocurrency Portfolio
+  - Crypto Investment
+  - Bitcoin Holdings
+  - Crypto Assets
+  category: I5
+  level: 4
+  status: active
+edges:
+- from: i5
+  to: borrowing_and_credit
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Finance & Wealth contains borrowing and credit products
+- from: i5
+  to: savings_and_deposits
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Finance & Wealth contains savings and deposit instruments
+- from: i5
+  to: market_investments
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Finance & Wealth contains capital market investments
+- from: i5
+  to: retirement_and_provident_funds
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Finance & Wealth contains retirement and provident fund corpuses
+- from: i5
+  to: insurance_premiums
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Finance & Wealth contains insurance premium obligations
+- from: i5
+  to: taxation_and_compliance
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Finance & Wealth contains direct taxation and compliance obligations
+- from: i5
+  to: physical_and_alternative_assets
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Finance & Wealth contains physical and alternative asset investments
+- from: borrowing_and_credit
+  to: secured_loans
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Borrowing & Credit contains secured loan products
+- from: borrowing_and_credit
+  to: unsecured_loans
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Borrowing & Credit contains unsecured loan products
+- from: secured_loans
+  to: home_loan_emi
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Secured loans contain home loan EMIs
+- from: secured_loans
+  to: auto_loan_emi
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Secured loans contain auto loan EMIs
+- from: secured_loans
+  to: gold_loan_interest
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Secured loans contain gold loan interest obligations
+- from: unsecured_loans
+  to: personal_loan_emi
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Unsecured loans contain personal loan EMIs
+- from: unsecured_loans
+  to: credit_card_dues
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Unsecured loans contain credit card outstanding dues
+- from: unsecured_loans
+  to: microfinance_loan
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Unsecured loans contain microfinance loan obligations
+- from: unsecured_loans
+  to: bnpl_installments
+  type: CONTAINS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Unsecured loans contain Buy Now Pay Later installments
+- from: savings_and_deposits
+  to: bank_deposits
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Savings & Deposits contains bank deposit instruments
+- from: savings_and_deposits
+  to: small_savings_schemes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Savings & Deposits contains government small savings schemes
+- from: bank_deposits
+  to: fixed_deposits
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Bank deposits contain fixed deposit investments
+- from: bank_deposits
+  to: recurring_deposits
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Bank deposits contain recurring deposit investments
+- from: bank_deposits
+  to: savings_account_balance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Bank deposits contain liquid savings account balances
+- from: small_savings_schemes
+  to: senior_citizen_savings_scheme
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Small savings schemes contain the Senior Citizen Savings Scheme
+- from: small_savings_schemes
+  to: sukanya_samriddhi_yojana
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Small savings schemes contain the Sukanya Samriddhi Yojana
+- from: market_investments
+  to: equity_investments
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Market Investments contains direct equity investments
+- from: market_investments
+  to: mutual_funds
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Market Investments contains mutual fund investments
+- from: equity_investments
+  to: direct_equity_portfolio
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Equity investments contain direct retail stock portfolios
+- from: equity_investments
+  to: ipo_allotment
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Equity investments contain IPO allotments
+- from: mutual_funds
+  to: equity_mutual_funds
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mutual funds contain equity mutual fund SIPs and lumpsums
+- from: mutual_funds
+  to: debt_mutual_funds
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mutual funds contain debt mutual fund investments
+- from: retirement_and_provident_funds
+  to: statutory_provident_funds
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Retirement & Provident Funds contains statutory provident funds
+- from: retirement_and_provident_funds
+  to: pension_schemes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Retirement & Provident Funds contains pension schemes
+- from: statutory_provident_funds
+  to: epf_balance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Statutory provident funds contain Employee Provident Fund balances
+- from: statutory_provident_funds
+  to: ppf_investment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Statutory provident funds contain Public Provident Fund investments
+- from: pension_schemes
+  to: nps_portfolio
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Pension schemes contain National Pension System portfolios
+- from: pension_schemes
+  to: atal_pension_yojana
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Pension schemes contain Atal Pension Yojana accounts
+- from: insurance_premiums
+  to: life_insurance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Insurance Premiums contains life insurance policies
+- from: insurance_premiums
+  to: general_insurance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Insurance Premiums contains general insurance policies
+- from: life_insurance
+  to: term_insurance_premium
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Life insurance contains term insurance premiums
+- from: life_insurance
+  to: endowment_policy_premium
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Life insurance contains endowment and ULIP policy premiums
+- from: general_insurance
+  to: health_insurance_premium
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: General insurance contains health insurance premiums
+- from: general_insurance
+  to: motor_insurance_premium
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: General insurance contains motor insurance premiums
+- from: taxation_and_compliance
+  to: direct_taxes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Taxation & Compliance contains direct tax obligations
+- from: direct_taxes
+  to: personal_income_tax
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Direct taxes contain personal income tax obligations
+- from: direct_taxes
+  to: capital_gains_tax
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Direct taxes contain capital gains tax obligations
+- from: direct_taxes
+  to: tds_deduction
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Direct taxes contain Tax Deducted at Source deductions
+- from: physical_and_alternative_assets
+  to: precious_metals
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical & Alternative Assets contains precious metal investments
+- from: physical_and_alternative_assets
+  to: real_estate_investment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical & Alternative Assets contains real estate investments
+- from: physical_and_alternative_assets
+  to: informal_and_digital_alternatives
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical & Alternative Assets contains informal and digital alternative
+    investments
+- from: precious_metals
+  to: retail_gold_investment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Precious metals contain retail gold investments
+- from: precious_metals
+  to: retail_silver_investment
+  type: CONTAINS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Precious metals contain retail silver investments
+- from: real_estate_investment
+  to: investment_property_value
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Real estate investment contains investment property values
+- from: informal_and_digital_alternatives
+  to: chit_fund_contribution
+  type: CONTAINS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Informal alternatives contain chit fund contributions
+- from: informal_and_digital_alternatives
+  to: cryptocurrency_portfolio
+  type: CONTAINS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital alternatives contain cryptocurrency portfolios

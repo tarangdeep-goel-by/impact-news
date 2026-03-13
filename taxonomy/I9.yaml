@@ -1,0 +1,607 @@
+nodes:
+- id: i9
+  aliases:
+  - Local Environmental Quality
+  - Neighborhood Environment
+  - Surrounding Environment
+  - Aas-paas ka mahol
+  category: I9
+  level: 1
+  status: active
+  is_category: true
+- id: air_quality_environment
+  aliases:
+  - Air Quality
+  - Atmospheric Quality
+  - Hawa ki quality
+  - Pollution levels
+  category: I9
+  level: 2
+  status: active
+  is_category: true
+- id: weather_and_thermal_environment
+  aliases:
+  - Weather Experience
+  - Thermal Comfort
+  - Mausam
+  - Outdoor Climate
+  category: I9
+  level: 2
+  status: active
+  is_category: true
+- id: urban_hydrology
+  aliases:
+  - Urban Hydrology
+  - Water Environment
+  - City Water Systems
+  - Jal star
+  category: I9
+  level: 2
+  status: active
+  is_category: true
+- id: civic_cleanliness
+  aliases:
+  - Civic Cleanliness
+  - Neighborhood Hygiene
+  - Safai
+  - Waste Environment
+  category: I9
+  level: 2
+  status: active
+  is_category: true
+- id: sensory_environment
+  aliases:
+  - Sensory Environment
+  - Noise and Light
+  - Shor sharaba
+  - Ambient Disturbances
+  category: I9
+  level: 2
+  status: active
+  is_category: true
+- id: urban_ecology
+  aliases:
+  - Urban Ecology
+  - Neighborhood Flora and Fauna
+  - City Wildlife
+  - Greenery and Animals
+  category: I9
+  level: 2
+  status: active
+  is_category: true
+- id: ambient_aqi
+  aliases:
+  - AQI
+  - Air Quality Index
+  - Overall Air Pollution
+  - Vayu pradooshan
+  category: I9
+  level: 3
+  status: active
+  is_category: false
+- id: particulate_matter_levels
+  aliases:
+  - PM 2.5
+  - PM 10
+  - Dust pollution
+  - Dhool mitti
+  - Particulate pollution
+  category: I9
+  level: 3
+  status: active
+  is_category: false
+- id: winter_smog
+  aliases:
+  - Smog
+  - Winter haze
+  - Kohra
+  - Dhuaan
+  - Toxic haze
+  category: I9
+  level: 3
+  status: active
+  is_category: false
+- id: ambient_temperature
+  aliases:
+  - Outdoor Temperature
+  - Tapman
+  - Ambient Heat and Cold
+  category: I9
+  level: 3
+  status: active
+  is_category: true
+- id: outdoor_heat
+  aliases:
+  - Summer heat
+  - Heatwave conditions
+  - Garmi
+  - Lu
+  - Scorching heat
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: outdoor_cold
+  aliases:
+  - Winter chill
+  - Cold wave
+  - Sardi
+  - Thand
+  - Sheet lehar
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: outdoor_humidity
+  aliases:
+  - Humidity
+  - Mugginess
+  - Umas
+  - Chipchipa mausam
+  - Moisture levels
+  category: I9
+  level: 3
+  status: active
+  is_category: false
+- id: urban_flooding
+  aliases:
+  - City Flooding
+  - Jalbrav
+  - Inundation
+  - Flooded areas
+  category: I9
+  level: 3
+  status: active
+  is_category: true
+- id: street_waterlogging
+  aliases:
+  - Waterlogged streets
+  - Gully flooding
+  - Sadak par pani
+  - Pothole puddles
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: basement_flooding
+  aliases:
+  - Flooded basements
+  - Underpass flooding
+  - Submerged parking
+  - Basement mein pani
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: local_water_bodies
+  aliases:
+  - Neighborhood Lakes
+  - City Rivers
+  - Nadi aur jheel
+  - Surface water
+  category: I9
+  level: 3
+  status: active
+  is_category: true
+- id: polluted_surface_water
+  aliases:
+  - Toxic lakes
+  - River froth
+  - Yamuna froth
+  - Bellandur foam
+  - Pradooshit jheel
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: solid_waste_environment
+  aliases:
+  - Solid Waste
+  - Garbage Environment
+  - Kachra prabandhan
+  - Trash levels
+  category: I9
+  level: 3
+  status: active
+  is_category: true
+- id: street_garbage
+  aliases:
+  - Neighborhood garbage dumps
+  - Overflowing bins
+  - Kachra
+  - Kooda
+  - Littering
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: urban_landfills
+  aliases:
+  - Garbage mountains
+  - Landfill sites
+  - Kooda pahad
+  - Ghazipur dump
+  - Landfill fires
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: sanitation_environment
+  aliases:
+  - Sanitation Environment
+  - Drainage hygiene
+  - Nali safai
+  - Sewerage environment
+  category: I9
+  level: 3
+  status: active
+  is_category: true
+- id: open_drains
+  aliases:
+  - Khule naale
+  - Open sewers
+  - Uncovered drains
+  - Gutter
+  - Stagnant nala
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: public_urination_odour
+  aliases:
+  - Public urination smell
+  - Badboo
+  - Foul smell
+  - Public toilet stench
+  - Urine odour
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: noise_pollution
+  aliases:
+  - Noise Pollution
+  - Shor
+  - Loud sounds
+  - Awaaz
+  category: I9
+  level: 3
+  status: active
+  is_category: true
+- id: traffic_noise
+  aliases:
+  - Honking
+  - Vehicular noise
+  - Traffic shor
+  - Horn noise
+  - Road noise
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: event_and_construction_noise
+  aliases:
+  - Loudspeaker noise
+  - DJ shor
+  - Festival noise
+  - Construction noise
+  - Azaan noise
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: light_pollution
+  aliases:
+  - Light Pollution
+  - Excessive glare
+  - Chakachaundh
+  - Night sky visibility
+  - Streetlight glare
+  category: I9
+  level: 3
+  status: active
+  is_category: false
+- id: urban_flora
+  aliases:
+  - City Flora
+  - Green Cover
+  - Hariyali
+  - Vegetation
+  category: I9
+  level: 3
+  status: active
+  is_category: true
+- id: neighborhood_greenery
+  aliases:
+  - Tree canopy
+  - Public parks
+  - Ped paudhe
+  - Shade trees
+  - Local greenery
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: urban_fauna
+  aliases:
+  - City Fauna
+  - Local Animals
+  - Janwar
+  - Neighborhood wildlife
+  category: I9
+  level: 3
+  status: active
+  is_category: true
+- id: stray_animals
+  aliases:
+  - Stray dogs
+  - Awara kutte
+  - Monkey menace
+  - Stray cattle
+  - Sadak ke janwar
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+- id: stagnant_water_pools
+  aliases:
+  - Mosquito breeding grounds
+  - Pest hotspots
+  - Machhar ke aade
+  - Stagnant puddles
+  - Swampy plots
+  category: I9
+  level: 4
+  status: active
+  is_category: false
+edges:
+- from: i9
+  to: air_quality_environment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Environmental Quality includes the air quality and atmospheric
+    conditions.
+- from: i9
+  to: weather_and_thermal_environment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Environmental Quality includes the physical experience of weather
+    and temperature.
+- from: i9
+  to: urban_hydrology
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Environmental Quality includes the state of local water bodies
+    and urban flooding.
+- from: i9
+  to: civic_cleanliness
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Environmental Quality includes neighborhood cleanliness and waste
+    management.
+- from: i9
+  to: sensory_environment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Environmental Quality includes sensory impacts like noise and
+    light pollution.
+- from: i9
+  to: urban_ecology
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Environmental Quality includes the presence of local flora and
+    fauna.
+- from: air_quality_environment
+  to: ambient_aqi
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Air quality environment contains the overall ambient Air Quality Index.
+- from: air_quality_environment
+  to: particulate_matter_levels
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Air quality environment contains specific particulate matter (PM 2.5/10)
+    levels.
+- from: air_quality_environment
+  to: winter_smog
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Air quality environment contains seasonal phenomena like winter smog
+    and haze.
+- from: weather_and_thermal_environment
+  to: ambient_temperature
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Weather experience contains the ambient temperature conditions.
+- from: weather_and_thermal_environment
+  to: outdoor_humidity
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Weather experience contains outdoor humidity and mugginess levels.
+- from: ambient_temperature
+  to: outdoor_heat
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ambient temperature contains extreme summer heat and heatwave conditions.
+- from: ambient_temperature
+  to: outdoor_cold
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ambient temperature contains extreme winter chill and cold wave conditions.
+- from: urban_hydrology
+  to: urban_flooding
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban hydrology contains instances of city and neighborhood flooding.
+- from: urban_hydrology
+  to: local_water_bodies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban hydrology contains the physical state of local lakes and rivers.
+- from: urban_flooding
+  to: street_waterlogging
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban flooding contains localized street waterlogging and inundated
+    roads.
+- from: urban_flooding
+  to: basement_flooding
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban flooding contains the flooding of basements and underpasses.
+- from: local_water_bodies
+  to: polluted_surface_water
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local water bodies contains the phenomenon of toxic, frothing, or heavily
+    polluted surface water.
+- from: civic_cleanliness
+  to: solid_waste_environment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic cleanliness contains the management and presence of solid waste.
+- from: civic_cleanliness
+  to: sanitation_environment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic cleanliness contains the state of local drainage and sanitation
+    infrastructure.
+- from: solid_waste_environment
+  to: street_garbage
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Solid waste environment contains localized street garbage and overflowing
+    bins.
+- from: solid_waste_environment
+  to: urban_landfills
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Solid waste environment contains massive urban landfills and garbage
+    mountains.
+- from: sanitation_environment
+  to: open_drains
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sanitation environment contains the presence of open, uncovered drains
+    and sewers.
+- from: sanitation_environment
+  to: public_urination_odour
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sanitation environment contains foul odours from public urination and
+    poor sanitation.
+- from: sensory_environment
+  to: noise_pollution
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sensory environment contains noise pollution levels.
+- from: sensory_environment
+  to: light_pollution
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sensory environment contains light pollution and excessive urban glare.
+- from: noise_pollution
+  to: traffic_noise
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Noise pollution contains vehicular honking and traffic noise.
+- from: noise_pollution
+  to: event_and_construction_noise
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Noise pollution contains loud noises from loudspeakers, festivals,
+    and construction.
+- from: urban_ecology
+  to: urban_flora
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban ecology contains the city's plant life and green cover.
+- from: urban_ecology
+  to: urban_fauna
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban ecology contains the city's animal and pest populations.
+- from: urban_flora
+  to: neighborhood_greenery
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban flora contains neighborhood tree canopies, parks, and general
+    greenery.
+- from: urban_fauna
+  to: stray_animals
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban fauna contains the presence of stray dogs, cattle, and monkeys
+    in neighborhoods.
+- from: urban_fauna
+  to: stagnant_water_pools
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban fauna contains stagnant water pools that act as breeding grounds
+    for mosquitoes and pests.

@@ -1,0 +1,712 @@
+nodes:
+- id: i8
+  aliases:
+  - Safety & Security
+  - Physical Safety
+  - Law and Order
+  - Suraksha
+  category: I8
+  level: 1
+  status: active
+  is_category: true
+- id: physical_crime_and_law_enforcement
+  aliases:
+  - Physical Crime & Law Enforcement
+  - Police and Crime
+  - Kanoon Vyavastha
+  category: I8
+  level: 2
+  status: active
+  is_category: true
+- id: women_and_child_safety
+  aliases:
+  - Women & Child Safety
+  - Mahila Suraksha
+  - Child Protection
+  category: I8
+  level: 2
+  status: active
+  is_category: true
+- id: digital_and_cyber_security
+  aliases:
+  - Digital & Cyber Security
+  - Cyber Crime
+  - Online Fraud
+  - Cyber Suraksha
+  category: I8
+  level: 2
+  status: active
+  is_category: true
+- id: accidents_and_hazards
+  aliases:
+  - Accidents & Hazards
+  - Physical Hazards
+  - Durghatna
+  - Public Safety Risks
+  category: I8
+  level: 2
+  status: active
+  is_category: true
+- id: public_order_and_emergencies
+  aliases:
+  - Public Order & Emergencies
+  - Civic Safety
+  - Public Disturbances
+  - Law and Order Situations
+  category: I8
+  level: 2
+  status: active
+  is_category: true
+- id: violent_crime
+  aliases:
+  - Violent Crime
+  - Physical Assaults
+  - Hinsa
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: property_crime
+  aliases:
+  - Property Crime
+  - Theft and Burglary
+  - Sampatti Ki Chori
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: law_enforcement_interface
+  aliases:
+  - Law Enforcement Interface
+  - Police Interaction
+  - Police Administration
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: homicide
+  aliases:
+  - Homicide
+  - Murder
+  - Hatya
+  - Killings
+  category: I8
+  level: 4
+  status: active
+- id: assault_and_battery
+  aliases:
+  - Assault & Battery
+  - Physical Altercation
+  - Marpeet
+  - Grievous Hurt
+  category: I8
+  level: 4
+  status: active
+- id: burglary_and_theft
+  aliases:
+  - Burglary & Theft
+  - Housebreaking
+  - Chori
+  - Chain Snatching
+  - Pickpocketing
+  category: I8
+  level: 4
+  status: active
+- id: vehicle_theft
+  aliases:
+  - Vehicle Theft
+  - Bike Chori
+  - Car Theft
+  - Auto Theft
+  category: I8
+  level: 4
+  status: active
+- id: police_response_time
+  aliases:
+  - Police Response Time
+  - Dial 112 Response
+  - Police Patrolling
+  - PCR Van Arrival
+  category: I8
+  level: 4
+  status: active
+- id: fir_registration
+  aliases:
+  - FIR Registration
+  - Police Complaint
+  - Thana Process
+  - Police Station Harassment
+  category: I8
+  level: 4
+  status: active
+- id: criminal_litigation_risk
+  aliases:
+  - Criminal Litigation Risk
+  - Court Summons
+  - Bail Hearings
+  - Mukadma
+  - False Cases
+  category: I8
+  level: 4
+  status: active
+- id: women_safety
+  aliases:
+  - Women Safety
+  - Female Security
+  - Mahila Suraksha
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: child_safety
+  aliases:
+  - Child Safety
+  - Child Protection
+  - Bacchon Ki Suraksha
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: street_harassment
+  aliases:
+  - Street Harassment
+  - Eve Teasing
+  - Chhedchad
+  - Public Harassment
+  category: I8
+  level: 4
+  status: active
+- id: domestic_violence
+  aliases:
+  - Domestic Violence
+  - Gharelu Hinsa
+  - Dowry Harassment
+  - Intimate Partner Violence
+  category: I8
+  level: 4
+  status: active
+- id: sexual_assault
+  aliases:
+  - Sexual Assault
+  - Rape
+  - Balatkar
+  - Molestation
+  category: I8
+  level: 4
+  status: active
+- id: child_abuse_and_pocso
+  aliases:
+  - Child Abuse & POCSO
+  - Child Exploitation
+  - Bal Shoshan
+  - POCSO Cases
+  category: I8
+  level: 4
+  status: active
+- id: child_kidnapping
+  aliases:
+  - Child Kidnapping
+  - Bachha Chori
+  - Child Abduction
+  - Missing Children
+  category: I8
+  level: 4
+  status: active
+- id: financial_cyber_fraud
+  aliases:
+  - Financial Cyber Fraud
+  - Online Scams
+  - Digital Thagi
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: digital_harassment_and_privacy
+  aliases:
+  - Digital Harassment & Privacy
+  - Online Abuse
+  - Cyber Privacy Threats
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: upi_and_bank_scams
+  aliases:
+  - UPI & Bank Scams
+  - OTP Fraud
+  - Jamtara Scams
+  - Phishing Links
+  - KYC Fraud
+  category: I8
+  level: 4
+  status: active
+- id: investment_and_job_scams
+  aliases:
+  - Investment & Job Scams
+  - Telegram Task Fraud
+  - Work From Home Scams
+  - Crypto Scams
+  category: I8
+  level: 4
+  status: active
+- id: cyberbullying_and_trolling
+  aliases:
+  - Cyberbullying & Trolling
+  - Online Harassment
+  - Social Media Abuse
+  - Doxxing
+  category: I8
+  level: 4
+  status: active
+- id: deepfake_and_identity_theft
+  aliases:
+  - Deepfake & Identity Theft
+  - Morphing
+  - Fake Profiles
+  - AI Voice Scams
+  category: I8
+  level: 4
+  status: active
+- id: transit_accidents
+  aliases:
+  - Transit Accidents
+  - Transportation Mishaps
+  - Yatayat Durghatna
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: infrastructure_hazards
+  aliases:
+  - Infrastructure Hazards
+  - Civic Hazards
+  - Structural Risks
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: animal_threats
+  aliases:
+  - Animal Threats
+  - Animal Attacks
+  - Janwar Ka Hamla
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: road_traffic_accidents
+  aliases:
+  - Road Traffic Accidents
+  - Sadak Durghatna
+  - Hit and Run
+  - Highway Crashes
+  category: I8
+  level: 4
+  status: active
+- id: railway_accidents
+  aliases:
+  - Railway Accidents
+  - Train Derailment
+  - Track Crossing Accidents
+  - Train Collision
+  category: I8
+  level: 4
+  status: active
+- id: fire_hazards
+  aliases:
+  - Fire Hazards
+  - Building Fires
+  - Aag Lagna
+  - Industrial Fires
+  - Fire NOC Violations
+  category: I8
+  level: 4
+  status: active
+- id: structural_collapse
+  aliases:
+  - Structural Collapse
+  - Building Collapse
+  - Imarat Girna
+  - Bridge Collapse
+  - Roof Fall
+  category: I8
+  level: 4
+  status: active
+- id: electrocution_hazard
+  aliases:
+  - Electrocution Hazard
+  - Open Wires
+  - Current Lagna
+  - Transformer Blasts
+  category: I8
+  level: 4
+  status: active
+- id: stray_animal_attacks
+  aliases:
+  - Stray Animal Attacks
+  - Dog Bites
+  - Kutta Katna
+  - Stray Cattle Menace
+  - Monkey Menace
+  category: I8
+  level: 4
+  status: active
+- id: wildlife_encounters
+  aliases:
+  - Wildlife Encounters
+  - Leopard Sightings
+  - Snake Bites
+  - Human-Animal Conflict
+  - Elephant Attacks
+  category: I8
+  level: 4
+  status: active
+- id: civil_unrest
+  aliases:
+  - Civil Unrest
+  - Public Disturbances
+  - Asahmati Aur Hinsa
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: crowd_emergencies
+  aliases:
+  - Crowd Emergencies
+  - Mass Gathering Risks
+  - Bheed Ka Khatra
+  category: I8
+  level: 3
+  status: active
+  is_category: true
+- id: riots_and_clashes
+  aliases:
+  - Riots & Clashes
+  - Dange
+  - Communal Violence
+  - Stone Pelting
+  - Mob Violence
+  category: I8
+  level: 4
+  status: active
+- id: curfews_and_section_144
+  aliases:
+  - Curfews & Section 144
+  - Internet Shutdowns
+  - Prohibitory Orders
+  - Lockdown Orders
+  category: I8
+  level: 4
+  status: active
+- id: stampedes
+  aliases:
+  - Stampedes
+  - Bhagdar
+  - Crowd Crush
+  - Temple Stampede
+  - Festival Rush
+  category: I8
+  level: 4
+  status: active
+edges:
+- from: i8
+  to: physical_crime_and_law_enforcement
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Safety & Security contains physical crime and law enforcement entities
+- from: i8
+  to: women_and_child_safety
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Safety & Security contains women and child safety entities
+- from: i8
+  to: digital_and_cyber_security
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Safety & Security contains digital and cyber security entities
+- from: i8
+  to: accidents_and_hazards
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Safety & Security contains accidents and physical hazards
+- from: i8
+  to: public_order_and_emergencies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Safety & Security contains public order and emergency entities
+- from: physical_crime_and_law_enforcement
+  to: violent_crime
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical crime contains violent crime categories
+- from: physical_crime_and_law_enforcement
+  to: property_crime
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical crime contains property crime categories
+- from: physical_crime_and_law_enforcement
+  to: law_enforcement_interface
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Law enforcement contains citizen interface entities
+- from: violent_crime
+  to: homicide
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Violent crime contains homicide
+- from: violent_crime
+  to: assault_and_battery
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Violent crime contains assault and battery
+- from: property_crime
+  to: burglary_and_theft
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Property crime contains burglary and theft
+- from: property_crime
+  to: vehicle_theft
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Property crime contains vehicle theft
+- from: law_enforcement_interface
+  to: police_response_time
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Law enforcement interface contains police response time
+- from: law_enforcement_interface
+  to: fir_registration
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Law enforcement interface contains FIR registration processes
+- from: law_enforcement_interface
+  to: criminal_litigation_risk
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Law enforcement interface contains criminal litigation risk
+- from: women_and_child_safety
+  to: women_safety
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Women and child safety contains women safety categories
+- from: women_and_child_safety
+  to: child_safety
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Women and child safety contains child safety categories
+- from: women_safety
+  to: street_harassment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Women safety contains street harassment
+- from: women_safety
+  to: domestic_violence
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Women safety contains domestic violence
+- from: women_safety
+  to: sexual_assault
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Women safety contains sexual assault
+- from: child_safety
+  to: child_abuse_and_pocso
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Child safety contains child abuse and POCSO cases
+- from: child_safety
+  to: child_kidnapping
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Child safety contains child kidnapping
+- from: digital_and_cyber_security
+  to: financial_cyber_fraud
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital security contains financial cyber fraud
+- from: digital_and_cyber_security
+  to: digital_harassment_and_privacy
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital security contains digital harassment and privacy threats
+- from: financial_cyber_fraud
+  to: upi_and_bank_scams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial cyber fraud contains UPI and bank scams
+- from: financial_cyber_fraud
+  to: investment_and_job_scams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial cyber fraud contains investment and job scams
+- from: digital_harassment_and_privacy
+  to: cyberbullying_and_trolling
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital harassment contains cyberbullying and trolling
+- from: digital_harassment_and_privacy
+  to: deepfake_and_identity_theft
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital harassment contains deepfake and identity theft
+- from: accidents_and_hazards
+  to: transit_accidents
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accidents and hazards contains transit accidents
+- from: accidents_and_hazards
+  to: infrastructure_hazards
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accidents and hazards contains infrastructure hazards
+- from: accidents_and_hazards
+  to: animal_threats
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accidents and hazards contains animal threats
+- from: transit_accidents
+  to: road_traffic_accidents
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transit accidents contains road traffic accidents
+- from: transit_accidents
+  to: railway_accidents
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transit accidents contains railway accidents
+- from: infrastructure_hazards
+  to: fire_hazards
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure hazards contains fire hazards
+- from: infrastructure_hazards
+  to: structural_collapse
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure hazards contains structural collapse
+- from: infrastructure_hazards
+  to: electrocution_hazard
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure hazards contains electrocution hazards
+- from: animal_threats
+  to: stray_animal_attacks
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Animal threats contains stray animal attacks
+- from: animal_threats
+  to: wildlife_encounters
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Animal threats contains wildlife encounters
+- from: public_order_and_emergencies
+  to: civil_unrest
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public order contains civil unrest
+- from: public_order_and_emergencies
+  to: crowd_emergencies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public order contains crowd emergencies
+- from: civil_unrest
+  to: riots_and_clashes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civil unrest contains riots and clashes
+- from: civil_unrest
+  to: curfews_and_section_144
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civil unrest contains curfews and section 144 orders
+- from: crowd_emergencies
+  to: stampedes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Crowd emergencies contains stampedes

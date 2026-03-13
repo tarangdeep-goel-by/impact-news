@@ -1,0 +1,1062 @@
+nodes:
+- id: i6
+  aliases:
+  - Health & Physiology
+  - Physical Wellbeing
+  - Healthcare
+  - Swasthya
+  category: I6
+  level: 1
+  status: active
+  is_category: true
+- id: healthcare_services
+  aliases:
+  - Healthcare Services
+  - Medical Care
+  - Clinical Services
+  - Chikitsa Suvidha
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: inpatient_care
+  aliases:
+  - Inpatient Care
+  - Hospitalization
+  - Admitted to Hospital
+  - Aspatal me bharti
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: outpatient_care
+  aliases:
+  - Outpatient Care
+  - OPD
+  - Clinic Visits
+  - Baharang vibhag
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: diagnostic_services
+  aliases:
+  - Diagnostic Services
+  - Medical Tests
+  - Pathology and Radiology
+  - Jaanch suvidha
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: hospital_beds
+  aliases:
+  - Hospital Beds
+  - ICU beds
+  - Ward beds
+  - Aspatal ka bistar
+  category: I6
+  level: 4
+  status: active
+- id: surgical_procedures
+  aliases:
+  - Surgical Procedures
+  - Surgery
+  - Operation
+  - Shalya chikitsa
+  category: I6
+  level: 4
+  status: active
+- id: doctor_consultation
+  aliases:
+  - Doctor Consultation
+  - OPD visit
+  - Doctor appointment
+  - Doctor ki fees
+  category: I6
+  level: 4
+  status: active
+- id: dental_care
+  aliases:
+  - Dental Care
+  - Dentist visit
+  - Root canal
+  - Daant ka ilaaj
+  category: I6
+  level: 4
+  status: active
+- id: vision_care
+  aliases:
+  - Vision Care
+  - Eye checkup
+  - Spectacles
+  - Aankh ka ilaaj
+  - Cataract surgery
+  category: I6
+  level: 4
+  status: active
+- id: blood_tests
+  aliases:
+  - Blood Tests
+  - Pathology lab
+  - Khoon ki jaanch
+  - Blood work
+  category: I6
+  level: 4
+  status: active
+- id: medical_imaging
+  aliases:
+  - Medical Imaging
+  - MRI
+  - CT Scan
+  - X-ray
+  - Ultrasound
+  category: I6
+  level: 4
+  status: active
+- id: pharmaceuticals_and_supplies
+  aliases:
+  - Pharmaceuticals & Supplies
+  - Medicines
+  - Drugs
+  - Dawaiyan
+  - Aushadhi
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: prescription_drugs
+  aliases:
+  - Prescription Drugs
+  - Rx Medicines
+  - Doctor prescribed medicines
+  - Parchi wali dawai
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: over_the_counter_products
+  aliases:
+  - Over The Counter Products
+  - OTC Medicines
+  - Non-prescription drugs
+  - Medical store dawai
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: home_medical_devices
+  aliases:
+  - Home Medical Devices
+  - Medical Equipment
+  - Health monitors
+  - Medical upkaran
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: generic_medicines
+  aliases:
+  - Generic Medicines
+  - Jan Aushadhi
+  - Generic dawai
+  - Unbranded drugs
+  category: I6
+  level: 4
+  status: active
+- id: antibiotics
+  aliases:
+  - Antibiotics
+  - Anti-bacterial drugs
+  - Amoxicillin
+  - Infection ki dawai
+  category: I6
+  level: 4
+  status: active
+- id: chronic_disease_medication
+  aliases:
+  - Chronic Disease Medication
+  - Insulin
+  - BP pills
+  - Statins
+  - Daily medication
+  category: I6
+  level: 4
+  status: active
+- id: painkillers_and_antipyretics
+  aliases:
+  - Painkillers & Antipyretics
+  - Paracetamol
+  - Dolo
+  - Crocin
+  - Dard nivarak
+  category: I6
+  level: 4
+  status: active
+- id: nutritional_supplements
+  aliases:
+  - Nutritional Supplements
+  - Vitamins
+  - Calcium tablets
+  - Protein powder
+  - Chyawanprash
+  category: I6
+  level: 4
+  status: active
+- id: home_monitoring_devices
+  aliases:
+  - Home Monitoring Devices
+  - Thermometer
+  - BP monitor
+  - Glucometer
+  - Oximeter
+  category: I6
+  level: 4
+  status: active
+- id: infectious_diseases
+  aliases:
+  - Infectious Diseases
+  - Communicable Diseases
+  - Infections
+  - Sankramak rog
+  - Bimari
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: vector_borne_diseases
+  aliases:
+  - Vector Borne Diseases
+  - Mosquito borne diseases
+  - Machhar janit rog
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: water_and_food_borne_diseases
+  aliases:
+  - Water & Food Borne Diseases
+  - Contamination diseases
+  - Jal janit rog
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: respiratory_infections
+  aliases:
+  - Respiratory Infections
+  - Airborne diseases
+  - Lung infections
+  - Shwasan sankraman
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: dengue
+  aliases:
+  - Dengue
+  - Dengue fever
+  - Breakbone fever
+  - Dengu
+  category: I6
+  level: 4
+  status: active
+- id: malaria
+  aliases:
+  - Malaria
+  - Malaria fever
+  - Plasmodium infection
+  category: I6
+  level: 4
+  status: active
+- id: chikungunya
+  aliases:
+  - Chikungunya
+  - Chikungunya virus
+  - Joint pain fever
+  category: I6
+  level: 4
+  status: active
+- id: typhoid
+  aliases:
+  - Typhoid
+  - Typhoid fever
+  - Enteric fever
+  - Miyadi bukhar
+  category: I6
+  level: 4
+  status: active
+- id: cholera_and_diarrhea
+  aliases:
+  - Cholera & Diarrhea
+  - Haiza
+  - Loose motions
+  - Pechish
+  - Food poisoning
+  category: I6
+  level: 4
+  status: active
+- id: tuberculosis
+  aliases:
+  - Tuberculosis
+  - TB
+  - Tapedik
+  - Koch disease
+  category: I6
+  level: 4
+  status: active
+- id: influenza_and_viral_fever
+  aliases:
+  - Influenza & Viral Fever
+  - Flu
+  - Viral bukhar
+  - Cough and cold
+  - Seasonal flu
+  category: I6
+  level: 4
+  status: active
+- id: covid_19
+  aliases:
+  - COVID-19
+  - Coronavirus
+  - SARS-CoV-2
+  - Covid
+  category: I6
+  level: 4
+  status: active
+- id: chronic_and_lifestyle_conditions
+  aliases:
+  - Chronic & Lifestyle Conditions
+  - Non-communicable diseases
+  - NCDs
+  - Lifestyle diseases
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: metabolic_disorders
+  aliases:
+  - Metabolic Disorders
+  - Metabolism issues
+  - Chayapchay vikar
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: cardiovascular_health
+  aliases:
+  - Cardiovascular Health
+  - Heart conditions
+  - Dil ki bimari
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: respiratory_conditions
+  aliases:
+  - Respiratory Conditions
+  - Chronic lung diseases
+  - Saans ki bimari
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: oncology
+  aliases:
+  - Oncology
+  - Cancer care
+  - Tumor treatment
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: diabetes
+  aliases:
+  - Diabetes
+  - Sugar
+  - Madhumeh
+  - Type 2 diabetes
+  - Blood sugar
+  category: I6
+  level: 4
+  status: active
+- id: obesity
+  aliases:
+  - Obesity
+  - Motapa
+  - Weight gain
+  - Overweight
+  category: I6
+  level: 4
+  status: active
+- id: hypertension
+  aliases:
+  - Hypertension
+  - High BP
+  - Blood pressure
+  - Ucch raktchap
+  category: I6
+  level: 4
+  status: active
+- id: heart_disease
+  aliases:
+  - Heart Disease
+  - Heart attack
+  - Cardiac arrest
+  - Coronary artery disease
+  category: I6
+  level: 4
+  status: active
+- id: asthma
+  aliases:
+  - Asthma
+  - Dama
+  - Asthmatic attack
+  - Wheezing
+  category: I6
+  level: 4
+  status: active
+- id: copd
+  aliases:
+  - COPD
+  - Chronic bronchitis
+  - Emphysema
+  - Smokers lung
+  category: I6
+  level: 4
+  status: active
+- id: cancer
+  aliases:
+  - Cancer
+  - Kark rog
+  - Malignancy
+  - Chemotherapy
+  category: I6
+  level: 4
+  status: active
+- id: mental_health_and_wellbeing
+  aliases:
+  - Mental Health & Wellbeing
+  - Psychological health
+  - Mansik swasthya
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: mental_health_conditions
+  aliases:
+  - Mental Health Conditions
+  - Psychiatric disorders
+  - Mansik rog
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: mental_health_services
+  aliases:
+  - Mental Health Services
+  - Psychiatric care
+  - Mental health support
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: depression
+  aliases:
+  - Depression
+  - Avsad
+  - Clinical depression
+  - Major depressive disorder
+  category: I6
+  level: 4
+  status: active
+- id: anxiety_disorders
+  aliases:
+  - Anxiety Disorders
+  - Ghabrahat
+  - Panic attacks
+  - Generalized anxiety
+  category: I6
+  level: 4
+  status: active
+- id: substance_abuse
+  aliases:
+  - Substance Abuse
+  - Nasha
+  - Addiction
+  - Alcoholism
+  - Drug abuse
+  category: I6
+  level: 4
+  status: active
+- id: therapy_consultation
+  aliases:
+  - Therapy Consultation
+  - Counseling
+  - Psychologist visit
+  - Therapy session
+  category: I6
+  level: 4
+  status: active
+- id: psychiatric_medication
+  aliases:
+  - Psychiatric Medication
+  - Antidepressants
+  - Sleeping pills
+  - Anti-anxiety meds
+  category: I6
+  level: 4
+  status: active
+- id: maternal_and_child_health
+  aliases:
+  - Maternal & Child Health
+  - Reproductive health
+  - Matritva aur shishu swasthya
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: maternal_care
+  aliases:
+  - Maternal Care
+  - Pregnancy care
+  - Prasuti suvidha
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: child_health
+  aliases:
+  - Child Health
+  - Pediatrics
+  - Shishu swasthya
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: maternity_services
+  aliases:
+  - Maternity Services
+  - Delivery
+  - Childbirth
+  - Prasav
+  - C-section
+  category: I6
+  level: 4
+  status: active
+- id: fertility_treatments
+  aliases:
+  - Fertility Treatments
+  - IVF
+  - Infertility treatment
+  - Baanjhpan ilaaj
+  category: I6
+  level: 4
+  status: active
+- id: pediatric_vaccines
+  aliases:
+  - Pediatric Vaccines
+  - Teekakaran
+  - Child immunization
+  - Polio drops
+  - Vaccination
+  category: I6
+  level: 4
+  status: active
+- id: childhood_malnutrition
+  aliases:
+  - Childhood Malnutrition
+  - Kuposhan
+  - Stunting
+  - Wasting
+  - Undernutrition
+  category: I6
+  level: 4
+  status: active
+- id: alternative_medicine
+  aliases:
+  - Alternative Medicine
+  - Traditional Medicine
+  - AYUSH
+  - Vaikalpik chikitsa
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: ayush_treatments
+  aliases:
+  - AYUSH Treatments
+  - Ayurveda Yoga Unani Siddha Homeopathy
+  - Traditional therapies
+  category: I6
+  level: 3
+  status: active
+  is_category: true
+- id: ayurvedic_medicines
+  aliases:
+  - Ayurvedic Medicines
+  - Jadi buti
+  - Ayurveda
+  - Churna
+  - Patanjali products
+  category: I6
+  level: 4
+  status: active
+- id: homeopathic_medicines
+  aliases:
+  - Homeopathic Medicines
+  - Homeopathy
+  - Meethi goli
+  - Homeopathic drops
+  category: I6
+  level: 4
+  status: active
+edges:
+- from: i6
+  to: healthcare_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Physiology contains Healthcare Services
+- from: i6
+  to: pharmaceuticals_and_supplies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Physiology contains Pharmaceuticals & Supplies
+- from: i6
+  to: infectious_diseases
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Physiology contains Infectious Diseases
+- from: i6
+  to: chronic_and_lifestyle_conditions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Physiology contains Chronic & Lifestyle Conditions
+- from: i6
+  to: mental_health_and_wellbeing
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Physiology contains Mental Health & Wellbeing
+- from: i6
+  to: maternal_and_child_health
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Physiology contains Maternal & Child Health
+- from: i6
+  to: alternative_medicine
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Physiology contains Alternative & Traditional Medicine
+- from: healthcare_services
+  to: inpatient_care
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Healthcare Services contains Inpatient Care
+- from: healthcare_services
+  to: outpatient_care
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Healthcare Services contains Outpatient Care
+- from: healthcare_services
+  to: diagnostic_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Healthcare Services contains Diagnostic Services
+- from: inpatient_care
+  to: hospital_beds
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Inpatient Care contains Hospital Beds
+- from: inpatient_care
+  to: surgical_procedures
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Inpatient Care contains Surgical Procedures
+- from: outpatient_care
+  to: doctor_consultation
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Outpatient Care contains Doctor Consultation
+- from: outpatient_care
+  to: dental_care
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Outpatient Care contains Dental Care
+- from: outpatient_care
+  to: vision_care
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Outpatient Care contains Vision Care
+- from: diagnostic_services
+  to: blood_tests
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Diagnostic Services contains Blood Tests
+- from: diagnostic_services
+  to: medical_imaging
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Diagnostic Services contains Medical Imaging
+- from: pharmaceuticals_and_supplies
+  to: prescription_drugs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Pharmaceuticals & Supplies contains Prescription Drugs
+- from: pharmaceuticals_and_supplies
+  to: over_the_counter_products
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Pharmaceuticals & Supplies contains Over The Counter Products
+- from: pharmaceuticals_and_supplies
+  to: home_medical_devices
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Pharmaceuticals & Supplies contains Home Medical Devices
+- from: prescription_drugs
+  to: generic_medicines
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Prescription Drugs contains Generic Medicines
+- from: prescription_drugs
+  to: antibiotics
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Prescription Drugs contains Antibiotics
+- from: prescription_drugs
+  to: chronic_disease_medication
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Prescription Drugs contains Chronic Disease Medication
+- from: over_the_counter_products
+  to: painkillers_and_antipyretics
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Over The Counter Products contains Painkillers & Antipyretics
+- from: over_the_counter_products
+  to: nutritional_supplements
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Over The Counter Products contains Nutritional Supplements
+- from: home_medical_devices
+  to: home_monitoring_devices
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Home Medical Devices contains Home Monitoring Devices
+- from: infectious_diseases
+  to: vector_borne_diseases
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infectious Diseases contains Vector Borne Diseases
+- from: infectious_diseases
+  to: water_and_food_borne_diseases
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infectious Diseases contains Water & Food Borne Diseases
+- from: infectious_diseases
+  to: respiratory_infections
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infectious Diseases contains Respiratory Infections
+- from: vector_borne_diseases
+  to: dengue
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vector Borne Diseases contains Dengue
+- from: vector_borne_diseases
+  to: malaria
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vector Borne Diseases contains Malaria
+- from: vector_borne_diseases
+  to: chikungunya
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vector Borne Diseases contains Chikungunya
+- from: water_and_food_borne_diseases
+  to: typhoid
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Water & Food Borne Diseases contains Typhoid
+- from: water_and_food_borne_diseases
+  to: cholera_and_diarrhea
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Water & Food Borne Diseases contains Cholera & Diarrhea
+- from: respiratory_infections
+  to: tuberculosis
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Respiratory Infections contains Tuberculosis
+- from: respiratory_infections
+  to: influenza_and_viral_fever
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Respiratory Infections contains Influenza & Viral Fever
+- from: respiratory_infections
+  to: covid_19
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Respiratory Infections contains COVID-19
+- from: chronic_and_lifestyle_conditions
+  to: metabolic_disorders
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Chronic & Lifestyle Conditions contains Metabolic Disorders
+- from: chronic_and_lifestyle_conditions
+  to: cardiovascular_health
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Chronic & Lifestyle Conditions contains Cardiovascular Health
+- from: chronic_and_lifestyle_conditions
+  to: respiratory_conditions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Chronic & Lifestyle Conditions contains Respiratory Conditions
+- from: chronic_and_lifestyle_conditions
+  to: oncology
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Chronic & Lifestyle Conditions contains Oncology
+- from: metabolic_disorders
+  to: diabetes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Metabolic Disorders contains Diabetes
+- from: metabolic_disorders
+  to: obesity
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Metabolic Disorders contains Obesity
+- from: cardiovascular_health
+  to: hypertension
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cardiovascular Health contains Hypertension
+- from: cardiovascular_health
+  to: heart_disease
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cardiovascular Health contains Heart Disease
+- from: respiratory_conditions
+  to: asthma
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Respiratory Conditions contains Asthma
+- from: respiratory_conditions
+  to: copd
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Respiratory Conditions contains COPD
+- from: oncology
+  to: cancer
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Oncology contains Cancer
+- from: mental_health_and_wellbeing
+  to: mental_health_conditions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mental Health & Wellbeing contains Mental Health Conditions
+- from: mental_health_and_wellbeing
+  to: mental_health_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mental Health & Wellbeing contains Mental Health Services
+- from: mental_health_conditions
+  to: depression
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mental Health Conditions contains Depression
+- from: mental_health_conditions
+  to: anxiety_disorders
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mental Health Conditions contains Anxiety Disorders
+- from: mental_health_conditions
+  to: substance_abuse
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mental Health Conditions contains Substance Abuse
+- from: mental_health_services
+  to: therapy_consultation
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mental Health Services contains Therapy Consultation
+- from: mental_health_services
+  to: psychiatric_medication
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mental Health Services contains Psychiatric Medication
+- from: maternal_and_child_health
+  to: maternal_care
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Maternal & Child Health contains Maternal Care
+- from: maternal_and_child_health
+  to: child_health
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Maternal & Child Health contains Child Health
+- from: maternal_care
+  to: maternity_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Maternal Care contains Maternity Services
+- from: maternal_care
+  to: fertility_treatments
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Maternal Care contains Fertility Treatments
+- from: child_health
+  to: pediatric_vaccines
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Child Health contains Pediatric Vaccines
+- from: child_health
+  to: childhood_malnutrition
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Child Health contains Childhood Malnutrition
+- from: alternative_medicine
+  to: ayush_treatments
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Alternative Medicine contains AYUSH Treatments
+- from: ayush_treatments
+  to: ayurvedic_medicines
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: AYUSH Treatments contains Ayurvedic Medicines
+- from: ayush_treatments
+  to: homeopathic_medicines
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: AYUSH Treatments contains Homeopathic Medicines
