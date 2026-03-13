@@ -64,6 +64,8 @@ class UserGraph(BaseModel):
     user_id: str
     edges: list[UserEdge] = []
     reachable_nodes: set[str] = set()
+    completed_tiers: list[str] = []  # ["tier1", "investments", "health", ...]
+    income_multiplier: float = 1.0  # importance scaling based on income range
 
 
 class NodeMatch(BaseModel):

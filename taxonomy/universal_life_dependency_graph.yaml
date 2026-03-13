@@ -4886,10 +4886,791 @@ global_economy:
         - Fitch
         leaf: true
         universality: high
-nodes:
-- id: food_safety
-  aliases:
-  - food safety inspection
-  - food hygiene
-  - food quality
-  category: health_and_healthcare
+
+# =============================================================================
+# DOMAIN 21: LOCAL GOVERNANCE
+# City, district, and state-level policy and infrastructure
+# =============================================================================
+local_governance:
+  id: "local_governance"
+  level: 1
+  type: universal
+  description: "City, district, and state-level governance affecting daily life"
+
+  municipal_services:
+    id: "municipal_services"
+    level: 2
+    type: universal
+
+    water_supply:
+      id: "water_supply_local"
+      level: 3
+      children:
+        piped_water:
+          id: "piped_water"
+          level: 4
+          aliases: ["water supply disruption", "water cut", "water shortage", "tap water"]
+          leaf: true
+          universality: high
+        water_tanker:
+          id: "water_tanker"
+          level: 4
+          aliases: ["tanker water", "water tanker prices", "tanker mafia"]
+          leaf: true
+          universality: medium
+        water_quality:
+          id: "water_quality_local"
+          level: 4
+          aliases: ["contaminated water", "water testing", "water purification", "borewell water"]
+          leaf: true
+          universality: high
+        water_rationing:
+          id: "water_rationing"
+          level: 4
+          aliases: ["water rationing schedule", "water restriction", "alternate day supply"]
+          leaf: true
+          universality: medium
+
+    sewage_and_drainage:
+      id: "sewage_drainage"
+      level: 3
+      children:
+        stormwater_drainage:
+          id: "stormwater_drainage"
+          level: 4
+          aliases: ["waterlogging", "urban flooding", "drainage blockage", "monsoon flooding"]
+          leaf: true
+          universality: high
+        sewage_treatment:
+          id: "sewage_treatment"
+          level: 4
+          aliases: ["STP", "sewage overflow", "lake pollution", "untreated sewage"]
+          leaf: true
+          universality: medium
+
+    waste_management:
+      id: "waste_management"
+      level: 3
+      children:
+        garbage_collection:
+          id: "garbage_collection"
+          level: 4
+          aliases: ["garbage strike", "waste pickup", "BBMP garbage", "sanitation workers"]
+          leaf: true
+          universality: high
+        landfill:
+          id: "landfill"
+          level: 4
+          aliases: ["landfill fire", "dump yard", "waste processing plant", "landfill overflow"]
+          leaf: true
+          universality: medium
+        waste_segregation:
+          id: "waste_segregation"
+          level: 4
+          aliases: ["dry waste", "wet waste", "segregation rules", "composting mandate"]
+          leaf: true
+          universality: medium
+
+    street_maintenance:
+      id: "street_maintenance"
+      level: 3
+      children:
+        road_repair:
+          id: "road_repair"
+          level: 4
+          aliases: ["pothole", "road resurfacing", "road damage", "road condition"]
+          leaf: true
+          universality: high
+        streetlights:
+          id: "streetlights"
+          level: 4
+          aliases: ["street lighting", "dark roads", "LED streetlight"]
+          leaf: true
+          universality: medium
+        footpath_pedestrian:
+          id: "footpath_pedestrian"
+          level: 4
+          aliases: ["footpath encroachment", "pedestrian safety", "walkability"]
+          leaf: true
+          universality: medium
+
+    public_parks_spaces:
+      id: "public_parks_spaces"
+      level: 3
+      aliases: ["park maintenance", "public space", "playground", "open space"]
+      leaf: true
+      universality: medium
+
+  city_transport:
+    id: "city_transport"
+    level: 2
+    type: universal
+
+    metro_rail:
+      id: "metro_rail"
+      level: 3
+      children:
+        metro_expansion:
+          id: "metro_expansion"
+          level: 4
+          aliases: ["new metro line", "metro phase 2", "metro route", "metro construction"]
+          leaf: true
+          universality: high
+        metro_fare:
+          id: "metro_fare"
+          level: 4
+          aliases: ["metro ticket price", "metro fare hike", "metro pass"]
+          leaf: true
+          universality: high
+        metro_disruption:
+          id: "metro_disruption"
+          level: 4
+          aliases: ["metro breakdown", "metro delay", "metro shut", "metro strike"]
+          leaf: true
+          universality: high
+
+    bus_service:
+      id: "bus_service"
+      level: 3
+      children:
+        bus_routes:
+          id: "bus_routes"
+          level: 4
+          aliases: ["bus route change", "new bus route", "BMTC", "DTC", "BEST bus"]
+          leaf: true
+          universality: high
+        bus_fare:
+          id: "bus_fare"
+          level: 4
+          aliases: ["bus fare hike", "bus pass price", "bus ticket"]
+          leaf: true
+          universality: high
+        bus_frequency:
+          id: "bus_frequency"
+          level: 4
+          aliases: ["bus frequency", "bus shortage", "last mile connectivity"]
+          leaf: true
+          universality: medium
+
+    traffic_management:
+      id: "traffic_management"
+      level: 3
+      children:
+        traffic_congestion:
+          id: "traffic_congestion"
+          level: 4
+          aliases: ["traffic jam", "peak hour traffic", "commute time", "road congestion"]
+          leaf: true
+          universality: high
+        traffic_rules:
+          id: "traffic_rules"
+          level: 4
+          aliases: ["traffic fine", "challan", "speed limit", "one-way", "odd-even"]
+          leaf: true
+          universality: high
+        signal_infrastructure:
+          id: "signal_infrastructure"
+          level: 4
+          aliases: ["traffic signal", "signal timing", "adaptive signal"]
+          leaf: true
+          universality: medium
+        parking:
+          id: "parking"
+          level: 4
+          aliases: ["parking fee", "parking fine", "no parking zone", "parking policy"]
+          leaf: true
+          universality: high
+
+    auto_rickshaw_taxi:
+      id: "auto_rickshaw_taxi"
+      level: 3
+      children:
+        auto_fare:
+          id: "auto_fare"
+          level: 4
+          aliases: ["auto fare revision", "auto meter", "minimum fare", "auto rickshaw"]
+          leaf: true
+          universality: high
+        cab_aggregator:
+          id: "cab_aggregator"
+          level: 4
+          aliases: ["Uber surge", "Ola prices", "ride hailing regulation", "cab strike"]
+          leaf: true
+          universality: high
+
+    cycling_pedestrian:
+      id: "cycling_pedestrian"
+      level: 3
+      aliases: ["cycle lane", "bike sharing", "pedestrian zone", "cycling infrastructure"]
+      leaf: true
+      universality: medium
+
+  local_utilities:
+    id: "local_utilities"
+    level: 2
+    type: universal
+
+    electricity_distribution:
+      id: "electricity_distribution"
+      level: 3
+      children:
+        power_cuts:
+          id: "power_cuts"
+          level: 4
+          aliases: ["load shedding", "power outage", "blackout", "electricity cut", "scheduled outage"]
+          leaf: true
+          universality: high
+        electricity_tariff:
+          id: "electricity_tariff"
+          level: 4
+          aliases: ["electricity bill hike", "tariff revision", "BESCOM tariff", "DISCOM rates"]
+          leaf: true
+          universality: high
+        smart_meter:
+          id: "smart_meter"
+          level: 4
+          aliases: ["smart meter", "prepaid meter", "meter reading"]
+          leaf: true
+          universality: medium
+
+    gas_supply:
+      id: "gas_supply_local"
+      level: 3
+      children:
+        lpg_distribution:
+          id: "lpg_distribution"
+          level: 4
+          aliases: ["LPG cylinder price", "gas cylinder booking", "Ujjwala", "cooking gas"]
+          leaf: true
+          universality: high
+        piped_natural_gas:
+          id: "piped_natural_gas"
+          level: 4
+          aliases: ["PNG connection", "piped gas tariff", "city gas distribution", "CNG price"]
+          leaf: true
+          universality: medium
+
+    internet_broadband:
+      id: "internet_broadband"
+      level: 3
+      children:
+        fiber_broadband:
+          id: "fiber_broadband"
+          level: 4
+          aliases: ["fiber connection", "broadband outage", "ISP", "internet speed"]
+          leaf: true
+          universality: high
+        mobile_network:
+          id: "mobile_network_local"
+          level: 4
+          aliases: ["network coverage", "tower installation", "call drop", "4G 5G coverage"]
+          leaf: true
+          universality: high
+
+  state_policy:
+    id: "state_policy"
+    level: 2
+    type: universal
+
+    state_budget:
+      id: "state_budget"
+      level: 3
+      aliases: ["state budget", "state fiscal deficit", "state spending", "state allocation"]
+      leaf: true
+      universality: high
+
+    state_taxation:
+      id: "state_taxation"
+      level: 3
+      children:
+        stamp_duty:
+          id: "stamp_duty"
+          level: 4
+          aliases: ["stamp duty rate", "registration charges", "stamp duty cut"]
+          leaf: true
+          universality: high
+        state_excise:
+          id: "state_excise"
+          level: 4
+          aliases: ["liquor tax", "excise duty", "alcohol policy", "bar license"]
+          leaf: true
+          universality: medium
+        road_tax:
+          id: "road_tax"
+          level: 4
+          aliases: ["vehicle registration tax", "road tax", "lifetime tax"]
+          leaf: true
+          universality: high
+        property_tax:
+          id: "property_tax_local"
+          level: 4
+          aliases: ["property tax hike", "BBMP tax", "house tax", "municipal tax"]
+          leaf: true
+          universality: high
+        professional_tax:
+          id: "professional_tax"
+          level: 4
+          aliases: ["professional tax", "employment tax", "state professional tax"]
+          leaf: true
+          universality: high
+
+    land_policy:
+      id: "land_policy"
+      level: 3
+      children:
+        land_acquisition:
+          id: "land_acquisition"
+          level: 4
+          aliases: ["land acquisition", "eminent domain", "land acquisition act"]
+          leaf: true
+          universality: medium
+        zoning_master_plan:
+          id: "zoning_master_plan"
+          level: 4
+          aliases: ["master plan", "zoning change", "land use", "CDP", "revised master plan"]
+          leaf: true
+          universality: high
+        building_bylaws:
+          id: "building_bylaws"
+          level: 4
+          aliases: ["building code", "FAR", "setback rules", "building permission", "BDA"]
+          leaf: true
+          universality: medium
+
+    law_and_order:
+      id: "law_and_order"
+      level: 3
+      children:
+        police_policy:
+          id: "police_policy"
+          level: 4
+          aliases: ["police reform", "night patrol", "CCTV surveillance", "police helpline"]
+          leaf: true
+          universality: medium
+        curfew_shutdown:
+          id: "curfew_shutdown"
+          level: 4
+          aliases: ["bandh", "shutdown", "curfew", "section 144", "protest shutdown"]
+          leaf: true
+          universality: high
+        liquor_policy:
+          id: "liquor_policy"
+          level: 4
+          aliases: ["dry day", "liquor ban", "bar timing", "wine shop license"]
+          leaf: true
+          universality: medium
+
+    education_policy_state:
+      id: "education_policy_state"
+      level: 3
+      children:
+        school_fee_regulation:
+          id: "school_fee_regulation"
+          level: 4
+          aliases: ["school fee cap", "fee hike", "school fee regulation"]
+          leaf: true
+          universality: high
+        state_board_exam:
+          id: "state_board_exam"
+          level: 4
+          aliases: ["board exam date", "exam postponed", "result date", "PUC exam"]
+          leaf: true
+          universality: medium
+        college_admission:
+          id: "college_admission_state"
+          level: 4
+          aliases: ["CET", "state entrance exam", "college cutoff", "seat allotment"]
+          leaf: true
+          universality: medium
+
+    healthcare_policy_state:
+      id: "healthcare_policy_state"
+      level: 3
+      children:
+        government_hospital:
+          id: "government_hospital"
+          level: 4
+          aliases: ["government hospital", "PHC", "district hospital", "hospital capacity"]
+          leaf: true
+          universality: high
+        health_scheme_state:
+          id: "health_scheme_state"
+          level: 4
+          aliases: ["Ayushman Bharat", "state health scheme", "free treatment", "health card"]
+          leaf: true
+          universality: high
+        epidemic_response:
+          id: "epidemic_response"
+          level: 4
+          aliases: ["dengue outbreak", "malaria surge", "local epidemic", "fumigation drive"]
+          leaf: true
+          universality: high
+
+  urban_development:
+    id: "urban_development"
+    level: 2
+    type: universal
+
+    construction_projects:
+      id: "construction_projects"
+      level: 3
+      children:
+        flyover_underpass:
+          id: "flyover_underpass"
+          level: 4
+          aliases: ["flyover construction", "underpass", "elevated corridor", "grade separator"]
+          leaf: true
+          universality: high
+        road_widening:
+          id: "road_widening"
+          level: 4
+          aliases: ["road widening", "road expansion", "demolition drive", "encroachment removal"]
+          leaf: true
+          universality: high
+        ring_road_expressway:
+          id: "ring_road_expressway"
+          level: 4
+          aliases: ["peripheral ring road", "expressway", "signal-free corridor", "ORR"]
+          leaf: true
+          universality: medium
+
+    real_estate_local:
+      id: "real_estate_local"
+      level: 3
+      children:
+        property_prices_locality:
+          id: "property_prices_locality"
+          level: 4
+          aliases: ["property rates", "circle rate", "guidance value", "locality price"]
+          leaf: true
+          universality: high
+        new_development:
+          id: "new_development"
+          level: 4
+          aliases: ["new township", "IT park", "commercial complex", "mall opening"]
+          leaf: true
+          universality: medium
+        rental_market_local:
+          id: "rental_market_local"
+          level: 4
+          aliases: ["rent increase", "rental demand", "pg accommodation", "rental agreement"]
+          leaf: true
+          universality: high
+
+    smart_city:
+      id: "smart_city"
+      level: 3
+      aliases: ["smart city project", "smart city mission", "digital infrastructure", "city wifi"]
+      leaf: true
+      universality: medium
+
+    gentrification:
+      id: "gentrification"
+      level: 3
+      aliases: ["gentrification", "displacement", "neighborhood change", "rising rents area"]
+      leaf: true
+      universality: medium
+
+  environmental_local:
+    id: "environmental_local"
+    level: 2
+    type: universal
+
+    air_quality:
+      id: "air_quality_local"
+      level: 3
+      children:
+        aqi_levels:
+          id: "aqi_levels"
+          level: 4
+          aliases: ["AQI", "air quality index", "pollution level", "smog", "haze"]
+          leaf: true
+          universality: high
+        vehicle_emission:
+          id: "vehicle_emission"
+          level: 4
+          aliases: ["BS6", "emission norms", "PUC certificate", "diesel ban"]
+          leaf: true
+          universality: medium
+        stubble_burning:
+          id: "stubble_burning"
+          level: 4
+          aliases: ["stubble burning", "crop burning", "parali", "farm fire"]
+          leaf: true
+          universality: medium
+        construction_dust:
+          id: "construction_dust"
+          level: 4
+          aliases: ["construction dust", "dust pollution", "site pollution"]
+          leaf: true
+          universality: medium
+
+    noise_pollution:
+      id: "noise_pollution"
+      level: 3
+      aliases: ["noise pollution", "honking ban", "silent zone", "noise limit", "DJ ban"]
+      leaf: true
+      universality: medium
+
+    urban_heat:
+      id: "urban_heat"
+      level: 3
+      aliases: ["urban heat island", "concrete heat", "green cover loss", "tree cutting"]
+      leaf: true
+      universality: high
+
+    lake_river_health:
+      id: "lake_river_health"
+      level: 3
+      aliases: ["lake pollution", "river cleaning", "lake rejuvenation", "foam on lake", "Bellandur"]
+      leaf: true
+      universality: medium
+
+  civic_participation:
+    id: "civic_participation"
+    level: 2
+
+    local_elections:
+      id: "local_elections"
+      level: 3
+      aliases: ["municipal election", "BBMP election", "corporation election", "ward election", "panchayat election"]
+      leaf: true
+      universality: high
+
+    citizen_grievance:
+      id: "citizen_grievance"
+      level: 3
+      aliases: ["complaint portal", "grievance redressal", "RTI", "citizen helpline", "311"]
+      leaf: true
+      universality: medium
+
+    rwa_community:
+      id: "rwa_community"
+      level: 3
+      aliases: ["RWA", "residents welfare", "apartment association", "community meeting"]
+      leaf: true
+      universality: medium
+
+# =============================================================================
+# SUPPLEMENTARY USER-CENTRIC NODES
+# Added to support user profiling questionnaire inference mapping
+# These nodes are leaf-level concepts that connect to existing tree nodes via edges
+# =============================================================================
+
+supplementary_nodes:
+  # --- Health & Healthcare ---
+  - id: bp_medication
+    aliases: ["blood pressure pills", "hypertension drugs", "anti-hypertensive", "BP meds"]
+    category: health_and_healthcare
+
+  - id: cardiac_care
+    aliases: ["heart surgery", "angioplasty", "stent cost", "cardiologist consultation", "heart attack treatment"]
+    category: health_and_healthcare
+
+  - id: thyroid_medication
+    aliases: ["thyroxine", "hypothyroidism drugs", "thyroid pills"]
+    category: health_and_healthcare
+
+  - id: uninsured
+    aliases: ["no health insurance", "paying out of pocket", "medical debt", "uncovered medical expenses"]
+    category: health_and_healthcare
+
+  - id: out_of_pocket_healthcare
+    aliases: ["medical bills", "pharmacy expenses", "doctor fees", "clinic charges", "diagnostic costs"]
+    category: health_and_healthcare
+
+  - id: parental_health_support
+    aliases: ["parents medical bills", "senior citizen health insurance", "paying for parents treatment"]
+    category: health_and_healthcare
+
+  # --- Consumer Spending ---
+  - id: electronics
+    aliases: ["consumer electronics", "home appliances", "gadgets", "laptops and phones"]
+    category: consumer_spending
+
+  - id: pet_industry
+    aliases: ["pet care", "pet supplies", "dog food", "pet grooming"]
+    category: recreation_and_culture
+
+  - id: grocery_expenses
+    aliases: ["monthly groceries", "ration bill", "supermarket bill", "food expenses"]
+    category: food_and_nutrition
+
+  - id: fuel_expenses
+    aliases: ["petrol bill", "diesel costs", "commuting fuel", "tank full cost"]
+    category: energy_and_fuel
+
+  - id: domestic_help_expenses
+    aliases: ["maid salary", "cook salary", "driver pay", "nanny cost"]
+    category: housing_and_shelter
+
+  - id: digital_subscriptions
+    aliases: ["Netflix bill", "Spotify premium", "cloud storage fee", "software subscriptions"]
+    category: communication_and_information
+
+  # --- Transport & Commute ---
+  - id: daily_commute_expenses
+    aliases: ["travel to work", "metro pass", "bus tickets", "office commute cost", "cab fare to office"]
+    category: transport_and_mobility
+
+  - id: rent_escalation
+    aliases: ["rent increase", "lease renewal hike", "landlord raising rent"]
+    category: housing_and_shelter
+
+  - id: two_wheeler_emi
+    aliases: ["bike loan", "scooter emi", "motorcycle finance"]
+    category: financial
+
+  # --- Family & Dependents ---
+  - id: elderly_care
+    aliases: ["senior citizen care", "parents maintenance", "geriatric care", "old age support"]
+    category: demographics_and_social
+
+  - id: childcare_expenses
+    aliases: ["creche fees", "nanny costs", "babysitter", "daycare costs"]
+    category: education_and_learning
+
+supplementary_edges:
+  # Health edges
+  - from: bp_medication
+    to: cardiovascular_drugs
+    type: SUBSET_OF
+    description: "BP medication is a primary category of cardiovascular drugs."
+  - from: bp_medication
+    to: drug_pricing
+    type: AFFECTED_BY
+    description: "Changes in essential medicine price caps directly affect BP medication costs."
+  - from: cardiac_care
+    to: hospital_services
+    type: REQUIRES
+    description: "Cardiac care heavily relies on specialized hospital services and ICU beds."
+  - from: cardiac_care
+    to: health_insurance_premium
+    type: DRIVES
+    description: "High costs of cardiac care drive up health insurance premiums and claims."
+  - from: thyroid_medication
+    to: pharmaceuticals
+    type: SUBSET_OF
+    description: "Thyroid medication is a widely consumed pharmaceutical product."
+  - from: thyroid_medication
+    to: out_of_pocket_healthcare
+    type: CONTRIBUTES_TO
+    description: "Daily lifelong medication adds to recurring out-of-pocket healthcare expenses."
+  - from: uninsured
+    to: out_of_pocket_healthcare
+    type: INCREASES
+    description: "Being uninsured drastically increases out-of-pocket healthcare costs during emergencies."
+  - from: uninsured
+    to: government_health_schemes
+    type: RELIES_ON
+    description: "Uninsured citizens often rely on government schemes like Ayushman Bharat."
+  - from: out_of_pocket_healthcare
+    to: savings_rate
+    type: DECREASES
+    description: "High out-of-pocket medical expenses deplete household savings."
+  - from: out_of_pocket_healthcare
+    to: diagnostic_tests
+    type: INCLUDES
+    description: "Routine blood tests and scans form a large part of out-of-pocket expenses."
+  - from: parental_health_support
+    to: section_80d
+    type: PROVIDES_TAX_BENEFIT
+    description: "Paying health insurance premiums for parents offers additional Section 80D tax deductions."
+  - from: parental_health_support
+    to: hospital_services
+    type: REQUIRES
+    description: "Aging parents frequently require hospital services, impacting the user's finances."
+
+  # Consumer spending edges
+  - from: electronics
+    to: electronics_import_duty
+    type: AFFECTED_BY
+    description: "Import duties on components directly change the retail price of electronics."
+  - from: electronics
+    to: e_commerce
+    type: PURCHASED_VIA
+    description: "A massive share of consumer electronics is bought during e-commerce sales."
+  - from: pet_industry
+    to: pet_food
+    type: INCLUDES
+    description: "Pet food is the largest recurring expense in the pet industry."
+  - from: pet_industry
+    to: veterinary_care
+    type: INCLUDES
+    description: "Veterinary costs are a major component of pet ownership."
+  - from: grocery_expenses
+    to: food_inflation_india
+    type: AFFECTED_BY
+    description: "Food inflation directly increases the monthly grocery bill for households."
+  - from: grocery_expenses
+    to: fmcg_sector
+    type: DRIVES_REVENUE
+    description: "Household grocery spending is the primary revenue driver for the FMCG sector."
+  - from: fuel_expenses
+    to: petrol
+    type: AFFECTED_BY
+    description: "Retail petrol prices dictate the monthly fuel budget for car/bike owners."
+  - from: fuel_expenses
+    to: cpi_inflation
+    type: CONTRIBUTES_TO
+    description: "Household fuel expenses are a key component of consumer price inflation."
+  - from: domestic_help_expenses
+    to: domestic_help
+    type: PAYS_FOR
+    description: "This node represents the user's out-of-pocket cost for domestic help."
+  - from: domestic_help_expenses
+    to: minimum_wage
+    type: AFFECTED_BY
+    description: "State minimum wage hikes often push up the going rate for domestic workers."
+  - from: digital_subscriptions
+    to: streaming_subscriptions
+    type: INCLUDES
+    description: "OTT platforms form the bulk of consumer digital subscriptions."
+  - from: digital_subscriptions
+    to: rbi_circular
+    type: AFFECTED_BY
+    description: "RBI rules on recurring card mandates directly affect subscription renewals."
+
+  # Transport & commute edges
+  - from: daily_commute_expenses
+    to: public_transport
+    type: AFFECTED_BY
+    description: "Fare hikes in public transport directly increase daily commute expenses."
+  - from: daily_commute_expenses
+    to: fuel_expenses
+    type: AFFECTED_BY
+    description: "For private vehicle users, fuel prices dictate commute expenses."
+  - from: rent_escalation
+    to: residential_rent
+    type: INCREASES
+    description: "Annual rent escalation directly increases the residential rent burden."
+  - from: rent_escalation
+    to: rental_yield
+    type: DRIVES
+    description: "Higher rent escalations improve rental yields for property investors."
+  - from: two_wheeler_emi
+    to: auto_loan
+    type: SUBSET_OF
+    description: "Two-wheeler loans are a massive sub-category of auto loans in India."
+  - from: two_wheeler_emi
+    to: two_wheelers
+    type: ENABLES_PURCHASE_OF
+    description: "EMIs are the primary way middle-class users purchase two-wheelers."
+
+  # Family & dependents edges
+  - from: elderly_care
+    to: aging_population
+    type: DRIVEN_BY
+    description: "The macro trend of an aging population increases the need for elderly care at the household level."
+  - from: elderly_care
+    to: parental_health_support
+    type: INCLUDES
+    description: "Healthcare is the largest component of elderly care for dependents."
+  - from: childcare_expenses
+    to: daycare_creche
+    type: PAYS_FOR
+    description: "This is the user's financial outflow for daycare services."
+  - from: childcare_expenses
+    to: female_labor_force_participation
+    type: INFLUENCES
+    description: "High childcare expenses often force women to drop out of the workforce."
