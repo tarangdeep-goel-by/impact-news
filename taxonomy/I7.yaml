@@ -473,6 +473,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: coaching_fees
   aliases:
   - Coaching Fee

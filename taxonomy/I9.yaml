@@ -80,6 +80,7 @@ nodes:
   status: active
   is_category: false
   portal: true
+  port: true
 - id: particulate_matter_levels
   aliases:
   - PM 2.5
@@ -91,6 +92,7 @@ nodes:
   level: 3
   status: active
   is_category: false
+  port: true
 - id: winter_smog
   aliases:
   - Smog
@@ -137,6 +139,7 @@ nodes:
   status: active
   is_category: false
   portal: true
+  port: true
 - id: outdoor_humidity
   aliases:
   - Humidity

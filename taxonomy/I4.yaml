@@ -88,6 +88,7 @@ nodes:
   category: I4
   level: 4
   status: active
+  port: true
 - id: it_sector_salary
   aliases:
   - IT Sector Salary
@@ -370,6 +371,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: construction_and_manual
   aliases:
   - Construction & Manual Labor
@@ -390,6 +392,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: domestic_and_care
   aliases:
   - Domestic & Care Work

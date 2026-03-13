@@ -122,6 +122,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: millets
   aliases:
   - Millets
@@ -202,6 +203,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: retail_onion
   aliases:
   - Retail Onion
@@ -349,6 +351,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: mustard_oil
   aliases:
   - Mustard Oil
