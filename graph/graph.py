@@ -26,6 +26,12 @@ class ImpactGraph:
                 aliases=node.aliases,
                 category=node.category,
                 is_category=node.is_category,
+                status=node.status,
+                merged_into=node.merged_into,
+                port=node.port,
+                portal=node.portal,
+                secondary_tags=node.secondary_tags,
+                level=node.level,
             )
 
         for e in data.get("edges", []):
@@ -48,6 +54,12 @@ class ImpactGraph:
             aliases=attrs.get("aliases", []),
             category=attrs.get("category", ""),
             is_category=attrs.get("is_category", False),
+            status=attrs.get("status", "active"),
+            merged_into=attrs.get("merged_into"),
+            port=attrs.get("port", False),
+            portal=attrs.get("portal", False),
+            secondary_tags=attrs.get("secondary_tags", []),
+            level=attrs.get("level"),
         )
 
     def get_neighbors(self, node_id: str, direction: str = "both") -> list[str]:

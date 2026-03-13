@@ -18,13 +18,7 @@ log = logging.getLogger(__name__)
 
 class TaxonomyMerger:
     TAXONOMY_DIR = Path("taxonomy")
-    FLAT_FILES = [
-        "employment_domain_graph.yaml",
-        "financial_system_domain_graph.yaml",
-        "food_energy_graph.yaml",
-        "local_governance_graph.yaml",
-    ]
-    TREE_FILE = "universal_life_dependency_graph.yaml"
+    FLAT_FILES = [f"I{i}.yaml" for i in range(1, 12)] + [f"T{i}.yaml" for i in range(1, 6)]
     PATCH_FILES = [
         "taxonomy/edge_patches.yaml",
         "taxonomy/edge_patches_generated.yaml",
@@ -39,20 +33,13 @@ class TaxonomyMerger:
         """Load all taxonomy sources, optionally apply patches, return merged graph."""
         G = nx.DiGraph()
 
-        # Flat graphs
+        # Per-L1 flat graphs
         for fname in self.FLAT_FILES:
             path = self.root / self.TAXONOMY_DIR / fname
             if path.exists():
                 self._load_flat(G, path)
             else:
                 log.warning("Flat file not found, skipping: %s", path)
-
-        # Universal tree
-        tree_path = self.root / self.TAXONOMY_DIR / self.TREE_FILE
-        if tree_path.exists():
-            self._load_tree(G, tree_path)
-        else:
-            log.warning("Tree file not found, skipping: %s", tree_path)
 
         # Patches
         if apply_patches:
@@ -86,15 +73,34 @@ class TaxonomyMerger:
             aliases = list(node.get("aliases") or [])
             category = node.get("category", "")
             if G.has_node(nid):
-                # Merge: union aliases, fill empty category
                 existing = G.nodes[nid]
                 merged_aliases = list(dict.fromkeys(existing.get("aliases", []) + aliases))
                 existing["aliases"] = merged_aliases
                 if not existing.get("category") and category:
                     existing["category"] = category
                     existing["source_file"] = source
+                # Update v4 fields if provided
+                for field in ("status", "merged_into", "port", "portal", "level"):
+                    val = node.get(field)
+                    if val is not None:
+                        existing[field] = val
+                if node.get("secondary_tags"):
+                    existing_tags = existing.get("secondary_tags", [])
+                    existing["secondary_tags"] = list(dict.fromkeys(existing_tags + list(node["secondary_tags"])))
             else:
-                G.add_node(nid, aliases=aliases, category=category, source_file=source)
+                G.add_node(
+                    nid,
+                    aliases=aliases,
+                    category=category,
+                    source_file=source,
+                    status=node.get("status", "active"),
+                    merged_into=node.get("merged_into"),
+                    port=node.get("port", False),
+                    portal=node.get("portal", False),
+                    secondary_tags=list(node.get("secondary_tags") or []),
+                    level=node.get("level"),
+                    is_category=node.get("is_category", False),
+                )
 
         for i, edge in enumerate(data.get("edges", []) or []):
             if "from" not in edge or "to" not in edge:
@@ -110,89 +116,6 @@ class TaxonomyMerger:
                 delay=edge.get("delay", "SHORT_TERM"),
                 source_file=source,
             )
-
-    # -- tree loader -------------------------------------------------------
-
-    def _load_tree(self, G: nx.DiGraph, path: Path) -> None:
-        data = yaml.safe_load(path.read_text())
-        if data is None:
-            return
-        source = path.name
-
-        # Walk each top-level domain (L1 nodes)
-        l1_ids: list[str] = []
-        for key, value in data.items():
-            if key in ("meta", "supplementary_nodes", "supplementary_edges"):
-                continue
-            if isinstance(value, dict) and "id" in value:
-                l1_ids.append(value["id"])
-                self._walk_tree(G, value, parent_id=None, category=key, source=source)
-
-        # Mark L1 nodes as containers/categories
-        for nid in l1_ids:
-            if G.has_node(nid):
-                G.nodes[nid]["is_category"] = True
-                G.nodes[nid]["is_container"] = True
-
-        # Supplementary flat nodes (user-centric additions appended to tree file)
-        for node in data.get("supplementary_nodes", []) or []:
-            nid = node["id"]
-            aliases = list(node.get("aliases") or [])
-            category = node.get("category", "")
-            if not G.has_node(nid):
-                G.add_node(nid, aliases=aliases, category=category, source_file=source)
-
-        for edge in data.get("supplementary_edges", []) or []:
-            if "from" not in edge or "to" not in edge:
-                continue
-            G.add_edge(
-                edge["from"],
-                edge["to"],
-                type=edge.get("type", ""),
-                description=edge.get("description", ""),
-                weight=edge.get("weight", 1.0),
-                polarity=edge.get("polarity", 0),
-                delay=edge.get("delay", "SHORT_TERM"),
-                source_file=source,
-            )
-
-    def _walk_tree(
-        self,
-        G: nx.DiGraph,
-        node: dict[str, Any],
-        parent_id: str | None,
-        category: str,
-        source: str,
-    ) -> None:
-        nid = node["id"]
-        aliases = list(node.get("aliases") or [])
-
-        if G.has_node(nid):
-            existing = G.nodes[nid]
-            merged_aliases = list(dict.fromkeys(existing.get("aliases", []) + aliases))
-            existing["aliases"] = merged_aliases
-        else:
-            node_attrs: dict[str, Any] = dict(aliases=aliases, category=category, source_file=source)
-            if node.get("level") is not None and node["level"] <= 2:
-                node_attrs["is_category"] = True
-            G.add_node(nid, **node_attrs)
-
-        if parent_id is not None:
-            G.add_edge(parent_id, nid, type="CONTAINS", description="", weight=0.9, polarity=1, delay="IMMEDIATE", source_file=source)
-            G.add_edge(nid, parent_id, type="IS_A", description="", weight=0.2, polarity=1, delay="IMMEDIATE", source_file=source)
-
-        # Recurse into child dicts
-        for key, value in node.items():
-            if key in ("id", "level", "type", "description", "aliases", "leaf", "universality"):
-                continue
-            if key == "children":
-                # Explicit children dict
-                for _child_key, child_val in value.items():
-                    if isinstance(child_val, dict) and "id" in child_val:
-                        self._walk_tree(G, child_val, parent_id=nid, category=category, source=source)
-            elif isinstance(value, dict) and "id" in value:
-                # Inline child
-                self._walk_tree(G, value, parent_id=nid, category=category, source=source)
 
     # -- patch applicator --------------------------------------------------
 
@@ -279,14 +202,26 @@ def export_graph(G: nx.DiGraph, path: Path) -> None:
     """Write merged graph to YAML compatible with graph/graph.py (ImpactGraph)."""
     nodes = []
     for nid, attrs in sorted(G.nodes(data=True)):
-        nodes.append(
-            {
-                "id": nid,
-                "aliases": attrs.get("aliases", []),
-                "category": attrs.get("category", ""),
-                "is_category": attrs.get("is_category", False),
-            }
-        )
+        node_data: dict[str, Any] = {
+            "id": nid,
+            "aliases": attrs.get("aliases", []),
+            "category": attrs.get("category", ""),
+            "is_category": attrs.get("is_category", False),
+        }
+        # v4 fields — only include if non-default
+        if attrs.get("status", "active") != "active":
+            node_data["status"] = attrs["status"]
+        if attrs.get("merged_into"):
+            node_data["merged_into"] = attrs["merged_into"]
+        if attrs.get("port"):
+            node_data["port"] = True
+        if attrs.get("portal"):
+            node_data["portal"] = True
+        if attrs.get("secondary_tags"):
+            node_data["secondary_tags"] = attrs["secondary_tags"]
+        if attrs.get("level") is not None:
+            node_data["level"] = attrs["level"]
+        nodes.append(node_data)
 
     edges = []
     for src, dst, attrs in sorted(G.edges(data=True)):

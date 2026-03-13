@@ -18,6 +18,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
+import networkx as nx
 import yaml
 
 from graph.merge import TaxonomyMerger
@@ -31,19 +32,12 @@ log = logging.getLogger(__name__)
 
 _NODE_ID_RE = re.compile(r"^[a-z][a-z0-9_]*$")
 
-_FLAT_FILES = [
-    "employment_domain_graph.yaml",
-    "financial_system_domain_graph.yaml",
-    "food_energy_graph.yaml",
-    "local_governance_graph.yaml",
-]
+_FLAT_FILES = [f"I{i}.yaml" for i in range(1, 12)] + [f"T{i}.yaml" for i in range(1, 6)]
 
 _PATCH_FILES = [
     "edge_patches.yaml",
     "edge_patches_generated.yaml",
 ]
-
-_PROTECTED_FILE = "universal_life_dependency_graph.yaml"
 
 
 # ---------------------------------------------------------------------------
@@ -106,31 +100,7 @@ def _collect_all_node_ids(root: Path) -> dict[str, str]:
             if nid:
                 result[nid] = path.name
 
-    # Also scan tree file
-    tree_path = _taxonomy_dir(root) / _PROTECTED_FILE
-    if tree_path.exists():
-        data = _load_yaml(tree_path)
-        if data:
-            _walk_tree_ids(data, result, _PROTECTED_FILE)
-
     return result
-
-
-def _walk_tree_ids(data: Any, out: dict[str, str], source: str) -> None:
-    """Recursively extract 'id' fields from a tree-structured YAML."""
-    if not isinstance(data, dict):
-        return
-    if "id" in data:
-        out[data["id"]] = source
-    for key, val in data.items():
-        if key in ("id", "level", "type", "description", "aliases", "leaf", "universality"):
-            continue
-        if isinstance(val, dict):
-            _walk_tree_ids(val, out, source)
-        elif isinstance(val, list):
-            for item in val:
-                if isinstance(item, dict):
-                    _walk_tree_ids(item, out, source)
 
 
 # ---------------------------------------------------------------------------
@@ -148,10 +118,6 @@ def cmd_add_node(args: argparse.Namespace) -> int:
     edge_specs: list[str] = args.edges or []
 
     # --- Validations ---
-
-    if filename == _PROTECTED_FILE:
-        print(f"ERROR: Cannot modify protected file {_PROTECTED_FILE}", file=sys.stderr)
-        return 1
 
     if filename not in _FLAT_FILES:
         print(
@@ -385,6 +351,148 @@ def cmd_search(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_validate_dag(args: argparse.Namespace) -> int:
+    """Check for cycles within same-world lateral edges (Rule 14)."""
+    root: Path = args.root
+    merger = TaxonomyMerger(root=root)
+    G = merger.merge()
+
+    from graph.traverse import TAXONOMY_TYPES
+
+    # Build subgraph of only lateral edges (exclude CONTAINS, IS_A)
+    lateral = nx.DiGraph()
+    for src, dst, attrs in G.edges(data=True):
+        if attrs.get("type") not in TAXONOMY_TYPES:
+            lateral.add_edge(src, dst)
+
+    cycles = list(nx.simple_cycles(lateral))
+    if cycles:
+        print(f"DAG violation: {len(cycles)} cycle(s) found:")
+        for i, cycle in enumerate(cycles[:10]):
+            print(f"  {i+1}. {' -> '.join(cycle)} -> {cycle[0]}")
+        if len(cycles) > 10:
+            print(f"  ... and {len(cycles) - 10} more")
+        return 1
+
+    print("DAG check: no cycles found in lateral edges.")
+    return 0
+
+
+def cmd_validate_orphans(args: argparse.Namespace) -> int:
+    """Flag leaf nodes with no lateral edges (Rule 17: 1a→1b gate)."""
+    root: Path = args.root
+    merger = TaxonomyMerger(root=root)
+    G = merger.merge()
+
+    from graph.traverse import TAXONOMY_TYPES
+
+    orphan_leaves: list[str] = []
+    for node in G.nodes():
+        # Only check leaf nodes (no CONTAINS outgoing)
+        has_children = any(
+            G.edges[node, s].get("type") == "CONTAINS"
+            for s in G.successors(node)
+        )
+        if has_children:
+            continue
+
+        # Check for any lateral (non-taxonomy) edges
+        has_lateral = False
+        for s in G.successors(node):
+            if G.edges[node, s].get("type") not in TAXONOMY_TYPES:
+                has_lateral = True
+                break
+        if not has_lateral:
+            for p in G.predecessors(node):
+                if G.edges[p, node].get("type") not in TAXONOMY_TYPES:
+                    has_lateral = True
+                    break
+
+        if not has_lateral:
+            orphan_leaves.append(node)
+
+    if orphan_leaves:
+        print(f"Orphan leaves ({len(orphan_leaves)} nodes with no lateral edges):")
+        for nid in sorted(orphan_leaves)[:30]:
+            cat = G.nodes[nid].get("category", "?")
+            print(f"  {nid} ({cat})")
+        if len(orphan_leaves) > 30:
+            print(f"  ... and {len(orphan_leaves) - 30} more")
+        return 1
+
+    print("Orphan check: all leaf nodes have lateral edges.")
+    return 0
+
+
+def cmd_validate_bridges(args: argparse.Namespace) -> int:
+    """Verify port nodes have bridge edges, feedback delay >= MEDIUM_TERM (Rule 17: 3→4 gate)."""
+    root: Path = args.root
+    merger = TaxonomyMerger(root=root)
+    G = merger.merge()
+
+    issues = 0
+
+    # Check port nodes have at least one bridge edge (T→I inbound)
+    port_nodes = [n for n, attrs in G.nodes(data=True) if attrs.get("port")]
+    for nid in port_nodes:
+        has_bridge = False
+        for pred in G.predecessors(nid):
+            pred_cat = G.nodes[pred].get("category", "")
+            node_cat = G.nodes[nid].get("category", "")
+            # Bridge = Trigger node -> Impact node
+            if pred_cat.startswith("T") and node_cat.startswith("I"):
+                has_bridge = True
+                break
+        if not has_bridge:
+            print(f"  Port node '{nid}' has no bridge edge from Trigger world")
+            issues += 1
+
+    if not port_nodes:
+        print("  Warning: no port nodes found in graph")
+
+    # Check feedback edges (I→T) have delay >= MEDIUM_TERM
+    from graph.traverse import DELAY_RANK
+    for src, dst, attrs in G.edges(data=True):
+        src_cat = G.nodes[src].get("category", "") if src in G.nodes else ""
+        dst_cat = G.nodes[dst].get("category", "") if dst in G.nodes else ""
+        if src_cat.startswith("I") and dst_cat.startswith("T"):
+            delay = attrs.get("delay", "SHORT_TERM")
+            if DELAY_RANK.get(delay, 0) < DELAY_RANK.get("MEDIUM_TERM", 2):
+                print(f"  Feedback edge {src}->{dst} has delay '{delay}' (must be >= MEDIUM_TERM)")
+                issues += 1
+
+    if issues:
+        print(f"\nBridge validation: {issues} issue(s) found.")
+        return 1
+
+    print("Bridge validation: all checks passed.")
+    return 0
+
+
+def cmd_validate_components(args: argparse.Namespace) -> int:
+    """Check weakly connected components (Rule 17: 1b→2a gate)."""
+    root: Path = args.root
+    merger = TaxonomyMerger(root=root)
+    G = merger.merge()
+
+    wcc = list(nx.weakly_connected_components(G))
+    print(f"Weakly connected components: {len(wcc)}")
+
+    if len(wcc) > 1:
+        # Sort by size descending
+        wcc_sorted = sorted(wcc, key=len, reverse=True)
+        for i, comp in enumerate(wcc_sorted[:5]):
+            sample = sorted(comp)[:5]
+            print(f"  Component {i+1} ({len(comp)} nodes): {', '.join(sample)}{'...' if len(comp) > 5 else ''}")
+        return 1
+
+    if len(wcc) == 1:
+        print("Graph is fully connected.")
+    else:
+        print("Graph is empty.")
+    return 0
+
+
 def cmd_validate(args: argparse.Namespace) -> int:
     """Validate inference.py references against the merged graph."""
     root: Path = args.root
@@ -603,6 +711,18 @@ def main() -> int:
     # lint
     sub.add_parser("lint", help="Lint YAML files for naming/quality conventions")
 
+    # validate-dag
+    sub.add_parser("validate-dag", help="Check for cycles in lateral edges (Rule 14)")
+
+    # validate-orphans
+    sub.add_parser("validate-orphans", help="Flag leaf nodes with no lateral edges")
+
+    # validate-bridges
+    sub.add_parser("validate-bridges", help="Verify port/bridge/feedback constraints")
+
+    # validate-components
+    sub.add_parser("validate-components", help="Check weakly connected components")
+
     args = parser.parse_args()
 
     logging.basicConfig(level=logging.WARNING, format="%(levelname)s: %(message)s")
@@ -613,6 +733,10 @@ def main() -> int:
         "search": cmd_search,
         "validate": cmd_validate,
         "lint": cmd_lint,
+        "validate-dag": cmd_validate_dag,
+        "validate-orphans": cmd_validate_orphans,
+        "validate-bridges": cmd_validate_bridges,
+        "validate-components": cmd_validate_components,
     }
 
     return dispatch[args.command](args)

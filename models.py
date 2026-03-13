@@ -12,8 +12,14 @@ from pydantic import BaseModel, Field
 class Node(BaseModel):
     id: str
     aliases: list[str] = []
-    category: str = ""
+    category: str = ""          # T1-T5, I1-I11
     is_category: bool = False
+    status: str = "active"      # active | deprecated | merged
+    merged_into: str | None = None  # For Rule 16 mergers
+    port: bool = False          # Receives bridge edges (T→I)
+    portal: bool = False        # Has cross-L1 edges within same world
+    secondary_tags: list[str] = []  # Rule 4: secondary L1 relevance
+    level: int | None = None    # L1=1, L2=2, L3=3
 
 
 class Edge(BaseModel):
