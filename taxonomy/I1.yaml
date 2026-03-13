@@ -110,6 +110,7 @@ nodes:
   category: I1
   level: 3
   status: active
+  port: true
 - id: retail_rice
   aliases:
   - Retail Rice
@@ -368,6 +369,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: sunflower_oil
   aliases:
   - Sunflower Oil

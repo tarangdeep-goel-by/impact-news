@@ -40,6 +40,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: auto_loan_emi
   aliases:
   - Auto Loan EMI
@@ -90,6 +91,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: microfinance_loan
   aliases:
   - Microfinance Loan
@@ -218,6 +220,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: ipo_allotment
   aliases:
   - IPO Allotment
@@ -285,6 +288,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: ppf_investment
   aliases:
   - PPF Investment
@@ -420,6 +424,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: capital_gains_tax
   aliases:
   - Capital Gains Tax
@@ -469,6 +474,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: retail_silver_investment
   aliases:
   - Retail Silver Investment
