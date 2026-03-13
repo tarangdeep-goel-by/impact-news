@@ -163,6 +163,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: building_materials_cost
   aliases:
   - cement price
@@ -174,6 +175,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: construction_labor_wages
   aliases:
   - mason wages
@@ -206,6 +208,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  port: true
 - id: electricity_tariff
   aliases:
   - bijli bill
@@ -251,6 +254,7 @@ nodes:
   category: I2
   level: 4
   status: active
+  port: true
 - id: waste_collection_services
   aliases:
   - garbage collection
@@ -295,6 +299,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: repair_service_charges
   aliases:
   - plumber charges

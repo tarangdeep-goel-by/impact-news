@@ -100,6 +100,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: theatre_play
   aliases:
   - Theatre Play
@@ -245,6 +246,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: firecracker
   aliases:
   - Firecracker
@@ -415,6 +417,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  port: true
 - id: tourist_attraction_ticket
   aliases:
   - Tourist Attraction Ticket

@@ -344,6 +344,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: intercity_bus_fare
   aliases:
   - Intercity Bus Fare
@@ -355,6 +356,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: highway_tolls
   aliases:
   - Highway Tolls
@@ -396,6 +398,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: traffic_congestion
   aliases:
   - Traffic Congestion
@@ -407,6 +410,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: parking_fees
   aliases:
   - Parking Fees

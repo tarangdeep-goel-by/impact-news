@@ -247,6 +247,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: public_wifi
   aliases:
   - Public WiFi
