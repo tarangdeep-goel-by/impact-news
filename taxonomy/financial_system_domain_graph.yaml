@@ -1506,6 +1506,167 @@ nodes:
   - VC funding India
   - startup funding India
   category: financial
+- id: agriculture_sector
+  aliases:
+  - agriculture India
+  - farming sector
+  category: employment_and_income
+
+- id: auto_manufacturing
+  aliases:
+  - auto sector India
+  - automobile industry
+  category: employment_and_income
+
+- id: credit_card_debt
+  aliases:
+  - credit card bill
+  - revolving credit
+  - card outstanding
+  - minimum due
+  category: financial
+
+- id: crude_oil_price
+  aliases:
+  - crude oil price
+  - Brent crude
+  - WTI crude
+  - oil price
+  category: energy
+
+- id: education_loan_subsidy
+  aliases:
+  - student loan waiver
+  - education loan interest subsidy
+  - Vidya Lakshmi scheme
+  category: financial
+
+- id: emergency_savings
+  aliases:
+  - rainy day fund
+  - contingency fund
+  - bank balance
+  - savings account buffer
+  category: financial
+
+- id: fed_policy
+  aliases:
+  - US Federal Reserve
+  - Fed rate hike
+  - Fed pivot
+  - FOMC meeting
+  category: financial
+
+- id: fmcg_sector
+  aliases:
+  - FMCG sector India
+  - consumer goods India
+  category: employment_and_income
+
+- id: food_inflation
+  aliases:
+  - food inflation India
+  - food prices
+  - food CPI
+  - cereal inflation
+  - vegetable prices
+  category: food
+
+- id: it_services_sector
+  aliases:
+  - IT services
+  - Indian IT
+  - IT outsourcing
+  category: employment_and_income
+
+- id: itr_filing_compliance
+  aliases:
+  - tax returns
+  - ITR filing
+  - tax portal
+  - CA fees for tax
+  category: financial
+
+
+# =============================================================================
+# EDGES — 380+ typed relationships
+# =============================================================================
+
+- id: job_market_india
+  aliases:
+  - job market India
+  - employment rate India
+  category: employment_and_income
+
+- id: monsoon_forecast
+  aliases:
+  - monsoon forecast
+  - IMD monsoon
+  - monsoon prediction
+  - rainfall forecast
+  category: food
+
+- id: nbfc_sector
+  aliases:
+  - NBFC sector
+  - non-banking financial company
+  - Bajaj Finance
+  - Shriram Finance
+  category: financial
+
+- id: pharma_sector
+  aliases:
+  - pharma industry India
+  - pharmaceutical sector
+  category: employment_and_income
+
+- id: private_banks
+  aliases:
+  - private banks India
+  - HDFC Bank
+  - ICICI Bank
+  - Kotak Mahindra Bank
+  - Axis Bank
+  category: financial
+
+- id: psu_banks
+  aliases:
+  - PSU banks
+  - public sector banks
+  - SBI
+  - Bank of Baroda
+  - PNB
+  - government banks
+  category: financial
+
+- id: real_estate_sector
+  aliases:
+  - real estate India
+  - property market
+  - housing market India
+  category: employment_and_income
+
+- id: salary_trends
+  aliases:
+  - salary trends India
+  - salary hike
+  - compensation trends
+  category: employment_and_income
+
+- id: semiconductor_supply
+  aliases:
+  - semiconductor supply
+  - chip shortage
+  - TSMC
+  - semiconductor geopolitics
+  category: technology_and_digital
+
+- id: startup_layoffs
+  aliases:
+  - startup layoffs India
+  - tech layoffs India
+  category: employment_and_income
+
 edges:
 - from: rbi
   to: rbi_mpc
@@ -2890,3 +3051,52 @@ edges:
   to: credit_growth
   type: AFFECTS
   description: GDP growth drives credit demand
+- from: credit_card_debt
+  to: credit_cards
+  type: GENERATED_BY
+  description: Credit card usage generates this specific type of high-interest debt.
+
+- from: credit_card_debt
+  to: personal_loan
+  type: LEADS_TO
+  description: Users often take personal loans to consolidate and pay off high credit card debt.
+
+- from: education_loan_subsidy
+  to: education_loan
+  type: REDUCES_COST_OF
+  description: Subsidies reduce the effective interest burden of education loans.
+
+- from: education_loan_subsidy
+  to: higher_education
+  type: ENABLES
+  description: Interest subsidies make higher education accessible to lower-income groups.
+
+- from: emergency_savings
+  to: liquid_fund
+  type: INVESTED_IN
+  description: Many users park emergency savings in liquid mutual funds for better returns.
+
+- from: emergency_savings
+  to: savings_rate
+  type: PART_OF
+  description: Emergency savings are a critical component of a household's overall savings rate.
+
+- from: fed_policy
+  to: rbi_mpc
+  type: INFLUENCES
+  description: US Fed policy heavily influences the RBI's Monetary Policy Committee decisions.
+
+- from: fed_policy
+  to: us_fed
+  type: SET_BY
+  description: Fed policy is determined by the US Federal Reserve.
+
+- from: itr_filing_compliance
+  to: income_tax
+  type: RELATED_TO
+  description: ITR filing is the compliance mechanism for income tax.
+
+- from: itr_filing_compliance
+  to: new_tax_regime
+  type: AFFECTED_BY
+  description: Choosing between old and new tax regimes complicates or simplifies the ITR filing process.

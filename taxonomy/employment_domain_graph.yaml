@@ -1429,6 +1429,231 @@ nodes:
   - rental yield
   - rent hike
   category: financial
+- id: business_income
+  aliases:
+  - business profits
+  - SME earnings
+  - shop owner income
+  - entrepreneur income
+  category: employment_and_income
+
+- id: china_economy
+  aliases:
+  - China economy
+  - Chinese GDP
+  - China slowdown
+  - China growth
+  category: geopolitics_and_trade
+
+- id: consulting_sector
+  aliases:
+  - management consulting
+  - advisory services
+  - strategy consulting
+  - Big 4
+  category: employment_and_income
+
+- id: cpi_inflation
+  aliases:
+  - CPI inflation India
+  - consumer price index
+  - retail inflation
+  - inflation rate India
+  category: financial
+
+- id: credit_growth
+  aliases:
+  - credit growth India
+  - bank lending growth
+  - loan growth
+  - credit offtake
+  category: financial
+
+- id: crop_insurance
+  aliases:
+  - crop insurance
+  - PMFBY
+  - Pradhan Mantri Fasal Bima
+  - farm insurance
+  category: financial
+
+  # ===========================================================================
+  # 16. RETAIL
+  # ===========================================================================
+- id: customs_duty
+  aliases:
+  - customs duty India
+  - import duty
+  - tariff India
+  - customs tariff change
+  category: financial
+
+- id: education_loan
+  aliases:
+  - education loan India
+  - student loan
+  - education loan interest
+  - Vidya Lakshmi
+  category: financial
+
+  # ---------------------------------------------------------------------------
+  # USER-CENTRIC EMPLOYMENT & INCOME
+  # ---------------------------------------------------------------------------
+- id: electricity_tariff
+  aliases:
+  - electricity tariff
+  - power tariff hike
+  - electricity bill
+  - electricity rate
+  category: energy
+
+- id: epf
+  aliases:
+  - EPF
+  - Employee Provident Fund
+  - PF contribution
+  - EPFO
+  - EPF interest rate
+  - PF withdrawal
+  category: financial
+
+- id: eu_economy
+  aliases:
+  - European economy
+  - EU GDP
+  - Eurozone economy
+  - EU economic growth
+  category: geopolitics_and_trade
+
+- id: freelance_income
+  aliases:
+  - freelance earnings
+  - contractor pay
+  - upwork earnings
+  - client retainers
+  category: employment_and_income
+
+
+# =============================================================================
+# EDGES — 350+ typed relationships
+# =============================================================================
+
+- id: gold_price
+  aliases:
+  - gold price
+  - gold rate today
+  - gold price India
+  - sovereign gold
+  - gold import
+  category: financial
+
+- id: gratuity
+  aliases:
+  - gratuity
+  - gratuity calculation
+  - gratuity limit
+  - gratuity tax
+  category: financial
+
+- id: home_loan_emi
+  aliases:
+  - home loan EMI
+  - housing loan EMI
+  - mortgage EMI
+  - home loan interest rate
+  category: financial
+
+- id: income_volatility
+  aliases:
+  - variable income
+  - unpredictable earnings
+  - pay cuts
+  - irregular salary
+  category: employment_and_income
+
+- id: india_gdp
+  aliases:
+  - India GDP
+  - Indian economy growth
+  - GDP growth rate India
+  - quarterly GDP India
+  category: financial
+
+- id: india_us_trade
+  aliases:
+  - India US trade
+  - India America trade
+  - bilateral trade India US
+  - India US tariff
+  category: geopolitics_and_trade
+
+- id: nps
+  aliases:
+  - NPS
+  - National Pension System
+  - NPS contribution
+  - NPS tier 1
+  - NPS tier 2
+  category: financial
+
+- id: platform_economy
+  aliases:
+  - gig economy
+  - aggregator platforms
+  - app-based work
+  - task-based work
+  category: employment_and_income
+
+- id: repo_rate
+  aliases:
+  - repo rate
+  - RBI repo rate
+  - RBI rate decision
+  - policy rate
+  - RBI MPC
+  category: financial
+
+- id: rera
+  aliases:
+  - RERA
+  - Real Estate Regulation Act
+  - RERA compliance
+  - RERA authority
+  category: geopolitics_and_trade
+
+- id: salaried_employment
+  aliases:
+  - fixed salary
+  - monthly paycheck
+  - corporate job
+  - white collar job
+  category: employment_and_income
+
+- id: upi
+  aliases:
+  - UPI
+  - Unified Payments Interface
+  - UPI transaction
+  - UPI volume
+  - UPI outage
+  category: financial
+
+- id: us_economy
+  aliases:
+  - US economy
+  - US GDP
+  - American economy
+  - US economic growth
+  category: geopolitics_and_trade
+
+- id: vc_funding_india
+  aliases:
+  - VC funding India
+  - startup funding India
+  - venture capital India
+  - Indian startup investment
+  category: financial
+
 edges:
 - from: tcs
   to: it_services_sector
@@ -2781,3 +3006,62 @@ edges:
   to: warehousing
   type: DEPENDS_ON
   description: E-commerce fulfilment depends on warehouse infrastructure
+- from: business_income
+  to: gst_compliance
+  type: AFFECTED_BY
+  description: Changes in GST rules directly impact the net income and compliance costs of business owners.
+
+- from: business_income
+  to: rural_demand
+  type: AFFECTED_BY
+  description: For many retail and wholesale businesses, rural demand dictates business income.
+
+- from: consulting_sector
+  to: freelance_market
+  type: OVERLAPS_WITH
+  description: Many independent consultants operate within the freelance market.
+
+- from: consulting_sector
+  to: it_services_sector
+  type: RELATED_TO
+  description: IT and management consulting often move together in terms of hiring and layoffs.
+
+- from: freelance_income
+  to: inr_usd_freelance
+  type: AFFECTED_BY
+  description: Exchange rate fluctuations directly impact INR earnings for global freelancers.
+
+- from: freelance_income
+  to: tds
+  type: AFFECTED_BY
+  description: Changes in TDS rates for professional services impact freelance cash flow.
+- from: income_volatility
+  to: credit_card_debt
+  type: INCREASES
+  description: Income dips often lead to increased reliance on credit cards for daily expenses.
+
+- from: income_volatility
+  to: emergency_savings
+  type: REQUIRES
+  description: High income volatility necessitates larger emergency savings.
+
+- from: platform_economy
+  to: delivery_worker_earnings
+  type: INCLUDES
+  description: Delivery workers are a core component of the platform economy.
+
+- from: platform_economy
+  to: gig_worker_regulation
+  type: AFFECTED_BY
+  description: New labor laws and social security mandates directly impact platform economy workers.
+
+- from: salaried_employment
+  to: epf
+  type: CONTRIBUTES_TO
+  description: Salaried employment mandates EPF contributions, affecting take-home pay.
+
+- from: salaried_employment
+  to: income_tax_slab
+  type: AFFECTED_BY
+  description: Salaried employees are directly impacted by changes to income tax slabs and standard deductions.
+

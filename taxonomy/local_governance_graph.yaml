@@ -2150,6 +2150,117 @@ nodes:
   - city health
   - urban lifestyle disease
   category: global_economy
+- id: affordable_housing
+  aliases:
+  - affordable housing
+  - PMAY
+  - EWS housing
+  - LIG housing
+  - housing for all
+  category: property_land
+
+- id: bescom
+  aliases:
+  - BESCOM
+  - Bangalore Electricity Supply
+  - BESCOM bill
+  - BESCOM outage
+  category: utilities
+
+- id: bureaucracy
+  aliases:
+  - red tape
+  - government offices
+  - paperwork
+  - official delays
+  - babu culture
+  category: governance_and_regulation
+
+- id: city_gas_distribution
+  aliases:
+  - CGD
+  - city gas
+  - piped natural gas
+  - PNG
+  - CNG distribution
+  category: utilities
+
+- id: electricity_tariff
+  aliases:
+  - power tariff
+  - electricity rate
+  - unit rate electricity
+  - per unit cost
+  - electricity price
+  category: utilities
+
+- id: food_safety
+  aliases:
+  - food safety inspection
+  - food hygiene
+  - food quality
+  category: healthcare
+
+- id: gail
+  aliases:
+  - GAIL
+  - Gas Authority of India
+  - GAIL pipeline
+  - natural gas transmission
+  category: utilities
+
+- id: government_services
+  aliases:
+  - RTO
+  - passport office
+  - municipal services
+  - certificate issuance
+  category: governance_and_regulation
+
+# =============================================================================
+# EDGES
+# =============================================================================
+- id: msedcl
+  aliases:
+  - MSEDCL
+  - Maharashtra State Electricity Distribution
+  - MSEDCL bill
+  - Mahavitaran
+  category: utilities
+
+- id: property_tax
+  aliases:
+  - house tax
+  - property tax assessment
+  - property tax payment
+  - property tax hike
+  - SAS property tax
+  category: municipal_governance
+
+- id: rera
+  aliases:
+  - RERA
+  - Real Estate Regulatory Authority
+  - RERA complaint
+  - RERA registration
+  category: property_land
+
+- id: stamp_duty
+  aliases:
+  - stamp duty rates
+  - registration charges
+  - stamp duty reduction
+  - stamp duty exemption
+  category: property_land
+
+- id: telemedicine
+  aliases:
+  - telemedicine
+  - eSanjeevani
+  - online doctor consultation
+  - teleconsultation
+  category: healthcare
+
 edges:
 - from: river_systems
   to: interstate_water_disputes
@@ -3723,3 +3834,22 @@ edges:
 - from: building_codes
   to: affordable_housing
   type: REGULATES
+- from: bureaucracy
+  to: citizen_grievance
+  type: IMPACTS
+  description: Bureaucratic delays are a primary driver of citizen grievances.
+
+- from: bureaucracy
+  to: government_services
+  type: MANAGES
+  description: Bureaucracy dictates the speed and efficiency of government service delivery.
+
+- from: government_services
+  to: aadhaar_kyc
+  type: REQUIRES
+  description: Almost all citizen-facing government services now require Aadhaar authentication.
+
+- from: government_services
+  to: digital_services
+  type: DELIVERED_VIA
+  description: Many government services are migrating to digital portals (e.g., DigiLocker, Umang).
