@@ -92,6 +92,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: retail_diesel
   aliases:
   - Retail Diesel
@@ -100,6 +101,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: cng_fuel
   aliases:
   - CNG Fuel
@@ -109,6 +111,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: ev_charging_tariff
   aliases:
   - EV Charging Tariff
@@ -128,6 +131,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: four_wheeler_price
   aliases:
   - Four Wheeler Price
@@ -137,6 +141,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: traffic_fines
   aliases:
   - Traffic Fines
@@ -147,6 +152,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: vehicle_insurance_premium
   aliases:
   - Vehicle Insurance Premium
@@ -156,6 +162,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: vehicle_servicing_cost
   aliases:
   - Vehicle Servicing Cost
@@ -166,6 +173,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: urban_rail_transit
   aliases:
   - Urban Rail Transit
@@ -194,6 +202,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: local_train_ticket
   aliases:
   - Local Train Ticket
@@ -242,6 +251,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: bike_taxi_fare
   aliases:
   - Bike Taxi Fare
@@ -251,6 +261,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: auto_rickshaw_fare
   aliases:
   - Auto Rickshaw Fare
@@ -261,6 +272,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: e_rickshaw_fare
   aliases:
   - E-Rickshaw Fare
@@ -327,6 +339,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: intercity_bus_fare
   aliases:
   - Intercity Bus Fare
@@ -337,6 +350,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: highway_tolls
   aliases:
   - Highway Tolls
@@ -365,6 +379,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: road_potholes
   aliases:
   - Road Potholes
@@ -375,6 +390,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: traffic_congestion
   aliases:
   - Traffic Congestion
@@ -385,6 +401,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  portal: true
 - id: parking_fees
   aliases:
   - Parking Fees
@@ -684,3 +701,373 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Urban Road Conditions contains parking fees
+- from: retail_petrol
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher petrol costs are passed on to riders via fare hikes by cab aggregators.
+- from: retail_petrol
+  to: cab_driver_earnings
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Higher fuel costs eat into driver margins, reducing their net earnings
+    before fares adjust.
+- from: retail_petrol
+  to: food_delivery_payouts
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Delivery partners bear the brunt of petrol price hikes, reducing their
+    net payouts per delivery.
+- from: retail_petrol
+  to: ambient_aqi
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Combustion of petrol in two-wheelers and cars contributes directly
+    to urban air pollution.
+- from: retail_diesel
+  to: city_bus_fare
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: State transport corporations hike bus fares when bulk diesel prices
+    rise significantly.
+- from: retail_diesel
+  to: intercity_bus_fare
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Private intercity bus operators pass on diesel price hikes to passengers
+    via ticket prices.
+- from: retail_diesel
+  to: retail_tomato
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Diesel prices dictate trucking freight rates, increasing the retail
+    cost of transported perishables like tomatoes.
+- from: retail_diesel
+  to: building_materials_cost
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Heavy transport relies on diesel, raising the landed cost of construction
+    materials like cement and steel.
+- from: retail_diesel
+  to: particulate_matter_levels
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Diesel exhaust from commercial vehicles and trucks is a primary source
+    of PM 2.5 and PM 10.
+- from: cng_fuel
+  to: auto_rickshaw_fare
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: CNG price hikes lead to union demands for official meter fare revisions.
+- from: cng_fuel
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Many Ola and Uber cabs run on CNG; price hikes increase operating costs
+    and eventually fares.
+- from: cng_fuel
+  to: auto_driver_earnings
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Higher CNG costs reduce the daily take-home pay for auto drivers before
+    fares are officially adjusted.
+- from: ev_charging_tariff
+  to: e_rickshaw_fare
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher commercial charging rates increase operating costs for e-rickshaws,
+    leading to fare hikes.
+- from: two_wheeler_price
+  to: auto_loan_emi
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher vehicle prices increase the principal amount required for two-wheeler
+    loans, raising the EMI.
+- from: two_wheeler_price
+  to: vehicle_insurance_premium
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Insurance IDV and premiums scale directly with the ex-showroom price
+    of the two-wheeler.
+- from: four_wheeler_price
+  to: auto_loan_emi
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher car prices directly increase the principal and subsequent EMI
+    burden for buyers.
+- from: four_wheeler_price
+  to: vehicle_insurance_premium
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Comprehensive insurance premiums rise proportionally with the cost
+    of the car.
+- from: traffic_fines
+  to: cab_driver_earnings
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: IMMEDIATE
+  description: Strict challan enforcement reduces the net daily earnings for commercial
+    cab drivers.
+- from: traffic_fines
+  to: traffic_congestion
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: Stricter fines for illegal parking and lane driving deter violations,
+    improving traffic flow.
+- from: vehicle_insurance_premium
+  to: motor_insurance_premium
+  type: AFFECTS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle insurance premiums directly determine the personal finance
+    burden of motor insurance.
+- from: vehicle_servicing_cost
+  to: cab_driver_earnings
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Higher maintenance and repair costs reduce the long-term profitability
+    of driving a cab.
+- from: metro_fare
+  to: cab_aggregator_fare
+  type: COMPETES_WITH
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: If metro fares rise significantly, cab aggregators may see increased
+    demand, triggering surge pricing.
+- from: metro_fare
+  to: ncmc_smart_card
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Metro fare payments increasingly rely on NCMC card infrastructure for
+    seamless transit.
+- from: local_train_ticket
+  to: city_bus_fare
+  type: COMPETES_WITH
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Suburban rail and city buses act as substitute goods; higher train
+    fares push commuters to buses.
+- from: city_bus_fare
+  to: auto_rickshaw_fare
+  type: COMPETES_WITH
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Higher bus fares can push marginal commuters toward shared autos for
+    similar price points.
+- from: cab_aggregator_fare
+  to: cab_driver_earnings
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher fares, especially during surge pricing, generally increase the
+    per-ride payout for cab drivers.
+- from: bike_taxi_fare
+  to: gig_worker_payouts
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher bike taxi fares increase the per-ride earnings for gig workers
+    on mobility platforms.
+- from: auto_rickshaw_fare
+  to: auto_driver_earnings
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Meter fare hikes directly increase the daily revenue and earnings of
+    auto drivers.
+- from: e_rickshaw_fare
+  to: auto_rickshaw_fare
+  type: COMPETES_WITH
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Cheap e-rickshaws provide last-mile connectivity that competes with
+    traditional auto rickshaws.
+- from: irctc_train_ticket
+  to: domestic_flight_ticket
+  type: COMPETES_WITH
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: High train fares or waitlists push travelers to book domestic flights
+    instead.
+- from: irctc_train_ticket
+  to: intercity_bus_fare
+  type: COMPETES_WITH
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Waitlisted train tickets drive up demand and dynamic pricing for intercity
+    private buses.
+- from: premium_train_fare
+  to: domestic_flight_ticket
+  type: COMPETES_WITH
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Vande Bharat and Rajdhani dynamic pricing competes directly with budget
+    airline fares.
+- from: domestic_flight_ticket
+  to: tour_package
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Airfare is a major component of domestic holiday packages, driving
+    up total vacation costs.
+- from: intercity_bus_fare
+  to: tour_package
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Bus fares impact the cost of budget travel and pilgrimage packages.
+- from: highway_toll_fare
+  to: intercity_bus_fare
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased toll taxes are passed on to passengers via higher intercity
+    bus ticket prices.
+- from: highway_toll_fare
+  to: retail_tomato
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher tolls increase trucking freight costs, raising the retail prices
+    of transported goods like tomatoes.
+- from: highway_toll_fare
+  to: fastag_wallet
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Toll plaza deductions directly deplete FASTag wallet balances.
+- from: road_potholes
+  to: vehicle_servicing_cost
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Bad roads cause suspension and tire damage, increasing vehicle maintenance
+    bills.
+- from: road_potholes
+  to: traffic_congestion
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Potholes force vehicles to slow down, creating bottlenecks and traffic
+    jams.
+- from: road_potholes
+  to: road_traffic_accidents
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Potholes are a major cause of two-wheeler accidents and road fatalities.
+- from: road_potholes
+  to: food_delivery_payouts
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Bad roads slow down delivery partners, reducing the number of orders
+    they can complete and their payouts.
+- from: traffic_congestion
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Heavy traffic triggers surge pricing algorithms due to increased trip
+    duration and lower cab availability.
+- from: traffic_congestion
+  to: ambient_aqi
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Idling vehicles in traffic jams significantly increase localized air
+    pollution and AQI.
+- from: traffic_congestion
+  to: traffic_noise
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Congestion leads to excessive honking and vehicular noise pollution.
+- from: traffic_congestion
+  to: police_response_time
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Traffic jams delay PCR vans and emergency responders, increasing police
+    response times.
+- from: parking_fees
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Airport and mall parking fees are often added to the final cab fare
+    paid by the rider.
+- from: parking_fees
+  to: traffic_congestion
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: High parking fees discourage private vehicle use, potentially reducing
+    urban congestion over time.

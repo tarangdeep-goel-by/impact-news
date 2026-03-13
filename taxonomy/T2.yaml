@@ -106,6 +106,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: ministry_of_commerce_and_industry
   aliases:
   - Commerce Ministry
@@ -115,6 +116,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: ministry_of_road_transport
   aliases:
   - MoRTH
@@ -124,6 +126,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: ministry_of_railways
   aliases:
   - Railway Ministry
@@ -133,6 +136,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: ministry_of_civil_aviation
   aliases:
   - Aviation Ministry
@@ -151,6 +155,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: ministry_of_health
   aliases:
   - Health Ministry
@@ -178,6 +183,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: ministry_of_consumer_affairs
   aliases:
   - Consumer Affairs Ministry
@@ -187,6 +193,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: financial_regulators
   aliases:
   - Market Regulators
@@ -223,6 +230,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: sebi
   aliases:
   - Securities and Exchange Board of India
@@ -232,6 +240,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: irda
   aliases:
   - Insurance Regulatory and Development Authority
@@ -259,6 +268,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: cci
   aliases:
   - Competition Commission of India
@@ -268,6 +278,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: dgca
   aliases:
   - Directorate General of Civil Aviation
@@ -277,6 +288,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: rera
   aliases:
   - Real Estate Regulatory Authority
@@ -313,6 +325,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: higher_judiciary
   aliases:
   - Apex Courts
@@ -358,6 +371,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: enforcement_directorate
   aliases:
   - ED
@@ -430,6 +444,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: monetary_policy_committee
   aliases:
   - MPC
@@ -439,6 +454,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: epfo
   aliases:
   - Employees Provident Fund Organisation
@@ -448,6 +464,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: uidai
   aliases:
   - Unique Identification Authority of India
@@ -457,6 +474,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: state_executive_bodies
   aliases:
   - State Administrations
@@ -504,6 +522,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: panchayati_raj_institutions
   aliases:
   - Gram Panchayat
@@ -531,6 +550,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: global_central_banks
   aliases:
   - International Central Banks
@@ -567,6 +587,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: european_central_bank
   aliases:
   - ECB
@@ -576,6 +597,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: us_government
   aliases:
   - United States Government
@@ -585,6 +607,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: chinese_government
   aliases:
   - Beijing
@@ -594,6 +617,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: russian_government
   aliases:
   - Kremlin
@@ -603,6 +627,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: european_union
   aliases:
   - EU
@@ -612,6 +637,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: opec
   aliases:
   - Organization of the Petroleum Exporting Countries
@@ -621,6 +647,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: wto
   aliases:
   - World Trade Organization
@@ -630,6 +657,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 - id: imf
   aliases:
   - International Monetary Fund
@@ -639,6 +667,7 @@ nodes:
   category: T2
   level: 4
   status: active
+  portal: true
 edges:
 - from: t2
   to: indian_union_government
@@ -1142,3 +1171,475 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: International Organizations contains the International Monetary Fund
+- from: ministry_of_finance
+  to: union_budget_framework
+  type: MANAGES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Ministry of Finance directly drafts, allocates, and manages the
+    Union Budget framework.
+- from: ministry_of_finance
+  to: income_tax_department
+  type: MANAGES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Finance Ministry oversees the CBDT, which dictates the operational
+    capacity of the Income Tax Department.
+- from: ministry_of_civil_aviation
+  to: dgca
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Aviation Ministry sets the overarching policy framework that the
+    DGCA enforces.
+- from: ministry_of_health
+  to: cdsco
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Health Ministry directs the administrative and policy priorities
+    of the central drug regulator.
+- from: ministry_of_health
+  to: fssai
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Health Ministry oversees the Food Safety and Standards Authority
+    of India.
+- from: rbi
+  to: monetary_policy_committee
+  type: MANAGES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: The RBI Governor chairs the MPC and the central bank provides the data
+    and operational framework for its rate decisions.
+- from: supreme_court_of_india
+  to: high_courts
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Supreme Court collegium decisions and judicial precedents directly
+    dictate High Court appointments and rulings.
+- from: supreme_court_of_india
+  to: enforcement_directorate
+  type: REGULATES
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Supreme Court rulings on bail and PMLA provisions constrain the arbitrary
+    arrest and attachment powers of the ED.
+- from: gst_council
+  to: union_budget_framework
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: GST Council decisions on tax slabs directly determine the indirect
+    tax revenue available for the Union Budget.
+- from: gst_council
+  to: state_governments
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: GST compensation cess and revenue sharing formulas directly fund state
+    exchequers.
+- from: state_governments
+  to: municipal_corporations
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: State finance commission grants and budget allocations provide the
+    primary funding for municipal civic bodies.
+- from: state_governments
+  to: state_electricity_boards
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: State government subsidies and financial bailout packages keep debt-laden
+    power discoms operational.
+- from: state_governments
+  to: regional_transport_office
+  type: MANAGES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: State transport departments directly administer RTO operations, staffing,
+    and fee structures.
+- from: us_federal_reserve
+  to: rbi
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: US Fed rate hikes pressure the RBI to raise domestic interest rates
+    to maintain yield differentials and prevent capital flight.
+- from: ministry_of_finance
+  to: india_10yr_bond_yield
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher government borrowing targets set by the Finance Ministry increase
+    the supply of G-secs, pushing up bond yields.
+- from: union_budget_framework
+  to: india_gdp_growth
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Increased capital expenditure allocations in the Union Budget stimulate
+    infrastructure creation and national GDP growth.
+- from: ministry_of_commerce_and_industry
+  to: india_trade_deficit
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Export promotion schemes (like PLI) and import substitution policies
+    reduce the national trade deficit.
+- from: ministry_of_commerce_and_industry
+  to: fii_fpi_flows
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Liberalization of Foreign Direct Investment (FDI) limits by the Commerce
+    Ministry increases foreign capital inflows.
+- from: ministry_of_agriculture
+  to: global_food_grain_supply
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Indian agriculture ministry decisions on export quotas or bans significantly
+    alter the global supply of rice and wheat.
+- from: ministry_of_consumer_affairs
+  to: wpi
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Releasing buffer stocks of pulses and onions into the open market suppresses
+    wholesale food inflation.
+- from: rbi
+  to: usd_inr_exchange
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: RBI intervention by selling dollars in the forex market prevents rupee
+    depreciation (lowering the USD-INR rate).
+- from: rbi
+  to: india_forex_reserves
+  type: MANAGES
+  weight: 1.0
+  polarity: 1
+  delay: SHORT_TERM
+  description: RBI's dollar purchasing activities directly build up the national foreign
+    exchange reserves.
+- from: monetary_policy_committee
+  to: india_10yr_bond_yield
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Increases in the repo rate by the MPC immediately drive up benchmark
+    sovereign bond yields.
+- from: monetary_policy_committee
+  to: wpi
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Rate hikes by the MPC suppress aggregate demand and corporate borrowing,
+    eventually cooling wholesale inflation.
+- from: sebi
+  to: nifty_50
+  type: REGULATES
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Stricter SEBI margin requirements and curbs on derivatives trading
+    suppress speculative volumes and index volatility.
+- from: epfo
+  to: epfo_payroll_additions
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: EPFO administrative drives and compliance enforcement directly increase
+    the recorded formal payroll additions.
+- from: epfo
+  to: dii_flows
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: EPFO mandates to invest a percentage of corpus in equities channel
+    massive funds into Domestic Institutional Investors.
+- from: us_federal_reserve
+  to: us_treasury_yields
+  type: AFFECTS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Federal Reserve interest rate hikes directly and immediately increase
+    yields on US Treasury bonds.
+- from: us_federal_reserve
+  to: us_dollar_index
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher Fed rates attract global capital seeking yield, strengthening
+    the US Dollar against other currencies.
+- from: us_federal_reserve
+  to: fii_fpi_flows
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: Fed monetary tightening pulls foreign portfolio capital out of emerging
+    markets like India back to US assets.
+- from: european_central_bank
+  to: us_dollar_index
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: ECB rate hikes strengthen the Euro, which inversely lowers the value
+    of the US Dollar Index (DXY).
+- from: us_government
+  to: us_consumer_demand
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Federal stimulus packages and tax cuts boost disposable income, driving
+    American consumer spending.
+- from: us_government
+  to: global_semiconductor_supply_chain
+  type: REGULATES
+  weight: 0.9
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: US export controls and sanctions restrict the flow of advanced microchips
+    and manufacturing equipment globally.
+- from: chinese_government
+  to: china_manufacturing_output
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: State subsidies, credit easing, and infrastructure spending by Beijing
+    directly boost Chinese factory production.
+- from: chinese_government
+  to: industrial_metals_index
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Chinese state-backed property and infrastructure stimulus drives massive
+    global demand for steel, copper, and aluminum.
+- from: russian_government
+  to: global_natural_gas
+  type: DISRUPTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Russian state decisions to restrict pipeline flows or weaponize energy
+    exports spike global natural gas prices.
+- from: opec
+  to: brent_crude
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: OPEC+ coordinated production cuts artificially restrict global oil
+    supply, driving up Brent crude prices.
+- from: wto
+  to: india_trade_deficit
+  type: REGULATES
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: WTO mandates against protective import tariffs force India to open
+    markets, potentially widening the trade deficit.
+- from: imf
+  to: india_forex_reserves
+  type: FUNDS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: IMF Special Drawing Rights (SDR) allocations directly increase India's
+    foreign exchange reserves.
+- from: ministry_of_road_transport
+  to: highway_network
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: MoRTH budget allocations and NHAI project approvals directly expand
+    the national highway and expressway network.
+- from: ministry_of_railways
+  to: indian_railways_network
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Railway Ministry capital expenditure drives track electrification,
+    gauge conversion, and network expansion.
+- from: ministry_of_railways
+  to: dedicated_freight_corridors
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Ministry funding and land acquisition support accelerate the completion
+    of Dedicated Freight Corridors.
+- from: ministry_of_power
+  to: national_power_grid
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Power Ministry policies and investments strengthen transmission capacity
+    and grid integration.
+- from: ministry_of_power
+  to: renewable_energy_parks
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Subsidies, PLI schemes, and policy targets set by the Power Ministry
+    increase solar and wind park capacity.
+- from: rbi
+  to: upi_platform
+  type: REGULATES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: RBI regulatory frameworks and NPCI oversight expand the capacity, security,
+    and adoption of the UPI ecosystem.
+- from: trai
+  to: telecom_spectrum
+  type: REGULATES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: TRAI pricing recommendations and auction rules determine the volume
+    of spectrum deployed by telcos.
+- from: trai
+  to: telecom_towers_network
+  type: REGULATES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Infrastructure sharing regulations by TRAI facilitate the expansion
+    of mobile tower density.
+- from: cci
+  to: ondc_platform
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Antitrust actions by CCI against e-commerce duopolies drive merchants
+    to adopt the open ONDC network.
+- from: dgca
+  to: commercial_airports
+  type: REGULATES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: DGCA safety clearances, aerodrome licensing, and slot allocations increase
+    operational airport capacity.
+- from: cpcb
+  to: coal_power_plants
+  type: REGULATES
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Strict CPCB emission norms force the closure or reduced output of older,
+    polluting thermal power plants.
+- from: national_green_tribunal
+  to: coal_power_plants
+  type: REGULATES
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: NGT shutdown orders halt operations at thermal plants violating environmental
+    clearances.
+- from: national_green_tribunal
+  to: highway_network
+  type: REGULATES
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Environmental clearance stays and ecological mandates by the NGT delay
+    highway construction projects.
+- from: uidai
+  to: aadhaar_database
+  type: MANAGES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: UIDAI policies, server upgrades, and biometric drives expand the capacity
+    and reach of the Aadhaar database.
+- from: municipal_corporations
+  to: municipal_water_grid
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Civic body investments and public works projects expand piped water
+    supply networks in urban areas.
+- from: municipal_corporations
+  to: sewage_drainage_network
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Municipal funding and urban planning improve stormwater drains and
+    sewage treatment infrastructure.
+- from: state_electricity_boards
+  to: national_power_grid
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: The financial health of state discoms determines their ability to purchase
+    and draw power from the national grid.
+- from: european_union
+  to: global_shipping_routes
+  type: REGULATES
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: EU carbon border taxes and maritime emission norms restrict older,
+    polluting vessels from European shipping routes.
+- from: ministry_of_agriculture
+  to: arable_topsoil
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: LONG_TERM
+  description: Long-term fertilizer subsidies encourage chemical overuse, gradually
+    degrading arable topsoil health.
+- from: municipal_corporations
+  to: urban_population_density
+  type: REGULATES
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: Strict municipal zoning laws and Floor Space Index (FSI) limits restrict
+    urban crowding and density.

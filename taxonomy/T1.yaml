@@ -99,6 +99,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 - id: northeast_monsoon
   aliases:
   - Northeast Monsoon
@@ -119,6 +120,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 - id: indian_ocean_dipole
   aliases:
   - Indian Ocean Dipole
@@ -138,6 +140,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 - id: cyclonic_storm_systems
   aliases:
   - Cyclonic Storm Systems
@@ -149,6 +152,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 - id: global_surface_temperature
   aliases:
   - Global Surface Temperature
@@ -188,6 +192,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 - id: indian_plate_interior
   aliases:
   - Indian Plate Interior
@@ -247,6 +252,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 - id: peninsular_river_systems
   aliases:
   - Peninsular River Systems
@@ -257,6 +263,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 - id: groundwater_aquifers
   aliases:
   - Groundwater Aquifers
@@ -267,6 +274,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 - id: bay_of_bengal_marine_system
   aliases:
   - Bay of Bengal Marine System
@@ -325,6 +333,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 - id: migratory_pest_populations
   aliases:
   - Migratory Pest Populations
@@ -335,6 +344,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 - id: marine_fish_stocks
   aliases:
   - Marine Fish Stocks
@@ -345,6 +355,7 @@ nodes:
   category: T1
   level: 4
   status: active
+  portal: true
 edges:
 - from: t1
   to: meteorological_systems
@@ -584,3 +595,311 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Biological Populations contains Marine Fish Stocks
+- from: el_nino_southern_oscillation
+  to: southwest_monsoon
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: El Nino events warm the central Pacific Ocean, shifting global atmospheric
+    circulation patterns that suppress the moisture-bearing southwest monsoon winds
+    over the Indian subcontinent.
+- from: el_nino_southern_oscillation
+  to: global_surface_temperature
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: During an El Nino phase, the Pacific Ocean releases massive amounts
+    of stored thermal energy into the atmosphere, temporarily spiking global average
+    surface temperatures.
+- from: indian_ocean_dipole
+  to: southwest_monsoon
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: A positive Indian Ocean Dipole creates a sea surface temperature gradient
+    that pushes moist air towards the Indian landmass, enhancing the strength and
+    rainfall of the southwest monsoon.
+- from: global_surface_temperature
+  to: himalayan_glaciers
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: LONG_TERM
+  description: Rising global atmospheric temperatures accelerate the melting rate
+    and retreat of high-altitude Himalayan ice caps, reducing their overall mass balance.
+- from: global_surface_temperature
+  to: arabian_sea_marine_system
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Long-term increases in global surface temperatures lead to the absorption
+    of excess heat by the oceans, steadily raising the sea surface temperature of
+    the Arabian Sea.
+- from: southwest_monsoon
+  to: groundwater_aquifers
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Heavy seasonal rainfall from the southwest monsoon percolates through
+    the soil, serving as the primary natural recharge mechanism for India's underground
+    water tables.
+- from: southwest_monsoon
+  to: peninsular_river_systems
+  type: SUPPLIES
+  weight: 0.95
+  polarity: 1
+  delay: SHORT_TERM
+  description: Summer monsoon precipitation directly dictates the water volume and
+    flow rates of rain-fed southern rivers like the Godavari, Krishna, and Kaveri.
+- from: southwest_monsoon
+  to: arable_topsoil
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Adequate monsoon rainfall maintains the critical soil moisture necessary
+    for Kharif crop sowing and prevents the desiccation of arable topsoil.
+- from: northeast_monsoon
+  to: peninsular_river_systems
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Winter rains from the retreating northeast monsoon recharge rivers
+    and reservoirs in southern India, particularly sustaining the Kaveri basin during
+    dry months.
+- from: western_disturbances
+  to: himalayan_glaciers
+  type: SUPPLIES
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Winter storm systems originating in the Mediterranean drop heavy snow
+    over the Himalayas, replenishing the ice mass of mountain glaciers.
+- from: western_disturbances
+  to: himalayan_river_systems
+  type: SUPPLIES
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Snowmelt from precipitation brought by western disturbances feeds northern
+    perennial rivers during the pre-monsoon summer months.
+- from: bay_of_bengal_marine_system
+  to: cyclonic_storm_systems
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Elevated sea surface temperatures and thermal energy in the Bay of
+    Bengal provide the latent heat and moisture necessary to trigger and intensify
+    tropical cyclones.
+- from: arabian_sea_marine_system
+  to: southwest_monsoon
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Evaporation from the warming Arabian Sea provides the bulk of the atmospheric
+    moisture carried by the southwest monsoon winds over the Indian landmass.
+- from: cyclonic_storm_systems
+  to: forest_cover
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: High-velocity cyclone winds uproot trees and storm surges inundate
+    coastal forests, causing severe mechanical and saline damage to ecosystems like
+    the Sundarbans.
+- from: cyclonic_storm_systems
+  to: arable_topsoil
+  type: DISRUPTS
+  weight: 0.75
+  polarity: -1
+  delay: SHORT_TERM
+  description: Cyclone-induced storm surges cause coastal flooding that deposits salt
+    into agricultural lands, degrading the fertility of arable topsoil.
+- from: himalayan_tectonic_plates
+  to: himalayan_river_systems
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: IMMEDIATE
+  description: Earthquakes and tectonic shifts trigger massive landslides that can
+    temporarily dam, block, or alter the course of mountain river systems.
+- from: himalayan_glaciers
+  to: himalayan_river_systems
+  type: SUPPLIES
+  weight: 0.95
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Glacial meltwater provides the crucial base flow for perennial northern
+    rivers like the Ganga and Indus, especially during non-monsoon dry seasons.
+- from: himalayan_river_systems
+  to: groundwater_aquifers
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Continuous flow from perennial rivers slowly percolates downward, recharging
+    the deep alluvial groundwater aquifers of the Indo-Gangetic plain.
+- from: forest_cover
+  to: groundwater_aquifers
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: LONG_TERM
+  description: Dense forest canopies and root systems slow down surface water runoff,
+    allowing more time for rainwater to percolate and recharge groundwater tables.
+- from: forest_cover
+  to: arable_topsoil
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Tree roots bind the earth and forest canopies break the impact of heavy
+    rain, preventing the wind and water erosion of nutrient-rich topsoil in adjacent
+    lands.
+- from: migratory_pest_populations
+  to: arable_topsoil
+  type: DISRUPTS
+  weight: 0.65
+  polarity: -1
+  delay: SHORT_TERM
+  description: Swarms of locusts and other migratory pests strip vegetation cover
+    entirely, exposing the underlying topsoil to rapid wind and water erosion.
+- from: bay_of_bengal_marine_system
+  to: marine_fish_stocks
+  type: SUPPLIES
+  weight: 0.85
+  polarity: 1
+  delay: LONG_TERM
+  description: Nutrient upwelling and the overall ecological health of the Bay of
+    Bengal sustain regional pelagic and demersal wild fish populations.
+- from: el_nino_southern_oscillation
+  to: global_food_grain_supply
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: ENSO-driven droughts in major agricultural basins (like India and Australia)
+    reduce crop yields, shrinking the total volume of grains available in global markets.
+- from: southwest_monsoon
+  to: global_food_grain_supply
+  type: SUPPLIES
+  weight: 0.85
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Abundant monsoon rains ensure high yields for India's Kharif crops
+    (like rice), increasing the volume of grains available for global export markets.
+- from: southwest_monsoon
+  to: global_sugar_supply
+  type: SUPPLIES
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Good monsoon rains in Maharashtra and Uttar Pradesh boost sugarcane
+    yields, increasing India's capacity to export sugar to global markets.
+- from: southwest_monsoon
+  to: seasonal_migrant_labor
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Strong monsoons increase agricultural sowing and harvesting activity,
+    driving up the demand for seasonal migrant labor in rural farming hubs.
+- from: western_disturbances
+  to: global_food_grain_supply
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Winter rains brought by western disturbances are crucial for the success
+    of the Rabi wheat crop in northwest India, impacting global wheat supplies.
+- from: cyclonic_storm_systems
+  to: major_seaports
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: SHORT_TERM
+  description: High-velocity winds and storm surges from cyclones force the suspension
+    of maritime operations and damage cargo handling infrastructure at coastal ports.
+- from: cyclonic_storm_systems
+  to: national_power_grid
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Severe cyclone winds and falling trees snap high-tension transmission
+    lines and damage substations, causing regional failures in the national power
+    grid.
+- from: himalayan_tectonic_plates
+  to: national_power_grid
+  type: DISRUPTS
+  weight: 0.65
+  polarity: -1
+  delay: IMMEDIATE
+  description: Major seismic events along Himalayan fault lines can structurally damage
+    hydroelectric dams and transmission infrastructure, disrupting power supply.
+- from: himalayan_river_systems
+  to: coal_power_plants
+  type: SUPPLIES
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Perennial river flows provide the massive volumes of continuous cooling
+    water required to operate thermal power plants located along the Ganga basin.
+- from: peninsular_river_systems
+  to: municipal_water_grid
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Southern rivers and their associated reservoirs are the primary source
+    of raw water for municipal supply networks in major cities like Chennai and Bangalore.
+- from: groundwater_aquifers
+  to: municipal_water_grid
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Borewells drawing from deep groundwater aquifers heavily supplement
+    piped municipal water supplies, especially in rapidly urbanizing peripheral areas.
+- from: arable_topsoil
+  to: global_food_grain_supply
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: The health and fertility of India's topsoil directly dictate the long-term
+    yield potential of staple crops that feed into international agricultural supply
+    chains.
+- from: arable_topsoil
+  to: farmer_unions
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: The degradation of fertile topsoil reduces crop yields and farm profitability,
+    driving agrarian distress that mobilizes farmer unions for protests and demands.
+- from: migratory_pest_populations
+  to: global_food_grain_supply
+  type: DISRUPTS
+  weight: 0.75
+  polarity: -1
+  delay: SHORT_TERM
+  description: Swarms of locusts consume vast tracts of standing crops, drastically
+    reducing the harvest yields that feed into domestic and international agricultural
+    markets.
+- from: marine_fish_stocks
+  to: global_supply_chains
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Healthy marine fish populations support India's commercial seafood
+    export industry, feeding directly into global food and logistics supply chains.

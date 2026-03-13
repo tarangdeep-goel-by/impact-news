@@ -87,6 +87,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  portal: true
 - id: private_preschools
   aliases:
   - Play School
@@ -180,6 +181,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  portal: true
 - id: free_textbooks_uniforms
   aliases:
   - Free Textbooks
@@ -208,6 +210,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  portal: true
 - id: medical_education
   aliases:
   - MBBS
@@ -218,6 +221,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  portal: true
 - id: arts_science_commerce
   aliases:
   - BA
@@ -258,6 +262,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  portal: true
 - id: phd_research_programs
   aliases:
   - PhD
@@ -332,6 +337,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  portal: true
 - id: banking_ssc_exams
   aliases:
   - SSC CGL
@@ -342,6 +348,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  portal: true
 - id: teaching_eligibility_exams
   aliases:
   - TET
@@ -352,6 +359,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  portal: true
 - id: test_prep_industry
   aliases:
   - Test Prep Industry
@@ -371,6 +379,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  portal: true
 - id: private_tutors
   aliases:
   - Home Tutor
@@ -390,6 +399,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  portal: true
 - id: language_soft_skills
   aliases:
   - English Speaking Course
@@ -399,6 +409,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  portal: true
 - id: corporate_upskilling
   aliases:
   - Professional Certification
@@ -408,6 +419,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  portal: true
 - id: k12_edtech
   aliases:
   - Online Tuition App
@@ -418,6 +430,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  portal: true
 - id: higher_ed_online_degrees
   aliases:
   - Online Degree
@@ -428,6 +441,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  portal: true
 - id: test_prep_edtech
   aliases:
   - Online Mock Tests
@@ -447,6 +461,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  portal: true
 - id: college_university_fees
   aliases:
   - College Fees
@@ -457,6 +472,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  portal: true
 - id: coaching_fees
   aliases:
   - Coaching Fee
@@ -466,6 +482,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  portal: true
 - id: educational_scholarships
   aliases:
   - Student Scholarship
@@ -821,3 +838,262 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Education economics contains educational scholarships and fee waivers
+- from: anganwadi_system
+  to: childhood_malnutrition
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Increased coverage and funding of Anganwadi centers reduces childhood
+    malnutrition through direct supplementary nutrition programs.
+- from: mid_day_meal
+  to: childhood_malnutrition
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Expansion of mid-day meal schemes directly reduces stunting and wasting
+    in school-going children by providing guaranteed daily calories.
+- from: mid_day_meal
+  to: government_schools
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Better mid-day meal provisions act as a strong economic incentive,
+    increasing student enrollment and daily attendance in government schools.
+- from: free_textbooks_uniforms
+  to: government_schools
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Provision of free educational supplies lowers the barrier to entry,
+    driving higher enrollment in government schools among low-income households.
+- from: government_schools
+  to: private_schools
+  type: COMPETES_WITH
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Improvement in government school infrastructure and teaching quality
+    reduces the dependency on and enrollment in affordable private schools.
+- from: private_preschools
+  to: private_schools
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Enrollment in premium private preschools acts as a feeder system, increasing
+    demand for elite private K-12 schools.
+- from: private_schools
+  to: school_fees
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The growth and premiumization of private schools directly drive up
+    the average household expenditure on school fees.
+- from: school_fees
+  to: personal_loan_emi
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Rising school fees force parents to take personal or specialized K-12
+    education loans, increasing their monthly EMI burdens.
+- from: cbse_exams
+  to: k12_edtech
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased difficulty or sudden syllabus changes in CBSE board exams
+    drive anxious students and parents to subscribe to K-12 edtech platforms for extra
+    help.
+- from: state_board_exams
+  to: university_entrance
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Grade inflation or syllabus alignment in state boards directly affects
+    the volume and competitiveness of students appearing for central university entrance
+    exams (CUET).
+- from: engineering_entrance
+  to: offline_coaching_centers
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher competition and tougher cutoffs in JEE drive up student enrollment
+    in specialized offline coaching centers.
+- from: medical_entrance
+  to: offline_coaching_centers
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intense competition for limited medical seats via NEET UG directly
+    increases demand for dedicated offline coaching institutes.
+- from: test_prep_edtech
+  to: offline_coaching_centers
+  type: COMPETES_WITH
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: The growth of affordable online test prep platforms reduces enrollment
+    in expensive, traditional offline coaching centers.
+- from: offline_coaching_centers
+  to: coaching_fees
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The proliferation and corporatization of premium offline coaching institutes
+    drive up average tuition and coaching fees.
+- from: offline_coaching_centers
+  to: pg_and_hostel_fees
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The concentration of coaching centers in educational hubs (like Kota
+    or Mukherjee Nagar) drives up local PG and hostel accommodation costs due to high
+    student influx.
+- from: private_tutors
+  to: coaching_fees
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: The rising hourly rates of private home tutors contribute to the overall
+    inflation in household coaching and tuition expenses.
+- from: coaching_fees
+  to: personal_loan_emi
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Exorbitant coaching fees for competitive exams increase household reliance
+    on personal credit and micro-loans.
+- from: engineering_education
+  to: it_sector_jobs
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Expansion of engineering college seats and graduation rates increases
+    the supply of entry-level candidates for IT sector jobs.
+- from: medical_education
+  to: doctor_consultation
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: More medical graduates eventually increase the availability of doctors,
+    expanding capacity for outpatient consultations.
+- from: management_education
+  to: private_bank_jobs
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: MBA and PGDM graduates directly feed into the talent pool for private
+    banking, wealth management, and corporate finance roles.
+- from: arts_science_commerce
+  to: banking_ssc_exams
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: A large volume of general graduation degree holders drives up the applicant
+    pool for banking and SSC recruitment exams.
+- from: phd_research_programs
+  to: teaching_eligibility_exams
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Growth in PhD scholars increases the pool of candidates appearing for
+    NET and higher education teaching eligibility exams.
+- from: college_university_fees
+  to: personal_loan_emi
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Rising costs of higher education force students and parents to take
+    on formal education loans, increasing EMI burdens.
+- from: educational_scholarships
+  to: college_university_fees
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Increased availability of government and private scholarships directly
+    reduces the net out-of-pocket college fees for students.
+- from: civil_services_exam
+  to: upsc_civil_services
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The scale and intake of the UPSC exam directly determine the number
+    of civil service job placements available.
+- from: banking_ssc_exams
+  to: psu_bank_jobs
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Vacancies and clearances in IBPS and SSC exams directly lead to employment
+    in public sector banks.
+- from: teaching_eligibility_exams
+  to: government_teacher_jobs
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Clearing TET/CTET is a direct prerequisite that increases the pool
+    of eligible candidates for government teacher jobs.
+- from: technical_vocational_training
+  to: factory_worker_jobs
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: ITI and polytechnic training increases the employable, skilled workforce
+    available for manufacturing and factory roles.
+- from: language_soft_skills
+  to: urban_company_partner_earnings
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Better soft skills and communication training improve customer ratings
+    and tips, directly boosting earnings for gig and service workers.
+- from: corporate_upskilling
+  to: it_sector_salary
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Professional certifications and coding bootcamps enable IT workers
+    to negotiate higher salary packages and promotions.
+- from: k12_edtech
+  to: smartphone_device
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Adoption of online learning apps forces households to purchase dedicated
+    smartphones or tablets for their children's education.
+- from: higher_ed_online_degrees
+  to: fiber_broadband_tariff
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: High bandwidth requirements for streaming online degree lectures drive
+    households to upgrade to premium fiber broadband plans.
