@@ -18,7 +18,7 @@ log = logging.getLogger(__name__)
 
 class TaxonomyMerger:
     TAXONOMY_DIR = Path("taxonomy")
-    FLAT_FILES = [f"I{i}.yaml" for i in range(1, 12)] + [f"T{i}.yaml" for i in range(1, 6)]
+    FLAT_FILES = [f"I{i}.yaml" for i in range(1, 12)] + [f"T{i}.yaml" for i in range(1, 6)] + ["bridge_edges.yaml"]
     PATCH_FILES = [
         "taxonomy/edge_patches.yaml",
         "taxonomy/edge_patches_generated.yaml",

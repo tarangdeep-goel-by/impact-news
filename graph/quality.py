@@ -444,37 +444,24 @@ class QualityAnalyzer:
 
         Callable standalone — used by merge.py post-merge hook.
         """
-        from user.inference import (
-            CITY_GRAPH_MAP,
-            COMMUTE_MAP,
-            DEPENDENTS_MAP,
-            DIET_MAP,
-            HEALTH_MAP,
-            HOUSING_MAP,
-            INVESTMENTS_MAP,
-            LOANS_MAP,
-            WORK_SECTOR_MAP,
-        )
+        import user.inference as _inf
 
         all_refs: set[str] = set()
 
         # City map: nested dict[str, dict[str, list[str]]]
-        for _city, categories in CITY_GRAPH_MAP.items():
+        city_map = getattr(_inf, "CITY_GRAPH_MAP", {})
+        for _city, categories in city_map.items():
             for _cat, node_ids in categories.items():
                 for nid in node_ids:
                     all_refs.add(nid)
 
         # Tuple maps: dict[str, list[tuple[str, str, float]]]
-        tuple_maps = [
-            WORK_SECTOR_MAP,
-            HOUSING_MAP,
-            COMMUTE_MAP,
-            LOANS_MAP,
-            INVESTMENTS_MAP,
-            DIET_MAP,
-            DEPENDENTS_MAP,
-            HEALTH_MAP,
+        _MAP_NAMES = [
+            "WORK_SECTOR_MAP", "HOUSING_MAP", "COMMUTE_MAP",
+            "LOANS_MAP", "INVESTMENTS_MAP", "DIET_MAP",
+            "DEPENDENTS_MAP", "HEALTH_MAP",
         ]
+        tuple_maps = [getattr(_inf, n) for n in _MAP_NAMES if hasattr(_inf, n)]
         for mapping in tuple_maps:
             for _key, tuples in mapping.items():
                 for node_id, _rel, _imp in tuples:
