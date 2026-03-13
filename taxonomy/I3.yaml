@@ -93,6 +93,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: retail_diesel
   aliases:
   - Retail Diesel
@@ -102,6 +103,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: cng_fuel
   aliases:
   - CNG Fuel
@@ -112,6 +114,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: ev_charging_tariff
   aliases:
   - EV Charging Tariff
@@ -319,6 +322,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  port: true
 - id: premium_train_fare
   aliases:
   - Premium Train Fare
@@ -380,6 +384,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: road_potholes
   aliases:
   - Road Potholes

@@ -154,6 +154,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: women_safety
   aliases:
   - Women Safety

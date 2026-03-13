@@ -223,6 +223,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: fiber_broadband_tariff
   aliases:
   - Fiber Broadband Tariff
@@ -270,6 +271,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: pan_aadhaar_linkage
   aliases:
   - PAN-Aadhaar Linkage
@@ -317,6 +319,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: upi_transaction_limits
   aliases:
   - UPI Transaction Limits
@@ -426,6 +429,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: laptop_computer
   aliases:
   - Laptop Computer

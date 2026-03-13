@@ -151,6 +151,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: pg_and_hostel_fees
   aliases:
   - pg rent
@@ -227,6 +228,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: municipal_water_supply
   aliases:
   - kaveri water
@@ -238,6 +240,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: private_water_tanker
   aliases:
   - water tanker

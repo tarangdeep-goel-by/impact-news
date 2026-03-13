@@ -99,6 +99,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: startup_ecosystem
   aliases:
   - Startup Ecosystem
@@ -227,6 +228,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: government_teacher_jobs
   aliases:
   - Government Teacher Jobs
@@ -347,6 +349,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: agriculture_and_allied
   aliases:
   - Agriculture & Allied Labor
@@ -496,6 +499,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: unemployment_levels
   aliases:
   - Unemployment Levels

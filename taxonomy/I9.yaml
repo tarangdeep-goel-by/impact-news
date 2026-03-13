@@ -124,6 +124,7 @@ nodes:
   status: active
   is_category: false
   portal: true
+  port: true
 - id: outdoor_cold
   aliases:
   - Winter chill
@@ -169,6 +170,7 @@ nodes:
   status: active
   is_category: false
   portal: true
+  port: true
 - id: basement_flooding
   aliases:
   - Flooded basements
