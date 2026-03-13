@@ -1,0 +1,507 @@
+nodes:
+- id: t4
+  aliases:
+  - Technological & Physical Infrastructure
+  - Physical Grids
+  - National Infrastructure
+  - Foundational Tech
+  category: T4
+  level: 1
+  status: active
+  is_category: true
+- id: energy_power_infrastructure
+  aliases:
+  - Energy & Power Infrastructure
+  - Power Grids
+  - Urja Infrastructure
+  - Energy Generation Facilities
+  category: T4
+  level: 2
+  status: active
+  is_category: true
+- id: digital_telecom_infrastructure
+  aliases:
+  - Digital & Telecom Infrastructure
+  - Communications Network
+  - Digital Backbone
+  - Telecom Grids
+  category: T4
+  level: 2
+  status: active
+  is_category: true
+- id: transport_logistics_infrastructure
+  aliases:
+  - Transport & Logistics Infrastructure
+  - Mobility Networks
+  - Freight Infrastructure
+  - Parivahan Network
+  category: T4
+  level: 2
+  status: active
+  is_category: true
+- id: civic_urban_infrastructure
+  aliases:
+  - Civic & Urban Infrastructure
+  - Municipal Grids
+  - City Infrastructure
+  - Public Works
+  category: T4
+  level: 2
+  status: active
+  is_category: true
+- id: advanced_tech_infrastructure
+  aliases:
+  - Advanced Tech & Space Infrastructure
+  - Strategic Technology
+  - Space Assets
+  - High-Tech Facilities
+  category: T4
+  level: 2
+  status: active
+  is_category: true
+- id: national_power_grid
+  aliases:
+  - National Power Grid
+  - Electricity Grid
+  - Bijli Grid
+  - Transmission Lines
+  - National Load Despatch Centre
+  category: T4
+  level: 3
+  status: active
+- id: coal_power_plants
+  aliases:
+  - Coal Power Plants
+  - Thermal Power Stations
+  - Koyla Plant
+  - NTPC Plants
+  - Thermal Generation Units
+  category: T4
+  level: 3
+  status: active
+- id: renewable_energy_parks
+  aliases:
+  - Renewable Energy Parks
+  - Solar Parks
+  - Wind Farms
+  - Saur Urja Plant
+  - Green Energy Grid
+  category: T4
+  level: 3
+  status: active
+- id: oil_gas_pipelines
+  aliases:
+  - Oil & Gas Pipelines
+  - Petroleum Pipelines
+  - Natural Gas Grid
+  - Gas Pipeline Network
+  - Fuel Transport Pipes
+  category: T4
+  level: 3
+  status: active
+- id: nuclear_power_plants
+  aliases:
+  - Nuclear Power Plants
+  - Atomic Power Stations
+  - Nuclear Reactors
+  - NPCIL Facilities
+  category: T4
+  level: 3
+  status: active
+- id: telecom_spectrum
+  aliases:
+  - Telecom Spectrum
+  - 5G Spectrum
+  - 4G Airwaves
+  - Telecom Bandwidth
+  - Radio Frequencies
+  category: T4
+  level: 3
+  status: active
+- id: telecom_towers_network
+  aliases:
+  - Telecom Towers Network
+  - Cell Towers
+  - Mobile Towers
+  - Mobile Network Infrastructure
+  - Base Transceiver Stations
+  category: T4
+  level: 3
+  status: active
+- id: optical_fibre_network
+  aliases:
+  - Optical Fibre Network
+  - Broadband Backbone
+  - BharatNet
+  - Fiber Optic Cables
+  - OFC Network
+  category: T4
+  level: 3
+  status: active
+- id: submarine_internet_cables
+  aliases:
+  - Submarine Internet Cables
+  - Undersea Cables
+  - International Internet Gateway
+  - Ocean Data Cables
+  category: T4
+  level: 3
+  status: active
+- id: data_centers
+  aliases:
+  - Data Centers
+  - Server Farms
+  - Cloud Infrastructure
+  - Data Storage Facilities
+  - Colocation Centers
+  category: T4
+  level: 3
+  status: active
+- id: digital_public_infrastructure
+  aliases:
+  - Digital Public Infrastructure
+  - DPI
+  - India Stack
+  - Digital Public Goods
+  category: T4
+  level: 3
+  status: active
+  is_category: true
+- id: upi_platform
+  aliases:
+  - UPI Platform
+  - Unified Payments Interface Switch
+  - NPCI Infrastructure
+  - UPI Server
+  - Payment Gateway Backbone
+  category: T4
+  level: 4
+  status: active
+- id: aadhaar_database
+  aliases:
+  - Aadhaar Database
+  - UIDAI Servers
+  - CIDR
+  - Biometric Identity Database
+  - Aadhaar Authentication Infrastructure
+  category: T4
+  level: 4
+  status: active
+- id: ondc_platform
+  aliases:
+  - ONDC Platform
+  - Open Network for Digital Commerce
+  - ONDC Protocol
+  - E-commerce Public Network
+  category: T4
+  level: 4
+  status: active
+- id: indian_railways_network
+  aliases:
+  - Indian Railways Network
+  - Railway Tracks
+  - Train Network
+  - Railway Infrastructure
+  - Broad Gauge Network
+  category: T4
+  level: 3
+  status: active
+- id: dedicated_freight_corridors
+  aliases:
+  - Dedicated Freight Corridors
+  - DFC
+  - Freight Railway Lines
+  - Goods Train Corridors
+  - EDFC
+  - WDFC
+  category: T4
+  level: 3
+  status: active
+- id: highway_network
+  aliases:
+  - Highway Network
+  - National Highways
+  - Expressways
+  - NHAI Roads
+  - Sadak Network
+  - Road Infrastructure
+  category: T4
+  level: 3
+  status: active
+- id: commercial_airports
+  aliases:
+  - Commercial Airports
+  - Airport Infrastructure
+  - Hawai Adda
+  - Aviation Hubs
+  - Runways and Terminals
+  category: T4
+  level: 3
+  status: active
+- id: major_seaports
+  aliases:
+  - Major Seaports
+  - Shipping Ports
+  - Bandargah
+  - Cargo Terminals
+  - Maritime Ports
+  category: T4
+  level: 3
+  status: active
+- id: global_shipping_routes
+  aliases:
+  - Global Shipping Routes
+  - Sea Lanes
+  - Suez Canal
+  - Maritime Chokepoints
+  - International Trade Routes
+  category: T4
+  level: 3
+  status: active
+- id: municipal_water_grid
+  aliases:
+  - Municipal Water Grid
+  - Water Supply Network
+  - Pani Ki Pipeline
+  - Water Reservoirs
+  - Pumping Stations
+  category: T4
+  level: 3
+  status: active
+- id: sewage_drainage_network
+  aliases:
+  - Sewage & Drainage Network
+  - Stormwater Drains
+  - Gutter System
+  - Sewage Treatment Plants
+  - Underground Drainage
+  category: T4
+  level: 3
+  status: active
+- id: satellite_network
+  aliases:
+  - Satellite Network
+  - ISRO Satellites
+  - Communication Satellites
+  - GPS NavIC
+  - Orbital Infrastructure
+  category: T4
+  level: 3
+  status: active
+- id: semiconductor_fabs
+  aliases:
+  - Semiconductor Fabs
+  - Chip Manufacturing Plants
+  - Wafer Fabs
+  - Semiconductor Foundries
+  - Microchip Plants
+  category: T4
+  level: 3
+  status: active
+edges:
+- from: t4
+  to: energy_power_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Technological & Physical Infrastructure contains Energy & Power Infrastructure
+- from: t4
+  to: digital_telecom_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Technological & Physical Infrastructure contains Digital & Telecom
+    Infrastructure
+- from: t4
+  to: transport_logistics_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Technological & Physical Infrastructure contains Transport & Logistics
+    Infrastructure
+- from: t4
+  to: civic_urban_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Technological & Physical Infrastructure contains Civic & Urban Infrastructure
+- from: t4
+  to: advanced_tech_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Technological & Physical Infrastructure contains Advanced Tech & Space
+    Infrastructure
+- from: energy_power_infrastructure
+  to: national_power_grid
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy & Power Infrastructure contains the National Power Grid
+- from: energy_power_infrastructure
+  to: coal_power_plants
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy & Power Infrastructure contains Coal Power Plants
+- from: energy_power_infrastructure
+  to: renewable_energy_parks
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy & Power Infrastructure contains Renewable Energy Parks
+- from: energy_power_infrastructure
+  to: oil_gas_pipelines
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy & Power Infrastructure contains Oil & Gas Pipelines
+- from: energy_power_infrastructure
+  to: nuclear_power_plants
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy & Power Infrastructure contains Nuclear Power Plants
+- from: digital_telecom_infrastructure
+  to: telecom_spectrum
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Telecom Infrastructure contains Telecom Spectrum
+- from: digital_telecom_infrastructure
+  to: telecom_towers_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Telecom Infrastructure contains the Telecom Towers Network
+- from: digital_telecom_infrastructure
+  to: optical_fibre_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Telecom Infrastructure contains the Optical Fibre Network
+- from: digital_telecom_infrastructure
+  to: submarine_internet_cables
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Telecom Infrastructure contains Submarine Internet Cables
+- from: digital_telecom_infrastructure
+  to: data_centers
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Telecom Infrastructure contains Data Centers
+- from: digital_telecom_infrastructure
+  to: digital_public_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Telecom Infrastructure contains Digital Public Infrastructure
+- from: digital_public_infrastructure
+  to: upi_platform
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Public Infrastructure contains the UPI Platform
+- from: digital_public_infrastructure
+  to: aadhaar_database
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Public Infrastructure contains the Aadhaar Database
+- from: digital_public_infrastructure
+  to: ondc_platform
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Public Infrastructure contains the ONDC Platform
+- from: transport_logistics_infrastructure
+  to: indian_railways_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Logistics Infrastructure contains the Indian Railways Network
+- from: transport_logistics_infrastructure
+  to: dedicated_freight_corridors
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Logistics Infrastructure contains Dedicated Freight Corridors
+- from: transport_logistics_infrastructure
+  to: highway_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Logistics Infrastructure contains the Highway Network
+- from: transport_logistics_infrastructure
+  to: commercial_airports
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Logistics Infrastructure contains Commercial Airports
+- from: transport_logistics_infrastructure
+  to: major_seaports
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Logistics Infrastructure contains Major Seaports
+- from: transport_logistics_infrastructure
+  to: global_shipping_routes
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Logistics Infrastructure contains Global Shipping Routes
+- from: civic_urban_infrastructure
+  to: municipal_water_grid
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic & Urban Infrastructure contains the Municipal Water Grid
+- from: civic_urban_infrastructure
+  to: sewage_drainage_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic & Urban Infrastructure contains the Sewage & Drainage Network
+- from: advanced_tech_infrastructure
+  to: satellite_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Advanced Tech & Space Infrastructure contains the Satellite Network
+- from: advanced_tech_infrastructure
+  to: semiconductor_fabs
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Advanced Tech & Space Infrastructure contains Semiconductor Fabs

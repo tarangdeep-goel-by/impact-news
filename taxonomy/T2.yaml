@@ -1,0 +1,1144 @@
+nodes:
+- id: t2
+  aliases:
+  - Institutional & Sovereign Entities
+  - State Bodies
+  - Government & Regulators
+  - Sovereign Institutions
+  category: T2
+  level: 1
+  status: active
+  is_category: true
+- id: indian_union_government
+  aliases:
+  - Central Government
+  - Union Government
+  - Kendriya Sarkar
+  - Government of India
+  - GoI
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: indian_regulatory_bodies
+  aliases:
+  - Regulators
+  - Statutory Regulators
+  - Niyamak
+  - Watchdogs
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: indian_judiciary_and_law_enforcement
+  aliases:
+  - Judiciary
+  - Courts and Agencies
+  - Nyayapalika
+  - Investigative Agencies
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: indian_statutory_frameworks_and_councils
+  aliases:
+  - Statutory Frameworks
+  - Policy Councils
+  - Government Committees
+  - Statutory Bodies
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: state_and_local_governments
+  aliases:
+  - State Governments
+  - Local Bodies
+  - Rajya Sarkar
+  - Civic Authorities
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: global_sovereign_entities
+  aliases:
+  - Global Institutions
+  - Foreign Governments
+  - International Bodies
+  - Geopolitical Entities
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: economic_ministries
+  aliases:
+  - Finance and Commerce Ministries
+  - Economic Departments
+  - Arthik Mantralaya
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: infrastructure_ministries
+  aliases:
+  - Infra Ministries
+  - Transport and Power Ministries
+  - B बुनियादी ढांचा मंत्रालय
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: social_and_welfare_ministries
+  aliases:
+  - Welfare Ministries
+  - Social Sector Departments
+  - Kalyan Mantralaya
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: ministry_of_finance
+  aliases:
+  - Finance Ministry
+  - Vitt Mantralaya
+  - FinMin
+  - MoF
+  category: T2
+  level: 4
+  status: active
+- id: ministry_of_commerce_and_industry
+  aliases:
+  - Commerce Ministry
+  - Vanijya Mantralaya
+  - DPIIT
+  - MoCI
+  category: T2
+  level: 4
+  status: active
+- id: ministry_of_road_transport
+  aliases:
+  - MoRTH
+  - Road Ministry
+  - Sadak Parivahan Mantralaya
+  - Highways Ministry
+  category: T2
+  level: 4
+  status: active
+- id: ministry_of_railways
+  aliases:
+  - Railway Ministry
+  - Rail Mantralaya
+  - Indian Railways Board
+  - Rail Bhavan
+  category: T2
+  level: 4
+  status: active
+- id: ministry_of_civil_aviation
+  aliases:
+  - Aviation Ministry
+  - MoCA
+  - Nagar Vimanan Mantralaya
+  - Civil Aviation Dept
+  category: T2
+  level: 4
+  status: active
+- id: ministry_of_power
+  aliases:
+  - Power Ministry
+  - Urja Mantralaya
+  - MoP
+  - Energy Ministry
+  category: T2
+  level: 4
+  status: active
+- id: ministry_of_health
+  aliases:
+  - Health Ministry
+  - Swasthya Mantralaya
+  - MoHFW
+  - Health Dept
+  category: T2
+  level: 4
+  status: active
+- id: ministry_of_education
+  aliases:
+  - Education Ministry
+  - Shiksha Mantralaya
+  - MoE
+  - HRD Ministry
+  category: T2
+  level: 4
+  status: active
+- id: ministry_of_agriculture
+  aliases:
+  - Agriculture Ministry
+  - Krishi Mantralaya
+  - MoA
+  - Farmers Welfare Ministry
+  category: T2
+  level: 4
+  status: active
+- id: ministry_of_consumer_affairs
+  aliases:
+  - Consumer Affairs Ministry
+  - Upbhokta Mantralaya
+  - Food Ministry
+  - Public Distribution Dept
+  category: T2
+  level: 4
+  status: active
+- id: financial_regulators
+  aliases:
+  - Market Regulators
+  - Financial Watchdogs
+  - Vittiya Niyamak
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: commercial_and_telecom_regulators
+  aliases:
+  - Business Regulators
+  - Telecom and Aviation Watchdogs
+  - Vyapar Niyamak
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: health_and_safety_regulators
+  aliases:
+  - Safety Regulators
+  - Health Watchdogs
+  - Suraksha Niyamak
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: rbi
+  aliases:
+  - Reserve Bank of India
+  - Central Bank
+  - Kendriya Bank
+  - Mint Street
+  category: T2
+  level: 4
+  status: active
+- id: sebi
+  aliases:
+  - Securities and Exchange Board of India
+  - Market Regulator
+  - SEBI
+  - Capital Markets Watchdog
+  category: T2
+  level: 4
+  status: active
+- id: irda
+  aliases:
+  - Insurance Regulatory and Development Authority
+  - IRDAI
+  - Bima Niyamak
+  - Insurance Regulator
+  category: T2
+  level: 4
+  status: active
+- id: pfrda
+  aliases:
+  - Pension Fund Regulatory and Development Authority
+  - Pension Regulator
+  - NPS Trust
+  - PFRDA
+  category: T2
+  level: 4
+  status: active
+- id: trai
+  aliases:
+  - Telecom Regulatory Authority of India
+  - Telecom Regulator
+  - TRAI
+  - Telecom Watchdog
+  category: T2
+  level: 4
+  status: active
+- id: cci
+  aliases:
+  - Competition Commission of India
+  - Antitrust Regulator
+  - CCI
+  - Fair Trade Regulator
+  category: T2
+  level: 4
+  status: active
+- id: dgca
+  aliases:
+  - Directorate General of Civil Aviation
+  - Aviation Regulator
+  - DGCA
+  - Flight Safety Watchdog
+  category: T2
+  level: 4
+  status: active
+- id: rera
+  aliases:
+  - Real Estate Regulatory Authority
+  - Real Estate Regulator
+  - RERA
+  - Housing Watchdog
+  category: T2
+  level: 4
+  status: active
+- id: fssai
+  aliases:
+  - Food Safety and Standards Authority of India
+  - Food Regulator
+  - FSSAI
+  - Khadya Suraksha Niyamak
+  category: T2
+  level: 4
+  status: active
+- id: cdsco
+  aliases:
+  - Central Drugs Standard Control Organisation
+  - Drug Controller
+  - DCGI
+  - Pharma Regulator
+  category: T2
+  level: 4
+  status: active
+- id: cpcb
+  aliases:
+  - Central Pollution Control Board
+  - Pollution Board
+  - CPCB
+  - Pradushan Niyantran Board
+  category: T2
+  level: 4
+  status: active
+- id: higher_judiciary
+  aliases:
+  - Apex Courts
+  - Constitutional Courts
+  - Uchhatam Nyayalaya
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: central_investigative_agencies
+  aliases:
+  - Federal Agencies
+  - Probe Agencies
+  - Janch Agenicy
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: supreme_court_of_india
+  aliases:
+  - Supreme Court
+  - SC
+  - Sarvochha Nyayalaya
+  - Apex Court
+  category: T2
+  level: 4
+  status: active
+- id: high_courts
+  aliases:
+  - High Court
+  - HC
+  - Uchha Nyayalaya
+  - State Apex Courts
+  category: T2
+  level: 4
+  status: active
+- id: national_green_tribunal
+  aliases:
+  - NGT
+  - Green Court
+  - Harit Pradhikaran
+  - Environmental Tribunal
+  category: T2
+  level: 4
+  status: active
+- id: enforcement_directorate
+  aliases:
+  - ED
+  - Pravartan Nideshalaya
+  - Anti-Money Laundering Agency
+  - Financial Probe Agency
+  category: T2
+  level: 4
+  status: active
+- id: cbi
+  aliases:
+  - Central Bureau of Investigation
+  - CBI
+  - Kendriya Anveshan Bureau
+  - Federal Probe Agency
+  category: T2
+  level: 4
+  status: active
+- id: income_tax_department
+  aliases:
+  - IT Dept
+  - Aaykar Vibhag
+  - Taxman
+  - CBDT
+  category: T2
+  level: 4
+  status: active
+- id: nia
+  aliases:
+  - National Investigation Agency
+  - NIA
+  - Anti-Terror Agency
+  - Rashtriya Janch Agency
+  category: T2
+  level: 4
+  status: active
+- id: fiscal_policies_and_councils
+  aliases:
+  - Tax and Budget Councils
+  - Fiscal Frameworks
+  - Rajkoshiya Niti
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: labor_and_welfare_frameworks
+  aliases:
+  - Employment Frameworks
+  - Social Security Bodies
+  - Kalyan Framework
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: gst_council
+  aliases:
+  - Goods and Services Tax Council
+  - GST Panel
+  - GST Board
+  - GST Samiti
+  category: T2
+  level: 4
+  status: active
+- id: union_budget_framework
+  aliases:
+  - Union Budget
+  - Kendriya Budget
+  - Annual Financial Statement
+  - Central Budget
+  category: T2
+  level: 4
+  status: active
+- id: monetary_policy_committee
+  aliases:
+  - MPC
+  - Rate Setting Panel
+  - RBI MPC
+  - Monetary Policy Board
+  category: T2
+  level: 4
+  status: active
+- id: epfo
+  aliases:
+  - Employees Provident Fund Organisation
+  - PF Office
+  - Bhavishya Nidhi Sangathan
+  - EPF Board
+  category: T2
+  level: 4
+  status: active
+- id: uidai
+  aliases:
+  - Unique Identification Authority of India
+  - Aadhaar Authority
+  - UIDAI
+  - Aadhaar Board
+  category: T2
+  level: 4
+  status: active
+- id: state_executive_bodies
+  aliases:
+  - State Administrations
+  - Provincial Governments
+  - Rajya Prashasan
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: local_civic_bodies
+  aliases:
+  - Municipalities
+  - Panchayats
+  - Sthaniya Nikay
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: state_transport_and_utility_boards
+  aliases:
+  - State Utilities
+  - Transport Departments
+  - Rajya Board
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: state_governments
+  aliases:
+  - State Govt
+  - Rajya Sarkar
+  - Provincial Government
+  - Chief Minister Office
+  category: T2
+  level: 4
+  status: active
+- id: municipal_corporations
+  aliases:
+  - Nagar Nigam
+  - Mahanagar Palika
+  - Civic Body
+  - Municipality
+  - BBMP
+  - BMC
+  category: T2
+  level: 4
+  status: active
+- id: panchayati_raj_institutions
+  aliases:
+  - Gram Panchayat
+  - Zila Parishad
+  - Village Council
+  - Panchayat
+  category: T2
+  level: 4
+  status: active
+- id: regional_transport_office
+  aliases:
+  - RTO
+  - Transport Department
+  - Parivahan Vibhag
+  - Motor Vehicles Dept
+  category: T2
+  level: 4
+  status: active
+- id: state_electricity_boards
+  aliases:
+  - Discoms
+  - Electricity Board
+  - Vidyut Vibhag
+  - Power Distribution Companies
+  category: T2
+  level: 4
+  status: active
+- id: global_central_banks
+  aliases:
+  - International Central Banks
+  - Foreign Reserve Banks
+  - Videshi Central Bank
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: geopolitical_states
+  aliases:
+  - Foreign Governments
+  - Global Powers
+  - Videshi Sarkar
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: international_organizations
+  aliases:
+  - Global Bodies
+  - Multilateral Organizations
+  - Antarrashtriya Sangathan
+  category: T2
+  level: 3
+  status: active
+  is_category: true
+- id: us_federal_reserve
+  aliases:
+  - US Fed
+  - Federal Reserve
+  - American Central Bank
+  - Fed
+  category: T2
+  level: 4
+  status: active
+- id: european_central_bank
+  aliases:
+  - ECB
+  - Eurozone Central Bank
+  - European Bank
+  - Frankfurt Bank
+  category: T2
+  level: 4
+  status: active
+- id: us_government
+  aliases:
+  - United States Government
+  - Washington
+  - US Admin
+  - White House
+  category: T2
+  level: 4
+  status: active
+- id: chinese_government
+  aliases:
+  - Beijing
+  - PRC Government
+  - Chinese State
+  - CCP
+  category: T2
+  level: 4
+  status: active
+- id: russian_government
+  aliases:
+  - Kremlin
+  - Russian Federation
+  - Moscow
+  - Russian State
+  category: T2
+  level: 4
+  status: active
+- id: european_union
+  aliases:
+  - EU
+  - Brussels
+  - European Commission
+  - European Bloc
+  category: T2
+  level: 4
+  status: active
+- id: opec
+  aliases:
+  - Organization of the Petroleum Exporting Countries
+  - OPEC+
+  - Oil Cartel
+  - Petroleum Exporting Bloc
+  category: T2
+  level: 4
+  status: active
+- id: wto
+  aliases:
+  - World Trade Organization
+  - WTO
+  - Global Trade Body
+  - International Trade Organization
+  category: T2
+  level: 4
+  status: active
+- id: imf
+  aliases:
+  - International Monetary Fund
+  - IMF
+  - Global Lender
+  - Washington Lender
+  category: T2
+  level: 4
+  status: active
+edges:
+- from: t2
+  to: indian_union_government
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Institutional & Sovereign Entities contains the Indian Union Government
+- from: t2
+  to: indian_regulatory_bodies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Institutional & Sovereign Entities contains Indian Regulatory Bodies
+- from: t2
+  to: indian_judiciary_and_law_enforcement
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Institutional & Sovereign Entities contains Indian Judiciary and Law
+    Enforcement
+- from: t2
+  to: indian_statutory_frameworks_and_councils
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Institutional & Sovereign Entities contains Indian Statutory Frameworks
+    and Councils
+- from: t2
+  to: state_and_local_governments
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Institutional & Sovereign Entities contains State and Local Governments
+- from: t2
+  to: global_sovereign_entities
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Institutional & Sovereign Entities contains Global Sovereign Entities
+- from: indian_union_government
+  to: economic_ministries
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian Union Government contains Economic Ministries
+- from: indian_union_government
+  to: infrastructure_ministries
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian Union Government contains Infrastructure Ministries
+- from: indian_union_government
+  to: social_and_welfare_ministries
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian Union Government contains Social and Welfare Ministries
+- from: economic_ministries
+  to: ministry_of_finance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic Ministries contains the Ministry of Finance
+- from: economic_ministries
+  to: ministry_of_commerce_and_industry
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic Ministries contains the Ministry of Commerce and Industry
+- from: infrastructure_ministries
+  to: ministry_of_road_transport
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure Ministries contains the Ministry of Road Transport
+- from: infrastructure_ministries
+  to: ministry_of_railways
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure Ministries contains the Ministry of Railways
+- from: infrastructure_ministries
+  to: ministry_of_civil_aviation
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure Ministries contains the Ministry of Civil Aviation
+- from: infrastructure_ministries
+  to: ministry_of_power
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure Ministries contains the Ministry of Power
+- from: social_and_welfare_ministries
+  to: ministry_of_health
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social and Welfare Ministries contains the Ministry of Health
+- from: social_and_welfare_ministries
+  to: ministry_of_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social and Welfare Ministries contains the Ministry of Education
+- from: social_and_welfare_ministries
+  to: ministry_of_agriculture
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social and Welfare Ministries contains the Ministry of Agriculture
+- from: social_and_welfare_ministries
+  to: ministry_of_consumer_affairs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social and Welfare Ministries contains the Ministry of Consumer Affairs
+- from: indian_regulatory_bodies
+  to: financial_regulators
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian Regulatory Bodies contains Financial Regulators
+- from: indian_regulatory_bodies
+  to: commercial_and_telecom_regulators
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian Regulatory Bodies contains Commercial and Telecom Regulators
+- from: indian_regulatory_bodies
+  to: health_and_safety_regulators
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian Regulatory Bodies contains Health and Safety Regulators
+- from: financial_regulators
+  to: rbi
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial Regulators contains the Reserve Bank of India
+- from: financial_regulators
+  to: sebi
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial Regulators contains the Securities and Exchange Board of
+    India
+- from: financial_regulators
+  to: irda
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial Regulators contains the Insurance Regulatory and Development
+    Authority
+- from: financial_regulators
+  to: pfrda
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial Regulators contains the Pension Fund Regulatory and Development
+    Authority
+- from: commercial_and_telecom_regulators
+  to: trai
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Commercial and Telecom Regulators contains the Telecom Regulatory Authority
+    of India
+- from: commercial_and_telecom_regulators
+  to: cci
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Commercial and Telecom Regulators contains the Competition Commission
+    of India
+- from: commercial_and_telecom_regulators
+  to: dgca
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Commercial and Telecom Regulators contains the Directorate General
+    of Civil Aviation
+- from: commercial_and_telecom_regulators
+  to: rera
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Commercial and Telecom Regulators contains the Real Estate Regulatory
+    Authority
+- from: health_and_safety_regulators
+  to: fssai
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health and Safety Regulators contains the Food Safety and Standards
+    Authority of India
+- from: health_and_safety_regulators
+  to: cdsco
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health and Safety Regulators contains the Central Drugs Standard Control
+    Organisation
+- from: health_and_safety_regulators
+  to: cpcb
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health and Safety Regulators contains the Central Pollution Control
+    Board
+- from: indian_judiciary_and_law_enforcement
+  to: higher_judiciary
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian Judiciary and Law Enforcement contains the Higher Judiciary
+- from: indian_judiciary_and_law_enforcement
+  to: central_investigative_agencies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian Judiciary and Law Enforcement contains Central Investigative
+    Agencies
+- from: higher_judiciary
+  to: supreme_court_of_india
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher Judiciary contains the Supreme Court of India
+- from: higher_judiciary
+  to: high_courts
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher Judiciary contains the High Courts
+- from: higher_judiciary
+  to: national_green_tribunal
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher Judiciary contains the National Green Tribunal
+- from: central_investigative_agencies
+  to: enforcement_directorate
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Central Investigative Agencies contains the Enforcement Directorate
+- from: central_investigative_agencies
+  to: cbi
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Central Investigative Agencies contains the Central Bureau of Investigation
+- from: central_investigative_agencies
+  to: income_tax_department
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Central Investigative Agencies contains the Income Tax Department
+- from: central_investigative_agencies
+  to: nia
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Central Investigative Agencies contains the National Investigation
+    Agency
+- from: indian_statutory_frameworks_and_councils
+  to: fiscal_policies_and_councils
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian Statutory Frameworks and Councils contains Fiscal Policies and
+    Councils
+- from: indian_statutory_frameworks_and_councils
+  to: labor_and_welfare_frameworks
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Indian Statutory Frameworks and Councils contains Labor and Welfare
+    Frameworks
+- from: fiscal_policies_and_councils
+  to: gst_council
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Fiscal Policies and Councils contains the GST Council
+- from: fiscal_policies_and_councils
+  to: union_budget_framework
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Fiscal Policies and Councils contains the Union Budget Framework
+- from: fiscal_policies_and_councils
+  to: monetary_policy_committee
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Fiscal Policies and Councils contains the Monetary Policy Committee
+- from: labor_and_welfare_frameworks
+  to: epfo
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Labor and Welfare Frameworks contains the Employees Provident Fund
+    Organisation
+- from: labor_and_welfare_frameworks
+  to: uidai
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Labor and Welfare Frameworks contains the Unique Identification Authority
+    of India
+- from: state_and_local_governments
+  to: state_executive_bodies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: State and Local Governments contains State Executive Bodies
+- from: state_and_local_governments
+  to: local_civic_bodies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: State and Local Governments contains Local Civic Bodies
+- from: state_and_local_governments
+  to: state_transport_and_utility_boards
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: State and Local Governments contains State Transport and Utility Boards
+- from: state_executive_bodies
+  to: state_governments
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: State Executive Bodies contains State Governments
+- from: local_civic_bodies
+  to: municipal_corporations
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Civic Bodies contains Municipal Corporations
+- from: local_civic_bodies
+  to: panchayati_raj_institutions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Civic Bodies contains Panchayati Raj Institutions
+- from: state_transport_and_utility_boards
+  to: regional_transport_office
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: State Transport and Utility Boards contains the Regional Transport
+    Office
+- from: state_transport_and_utility_boards
+  to: state_electricity_boards
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: State Transport and Utility Boards contains State Electricity Boards
+- from: global_sovereign_entities
+  to: global_central_banks
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Sovereign Entities contains Global Central Banks
+- from: global_sovereign_entities
+  to: geopolitical_states
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Sovereign Entities contains Geopolitical States
+- from: global_sovereign_entities
+  to: international_organizations
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Sovereign Entities contains International Organizations
+- from: global_central_banks
+  to: us_federal_reserve
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Central Banks contains the US Federal Reserve
+- from: global_central_banks
+  to: european_central_bank
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Central Banks contains the European Central Bank
+- from: geopolitical_states
+  to: us_government
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geopolitical States contains the US Government
+- from: geopolitical_states
+  to: chinese_government
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geopolitical States contains the Chinese Government
+- from: geopolitical_states
+  to: russian_government
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geopolitical States contains the Russian Government
+- from: geopolitical_states
+  to: european_union
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geopolitical States contains the European Union
+- from: international_organizations
+  to: opec
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Organizations contains OPEC
+- from: international_organizations
+  to: wto
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Organizations contains the World Trade Organization
+- from: international_organizations
+  to: imf
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Organizations contains the International Monetary Fund

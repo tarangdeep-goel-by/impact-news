@@ -1,0 +1,586 @@
+nodes:
+- id: t1
+  aliases:
+  - Natural & Planetary Systems
+  - Earth Systems
+  - Planetary Triggers
+  - Natural Phenomena
+  category: T1
+  level: 1
+  status: active
+  is_category: true
+- id: meteorological_systems
+  aliases:
+  - Meteorological Systems
+  - Weather & Climate Systems
+  - Mausam Pranali
+  - Atmospheric Systems
+  category: T1
+  level: 2
+  status: active
+  is_category: true
+- id: geological_and_tectonic_systems
+  aliases:
+  - Geological & Tectonic Systems
+  - Earth & Land Systems
+  - Bhugarbhik Pranali
+  - Lithosphere
+  category: T1
+  level: 2
+  status: active
+  is_category: true
+- id: hydrological_systems
+  aliases:
+  - Hydrological Systems
+  - Water Systems
+  - Jal Pranali
+  - Hydrosphere
+  category: T1
+  level: 2
+  status: active
+  is_category: true
+- id: biophysical_and_ecological_systems
+  aliases:
+  - Biophysical & Ecological Systems
+  - Biosphere
+  - Paryavaran Pranali
+  - Natural Ecosystems
+  category: T1
+  level: 2
+  status: active
+  is_category: true
+- id: monsoon_systems
+  aliases:
+  - Monsoon Systems
+  - Seasonal Winds
+  - Monsoon Hawaen
+  - Indian Monsoon Circulation
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: macro_climate_drivers
+  aliases:
+  - Macro Climate Drivers
+  - Global Climate Patterns
+  - Ocean-Atmosphere Oscillations
+  - Jalvayu Pranali
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: regional_weather_phenomena
+  aliases:
+  - Regional Weather Phenomena
+  - Storm Systems
+  - Sthaniya Mausam
+  - Subcontinental Weather Systems
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: atmospheric_temperature
+  aliases:
+  - Atmospheric Temperature
+  - Global Warming Trends
+  - Tapman Pranali
+  - Thermal Profile
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: southwest_monsoon
+  aliases:
+  - Southwest Monsoon
+  - Summer Monsoon
+  - Dakshin-Pashchim Monsoon
+  - Nairutya Maarut
+  - Indian Monsoon
+  category: T1
+  level: 4
+  status: active
+- id: northeast_monsoon
+  aliases:
+  - Northeast Monsoon
+  - Winter Monsoon
+  - Retreating Monsoon
+  - Ishaanya Monsoon
+  - Post-Monsoon
+  category: T1
+  level: 4
+  status: active
+- id: el_nino_southern_oscillation
+  aliases:
+  - El Nino Southern Oscillation
+  - ENSO
+  - El Nino
+  - La Nina
+  - Pacific Ocean Warming
+  category: T1
+  level: 4
+  status: active
+- id: indian_ocean_dipole
+  aliases:
+  - Indian Ocean Dipole
+  - IOD
+  - Indian Nino
+  - Indian Ocean Temperature Anomaly
+  category: T1
+  level: 4
+  status: active
+- id: western_disturbances
+  aliases:
+  - Western Disturbances
+  - Pashchimi Vikshobh
+  - Winter Rain System
+  - Mediterranean Storms
+  - Extratropical Storms
+  category: T1
+  level: 4
+  status: active
+- id: cyclonic_storm_systems
+  aliases:
+  - Cyclonic Storm Systems
+  - Tropical Cyclones
+  - Chakravat
+  - Bay of Bengal Cyclones
+  - Arabian Sea Cyclones
+  - Toofan
+  category: T1
+  level: 4
+  status: active
+- id: global_surface_temperature
+  aliases:
+  - Global Surface Temperature
+  - Global Warming
+  - Vaishvik Tapman
+  - Earth Average Temperature
+  category: T1
+  level: 4
+  status: active
+- id: tectonic_plates
+  aliases:
+  - Tectonic Plates
+  - Fault Lines
+  - Bhukampiya Zone
+  - Lithospheric Plates
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: cryosphere
+  aliases:
+  - Cryosphere
+  - Glacial Systems
+  - Himnad Pranali
+  - Ice Caps
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: himalayan_tectonic_plates
+  aliases:
+  - Himalayan Tectonic Plates
+  - Himalayan Fault Lines
+  - Seismic Zone V
+  - Indo-Eurasian Plate Boundary
+  - Bhukamp Zone
+  category: T1
+  level: 4
+  status: active
+- id: indian_plate_interior
+  aliases:
+  - Indian Plate Interior
+  - Deccan Plateau Seismic Zones
+  - Peninsular Fault Lines
+  - Stable Continental Region
+  category: T1
+  level: 4
+  status: active
+- id: himalayan_glaciers
+  aliases:
+  - Himalayan Glaciers
+  - Himnad
+  - Hindu Kush Ice
+  - Mountain Glaciers
+  - Third Pole
+  category: T1
+  level: 4
+  status: active
+- id: major_river_basins
+  aliases:
+  - Major River Basins
+  - River Systems
+  - Nadi Ghati
+  - Surface Water Networks
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: subsurface_water
+  aliases:
+  - Subsurface Water
+  - Groundwater Systems
+  - Bhujal Pranali
+  - Aquifer Networks
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: oceanic_systems
+  aliases:
+  - Oceanic Systems
+  - Marine Environments
+  - Samudri Pranali
+  - Sea Basins
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: himalayan_river_systems
+  aliases:
+  - Himalayan River Systems
+  - Ganga-Brahmaputra Basin
+  - Perennial Rivers
+  - Uttar Bharatiya Nadiyan
+  - Indus Basin
+  category: T1
+  level: 4
+  status: active
+- id: peninsular_river_systems
+  aliases:
+  - Peninsular River Systems
+  - Deccan Rivers
+  - Dakshin Bharatiya Nadiyan
+  - Seasonal Rivers
+  - Godavari-Krishna-Kaveri Basins
+  category: T1
+  level: 4
+  status: active
+- id: groundwater_aquifers
+  aliases:
+  - Groundwater Aquifers
+  - Bhujal
+  - Water Table
+  - Underground Water Reserves
+  - Jalstar
+  category: T1
+  level: 4
+  status: active
+- id: bay_of_bengal_marine_system
+  aliases:
+  - Bay of Bengal Marine System
+  - Bengal Ki Khadi
+  - Eastern Seaboard Waters
+  - BoB Surface Temperature
+  category: T1
+  level: 4
+  status: active
+- id: arabian_sea_marine_system
+  aliases:
+  - Arabian Sea Marine System
+  - Arab Sagar
+  - Western Seaboard Waters
+  - Arabian Sea Surface Temperature
+  category: T1
+  level: 4
+  status: active
+- id: terrestrial_ecosystems
+  aliases:
+  - Terrestrial Ecosystems
+  - Land Biomes
+  - Sthaliya Paristhitiki
+  - Land Cover
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: biological_populations
+  aliases:
+  - Biological Populations
+  - Wild Flora and Fauna
+  - Jeev Jantu
+  - Natural Biomass
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: forest_cover
+  aliases:
+  - Forest Cover
+  - Jangal
+  - Van Sampada
+  - Woodlands
+  - Vegetation Cover
+  category: T1
+  level: 4
+  status: active
+- id: arable_topsoil
+  aliases:
+  - Arable Topsoil
+  - Kheti Ki Mitti
+  - Agricultural Soil
+  - Mitti
+  - Topsoil Health
+  category: T1
+  level: 4
+  status: active
+- id: migratory_pest_populations
+  aliases:
+  - Migratory Pest Populations
+  - Locust Swarms
+  - Tiddi Dal
+  - Agricultural Pests
+  - Invasive Species
+  category: T1
+  level: 4
+  status: active
+- id: marine_fish_stocks
+  aliases:
+  - Marine Fish Stocks
+  - Samudri Machli
+  - Oceanic Fishery Reserves
+  - Wild Fish Population
+  - Pelagic Fish
+  category: T1
+  level: 4
+  status: active
+edges:
+- from: t1
+  to: meteorological_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Natural & Planetary Systems contains Meteorological Systems
+- from: t1
+  to: geological_and_tectonic_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Natural & Planetary Systems contains Geological & Tectonic Systems
+- from: t1
+  to: hydrological_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Natural & Planetary Systems contains Hydrological Systems
+- from: t1
+  to: biophysical_and_ecological_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Natural & Planetary Systems contains Biophysical & Ecological Systems
+- from: meteorological_systems
+  to: monsoon_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Meteorological Systems contains Monsoon Systems
+- from: meteorological_systems
+  to: macro_climate_drivers
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Meteorological Systems contains Macro Climate Drivers
+- from: meteorological_systems
+  to: regional_weather_phenomena
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Meteorological Systems contains Regional Weather Phenomena
+- from: meteorological_systems
+  to: atmospheric_temperature
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Meteorological Systems contains Atmospheric Temperature
+- from: monsoon_systems
+  to: southwest_monsoon
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Monsoon Systems contains the Southwest Monsoon
+- from: monsoon_systems
+  to: northeast_monsoon
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Monsoon Systems contains the Northeast Monsoon
+- from: macro_climate_drivers
+  to: el_nino_southern_oscillation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macro Climate Drivers contains the El Nino Southern Oscillation
+- from: macro_climate_drivers
+  to: indian_ocean_dipole
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macro Climate Drivers contains the Indian Ocean Dipole
+- from: regional_weather_phenomena
+  to: western_disturbances
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Regional Weather Phenomena contains Western Disturbances
+- from: regional_weather_phenomena
+  to: cyclonic_storm_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Regional Weather Phenomena contains Cyclonic Storm Systems
+- from: atmospheric_temperature
+  to: global_surface_temperature
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Atmospheric Temperature contains Global Surface Temperature
+- from: geological_and_tectonic_systems
+  to: tectonic_plates
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geological & Tectonic Systems contains Tectonic Plates
+- from: geological_and_tectonic_systems
+  to: cryosphere
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geological & Tectonic Systems contains the Cryosphere
+- from: tectonic_plates
+  to: himalayan_tectonic_plates
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Tectonic Plates contains Himalayan Tectonic Plates
+- from: tectonic_plates
+  to: indian_plate_interior
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Tectonic Plates contains the Indian Plate Interior
+- from: cryosphere
+  to: himalayan_glaciers
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cryosphere contains Himalayan Glaciers
+- from: hydrological_systems
+  to: major_river_basins
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrological Systems contains Major River Basins
+- from: hydrological_systems
+  to: subsurface_water
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrological Systems contains Subsurface Water
+- from: hydrological_systems
+  to: oceanic_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrological Systems contains Oceanic Systems
+- from: major_river_basins
+  to: himalayan_river_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Major River Basins contains Himalayan River Systems
+- from: major_river_basins
+  to: peninsular_river_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Major River Basins contains Peninsular River Systems
+- from: subsurface_water
+  to: groundwater_aquifers
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Subsurface Water contains Groundwater Aquifers
+- from: oceanic_systems
+  to: bay_of_bengal_marine_system
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Oceanic Systems contains the Bay of Bengal Marine System
+- from: oceanic_systems
+  to: arabian_sea_marine_system
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Oceanic Systems contains the Arabian Sea Marine System
+- from: biophysical_and_ecological_systems
+  to: terrestrial_ecosystems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Biophysical & Ecological Systems contains Terrestrial Ecosystems
+- from: biophysical_and_ecological_systems
+  to: biological_populations
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Biophysical & Ecological Systems contains Biological Populations
+- from: terrestrial_ecosystems
+  to: forest_cover
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Terrestrial Ecosystems contains Forest Cover
+- from: terrestrial_ecosystems
+  to: arable_topsoil
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Terrestrial Ecosystems contains Arable Topsoil
+- from: biological_populations
+  to: migratory_pest_populations
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Biological Populations contains Migratory Pest Populations
+- from: biological_populations
+  to: marine_fish_stocks
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Biological Populations contains Marine Fish Stocks

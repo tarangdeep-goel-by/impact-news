@@ -1,0 +1,754 @@
+nodes:
+- id: t5
+  aliases:
+  - Social, Demographic & Cultural Forces
+  - Macro-Cultural Shifts
+  - Population Dynamics
+  - Samajik Aur Janasankhyikiy Bal
+  category: T5
+  level: 1
+  status: active
+  is_category: true
+- id: demographics_and_population
+  aliases:
+  - Demographics & Population
+  - Population Metrics
+  - Janasankhya
+  - Demographic Trends
+  category: T5
+  level: 2
+  status: active
+  is_category: true
+- id: age_demographics
+  aliases:
+  - Age Demographics
+  - Age Distribution
+  - Generational Cohorts
+  - Aayu Varg
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: gender_demographics
+  aliases:
+  - Gender Demographics
+  - Gender Ratios
+  - Ling Anupat
+  - Gender Distribution
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: urbanization_trends
+  aliases:
+  - Urbanization Trends
+  - City Growth
+  - Shaharikaran
+  - Urban Sprawl
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: india_working_age_population
+  aliases:
+  - India Working Age Population
+  - Demographic Dividend
+  - Youth Workforce
+  - Yuva Aabadi
+  - Working Class Population
+  category: T5
+  level: 4
+  status: active
+- id: india_aging_population
+  aliases:
+  - India Aging Population
+  - Senior Citizens Aggregate
+  - Elderly Population
+  - Vridh Aabadi
+  - Geriatric Demographic
+  category: T5
+  level: 4
+  status: active
+- id: female_labor_force_participation
+  aliases:
+  - Female Labor Force Participation
+  - FLFP
+  - Women in Workforce
+  - Mahila Shramik
+  - Working Women Aggregate
+  category: T5
+  level: 4
+  status: active
+- id: urban_population_density
+  aliases:
+  - Urban Population Density
+  - City Crowding
+  - Metro Density
+  - Shahar Ki Bheed
+  - Urban Congestion
+  category: T5
+  level: 4
+  status: active
+- id: tier_2_3_city_expansion
+  aliases:
+  - Tier 2/3 City Expansion
+  - Small Town Growth
+  - Rurbanization
+  - Chhote Shaharon Ka Vikas
+  - Emerging Cities
+  category: T5
+  level: 4
+  status: active
+- id: migration_and_mobility
+  aliases:
+  - Migration & Mobility
+  - Population Movement
+  - Pravas
+  - Human Relocation
+  category: T5
+  level: 2
+  status: active
+  is_category: true
+- id: domestic_migration
+  aliases:
+  - Domestic Migration
+  - Internal Migration
+  - Antarik Pravas
+  - Inter-state Migration
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: international_migration
+  aliases:
+  - International Migration
+  - Cross-border Migration
+  - Antarrashtriya Pravas
+  - Emigration
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: rural_urban_migration_corridors
+  aliases:
+  - Rural-Urban Migration Corridors
+  - Village to City Migration
+  - Gaon Se Shahar Pravas
+  - Labor Corridors
+  category: T5
+  level: 4
+  status: active
+- id: seasonal_migrant_labor
+  aliases:
+  - Seasonal Migrant Labor
+  - Migrant Workers
+  - Pravasi Mazdoor
+  - Dihadi Mazdoor
+  - Agricultural Migrants
+  category: T5
+  level: 4
+  status: active
+- id: indian_diaspora_nri
+  aliases:
+  - Indian Diaspora
+  - NRI Population
+  - Non-Resident Indians
+  - Pravasi Bhartiya
+  - Overseas Indians
+  category: T5
+  level: 4
+  status: active
+- id: skilled_emigration
+  aliases:
+  - Skilled Emigration
+  - Brain Drain
+  - Student Outflow
+  - Videsh Padhai
+  - Tech Worker Migration
+  category: T5
+  level: 4
+  status: active
+- id: social_movements_and_collectives
+  aliases:
+  - Social Movements & Collectives
+  - Mass Movements
+  - Samajik Andolan
+  - Activism
+  category: T5
+  level: 2
+  status: active
+  is_category: true
+- id: labor_and_trade_unions
+  aliases:
+  - Labor & Trade Unions
+  - Worker Collectives
+  - Mazdoor Sangh
+  - Trade Associations
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: agrarian_collectives
+  aliases:
+  - Agrarian Collectives
+  - Farmer Organizations
+  - Kisan Sangathan
+  - Agricultural Movements
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: identity_and_rights_movements
+  aliases:
+  - Identity & Rights Movements
+  - Civil Rights Groups
+  - Adhikar Andolan
+  - Social Justice Movements
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: organized_labor_unions
+  aliases:
+  - Organized Labor Unions
+  - Central Trade Unions
+  - Bank Unions
+  - Sangatit Mazdoor Sangh
+  - PSU Unions
+  category: T5
+  level: 4
+  status: active
+- id: gig_worker_unions
+  aliases:
+  - Gig Worker Unions
+  - Platform Worker Collectives
+  - Delivery Partner Associations
+  - Gig Workers Union
+  category: T5
+  level: 4
+  status: active
+- id: transport_worker_unions
+  aliases:
+  - Transport Worker Unions
+  - Trucker Associations
+  - Taxi Unions
+  - Auto Rickshaw Unions
+  - Transport Strike Committees
+  category: T5
+  level: 4
+  status: active
+- id: farmer_unions
+  aliases:
+  - Farmer Unions
+  - Kisan Morcha
+  - Bharatiya Kisan Union
+  - Kisan Andolan
+  - Agricultural Unions
+  category: T5
+  level: 4
+  status: active
+- id: caste_reservation_movements
+  aliases:
+  - Caste Reservation Movements
+  - Quota Agitations
+  - Aarakshan Andolan
+  - Backward Class Movements
+  category: T5
+  level: 4
+  status: active
+- id: student_unions
+  aliases:
+  - Student Unions
+  - University Political Wings
+  - Chhatra Sangh
+  - Campus Political Groups
+  category: T5
+  level: 4
+  status: active
+- id: cultural_and_religious_forces
+  aliases:
+  - Cultural & Religious Forces
+  - Cultural Shifts
+  - Sanskritik Bal
+  - Religious Dynamics
+  category: T5
+  level: 2
+  status: active
+  is_category: true
+- id: major_festivals_and_observances
+  aliases:
+  - Major Festivals & Observances
+  - Festive Seasons
+  - Tyohar
+  - Cultural Celebrations
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: religious_institutions_and_trusts
+  aliases:
+  - Religious Institutions & Trusts
+  - Faith-based Organizations
+  - Dharmik Sansthan
+  - Religious Boards
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: linguistic_and_regional_identity
+  aliases:
+  - Linguistic & Regional Identity
+  - Language Movements
+  - Bhashayi Asmita
+  - Regional Pride
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: autumn_festive_season
+  aliases:
+  - Autumn Festive Season
+  - Diwali Season
+  - Durga Puja Season
+  - Tyohar Ka Mausam
+  - Festive Demand Period
+  category: T5
+  level: 4
+  status: active
+- id: spring_harvest_festivals
+  aliases:
+  - Spring Harvest Festivals
+  - Holi Season
+  - Baisakhi
+  - Pongal
+  - Makar Sankranti
+  category: T5
+  level: 4
+  status: active
+- id: islamic_festivals
+  aliases:
+  - Islamic Festivals
+  - Eid Season
+  - Ramadan
+  - Ramzan
+  - Bakrid
+  category: T5
+  level: 4
+  status: active
+- id: regional_new_year_festivals
+  aliases:
+  - Regional New Year Festivals
+  - Ugadi
+  - Gudi Padwa
+  - Vishu
+  - Bihu
+  category: T5
+  level: 4
+  status: active
+- id: wedding_season_aggregate
+  aliases:
+  - Indian Wedding Season
+  - Shaadi Season
+  - Marriage Season
+  - Lagan
+  - Saaya
+  category: T5
+  level: 4
+  status: active
+- id: major_temple_trusts
+  aliases:
+  - Major Temple Trusts
+  - Hindu Endowments
+  - Mandir Trust
+  - Tirupati Devasthanam
+  - Pilgrimage Boards
+  category: T5
+  level: 4
+  status: active
+- id: waqf_boards
+  aliases:
+  - Waqf Boards
+  - Islamic Endowments
+  - Waqf Properties
+  - Muslim Trust Boards
+  category: T5
+  level: 4
+  status: active
+- id: regional_language_movements
+  aliases:
+  - Regional Language Movements
+  - Pro-Language Agitations
+  - Bhasha Andolan
+  - Linguistic Pride Movements
+  category: T5
+  level: 4
+  status: active
+- id: macro_behavioral_shifts
+  aliases:
+  - Macro Behavioral Shifts
+  - Public Sentiment
+  - Jan Bhavna
+  - Collective Behavior
+  category: T5
+  level: 2
+  status: active
+  is_category: true
+- id: consumer_sentiment
+  aliases:
+  - Consumer Sentiment
+  - Public Confidence
+  - Upbhokta Bhavna
+  - Market Mood
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: civic_participation
+  aliases:
+  - Civic Participation
+  - Democratic Engagement
+  - Nagrik Bhagidari
+  - Electoral Participation
+  category: T5
+  level: 3
+  status: active
+  is_category: true
+- id: aggregate_consumer_confidence
+  aliases:
+  - Aggregate Consumer Confidence
+  - Willingness to Spend
+  - Consumer Optimism
+  - Upbhokta Vishwas
+  - Retail Sentiment
+  category: T5
+  level: 4
+  status: active
+- id: mass_boycott_movements
+  aliases:
+  - Mass Boycott Movements
+  - Cancel Culture
+  - Brand Boycotts
+  - Bahishkar Andolan
+  - Social Media Boycotts
+  category: T5
+  level: 4
+  status: active
+- id: voter_turnout_aggregates
+  aliases:
+  - Voter Turnout Aggregates
+  - Election Participation Rates
+  - Matdaan Pratishat
+  - Voting Percentages
+  category: T5
+  level: 4
+  status: active
+edges:
+- from: t5
+  to: demographics_and_population
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social, Demographic & Cultural Forces contains Demographics & Population
+- from: t5
+  to: migration_and_mobility
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social, Demographic & Cultural Forces contains Migration & Mobility
+- from: t5
+  to: social_movements_and_collectives
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social, Demographic & Cultural Forces contains Social Movements & Collectives
+- from: t5
+  to: cultural_and_religious_forces
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social, Demographic & Cultural Forces contains Cultural & Religious
+    Forces
+- from: t5
+  to: macro_behavioral_shifts
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social, Demographic & Cultural Forces contains Macro Behavioral Shifts
+- from: demographics_and_population
+  to: age_demographics
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Demographics & Population contains Age Demographics
+- from: demographics_and_population
+  to: gender_demographics
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Demographics & Population contains Gender Demographics
+- from: demographics_and_population
+  to: urbanization_trends
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Demographics & Population contains Urbanization Trends
+- from: age_demographics
+  to: india_working_age_population
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Age Demographics contains India Working Age Population
+- from: age_demographics
+  to: india_aging_population
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Age Demographics contains India Aging Population
+- from: gender_demographics
+  to: female_labor_force_participation
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Gender Demographics contains Female Labor Force Participation
+- from: urbanization_trends
+  to: urban_population_density
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urbanization Trends contains Urban Population Density
+- from: urbanization_trends
+  to: tier_2_3_city_expansion
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urbanization Trends contains Tier 2/3 City Expansion
+- from: migration_and_mobility
+  to: domestic_migration
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Migration & Mobility contains Domestic Migration
+- from: migration_and_mobility
+  to: international_migration
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Migration & Mobility contains International Migration
+- from: domestic_migration
+  to: rural_urban_migration_corridors
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Migration contains Rural-Urban Migration Corridors
+- from: domestic_migration
+  to: seasonal_migrant_labor
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Migration contains Seasonal Migrant Labor
+- from: international_migration
+  to: indian_diaspora_nri
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Migration contains Indian Diaspora NRI
+- from: international_migration
+  to: skilled_emigration
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Migration contains Skilled Emigration
+- from: social_movements_and_collectives
+  to: labor_and_trade_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social Movements & Collectives contains Labor & Trade Unions
+- from: social_movements_and_collectives
+  to: agrarian_collectives
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social Movements & Collectives contains Agrarian Collectives
+- from: social_movements_and_collectives
+  to: identity_and_rights_movements
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social Movements & Collectives contains Identity & Rights Movements
+- from: labor_and_trade_unions
+  to: organized_labor_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Labor & Trade Unions contains Organized Labor Unions
+- from: labor_and_trade_unions
+  to: gig_worker_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Labor & Trade Unions contains Gig Worker Unions
+- from: labor_and_trade_unions
+  to: transport_worker_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Labor & Trade Unions contains Transport Worker Unions
+- from: agrarian_collectives
+  to: farmer_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Agrarian Collectives contains Farmer Unions
+- from: identity_and_rights_movements
+  to: caste_reservation_movements
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Identity & Rights Movements contains Caste Reservation Movements
+- from: identity_and_rights_movements
+  to: student_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Identity & Rights Movements contains Student Unions
+- from: cultural_and_religious_forces
+  to: major_festivals_and_observances
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cultural & Religious Forces contains Major Festivals & Observances
+- from: cultural_and_religious_forces
+  to: religious_institutions_and_trusts
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cultural & Religious Forces contains Religious Institutions & Trusts
+- from: cultural_and_religious_forces
+  to: linguistic_and_regional_identity
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cultural & Religious Forces contains Linguistic & Regional Identity
+- from: major_festivals_and_observances
+  to: autumn_festive_season
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Major Festivals & Observances contains Autumn Festive Season
+- from: major_festivals_and_observances
+  to: spring_harvest_festivals
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Major Festivals & Observances contains Spring Harvest Festivals
+- from: major_festivals_and_observances
+  to: islamic_festivals
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Major Festivals & Observances contains Islamic Festivals
+- from: major_festivals_and_observances
+  to: regional_new_year_festivals
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Major Festivals & Observances contains Regional New Year Festivals
+- from: major_festivals_and_observances
+  to: wedding_season_aggregate
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Major Festivals & Observances contains Wedding Season Aggregate
+- from: religious_institutions_and_trusts
+  to: major_temple_trusts
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Religious Institutions & Trusts contains Major Temple Trusts
+- from: religious_institutions_and_trusts
+  to: waqf_boards
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Religious Institutions & Trusts contains Waqf Boards
+- from: linguistic_and_regional_identity
+  to: regional_language_movements
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Linguistic & Regional Identity contains Regional Language Movements
+- from: macro_behavioral_shifts
+  to: consumer_sentiment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macro Behavioral Shifts contains Consumer Sentiment
+- from: macro_behavioral_shifts
+  to: civic_participation
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macro Behavioral Shifts contains Civic Participation
+- from: consumer_sentiment
+  to: aggregate_consumer_confidence
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Consumer Sentiment contains Aggregate Consumer Confidence
+- from: consumer_sentiment
+  to: mass_boycott_movements
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Consumer Sentiment contains Mass Boycott Movements
+- from: civic_participation
+  to: voter_turnout_aggregates
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic Participation contains Voter Turnout Aggregates
