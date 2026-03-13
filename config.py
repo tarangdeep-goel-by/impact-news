@@ -50,5 +50,15 @@ class Settings(BaseSettings):
     # Schedule
     collect_interval_hours: int = 2
 
+    # Scoring
+    score_high_threshold: float = 0.5
+    score_medium_threshold: float = 0.2
+    indirect_weight: float = 0.7
+    gemini_model: str = "gemini-2.0-flash"
+
+    # Delivery
+    digest_hour: int = 8
+    pipeline_interval_seconds: int = 7200
+
 
 settings = Settings()

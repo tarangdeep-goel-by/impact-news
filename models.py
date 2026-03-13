@@ -72,6 +72,21 @@ class NodeMatch(BaseModel):
     score: float
 
 
+class TagExtractionResult(BaseModel):
+    article_id: str
+    tags: list[str] = []
+    indirect_effects: list[str] = []
+    domains: list[str] = []
+
+
+class ArticleImpact(BaseModel):
+    article_id: str
+    matched_nodes: list[dict] = []  # [{node_id, tag, match_score, graph_score, combined}]
+    top_score: float = 0.0
+    severity: str = "low"
+    explanation: str = ""
+
+
 class CollectionResult(BaseModel):
     total_fetched: int = 0
     after_dedup: int = 0

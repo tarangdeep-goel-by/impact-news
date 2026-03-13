@@ -1,2817 +1,2892 @@
-# Financial System Domain Graph
-# Part of Impact News — Personal Impact Graph System
-# Structure: GRAPH (not tree) — nodes + typed edges with cross-domain connections
-# Target: 250+ nodes, 350+ edges
-# Created: 2026-03-09
-
-# =============================================================================
-# EDGE TYPES:
-#   PRODUCES, CONSUMES, AFFECTS, REGULATES, DISRUPTS, SUPPLIES, COMPETES_WITH,
-#   LOCATED_IN, DEPENDS_ON, EMPLOYS, FUNDS, BENCHMARKED_TO
-# =============================================================================
-
 nodes:
-
-  # ===========================================================================
-  # 1. MONETARY POLICY — RBI
-  # ===========================================================================
-  - id: rbi
-    aliases: ["Reserve Bank of India", "RBI", "central bank India"]
-    category: financial
-
-  - id: rbi_mpc
-    aliases: ["RBI MPC", "Monetary Policy Committee", "MPC meeting", "MPC decision", "RBI rate decision"]
-    category: financial
-
-  - id: repo_rate
-    aliases: ["repo rate", "RBI repo rate", "policy rate", "repurchase rate"]
-    category: financial
-
-  - id: reverse_repo_rate
-    aliases: ["reverse repo rate", "RBI reverse repo", "absorption rate"]
-    category: financial
-
-  - id: crr
-    aliases: ["CRR", "cash reserve ratio", "CRR change", "RBI CRR"]
-    category: financial
-
-  - id: slr
-    aliases: ["SLR", "statutory liquidity ratio", "SLR requirement"]
-    category: financial
-
-  - id: bank_liquidity
-    aliases: ["banking system liquidity", "liquidity surplus", "liquidity deficit", "RBI liquidity management"]
-    category: financial
-
-  - id: mclr
-    aliases: ["MCLR", "marginal cost of funds lending rate", "MCLR rate", "bank MCLR"]
-    category: financial
-
-  - id: eblr
-    aliases: ["EBLR", "external benchmark lending rate", "repo-linked lending rate"]
-    category: financial
-
-  - id: rbi_inflation_target
-    aliases: ["RBI inflation target", "4% inflation target", "CPI target band", "flexible inflation targeting"]
-    category: financial
-
-  - id: cpi_inflation
-    aliases: ["CPI inflation", "consumer price index", "retail inflation", "inflation rate India"]
-    category: financial
-
-  - id: core_inflation
-    aliases: ["core inflation", "non-food non-fuel inflation", "underlying inflation"]
-    category: financial
-
-  - id: food_inflation
-    aliases: ["food inflation India", "food prices", "food CPI", "cereal inflation", "vegetable prices"]
-    category: food
-
-  - id: fuel_inflation
-    aliases: ["fuel inflation", "energy inflation", "fuel CPI component"]
-    category: energy
-
-  - id: wpi_inflation
-    aliases: ["WPI", "wholesale price index", "WPI inflation", "producer inflation"]
-    category: financial
-
-  - id: rbi_open_market_operations
-    aliases: ["OMO", "open market operations", "RBI bond purchase", "RBI bond sale"]
-    category: financial
-
-  - id: rbi_forex_reserves
-    aliases: ["RBI forex reserves", "India forex reserves", "foreign exchange reserves", "RBI dollar reserves"]
-    category: financial
-
-  - id: rbi_intervention
-    aliases: ["RBI forex intervention", "RBI dollar sale", "RBI rupee defense", "RBI forex operation"]
-    category: financial
-
-  # ===========================================================================
-  # 2. MONETARY POLICY — GLOBAL CENTRAL BANKS
-  # ===========================================================================
-  - id: us_fed
-    aliases: ["Federal Reserve", "US Fed", "Fed rate", "FOMC", "Fed funds rate", "Jerome Powell"]
-    category: financial
-
-  - id: fed_funds_rate
-    aliases: ["fed funds rate", "federal funds rate", "US interest rate", "Fed rate decision"]
-    category: financial
-
-  - id: us_treasury_yield
-    aliases: ["US Treasury yield", "10-year Treasury", "US bond yield", "Treasury rate"]
-    category: financial
-
-  - id: ecb
-    aliases: ["ECB", "European Central Bank", "ECB rate", "ECB decision", "Christine Lagarde"]
-    category: financial
-
-  - id: ecb_rate
-    aliases: ["ECB interest rate", "ECB deposit rate", "Eurozone rate"]
-    category: financial
-
-  - id: boj
-    aliases: ["BOJ", "Bank of Japan", "BOJ rate", "BOJ policy", "Japan monetary policy"]
-    category: financial
-
-  - id: boj_rate
-    aliases: ["BOJ interest rate", "Japan rate", "yen carry trade"]
-    category: financial
-
-  - id: pboc
-    aliases: ["PBOC", "People's Bank of China", "China central bank", "China rate"]
-    category: financial
-
-  - id: global_liquidity
-    aliases: ["global liquidity", "central bank liquidity", "global money supply", "liquidity cycle"]
-    category: financial
-
-  - id: dollar_index
-    aliases: ["dollar index", "DXY", "US dollar strength", "dollar value", "USD index"]
-    category: financial
-
-  - id: fii_flows
-    aliases: ["FII flows", "FPI flows", "foreign institutional investor", "foreign portfolio investment India", "FII selling", "FII buying"]
-    category: financial
-
-  - id: dii_flows
-    aliases: ["DII flows", "domestic institutional investor", "mutual fund flows", "LIC investment"]
-    category: financial
-
-  - id: emerging_market_flows
-    aliases: ["emerging market flows", "EM fund flows", "emerging market investment", "EM allocation"]
-    category: financial
-
-  # ===========================================================================
-  # 3. BANKING SYSTEM — DEPOSITS
-  # ===========================================================================
-  - id: fd_rates
-    aliases: ["FD rates", "fixed deposit rates", "FD interest rate", "term deposit rate", "bank FD rate"]
-    category: financial
-
-  - id: savings_rate
-    aliases: ["savings account rate", "savings interest rate", "bank savings rate"]
-    category: financial
-
-  - id: ppf
-    aliases: ["PPF", "Public Provident Fund", "PPF interest rate", "PPF rate", "PPF withdrawal"]
-    category: financial
-
-  - id: scss
-    aliases: ["SCSS", "Senior Citizens Savings Scheme", "senior citizen FD", "SCSS rate"]
-    category: financial
-
-  - id: nsc
-    aliases: ["NSC", "National Savings Certificate", "NSC rate", "NSC interest"]
-    category: financial
-
-  - id: post_office_schemes
-    aliases: ["post office savings", "small savings schemes", "post office RD", "KVP", "Sukanya Samriddhi"]
-    category: financial
-
-  - id: small_savings_rate
-    aliases: ["small savings rate", "small savings interest", "government savings rate", "quarterly rate revision"]
-    category: financial
-
-  - id: deposit_growth
-    aliases: ["deposit growth", "bank deposit growth", "savings growth", "deposit mobilization"]
-    category: financial
-
-  # ===========================================================================
-  # 4. BANKING SYSTEM — LOANS
-  # ===========================================================================
-  - id: home_loan
-    aliases: ["home loan", "housing loan", "mortgage India", "home loan rate", "home loan EMI"]
-    category: financial
-
-  - id: home_loan_emi
-    aliases: ["home loan EMI", "mortgage EMI", "housing loan EMI", "EMI increase", "EMI reduction"]
-    category: financial
-
-  - id: auto_loan
-    aliases: ["auto loan", "car loan", "vehicle loan", "auto loan rate", "car loan EMI"]
-    category: financial
-
-  - id: auto_loan_emi
-    aliases: ["auto loan EMI", "car loan EMI", "vehicle loan EMI"]
-    category: financial
-
-  - id: personal_loan
-    aliases: ["personal loan", "personal loan rate", "personal loan EMI", "unsecured loan"]
-    category: financial
-
-  - id: education_loan
-    aliases: ["education loan", "student loan India", "education loan rate", "Vidya Lakshmi", "study abroad loan"]
-    category: financial
-
-  - id: gold_loan
-    aliases: ["gold loan", "gold loan rate", "Muthoot gold loan", "Manappuram gold loan"]
-    category: financial
-
-  - id: business_loan
-    aliases: ["business loan", "MSME loan", "business loan rate", "working capital loan", "term loan"]
-    category: financial
-
-  - id: credit_card_rates
-    aliases: ["credit card interest", "credit card rate", "credit card APR", "revolving credit"]
-    category: financial
-
-  - id: credit_growth
-    aliases: ["credit growth India", "bank lending growth", "loan growth", "credit offtake"]
-    category: financial
-
-  - id: retail_credit
-    aliases: ["retail credit growth", "retail lending", "consumer lending", "personal credit"]
-    category: financial
-
-  - id: corporate_credit
-    aliases: ["corporate credit", "corporate lending", "corporate loan growth", "project finance"]
-    category: financial
-
-  # ===========================================================================
-  # 5. BANKING SYSTEM — HEALTH
-  # ===========================================================================
-  - id: npa
-    aliases: ["NPA", "non-performing assets", "bad loans", "gross NPA", "net NPA", "stressed assets"]
-    category: financial
-
-  - id: bank_provisions
-    aliases: ["bank provisioning", "loan loss provision", "provision coverage ratio", "PCR"]
-    category: financial
-
-  - id: bank_write_off
-    aliases: ["bank write-off", "loan write-off", "bad debt write-off", "technical write-off"]
-    category: financial
-
-  - id: bank_recapitalization
-    aliases: ["bank recapitalization", "bank recap", "capital infusion banks", "PSU bank recap"]
-    category: financial
-
-  - id: bank_merger
-    aliases: ["bank merger", "PSU bank consolidation", "bank amalgamation"]
-    category: financial
-
-  - id: bank_fraud
-    aliases: ["bank fraud", "banking scam", "loan fraud", "Nirav Modi", "bank embezzlement"]
-    category: financial
-
-  # ===========================================================================
-  # 6. DIGITAL BANKING & PAYMENTS
-  # ===========================================================================
-  - id: upi
-    aliases: ["UPI", "Unified Payments Interface", "UPI transaction", "UPI volume", "UPI payment"]
-    category: financial
-
-  - id: upi_outage
-    aliases: ["UPI outage", "UPI down", "UPI server issue", "payment system failure"]
-    category: financial
-
-  - id: imps
-    aliases: ["IMPS", "Immediate Payment Service", "instant transfer"]
-    category: financial
-
-  - id: neft_rtgs
-    aliases: ["NEFT", "RTGS", "bank transfer", "fund transfer"]
-    category: financial
-
-  - id: digital_rupee
-    aliases: ["digital rupee", "e-rupee", "CBDC India", "RBI digital currency", "central bank digital currency"]
-    category: financial
-
-  - id: payment_system_regulation
-    aliases: ["payment system regulation", "NPCI", "payment aggregator rules", "PA/PG regulation"]
-    category: financial
-
-  - id: npci
-    aliases: ["NPCI", "National Payments Corporation", "NPCI regulation", "UPI operator"]
-    category: financial
-
-  # ===========================================================================
-  # 7. BANKING REGULATION
-  # ===========================================================================
-  - id: rbi_circular
-    aliases: ["RBI circular", "RBI notification", "RBI guidelines", "RBI direction"]
-    category: financial
-
-  - id: basel_iii
-    aliases: ["Basel III", "Basel norms India", "bank capital adequacy", "CAR requirement"]
-    category: financial
-
-  - id: nbfc_regulation
-    aliases: ["NBFC regulation", "RBI NBFC rules", "NBFC scale based regulation", "NBFC-UL"]
-    category: financial
-
-  - id: microfinance_regulation
-    aliases: ["microfinance regulation", "MFI rules", "microfinance interest cap", "SHG lending"]
-    category: financial
-
-  - id: co_lending
-    aliases: ["co-lending", "bank-NBFC co-lending", "co-origination", "colending model"]
-    category: financial
-
-  - id: psu_banks
-    aliases: ["PSU banks", "public sector banks", "SBI", "Bank of Baroda", "PNB", "government banks"]
-    category: financial
-
-  - id: private_banks
-    aliases: ["private banks India", "HDFC Bank", "ICICI Bank", "Kotak Mahindra Bank", "Axis Bank"]
-    category: financial
-
-  - id: nbfc_sector
-    aliases: ["NBFC sector", "non-banking financial company", "Bajaj Finance", "Shriram Finance"]
-    category: financial
-
-  - id: small_finance_banks
-    aliases: ["small finance bank", "SFB", "AU Small Finance Bank", "Ujjivan SFB"]
-    category: financial
-
-  - id: cooperative_banks
-    aliases: ["cooperative bank", "urban cooperative bank", "UCB", "district cooperative bank"]
-    category: financial
-
-  # ===========================================================================
-  # 8. EQUITY MARKETS
-  # ===========================================================================
-  - id: nifty_50
-    aliases: ["Nifty 50", "Nifty", "NSE index", "Nifty level", "Nifty crash", "Nifty rally"]
-    category: financial
-
-  - id: sensex
-    aliases: ["Sensex", "BSE Sensex", "Sensex level", "Sensex crash", "Sensex rally"]
-    category: financial
-
-  - id: nifty_bank
-    aliases: ["Bank Nifty", "Nifty Bank", "banking index", "bank index"]
-    category: financial
-
-  - id: nifty_it
-    aliases: ["Nifty IT", "IT index", "tech index India"]
-    category: financial
-
-  - id: nifty_pharma
-    aliases: ["Nifty Pharma", "pharma index"]
-    category: financial
-
-  - id: nifty_auto
-    aliases: ["Nifty Auto", "auto index"]
-    category: financial
-
-  - id: nifty_fmcg
-    aliases: ["Nifty FMCG", "FMCG index"]
-    category: financial
-
-  - id: nifty_realty
-    aliases: ["Nifty Realty", "realty index"]
-    category: financial
-
-  - id: nifty_midcap
-    aliases: ["Nifty Midcap", "midcap index", "Nifty Midcap 150", "midcap stocks"]
-    category: financial
-
-  - id: nifty_smallcap
-    aliases: ["Nifty Smallcap", "smallcap index", "Nifty Smallcap 250", "smallcap stocks"]
-    category: financial
-
-  - id: ipo_market
-    aliases: ["IPO market", "IPO listing", "upcoming IPO", "IPO allotment", "IPO subscription"]
-    category: financial
-
-  - id: sebi
-    aliases: ["SEBI", "Securities and Exchange Board", "SEBI regulation", "SEBI circular", "SEBI order"]
-    category: financial
-
-  - id: nse
-    aliases: ["NSE", "National Stock Exchange", "NSE trading", "NSE outage"]
-    category: financial
-
-  - id: bse
-    aliases: ["BSE", "Bombay Stock Exchange", "BSE trading"]
-    category: financial
-
-  - id: market_volatility
-    aliases: ["market volatility", "India VIX", "stock market volatility", "market correction"]
-    category: financial
-
-  - id: insider_trading
-    aliases: ["insider trading", "SEBI insider trading", "front running", "market manipulation"]
-    category: financial
-
-  - id: stock_market_crash
-    aliases: ["stock market crash", "market crash India", "bear market", "equity market crash"]
-    category: financial
-
-  - id: stock_market_rally
-    aliases: ["stock market rally", "bull run", "market rally India", "all-time high"]
-    category: financial
-
-  - id: margin_trading
-    aliases: ["margin trading", "margin call", "leverage trading", "F&O margin"]
-    category: financial
-
-  # ===========================================================================
-  # 9. MUTUAL FUNDS
-  # ===========================================================================
-  - id: mutual_fund_industry
-    aliases: ["mutual fund industry", "MF industry", "AMFI", "mutual fund AUM"]
-    category: financial
-
-  - id: equity_mf
-    aliases: ["equity mutual fund", "equity fund", "equity MF", "stock mutual fund"]
-    category: financial
-
-  - id: large_cap_mf
-    aliases: ["large cap fund", "large cap mutual fund", "bluechip fund"]
-    category: financial
-
-  - id: mid_cap_mf
-    aliases: ["mid cap fund", "mid cap mutual fund", "midcap fund"]
-    category: financial
-
-  - id: small_cap_mf
-    aliases: ["small cap fund", "small cap mutual fund", "smallcap fund"]
-    category: financial
-
-  - id: sectoral_mf
-    aliases: ["sectoral fund", "thematic fund", "sectoral mutual fund"]
-    category: financial
-
-  - id: debt_mf
-    aliases: ["debt mutual fund", "debt fund", "bond fund", "fixed income fund"]
-    category: financial
-
-  - id: liquid_fund
-    aliases: ["liquid fund", "liquid mutual fund", "money market fund", "overnight fund"]
-    category: financial
-
-  - id: gilt_fund
-    aliases: ["gilt fund", "government securities fund", "G-sec fund"]
-    category: financial
-
-  - id: corporate_bond_fund
-    aliases: ["corporate bond fund", "credit risk fund", "corporate debt fund"]
-    category: financial
-
-  - id: hybrid_fund
-    aliases: ["hybrid fund", "balanced fund", "balanced advantage fund", "aggressive hybrid"]
-    category: financial
-
-  - id: index_fund
-    aliases: ["index fund", "passive fund", "Nifty index fund", "ETF India"]
-    category: financial
-
-  - id: sip_flows
-    aliases: ["SIP flows", "SIP contribution", "systematic investment plan", "SIP amount", "SIP book"]
-    category: financial
-
-  - id: mf_taxation
-    aliases: ["mutual fund taxation", "LTCG on MF", "STCG on equity", "debt fund taxation"]
-    category: financial
-
-  - id: mf_regulation
-    aliases: ["SEBI mutual fund regulation", "MF expense ratio", "TER cap", "SEBI MF circular"]
-    category: financial
-
-  # ===========================================================================
-  # 10. FIXED INCOME / BONDS
-  # ===========================================================================
-  - id: gsec
-    aliases: ["G-sec", "government securities", "government bond India", "10-year G-sec", "gilt"]
-    category: financial
-
-  - id: gsec_yield
-    aliases: ["G-sec yield", "10-year yield India", "government bond yield", "benchmark yield"]
-    category: financial
-
-  - id: corporate_bonds
-    aliases: ["corporate bonds India", "corporate bond market", "NCD", "non-convertible debenture"]
-    category: financial
-
-  - id: yield_curve
-    aliases: ["yield curve India", "yield curve inversion", "term spread", "yield curve steepening"]
-    category: financial
-
-  - id: bond_market_india
-    aliases: ["bond market India", "Indian debt market", "fixed income market"]
-    category: financial
-
-  - id: sdl
-    aliases: ["SDL", "state development loan", "state government bonds"]
-    category: financial
-
-  - id: sovereign_green_bond
-    aliases: ["sovereign green bond", "green bond India", "green G-sec"]
-    category: financial
-
-  - id: rbis_sovereign_gold_bond
-    aliases: ["sovereign gold bond", "SGB", "RBI gold bond", "gold bond interest"]
-    category: financial
-
-  # ===========================================================================
-  # 11. GOLD
-  # ===========================================================================
-  - id: gold_price
-    aliases: ["gold price", "gold rate", "gold price India", "gold rate today", "international gold price"]
-    category: financial
-
-  - id: gold_import
-    aliases: ["gold import India", "gold import duty", "gold smuggling", "gold demand India"]
-    category: financial
-
-  - id: gold_etf
-    aliases: ["gold ETF", "gold exchange traded fund", "gold ETF India"]
-    category: financial
-
-  - id: physical_gold
-    aliases: ["physical gold", "gold jewelry", "gold coins", "gold bars", "gold demand"]
-    category: financial
-
-  - id: gold_loan_market
-    aliases: ["gold loan market", "gold-backed lending", "gold loan growth"]
-    category: financial
-
-  # ===========================================================================
-  # 12. REAL ESTATE (financial angle)
-  # ===========================================================================
-  - id: reit
-    aliases: ["REIT", "real estate investment trust", "REIT India", "Embassy REIT", "Mindspace REIT", "Brookfield REIT"]
-    category: financial
-
-  - id: property_price
-    aliases: ["property prices India", "real estate prices", "housing prices", "flat prices"]
-    category: financial
-
-  - id: stamp_duty
-    aliases: ["stamp duty", "stamp duty rate", "registration charges", "stamp duty cut"]
-    category: financial
-
-  - id: circle_rate
-    aliases: ["circle rate", "guideline value", "ready reckoner rate", "government valuation"]
-    category: financial
-
-  - id: rental_yield
-    aliases: ["rental yield", "rental return", "rental income", "rent to price ratio"]
-    category: financial
-
-  - id: rera
-    aliases: ["RERA", "Real Estate Regulation Act", "RERA compliance", "RERA authority"]
-    category: financial
-
-  - id: home_loan_rate
-    aliases: ["home loan rate", "home loan interest rate", "housing loan rate", "mortgage rate India"]
-    category: financial
-
-  # ===========================================================================
-  # 13. CRYPTOCURRENCY
-  # ===========================================================================
-  - id: bitcoin
-    aliases: ["Bitcoin", "BTC", "Bitcoin price", "Bitcoin India", "Bitcoin crash", "Bitcoin rally"]
-    category: financial
-
-  - id: ethereum
-    aliases: ["Ethereum", "ETH", "Ethereum price", "Ether"]
-    category: financial
-
-  - id: crypto_regulation_india
-    aliases: ["crypto regulation India", "crypto ban India", "RBI crypto stance", "cryptocurrency bill"]
-    category: financial
-
-  - id: crypto_tax_india
-    aliases: ["crypto tax India", "30% crypto tax", "1% TDS crypto", "VDA taxation"]
-    category: financial
-
-  - id: crypto_exchange_india
-    aliases: ["crypto exchange India", "WazirX", "CoinDCX", "CoinSwitch", "Indian crypto exchange"]
-    category: financial
-
-  - id: global_crypto_regulation
-    aliases: ["global crypto regulation", "SEC crypto", "MiCA", "crypto regulation US"]
-    category: financial
-
-  # ===========================================================================
-  # 14. INSURANCE
-  # ===========================================================================
-  - id: health_insurance
-    aliases: ["health insurance India", "mediclaim", "health insurance premium", "health cover"]
-    category: financial
-
-  - id: health_insurance_premium
-    aliases: ["health insurance premium hike", "mediclaim premium", "health insurance cost"]
-    category: financial
-
-  - id: health_insurance_portability
-    aliases: ["health insurance portability", "insurance portability", "switch health insurer"]
-    category: financial
-
-  - id: cashless_network
-    aliases: ["cashless hospital", "TPA network", "cashless claim", "network hospital"]
-    category: financial
-
-  - id: pre_existing_condition
-    aliases: ["pre-existing condition", "PED waiting period", "pre-existing disease cover"]
-    category: financial
-
-  - id: motor_insurance
-    aliases: ["motor insurance", "car insurance", "bike insurance", "vehicle insurance"]
-    category: financial
-
-  - id: third_party_insurance
-    aliases: ["third party insurance", "TP insurance", "mandatory insurance vehicle"]
-    category: financial
-
-  - id: own_damage_insurance
-    aliases: ["own damage insurance", "OD insurance", "comprehensive insurance", "IDV"]
-    category: financial
-
-  - id: term_insurance
-    aliases: ["term insurance", "term life insurance", "term plan", "life cover"]
-    category: financial
-
-  - id: endowment_plan
-    aliases: ["endowment plan", "money back policy", "LIC endowment", "traditional insurance"]
-    category: financial
-
-  - id: ulip
-    aliases: ["ULIP", "unit linked insurance plan", "ULIP charges", "insurance + investment"]
-    category: financial
-
-  - id: crop_insurance
-    aliases: ["crop insurance", "PMFBY", "Pradhan Mantri Fasal Bima", "farm insurance"]
-    category: financial
-
-  - id: irdai
-    aliases: ["IRDAI", "Insurance Regulatory Authority", "IRDAI regulation", "IRDAI circular"]
-    category: financial
-
-  - id: bima_sugam
-    aliases: ["Bima Sugam", "insurance marketplace", "IRDAI Bima Sugam", "insurance portal"]
-    category: financial
-
-  - id: claim_settlement
-    aliases: ["insurance claim settlement", "claim ratio", "claim rejection", "claim process"]
-    category: financial
-
-  - id: reinsurance
-    aliases: ["reinsurance", "reinsurance rates", "GIC Re", "global reinsurance"]
-    category: financial
-
-  # ===========================================================================
-  # 15. TAXATION — INCOME TAX
-  # ===========================================================================
-  - id: income_tax
-    aliases: ["income tax India", "income tax rate", "income tax slab", "IT return"]
-    category: financial
-
-  - id: income_tax_slab
-    aliases: ["income tax slab", "tax slab", "tax bracket", "tax rate individual"]
-    category: financial
-
-  - id: new_tax_regime
-    aliases: ["new tax regime", "new income tax regime", "simplified tax regime", "section 115BAC"]
-    category: financial
-
-  - id: old_tax_regime
-    aliases: ["old tax regime", "old income tax regime", "deductions regime"]
-    category: financial
-
-  - id: section_80c
-    aliases: ["Section 80C", "80C deduction", "80C limit", "tax saving investment"]
-    category: financial
-
-  - id: section_80d
-    aliases: ["Section 80D", "80D deduction", "health insurance deduction", "medical insurance tax benefit"]
-    category: financial
-
-  - id: hra_deduction
-    aliases: ["HRA deduction", "house rent allowance", "HRA exemption", "HRA tax benefit"]
-    category: financial
-
-  - id: standard_deduction
-    aliases: ["standard deduction", "salary standard deduction", "Rs 75000 deduction"]
-    category: financial
-
-  - id: surcharge
-    aliases: ["income tax surcharge", "surcharge on tax", "high income surcharge"]
-    category: financial
-
-  - id: tds
-    aliases: ["TDS", "tax deducted at source", "TDS rate", "TDS return", "26AS"]
-    category: financial
-
-  - id: advance_tax
-    aliases: ["advance tax", "advance tax due date", "advance tax payment"]
-    category: financial
-
-  - id: union_budget
-    aliases: ["Union Budget", "Budget 2026", "budget announcement", "finance minister budget", "budget impact"]
-    category: financial
-
-  # ===========================================================================
-  # 16. TAXATION — CAPITAL GAINS
-  # ===========================================================================
-  - id: stcg
-    aliases: ["STCG", "short term capital gains", "short term capital gains tax", "STCG rate"]
-    category: financial
-
-  - id: ltcg
-    aliases: ["LTCG", "long term capital gains", "long term capital gains tax", "LTCG rate", "LTCG exemption"]
-    category: financial
-
-  - id: indexation
-    aliases: ["indexation benefit", "cost inflation index", "indexation removal", "inflation adjustment"]
-    category: financial
-
-  - id: capital_gains_budget
-    aliases: ["capital gains budget", "LTCG budget change", "STCG budget change", "capital gains tax change"]
-    category: financial
-
-  - id: stt
-    aliases: ["STT", "securities transaction tax", "STT rate", "STT on F&O"]
-    category: financial
-
-  # ===========================================================================
-  # 17. TAXATION — GST
-  # ===========================================================================
-  - id: gst
-    aliases: ["GST", "goods and services tax", "GST India"]
-    category: financial
-
-  - id: gst_rate
-    aliases: ["GST rate", "GST rate change", "GST slab", "5% GST", "12% GST", "18% GST", "28% GST"]
-    category: financial
-
-  - id: gst_council
-    aliases: ["GST Council", "GST Council meeting", "GST Council decision"]
-    category: financial
-
-  - id: gst_collection
-    aliases: ["GST collection", "GST revenue", "monthly GST collection", "GST mop-up"]
-    category: financial
-
-  - id: input_tax_credit
-    aliases: ["input tax credit", "ITC GST", "GST credit", "ITC claim", "blocked credit"]
-    category: financial
-
-  - id: gst_compliance
-    aliases: ["GST compliance", "GST return filing", "GSTR-1", "GSTR-3B", "GST audit"]
-    category: financial
-
-  - id: gst_on_insurance
-    aliases: ["GST on insurance", "18% GST insurance", "insurance GST", "GST health insurance"]
-    category: financial
-
-  # ===========================================================================
-  # 18. TAXATION — CUSTOMS & TRADE
-  # ===========================================================================
-  - id: customs_duty
-    aliases: ["customs duty", "import duty", "basic customs duty", "BCD"]
-    category: financial
-
-  - id: electronics_import_duty
-    aliases: ["electronics import duty", "laptop import duty", "phone import duty", "IT hardware duty"]
-    category: financial
-
-  - id: gold_import_duty
-    aliases: ["gold import duty", "gold customs duty", "gold duty change"]
-    category: financial
-
-  - id: auto_import_duty
-    aliases: ["auto import duty", "car import duty", "CKD duty", "CBU duty"]
-    category: financial
-
-  - id: agri_import_duty
-    aliases: ["agricultural import duty", "edible oil duty", "pulse import duty", "wheat import duty"]
-    category: financial
-
-  - id: anti_dumping_duty
-    aliases: ["anti-dumping duty", "safeguard duty", "countervailing duty", "trade remedy"]
-    category: financial
-
-  # ===========================================================================
-  # 19. TAXATION — PROPERTY
-  # ===========================================================================
-  - id: property_tax
-    aliases: ["property tax", "house tax", "municipal tax", "property tax hike"]
-    category: financial
-
-  - id: stamp_duty_rate
-    aliases: ["stamp duty rate", "registration charges", "stamp duty reduction", "stamp duty hike"]
-    category: financial
-
-  - id: capital_gains_property
-    aliases: ["capital gains on property", "property LTCG", "section 54", "real estate tax"]
-    category: financial
-
-  # ===========================================================================
-  # 20. TAXATION — INTERNATIONAL
-  # ===========================================================================
-  - id: dtaa
-    aliases: ["DTAA", "double taxation avoidance", "tax treaty", "bilateral tax agreement"]
-    category: financial
-
-  - id: fema
-    aliases: ["FEMA", "Foreign Exchange Management Act", "FEMA regulation", "forex regulation India"]
-    category: financial
-
-  - id: lrs
-    aliases: ["LRS", "liberalized remittance scheme", "$250K limit", "foreign remittance", "TCS on remittance"]
-    category: financial
-
-  - id: angel_tax
-    aliases: ["angel tax", "Section 56(2)(viib)", "startup angel tax", "angel tax abolition"]
-    category: financial
-
-  - id: tcs_foreign_remittance
-    aliases: ["TCS on foreign remittance", "TCS LRS", "20% TCS", "TCS overseas"]
-    category: financial
-
-  - id: equalization_levy
-    aliases: ["equalization levy", "Google tax", "digital service tax", "equalization levy 2%"]
-    category: financial
-
-  # ===========================================================================
-  # 21. FOREX & CURRENCY
-  # ===========================================================================
-  - id: inr_usd
-    aliases: ["INR USD", "rupee dollar", "USD INR rate", "rupee exchange rate", "rupee depreciation", "rupee appreciation"]
-    category: financial
-
-  - id: inr_eur
-    aliases: ["INR EUR", "rupee euro", "EUR INR rate"]
-    category: financial
-
-  - id: inr_gbp
-    aliases: ["INR GBP", "rupee pound", "GBP INR rate"]
-    category: financial
-
-  - id: trade_deficit
-    aliases: ["trade deficit India", "current account deficit", "CAD India", "import-export gap"]
-    category: financial
-
-  - id: oil_import_bill
-    aliases: ["oil import bill", "crude oil import cost", "petroleum import", "energy import"]
-    category: energy
-
-  - id: it_export_earnings
-    aliases: ["IT export earnings", "software export", "IT services forex", "IT dollar earnings"]
-    category: financial
-
-  - id: remittances_inward
-    aliases: ["remittances India", "NRI remittances", "inward remittance", "diaspora remittance"]
-    category: financial
-
-  - id: remittances_outward
-    aliases: ["outward remittance", "LRS remittance", "money transfer abroad", "foreign education payment"]
-    category: financial
-
-  - id: ecb_norms
-    aliases: ["ECB norms", "external commercial borrowing", "foreign borrowing rules", "ECB framework"]
-    category: financial
-
-  - id: fema_limits
-    aliases: ["FEMA limits", "forex limits individual", "resident forex allowance"]
-    category: financial
-
-  # ===========================================================================
-  # 22. NPS / EPF / RETIREMENT
-  # ===========================================================================
-  - id: epf
-    aliases: ["EPF", "Employee Provident Fund", "PF", "EPFO", "EPF interest rate", "PF withdrawal"]
-    category: financial
-
-  - id: epf_interest_rate
-    aliases: ["EPF interest rate", "PF interest rate", "EPFO rate", "EPF rate declaration"]
-    category: financial
-
-  - id: eps
-    aliases: ["EPS", "Employee Pension Scheme", "EPS 95", "EPS pension"]
-    category: financial
-
-  - id: nps
-    aliases: ["NPS", "National Pension System", "NPS tier 1", "NPS tier 2", "NPS contribution"]
-    category: financial
-
-  - id: nps_equity_allocation
-    aliases: ["NPS equity allocation", "NPS asset allocation", "NPS aggressive", "NPS lifecycle fund"]
-    category: financial
-
-  - id: annuity_rates
-    aliases: ["annuity rates", "NPS annuity", "pension annuity", "annuity purchase"]
-    category: financial
-
-  - id: gratuity
-    aliases: ["gratuity", "gratuity limit", "gratuity calculation", "gratuity tax exemption"]
-    category: financial
-
-  - id: superannuation
-    aliases: ["superannuation fund", "employer pension", "superannuation benefit"]
-    category: financial
-
-  # ===========================================================================
-  # 23. CROSS-DOMAIN ANCHOR NODES
-  # ===========================================================================
-  - id: us_economy
-    aliases: ["US economy", "US GDP", "American economy", "US growth"]
-    category: geopolitics
-
-  - id: eu_economy
-    aliases: ["European economy", "EU GDP", "Eurozone economy"]
-    category: geopolitics
-
-  - id: china_economy
-    aliases: ["China economy", "Chinese GDP", "China slowdown"]
-    category: geopolitics
-
-  - id: india_gdp
-    aliases: ["India GDP", "Indian economy growth", "GDP growth rate India"]
-    category: financial
-
-  - id: crude_oil_price
-    aliases: ["crude oil price", "Brent crude", "WTI crude", "oil price"]
-    category: energy
-
-  - id: opec_decision
-    aliases: ["OPEC decision", "OPEC+ output", "OPEC production cut", "OPEC supply"]
-    category: energy
-
-  - id: natural_gas_price
-    aliases: ["natural gas price", "LNG price", "gas price India", "APM gas price"]
-    category: energy
-
-  - id: monsoon_forecast
-    aliases: ["monsoon forecast", "IMD monsoon", "monsoon prediction", "rainfall forecast"]
-    category: food
-
-  - id: geopolitical_risk
-    aliases: ["geopolitical risk", "geopolitical tension", "war risk", "global conflict"]
-    category: geopolitics
-
-  - id: us_china_trade
-    aliases: ["US China trade", "US China tariff", "trade war", "decoupling"]
-    category: geopolitics
-
-  - id: india_us_trade
-    aliases: ["India US trade", "India America trade", "bilateral trade India US"]
-    category: geopolitics
-
-  - id: russia_ukraine
-    aliases: ["Russia Ukraine", "Ukraine war", "Russia sanctions", "Russia conflict"]
-    category: geopolitics
-
-  - id: middle_east_conflict
-    aliases: ["Middle East conflict", "Iran tension", "Israel conflict", "Strait of Hormuz"]
-    category: geopolitics
-
-  - id: semiconductor_supply
-    aliases: ["semiconductor supply", "chip shortage", "TSMC", "semiconductor geopolitics"]
-    category: technology
-
-  - id: renewable_energy
-    aliases: ["renewable energy India", "solar energy", "wind energy", "green energy transition"]
-    category: energy
-
-  - id: it_services_sector
-    aliases: ["IT services", "Indian IT", "IT outsourcing"]
-    category: employment
-
-  - id: real_estate_sector
-    aliases: ["real estate India", "property market", "housing market India"]
-    category: employment
-
-  - id: pharma_sector
-    aliases: ["pharma industry India", "pharmaceutical sector"]
-    category: employment
-
-  - id: auto_manufacturing
-    aliases: ["auto sector India", "automobile industry"]
-    category: employment
-
-  - id: agriculture_sector
-    aliases: ["agriculture India", "farming sector"]
-    category: employment
-
-  - id: fmcg_sector
-    aliases: ["FMCG sector India", "consumer goods India"]
-    category: employment
-
-  - id: job_market_india
-    aliases: ["job market India", "employment rate India"]
-    category: employment
-
-  - id: salary_trends
-    aliases: ["salary trends India", "salary hike", "compensation trends"]
-    category: employment
-
-  - id: startup_layoffs
-    aliases: ["startup layoffs India", "tech layoffs India"]
-    category: employment
-
-  - id: vc_funding_india
-    aliases: ["VC funding India", "startup funding India"]
-    category: financial
-
-
-# =============================================================================
-# EDGES — 380+ typed relationships
-# =============================================================================
-
+- id: rbi
+  aliases:
+  - Reserve Bank of India
+  - RBI
+  - central bank India
+  category: financial
+- id: rbi_mpc
+  aliases:
+  - RBI MPC
+  - Monetary Policy Committee
+  - MPC meeting
+  - MPC decision
+  - RBI rate decision
+  category: financial
+- id: repo_rate
+  aliases:
+  - repo rate
+  - RBI repo rate
+  - policy rate
+  - repurchase rate
+  category: financial
+- id: reverse_repo_rate
+  aliases:
+  - reverse repo rate
+  - RBI reverse repo
+  - absorption rate
+  category: financial
+- id: crr
+  aliases:
+  - CRR
+  - cash reserve ratio
+  - CRR change
+  - RBI CRR
+  category: financial
+- id: slr
+  aliases:
+  - SLR
+  - statutory liquidity ratio
+  - SLR requirement
+  category: financial
+- id: bank_liquidity
+  aliases:
+  - banking system liquidity
+  - liquidity surplus
+  - liquidity deficit
+  - RBI liquidity management
+  category: financial
+- id: mclr
+  aliases:
+  - MCLR
+  - marginal cost of funds lending rate
+  - MCLR rate
+  - bank MCLR
+  category: financial
+- id: eblr
+  aliases:
+  - EBLR
+  - external benchmark lending rate
+  - repo-linked lending rate
+  category: financial
+- id: rbi_inflation_target
+  aliases:
+  - RBI inflation target
+  - 4% inflation target
+  - CPI target band
+  - flexible inflation targeting
+  category: financial
+- id: cpi_inflation
+  aliases:
+  - CPI inflation
+  - consumer price index
+  - retail inflation
+  - inflation rate India
+  category: financial
+- id: core_inflation
+  aliases:
+  - core inflation
+  - non-food non-fuel inflation
+  - underlying inflation
+  category: financial
+- id: fuel_inflation
+  aliases:
+  - fuel inflation
+  - energy inflation
+  - fuel CPI component
+  category: energy
+- id: wpi_inflation
+  aliases:
+  - WPI
+  - wholesale price index
+  - WPI inflation
+  - producer inflation
+  category: financial
+- id: rbi_open_market_operations
+  aliases:
+  - OMO
+  - open market operations
+  - RBI bond purchase
+  - RBI bond sale
+  category: financial
+- id: rbi_forex_reserves
+  aliases:
+  - RBI forex reserves
+  - India forex reserves
+  - foreign exchange reserves
+  - RBI dollar reserves
+  category: financial
+- id: rbi_intervention
+  aliases:
+  - RBI forex intervention
+  - RBI dollar sale
+  - RBI rupee defense
+  - RBI forex operation
+  category: financial
+- id: us_fed
+  aliases:
+  - Federal Reserve
+  - US Fed
+  - Fed rate
+  - FOMC
+  - Fed funds rate
+  - Jerome Powell
+  category: financial
+- id: fed_funds_rate
+  aliases:
+  - fed funds rate
+  - federal funds rate
+  - US interest rate
+  - Fed rate decision
+  category: financial
+- id: us_treasury_yield
+  aliases:
+  - US Treasury yield
+  - 10-year Treasury
+  - US bond yield
+  - Treasury rate
+  category: financial
+- id: ecb
+  aliases:
+  - ECB
+  - European Central Bank
+  - ECB rate
+  - ECB decision
+  - Christine Lagarde
+  category: financial
+- id: ecb_rate
+  aliases:
+  - ECB interest rate
+  - ECB deposit rate
+  - Eurozone rate
+  category: financial
+- id: boj
+  aliases:
+  - BOJ
+  - Bank of Japan
+  - BOJ rate
+  - BOJ policy
+  - Japan monetary policy
+  category: financial
+- id: boj_rate
+  aliases:
+  - BOJ interest rate
+  - Japan rate
+  - yen carry trade
+  category: financial
+- id: pboc
+  aliases:
+  - PBOC
+  - People's Bank of China
+  - China central bank
+  - China rate
+  category: financial
+- id: global_liquidity
+  aliases:
+  - global liquidity
+  - central bank liquidity
+  - global money supply
+  - liquidity cycle
+  category: financial
+- id: dollar_index
+  aliases:
+  - dollar index
+  - DXY
+  - US dollar strength
+  - dollar value
+  - USD index
+  category: financial
+- id: fii_flows
+  aliases:
+  - FII flows
+  - FPI flows
+  - foreign institutional investor
+  - foreign portfolio investment India
+  - FII selling
+  - FII buying
+  category: financial
+- id: dii_flows
+  aliases:
+  - DII flows
+  - domestic institutional investor
+  - mutual fund flows
+  - LIC investment
+  category: financial
+- id: emerging_market_flows
+  aliases:
+  - emerging market flows
+  - EM fund flows
+  - emerging market investment
+  - EM allocation
+  category: financial
+- id: fd_rates
+  aliases:
+  - FD rates
+  - fixed deposit rates
+  - FD interest rate
+  - term deposit rate
+  - bank FD rate
+  category: financial
+- id: savings_rate
+  aliases:
+  - savings account rate
+  - savings interest rate
+  - bank savings rate
+  category: financial
+- id: ppf
+  aliases:
+  - PPF
+  - Public Provident Fund
+  - PPF interest rate
+  - PPF rate
+  - PPF withdrawal
+  category: financial
+- id: scss
+  aliases:
+  - SCSS
+  - Senior Citizens Savings Scheme
+  - senior citizen FD
+  - SCSS rate
+  category: financial
+- id: nsc
+  aliases:
+  - NSC
+  - National Savings Certificate
+  - NSC rate
+  - NSC interest
+  category: financial
+- id: post_office_schemes
+  aliases:
+  - post office savings
+  - small savings schemes
+  - post office RD
+  - KVP
+  - Sukanya Samriddhi
+  category: financial
+- id: small_savings_rate
+  aliases:
+  - small savings rate
+  - small savings interest
+  - government savings rate
+  - quarterly rate revision
+  category: financial
+- id: deposit_growth
+  aliases:
+  - deposit growth
+  - bank deposit growth
+  - savings growth
+  - deposit mobilization
+  category: financial
+- id: home_loan
+  aliases:
+  - home loan
+  - housing loan
+  - mortgage India
+  - home loan rate
+  - home loan EMI
+  category: financial
+- id: home_loan_emi
+  aliases:
+  - home loan EMI
+  - mortgage EMI
+  - housing loan EMI
+  - EMI increase
+  - EMI reduction
+  category: financial
+- id: auto_loan
+  aliases:
+  - auto loan
+  - car loan
+  - vehicle loan
+  - auto loan rate
+  - car loan EMI
+  category: financial
+- id: auto_loan_emi
+  aliases:
+  - auto loan EMI
+  - car loan EMI
+  - vehicle loan EMI
+  category: financial
+- id: personal_loan
+  aliases:
+  - personal loan
+  - personal loan rate
+  - personal loan EMI
+  - unsecured loan
+  category: financial
+- id: education_loan
+  aliases:
+  - education loan
+  - student loan India
+  - education loan rate
+  - Vidya Lakshmi
+  - study abroad loan
+  category: financial
+- id: gold_loan
+  aliases:
+  - gold loan
+  - gold loan rate
+  - Muthoot gold loan
+  - Manappuram gold loan
+  category: financial
+- id: business_loan
+  aliases:
+  - business loan
+  - MSME loan
+  - business loan rate
+  - working capital loan
+  - term loan
+  category: financial
+- id: credit_card_rates
+  aliases:
+  - credit card interest
+  - credit card rate
+  - credit card APR
+  - revolving credit
+  category: financial
+- id: credit_growth
+  aliases:
+  - credit growth India
+  - bank lending growth
+  - loan growth
+  - credit offtake
+  category: financial
+- id: retail_credit
+  aliases:
+  - retail credit growth
+  - retail lending
+  - consumer lending
+  - personal credit
+  category: financial
+- id: corporate_credit
+  aliases:
+  - corporate credit
+  - corporate lending
+  - corporate loan growth
+  - project finance
+  category: financial
+- id: npa
+  aliases:
+  - NPA
+  - non-performing assets
+  - bad loans
+  - gross NPA
+  - net NPA
+  - stressed assets
+  category: financial
+- id: bank_provisions
+  aliases:
+  - bank provisioning
+  - loan loss provision
+  - provision coverage ratio
+  - PCR
+  category: financial
+- id: bank_write_off
+  aliases:
+  - bank write-off
+  - loan write-off
+  - bad debt write-off
+  - technical write-off
+  category: financial
+- id: bank_recapitalization
+  aliases:
+  - bank recapitalization
+  - bank recap
+  - capital infusion banks
+  - PSU bank recap
+  category: financial
+- id: bank_merger
+  aliases:
+  - bank merger
+  - PSU bank consolidation
+  - bank amalgamation
+  category: financial
+- id: bank_fraud
+  aliases:
+  - bank fraud
+  - banking scam
+  - loan fraud
+  - Nirav Modi
+  - bank embezzlement
+  category: financial
+- id: upi
+  aliases:
+  - UPI
+  - Unified Payments Interface
+  - UPI transaction
+  - UPI volume
+  - UPI payment
+  category: financial
+- id: upi_outage
+  aliases:
+  - UPI outage
+  - UPI down
+  - UPI server issue
+  - payment system failure
+  category: financial
+- id: imps
+  aliases:
+  - IMPS
+  - Immediate Payment Service
+  - instant transfer
+  category: financial
+- id: neft_rtgs
+  aliases:
+  - NEFT
+  - RTGS
+  - bank transfer
+  - fund transfer
+  category: financial
+- id: digital_rupee
+  aliases:
+  - digital rupee
+  - e-rupee
+  - CBDC India
+  - RBI digital currency
+  - central bank digital currency
+  category: financial
+- id: payment_system_regulation
+  aliases:
+  - payment system regulation
+  - NPCI
+  - payment aggregator rules
+  - PA/PG regulation
+  category: financial
+- id: npci
+  aliases:
+  - NPCI
+  - National Payments Corporation
+  - NPCI regulation
+  - UPI operator
+  category: financial
+- id: rbi_circular
+  aliases:
+  - RBI circular
+  - RBI notification
+  - RBI guidelines
+  - RBI direction
+  category: financial
+- id: basel_iii
+  aliases:
+  - Basel III
+  - Basel norms India
+  - bank capital adequacy
+  - CAR requirement
+  category: financial
+- id: nbfc_regulation
+  aliases:
+  - NBFC regulation
+  - RBI NBFC rules
+  - NBFC scale based regulation
+  - NBFC-UL
+  category: financial
+- id: microfinance_regulation
+  aliases:
+  - microfinance regulation
+  - MFI rules
+  - microfinance interest cap
+  - SHG lending
+  category: financial
+- id: co_lending
+  aliases:
+  - co-lending
+  - bank-NBFC co-lending
+  - co-origination
+  - colending model
+  category: financial
+- id: small_finance_banks
+  aliases:
+  - small finance bank
+  - SFB
+  - AU Small Finance Bank
+  - Ujjivan SFB
+  category: financial
+- id: cooperative_banks
+  aliases:
+  - cooperative bank
+  - urban cooperative bank
+  - UCB
+  - district cooperative bank
+  category: financial
+- id: nifty_50
+  aliases:
+  - Nifty 50
+  - Nifty
+  - NSE index
+  - Nifty level
+  - Nifty crash
+  - Nifty rally
+  category: financial
+- id: sensex
+  aliases:
+  - Sensex
+  - BSE Sensex
+  - Sensex level
+  - Sensex crash
+  - Sensex rally
+  category: financial
+- id: nifty_bank
+  aliases:
+  - Bank Nifty
+  - Nifty Bank
+  - banking index
+  - bank index
+  category: financial
+- id: nifty_it
+  aliases:
+  - Nifty IT
+  - IT index
+  - tech index India
+  category: financial
+- id: nifty_pharma
+  aliases:
+  - Nifty Pharma
+  - pharma index
+  category: financial
+- id: nifty_auto
+  aliases:
+  - Nifty Auto
+  - auto index
+  category: financial
+- id: nifty_fmcg
+  aliases:
+  - Nifty FMCG
+  - FMCG index
+  category: financial
+- id: nifty_realty
+  aliases:
+  - Nifty Realty
+  - realty index
+  category: financial
+- id: nifty_midcap
+  aliases:
+  - Nifty Midcap
+  - midcap index
+  - Nifty Midcap 150
+  - midcap stocks
+  category: financial
+- id: nifty_smallcap
+  aliases:
+  - Nifty Smallcap
+  - smallcap index
+  - Nifty Smallcap 250
+  - smallcap stocks
+  category: financial
+- id: ipo_market
+  aliases:
+  - IPO market
+  - IPO listing
+  - upcoming IPO
+  - IPO allotment
+  - IPO subscription
+  category: financial
+- id: sebi
+  aliases:
+  - SEBI
+  - Securities and Exchange Board
+  - SEBI regulation
+  - SEBI circular
+  - SEBI order
+  category: financial
+- id: nse
+  aliases:
+  - NSE
+  - National Stock Exchange
+  - NSE trading
+  - NSE outage
+  category: financial
+- id: bse
+  aliases:
+  - BSE
+  - Bombay Stock Exchange
+  - BSE trading
+  category: financial
+- id: market_volatility
+  aliases:
+  - market volatility
+  - India VIX
+  - stock market volatility
+  - market correction
+  category: financial
+- id: insider_trading
+  aliases:
+  - insider trading
+  - SEBI insider trading
+  - front running
+  - market manipulation
+  category: financial
+- id: stock_market_crash
+  aliases:
+  - stock market crash
+  - market crash India
+  - bear market
+  - equity market crash
+  category: financial
+- id: stock_market_rally
+  aliases:
+  - stock market rally
+  - bull run
+  - market rally India
+  - all-time high
+  category: financial
+- id: margin_trading
+  aliases:
+  - margin trading
+  - margin call
+  - leverage trading
+  - F&O margin
+  category: financial
+- id: mutual_fund_industry
+  aliases:
+  - mutual fund industry
+  - MF industry
+  - AMFI
+  - mutual fund AUM
+  category: financial
+- id: equity_mf
+  aliases:
+  - equity mutual fund
+  - equity fund
+  - equity MF
+  - stock mutual fund
+  category: financial
+- id: large_cap_mf
+  aliases:
+  - large cap fund
+  - large cap mutual fund
+  - bluechip fund
+  category: financial
+- id: mid_cap_mf
+  aliases:
+  - mid cap fund
+  - mid cap mutual fund
+  - midcap fund
+  category: financial
+- id: small_cap_mf
+  aliases:
+  - small cap fund
+  - small cap mutual fund
+  - smallcap fund
+  category: financial
+- id: sectoral_mf
+  aliases:
+  - sectoral fund
+  - thematic fund
+  - sectoral mutual fund
+  category: financial
+- id: debt_mf
+  aliases:
+  - debt mutual fund
+  - debt fund
+  - bond fund
+  - fixed income fund
+  category: financial
+- id: liquid_fund
+  aliases:
+  - liquid fund
+  - liquid mutual fund
+  - money market fund
+  - overnight fund
+  category: financial
+- id: gilt_fund
+  aliases:
+  - gilt fund
+  - government securities fund
+  - G-sec fund
+  category: financial
+- id: corporate_bond_fund
+  aliases:
+  - corporate bond fund
+  - credit risk fund
+  - corporate debt fund
+  category: financial
+- id: hybrid_fund
+  aliases:
+  - hybrid fund
+  - balanced fund
+  - balanced advantage fund
+  - aggressive hybrid
+  category: financial
+- id: index_fund
+  aliases:
+  - index fund
+  - passive fund
+  - Nifty index fund
+  - ETF India
+  category: financial
+- id: sip_flows
+  aliases:
+  - SIP flows
+  - SIP contribution
+  - systematic investment plan
+  - SIP amount
+  - SIP book
+  category: financial
+- id: mf_taxation
+  aliases:
+  - mutual fund taxation
+  - LTCG on MF
+  - STCG on equity
+  - debt fund taxation
+  category: financial
+- id: mf_regulation
+  aliases:
+  - SEBI mutual fund regulation
+  - MF expense ratio
+  - TER cap
+  - SEBI MF circular
+  category: financial
+- id: gsec
+  aliases:
+  - G-sec
+  - government securities
+  - government bond India
+  - 10-year G-sec
+  - gilt
+  category: financial
+- id: gsec_yield
+  aliases:
+  - G-sec yield
+  - 10-year yield India
+  - government bond yield
+  - benchmark yield
+  category: financial
+- id: corporate_bonds
+  aliases:
+  - corporate bonds India
+  - corporate bond market
+  - NCD
+  - non-convertible debenture
+  category: financial
+- id: yield_curve
+  aliases:
+  - yield curve India
+  - yield curve inversion
+  - term spread
+  - yield curve steepening
+  category: financial
+- id: bond_market_india
+  aliases:
+  - bond market India
+  - Indian debt market
+  - fixed income market
+  category: financial
+- id: sdl
+  aliases:
+  - SDL
+  - state development loan
+  - state government bonds
+  category: financial
+- id: sovereign_green_bond
+  aliases:
+  - sovereign green bond
+  - green bond India
+  - green G-sec
+  category: financial
+- id: rbis_sovereign_gold_bond
+  aliases:
+  - sovereign gold bond
+  - SGB
+  - RBI gold bond
+  - gold bond interest
+  category: financial
+- id: gold_price
+  aliases:
+  - gold price
+  - gold rate
+  - gold price India
+  - gold rate today
+  - international gold price
+  category: financial
+- id: gold_import
+  aliases:
+  - gold import India
+  - gold import duty
+  - gold smuggling
+  - gold demand India
+  category: financial
+- id: gold_etf
+  aliases:
+  - gold ETF
+  - gold exchange traded fund
+  - gold ETF India
+  category: financial
+- id: physical_gold
+  aliases:
+  - physical gold
+  - gold jewelry
+  - gold coins
+  - gold bars
+  - gold demand
+  category: financial
+- id: gold_loan_market
+  aliases:
+  - gold loan market
+  - gold-backed lending
+  - gold loan growth
+  category: financial
+- id: reit
+  aliases:
+  - REIT
+  - real estate investment trust
+  - REIT India
+  - Embassy REIT
+  - Mindspace REIT
+  - Brookfield REIT
+  category: financial
+- id: property_price
+  aliases:
+  - property prices India
+  - real estate prices
+  - housing prices
+  - flat prices
+  category: financial
+- id: stamp_duty
+  aliases:
+  - stamp duty
+  - stamp duty rate
+  - registration charges
+  - stamp duty cut
+  category: financial
+- id: circle_rate
+  aliases:
+  - circle rate
+  - guideline value
+  - ready reckoner rate
+  - government valuation
+  category: financial
+- id: rental_yield
+  aliases:
+  - rental yield
+  - rental return
+  - rental income
+  - rent to price ratio
+  category: financial
+- id: rera
+  aliases:
+  - RERA
+  - Real Estate Regulation Act
+  - RERA compliance
+  - RERA authority
+  category: financial
+- id: home_loan_rate
+  aliases:
+  - home loan rate
+  - home loan interest rate
+  - housing loan rate
+  - mortgage rate India
+  category: financial
+- id: bitcoin
+  aliases:
+  - Bitcoin
+  - BTC
+  - Bitcoin price
+  - Bitcoin India
+  - Bitcoin crash
+  - Bitcoin rally
+  category: financial
+- id: ethereum
+  aliases:
+  - Ethereum
+  - ETH
+  - Ethereum price
+  - Ether
+  category: financial
+- id: crypto_regulation_india
+  aliases:
+  - crypto regulation India
+  - crypto ban India
+  - RBI crypto stance
+  - cryptocurrency bill
+  category: financial
+- id: crypto_tax_india
+  aliases:
+  - crypto tax India
+  - 30% crypto tax
+  - 1% TDS crypto
+  - VDA taxation
+  category: financial
+- id: crypto_exchange_india
+  aliases:
+  - crypto exchange India
+  - WazirX
+  - CoinDCX
+  - CoinSwitch
+  - Indian crypto exchange
+  category: financial
+- id: global_crypto_regulation
+  aliases:
+  - global crypto regulation
+  - SEC crypto
+  - MiCA
+  - crypto regulation US
+  category: financial
+- id: health_insurance
+  aliases:
+  - health insurance India
+  - mediclaim
+  - health insurance premium
+  - health cover
+  category: financial
+- id: health_insurance_premium
+  aliases:
+  - health insurance premium hike
+  - mediclaim premium
+  - health insurance cost
+  category: financial
+- id: health_insurance_portability
+  aliases:
+  - health insurance portability
+  - insurance portability
+  - switch health insurer
+  category: financial
+- id: cashless_network
+  aliases:
+  - cashless hospital
+  - TPA network
+  - cashless claim
+  - network hospital
+  category: financial
+- id: pre_existing_condition
+  aliases:
+  - pre-existing condition
+  - PED waiting period
+  - pre-existing disease cover
+  category: financial
+- id: motor_insurance
+  aliases:
+  - motor insurance
+  - car insurance
+  - bike insurance
+  - vehicle insurance
+  category: financial
+- id: third_party_insurance
+  aliases:
+  - third party insurance
+  - TP insurance
+  - mandatory insurance vehicle
+  category: financial
+- id: own_damage_insurance
+  aliases:
+  - own damage insurance
+  - OD insurance
+  - comprehensive insurance
+  - IDV
+  category: financial
+- id: term_insurance
+  aliases:
+  - term insurance
+  - term life insurance
+  - term plan
+  - life cover
+  category: financial
+- id: endowment_plan
+  aliases:
+  - endowment plan
+  - money back policy
+  - LIC endowment
+  - traditional insurance
+  category: financial
+- id: ulip
+  aliases:
+  - ULIP
+  - unit linked insurance plan
+  - ULIP charges
+  - insurance + investment
+  category: financial
+- id: crop_insurance
+  aliases:
+  - crop insurance
+  - PMFBY
+  - Pradhan Mantri Fasal Bima
+  - farm insurance
+  category: financial
+- id: irdai
+  aliases:
+  - IRDAI
+  - Insurance Regulatory Authority
+  - IRDAI regulation
+  - IRDAI circular
+  category: financial
+- id: bima_sugam
+  aliases:
+  - Bima Sugam
+  - insurance marketplace
+  - IRDAI Bima Sugam
+  - insurance portal
+  category: financial
+- id: claim_settlement
+  aliases:
+  - insurance claim settlement
+  - claim ratio
+  - claim rejection
+  - claim process
+  category: financial
+- id: reinsurance
+  aliases:
+  - reinsurance
+  - reinsurance rates
+  - GIC Re
+  - global reinsurance
+  category: financial
+- id: income_tax
+  aliases:
+  - income tax India
+  - income tax rate
+  - income tax slab
+  - IT return
+  category: financial
+- id: income_tax_slab
+  aliases:
+  - income tax slab
+  - tax slab
+  - tax bracket
+  - tax rate individual
+  category: financial
+- id: new_tax_regime
+  aliases:
+  - new tax regime
+  - new income tax regime
+  - simplified tax regime
+  - section 115BAC
+  category: financial
+- id: old_tax_regime
+  aliases:
+  - old tax regime
+  - old income tax regime
+  - deductions regime
+  category: financial
+- id: section_80c
+  aliases:
+  - Section 80C
+  - 80C deduction
+  - 80C limit
+  - tax saving investment
+  category: financial
+- id: section_80d
+  aliases:
+  - Section 80D
+  - 80D deduction
+  - health insurance deduction
+  - medical insurance tax benefit
+  category: financial
+- id: hra_deduction
+  aliases:
+  - HRA deduction
+  - house rent allowance
+  - HRA exemption
+  - HRA tax benefit
+  category: financial
+- id: standard_deduction
+  aliases:
+  - standard deduction
+  - salary standard deduction
+  - Rs 75000 deduction
+  category: financial
+- id: surcharge
+  aliases:
+  - income tax surcharge
+  - surcharge on tax
+  - high income surcharge
+  category: financial
+- id: tds
+  aliases:
+  - TDS
+  - tax deducted at source
+  - TDS rate
+  - TDS return
+  - 26AS
+  category: financial
+- id: advance_tax
+  aliases:
+  - advance tax
+  - advance tax due date
+  - advance tax payment
+  category: financial
+- id: union_budget
+  aliases:
+  - Union Budget
+  - Budget 2026
+  - budget announcement
+  - finance minister budget
+  - budget impact
+  category: financial
+- id: stcg
+  aliases:
+  - STCG
+  - short term capital gains
+  - short term capital gains tax
+  - STCG rate
+  category: financial
+- id: ltcg
+  aliases:
+  - LTCG
+  - long term capital gains
+  - long term capital gains tax
+  - LTCG rate
+  - LTCG exemption
+  category: financial
+- id: indexation
+  aliases:
+  - indexation benefit
+  - cost inflation index
+  - indexation removal
+  - inflation adjustment
+  category: financial
+- id: capital_gains_budget
+  aliases:
+  - capital gains budget
+  - LTCG budget change
+  - STCG budget change
+  - capital gains tax change
+  category: financial
+- id: stt
+  aliases:
+  - STT
+  - securities transaction tax
+  - STT rate
+  - STT on F&O
+  category: financial
+- id: gst
+  aliases:
+  - GST
+  - goods and services tax
+  - GST India
+  category: financial
+- id: gst_rate
+  aliases:
+  - GST rate
+  - GST rate change
+  - GST slab
+  - 5% GST
+  - 12% GST
+  - 18% GST
+  - 28% GST
+  category: financial
+- id: gst_council
+  aliases:
+  - GST Council
+  - GST Council meeting
+  - GST Council decision
+  category: financial
+- id: gst_collection
+  aliases:
+  - GST collection
+  - GST revenue
+  - monthly GST collection
+  - GST mop-up
+  category: financial
+- id: input_tax_credit
+  aliases:
+  - input tax credit
+  - ITC GST
+  - GST credit
+  - ITC claim
+  - blocked credit
+  category: financial
+- id: gst_compliance
+  aliases:
+  - GST compliance
+  - GST return filing
+  - GSTR-1
+  - GSTR-3B
+  - GST audit
+  category: financial
+- id: gst_on_insurance
+  aliases:
+  - GST on insurance
+  - 18% GST insurance
+  - insurance GST
+  - GST health insurance
+  category: financial
+- id: customs_duty
+  aliases:
+  - customs duty
+  - import duty
+  - basic customs duty
+  - BCD
+  category: financial
+- id: electronics_import_duty
+  aliases:
+  - electronics import duty
+  - laptop import duty
+  - phone import duty
+  - IT hardware duty
+  category: financial
+- id: gold_import_duty
+  aliases:
+  - gold import duty
+  - gold customs duty
+  - gold duty change
+  category: financial
+- id: auto_import_duty
+  aliases:
+  - auto import duty
+  - car import duty
+  - CKD duty
+  - CBU duty
+  category: financial
+- id: agri_import_duty
+  aliases:
+  - agricultural import duty
+  - edible oil duty
+  - pulse import duty
+  - wheat import duty
+  category: financial
+- id: anti_dumping_duty
+  aliases:
+  - anti-dumping duty
+  - safeguard duty
+  - countervailing duty
+  - trade remedy
+  category: financial
+- id: property_tax
+  aliases:
+  - property tax
+  - house tax
+  - municipal tax
+  - property tax hike
+  category: financial
+- id: stamp_duty_rate
+  aliases:
+  - stamp duty rate
+  - registration charges
+  - stamp duty reduction
+  - stamp duty hike
+  category: financial
+- id: capital_gains_property
+  aliases:
+  - capital gains on property
+  - property LTCG
+  - section 54
+  - real estate tax
+  category: financial
+- id: dtaa
+  aliases:
+  - DTAA
+  - double taxation avoidance
+  - tax treaty
+  - bilateral tax agreement
+  category: financial
+- id: fema
+  aliases:
+  - FEMA
+  - Foreign Exchange Management Act
+  - FEMA regulation
+  - forex regulation India
+  category: financial
+- id: lrs
+  aliases:
+  - LRS
+  - liberalized remittance scheme
+  - $250K limit
+  - foreign remittance
+  - TCS on remittance
+  category: financial
+- id: angel_tax
+  aliases:
+  - angel tax
+  - Section 56(2)(viib)
+  - startup angel tax
+  - angel tax abolition
+  category: financial
+- id: tcs_foreign_remittance
+  aliases:
+  - TCS on foreign remittance
+  - TCS LRS
+  - 20% TCS
+  - TCS overseas
+  category: financial
+- id: equalization_levy
+  aliases:
+  - equalization levy
+  - Google tax
+  - digital service tax
+  - equalization levy 2%
+  category: financial
+- id: inr_usd
+  aliases:
+  - INR USD
+  - rupee dollar
+  - USD INR rate
+  - rupee exchange rate
+  - rupee depreciation
+  - rupee appreciation
+  category: financial
+- id: inr_eur
+  aliases:
+  - INR EUR
+  - rupee euro
+  - EUR INR rate
+  category: financial
+- id: inr_gbp
+  aliases:
+  - INR GBP
+  - rupee pound
+  - GBP INR rate
+  category: financial
+- id: trade_deficit
+  aliases:
+  - trade deficit India
+  - current account deficit
+  - CAD India
+  - import-export gap
+  category: financial
+- id: oil_import_bill
+  aliases:
+  - oil import bill
+  - crude oil import cost
+  - petroleum import
+  - energy import
+  category: energy
+- id: it_export_earnings
+  aliases:
+  - IT export earnings
+  - software export
+  - IT services forex
+  - IT dollar earnings
+  category: financial
+- id: remittances_inward
+  aliases:
+  - remittances India
+  - NRI remittances
+  - inward remittance
+  - diaspora remittance
+  category: financial
+- id: remittances_outward
+  aliases:
+  - outward remittance
+  - LRS remittance
+  - money transfer abroad
+  - foreign education payment
+  category: financial
+- id: ecb_norms
+  aliases:
+  - ECB norms
+  - external commercial borrowing
+  - foreign borrowing rules
+  - ECB framework
+  category: financial
+- id: fema_limits
+  aliases:
+  - FEMA limits
+  - forex limits individual
+  - resident forex allowance
+  category: financial
+- id: epf
+  aliases:
+  - EPF
+  - Employee Provident Fund
+  - PF
+  - EPFO
+  - EPF interest rate
+  - PF withdrawal
+  category: financial
+- id: epf_interest_rate
+  aliases:
+  - EPF interest rate
+  - PF interest rate
+  - EPFO rate
+  - EPF rate declaration
+  category: financial
+- id: eps
+  aliases:
+  - EPS
+  - Employee Pension Scheme
+  - EPS 95
+  - EPS pension
+  category: financial
+- id: nps
+  aliases:
+  - NPS
+  - National Pension System
+  - NPS tier 1
+  - NPS tier 2
+  - NPS contribution
+  category: financial
+- id: nps_equity_allocation
+  aliases:
+  - NPS equity allocation
+  - NPS asset allocation
+  - NPS aggressive
+  - NPS lifecycle fund
+  category: financial
+- id: annuity_rates
+  aliases:
+  - annuity rates
+  - NPS annuity
+  - pension annuity
+  - annuity purchase
+  category: financial
+- id: gratuity
+  aliases:
+  - gratuity
+  - gratuity limit
+  - gratuity calculation
+  - gratuity tax exemption
+  category: financial
+- id: superannuation
+  aliases:
+  - superannuation fund
+  - employer pension
+  - superannuation benefit
+  category: financial
+- id: us_economy
+  aliases:
+  - US economy
+  - US GDP
+  - American economy
+  - US growth
+  category: global_economy
+- id: eu_economy
+  aliases:
+  - European economy
+  - EU GDP
+  - Eurozone economy
+  category: global_economy
+- id: china_economy
+  aliases:
+  - China economy
+  - Chinese GDP
+  - China slowdown
+  category: global_economy
+- id: india_gdp
+  aliases:
+  - India GDP
+  - Indian economy growth
+  - GDP growth rate India
+  category: financial
+- id: opec_decision
+  aliases:
+  - OPEC decision
+  - OPEC+ output
+  - OPEC production cut
+  - OPEC supply
+  category: energy
+- id: natural_gas_price
+  aliases:
+  - natural gas price
+  - LNG price
+  - gas price India
+  - APM gas price
+  category: energy
+- id: geopolitical_risk
+  aliases:
+  - geopolitical risk
+  - geopolitical tension
+  - war risk
+  - global conflict
+  category: global_economy
+- id: us_china_trade
+  aliases:
+  - US China trade
+  - US China tariff
+  - trade war
+  - decoupling
+  category: global_economy
+- id: india_us_trade
+  aliases:
+  - India US trade
+  - India America trade
+  - bilateral trade India US
+  category: global_economy
+- id: russia_ukraine
+  aliases:
+  - Russia Ukraine
+  - Ukraine war
+  - Russia sanctions
+  - Russia conflict
+  category: global_economy
+- id: middle_east_conflict
+  aliases:
+  - Middle East conflict
+  - Iran tension
+  - Israel conflict
+  - Strait of Hormuz
+  category: global_economy
+- id: renewable_energy
+  aliases:
+  - renewable energy India
+  - solar energy
+  - wind energy
+  - green energy transition
+  category: energy
+- id: vc_funding_india
+  aliases:
+  - VC funding India
+  - startup funding India
+  category: financial
 edges:
-
-  # ---------------------------------------------------------------------------
-  # MONETARY POLICY — RBI CHAIN
-  # ---------------------------------------------------------------------------
-  - from: rbi
-    to: rbi_mpc
-    type: PRODUCES
-    description: "RBI's MPC is the rate-setting body"
-
-  - from: rbi_mpc
-    to: repo_rate
-    type: PRODUCES
-    description: "MPC decides repo rate every 2 months"
-
-  - from: rbi
-    to: reverse_repo_rate
-    type: PRODUCES
-    description: "RBI sets the reverse repo rate"
-
-  - from: rbi
-    to: crr
-    type: PRODUCES
-    description: "RBI mandates CRR for banks"
-
-  - from: rbi
-    to: slr
-    type: PRODUCES
-    description: "RBI mandates SLR for banks"
-
-  - from: crr
-    to: bank_liquidity
-    type: AFFECTS
-    description: "CRR hike reduces bank liquidity (money locked with RBI)"
-
-  - from: slr
-    to: bank_liquidity
-    type: AFFECTS
-    description: "SLR requirement locks bank funds in government securities"
-
-  - from: repo_rate
-    to: mclr
-    type: AFFECTS
-    description: "Repo rate influences banks' cost of funds and MCLR"
-
-  - from: repo_rate
-    to: eblr
-    type: BENCHMARKED_TO
-    description: "EBLR is directly linked to repo rate"
-
-  - from: eblr
-    to: home_loan
-    type: BENCHMARKED_TO
-    description: "New home loans benchmarked to EBLR"
-
-  - from: mclr
-    to: home_loan
-    type: BENCHMARKED_TO
-    description: "Older home loans benchmarked to MCLR"
-
-  - from: eblr
-    to: auto_loan
-    type: BENCHMARKED_TO
-    description: "Auto loans linked to EBLR"
-
-  - from: eblr
-    to: personal_loan
-    type: BENCHMARKED_TO
-    description: "Personal loans linked to EBLR"
-
-  - from: home_loan
-    to: home_loan_emi
-    type: PRODUCES
-    description: "Loan rate determines EMI amount"
-
-  - from: auto_loan
-    to: auto_loan_emi
-    type: PRODUCES
-    description: "Auto loan rate determines car EMI"
-
-  - from: repo_rate
-    to: home_loan_emi
-    type: AFFECTS
-    description: "Repo rate hike increases floating rate home loan EMI"
-
-  - from: repo_rate
-    to: auto_loan_emi
-    type: AFFECTS
-    description: "Rate hike increases auto loan EMI"
-
-  - from: repo_rate
-    to: education_loan
-    type: AFFECTS
-    description: "Rate changes affect education loan interest"
-
-  - from: repo_rate
-    to: business_loan
-    type: AFFECTS
-    description: "Rate changes affect business borrowing cost"
-
-  - from: repo_rate
-    to: fd_rates
-    type: AFFECTS
-    description: "Repo rate changes lead to FD rate revisions"
-
-  - from: repo_rate
-    to: savings_rate
-    type: AFFECTS
-    description: "Savings account rates loosely follow repo"
-
-  - from: bank_liquidity
-    to: credit_growth
-    type: AFFECTS
-    description: "Bank liquidity determines lending capacity"
-
-  - from: credit_growth
-    to: business_loan
-    type: AFFECTS
-    description: "Credit availability determines business loan ease"
-
-  - from: rbi_inflation_target
-    to: rbi_mpc
-    type: REGULATES
-    description: "4% target mandates MPC response to inflation deviations"
-
-  - from: cpi_inflation
-    to: rbi_mpc
-    type: AFFECTS
-    description: "CPI data drives MPC rate decisions"
-
-  - from: food_inflation
-    to: cpi_inflation
-    type: AFFECTS
-    description: "Food is ~46% of India CPI basket"
-
-  - from: fuel_inflation
-    to: cpi_inflation
-    type: AFFECTS
-    description: "Fuel directly and indirectly affects CPI"
-
-  - from: core_inflation
-    to: cpi_inflation
-    type: AFFECTS
-    description: "Core inflation is the demand-driven component"
-
-  - from: wpi_inflation
-    to: cpi_inflation
-    type: AFFECTS
-    description: "WPI tracks producer prices that eventually pass through to consumer prices"
-
-  - from: crude_oil_price
-    to: wpi_inflation
-    type: AFFECTS
-    description: "Crude oil is a major component of wholesale price index"
-
-  - from: rbi
-    to: rbi_open_market_operations
-    type: PRODUCES
-    description: "RBI uses OMO to manage liquidity"
-
-  - from: rbi_open_market_operations
-    to: bank_liquidity
-    type: AFFECTS
-    description: "Bond purchases inject liquidity, sales drain it"
-
-  - from: rbi_open_market_operations
-    to: gsec_yield
-    type: AFFECTS
-    description: "OMO purchases suppress G-sec yields"
-
-  # ---------------------------------------------------------------------------
-  # GLOBAL CENTRAL BANKS → INDIA
-  # ---------------------------------------------------------------------------
-  - from: us_fed
-    to: fed_funds_rate
-    type: PRODUCES
-    description: "Fed sets the federal funds rate"
-
-  - from: fed_funds_rate
-    to: us_treasury_yield
-    type: AFFECTS
-    description: "Fed rate affects Treasury yields"
-
-  - from: fed_funds_rate
-    to: dollar_index
-    type: AFFECTS
-    description: "Higher Fed rate strengthens the dollar"
-
-  - from: dollar_index
-    to: inr_usd
-    type: AFFECTS
-    description: "Strong dollar weakens rupee"
-
-  - from: fed_funds_rate
-    to: fii_flows
-    type: AFFECTS
-    description: "High US rates pull FII money from India to US"
-
-  - from: fii_flows
-    to: nifty_50
-    type: AFFECTS
-    description: "FII selling/buying directly moves Indian markets"
-
-  - from: fii_flows
-    to: inr_usd
-    type: AFFECTS
-    description: "FII outflows weaken rupee (dollar demand)"
-
-  - from: dii_flows
-    to: nifty_50
-    type: AFFECTS
-    description: "DII buying cushions FII selling"
-
-  - from: sip_flows
-    to: dii_flows
-    type: AFFECTS
-    description: "Monthly SIP flows are the primary DII source"
-
-  - from: ecb
-    to: ecb_rate
-    type: PRODUCES
-    description: "ECB sets Eurozone interest rates"
-
-  - from: ecb_rate
-    to: global_liquidity
-    type: AFFECTS
-    description: "ECB rates affect European capital flows"
-
-  - from: boj
-    to: boj_rate
-    type: PRODUCES
-    description: "BOJ sets Japan interest rates"
-
-  - from: boj_rate
-    to: global_liquidity
-    type: AFFECTS
-    description: "BOJ policy affects yen carry trade and global flows"
-
-  - from: pboc
-    to: global_liquidity
-    type: AFFECTS
-    description: "PBOC monetary policy influences global capital flows"
-
-  - from: pboc
-    to: china_economy
-    type: REGULATES
-    description: "PBOC sets China's monetary policy and interest rates"
-
-  - from: global_liquidity
-    to: emerging_market_flows
-    type: AFFECTS
-    description: "Global liquidity expansion favors EM allocation"
-
-  - from: emerging_market_flows
-    to: fii_flows
-    type: AFFECTS
-    description: "India competes for EM allocation"
-
-  - from: fed_funds_rate
-    to: global_liquidity
-    type: AFFECTS
-    description: "US rates are the single biggest global liquidity driver"
-
-  - from: fed_funds_rate
-    to: vc_funding_india
-    type: AFFECTS
-    description: "US rates affect LP allocations → VC dry powder globally"
-
-  # ---------------------------------------------------------------------------
-  # DEPOSITS
-  # ---------------------------------------------------------------------------
-  - from: repo_rate
-    to: small_savings_rate
-    type: AFFECTS
-    description: "Small savings rates reset quarterly linked to G-sec yields"
-
-  - from: small_savings_rate
-    to: ppf
-    type: PRODUCES
-    description: "PPF rate set under small savings framework"
-
-  - from: small_savings_rate
-    to: scss
-    type: PRODUCES
-    description: "SCSS rate set under small savings framework"
-
-  - from: small_savings_rate
-    to: nsc
-    type: PRODUCES
-    description: "NSC rate set under small savings framework"
-
-  - from: small_savings_rate
-    to: post_office_schemes
-    type: PRODUCES
-    description: "All post office scheme rates follow small savings"
-
-  - from: fd_rates
-    to: deposit_growth
-    type: AFFECTS
-    description: "Higher FD rates attract more deposits"
-
-  - from: deposit_growth
-    to: bank_liquidity
-    type: AFFECTS
-    description: "Strong deposit growth supports bank liquidity"
-
-  - from: fd_rates
-    to: small_savings_rate
-    type: COMPETES_WITH
-    description: "FD and small savings compete for household savings"
-
-  - from: nifty_50
-    to: fd_rates
-    type: COMPETES_WITH
-    description: "Strong equity markets pull money away from FDs"
-
-  - from: section_80c
-    to: ppf
-    type: AFFECTS
-    description: "PPF qualifies for 80C tax deduction"
-
-  - from: section_80c
-    to: nsc
-    type: AFFECTS
-    description: "NSC qualifies for 80C deduction"
-
-  # ---------------------------------------------------------------------------
-  # LOANS
-  # ---------------------------------------------------------------------------
-  - from: home_loan_emi
-    to: property_price
-    type: AFFECTS
-    description: "EMI affordability determines property demand"
-
-  - from: property_price
-    to: real_estate_sector
-    type: AFFECTS
-    description: "Property prices determine builder revenue and sector health"
-
-  - from: auto_loan_emi
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "Auto loan EMI affordability drives vehicle demand"
-
-  - from: education_loan
-    to: remittances_outward
-    type: AFFECTS
-    description: "Education loans fund study abroad → outward remittances"
-
-  - from: gold_loan
-    to: gold_loan_market
-    type: PRODUCES
-    description: "Gold loan rates drive gold-backed lending market"
-
-  - from: gold_price
-    to: gold_loan
-    type: AFFECTS
-    description: "Gold price determines collateral value for gold loans"
-
-  - from: credit_card_rates
-    to: retail_credit
-    type: AFFECTS
-    description: "Credit card rates affect consumer revolving debt"
-
-  - from: retail_credit
-    to: credit_growth
-    type: AFFECTS
-    description: "Retail lending is a growing share of total credit"
-
-  - from: corporate_credit
-    to: credit_growth
-    type: AFFECTS
-    description: "Corporate lending drives capital expenditure"
-
-  - from: npa
-    to: credit_growth
-    type: AFFECTS
-    description: "High NPAs make banks risk-averse, reducing lending"
-
-  # ---------------------------------------------------------------------------
-  # BANKING HEALTH
-  # ---------------------------------------------------------------------------
-  - from: npa
-    to: bank_provisions
-    type: AFFECTS
-    description: "Rising NPAs require higher provisioning"
-
-  - from: bank_provisions
-    to: psu_banks
-    type: AFFECTS
-    description: "Provisions reduce bank profitability"
-
-  - from: bank_write_off
-    to: npa
-    type: AFFECTS
-    description: "Write-offs reduce reported NPA ratios"
-
-  - from: bank_recapitalization
-    to: psu_banks
-    type: AFFECTS
-    description: "Capital infusion restores PSU bank lending capacity"
-
-  - from: bank_merger
-    to: psu_banks
-    type: DISRUPTS
-    description: "Bank mergers affect branch networks and staffing"
-
-  - from: bank_fraud
-    to: npa
-    type: AFFECTS
-    description: "Fraud-related NPAs damage bank balance sheets"
-
-  - from: rbi_circular
-    to: psu_banks
-    type: REGULATES
-    description: "RBI circulars govern banking operations and compliance"
-
-  - from: rbi_circular
-    to: nbfc_sector
-    type: REGULATES
-    description: "RBI circulars set regulatory framework for NBFCs"
-
-  - from: nbfc_regulation
-    to: nbfc_sector
-    type: REGULATES
-    description: "RBI regulation determines NBFC operating framework"
-
-  - from: microfinance_regulation
-    to: nbfc_sector
-    type: REGULATES
-    description: "Microfinance rules affect NBFC-MFI operations"
-
-  - from: rbi_circular
-    to: small_finance_banks
-    type: REGULATES
-    description: "RBI circulars govern SFB licensing and operations"
-
-  - from: small_finance_banks
-    to: microfinance_regulation
-    type: DEPENDS_ON
-    description: "Many SFBs converted from MFIs and serve similar segments"
-
-  - from: rbi_circular
-    to: cooperative_banks
-    type: REGULATES
-    description: "RBI brought cooperative banks under its regulatory purview"
-
-  - from: cooperative_banks
-    to: npa
-    type: AFFECTS
-    description: "Cooperative banks have historically high NPA ratios"
-
-  - from: co_lending
-    to: nbfc_sector
-    type: AFFECTS
-    description: "Co-lending model expands NBFC reach"
-
-  - from: co_lending
-    to: private_banks
-    type: AFFECTS
-    description: "Co-lending expands bank retail exposure"
-
-  - from: basel_iii
-    to: psu_banks
-    type: REGULATES
-    description: "Capital adequacy norms constrain PSU bank lending"
-
-  - from: basel_iii
-    to: private_banks
-    type: REGULATES
-    description: "Basel III applies to all scheduled commercial banks"
-
-  # ---------------------------------------------------------------------------
-  # DIGITAL BANKING
-  # ---------------------------------------------------------------------------
-  - from: upi
-    to: npci
-    type: DEPENDS_ON
-    description: "UPI is operated by NPCI"
-
-  - from: upi_outage
-    to: upi
-    type: DISRUPTS
-    description: "UPI outages affect millions of daily transactions"
-
-  - from: payment_system_regulation
-    to: upi
-    type: REGULATES
-    description: "RBI/NPCI rules govern UPI operations"
-
-  - from: digital_rupee
-    to: rbi
-    type: DEPENDS_ON
-    description: "CBDC is an RBI initiative"
-
-  - from: digital_rupee
-    to: upi
-    type: COMPETES_WITH
-    description: "Digital rupee may complement or compete with UPI"
-
-  - from: imps
-    to: npci
-    type: DEPENDS_ON
-    description: "IMPS is operated by NPCI for instant interbank transfers"
-
-  - from: upi
-    to: imps
-    type: COMPETES_WITH
-    description: "UPI has largely replaced IMPS for instant person-to-person transfers"
-
-  - from: upi
-    to: neft_rtgs
-    type: COMPETES_WITH
-    description: "UPI reducing NEFT/RTGS usage for small amounts"
-
-  # ---------------------------------------------------------------------------
-  # EQUITY MARKETS
-  # ---------------------------------------------------------------------------
-  - from: fii_flows
-    to: nifty_50
-    type: AFFECTS
-    description: "FII flows are the biggest market mover"
-
-  - from: dii_flows
-    to: nifty_50
-    type: AFFECTS
-    description: "DII flows provide market stability"
-
-  - from: india_gdp
-    to: nifty_50
-    type: AFFECTS
-    description: "GDP growth underpins corporate earnings"
-
-  # Nifty and Sensex are parallel indices (corr >0.99), not causally related — no edge
-
-  - from: nifty_50
-    to: nifty_bank
-    type: AFFECTS
-    description: "Banking stocks are ~33% of Nifty weight"
-
-  - from: nifty_50
-    to: nifty_midcap
-    type: AFFECTS
-    description: "Broad market direction affects mid/smallcap"
-
-  - from: nifty_50
-    to: nifty_smallcap
-    type: AFFECTS
-    description: "Risk appetite in large caps spills to smallcaps"
-
-  - from: it_services_sector
-    to: nifty_it
-    type: AFFECTS
-    description: "IT sector results drive IT index"
-
-  - from: pharma_sector
-    to: nifty_pharma
-    type: AFFECTS
-    description: "Pharma earnings drive pharma index"
-
-  - from: auto_manufacturing
-    to: nifty_auto
-    type: AFFECTS
-    description: "Auto sales drive auto index"
-
-  - from: fmcg_sector
-    to: nifty_fmcg
-    type: AFFECTS
-    description: "FMCG volume growth drives FMCG index"
-
-  - from: real_estate_sector
-    to: nifty_realty
-    type: AFFECTS
-    description: "Real estate sector health drives realty index"
-
-  - from: nse
-    to: nifty_50
-    type: PRODUCES
-    description: "NSE operates the Nifty 50 index"
-
-  - from: bse
-    to: sensex
-    type: PRODUCES
-    description: "BSE operates the Sensex index"
-
-  - from: sebi
-    to: nse
-    type: REGULATES
-    description: "SEBI regulates NSE as a stock exchange"
-
-  - from: sebi
-    to: bse
-    type: REGULATES
-    description: "SEBI regulates BSE as a stock exchange"
-
-  - from: stock_market_rally
-    to: nifty_50
-    type: AFFECTS
-    description: "Bull rallies push Nifty to new highs"
-
-  - from: stock_market_rally
-    to: ipo_market
-    type: AFFECTS
-    description: "Market rallies open the IPO window for new listings"
-
-  - from: sebi
-    to: nifty_50
-    type: REGULATES
-    description: "SEBI regulations govern equity markets"
-
-  - from: sebi
-    to: ipo_market
-    type: REGULATES
-    description: "SEBI approves and regulates IPOs"
-
-  - from: sebi
-    to: margin_trading
-    type: REGULATES
-    description: "SEBI margin rules affect F&O trading"
-
-  - from: market_volatility
-    to: nifty_50
-    type: AFFECTS
-    description: "High VIX indicates market stress"
-
-  - from: geopolitical_risk
-    to: market_volatility
-    type: AFFECTS
-    description: "Geopolitical events spike market volatility"
-
-  - from: stock_market_crash
-    to: nifty_50
-    type: DISRUPTS
-    description: "Market crashes destroy portfolio values"
-
-  - from: stock_market_crash
-    to: ipo_market
-    type: DISRUPTS
-    description: "Crashes freeze IPO pipeline"
-
-  - from: stock_market_crash
-    to: nps
-    type: AFFECTS
-    description: "Crash affects NPS equity allocation value"
-
-  - from: stock_market_crash
-    to: epf
-    type: AFFECTS
-    description: "EPFO invests ~15% in equities"
-
-  - from: insider_trading
-    to: sebi
-    type: AFFECTS
-    description: "Insider trading cases trigger SEBI enforcement"
-
-  # ---------------------------------------------------------------------------
-  # MUTUAL FUNDS
-  # ---------------------------------------------------------------------------
-  - from: mutual_fund_industry
-    to: equity_mf
-    type: PRODUCES
-    description: "Equity MFs are the largest MF category"
-
-  - from: equity_mf
-    to: large_cap_mf
-    type: PRODUCES
-    description: "Large cap funds invest in top 100 stocks"
-
-  - from: equity_mf
-    to: mid_cap_mf
-    type: PRODUCES
-    description: "Mid cap funds invest in 101-250 ranked stocks"
-
-  - from: equity_mf
-    to: small_cap_mf
-    type: PRODUCES
-    description: "Small cap funds invest in 251+ ranked stocks"
-
-  - from: equity_mf
-    to: sectoral_mf
-    type: PRODUCES
-    description: "Sectoral/thematic funds focus on specific sectors"
-
-  - from: mutual_fund_industry
-    to: debt_mf
-    type: PRODUCES
-    description: "Debt MFs invest in fixed income"
-
-  - from: debt_mf
-    to: liquid_fund
-    type: PRODUCES
-    description: "Liquid funds for short-term parking"
-
-  - from: debt_mf
-    to: gilt_fund
-    type: PRODUCES
-    description: "Gilt funds invest in government securities"
-
-  - from: debt_mf
-    to: corporate_bond_fund
-    type: PRODUCES
-    description: "Corporate bond funds invest in company debt"
-
-  - from: mutual_fund_industry
-    to: hybrid_fund
-    type: PRODUCES
-    description: "Hybrid funds mix equity and debt"
-
-  - from: mutual_fund_industry
-    to: index_fund
-    type: PRODUCES
-    description: "Index/passive funds track indices"
-
-  - from: sip_flows
-    to: equity_mf
-    type: FUNDS
-    description: "Monthly SIPs are the primary equity MF source"
-
-  - from: sip_flows
-    to: dii_flows
-    type: PRODUCES
-    description: "SIP flows make MFs the largest DII"
-
-  - from: nifty_50
-    to: equity_mf
-    type: AFFECTS
-    description: "Market performance affects MF NAV and returns"
-
-  - from: gsec_yield
-    to: debt_mf
-    type: AFFECTS
-    description: "G-sec yields inversely affect debt fund NAV"
-
-  - from: mf_taxation
-    to: mutual_fund_industry
-    type: AFFECTS
-    description: "Tax changes affect MF attractiveness"
-
-  - from: mf_regulation
-    to: mutual_fund_industry
-    type: REGULATES
-    description: "SEBI expense ratio caps affect AMC revenue"
-
-  - from: section_80c
-    to: equity_mf
-    type: AFFECTS
-    description: "ELSS funds get 80C tax benefit"
-
-  - from: ltcg
-    to: equity_mf
-    type: AFFECTS
-    description: "LTCG tax on equity MF affects post-tax returns"
-
-  - from: stcg
-    to: equity_mf
-    type: AFFECTS
-    description: "STCG tax on equity MF affects trading decisions"
-
-  - from: repo_rate
-    to: debt_mf
-    type: AFFECTS
-    description: "Rate cuts boost debt fund NAV (bond price rise)"
-
-  - from: nifty_smallcap
-    to: small_cap_mf
-    type: AFFECTS
-    description: "Smallcap index performance drives smallcap fund returns"
-
-  # ---------------------------------------------------------------------------
-  # FIXED INCOME / BONDS
-  # ---------------------------------------------------------------------------
-  - from: rbi
-    to: gsec
-    type: PRODUCES
-    description: "Government borrows via G-sec auctions managed by RBI"
-
-  - from: gsec
-    to: gsec_yield
-    type: PRODUCES
-    description: "G-sec auction demand determines yields"
-
-  - from: repo_rate
-    to: gsec_yield
-    type: AFFECTS
-    description: "Repo rate sets the floor for short-term yields"
-
-  - from: cpi_inflation
-    to: gsec_yield
-    type: AFFECTS
-    description: "Inflation expectations drive bond yields"
-
-  - from: us_treasury_yield
-    to: gsec_yield
-    type: AFFECTS
-    description: "US yield differential affects India bond demand"
-
-  - from: gsec_yield
-    to: yield_curve
-    type: PRODUCES
-    description: "Term structure of G-sec yields forms yield curve"
-
-  - from: yield_curve
-    to: bond_market_india
-    type: AFFECTS
-    description: "Yield curve shape signals economic expectations"
-
-  - from: corporate_bonds
-    to: bond_market_india
-    type: PRODUCES
-    description: "Corporate bonds are part of the overall debt market"
-
-  - from: gsec_yield
-    to: corporate_bonds
-    type: AFFECTS
-    description: "Corporate bond spreads anchored to G-sec yield"
-
-  - from: gsec_yield
-    to: small_savings_rate
-    type: AFFECTS
-    description: "Small savings rate formula linked to G-sec yields"
-
-  - from: gsec_yield
-    to: home_loan_rate
-    type: AFFECTS
-    description: "Long-term rates track government bond yields"
-
-  - from: sovereign_green_bond
-    to: bond_market_india
-    type: PRODUCES
-    description: "Sovereign green bonds are a G-sec sub-category for climate projects"
-
-  - from: sovereign_green_bond
-    to: gsec_yield
-    type: BENCHMARKED_TO
-    description: "Green bond yields benchmarked to comparable G-sec yields"
-
-  - from: sdl
-    to: bond_market_india
-    type: PRODUCES
-    description: "State development loans are a significant bond segment"
-
-  - from: rbi
-    to: rbis_sovereign_gold_bond
-    type: PRODUCES
-    description: "RBI issues SGBs on government's behalf"
-
-  # ---------------------------------------------------------------------------
-  # GOLD
-  # ---------------------------------------------------------------------------
-  - from: gold_price
-    to: physical_gold
-    type: AFFECTS
-    description: "Gold price drives jewelry and investment demand"
-
-  - from: gold_price
-    to: gold_etf
-    type: AFFECTS
-    description: "Gold ETF NAV tracks gold price"
-
-  - from: gold_price
-    to: rbis_sovereign_gold_bond
-    type: AFFECTS
-    description: "SGB redemption value linked to gold price"
-
-  - from: gold_price
-    to: gold_loan
-    type: AFFECTS
-    description: "Higher gold price increases collateral value"
-
-  - from: gold_import_duty
-    to: gold_price
-    type: AFFECTS
-    description: "Import duty affects domestic gold price premium"
-
-  - from: gold_import
-    to: trade_deficit
-    type: AFFECTS
-    description: "Gold imports widen trade deficit"
-
-  - from: dollar_index
-    to: gold_price
-    type: AFFECTS
-    description: "Gold inversely correlated with dollar (mostly)"
-
-  - from: geopolitical_risk
-    to: gold_price
-    type: AFFECTS
-    description: "Geopolitical tension drives safe-haven gold demand"
-
-  - from: cpi_inflation
-    to: gold_price
-    type: AFFECTS
-    description: "Gold seen as inflation hedge"
-
-  - from: us_treasury_yield
-    to: gold_price
-    type: AFFECTS
-    description: "Higher real yields reduce gold attractiveness (no yield)"
-
-  # ---------------------------------------------------------------------------
-  # REAL ESTATE (financial)
-  # ---------------------------------------------------------------------------
-  - from: home_loan_rate
-    to: property_price
-    type: AFFECTS
-    description: "Loan rates determine affordability and demand"
-
-  - from: stamp_duty
-    to: property_price
-    type: AFFECTS
-    description: "Stamp duty affects transaction cost and demand"
-
-  - from: circle_rate
-    to: property_tax
-    type: AFFECTS
-    description: "Circle rates determine property tax base"
-
-  - from: reit
-    to: real_estate_sector
-    type: AFFECTS
-    description: "REITs provide institutional demand for commercial RE"
-
-  - from: rental_yield
-    to: reit
-    type: AFFECTS
-    description: "Rental yield determines REIT distribution"
-
-  - from: rera
-    to: property_price
-    type: REGULATES
-    description: "RERA improves transparency but adds compliance cost"
-
-  - from: repo_rate
-    to: home_loan_rate
-    type: AFFECTS
-    description: "Repo rate determines floating home loan rates"
-
-  - from: capital_gains_property
-    to: property_price
-    type: AFFECTS
-    description: "Capital gains tax rules affect property investment decisions"
-
-  - from: nifty_50
-    to: reit
-    type: COMPETES_WITH
-    description: "REITs compete with equities for investor allocation"
-
-  # ---------------------------------------------------------------------------
-  # CRYPTOCURRENCY
-  # ---------------------------------------------------------------------------
-  - from: bitcoin
-    to: crypto_exchange_india
-    type: AFFECTS
-    description: "Bitcoin price drives Indian crypto exchange volumes"
-
-  - from: ethereum
-    to: crypto_exchange_india
-    type: AFFECTS
-    description: "ETH is #2 traded crypto on Indian exchanges"
-
-  - from: crypto_tax_india
-    to: crypto_exchange_india
-    type: AFFECTS
-    description: "30% tax + 1% TDS devastated Indian crypto trading"
-
-  - from: crypto_regulation_india
-    to: crypto_exchange_india
-    type: REGULATES
-    description: "Regulatory uncertainty affects crypto platforms"
-
-  - from: global_crypto_regulation
-    to: bitcoin
-    type: AFFECTS
-    description: "US SEC actions affect global crypto prices"
-
-  - from: fed_funds_rate
-    to: bitcoin
-    type: AFFECTS
-    description: "Risk assets like crypto suffer in high-rate environment"
-
-  - from: geopolitical_risk
-    to: bitcoin
-    type: AFFECTS
-    description: "Some view crypto as digital gold during crises"
-
-  - from: rbi
-    to: crypto_regulation_india
-    type: REGULATES
-    description: "RBI has historically been against crypto"
-
-  # ---------------------------------------------------------------------------
-  # INSURANCE
-  # ---------------------------------------------------------------------------
-  - from: irdai
-    to: health_insurance
-    type: REGULATES
-    description: "IRDAI regulates health insurance products and pricing"
-
-  - from: irdai
-    to: motor_insurance
-    type: REGULATES
-    description: "IRDAI regulates motor insurance pricing"
-
-  - from: irdai
-    to: term_insurance
-    type: REGULATES
-    description: "IRDAI regulates life insurance products"
-
-  - from: irdai
-    to: bima_sugam
-    type: PRODUCES
-    description: "IRDAI is building Bima Sugam marketplace"
-
-  - from: health_insurance
-    to: health_insurance_premium
-    type: PRODUCES
-    description: "Health insurance cost determined by premium"
-
-  - from: cpi_inflation
-    to: health_insurance_premium
-    type: AFFECTS
-    description: "Medical inflation drives premium hikes"
-
-  - from: health_insurance
-    to: cashless_network
-    type: DEPENDS_ON
-    description: "Cashless claims need network hospitals"
-
-  - from: health_insurance
-    to: pre_existing_condition
-    type: AFFECTS
-    description: "PED rules determine coverage scope"
-
-  - from: health_insurance_portability
-    to: health_insurance
-    type: AFFECTS
-    description: "Portability rules allow switching insurers"
-
-  - from: motor_insurance
-    to: third_party_insurance
-    type: PRODUCES
-    description: "TP insurance is mandatory for all vehicles"
-
-  - from: motor_insurance
-    to: own_damage_insurance
-    type: PRODUCES
-    description: "OD insurance is optional but common"
-
-  - from: term_insurance
-    to: claim_settlement
-    type: DEPENDS_ON
-    description: "Term insurance value depends on claim settlement ratio"
-
-  - from: endowment_plan
-    to: section_80c
-    type: DEPENDS_ON
-    description: "Endowment premiums qualify for 80C deduction"
-
-  - from: ulip
-    to: nifty_50
-    type: DEPENDS_ON
-    description: "ULIP equity returns track market performance"
-
-  - from: monsoon
-    to: crop_insurance
-    type: AFFECTS
-    description: "Actual monsoon failures trigger crop insurance claims under PMFBY; poor monsoon years see 3-5x higher claim volumes"
-
-  - from: crop_insurance
-    to: agriculture_sector
-    type: AFFECTS
-    description: "Insurance availability affects farmer risk-taking"
-
-  - from: reinsurance
-    to: health_insurance_premium
-    type: AFFECTS
-    description: "Global reinsurance rates affect Indian insurance pricing"
-
-  - from: reinsurance
-    to: crop_insurance
-    type: AFFECTS
-    description: "Reinsurance rates affect crop insurance viability"
-
-  - from: section_80d
-    to: health_insurance
-    type: AFFECTS
-    description: "80D deduction incentivizes health insurance purchase"
-
-  - from: gst_on_insurance
-    to: health_insurance_premium
-    type: AFFECTS
-    description: "18% GST on premiums increases effective cost"
-
-  - from: gst_on_insurance
-    to: term_insurance
-    type: AFFECTS
-    description: "GST adds to term insurance premium cost"
-
-  # ---------------------------------------------------------------------------
-  # INCOME TAX
-  # ---------------------------------------------------------------------------
-  - from: union_budget
-    to: income_tax_slab
-    type: AFFECTS
-    description: "Budget changes tax slabs and rates"
-
-  - from: union_budget
-    to: new_tax_regime
-    type: AFFECTS
-    description: "Budget updates new regime benefits"
-
-  - from: union_budget
-    to: section_80c
-    type: AFFECTS
-    description: "Budget can change 80C limits"
-
-  - from: union_budget
-    to: standard_deduction
-    type: AFFECTS
-    description: "Budget can revise standard deduction"
-
-  - from: union_budget
-    to: customs_duty
-    type: AFFECTS
-    description: "Budget announces customs duty changes"
-
-  - from: union_budget
-    to: capital_gains_budget
-    type: PRODUCES
-    description: "Budget announces capital gains tax changes"
-
-  - from: income_tax_slab
-    to: new_tax_regime
-    type: PRODUCES
-    description: "New regime has specific slab structure"
-
-  - from: income_tax_slab
-    to: old_tax_regime
-    type: PRODUCES
-    description: "Old regime has different slabs with deductions"
-
-  - from: new_tax_regime
-    to: old_tax_regime
-    type: COMPETES_WITH
-    description: "Taxpayers choose between new and old regime"
-
-  - from: section_80c
-    to: old_tax_regime
-    type: AFFECTS
-    description: "80C available only in old regime"
-
-  - from: section_80d
-    to: old_tax_regime
-    type: AFFECTS
-    description: "80D available only in old regime"
-
-  - from: hra_deduction
-    to: old_tax_regime
-    type: AFFECTS
-    description: "HRA deduction only in old regime"
-
-  - from: advance_tax
-    to: income_tax
-    type: AFFECTS
-    description: "Advance tax is quarterly pre-payment of estimated income tax liability"
-
-  - from: surcharge
-    to: income_tax
-    type: AFFECTS
-    description: "Surcharge increases effective tax rate for high-income taxpayers"
-
-  - from: tds
-    to: income_tax
-    type: AFFECTS
-    description: "TDS is advance tax collection at source"
-
-  - from: income_tax
-    to: salary_trends
-    type: AFFECTS
-    description: "Take-home pay depends on tax outgo"
-
-  # ---------------------------------------------------------------------------
-  # CAPITAL GAINS TAX
-  # ---------------------------------------------------------------------------
-  - from: capital_gains_budget
-    to: stcg
-    type: AFFECTS
-    description: "Budget changes STCG rates and rules"
-
-  - from: capital_gains_budget
-    to: ltcg
-    type: AFFECTS
-    description: "Budget changes LTCG rates and exemptions"
-
-  - from: capital_gains_budget
-    to: indexation
-    type: AFFECTS
-    description: "Budget 2024 removed indexation for most assets"
-
-  - from: stcg
-    to: nifty_50
-    type: AFFECTS
-    description: "STCG tax affects short-term trading behavior"
-
-  - from: ltcg
-    to: equity_mf
-    type: AFFECTS
-    description: "LTCG tax reduces long-term equity returns"
-
-  - from: stt
-    to: margin_trading
-    type: AFFECTS
-    description: "STT on F&O increases trading costs"
-
-  - from: indexation
-    to: property_price
-    type: AFFECTS
-    description: "Indexation removal affects property investment returns"
-
-  - from: indexation
-    to: debt_mf
-    type: AFFECTS
-    description: "Indexation removal makes debt MFs less tax-efficient"
-
-  - from: indexation
-    to: gold_price
-    type: AFFECTS
-    description: "Indexation changes affect gold investment attractiveness"
-
-  # ---------------------------------------------------------------------------
-  # GST
-  # ---------------------------------------------------------------------------
-  - from: gst
-    to: gst_council
-    type: PRODUCES
-    description: "GST framework established the GST Council as its governing body"
-
-  - from: gst
-    to: gst_collection
-    type: PRODUCES
-    description: "GST regime generates monthly tax collections tracked as economic indicator"
-
-  - from: gst_council
-    to: gst_rate
-    type: PRODUCES
-    description: "GST Council sets and revises rates"
-
-  - from: gst_rate
-    to: fmcg_sector
-    type: AFFECTS
-    description: "GST rates on FMCG products affect pricing"
-
-  - from: gst_rate
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "GST cess on vehicles affects demand"
-
-  - from: gst_rate
-    to: real_estate_sector
-    type: AFFECTS
-    description: "GST on under-construction property affects demand"
-
-  - from: gst_collection
-    to: india_gdp
-    type: AFFECTS
-    description: "GST collection is a proxy for economic activity"
-
-  - from: input_tax_credit
-    to: gst_compliance
-    type: AFFECTS
-    description: "ITC claims require proper compliance"
-
-  - from: gst_compliance
-    to: job_market_india
-    type: AFFECTS
-    description: "GST compliance burden affects small business operations"
-
-  - from: gst_on_insurance
-    to: health_insurance_premium
-    type: AFFECTS
-    description: "18% GST on health insurance premiums"
-
-  # ---------------------------------------------------------------------------
-  # CUSTOMS & TRADE
-  # ---------------------------------------------------------------------------
-  - from: customs_duty
-    to: electronics_import_duty
-    type: PRODUCES
-    description: "Customs duty framework includes electronics"
-
-  - from: customs_duty
-    to: gold_import_duty
-    type: PRODUCES
-    description: "Gold import duty is a customs duty category"
-
-  - from: customs_duty
-    to: auto_import_duty
-    type: PRODUCES
-    description: "Auto parts and CBU import duties"
-
-  - from: customs_duty
-    to: agri_import_duty
-    type: PRODUCES
-    description: "Agricultural commodity import duties"
-
-  - from: electronics_import_duty
-    to: semiconductor_supply
-    type: AFFECTS
-    description: "Import duties affect electronics cost"
-
-  - from: gold_import_duty
-    to: gold_import
-    type: AFFECTS
-    description: "Duty changes affect gold import volumes"
-
-  - from: agri_import_duty
-    to: food_inflation
-    type: AFFECTS
-    description: "Lowering edible oil duty reduces food inflation"
-
-  - from: auto_import_duty
-    to: auto_manufacturing
-    type: AFFECTS
-    description: "CKD/CBU duty affects vehicle pricing"
-
-  - from: anti_dumping_duty
-    to: china_economy
-    type: AFFECTS
-    description: "Anti-dumping often targets Chinese goods"
-
-  - from: us_china_trade
-    to: india_us_trade
-    type: AFFECTS
-    description: "US-China trade war shifts supply chains via China+1 strategy, boosting India's bilateral trade volumes in electronics, pharma, and textiles"
-
-  # ---------------------------------------------------------------------------
-  # PROPERTY TAX
-  # ---------------------------------------------------------------------------
-  - from: property_tax
-    to: property_price
-    type: AFFECTS
-    description: "Property tax is an ongoing ownership cost"
-
-  - from: stamp_duty_rate
-    to: property_price
-    type: AFFECTS
-    description: "High stamp duty adds to acquisition cost"
-
-  - from: capital_gains_property
-    to: property_price
-    type: AFFECTS
-    description: "Capital gains rules affect investment attractiveness"
-
-  # ---------------------------------------------------------------------------
-  # INTERNATIONAL TAX
-  # ---------------------------------------------------------------------------
-  - from: dtaa
-    to: inr_usd
-    type: AFFECTS
-    description: "Tax treaties affect cross-border investment flows"
-
-  - from: fema
-    to: fema_limits
-    type: PRODUCES
-    description: "FEMA sets foreign exchange limits"
-
-  - from: lrs
-    to: remittances_outward
-    type: REGULATES
-    description: "LRS caps individual foreign remittance at $250K/year"
-
-  - from: tcs_foreign_remittance
-    to: lrs
-    type: AFFECTS
-    description: "TCS on remittances above Rs 7 lakh increases cost"
-
-  - from: tcs_foreign_remittance
-    to: remittances_outward
-    type: AFFECTS
-    description: "TCS discourages foreign remittances"
-
-  - from: angel_tax
-    to: vc_funding_india
-    type: AFFECTS
-    description: "Angel tax on startup funding created compliance burden"
-
-  - from: ecb_norms
-    to: corporate_credit
-    type: AFFECTS
-    description: "ECB norms determine foreign borrowing access"
-
-  - from: equalization_levy
-    to: it_services_sector
-    type: AFFECTS
-    description: "Digital tax affects cross-border tech services"
-
-  # ---------------------------------------------------------------------------
-  # FOREX & CURRENCY
-  # ---------------------------------------------------------------------------
-  - from: inr_usd
-    to: trade_deficit
-    type: AFFECTS
-    description: "Weak rupee increases import bill in INR terms"
-
-  - from: trade_deficit
-    to: inr_usd
-    type: AFFECTS
-    description: "High trade deficit creates rupee depreciation pressure"
-
-  - from: oil_import_bill
-    to: trade_deficit
-    type: AFFECTS
-    description: "Oil is ~25% of India's total imports"
-
-  - from: crude_oil_price
-    to: oil_import_bill
-    type: AFFECTS
-    description: "Oil price directly drives import bill"
-
-  - from: it_export_earnings
-    to: trade_deficit
-    type: AFFECTS
-    description: "IT exports offset trade deficit (services surplus)"
-
-  - from: it_services_sector
-    to: it_export_earnings
-    type: PRODUCES
-    description: "IT services generate forex through exports"
-
-  - from: remittances_inward
-    to: inr_usd
-    type: AFFECTS
-    description: "NRI remittances provide dollar supply"
-
-  - from: rbi_intervention
-    to: inr_usd
-    type: AFFECTS
-    description: "RBI buys/sells dollars to manage rupee"
-
-  - from: rbi_forex_reserves
-    to: rbi_intervention
-    type: DEPENDS_ON
-    description: "Reserves give RBI ammunition for forex intervention"
-
-  - from: fii_flows
-    to: inr_usd
-    type: AFFECTS
-    description: "FII flows drive rupee via portfolio capital"
-
-  - from: inr_usd
-    to: inr_eur
-    type: AFFECTS
-    description: "INR-EUR is a cross rate through USD"
-
-  - from: inr_usd
-    to: inr_gbp
-    type: AFFECTS
-    description: "INR-GBP is a cross rate through USD"
-
-  - from: inr_usd
-    to: cpi_inflation
-    type: AFFECTS
-    description: "Weak rupee increases imported inflation"
-
-  - from: inr_usd
-    to: it_services_sector
-    type: AFFECTS
-    description: "Weak rupee boosts IT margins (revenue in USD, cost in INR)"
-
-  - from: inr_usd
-    to: pharma_sector
-    type: AFFECTS
-    description: "Rupee affects pharma export revenue vs API import cost"
-
-  - from: inr_usd
-    to: education_loan
-    type: AFFECTS
-    description: "Weak rupee increases cost of foreign education"
-
-  - from: inr_usd
-    to: remittances_outward
-    type: AFFECTS
-    description: "Weak rupee makes foreign remittances costlier"
-
-  - from: inr_eur
-    to: remittances_inward
-    type: AFFECTS
-    description: "EUR rate affects European NRI remittance value"
-
-  - from: inr_gbp
-    to: remittances_inward
-    type: AFFECTS
-    description: "GBP rate affects UK NRI remittance value"
-
-  # ---------------------------------------------------------------------------
-  # NPS / EPF / RETIREMENT
-  # ---------------------------------------------------------------------------
-  - from: epf
-    to: epf_interest_rate
-    type: PRODUCES
-    description: "EPFO sets annual interest rate"
-
-  - from: gsec_yield
-    to: epf_interest_rate
-    type: AFFECTS
-    description: "G-sec yields determine EPF corpus earnings; EPFO invests ~50% in government securities, so yield levels directly constrain the annual interest rate declaration"
-
-  - from: epf
-    to: eps
-    type: PRODUCES
-    description: "Part of EPF contribution goes to EPS pension"
-
-  - from: nps
-    to: nps_equity_allocation
-    type: PRODUCES
-    description: "NPS allows equity allocation up to 75%"
-
-  - from: nps_equity_allocation
-    to: nifty_50
-    type: DEPENDS_ON
-    description: "NPS equity returns depend on market performance"
-
-  - from: nps
-    to: annuity_rates
-    type: DEPENDS_ON
-    description: "NPS mandates 40% annuity purchase at retirement"
-
-  - from: repo_rate
-    to: annuity_rates
-    type: AFFECTS
-    description: "Interest rates determine annuity payout rates"
-
-  - from: section_80c
-    to: epf
-    type: AFFECTS
-    description: "EPF qualifies for 80C deduction"
-
-  - from: section_80c
-    to: nps
-    type: AFFECTS
-    description: "NPS gets additional 80CCD(1B) deduction of Rs 50K"
-
-  - from: nifty_50
-    to: nps
-    type: AFFECTS
-    description: "Equity market performance affects NPS corpus"
-
-  - from: gsec_yield
-    to: nps
-    type: AFFECTS
-    description: "Bond yields affect NPS debt returns"
-
-  - from: gsec_yield
-    to: annuity_rates
-    type: AFFECTS
-    description: "Low yields mean lower annuity payouts"
-
-  - from: gratuity
-    to: epf
-    type: AFFECTS
-    description: "Gratuity and EPF together form the core employer-provided retirement benefits"
-
-  - from: gratuity
-    to: income_tax
-    type: AFFECTS
-    description: "Gratuity up to Rs 20L is tax-exempt; excess is taxable"
-
-  - from: superannuation
-    to: nps
-    type: AFFECTS
-    description: "Many employers moved from superannuation funds to NPS for retirement benefits"
-
-  - from: superannuation
-    to: annuity_rates
-    type: DEPENDS_ON
-    description: "Superannuation corpus converted to annuity at retirement"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: GEOPOLITICS → FINANCIAL
-  # ---------------------------------------------------------------------------
-  - from: us_economy
-    to: fed_funds_rate
-    type: AFFECTS
-    description: "US economic conditions drive Fed policy"
-
-  - from: us_economy
-    to: it_services_sector
-    type: AFFECTS
-    description: "US health drives IT outsourcing demand"
-
-  - from: eu_economy
-    to: ecb_rate
-    type: AFFECTS
-    description: "Eurozone economic conditions drive ECB policy decisions"
-
-  - from: eu_economy
-    to: it_services_sector
-    type: AFFECTS
-    description: "EU is the second-largest IT outsourcing market for Indian firms"
-
-  - from: russia_ukraine
-    to: crude_oil_price
-    type: AFFECTS
-    description: "Russia conflict disrupts global energy supply"
-
-  - from: russia_ukraine
-    to: food_inflation
-    type: AFFECTS
-    description: "Ukraine is a major wheat/sunflower oil exporter"
-
-  - from: middle_east_conflict
-    to: crude_oil_price
-    type: AFFECTS
-    description: "Middle East tension threatens oil supply routes"
-
-  - from: middle_east_conflict
-    to: gold_price
-    type: AFFECTS
-    description: "Conflict drives safe-haven gold demand"
-
-  - from: us_china_trade
-    to: semiconductor_supply
-    type: DISRUPTS
-    description: "US-China tech war disrupts chip supply chains"
-
-  - from: geopolitical_risk
-    to: fii_flows
-    type: AFFECTS
-    description: "High geopolitical risk reduces EM allocation"
-
-  - from: geopolitical_risk
-    to: crude_oil_price
-    type: AFFECTS
-    description: "Geopolitical risk includes oil supply risk premium"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: ENERGY → FINANCIAL
-  # ---------------------------------------------------------------------------
-  - from: crude_oil_price
-    to: cpi_inflation
-    type: AFFECTS
-    description: "Oil price drives fuel and transport inflation"
-
-  - from: crude_oil_price
-    to: fuel_inflation
-    type: AFFECTS
-    description: "Oil directly determines fuel prices"
-
-  - from: crude_oil_price
-    to: trade_deficit
-    type: AFFECTS
-    description: "Oil is India's largest import (>$150B/year)"
-
-  - from: crude_oil_price
-    to: inr_usd
-    type: AFFECTS
-    description: "High oil → high imports → rupee pressure"
-
-  - from: opec_decision
-    to: crude_oil_price
-    type: AFFECTS
-    description: "OPEC production decisions set oil supply"
-
-  - from: natural_gas_price
-    to: cpi_inflation
-    type: AFFECTS
-    description: "Gas price affects CNG, piped gas, power"
-
-  - from: natural_gas_price
-    to: fuel_inflation
-    type: AFFECTS
-    description: "Gas is an alternative fuel affecting inflation"
-
-  - from: renewable_energy
-    to: india_crude_imports
-    type: AFFECTS
-    description: "India's renewable energy adoption reduces its crude oil import dependency"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: FOOD → FINANCIAL
-  # ---------------------------------------------------------------------------
-  - from: monsoon_forecast
-    to: food_inflation
-    type: AFFECTS
-    description: "Bad monsoon causes vegetable and cereal price spikes"
-
-  - from: food_inflation
-    to: cpi_inflation
-    type: AFFECTS
-    description: "Food is ~46% weight in India CPI"
-
-  - from: food_inflation
-    to: rbi_mpc
-    type: AFFECTS
-    description: "Food inflation spikes force hawkish MPC"
-
-  - from: food_inflation
-    to: fmcg_sector
-    type: AFFECTS
-    description: "Food inflation increases FMCG input costs"
-
-  - from: monsoon_forecast
-    to: agriculture_sector
-    type: AFFECTS
-    description: "Monsoon determines kharif output and farmer income"
-
-  - from: agriculture_sector
-    to: food_inflation
-    type: AFFECTS
-    description: "Farm output determines food supply"
-
-  # ---------------------------------------------------------------------------
-  # CROSS-DOMAIN: EMPLOYMENT → FINANCIAL
-  # ---------------------------------------------------------------------------
-  - from: job_market_india
-    to: retail_credit
-    type: AFFECTS
-    description: "Employment drives consumer borrowing capacity"
-
-  - from: job_market_india
-    to: sip_flows
-    type: AFFECTS
-    description: "Employment and income drive MF investment capacity"
-
-  - from: salary_trends
-    to: income_tax
-    type: AFFECTS
-    description: "Salary levels determine tax liability"
-
-  - from: salary_trends
-    to: home_loan_emi
-    type: AFFECTS
-    description: "Income determines home loan eligibility"
-
-  - from: startup_layoffs
-    to: npa
-    type: AFFECTS
-    description: "Layoffs increase personal loan defaults"
-
-  - from: it_services_sector
-    to: nifty_it
-    type: AFFECTS
-    description: "IT sector health drives IT index"
-
-  - from: vc_funding_india
-    to: ipo_market
-    type: AFFECTS
-    description: "VC exits drive IPO pipeline"
-
-  # ---------------------------------------------------------------------------
-  # COMPOUND PATTERNS
-  # ---------------------------------------------------------------------------
-  - from: fed_funds_rate
-    to: inr_usd
-    type: AFFECTS
-    description: "Fed hike → dollar strength → rupee weakness → import inflation → RBI response"
-
-  - from: crude_oil_price
-    to: rbi_mpc
-    type: AFFECTS
-    description: "Oil shock → fuel/food inflation → CPI → MPC forced to hike"
-
-  - from: stock_market_crash
-    to: startup_layoffs
-    type: AFFECTS
-    description: "Market crash → funding freeze → startup layoffs"
-
-  - from: nifty_50
-    to: ipo_market
-    type: AFFECTS
-    description: "Bull market enables IPO window, crash shuts it"
-
-  - from: cpi_inflation
-    to: repo_rate
-    type: AFFECTS
-    description: "Persistent high inflation forces RBI rate hikes"
-
-  - from: repo_rate
-    to: nifty_50
-    type: AFFECTS
-    description: "Rate hikes compress equity valuations"
-
-  - from: inr_usd
-    to: fii_flows
-    type: AFFECTS
-    description: "Rupee weakness causes FII hedging losses → selling"
-
-  - from: india_gdp
-    to: gst_collection
-    type: AFFECTS
-    description: "Economic activity drives GST revenues"
-
-  - from: india_gdp
-    to: nifty_50
-    type: AFFECTS
-    description: "GDP growth drives corporate earnings → market"
-
-  - from: india_gdp
-    to: credit_growth
-    type: AFFECTS
-    description: "GDP growth drives credit demand"
+- from: rbi
+  to: rbi_mpc
+  type: PRODUCES
+  description: RBI's MPC is the rate-setting body
+- from: rbi_mpc
+  to: repo_rate
+  type: PRODUCES
+  description: MPC decides repo rate every 2 months
+- from: rbi
+  to: reverse_repo_rate
+  type: PRODUCES
+  description: RBI sets the reverse repo rate
+- from: rbi
+  to: crr
+  type: PRODUCES
+  description: RBI mandates CRR for banks
+- from: rbi
+  to: slr
+  type: PRODUCES
+  description: RBI mandates SLR for banks
+- from: crr
+  to: bank_liquidity
+  type: AFFECTS
+  description: CRR hike reduces bank liquidity (money locked with RBI)
+- from: slr
+  to: bank_liquidity
+  type: AFFECTS
+  description: SLR requirement locks bank funds in government securities
+- from: repo_rate
+  to: mclr
+  type: AFFECTS
+  description: Repo rate influences banks' cost of funds and MCLR
+- from: repo_rate
+  to: eblr
+  type: DEPENDS_ON
+  description: EBLR is directly linked to repo rate
+- from: eblr
+  to: home_loan
+  type: DEPENDS_ON
+  description: New home loans benchmarked to EBLR
+- from: mclr
+  to: home_loan
+  type: DEPENDS_ON
+  description: Older home loans benchmarked to MCLR
+- from: eblr
+  to: auto_loan
+  type: DEPENDS_ON
+  description: Auto loans linked to EBLR
+- from: eblr
+  to: personal_loan
+  type: DEPENDS_ON
+  description: Personal loans linked to EBLR
+- from: home_loan
+  to: home_loan_emi
+  type: PRODUCES
+  description: Loan rate determines EMI amount
+- from: auto_loan
+  to: auto_loan_emi
+  type: PRODUCES
+  description: Auto loan rate determines car EMI
+- from: repo_rate
+  to: home_loan_emi
+  type: AFFECTS
+  description: Repo rate hike increases floating rate home loan EMI
+- from: repo_rate
+  to: auto_loan_emi
+  type: AFFECTS
+  description: Rate hike increases auto loan EMI
+- from: repo_rate
+  to: education_loan
+  type: AFFECTS
+  description: Rate changes affect education loan interest
+- from: repo_rate
+  to: business_loan
+  type: AFFECTS
+  description: Rate changes affect business borrowing cost
+- from: repo_rate
+  to: fd_rates
+  type: AFFECTS
+  description: Repo rate changes lead to FD rate revisions
+- from: repo_rate
+  to: savings_rate
+  type: AFFECTS
+  description: Savings account rates loosely follow repo
+- from: bank_liquidity
+  to: credit_growth
+  type: AFFECTS
+  description: Bank liquidity determines lending capacity
+- from: credit_growth
+  to: business_loan
+  type: AFFECTS
+  description: Credit availability determines business loan ease
+- from: rbi_inflation_target
+  to: rbi_mpc
+  type: REGULATES
+  description: 4% target mandates MPC response to inflation deviations
+- from: cpi_inflation
+  to: rbi_mpc
+  type: AFFECTS
+  description: CPI data drives MPC rate decisions
+- from: food_inflation
+  to: cpi_inflation
+  type: AFFECTS
+  description: Food is ~46% of India CPI basket
+- from: fuel_inflation
+  to: cpi_inflation
+  type: AFFECTS
+  description: Fuel directly and indirectly affects CPI
+- from: core_inflation
+  to: cpi_inflation
+  type: AFFECTS
+  description: Core inflation is the demand-driven component
+- from: wpi_inflation
+  to: cpi_inflation
+  type: AFFECTS
+  description: WPI tracks producer prices that eventually pass through to consumer
+    prices
+- from: crude_oil_price
+  to: wpi_inflation
+  type: AFFECTS
+  description: Crude oil is a major component of wholesale price index
+- from: rbi
+  to: rbi_open_market_operations
+  type: PRODUCES
+  description: RBI uses OMO to manage liquidity
+- from: rbi_open_market_operations
+  to: bank_liquidity
+  type: AFFECTS
+  description: Bond purchases inject liquidity, sales drain it
+- from: rbi_open_market_operations
+  to: gsec_yield
+  type: AFFECTS
+  description: OMO purchases suppress G-sec yields
+- from: us_fed
+  to: fed_funds_rate
+  type: PRODUCES
+  description: Fed sets the federal funds rate
+- from: fed_funds_rate
+  to: us_treasury_yield
+  type: AFFECTS
+  description: Fed rate affects Treasury yields
+- from: fed_funds_rate
+  to: dollar_index
+  type: AFFECTS
+  description: Higher Fed rate strengthens the dollar
+- from: dollar_index
+  to: inr_usd
+  type: AFFECTS
+  description: Strong dollar weakens rupee
+- from: fed_funds_rate
+  to: fii_flows
+  type: AFFECTS
+  description: High US rates pull FII money from India to US
+- from: fii_flows
+  to: nifty_50
+  type: AFFECTS
+  description: FII selling/buying directly moves Indian markets
+- from: fii_flows
+  to: inr_usd
+  type: AFFECTS
+  description: FII outflows weaken rupee (dollar demand)
+- from: dii_flows
+  to: nifty_50
+  type: AFFECTS
+  description: DII buying cushions FII selling
+- from: sip_flows
+  to: dii_flows
+  type: AFFECTS
+  description: Monthly SIP flows are the primary DII source
+- from: ecb
+  to: ecb_rate
+  type: PRODUCES
+  description: ECB sets Eurozone interest rates
+- from: ecb_rate
+  to: global_liquidity
+  type: AFFECTS
+  description: ECB rates affect European capital flows
+- from: boj
+  to: boj_rate
+  type: PRODUCES
+  description: BOJ sets Japan interest rates
+- from: boj_rate
+  to: global_liquidity
+  type: AFFECTS
+  description: BOJ policy affects yen carry trade and global flows
+- from: pboc
+  to: global_liquidity
+  type: AFFECTS
+  description: PBOC monetary policy influences global capital flows
+- from: pboc
+  to: china_economy
+  type: REGULATES
+  description: PBOC sets China's monetary policy and interest rates
+- from: global_liquidity
+  to: emerging_market_flows
+  type: AFFECTS
+  description: Global liquidity expansion favors EM allocation
+- from: emerging_market_flows
+  to: fii_flows
+  type: AFFECTS
+  description: India competes for EM allocation
+- from: fed_funds_rate
+  to: global_liquidity
+  type: AFFECTS
+  description: US rates are the single biggest global liquidity driver
+- from: fed_funds_rate
+  to: vc_funding_india
+  type: AFFECTS
+  description: US rates affect LP allocations → VC dry powder globally
+- from: repo_rate
+  to: small_savings_rate
+  type: AFFECTS
+  description: Small savings rates reset quarterly linked to G-sec yields
+- from: small_savings_rate
+  to: ppf
+  type: PRODUCES
+  description: PPF rate set under small savings framework
+- from: small_savings_rate
+  to: scss
+  type: PRODUCES
+  description: SCSS rate set under small savings framework
+- from: small_savings_rate
+  to: nsc
+  type: PRODUCES
+  description: NSC rate set under small savings framework
+- from: small_savings_rate
+  to: post_office_schemes
+  type: PRODUCES
+  description: All post office scheme rates follow small savings
+- from: fd_rates
+  to: deposit_growth
+  type: AFFECTS
+  description: Higher FD rates attract more deposits
+- from: deposit_growth
+  to: bank_liquidity
+  type: AFFECTS
+  description: Strong deposit growth supports bank liquidity
+- from: fd_rates
+  to: small_savings_rate
+  type: COMPETES_WITH
+  description: FD and small savings compete for household savings
+- from: nifty_50
+  to: fd_rates
+  type: COMPETES_WITH
+  description: Strong equity markets pull money away from FDs
+- from: section_80c
+  to: ppf
+  type: AFFECTS
+  description: PPF qualifies for 80C tax deduction
+- from: section_80c
+  to: nsc
+  type: AFFECTS
+  description: NSC qualifies for 80C deduction
+- from: home_loan_emi
+  to: property_price
+  type: AFFECTS
+  description: EMI affordability determines property demand
+- from: property_price
+  to: real_estate_sector
+  type: AFFECTS
+  description: Property prices determine builder revenue and sector health
+- from: auto_loan_emi
+  to: auto_manufacturing
+  type: AFFECTS
+  description: Auto loan EMI affordability drives vehicle demand
+- from: education_loan
+  to: remittances_outward
+  type: AFFECTS
+  description: Education loans fund study abroad → outward remittances
+- from: gold_loan
+  to: gold_loan_market
+  type: PRODUCES
+  description: Gold loan rates drive gold-backed lending market
+- from: gold_price
+  to: gold_loan
+  type: AFFECTS
+  description: Gold price determines collateral value for gold loans
+- from: credit_card_rates
+  to: retail_credit
+  type: AFFECTS
+  description: Credit card rates affect consumer revolving debt
+- from: retail_credit
+  to: credit_growth
+  type: AFFECTS
+  description: Retail lending is a growing share of total credit
+- from: corporate_credit
+  to: credit_growth
+  type: AFFECTS
+  description: Corporate lending drives capital expenditure
+- from: npa
+  to: credit_growth
+  type: AFFECTS
+  description: High NPAs make banks risk-averse, reducing lending
+- from: npa
+  to: bank_provisions
+  type: AFFECTS
+  description: Rising NPAs require higher provisioning
+- from: bank_provisions
+  to: psu_banks
+  type: AFFECTS
+  description: Provisions reduce bank profitability
+- from: bank_write_off
+  to: npa
+  type: AFFECTS
+  description: Write-offs reduce reported NPA ratios
+- from: bank_recapitalization
+  to: psu_banks
+  type: AFFECTS
+  description: Capital infusion restores PSU bank lending capacity
+- from: bank_merger
+  to: psu_banks
+  type: DISRUPTS
+  description: Bank mergers affect branch networks and staffing
+- from: bank_fraud
+  to: npa
+  type: AFFECTS
+  description: Fraud-related NPAs damage bank balance sheets
+- from: rbi_circular
+  to: psu_banks
+  type: REGULATES
+  description: RBI circulars govern banking operations and compliance
+- from: rbi_circular
+  to: nbfc_sector
+  type: REGULATES
+  description: RBI circulars set regulatory framework for NBFCs
+- from: nbfc_regulation
+  to: nbfc_sector
+  type: REGULATES
+  description: RBI regulation determines NBFC operating framework
+- from: microfinance_regulation
+  to: nbfc_sector
+  type: REGULATES
+  description: Microfinance rules affect NBFC-MFI operations
+- from: rbi_circular
+  to: small_finance_banks
+  type: REGULATES
+  description: RBI circulars govern SFB licensing and operations
+- from: small_finance_banks
+  to: microfinance_regulation
+  type: DEPENDS_ON
+  description: Many SFBs converted from MFIs and serve similar segments
+- from: rbi_circular
+  to: cooperative_banks
+  type: REGULATES
+  description: RBI brought cooperative banks under its regulatory purview
+- from: cooperative_banks
+  to: npa
+  type: AFFECTS
+  description: Cooperative banks have historically high NPA ratios
+- from: co_lending
+  to: nbfc_sector
+  type: AFFECTS
+  description: Co-lending model expands NBFC reach
+- from: co_lending
+  to: private_banks
+  type: AFFECTS
+  description: Co-lending expands bank retail exposure
+- from: basel_iii
+  to: psu_banks
+  type: REGULATES
+  description: Capital adequacy norms constrain PSU bank lending
+- from: basel_iii
+  to: private_banks
+  type: REGULATES
+  description: Basel III applies to all scheduled commercial banks
+- from: upi
+  to: npci
+  type: DEPENDS_ON
+  description: UPI is operated by NPCI
+- from: upi_outage
+  to: upi
+  type: DISRUPTS
+  description: UPI outages affect millions of daily transactions
+- from: payment_system_regulation
+  to: upi
+  type: REGULATES
+  description: RBI/NPCI rules govern UPI operations
+- from: digital_rupee
+  to: rbi
+  type: DEPENDS_ON
+  description: CBDC is an RBI initiative
+- from: digital_rupee
+  to: upi
+  type: COMPETES_WITH
+  description: Digital rupee may complement or compete with UPI
+- from: imps
+  to: npci
+  type: DEPENDS_ON
+  description: IMPS is operated by NPCI for instant interbank transfers
+- from: upi
+  to: imps
+  type: COMPETES_WITH
+  description: UPI has largely replaced IMPS for instant person-to-person transfers
+- from: upi
+  to: neft_rtgs
+  type: COMPETES_WITH
+  description: UPI reducing NEFT/RTGS usage for small amounts
+- from: fii_flows
+  to: nifty_50
+  type: AFFECTS
+  description: FII flows are the biggest market mover
+- from: dii_flows
+  to: nifty_50
+  type: AFFECTS
+  description: DII flows provide market stability
+- from: india_gdp
+  to: nifty_50
+  type: AFFECTS
+  description: GDP growth underpins corporate earnings
+- from: nifty_50
+  to: nifty_bank
+  type: AFFECTS
+  description: Banking stocks are ~33% of Nifty weight
+- from: nifty_50
+  to: nifty_midcap
+  type: AFFECTS
+  description: Broad market direction affects mid/smallcap
+- from: nifty_50
+  to: nifty_smallcap
+  type: AFFECTS
+  description: Risk appetite in large caps spills to smallcaps
+- from: it_services_sector
+  to: nifty_it
+  type: AFFECTS
+  description: IT sector results drive IT index
+- from: pharma_sector
+  to: nifty_pharma
+  type: AFFECTS
+  description: Pharma earnings drive pharma index
+- from: auto_manufacturing
+  to: nifty_auto
+  type: AFFECTS
+  description: Auto sales drive auto index
+- from: fmcg_sector
+  to: nifty_fmcg
+  type: AFFECTS
+  description: FMCG volume growth drives FMCG index
+- from: real_estate_sector
+  to: nifty_realty
+  type: AFFECTS
+  description: Real estate sector health drives realty index
+- from: nse
+  to: nifty_50
+  type: PRODUCES
+  description: NSE operates the Nifty 50 index
+- from: bse
+  to: sensex
+  type: PRODUCES
+  description: BSE operates the Sensex index
+- from: sebi
+  to: nse
+  type: REGULATES
+  description: SEBI regulates NSE as a stock exchange
+- from: sebi
+  to: bse
+  type: REGULATES
+  description: SEBI regulates BSE as a stock exchange
+- from: stock_market_rally
+  to: nifty_50
+  type: AFFECTS
+  description: Bull rallies push Nifty to new highs
+- from: stock_market_rally
+  to: ipo_market
+  type: AFFECTS
+  description: Market rallies open the IPO window for new listings
+- from: sebi
+  to: nifty_50
+  type: REGULATES
+  description: SEBI regulations govern equity markets
+- from: sebi
+  to: ipo_market
+  type: REGULATES
+  description: SEBI approves and regulates IPOs
+- from: sebi
+  to: margin_trading
+  type: REGULATES
+  description: SEBI margin rules affect F&O trading
+- from: market_volatility
+  to: nifty_50
+  type: AFFECTS
+  description: High VIX indicates market stress
+- from: geopolitical_risk
+  to: market_volatility
+  type: AFFECTS
+  description: Geopolitical events spike market volatility
+- from: stock_market_crash
+  to: nifty_50
+  type: DISRUPTS
+  description: Market crashes destroy portfolio values
+- from: stock_market_crash
+  to: ipo_market
+  type: DISRUPTS
+  description: Crashes freeze IPO pipeline
+- from: stock_market_crash
+  to: nps
+  type: AFFECTS
+  description: Crash affects NPS equity allocation value
+- from: stock_market_crash
+  to: epf
+  type: AFFECTS
+  description: EPFO invests ~15% in equities
+- from: insider_trading
+  to: sebi
+  type: AFFECTS
+  description: Insider trading cases trigger SEBI enforcement
+- from: mutual_fund_industry
+  to: equity_mf
+  type: PRODUCES
+  description: Equity MFs are the largest MF category
+- from: equity_mf
+  to: large_cap_mf
+  type: PRODUCES
+  description: Large cap funds invest in top 100 stocks
+- from: equity_mf
+  to: mid_cap_mf
+  type: PRODUCES
+  description: Mid cap funds invest in 101-250 ranked stocks
+- from: equity_mf
+  to: small_cap_mf
+  type: PRODUCES
+  description: Small cap funds invest in 251+ ranked stocks
+- from: equity_mf
+  to: sectoral_mf
+  type: PRODUCES
+  description: Sectoral/thematic funds focus on specific sectors
+- from: mutual_fund_industry
+  to: debt_mf
+  type: PRODUCES
+  description: Debt MFs invest in fixed income
+- from: debt_mf
+  to: liquid_fund
+  type: PRODUCES
+  description: Liquid funds for short-term parking
+- from: debt_mf
+  to: gilt_fund
+  type: PRODUCES
+  description: Gilt funds invest in government securities
+- from: debt_mf
+  to: corporate_bond_fund
+  type: PRODUCES
+  description: Corporate bond funds invest in company debt
+- from: mutual_fund_industry
+  to: hybrid_fund
+  type: PRODUCES
+  description: Hybrid funds mix equity and debt
+- from: mutual_fund_industry
+  to: index_fund
+  type: PRODUCES
+  description: Index/passive funds track indices
+- from: sip_flows
+  to: equity_mf
+  type: FUNDS
+  description: Monthly SIPs are the primary equity MF source
+- from: sip_flows
+  to: dii_flows
+  type: PRODUCES
+  description: SIP flows make MFs the largest DII
+- from: nifty_50
+  to: equity_mf
+  type: AFFECTS
+  description: Market performance affects MF NAV and returns
+- from: gsec_yield
+  to: debt_mf
+  type: AFFECTS
+  description: G-sec yields inversely affect debt fund NAV
+- from: mf_taxation
+  to: mutual_fund_industry
+  type: AFFECTS
+  description: Tax changes affect MF attractiveness
+- from: mf_regulation
+  to: mutual_fund_industry
+  type: REGULATES
+  description: SEBI expense ratio caps affect AMC revenue
+- from: section_80c
+  to: equity_mf
+  type: AFFECTS
+  description: ELSS funds get 80C tax benefit
+- from: ltcg
+  to: equity_mf
+  type: AFFECTS
+  description: LTCG tax on equity MF affects post-tax returns
+- from: stcg
+  to: equity_mf
+  type: AFFECTS
+  description: STCG tax on equity MF affects trading decisions
+- from: repo_rate
+  to: debt_mf
+  type: AFFECTS
+  description: Rate cuts boost debt fund NAV (bond price rise)
+- from: nifty_smallcap
+  to: small_cap_mf
+  type: AFFECTS
+  description: Smallcap index performance drives smallcap fund returns
+- from: rbi
+  to: gsec
+  type: PRODUCES
+  description: Government borrows via G-sec auctions managed by RBI
+- from: gsec
+  to: gsec_yield
+  type: PRODUCES
+  description: G-sec auction demand determines yields
+- from: repo_rate
+  to: gsec_yield
+  type: AFFECTS
+  description: Repo rate sets the floor for short-term yields
+- from: cpi_inflation
+  to: gsec_yield
+  type: AFFECTS
+  description: Inflation expectations drive bond yields
+- from: us_treasury_yield
+  to: gsec_yield
+  type: AFFECTS
+  description: US yield differential affects India bond demand
+- from: gsec_yield
+  to: yield_curve
+  type: PRODUCES
+  description: Term structure of G-sec yields forms yield curve
+- from: yield_curve
+  to: bond_market_india
+  type: AFFECTS
+  description: Yield curve shape signals economic expectations
+- from: corporate_bonds
+  to: bond_market_india
+  type: PRODUCES
+  description: Corporate bonds are part of the overall debt market
+- from: gsec_yield
+  to: corporate_bonds
+  type: AFFECTS
+  description: Corporate bond spreads anchored to G-sec yield
+- from: gsec_yield
+  to: small_savings_rate
+  type: AFFECTS
+  description: Small savings rate formula linked to G-sec yields
+- from: gsec_yield
+  to: home_loan_rate
+  type: AFFECTS
+  description: Long-term rates track government bond yields
+- from: sovereign_green_bond
+  to: bond_market_india
+  type: PRODUCES
+  description: Sovereign green bonds are a G-sec sub-category for climate projects
+- from: sovereign_green_bond
+  to: gsec_yield
+  type: DEPENDS_ON
+  description: Green bond yields benchmarked to comparable G-sec yields
+- from: sdl
+  to: bond_market_india
+  type: PRODUCES
+  description: State development loans are a significant bond segment
+- from: rbi
+  to: rbis_sovereign_gold_bond
+  type: PRODUCES
+  description: RBI issues SGBs on government's behalf
+- from: gold_price
+  to: physical_gold
+  type: AFFECTS
+  description: Gold price drives jewelry and investment demand
+- from: gold_price
+  to: gold_etf
+  type: AFFECTS
+  description: Gold ETF NAV tracks gold price
+- from: gold_price
+  to: rbis_sovereign_gold_bond
+  type: AFFECTS
+  description: SGB redemption value linked to gold price
+- from: gold_price
+  to: gold_loan
+  type: AFFECTS
+  description: Higher gold price increases collateral value
+- from: gold_import_duty
+  to: gold_price
+  type: AFFECTS
+  description: Import duty affects domestic gold price premium
+- from: gold_import
+  to: trade_deficit
+  type: AFFECTS
+  description: Gold imports widen trade deficit
+- from: dollar_index
+  to: gold_price
+  type: AFFECTS
+  description: Gold inversely correlated with dollar (mostly)
+- from: geopolitical_risk
+  to: gold_price
+  type: AFFECTS
+  description: Geopolitical tension drives safe-haven gold demand
+- from: cpi_inflation
+  to: gold_price
+  type: AFFECTS
+  description: Gold seen as inflation hedge
+- from: us_treasury_yield
+  to: gold_price
+  type: AFFECTS
+  description: Higher real yields reduce gold attractiveness (no yield)
+- from: home_loan_rate
+  to: property_price
+  type: AFFECTS
+  description: Loan rates determine affordability and demand
+- from: stamp_duty
+  to: property_price
+  type: AFFECTS
+  description: Stamp duty affects transaction cost and demand
+- from: circle_rate
+  to: property_tax
+  type: AFFECTS
+  description: Circle rates determine property tax base
+- from: reit
+  to: real_estate_sector
+  type: AFFECTS
+  description: REITs provide institutional demand for commercial RE
+- from: rental_yield
+  to: reit
+  type: AFFECTS
+  description: Rental yield determines REIT distribution
+- from: rera
+  to: property_price
+  type: REGULATES
+  description: RERA improves transparency but adds compliance cost
+- from: repo_rate
+  to: home_loan_rate
+  type: AFFECTS
+  description: Repo rate determines floating home loan rates
+- from: capital_gains_property
+  to: property_price
+  type: AFFECTS
+  description: Capital gains tax rules affect property investment decisions
+- from: nifty_50
+  to: reit
+  type: COMPETES_WITH
+  description: REITs compete with equities for investor allocation
+- from: bitcoin
+  to: crypto_exchange_india
+  type: AFFECTS
+  description: Bitcoin price drives Indian crypto exchange volumes
+- from: ethereum
+  to: crypto_exchange_india
+  type: AFFECTS
+  description: 'ETH is #2 traded crypto on Indian exchanges'
+- from: crypto_tax_india
+  to: crypto_exchange_india
+  type: AFFECTS
+  description: 30% tax + 1% TDS devastated Indian crypto trading
+- from: crypto_regulation_india
+  to: crypto_exchange_india
+  type: REGULATES
+  description: Regulatory uncertainty affects crypto platforms
+- from: global_crypto_regulation
+  to: bitcoin
+  type: AFFECTS
+  description: US SEC actions affect global crypto prices
+- from: fed_funds_rate
+  to: bitcoin
+  type: AFFECTS
+  description: Risk assets like crypto suffer in high-rate environment
+- from: geopolitical_risk
+  to: bitcoin
+  type: AFFECTS
+  description: Some view crypto as digital gold during crises
+- from: rbi
+  to: crypto_regulation_india
+  type: REGULATES
+  description: RBI has historically been against crypto
+- from: irdai
+  to: health_insurance
+  type: REGULATES
+  description: IRDAI regulates health insurance products and pricing
+- from: irdai
+  to: motor_insurance
+  type: REGULATES
+  description: IRDAI regulates motor insurance pricing
+- from: irdai
+  to: term_insurance
+  type: REGULATES
+  description: IRDAI regulates life insurance products
+- from: irdai
+  to: bima_sugam
+  type: PRODUCES
+  description: IRDAI is building Bima Sugam marketplace
+- from: health_insurance
+  to: health_insurance_premium
+  type: PRODUCES
+  description: Health insurance cost determined by premium
+- from: cpi_inflation
+  to: health_insurance_premium
+  type: AFFECTS
+  description: Medical inflation drives premium hikes
+- from: health_insurance
+  to: cashless_network
+  type: DEPENDS_ON
+  description: Cashless claims need network hospitals
+- from: health_insurance
+  to: pre_existing_condition
+  type: AFFECTS
+  description: PED rules determine coverage scope
+- from: health_insurance_portability
+  to: health_insurance
+  type: AFFECTS
+  description: Portability rules allow switching insurers
+- from: motor_insurance
+  to: third_party_insurance
+  type: PRODUCES
+  description: TP insurance is mandatory for all vehicles
+- from: motor_insurance
+  to: own_damage_insurance
+  type: PRODUCES
+  description: OD insurance is optional but common
+- from: term_insurance
+  to: claim_settlement
+  type: DEPENDS_ON
+  description: Term insurance value depends on claim settlement ratio
+- from: endowment_plan
+  to: section_80c
+  type: DEPENDS_ON
+  description: Endowment premiums qualify for 80C deduction
+- from: ulip
+  to: nifty_50
+  type: DEPENDS_ON
+  description: ULIP equity returns track market performance
+- from: monsoon
+  to: crop_insurance
+  type: AFFECTS
+  description: Actual monsoon failures trigger crop insurance claims under PMFBY;
+    poor monsoon years see 3-5x higher claim volumes
+- from: crop_insurance
+  to: agriculture_sector
+  type: AFFECTS
+  description: Insurance availability affects farmer risk-taking
+- from: reinsurance
+  to: health_insurance_premium
+  type: AFFECTS
+  description: Global reinsurance rates affect Indian insurance pricing
+- from: reinsurance
+  to: crop_insurance
+  type: AFFECTS
+  description: Reinsurance rates affect crop insurance viability
+- from: section_80d
+  to: health_insurance
+  type: AFFECTS
+  description: 80D deduction incentivizes health insurance purchase
+- from: gst_on_insurance
+  to: health_insurance_premium
+  type: AFFECTS
+  description: 18% GST on premiums increases effective cost
+- from: gst_on_insurance
+  to: term_insurance
+  type: AFFECTS
+  description: GST adds to term insurance premium cost
+- from: union_budget
+  to: income_tax_slab
+  type: AFFECTS
+  description: Budget changes tax slabs and rates
+- from: union_budget
+  to: new_tax_regime
+  type: AFFECTS
+  description: Budget updates new regime benefits
+- from: union_budget
+  to: section_80c
+  type: AFFECTS
+  description: Budget can change 80C limits
+- from: union_budget
+  to: standard_deduction
+  type: AFFECTS
+  description: Budget can revise standard deduction
+- from: union_budget
+  to: customs_duty
+  type: AFFECTS
+  description: Budget announces customs duty changes
+- from: union_budget
+  to: capital_gains_budget
+  type: PRODUCES
+  description: Budget announces capital gains tax changes
+- from: income_tax_slab
+  to: new_tax_regime
+  type: PRODUCES
+  description: New regime has specific slab structure
+- from: income_tax_slab
+  to: old_tax_regime
+  type: PRODUCES
+  description: Old regime has different slabs with deductions
+- from: new_tax_regime
+  to: old_tax_regime
+  type: COMPETES_WITH
+  description: Taxpayers choose between new and old regime
+- from: section_80c
+  to: old_tax_regime
+  type: AFFECTS
+  description: 80C available only in old regime
+- from: section_80d
+  to: old_tax_regime
+  type: AFFECTS
+  description: 80D available only in old regime
+- from: hra_deduction
+  to: old_tax_regime
+  type: AFFECTS
+  description: HRA deduction only in old regime
+- from: advance_tax
+  to: income_tax
+  type: AFFECTS
+  description: Advance tax is quarterly pre-payment of estimated income tax liability
+- from: surcharge
+  to: income_tax
+  type: AFFECTS
+  description: Surcharge increases effective tax rate for high-income taxpayers
+- from: tds
+  to: income_tax
+  type: AFFECTS
+  description: TDS is advance tax collection at source
+- from: income_tax
+  to: salary_trends
+  type: AFFECTS
+  description: Take-home pay depends on tax outgo
+- from: capital_gains_budget
+  to: stcg
+  type: AFFECTS
+  description: Budget changes STCG rates and rules
+- from: capital_gains_budget
+  to: ltcg
+  type: AFFECTS
+  description: Budget changes LTCG rates and exemptions
+- from: capital_gains_budget
+  to: indexation
+  type: AFFECTS
+  description: Budget 2024 removed indexation for most assets
+- from: stcg
+  to: nifty_50
+  type: AFFECTS
+  description: STCG tax affects short-term trading behavior
+- from: ltcg
+  to: equity_mf
+  type: AFFECTS
+  description: LTCG tax reduces long-term equity returns
+- from: stt
+  to: margin_trading
+  type: AFFECTS
+  description: STT on F&O increases trading costs
+- from: indexation
+  to: property_price
+  type: AFFECTS
+  description: Indexation removal affects property investment returns
+- from: indexation
+  to: debt_mf
+  type: AFFECTS
+  description: Indexation removal makes debt MFs less tax-efficient
+- from: indexation
+  to: gold_price
+  type: AFFECTS
+  description: Indexation changes affect gold investment attractiveness
+- from: gst
+  to: gst_council
+  type: PRODUCES
+  description: GST framework established the GST Council as its governing body
+- from: gst
+  to: gst_collection
+  type: PRODUCES
+  description: GST regime generates monthly tax collections tracked as economic indicator
+- from: gst_council
+  to: gst_rate
+  type: PRODUCES
+  description: GST Council sets and revises rates
+- from: gst_rate
+  to: fmcg_sector
+  type: AFFECTS
+  description: GST rates on FMCG products affect pricing
+- from: gst_rate
+  to: auto_manufacturing
+  type: AFFECTS
+  description: GST cess on vehicles affects demand
+- from: gst_rate
+  to: real_estate_sector
+  type: AFFECTS
+  description: GST on under-construction property affects demand
+- from: gst_collection
+  to: india_gdp
+  type: AFFECTS
+  description: GST collection is a proxy for economic activity
+- from: input_tax_credit
+  to: gst_compliance
+  type: AFFECTS
+  description: ITC claims require proper compliance
+- from: gst_compliance
+  to: job_market_india
+  type: AFFECTS
+  description: GST compliance burden affects small business operations
+- from: gst_on_insurance
+  to: health_insurance_premium
+  type: AFFECTS
+  description: 18% GST on health insurance premiums
+- from: customs_duty
+  to: electronics_import_duty
+  type: PRODUCES
+  description: Customs duty framework includes electronics
+- from: customs_duty
+  to: gold_import_duty
+  type: PRODUCES
+  description: Gold import duty is a customs duty category
+- from: customs_duty
+  to: auto_import_duty
+  type: PRODUCES
+  description: Auto parts and CBU import duties
+- from: customs_duty
+  to: agri_import_duty
+  type: PRODUCES
+  description: Agricultural commodity import duties
+- from: electronics_import_duty
+  to: semiconductor_supply
+  type: AFFECTS
+  description: Import duties affect electronics cost
+- from: gold_import_duty
+  to: gold_import
+  type: AFFECTS
+  description: Duty changes affect gold import volumes
+- from: agri_import_duty
+  to: food_inflation
+  type: AFFECTS
+  description: Lowering edible oil duty reduces food inflation
+- from: auto_import_duty
+  to: auto_manufacturing
+  type: AFFECTS
+  description: CKD/CBU duty affects vehicle pricing
+- from: anti_dumping_duty
+  to: china_economy
+  type: AFFECTS
+  description: Anti-dumping often targets Chinese goods
+- from: us_china_trade
+  to: india_us_trade
+  type: AFFECTS
+  description: US-China trade war shifts supply chains via China+1 strategy, boosting
+    India's bilateral trade volumes in electronics, pharma, and textiles
+- from: property_tax
+  to: property_price
+  type: AFFECTS
+  description: Property tax is an ongoing ownership cost
+- from: stamp_duty_rate
+  to: property_price
+  type: AFFECTS
+  description: High stamp duty adds to acquisition cost
+- from: capital_gains_property
+  to: property_price
+  type: AFFECTS
+  description: Capital gains rules affect investment attractiveness
+- from: dtaa
+  to: inr_usd
+  type: AFFECTS
+  description: Tax treaties affect cross-border investment flows
+- from: fema
+  to: fema_limits
+  type: PRODUCES
+  description: FEMA sets foreign exchange limits
+- from: lrs
+  to: remittances_outward
+  type: REGULATES
+  description: LRS caps individual foreign remittance at $250K/year
+- from: tcs_foreign_remittance
+  to: lrs
+  type: AFFECTS
+  description: TCS on remittances above Rs 7 lakh increases cost
+- from: tcs_foreign_remittance
+  to: remittances_outward
+  type: AFFECTS
+  description: TCS discourages foreign remittances
+- from: angel_tax
+  to: vc_funding_india
+  type: AFFECTS
+  description: Angel tax on startup funding created compliance burden
+- from: ecb_norms
+  to: corporate_credit
+  type: AFFECTS
+  description: ECB norms determine foreign borrowing access
+- from: equalization_levy
+  to: it_services_sector
+  type: AFFECTS
+  description: Digital tax affects cross-border tech services
+- from: inr_usd
+  to: trade_deficit
+  type: AFFECTS
+  description: Weak rupee increases import bill in INR terms
+- from: trade_deficit
+  to: inr_usd
+  type: AFFECTS
+  description: High trade deficit creates rupee depreciation pressure
+- from: oil_import_bill
+  to: trade_deficit
+  type: AFFECTS
+  description: Oil is ~25% of India's total imports
+- from: crude_oil_price
+  to: oil_import_bill
+  type: AFFECTS
+  description: Oil price directly drives import bill
+- from: it_export_earnings
+  to: trade_deficit
+  type: AFFECTS
+  description: IT exports offset trade deficit (services surplus)
+- from: it_services_sector
+  to: it_export_earnings
+  type: PRODUCES
+  description: IT services generate forex through exports
+- from: remittances_inward
+  to: inr_usd
+  type: AFFECTS
+  description: NRI remittances provide dollar supply
+- from: rbi_intervention
+  to: inr_usd
+  type: AFFECTS
+  description: RBI buys/sells dollars to manage rupee
+- from: rbi_forex_reserves
+  to: rbi_intervention
+  type: DEPENDS_ON
+  description: Reserves give RBI ammunition for forex intervention
+- from: fii_flows
+  to: inr_usd
+  type: AFFECTS
+  description: FII flows drive rupee via portfolio capital
+- from: inr_usd
+  to: inr_eur
+  type: AFFECTS
+  description: INR-EUR is a cross rate through USD
+- from: inr_usd
+  to: inr_gbp
+  type: AFFECTS
+  description: INR-GBP is a cross rate through USD
+- from: inr_usd
+  to: cpi_inflation
+  type: AFFECTS
+  description: Weak rupee increases imported inflation
+- from: inr_usd
+  to: it_services_sector
+  type: AFFECTS
+  description: Weak rupee boosts IT margins (revenue in USD, cost in INR)
+- from: inr_usd
+  to: pharma_sector
+  type: AFFECTS
+  description: Rupee affects pharma export revenue vs API import cost
+- from: inr_usd
+  to: education_loan
+  type: AFFECTS
+  description: Weak rupee increases cost of foreign education
+- from: inr_usd
+  to: remittances_outward
+  type: AFFECTS
+  description: Weak rupee makes foreign remittances costlier
+- from: inr_eur
+  to: remittances_inward
+  type: AFFECTS
+  description: EUR rate affects European NRI remittance value
+- from: inr_gbp
+  to: remittances_inward
+  type: AFFECTS
+  description: GBP rate affects UK NRI remittance value
+- from: epf
+  to: epf_interest_rate
+  type: PRODUCES
+  description: EPFO sets annual interest rate
+- from: gsec_yield
+  to: epf_interest_rate
+  type: AFFECTS
+  description: G-sec yields determine EPF corpus earnings; EPFO invests ~50% in government
+    securities, so yield levels directly constrain the annual interest rate declaration
+- from: epf
+  to: eps
+  type: PRODUCES
+  description: Part of EPF contribution goes to EPS pension
+- from: nps
+  to: nps_equity_allocation
+  type: PRODUCES
+  description: NPS allows equity allocation up to 75%
+- from: nps_equity_allocation
+  to: nifty_50
+  type: DEPENDS_ON
+  description: NPS equity returns depend on market performance
+- from: nps
+  to: annuity_rates
+  type: DEPENDS_ON
+  description: NPS mandates 40% annuity purchase at retirement
+- from: repo_rate
+  to: annuity_rates
+  type: AFFECTS
+  description: Interest rates determine annuity payout rates
+- from: section_80c
+  to: epf
+  type: AFFECTS
+  description: EPF qualifies for 80C deduction
+- from: section_80c
+  to: nps
+  type: AFFECTS
+  description: NPS gets additional 80CCD(1B) deduction of Rs 50K
+- from: nifty_50
+  to: nps
+  type: AFFECTS
+  description: Equity market performance affects NPS corpus
+- from: gsec_yield
+  to: nps
+  type: AFFECTS
+  description: Bond yields affect NPS debt returns
+- from: gsec_yield
+  to: annuity_rates
+  type: AFFECTS
+  description: Low yields mean lower annuity payouts
+- from: gratuity
+  to: epf
+  type: AFFECTS
+  description: Gratuity and EPF together form the core employer-provided retirement
+    benefits
+- from: gratuity
+  to: income_tax
+  type: AFFECTS
+  description: Gratuity up to Rs 20L is tax-exempt; excess is taxable
+- from: superannuation
+  to: nps
+  type: AFFECTS
+  description: Many employers moved from superannuation funds to NPS for retirement
+    benefits
+- from: superannuation
+  to: annuity_rates
+  type: DEPENDS_ON
+  description: Superannuation corpus converted to annuity at retirement
+- from: us_economy
+  to: fed_funds_rate
+  type: AFFECTS
+  description: US economic conditions drive Fed policy
+- from: us_economy
+  to: it_services_sector
+  type: AFFECTS
+  description: US health drives IT outsourcing demand
+- from: eu_economy
+  to: ecb_rate
+  type: AFFECTS
+  description: Eurozone economic conditions drive ECB policy decisions
+- from: eu_economy
+  to: it_services_sector
+  type: AFFECTS
+  description: EU is the second-largest IT outsourcing market for Indian firms
+- from: russia_ukraine
+  to: crude_oil_price
+  type: AFFECTS
+  description: Russia conflict disrupts global energy supply
+- from: russia_ukraine
+  to: food_inflation
+  type: AFFECTS
+  description: Ukraine is a major wheat/sunflower oil exporter
+- from: middle_east_conflict
+  to: crude_oil_price
+  type: AFFECTS
+  description: Middle East tension threatens oil supply routes
+- from: middle_east_conflict
+  to: gold_price
+  type: AFFECTS
+  description: Conflict drives safe-haven gold demand
+- from: us_china_trade
+  to: semiconductor_supply
+  type: DISRUPTS
+  description: US-China tech war disrupts chip supply chains
+- from: geopolitical_risk
+  to: fii_flows
+  type: AFFECTS
+  description: High geopolitical risk reduces EM allocation
+- from: geopolitical_risk
+  to: crude_oil_price
+  type: AFFECTS
+  description: Geopolitical risk includes oil supply risk premium
+- from: crude_oil_price
+  to: cpi_inflation
+  type: AFFECTS
+  description: Oil price drives fuel and transport inflation
+- from: crude_oil_price
+  to: fuel_inflation
+  type: AFFECTS
+  description: Oil directly determines fuel prices
+- from: crude_oil_price
+  to: trade_deficit
+  type: AFFECTS
+  description: Oil is India's largest import (>$150B/year)
+- from: crude_oil_price
+  to: inr_usd
+  type: AFFECTS
+  description: High oil → high imports → rupee pressure
+- from: opec_decision
+  to: crude_oil_price
+  type: AFFECTS
+  description: OPEC production decisions set oil supply
+- from: natural_gas_price
+  to: cpi_inflation
+  type: AFFECTS
+  description: Gas price affects CNG, piped gas, power
+- from: natural_gas_price
+  to: fuel_inflation
+  type: AFFECTS
+  description: Gas is an alternative fuel affecting inflation
+- from: renewable_energy
+  to: india_crude_imports
+  type: AFFECTS
+  description: India's renewable energy adoption reduces its crude oil import dependency
+- from: monsoon_forecast
+  to: food_inflation
+  type: AFFECTS
+  description: Bad monsoon causes vegetable and cereal price spikes
+- from: food_inflation
+  to: cpi_inflation
+  type: AFFECTS
+  description: Food is ~46% weight in India CPI
+- from: food_inflation
+  to: rbi_mpc
+  type: AFFECTS
+  description: Food inflation spikes force hawkish MPC
+- from: food_inflation
+  to: fmcg_sector
+  type: AFFECTS
+  description: Food inflation increases FMCG input costs
+- from: monsoon_forecast
+  to: agriculture_sector
+  type: AFFECTS
+  description: Monsoon determines kharif output and farmer income
+- from: agriculture_sector
+  to: food_inflation
+  type: AFFECTS
+  description: Farm output determines food supply
+- from: job_market_india
+  to: retail_credit
+  type: AFFECTS
+  description: Employment drives consumer borrowing capacity
+- from: job_market_india
+  to: sip_flows
+  type: AFFECTS
+  description: Employment and income drive MF investment capacity
+- from: salary_trends
+  to: income_tax
+  type: AFFECTS
+  description: Salary levels determine tax liability
+- from: salary_trends
+  to: home_loan_emi
+  type: AFFECTS
+  description: Income determines home loan eligibility
+- from: startup_layoffs
+  to: npa
+  type: AFFECTS
+  description: Layoffs increase personal loan defaults
+- from: it_services_sector
+  to: nifty_it
+  type: AFFECTS
+  description: IT sector health drives IT index
+- from: vc_funding_india
+  to: ipo_market
+  type: AFFECTS
+  description: VC exits drive IPO pipeline
+- from: fed_funds_rate
+  to: inr_usd
+  type: AFFECTS
+  description: Fed hike → dollar strength → rupee weakness → import inflation → RBI
+    response
+- from: crude_oil_price
+  to: rbi_mpc
+  type: AFFECTS
+  description: Oil shock → fuel/food inflation → CPI → MPC forced to hike
+- from: stock_market_crash
+  to: startup_layoffs
+  type: AFFECTS
+  description: Market crash → funding freeze → startup layoffs
+- from: nifty_50
+  to: ipo_market
+  type: AFFECTS
+  description: Bull market enables IPO window, crash shuts it
+- from: cpi_inflation
+  to: repo_rate
+  type: AFFECTS
+  description: Persistent high inflation forces RBI rate hikes
+- from: repo_rate
+  to: nifty_50
+  type: AFFECTS
+  description: Rate hikes compress equity valuations
+- from: inr_usd
+  to: fii_flows
+  type: AFFECTS
+  description: Rupee weakness causes FII hedging losses → selling
+- from: india_gdp
+  to: gst_collection
+  type: AFFECTS
+  description: Economic activity drives GST revenues
+- from: india_gdp
+  to: nifty_50
+  type: AFFECTS
+  description: GDP growth drives corporate earnings → market
+- from: india_gdp
+  to: credit_growth
+  type: AFFECTS
+  description: GDP growth drives credit demand

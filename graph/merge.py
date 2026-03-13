@@ -86,10 +86,13 @@ class TaxonomyMerger:
             aliases = list(node.get("aliases") or [])
             category = node.get("category", "")
             if G.has_node(nid):
-                # Merge: union aliases, keep first category
+                # Merge: union aliases, fill empty category
                 existing = G.nodes[nid]
                 merged_aliases = list(dict.fromkeys(existing.get("aliases", []) + aliases))
                 existing["aliases"] = merged_aliases
+                if not existing.get("category") and category:
+                    existing["category"] = category
+                    existing["source_file"] = source
             else:
                 G.add_node(nid, aliases=aliases, category=category, source_file=source)
 
@@ -179,13 +182,17 @@ class TaxonomyMerger:
         # 0. New nodes (must come before edges so patch edges can reference them)
         for node in data.get("new_nodes", []) or []:
             nid = node["id"]
-            if not G.has_node(nid):
-                G.add_node(
-                    nid,
-                    aliases=list(node.get("aliases") or []),
-                    category=node.get("category", ""),
-                    source_file=patch_path.name,
-                )
+            aliases = list(node.get("aliases") or [])
+            category = node.get("category", "")
+            if G.has_node(nid):
+                existing = G.nodes[nid]
+                merged_aliases = list(dict.fromkeys(existing.get("aliases", []) + aliases))
+                existing["aliases"] = merged_aliases
+                if not existing.get("category") and category:
+                    existing["category"] = category
+                    existing["source_file"] = patch_path.name
+            else:
+                G.add_node(nid, aliases=aliases, category=category, source_file=patch_path.name)
 
         # 1. Node merges
         for merge in data.get("node_merges", []) or []:
@@ -312,6 +319,22 @@ def main() -> None:
         out = args.root / "data" / "merged_graph.yaml"
         export_graph(G, out)
         print(f"\nExported to {out}")
+
+    # Post-merge validation: check inference refs
+    try:
+        from graph.quality import QualityAnalyzer
+
+        validation = QualityAnalyzer(root=args.root)._validate_inference_refs(G)
+        if validation.missing_nodes:
+            print(f"\n⚠ {len(validation.missing_nodes)} inference refs missing from graph:")
+            for nid in validation.missing_nodes[:10]:
+                print(f"  - {nid}")
+            if len(validation.missing_nodes) > 10:
+                print(f"  ... and {len(validation.missing_nodes) - 10} more")
+        else:
+            print("\n✓ All inference refs valid")
+    except Exception as e:
+        log.warning("Post-merge validation skipped: %s", e)
 
 
 if __name__ == "__main__":
