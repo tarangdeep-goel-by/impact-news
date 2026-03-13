@@ -119,7 +119,7 @@ class TaxonomyMerger:
         # Walk each top-level domain (L1 nodes)
         l1_ids: list[str] = []
         for key, value in data.items():
-            if key == "meta":
+            if key in ("meta", "supplementary_nodes", "supplementary_edges"):
                 continue
             if isinstance(value, dict) and "id" in value:
                 l1_ids.append(value["id"])
@@ -130,6 +130,28 @@ class TaxonomyMerger:
             if G.has_node(nid):
                 G.nodes[nid]["is_category"] = True
                 G.nodes[nid]["is_container"] = True
+
+        # Supplementary flat nodes (user-centric additions appended to tree file)
+        for node in data.get("supplementary_nodes", []) or []:
+            nid = node["id"]
+            aliases = list(node.get("aliases") or [])
+            category = node.get("category", "")
+            if not G.has_node(nid):
+                G.add_node(nid, aliases=aliases, category=category, source_file=source)
+
+        for edge in data.get("supplementary_edges", []) or []:
+            if "from" not in edge or "to" not in edge:
+                continue
+            G.add_edge(
+                edge["from"],
+                edge["to"],
+                type=edge.get("type", ""),
+                description=edge.get("description", ""),
+                weight=edge.get("weight", 1.0),
+                polarity=edge.get("polarity", 0),
+                delay=edge.get("delay", "SHORT_TERM"),
+                source_file=source,
+            )
 
     def _walk_tree(
         self,
