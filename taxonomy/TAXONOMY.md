@@ -1,30 +1,246 @@
 # Taxonomy v4 — Impact News Knowledge Graph
 
-## Status: L1s LOCKED (2026-03-13). L2s pending.
+## Status: CONSTITUTION LOCKED (2026-03-13). L1s LOCKED. L2s pending.
 
 ---
 
-## Core Design Principles
+## Graph Constitution
 
-### 1. Nodes are ENTITIES, not events
+The rules below govern all graph construction. They are ordered by precedence — earlier rules override later ones in case of conflict.
+
+---
+
+### Rule 1: Entity Principle
+
+Nodes are **entities** (things that exist), not events or changes.
+
 - `crude_oil` is a node. `crude_oil_price_hike` is NOT — that's an edge property.
 - `monsoon` is a node. `monsoon_deficit` is NOT.
-- The graph captures what exists; edges and their properties capture what changed and how.
+- The graph captures what exists; edges capture what changed and how.
 
-### 2. Classification Test: "Locus of Interface"
+Because nodes are static entities, causal edges represent **covariation** — how changes in one entity relate to changes in another:
+- Polarity **+1** = directly proportional (A increases → B increases)
+- Polarity **-1** = inversely proportional (A increases → B decreases)
+
+Every node has an implied **axis** — the dimension that "increases" or "decreases" means. Examples:
+- `unemployment` — axis: unemployment rate (up = more unemployment)
+- `auto_rickshaw_fare` — axis: cost in INR (up = more expensive)
+- `retail_tomato` — axis: retail price (up = costlier)
+
+Polarity describes the **entity's value**, not the edge verb. `monsoon` DISRUPTS `crop_yield` with polarity **-1** means: when monsoon strength increases, crop yield decreases. The verb `DISRUPTS` is semantic context for humans; the polarity is the math.
+
+---
+
+### Rule 2: Trigger/Impact Classification (Locus of Interface Test)
+
 > Can a single citizen directly experience this entity in their body, wallet, schedule, or environment?
+
 - **YES → Impact** (citizen-level entity)
 - **NO → Trigger** (system-level entity)
 
-### 3. Impacts can cause other Impacts
-- `diesel` (Impact: Transport) → `freight_rates` (Impact: Transport) → `tomato` (Impact: Food)
-- The Trigger/Impact split is about the entity's **nature**, not its position in a chain.
+Impacts can cause other Impacts. Triggers can cause other Triggers. The split is about the entity's **nature**, not its position in a causal chain.
 
-### 4. Edges carry properties
-- **direction**: positive (+) or negative (-)
-- **magnitude**: 0.2 / 0.4 / 0.7 / 0.9
-- **delay**: IMMEDIATE / SHORT_TERM / MEDIUM_TERM / LONG_TERM
-- **type**: AFFECTS, PRODUCES, REGULATES, DISRUPTS, SUPPLIES, DEPENDS_ON, etc.
+---
+
+### Rule 3: Dual-Nature Prevention
+
+A node exists in **ONE world only** — Trigger OR Impact, never both.
+
+If an entity has both a system-level and citizen-level face, it becomes **two nodes**:
+- `crude_oil` (T3, the global commodity) — Trigger
+- `retail_diesel` (I3, what you pay at the pump) — Impact
+
+The bridge edge between them connects the two worlds. This is by design.
+
+---
+
+### Rule 4: One Node, One Home
+
+Each node belongs to exactly **one L1 tree**. No duplicates across L1s or source files.
+
+If a node has secondary relevance to another L1, it stays in its primary home and gets a `secondary_tags` field:
+
+```yaml
+digital_payments:
+  category: I5   # Primary home: Finance
+  secondary_tags: [I10]  # Also relevant to: Digital Life
+```
+
+Cross-L1 relevance is expressed through **portal edges**, not duplicate nodes.
+
+---
+
+### Rule 5: Leaf Node Test
+
+A node is a valid **leaf** when it satisfies ALL three:
+
+| Test | Question | Failure Mode |
+|------|----------|-------------|
+| **Matchable** | Could an LLM reading a news headline plausibly extract this as a tag? | Too abstract → go deeper |
+| **Mappable** | Could a user's onboarding answer plausibly connect to this? | Too obscure → reconsider |
+| **Edgeable** | Does it have at least one meaningful causal edge (not just IS_A/CONTAINS)? | Too granular → go up |
+
+---
+
+### Rule 6: Vertical Edge Semantics
+
+Two vertical edge types. Never mix them.
+
+| Edge | Meaning | Use | Example |
+|------|---------|-----|---------|
+| `CONTAINS` | Parent is a **group**, child is a **member** | Taxonomy levels: L1→L2→L3 | I1 Food CONTAINS Staples |
+| `IS_A` | Child is a **subtype** of parent | Within-level specialization only | `atta` IS_A `staple_grain` |
+
+---
+
+### Rule 7: Three Types of Lateral Edges
+
+The graph has three kinds of non-hierarchical connections:
+
+| Type | Connects | Example | Built In |
+|------|----------|---------|----------|
+| **Intra-tree** | Nodes within same L1 | `retail_diesel` → `freight_cost` (both I3) | Phase 1b / 2b |
+| **Portal** | Nodes across different L1s, same world | `freight_cost` (I3) → `retail_tomato` (I1) | Phase 1b / 2b |
+| **Bridge** | Trigger node → Impact node | `crude_oil` (T3) → `retail_diesel` (I3) | Phase 3 |
+| **Feedback** | Impact node → Trigger node | `retail_inflation` (I5) → `rbi` (T2) | Phase 3 |
+
+Portal edges can connect nodes at **any level** — an L3 in one tree can link to an L2 in another. Causal links don't respect taxonomy depth.
+
+**Feedback edges** model how citizen-level outcomes influence system-level entities. Citizens are not purely passive receivers — widespread inflation triggers central bank action, unemployment triggers protest movements, health crises trigger regulatory responses. Feedback edges always carry a longer `delay` (typically MEDIUM_TERM or LONG_TERM) since systemic responses lag citizen impact.
+
+---
+
+### Rule 8: Node Connector Tags
+
+Nodes that participate in cross-tree connections get metadata tags:
+
+| Tag | Meaning | Example |
+|-----|---------|---------|
+| `port: true` | Receives **bridge** edges (T→I) | `retail_diesel` — landing point from Trigger world |
+| `portal: true` | Has **cross-L1** edges within same world | `freight_cost` — connects I3 Transport to I1 Food |
+
+These tags are discovered naturally during edge construction phases. They exist to make bridge/portal wiring explicit and auditable.
+
+---
+
+### Rule 9: Sibling Distinctness
+
+Nodes at the same level under the same parent should be **as mutually exclusive as practical**.
+
+Test: "Can a news article affect node A without affecting node B?" If yes, they're distinct enough. If they always co-move, merge them.
+
+Strict MECE is not required — socioeconomic entities overlap. Pragmatic distinctness is sufficient.
+
+---
+
+### Rule 10: Granularity Parity
+
+Within each L1, leaf nodes should be at roughly the **same taxonomic depth**.
+
+Don't place `retail_tomato` alongside `vegetables` — one is a leaf entity, the other is a category. If `vegetables` exists, `retail_tomato` goes under it, not beside it.
+
+**Trees define structure. Weights define scale.** A tomato is taxonomically a vegetable — that relationship is expressed in the tree. Its outsized importance to Indian inflation is expressed through high **edge weights**, not by promoting it to a higher taxonomy level.
+
+---
+
+### Rule 11: India-First Scoping
+
+Different scoping tests for each world:
+
+- **Impact nodes:** "Would this plausibly appear in an Indian news headline in 2026?" We need `atta`, `dal`, `onion` — not `pizza_and_quiche`.
+- **Trigger nodes:** "Does this entity have a demonstrable causal path (≤4 hops) to an Indian citizen Impact node?" This includes global/geopolitical entities (`us_federal_reserve`, `opec_crude_supply`, `global_shipping_routes`) that causally reach Indian citizens.
+
+Geopolitical entities do not need special rules — they decompose into standard Trigger nodes if named correctly:
+- Policies and institutions → T2 (e.g., `us_tariffs_on_chinese_goods`, `russian_sanctions_regime`)
+- Market aggregates and supply volumes → T3 (e.g., `global_food_grain_supply`, `china_manufacturing_output`)
+- Physical infrastructure → T4 (e.g., `global_shipping_routes`)
+
+Events and relationships are NOT entities. `russia_ukraine_conflict` fails Rule 1 — split into the entities it affects. `us_china_trade` fails Rule 1 — split into the policies and volumes involved.
+
+---
+
+### Rule 12: Edge Completeness
+
+Every **lateral** (non-hierarchical) edge must carry ALL of:
+
+| Property | Values | Purpose |
+|----------|--------|---------|
+| `type` | One of 12 canonical types | What kind of relationship |
+| `weight` | 0.0–1.0 | Strength of causal link |
+| `polarity` | +1 or -1 | Covariation direction (see Rule 1) |
+| `delay` | IMMEDIATE / SHORT_TERM / MEDIUM_TERM / LONG_TERM | Temporal lag |
+| `description` | Non-empty string | Human-readable explanation of mechanism |
+
+---
+
+### Rule 13: Edge Conditionality (Optional)
+
+Lateral and bridge edges may include optional **scope conditions** when the causal relationship is not universal:
+
+```yaml
+- from: us_immigration_policy
+  to: it_sector_jobs
+  type: AFFECTS
+  conditions:
+    demographic: [it_professionals]
+    geo_scope: [bangalore, hyderabad, pune]
+```
+
+If no conditions are specified, the edge is assumed to apply universally.
+
+---
+
+### Rule 14: Acyclicity Within Layers
+
+Lateral edges within the same world (I→I or T→T) must form a **Directed Acyclic Graph (DAG)**.
+
+No cycles allowed: `healthcare_costs` → `personal_savings` → `mental_health` → `healthcare_costs` is forbidden.
+
+Validation: run `python -m graph.admin validate` after every edge addition to detect cycles. If a real-world feedback loop exists, model it as two separate unidirectional paths with different delays, not a cycle.
+
+---
+
+### Rule 15: Causal Provenance
+
+Every lateral or bridge edge must include a `description` field (see Rule 12) that explains **the causal mechanism**, not just restates the edge.
+
+- Good: "Diesel price increases raise trucking freight rates, which are passed through to retail food costs"
+- Bad: "diesel affects tomato"
+
+This grounds the personalization LLM and prevents hallucinated explanations.
+
+---
+
+### Rule 16: Node Lifecycle
+
+Every node carries a `status` field:
+
+| Status | Meaning | Behavior |
+|--------|---------|----------|
+| `active` | Live in the graph, used by scoring pipeline | Default for all new nodes |
+| `deprecated` | Marked for removal, still resolves in lookups but excluded from new scoring | Set when entity becomes irrelevant |
+| `merged` | Subsumed into another node | Must include `merged_into: <target_node_id>`. Lookups redirect to target |
+
+**Temporal entities** (e.g., `covid_19_lockdown`, `demonetisation`) are allowed as nodes if they pass the Leaf Node Test (Rule 5). When the entity ceases to be relevant, set status to `deprecated`. The node remains in git history and can be reactivated if the entity recurs.
+
+**Mergers** (e.g., `hdfc_ltd` merges into `hdfc_bank`): set the absorbed node to `merged`, update `merged_into`, and transfer all inbound/outbound edges to the target node.
+
+---
+
+### Rule 17: Phase Transition Validation
+
+At each phase boundary, run these checks before proceeding:
+
+| Transition | Validation | Script |
+|------------|-----------|--------|
+| **1a → 1b** | No orphan leaves — every leaf has `degree >= 1` lateral edge potential | `graph.admin validate --orphans` |
+| **1b → 2a** | Impact subgraph is connected DAG, no isolated components | `graph.admin validate --dag --components` |
+| **2a → 2b** | Every Trigger node has a hypothetical path to at least one Impact node ("So What?" test) | Manual review |
+| **2b → 3** | Trigger subgraph is connected DAG | `graph.admin validate --dag` |
+| **3 → 4** | All port nodes have at least one bridge edge, all feedback edges have delay >= MEDIUM_TERM | `graph.admin validate --bridges` |
+| **Phase 4** | Trace 15+ real scenarios end-to-end, verify traversal reaches expected Impact nodes | Manual + `graph.traverse` |
+
+Do not proceed to the next phase until validation passes.
 
 ---
 
@@ -154,9 +370,34 @@ No existing product or framework combines causal chain modeling with citizen-cen
 
 ---
 
-## Next Steps
-1. Generate L2 subcategories for each L1 (MECE within each)
-2. Generate L3 leaf nodes under each L2
-3. Build edges between Trigger and Impact entities
-4. Map user profile attributes to Impact L1s for personalization
-5. Rebuild the graph with new taxonomy
+## North Star Metrics
+
+| Metric | Target | Rationale |
+|--------|--------|-----------|
+| Impact leaf nodes | 150-180 | ~15-20 per L1, enough to cover Indian life without bloat |
+| Trigger leaf nodes | 70-100 | Domestic institutions + geopolitical entities with ≤4 hop paths |
+| Total nodes (with L2 categories) | 300-350 | Leaves + ~85 L2s + 16 L1s |
+| Lateral edges per leaf | 3-5 avg | Meaningfully connected, not over-wired |
+| Dead-end ratio | < 5% | Almost every node in a causal chain |
+| Orphan nodes | 0 | No disconnected nodes |
+| Connected components (after Phase 3) | 1 | Entire graph reachable |
+| Edge description coverage | 100% | Rule 15 — provenance on every causal edge |
+| Persona coverage | > 40% reachable | Each test persona reaches a meaningful graph portion |
+| Cycles within layers | 0 | Rule 14 DAG enforcement |
+| Port nodes with ≥1 bridge | 100% | No dead ports after Phase 3 |
+| Duplicate nodes across files | 0 | Rule 4 enforcement |
+
+---
+
+## Build Phases
+
+| Phase | What | Edge Types | Output |
+|-------|------|------------|--------|
+| **1a** | Impact vertical trees (L1→L2→L3) | CONTAINS, IS_A only | 11 Impact tree structures |
+| **1b** | Impact lateral edges (intra-tree + portals) | AFFECTS, DISRUPTS, SUPPLIES, etc. | Connected Impact subgraph |
+| **2a** | Trigger vertical trees | CONTAINS, IS_A only | 5 Trigger tree structures |
+| **2b** | Trigger lateral edges (intra-tree + portals) | AFFECTS, DISRUPTS, SUPPLIES, etc. | Connected Trigger subgraph |
+| **3** | Bridge + Feedback edges (T→I and I→T) | Any lateral type | Full connected graph |
+| **4** | End-to-end validation | — | 15+ traced scenarios, gap-fill |
+
+Within each phase: build nodes → tag ports/portals → add edges → validate (Rule 17 checks at each boundary).

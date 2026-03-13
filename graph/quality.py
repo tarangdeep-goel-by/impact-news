@@ -31,22 +31,9 @@ log = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 CANONICAL_CATEGORIES: set[str] = {
-    "food_and_agriculture",
-    "energy",
-    "transport",
-    "housing",
-    "health_and_healthcare",
-    "education",
-    "employment_and_income",
-    "financial",
-    "governance_and_regulation",
-    "environment_and_climate",
-    "consumer_goods",
-    "technology_and_telecom",
-    "infrastructure",
-    "demographics_and_social",
-    "global_economy",
-}  # 15 categories
+    "T1", "T2", "T3", "T4", "T5",
+    "I1", "I2", "I3", "I4", "I5", "I6", "I7", "I8", "I9", "I10", "I11",
+}  # 16 L1 categories (5 Trigger + 11 Impact)
 
 CANONICAL_EDGE_TYPES: set[str] = {
     "AFFECTS",
@@ -225,11 +212,9 @@ class QualityAnalyzer:
 
     # Source YAML files to scan for overlap analysis
     _YAML_SOURCES = [
-        "taxonomy/employment_domain_graph.yaml",
-        "taxonomy/financial_system_domain_graph.yaml",
-        "taxonomy/food_energy_graph.yaml",
-        "taxonomy/local_governance_graph.yaml",
-        "taxonomy/universal_life_dependency_graph.yaml",
+        f"taxonomy/I{i}.yaml" for i in range(1, 12)
+    ] + [
+        f"taxonomy/T{i}.yaml" for i in range(1, 6)
     ]
 
     def __init__(self, root: Path = Path.cwd()) -> None:
