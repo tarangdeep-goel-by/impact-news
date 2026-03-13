@@ -94,7 +94,7 @@ class GraphGemini:
     def __init__(self):
         self.client = genai.Client(api_key=settings.gemini_api_key)
 
-    def call(self, prompt: str, *, temperature: float = 0.1, thinking_budget: int = 16000) -> str:
+    def call(self, prompt: str, *, temperature: float = 0.1, thinking_budget: int = 16000, max_output_tokens: int | None = None) -> str:
         """Call Gemini with thinking enabled. Retries on transient failures."""
         import time
 
@@ -102,15 +102,18 @@ class GraphGemini:
             for model in MODEL_CHAIN:
                 try:
                     log.info("Attempt %d — model: %s", attempt, model)
+                    config_kwargs: dict = {
+                        "temperature": temperature,
+                        "thinking_config": genai.types.ThinkingConfig(
+                            thinking_budget=thinking_budget,
+                        ),
+                    }
+                    if max_output_tokens:
+                        config_kwargs["max_output_tokens"] = max_output_tokens
                     response = self.client.models.generate_content(
                         model=model,
                         contents=prompt,
-                        config=genai.types.GenerateContentConfig(
-                            temperature=temperature,
-                            thinking_config=genai.types.ThinkingConfig(
-                                thinking_budget=thinking_budget,
-                            ),
-                        ),
+                        config=genai.types.GenerateContentConfig(**config_kwargs),
                     )
                     return response.text
                 except Exception as e:
@@ -868,7 +871,12 @@ portal_nodes:
 
 
 def cmd_generate_bridges(args: argparse.Namespace) -> int:
-    """Generate T->I bridge edges (Phase 3)."""
+    """Generate T->I bridge edges (Phase 3).
+
+    Runs per-T-L1 for better coverage — each Trigger L1 gets its own
+    call against all Impact L1s, with higher thinking/output budgets.
+    Use --append to add to existing bridge_edges.yaml instead of overwriting.
+    """
     trigger_trees = load_all_world_yamls("trigger")
     impact_trees = load_all_world_yamls("impact")
 
@@ -879,34 +887,90 @@ def cmd_generate_bridges(args: argparse.Namespace) -> int:
         print("ERROR: No impact trees found.")
         return 1
 
-    print(f"Generating bridge edges ({len(trigger_trees)} Trigger L1s -> {len(impact_trees)} Impact L1s)...")
-
     constitution = load_constitution()
-    trigger_yaml = yaml.dump(trigger_trees, default_flow_style=False, sort_keys=False, allow_unicode=True)
     impact_yaml = yaml.dump(impact_trees, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
-    prompt = build_bridge_prompt(trigger_yaml, impact_yaml, constitution)
-
     gemini = GraphGemini()
-    response = gemini.call(prompt, temperature=0.1, thinking_budget=24000)
+    all_bridge_edges = []
+    all_feedback_edges = []
+    all_port_nodes = set()
 
-    try:
-        data = parse_yaml_from_response(response)
-    except Exception as e:
-        print(f"ERROR: Failed to parse YAML: {e}")
-        print(response[:2000])
-        return 1
+    # Load existing bridge edges if --append
+    patch_path = TAXONOMY_DIR / "bridge_edges.yaml"
+    if getattr(args, "append", False) and patch_path.exists():
+        existing = yaml.safe_load(patch_path.read_text()) or {}
+        all_bridge_edges.extend(existing.get("edges", []))
+        existing_pairs = {(e["from"], e["to"]) for e in all_bridge_edges}
+        print(f"Loaded {len(all_bridge_edges)} existing bridge/feedback edges")
+    else:
+        existing_pairs = set()
 
-    bridge_edges = data.get("bridge_edges", [])
-    feedback_edges = data.get("feedback_edges", [])
-    port_nodes_list = set(data.get("port_nodes", []))
+    trigger_yaml = yaml.dump(trigger_trees, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
-    # Save bridge edges to a dedicated patch file
+    per_impact = getattr(args, "per_impact", False)
+
+    if per_impact:
+        # Per-I-L1: each Impact L1 gets its own call against all Trigger L1s
+        for i_id, i_data in sorted(impact_trees.items()):
+            i_yaml = yaml.dump({i_id: i_data}, default_flow_style=False, sort_keys=False, allow_unicode=True)
+            print(f"\nGenerating bridges: all Trigger L1s -> {i_id}...")
+
+            prompt = build_bridge_prompt(trigger_yaml, i_yaml, constitution)
+            response = gemini.call(prompt, temperature=0.1, thinking_budget=32000, max_output_tokens=16000)
+
+            try:
+                data = parse_yaml_from_response(response)
+            except Exception as e:
+                print(f"  WARNING: Failed to parse YAML for {i_id}: {e}")
+                continue
+
+            bridges = data.get("bridge_edges", [])
+            feedback = data.get("feedback_edges", [])
+            ports = set(data.get("port_nodes", []))
+
+            new_bridges = [e for e in bridges if (e["from"], e["to"]) not in existing_pairs]
+            new_feedback = [e for e in feedback if (e["from"], e["to"]) not in existing_pairs]
+            for e in new_bridges + new_feedback:
+                existing_pairs.add((e["from"], e["to"]))
+
+            all_bridge_edges.extend(new_bridges)
+            all_feedback_edges.extend(new_feedback)
+            all_port_nodes.update(ports)
+            print(f"  {i_id}: +{len(new_bridges)} bridges, +{len(new_feedback)} feedback, {len(ports)} ports")
+    else:
+        # Per-T-L1: each Trigger L1 gets its own call against all Impact L1s
+        for t_id, t_data in sorted(trigger_trees.items()):
+            t_yaml = yaml.dump({t_id: t_data}, default_flow_style=False, sort_keys=False, allow_unicode=True)
+            print(f"\nGenerating bridges: {t_id} -> all Impact L1s...")
+
+            prompt = build_bridge_prompt(t_yaml, impact_yaml, constitution)
+            response = gemini.call(prompt, temperature=0.1, thinking_budget=32000, max_output_tokens=16000)
+
+            try:
+                data = parse_yaml_from_response(response)
+            except Exception as e:
+                print(f"  WARNING: Failed to parse YAML for {t_id}: {e}")
+                continue
+
+            bridges = data.get("bridge_edges", [])
+            feedback = data.get("feedback_edges", [])
+            ports = set(data.get("port_nodes", []))
+
+            new_bridges = [e for e in bridges if (e["from"], e["to"]) not in existing_pairs]
+            new_feedback = [e for e in feedback if (e["from"], e["to"]) not in existing_pairs]
+            for e in new_bridges + new_feedback:
+                existing_pairs.add((e["from"], e["to"]))
+
+            all_bridge_edges.extend(new_bridges)
+            all_feedback_edges.extend(new_feedback)
+            all_port_nodes.update(ports)
+            print(f"  {t_id}: +{len(new_bridges)} bridges, +{len(new_feedback)} feedback, {len(ports)} ports")
+
+    # Save all bridge edges
     patch_data = {
-        "edges": bridge_edges + feedback_edges,
+        "edges": all_bridge_edges + all_feedback_edges,
         "new_nodes": [],
     }
-    patch_path = TAXONOMY_DIR / "bridge_edges.yaml"
     patch_path.write_text(
         yaml.dump(patch_data, default_flow_style=False, sort_keys=False, allow_unicode=True)
     )
@@ -915,15 +979,15 @@ def cmd_generate_bridges(args: argparse.Namespace) -> int:
     for l1_id, tree_data in impact_trees.items():
         changed = False
         for node in tree_data.get("nodes", []):
-            if node["id"] in port_nodes_list and not node.get("port"):
+            if node["id"] in all_port_nodes and not node.get("port"):
                 node["port"] = True
                 changed = True
         if changed:
             save_l1_yaml(l1_id, tree_data)
 
-    print(f"\nBridge edges: {len(bridge_edges)}")
-    print(f"Feedback edges: {len(feedback_edges)}")
-    print(f"Port nodes marked: {len(port_nodes_list)}")
+    print(f"\nTotal bridge edges: {len(all_bridge_edges)}")
+    print(f"Total feedback edges: {len(all_feedback_edges)}")
+    print(f"Port nodes marked: {len(all_port_nodes)}")
     print(f"Saved to {patch_path}")
 
     return 0
@@ -1040,7 +1104,9 @@ def main() -> int:
     p.add_argument("--world", required=True, choices=["impact", "trigger"])
 
     # generate-bridges
-    sub.add_parser("generate-bridges", help="Generate T->I bridge + I->T feedback edges")
+    p_bridges = sub.add_parser("generate-bridges", help="Generate T->I bridge + I->T feedback edges")
+    p_bridges.add_argument("--append", action="store_true", help="Add to existing bridge_edges.yaml instead of overwriting")
+    p_bridges.add_argument("--per-impact", action="store_true", dest="per_impact", help="Run per-Impact-L1 instead of per-Trigger-L1")
 
     # generate-feedback
     sub.add_parser("generate-feedback", help="(Included in generate-bridges)")

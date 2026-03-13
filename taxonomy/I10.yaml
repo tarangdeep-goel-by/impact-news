@@ -211,6 +211,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: mobile_network_quality
   aliases:
   - Mobile Network Quality
@@ -260,6 +261,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: aadhaar_authentication
   aliases:
   - Aadhaar Authentication
@@ -284,6 +286,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: digilocker_documents
   aliases:
   - DigiLocker Documents
@@ -296,6 +299,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: epramaan_and_sso
   aliases:
   - ePramaan & SSO
@@ -333,6 +337,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: fastag_wallet
   aliases:
   - FASTag Wallet
@@ -345,6 +350,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: ncmc_smart_card
   aliases:
   - NCMC Smart Card
@@ -368,6 +374,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: whatsapp_messaging
   aliases:
   - WhatsApp Messaging
@@ -405,6 +412,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: personal_data_privacy
   aliases:
   - Personal Data Privacy
@@ -443,6 +451,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 edges:
 - from: i10
   to: telecom_and_internet_access

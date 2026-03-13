@@ -52,6 +52,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: gold_loan_interest
   aliases:
   - Gold Loan Interest
@@ -81,6 +82,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: credit_card_dues
   aliases:
   - Credit Card Dues
@@ -103,6 +105,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: bnpl_installments
   aliases:
   - BNPL Installments
@@ -113,6 +116,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: savings_and_deposits
   aliases:
   - Savings & Deposits
@@ -142,6 +146,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: recurring_deposits
   aliases:
   - Recurring Deposits
@@ -249,6 +254,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: debt_mutual_funds
   aliases:
   - Debt Mutual Funds
@@ -258,6 +264,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: retirement_and_provident_funds
   aliases:
   - Retirement & Provident Funds
@@ -383,6 +390,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: motor_insurance_premium
   aliases:
   - Motor Insurance Premium
@@ -435,6 +443,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: tds_deduction
   aliases:
   - TDS Deduction
@@ -484,6 +493,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: real_estate_investment
   aliases:
   - Real Estate Investment
@@ -504,6 +514,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: informal_and_digital_alternatives
   aliases:
   - Informal & Digital Alternatives

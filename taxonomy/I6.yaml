@@ -59,6 +59,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: surgical_procedures
   aliases:
   - Surgical Procedures
@@ -181,6 +182,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: chronic_disease_medication
   aliases:
   - Chronic Disease Medication
@@ -192,6 +194,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: painkillers_and_antipyretics
   aliases:
   - Painkillers & Antipyretics
@@ -319,6 +322,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: influenza_and_viral_fever
   aliases:
   - Influenza & Viral Fever
@@ -431,6 +435,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: copd
   aliases:
   - COPD
@@ -584,6 +589,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: childhood_malnutrition
   aliases:
   - Childhood Malnutrition

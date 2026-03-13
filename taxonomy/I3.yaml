@@ -124,6 +124,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  port: true
 - id: two_wheeler_price
   aliases:
   - Two Wheeler Price
@@ -135,6 +136,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: four_wheeler_price
   aliases:
   - Four Wheeler Price
@@ -145,6 +147,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: traffic_fines
   aliases:
   - Traffic Fines
@@ -156,6 +159,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: vehicle_insurance_premium
   aliases:
   - Vehicle Insurance Premium
@@ -166,6 +170,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: vehicle_servicing_cost
   aliases:
   - Vehicle Servicing Cost
@@ -206,6 +211,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: local_train_ticket
   aliases:
   - Local Train Ticket
@@ -226,6 +232,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  port: true
 - id: ride_hailing_services
   aliases:
   - Ride Hailing Services
@@ -333,6 +340,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  port: true
 - id: domestic_flight_ticket
   aliases:
   - Domestic Flight Ticket
@@ -421,6 +429,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  port: true
 edges:
 - from: i3
   to: private_vehicle_ownership
