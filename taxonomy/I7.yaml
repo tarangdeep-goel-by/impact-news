@@ -1,0 +1,823 @@
+nodes:
+- id: i7
+  aliases:
+  - Education & Human Capital
+  - Learning
+  - Skilling
+  - Shiksha
+  category: I7
+  level: 1
+  status: active
+  is_category: true
+- id: early_childhood_education
+  aliases:
+  - Early Childhood Education
+  - Pre-primary Education
+  - Foundational Learning
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: school_education
+  aliases:
+  - School Education
+  - K-12 Education
+  - Primary and Secondary Schooling
+  - Vidyalaya
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: higher_education
+  aliases:
+  - Higher Education
+  - University Education
+  - College Degrees
+  - Uchha Shiksha
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: competitive_exams_and_coaching
+  aliases:
+  - Competitive Exams & Coaching
+  - Entrance Tests
+  - Test Prep
+  - Pratiyogi Pariksha
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: vocational_and_professional_skilling
+  aliases:
+  - Vocational & Professional Skilling
+  - Skill Development
+  - Job Training
+  - Kaushal Vikas
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: edtech_platforms
+  aliases:
+  - EdTech Platforms
+  - Online Learning
+  - Digital Education
+  - E-learning
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: education_economics
+  aliases:
+  - Education Economics
+  - Educational Costs
+  - Schooling Expenses
+  - Shiksha ka Kharch
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: anganwadi_system
+  aliases:
+  - Anganwadi
+  - Balwadi
+  - Rural Childcare
+  - Anganwadi Kendra
+  category: I7
+  level: 3
+  status: active
+- id: private_preschools
+  aliases:
+  - Play School
+  - Nursery
+  - Kindergarten
+  - KG
+  - Montessori
+  category: I7
+  level: 3
+  status: active
+- id: school_examinations
+  aliases:
+  - School Board Examinations
+  - Board Exams
+  - 10th and 12th Boards
+  category: I7
+  level: 3
+  status: active
+  is_category: true
+- id: cbse_exams
+  aliases:
+  - CBSE Board Exams
+  - 10th Board CBSE
+  - 12th Board CBSE
+  - Central Board Exams
+  category: I7
+  level: 4
+  status: active
+- id: icse_exams
+  aliases:
+  - ICSE Board Exams
+  - ISC Exams
+  - CISCE Board
+  category: I7
+  level: 4
+  status: active
+- id: state_board_exams
+  aliases:
+  - State Board Exams
+  - Matriculation
+  - SSC Board
+  - HSC Board
+  - UP Board
+  - Bihar Board
+  category: I7
+  level: 4
+  status: active
+- id: school_types
+  aliases:
+  - School Infrastructure
+  - Types of Schools
+  - Schooling Systems
+  category: I7
+  level: 3
+  status: active
+  is_category: true
+- id: government_schools
+  aliases:
+  - Sarkari School
+  - Kendriya Vidyalaya
+  - Government School
+  - Navodaya Vidyalaya
+  - Public School
+  category: I7
+  level: 4
+  status: active
+- id: private_schools
+  aliases:
+  - Private School
+  - International School
+  - Convent School
+  - Unaided School
+  category: I7
+  level: 4
+  status: active
+- id: student_welfare_programs
+  aliases:
+  - Student Welfare
+  - School Subsidies
+  - Educational Schemes
+  category: I7
+  level: 3
+  status: active
+  is_category: true
+- id: mid_day_meal
+  aliases:
+  - Mid-day Meal Scheme
+  - PM Poshan
+  - School Lunch
+  - Madhyahn Bhojan
+  category: I7
+  level: 4
+  status: active
+- id: free_textbooks_uniforms
+  aliases:
+  - Free Textbooks
+  - School Uniform Distribution
+  - Muft Kitabein
+  - School Kit
+  category: I7
+  level: 4
+  status: active
+- id: undergraduate_programs
+  aliases:
+  - Undergraduate Programs
+  - Bachelor Degrees
+  - UG Courses
+  - Graduation
+  category: I7
+  level: 3
+  status: active
+  is_category: true
+- id: engineering_education
+  aliases:
+  - B.Tech
+  - BE
+  - Engineering College
+  - Bachelor of Technology
+  category: I7
+  level: 4
+  status: active
+- id: medical_education
+  aliases:
+  - MBBS
+  - Medical College
+  - Dental College
+  - BDS
+  - Ayurvedic College
+  category: I7
+  level: 4
+  status: active
+- id: arts_science_commerce
+  aliases:
+  - BA
+  - BSc
+  - BCom
+  - Degree College
+  - General Graduation
+  category: I7
+  level: 4
+  status: active
+- id: law_education
+  aliases:
+  - LLB
+  - Law School
+  - National Law University
+  - NLU
+  - Legal Studies
+  category: I7
+  level: 4
+  status: active
+- id: postgraduate_research
+  aliases:
+  - Postgraduate & Research
+  - Master Degrees
+  - PG Courses
+  - Higher Studies
+  category: I7
+  level: 3
+  status: active
+  is_category: true
+- id: management_education
+  aliases:
+  - MBA
+  - PGDM
+  - IIMs
+  - B-School
+  - Business School
+  category: I7
+  level: 4
+  status: active
+- id: phd_research_programs
+  aliases:
+  - PhD
+  - Doctorate
+  - Research Fellowship
+  - JRF
+  - Scholars
+  category: I7
+  level: 4
+  status: active
+- id: entrance_examinations
+  aliases:
+  - College Entrance Exams
+  - Admission Tests
+  - Higher Ed Entrance
+  category: I7
+  level: 3
+  status: active
+  is_category: true
+- id: engineering_entrance
+  aliases:
+  - JEE Main
+  - JEE Advanced
+  - CET
+  - Engineering Entrance
+  - IIT JEE
+  category: I7
+  level: 4
+  status: active
+- id: medical_entrance
+  aliases:
+  - NEET UG
+  - NEET PG
+  - Medical Entrance
+  - PMT
+  category: I7
+  level: 4
+  status: active
+- id: management_entrance
+  aliases:
+  - CAT
+  - XAT
+  - MAT
+  - MBA Entrance
+  category: I7
+  level: 4
+  status: active
+- id: university_entrance
+  aliases:
+  - CUET
+  - College Admission Test
+  - Central University Exam
+  category: I7
+  level: 4
+  status: active
+- id: government_job_exams
+  aliases:
+  - Government Job Exams
+  - Sarkari Naukri Exams
+  - Recruitment Tests
+  category: I7
+  level: 3
+  status: active
+  is_category: true
+- id: civil_services_exam
+  aliases:
+  - UPSC
+  - IAS Exam
+  - State PSC
+  - Civil Services
+  - IPS Exam
+  category: I7
+  level: 4
+  status: active
+- id: banking_ssc_exams
+  aliases:
+  - SSC CGL
+  - IBPS
+  - Bank PO Exam
+  - Railway Recruitment
+  - RRB Exam
+  category: I7
+  level: 4
+  status: active
+- id: teaching_eligibility_exams
+  aliases:
+  - TET
+  - CTET
+  - NET
+  - Teacher Recruitment Exam
+  - B.Ed Entrance
+  category: I7
+  level: 4
+  status: active
+- id: test_prep_industry
+  aliases:
+  - Test Prep Industry
+  - Coaching Sector
+  - Tuition Ecosystem
+  category: I7
+  level: 3
+  status: active
+  is_category: true
+- id: offline_coaching_centers
+  aliases:
+  - Coaching Institute
+  - Tuition Center
+  - Kota Factory
+  - Tutorials
+  - Coaching Classes
+  category: I7
+  level: 4
+  status: active
+- id: private_tutors
+  aliases:
+  - Home Tutor
+  - Private Tuition
+  - Masterji
+  - Personal Tutor
+  category: I7
+  level: 4
+  status: active
+- id: technical_vocational_training
+  aliases:
+  - ITI
+  - Polytechnic
+  - Diploma Courses
+  - Skill Development
+  - Kaushal Vikas Yojana
+  category: I7
+  level: 3
+  status: active
+- id: language_soft_skills
+  aliases:
+  - English Speaking Course
+  - Personality Development
+  - IELTS Coaching
+  - Spoken English
+  category: I7
+  level: 3
+  status: active
+- id: corporate_upskilling
+  aliases:
+  - Professional Certification
+  - Executive Education
+  - Coding Bootcamp
+  - IT Certifications
+  category: I7
+  level: 3
+  status: active
+- id: k12_edtech
+  aliases:
+  - Online Tuition App
+  - School Learning App
+  - Byjus
+  - Vedantu
+  - K-12 E-learning
+  category: I7
+  level: 3
+  status: active
+- id: higher_ed_online_degrees
+  aliases:
+  - Online Degree
+  - Distance Education
+  - IGNOU Online
+  - Coursera
+  - UpGrad
+  category: I7
+  level: 3
+  status: active
+- id: test_prep_edtech
+  aliases:
+  - Online Mock Tests
+  - Unacademy
+  - Physics Wallah App
+  - Online Coaching
+  category: I7
+  level: 3
+  status: active
+- id: school_fees
+  aliases:
+  - School Fee
+  - Admission Fees
+  - Tuition Fee
+  - School Donation
+  - School ki Fees
+  category: I7
+  level: 3
+  status: active
+- id: college_university_fees
+  aliases:
+  - College Fees
+  - Semester Fee
+  - Hostel Fee
+  - Higher Ed Cost
+  - University Dues
+  category: I7
+  level: 3
+  status: active
+- id: coaching_fees
+  aliases:
+  - Coaching Fee
+  - Tuition Fee
+  - Test Prep Cost
+  - Institute Charges
+  category: I7
+  level: 3
+  status: active
+- id: educational_scholarships
+  aliases:
+  - Student Scholarship
+  - Fee Waiver
+  - Merit Scholarship
+  - Chhatravriti
+  - Stipend
+  category: I7
+  level: 3
+  status: active
+edges:
+- from: i7
+  to: early_childhood_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Human Capital contains early childhood education
+- from: i7
+  to: school_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Human Capital contains school education
+- from: i7
+  to: higher_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Human Capital contains higher education
+- from: i7
+  to: competitive_exams_and_coaching
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Human Capital contains competitive exams and coaching
+- from: i7
+  to: vocational_and_professional_skilling
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Human Capital contains vocational and professional skilling
+- from: i7
+  to: edtech_platforms
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Human Capital contains edtech platforms
+- from: i7
+  to: education_economics
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Human Capital contains education economics
+- from: early_childhood_education
+  to: anganwadi_system
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Early childhood education contains the anganwadi system
+- from: early_childhood_education
+  to: private_preschools
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Early childhood education contains private preschools
+- from: school_education
+  to: school_examinations
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School education contains school board examinations
+- from: school_education
+  to: school_types
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School education contains different types of school infrastructure
+- from: school_education
+  to: student_welfare_programs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School education contains student welfare programs
+- from: school_examinations
+  to: cbse_exams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School examinations contains CBSE board exams
+- from: school_examinations
+  to: icse_exams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School examinations contains ICSE board exams
+- from: school_examinations
+  to: state_board_exams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School examinations contains state board exams
+- from: school_types
+  to: government_schools
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School types contains government schools
+- from: school_types
+  to: private_schools
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School types contains private schools
+- from: student_welfare_programs
+  to: mid_day_meal
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Student welfare programs contains the mid-day meal scheme
+- from: student_welfare_programs
+  to: free_textbooks_uniforms
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Student welfare programs contains free textbooks and uniforms distribution
+- from: higher_education
+  to: undergraduate_programs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher education contains undergraduate programs
+- from: higher_education
+  to: postgraduate_research
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher education contains postgraduate and research programs
+- from: undergraduate_programs
+  to: engineering_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Undergraduate programs contains engineering education
+- from: undergraduate_programs
+  to: medical_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Undergraduate programs contains medical education
+- from: undergraduate_programs
+  to: arts_science_commerce
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Undergraduate programs contains arts, science, and commerce degrees
+- from: undergraduate_programs
+  to: law_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Undergraduate programs contains law education
+- from: postgraduate_research
+  to: management_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Postgraduate programs contains management education
+- from: postgraduate_research
+  to: phd_research_programs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Postgraduate programs contains PhD and research programs
+- from: competitive_exams_and_coaching
+  to: entrance_examinations
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Competitive exams and coaching contains higher education entrance examinations
+- from: competitive_exams_and_coaching
+  to: government_job_exams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Competitive exams and coaching contains government job recruitment
+    exams
+- from: competitive_exams_and_coaching
+  to: test_prep_industry
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Competitive exams and coaching contains the test prep industry
+- from: entrance_examinations
+  to: engineering_entrance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entrance examinations contains engineering entrance exams
+- from: entrance_examinations
+  to: medical_entrance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entrance examinations contains medical entrance exams
+- from: entrance_examinations
+  to: management_entrance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entrance examinations contains management entrance exams
+- from: entrance_examinations
+  to: university_entrance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entrance examinations contains general university entrance exams
+- from: government_job_exams
+  to: civil_services_exam
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Government job exams contains civil services examinations
+- from: government_job_exams
+  to: banking_ssc_exams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Government job exams contains banking and SSC examinations
+- from: government_job_exams
+  to: teaching_eligibility_exams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Government job exams contains teaching eligibility examinations
+- from: test_prep_industry
+  to: offline_coaching_centers
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Test prep industry contains offline coaching centers
+- from: test_prep_industry
+  to: private_tutors
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Test prep industry contains private tutors
+- from: vocational_and_professional_skilling
+  to: technical_vocational_training
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vocational skilling contains technical and vocational training institutes
+- from: vocational_and_professional_skilling
+  to: language_soft_skills
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vocational skilling contains language and soft skills training
+- from: vocational_and_professional_skilling
+  to: corporate_upskilling
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vocational skilling contains corporate upskilling and certifications
+- from: edtech_platforms
+  to: k12_edtech
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: EdTech platforms contains K-12 online learning apps
+- from: edtech_platforms
+  to: higher_ed_online_degrees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: EdTech platforms contains online higher education degrees
+- from: edtech_platforms
+  to: test_prep_edtech
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: EdTech platforms contains online test prep platforms
+- from: education_economics
+  to: school_fees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education economics contains school fees
+- from: education_economics
+  to: college_university_fees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education economics contains college and university fees
+- from: education_economics
+  to: coaching_fees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education economics contains coaching and tuition fees
+- from: education_economics
+  to: educational_scholarships
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education economics contains educational scholarships and fee waivers

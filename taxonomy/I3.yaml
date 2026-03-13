@@ -1,0 +1,686 @@
+nodes:
+- id: i3
+  aliases:
+  - Transport & Mobility
+  - Commute
+  - Travel
+  - Transportation
+  category: I3
+  level: 1
+  status: active
+  is_category: true
+- id: private_vehicle_ownership
+  aliases:
+  - Private Vehicle Ownership
+  - Personal Vehicles
+  - Owning a Car or Bike
+  category: I3
+  level: 2
+  status: active
+  is_category: true
+- id: public_transit
+  aliases:
+  - Public Transit
+  - Mass Transit
+  - Public Transport
+  - City Transport
+  category: I3
+  level: 2
+  status: active
+  is_category: true
+- id: on_demand_transit
+  aliases:
+  - On-Demand Transit
+  - Cabs and Autos
+  - Ride Hailing
+  - Point-to-Point Transit
+  category: I3
+  level: 2
+  status: active
+  is_category: true
+- id: intercity_travel
+  aliases:
+  - Intercity Travel
+  - Long Distance Travel
+  - Outstation Travel
+  category: I3
+  level: 2
+  status: active
+  is_category: true
+- id: road_infrastructure_experience
+  aliases:
+  - Road Infrastructure Experience
+  - Road Conditions
+  - Driving Experience
+  category: I3
+  level: 2
+  status: active
+  is_category: true
+- id: vehicle_fuel
+  aliases:
+  - Vehicle Fuel
+  - Motor Fuel
+  - Fuel Costs
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: vehicle_acquisition
+  aliases:
+  - Vehicle Acquisition
+  - Buying a Vehicle
+  - Automobile Purchase
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: vehicle_maintenance_and_compliance
+  aliases:
+  - Vehicle Maintenance and Compliance
+  - Vehicle Upkeep
+  - RTO and Fines
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: retail_petrol
+  aliases:
+  - Retail Petrol
+  - petrol price
+  - gasoline
+  - petrol ka daam
+  category: I3
+  level: 4
+  status: active
+- id: retail_diesel
+  aliases:
+  - Retail Diesel
+  - diesel price
+  - diesel ka daam
+  category: I3
+  level: 4
+  status: active
+- id: cng_fuel
+  aliases:
+  - CNG Fuel
+  - cng price
+  - compressed natural gas
+  - cng pump
+  category: I3
+  level: 4
+  status: active
+- id: ev_charging_tariff
+  aliases:
+  - EV Charging Tariff
+  - electric vehicle charging
+  - ev charging cost
+  - charging station fee
+  category: I3
+  level: 4
+  status: active
+- id: two_wheeler_price
+  aliases:
+  - Two Wheeler Price
+  - scooter price
+  - bike price
+  - motorcycle cost
+  - scooty
+  category: I3
+  level: 4
+  status: active
+- id: four_wheeler_price
+  aliases:
+  - Four Wheeler Price
+  - car price
+  - gaadi ka daam
+  - suv price
+  category: I3
+  level: 4
+  status: active
+- id: traffic_fines
+  aliases:
+  - Traffic Fines
+  - challan
+  - traffic police fine
+  - e-challan
+  - traffic penalty
+  category: I3
+  level: 4
+  status: active
+- id: vehicle_insurance_premium
+  aliases:
+  - Vehicle Insurance Premium
+  - motor insurance
+  - bike insurance
+  - car insurance renewal
+  category: I3
+  level: 4
+  status: active
+- id: vehicle_servicing_cost
+  aliases:
+  - Vehicle Servicing Cost
+  - car repair
+  - mechanic cost
+  - bike servicing
+  - spare parts cost
+  category: I3
+  level: 4
+  status: active
+- id: urban_rail_transit
+  aliases:
+  - Urban Rail Transit
+  - City Trains
+  - Metro Rail
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: urban_bus_transit
+  aliases:
+  - Urban Bus Transit
+  - City Buses
+  - Local Bus Service
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: metro_fare
+  aliases:
+  - Metro Fare
+  - metro ticket
+  - delhi metro fare
+  - namma metro ticket
+  - metro pass
+  category: I3
+  level: 4
+  status: active
+- id: local_train_ticket
+  aliases:
+  - Local Train Ticket
+  - mumbai local fare
+  - emu ticket
+  - suburban rail pass
+  - local train pass
+  category: I3
+  level: 4
+  status: active
+- id: city_bus_fare
+  aliases:
+  - City Bus Fare
+  - dtc bus ticket
+  - bmtc fare
+  - best bus pass
+  - bus ka bhada
+  category: I3
+  level: 4
+  status: active
+- id: ride_hailing_services
+  aliases:
+  - Ride Hailing Services
+  - App-based Cabs
+  - Aggregator Taxis
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: traditional_hailing
+  aliases:
+  - Traditional Hailing
+  - Street Hailed Transit
+  - Autos and Rickshaws
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: cab_aggregator_fare
+  aliases:
+  - Cab Aggregator Fare
+  - ola fare
+  - uber surge pricing
+  - taxi fare
+  - cab price
+  category: I3
+  level: 4
+  status: active
+- id: bike_taxi_fare
+  aliases:
+  - Bike Taxi Fare
+  - rapido fare
+  - ola bike
+  - uber moto
+  category: I3
+  level: 4
+  status: active
+- id: auto_rickshaw_fare
+  aliases:
+  - Auto Rickshaw Fare
+  - auto fare
+  - meter down
+  - rickshaw bhada
+  - auto charge
+  category: I3
+  level: 4
+  status: active
+- id: e_rickshaw_fare
+  aliases:
+  - E-Rickshaw Fare
+  - toto fare
+  - battery rickshaw fare
+  - shared auto fare
+  category: I3
+  level: 4
+  status: active
+- id: railway_travel
+  aliases:
+  - Railway Travel
+  - Indian Railways
+  - Train Journeys
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: air_travel
+  aliases:
+  - Air Travel
+  - Flights
+  - Aviation
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: highway_bus_travel
+  aliases:
+  - Highway Bus Travel
+  - Intercity Buses
+  - Outstation Buses
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: irctc_train_ticket
+  aliases:
+  - IRCTC Train Ticket
+  - train fare
+  - tatkal ticket
+  - sleeper class fare
+  - railway ticket
+  category: I3
+  level: 4
+  status: active
+- id: premium_train_fare
+  aliases:
+  - Premium Train Fare
+  - vande bharat ticket
+  - shatabdi fare
+  - rajdhani ticket
+  - tejas express fare
+  category: I3
+  level: 4
+  status: active
+- id: domestic_flight_ticket
+  aliases:
+  - Domestic Flight Ticket
+  - airfare
+  - flight ticket
+  - indigo fare
+  - hawai yatra
+  category: I3
+  level: 4
+  status: active
+- id: intercity_bus_fare
+  aliases:
+  - Intercity Bus Fare
+  - volvo bus ticket
+  - ksrtc fare
+  - sleeper bus ticket
+  - private bus fare
+  category: I3
+  level: 4
+  status: active
+- id: highway_tolls
+  aliases:
+  - Highway Tolls
+  - Toll Plazas
+  - Road Tax
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: urban_road_conditions
+  aliases:
+  - Urban Road Conditions
+  - City Traffic
+  - Street Quality
+  category: I3
+  level: 3
+  status: active
+  is_category: true
+- id: highway_toll_fare
+  aliases:
+  - Highway Toll Fare
+  - toll tax
+  - fastag deduction
+  - fastag balance
+  - toll plaza charge
+  category: I3
+  level: 4
+  status: active
+- id: road_potholes
+  aliases:
+  - Road Potholes
+  - bad roads
+  - broken roads
+  - khadda
+  - pothole menace
+  category: I3
+  level: 4
+  status: active
+- id: traffic_congestion
+  aliases:
+  - Traffic Congestion
+  - traffic jam
+  - bottleneck
+  - peak hour traffic
+  - bumper to bumper
+  category: I3
+  level: 4
+  status: active
+- id: parking_fees
+  aliases:
+  - Parking Fees
+  - car parking charge
+  - mall parking
+  - paid parking
+  - parking ticket
+  category: I3
+  level: 4
+  status: active
+edges:
+- from: i3
+  to: private_vehicle_ownership
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Mobility contains the Private Vehicle Ownership category
+- from: i3
+  to: public_transit
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Mobility contains the Public Transit category
+- from: i3
+  to: on_demand_transit
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Mobility contains the On-Demand Transit category
+- from: i3
+  to: intercity_travel
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Mobility contains the Intercity Travel category
+- from: i3
+  to: road_infrastructure_experience
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport & Mobility contains the Road Infrastructure Experience category
+- from: private_vehicle_ownership
+  to: vehicle_fuel
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Private Vehicle Ownership contains the Vehicle Fuel subcategory
+- from: private_vehicle_ownership
+  to: vehicle_acquisition
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Private Vehicle Ownership contains the Vehicle Acquisition subcategory
+- from: private_vehicle_ownership
+  to: vehicle_maintenance_and_compliance
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Private Vehicle Ownership contains the Vehicle Maintenance and Compliance
+    subcategory
+- from: vehicle_fuel
+  to: retail_petrol
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle Fuel contains retail petrol
+- from: vehicle_fuel
+  to: retail_diesel
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle Fuel contains retail diesel
+- from: vehicle_fuel
+  to: cng_fuel
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle Fuel contains CNG fuel
+- from: vehicle_fuel
+  to: ev_charging_tariff
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle Fuel contains EV charging tariffs
+- from: vehicle_acquisition
+  to: two_wheeler_price
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle Acquisition contains two-wheeler prices
+- from: vehicle_acquisition
+  to: four_wheeler_price
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle Acquisition contains four-wheeler prices
+- from: vehicle_maintenance_and_compliance
+  to: traffic_fines
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle Maintenance and Compliance contains traffic fines
+- from: vehicle_maintenance_and_compliance
+  to: vehicle_insurance_premium
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle Maintenance and Compliance contains vehicle insurance premiums
+- from: vehicle_maintenance_and_compliance
+  to: vehicle_servicing_cost
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vehicle Maintenance and Compliance contains vehicle servicing costs
+- from: public_transit
+  to: urban_rail_transit
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public Transit contains the Urban Rail Transit subcategory
+- from: public_transit
+  to: urban_bus_transit
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public Transit contains the Urban Bus Transit subcategory
+- from: urban_rail_transit
+  to: metro_fare
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban Rail Transit contains metro fares
+- from: urban_rail_transit
+  to: local_train_ticket
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban Rail Transit contains local train tickets
+- from: urban_bus_transit
+  to: city_bus_fare
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban Bus Transit contains city bus fares
+- from: on_demand_transit
+  to: ride_hailing_services
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: On-Demand Transit contains the Ride Hailing Services subcategory
+- from: on_demand_transit
+  to: traditional_hailing
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: On-Demand Transit contains the Traditional Hailing subcategory
+- from: ride_hailing_services
+  to: cab_aggregator_fare
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ride Hailing Services contains cab aggregator fares
+- from: ride_hailing_services
+  to: bike_taxi_fare
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ride Hailing Services contains bike taxi fares
+- from: traditional_hailing
+  to: auto_rickshaw_fare
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Traditional Hailing contains auto rickshaw fares
+- from: traditional_hailing
+  to: e_rickshaw_fare
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Traditional Hailing contains e-rickshaw fares
+- from: intercity_travel
+  to: railway_travel
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intercity Travel contains the Railway Travel subcategory
+- from: intercity_travel
+  to: air_travel
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intercity Travel contains the Air Travel subcategory
+- from: intercity_travel
+  to: highway_bus_travel
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intercity Travel contains the Highway Bus Travel subcategory
+- from: railway_travel
+  to: irctc_train_ticket
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Railway Travel contains IRCTC train tickets
+- from: railway_travel
+  to: premium_train_fare
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Railway Travel contains premium train fares
+- from: air_travel
+  to: domestic_flight_ticket
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Air Travel contains domestic flight tickets
+- from: highway_bus_travel
+  to: intercity_bus_fare
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Highway Bus Travel contains intercity bus fares
+- from: road_infrastructure_experience
+  to: highway_tolls
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Road Infrastructure Experience contains the Highway Tolls subcategory
+- from: road_infrastructure_experience
+  to: urban_road_conditions
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Road Infrastructure Experience contains the Urban Road Conditions subcategory
+- from: highway_tolls
+  to: highway_toll_fare
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Highway Tolls contains highway toll fares
+- from: urban_road_conditions
+  to: road_potholes
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban Road Conditions contains road potholes
+- from: urban_road_conditions
+  to: traffic_congestion
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban Road Conditions contains traffic congestion
+- from: urban_road_conditions
+  to: parking_fees
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Urban Road Conditions contains parking fees

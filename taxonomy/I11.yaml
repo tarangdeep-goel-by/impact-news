@@ -1,0 +1,692 @@
+nodes:
+- id: i11
+  aliases:
+  - Leisure, Culture & Community
+  - Entertainment
+  - Recreation
+  - Social Life
+  category: I11
+  level: 1
+  status: active
+  is_category: true
+- id: entertainment_and_media
+  aliases:
+  - Entertainment & Media
+  - Movies and Shows
+  - Digital Entertainment
+  - Manoranjan
+  category: I11
+  level: 2
+  status: active
+  is_category: true
+- id: sports_and_recreation
+  aliases:
+  - Sports & Recreation
+  - Games and Sports
+  - Khel Kood
+  - Athletics and Clubs
+  category: I11
+  level: 2
+  status: active
+  is_category: true
+- id: cultural_and_religious_life
+  aliases:
+  - Cultural & Religious Life
+  - Festivals and Weddings
+  - Dharmik Events
+  - Sanskriti
+  category: I11
+  level: 2
+  status: active
+  is_category: true
+- id: community_and_civic_life
+  aliases:
+  - Community & Civic Life
+  - Neighborhood Life
+  - Samajik Jivan
+  - Local Community
+  category: I11
+  level: 2
+  status: active
+  is_category: true
+- id: travel_and_tourism
+  aliases:
+  - Travel & Tourism
+  - Holidays
+  - Ghoomna
+  - Vacations
+  category: I11
+  level: 2
+  status: active
+  is_category: true
+- id: cinema_and_theatre
+  aliases:
+  - Cinema & Theatre
+  - Movies
+  - Films
+  - Natak
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: digital_entertainment
+  aliases:
+  - Digital Entertainment
+  - Streaming and Gaming
+  - Online Entertainment
+  - OTT and Games
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: live_events
+  aliases:
+  - Live Events
+  - Concerts and Shows
+  - Live Performances
+  - Gigs
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: cinema_ticket
+  aliases:
+  - Movie Ticket
+  - Multiplex Ticket
+  - PVR Ticket
+  - Picture ki Ticket
+  - Cinema Hall Entry
+  category: I11
+  level: 4
+  status: active
+- id: theatre_play
+  aliases:
+  - Theatre Play
+  - Stage Show
+  - Natak
+  - Rangmanch
+  - Nukkad Natak
+  category: I11
+  level: 4
+  status: active
+- id: ott_subscription
+  aliases:
+  - OTT Subscription
+  - Netflix Plan
+  - Prime Video
+  - Hotstar Subscription
+  - Streaming Service
+  category: I11
+  level: 4
+  status: active
+- id: video_game
+  aliases:
+  - Video Game
+  - BGMI
+  - PlayStation Game
+  - PC Gaming
+  - Esports Title
+  category: I11
+  level: 4
+  status: active
+- id: concert_ticket
+  aliases:
+  - Concert Ticket
+  - Music Festival Pass
+  - Standup Comedy Ticket
+  - Live Gig Entry
+  - Show Pass
+  category: I11
+  level: 4
+  status: active
+- id: spectator_sports
+  aliases:
+  - Spectator Sports
+  - Live Matches
+  - Stadium Sports
+  - Sports Tournaments
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: recreational_facilities
+  aliases:
+  - Recreational Facilities
+  - Clubs and Parks
+  - Leisure Centers
+  - Entertainment Zones
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: cricket_match_ticket
+  aliases:
+  - Cricket Match Ticket
+  - IPL Ticket
+  - Stadium Entry
+  - BCCI Match Pass
+  - World Cup Ticket
+  category: I11
+  level: 4
+  status: active
+- id: football_match_ticket
+  aliases:
+  - Football Match Ticket
+  - ISL Ticket
+  - Mohun Bagan Match
+  - Local Football Pass
+  - Stadium Ticket
+  category: I11
+  level: 4
+  status: active
+- id: amusement_park
+  aliases:
+  - Amusement Park
+  - Water Park
+  - Wonderla
+  - Essel World
+  - Theme Park
+  category: I11
+  level: 4
+  status: active
+- id: sports_club_membership
+  aliases:
+  - Sports Club Membership
+  - Gymkhana
+  - Local Club
+  - Swimming Pool Membership
+  - Golf Club
+  category: I11
+  level: 4
+  status: active
+- id: festivals_and_celebrations
+  aliases:
+  - Festivals & Celebrations
+  - Tyohar
+  - Utsav
+  - Holiday Celebrations
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: weddings_and_milestones
+  aliases:
+  - Weddings & Milestones
+  - Shaadi
+  - Marriage Functions
+  - Family Events
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: religious_pilgrimage
+  aliases:
+  - Religious Pilgrimage
+  - Teerth Yatra
+  - Darshan
+  - Religious Travel
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: puja_pandal_contribution
+  aliases:
+  - Puja Pandal Contribution
+  - Chanda
+  - Durga Puja Pandal
+  - Ganesh Chaturthi Vargani
+  - Festival Donation
+  category: I11
+  level: 4
+  status: active
+- id: firecracker
+  aliases:
+  - Firecracker
+  - Patakhe
+  - Sivakasi Crackers
+  - Fireworks
+  - Phuljhadi
+  category: I11
+  level: 4
+  status: active
+- id: festive_idol
+  aliases:
+  - Festive Idol
+  - Murti
+  - Ganesh Idol
+  - Durga Pratima
+  - Puja Decor
+  category: I11
+  level: 4
+  status: active
+- id: wedding_venue
+  aliases:
+  - Wedding Venue
+  - Marriage Hall
+  - Banquet Hall
+  - Shaadi Mandap
+  - Kalyana Mandapam
+  category: I11
+  level: 4
+  status: active
+- id: wedding_planning_service
+  aliases:
+  - Wedding Planning Service
+  - Event Manager
+  - Shaadi Planner
+  - Wedding Decorator
+  - Marriage Contractor
+  category: I11
+  level: 4
+  status: active
+- id: pilgrimage_package
+  aliases:
+  - Pilgrimage Package
+  - Char Dham Yatra
+  - Hajj Package
+  - Tirupati Darshan
+  - Vaishno Devi Trip
+  category: I11
+  level: 4
+  status: active
+- id: temple_donation
+  aliases:
+  - Temple Donation
+  - Hundi
+  - Dakshina
+  - Chadhava
+  - Religious Offering
+  category: I11
+  level: 4
+  status: active
+- id: neighborhood_associations
+  aliases:
+  - Neighborhood Associations
+  - Housing Societies
+  - Mohalla Committees
+  - Resident Groups
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: public_spaces
+  aliases:
+  - Public Spaces
+  - Community Areas
+  - Sarvajanik Jagah
+  - Civic Spaces
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: rwa_regulation
+  aliases:
+  - RWA Regulation
+  - Society Rules
+  - Resident Welfare Association Bylaws
+  - Housing Society Rule
+  - Apartment Guidelines
+  category: I11
+  level: 4
+  status: active
+- id: community_gathering
+  aliases:
+  - Community Gathering
+  - Society Meeting
+  - Mohalla Sabha
+  - Resident Get-together
+  - Townhall
+  category: I11
+  level: 4
+  status: active
+- id: public_park
+  aliases:
+  - Public Park
+  - Maidan
+  - Neighborhood Park
+  - Walking Track
+  - Jogger's Park
+  category: I11
+  level: 4
+  status: active
+- id: community_hall
+  aliases:
+  - Community Hall
+  - Panchayat Bhavan
+  - Barat Ghar
+  - Local Gathering Space
+  - Samudayik Bhavan
+  category: I11
+  level: 4
+  status: active
+- id: holiday_accommodation
+  aliases:
+  - Holiday Accommodation
+  - Hotels and Resorts
+  - Lodging
+  - Staycations
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: tourism_services
+  aliases:
+  - Tourism Services
+  - Travel Agencies
+  - Guided Tours
+  - Sightseeing
+  category: I11
+  level: 3
+  status: active
+  is_category: true
+- id: hotel_room
+  aliases:
+  - Hotel Room
+  - Resort Stay
+  - Homestay
+  - OYO Room
+  - Luxury Hotel Tariff
+  category: I11
+  level: 4
+  status: active
+- id: tour_package
+  aliases:
+  - Tour Package
+  - Holiday Package
+  - MakeMyTrip Package
+  - Guided Tour
+  - Travel Agency Booking
+  category: I11
+  level: 4
+  status: active
+- id: tourist_attraction_ticket
+  aliases:
+  - Tourist Attraction Ticket
+  - Monument Entry
+  - Taj Mahal Ticket
+  - Museum Pass
+  - Zoo Ticket
+  category: I11
+  level: 4
+  status: active
+edges:
+- from: i11
+  to: entertainment_and_media
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Leisure, Culture & Community contains Entertainment & Media
+- from: i11
+  to: sports_and_recreation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Leisure, Culture & Community contains Sports & Recreation
+- from: i11
+  to: cultural_and_religious_life
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Leisure, Culture & Community contains Cultural & Religious Life
+- from: i11
+  to: community_and_civic_life
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Leisure, Culture & Community contains Community & Civic Life
+- from: i11
+  to: travel_and_tourism
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Leisure, Culture & Community contains Travel & Tourism
+- from: entertainment_and_media
+  to: cinema_and_theatre
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entertainment & Media contains Cinema & Theatre
+- from: entertainment_and_media
+  to: digital_entertainment
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entertainment & Media contains Digital Entertainment
+- from: entertainment_and_media
+  to: live_events
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entertainment & Media contains Live Events
+- from: cinema_and_theatre
+  to: cinema_ticket
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cinema & Theatre contains Cinema Ticket
+- from: cinema_and_theatre
+  to: theatre_play
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cinema & Theatre contains Theatre Play
+- from: digital_entertainment
+  to: ott_subscription
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Entertainment contains OTT Subscription
+- from: digital_entertainment
+  to: video_game
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Entertainment contains Video Game
+- from: live_events
+  to: concert_ticket
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Live Events contains Concert Ticket
+- from: sports_and_recreation
+  to: spectator_sports
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sports & Recreation contains Spectator Sports
+- from: sports_and_recreation
+  to: recreational_facilities
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sports & Recreation contains Recreational Facilities
+- from: spectator_sports
+  to: cricket_match_ticket
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spectator Sports contains Cricket Match Ticket
+- from: spectator_sports
+  to: football_match_ticket
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spectator Sports contains Football Match Ticket
+- from: recreational_facilities
+  to: amusement_park
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Recreational Facilities contains Amusement Park
+- from: recreational_facilities
+  to: sports_club_membership
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Recreational Facilities contains Sports Club Membership
+- from: cultural_and_religious_life
+  to: festivals_and_celebrations
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cultural & Religious Life contains Festivals & Celebrations
+- from: cultural_and_religious_life
+  to: weddings_and_milestones
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cultural & Religious Life contains Weddings & Milestones
+- from: cultural_and_religious_life
+  to: religious_pilgrimage
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cultural & Religious Life contains Religious Pilgrimage
+- from: festivals_and_celebrations
+  to: puja_pandal_contribution
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Festivals & Celebrations contains Puja Pandal Contribution
+- from: festivals_and_celebrations
+  to: firecracker
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Festivals & Celebrations contains Firecracker
+- from: festivals_and_celebrations
+  to: festive_idol
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Festivals & Celebrations contains Festive Idol
+- from: weddings_and_milestones
+  to: wedding_venue
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Weddings & Milestones contains Wedding Venue
+- from: weddings_and_milestones
+  to: wedding_planning_service
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Weddings & Milestones contains Wedding Planning Service
+- from: religious_pilgrimage
+  to: pilgrimage_package
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Religious Pilgrimage contains Pilgrimage Package
+- from: religious_pilgrimage
+  to: temple_donation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Religious Pilgrimage contains Temple Donation
+- from: community_and_civic_life
+  to: neighborhood_associations
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Community & Civic Life contains Neighborhood Associations
+- from: community_and_civic_life
+  to: public_spaces
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Community & Civic Life contains Public Spaces
+- from: neighborhood_associations
+  to: rwa_regulation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Neighborhood Associations contains RWA Regulation
+- from: neighborhood_associations
+  to: community_gathering
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Neighborhood Associations contains Community Gathering
+- from: public_spaces
+  to: public_park
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public Spaces contains Public Park
+- from: public_spaces
+  to: community_hall
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public Spaces contains Community Hall
+- from: travel_and_tourism
+  to: holiday_accommodation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Travel & Tourism contains Holiday Accommodation
+- from: travel_and_tourism
+  to: tourism_services
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Travel & Tourism contains Tourism Services
+- from: holiday_accommodation
+  to: hotel_room
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Holiday Accommodation contains Hotel Room
+- from: tourism_services
+  to: tour_package
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Tourism Services contains Tour Package
+- from: tourism_services
+  to: tourist_attraction_ticket
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Tourism Services contains Tourist Attraction Ticket

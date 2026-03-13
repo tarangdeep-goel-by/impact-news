@@ -1,0 +1,844 @@
+nodes:
+- id: i1
+  aliases:
+  - Food & Nutrition
+  - Food
+  - Diet
+  - Groceries
+  - Khana
+  category: I1
+  level: 1
+  status: active
+  is_category: true
+- id: staple_grains
+  aliases:
+  - Staple Grains
+  - Cereals
+  - Anaaj
+  - Foodgrains
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: pulses_and_legumes
+  aliases:
+  - Pulses and Legumes
+  - Dals
+  - Lentils
+  - Dalhan
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: fresh_produce
+  aliases:
+  - Fresh Produce
+  - Fruits and Vegetables
+  - Sabzi aur Phal
+  - Fresh Groceries
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: dairy_and_eggs
+  aliases:
+  - Dairy and Eggs
+  - Milk Products
+  - Dairy
+  - Doodh aur Ande
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: meat_and_seafood
+  aliases:
+  - Meat and Seafood
+  - Non-Veg
+  - Poultry and Fish
+  - Maans aur Machli
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: edible_oils
+  aliases:
+  - Edible Oils
+  - Cooking Oil
+  - Khane ka Tel
+  - Vegetable Oils
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: spices_and_condiments
+  aliases:
+  - Spices and Condiments
+  - Masalas
+  - Seasonings
+  - Sugar and Salt
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: packaged_and_processed_foods
+  aliases:
+  - Packaged Foods
+  - FMCG Foods
+  - Processed Foods
+  - Snacks and Beverages
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: out_of_home_dining
+  aliases:
+  - Out of Home Dining
+  - Restaurant Food
+  - Food Delivery
+  - Bahar ka Khana
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: wheat_flour
+  aliases:
+  - Wheat Flour
+  - Atta
+  - Gehu ka Atta
+  - Chakki Atta
+  - Godhumai Maavu
+  category: I1
+  level: 3
+  status: active
+- id: retail_rice
+  aliases:
+  - Retail Rice
+  - Chawal
+  - Basmati
+  - Non-Basmati Rice
+  - Arisi
+  category: I1
+  level: 3
+  status: active
+- id: millets
+  aliases:
+  - Millets
+  - Bajra
+  - Jowar
+  - Ragi
+  - Shree Anna
+  - Nutri-cereals
+  category: I1
+  level: 3
+  status: active
+- id: tur_dal
+  aliases:
+  - Tur Dal
+  - Arhar Dal
+  - Pigeon Pea
+  - Toor Dal
+  - Tuvaram Paruppu
+  category: I1
+  level: 3
+  status: active
+- id: chana_dal
+  aliases:
+  - Chana Dal
+  - Bengal Gram
+  - Chickpea Split
+  - Kadalai Paruppu
+  category: I1
+  level: 3
+  status: active
+- id: moong_dal
+  aliases:
+  - Moong Dal
+  - Green Gram
+  - Mung Bean
+  - Paasi Paruppu
+  category: I1
+  level: 3
+  status: active
+- id: urad_dal
+  aliases:
+  - Urad Dal
+  - Black Gram
+  - Ulutham Paruppu
+  - Kaali Dal
+  category: I1
+  level: 3
+  status: active
+- id: vegetables
+  aliases:
+  - Vegetables
+  - Sabzi
+  - Karkari
+  - Tarkari
+  category: I1
+  level: 3
+  status: active
+  is_category: true
+- id: fruits
+  aliases:
+  - Fruits
+  - Phal
+  - Pazham
+  - Fresh Fruits
+  category: I1
+  level: 3
+  status: active
+  is_category: true
+- id: retail_tomato
+  aliases:
+  - Retail Tomato
+  - Tamatar
+  - Thakkali
+  - Tomato Prices
+  category: I1
+  level: 4
+  status: active
+- id: retail_onion
+  aliases:
+  - Retail Onion
+  - Pyaaz
+  - Kanda
+  - Vengayam
+  - Onion Prices
+  category: I1
+  level: 4
+  status: active
+- id: retail_potato
+  aliases:
+  - Retail Potato
+  - Aloo
+  - Urulaikizhangu
+  - Batata
+  category: I1
+  level: 4
+  status: active
+- id: green_vegetables
+  aliases:
+  - Green Vegetables
+  - Hari Sabzi
+  - Leafy Greens
+  - Palak
+  - Bhaji
+  category: I1
+  level: 4
+  status: active
+- id: retail_apple
+  aliases:
+  - Retail Apple
+  - Seb
+  - Apple Prices
+  - Kashmiri Apple
+  category: I1
+  level: 4
+  status: active
+- id: retail_mango
+  aliases:
+  - Retail Mango
+  - Aam
+  - Alphonso
+  - Mango Prices
+  category: I1
+  level: 4
+  status: active
+- id: retail_banana
+  aliases:
+  - Retail Banana
+  - Kela
+  - Vazhaikkai
+  - Banana Prices
+  category: I1
+  level: 4
+  status: active
+- id: liquid_milk
+  aliases:
+  - Liquid Milk
+  - Doodh
+  - Dairy Milk
+  - Paal
+  - Packet Milk
+  category: I1
+  level: 3
+  status: active
+- id: paneer_and_cheese
+  aliases:
+  - Paneer
+  - Cottage Cheese
+  - Processed Cheese
+  - Dairy Cheese
+  category: I1
+  level: 3
+  status: active
+- id: butter_and_ghee
+  aliases:
+  - Butter
+  - Ghee
+  - Clarified Butter
+  - Makhan
+  - Desi Ghee
+  category: I1
+  level: 3
+  status: active
+- id: poultry_eggs
+  aliases:
+  - Eggs
+  - Ande
+  - Poultry Eggs
+  - Muttai
+  - Table Eggs
+  category: I1
+  level: 3
+  status: active
+- id: poultry_chicken
+  aliases:
+  - Chicken
+  - Murgh
+  - Poultry Meat
+  - Broiler Chicken
+  - Kozhi
+  category: I1
+  level: 3
+  status: active
+- id: mutton_and_lamb
+  aliases:
+  - Mutton
+  - Goat Meat
+  - Lamb
+  - Bakra
+  - Meat
+  category: I1
+  level: 3
+  status: active
+- id: freshwater_fish
+  aliases:
+  - Freshwater Fish
+  - Rohu
+  - Katla
+  - Inland Fish
+  - Machli
+  category: I1
+  level: 3
+  status: active
+- id: marine_fish
+  aliases:
+  - Marine Fish
+  - Sea Fish
+  - Surmai
+  - Pomfret
+  - Prawns
+  - Seafood
+  category: I1
+  level: 3
+  status: active
+- id: mustard_oil
+  aliases:
+  - Mustard Oil
+  - Sarson ka Tel
+  - Kachi Ghani
+  - Kadugu Ennai
+  category: I1
+  level: 3
+  status: active
+- id: palm_oil
+  aliases:
+  - Palm Oil
+  - Palmolein
+  - Pam Tel
+  - Imported Palm Oil
+  category: I1
+  level: 3
+  status: active
+- id: sunflower_oil
+  aliases:
+  - Sunflower Oil
+  - Surajmukhi Tel
+  - Refined Sunflower Oil
+  category: I1
+  level: 3
+  status: active
+- id: coconut_oil
+  aliases:
+  - Coconut Oil
+  - Nariyal Tel
+  - Thengai Ennai
+  - Copra Oil
+  category: I1
+  level: 3
+  status: active
+- id: retail_sugar
+  aliases:
+  - Retail Sugar
+  - Cheeni
+  - Shakkar
+  - Sarkkarai
+  - White Sugar
+  category: I1
+  level: 3
+  status: active
+- id: retail_salt
+  aliases:
+  - Retail Salt
+  - Namak
+  - Iodized Salt
+  - Uppu
+  category: I1
+  level: 3
+  status: active
+- id: dry_red_chilli
+  aliases:
+  - Dry Red Chilli
+  - Lal Mirch
+  - Milagai
+  - Chilli Powder
+  category: I1
+  level: 3
+  status: active
+- id: turmeric_powder
+  aliases:
+  - Turmeric Powder
+  - Haldi
+  - Manjal
+  - Turmeric
+  category: I1
+  level: 3
+  status: active
+- id: garlic_and_ginger
+  aliases:
+  - Garlic
+  - Ginger
+  - Lahsun
+  - Adrak
+  - Ginger Garlic Paste
+  category: I1
+  level: 3
+  status: active
+- id: biscuits_and_snacks
+  aliases:
+  - Biscuits
+  - Namkeen
+  - Packaged Snacks
+  - Chips
+  - Bhujia
+  category: I1
+  level: 3
+  status: active
+- id: instant_noodles
+  aliases:
+  - Instant Noodles
+  - Maggi
+  - Ramen
+  - Packaged Noodles
+  category: I1
+  level: 3
+  status: active
+- id: tea_leaves
+  aliases:
+  - Tea Leaves
+  - Chai Patti
+  - Tea Powder
+  - Chai
+  category: I1
+  level: 3
+  status: active
+- id: coffee_powder
+  aliases:
+  - Coffee Powder
+  - Instant Coffee
+  - Filter Coffee
+  - Kapi
+  category: I1
+  level: 3
+  status: active
+- id: food_delivery_services
+  aliases:
+  - Food Delivery
+  - Swiggy
+  - Zomato
+  - Cloud Kitchens
+  - Online Food Order
+  category: I1
+  level: 3
+  status: active
+- id: quick_service_restaurants
+  aliases:
+  - QSR
+  - Fast Food
+  - Burger Chains
+  - Pizza Delivery
+  - Fast Food Outlets
+  category: I1
+  level: 3
+  status: active
+- id: street_food
+  aliases:
+  - Street Food
+  - Chaat
+  - Thela Food
+  - Roadside Eateries
+  - Vada Pav
+  category: I1
+  level: 3
+  status: active
+- id: fine_dining_restaurants
+  aliases:
+  - Fine Dining
+  - Sit-down Restaurants
+  - Restaurant Dining
+  - Eating Out
+  category: I1
+  level: 3
+  status: active
+edges:
+- from: i1
+  to: staple_grains
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Food & Nutrition category contains staple grains and cereals.
+- from: i1
+  to: pulses_and_legumes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Food & Nutrition category contains pulses and legumes.
+- from: i1
+  to: fresh_produce
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Food & Nutrition category contains fresh fruits and vegetables.
+- from: i1
+  to: dairy_and_eggs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Food & Nutrition category contains dairy products and eggs.
+- from: i1
+  to: meat_and_seafood
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Food & Nutrition category contains meat, poultry, and seafood.
+- from: i1
+  to: edible_oils
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Food & Nutrition category contains edible cooking oils.
+- from: i1
+  to: spices_and_condiments
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Food & Nutrition category contains spices, sugar, and salt.
+- from: i1
+  to: packaged_and_processed_foods
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Food & Nutrition category contains packaged FMCG foods and beverages.
+- from: i1
+  to: out_of_home_dining
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Food & Nutrition category contains restaurant and delivery food services.
+- from: staple_grains
+  to: wheat_flour
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Staple grains category contains wheat flour (atta).
+- from: staple_grains
+  to: retail_rice
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Staple grains category contains retail rice.
+- from: staple_grains
+  to: millets
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Staple grains category contains millets like bajra and jowar.
+- from: pulses_and_legumes
+  to: tur_dal
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Pulses category contains tur dal (pigeon pea).
+- from: pulses_and_legumes
+  to: chana_dal
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Pulses category contains chana dal (bengal gram).
+- from: pulses_and_legumes
+  to: moong_dal
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Pulses category contains moong dal (green gram).
+- from: pulses_and_legumes
+  to: urad_dal
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Pulses category contains urad dal (black gram).
+- from: fresh_produce
+  to: vegetables
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Fresh produce category contains vegetables.
+- from: fresh_produce
+  to: fruits
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Fresh produce category contains fruits.
+- from: vegetables
+  to: retail_tomato
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vegetables category contains retail tomatoes.
+- from: vegetables
+  to: retail_onion
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vegetables category contains retail onions.
+- from: vegetables
+  to: retail_potato
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vegetables category contains retail potatoes.
+- from: vegetables
+  to: green_vegetables
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vegetables category contains leafy green vegetables.
+- from: fruits
+  to: retail_apple
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Fruits category contains retail apples.
+- from: fruits
+  to: retail_mango
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Fruits category contains retail mangoes.
+- from: fruits
+  to: retail_banana
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Fruits category contains retail bananas.
+- from: dairy_and_eggs
+  to: liquid_milk
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Dairy and eggs category contains liquid milk.
+- from: dairy_and_eggs
+  to: paneer_and_cheese
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Dairy and eggs category contains paneer and cheese.
+- from: dairy_and_eggs
+  to: butter_and_ghee
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Dairy and eggs category contains butter and ghee.
+- from: dairy_and_eggs
+  to: poultry_eggs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Dairy and eggs category contains poultry eggs.
+- from: meat_and_seafood
+  to: poultry_chicken
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Meat and seafood category contains poultry chicken.
+- from: meat_and_seafood
+  to: mutton_and_lamb
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Meat and seafood category contains mutton and lamb.
+- from: meat_and_seafood
+  to: freshwater_fish
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Meat and seafood category contains freshwater fish.
+- from: meat_and_seafood
+  to: marine_fish
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Meat and seafood category contains marine fish and seafood.
+- from: edible_oils
+  to: mustard_oil
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Edible oils category contains mustard oil.
+- from: edible_oils
+  to: palm_oil
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Edible oils category contains palm oil.
+- from: edible_oils
+  to: sunflower_oil
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Edible oils category contains sunflower oil.
+- from: edible_oils
+  to: coconut_oil
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Edible oils category contains coconut oil.
+- from: spices_and_condiments
+  to: retail_sugar
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spices and condiments category contains retail sugar.
+- from: spices_and_condiments
+  to: retail_salt
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spices and condiments category contains retail salt.
+- from: spices_and_condiments
+  to: dry_red_chilli
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spices and condiments category contains dry red chilli.
+- from: spices_and_condiments
+  to: turmeric_powder
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spices and condiments category contains turmeric powder.
+- from: spices_and_condiments
+  to: garlic_and_ginger
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spices and condiments category contains garlic and ginger.
+- from: packaged_and_processed_foods
+  to: biscuits_and_snacks
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Packaged foods category contains biscuits and snacks.
+- from: packaged_and_processed_foods
+  to: instant_noodles
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Packaged foods category contains instant noodles.
+- from: packaged_and_processed_foods
+  to: tea_leaves
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Packaged foods category contains tea leaves.
+- from: packaged_and_processed_foods
+  to: coffee_powder
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Packaged foods category contains coffee powder.
+- from: out_of_home_dining
+  to: food_delivery_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Out of home dining category contains food delivery services.
+- from: out_of_home_dining
+  to: quick_service_restaurants
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Out of home dining category contains quick service restaurants.
+- from: out_of_home_dining
+  to: street_food
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Out of home dining category contains street food.
+- from: out_of_home_dining
+  to: fine_dining_restaurants
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Out of home dining category contains fine dining restaurants.

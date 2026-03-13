@@ -1,0 +1,507 @@
+nodes:
+- id: i2
+  aliases:
+  - Housing & Utilities
+  - Shelter
+  - Home Utilities
+  - Residential Costs
+  - Makan aur Bijli-Pani
+  category: I2
+  level: 1
+  status: active
+  is_category: true
+- id: shelter_and_accommodation
+  aliases:
+  - Shelter and Accommodation
+  - Housing Costs
+  - Physical Shelter
+  - Awas
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: household_energy
+  aliases:
+  - Household Energy
+  - Domestic Power and Fuel
+  - Gharelu Indhan
+  - Home Energy
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: water_and_sanitation
+  aliases:
+  - Water and Sanitation
+  - Jal aur Swachhata
+  - Water Supply and Drainage
+  - Pani aur Kachra
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: residential_maintenance_and_services
+  aliases:
+  - Residential Maintenance and Services
+  - Home Upkeep
+  - Ghar ka Rakhrakhav
+  - Domestic Services
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: rental_housing
+  aliases:
+  - Rental Housing
+  - Rented Accommodation
+  - Kiraya Makan
+  - Tenancy
+  category: I2
+  level: 3
+  status: active
+  is_category: true
+- id: home_construction_and_modification
+  aliases:
+  - Home Construction and Modification
+  - House Building
+  - Makan Nirman
+  - Renovation Costs
+  category: I2
+  level: 3
+  status: active
+  is_category: true
+- id: cooking_fuel
+  aliases:
+  - Cooking Fuel
+  - Kitchen Fuel
+  - Rasoi Indhan
+  - Cooking Gas
+  category: I2
+  level: 3
+  status: active
+  is_category: true
+- id: residential_electricity
+  aliases:
+  - Residential Electricity
+  - Domestic Power
+  - Gharelu Bijli
+  - Home Electricity
+  category: I2
+  level: 3
+  status: active
+  is_category: true
+- id: residential_water_supply
+  aliases:
+  - Residential Water Supply
+  - Domestic Water
+  - Gharelu Pani
+  - Drinking Water Supply
+  category: I2
+  level: 3
+  status: active
+  is_category: true
+- id: residential_sanitation
+  aliases:
+  - Residential Sanitation
+  - Home Waste Management
+  - Gharelu Swachhata
+  - Sewage and Garbage
+  category: I2
+  level: 3
+  status: active
+  is_category: true
+- id: housing_society_management
+  aliases:
+  - Housing Society Management
+  - Apartment Management
+  - Society Affairs
+  - RWA Management
+  category: I2
+  level: 3
+  status: active
+  is_category: true
+- id: domestic_labor
+  aliases:
+  - Domestic Labor
+  - Household Help
+  - Gharelu Kamgar
+  - Maids and Servants
+  category: I2
+  level: 3
+  status: active
+  is_category: true
+- id: home_upkeep
+  aliases:
+  - Home Upkeep
+  - House Repairs
+  - Makan ki Murammat
+  - Residential Maintenance
+  category: I2
+  level: 3
+  status: active
+  is_category: true
+- id: residential_rent
+  aliases:
+  - house rent
+  - kiraya
+  - flat rent
+  - room rent
+  - makan kiraya
+  category: I2
+  level: 4
+  status: active
+- id: pg_and_hostel_fees
+  aliases:
+  - pg rent
+  - paying guest accommodation
+  - hostel fees
+  - co-living rent
+  - student accommodation
+  category: I2
+  level: 4
+  status: active
+- id: building_materials_cost
+  aliases:
+  - cement price
+  - sariya price
+  - steel rebars
+  - construction material
+  - sand and bricks
+  category: I2
+  level: 4
+  status: active
+- id: construction_labor_wages
+  aliases:
+  - mason wages
+  - majdoor dihari
+  - construction worker pay
+  - thekedar charges
+  - mistri fees
+  category: I2
+  level: 4
+  status: active
+- id: lpg_cylinder
+  aliases:
+  - gas cylinder
+  - cooking gas
+  - rasoi gas
+  - 14.2kg cylinder
+  - lpg price
+  category: I2
+  level: 4
+  status: active
+- id: piped_natural_gas
+  aliases:
+  - png
+  - piped gas
+  - mahanagar gas
+  - igl piped gas
+  - city gas distribution
+  category: I2
+  level: 4
+  status: active
+- id: electricity_tariff
+  aliases:
+  - bijli bill
+  - power tariff
+  - electricity rates
+  - per unit charge
+  - electricity bill
+  category: I2
+  level: 4
+  status: active
+- id: residential_power_supply
+  aliases:
+  - power cut
+  - load shedding
+  - bijli gul
+  - power backup
+  - electricity supply uptime
+  category: I2
+  level: 4
+  status: active
+- id: municipal_water_supply
+  aliases:
+  - kaveri water
+  - bmc water
+  - jal board
+  - tap water
+  - nagar nigam water
+  category: I2
+  level: 4
+  status: active
+- id: private_water_tanker
+  aliases:
+  - water tanker
+  - private tanker
+  - tanker mafia
+  - tanker water price
+  - tractor tanker
+  category: I2
+  level: 4
+  status: active
+- id: waste_collection_services
+  aliases:
+  - garbage collection
+  - kachra gadi
+  - solid waste disposal
+  - door-to-door garbage
+  - swachh bharat collection
+  category: I2
+  level: 4
+  status: active
+- id: sewage_infrastructure
+  aliases:
+  - drainage system
+  - sewage line
+  - gutter
+  - stormwater drain
+  - waterlogging drainage
+  category: I2
+  level: 4
+  status: active
+- id: rwa_maintenance_fees
+  aliases:
+  - society charges
+  - maintenance bill
+  - rwa fees
+  - apartment maintenance
+  - common area charges
+  category: I2
+  level: 4
+  status: active
+- id: domestic_help_cost
+  aliases:
+  - domestic help cost
+  - maid salary expense
+  - bai ka kharcha
+  - house help payment
+  - cook hiring cost
+  category: I2
+  level: 4
+  status: active
+- id: repair_service_charges
+  aliases:
+  - plumber charges
+  - electrician fee
+  - carpenter cost
+  - handyman services
+  - repairman visit
+  category: I2
+  level: 4
+  status: active
+- id: pest_control_services
+  aliases:
+  - pest control
+  - termite treatment
+  - mosquito fogging
+  - bed bug treatment
+  - rodent control
+  category: I2
+  level: 4
+  status: active
+edges:
+- from: i2
+  to: shelter_and_accommodation
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Housing & Utilities contains shelter and accommodation entities
+- from: i2
+  to: household_energy
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Housing & Utilities contains household energy and fuel entities
+- from: i2
+  to: water_and_sanitation
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Housing & Utilities contains water supply and sanitation entities
+- from: i2
+  to: residential_maintenance_and_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Housing & Utilities contains residential maintenance and service entities
+- from: shelter_and_accommodation
+  to: rental_housing
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Shelter and accommodation contains rental housing categories
+- from: shelter_and_accommodation
+  to: home_construction_and_modification
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Shelter and accommodation contains home construction and modification
+    categories
+- from: household_energy
+  to: cooking_fuel
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Household energy contains cooking fuel categories
+- from: household_energy
+  to: residential_electricity
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Household energy contains residential electricity categories
+- from: water_and_sanitation
+  to: residential_water_supply
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Water and sanitation contains residential water supply categories
+- from: water_and_sanitation
+  to: residential_sanitation
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Water and sanitation contains residential sanitation categories
+- from: residential_maintenance_and_services
+  to: housing_society_management
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential maintenance contains housing society management categories
+- from: residential_maintenance_and_services
+  to: domestic_labor
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential maintenance contains domestic labor categories
+- from: residential_maintenance_and_services
+  to: home_upkeep
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential maintenance contains home upkeep categories
+- from: rental_housing
+  to: residential_rent
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Rental housing contains residential rent entity
+- from: rental_housing
+  to: pg_and_hostel_fees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Rental housing contains PG and hostel fees entity
+- from: home_construction_and_modification
+  to: building_materials_cost
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Home construction contains building materials cost entity
+- from: home_construction_and_modification
+  to: construction_labor_wages
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Home construction contains construction labor wages entity
+- from: cooking_fuel
+  to: lpg_cylinder
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cooking fuel contains LPG cylinder entity
+- from: cooking_fuel
+  to: piped_natural_gas
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cooking fuel contains piped natural gas entity
+- from: residential_electricity
+  to: electricity_tariff
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential electricity contains electricity tariff entity
+- from: residential_electricity
+  to: residential_power_supply
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential electricity contains residential power supply entity
+- from: residential_water_supply
+  to: municipal_water_supply
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential water supply contains municipal water supply entity
+- from: residential_water_supply
+  to: private_water_tanker
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential water supply contains private water tanker entity
+- from: residential_sanitation
+  to: waste_collection_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential sanitation contains waste collection services entity
+- from: residential_sanitation
+  to: sewage_infrastructure
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential sanitation contains sewage infrastructure entity
+- from: housing_society_management
+  to: rwa_maintenance_fees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Housing society management contains RWA maintenance fees entity
+- from: domestic_labor
+  to: domestic_help_cost
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic labor contains the cost of hiring domestic help
+- from: home_upkeep
+  to: repair_service_charges
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Home upkeep contains repair service charges entity
+- from: home_upkeep
+  to: pest_control_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Home upkeep contains pest control services entity
