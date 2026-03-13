@@ -122,6 +122,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: video_game
   aliases:
   - Video Game
@@ -133,6 +134,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: concert_ticket
   aliases:
   - Concert Ticket
@@ -195,6 +197,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  port: true
 - id: sports_club_membership
   aliases:
   - Sports Club Membership
@@ -293,6 +296,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: pilgrimage_package
   aliases:
   - Pilgrimage Package
@@ -304,6 +308,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: temple_donation
   aliases:
   - Temple Donation
@@ -314,6 +319,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  port: true
 - id: neighborhood_associations
   aliases:
   - Neighborhood Associations
@@ -366,6 +372,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: community_hall
   aliases:
   - Community Hall
@@ -376,6 +383,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  port: true
 - id: holiday_accommodation
   aliases:
   - Holiday Accommodation
@@ -407,6 +415,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: tour_package
   aliases:
   - Tour Package

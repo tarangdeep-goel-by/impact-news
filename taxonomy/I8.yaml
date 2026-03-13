@@ -115,6 +115,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: vehicle_theft
   aliases:
   - Vehicle Theft
@@ -134,6 +135,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  port: true
 - id: fir_registration
   aliases:
   - FIR Registration
@@ -183,6 +185,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: domestic_violence
   aliases:
   - Domestic Violence
@@ -252,6 +255,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: investment_and_job_scams
   aliases:
   - Investment & Job Scams
@@ -262,6 +266,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: cyberbullying_and_trolling
   aliases:
   - Cyberbullying & Trolling
@@ -282,6 +287,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: transit_accidents
   aliases:
   - Transit Accidents
@@ -319,6 +325,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: railway_accidents
   aliases:
   - Railway Accidents
@@ -329,6 +336,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: fire_hazards
   aliases:
   - Fire Hazards
@@ -340,6 +348,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: structural_collapse
   aliases:
   - Structural Collapse
@@ -351,6 +360,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: electrocution_hazard
   aliases:
   - Electrocution Hazard
@@ -361,6 +371,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: stray_animal_attacks
   aliases:
   - Stray Animal Attacks
@@ -372,6 +383,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: wildlife_encounters
   aliases:
   - Wildlife Encounters
@@ -383,6 +395,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: civil_unrest
   aliases:
   - Civil Unrest
@@ -412,6 +425,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: curfews_and_section_144
   aliases:
   - Curfews & Section 144
@@ -433,6 +447,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 edges:
 - from: i8
   to: physical_crime_and_law_enforcement

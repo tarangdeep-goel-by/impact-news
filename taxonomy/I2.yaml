@@ -187,6 +187,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: lpg_cylinder
   aliases:
   - gas cylinder
@@ -198,6 +199,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: piped_natural_gas
   aliases:
   - png
@@ -220,6 +222,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: residential_power_supply
   aliases:
   - power cut
@@ -266,6 +269,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: sewage_infrastructure
   aliases:
   - drainage system
@@ -277,6 +281,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: rwa_maintenance_fees
   aliases:
   - society charges

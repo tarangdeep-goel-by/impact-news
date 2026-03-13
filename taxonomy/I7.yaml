@@ -116,6 +116,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  port: true
 - id: icse_exams
   aliases:
   - ICSE Board Exams
@@ -135,6 +136,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  port: true
 - id: school_types
   aliases:
   - School Infrastructure
@@ -154,6 +156,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  port: true
 - id: private_schools
   aliases:
   - Private School
@@ -182,6 +185,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: free_textbooks_uniforms
   aliases:
   - Free Textbooks
@@ -292,6 +296,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  port: true
 - id: medical_entrance
   aliases:
   - NEET UG
@@ -301,6 +306,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  port: true
 - id: management_entrance
   aliases:
   - CAT
@@ -338,6 +344,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: banking_ssc_exams
   aliases:
   - SSC CGL
@@ -349,6 +356,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: teaching_eligibility_exams
   aliases:
   - TET
@@ -380,6 +388,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: private_tutors
   aliases:
   - Home Tutor
@@ -431,6 +440,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: higher_ed_online_degrees
   aliases:
   - Online Degree
@@ -451,6 +461,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  port: true
 - id: school_fees
   aliases:
   - School Fee
@@ -462,6 +473,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: college_university_fees
   aliases:
   - College Fees

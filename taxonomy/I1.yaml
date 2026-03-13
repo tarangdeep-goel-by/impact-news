@@ -146,6 +146,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: chana_dal
   aliases:
   - Chana Dal
@@ -215,6 +216,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: retail_potato
   aliases:
   - Retail Potato
@@ -235,6 +237,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: retail_apple
   aliases:
   - Retail Apple
@@ -245,6 +248,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: retail_mango
   aliases:
   - Retail Mango
@@ -403,6 +407,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: retail_salt
   aliases:
   - Retail Salt
@@ -495,6 +500,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: quick_service_restaurants
   aliases:
   - QSR
@@ -517,6 +523,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: fine_dining_restaurants
   aliases:
   - Fine Dining
