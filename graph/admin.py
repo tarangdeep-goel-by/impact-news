@@ -500,24 +500,15 @@ def cmd_validate(args: argparse.Namespace) -> int:
     merger = TaxonomyMerger(root=root)
     G = merger.merge()
 
-    from user.inference import (
-        CITY_GRAPH_MAP,
-        COMMUTE_MAP,
-        DEPENDENTS_MAP,
-        DIET_MAP,
-        HEALTH_MAP,
-        HOUSING_MAP,
-        INVESTMENTS_MAP,
-        LOANS_MAP,
-        WORK_SECTOR_MAP,
-    )
+    import user.inference as _inf
 
     node_ids = set(G.nodes())
     missing: list[tuple[str, str]] = []  # (node_id, source_context)
     total_refs = 0
 
     # City map
-    for city, categories in CITY_GRAPH_MAP.items():
+    city_map = getattr(_inf, "CITY_GRAPH_MAP", {})
+    for city, categories in city_map.items():
         for cat, nids in categories.items():
             for nid in nids:
                 total_refs += 1
@@ -525,15 +516,13 @@ def cmd_validate(args: argparse.Namespace) -> int:
                     missing.append((nid, f"CITY_GRAPH_MAP[{city}][{cat}]"))
 
     # Tuple maps
-    tuple_maps: list[tuple[str, dict[str, list[tuple[str, str, float]]]]] = [
-        ("WORK_SECTOR_MAP", WORK_SECTOR_MAP),
-        ("HOUSING_MAP", HOUSING_MAP),
-        ("COMMUTE_MAP", COMMUTE_MAP),
-        ("LOANS_MAP", LOANS_MAP),
-        ("INVESTMENTS_MAP", INVESTMENTS_MAP),
-        ("DIET_MAP", DIET_MAP),
-        ("DEPENDENTS_MAP", DEPENDENTS_MAP),
-        ("HEALTH_MAP", HEALTH_MAP),
+    _MAP_NAMES = [
+        "WORK_SECTOR_MAP", "HOUSING_MAP", "COMMUTE_MAP",
+        "LOANS_MAP", "INVESTMENTS_MAP", "DIET_MAP",
+        "DEPENDENTS_MAP", "HEALTH_MAP",
+    ]
+    tuple_maps: list[tuple[str, dict]] = [
+        (n, getattr(_inf, n)) for n in _MAP_NAMES if hasattr(_inf, n)
     ]
     for map_name, mapping in tuple_maps:
         for key, tuples in mapping.items():

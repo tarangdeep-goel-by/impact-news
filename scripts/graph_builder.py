@@ -562,44 +562,73 @@ def build_full_review_prompt(full_graph_yaml: str, constitution: str) -> str:
 {full_graph_yaml}
 ```
 
-## Task: Run these 15 scenario traces
+## Task: Run these 30 scenario traces
 
-For each scenario, trace the causal chain through the graph and verify it reaches the expected Impact nodes.
+For each scenario, trace the FULL causal chain through the graph — every hop must use an actual edge
+that exists in the graph. Verify it reaches the expected Impact nodes at the citizen level.
 
-1. **Brent crude price spike** -> diesel -> freight -> food prices -> household savings
-2. **RBI repo rate hike** -> home loan EMI -> personal savings -> consumer spending
-3. **Southwest monsoon deficit** -> crop yield -> food prices -> farmer income
-4. **IT layoffs wave** -> tech jobs -> personal income -> loan defaults
-5. **Delhi AQI crisis** -> respiratory health -> hospital visits -> healthcare costs
-6. **GST rate change** -> consumer prices -> household budget -> discretionary spending
-7. **US Fed rate cut** -> FII flows -> Nifty -> mutual fund portfolios
-8. **Jio tariff hike** -> mobile data costs -> digital service access -> gig worker earnings
-9. **Metro fare revision** -> commute costs -> work location choices -> rental demand
-10. **School fee increase** -> education costs -> household savings -> loan demand
-11. **Gold price rally** -> retail gold investment -> wedding costs -> personal finance
-12. **Startup funding winter** -> job market -> gig economy -> platform pricing
-13. **Power grid failure** -> electricity supply -> industrial output -> employment
-14. **Monsoon flooding** -> urban flooding -> property damage -> insurance claims
-15. **UPI outage** -> digital payments -> small business -> cash demand
+### Energy & Commodity Cascades
+1. **Brent crude price spike** → diesel → freight costs → food prices → household savings
+2. **Iran-US conflict escalates** → oil supply disruption → crude prices → LPG cylinder cost → cooking gas expense → household budget
+3. **Gold price rally (geopolitical safe haven)** → retail gold investment → gold loan collateral value → wedding costs → personal finance
+4. **Global natural gas price surge** → CNG fuel prices → auto-rickshaw fares → commute costs → gig worker margins
+
+### Monetary & Fiscal Policy
+5. **RBI repo rate hike** → home loan EMI → personal savings → consumer spending → kirana store income
+6. **US Fed rate cut** → FII inflows → Nifty index → mutual fund portfolios → retirement corpus
+7. **GST rate revision on packaged food** → FMCG prices → household grocery bill → discretionary spending
+8. **LPG subsidy removal (₹60 hike)** → cooking fuel cost → household food budget → calorie intake → malnutrition
+
+### Technology & Digital
+9. **AI boom → global RAM shortage** → smartphone prices → device replacement cycles → digital access → UPI adoption → kirana store payments
+10. **Jio tariff hike** → mobile data costs → OTT streaming → gig worker app access → delivery earnings
+11. **UPI infrastructure outage** → digital payment failure → cash demand → small business disruption → street vendor income
+12. **Aadhaar authentication server downtime** → EPF withdrawal blocked → pension access → elderly financial stress
+
+### Climate & Natural Systems
+13. **El Niño 2026 → weak southwest monsoon** → kharif crop failure → rice/wheat prices → farmer income → rural distress → MGNREGA demand
+14. **Delhi winter inversion (AQI 500+)** → respiratory illness → hospital visits → healthcare costs → productivity loss
+15. **Himalayan glacier retreat** → river basin water levels → irrigation availability → crop yield → food prices
+16. **Tropical cyclone (Bay of Bengal)** → coastal flooding → fish catch disruption → marine fish prices → fisher livelihood
+17. **Post-monsoon stubble burning winds** → air quality → school closures → education disruption → child learning outcomes
+
+### Employment & Livelihood
+18. **IT layoffs wave (global recession)** → tech sector jobs → personal income → loan defaults → credit score → future borrowing
+19. **Startup funding winter** → startup jobs → gig economy shift → platform worker density → per-delivery earnings
+20. **MGNREGA budget cut** → rural employment guarantee → daily wage income → rural consumption → kirana store income
+21. **Zomato/Swiggy commission hike** → restaurant margins → menu prices → food delivery demand → delivery worker trips
+
+### Trade & Geopolitical
+22. **US Section 301 tariffs on India** → export manufacturing → factory employment → industrial town economy → local rent prices
+23. **India-US trade deal (tariff reduction to 18%)** → cheaper imports → domestic manufacturing competition → MSME revenue → informal employment
+24. **China-Taiwan semiconductor tensions** → chip supply → electronics prices → laptop costs → edtech access → student outcomes
+25. **Russia-Ukraine grain corridor collapse** → global wheat prices → Indian wheat export ban → domestic wheat supply → atta prices
+
+### Social & Demographic
+26. **Mass rural-to-urban migration wave** → urban housing demand → rental prices → slum growth → sanitation access → waterborne disease
+27. **Major religious festival (Kumbh Mela scale)** → mass pilgrimage → local economy boost → transport demand → hotel prices → tourism revenue
+28. **Farmer protest / highway blockade** → freight disruption → perishable food wastage → vegetable prices → urban household costs
+29. **Heatwave (48°C in north India)** → outdoor labor productivity → construction sector → daily wage loss → dehydration hospitalizations
+30. **School fee hyperinflation** → education loan demand → household debt → credit card EMIs → discretionary spending cuts → OTT cancellations
 
 ## For Each Scenario:
-1. Identify the trigger event and starting node
-2. Trace the causal chain through edges (list each hop with edge type)
-3. Note if any link is missing or broken
-4. Rate chain completeness: COMPLETE / PARTIAL / BROKEN
+1. Identify the trigger event and map it to a starting node in the graph
+2. Trace the causal chain through actual edges (list each hop: node → node, edge type, weight)
+3. Note EVERY missing link or broken connection — be specific about which edge is absent
+4. Rate chain completeness: COMPLETE (all hops exist) / PARTIAL (>50% hops exist) / BROKEN (<50% or critical link missing)
+5. For PARTIAL/BROKEN: suggest specific edges that should be added
 
-## Also Verify North Star Metrics:
-- Total nodes (target: 300-350)
-- Impact leaves (target: 150-180)
-- Trigger leaves (target: 70-100)
-- Lateral edges per leaf (target: 3-5 avg)
-- Orphans (target: 0)
-- Connected components (target: 1)
-- Edge descriptions (target: 100%)
-- Cycles (target: 0)
+## Also Verify Graph Health:
+- Total nodes vs target (700-800 with variable depth)
+- Orphan nodes (leaves with zero lateral edges)
+- Connected components (target: 1 after bridge edges)
+- Edge description coverage (target: 100%)
+- Feedback edge delays (all must be >= MEDIUM_TERM)
+- Port node coverage (every Impact L1 should have port nodes)
 
-## Output:
-Scenario traces followed by metric assessment and overall graph health score (1-10)."""
+## Output Format:
+For each scenario: scenario name, chain trace, rating, missing edges.
+Then: metric summary table, list of all suggested new edges, overall health score (1-10)."""
 
 
 # ---------------------------------------------------------------------------
@@ -1051,15 +1080,20 @@ def cmd_full_review(args: argparse.Namespace) -> int:
     constitution = load_constitution()
     full_yaml = yaml.dump(all_data, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
-    # Truncate if too long (Gemini context limit)
-    if len(full_yaml) > 200000:
-        print(f"WARNING: Graph YAML is {len(full_yaml)} chars, truncating to 200k for review")
-        full_yaml = full_yaml[:200000] + "\n... (truncated)"
+    # Include bridge edges
+    bridge_path = TAXONOMY_DIR / "bridge_edges.yaml"
+    if bridge_path.exists():
+        bridge_data = yaml.safe_load(bridge_path.read_text()) or {}
+        all_data["bridge_edges"] = bridge_data
+
+    full_yaml = yaml.dump(all_data, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    print(f"Graph YAML size: {len(full_yaml):,} chars")
 
     prompt = build_full_review_prompt(full_yaml, constitution)
+    print(f"Total prompt size: {len(prompt):,} chars")
 
     gemini = GraphGemini()
-    response = gemini.call(prompt, temperature=0.3, thinking_budget=24000)
+    response = gemini.call(prompt, temperature=0.3, thinking_budget=65000, max_output_tokens=32000)
 
     print("\n" + "=" * 60)
     print("FULL GRAPH REVIEW")
