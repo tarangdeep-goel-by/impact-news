@@ -34,28 +34,31 @@ FAN_OUT_CAP = 0.4
 
 
 def apply_defaults(G):
-    """Apply structural defaults based on edge type."""
-    updated = 0
+    """Fill missing edge properties from structural defaults.
+
+    Only sets weight/polarity/delay when the YAML source did not provide them.
+    YAML-authored values are never overwritten.
+    """
+    filled = 0
     type_counts = Counter()
 
     for src, dst, attrs in G.edges(data=True):
         edge_type = attrs.get("type", "")
         type_counts[edge_type] += 1
 
-        if edge_type in STRUCTURAL_DEFAULTS:
-            defaults = STRUCTURAL_DEFAULTS[edge_type]
-            attrs["weight"] = defaults["weight"]
-            attrs["polarity"] = defaults["polarity"]
-            attrs["delay"] = defaults["delay"]
-            updated += 1
-        else:
-            # Unknown type — conservative defaults
-            attrs["weight"] = 0.4
-            attrs["polarity"] = 0
-            attrs["delay"] = "SHORT_TERM"
-            updated += 1
+        defaults = STRUCTURAL_DEFAULTS.get(edge_type, {
+            "weight": 0.4, "polarity": 0, "delay": "SHORT_TERM",
+        })
 
-    return updated, type_counts
+        changed = False
+        for key in ("weight", "polarity", "delay"):
+            if key not in attrs or attrs[key] is None:
+                attrs[key] = defaults[key]
+                changed = True
+        if changed:
+            filled += 1
+
+    return filled, type_counts
 
 
 def apply_fan_out_penalty(G):

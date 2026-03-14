@@ -1016,3 +1016,144 @@ edges:
   delay: MEDIUM_TERM
   description: High voter turnout aggregates signal strong democratic engagement,
     which influences the Union Budget framework toward more populist allocations.
+- from: demographics_and_population
+  to: hydrological_systems
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: Rapid urbanization and population density increases lead to the over-extraction
+    of subsurface water and severe pollution of major river basins.
+- from: demographics_and_population
+  to: biophysical_and_ecological_systems
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: Urban sprawl and population expansion encroach upon terrestrial ecosystems,
+    driving habitat loss and disrupting biological populations.
+- from: cultural_and_religious_forces
+  to: hydrological_systems
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: Major festivals and mass religious observances (e.g., idol immersions,
+    mass bathing) temporarily degrade water quality in major river basins.
+- from: social_movements_and_collectives
+  to: indian_statutory_frameworks_and_councils
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Mass social movements, labor strikes, and agrarian protests pressure
+    the state to amend, repeal, or create new statutory and welfare frameworks.
+- from: demographics_and_population
+  to: indian_statutory_frameworks_and_councils
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Long-term demographic shifts, such as a youth bulge or an aging population,
+    necessitate structural adaptations in national fiscal policies and labor/welfare
+    frameworks.
+- from: cultural_and_religious_forces
+  to: state_and_local_governments
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Linguistic and regional identity forces strongly dictate the political
+    priorities, administrative boundaries, and cultural policies of state and local
+    governments.
+- from: macro_behavioral_shifts
+  to: indian_union_government
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Shifts in mass civic participation and public sentiment directly influence
+    the policy priorities, welfare distribution, and electoral mandates of the Union
+    Government.
+- from: demographics_and_population
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: The demographic dividend (working-age population and urbanization)
+    is the primary structural driver of long-term national output and employment aggregates.
+- from: macro_behavioral_shifts
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Consumer sentiment directly drives aggregate demand, which heavily
+    influences national output, growth, and inflation indices.
+- from: cultural_and_religious_forces
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major festival seasons create massive cyclical spikes in domestic consumption,
+    temporarily boosting national output and employment.
+- from: cultural_and_religious_forces
+  to: global_commodity_markets
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Indian festival and wedding seasons significantly drive global demand
+    and pricing for precious metals (gold/silver) and agricultural commodities (edible
+    oils, sugar).
+- from: social_movements_and_collectives
+  to: international_trade_and_supply_chains
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Large-scale labor and transport union strikes disrupt export-import
+    logistics, port operations, and global supply chains.
+- from: social_movements_and_collectives
+  to: indian_macroeconomic_indicators
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Widespread agrarian or industrial strikes disrupt national output,
+    manufacturing growth, and inflation indices via supply shocks.
+- from: migration_and_mobility
+  to: financial_and_capital_markets
+  type: FUNDS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: International migration drives massive inward remittance flows, directly
+    supporting India's currency and forex markets.
+- from: demographics_and_population
+  to: civic_urban_infrastructure
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: Rapid urbanization trends and population density increases severely
+    strain and disrupt the capacity of municipal water and sewage grids.
+- from: social_movements_and_collectives
+  to: transport_logistics_infrastructure
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Mass social movements, agrarian protests, and labor strikes frequently
+    blockade or disrupt highway networks, railways, and logistics corridors.
+- from: cultural_and_religious_forces
+  to: transport_logistics_infrastructure
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Major cultural festivals and religious observances create massive,
+    concentrated surges in passenger traffic, temporarily straining railway and highway
+    networks.

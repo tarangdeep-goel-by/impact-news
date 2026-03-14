@@ -1,0 +1,312 @@
+metadata:
+  generated_at: '2026-03-14T06:54:11.737701+00:00'
+  scenarios_fixed:
+  - energy_coal_to_tariff
+  - energy_crude_reachability
+  - monetary_gst_to_food
+  - monetary_budget_to_lpg
+  - monetary_nifty_to_nps
+  - climate_monsoon_reachability
+  - climate_heat_to_labor
+  - climate_cyclone_to_fish
+  - employment_farm_to_unemployment
+  - employment_it_to_credit
+  - trade_deficit_to_sme
+  - trade_russia_to_grain
+  - tech_telecom_to_data
+  - social_confidence_to_kirana
+  - social_confidence_reachability
+  - governance_budget_reachability
+  - cross_rbi_reachability
+  - cross_it_reachability
+  - cross_heat_reachability
+  - cross_gst_reachability
+  failures_diagnosed: 20
+new_nodes:
+- id: fossil_fuel_subsidies
+  aliases:
+  - LPG Subsidy
+  - Fuel Subsidy
+  - PMUY Allocation
+  - PAHAL Scheme
+  category: T2
+  level: 3
+  parent: social_welfare_schemes
+- id: vegetable_crops
+  aliases:
+  - Vegetable Crops
+  - Horticulture Produce
+  - Sabzi Ki Kheti
+  category: T3
+  level: 4
+  parent: agricultural_commodities
+- id: it_sector_jobs
+  aliases:
+  - IT Sector Jobs
+  - Tech Employment
+  - Software Jobs
+  - IT Layoffs
+  category: I4
+  level: 3
+  parent: corporate_employment
+- id: msme_and_self_employment
+  aliases:
+  - MSME Sector
+  - Small Business Employment
+  - Self-Employed Workers
+  category: I4
+  level: 2
+  parent: jobs_and_wages
+- id: rice_crop_yield
+  aliases:
+  - Paddy Yield
+  - Rice Production
+  - Dhan ki paidawar
+  category: T3
+  level: 3
+  parent: agricultural_production
+new_edges:
+- from: international_coal_prices
+  to: utilities_and_maintenance
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: International coal prices directly determine the fuel adjustment charges
+    (FPPCA) applied to consumer utility bills.
+  scenario_id: energy_coal_to_tariff
+- from: lpg_cylinder
+  to: cooking_fuel
+  type: AFFECTS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Increases in LPG cylinder prices directly drive up the aggregate cost
+    of household cooking fuel.
+  scenario_id: energy_crude_reachability
+- from: gst_council
+  to: packaged_and_processed_foods
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The GST Council sets tax rates on packaged and processed foods, directly
+    impacting their retail prices.
+  scenario_id: monetary_gst_to_food
+- from: union_budget_framework
+  to: fossil_fuel_subsidies
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The Union Budget allocates financial resources for fossil fuel and
+    LPG subsidy programs.
+  scenario_id: monetary_budget_to_lpg
+- from: fossil_fuel_subsidies
+  to: housing_and_utilities
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Government subsidies on fossil fuels directly reduce the net out-of-pocket
+    energy expenses for households.
+  scenario_id: monetary_budget_to_lpg
+- from: nifty_50
+  to: investment_returns
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Movements in the Nifty 50 benchmark index directly determine the valuation
+    and returns of equity-linked citizen investments, including the NPS portfolio.
+  scenario_id: monetary_nifty_to_nps
+- from: southwest_monsoon
+  to: vegetable_crops
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Adequate southwest monsoon rainfall increases the yield and quality
+    of vegetable crops.
+  scenario_id: climate_monsoon_reachability
+- from: vegetable_crops
+  to: fresh_produce
+  type: SUPPLIES
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher yields of vegetable crops increase market supply, which reduces
+    the retail price of fresh produce.
+  scenario_id: climate_monsoon_reachability
+- from: outdoor_heat
+  to: informal_and_daily_wage
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Extreme outdoor heat directly reduces working hours and productivity
+    for informal and daily wage laborers.
+  scenario_id: climate_heat_to_labor
+- from: cyclonic_storm_systems
+  to: marine_fish_stocks
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Cyclonic storms physically disrupt marine habitats and alter water
+    conditions, negatively impacting marine fish populations.
+  scenario_id: climate_cyclone_to_fish
+- from: farm_labor_wages
+  to: macroeconomy_and_markets
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Changes in farm labor wages directly affect the broader macroeconomy
+    by altering rural employment dynamics and agricultural production costs.
+  scenario_id: employment_farm_to_unemployment
+- from: it_sector_jobs
+  to: bank_deposits
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: IT sector employment generates regular salary income that accumulates
+    as bank deposits.
+  scenario_id: employment_it_to_credit
+- from: bank_deposits
+  to: credit_card_dues
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: A reduction in bank deposits impairs the ability to pay off credit
+    card balances, leading to higher outstanding dues.
+  scenario_id: employment_it_to_credit
+- from: india_trade_deficit
+  to: currency_and_forex_markets
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: A widening national trade deficit increases demand for foreign currency,
+    directly depreciating the domestic currency's exchange rate.
+  scenario_id: trade_deficit_to_sme
+- from: currency_and_forex_markets
+  to: msme_and_self_employment
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Currency depreciation raises the cost of imported industrial raw materials,
+    directly reducing the operating margins of small business owners.
+  scenario_id: trade_deficit_to_sme
+- from: msme_and_self_employment
+  to: small_factory_owner_income
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Small factory owners represent a core demographic within the broader
+    MSME and self-employment sector.
+  scenario_id: trade_deficit_to_sme
+- from: russian_government
+  to: global_food_grain_supply
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Russian government export policies and geopolitical actions directly
+    alter the availability of food grains in the global market.
+  scenario_id: trade_russia_to_grain
+- from: digital_telecom_infrastructure
+  to: digital_life
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Capital expenditure and expansion of digital telecom infrastructure
+    directly affect the pricing and delivery of all digital life services, including
+    mobile data tariffs.
+  scenario_id: tech_telecom_to_data
+- from: aggregate_consumer_confidence
+  to: income_and_employment
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher aggregate consumer confidence increases retail spending and
+    footfall, directly boosting the income of retail businesses and overall employment.
+  scenario_id: social_confidence_to_kirana
+- from: aggregate_consumer_confidence
+  to: business_and_professional_income
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher consumer confidence drives retail spending, directly increasing
+    the income of businesses and shopkeepers.
+  scenario_id: social_confidence_reachability
+- from: aggregate_consumer_confidence
+  to: credit_and_loans
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased consumer optimism encourages higher discretionary spending
+    through credit cards and personal loans.
+  scenario_id: social_confidence_reachability
+- from: union_budget_framework
+  to: housing_and_utilities
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The Union Budget sets subsidy allocations for cooking gas and power
+    sector grants, directly influencing residential utility and energy costs.
+  scenario_id: governance_budget_reachability
+- from: rbi
+  to: savings_and_investments
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The Reserve Bank of India's repo rate adjustments directly influence
+    the interest rates offered on consumer savings and fixed deposits.
+  scenario_id: cross_rbi_reachability
+- from: it_sector_salary
+  to: credit_card_dues
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher IT sector salaries directly improve the ability of professionals
+    to clear their pending credit card dues.
+  scenario_id: cross_it_reachability
+- from: it_sector_salary
+  to: kirana_store_income
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased IT sector salaries lead to higher daily consumption and grocery
+    spending at local kirana stores.
+  scenario_id: cross_it_reachability
+- from: outdoor_heat
+  to: rice_crop_yield
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Extreme heat stress during the growing season directly reduces the
+    yield of rice crops.
+  scenario_id: cross_heat_reachability
+- from: rice_crop_yield
+  to: staple_grains
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: Lower rice crop yields reduce the market supply of staple grains, driving
+    up their retail prices.
+  scenario_id: cross_heat_reachability

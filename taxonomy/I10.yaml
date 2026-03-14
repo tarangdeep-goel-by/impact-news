@@ -212,6 +212,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - trai
 - id: mobile_network_quality
   aliases:
   - Mobile Network Quality
@@ -225,6 +227,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - trai
 - id: fiber_broadband_tariff
   aliases:
   - Fiber Broadband Tariff
@@ -275,6 +279,9 @@ nodes:
   status: active
   portal: true
   port: true
+  managed_by:
+  - aadhaar_database
+  - uidai
 - id: pan_aadhaar_linkage
   aliases:
   - PAN-Aadhaar Linkage
@@ -287,6 +294,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - ministry_of_finance
 - id: digilocker_documents
   aliases:
   - DigiLocker Documents
@@ -325,6 +334,10 @@ nodes:
   status: active
   portal: true
   port: true
+  managed_by:
+  - upi_platform
+  regulated_by:
+  - rbi
 - id: upi_transaction_limits
   aliases:
   - UPI Transaction Limits
@@ -338,6 +351,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - rbi
 - id: fastag_wallet
   aliases:
   - FASTag Wallet
@@ -351,6 +366,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - ministry_of_road_transport
 - id: ncmc_smart_card
   aliases:
   - NCMC Smart Card
@@ -375,6 +392,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - rbi
 - id: whatsapp_messaging
   aliases:
   - WhatsApp Messaging
@@ -413,6 +432,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - trai
 - id: personal_data_privacy
   aliases:
   - Personal Data Privacy
@@ -439,6 +460,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - ministry_of_commerce_and_industry
 - id: laptop_computer
   aliases:
   - Laptop Computer
@@ -1131,3 +1154,502 @@ edges:
   description: A laptop or personal computer is an essential tool for students enrolled
     in online degree programs to attend virtual classes, access materials, and complete
     assignments.
+- from: digital_payments_interface
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Ubiquitous UPI and digital payment systems enable seamless, exact-change
+    transactions across food delivery apps, street food vendors, and restaurants,
+    significantly driving transaction volume.
+- from: digital_identity_and_egovernance
+  to: staple_grains
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Aadhaar-based biometric authentication (e-PoS) acts as the mandatory
+    digital gateway for hundreds of millions of citizens to access subsidized staple
+    grains (rice, wheat, millets) via the Public Distribution System (PDS).
+- from: telecom_and_internet_access
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Mobile internet connectivity provides the foundational infrastructure
+    required for the operation of food delivery platforms, cloud kitchens, and digital
+    restaurant ordering systems.
+- from: digital_communication_platforms
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Social media platforms and instant messaging heavily drive restaurant
+    discovery, viral street food trends, and customer acquisition for the dining and
+    food service sector.
+- from: telecom_and_internet_access
+  to: entertainment_and_media
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: High-speed mobile and home internet access is the foundational infrastructure
+    supplying digital entertainment, OTT streaming, and online gaming.
+- from: consumer_tech_devices
+  to: entertainment_and_media
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Smartphones, smart TVs, and personal computing devices serve as the
+    primary hardware mediums for consuming digital entertainment and media.
+- from: digital_communication_platforms
+  to: community_and_civic_life
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Instant messaging (e.g., WhatsApp groups) and social media platforms
+    facilitate the organization, communication, and daily functioning of neighborhood
+    associations and civic groups.
+- from: digital_communication_platforms
+  to: cultural_and_religious_life
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Messaging apps and social media amplify the coordination, e-invitations,
+    and virtual broadcasting of festivals, weddings, and religious milestones.
+- from: digital_payments_interface
+  to: entertainment_and_media
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: UPI and recurring digital payment mandates enable frictionless transactions
+    for OTT subscriptions, online gaming purchases, and event ticketing.
+- from: digital_payments_interface
+  to: travel_and_tourism
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital payment ecosystems streamline the booking of holiday accommodations,
+    travel tickets, and local tourism services.
+- from: digital_identity_and_egovernance
+  to: travel_and_tourism
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital identity systems (like Aadhaar and DigiYatra) streamline airport
+    access, hotel check-ins, and identity verifications for tourism services.
+- from: consumer_tech_devices
+  to: community_and_civic_life
+  type: DISRUPTS
+  weight: 0.5
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: High engagement with personal smart devices and screens can reduce
+    physical participation in neighborhood public spaces and face-to-face civic life.
+- from: telecom_and_internet_access
+  to: household_energy
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Home broadband routers and local telecom infrastructure rely heavily
+    on consistent residential electricity supply to function.
+- from: consumer_tech_devices
+  to: household_energy
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: The proliferation of personal computing and smart devices increases
+    overall residential electricity consumption.
+- from: digital_payments_interface
+  to: household_energy
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital payment systems streamline the payment of electricity and piped
+    gas bills, improving utility revenue collection and user convenience.
+- from: digital_identity_and_egovernance
+  to: household_energy
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital identity (Aadhaar) integration is essential for the direct
+    benefit transfer (DBT) of cooking fuel (LPG) subsidies to households.
+- from: digital_identity_and_egovernance
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Core digital identity (Aadhaar) serves as the primary mechanism for
+    tenant verification (KYC), rental agreements, and property registration.
+- from: telecom_and_internet_access
+  to: residential_maintenance_and_services
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Internet connectivity enables the deployment and daily functioning
+    of digital housing society management platforms (e.g., MyGate) and smart security
+    systems.
+- from: digital_payments_interface
+  to: residential_maintenance_and_services
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: UPI and digital payment ecosystems facilitate seamless collection of
+    housing society maintenance dues and salary payments for domestic labor.
+- from: digital_payments_interface
+  to: road_infrastructure_experience
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital transit payments (like FASTag) automate highway toll collection,
+    significantly reducing wait times and congestion at toll plazas.
+- from: digital_payments_interface
+  to: public_transit
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: UPI and National Common Mobility Cards (NCMC) streamline ticketing
+    and fare collection for urban rail and bus networks.
+- from: digital_identity_and_egovernance
+  to: intercity_travel
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital identity systems (like DigiYatra and DigiLocker) enable paperless
+    boarding and faster identity verification for air and railway travel.
+- from: digital_identity_and_egovernance
+  to: private_vehicle_ownership
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: e-Governance platforms (like Vahan/Sarathi) and digital document storage
+    (mParivahan) streamline vehicle registration, licensing, and traffic compliance
+    verification.
+- from: digital_payments_interface
+  to: on_demand_transit
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: The ubiquitous adoption of UPI enables seamless, exact-change transactions
+    for both app-based ride-hailing and traditional autos/cabs.
+- from: telecom_and_internet_access
+  to: gig_and_platform_economy
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Reliable mobile internet connectivity is a fundamental prerequisite
+    for participating in the gig and platform economy, enabling ride-hailing, delivery,
+    and freelance work.
+- from: consumer_tech_devices
+  to: gig_and_platform_economy
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Access to personal computing devices, specifically smartphones, is
+    a mandatory requirement for workers to access platform-based gig employment.
+- from: digital_payments_interface
+  to: gig_and_platform_economy
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital payment systems and UPI enable seamless, high-frequency wage
+    payouts and customer transactions for gig and platform workers.
+- from: digital_payments_interface
+  to: self_employment_and_msme
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The UPI ecosystem and digital payment interfaces enable small businesses
+    and retail traders to seamlessly accept customer payments, improving cash flow
+    and formalization.
+- from: digital_communication_platforms
+  to: self_employment_and_msme
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Instant messaging and social media platforms provide crucial marketing
+    and customer engagement channels for self-employed individuals and MSMEs.
+- from: digital_identity_and_egovernance
+  to: gig_and_platform_economy
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Core digital identity (Aadhaar) and online KYC processes enable rapid
+    onboarding and background verification for gig and platform workers.
+- from: digital_identity_and_egovernance
+  to: informal_and_daily_wage
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital identity (Aadhaar) is essential for informal and daily wage
+    workers to access rural employment schemes (like MGNREGA) and receive direct wage
+    transfers.
+- from: telecom_and_internet_access
+  to: corporate_employment
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Home broadband and mobile connectivity enable remote work, hybrid models,
+    and continuous operations for corporate and IT sector employees.
+- from: digital_identity_and_egovernance
+  to: borrowing_and_credit
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital KYC and identity verification significantly reduce processing
+    time and customer acquisition costs for issuing both secured and unsecured loans.
+- from: digital_identity_and_egovernance
+  to: market_investments
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: eKYC and digital onboarding processes enable rapid, paperless opening
+    of demat accounts and mutual fund folios for retail investors.
+- from: digital_identity_and_egovernance
+  to: taxation_and_compliance
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Integration of core digital identity (like PAN-Aadhaar linkage) with
+    tax portals streamlines direct tax filing, verification, and compliance tracking.
+- from: digital_payments_interface
+  to: market_investments
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital payment systems like UPI and e-mandates facilitate seamless,
+    instant fund transfers for equity trading and automated mutual fund SIPs.
+- from: digital_payments_interface
+  to: borrowing_and_credit
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Digital payment trails generate alternative cash-flow data for credit
+    scoring, expanding access to formal credit and digital lending.
+- from: digital_payments_interface
+  to: taxation_and_compliance
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Increased adoption of digital payments creates formal financial trails,
+    reducing cash transactions, broadening the tax base, and improving direct tax
+    compliance.
+- from: digital_payments_interface
+  to: insurance_premiums
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Recurring digital payment mandates (e-NACH/UPI AutoPay) simplify the
+    collection and auto-renewal of life and general insurance premiums.
+- from: telecom_and_internet_access
+  to: market_investments
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Mobile and broadband connectivity provides the foundational infrastructure
+    enabling retail participation in digital capital markets and discount broking.
+- from: digital_communication_platforms
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: High engagement with social media and instant messaging platforms can
+    negatively impact psychological health by increasing anxiety, sleep disruption,
+    and social comparison.
+- from: consumer_tech_devices
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Prolonged usage of personal computing and smart devices contributes
+    to sedentary lifestyles and poor posture, increasing the risk of metabolic and
+    musculoskeletal disorders.
+- from: telecom_and_internet_access
+  to: healthcare_services
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Reliable mobile and broadband connectivity enables telemedicine, remote
+    patient monitoring, and digital consultations, expanding access to medical care.
+- from: digital_identity_and_egovernance
+  to: healthcare_services
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Digital identity frameworks (like ABHA and Aadhaar) streamline patient
+    onboarding, health record portability, and access to government healthcare schemes.
+- from: telecom_and_internet_access
+  to: pharmaceuticals_and_supplies
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Internet access enables e-pharmacy platforms and digital ordering,
+    improving consumer access to prescription drugs, OTC products, and home medical
+    devices.
+- from: telecom_and_internet_access
+  to: edtech_platforms
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Reliable mobile connectivity and home broadband are fundamental prerequisites
+    for accessing K-12, higher education, and test prep EdTech platforms.
+- from: consumer_tech_devices
+  to: edtech_platforms
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The availability and capability of personal computing devices (smartphones,
+    tablets, laptops) directly dictate a student's ability to consume online learning.
+- from: digital_identity_and_egovernance
+  to: education_economics
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Core digital identity (Aadhaar) and e-governance portals are critical
+    for the verification, processing, and direct benefit transfer (DBT) of educational
+    scholarships.
+- from: digital_payments_interface
+  to: education_economics
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: UPI and digital payment ecosystems streamline the collection and payment
+    of school, university, and coaching fees, reducing administrative friction.
+- from: digital_communication_platforms
+  to: competitive_exams_and_coaching
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Instant messaging apps (like Telegram and WhatsApp) serve as massive,
+    informal distribution networks for study materials, peer discussions, and government
+    job exam updates.
+- from: digital_payments_interface
+  to: digital_and_cyber_security
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased adoption of digital payment systems (like UPI) expands the
+    attack surface for financial cyber fraud and scams.
+- from: digital_privacy_and_hygiene
+  to: digital_and_cyber_security
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Strong personal data control and digital hygiene practices reduce citizen
+    vulnerability to cyber fraud and digital harassment.
+- from: digital_communication_platforms
+  to: public_order_and_emergencies
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Rapid spread of unverified information and rumors on messaging and
+    social platforms can trigger or exacerbate civil unrest and mob violence.
+- from: digital_communication_platforms
+  to: digital_and_cyber_security
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Social media and instant messaging platforms serve as primary vectors
+    for digital harassment, cyberbullying, and privacy violations.
+- from: consumer_tech_devices
+  to: accidents_and_hazards
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Distracted usage of personal smart devices while driving or walking
+    significantly increases the risk of transit accidents.
+- from: digital_identity_and_egovernance
+  to: digital_and_cyber_security
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Compromised digital identity and online KYC documents provide the foundation
+    for sophisticated financial cyber frauds and identity theft.
+- from: consumer_tech_devices
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: LONG_TERM
+  description: The proliferation and rapid obsolescence of personal computing and
+    smart devices lead to increased e-waste, straining local solid waste management
+    systems and negatively affecting neighborhood hygiene.
+- from: digital_identity_and_egovernance
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Online citizen service portals and grievance redressal apps (e.g.,
+    Swachhata App) enable residents to efficiently report solid waste and sanitation
+    issues to municipal authorities, facilitating improved civic cleanliness.
+- from: telecom_and_internet_access
+  to: air_quality_environment
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: The reliance on diesel generator sets for backup power at telecom towers
+    during grid outages contributes to localized particulate matter emissions, negatively
+    impacting neighborhood air quality.
+- from: telecom_and_internet_access
+  to: sensory_environment
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: The operation of diesel generators for telecom tower backup power contributes
+    to localized noise pollution in residential areas, degrading the sensory environment.

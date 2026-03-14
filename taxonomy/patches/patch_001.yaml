@@ -1,0 +1,362 @@
+metadata:
+  generated_at: '2026-03-14T05:39:13.616426+00:00'
+  scenarios_fixed:
+  - energy_coal_to_tariff
+  - energy_crude_reachability
+  - monetary_gst_to_food
+  - monetary_budget_to_lpg
+  - monetary_gst_to_biscuits
+  - monetary_nifty_to_nps
+  - climate_monsoon_reachability
+  - climate_heat_to_labor
+  - climate_cyclone_to_fish
+  - employment_farm_to_unemployment
+  - employment_it_to_credit
+  - trade_deficit_to_sme
+  - trade_russia_to_grain
+  - trade_usd_reachability
+  - tech_telecom_to_data
+  - tech_aadhaar_to_senior
+  - social_confidence_to_kirana
+  - social_confidence_reachability
+  - social_inflation_score
+  - governance_voter_turnout
+  - governance_budget_reachability
+  - governance_inflation_to_savings_score
+  - cross_rbi_reachability
+  - cross_it_reachability
+  - cross_heat_reachability
+  - cross_gst_reachability
+  - neg_cyclone_to_upi
+  failures_diagnosed: 27
+new_nodes:
+- id: outdoor_heat
+  aliases:
+  - Extreme Heat
+  - Heatwave Conditions
+  - Bahar ki Garmi
+  category: I9
+  level: 4
+  parent: ambient_temperature
+- id: informal_and_daily_wage
+  aliases:
+  - Informal Sector
+  - Daily Wage Labor
+  - Unorganized Sector Work
+  category: I4
+  level: 2
+  parent: employment_and_wages
+- id: inr_usd_exchange_rate
+  aliases:
+  - Rupee Dollar Rate
+  - USD INR
+  - Rupee Depreciation
+  - Currency Exchange Rate
+  category: T3
+  level: 4
+  parent: currency_and_forex_markets
+- id: savings_account_balance
+  aliases:
+  - Savings Account
+  - Bank Balance
+  - Bachat Khata
+  - Savings Deposit
+  category: I5
+  level: 4
+  parent: bank_deposits
+- id: rice_crop_yield
+  aliases:
+  - Paddy Yield
+  - Rice Production
+  - Dhan ki Fasal
+  category: T1
+  level: 4
+  parent: agricultural_production
+- id: npci_infrastructure
+  aliases:
+  - NPCI Servers
+  - UPI Switch
+  - Payment Gateways
+  - Core Banking Systems
+  category: T5
+  level: 4
+  parent: financial_infrastructure
+new_edges:
+- from: international_coal_prices
+  to: electricity_tariff
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Increases in international coal prices raise the input fuel costs for
+    thermal power plants (especially those relying on imported coal), which are eventually
+    passed on to consumers via higher electricity tariffs.
+  scenario_id: energy_coal_to_tariff
+- from: brent_crude
+  to: cooking_fuel
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Spikes in global crude oil prices directly increase the retail cost
+    of petroleum-derived cooking fuels such as LPG and kerosene.
+  scenario_id: energy_crude_reachability
+- from: gst_council
+  to: packaged_and_processed_foods
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Changes in GST slabs by the GST Council directly impact the final retail
+    prices of packaged and processed foods.
+  scenario_id: monetary_gst_to_food
+- from: union_budget_framework
+  to: lpg_cylinder
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: Union budget allocations for cooking fuel subsidies (such as the Ujjwala
+    Yojana) directly reduce the out-of-pocket retail price of LPG cylinders for citizens.
+  scenario_id: monetary_budget_to_lpg
+- from: gst_council
+  to: biscuits_and_snacks
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: GST Council decisions on tax slabs directly affect the final retail
+    prices (MRP) of biscuits and snacks.
+  scenario_id: monetary_gst_to_biscuits
+- from: nifty_50
+  to: nps_portfolio
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: NPS portfolios with equity exposure (Scheme E) are directly impacted
+    by the movement of benchmark indices like Nifty 50, as they invest in index-linked
+    equities.
+  scenario_id: monetary_nifty_to_nps
+- from: southwest_monsoon
+  to: vegetables
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Adequate southwest monsoon rainfall improves vegetable crop yields,
+    increasing market supply and thereby lowering retail prices.
+  scenario_id: climate_monsoon_reachability
+- from: outdoor_heat
+  to: informal_and_daily_wage
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: High outdoor temperatures directly reduce the working hours, productivity,
+    and earnings of informal and daily wage laborers who primarily work outdoors.
+  scenario_id: climate_heat_to_labor
+- from: cyclonic_storm_systems
+  to: marine_fish_stocks
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Cyclonic storms cause severe ocean turbulence, rapid temperature changes,
+    and altered salinity, which disrupt and scatter marine fish populations.
+  scenario_id: climate_cyclone_to_fish
+- from: farm_labor_wages
+  to: rural_unemployment_rate
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher farm labor wages increase cultivation costs, leading farmers
+    to reduce hiring or adopt mechanization, thereby increasing the rural unemployment
+    rate.
+  scenario_id: employment_farm_to_unemployment
+- from: it_sector_jobs
+  to: credit_card_dues
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: A reduction in IT sector jobs leads to loss of income for professionals,
+    resulting in increased outstanding credit card dues and payment stress.
+  scenario_id: employment_it_to_credit
+- from: india_trade_deficit
+  to: inr_usd_exchange_rate
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: A widening trade deficit increases the demand for foreign currency
+    to pay for imports, leading to the depreciation of the Indian Rupee against the
+    USD.
+  scenario_id: trade_deficit_to_sme
+- from: inr_usd_exchange_rate
+  to: small_factory_owner_income
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: A weaker rupee (higher USD/INR rate) increases the cost of imported
+    raw materials, components, and machinery, which squeezes profit margins and reduces
+    the net income of small factory owners.
+  scenario_id: trade_deficit_to_sme
+- from: russian_government
+  to: global_food_grain_supply
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Russian government policy decisions, such as export bans, quotas, or
+    geopolitical actions (e.g., Black Sea grain agreements), directly restrict or
+    alter the global supply of food grains.
+  scenario_id: trade_russia_to_grain
+- from: usd_inr_exchange
+  to: brent_crude
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: A weaker INR against the USD increases the effective purchasing cost
+    of Brent crude for Indian importers.
+  scenario_id: trade_usd_reachability
+- from: retail_diesel
+  to: inflation_indices
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increases in retail diesel prices raise freight and transportation
+    costs across the economy, directly driving up overall inflation indices.
+  scenario_id: trade_usd_reachability
+- from: digital_telecom_infrastructure
+  to: mobile_data_tariff
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Capital expenditure and upgrades in digital telecom infrastructure
+    (such as 5G rollouts) directly influence the pricing of mobile data tariffs for
+    consumers.
+  scenario_id: tech_telecom_to_data
+- from: aadhaar_authentication
+  to: senior_citizen_savings_scheme
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Aadhaar authentication serves as the primary e-KYC mechanism required
+    to open, verify, and maintain Senior Citizen Savings Scheme accounts.
+  scenario_id: tech_aadhaar_to_senior
+- from: aggregate_consumer_confidence
+  to: kirana_store_income
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher aggregate consumer confidence leads to increased household spending
+    on daily goods and discretionary items, directly boosting the sales and income
+    of local kirana stores.
+  scenario_id: social_confidence_to_kirana
+- from: aggregate_consumer_confidence
+  to: credit_card_dues
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased consumer confidence drives discretionary spending, often
+    financed via credit cards, leading to higher outstanding dues.
+  scenario_id: social_confidence_reachability
+- from: inflation_indices
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Higher inflation indices reflect an increased cost of living, which
+    reduces citizens' surplus income and depletes their savings account balances.
+  scenario_id: social_inflation_score
+- from: voter_turnout_aggregates
+  to: aggregate_consumer_confidence
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: High voter turnout typically leads to decisive electoral mandates,
+    reducing political uncertainty and thereby boosting aggregate consumer confidence.
+  scenario_id: governance_voter_turnout
+- from: union_budget_framework
+  to: electricity_tariff
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Union budget allocations for the power sector, grid infrastructure,
+    and renewable energy schemes influence consumer electricity tariffs.
+  scenario_id: governance_budget_reachability
+- from: rbi
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: RBI's repo rate adjustments directly influence the interest rates banks
+    offer on savings accounts and fixed deposits.
+  scenario_id: cross_rbi_reachability
+- from: it_sector_salary
+  to: credit_card_dues
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: A drop in IT sector salaries leads to higher unpaid credit card dues
+    due to reduced repayment capacity.
+  scenario_id: cross_it_reachability
+- from: it_sector_salary
+  to: kirana_store_income
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: IT sector salaries drive local urban consumption, directly affecting
+    the daily income of neighborhood kirana stores.
+  scenario_id: cross_it_reachability
+- from: outdoor_heat
+  to: rice_crop_yield
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: High temperatures and heatwaves during the growing season cause heat
+    stress, reducing rice crop yields.
+  scenario_id: cross_heat_reachability
+- from: rice_crop_yield
+  to: retail_rice
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: A decrease in rice crop yield reduces market supply, leading to higher
+    retail prices for rice.
+  scenario_id: cross_heat_reachability
+- from: data_centers
+  to: npci_infrastructure
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Data centers provide the physical hosting for NPCI servers; their operational
+    capacity directly affects the uptime of the UPI switch.
+  scenario_id: neg_cyclone_to_upi
+- from: npci_infrastructure
+  to: upi_transaction_success
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The operational status of the NPCI infrastructure directly determines
+    the success rate of citizen UPI transactions.
+  scenario_id: neg_cyclone_to_upi

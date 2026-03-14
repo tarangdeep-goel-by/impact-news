@@ -1,0 +1,1233 @@
+metadata:
+  total_t_to_i: 169
+  unique_l2_pairs: 120
+  unmapped: 0
+l2_pairs:
+- src_l2: cultural_and_religious_forces
+  src_cat: T5
+  dst_l2: cultural_and_religious_life
+  dst_cat: I11
+  leaf_edge_count: 5
+  leaf_edges:
+  - from: autumn_festive_season
+    to: firecracker
+    type: PRODUCES
+  - from: wedding_season_aggregate
+    to: wedding_venue
+    type: AFFECTS
+  - from: autumn_festive_season
+    to: puja_pandal_contribution
+    type: FUNDS
+  - from: wedding_season_aggregate
+    to: wedding_planning_service
+    type: AFFECTS
+  - from: major_temple_trusts
+    to: temple_donation
+    type: AFFECTS
+- src_l2: financial_and_capital_markets
+  src_cat: T3
+  dst_l2: market_investments
+  dst_cat: I5
+  leaf_edge_count: 4
+  leaf_edges:
+  - from: nifty_50
+    to: direct_equity_portfolio
+    type: AFFECTS
+  - from: fii_fpi_flows
+    to: direct_equity_portfolio
+    type: AFFECTS
+  - from: india_10yr_bond_yield
+    to: debt_mutual_funds
+    type: AFFECTS
+  - from: nifty_50
+    to: equity_mutual_funds
+    type: AFFECTS
+- src_l2: digital_telecom_infrastructure
+  src_cat: T4
+  dst_l2: telecom_and_internet_access
+  dst_cat: I10
+  leaf_edge_count: 4
+  leaf_edges:
+  - from: telecom_spectrum
+    to: mobile_network_quality
+    type: AFFECTS
+  - from: telecom_towers_network
+    to: mobile_network_quality
+    type: AFFECTS
+  - from: optical_fibre_network
+    to: broadband_network_quality
+    type: AFFECTS
+  - from: submarine_internet_cables
+    to: broadband_network_quality
+    type: AFFECTS
+- src_l2: global_commodity_markets
+  src_cat: T3
+  dst_l2: private_vehicle_ownership
+  dst_cat: I3
+  leaf_edge_count: 3
+  leaf_edges:
+  - from: brent_crude
+    to: retail_petrol
+    type: AFFECTS
+  - from: brent_crude
+    to: retail_diesel
+    type: AFFECTS
+  - from: global_natural_gas
+    to: cng_fuel
+    type: AFFECTS
+- src_l2: indian_statutory_frameworks_and_councils
+  src_cat: T2
+  dst_l2: borrowing_and_credit
+  dst_cat: I5
+  leaf_edge_count: 3
+  leaf_edges:
+  - from: monetary_policy_committee
+    to: home_loan_emi
+    type: AFFECTS
+  - from: monetary_policy_committee
+    to: auto_loan_emi
+    type: AFFECTS
+  - from: monetary_policy_committee
+    to: personal_loan_emi
+    type: AFFECTS
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: weather_and_thermal_environment
+  dst_cat: I9
+  leaf_edge_count: 3
+  leaf_edges:
+  - from: global_surface_temperature
+    to: outdoor_heat
+    type: AFFECTS
+  - from: western_disturbances
+    to: outdoor_cold
+    type: AFFECTS
+  - from: southwest_monsoon
+    to: outdoor_humidity
+    type: AFFECTS
+- src_l2: migration_and_mobility
+  src_cat: T5
+  dst_l2: shelter_and_accommodation
+  dst_cat: I2
+  leaf_edge_count: 3
+  leaf_edges:
+  - from: rural_urban_migration_corridors
+    to: residential_rent
+    type: AFFECTS
+  - from: rural_urban_migration_corridors
+    to: pg_and_hostel_fees
+    type: AFFECTS
+  - from: seasonal_migrant_labor
+    to: construction_labor_wages
+    type: AFFECTS
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: infectious_diseases
+  dst_cat: I6
+  leaf_edge_count: 3
+  leaf_edges:
+  - from: southwest_monsoon
+    to: dengue
+    type: AFFECTS
+  - from: southwest_monsoon
+    to: malaria
+    type: AFFECTS
+  - from: cyclonic_storm_systems
+    to: cholera_and_diarrhea
+    type: AFFECTS
+- src_l2: hydrological_systems
+  src_cat: T1
+  dst_l2: water_and_sanitation
+  dst_cat: I2
+  leaf_edge_count: 3
+  leaf_edges:
+  - from: groundwater_aquifers
+    to: municipal_water_supply
+    type: SUPPLIES
+  - from: groundwater_aquifers
+    to: private_water_tanker
+    type: AFFECTS
+  - from: himalayan_river_systems
+    to: municipal_water_supply
+    type: SUPPLIES
+- src_l2: migration_and_mobility
+  src_cat: T5
+  dst_l2: informal_and_daily_wage
+  dst_cat: I4
+  leaf_edge_count: 3
+  leaf_edges:
+  - from: rural_urban_migration_corridors
+    to: construction_worker_wages
+    type: AFFECTS
+  - from: seasonal_migrant_labor
+    to: farm_labor_wages
+    type: AFFECTS
+  - from: seasonal_migrant_labor
+    to: construction_worker_wages
+    type: AFFECTS
+- src_l2: global_commodity_markets
+  src_cat: T3
+  dst_l2: physical_and_alternative_assets
+  dst_cat: I5
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: international_gold_prices
+    to: retail_gold_investment
+    type: AFFECTS
+  - from: international_silver_prices
+    to: retail_silver_investment
+    type: AFFECTS
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: urban_hydrology
+  dst_cat: I9
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: cyclonic_storm_systems
+    to: street_waterlogging
+    type: PRODUCES
+  - from: southwest_monsoon
+    to: street_waterlogging
+    type: PRODUCES
+- src_l2: energy_power_infrastructure
+  src_cat: T4
+  dst_l2: household_energy
+  dst_cat: I2
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: national_power_grid
+    to: residential_power_supply
+    type: SUPPLIES
+  - from: oil_gas_pipelines
+    to: piped_natural_gas
+    type: SUPPLIES
+- src_l2: civic_urban_infrastructure
+  src_cat: T4
+  dst_l2: water_and_sanitation
+  dst_cat: I2
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: municipal_water_grid
+    to: municipal_water_supply
+    type: SUPPLIES
+  - from: sewage_drainage_network
+    to: sewage_infrastructure
+    type: SUPPLIES
+- src_l2: indian_macroeconomic_indicators
+  src_cat: T3
+  dst_l2: corporate_employment
+  dst_cat: I4
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: india_gdp_growth
+    to: it_sector_salary
+    type: AFFECTS
+  - from: index_of_industrial_production
+    to: factory_worker_jobs
+    type: AFFECTS
+- src_l2: transport_logistics_infrastructure
+  src_cat: T4
+  dst_l2: intercity_travel
+  dst_cat: I3
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: indian_railways_network
+    to: irctc_train_ticket
+    type: SUPPLIES
+  - from: commercial_airports
+    to: domestic_flight_ticket
+    type: SUPPLIES
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: road_infrastructure_experience
+  dst_cat: I3
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: cyclonic_storm_systems
+    to: road_potholes
+    type: PRODUCES
+  - from: southwest_monsoon
+    to: road_potholes
+    type: PRODUCES
+- src_l2: global_sovereign_entities
+  src_cat: T2
+  dst_l2: corporate_employment
+  dst_cat: I4
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: us_federal_reserve
+    to: it_sector_salary
+    type: AFFECTS
+  - from: us_federal_reserve
+    to: it_sector_jobs
+    type: AFFECTS
+- src_l2: international_trade_and_supply_chains
+  src_cat: T3
+  dst_l2: pharmaceuticals_and_supplies
+  dst_cat: I6
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: active_pharmaceutical_ingredients_supply
+    to: generic_medicines
+    type: AFFECTS
+  - from: active_pharmaceutical_ingredients_supply
+    to: antibiotics
+    type: SUPPLIES
+- src_l2: energy_power_infrastructure
+  src_cat: T4
+  dst_l2: private_vehicle_ownership
+  dst_cat: I3
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: oil_gas_pipelines
+    to: cng_fuel
+    type: SUPPLIES
+  - from: national_power_grid
+    to: ev_charging_tariff
+    type: SUPPLIES
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: shelter_and_accommodation
+  dst_cat: I2
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: urban_population_density
+    to: residential_rent
+    type: AFFECTS
+  - from: tier_2_3_city_expansion
+    to: building_materials_cost
+    type: AFFECTS
+- src_l2: macro_behavioral_shifts
+  src_cat: T5
+  dst_l2: entertainment_and_media
+  dst_cat: I11
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: mass_boycott_movements
+    to: cinema_ticket
+    type: DISRUPTS
+  - from: aggregate_consumer_confidence
+    to: ott_subscription
+    type: AFFECTS
+- src_l2: digital_telecom_infrastructure
+  src_cat: T4
+  dst_l2: cultural_and_religious_life
+  dst_cat: I11
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: upi_platform
+    to: puja_pandal_contribution
+    type: AFFECTS
+  - from: upi_platform
+    to: temple_donation
+    type: AFFECTS
+- src_l2: global_commodity_markets
+  src_cat: T3
+  dst_l2: household_energy
+  dst_cat: I2
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: global_natural_gas
+    to: piped_natural_gas
+    type: AFFECTS
+  - from: brent_crude
+    to: lpg_cylinder
+    type: AFFECTS
+- src_l2: cultural_and_religious_forces
+  src_cat: T5
+  dst_l2: intercity_travel
+  dst_cat: I3
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: autumn_festive_season
+    to: domestic_flight_ticket
+    type: AFFECTS
+  - from: autumn_festive_season
+    to: premium_train_fare
+    type: AFFECTS
+- src_l2: financial_and_capital_markets
+  src_cat: T3
+  dst_l2: corporate_employment
+  dst_cat: I4
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: fii_fpi_flows
+    to: startup_jobs
+    type: FUNDS
+  - from: fii_fpi_flows
+    to: startup_layoffs
+    type: AFFECTS
+- src_l2: indian_macroeconomic_indicators
+  src_cat: T3
+  dst_l2: employment_metrics_and_conditions
+  dst_cat: I4
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: national_unemployment_rate
+    to: urban_unemployment_rate
+    type: AFFECTS
+  - from: national_unemployment_rate
+    to: rural_unemployment_rate
+    type: AFFECTS
+- src_l2: digital_telecom_infrastructure
+  src_cat: T4
+  dst_l2: borrowing_and_credit
+  dst_cat: I5
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: upi_platform
+    to: bnpl_installments
+    type: SUPPLIES
+  - from: aadhaar_database
+    to: microfinance_loan
+    type: SUPPLIES
+- src_l2: civic_urban_infrastructure
+  src_cat: T4
+  dst_l2: infectious_diseases
+  dst_cat: I6
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: municipal_water_grid
+    to: cholera_and_diarrhea
+    type: AFFECTS
+  - from: sewage_drainage_network
+    to: dengue
+    type: AFFECTS
+- src_l2: indian_macroeconomic_indicators
+  src_cat: T3
+  dst_l2: competitive_exams_and_coaching
+  dst_cat: I7
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: national_unemployment_rate
+    to: banking_ssc_exams
+    type: AFFECTS
+  - from: national_unemployment_rate
+    to: civil_services_exam
+    type: AFFECTS
+- src_l2: digital_telecom_infrastructure
+  src_cat: T4
+  dst_l2: edtech_platforms
+  dst_cat: I7
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: optical_fibre_network
+    to: k12_edtech
+    type: SUPPLIES
+  - from: telecom_towers_network
+    to: test_prep_edtech
+    type: SUPPLIES
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: competitive_exams_and_coaching
+  dst_cat: I7
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: india_working_age_population
+    to: engineering_entrance
+    type: AFFECTS
+  - from: tier_2_3_city_expansion
+    to: offline_coaching_centers
+    type: AFFECTS
+- src_l2: transport_logistics_infrastructure
+  src_cat: T4
+  dst_l2: accidents_and_hazards
+  dst_cat: I8
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: highway_network
+    to: road_traffic_accidents
+    type: AFFECTS
+  - from: indian_railways_network
+    to: railway_accidents
+    type: AFFECTS
+- src_l2: digital_telecom_infrastructure
+  src_cat: T4
+  dst_l2: digital_and_cyber_security
+  dst_cat: I8
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: upi_platform
+    to: upi_and_bank_scams
+    type: AFFECTS
+  - from: aadhaar_database
+    to: deepfake_and_identity_theft
+    type: AFFECTS
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: civic_cleanliness
+  dst_cat: I9
+  leaf_edge_count: 2
+  leaf_edges:
+  - from: urban_population_density
+    to: street_garbage
+    type: PRODUCES
+  - from: urban_population_density
+    to: open_drains
+    type: DISRUPTS
+- src_l2: global_commodity_markets
+  src_cat: T3
+  dst_l2: edible_oils
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: global_edible_oil_supply
+    to: palm_oil
+    type: AFFECTS
+- src_l2: global_commodity_markets
+  src_cat: T3
+  dst_l2: staple_grains
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: global_food_grain_supply
+    to: wheat_flour
+    type: AFFECTS
+- src_l2: international_trade_and_supply_chains
+  src_cat: T3
+  dst_l2: consumer_tech_devices
+  dst_cat: I10
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: global_semiconductor_supply_chain
+    to: smartphone_device
+    type: AFFECTS
+- src_l2: indian_macroeconomic_indicators
+  src_cat: T3
+  dst_l2: gig_and_platform_economy
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: national_unemployment_rate
+    to: gig_worker_payouts
+    type: AFFECTS
+- src_l2: social_movements_and_collectives
+  src_cat: T5
+  dst_l2: employment_metrics_and_conditions
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: organized_labor_unions
+    to: minimum_wage
+    type: AFFECTS
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: staple_grains
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: southwest_monsoon
+    to: retail_rice
+    type: AFFECTS
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: informal_and_daily_wage
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: southwest_monsoon
+    to: farm_labor_wages
+    type: AFFECTS
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: fresh_produce
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: cyclonic_storm_systems
+    to: retail_tomato
+    type: DISRUPTS
+- src_l2: biophysical_and_ecological_systems
+  src_cat: T1
+  dst_l2: staple_grains
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: migratory_pest_populations
+    to: wheat_flour
+    type: AFFECTS
+- src_l2: biophysical_and_ecological_systems
+  src_cat: T1
+  dst_l2: meat_and_seafood
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: marine_fish_stocks
+    to: marine_fish
+    type: SUPPLIES
+- src_l2: biophysical_and_ecological_systems
+  src_cat: T1
+  dst_l2: air_quality_environment
+  dst_cat: I9
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: forest_cover
+    to: ambient_aqi
+    type: AFFECTS
+- src_l2: indian_union_government
+  src_cat: T2
+  dst_l2: staple_grains
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: ministry_of_agriculture
+    to: wheat_flour
+    type: AFFECTS
+- src_l2: indian_regulatory_bodies
+  src_cat: T2
+  dst_l2: shelter_and_accommodation
+  dst_cat: I2
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: rbi
+    to: residential_rent
+    type: AFFECTS
+- src_l2: indian_judiciary_and_law_enforcement
+  src_cat: T2
+  dst_l2: weather_and_thermal_environment
+  dst_cat: I9
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: national_green_tribunal
+    to: outdoor_heat
+    type: AFFECTS
+- src_l2: global_commodity_markets
+  src_cat: T3
+  dst_l2: shelter_and_accommodation
+  dst_cat: I2
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: industrial_metals_index
+    to: building_materials_cost
+    type: AFFECTS
+- src_l2: financial_and_capital_markets
+  src_cat: T3
+  dst_l2: borrowing_and_credit
+  dst_cat: I5
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: india_10yr_bond_yield
+    to: home_loan_emi
+    type: AFFECTS
+- src_l2: international_trade_and_supply_chains
+  src_cat: T3
+  dst_l2: corporate_employment
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: us_consumer_demand
+    to: it_sector_jobs
+    type: AFFECTS
+- src_l2: financial_and_capital_markets
+  src_cat: T3
+  dst_l2: intercity_travel
+  dst_cat: I3
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: usd_inr_exchange
+    to: domestic_flight_ticket
+    type: AFFECTS
+- src_l2: civic_urban_infrastructure
+  src_cat: T4
+  dst_l2: urban_hydrology
+  dst_cat: I9
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: sewage_drainage_network
+    to: street_waterlogging
+    type: DISRUPTS
+- src_l2: transport_logistics_infrastructure
+  src_cat: T4
+  dst_l2: road_infrastructure_experience
+  dst_cat: I3
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: highway_network
+    to: highway_toll_fare
+    type: AFFECTS
+- src_l2: energy_power_infrastructure
+  src_cat: T4
+  dst_l2: air_quality_environment
+  dst_cat: I9
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: coal_power_plants
+    to: particulate_matter_levels
+    type: PRODUCES
+- src_l2: transport_logistics_infrastructure
+  src_cat: T4
+  dst_l2: edible_oils
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: global_shipping_routes
+    to: palm_oil
+    type: AFFECTS
+- src_l2: advanced_tech_infrastructure
+  src_cat: T4
+  dst_l2: consumer_tech_devices
+  dst_cat: I10
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: semiconductor_fabs
+    to: smartphone_device
+    type: SUPPLIES
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: road_infrastructure_experience
+  dst_cat: I3
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: urban_population_density
+    to: traffic_congestion
+    type: PRODUCES
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: air_quality_environment
+  dst_cat: I9
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: urban_population_density
+    to: ambient_aqi
+    type: PRODUCES
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: residential_maintenance_and_services
+  dst_cat: I2
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: female_labor_force_participation
+    to: domestic_help_cost
+    type: AFFECTS
+- src_l2: social_movements_and_collectives
+  src_cat: T5
+  dst_l2: gig_and_platform_economy
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: gig_worker_unions
+    to: gig_worker_payouts
+    type: AFFECTS
+- src_l2: social_movements_and_collectives
+  src_cat: T5
+  dst_l2: intercity_travel
+  dst_cat: I3
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: transport_worker_unions
+    to: intercity_bus_fare
+    type: AFFECTS
+- src_l2: social_movements_and_collectives
+  src_cat: T5
+  dst_l2: fresh_produce
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: farmer_unions
+    to: retail_tomato
+    type: DISRUPTS
+- src_l2: cultural_and_religious_forces
+  src_cat: T5
+  dst_l2: physical_and_alternative_assets
+  dst_cat: I5
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: wedding_season_aggregate
+    to: retail_gold_investment
+    type: AFFECTS
+- src_l2: macro_behavioral_shifts
+  src_cat: T5
+  dst_l2: travel_and_tourism
+  dst_cat: I11
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: aggregate_consumer_confidence
+    to: tour_package
+    type: AFFECTS
+- src_l2: indian_union_government
+  src_cat: T2
+  dst_l2: pulses_and_legumes
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: ministry_of_agriculture
+    to: tur_dal
+    type: AFFECTS
+- src_l2: transport_logistics_infrastructure
+  src_cat: T4
+  dst_l2: fresh_produce
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: highway_network
+    to: retail_apple
+    type: AFFECTS
+- src_l2: biophysical_and_ecological_systems
+  src_cat: T1
+  dst_l2: fresh_produce
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: arable_topsoil
+    to: green_vegetables
+    type: AFFECTS
+- src_l2: digital_telecom_infrastructure
+  src_cat: T4
+  dst_l2: out_of_home_dining
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: upi_platform
+    to: food_delivery_services
+    type: AFFECTS
+- src_l2: cultural_and_religious_forces
+  src_cat: T5
+  dst_l2: spices_and_condiments
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: autumn_festive_season
+    to: retail_sugar
+    type: AFFECTS
+- src_l2: global_commodity_markets
+  src_cat: T3
+  dst_l2: fresh_produce
+  dst_cat: I1
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: brent_crude
+    to: retail_tomato
+    type: AFFECTS
+- src_l2: financial_and_capital_markets
+  src_cat: T3
+  dst_l2: consumer_tech_devices
+  dst_cat: I10
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: usd_inr_exchange
+    to: laptop_computer
+    type: AFFECTS
+- src_l2: digital_telecom_infrastructure
+  src_cat: T4
+  dst_l2: digital_identity_and_egovernance
+  dst_cat: I10
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: data_centers
+    to: digilocker_documents
+    type: SUPPLIES
+- src_l2: energy_power_infrastructure
+  src_cat: T4
+  dst_l2: telecom_and_internet_access
+  dst_cat: I10
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: national_power_grid
+    to: broadband_network_quality
+    type: AFFECTS
+- src_l2: state_and_local_governments
+  src_cat: T2
+  dst_l2: telecom_and_internet_access
+  dst_cat: I10
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: municipal_corporations
+    to: public_wifi
+    type: FUNDS
+- src_l2: transport_logistics_infrastructure
+  src_cat: T4
+  dst_l2: telecom_and_internet_access
+  dst_cat: I10
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: indian_railways_network
+    to: public_wifi
+    type: SUPPLIES
+- src_l2: global_commodity_markets
+  src_cat: T3
+  dst_l2: travel_and_tourism
+  dst_cat: I11
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: brent_crude
+    to: tour_package
+    type: AFFECTS
+- src_l2: digital_telecom_infrastructure
+  src_cat: T4
+  dst_l2: entertainment_and_media
+  dst_cat: I11
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: optical_fibre_network
+    to: video_game
+    type: SUPPLIES
+- src_l2: transport_logistics_infrastructure
+  src_cat: T4
+  dst_l2: travel_and_tourism
+  dst_cat: I11
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: commercial_airports
+    to: tour_package
+    type: AFFECTS
+- src_l2: transport_logistics_infrastructure
+  src_cat: T4
+  dst_l2: cultural_and_religious_life
+  dst_cat: I11
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: indian_railways_network
+    to: pilgrimage_package
+    type: SUPPLIES
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: sports_and_recreation
+  dst_cat: I11
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: southwest_monsoon
+    to: amusement_park
+    type: DISRUPTS
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: travel_and_tourism
+  dst_cat: I11
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: cyclonic_storm_systems
+    to: tour_package
+    type: DISRUPTS
+- src_l2: indian_statutory_frameworks_and_councils
+  src_cat: T2
+  dst_l2: shelter_and_accommodation
+  dst_cat: I2
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: monetary_policy_committee
+    to: residential_rent
+    type: AFFECTS
+- src_l2: financial_and_capital_markets
+  src_cat: T3
+  dst_l2: private_vehicle_ownership
+  dst_cat: I3
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: usd_inr_exchange
+    to: retail_petrol
+    type: AFFECTS
+- src_l2: international_trade_and_supply_chains
+  src_cat: T3
+  dst_l2: private_vehicle_ownership
+  dst_cat: I3
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: global_semiconductor_supply_chain
+    to: four_wheeler_price
+    type: AFFECTS
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: intercity_travel
+  dst_cat: I3
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: cyclonic_storm_systems
+    to: domestic_flight_ticket
+    type: DISRUPTS
+- src_l2: indian_regulatory_bodies
+  src_cat: T2
+  dst_l2: corporate_employment
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: rbi
+    to: private_bank_jobs
+    type: AFFECTS
+- src_l2: indian_statutory_frameworks_and_councils
+  src_cat: T2
+  dst_l2: informal_and_daily_wage
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: union_budget_framework
+    to: mgnrega_wages
+    type: FUNDS
+- src_l2: transport_logistics_infrastructure
+  src_cat: T4
+  dst_l2: informal_and_daily_wage
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: highway_network
+    to: construction_worker_wages
+    type: AFFECTS
+- src_l2: digital_telecom_infrastructure
+  src_cat: T4
+  dst_l2: self_employment_and_msme
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: upi_platform
+    to: street_vendor_income
+    type: AFFECTS
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: informal_and_daily_wage
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: urban_population_density
+    to: domestic_help_wages
+    type: AFFECTS
+- src_l2: digital_telecom_infrastructure
+  src_cat: T4
+  dst_l2: gig_and_platform_economy
+  dst_cat: I4
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: ondc_platform
+    to: food_delivery_payouts
+    type: AFFECTS
+- src_l2: financial_and_capital_markets
+  src_cat: T3
+  dst_l2: savings_and_deposits
+  dst_cat: I5
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: india_10yr_bond_yield
+    to: fixed_deposits
+    type: AFFECTS
+- src_l2: cultural_and_religious_forces
+  src_cat: T5
+  dst_l2: borrowing_and_credit
+  dst_cat: I5
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: autumn_festive_season
+    to: credit_card_dues
+    type: PRODUCES
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: physical_and_alternative_assets
+  dst_cat: I5
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: tier_2_3_city_expansion
+    to: investment_property_value
+    type: AFFECTS
+- src_l2: indian_union_government
+  src_cat: T2
+  dst_l2: maternal_and_child_health
+  dst_cat: I6
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: ministry_of_health
+    to: pediatric_vaccines
+    type: SUPPLIES
+- src_l2: indian_regulatory_bodies
+  src_cat: T2
+  dst_l2: chronic_and_lifestyle_conditions
+  dst_cat: I6
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: cpcb
+    to: asthma
+    type: AFFECTS
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: infectious_diseases
+  dst_cat: I6
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: urban_population_density
+    to: tuberculosis
+    type: AFFECTS
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: pharmaceuticals_and_supplies
+  dst_cat: I6
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: india_aging_population
+    to: chronic_disease_medication
+    type: AFFECTS
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: healthcare_services
+  dst_cat: I6
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: india_aging_population
+    to: hospital_beds
+    type: AFFECTS
+- src_l2: indian_union_government
+  src_cat: T2
+  dst_l2: school_education
+  dst_cat: I7
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: ministry_of_education
+    to: government_schools
+    type: FUNDS
+- src_l2: state_and_local_governments
+  src_cat: T2
+  dst_l2: school_education
+  dst_cat: I7
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: state_governments
+    to: government_schools
+    type: FUNDS
+- src_l2: indian_statutory_frameworks_and_councils
+  src_cat: T2
+  dst_l2: school_education
+  dst_cat: I7
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: union_budget_framework
+    to: mid_day_meal
+    type: FUNDS
+- src_l2: indian_macroeconomic_indicators
+  src_cat: T3
+  dst_l2: education_economics
+  dst_cat: I7
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: wpi
+    to: school_fees
+    type: AFFECTS
+- src_l2: social_movements_and_collectives
+  src_cat: T5
+  dst_l2: competitive_exams_and_coaching
+  dst_cat: I7
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: caste_reservation_movements
+    to: medical_entrance
+    type: AFFECTS
+- src_l2: meteorological_systems
+  src_cat: T1
+  dst_l2: accidents_and_hazards
+  dst_cat: I8
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: cyclonic_storm_systems
+    to: structural_collapse
+    type: AFFECTS
+- src_l2: geological_and_tectonic_systems
+  src_cat: T1
+  dst_l2: accidents_and_hazards
+  dst_cat: I8
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: himalayan_tectonic_plates
+    to: structural_collapse
+    type: AFFECTS
+- src_l2: biophysical_and_ecological_systems
+  src_cat: T1
+  dst_l2: accidents_and_hazards
+  dst_cat: I8
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: forest_cover
+    to: wildlife_encounters
+    type: DISRUPTS
+- src_l2: state_and_local_governments
+  src_cat: T2
+  dst_l2: physical_crime_and_law_enforcement
+  dst_cat: I8
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: state_governments
+    to: police_response_time
+    type: AFFECTS
+- src_l2: indian_judiciary_and_law_enforcement
+  src_cat: T2
+  dst_l2: physical_crime_and_law_enforcement
+  dst_cat: I8
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: enforcement_directorate
+    to: criminal_litigation_risk
+    type: PRODUCES
+- src_l2: indian_macroeconomic_indicators
+  src_cat: T3
+  dst_l2: physical_crime_and_law_enforcement
+  dst_cat: I8
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: national_unemployment_rate
+    to: burglary_and_theft
+    type: AFFECTS
+- src_l2: indian_macroeconomic_indicators
+  src_cat: T3
+  dst_l2: digital_and_cyber_security
+  dst_cat: I8
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: national_unemployment_rate
+    to: investment_and_job_scams
+    type: AFFECTS
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: women_and_child_safety
+  dst_cat: I8
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: urban_population_density
+    to: street_harassment
+    type: AFFECTS
+- src_l2: cultural_and_religious_forces
+  src_cat: T5
+  dst_l2: public_order_and_emergencies
+  dst_cat: I8
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: autumn_festive_season
+    to: stampedes
+    type: PRODUCES
+- src_l2: social_movements_and_collectives
+  src_cat: T5
+  dst_l2: public_order_and_emergencies
+  dst_cat: I8
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: caste_reservation_movements
+    to: riots_and_clashes
+    type: PRODUCES
+- src_l2: transport_logistics_infrastructure
+  src_cat: T4
+  dst_l2: sensory_environment
+  dst_cat: I9
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: highway_network
+    to: traffic_noise
+    type: PRODUCES
+- src_l2: cultural_and_religious_forces
+  src_cat: T5
+  dst_l2: air_quality_environment
+  dst_cat: I9
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: autumn_festive_season
+    to: ambient_aqi
+    type: PRODUCES
+- src_l2: cultural_and_religious_forces
+  src_cat: T5
+  dst_l2: sensory_environment
+  dst_cat: I9
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: autumn_festive_season
+    to: event_and_construction_noise
+    type: PRODUCES
+- src_l2: demographics_and_population
+  src_cat: T5
+  dst_l2: urban_ecology
+  dst_cat: I9
+  leaf_edge_count: 1
+  leaf_edges:
+  - from: tier_2_3_city_expansion
+    to: neighborhood_greenery
+    type: DISRUPTS
+unmapped: []

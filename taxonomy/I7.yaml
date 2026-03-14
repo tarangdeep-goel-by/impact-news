@@ -117,6 +117,8 @@ nodes:
   level: 4
   status: active
   port: true
+  managed_by:
+  - ministry_of_education
 - id: icse_exams
   aliases:
   - ICSE Board Exams
@@ -137,6 +139,8 @@ nodes:
   level: 4
   status: active
   port: true
+  managed_by:
+  - state_governments
 - id: school_types
   aliases:
   - School Infrastructure
@@ -486,6 +490,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - student_unions
 - id: coaching_fees
   aliases:
   - Coaching Fee
@@ -1110,3 +1116,267 @@ edges:
   delay: SHORT_TERM
   description: High bandwidth requirements for streaming online degree lectures drive
     households to upgrade to premium fiber broadband plans.
+- from: higher_education
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Large student populations in higher education hubs drive significant,
+    localized demand for street food, quick service restaurants, and food delivery
+    services.
+- from: higher_education
+  to: packaged_and_processed_foods
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: University and hostel student demographics are major, consistent drivers
+    of demand for instant noodles, biscuits, snacks, and packaged beverages.
+- from: competitive_exams_and_coaching
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Migrant students in major competitive exam coaching hubs create concentrated,
+    high-volume demand for street food, tiffin services, and quick dining options.
+- from: higher_education
+  to: consumer_tech_devices
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Enrollment in undergraduate and postgraduate programs is a major life
+    milestone that directly drives the acquisition of personal computing devices (laptops)
+    for coursework.
+- from: edtech_platforms
+  to: telecom_and_internet_access
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: The high bandwidth requirements of video-based online learning drive
+    consumer demand for home broadband connections and higher mobile data limits.
+- from: vocational_and_professional_skilling
+  to: digital_privacy_and_hygiene
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: Digital literacy and corporate upskilling programs improve user awareness
+    regarding personal data control and cybersecurity hygiene.
+- from: competitive_exams_and_coaching
+  to: sports_and_recreation
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: The intense pressure and massive time commitment required for competitive
+    exams and coaching severely restrict youth participation in recreational facilities
+    and sports activities.
+- from: competitive_exams_and_coaching
+  to: entertainment_and_media
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Rigorous preparation schedules for entrance and government exams limit
+    the time young adults have to consume digital entertainment, attend live events,
+    or visit cinemas.
+- from: school_education
+  to: travel_and_tourism
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: School examination schedules and academic vacation periods dictate
+    family travel patterns, driving peak seasonal demand for holiday accommodations
+    and tourism services.
+- from: edtech_platforms
+  to: household_energy
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Access to EdTech platforms and online learning heavily depends on reliable
+    residential electricity for powering devices and home internet routers.
+- from: higher_education
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: University student migration to educational hubs drives significant
+    demand for rental housing, hostels, and paying guest (PG) accommodations.
+- from: competitive_exams_and_coaching
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Major test prep and coaching hubs (e.g., Kota, Mukherjee Nagar) create
+    massive, concentrated local demand for student rental housing and accommodations.
+- from: vocational_and_professional_skilling
+  to: residential_maintenance_and_services
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Vocational and technical training institutes (like ITIs) supply the
+    skilled workforce (electricians, plumbers, carpenters) required for residential
+    maintenance and home upkeep.
+- from: competitive_exams_and_coaching
+  to: intercity_travel
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major national and state-level competitive exams produce massive, concentrated
+    surges in intercity travel demand as millions of candidates travel to designated
+    exam centers.
+- from: school_education
+  to: road_infrastructure_experience
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: School opening and closing hours create concentrated local traffic
+    peaks, significantly increasing urban road congestion and commute times.
+- from: higher_education
+  to: corporate_employment
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: University graduates form the primary talent pipeline for formal corporate
+    and private sector employment.
+- from: competitive_exams_and_coaching
+  to: government_and_psu
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Entrance tests and coaching institutes directly supply qualified candidates
+    for Central, State, and PSU jobs.
+- from: vocational_and_professional_skilling
+  to: corporate_employment
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Technical and vocational training programs supply skilled labor to
+    manufacturing, IT, and core corporate sectors.
+- from: vocational_and_professional_skilling
+  to: self_employment_and_msme
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Skill development and vocational training enable individuals to start
+    small businesses and enter self-employment.
+- from: early_childhood_education
+  to: informal_and_daily_wage
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Anganwadis and preschools provide essential childcare, enabling parents
+    (especially mothers) to participate in informal and daily wage labor.
+- from: education_economics
+  to: borrowing_and_credit
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The high cost of private higher education and professional degrees
+    necessitates taking on secured and unsecured education loans.
+- from: education_economics
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Lump-sum payments for school admissions, college fees, and coaching
+    institutes significantly deplete household savings and fixed deposits.
+- from: edtech_platforms
+  to: borrowing_and_credit
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: EdTech platforms frequently partner with NBFCs to offer bundled financing
+    and zero-cost EMIs, directly driving unsecured consumer borrowing.
+- from: early_childhood_education
+  to: maternal_and_child_health
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Anganwadi centers and early childhood programs serve as primary delivery
+    nodes for supplementary nutrition, immunization, and child health monitoring.
+- from: school_education
+  to: maternal_and_child_health
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Student welfare programs, particularly the Mid-Day Meal scheme, directly
+    improve the nutritional status and overall health of school-going children.
+- from: competitive_exams_and_coaching
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: High-pressure competitive exam preparation and the intensive coaching
+    industry frequently trigger severe stress, anxiety, and mental health crises among
+    students.
+- from: education_economics
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: The high financial burden of private school fees, college tuition,
+    and coaching institutes creates significant financial stress and anxiety for parents.
+- from: higher_education
+  to: healthcare_services
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Medical, dental, and nursing colleges within the higher education system
+    supply the trained professional workforce essential for operating healthcare services.
+- from: competitive_exams_and_coaching
+  to: public_order_and_emergencies
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Irregularities, paper leaks, and delays in government job and entrance
+    exams frequently trigger large-scale youth protests and civil unrest.
+- from: higher_education
+  to: public_order_and_emergencies
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: University campuses and higher education student movements frequently
+    serve as epicenters for broader civic protests and civil unrest.
+- from: school_education
+  to: women_and_child_safety
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Active participation in school education acts as a protective factor
+    against child labor, early marriage, and other child safety vulnerabilities.
+- from: edtech_platforms
+  to: digital_and_cyber_security
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased reliance on edtech platforms exposes students to digital
+    privacy risks, data harvesting, and potential cyber harassment.

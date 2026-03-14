@@ -1,4 +1,9 @@
-"""Validation tests for the impact traversal engine."""
+"""Validation tests for the impact traversal engine.
+
+DEPRECATED: This file is superseded by graph/scenarios.py + taxonomy/scenarios.yaml.
+Use `python3 scripts/graph_builder.py test` for scenario-based testing.
+Kept for reference only.
+"""
 
 from __future__ import annotations
 

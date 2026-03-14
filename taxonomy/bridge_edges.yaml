@@ -1,30 +1,4 @@
 edges:
-- from: brent_crude
-  to: retail_petrol
-  type: AFFECTS
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: Global crude oil price benchmarks directly dictate the base procurement
-    cost for domestic oil marketing companies, which is passed on to retail petrol
-    prices at the pump.
-- from: brent_crude
-  to: retail_diesel
-  type: AFFECTS
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: Fluctuations in international Brent crude prices alter the refining
-    and import costs for diesel, directly impacting the retail price paid by consumers
-    and transporters.
-- from: global_natural_gas
-  to: cng_fuel
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: Increases in global LNG and natural gas prices raise the input costs
-    for city gas distribution networks, leading to higher retail CNG prices for vehicles.
 - from: monetary_policy_committee
   to: home_loan_emi
   type: AFFECTS
@@ -34,106 +8,6 @@ edges:
   description: When the MPC hikes the benchmark repo rate, commercial banks immediately
     pass the increased cost of funds to consumers by raising floating interest rates
     on home loans, increasing the EMI burden.
-- from: nifty_50
-  to: direct_equity_portfolio
-  type: AFFECTS
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: The valuation of the Nifty 50 benchmark index mathematically dictates
-    the aggregate mark-to-market value of a retail investor's direct equity portfolio.
-- from: international_gold_prices
-  to: retail_gold_investment
-  type: AFFECTS
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: Global spot gold prices, adjusted for exchange rates and import duties,
-    set the daily retail price for physical gold and sovereign gold bonds in the domestic
-    market.
-- from: cyclonic_storm_systems
-  to: street_waterlogging
-  type: PRODUCES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Torrential rainfall and storm surges brought by tropical cyclones rapidly
-    overwhelm urban drainage infrastructure, causing severe localized street waterlogging.
-- from: global_surface_temperature
-  to: outdoor_heat
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The long-term rise in global surface temperatures increases the frequency,
-    duration, and peak intensity of extreme summer heatwaves experienced by citizens.
-- from: national_power_grid
-  to: residential_power_supply
-  type: SUPPLIES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The stability and generation capacity of the national power grid directly
-    determines the uptime and reliability of electricity supplied to residential households.
-- from: municipal_water_grid
-  to: municipal_water_supply
-  type: SUPPLIES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The operational capacity and reservoir levels of the municipal water
-    grid dictate the volume and pressure of piped water reaching household taps.
-- from: upi_platform
-  to: upi_transaction_success
-  type: MANAGES
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: The server uptime and processing bandwidth of the NPCI's central UPI
-    switch directly govern the success and failure rates of retail digital payments.
-- from: aadhaar_database
-  to: aadhaar_authentication
-  type: MANAGES
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: The operational status of the UIDAI CIDR servers determines whether
-    citizens can successfully complete biometric or OTP-based Aadhaar e-KYC authentications.
-- from: telecom_spectrum
-  to: mobile_network_quality
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The allocation of wider telecom spectrum bands to operators increases
-    data carrying capacity, reducing call drops and improving mobile internet speeds
-    for users.
-- from: union_budget_framework
-  to: personal_income_tax
-  type: REGULATES
-  weight: 1.0
-  polarity: 1
-  delay: SHORT_TERM
-  description: Annual alterations to tax slabs, surcharges, and deductions in the
-    Union Budget directly dictate the net personal income tax liability for salaried
-    and self-employed citizens.
-- from: epfo
-  to: epf_balance
-  type: MANAGES
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: The EPFO's annual interest rate declarations and administrative processing
-    efficiency directly determine the growth and accessibility of a citizen's provident
-    fund corpus.
-- from: global_edible_oil_supply
-  to: palm_oil
-  type: AFFECTS
-  weight: 0.9
-  polarity: -1
-  delay: SHORT_TERM
-  description: A robust global supply of palm oil from Southeast Asia lowers international
-    benchmark prices, which translates to cheaper retail palm oil for Indian households.
 - from: global_food_grain_supply
   to: wheat_flour
   type: AFFECTS
@@ -142,24 +16,6 @@ edges:
   delay: SHORT_TERM
   description: Abundant global wheat harvests suppress international grain prices,
     helping to keep domestic retail wheat flour (atta) prices affordable.
-- from: global_semiconductor_supply_chain
-  to: smartphone_device
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: An oversupply or stabilization in the global semiconductor supply chain
-    lowers the manufacturing cost of microchips, reducing the retail price of smartphone
-    devices.
-- from: india_gdp_growth
-  to: it_sector_salary
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Strong national economic growth boosts corporate earnings and tech
-    spending, allowing IT companies to offer higher salary increments and starting
-    packages.
 - from: national_unemployment_rate
   to: gig_worker_payouts
   type: AFFECTS
@@ -169,31 +25,6 @@ edges:
   description: High aggregate unemployment floods the gig economy with desperate labor,
     allowing platform algorithms to suppress per-task payouts due to an oversupply
     of workers.
-- from: autumn_festive_season
-  to: firecracker
-  type: PRODUCES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The onset of the autumn festive season (Diwali) triggers massive consumer
-    demand and the widespread retail purchase and bursting of firecrackers.
-- from: wedding_season_aggregate
-  to: wedding_venue
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The concentration of auspicious marriage dates during the wedding season
-    creates a massive demand shock, driving up the booking costs of banquet halls
-    and wedding venues.
-- from: rural_urban_migration_corridors
-  to: residential_rent
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Sustained inflows of migrants from rural areas to urban centers increase
-    the demand for housing, driving up residential rents in city neighborhoods.
 - from: organized_labor_unions
   to: minimum_wage
   type: AFFECTS
@@ -202,284 +33,6 @@ edges:
   delay: MEDIUM_TERM
   description: Collective bargaining and strikes by organized labor unions pressure
     state governments to revise and increase statutory minimum wage floors.
-- from: rbi
-  to: credit_card_dues
-  type: REGULATES
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: RBI regulations increasing the risk weights on unsecured consumer credit
-    force banks to tighten lending standards, slowing the growth of aggregate credit
-    card dues.
-- from: ministry_of_road_transport
-  to: highway_toll_fare
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The Ministry of Road Transport and NHAI directly set the tariff policies
-    and annual price hikes for toll plazas across the national highway network.
-- from: indian_railways_network
-  to: irctc_train_ticket
-  type: SUPPLIES
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: The physical capacity of the Indian Railways network (tracks and rolling
-    stock) dictates the total inventory of train tickets available for citizens to
-    book.
-- from: state_governments
-  to: state_police_jobs
-  type: MANAGES
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: State government budget allocations and recruitment drives directly
-    determine the number of vacancies filled for state police and constabulary jobs.
-- from: supreme_court_of_india
-  to: criminal_litigation_risk
-  type: REGULATES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: Supreme Court rulings on bail conditions and the interpretation of
-    criminal statutes directly alter the legal jeopardy and litigation risk faced
-    by accused citizens.
-- from: retail_tomato
-  to: monetary_policy_committee
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Sustained high retail food inflation, driven by volatile perishables
-    like tomatoes, forces the RBI's MPC to maintain or hike repo rates to anchor inflation
-    expectations.
-- from: retail_petrol
-  to: ministry_of_finance
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Extreme spikes in retail petrol prices cause public outcry and inflation,
-    pressuring the Ministry of Finance to cut central excise duties to provide relief.
-- from: urban_unemployment_rate
-  to: union_budget_framework
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High urban joblessness forces the central government to allocate more
-    funds in the Union Budget toward infrastructure and employment generation schemes.
-- from: mgnrega_wages
-  to: union_budget_framework
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Increased demand for rural work and higher MGNREGA wage payouts compel
-    the government to expand the scheme's financial outlay in the Union Budget.
-- from: ambient_aqi
-  to: national_green_tribunal
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Severe deterioration in urban AQI triggers suo motu cognizance by the
-    NGT, leading to strict bans on construction, diesel vehicles, and industrial emissions.
-- from: street_waterlogging
-  to: municipal_corporations
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Chronic street waterlogging and public anger during monsoons force
-    municipal corporations to allocate emergency budgets for desilting and upgrading
-    drainage infrastructure.
-- from: upi_and_bank_scams
-  to: rbi
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: A rising epidemic of digital financial fraud and UPI scams forces the
-    RBI to mandate stricter KYC norms, cooling-off periods, and multi-factor authentication
-    protocols.
-- from: road_traffic_accidents
-  to: ministry_of_road_transport
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High fatality rates from road traffic accidents prompt the Ministry
-    of Road Transport to mandate stricter vehicle safety standards (like 6 airbags)
-    and harsher penalties.
-- from: covid_19
-  to: ministry_of_health
-  type: AFFECTS
-  weight: 0.95
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Surges in severe infectious diseases like COVID-19 force the Ministry
-    of Health to invoke emergency powers, procure vaccines, and overhaul national
-    healthcare protocols.
-- from: gig_worker_payouts
-  to: gig_worker_unions
-  type: AFFECTS
-  weight: 0.85
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Declining real payouts and the lack of social security for platform
-    workers catalyze the formation, mobilization, and strike actions of gig worker
-    unions.
-- from: home_loan_emi
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Rising home loan EMIs consume a larger share of household disposable
-    income, significantly depressing overall consumer optimism and willingness to
-    spend.
-- from: equity_mutual_funds
-  to: dii_flows
-  type: FUNDS
-  weight: 0.95
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Consistent retail SIP contributions into equity mutual funds aggregate
-    into massive Domestic Institutional Investor (DII) flows, stabilizing the broader
-    stock market.
-- from: personal_income_tax
-  to: union_budget_framework
-  type: FUNDS
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Robust collections from personal income tax provide the central government
-    with the fiscal headroom needed to expand capital expenditure in the Union Budget.
-- from: hospital_beds
-  to: state_governments
-  type: AFFECTS
-  weight: 0.75
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Acute shortages of hospital beds during health crises create massive
-    political backlash, forcing state governments to invest heavily in new public
-    healthcare infrastructure.
-- from: sexual_assault
-  to: state_governments
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High-profile cases of sexual assault trigger mass protests, compelling
-    state governments to fast-track justice, change policing leadership, and amend
-    safety laws.
-- from: broadband_network_quality
-  to: trai
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Widespread consumer complaints regarding poor broadband network quality
-    and frequent outages prompt TRAI to issue show-cause notices and tighten quality-of-service
-    regulations.
-- from: school_fees
-  to: state_governments
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Exorbitant hikes in private school fees lead to organized parent protests,
-    prompting state governments to introduce and enforce fee-cap regulations.
-- from: southwest_monsoon
-  to: retail_rice
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: A strong southwest monsoon ensures adequate water for paddy cultivation,
-    increasing rice yields and suppressing retail rice prices.
-- from: southwest_monsoon
-  to: farm_labor_wages
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Abundant monsoon rains trigger widespread agricultural sowing, driving
-    up the demand and daily wages for farm labor.
-- from: southwest_monsoon
-  to: street_waterlogging
-  type: PRODUCES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Heavy seasonal rainfall from the southwest monsoon overwhelms urban
-    drainage systems, directly causing street waterlogging.
-- from: southwest_monsoon
-  to: dengue
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Monsoon rains create numerous stagnant water pools across urban areas,
-    facilitating Aedes mosquito breeding and triggering dengue outbreaks.
-- from: southwest_monsoon
-  to: malaria
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Post-monsoon water accumulation creates extensive breeding habitats
-    for Anopheles mosquitoes, leading to spikes in malaria cases.
-- from: groundwater_aquifers
-  to: municipal_water_supply
-  type: SUPPLIES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Healthy groundwater aquifers provide the necessary raw water reserves
-    for municipal borewells to maintain consistent piped water supply to households.
-- from: groundwater_aquifers
-  to: private_water_tanker
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: Depletion of groundwater aquifers forces borewells to dry up, drastically
-    increasing citizen reliance on expensive private water tankers.
-- from: cyclonic_storm_systems
-  to: road_potholes
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Severe cyclonic storms and associated torrential rains wash away asphalt
-    and degrade urban road infrastructure, creating potholes.
-- from: cyclonic_storm_systems
-  to: retail_tomato
-  type: DISRUPTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Cyclonic storms destroy standing vegetable crops and disrupt transport
-    networks, causing sudden spikes in the retail price of perishables like tomatoes.
-- from: cyclonic_storm_systems
-  to: cholera_and_diarrhea
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Storm surges and severe flooding from cyclones contaminate drinking
-    water supplies with sewage, triggering outbreaks of cholera and diarrhea.
-- from: western_disturbances
-  to: outdoor_cold
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Winter storm systems from the Mediterranean bring cold winds and precipitation
-    to northern India, intensifying outdoor cold waves.
 - from: migratory_pest_populations
   to: wheat_flour
   type: AFFECTS
@@ -504,14 +57,6 @@ edges:
   delay: LONG_TERM
   description: Dense forest cover acts as a natural carbon and particulate sink, filtering
     the air and reducing the overall ambient Air Quality Index (pollution levels).
-- from: himalayan_river_systems
-  to: municipal_water_supply
-  type: SUPPLIES
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: Perennial flow from Himalayan rivers provides the primary raw water
-    source for municipal water treatment and supply networks in northern Indian cities.
 - from: ministry_of_agriculture
   to: wheat_flour
   type: AFFECTS
@@ -520,14 +65,6 @@ edges:
   delay: MEDIUM_TERM
   description: Minimum Support Price (MSP) and export bans by the Agriculture Ministry
     directly dictate domestic wheat availability and retail flour prices.
-- from: ministry_of_commerce_and_industry
-  to: palm_oil
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: Changes in import duties on edible oils by the Commerce Ministry directly
-    alter the landed cost of palm oil for Indian consumers.
 - from: rbi
   to: residential_rent
   type: AFFECTS
@@ -536,54 +73,6 @@ edges:
   delay: MEDIUM_TERM
   description: RBI interest rate hikes increase developer borrowing costs, slowing
     down new housing supply and pushing up residential rents.
-- from: state_electricity_boards
-  to: residential_power_supply
-  type: MANAGES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The financial health and operational capacity of state discoms directly
-    determine the uptime and reliability of residential power supply.
-- from: municipal_corporations
-  to: municipal_water_supply
-  type: MANAGES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Civic body infrastructure investments and maintenance schedules directly
-    dictate the availability and pressure of piped municipal water.
-- from: ministry_of_finance
-  to: retail_petrol
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Central excise duty revisions by the Finance Ministry immediately alter
-    the retail pump price of petrol.
-- from: ministry_of_finance
-  to: retail_diesel
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Changes in central taxes and cess by the Finance Ministry directly
-    dictate the retail price of diesel.
-- from: ministry_of_finance
-  to: cng_fuel
-  type: REGULATES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Taxation policies and gas allocation priorities set by the central
-    government influence the retail price of CNG.
-- from: ministry_of_railways
-  to: irctc_train_ticket
-  type: MANAGES
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: The Railway Ministry directly sets the base fares, dynamic pricing
-    rules, and availability of IRCTC train tickets.
 - from: us_federal_reserve
   to: it_sector_salary
   type: AFFECTS
@@ -592,38 +81,6 @@ edges:
   delay: MEDIUM_TERM
   description: US Fed rate cuts lower the cost of capital, boosting tech investments
     and driving up hiring budgets and salaries in the Indian IT sector.
-- from: supreme_court_of_india
-  to: gig_worker_payouts
-  type: REGULATES
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Supreme Court rulings on the classification of gig workers as employees
-    can force platforms to provide minimum wage guarantees and benefits.
-- from: state_governments
-  to: minimum_wage
-  type: REGULATES
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: State labor departments periodically revise and mandate the statutory
-    minimum wage for various scheduled employments.
-- from: sebi
-  to: direct_equity_portfolio
-  type: REGULATES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: SEBI regulations on margin requirements and T+0 settlement directly
-    impact the liquidity and trading behavior in retail equity portfolios.
-- from: ministry_of_finance
-  to: retail_gold_investment
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Changes in the basic customs duty on gold imports by the Finance Ministry
-    immediately alter the domestic retail price of gold.
 - from: national_green_tribunal
   to: outdoor_heat
   type: AFFECTS
@@ -632,62 +89,6 @@ edges:
   delay: LONG_TERM
   description: NGT orders halting the felling of urban trees preserve the local green
     canopy, mitigating the urban heat island effect.
-- from: municipal_corporations
-  to: street_waterlogging
-  type: MANAGES
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: Pre-monsoon desilting of drains and maintenance of stormwater infrastructure
-    by civic bodies directly reduces the severity of street waterlogging.
-- from: trai
-  to: mobile_network_quality
-  type: REGULATES
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: TRAI's enforcement of Quality of Service (QoS) norms and penalties
-    for call drops forces telcos to improve mobile network quality.
-- from: uidai
-  to: aadhaar_authentication
-  type: MANAGES
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: UIDAI's server uptime and biometric matching algorithms directly determine
-    the success rate of Aadhaar authentication requests.
-- from: rbi
-  to: upi_transaction_success
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: RBI mandates on bank server capacities and NPCI infrastructure upgrades
-    directly ensure high UPI transaction success rates.
-- from: ministry_of_commerce_and_industry
-  to: smartphone_device
-  type: REGULATES
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Production Linked Incentive (PLI) schemes boost domestic manufacturing,
-    lowering the retail price and increasing the availability of smartphone devices.
-- from: supreme_court_of_india
-  to: firecracker
-  type: REGULATES
-  weight: 0.9
-  polarity: -1
-  delay: IMMEDIATE
-  description: Supreme Court bans on the sale and use of barium-based fireworks directly
-    restrict the availability and use of firecrackers during festivals.
-- from: municipal_corporations
-  to: wedding_venue
-  type: REGULATES
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: Strict enforcement of municipal zoning laws and noise curfews restricts
-    the operating hours and availability of large wedding venues.
 - from: industrial_metals_index
   to: building_materials_cost
   type: AFFECTS
@@ -705,22 +106,6 @@ edges:
   description: The 10-year government bond yield serves as a benchmark for interest
     rates; higher yields prompt banks to raise floating home loan rates, increasing
     EMIs.
-- from: active_pharmaceutical_ingredients_supply
-  to: generic_medicines
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: A stable and abundant global supply of APIs reduces manufacturing costs
-    for Indian pharma companies, lowering the retail price of generic medicines.
-- from: us_consumer_demand
-  to: it_sector_jobs
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Strong US consumer and corporate demand drives software export orders,
-    directly fueling hiring and job creation in the Indian IT sector.
 - from: usd_inr_exchange
   to: domestic_flight_ticket
   type: AFFECTS
@@ -730,54 +115,6 @@ edges:
   description: A depreciating Rupee (higher USD-INR) increases the cost of aviation
     turbine fuel and aircraft leases (priced in dollars), driving up domestic flight
     tickets.
-- from: fii_fpi_flows
-  to: direct_equity_portfolio
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Strong foreign institutional inflows inject liquidity and bullish sentiment
-    into Indian markets, lifting the value of retail direct equity portfolios.
-- from: sewage_drainage_network
-  to: street_waterlogging
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: IMMEDIATE
-  description: A high-capacity sewage and drainage network effectively channels stormwater,
-    preventing localized street waterlogging during monsoons.
-- from: telecom_towers_network
-  to: mobile_network_quality
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The density and operational status of telecom towers directly determine
-    the signal strength and mobile network quality experienced by citizens.
-- from: optical_fibre_network
-  to: broadband_network_quality
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The reach and bandwidth capacity of the optical fibre backbone dictate
-    the speed and reliability of home broadband connections.
-- from: highway_network
-  to: highway_toll_fare
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The expansion of the national highway and expressway network leads
-    to the commissioning of new toll plazas, increasing the toll fare burden on commuters.
-- from: commercial_airports
-  to: domestic_flight_ticket
-  type: SUPPLIES
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The addition of new commercial airports and terminal capacity increases
-    flight slot availability, expanding the supply of domestic flight tickets.
 - from: coal_power_plants
   to: particulate_matter_levels
   type: PRODUCES
@@ -787,22 +124,6 @@ edges:
   description: Emissions from coal-fired thermal power plants release significant
     volumes of fly ash and sulfur dioxide, directly increasing ambient particulate
     matter levels.
-- from: oil_gas_pipelines
-  to: piped_natural_gas
-  type: SUPPLIES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The expansion of the national gas pipeline grid directly increases
-    the availability and supply of piped natural gas (PNG) to residential kitchens.
-- from: oil_gas_pipelines
-  to: cng_fuel
-  type: SUPPLIES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: City gas distribution pipelines supply compressed natural gas to filling
-    stations, dictating the availability of CNG fuel for vehicles.
 - from: global_shipping_routes
   to: palm_oil
   type: AFFECTS
@@ -812,23 +133,6 @@ edges:
   description: Increased capacity and smooth transit through global shipping routes
     lower maritime freight costs, reducing the landed retail price of imported palm
     oil.
-- from: semiconductor_fabs
-  to: smartphone_device
-  type: SUPPLIES
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Domestic semiconductor manufacturing increases the local supply of
-    microchips, potentially lowering the production cost and retail price of smartphone
-    devices.
-- from: urban_population_density
-  to: residential_rent
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: A higher concentration of people in urban centers intensifies competition
-    for limited housing stock, directly driving up residential rental prices.
 - from: urban_population_density
   to: traffic_congestion
   type: PRODUCES
@@ -845,40 +149,6 @@ edges:
   delay: IMMEDIATE
   description: Higher urban density concentrates vehicular emissions, cooking fuels,
     and waste generation, significantly degrading the local Air Quality Index.
-- from: tier_2_3_city_expansion
-  to: building_materials_cost
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The rapid infrastructural and real estate development in emerging tier
-    2 and 3 cities creates a massive demand shock for cement, steel, and bricks, raising
-    their costs.
-- from: rural_urban_migration_corridors
-  to: construction_worker_wages
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: A steady influx of unskilled migrant labor from rural areas creates
-    an oversupply of manual workers in cities, suppressing the daily wages of construction
-    laborers.
-- from: rural_urban_migration_corridors
-  to: pg_and_hostel_fees
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Large volumes of students and young professionals migrating to urban
-    hubs drive up the demand and pricing for affordable PG and hostel accommodations.
-- from: seasonal_migrant_labor
-  to: farm_labor_wages
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: SHORT_TERM
-  description: The arrival of seasonal migrant workers during harvest seasons increases
-    the agricultural labor supply, preventing sharp spikes in local farm labor wages.
 - from: female_labor_force_participation
   to: domestic_help_cost
   type: AFFECTS
@@ -895,14 +165,6 @@ edges:
   delay: SHORT_TERM
   description: Successful strikes and collective bargaining by gig worker unions force
     aggregator platforms to revise their rate cards and increase per-task payouts.
-- from: transport_worker_unions
-  to: intercity_bus_fare
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Strikes by transport unions reduce the availability of buses, allowing
-    private operators to surge price their intercity bus fares.
 - from: farmer_unions
   to: retail_tomato
   type: DISRUPTS
@@ -912,22 +174,6 @@ edges:
   description: Highway blockades and procurement boycotts by farmer unions disrupt
     the supply chain of perishables, causing immediate price spikes for vegetables
     like tomatoes.
-- from: student_unions
-  to: college_university_fees
-  type: REGULATES
-  weight: 0.7
-  polarity: -1
-  delay: SHORT_TERM
-  description: Aggressive campus protests and mobilization by student unions frequently
-    force university administrations to roll back or cap proposed fee hikes.
-- from: autumn_festive_season
-  to: puja_pandal_contribution
-  type: FUNDS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Festivals like Durga Puja and Ganesh Chaturthi drive neighborhood associations
-    to aggressively collect chanda (contributions) for pandal setups.
 - from: wedding_season_aggregate
   to: retail_gold_investment
   type: AFFECTS
@@ -936,335 +182,6 @@ edges:
   delay: SHORT_TERM
   description: Traditional gifting and dowry requirements during the wedding season
     drive a massive surge in retail gold and jewelry purchases.
-- from: aggregate_consumer_confidence
-  to: tour_package
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: High consumer optimism and willingness to spend directly translate
-    into increased bookings for discretionary leisure travel and holiday tour packages.
-- from: mass_boycott_movements
-  to: cinema_ticket
-  type: DISRUPTS
-  weight: 0.7
-  polarity: -1
-  delay: IMMEDIATE
-  description: Organized social media boycott campaigns against specific films or
-    actors significantly depress box office collections and cinema ticket sales.
-- from: private_water_tanker
-  to: groundwater_aquifers
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: LONG_TERM
-  description: The proliferation of private water tankers drives unregulated, deep-borewell
-    water extraction, severely depleting natural groundwater aquifers over time.
-- from: retail_rice
-  to: groundwater_aquifers
-  type: DISRUPTS
-  weight: 0.7
-  polarity: -1
-  delay: LONG_TERM
-  description: High retail prices and demand for water-intensive crops like rice incentivize
-    farmers to over-extract water, lowering the water table of groundwater aquifers.
-- from: traffic_congestion
-  to: global_surface_temperature
-  type: PRODUCES
-  weight: 0.6
-  polarity: 1
-  delay: LONG_TERM
-  description: Chronic urban traffic congestion increases vehicular idling and greenhouse
-    gas emissions, contributing incrementally to rising global surface temperatures.
-- from: neighborhood_greenery
-  to: groundwater_aquifers
-  type: SUPPLIES
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: Expansion of neighborhood parks and urban greenery improves soil permeability,
-    allowing rainwater to percolate and recharge groundwater aquifers.
-- from: urban_landfills
-  to: global_surface_temperature
-  type: PRODUCES
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: Massive, decomposing urban landfills release significant volumes of
-    methane, a potent greenhouse gas that accelerates global surface temperature rise.
-- from: building_materials_cost
-  to: arable_topsoil
-  type: DISRUPTS
-  weight: 0.7
-  polarity: -1
-  delay: LONG_TERM
-  description: High demand and prices for building materials like red bricks drive
-    the rampant, unregulated mining of fertile arable topsoil for brick kilns.
-- from: marine_fish
-  to: marine_fish_stocks
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: LONG_TERM
-  description: Surging consumer demand and high retail prices for marine fish incentivize
-    overfishing and mechanized trawling, severely depleting wild marine fish stocks.
-- from: epf_balance
-  to: epfo
-  type: FUNDS
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The aggregate growth of citizen EPF balances increases the total corpus
-    managed by the EPFO, expanding its influence in domestic equity markets.
-- from: hospital_beds
-  to: ministry_of_health
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Severe shortages of hospital beds during health crises force the Health
-    Ministry to revise policies and increase healthcare infrastructure funding.
-- from: upi_transaction_success
-  to: rbi
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: A high volume of failed UPI transactions prompts the RBI to issue strict
-    regulatory directives to banks to upgrade their core banking infrastructure.
-- from: cyberbullying_and_trolling
-  to: supreme_court_of_india
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: LONG_TERM
-  description: Widespread instances of severe cyberbullying and online harassment
-    lead to public interest litigations, prompting the Supreme Court to issue guidelines
-    on digital safety.
-- from: retail_petrol
-  to: wpi
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Sustained high retail petrol prices increase transportation and logistics
-    costs across the economy, eventually feeding back into the Wholesale Price Index.
-- from: retail_tomato
-  to: wpi
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Persistent spikes in essential retail food items like tomatoes significantly
-    contribute to primary article inflation, pushing up the aggregate WPI.
-- from: retail_gold_investment
-  to: india_trade_deficit
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Massive domestic retail demand for physical gold necessitates heavy
-    bullion imports, which structurally widens India's merchandise trade deficit.
-- from: epf_balance
-  to: dii_flows
-  type: FUNDS
-  weight: 0.9
-  polarity: 1
-  delay: LONG_TERM
-  description: Growing aggregate EPF balances allow the EPFO to channel a portion
-    of retirement corpuses into equity markets, bolstering Domestic Institutional
-    Investor flows.
-- from: home_loan_emi
-  to: india_gdp_growth
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: LONG_TERM
-  description: Widespread increases in home loan EMIs severely constrain middle-class
-    disposable income, dampening aggregate consumer demand and slowing GDP growth.
-- from: smartphone_device
-  to: india_trade_deficit
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Surging domestic demand for premium smartphone devices and their components
-    drives up electronics imports, widening the national trade deficit.
-- from: urban_unemployment_rate
-  to: india_gdp_growth
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: LONG_TERM
-  description: Chronic high urban unemployment reduces aggregate household earning
-    and consumption, acting as a structural drag on national GDP growth.
-- from: residential_power_supply
-  to: renewable_energy_parks
-  type: AFFECTS
-  weight: 0.6
-  polarity: -1
-  delay: LONG_TERM
-  description: Chronic shortages in residential power supply (power cuts) create political
-    and economic pressure to accelerate the deployment of renewable energy parks.
-- from: upi_transaction_success
-  to: data_centers
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The exponential growth in successful UPI transactions necessitates
-    massive expansions in domestic data center capacity to handle the compute load.
-- from: domestic_flight_ticket
-  to: commercial_airports
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: Sustained high demand and purchasing of domestic flight tickets drive
-    government and private investment into expanding commercial airport infrastructure.
-- from: irctc_train_ticket
-  to: dedicated_freight_corridors
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: Massive waitlists for passenger train tickets force the railway ministry
-    to expedite dedicated freight corridors to free up tracks for passenger trains.
-- from: street_waterlogging
-  to: sewage_drainage_network
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: Severe and recurring street waterlogging during monsoons forces municipal
-    corporations to upgrade and expand the underground sewage and drainage network.
-- from: mobile_data_tariff
-  to: telecom_spectrum
-  type: AFFECTS
-  weight: 0.6
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: When mobile data tariffs drop and consumption explodes, telecom operators
-    are forced to bid for more telecom spectrum to prevent network congestion.
-- from: smartphone_device
-  to: semiconductor_fabs
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: The massive domestic consumer demand for smartphone devices drives
-    national strategic investments and subsidies to establish local semiconductor
-    fabs.
-- from: retail_diesel
-  to: dedicated_freight_corridors
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Sustained high retail diesel prices make road transport expensive,
-    accelerating the shift of logistics companies towards electrified dedicated freight
-    corridors.
-- from: ev_charging_tariff
-  to: national_power_grid
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: The widespread adoption of EVs and subsequent demand at charging stations
-    requires significant capacity upgrades to the national power grid.
-- from: urban_unemployment_rate
-  to: student_unions
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High youth unemployment and a lack of formal job opportunities fuel
-    frustration on university campuses, swelling the ranks and militancy of student
-    unions.
-- from: farm_labor_wages
-  to: rural_urban_migration_corridors
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Stagnant or unlivable agricultural wages force rural laborers to abandon
-    farming and migrate to urban corridors in search of better-paying informal work.
-- from: residential_rent
-  to: tier_2_3_city_expansion
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: Exorbitant residential rents and high costs of living in metro cities
-    drive companies and talent to relocate, accelerating the expansion of tier 2 and
-    3 cities.
-- from: retail_tomato
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Sustained food inflation, symbolized by soaring tomato and onion prices,
-    severely pinches household budgets and depresses overall consumer confidence.
-- from: college_university_fees
-  to: student_unions
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Steep, unaffordable hikes in university tuition and hostel fees act
-    as a primary catalyst for the mobilization and protests led by student unions.
-- from: it_sector_salary
-  to: skilled_emigration
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: LONG_TERM
-  description: Stagnant IT sector salaries and poor domestic increments push highly
-    skilled software engineers to seek lucrative opportunities abroad, driving brain
-    drain.
-- from: ambient_aqi
-  to: skilled_emigration
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: LONG_TERM
-  description: Chronic, severe air pollution in major Indian metros increasingly drives
-    wealthy and highly skilled professionals to emigrate for a better quality of life.
-- from: maternity_leave_benefits
-  to: female_labor_force_participation
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: Robust, legally mandated paid maternity leave prevents women from dropping
-    out of the workforce post-childbirth, sustaining female labor force participation.
-- from: domestic_help_cost
-  to: female_labor_force_participation
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: When the cost of domestic help and childcare becomes prohibitively
-    expensive, many women are forced to leave formal employment to manage household
-    duties.
-- from: minimum_wage
-  to: organized_labor_unions
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Failure of statutory minimum wages to keep up with inflation drives
-    working-class resentment, boosting membership and agitation within organized labor
-    unions.
-- from: ministry_of_consumer_affairs
-  to: retail_onion
-  type: REGULATES
-  weight: 0.85
-  polarity: -1
-  delay: SHORT_TERM
-  description: The Ministry of Consumer Affairs releases buffer stocks of onions into
-    the open market specifically to cool down spiking retail onion prices.
 - from: ministry_of_agriculture
   to: tur_dal
   type: AFFECTS
@@ -1274,15 +191,6 @@ edges:
   description: Increases in the Minimum Support Price (MSP) for pulses set by the
     Agriculture Ministry raise the baseline procurement cost, pushing up retail tur
     dal prices.
-- from: highway_network
-  to: retail_apple
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Expansion of the national highway network reduces transit times and
-    spoilage for perishable fruits from Kashmir and Himachal, lowering retail apple
-    prices.
 - from: arable_topsoil
   to: green_vegetables
   type: AFFECTS
@@ -1316,62 +224,6 @@ edges:
   description: Higher Brent crude prices increase diesel costs for trucking, which
     are passed on as higher freight charges, inflating the retail price of transported
     tomatoes.
-- from: fssai
-  to: street_food
-  type: REGULATES
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Strict hygiene and licensing drives by FSSAI increase the compliance
-    and operational costs for street food vendors, slightly raising street food prices.
-- from: trai
-  to: mobile_data_tariff
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: TRAI sets the regulatory framework, floor prices, and tariff forbearance
-    policies that directly dictate the cost of mobile data for consumers.
-- from: trai
-  to: spam_calls
-  type: REGULATES
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Stricter TRAI regulations on unregistered telemarketers and the enforcement
-    of DND (Do Not Disturb) registries reduce the volume of spam calls.
-- from: submarine_internet_cables
-  to: broadband_network_quality
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: Cuts or maintenance on submarine internet cables restrict international
-    bandwidth, causing severe buffering and degraded broadband network quality.
-- from: rbi
-  to: upi_transaction_limits
-  type: REGULATES
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: The Reserve Bank of India sets the statutory maximum transaction caps
-    and wallet limits for all UPI payments to mitigate systemic risk.
-- from: rbi
-  to: e_mandate_autopay
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: RBI regulations regarding additional factor of authentication (AFA)
-    dictate the friction, limits, and approval processes for recurring e-mandate autopays.
-- from: ministry_of_road_transport
-  to: fastag_wallet
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: MoRTH mandates the compulsory use of FASTag for toll payments and sets
-    the overarching KYC and interoperability rules for the wallets.
 - from: usd_inr_exchange
   to: laptop_computer
   type: AFFECTS
@@ -1380,22 +232,6 @@ edges:
   delay: SHORT_TERM
   description: A depreciating Rupee (higher USD-INR rate) increases the import cost
     of electronics and components, driving up the retail price of laptop computers.
-- from: ministry_of_finance
-  to: pan_aadhaar_linkage
-  type: REGULATES
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: The Ministry of Finance (via CBDT) legally mandates PAN-Aadhaar linkage,
-    setting the deadlines and financial penalties for non-compliance.
-- from: data_centers
-  to: digilocker_documents
-  type: SUPPLIES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Domestic data centers and cloud infrastructure provide the secure hosting
-    environment required to store and retrieve DigiLocker documents.
 - from: national_power_grid
   to: broadband_network_quality
   type: AFFECTS
@@ -1421,47 +257,6 @@ edges:
   description: The Indian Railways network infrastructure (via RailTel) provides the
     physical stations and backhaul for one of the largest public WiFi networks in
     the country.
-- from: wedding_season_aggregate
-  to: wedding_planning_service
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The concentration of marriages during specific seasonal windows drives
-    peak demand and premium pricing for event managers and wedding planners.
-- from: gst_council
-  to: cinema_ticket
-  type: REGULATES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: GST Council revisions to the entertainment tax slab directly alter
-    the final retail price of multiplex cinema tickets.
-- from: gst_council
-  to: hotel_room
-  type: REGULATES
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: Changes in GST rate slabs for the hospitality sector directly dictate
-    the final tariff paid by consumers for hotel rooms.
-- from: municipal_corporations
-  to: public_park
-  type: MANAGES
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Civic body budget allocations and horticulture department activities
-    directly determine the maintenance, safety, and expansion of neighborhood public
-    parks.
-- from: municipal_corporations
-  to: community_hall
-  type: MANAGES
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Municipal funding and urban planning initiatives drive the construction
-    and upkeep of subsidized public community halls and barat ghars.
 - from: brent_crude
   to: tour_package
   type: AFFECTS
@@ -1471,14 +266,6 @@ edges:
   description: Spikes in global Brent crude prices increase aviation turbine fuel
     (ATF) and diesel costs, which travel agencies pass on by raising overall tour
     package prices.
-- from: aggregate_consumer_confidence
-  to: ott_subscription
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Higher consumer confidence and willingness to spend on discretionary
-    entertainment drives the uptake of premium OTT streaming subscriptions.
 - from: optical_fibre_network
   to: video_game
   type: SUPPLIES
@@ -1488,15 +275,6 @@ edges:
   description: The expansion of high-speed optical fibre broadband provides the low-latency
     internet required to support the adoption of multiplayer PC and console video
     games.
-- from: commercial_airports
-  to: tour_package
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The opening of new commercial airports or terminals increases flight
-    connectivity, lowering travel friction and boosting sales of tour packages to
-    those regions.
 - from: indian_railways_network
   to: pilgrimage_package
   type: SUPPLIES
@@ -1521,15 +299,6 @@ edges:
   delay: IMMEDIATE
   description: Approaching cyclones force the mass cancellation of coastal holiday
     bookings and tour packages due to safety hazards and transport disruptions.
-- from: major_temple_trusts
-  to: temple_donation
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: The administrative efficiency, crowd management, and facility upgrades
-    by major temple trusts directly increase pilgrim footfall and subsequent hundi
-    donations.
 - from: upi_platform
   to: puja_pandal_contribution
   type: AFFECTS
@@ -1546,55 +315,6 @@ edges:
   delay: IMMEDIATE
   description: Digital payment integration via UPI at religious sites allows cashless
     pilgrims to easily make offerings, boosting overall temple donations.
-- from: state_electricity_boards
-  to: electricity_tariff
-  type: MANAGES
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: State electricity distribution companies (discoms) directly set and
-    revise the per-unit power tariffs charged to residential consumers.
-- from: municipal_corporations
-  to: waste_collection_services
-  type: MANAGES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Budget allocations and contractor management by municipal corporations
-    directly determine the frequency and efficiency of door-to-door garbage collection.
-- from: sewage_drainage_network
-  to: sewage_infrastructure
-  type: SUPPLIES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: The capacity of the macro urban drainage network determines how effectively
-    residential sewage and stormwater systems can clear waste without backing up.
-- from: global_natural_gas
-  to: piped_natural_gas
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: SHORT_TERM
-  description: Higher international LNG prices increase the input costs for city gas
-    distribution companies, which are passed on to consumers as higher PNG rates.
-- from: brent_crude
-  to: lpg_cylinder
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: Since India imports the majority of its petroleum, spikes in global
-    Brent crude prices directly drive up the retail cost of domestic LPG cooking cylinders.
-- from: seasonal_migrant_labor
-  to: construction_labor_wages
-  type: AFFECTS
-  weight: 0.75
-  polarity: -1
-  delay: SHORT_TERM
-  description: An abundant supply of seasonal migrant labor in cities increases competition
-    among daily wage workers, suppressing the wages charged by construction masons
-    and laborers.
 - from: monetary_policy_committee
   to: residential_rent
   type: AFFECTS
@@ -1612,22 +332,6 @@ edges:
   delay: SHORT_TERM
   description: A depreciating Rupee makes dollar-denominated crude oil imports more
     expensive, raising domestic retail petrol prices.
-- from: gst_council
-  to: two_wheeler_price
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: GST Council decisions on tax slabs and compensation cess directly alter
-    the on-road price of two-wheelers.
-- from: gst_council
-  to: four_wheeler_price
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Changes in GST rates and automobile cess by the GST Council immediately
-    impact the final retail price of cars and SUVs.
 - from: global_semiconductor_supply_chain
   to: four_wheeler_price
   type: AFFECTS
@@ -1636,102 +340,6 @@ edges:
   delay: MEDIUM_TERM
   description: Robust global microchip supplies eliminate production bottlenecks,
     reducing wait times and dealer markups on four-wheelers.
-- from: southwest_monsoon
-  to: road_potholes
-  type: PRODUCES
-  weight: 0.85
-  polarity: 1
-  delay: SHORT_TERM
-  description: Heavy seasonal monsoon rains erode asphalt and wash away poorly constructed
-    road surfaces, creating widespread potholes.
-- from: municipal_corporations
-  to: road_potholes
-  type: MANAGES
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Effective civic administration and adequate budget allocation for road
-    maintenance reduce the incidence of urban potholes.
-- from: regional_transport_office
-  to: traffic_fines
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: RTO enforcement drives and updates to the Motor Vehicles Act penalty
-    structures directly dictate the traffic fines levied on citizens.
-- from: irda
-  to: vehicle_insurance_premium
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: IRDAI sets the mandatory third-party motor insurance premium rates,
-    directly affecting the total insurance cost for vehicle owners.
-- from: state_governments
-  to: city_bus_fare
-  type: REGULATES
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: State governments control the pricing policies and subsidies for state-run
-    urban transport corporations, dictating city bus fares.
-- from: state_governments
-  to: metro_fare
-  type: REGULATES
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Fare fixation committees appointed by state and central governments
-    determine the ticket prices for urban metro rail networks.
-- from: ministry_of_railways
-  to: premium_train_fare
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The Railway Ministry dictates the flexi-fare schemes and base ticket
-    prices for premium trains like Vande Bharat and Rajdhani.
-- from: autumn_festive_season
-  to: domestic_flight_ticket
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: SHORT_TERM
-  description: The surge in holiday travel demand during Diwali and Durga Puja triggers
-    dynamic pricing algorithms, spiking domestic airfares.
-- from: autumn_festive_season
-  to: premium_train_fare
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Massive passenger movement during the festive season exhausts base-fare
-    quotas, pushing up dynamic pricing on premium trains.
-- from: national_power_grid
-  to: ev_charging_tariff
-  type: SUPPLIES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: The cost and availability of commercial electricity from the national
-    grid directly determine the tariffs at public EV charging stations.
-- from: municipal_corporations
-  to: parking_fees
-  type: REGULATES
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Civic bodies set the pricing policies for public parking spaces and
-    commercial building parking mandates, influencing parking fees.
-- from: cyclonic_storm_systems
-  to: domestic_flight_ticket
-  type: DISRUPTS
-  weight: 0.7
-  polarity: 1
-  delay: IMMEDIATE
-  description: Severe weather events force flight cancellations and rerouting, causing
-    immediate supply shocks that spike last-minute airfares.
 - from: us_federal_reserve
   to: it_sector_jobs
   type: AFFECTS
@@ -1741,31 +349,6 @@ edges:
   description: US Federal Reserve interest rate hikes increase borrowing costs for
     American corporations, leading to tightened tech budgets and reduced outsourcing
     demand, which suppresses hiring in the Indian IT sector.
-- from: fii_fpi_flows
-  to: startup_jobs
-  type: FUNDS
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: Strong foreign portfolio and institutional inflows provide the venture
-    capital liquidity necessary for Indian startups to aggressively expand their workforce.
-- from: fii_fpi_flows
-  to: startup_layoffs
-  type: AFFECTS
-  weight: 0.85
-  polarity: -1
-  delay: SHORT_TERM
-  description: A withdrawal of foreign institutional capital creates a 'funding winter',
-    forcing venture-backed startups to conserve cash through mass layoffs.
-- from: index_of_industrial_production
-  to: factory_worker_jobs
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Sustained growth in the Index of Industrial Production indicates higher
-    capacity utilization, prompting manufacturers to hire more shop-floor factory
-    workers.
 - from: rbi
   to: private_bank_jobs
   type: AFFECTS
@@ -1775,14 +358,6 @@ edges:
   description: Accommodative RBI monetary policies lower the cost of capital, spurring
     credit growth and prompting private banks to expand their branch networks and
     sales teams.
-- from: ministry_of_railways
-  to: railway_rrb_jobs
-  type: MANAGES
-  weight: 1.0
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The Ministry of Railways directly controls the frequency and volume
-    of Railway Recruitment Board (RRB) hiring drives for Group D and technical roles.
 - from: union_budget_framework
   to: mgnrega_wages
   type: FUNDS
@@ -1791,14 +366,6 @@ edges:
   delay: IMMEDIATE
   description: Annual financial allocations made in the Union Budget directly determine
     the total pool of funds available for MGNREGA wage payouts across the country.
-- from: state_governments
-  to: government_teacher_jobs
-  type: MANAGES
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: State education departments manage Teacher Eligibility Tests (TET)
-    and control the volume of hiring for government school teachers.
 - from: highway_network
   to: construction_worker_wages
   type: AFFECTS
@@ -1817,40 +384,6 @@ edges:
   description: The ubiquitous adoption of the UPI platform eliminates the friction
     of exact change and credit risk, increasing impulse purchases and daily sales
     volumes for street vendors.
-- from: seasonal_migrant_labor
-  to: construction_worker_wages
-  type: AFFECTS
-  weight: 0.75
-  polarity: -1
-  delay: SHORT_TERM
-  description: A high influx of seasonal migrant labor into urban centers creates
-    an oversupply of manual workers, suppressing the daily wages contractors are willing
-    to pay for construction labor.
-- from: national_unemployment_rate
-  to: urban_unemployment_rate
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Macroeconomic joblessness directly translates into higher unemployment
-    rates within urban centers and metropolitan areas.
-- from: national_unemployment_rate
-  to: rural_unemployment_rate
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Aggregate national unemployment trends directly reflect and influence
-    the lack of employment opportunities in rural and agrarian economies.
-- from: indian_union_government
-  to: maternity_leave_benefits
-  type: REGULATES
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: The Union Government legislates amendments to the Maternity Benefit
-    Act, directly dictating the duration and terms of paid maternity leave for female
-    employees.
 - from: urban_population_density
   to: domestic_help_wages
   type: AFFECTS
@@ -1860,15 +393,6 @@ edges:
   description: Increasing population density in premium urban high-rises concentrates
     demand for household labor, driving up the monthly wages commanded by domestic
     help.
-- from: ondc_platform
-  to: food_delivery_payouts
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The expansion of the ONDC network breaks the duopoly of major food
-    delivery apps, forcing platforms to offer better payout structures to retain delivery
-    partners.
 - from: monetary_policy_committee
   to: auto_loan_emi
   type: AFFECTS
@@ -1893,39 +417,6 @@ edges:
   delay: MEDIUM_TERM
   description: As sovereign bond yields rise, commercial banks increase their fixed
     deposit interest rates to remain competitive in attracting retail liquidity.
-- from: india_10yr_bond_yield
-  to: debt_mutual_funds
-  type: AFFECTS
-  weight: 0.9
-  polarity: -1
-  delay: IMMEDIATE
-  description: An increase in benchmark bond yields causes an immediate mathematical
-    drop in the prices of existing bonds, reducing the Net Asset Value (NAV) of debt
-    mutual funds.
-- from: nifty_50
-  to: equity_mutual_funds
-  type: AFFECTS
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: Upward movement in broad market indices directly increases the Net
-    Asset Value (NAV) of retail equity mutual fund portfolios.
-- from: international_silver_prices
-  to: retail_silver_investment
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Fluctuations in global silver commodity markets immediately reflect
-    in the domestic retail price of physical silver and silver ETFs.
-- from: union_budget_framework
-  to: capital_gains_tax
-  type: REGULATES
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: Finance Ministry amendments in the Union Budget dictate the exact taxation
-    rates and holding period definitions for short and long-term capital gains.
 - from: autumn_festive_season
   to: credit_card_dues
   type: PRODUCES
@@ -1934,14 +425,6 @@ edges:
   delay: SHORT_TERM
   description: Aggressive consumer spending on electronics, apparel, and gifts during
     the Diwali festive season leads to a sharp spike in outstanding credit card balances.
-- from: irda
-  to: health_insurance_premium
-  type: REGULATES
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: IRDAI regulatory approvals for product repricing and standardized coverage
-    mandates directly influence the premiums charged for retail health insurance.
 - from: tier_2_3_city_expansion
   to: investment_property_value
   type: AFFECTS
@@ -1977,14 +460,6 @@ edges:
   delay: MEDIUM_TERM
   description: The Ministry of Health funds and administers the Universal Immunization
     Programme, directly dictating the availability and coverage of pediatric vaccines.
-- from: cdsco
-  to: generic_medicines
-  type: REGULATES
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: CDSCO's regulatory approvals and quality clearances directly determine
-    the volume of generic medicines legally available in the domestic market.
 - from: cpcb
   to: asthma
   type: AFFECTS
@@ -1994,30 +469,6 @@ edges:
   description: Stricter enforcement of industrial and vehicular emission norms by
     the CPCB reduces ambient particulate matter, lowering the incidence of asthma
     attacks.
-- from: active_pharmaceutical_ingredients_supply
-  to: antibiotics
-  type: SUPPLIES
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: Disruptions in the international supply of bulk active pharmaceutical
-    ingredients immediately constrain the domestic production of essential antibiotics.
-- from: municipal_water_grid
-  to: cholera_and_diarrhea
-  type: AFFECTS
-  weight: 0.85
-  polarity: -1
-  delay: SHORT_TERM
-  description: The expansion of treated, piped municipal water grids directly reduces
-    citizen reliance on contaminated groundwater, lowering waterborne disease rates.
-- from: sewage_drainage_network
-  to: dengue
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Proper underground drainage prevents surface water accumulation in
-    urban areas, eliminating the breeding sites required for dengue-carrying mosquitoes.
 - from: urban_population_density
   to: tuberculosis
   type: AFFECTS
@@ -2043,14 +494,6 @@ edges:
   description: An aging population has a naturally higher baseline rate of severe
     illness and surgical needs, driving up the structural demand for hospital beds.
 - from: ministry_of_education
-  to: cbse_exams
-  type: MANAGES
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: The Ministry of Education directly sets the national curriculum framework,
-    policies, and operational guidelines that govern CBSE board exams.
-- from: ministry_of_education
   to: government_schools
   type: FUNDS
   weight: 0.9
@@ -2059,22 +502,6 @@ edges:
   description: Central government budget allocations through the Ministry of Education
     directly fund the infrastructure and teacher salaries of Kendriya Vidyalayas and
     Navodaya Vidyalayas.
-- from: state_governments
-  to: state_board_exams
-  type: MANAGES
-  weight: 1.0
-  polarity: 1
-  delay: IMMEDIATE
-  description: State education departments directly administer, set the syllabus for,
-    and evaluate state board matriculation and higher secondary exams.
-- from: state_governments
-  to: government_schools
-  type: FUNDS
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: State governments provide the primary financial backing and administrative
-    oversight for the vast majority of public schools in their respective jurisdictions.
 - from: union_budget_framework
   to: mid_day_meal
   type: FUNDS
@@ -2110,24 +537,6 @@ edges:
   description: Rising wholesale inflation increases the operational, real estate,
     and administrative costs for private schools, which are passed down to parents
     via annual fee hikes.
-- from: optical_fibre_network
-  to: k12_edtech
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: The expansion of high-speed broadband and BharatNet infrastructure
-    provides the necessary bandwidth for households to stream video-heavy K-12 edtech
-    platforms.
-- from: telecom_towers_network
-  to: test_prep_edtech
-  type: SUPPLIES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: Deep penetration of 4G/5G mobile networks allows students in tier 2/3
-    cities and rural areas to access live online coaching and mock tests on their
-    smartphones.
 - from: india_working_age_population
   to: engineering_entrance
   type: AFFECTS
@@ -2162,22 +571,6 @@ edges:
   delay: SHORT_TERM
   description: High-velocity winds and storm surges from severe cyclones directly
     cause the collapse of weak buildings, roofs, and coastal infrastructure.
-- from: himalayan_tectonic_plates
-  to: structural_collapse
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Major seismic shifts along Himalayan fault lines trigger earthquakes
-    that instantly compromise and collapse civic structures and housing.
-- from: forest_cover
-  to: wildlife_encounters
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: LONG_TERM
-  description: The depletion of natural forest cover forces wild animals like leopards
-    and elephants into human settlements, increasing dangerous encounters.
 - from: state_governments
   to: police_response_time
   type: AFFECTS
@@ -2186,39 +579,6 @@ edges:
   delay: MEDIUM_TERM
   description: Increased state government funding for police modernization, staffing,
     and PCR vans directly reduces emergency response times.
-- from: municipal_corporations
-  to: stray_animal_attacks
-  type: REGULATES
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Effective implementation of Animal Birth Control (ABC) and vaccination
-    drives by municipal corporations reduces the stray dog population and subsequent
-    attacks.
-- from: municipal_corporations
-  to: fire_hazards
-  type: REGULATES
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Strict enforcement of building codes and fire NOCs by civic bodies
-    significantly mitigates the risk of commercial and residential fire hazards.
-- from: state_electricity_boards
-  to: electrocution_hazard
-  type: REGULATES
-  weight: 0.9
-  polarity: -1
-  delay: SHORT_TERM
-  description: Proactive maintenance of transformers and the undergrounding of high-tension
-    wires by state discoms reduces public electrocution risks.
-- from: enforcement_directorate
-  to: criminal_litigation_risk
-  type: PRODUCES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Aggressive PMLA probes, raids, and asset attachments by the ED directly
-    increase the risk of severe, non-bailable criminal litigation for accused individuals.
 - from: national_unemployment_rate
   to: burglary_and_theft
   type: AFFECTS
@@ -2235,41 +595,6 @@ edges:
   delay: SHORT_TERM
   description: A large pool of desperate, unemployed youth creates a highly susceptible
     target demographic for fraudulent work-from-home and Telegram task scams.
-- from: highway_network
-  to: road_traffic_accidents
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The rapid expansion of high-speed expressways without corresponding
-    enforcement of speed limits leads to an increase in fatal, high-impact traffic
-    collisions.
-- from: indian_railways_network
-  to: railway_accidents
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The massive scale and aging track infrastructure of the Indian Railways
-    network inherently carries a baseline risk of derailments and crossing accidents.
-- from: upi_platform
-  to: upi_and_bank_scams
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The ubiquitous, frictionless nature of the UPI payment switch provides
-    scammers with a massive, instant mechanism to siphon funds via phishing and OTP
-    frauds.
-- from: aadhaar_database
-  to: deepfake_and_identity_theft
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Breaches or misuse of Aadhaar biometric and demographic data provide
-    malicious actors with the raw material needed to execute sophisticated identity
-    theft.
 - from: urban_population_density
   to: street_harassment
   type: AFFECTS
@@ -2286,63 +611,6 @@ edges:
   delay: SHORT_TERM
   description: Massive, concentrated crowd surges at pandals and markets during Diwali
     and Durga Puja significantly elevate the risk of fatal crowd crushes.
-- from: major_temple_trusts
-  to: stampedes
-  type: REGULATES
-  weight: 0.9
-  polarity: -1
-  delay: SHORT_TERM
-  description: Effective crowd control, barricading, and queue management by major
-    temple trusts directly prevents deadly stampedes during peak pilgrimage days.
-- from: caste_reservation_movements
-  to: riots_and_clashes
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Intense, large-scale quota agitations frequently break down into mob
-    violence, arson, and violent clashes with law enforcement.
-- from: southwest_monsoon
-  to: outdoor_humidity
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: The influx of moisture-laden monsoon winds drastically increases ambient
-    outdoor humidity levels across the subcontinent.
-- from: municipal_corporations
-  to: street_garbage
-  type: REGULATES
-  weight: 0.85
-  polarity: -1
-  delay: SHORT_TERM
-  description: Efficient waste collection fleets and sanitation budgets managed by
-    municipal corporations directly reduce the accumulation of street garbage.
-- from: municipal_corporations
-  to: urban_landfills
-  type: MANAGES
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Municipal waste management policies and land allocations dictate the
-    physical expansion and operational scale of urban landfills.
-- from: cpcb
-  to: ambient_aqi
-  type: REGULATES
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: Strict enforcement of industrial emission norms and the Graded Response
-    Action Plan (GRAP) by the CPCB reduces atmospheric pollutants, lowering the ambient
-    AQI.
-- from: national_green_tribunal
-  to: polluted_surface_water
-  type: REGULATES
-  weight: 0.75
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: NGT shutdown orders against industries discharging untreated effluents
-    help reduce the toxicity and chemical frothing of polluted surface water.
 - from: highway_network
   to: traffic_noise
   type: PRODUCES
@@ -2375,14 +643,6 @@ edges:
   delay: IMMEDIATE
   description: Massive bursting of firecrackers during Diwali and autumn festivals
     releases dense smoke, causing an immediate and hazardous spike in ambient AQI.
-- from: autumn_festive_season
-  to: event_and_construction_noise
-  type: PRODUCES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The proliferation of loudspeakers, pandals, and late-night celebrations
-    during the festive season drastically increases neighborhood noise pollution.
 - from: tier_2_3_city_expansion
   to: neighborhood_greenery
   type: DISRUPTS
@@ -2391,645 +651,764 @@ edges:
   delay: LONG_TERM
   description: Rapid, unplanned real estate development and road widening in emerging
     cities lead to the widespread felling of mature neighborhood trees.
-- from: retail_onion
-  to: ministry_of_consumer_affairs
+- from: meteorological_systems
+  to: fresh_produce
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme weather and monsoon deficits directly reduce the yield and
+    availability of fruits and vegetables.
+- from: meteorological_systems
+  to: staple_grains
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Monsoon variations and temperature shocks disrupt the cultivation cycles
+    of major cereal crops.
+- from: meteorological_systems
+  to: pulses_and_legumes
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Erratic rainfall patterns severely impact the production of rain-fed
+    pulse and legume crops.
+- from: meteorological_systems
+  to: road_infrastructure_experience
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Heavy rainfall and extreme weather directly degrade urban road surfaces
+    and highway conditions.
+- from: meteorological_systems
+  to: informal_and_daily_wage
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Adverse weather conditions force immediate halts to outdoor manual
+    labor in agriculture and construction.
+- from: meteorological_systems
+  to: infectious_diseases
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Monsoon systems and temperature shifts create ideal breeding conditions
+    for vector-borne and water-borne diseases.
+- from: meteorological_systems
+  to: weather_and_thermal_environment
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macro meteorological systems directly dictate the local ambient temperature
+    and humidity experienced by citizens.
+- from: meteorological_systems
+  to: air_quality_environment
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Active meteorological systems like high wind speeds and rain disperse
+    particulate matter, improving local air quality.
+- from: meteorological_systems
+  to: urban_hydrology
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intense monsoon systems and heavy rainfall directly cause urban flooding
+    and swell local water bodies.
+- from: meteorological_systems
+  to: intercity_travel
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: IMMEDIATE
+  description: Severe weather phenomena force cancellations, delays, and rerouting
+    in air and railway travel.
+- from: geological_and_tectonic_systems
+  to: accidents_and_hazards
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Tectonic plate movements directly cause earthquakes and landslides,
+    creating severe physical infrastructure hazards.
+- from: geological_and_tectonic_systems
+  to: shelter_and_accommodation
+  type: DISRUPTS
+  weight: 0.5
+  polarity: -1
+  delay: IMMEDIATE
+  description: Seismic activity and landslides cause structural damage to housing
+    and rental properties in vulnerable geographic zones.
+- from: hydrological_systems
+  to: water_and_sanitation
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major river basins and subsurface aquifers directly provide the raw
+    water required for residential water supply.
+- from: hydrological_systems
+  to: staple_grains
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: River basins and groundwater reserves provide essential irrigation
+    for water-intensive cereal crops like rice and wheat.
+- from: hydrological_systems
+  to: meat_and_seafood
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Oceanic systems and major rivers directly sustain the populations of
+    marine and freshwater fish consumed by citizens.
+- from: hydrological_systems
+  to: urban_hydrology
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The water levels in major river basins directly influence the state
+    of local urban water bodies and regional flood risks.
+- from: biophysical_and_ecological_systems
+  to: infectious_diseases
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Biological populations act as vectors and reservoirs for communicable
+    and zoonotic diseases.
+- from: biophysical_and_ecological_systems
+  to: urban_ecology
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Broader terrestrial ecosystems provide the baseline biodiversity that
+    populates neighborhood flora and fauna.
+- from: biophysical_and_ecological_systems
+  to: accidents_and_hazards
+  type: PRODUCES
+  weight: 0.5
+  polarity: 1
+  delay: IMMEDIATE
+  description: Shifts in biological populations and habitat loss drive human-wildlife
+    conflicts and animal threats in human settlements.
+- from: indian_union_government
+  to: government_and_psu
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Central government budget allocations and ministry policies directly
+    fund and expand public sector employment opportunities.
+- from: indian_union_government
+  to: taxation_and_compliance
   type: AFFECTS
   weight: 0.9
   polarity: 1
-  delay: MEDIUM_TERM
-  description: Severe spikes in retail onion prices create immense political pressure,
-    forcing the Ministry of Consumer Affairs to ban exports and impose stock limits.
-- from: wheat_flour
-  to: ministry_of_agriculture
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Surging retail atta prices compel the Ministry of Agriculture to restrict
-    wheat exports to ensure domestic food security.
-- from: palm_oil
-  to: india_trade_deficit
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High domestic consumption and rising retail prices of imported palm
-    oil significantly inflate the import bill, widening India's trade deficit.
-- from: food_delivery_services
-  to: gig_worker_unions
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Algorithmic wage suppression and declining payouts in food delivery
-    services drive delivery partners to organize and form gig worker unions.
-- from: biscuits_and_snacks
-  to: fssai
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: LONG_TERM
-  description: The rising public health burden of obesity linked to ultra-processed
-    packaged snacks pressures FSSAI to draft stricter front-of-pack nutritional labeling
-    rules.
-- from: street_food
-  to: municipal_corporations
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The unchecked proliferation of street food stalls and associated waste
-    generation forces municipal corporations to conduct eviction drives and establish
-    regulated vending zones.
-- from: poultry_chicken
-  to: fssai
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: Widespread antibiotic residue found in retail poultry chicken forces
-    FSSAI to tighten maximum residue limits and testing protocols for meat.
-- from: spam_calls
-  to: trai
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: A high volume of citizen complaints regarding spam calls and SMS fraud
-    pressures TRAI to implement stricter telemarketing regulations and financial penalties.
-- from: personal_data_privacy
-  to: supreme_court_of_india
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: LONG_TERM
-  description: Severe degradation of personal data privacy and mass data leaks trigger
-    public interest litigations, compelling the Supreme Court to mandate stricter
-    privacy frameworks.
-- from: mobile_network_quality
-  to: trai
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Persistent deterioration in mobile network quality and rising call
-    drop rates lead TRAI to issue show-cause notices and levy fines on telecom operators.
-- from: laptop_computer
-  to: india_trade_deficit
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High demand for laptop computers for remote work and education increases
-    electronics imports, contributing to a wider national trade deficit.
-- from: fastag_wallet
-  to: highway_network
-  type: FUNDS
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: Widespread adoption and pre-funding of FASTag wallets provide the NHAI
-    with consistent, digitized toll revenue to finance further highway network expansion.
-- from: social_media_accounts
-  to: cci
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: LONG_TERM
-  description: The massive user base and data concentration of social media accounts
-    by tech giants trigger antitrust investigations by the Competition Commission
-    of India.
-- from: ott_subscription
-  to: telecom_spectrum
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: The massive surge in data consumption driven by widespread OTT video
-    streaming forces telecom operators to bid for and deploy additional spectrum capacity.
-- from: video_game
-  to: data_centers
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The explosive growth of multiplayer gaming and esports in India drives
-    demand for localized server hosting, accelerating data center expansion.
-- from: pilgrimage_package
-  to: indian_railways_network
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Sustained high volume in religious tourism packages prompts the Ministry
-    of Railways to permanently expand track capacity and introduce dedicated trains
-    on pilgrimage routes.
-- from: tour_package
-  to: commercial_airports
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: LONG_TERM
-  description: Consistent year-on-year growth in leisure travel and tour package bookings
-    to specific destinations forces the government to upgrade and expand local commercial
-    airports.
-- from: firecracker
-  to: cpcb
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Severe post-Diwali air quality crises caused by mass firecracker usage
-    compel the Central Pollution Control Board to draft stricter emergency pollution
-    control frameworks.
-- from: rwa_regulation
-  to: municipal_corporations
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Collective lobbying and civic activism by organized RWAs heavily influence
-    municipal corporation policies on zoning, waste management, and local infrastructure
-    spending.
-- from: cricket_match_ticket
-  to: commercial_airports
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The recurring massive influx of traveling fans for mega sporting events
-    (like the IPL) drives temporary and permanent upgrades to local airport handling
-    capacity.
-- from: hotel_room
-  to: tier_2_3_city_expansion
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: A boom in hospitality infrastructure and hotel room inventory in smaller
-    towns acts as a catalyst for broader economic investment and tier 2/3 city expansion.
-- from: tourist_attraction_ticket
-  to: highway_network
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: LONG_TERM
-  description: High tourist footfall and ticket sales at heritage sites prompt the
-    Ministry of Road Transport to prioritize and upgrade connecting highway networks.
-- from: residential_rent
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Steep increases in residential rent consume a larger share of household
-    income, significantly eroding disposable income and dampening overall consumer
-    confidence.
-- from: electricity_tariff
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Sustained hikes in household electricity bills squeeze middle-class
-    budgets, leading to reduced discretionary spending and lower consumer optimism.
-- from: lpg_cylinder
-  to: union_budget_framework
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High retail prices for cooking gas generate widespread political backlash,
-    forcing the central government to allocate higher LPG subsidies in the Union Budget.
-- from: construction_labor_wages
-  to: rural_urban_migration_corridors
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Rising daily wages for construction work in urban centers act as a
-    strong economic magnet, accelerating the flow of workers through rural-urban migration
-    corridors.
-- from: residential_power_supply
-  to: state_electricity_boards
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Frequent residential power cuts (axis up) trigger severe civic complaints
-    and political pressure, forcing state electricity boards to intervene and upgrade
-    local transformers.
-- from: waste_collection_services
-  to: municipal_corporations
-  type: AFFECTS
-  weight: 0.75
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: A breakdown in regular waste collection (axis down) leads to public
-    health hazards and protests, forcing municipal corporations to penalize contractors
-    and restructure civic administration (axis up).
-- from: municipal_water_supply
-  to: voter_turnout_aggregates
-  type: AFFECTS
-  weight: 0.65
-  polarity: -1
-  delay: LONG_TERM
-  description: Chronic shortages in municipal tap water (axis down) drive deep anti-incumbency
-    sentiment, mobilizing frustrated citizens to vote in higher numbers during local
-    elections (axis up).
-- from: retail_diesel
-  to: wpi
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Sustained high retail diesel prices increase nationwide freight and
-    logistics costs, which eventually pass through into the Wholesale Price Index.
-- from: traffic_congestion
-  to: highway_network
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: Chronic urban and peri-urban traffic congestion forces the government
-    to plan and construct new bypasses and expressways.
-- from: road_potholes
-  to: municipal_corporations
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Widespread public outrage over dangerous potholes damages the political
-    capital of local civic bodies, forcing emergency road repair tenders.
-- from: highway_toll_fare
-  to: transport_worker_unions
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Steep hikes in highway toll taxes squeeze trucking margins, mobilizing
-    transport worker unions to organize strikes and protests.
-- from: cab_aggregator_fare
-  to: gig_worker_unions
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: When high consumer cab fares do not translate into higher driver payouts,
-    it accelerates the mobilization of gig worker unions demanding fair revenue splits.
-- from: domestic_flight_ticket
-  to: ministry_of_civil_aviation
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Exorbitant surge pricing on domestic flight routes during crises or
-    holidays prompts the Aviation Ministry to intervene and consider fare caps.
-- from: traffic_fines
-  to: state_governments
+  delay: SHORT_TERM
+  description: Union government finance ministries directly set the direct tax slabs,
+    surcharges, and compliance rules for citizens.
+- from: indian_union_government
+  to: intercity_travel
   type: FUNDS
   weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
-  description: The aggressive collection of traffic fines via e-challans provides
-    a significant supplementary revenue stream for state government exchequers.
-- from: auto_rickshaw_fare
-  to: transport_worker_unions
+  description: Central infrastructure ministries directly fund and develop the national
+    railway, highway, and aviation networks.
+- from: indian_regulatory_bodies
+  to: borrowing_and_credit
   type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Stagnant official auto rickshaw fares amid rising fuel costs trigger
-    transport unions to strike and demand meter rate revisions.
-- from: ev_charging_tariff
-  to: renewable_energy_parks
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Central bank monetary policies and repo rate adjustments directly dictate
+    the interest rates and availability of retail loans.
+- from: indian_regulatory_bodies
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Financial regulators dictate the baseline interest rates and regulatory
+    frameworks for bank deposits and small savings schemes.
+- from: indian_regulatory_bodies
+  to: market_investments
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Capital market regulators directly alter the compliance, margin requirements,
+    and operational rules for equity and mutual fund investments.
+- from: indian_regulatory_bodies
+  to: insurance_premiums
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Insurance regulatory bodies directly approve and mandate changes to
+    life and general insurance premium rates and coverage rules.
+- from: indian_regulatory_bodies
+  to: telecom_and_internet_access
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Telecom regulators directly set tariff floors, spectrum rules, and
+    service quality mandates that dictate consumer mobile and broadband costs.
+- from: indian_regulatory_bodies
+  to: pharmaceuticals_and_supplies
   type: AFFECTS
   weight: 0.6
   polarity: 1
-  delay: LONG_TERM
-  description: High demand and lucrative tariffs for EV charging incentivize energy
-    companies to invest heavily in expanding renewable energy parks to supply the
-    grid.
-- from: urban_unemployment_rate
-  to: organized_labor_unions
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Persistently high urban unemployment and job insecurity drive formal
-    sector workers to join and strengthen organized labor unions to protect their
-    livelihoods.
-- from: rural_unemployment_rate
-  to: union_budget_framework
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High rural unemployment creates intense political pressure, forcing
-    the government to increase welfare and rural development allocations in the upcoming
-    Union Budget.
-- from: farm_labor_wages
-  to: wpi
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Rising daily wages for farm labor increase the fundamental cost of
-    agricultural production, which eventually feeds into higher wholesale food inflation
-    (WPI).
-- from: it_sector_salary
-  to: india_gdp_growth
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High compensation in the IT sector fuels massive urban discretionary
-    consumption and real estate investment, contributing significantly to national
-    GDP growth.
-- from: startup_layoffs
-  to: epfo_payroll_additions
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Mass downsizing events in the formal startup and tech ecosystem directly
-    reduce the net new additions recorded in the EPFO payroll data.
-- from: minimum_wage
-  to: wpi
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Broad statutory increases in minimum wages raise operating costs for
-    manufacturing and logistics sectors, pushing up the Wholesale Price Index.
-- from: factory_worker_jobs
-  to: index_of_industrial_production
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: An increase in the number of actively employed factory workers directly
-    enables higher manufacturing output, driving up the IIP.
-- from: cab_driver_earnings
-  to: transport_worker_unions
-  type: AFFECTS
-  weight: 0.75
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Declining net earnings for cab drivers due to high platform commissions
-    lead to widespread strikes and increased membership in transport worker unions.
-- from: mgnrega_wages
-  to: rural_urban_migration_corridors
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Higher guaranteed wage payouts under the MGNREGA scheme provide viable
-    local livelihood options, reducing the economic desperation that drives rural-to-urban
-    migration.
-- from: credit_card_dues
-  to: rbi
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: A systemic surge in unsecured retail debt and credit card defaults
-    prompts the RBI to intervene by raising risk weights on consumer credit for banks.
-- from: investment_property_value
-  to: tier_2_3_city_expansion
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: LONG_TERM
-  description: As property values in tier 1 metros become unaffordable, retail real
-    estate investment capital flows outward, accelerating the expansion and development
-    of tier 2 and 3 cities.
-- from: dengue
-  to: municipal_corporations
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Widespread urban dengue outbreaks generate intense public pressure,
-    forcing municipal corporations to increase budgets for fogging and sanitation
-    drives.
-- from: childhood_malnutrition
-  to: ministry_of_health
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: LONG_TERM
-  description: Persistently high rates of stunting and wasting compel the government
-    to launch and fund massive national nutrition missions (like POSHAN Abhiyaan).
-- from: hospital_beds
-  to: epfo_payroll_additions
-  type: PRODUCES
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The physical expansion of hospital bed capacity requires hiring thousands
-    of nurses, technicians, and support staff, boosting formal sector payroll additions.
-- from: depression
-  to: female_labor_force_participation
-  type: DISRUPTS
-  weight: 0.7
-  polarity: -1
-  delay: LONG_TERM
-  description: High rates of untreated clinical depression and anxiety disproportionately
-    impact vulnerable demographics, causing them to drop out of the active labor force.
-- from: tuberculosis
-  to: seasonal_migrant_labor
+  delay: SHORT_TERM
+  description: National pharmaceutical pricing authorities and health regulators directly
+    control the price caps and market approvals for essential medicines.
+- from: indian_judiciary_and_law_enforcement
+  to: physical_crime_and_law_enforcement
   type: DISRUPTS
   weight: 0.8
   polarity: -1
-  delay: MEDIUM_TERM
-  description: The severe physical wasting and prolonged fatigue caused by TB infections
-    render individuals incapable of performing heavy manual migrant labor.
-- from: cancer
-  to: cdsco
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: LONG_TERM
-  description: The exorbitant out-of-pocket costs of oncology treatments create political
-    pressure on the CDSCO and NPPA to enforce price caps on essential cancer drugs.
-- from: engineering_education
-  to: skilled_emigration
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: A massive output of engineering graduates who cannot find suitable
-    high-paying domestic employment drives a steady brain drain of tech talent to
-    Western countries.
-- from: medical_education
-  to: skilled_emigration
-  type: PRODUCES
-  weight: 0.75
-  polarity: 1
-  delay: LONG_TERM
-  description: Intense competition for limited postgraduate medical seats in India
-    pushes many MBBS graduates to migrate abroad for residency programs and better
-    compensation.
-- from: offline_coaching_centers
-  to: rural_urban_migration_corridors
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The concentration of elite coaching institutes in specific hubs (like
-    Kota or Mukherjee Nagar) drives massive, temporary domestic migration of students
-    from rural and semi-urban areas.
-- from: school_fees
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.85
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Exorbitant and consistently rising private school fees erode middle-class
-    disposable income, dampening overall consumer confidence and willingness to spend
-    on discretionary items.
-- from: technical_vocational_training
-  to: epfo_payroll_additions
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Successful skilling programs (ITIs, polytechnics) directly transition
-    youth into the formal manufacturing and services workforce, increasing provident
-    fund subscriptions.
-- from: corporate_upskilling
-  to: india_gdp_growth
-  type: PRODUCES
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: Continuous professional development and IT certifications increase
-    labor productivity and value-addition in the services sector, contributing to
-    national economic growth.
-- from: anganwadi_system
-  to: female_labor_force_participation
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: LONG_TERM
-  description: Reliable rural childcare and early education infrastructure frees up
-    mothers' time, enabling them to actively participate in the agricultural or informal
-    labor force.
-- from: riots_and_clashes
-  to: state_governments
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Severe communal violence and the breakdown of law and order politically
-    destabilize state governments, forcing administrative reshuffles and policy changes.
-- from: curfews_and_section_144
-  to: india_gdp_growth
+  delay: SHORT_TERM
+  description: Active policing, investigative agency actions, and judicial interventions
+    directly disrupt and reduce the incidence of violent and property crimes.
+- from: indian_judiciary_and_law_enforcement
+  to: public_order_and_emergencies
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.8
   polarity: -1
-  delay: MEDIUM_TERM
-  description: Prolonged internet shutdowns and curfews in major economic hubs paralyze
-    local commerce and logistics, creating a drag on national GDP growth.
-- from: upi_and_bank_scams
-  to: trai
+  delay: IMMEDIATE
+  description: Law enforcement deployments and judicial orders directly suppress civil
+    unrest, riots, and crowd emergencies.
+- from: indian_statutory_frameworks_and_councils
+  to: employment_metrics_and_conditions
   type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
-  description: Rampant phishing SMS and call scams force TRAI to implement stringent
-    DND registries, AI-based spam filtering, and telecom scrubbing rules.
-- from: railway_accidents
-  to: ministry_of_railways
+  description: Statutory wage boards and labor frameworks directly dictate minimum
+    wages, working hours, and formal workplace conditions.
+- from: state_and_local_governments
+  to: water_and_sanitation
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Municipal corporations and local civic bodies directly manage and supply
+    residential piped water and sewage infrastructure.
+- from: state_and_local_governments
+  to: public_transit
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: State transport boards and metro corporations directly fund, operate,
+    and set fares for urban bus and rail transit systems.
+- from: state_and_local_governments
+  to: civic_cleanliness
   type: AFFECTS
   weight: 0.9
   polarity: 1
-  delay: MEDIUM_TERM
-  description: Major train collisions and derailments force the Railway Ministry to
-    accelerate capital expenditure and deployment of the Kavach anti-collision system.
-- from: sexual_assault
-  to: supreme_court_of_india
+  delay: SHORT_TERM
+  description: Local municipal bodies directly execute solid waste management, street
+    sweeping, and neighborhood sanitation programs.
+- from: state_and_local_governments
+  to: road_infrastructure_experience
   type: AFFECTS
   weight: 0.8
   polarity: 1
+  delay: SHORT_TERM
+  description: Local civic bodies and state public works departments directly maintain
+    urban roads, fix potholes, and manage street infrastructure.
+- from: state_and_local_governments
+  to: urban_hydrology
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
   delay: MEDIUM_TERM
-  description: High-profile, brutal rape cases trigger massive public outrage, leading
-    the Supreme Court to take suo motu cognizance and issue national safety directives.
-- from: fire_hazards
-  to: municipal_corporations
+  description: Municipal stormwater management and local body zoning directly determine
+    the severity of urban flooding and the health of local water bodies.
+- from: state_and_local_governments
+  to: school_education
+  type: FUNDS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: State governments directly fund state-board public schools and administer
+    student welfare programs like mid-day meals.
+- from: state_and_local_governments
+  to: healthcare_services
+  type: FUNDS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: State health departments directly fund and operate primary health centers
+    and state-run public hospitals.
+- from: global_sovereign_entities
+  to: market_investments
   type: AFFECTS
   weight: 0.8
   polarity: 1
+  delay: SHORT_TERM
+  description: Interest rate decisions by global central banks dictate foreign institutional
+    capital flows into Indian equity and mutual fund markets.
+- from: global_sovereign_entities
+  to: higher_education
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
   delay: MEDIUM_TERM
-  description: Tragic commercial building fires force municipal corporations to conduct
-    mass safety audits and seal properties operating without valid fire NOCs.
-- from: stray_animal_attacks
-  to: municipal_corporations
+  description: Foreign government immigration and education policies directly affect
+    the availability and cost of overseas university programs for Indian students.
+- from: global_commodity_markets
+  to: edible_oils
   type: AFFECTS
   weight: 0.8
   polarity: 1
-  delay: MEDIUM_TERM
-  description: Public anger over fatal dog bites compels civic bodies to heavily fund
-    and accelerate Animal Birth Control (ABC) and anti-rabies vaccination programs.
-- from: investment_and_job_scams
-  to: sebi
+  delay: SHORT_TERM
+  description: Global agricultural commodity prices directly dictate the retail cost
+    of imported edible oils like palm and sunflower oil.
+- from: global_commodity_markets
+  to: household_energy
   type: AFFECTS
   weight: 0.9
   polarity: 1
-  delay: MEDIUM_TERM
-  description: Widespread retail investor losses to Telegram 'finfluencers' force
-    SEBI to aggressively crack down on unregistered investment advisors and pump-and-dump
-    schemes.
-- from: child_abuse_and_pocso
-  to: supreme_court_of_india
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: A rising backlog of sensitive child abuse cases prompts the Supreme
-    Court to mandate the establishment of dedicated POCSO fast-track courts across
-    all states.
-- from: ambient_aqi
-  to: cpcb
+  delay: SHORT_TERM
+  description: Global energy commodity prices determine the retail cost of domestic
+    cooking fuels like LPG and piped natural gas.
+- from: global_commodity_markets
+  to: private_vehicle_ownership
   type: AFFECTS
   weight: 0.9
   polarity: 1
-  delay: MEDIUM_TERM
-  description: Persistently hazardous air quality levels force the Central Pollution
-    Control Board to draft stricter emission mandates and implement emergency response
-    action plans.
-- from: polluted_surface_water
-  to: national_green_tribunal
+  delay: SHORT_TERM
+  description: Global crude oil prices directly drive retail petrol and diesel costs
+    for private vehicle owners.
+- from: global_commodity_markets
+  to: physical_and_alternative_assets
   type: AFFECTS
-  weight: 0.85
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global precious metal markets dictate the domestic retail price of
+    gold and silver investments.
+- from: indian_macroeconomic_indicators
+  to: corporate_employment
+  type: AFFECTS
+  weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
-  description: Viral incidents of toxic froth and mass fish die-offs in urban lakes
-    prompt the National Green Tribunal to take suo motu cognizance and penalize local
-    authorities.
-- from: urban_landfills
-  to: national_green_tribunal
+  description: Domestic economic growth and national output levels drive hiring demand
+    and salary increments in the formal private sector.
+- from: indian_macroeconomic_indicators
+  to: employment_metrics_and_conditions
   type: AFFECTS
-  weight: 0.75
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Macroeconomic employment aggregates directly translate to the unemployment
+    levels and wage conditions experienced by citizens.
+- from: indian_macroeconomic_indicators
+  to: borrowing_and_credit
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Domestic inflation indices drive central bank rate decisions, which
+    directly dictate retail loan interest rates.
+- from: indian_macroeconomic_indicators
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Macroeconomic inflation and policy rates determine the interest yields
+    on retail bank deposits and small savings schemes.
+- from: financial_and_capital_markets
+  to: market_investments
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Performance of domestic equity and debt markets directly determines
+    the portfolio value of retail mutual funds and direct stock investments.
+- from: financial_and_capital_markets
+  to: retirement_and_provident_funds
+  type: AFFECTS
+  weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
-  description: Frequent methane fires and toxic fumes from massive garbage mountains
-    lead to NGT interventions and heavy fines against civic bodies.
-- from: outdoor_heat
-  to: rural_urban_migration_corridors
-  type: AFFECTS
-  weight: 0.75
+  description: Institutional debt and bond market yields dictate the annual interest
+    rates declared for statutory provident funds and pension schemes.
+- from: financial_and_capital_markets
+  to: corporate_employment
+  type: FUNDS
+  weight: 0.6
   polarity: 1
-  delay: LONG_TERM
-  description: Unbearable, prolonged heatwaves that cause repeated agricultural failures
-    accelerate distress migration from rural farming areas to urban centers.
-- from: traffic_noise
-  to: municipal_corporations
+  delay: MEDIUM_TERM
+  description: Capital market liquidity and institutional investment flows fund corporate
+    expansion, driving job creation in startups and IT.
+- from: international_trade_and_supply_chains
+  to: pharmaceuticals_and_supplies
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Global supply chain efficiency dictates the import volume of active
+    pharmaceutical ingredients (APIs), affecting medicine availability and cost.
+- from: international_trade_and_supply_chains
+  to: consumer_tech_devices
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Global supply chain flows and semiconductor trade dictate the availability
+    and retail pricing of personal computing and smart devices.
+- from: international_trade_and_supply_chains
+  to: corporate_employment
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Global macroeconomic demand and trade balances directly drive hiring
+    and job security in export-oriented sectors like IT services and manufacturing.
+- from: energy_power_infrastructure
+  to: household_energy
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: National power grids and gas pipelines directly supply electricity
+    and cooking fuel to residential households.
+- from: energy_power_infrastructure
+  to: private_vehicle_ownership
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Oil and gas pipelines, along with power grids for EV charging, determine
+    the availability and cost of vehicle fuels.
+- from: digital_telecom_infrastructure
+  to: telecom_and_internet_access
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom towers, optical fiber networks, and spectrum allocation directly
+    provide mobile and broadband connectivity to citizens.
+- from: digital_telecom_infrastructure
+  to: digital_identity_and_egovernance
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital Public Infrastructure (DPI) and data centers form the foundational
+    backbone for core digital identity and online citizen services.
+- from: digital_telecom_infrastructure
+  to: digital_payments_interface
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Public Infrastructure and telecom networks directly enable
+    the functioning of the UPI ecosystem and digital payment systems.
+- from: digital_telecom_infrastructure
+  to: digital_communication_platforms
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Data centers and optical fibre networks provide the essential hosting
+    and bandwidth required for instant messaging and social media platforms.
+- from: digital_telecom_infrastructure
+  to: gig_and_platform_economy
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Robust telecom and digital infrastructure is the primary enabler for
+    platform-based gig work like ride-hailing and delivery services.
+- from: digital_telecom_infrastructure
+  to: edtech_platforms
   type: AFFECTS
   weight: 0.6
   polarity: 1
+  delay: SHORT_TERM
+  description: The penetration of telecom and broadband infrastructure directly enables
+    the adoption and delivery of online K-12 and higher education platforms.
+- from: digital_telecom_infrastructure
+  to: digital_and_cyber_security
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: The expansion of digital public infrastructure and telecom networks
+    proportionally increases the surface area for financial cyber fraud and digital
+    harassment.
+- from: transport_logistics_infrastructure
+  to: intercity_travel
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Railway networks, highways, and commercial airports directly provide
+    the physical capacity for long-distance passenger travel.
+- from: transport_logistics_infrastructure
+  to: road_infrastructure_experience
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The expansion and maintenance of highway networks directly dictate
+    toll costs and the physical condition of roads experienced by commuters.
+- from: transport_logistics_infrastructure
+  to: travel_and_tourism
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The development of airports, railways, and highways directly increases
+    accessibility to tourism services and holiday destinations.
+- from: transport_logistics_infrastructure
+  to: accidents_and_hazards
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: The scale and operational intensity of transport networks directly
+    correlate with the frequency of transit accidents and infrastructure hazards.
+- from: transport_logistics_infrastructure
+  to: packaged_and_processed_foods
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: Dedicated freight corridors and shipping routes reduce logistics costs,
+    inversely affecting the final retail price of packaged FMCG foods.
+- from: transport_logistics_infrastructure
+  to: fresh_produce
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Efficient transport and logistics networks directly improve the availability
+    and reduce spoilage of fresh fruits and vegetables.
+- from: civic_urban_infrastructure
+  to: water_and_sanitation
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Municipal water grids and sewage networks directly deliver residential
+    water supply and manage household sanitation.
+- from: civic_urban_infrastructure
+  to: urban_hydrology
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: The capacity and quality of municipal drainage networks inversely affect
+    the severity and frequency of urban flooding.
+- from: civic_urban_infrastructure
+  to: infectious_diseases
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Proper sewage and drainage infrastructure significantly reduces the
+    prevalence of water-borne and vector-borne diseases.
+- from: civic_urban_infrastructure
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Municipal waste and sanitation grids directly determine the cleanliness
+    and solid waste environment of local neighborhoods.
+- from: advanced_tech_infrastructure
+  to: consumer_tech_devices
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Semiconductor fabrication plants dictate the supply chain availability
+    and cost of personal computing and smart devices.
+- from: advanced_tech_infrastructure
+  to: telecom_and_internet_access
+  type: SUPPLIES
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Satellite networks provide critical backhaul and direct connectivity
+    for remote and rural internet access.
+- from: demographics_and_population
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
   delay: LONG_TERM
-  description: Rising citizen complaints regarding chronic traffic noise pressure
-    municipal corporations to install sound barriers and enforce no-honking zones.
-new_nodes: []
+  description: Urbanization trends and population growth directly drive up demand
+    and costs for rental housing and home construction.
+- from: demographics_and_population
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Aging demographics directly increase the prevalence and healthcare
+    burden of chronic, metabolic, and cardiovascular conditions.
+- from: demographics_and_population
+  to: employment_metrics_and_conditions
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Working-age population growth directly increases labor market competition,
+    impacting unemployment levels and wage stagnation.
+- from: migration_and_mobility
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Inward domestic migration directly increases localized demand and pricing
+    for rental housing and accommodation.
+- from: migration_and_mobility
+  to: informal_and_daily_wage
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Domestic migration directly supplies the labor force required for construction,
+    agriculture, and domestic care sectors.
+- from: migration_and_mobility
+  to: intercity_travel
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Migrant populations directly drive cyclical surges in demand for railway
+    and highway bus travel.
+- from: social_movements_and_collectives
+  to: public_order_and_emergencies
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mass social movements and identity protests directly trigger civil
+    unrest and crowd control emergencies.
+- from: social_movements_and_collectives
+  to: intercity_travel
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Agrarian and labor collective actions frequently manifest as blockades
+    that disrupt railway and highway travel efficiency.
+- from: social_movements_and_collectives
+  to: informal_and_daily_wage
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Labor and agrarian collectives directly negotiate and influence statutory
+    wages and working conditions for unorganized sector workers.
+- from: cultural_and_religious_forces
+  to: cultural_and_religious_life
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Major cultural observances and religious institutions directly dictate
+    the scale, frequency, and expenditure of festivals, weddings, and pilgrimages.
+- from: cultural_and_religious_forces
+  to: intercity_travel
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major festivals and religious observances directly drive massive, predictable
+    surges in railway, air, and highway travel.
+- from: cultural_and_religious_forces
+  to: sensory_environment
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Festivals and religious observances directly produce significant, localized
+    spikes in noise and light pollution.
+- from: macro_behavioral_shifts
+  to: entertainment_and_media
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Positive consumer sentiment directly drives discretionary spending
+    on cinema, digital entertainment, and live events.
+- from: macro_behavioral_shifts
+  to: market_investments
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Retail consumer sentiment directly dictates the volume of capital inflows
+    into equity investments and mutual funds.
+- from: macro_behavioral_shifts
+  to: travel_and_tourism
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Consumer sentiment and confidence directly impact household discretionary
+    spending on holiday accommodation and tourism services.
+- from: macro_behavioral_shifts
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Positive consumer sentiment directly increases the frequency and budget
+    allocated to restaurants and food delivery services.
+- from: indian_statutory_frameworks_and_councils
+  to: household_energy
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Statutory bodies like GST Council and petroleum ministry set administered
+    prices and subsidies for household cooking and heating fuels.
+- from: indian_statutory_frameworks_and_councils
+  to: taxation_and_compliance
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Union budget frameworks and statutory councils directly determine personal
+    income tax slabs, GST rates, and compliance requirements.
+- from: international_trade_and_supply_chains
+  to: self_employment_and_msme
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Trade policy changes and import competition directly impact the revenue
+    and survival of small manufacturing enterprises and MSMEs.
+- from: macro_behavioral_shifts
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Consumer confidence and behavioral sentiment shifts directly influence
+    household savings rates and deposit patterns.

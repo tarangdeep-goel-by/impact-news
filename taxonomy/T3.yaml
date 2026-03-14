@@ -1107,3 +1107,112 @@ edges:
   delay: SHORT_TERM
   description: A booming benchmark stock market creates a wealth effect among the
     investing class, boosting broader consumer optimism.
+- from: global_commodity_markets
+  to: biophysical_and_ecological_systems
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: High global demand and extraction of energy, metals, and agricultural
+    commodities drive deforestation, habitat loss, and widespread ecological degradation.
+- from: global_commodity_markets
+  to: meteorological_systems
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: The extraction, trade, and subsequent combustion of fossil energy commodities
+    directly drive greenhouse gas emissions, fundamentally altering macro climate
+    drivers and atmospheric temperatures.
+- from: indian_macroeconomic_indicators
+  to: indian_regulatory_bodies
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Domestic inflation indices and growth metrics directly trigger monetary
+    policy interventions and rate adjustments by financial regulators.
+- from: global_commodity_markets
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Global energy and agricultural commodity prices directly import inflation
+    into the Indian economy, driving up domestic inflation indices.
+- from: financial_and_capital_markets
+  to: indian_union_government
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Debt and bond market yields determine sovereign borrowing costs, directly
+    influencing the Union Government's fiscal deficit targets and infrastructure spending
+    capacity.
+- from: international_trade_and_supply_chains
+  to: indian_union_government
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Global supply chain disruptions and trade imbalances force economic
+    ministries to adjust import duties and launch domestic manufacturing incentives
+    (e.g., PLI schemes).
+- from: global_commodity_markets
+  to: energy_power_infrastructure
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Global energy commodities (coal, crude oil, natural gas) provide the
+    primary fuel inputs required to operate thermal power plants and pipeline networks.
+- from: financial_and_capital_markets
+  to: transport_logistics_infrastructure
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Debt markets, institutional investments, and equity markets provide
+    the massive capital required to build and expand highways, railways, and commercial
+    airports.
+- from: financial_and_capital_markets
+  to: energy_power_infrastructure
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Capital markets and institutional investment flows finance capital-intensive
+    energy projects, including renewable energy parks and national power grid expansions.
+- from: international_trade_and_supply_chains
+  to: advanced_tech_infrastructure
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Global supply chains provide the critical components, specialized machinery,
+    and raw materials required to build and operate semiconductor fabs and satellite
+    networks.
+- from: indian_macroeconomic_indicators
+  to: macro_behavioral_shifts
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Changes in inflation, employment, and GDP growth directly dictate consumer
+    sentiment and civic participation levels.
+- from: indian_macroeconomic_indicators
+  to: migration_and_mobility
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Domestic economic growth and employment aggregates drive rural-to-urban
+    domestic migration and influence international labor migration.
+- from: indian_macroeconomic_indicators
+  to: social_movements_and_collectives
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Macroeconomic distress (high inflation, low employment) triggers mobilization
+    of labor unions and agrarian collectives.

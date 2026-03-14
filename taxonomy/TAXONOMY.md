@@ -101,12 +101,11 @@ The graph has three kinds of non-hierarchical connections:
 |------|----------|---------|----------|
 | **Intra-tree** | Nodes within same L1 | `retail_diesel` → `freight_cost` (both I3) | Phase 1b / 2b |
 | **Portal** | Nodes across different L1s, same world | `freight_cost` (I3) → `retail_tomato` (I1) | Phase 1b / 2b |
-| **Bridge** | Trigger node → Impact node | `crude_oil` (T3) → `retail_diesel` (I3) | Phase 3 |
-| **Feedback** | Impact node → Trigger node | `retail_inflation` (I5) → `rbi` (T2) | Phase 3 |
+| **Bridge** | Trigger L2 → Impact L2 | `global_commodity_markets` (T3) → `petroleum_products` (I3) | Phase 3 |
 
 Portal edges can connect nodes at **any level** — an L3 in one tree can link to an L2 in another. Causal links don't respect taxonomy depth.
 
-**Feedback edges** model how citizen-level outcomes influence system-level entities. Citizens are not purely passive receivers — widespread inflation triggers central bank action, unemployment triggers protest movements, health crises trigger regulatory responses. Feedback edges always carry a longer `delay` (typically MEDIUM_TERM or LONG_TERM) since systemic responses lag citizen impact.
+**No I→T feedback edges.** Earlier designs included feedback edges (Impact→Trigger) modeling how citizen outcomes influence system entities. These were removed because they create cycles and "everything affects everything" paths. If an I-world node is actually an aggregate metric (e.g., `urban_unemployment_rate`), it likely belongs in T-world — fix the classification rather than adding feedback edges.
 
 ---
 
@@ -224,6 +223,38 @@ Every node carries a `status` field:
 **Temporal entities** (e.g., `covid_19_lockdown`, `demonetisation`) are allowed as nodes if they pass the Leaf Node Test (Rule 5). When the entity ceases to be relevant, set status to `deprecated`. The node remains in git history and can be reactivated if the entity recurs.
 
 **Mergers** (e.g., `hdfc_ltd` merges into `hdfc_bank`): set the absorbed node to `merged`, update `merged_into`, and transfer all inbound/outbound edges to the target node.
+
+---
+
+### Rule 18: L2 Highway Bridge Architecture
+
+Cross-world bridges (T→I) connect at the **L2 level**, not at leaves. One L2→L2 bridge replaces 3-10 leaf edges and automatically covers future child nodes via CONTAINS propagation.
+
+**Rules:**
+1. **New bridges MUST target L2→L2.** Connect at the highest level where the causal mechanism holds for ALL children of both the source and target L2. Only use L3/L4 targeting when the effect genuinely doesn't apply to the whole L2.
+2. **No new leaf-to-leaf cross-world edges.** Existing narrow leaf edges (78 as of v4) are grandfathered but should not be expanded. New connections go through L2 highways.
+3. **CONTAINS propagation handles depth.** The traversal engine seeds from ancestors and post-processes CONTAINS edges downward. You do not need to wire individual leaves — reaching the L2 parent is sufficient.
+4. **Cross-world REGULATES/MANAGES are metadata, not edges.** Administrative relationships that cross worlds (e.g., `rbi REGULATES credit_card_dues`) are stored as node properties (`regulated_by`, `managed_by`), not as graph edges. They short-circuit actual causal chains. Same-world REGULATES/MANAGES (e.g., `ministry_of_finance MANAGES union_budget_framework`, both T2) are fine as edges — they represent legitimate institutional relationships within a world.
+5. **No I→T edges.** The graph is forward-only: Trigger→Impact. See Rule 7.
+
+**Validation:** `python -m graph.quality` reports bridge level distribution. Any new L3/L4 cross-world edge triggers a warning.
+
+---
+
+### Rule 19: Patch and Edge Addition Protocol
+
+When adding new edges or bridges to the graph:
+
+1. **Check if an L2 bridge already covers the path.** Use `python -m graph.traverse <trigger_node>` to trace reachability. If the target is already reached via CONTAINS propagation from an existing L2 bridge, no new edge is needed.
+2. **Prefer adding L2 bridges over leaf edges.** If the mechanism applies broadly (e.g., "trade policy affects SME income"), add it at L2 (`international_trade_and_supply_chains → self_employment_and_msme`), not at L3/L4.
+3. **Same-world laterals at L2.** When adding I→I or T→T connections, prefer L2→L2 laterals. These create multi-hop highways within each world.
+4. **No new nodes without justification.** The L2 taxonomy is MECE. Adding a new L2 requires demonstrating that no existing L2 covers the concept. New L3/L4 leaves are fine if they pass the Leaf Node Test (Rule 5).
+5. **Every patch needs a scenario.** When adding a bridge to fix a gap, add a corresponding scenario to `taxonomy/scenarios.yaml` that validates the path. Patches without test coverage will regress silently.
+6. **Run the full validation suite after every patch:**
+   ```bash
+   python3 scripts/graph_builder.py test    # 47+ scenarios must pass
+   python3 -m graph.quality                 # scorecard must not regress
+   ```
 
 ---
 

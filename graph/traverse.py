@@ -9,14 +9,18 @@ import networkx as nx
 from models import UserGraph
 
 CAUSAL_TYPES = {"AFFECTS", "PRODUCES", "REGULATES", "DISRUPTS", "SUPPLIES", "DEPENDS_ON"}
-TAXONOMY_TYPES = {"IS_A", "CONTAINS"}
+TAXONOMY_TYPES = {"IS_A"}  # CONTAINS is followed for downward hierarchy propagation
 
 DELAY_RANK = {"IMMEDIATE": 0, "SHORT_TERM": 1, "MEDIUM_TERM": 2, "LONG_TERM": 3}
 DELAY_LABELS = {v: k for k, v in DELAY_RANK.items()}
 
 
 def get_causal_entry(g: nx.DiGraph, node_id: str) -> str:
-    """Walk UP IS_A edges until finding a node with causal out-edges."""
+    """Walk UP the hierarchy until finding a node with causal out-edges.
+
+    Supports both IS_A (child→parent as successor) and CONTAINS (parent→child,
+    so we walk up by checking predecessors with CONTAINS type).
+    """
     visited: set[str] = set()
     current = node_id
 
@@ -31,7 +35,7 @@ def get_causal_entry(g: nx.DiGraph, node_id: str) -> str:
         if has_causal:
             return current
 
-        # Follow IS_A edges upward (successors where edge type == IS_A)
+        # Try IS_A upward (child → parent as successor)
         parent = None
         for succ in g.successors(current):
             if g.edges[current, succ].get("type") == "IS_A":
@@ -39,11 +43,50 @@ def get_causal_entry(g: nx.DiGraph, node_id: str) -> str:
                     parent = succ
                     break
 
+        # Try CONTAINS upward (parent → child, so parent is a predecessor)
+        if parent is None:
+            for pred in g.predecessors(current):
+                if g.edges[pred, current].get("type") == "CONTAINS":
+                    if pred not in visited:
+                        parent = pred
+                        break
+
         if parent is None:
             break
         current = parent
 
     return node_id
+
+
+def _get_contains_ancestors(g: nx.DiGraph, node_id: str) -> list[tuple[str, float]]:
+    """Walk UP the CONTAINS chain, returning (ancestor_id, cumulative_weight) pairs.
+
+    Each step up multiplies by the CONTAINS edge weight (typically 0.9).
+    Stops at L1 (level=1) or when no more CONTAINS parents exist.
+    """
+    ancestors: list[tuple[str, float]] = []
+    current = node_id
+    cumulative = 1.0
+    visited: set[str] = {node_id}
+
+    while True:
+        parent = None
+        for pred in g.predecessors(current):
+            if pred not in visited and g.edges[pred, current].get("type") == "CONTAINS":
+                parent = pred
+                break
+        if parent is None:
+            break
+        visited.add(parent)
+        edge_w = g.edges[parent, current].get("weight", 0.9)
+        cumulative *= edge_w
+        level = g.nodes[parent].get("level", 0) if g.has_node(parent) else 0
+        ancestors.append((parent, cumulative))
+        if level <= 1:
+            break
+        current = parent
+
+    return ancestors
 
 
 def analyze_impact(
@@ -53,7 +96,11 @@ def analyze_impact(
     threshold: float = 0.05,
     max_depth: int = 6,
 ) -> list[dict]:
-    """Modified Dijkstra with max-product paths for impact propagation."""
+    """Modified Dijkstra with max-product paths for impact propagation.
+
+    Seeds traversal from the trigger node AND all its CONTAINS ancestors.
+    This enables L2 bridges to be reached from leaf trigger nodes.
+    """
     entry = get_causal_entry(g, trigger_node)
 
     # max-heap via negated weights
@@ -62,6 +109,13 @@ def analyze_impact(
     heapq.heappush(heap, (-1.0, entry, event_direction, [entry], "IMMEDIATE"))
 
     max_weight_seen: dict[str, float] = {entry: 1.0}
+
+    # Also seed from CONTAINS ancestors (for L2 bridge access)
+    for ancestor, cum_weight in _get_contains_ancestors(g, entry):
+        if cum_weight >= threshold:
+            heapq.heappush(heap, (-cum_weight, ancestor, event_direction, [entry, ancestor], "IMMEDIATE"))
+            max_weight_seen[ancestor] = cum_weight
+
     results: list[dict] = []
 
     while heap:
@@ -110,6 +164,45 @@ def analyze_impact(
             if new_weight > max_weight_seen.get(succ, 0.0):
                 max_weight_seen[succ] = new_weight
                 heapq.heappush(heap, (-new_weight, succ, new_polarity, path + [succ], new_delay))
+
+    # Post-processing: propagate CONTAINS edges downward from all reached nodes.
+    # This ensures L2 bridge targets propagate to ALL children regardless of
+    # whether a longer path reached the L2 first (max_weight_seen issue).
+    reached_scores = {r["node"]: r for r in results}
+    reached_scores[entry] = {"node": entry, "score": 1.0, "polarity": event_direction, "delay": "IMMEDIATE", "path": [entry]}
+
+    contains_queue = list(reached_scores.keys())
+    visited_contains: set[str] = set()
+    while contains_queue:
+        node = contains_queue.pop(0)
+        if node in visited_contains:
+            continue
+        visited_contains.add(node)
+
+        parent_result = reached_scores.get(node)
+        if not parent_result:
+            continue
+
+        for succ in g.successors(node):
+            if g.edges[node, succ].get("type") != "CONTAINS":
+                continue
+            edge_w = g.edges[node, succ].get("weight", 0.9)
+            child_score = parent_result["score"] * edge_w
+            if child_score < threshold:
+                continue
+            if succ not in reached_scores or reached_scores[succ]["score"] < child_score:
+                child_result = {
+                    "node": succ,
+                    "score": child_score,
+                    "polarity": parent_result["polarity"],
+                    "delay": parent_result["delay"],
+                    "path": parent_result["path"] + [succ],
+                }
+                reached_scores[succ] = child_result
+                contains_queue.append(succ)
+
+    # Rebuild results from reached_scores (exclude entry node)
+    results = [r for r in reached_scores.values() if r["node"] != entry]
 
     # Sort by score descending
     results.sort(key=lambda x: x["score"], reverse=True)

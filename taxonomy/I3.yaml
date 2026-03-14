@@ -94,6 +94,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - ministry_of_finance
 - id: retail_diesel
   aliases:
   - Retail Diesel
@@ -104,6 +106,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - ministry_of_finance
 - id: cng_fuel
   aliases:
   - CNG Fuel
@@ -115,6 +119,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - ministry_of_finance
 - id: ev_charging_tariff
   aliases:
   - EV Charging Tariff
@@ -137,6 +143,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - gst_council
 - id: four_wheeler_price
   aliases:
   - Four Wheeler Price
@@ -148,6 +156,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - gst_council
 - id: traffic_fines
   aliases:
   - Traffic Fines
@@ -160,6 +170,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - regional_transport_office
 - id: vehicle_insurance_premium
   aliases:
   - Vehicle Insurance Premium
@@ -171,6 +183,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - irda
 - id: vehicle_servicing_cost
   aliases:
   - Vehicle Servicing Cost
@@ -212,6 +226,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - state_governments
 - id: local_train_ticket
   aliases:
   - Local Train Ticket
@@ -233,6 +249,8 @@ nodes:
   level: 4
   status: active
   port: true
+  regulated_by:
+  - state_governments
 - id: ride_hailing_services
   aliases:
   - Ride Hailing Services
@@ -330,6 +348,8 @@ nodes:
   level: 4
   status: active
   port: true
+  managed_by:
+  - ministry_of_railways
 - id: premium_train_fare
   aliases:
   - Premium Train Fare
@@ -341,6 +361,8 @@ nodes:
   level: 4
   status: active
   port: true
+  regulated_by:
+  - ministry_of_railways
 - id: domestic_flight_ticket
   aliases:
   - Domestic Flight Ticket
@@ -395,6 +417,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - ministry_of_road_transport
 - id: road_potholes
   aliases:
   - Road Potholes
@@ -407,6 +431,8 @@ nodes:
   status: active
   portal: true
   port: true
+  managed_by:
+  - municipal_corporations
 - id: traffic_congestion
   aliases:
   - Traffic Congestion
@@ -430,6 +456,8 @@ nodes:
   level: 4
   status: active
   port: true
+  regulated_by:
+  - municipal_corporations
 edges:
 - from: i3
   to: private_vehicle_ownership
@@ -1089,3 +1117,292 @@ edges:
   delay: MEDIUM_TERM
   description: High parking fees discourage private vehicle use, potentially reducing
     urban congestion over time.
+- from: road_infrastructure_experience
+  to: fresh_produce
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Quality of road infrastructure directly impacts transit times, spoilage
+    rates, and retail availability of highly perishable fresh fruits and vegetables.
+- from: road_infrastructure_experience
+  to: dairy_and_eggs
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Road conditions affect the daily cold-chain logistics and timely urban
+    distribution of perishable dairy products and eggs.
+- from: road_infrastructure_experience
+  to: meat_and_seafood
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Efficient road networks are critical for the rapid transport of highly
+    perishable meat and marine/freshwater catch to urban markets.
+- from: road_infrastructure_experience
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Urban road conditions and traffic directly affect the operational efficiency,
+    viability, and delivery times of food delivery services.
+- from: public_transit
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: Accessible public transit networks increase consumer mobility and footfall
+    to commercial dining hubs, quick service restaurants, and street food zones.
+- from: on_demand_transit
+  to: telecom_and_internet_access
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: App-based ride-hailing services fundamentally require mobile internet
+    connectivity for both drivers and passengers to match rides and navigate.
+- from: intercity_travel
+  to: travel_and_tourism
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Expansion and quality of intercity travel networks (new flights, express
+    trains, highways) directly enable and boost tourism growth.
+- from: public_transit
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Expansion of public transit networks (such as metro rail and bus corridors)
+    directly increases rental demand and spurs home construction along transit corridors.
+- from: road_infrastructure_experience
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Improvements in urban road conditions and highway connectivity open
+    up new geographic areas for residential construction and elevate local rental
+    values.
+- from: private_vehicle_ownership
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: Increasing private vehicle ownership drives the demand for dedicated
+    parking infrastructure, directly influencing home construction designs and rental
+    housing premiums.
+- from: on_demand_transit
+  to: gig_and_platform_economy
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Expansion of on-demand transit services (cabs, autos) directly creates
+    employment opportunities and drives growth in the gig and platform economy.
+- from: public_transit
+  to: informal_and_daily_wage
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Affordable and extensive public transit networks enable daily wage
+    and informal workers to access employment opportunities across sprawling urban
+    areas.
+- from: intercity_travel
+  to: informal_and_daily_wage
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Intercity travel networks (especially affordable railways and highway
+    buses) facilitate the movement of migrant workers, supplying crucial labor to
+    the informal sector.
+- from: road_infrastructure_experience
+  to: gig_and_platform_economy
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: The quality of urban road infrastructure directly impacts the travel
+    efficiency, turnaround time, and daily earnings of gig delivery and ride-hailing
+    workers.
+- from: private_vehicle_ownership
+  to: insurance_premiums
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Mandatory motor insurance requirements for vehicle acquisition and
+    compliance directly drive recurring general insurance premium outgoes for households.
+- from: public_transit
+  to: infectious_diseases
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: High-density crowding in urban mass transit systems (buses and trains)
+    facilitates the rapid transmission of respiratory and other communicable diseases.
+- from: intercity_travel
+  to: infectious_diseases
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Long-distance travel via railways, buses, and airlines acts as a primary
+    vector for spreading infectious diseases across different geographic regions.
+- from: private_vehicle_ownership
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: High reliance on personal vehicles reduces daily physical activity
+    (lack of active commuting), contributing over time to the onset of metabolic and
+    cardiovascular disorders.
+- from: road_infrastructure_experience
+  to: healthcare_services
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Severe traffic congestion and poor urban road conditions delay emergency
+    medical responses (ambulances) and impede timely patient access to hospitals.
+- from: road_infrastructure_experience
+  to: maternal_and_child_health
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Poor road conditions and lack of reliable last-mile connectivity in
+    semi-urban and rural areas delay access to institutional deliveries and emergency
+    maternal care.
+- from: intercity_travel
+  to: healthcare_services
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Intercity transport networks (especially railways) enable patients
+    from smaller towns and rural areas to access specialized inpatient care and advanced
+    diagnostics in metropolitan medical hubs.
+- from: public_transit
+  to: healthcare_services
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Affordable and extensive urban mass transit networks improve the ability
+    of lower-income populations to regularly access outpatient and diagnostic healthcare
+    services.
+- from: public_transit
+  to: school_education
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Availability of reliable public transit (especially buses) improves
+    school accessibility and daily attendance for students.
+- from: public_transit
+  to: higher_education
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Urban mass transit networks enable daily commuting for college students,
+    expanding access to higher education institutions across cities.
+- from: intercity_travel
+  to: higher_education
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Affordable intercity travel networks (railways, highway buses) enable
+    students to migrate to different cities and states for university education.
+- from: road_infrastructure_experience
+  to: school_education
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Better urban road conditions and traffic management improve the efficiency
+    and reliability of daily school commutes, reducing travel fatigue for students.
+- from: public_transit
+  to: education_economics
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Provision of subsidized student passes on public transit systems reduces
+    the overall transportation component of out-of-pocket educational costs for families.
+- from: road_infrastructure_experience
+  to: accidents_and_hazards
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: Improvements in urban road conditions and highway infrastructure directly
+    reduce the frequency of transit accidents and physical hazards.
+- from: public_transit
+  to: women_and_child_safety
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The availability of well-lit, monitored, and reliable public transit
+    directly enhances the physical safety of women and children during commutes.
+- from: on_demand_transit
+  to: women_and_child_safety
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Safety features like GPS tracking, SOS buttons, and driver verification
+    in ride-hailing services directly impact women's security during transit.
+- from: private_vehicle_ownership
+  to: air_quality_environment
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Exhaust emissions and tire wear from private vehicles directly increase
+    ambient particulate matter and winter smog.
+- from: private_vehicle_ownership
+  to: sensory_environment
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Vehicle engines and frequent honking in traffic are primary contributors
+    to urban noise pollution.
+- from: public_transit
+  to: air_quality_environment
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: LONG_TERM
+  description: Higher utilization of mass public transit (metros, electric buses)
+    reduces per-capita vehicular emissions, lowering overall particulate matter levels.
+- from: road_infrastructure_experience
+  to: air_quality_environment
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Better paved road conditions and end-to-end surfacing reduce resuspended
+    road dust, which is a major source of urban PM levels.
+- from: road_infrastructure_experience
+  to: urban_hydrology
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: Extensive paved road networks and concretization without adequate drainage
+    increase surface runoff, exacerbating urban flooding.

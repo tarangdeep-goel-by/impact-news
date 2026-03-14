@@ -157,6 +157,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - supreme_court_of_india
 - id: women_safety
   aliases:
   - Women Safety
@@ -349,6 +351,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - municipal_corporations
 - id: structural_collapse
   aliases:
   - Structural Collapse
@@ -372,6 +376,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - state_electricity_boards
 - id: stray_animal_attacks
   aliases:
   - Stray Animal Attacks
@@ -384,6 +390,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - municipal_corporations
 - id: wildlife_encounters
   aliases:
   - Wildlife Encounters
@@ -448,6 +456,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - major_temple_trusts
 edges:
 - from: i8
   to: physical_crime_and_law_enforcement
@@ -1342,3 +1352,342 @@ edges:
   delay: IMMEDIATE
   description: Mass casualty stampedes trigger mandatory police FIRs against event
     organizers for criminal negligence.
+- from: public_order_and_emergencies
+  to: out_of_home_dining
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Civil unrest, curfews, and public emergencies force the immediate closure
+    of restaurants, street food stalls, and suspension of food delivery services.
+- from: public_order_and_emergencies
+  to: fresh_produce
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Public order disruptions and blockades halt daily mandi operations
+    and the transport of highly perishable fruits and vegetables, causing immediate
+    supply shocks.
+- from: physical_crime_and_law_enforcement
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Law enforcement actions, including strict closing time mandates, licensing
+    checks, and anti-encroachment drives, directly restrict the operations of street
+    food vendors and nightlife dining.
+- from: women_and_child_safety
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: Improved safety and security for women directly increases female and
+    family participation in out-of-home dining, particularly during evening and nighttime
+    hours.
+- from: public_order_and_emergencies
+  to: telecom_and_internet_access
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Civil unrest and public order emergencies frequently trigger government-mandated
+    localized internet and telecom shutdowns.
+- from: physical_crime_and_law_enforcement
+  to: consumer_tech_devices
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Property crimes such as street snatching and theft frequently target
+    high-value consumer tech devices like smartphones.
+- from: public_order_and_emergencies
+  to: cultural_and_religious_life
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Breakdowns in public order, civil unrest, or the imposition of prohibitory
+    orders (like Section 144) directly force the cancellation, restriction, or scaling
+    down of festivals, weddings, and religious gatherings.
+- from: public_order_and_emergencies
+  to: travel_and_tourism
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Civil unrest, curfews, and public emergencies immediately halt tourism
+    activities, leading to mass cancellations of holiday accommodations and travel
+    services.
+- from: women_and_child_safety
+  to: community_and_civic_life
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher levels of safety for women and children directly increase their
+    ability to participate in neighborhood life and freely utilize public spaces like
+    parks and community centers.
+- from: women_and_child_safety
+  to: entertainment_and_media
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Improved safety conditions enable greater participation of women and
+    families in evening and late-night entertainment, such as cinema, theatre, and
+    live events.
+- from: physical_crime_and_law_enforcement
+  to: travel_and_tourism
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: High incidences of violent or property crime (or the strong perception
+    thereof) deter visitors, negatively impacting local tourism services and the hospitality
+    sector.
+- from: public_order_and_emergencies
+  to: residential_maintenance_and_services
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Civil unrest, curfews, and localized emergencies restrict movement,
+    disrupting the daily availability of domestic labor and housing maintenance staff.
+- from: physical_crime_and_law_enforcement
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: LONG_TERM
+  description: High local crime rates depress rental housing demand and force defensive
+    modifications in home construction (e.g., installing heavy security grilles and
+    high walls).
+- from: public_order_and_emergencies
+  to: public_transit
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Civil unrest, protests, and crowd emergencies directly force the suspension,
+    delay, or rerouting of urban mass transit systems.
+- from: public_order_and_emergencies
+  to: intercity_travel
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Public order breakdowns, such as highway blockades and railway protests,
+    directly halt or severely delay intercity travel operations.
+- from: accidents_and_hazards
+  to: road_infrastructure_experience
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Transit accidents and physical hazards on roads directly cause severe
+    traffic congestion, degrading the overall road travel experience.
+- from: women_and_child_safety
+  to: public_transit
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: The actual and perceived safety of women directly influences their
+    willingness and ability to utilize public transit networks, affecting ridership.
+- from: public_order_and_emergencies
+  to: informal_and_daily_wage
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Civil unrest, curfews, and crowd emergencies immediately halt daily
+    wage labor and informal sector earnings.
+- from: public_order_and_emergencies
+  to: self_employment_and_msme
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Public order disruptions force the closure of retail shops and halt
+    MSME manufacturing and trade operations.
+- from: public_order_and_emergencies
+  to: gig_and_platform_economy
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Curfews and associated internet shutdowns immediately paralyze platform-based
+    delivery, logistics, and ride-hailing services.
+- from: women_and_child_safety
+  to: corporate_employment
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Improvements in women's safety, particularly regarding commutes and
+    night shifts, encourage higher female labor force participation in the corporate
+    sector.
+- from: physical_crime_and_law_enforcement
+  to: self_employment_and_msme
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Property crime, theft, and extortion directly disrupt the operations,
+    inventory, and profitability of retail businesses and MSMEs.
+- from: physical_crime_and_law_enforcement
+  to: physical_and_alternative_assets
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Property crimes directly result in the loss or damage of tangible wealth,
+    including precious metals, cash, and real estate.
+- from: digital_and_cyber_security
+  to: savings_and_deposits
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: Financial cyber fraud, phishing, and scams directly deplete individuals'
+    bank deposits and accumulated savings.
+- from: digital_and_cyber_security
+  to: borrowing_and_credit
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Identity theft and cyber security breaches can lead to fraudulent loans
+    taken in a victim's name, severely damaging their credit profile.
+- from: accidents_and_hazards
+  to: insurance_premiums
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: High frequency of transit accidents and physical hazards drives up
+    claims, leading to increased general and life insurance premiums over time.
+- from: public_order_and_emergencies
+  to: physical_and_alternative_assets
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Civil unrest and crowd emergencies can lead to vandalism, arson, and
+    destruction of physical assets like real estate and vehicles.
+- from: accidents_and_hazards
+  to: healthcare_services
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Transit accidents, infrastructure failures, and animal attacks directly
+    result in physical injuries requiring emergency and inpatient medical care.
+- from: physical_crime_and_law_enforcement
+  to: healthcare_services
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Violent crimes and physical altercations produce injuries that necessitate
+    immediate outpatient or inpatient healthcare services.
+- from: public_order_and_emergencies
+  to: healthcare_services
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Civil unrest and crowd emergencies (such as stampedes) cause mass casualties,
+    leading to sudden surges in demand for healthcare facilities.
+- from: women_and_child_safety
+  to: healthcare_services
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: 'Lapses in women and child safety, including domestic violence and
+    abuse, directly result in physical trauma requiring medical intervention (inverse
+    relationship: better safety reduces healthcare burden).'
+- from: physical_crime_and_law_enforcement
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Exposure to violent crime and severe property crime causes acute stress,
+    PTSD, and long-term psychological trauma for victims.
+- from: digital_and_cyber_security
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Victimization through financial cyber fraud and digital harassment
+    leads to significant anxiety, depression, and psychological distress.
+- from: women_and_child_safety
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: Improvements in women and child safety reduce the incidence of trauma,
+    abuse-related PTSD, and the subsequent need for mental health services.
+- from: public_order_and_emergencies
+  to: school_education
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Civil unrest, curfews, and public emergencies lead to immediate school
+    closures, disrupting academic schedules and examinations.
+- from: public_order_and_emergencies
+  to: higher_education
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Public order issues and curfews disrupt university classes, research
+    activities, and campus life.
+- from: public_order_and_emergencies
+  to: competitive_exams_and_coaching
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Civil unrest and associated internet shutdowns frequently force the
+    postponement or cancellation of competitive entrance and recruitment exams.
+- from: women_and_child_safety
+  to: school_education
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Improved safety for women and children directly increases school attendance
+    and reduces dropout rates, particularly for girls.
+- from: women_and_child_safety
+  to: higher_education
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Safe environments and secure transit options are critical for female
+    students' enrollment and sustained participation in higher education.
+- from: public_order_and_emergencies
+  to: civic_cleanliness
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Civil unrest and large crowd emergencies disrupt municipal waste collection
+    services and generate significant debris, degrading neighborhood hygiene.
+- from: public_order_and_emergencies
+  to: sensory_environment
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Large-scale civil unrest and crowd emergencies generate acute noise
+    pollution in residential and commercial neighborhoods.

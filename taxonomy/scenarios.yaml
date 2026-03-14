@@ -1,0 +1,498 @@
+# scenarios.yaml — Seed scenarios for graph path validation
+# 47 scenarios across 8 domains
+# Types: A (path_exists), B (reachability), C (score_threshold)
+# Mix: ~60% A, ~25% B, ~15% C, with ~10% negative tests
+
+scenarios:
+
+  # ============================================================
+  # DOMAIN: energy (7 scenarios)
+  # ============================================================
+
+  - id: energy_crude_to_diesel
+    description: "Brent crude spike reaches retail diesel"
+    domain: energy
+    type: A
+    trigger_node: brent_crude
+    target_node: retail_diesel
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: energy_crude_to_lpg
+    description: "Brent crude price hike reaches LPG cylinder cost"
+    domain: energy
+    type: A
+    trigger_node: brent_crude
+    target_node: lpg_cylinder
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: energy_gold_to_loan
+    description: "Gold price movement reaches gold loan interest"
+    domain: energy
+    type: A
+    trigger_node: international_gold_prices
+    target_node: gold_loan_interest
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: energy_natgas_to_auto
+    description: "Natural gas price reaches auto rickshaw fare via CNG"
+    domain: energy
+    type: A
+    trigger_node: global_natural_gas
+    target_node: auto_rickshaw_fare
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: energy_coal_to_tariff
+    description: "Coal prices affect electricity tariff"
+    domain: energy
+    type: A
+    trigger_node: international_coal_prices
+    target_node: electricity_tariff
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: energy_crude_reachability
+    description: "Brent crude spike reaches diesel, petrol, LPG, and cooking fuel"
+    domain: energy
+    type: B
+    trigger_node: brent_crude
+    target_nodes:
+      - retail_diesel
+      - retail_petrol
+      - lpg_cylinder
+      - cooking_fuel
+    direction: 1
+    threshold: 0.05
+
+  - id: energy_crude_to_savings_score
+    description: "Brent crude shock propagates to savings with meaningful score"
+    domain: energy
+    type: C
+    trigger_node: brent_crude
+    target_node: savings_account_balance
+    direction: 1
+    min_score: 0.05
+
+  # ============================================================
+  # DOMAIN: monetary (7 scenarios)
+  # ============================================================
+
+  - id: monetary_rbi_to_emi
+    description: "RBI policy reaches home loan EMI"
+    domain: monetary
+    type: A
+    trigger_node: rbi
+    target_node: home_loan_emi
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: monetary_rbi_to_emi_score
+    description: "RBI has strong causal link to home loan EMI"
+    domain: monetary
+    type: C
+    trigger_node: rbi
+    target_node: home_loan_emi
+    direction: 1
+    min_score: 0.15
+
+  - id: monetary_fed_to_nifty
+    description: "US Fed rate decision reaches Nifty 50 via FII flows"
+    domain: monetary
+    type: A
+    trigger_node: us_federal_reserve
+    target_node: nifty_50
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: monetary_gst_to_food
+    description: "GST council decision reaches packaged food prices"
+    domain: monetary
+    type: A
+    trigger_node: gst_council
+    target_node: packaged_and_processed_foods
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: monetary_budget_to_lpg
+    description: "Union budget subsidy changes reach LPG cylinder price"
+    domain: monetary
+    type: A
+    trigger_node: union_budget_framework
+    target_node: lpg_cylinder
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: monetary_mpc_to_emi_score
+    description: "MPC decision strongly affects home loan EMI"
+    domain: monetary
+    type: C
+    trigger_node: monetary_policy_committee
+    target_node: home_loan_emi
+    direction: 1
+    min_score: 0.15
+
+  - id: monetary_nifty_to_nps
+    description: "Nifty 50 movement reaches NPS portfolio value"
+    domain: monetary
+    type: A
+    trigger_node: nifty_50
+    target_node: nps_portfolio
+    max_hops: 3
+    expected: REACHABLE
+
+  # ============================================================
+  # DOMAIN: climate (7 scenarios)
+  # ============================================================
+
+  - id: climate_monsoon_to_rice
+    description: "Southwest monsoon affects retail rice price"
+    domain: climate
+    type: A
+    trigger_node: southwest_monsoon
+    target_node: retail_rice
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: climate_monsoon_reachability
+    description: "Southwest monsoon reaches rice, vegetables, and farm labor"
+    domain: climate
+    type: B
+    trigger_node: southwest_monsoon
+    target_nodes:
+      - retail_rice
+      - vegetables
+      - farm_labor_wages
+    direction: 1
+    threshold: 0.05
+
+  - id: climate_aqi_to_hospital
+    description: "Air quality crisis increases hospital bed demand"
+    domain: climate
+    type: A
+    trigger_node: ambient_aqi
+    target_node: hospital_beds
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: climate_heat_to_labor
+    description: "Outdoor heat reduces informal/daily wage labor productivity"
+    domain: climate
+    type: A
+    trigger_node: outdoor_heat
+    target_node: informal_and_daily_wage
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: climate_cyclone_to_fish
+    description: "Cyclonic storms disrupt marine fish stocks"
+    domain: climate
+    type: A
+    trigger_node: cyclonic_storm_systems
+    target_node: marine_fish_stocks
+    max_hops: 3
+    expected: REACHABLE
+
+  - id: climate_aqi_to_schools
+    description: "Air quality crisis forces school closures"
+    domain: climate
+    type: A
+    trigger_node: ambient_aqi
+    target_node: government_schools
+    max_hops: 5
+    expected: REACHABLE
+
+  - id: climate_heat_to_hospital
+    description: "Extreme heat increases hospital admissions"
+    domain: climate
+    type: A
+    trigger_node: outdoor_heat
+    target_node: hospital_beds
+    max_hops: 4
+    expected: REACHABLE
+
+  # ============================================================
+  # DOMAIN: employment (4 scenarios)
+  # ============================================================
+
+  - id: employment_it_to_salary
+    description: "IT sector job market affects IT sector salary"
+    domain: employment
+    type: A
+    trigger_node: it_sector_jobs
+    target_node: it_sector_salary
+    max_hops: 3
+    expected: REACHABLE
+
+  - id: employment_mgnrega_to_kirana
+    description: "MGNREGA wage payments reach kirana store income"
+    domain: employment
+    type: A
+    trigger_node: mgnrega_wages
+    target_node: kirana_store_income
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: employment_farm_to_unemployment
+    description: "Farm labor wage changes affect rural unemployment"
+    domain: employment
+    type: A
+    trigger_node: farm_labor_wages
+    target_node: rural_unemployment_rate
+    max_hops: 3
+    expected: REACHABLE
+
+  - id: employment_it_to_credit
+    description: "IT layoffs reach credit card payment stress"
+    domain: employment
+    type: A
+    trigger_node: it_sector_jobs
+    target_node: credit_card_dues
+    max_hops: 4
+    expected: REACHABLE
+
+  # ============================================================
+  # DOMAIN: trade (4 scenarios)
+  # ============================================================
+
+  - id: trade_us_to_factory
+    description: "US trade policy reaches Indian factory worker jobs"
+    domain: trade
+    type: A
+    trigger_node: us_government
+    target_node: factory_worker_jobs
+    max_hops: 5
+    expected: REACHABLE
+
+  - id: trade_deficit_to_sme
+    description: "Trade deficit affects small factory owner income"
+    domain: trade
+    type: A
+    trigger_node: india_trade_deficit
+    target_node: small_factory_owner_income
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: trade_russia_to_grain
+    description: "Russian government action reaches global food grain supply"
+    domain: trade
+    type: A
+    trigger_node: russian_government
+    target_node: global_food_grain_supply
+    max_hops: 5
+    expected: REACHABLE
+
+  - id: trade_usd_reachability
+    description: "USD/INR movement reaches petrol, diesel, and laptop costs"
+    domain: trade
+    type: B
+    trigger_node: usd_inr_exchange
+    target_nodes:
+      - retail_petrol
+      - retail_diesel
+      - laptop_computer
+    direction: 1
+    threshold: 0.05
+
+  # ============================================================
+  # DOMAIN: tech (4 scenarios)
+  # ============================================================
+
+  - id: tech_phone_to_upi
+    description: "Smartphone adoption enables UPI transaction success"
+    domain: tech
+    type: A
+    trigger_node: smartphone_device
+    target_node: upi_transaction_success
+    max_hops: 5
+    expected: REACHABLE
+
+  - id: tech_telecom_to_data
+    description: "Telecom infrastructure affects mobile data tariff"
+    domain: tech
+    type: A
+    trigger_node: digital_telecom_infrastructure
+    target_node: mobile_data_tariff
+    max_hops: 3
+    expected: REACHABLE
+
+  - id: tech_aadhaar_to_epf
+    description: "Aadhaar authentication enables EPF balance access"
+    domain: tech
+    type: A
+    trigger_node: aadhaar_authentication
+    target_node: epf_balance
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: tech_himalayan_to_rice
+    description: "Himalayan river system changes reach retail rice price"
+    domain: climate
+    type: A
+    trigger_node: himalayan_river_systems
+    target_node: retail_rice
+    max_hops: 5
+    expected: REACHABLE
+
+  # ============================================================
+  # DOMAIN: social (4 scenarios)
+  # ============================================================
+
+  - id: social_confidence_to_kirana
+    description: "Consumer confidence drop reaches kirana store income"
+    domain: social
+    type: A
+    trigger_node: aggregate_consumer_confidence
+    target_node: kirana_store_income
+    max_hops: 4
+    expected: REACHABLE
+
+  - id: social_tomato_to_savings
+    description: "Tomato price spike erodes household savings"
+    domain: social
+    type: A
+    trigger_node: retail_tomato
+    target_node: savings_account_balance
+    max_hops: 5
+    expected: REACHABLE
+
+  - id: social_confidence_reachability
+    description: "Consumer confidence reaches kirana, savings, and credit cards"
+    domain: social
+    type: B
+    trigger_node: aggregate_consumer_confidence
+    target_nodes:
+      - kirana_store_income
+      - savings_account_balance
+      - credit_card_dues
+    direction: 1
+    threshold: 0.05
+
+  - id: social_inflation_score
+    description: "Inflation indices have meaningful impact on savings"
+    domain: social
+    type: C
+    trigger_node: inflation_indices
+    target_node: savings_account_balance
+    direction: 1
+    min_score: 0.05
+
+  # ============================================================
+  # DOMAIN: governance (3 scenarios)
+  # ============================================================
+
+  - id: governance_budget_reachability
+    description: "Union budget reaches LPG, electricity, and income tax"
+    domain: governance
+    type: B
+    trigger_node: union_budget_framework
+    target_nodes:
+      - lpg_cylinder
+      - electricity_tariff
+      - personal_income_tax
+    direction: 1
+    threshold: 0.05
+
+  - id: governance_gdp_to_salary_score
+    description: "GDP growth has meaningful link to IT salary"
+    domain: governance
+    type: C
+    trigger_node: india_gdp_growth
+    target_node: it_sector_salary
+    direction: 1
+    min_score: 0.05
+
+  # ============================================================
+  # CROSS-DOMAIN REACHABILITY (additional Type B)
+  # ============================================================
+
+  - id: cross_rbi_reachability
+    description: "RBI reaches EMI, deposits, and credit cards"
+    domain: monetary
+    type: B
+    trigger_node: rbi
+    target_nodes:
+      - home_loan_emi
+      - savings_and_deposits
+      - credit_card_dues
+      - nifty_50
+    direction: 1
+    threshold: 0.05
+
+  - id: cross_it_reachability
+    description: "IT sector job changes reach salary, credit, and kirana"
+    domain: employment
+    type: B
+    trigger_node: it_sector_jobs
+    target_nodes:
+      - it_sector_salary
+      - credit_card_dues
+      - kirana_store_income
+    direction: 1
+    threshold: 0.05
+
+  - id: cross_heat_reachability
+    description: "Extreme heat reaches daily wage, hospitals, and rice"
+    domain: climate
+    type: B
+    trigger_node: outdoor_heat
+    target_nodes:
+      - informal_and_daily_wage
+      - hospital_beds
+      - retail_rice
+    direction: 1
+    threshold: 0.05
+
+  - id: cross_gst_reachability
+    description: "GST council reaches packaged food, biscuits, and retail tomato"
+    domain: monetary
+    type: B
+    trigger_node: gst_council
+    target_nodes:
+      - packaged_and_processed_foods
+      - biscuits_and_snacks
+      - retail_tomato
+    direction: 1
+    threshold: 0.05
+
+  # ============================================================
+  # NEGATIVE TESTS (~10% — expected UNREACHABLE)
+  # ============================================================
+
+  - id: neg_gold_to_schools
+    description: "Gold price should NOT reach school operations in 3 hops"
+    domain: energy
+    type: A
+    trigger_node: international_gold_prices
+    target_node: government_schools
+    max_hops: 3
+    expected: UNREACHABLE
+
+  - id: neg_monsoon_to_nps
+    description: "Monsoon should NOT directly reach NPS portfolio in 2 hops"
+    domain: climate
+    type: A
+    trigger_node: southwest_monsoon
+    target_node: nps_portfolio
+    max_hops: 2
+    expected: UNREACHABLE
+
+  - id: neg_aadhaar_to_fish
+    description: "Aadhaar auth should NOT reach marine fish stocks in 3 hops"
+    domain: tech
+    type: A
+    trigger_node: aadhaar_authentication
+    target_node: marine_fish_stocks
+    max_hops: 3
+    expected: UNREACHABLE
+
+  - id: neg_nifty_to_diesel
+    description: "Nifty should NOT directly reach diesel price in 2 hops"
+    domain: monetary
+    type: A
+    trigger_node: nifty_50
+    target_node: retail_diesel
+    max_hops: 2
+    expected: UNREACHABLE
