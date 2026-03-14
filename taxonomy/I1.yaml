@@ -217,6 +217,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - ministry_of_consumer_affairs
 - id: retail_potato
   aliases:
   - Retail Potato
@@ -377,6 +379,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - ministry_of_commerce_and_industry
 - id: sunflower_oil
   aliases:
   - Sunflower Oil
@@ -524,6 +528,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - fssai
 - id: fine_dining_restaurants
   aliases:
   - Fine Dining
@@ -1373,3 +1379,240 @@ edges:
   delay: SHORT_TERM
   description: Turmeric powder is a daily cooking essential, providing steady, reliable
     income for kirana stores.
+- from: out_of_home_dining
+  to: community_and_civic_life
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Street food stalls, tea shops, and local restaurants act as vital hubs
+    for neighborhood socialization and civic life.
+- from: staple_grains
+  to: household_energy
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The preparation and consumption of raw staple grains (rice, wheat flour,
+    millets) fundamentally depends on the availability of domestic cooking fuel.
+- from: pulses_and_legumes
+  to: household_energy
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cooking pulses and legumes requires sustained domestic energy (cooking
+    fuel) for boiling and preparation.
+- from: meat_and_seafood
+  to: household_energy
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Highly perishable meat and seafood require residential electricity
+    for cold storage and cooking fuel for safe preparation.
+- from: dairy_and_eggs
+  to: household_energy
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Dairy products and eggs heavily depend on residential electricity for
+    refrigeration and cooking fuel for boiling or cooking.
+- from: fresh_produce
+  to: water_and_sanitation
+  type: DEPENDS_ON
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: The safe preparation of fresh fruits and vegetables relies on residential
+    water supply for washing away dirt and pesticides, and sanitation systems for
+    organic waste disposal.
+- from: out_of_home_dining
+  to: household_energy
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Increased frequency of out-of-home dining and food delivery directly
+    reduces the domestic consumption of cooking fuel and residential electricity used
+    for cooking.
+- from: out_of_home_dining
+  to: gig_and_platform_economy
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Expansion of food delivery services and cloud kitchens directly creates
+    job opportunities for delivery personnel in the gig economy.
+- from: fresh_produce
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Price volatility and inflation in fresh fruits and vegetables (like
+    tomatoes and onions) directly squeeze household budgets, reducing the monthly
+    surplus available for bank deposits and small savings.
+- from: pulses_and_legumes
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: High expenditure on essential protein sources like dals reduces discretionary
+    income, negatively impacting the average Indian household's savings capacity.
+- from: edible_oils
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Fluctuations in cooking oil prices significantly alter monthly grocery
+    bills, directly affecting the amount households can allocate to savings.
+- from: out_of_home_dining
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Increased discretionary spending on food delivery, street food, and
+    restaurants directly depletes funds that could otherwise be allocated to household
+    savings and deposits.
+- from: packaged_and_processed_foods
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: High consumption of processed foods and snacks rich in trans fats,
+    refined carbs, and sodium directly increases the incidence of metabolic and cardiovascular
+    diseases.
+- from: out_of_home_dining
+  to: infectious_diseases
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Consumption of street food and unhygienic restaurant meals is a primary
+    vector for water and food-borne infectious diseases like typhoid and gastroenteritis.
+- from: out_of_home_dining
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Frequent consumption of restaurant and fast food, which is typically
+    calorie-dense and high in unhealthy fats, contributes to obesity and metabolic
+    disorders.
+- from: spices_and_condiments
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: High dietary intake of retail sugar and salt directly drives the prevalence
+    of metabolic disorders (diabetes) and cardiovascular conditions (hypertension).
+- from: edible_oils
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: High consumption of cooking oils, particularly palm oil and reused
+    oils high in saturated/trans fats, directly contributes to poor cardiovascular
+    health.
+- from: fresh_produce
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: LONG_TERM
+  description: Regular consumption of fruits and vegetables provides protective micronutrients,
+    antioxidants, and dietary fiber that reduce the risk of non-communicable diseases.
+- from: dairy_and_eggs
+  to: maternal_and_child_health
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Adequate intake of milk and eggs provides essential high-quality proteins
+    and micronutrients critical for child physical development and maternal nutrition.
+- from: pulses_and_legumes
+  to: maternal_and_child_health
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: As a primary protein source in Indian vegetarian diets, pulses directly
+    improve child growth metrics and maternal nutritional status, combating malnutrition.
+- from: spices_and_condiments
+  to: alternative_medicine
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Traditional Indian spices like turmeric, ginger, and garlic serve as
+    foundational active ingredients supplied for AYUSH treatments and home-based alternative
+    medicine.
+- from: staple_grains
+  to: school_education
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: The availability of staple grains enables the Mid-Day Meal scheme (PM
+    POSHAN), which directly drives government school enrollment, attendance, and subsequent
+    learning outcomes.
+- from: pulses_and_legumes
+  to: school_education
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Pulses provide essential protein for school mid-day meals, improving
+    student nutritional status which is directly linked to sustained attendance and
+    cognitive performance.
+- from: staple_grains
+  to: early_childhood_education
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Staple grains are the foundational input for Anganwadi supplementary
+    nutrition programs, driving enrollment and participation in early childhood care.
+- from: dairy_and_eggs
+  to: early_childhood_education
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: The provision of milk and eggs in Anganwadi centers boosts early childhood
+    nutrition, directly incentivizing attendance and supporting foundational cognitive
+    development.
+- from: out_of_home_dining
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Street food stalls and the surge in food delivery packaging generate
+    significant localized organic and plastic waste, degrading neighborhood hygiene
+    and sanitation.
+- from: packaged_and_processed_foods
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: Single-use plastic packaging from FMCG foods (snacks, biscuits, instant
+    noodles) forms a major component of neighborhood litter and solid waste accumulation.
+- from: meat_and_seafood
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Informal meat and fish markets often lack proper disposal infrastructure
+    for biological waste, directly degrading local sanitation and contributing to
+    neighborhood foul odors.

@@ -173,6 +173,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - cdsco
 - id: antibiotics
   aliases:
   - Antibiotics
@@ -1511,3 +1513,163 @@ edges:
   delay: MEDIUM_TERM
   description: Proper vision correction through spectacles or cataract surgery reduces
     the likelihood of driving accidents.
+- from: chronic_and_lifestyle_conditions
+  to: packaged_and_processed_foods
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Diagnosis of metabolic or cardiovascular disorders typically forces
+    dietary modifications, reducing the household consumption of unhealthy packaged
+    and processed foods.
+- from: chronic_and_lifestyle_conditions
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Individuals managing chronic lifestyle diseases often reduce their
+    frequency of dining out to maintain strict dietary controls over oil, salt, and
+    sugar intake.
+- from: infectious_diseases
+  to: cultural_and_religious_life
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Epidemics and infectious disease outbreaks necessitate public health
+    restrictions that force the cancellation or scaling down of festivals, weddings,
+    and religious pilgrimages.
+- from: infectious_diseases
+  to: travel_and_tourism
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: Outbreaks of infectious diseases lead to travel restrictions, border
+    closures, and fear of infection, severely disrupting tourism services and holiday
+    accommodations.
+- from: infectious_diseases
+  to: sports_and_recreation
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Public health measures during infectious disease outbreaks force the
+    closure of recreational facilities and the cancellation or restriction of spectator
+    sports events.
+- from: chronic_and_lifestyle_conditions
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: LONG_TERM
+  description: The onset of chronic health conditions and physical disabilities drives
+    the need for home modifications and specialized residential accommodations.
+- from: infectious_diseases
+  to: public_transit
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Severe outbreaks of communicable diseases lead to reduced ridership,
+    operational restrictions, and disruptions in mass transit systems to curb spread.
+- from: infectious_diseases
+  to: intercity_travel
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Epidemics and pandemics trigger travel advisories, state-border restrictions,
+    and a sharp decline in demand for long-distance rail and air travel.
+- from: infectious_diseases
+  to: informal_and_daily_wage
+  type: DISRUPTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Acute infectious disease episodes (like malaria, dengue, or gastrointestinal
+    infections) immediately disrupt the earning capacity of daily wage and informal
+    workers.
+- from: chronic_and_lifestyle_conditions
+  to: employment_metrics_and_conditions
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: LONG_TERM
+  description: The rising burden of non-communicable diseases reduces overall workforce
+    productivity, increases absenteeism, and worsens labor market indicators.
+- from: healthcare_services
+  to: savings_and_deposits
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: High out-of-pocket expenditure for medical treatments, diagnostics,
+    and hospitalizations rapidly depletes household savings.
+- from: healthcare_services
+  to: borrowing_and_credit
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major healthcare expenses and medical emergencies frequently force
+    households to take on secured or unsecured loans to cover hospital bills.
+- from: chronic_and_lifestyle_conditions
+  to: insurance_premiums
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The presence of pre-existing chronic diseases increases the health
+    risk profile of individuals, leading to higher health insurance premiums.
+- from: pharmaceuticals_and_supplies
+  to: savings_and_deposits
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Continuous out-of-pocket expenditure on prescription drugs and over-the-counter
+    medicines steadily drains household savings over time.
+- from: maternal_and_child_health
+  to: early_childhood_education
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Early childhood health and nutritional status directly determine cognitive
+    development, learning capacity, and readiness for pre-primary education.
+- from: infectious_diseases
+  to: school_education
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Outbreaks of infectious diseases (such as viral fevers, dengue, or
+    pandemics) lead to increased student absenteeism and temporary disruptions in
+    school operations.
+- from: infectious_diseases
+  to: public_order_and_emergencies
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Severe outbreaks of infectious diseases can trigger public panic, emergency
+    civic measures, and potential civil unrest over resource scarcity or lockdowns.
+- from: healthcare_services
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Generation and improper disposal of biomedical waste from hospitals
+    and clinics negatively impacts local solid waste environments and neighborhood
+    hygiene.
+- from: pharmaceuticals_and_supplies
+  to: urban_hydrology
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Improper disposal of medicines and pharmaceutical runoff contaminate
+    local water bodies, negatively affecting urban hydrology.

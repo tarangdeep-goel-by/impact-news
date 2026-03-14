@@ -1643,3 +1643,201 @@ edges:
   delay: LONG_TERM
   description: Strict municipal zoning laws and Floor Space Index (FSI) limits restrict
     urban crowding and density.
+- from: state_and_local_governments
+  to: hydrological_systems
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Local civic body policies on groundwater extraction, sewage management,
+    and urban planning directly impact subsurface water tables and river basin pollution
+    levels.
+- from: indian_union_government
+  to: biophysical_and_ecological_systems
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: Infrastructure and economic ministry projects (e.g., highways, mining,
+    industrial corridors) often lead to the fragmentation or degradation of terrestrial
+    ecosystems and biological populations.
+- from: indian_regulatory_bodies
+  to: biophysical_and_ecological_systems
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Health, safety, and environmental regulators enforce conservation laws,
+    emissions standards, and pollution controls that protect terrestrial ecosystems
+    and biological populations.
+- from: indian_judiciary_and_law_enforcement
+  to: biophysical_and_ecological_systems
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Higher judiciary rulings (e.g., National Green Tribunal orders) directly
+    enforce the protection and restoration of terrestrial ecosystems and biological
+    habitats.
+- from: indian_union_government
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Union government capital expenditure, taxation, and welfare spending
+    directly drive national output, economic growth, and employment aggregates.
+- from: indian_regulatory_bodies
+  to: financial_and_capital_markets
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Financial regulators (RBI, SEBI) set monetary policy, liquidity measures,
+    and market rules that directly govern equity, debt, and currency markets.
+- from: indian_statutory_frameworks_and_councils
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Statutory fiscal policies and tax frameworks (e.g., GST Council decisions)
+    directly impact domestic inflation indices and national output.
+- from: global_sovereign_entities
+  to: financial_and_capital_markets
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Global central bank rate decisions (e.g., US Federal Reserve) directly
+    drive institutional investment flows (FPI/FDI) and currency market valuations
+    in India.
+- from: global_sovereign_entities
+  to: global_commodity_markets
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Geopolitical states (e.g., OPEC+ nations) control production quotas
+    and strategic reserves, directly dictating global energy and metal commodity supplies.
+- from: global_sovereign_entities
+  to: international_trade_and_supply_chains
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Geopolitical states enact tariffs, sanctions, and trade agreements
+    that directly shape global supply chains and trade balances.
+- from: indian_union_government
+  to: transport_logistics_infrastructure
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: Union infrastructure ministries allocate capital and drive the expansion
+    of national highways, railways, and dedicated freight corridors.
+- from: indian_union_government
+  to: energy_power_infrastructure
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Central government policies and capital outlays finance the development
+    of national power grids, renewable energy parks, and nuclear plants.
+- from: indian_union_government
+  to: advanced_tech_infrastructure
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Union government strategic missions directly fund and develop satellite
+    networks and semiconductor fabrication facilities.
+- from: state_and_local_governments
+  to: civic_urban_infrastructure
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Local civic bodies and state governments directly finance, build, and
+    manage municipal water grids and sewage drainage networks.
+- from: indian_regulatory_bodies
+  to: digital_telecom_infrastructure
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Telecom regulators (e.g., TRAI) dictate spectrum allocation, pricing,
+    and operational frameworks for telecom towers and optical fibre networks.
+- from: indian_regulatory_bodies
+  to: energy_power_infrastructure
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Energy regulators (e.g., CERC, PNGRB) set tariffs, grid codes, and
+    operational rules for power grids, pipelines, and power plants.
+- from: indian_judiciary_and_law_enforcement
+  to: transport_logistics_infrastructure
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher judiciary interventions on environmental or land acquisition
+    grounds frequently halt or delay major transport infrastructure projects.
+- from: indian_judiciary_and_law_enforcement
+  to: energy_power_infrastructure
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Court rulings on environmental clearances and resource allocations
+    can suspend operations at coal power plants and halt pipeline constructions.
+- from: global_sovereign_entities
+  to: transport_logistics_infrastructure
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Geopolitical conflicts and sanctions by foreign states disrupt global
+    shipping routes and international logistics corridors.
+- from: global_sovereign_entities
+  to: migration_and_mobility
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Foreign government immigration policies, visa quotas, and geopolitical
+    actions directly dictate international migration flows and diaspora mobility.
+- from: indian_statutory_frameworks_and_councils
+  to: social_movements_and_collectives
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The introduction or alteration of labor, welfare, and agricultural
+    statutory frameworks directly triggers mobilization by trade unions and agrarian
+    collectives.
+- from: indian_judiciary_and_law_enforcement
+  to: cultural_and_religious_forces
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher judiciary rulings frequently intervene in, regulate, or redefine
+    the administration of religious trusts, festival observances, and cultural practices.
+- from: indian_union_government
+  to: macro_behavioral_shifts
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major economic and social welfare policy announcements by central ministries
+    directly drive shifts in aggregate consumer sentiment and civic behavior.
+- from: state_and_local_governments
+  to: migration_and_mobility
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: State-level domicile reservation policies and local nativist regulations
+    often restrict or alter the flow of domestic inter-state migration.

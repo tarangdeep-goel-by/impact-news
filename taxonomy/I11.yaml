@@ -101,6 +101,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - gst_council
 - id: theatre_play
   aliases:
   - Theatre Play
@@ -262,6 +264,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - supreme_court_of_india
 - id: festive_idol
   aliases:
   - Festive Idol
@@ -285,6 +289,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - municipal_corporations
 - id: wedding_planning_service
   aliases:
   - Wedding Planning Service
@@ -373,6 +379,8 @@ nodes:
   status: active
   portal: true
   port: true
+  managed_by:
+  - municipal_corporations
 - id: community_hall
   aliases:
   - Community Hall
@@ -384,6 +392,8 @@ nodes:
   level: 4
   status: active
   port: true
+  managed_by:
+  - municipal_corporations
 - id: holiday_accommodation
   aliases:
   - Holiday Accommodation
@@ -416,6 +426,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - gst_council
 - id: tour_package
   aliases:
   - Tour Package
@@ -1007,3 +1019,338 @@ edges:
   delay: IMMEDIATE
   description: High footfall at monuments and tourist attractions creates a captive
     market, directly boosting the daily income of nearby street vendors.
+- from: cultural_and_religious_life
+  to: dairy_and_eggs
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Festivals and religious ceremonies drive massive spikes in demand for
+    milk, ghee, and milk-based sweets.
+- from: cultural_and_religious_life
+  to: meat_and_seafood
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Religious calendars (e.g., Navratri, Shravan, Eid) directly dictate
+    the cyclical demand and consumption patterns for meat and seafood.
+- from: cultural_and_religious_life
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Weddings, milestones, and festivals directly drive catering, restaurant
+    bookings, and street food consumption.
+- from: travel_and_tourism
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Holidays and tourism inherently drive the consumption of restaurant
+    food, street food, and quick service restaurants.
+- from: entertainment_and_media
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Cinema, theatre, and live events are strongly coupled with eating out,
+    while digital entertainment drives food delivery services.
+- from: entertainment_and_media
+  to: packaged_and_processed_foods
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital entertainment and spectator events drive the consumption of
+    packaged snacks, biscuits, and instant foods.
+- from: entertainment_and_media
+  to: telecom_and_internet_access
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The growing consumption of data-heavy digital entertainment and media
+    drives consumer demand for higher bandwidth mobile data and broadband plans.
+- from: travel_and_tourism
+  to: digital_communication_platforms
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Travel and tourism experiences produce a significant volume of user-generated
+    content that drives engagement and presence on social media platforms.
+- from: cultural_and_religious_life
+  to: household_energy
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Festivals, weddings, and religious celebrations drive significant temporary
+    spikes in domestic electricity usage (lighting/cooling) and cooking fuel consumption.
+- from: cultural_and_religious_life
+  to: water_and_sanitation
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major festivals, community events, and large weddings increase residential
+    water demand and place additional load on local sanitation and waste systems.
+- from: community_and_civic_life
+  to: residential_maintenance_and_services
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Neighborhood associations (RWAs) and civic groups establish rules,
+    directly manage housing societies, and regulate domestic labor access and collective
+    home upkeep.
+- from: travel_and_tourism
+  to: intercity_travel
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Tourism and holiday travel directly drive passenger volumes and demand
+    for airlines, railways, and highway buses.
+- from: cultural_and_religious_life
+  to: intercity_travel
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major festivals, religious pilgrimages, and wedding seasons cause massive
+    seasonal surges in intercity travel demand.
+- from: cultural_and_religious_life
+  to: road_infrastructure_experience
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Street festivals, religious processions, pandals, and wedding baraats
+    frequently occupy streets, disrupting local traffic flow and road usage.
+- from: travel_and_tourism
+  to: on_demand_transit
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Tourist footfall directly increases the demand for local ride-hailing,
+    traditional taxis, and auto-rickshaws for sightseeing and transit.
+- from: entertainment_and_media
+  to: on_demand_transit
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Live events, concerts, and late-night cinema screenings drive localized
+    surges in demand for cabs and autos.
+- from: cultural_and_religious_life
+  to: self_employment_and_msme
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Festivals, weddings, and religious events generate massive seasonal
+    consumer demand that directly funds retail trade and MSME manufacturing (apparel,
+    jewelry, food products).
+- from: travel_and_tourism
+  to: self_employment_and_msme
+  type: FUNDS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: The tourism sector heavily relies on and provides revenue for local
+    MSMEs, including independent retail shops, local eateries, and small-scale travel
+    operators.
+- from: travel_and_tourism
+  to: gig_and_platform_economy
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Tourist activity drives localized spikes in demand for platform-based
+    ride-hailing, freelance guides, and short-term rental hosts.
+- from: entertainment_and_media
+  to: gig_and_platform_economy
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: The media and entertainment industry (especially digital content and
+    live events) creates substantial demand for freelance creators, technicians, and
+    gig workers.
+- from: cultural_and_religious_life
+  to: physical_and_alternative_assets
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Cultural festivals (like Dhanteras/Diwali) and weddings drive massive
+    demand for physical assets, particularly gold and precious metals.
+- from: cultural_and_religious_life
+  to: borrowing_and_credit
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major cultural milestones, especially weddings, frequently necessitate
+    taking out personal loans or utilizing informal credit.
+- from: cultural_and_religious_life
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Significant expenditure on weddings and major religious festivals often
+    depletes accumulated household savings.
+- from: cultural_and_religious_life
+  to: infectious_diseases
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Mass gatherings during festivals, weddings, and religious pilgrimages
+    create high-density environments that facilitate the transmission of respiratory
+    and water-borne infectious diseases.
+- from: travel_and_tourism
+  to: infectious_diseases
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Domestic and international tourism facilitates the rapid geographic
+    spread of infectious diseases through the movement and mixing of populations across
+    different regions.
+- from: community_and_civic_life
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Active neighborhood associations and accessible public spaces foster
+    social cohesion and community support, reducing isolation and improving overall
+    mental wellbeing.
+- from: sports_and_recreation
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Engagement in recreational facilities and enjoyment of spectator sports
+    provide stress relief, physical activity, and social engagement, improving psychological
+    health.
+- from: cultural_and_religious_life
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Participation in cultural festivals, family milestones, and religious
+    pilgrimages provides a sense of belonging, purpose, and joy, positively impacting
+    mental health.
+- from: travel_and_tourism
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Taking holidays and utilizing tourism services allows for rest, recuperation,
+    and a break from routine, which significantly reduces stress and improves mental
+    wellbeing.
+- from: entertainment_and_media
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Consumption of cinema, digital entertainment, and live events provides
+    escapism, relaxation, and emotional regulation, contributing to short-term mental
+    wellbeing.
+- from: cultural_and_religious_life
+  to: school_education
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Frequent cultural festivals and religious events lead to school closures,
+    disrupting academic calendars, examination schedules, and the consistent delivery
+    of student welfare programs like mid-day meals.
+- from: entertainment_and_media
+  to: edtech_platforms
+  type: COMPETES_WITH
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Digital entertainment, movies, and social media compete directly with
+    online learning and EdTech platforms for students' limited screen time and attention
+    spans.
+- from: cultural_and_religious_life
+  to: public_order_and_emergencies
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Large-scale festivals, religious processions, and pilgrimages frequently
+    create massive crowd management challenges, increasing the risk of crowd emergencies
+    (stampedes) or localized civil unrest.
+- from: community_and_civic_life
+  to: physical_crime_and_law_enforcement
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: LONG_TERM
+  description: Active neighborhood associations (like RWAs) and well-utilized public
+    spaces provide community surveillance ('eyes on the street'), which helps deter
+    property and violent crimes.
+- from: cultural_and_religious_life
+  to: air_quality_environment
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Firecrackers and emissions from large-scale festivals and celebrations
+    directly increase particulate matter and winter smog.
+- from: cultural_and_religious_life
+  to: sensory_environment
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Festivals, weddings, and religious processions directly produce significant
+    noise and light pollution in neighborhoods.
+- from: cultural_and_religious_life
+  to: urban_hydrology
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Immersion of idols and religious offerings during festivals degrades
+    the water quality of local water bodies.
+- from: cultural_and_religious_life
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Large public festivals, weddings, and pilgrimages generate massive
+    solid waste, straining local sanitation environments.
+- from: travel_and_tourism
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: High tourist footfall and holiday accommodations generate excess solid
+    waste and strain local sanitation infrastructure.
+- from: community_and_civic_life
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Active neighborhood associations drive local waste management initiatives
+    and improve civic sanitation.

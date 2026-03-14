@@ -903,3 +903,170 @@ edges:
   delay: MEDIUM_TERM
   description: Healthy marine fish populations support India's commercial seafood
     export industry, feeding directly into global food and logistics supply chains.
+- from: meteorological_systems
+  to: state_and_local_governments
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme weather events and monsoon anomalies directly disrupt state
+    executive and local civic body operations, forcing emergency disaster management
+    and resource diversion.
+- from: meteorological_systems
+  to: indian_union_government
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Monsoon performance and climate drivers dictate policy shifts, relief
+    packages, and budget allocations in economic and social welfare ministries.
+- from: geological_and_tectonic_systems
+  to: state_and_local_governments
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Tectonic activities (earthquakes) and cryosphere events (glacial lake
+    outbursts) cause immediate disruption to state and local government infrastructure
+    and administration.
+- from: hydrological_systems
+  to: state_and_local_governments
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: River basin levels and subsurface water availability directly dictate
+    the operational capacity of local civic bodies and state utility boards for municipal
+    water distribution.
+- from: biophysical_and_ecological_systems
+  to: indian_regulatory_bodies
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Biological population dynamics (e.g., zoonotic disease outbreaks, agricultural
+    pest swarms) trigger immediate responses and mandate changes from health and safety
+    regulators.
+- from: meteorological_systems
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Monsoon performance and regional weather patterns directly dictate
+    agricultural yields, driving rural consumption, food inflation, and overall national
+    GDP growth.
+- from: meteorological_systems
+  to: global_commodity_markets
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Macro climate drivers (e.g., El Niño) and extreme weather events determine
+    global agricultural harvests, directly impacting the supply and pricing of agricultural
+    commodities.
+- from: meteorological_systems
+  to: international_trade_and_supply_chains
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme weather phenomena (cyclones, severe storms) disrupt global
+    shipping routes, port operations, and physical supply chain logistics.
+- from: hydrological_systems
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Water availability in major river basins and subsurface aquifers sustains
+    agricultural output and industrial production capacity, fundamentally underpinning
+    national economic growth.
+- from: geological_and_tectonic_systems
+  to: international_trade_and_supply_chains
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Tectonic events (earthquakes, tsunamis) cause sudden, severe disruptions
+    to global manufacturing hubs and maritime shipping routes.
+- from: meteorological_systems
+  to: transport_logistics_infrastructure
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme weather events, such as heavy monsoons and cyclones, disrupt
+    railways, highways, commercial aviation, and seaport operations.
+- from: meteorological_systems
+  to: civic_urban_infrastructure
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Intense rainfall and monsoon systems frequently overwhelm municipal
+    sewage and drainage networks, causing severe urban flooding.
+- from: meteorological_systems
+  to: energy_power_infrastructure
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Weather systems and macro climate drivers directly dictate the generation
+    capacity of renewable energy parks (solar and wind).
+- from: hydrological_systems
+  to: civic_urban_infrastructure
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: Major river basins and subsurface water aquifers supply the raw water
+    required to sustain municipal water grids.
+- from: hydrological_systems
+  to: energy_power_infrastructure
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: River basins provide essential cooling water for thermal and nuclear
+    power plants, as well as kinetic energy for hydroelectric grids.
+- from: geological_and_tectonic_systems
+  to: transport_logistics_infrastructure
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Tectonic activity and resulting landslides disrupt mountain highways,
+    railway networks, and dedicated freight corridors.
+- from: meteorological_systems
+  to: migration_and_mobility
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Extreme weather events, climate shifts, and monsoon failures drive
+    domestic climate-induced migration and rural-to-urban displacement.
+- from: meteorological_systems
+  to: social_movements_and_collectives
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Monsoon deficits and extreme weather directly trigger agrarian distress,
+    mobilizing agrarian collectives and farmer protests.
+- from: meteorological_systems
+  to: macro_behavioral_shifts
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Monsoon performance directly dictates rural income expectations, heavily
+    influencing nationwide consumer sentiment and spending behavior.
+- from: hydrological_systems
+  to: migration_and_mobility
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Severe depletion of subsurface water and flooding of major river basins
+    force population displacement and out-migration from affected regions.

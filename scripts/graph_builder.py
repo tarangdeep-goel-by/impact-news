@@ -1103,6 +1103,1465 @@ def cmd_full_review(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_test(args: argparse.Namespace) -> int:
+    """Run scenario tests against the merged graph."""
+    from graph.merge import TaxonomyMerger
+    from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+    from graph.scenarios import load_scenarios, validate_scenario_refs, run_all, print_results, export_failures
+
+    # Load graph
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+    apply_defaults(G)
+    apply_fan_out_penalty(G)
+    print(f"Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
+
+    # Load scenarios
+    scenarios_path = getattr(args, 'scenarios', None)
+    if scenarios_path:
+        scenarios_path = Path(scenarios_path)
+    scenarios = load_scenarios(scenarios_path)
+    print(f"Loaded {len(scenarios)} scenarios")
+
+    # Filter by domain or id
+    if args.domain:
+        scenarios = [s for s in scenarios if s.get("domain") == args.domain]
+        print(f"Filtered to {len(scenarios)} scenarios (domain={args.domain})")
+    if args.id:
+        scenarios = [s for s in scenarios if s.get("id") == args.id]
+        print(f"Filtered to {len(scenarios)} scenarios (id={args.id})")
+
+    if not scenarios:
+        print("No scenarios to run.")
+        return 0
+
+    # Validate refs
+    ref_errors = validate_scenario_refs(scenarios, set(G.nodes()))
+    if ref_errors:
+        print(f"\nWARNING: {len(ref_errors)} node reference issues:")
+        for err in ref_errors:
+            print(f"  {err}")
+        print()
+
+    # Run
+    results = run_all(G, scenarios)
+    print_results(results)
+
+    # Export failures
+    failures = [r for r in results if r["status"] in ("FAIL", "ERROR")]
+    if failures:
+        export_path = Path(args.export) if args.export else PROJECT_ROOT / "data" / "failed_scenarios.json"
+        export_failures(results, export_path)
+        print(f"\nFailures exported to {export_path}")
+
+    return 1 if failures else 0
+
+
+def cmd_generate_scenarios(args: argparse.Namespace) -> int:
+    """Generate new scenarios via Gemini for a domain."""
+    from graph.merge import TaxonomyMerger
+    from graph.scenarios import load_scenarios
+
+    domain = args.domain
+    count = args.count or 20
+
+    # Load graph for node list
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+    print(f"Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
+
+    # Group nodes by L1 category
+    nodes_by_category: dict[str, list[str]] = {}
+    for nid, attrs in G.nodes(data=True):
+        cat = attrs.get("category", "uncategorized")
+        nodes_by_category.setdefault(cat, []).append(nid)
+
+    node_list_text = ""
+    for cat in sorted(nodes_by_category):
+        nodes = sorted(nodes_by_category[cat])
+        name = ALL_L1S.get(cat, cat)
+        node_list_text += f"\n### {cat} — {name}\n"
+        node_list_text += ", ".join(nodes) + "\n"
+
+    # Load existing scenario IDs to avoid duplicates
+    try:
+        existing = load_scenarios()
+        existing_ids = {s["id"] for s in existing}
+    except Exception:
+        existing_ids = set()
+
+    # Optional headlines file
+    headlines = ""
+    if args.headlines:
+        headlines_path = Path(args.headlines)
+        if headlines_path.exists():
+            headlines = f"\n## Recent Headlines (for inspiration):\n{headlines_path.read_text()}\n"
+
+    prompt = f"""You are generating test scenarios for an Indian citizen impact knowledge graph.
+
+## Available Node IDs (grouped by L1 category):
+{node_list_text}
+
+## Existing Scenario IDs (do NOT duplicate these):
+{', '.join(sorted(existing_ids)) if existing_ids else '(none)'}
+{headlines}
+## Task
+Generate {count} NEW test scenarios for the domain "{domain}".
+
+## Scenario Types:
+- Type A (path_exists): Test if a causal path exists from trigger to target node
+  Fields: id, description, domain, type: A, trigger_node, target_node, max_hops (2-6), expected (REACHABLE or UNREACHABLE)
+- Type B (reachability): Test if trigger reaches multiple target nodes
+  Fields: id, description, domain, type: B, trigger_node, target_nodes (list), direction (1 or -1), threshold (float)
+- Type C (score_threshold): Test if target is reachable with score >= min_score
+  Fields: id, description, domain, type: C, trigger_node, target_node, direction (1 or -1), min_score (float)
+
+## Rules:
+1. Use ONLY node IDs from the provided list above
+2. Mix types: ~60% A, ~25% B, ~15% C
+3. Include ~10% negative tests (expected: UNREACHABLE for Type A)
+4. Vary max_hops (2-6)
+5. Ground in real Indian news scenarios
+6. Cover both intra-world (I→I) and cross-world (T→I) chains
+7. ID format: {{domain}}_{{descriptive_name}} in snake_case
+8. Domain must be: {domain}
+
+## Output Format (YAML only):
+```yaml
+scenarios:
+  - id: {domain}_example
+    description: "Description of the scenario"
+    domain: {domain}
+    type: A
+    trigger_node: node_id_here
+    target_node: other_node_id
+    max_hops: 4
+    expected: REACHABLE
+```"""
+
+    print(f"Generating {count} scenarios for domain '{domain}'...")
+    gemini = GraphGemini()
+    response = gemini.call(prompt, temperature=0.5, thinking_budget=16000)
+
+    try:
+        data = parse_yaml_from_response(response)
+    except Exception as e:
+        print(f"ERROR: Failed to parse YAML: {e}")
+        print(response[:2000])
+        return 1
+
+    new_scenarios = data.get("scenarios", [])
+
+    # Validate node refs
+    known_nodes = set(G.nodes())
+    valid = []
+    invalid = 0
+    for sc in new_scenarios:
+        refs_ok = True
+        for field in ("trigger_node", "target_node"):
+            nid = sc.get(field)
+            if nid and nid not in known_nodes:
+                print(f"  WARNING: {sc.get('id', '?')}.{field} '{nid}' not in graph — skipping")
+                refs_ok = False
+        for nid in sc.get("target_nodes", []) or []:
+            if nid not in known_nodes:
+                print(f"  WARNING: {sc.get('id', '?')}.target_nodes '{nid}' not in graph — skipping")
+                refs_ok = False
+        if refs_ok:
+            valid.append(sc)
+        else:
+            invalid += 1
+
+    # Write staging file
+    staging_path = TAXONOMY_DIR / f"scenarios_staging_{domain}.yaml"
+    staging_path.write_text(
+        yaml.dump({"scenarios": valid}, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    )
+
+    print(f"\nGenerated {len(valid)} valid scenarios ({invalid} skipped)")
+    print(f"Written to {staging_path}")
+    print("Review, then merge into taxonomy/scenarios.yaml")
+
+    return 0
+
+
+def cmd_diagnose(args: argparse.Namespace) -> int:
+    """Diagnose failed scenarios and generate patch recipe."""
+    import json
+    from graph.merge import TaxonomyMerger
+    from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+
+    input_path = Path(args.input) if args.input else PROJECT_ROOT / "data" / "failed_scenarios.json"
+    output_path = Path(args.output) if args.output else TAXONOMY_DIR / "patches" / "patch_recipe.yaml"
+
+    if not input_path.exists():
+        print(f"ERROR: No failures file at {input_path}")
+        print("Run 'test --export' first to generate failures.")
+        return 1
+
+    failures = json.loads(input_path.read_text())
+    if not failures:
+        print("No failures to diagnose.")
+        return 0
+
+    print(f"Diagnosing {len(failures)} failed scenario(s)...")
+
+    # Load graph
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+    apply_defaults(G)
+    apply_fan_out_penalty(G)
+    print(f"Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
+
+    constitution = load_constitution()
+    gemini = GraphGemini()
+
+    # Map Phase: diagnose each failure
+    all_new_nodes = []
+    all_new_edges = []
+    scenarios_fixed = []
+
+    for failure in failures:
+        sid = failure.get("id", "?")
+        stype = failure.get("type", "?")
+        detail = failure.get("detail", "")
+
+        # Extract relevant nodes from failure
+        # We need to rebuild from the scenario — failures only have id/type/status/detail
+        # Load scenario data to get trigger/target
+        from graph.scenarios import load_scenarios
+        all_scenarios = load_scenarios()
+        scenario = next((s for s in all_scenarios if s.get("id") == sid), None)
+        if not scenario:
+            print(f"  SKIP {sid}: scenario definition not found")
+            continue
+
+        src = scenario.get("trigger_node", "")
+        dst = scenario.get("target_node", "")
+        if not src:
+            print(f"  SKIP {sid}: no trigger_node")
+            continue
+
+        # Build neighborhood subgraph (BFS radius 2 from src and dst)
+        neighborhood_nodes = set()
+        for start in [src, dst] if dst else [src]:
+            if not G.has_node(start):
+                continue
+            # BFS radius 2
+            visited = {start}
+            frontier = [start]
+            for _ in range(2):
+                next_frontier = []
+                for n in frontier:
+                    for neighbor in list(G.successors(n)) + list(G.predecessors(n)):
+                        if neighbor not in visited:
+                            visited.add(neighbor)
+                            next_frontier.append(neighbor)
+                frontier = next_frontier
+            neighborhood_nodes.update(visited)
+
+        # Also add nodes from same L1 categories
+        src_cat = G.nodes[src].get("category", "") if G.has_node(src) else ""
+        dst_cat = G.nodes[dst].get("category", "") if dst and G.has_node(dst) else ""
+        for nid, attrs in G.nodes(data=True):
+            if attrs.get("category") in (src_cat, dst_cat) and src_cat:
+                neighborhood_nodes.add(nid)
+
+        # Build neighborhood YAML (capped at 8000 chars)
+        neighborhood = {"nodes": [], "edges": []}
+        for nid in sorted(neighborhood_nodes):
+            if G.has_node(nid):
+                attrs = dict(G.nodes[nid])
+                neighborhood["nodes"].append({"id": nid, **{k: v for k, v in attrs.items() if k != "source_file"}})
+        for u, v, attrs in G.edges(data=True):
+            if u in neighborhood_nodes and v in neighborhood_nodes:
+                neighborhood["edges"].append({
+                    "from": u, "to": v,
+                    **{k: v2 for k, v2 in attrs.items() if k != "source_file"}
+                })
+
+        neighborhood_yaml = yaml.dump(neighborhood, default_flow_style=False, sort_keys=False, allow_unicode=True)
+        if len(neighborhood_yaml) > 8000:
+            # Truncate to prioritize nodes closer to src/dst
+            neighborhood_yaml = neighborhood_yaml[:8000] + "\n# ... (truncated)"
+
+        prompt = f"""You are diagnosing a failed scenario test in the Indian citizen impact knowledge graph.
+
+## Constitution (graph rules):
+{constitution[:3000]}
+
+## Failed Scenario:
+- ID: {sid}
+- Type: {stype}
+- Trigger: {src}
+- Target: {dst}
+- Detail: {detail}
+- Scenario: {yaml.dump(scenario, default_flow_style=False)}
+
+## Neighborhood Subgraph (BFS radius 2 from src/dst):
+```yaml
+{neighborhood_yaml}
+```
+
+## Valid edge types: {', '.join(CANONICAL_EDGE_TYPES)}
+
+## Graph Architecture (CRITICAL — read carefully):
+
+The graph has two worlds:
+- **Trigger world** (T1–T5): systemic forces — energy, policy, markets, infra, social
+- **Impact world** (I1–I11): citizen-facing outcomes — food, housing, transport, jobs, etc.
+
+Hierarchy levels: L1 (category) → L2 (subcategory) → L3 (leaf) → L4 (specific).
+L1/L2 nodes are structural parents. L3/L4 nodes carry most causal edges.
+CONTAINS edges connect parents to children: L1→L2→L3→L4.
+
+**The traversal engine follows CONTAINS edges downward.** This means:
+- An edge targeting an L2 node automatically propagates to ALL its L3/L4 children.
+- You do NOT need to create separate edges for each child.
+- Example: one edge `gst_council → food_and_nutrition` (L1) propagates to rice, tomato, biscuits, etc.
+
+## Routing Rules (MANDATORY — violations will be rejected):
+
+### Rule 1: Cross-world edges must target L1 or L2 only
+Any edge crossing from T→I or I→T MUST target an L1 or L2 node, NEVER an L3 or L4.
+CONTAINS propagation handles the downward reach.
+
+BAD:  `gst_council (T2) → biscuits_and_snacks (I1/L4)` — too specific, won't scale
+GOOD: `gst_council (T2) → packaged_and_processed_foods (I1/L2)` — propagates to all packaged food children
+
+BAD:  `nifty_50 (T3) → nps_portfolio (I5/L4)` — direct shortcut
+GOOD: `nifty_50 (T3) → investment_returns (I5/L2)` — propagates to NPS, mutual funds, etc.
+
+### Rule 2: Every causal edge must represent ONE direct mechanism
+If A affects B only through intermediate C, the graph needs A→C and C→B, NOT A→B.
+Ask: "Does A DIRECTLY cause B, or does it go through something?"
+
+BAD:  `outdoor_heat → retail_rice` — heat doesn't directly change rice prices
+GOOD: `outdoor_heat → rice_crop_yield` + `rice_crop_yield → retail_rice`
+
+### Rule 3: No speculative or weak causal links
+Every edge must represent a well-established, direct causal mechanism.
+If the connection requires 2+ sentences to justify, it's probably indirect — decompose it.
+
+BAD:  `voter_turnout → consumer_confidence` — speculative
+BAD:  `aadhaar_authentication → senior_citizen_savings_scheme` — operational, not causal
+
+### Rule 4: Prefer existing intermediate nodes
+Before creating a new node, check the neighborhood subgraph for existing nodes that could
+serve as the intermediate step. The graph already has 700+ nodes.
+
+## Task:
+1. Classify the gap:
+   - Type 1 (missing node): A necessary intermediate node doesn't exist
+   - Type 2 (missing edge): Nodes exist but no causal edge connects them
+   - Type 3 (missing path): Multiple hops missing, needs decomposition
+
+2. Propose the MINIMAL fix. Output YAML:
+
+```yaml
+gap_type: 1|2|3
+diagnosis: "Brief explanation of what's missing"
+
+new_nodes:
+  - id: new_node_id
+    aliases: [alias1, alias2]
+    category: T1|T2|...|I11
+    level: 2|3
+    parent: parent_node_id
+
+new_edges:
+  - from: source_node
+    to: target_node
+    type: AFFECTS|PRODUCES|etc
+    weight: 0.1-1.0
+    polarity: 1|-1
+    delay: IMMEDIATE|SHORT_TERM|MEDIUM_TERM|LONG_TERM
+    description: "One sentence: the direct causal mechanism"
+```
+
+Rules:
+- Node IDs must be snake_case
+- Prefer existing nodes over creating new ones
+- Every new node needs a parent (generates CONTAINS edge)
+- Edge descriptions must explain the DIRECT causal mechanism in one sentence
+- Keep fixes MINIMAL — don't add unnecessary nodes/edges
+- Cross-world edges (T↔I) MUST target L1 or L2 — NEVER L3/L4
+- Same-world edges must represent direct, single-step causation
+- If a scenario requires a chain of 3+ new edges, that's fine — build the chain through intermediaries"""
+
+        print(f"  Diagnosing {sid}...")
+        try:
+            response = gemini.call(prompt, temperature=0.1, thinking_budget=16000)
+            patch_data = parse_yaml_from_response(response)
+        except Exception as e:
+            print(f"  WARNING: Failed to diagnose {sid}: {e}")
+            continue
+
+        new_nodes = patch_data.get("new_nodes", [])
+        new_edges = patch_data.get("new_edges", [])
+
+        if new_nodes or new_edges:
+            scenarios_fixed.append(sid)
+            # Tag edges with scenario source
+            for edge in new_edges:
+                edge["scenario_id"] = sid
+            all_new_nodes.extend(new_nodes)
+            all_new_edges.extend(new_edges)
+            print(f"    +{len(new_nodes)} nodes, +{len(new_edges)} edges")
+        else:
+            print(f"    No fix proposed")
+
+    # Reduce Phase: deduplicate
+    seen_nodes = set()
+    deduped_nodes = []
+    for node in all_new_nodes:
+        nid = node.get("id", "")
+        if nid not in seen_nodes:
+            seen_nodes.add(nid)
+            deduped_nodes.append(node)
+
+    seen_edges = set()
+    deduped_edges = []
+    for edge in all_new_edges:
+        pair = (edge.get("from", ""), edge.get("to", ""))
+        if pair not in seen_edges:
+            seen_edges.add(pair)
+            deduped_edges.append(edge)
+
+    # Write patch recipe
+    from datetime import datetime, timezone
+    recipe = {
+        "metadata": {
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "scenarios_fixed": scenarios_fixed,
+            "failures_diagnosed": len(failures),
+        },
+        "new_nodes": deduped_nodes,
+        "new_edges": deduped_edges,
+    }
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        yaml.dump(recipe, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    )
+
+    print(f"\nPatch recipe: {len(deduped_nodes)} nodes, {len(deduped_edges)} edges")
+    print(f"Scenarios addressed: {len(scenarios_fixed)}")
+    print(f"Written to {output_path}")
+
+    return 0
+
+
+def cmd_patch(args: argparse.Namespace) -> int:
+    """Apply a patch recipe to the graph."""
+    import networkx as nx
+
+    from graph.merge import TaxonomyMerger
+    from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+    from graph.scenarios import load_scenarios, run_all, print_results
+
+    recipe_path = Path(args.recipe)
+    if not recipe_path.exists():
+        print(f"ERROR: Recipe not found: {recipe_path}")
+        return 1
+
+    recipe = yaml.safe_load(recipe_path.read_text())
+    new_nodes = recipe.get("new_nodes", [])
+    new_edges = recipe.get("new_edges", [])
+
+    print(f"Patch recipe: {len(new_nodes)} nodes, {len(new_edges)} edges")
+    if recipe.get("metadata", {}).get("scenarios_fixed"):
+        print(f"Targets scenarios: {', '.join(recipe['metadata']['scenarios_fixed'])}")
+
+    # Validate
+    issues = []
+    for node in new_nodes:
+        nid = node.get("id", "")
+        if not NODE_ID_RE.match(nid):
+            issues.append(f"Bad node ID format: '{nid}'")
+        cat = node.get("category", "")
+        if cat and cat not in ALL_L1S:
+            issues.append(f"Unknown category '{cat}' for node '{nid}'")
+        if not node.get("parent"):
+            issues.append(f"Node '{nid}' has no parent")
+
+    new_node_ids = {n.get("id") for n in new_nodes}
+
+    # Load graph for cross-world level validation
+    merger_val = TaxonomyMerger(root=PROJECT_ROOT)
+    G_val = merger_val.merge()
+
+    for edge in new_edges:
+        etype = edge.get("type", "")
+        if etype not in CANONICAL_EDGE_TYPES:
+            issues.append(f"Non-canonical edge type '{etype}': {edge.get('from')} -> {edge.get('to')}")
+
+        # Cross-world level check: T↔I edges must target L1 or L2
+        src_id = edge.get("from", "")
+        dst_id = edge.get("to", "")
+        src_cat = G_val.nodes[src_id].get("category", "") if G_val.has_node(src_id) else ""
+        dst_cat = G_val.nodes[dst_id].get("category", "") if G_val.has_node(dst_id) else ""
+        # Check new nodes too
+        for nn in new_nodes:
+            if nn.get("id") == src_id:
+                src_cat = nn.get("category", src_cat)
+            if nn.get("id") == dst_id:
+                dst_cat = nn.get("category", dst_cat)
+
+        src_is_trigger = src_cat.startswith("T")
+        dst_is_trigger = dst_cat.startswith("T")
+        is_cross_world = src_cat and dst_cat and (src_is_trigger != dst_is_trigger)
+
+        if is_cross_world:
+            # Determine target level — for T→I the target is dst, for I→T the target is src
+            # Actually, the "target" in the cross-world sense is whichever is in the other world
+            target_id = dst_id if src_is_trigger else src_id
+            target_level = None
+            if G_val.has_node(target_id):
+                target_level = G_val.nodes[target_id].get("level")
+            for nn in new_nodes:
+                if nn.get("id") == target_id:
+                    target_level = nn.get("level", target_level)
+
+            if target_level is not None and target_level > 2:
+                issues.append(
+                    f"Cross-world edge targets L{target_level} node: "
+                    f"{src_id} -> {dst_id} (must target L1/L2 for CONTAINS propagation)"
+                )
+
+    if issues:
+        print(f"\nValidation issues ({len(issues)}):")
+        for issue in issues:
+            print(f"  {issue}")
+        if not args.force:
+            print("\nUse --force to apply anyway.")
+            return 1
+
+    # Dry run
+    if args.dry_run:
+        print("\n--- DRY RUN ---")
+        if new_nodes:
+            print(f"\nWould add {len(new_nodes)} nodes:")
+            for node in new_nodes:
+                print(f"  {node['id']} (cat={node.get('category')}, parent={node.get('parent')})")
+        if new_edges:
+            print(f"\nWould add {len(new_edges)} edges:")
+            for edge in new_edges:
+                print(f"  {edge['from']} --[{edge.get('type')}]--> {edge['to']}")
+        return 0
+
+    # Apply nodes — add to the appropriate L1 YAML file
+    nodes_added = 0
+    for node in new_nodes:
+        nid = node["id"]
+        cat = node.get("category", "")
+        parent = node.get("parent", "")
+
+        # Determine target file from category
+        if not cat:
+            print(f"  SKIP node '{nid}': no category")
+            continue
+
+        data = load_l1_yaml(cat)
+        if not data:
+            print(f"  SKIP node '{nid}': {cat}.yaml not found")
+            continue
+
+        # Check if node already exists
+        existing_ids = {n["id"] for n in data.get("nodes", [])}
+        if nid in existing_ids:
+            print(f"  SKIP node '{nid}': already exists in {cat}.yaml")
+            continue
+
+        # Add node
+        node_entry = {
+            "id": nid,
+            "aliases": node.get("aliases", []),
+            "category": cat,
+            "level": node.get("level", 3),
+        }
+        data.setdefault("nodes", []).append(node_entry)
+
+        # Add CONTAINS edge from parent
+        if parent:
+            contains_edge = {
+                "from": parent,
+                "to": nid,
+                "type": "CONTAINS",
+                "weight": 0.9,
+                "polarity": 1,
+                "delay": "IMMEDIATE",
+                "description": f"Contains {nid}",
+            }
+            data.setdefault("edges", []).append(contains_edge)
+
+        save_l1_yaml(cat, data)
+        nodes_added += 1
+        print(f"  Added node '{nid}' to {cat}.yaml")
+
+    # Apply edges — same-world to source L1 file, cross-world to bridge_edges.yaml
+    edges_added = 0
+    bridge_edges_to_add = []
+
+    # Load graph to determine node categories
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+
+    for edge in new_edges:
+        src = edge["from"]
+        dst = edge["to"]
+
+        src_cat = G.nodes[src].get("category", "") if G.has_node(src) else ""
+        dst_cat = G.nodes[dst].get("category", "") if G.has_node(dst) else ""
+
+        # Cross-world: one is T*, other is I*
+        src_is_trigger = src_cat.startswith("T")
+        dst_is_trigger = dst_cat.startswith("T")
+        cross_world = src_is_trigger != dst_is_trigger
+
+        edge_entry = {
+            "from": src,
+            "to": dst,
+            "type": edge.get("type", "AFFECTS"),
+            "weight": edge.get("weight", 0.5),
+            "polarity": edge.get("polarity", 1),
+            "delay": edge.get("delay", "SHORT_TERM"),
+            "description": edge.get("description", ""),
+        }
+
+        if cross_world:
+            bridge_edges_to_add.append(edge_entry)
+        else:
+            # Add to source node's L1 file
+            if not src_cat:
+                print(f"  SKIP edge {src} -> {dst}: source category unknown")
+                continue
+            data = load_l1_yaml(src_cat)
+            if not data:
+                print(f"  SKIP edge {src} -> {dst}: {src_cat}.yaml not found")
+                continue
+            data.setdefault("edges", []).append(edge_entry)
+            save_l1_yaml(src_cat, data)
+            edges_added += 1
+
+    # Write bridge edges
+    if bridge_edges_to_add:
+        bridge_path = TAXONOMY_DIR / "bridge_edges.yaml"
+        if bridge_path.exists():
+            bridge_data = yaml.safe_load(bridge_path.read_text()) or {}
+        else:
+            bridge_data = {"nodes": [], "edges": []}
+        bridge_data.setdefault("edges", []).extend(bridge_edges_to_add)
+        bridge_path.write_text(
+            yaml.dump(bridge_data, default_flow_style=False, sort_keys=False, allow_unicode=True)
+        )
+        edges_added += len(bridge_edges_to_add)
+        print(f"  Added {len(bridge_edges_to_add)} bridge edge(s) to bridge_edges.yaml")
+
+    print(f"\nApplied: {nodes_added} nodes, {edges_added} edges")
+
+    # Post-patch: rebuild and run full test suite
+    print("\n--- Post-patch validation ---")
+    merger2 = TaxonomyMerger(root=PROJECT_ROOT)
+    G2 = merger2.merge()
+    apply_defaults(G2)
+    apply_fan_out_penalty(G2)
+
+    # Check connectivity
+    wcc = nx.number_weakly_connected_components(G2)
+    orphans = sum(1 for n in G2.nodes() if G2.degree(n) == 0)
+    print(f"Graph: {G2.number_of_nodes()} nodes, {G2.number_of_edges()} edges")
+    print(f"Components: {wcc}, Orphans: {orphans}")
+
+    # Run scenario tests
+    try:
+        scenarios = load_scenarios()
+        results = run_all(G2, scenarios)
+        print_results(results)
+
+        passed = sum(1 for r in results if r["status"] == "PASS")
+        failed_count = sum(1 for r in results if r["status"] in ("FAIL", "ERROR"))
+        print(f"\nPost-patch: {passed}/{len(results)} passing")
+
+        if failed_count > 0:
+            print(f"WARNING: {failed_count} scenario(s) still failing")
+    except Exception as e:
+        print(f"WARNING: Could not run post-patch tests: {e}")
+
+    return 0
+
+
+# ---------------------------------------------------------------------------
+# Phase 1-2: Bridge Redesign Commands
+# ---------------------------------------------------------------------------
+
+
+def _load_bridge_edges() -> tuple[list[dict], Path]:
+    """Load bridge_edges.yaml and return (edges, path)."""
+    path = TAXONOMY_DIR / "bridge_edges.yaml"
+    if not path.exists():
+        return [], path
+    data = yaml.safe_load(path.read_text()) or {}
+    return data.get("edges", []), path
+
+
+def _save_bridge_edges(edges: list[dict], path: Path) -> None:
+    """Save edges back to bridge_edges.yaml."""
+    data = {"edges": edges}
+    path.write_text(
+        yaml.dump(data, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    )
+
+
+def _get_node_category(G, node_id: str) -> str:
+    """Get node category from graph."""
+    if G.has_node(node_id):
+        return G.nodes[node_id].get("category", "")
+    return ""
+
+
+def cmd_convert_regulatory(args: argparse.Namespace) -> int:
+    """Phase 1: Convert REGULATES/MANAGES cross-world edges to node metadata.
+
+    Extracts regulatory edges, stores as regulated_by/managed_by properties
+    on target nodes in their L1 YAML files, and removes from bridge_edges.yaml.
+    """
+    from graph.merge import TaxonomyMerger
+
+    # Load graph for node lookups
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+
+    edges, bridge_path = _load_bridge_edges()
+    if not edges:
+        print("No bridge edges found.")
+        return 1
+
+    # Classify edges
+    regulatory = []
+    remaining = []
+    for e in edges:
+        src = e.get("from", "")
+        dst = e.get("to", "")
+        etype = e.get("type", "")
+        src_cat = _get_node_category(G, src)
+        dst_cat = _get_node_category(G, dst)
+        src_is_t = src_cat.startswith("T")
+        dst_is_t = dst_cat.startswith("T")
+        is_cross = (src_is_t and not dst_is_t) or (not src_is_t and dst_is_t)
+
+        if is_cross and etype in ("REGULATES", "MANAGES"):
+            regulatory.append(e)
+        else:
+            remaining.append(e)
+
+    if not regulatory:
+        print("No REGULATES/MANAGES cross-world edges found.")
+        return 0
+
+    print(f"Found {len(regulatory)} REGULATES/MANAGES cross-world edges")
+
+    if args.dry_run:
+        print("\n--- DRY RUN ---")
+        for e in regulatory:
+            prop = "regulated_by" if e["type"] == "REGULATES" else "managed_by"
+            print(f"  {e['from']} --[{e['type']}]--> {e['to']}  →  {e['to']}.{prop} += {e['from']}")
+        print(f"\nWould remove {len(regulatory)} edges, {len(remaining)} remaining")
+        return 0
+
+    # Group by target node's L1 category
+    metadata_by_l1: dict[str, dict[str, list[str]]] = {}  # L1 -> {node_id -> [source_ids]}
+    for e in regulatory:
+        dst = e["to"]
+        src = e["from"]
+        etype = e["type"]
+        dst_cat = _get_node_category(G, dst)
+        if not dst_cat:
+            print(f"  WARNING: target '{dst}' has no category, skipping")
+            continue
+
+        prop = "regulated_by" if etype == "REGULATES" else "managed_by"
+        metadata_by_l1.setdefault(dst_cat, {}).setdefault(dst, []).append(
+            f"{src}:{prop}"
+        )
+
+    # Apply metadata to L1 YAML files
+    modified_files = set()
+    for l1_id, node_metadata in sorted(metadata_by_l1.items()):
+        data = load_l1_yaml(l1_id)
+        if not data:
+            print(f"  WARNING: {l1_id}.yaml not found, skipping")
+            continue
+
+        for node in data.get("nodes", []):
+            nid = node["id"]
+            if nid in node_metadata:
+                for entry in node_metadata[nid]:
+                    src_id, prop = entry.split(":")
+                    existing = node.get(prop, [])
+                    if src_id not in existing:
+                        existing.append(src_id)
+                    node[prop] = existing
+
+        save_l1_yaml(l1_id, data)
+        modified_files.add(l1_id)
+        print(f"  {l1_id}: updated {len(node_metadata)} node(s) with metadata")
+
+    # Remove regulatory edges from bridge_edges.yaml
+    _save_bridge_edges(remaining, bridge_path)
+    print(f"\nRemoved {len(regulatory)} regulatory edges from bridge_edges.yaml")
+    print(f"Remaining edges: {len(remaining)}")
+    print(f"Modified L1 files: {', '.join(sorted(modified_files))}")
+
+    return 0
+
+
+def cmd_remove_feedback(args: argparse.Namespace) -> int:
+    """Phase 2a: Remove I→T feedback edges from bridge_edges.yaml.
+
+    Identifies edges where source is I-world and target is T-world,
+    removes them, and reports which I-world nodes had outgoing T-world edges.
+    """
+    from graph.merge import TaxonomyMerger
+
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+
+    edges, bridge_path = _load_bridge_edges()
+    if not edges:
+        print("No bridge edges found.")
+        return 1
+
+    feedback = []
+    remaining = []
+    for e in edges:
+        src = e.get("from", "")
+        dst = e.get("to", "")
+        src_cat = _get_node_category(G, src)
+        dst_cat = _get_node_category(G, dst)
+        src_is_i = src_cat.startswith("I")
+        dst_is_t = dst_cat.startswith("T")
+
+        if src_is_i and dst_is_t:
+            feedback.append(e)
+        else:
+            remaining.append(e)
+
+    if not feedback:
+        print("No I→T feedback edges found.")
+        return 0
+
+    print(f"Found {len(feedback)} I→T feedback edges")
+
+    # Report unique I-world source nodes
+    from collections import Counter
+    i_sources = Counter(e["from"] for e in feedback)
+    print(f"\nUnique I-world nodes with T-world outgoing edges: {len(i_sources)}")
+    for nid, count in i_sources.most_common(20):
+        cat = _get_node_category(G, nid)
+        level = G.nodes[nid].get("level", "?") if G.has_node(nid) else "?"
+        aliases = G.nodes[nid].get("aliases", [])[:2] if G.has_node(nid) else []
+        alias_str = f" ({', '.join(aliases)})" if aliases else ""
+        print(f"  {nid} [{cat}/L{level}]{alias_str}: {count} edge(s)")
+
+    if args.dry_run:
+        print(f"\n--- DRY RUN --- Would remove {len(feedback)} edges, {len(remaining)} remaining")
+        return 0
+
+    _save_bridge_edges(remaining, bridge_path)
+    print(f"\nRemoved {len(feedback)} feedback edges from bridge_edges.yaml")
+    print(f"Remaining edges: {len(remaining)}")
+
+    return 0
+
+
+def cmd_audit_nodes(args: argparse.Namespace) -> int:
+    """Phase 2b: Audit I-world nodes for possible T-world migration.
+
+    Examines I-world nodes that had outgoing T-world edges (feedback edges)
+    and evaluates whether they are aggregate/macro statistics that belong
+    in T-world rather than I-world.
+    """
+    from graph.merge import TaxonomyMerger
+
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+
+    # Find I-world nodes that have (or had) characteristics of aggregate stats
+    # Heuristic markers: names containing "rate", "index", "aggregate", "deficit", "surplus",
+    # "gdp", "inflation", "unemployment", "supply", "demand", "market", "trade"
+    AGGREGATE_MARKERS = {
+        "rate", "index", "aggregate", "deficit", "surplus", "inflation",
+        "unemployment", "supply", "demand", "trade", "gdp", "export",
+        "import", "production", "output", "consumption", "wage",
+    }
+
+    candidates = []
+    for nid, attrs in G.nodes(data=True):
+        cat = attrs.get("category", "")
+        if not cat.startswith("I"):
+            continue
+        level = attrs.get("level", 0)
+        if level < 3:  # L1/L2 are structural, skip
+            continue
+
+        # Check name against markers
+        name_parts = set(nid.split("_"))
+        markers_found = name_parts & AGGREGATE_MARKERS
+        if not markers_found:
+            continue
+
+        # Check if it has outgoing edges to T-world
+        t_targets = []
+        for succ in G.successors(nid):
+            succ_cat = G.nodes[succ].get("category", "") if G.has_node(succ) else ""
+            if succ_cat.startswith("T"):
+                t_targets.append(succ)
+
+        # Check aliases for aggregate-like terms
+        aliases = attrs.get("aliases", [])
+
+        candidates.append({
+            "id": nid,
+            "category": cat,
+            "level": level,
+            "aliases": aliases[:3],
+            "markers": sorted(markers_found),
+            "t_world_targets": t_targets,
+            "recommendation": "REVIEW",
+        })
+
+    print(f"Found {len(candidates)} I-world nodes with aggregate characteristics")
+
+    if not candidates:
+        return 0
+
+    # Write migration report
+    output_path = PROJECT_ROOT / "data" / "node_migration_report.yaml"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    report = {
+        "metadata": {
+            "total_candidates": len(candidates),
+            "description": "I-world nodes with aggregate/macro characteristics that may belong in T-world",
+            "action_required": "Human review — mark recommendation as MIGRATE or KEEP for each node",
+        },
+        "candidates": candidates,
+    }
+
+    output_path.write_text(
+        yaml.dump(report, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    )
+
+    print(f"\nMigration report written to {output_path}")
+    for c in candidates:
+        markers = ", ".join(c["markers"])
+        print(f"  {c['id']} [{c['category']}/L{c['level']}] markers=[{markers}]")
+
+    return 0
+
+
+def cmd_classify_bridges(args: argparse.Namespace) -> int:
+    """Phase 3 prep: Classify remaining T→I edges by (src_L2, dst_L2) parent pairs.
+
+    Groups leaf-to-leaf T→I edges by their L2 ancestor pairs to identify
+    which L2→L2 bridges would replace them.
+    """
+    from collections import defaultdict
+    from graph.merge import TaxonomyMerger
+
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+
+    edges, _ = _load_bridge_edges()
+
+    # Build parent lookup: node -> L2 ancestor
+    def get_l2_ancestor(nid: str) -> str | None:
+        """Walk up CONTAINS edges to find L2 ancestor."""
+        if not G.has_node(nid):
+            return None
+        level = G.nodes[nid].get("level", 0)
+        if level <= 2:
+            return nid if level == 2 else None
+
+        # Find parent via incoming CONTAINS edge
+        for pred in G.predecessors(nid):
+            if G.edges[pred, nid].get("type") == "CONTAINS":
+                pred_level = G.nodes[pred].get("level", 0)
+                if pred_level == 2:
+                    return pred
+                elif pred_level > 2:
+                    return get_l2_ancestor(pred)
+        return None
+
+    # Classify T→I edges
+    t_to_i = []
+    for e in edges:
+        src_cat = _get_node_category(G, e["from"])
+        dst_cat = _get_node_category(G, e["to"])
+        if src_cat.startswith("T") and dst_cat.startswith("I"):
+            t_to_i.append(e)
+
+    print(f"T→I causal edges: {len(t_to_i)}")
+
+    # Group by L2 pairs
+    l2_pairs: dict[tuple[str, str], list[dict]] = defaultdict(list)
+    unmapped = []
+    for e in t_to_i:
+        src_l2 = get_l2_ancestor(e["from"])
+        dst_l2 = get_l2_ancestor(e["to"])
+        if src_l2 and dst_l2:
+            l2_pairs[(src_l2, dst_l2)].append(e)
+        else:
+            unmapped.append(e)
+
+    print(f"Unique L2 parent pairs: {len(l2_pairs)}")
+    print(f"Unmapped edges: {len(unmapped)}")
+
+    print(f"\nL2 pair → leaf edge count (sorted by count):")
+    for (src_l2, dst_l2), pair_edges in sorted(l2_pairs.items(), key=lambda x: -len(x[1])):
+        src_cat = _get_node_category(G, src_l2)
+        dst_cat = _get_node_category(G, dst_l2)
+        print(f"  {src_l2} ({src_cat}) → {dst_l2} ({dst_cat}): {len(pair_edges)} edge(s)")
+        if args.verbose:
+            for e in pair_edges:
+                print(f"    {e['from']} --[{e['type']}]--> {e['to']}")
+
+    # Write classification
+    output_path = TAXONOMY_DIR / "patches" / "bridge_classification.yaml"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    classification = {
+        "metadata": {
+            "total_t_to_i": len(t_to_i),
+            "unique_l2_pairs": len(l2_pairs),
+            "unmapped": len(unmapped),
+        },
+        "l2_pairs": [
+            {
+                "src_l2": src_l2,
+                "src_cat": _get_node_category(G, src_l2),
+                "dst_l2": dst_l2,
+                "dst_cat": _get_node_category(G, dst_l2),
+                "leaf_edge_count": len(pair_edges),
+                "leaf_edges": [
+                    {"from": e["from"], "to": e["to"], "type": e.get("type", "")}
+                    for e in pair_edges
+                ],
+            }
+            for (src_l2, dst_l2), pair_edges in sorted(l2_pairs.items(), key=lambda x: -len(x[1]))
+        ],
+        "unmapped": [
+            {"from": e["from"], "to": e["to"], "type": e.get("type", "")}
+            for e in unmapped
+        ],
+    }
+
+    output_path.write_text(
+        yaml.dump(classification, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    )
+    print(f"\nClassification written to {output_path}")
+
+    return 0
+
+
+def cmd_generate_l2_bridges(args: argparse.Namespace) -> int:
+    """Phase 3: Generate L2→L2 T→I bridge matrix using Gemini.
+
+    For each T-L1, presents all T-L2 nodes and all I-L2 nodes to Gemini,
+    asks which pairs have direct causal mechanisms.
+    """
+    from graph.merge import TaxonomyMerger
+
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+
+    # Collect L2 nodes by world
+    t_l2_by_l1: dict[str, list[dict]] = {}
+    i_l2_by_l1: dict[str, list[dict]] = {}
+
+    for nid, attrs in G.nodes(data=True):
+        level = attrs.get("level", 0)
+        if level != 2:
+            continue
+        cat = attrs.get("category", "")
+        aliases = attrs.get("aliases", [])
+
+        # Get children (L3+)
+        children = []
+        for succ in G.successors(nid):
+            if G.edges[nid, succ].get("type") == "CONTAINS":
+                children.append(succ)
+
+        entry = {"id": nid, "aliases": aliases[:3], "children": children}
+
+        if cat.startswith("T"):
+            t_l2_by_l1.setdefault(cat, []).append(entry)
+        elif cat.startswith("I"):
+            i_l2_by_l1.setdefault(cat, []).append(entry)
+
+    # Build I-world reference text (same for all calls)
+    i_world_text = ""
+    for i_id in sorted(i_l2_by_l1):
+        i_name = IMPACT_L1S.get(i_id, i_id)
+        i_world_text += f"\n### {i_id}: {i_name}\n"
+        for l2 in i_l2_by_l1[i_id]:
+            children_str = ", ".join(l2["children"][:8])
+            if len(l2["children"]) > 8:
+                children_str += f", ... (+{len(l2['children']) - 8} more)"
+            i_world_text += f"  - **{l2['id']}** ({', '.join(l2['aliases'][:2])}): [{children_str}]\n"
+
+    constitution = load_constitution()
+    gemini = GraphGemini()
+    all_bridges = []
+
+    # Load existing bridge classification if available
+    class_path = TAXONOMY_DIR / "patches" / "bridge_classification.yaml"
+    existing_pairs_text = ""
+    if class_path.exists():
+        class_data = yaml.safe_load(class_path.read_text()) or {}
+        existing_pairs = class_data.get("l2_pairs", [])
+        if existing_pairs:
+            existing_pairs_text = "\n## Existing leaf-level bridges (grouped by L2 pair):\n"
+            for pair in existing_pairs[:30]:
+                existing_pairs_text += f"  - {pair['src_l2']} → {pair['dst_l2']}: {pair['leaf_edge_count']} existing leaf edges\n"
+
+    # Per T-L1 Gemini call
+    for t_id in sorted(t_l2_by_l1):
+        t_name = TRIGGER_L1S.get(t_id, t_id)
+        t_l2s = t_l2_by_l1[t_id]
+
+        t_section = f"## {t_id}: {t_name}\n"
+        for l2 in t_l2s:
+            children_str = ", ".join(l2["children"][:10])
+            if len(l2["children"]) > 10:
+                children_str += f", ... (+{len(l2['children']) - 10} more)"
+            t_section += f"  - **{l2['id']}** ({', '.join(l2['aliases'][:2])}): [{children_str}]\n"
+
+        prompt = f"""You are designing the L2→L2 bridge layer for an Indian citizen impact knowledge graph.
+
+## Constitution:
+{constitution[:4000]}
+
+## Architecture Context
+The graph has two worlds:
+- **Trigger world** (T1-T5): systemic forces that drive change
+- **Impact world** (I1-I11): citizen-facing outcomes
+
+Previously, all T→I bridges were leaf-to-leaf (L3/L4→L3/L4). We are redesigning to use
+L2→L2 bridges. The traversal engine follows CONTAINS edges downward, so one L2→L2 edge
+automatically propagates to ALL children of the target L2.
+
+## Current Trigger L1 — {t_id}: {t_name}
+{t_section}
+
+## All Impact L2 subcategories:
+{i_world_text}
+{existing_pairs_text}
+## Task
+For each T-L2 in {t_id}, evaluate EVERY I-L2 pair. Rate each:
+- **strong**: Direct causal mechanism applies to MOST children of the I-L2. Include as bridge.
+- **moderate**: Mechanism exists but only for SOME children. Include with lower weight.
+- **none**: No direct causal mechanism. Skip.
+
+## Rules
+1. Each bridge must represent ONE direct causal mechanism
+2. The mechanism must apply to most/all children of the target I-L2
+3. If it only affects 1-2 specific children, it's a leaf edge, not an L2 bridge
+4. Use appropriate edge types: AFFECTS, PRODUCES, DISRUPTS, SUPPLIES, DEPENDS_ON, FUNDS
+5. Do NOT use REGULATES or MANAGES (those are metadata now)
+6. Weight: strong=0.7-0.9, moderate=0.4-0.6
+7. Polarity: +1 (positive correlation) or -1 (inverse)
+8. Delay: IMMEDIATE, SHORT_TERM, MEDIUM_TERM, LONG_TERM
+
+## Output Format (YAML only):
+```yaml
+bridges:
+  - from: t_l2_node_id
+    to: i_l2_node_id
+    type: AFFECTS
+    weight: 0.8
+    polarity: -1
+    delay: MEDIUM_TERM
+    strength: strong
+    description: "One sentence explaining the direct causal mechanism"
+```"""
+
+        print(f"\nGenerating L2 bridges: {t_id} ({t_name}) → all Impact L2s...")
+        try:
+            response = gemini.call(prompt, temperature=0.1, thinking_budget=32000, max_output_tokens=16000)
+            data = parse_yaml_from_response(response)
+        except Exception as e:
+            print(f"  WARNING: Failed for {t_id}: {e}")
+            continue
+
+        bridges = data.get("bridges", [])
+        # Tag with source
+        for b in bridges:
+            b["source_t_l1"] = t_id
+
+        all_bridges.extend(bridges)
+        strong = sum(1 for b in bridges if b.get("strength") == "strong")
+        moderate = sum(1 for b in bridges if b.get("strength") == "moderate")
+        print(f"  {t_id}: {len(bridges)} bridges ({strong} strong, {moderate} moderate)")
+
+    # Write bridge matrix
+    output_path = TAXONOMY_DIR / "patches" / "bridge_matrix.yaml"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    matrix = {
+        "metadata": {
+            "total_bridges": len(all_bridges),
+            "strong": sum(1 for b in all_bridges if b.get("strength") == "strong"),
+            "moderate": sum(1 for b in all_bridges if b.get("strength") == "moderate"),
+            "description": "L2→L2 T→I bridge matrix for human review",
+        },
+        "bridges": all_bridges,
+    }
+
+    output_path.write_text(
+        yaml.dump(matrix, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    )
+
+    print(f"\nTotal L2 bridges: {len(all_bridges)}")
+    print(f"Written to {output_path}")
+    print("Review the matrix, then run 'apply-l2-bridges' to apply.")
+
+    return 0
+
+
+def cmd_apply_l2_bridges(args: argparse.Namespace) -> int:
+    """Phase 4: Apply approved L2 bridges and remove redundant leaf edges."""
+    from graph.merge import TaxonomyMerger
+    from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+
+    matrix_path = Path(args.matrix) if args.matrix else TAXONOMY_DIR / "patches" / "bridge_matrix.yaml"
+    if not matrix_path.exists():
+        print(f"ERROR: Bridge matrix not found at {matrix_path}")
+        print("Run 'generate-l2-bridges' first.")
+        return 1
+
+    matrix = yaml.safe_load(matrix_path.read_text()) or {}
+    new_bridges = matrix.get("bridges", [])
+    if not new_bridges:
+        print("No bridges in matrix.")
+        return 0
+
+    # Load graph for parent lookups
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+
+    # Build L2 ancestor lookup
+    def get_l2_ancestor(nid: str) -> str | None:
+        if not G.has_node(nid):
+            return None
+        level = G.nodes[nid].get("level", 0)
+        if level <= 2:
+            return nid if level == 2 else None
+        for pred in G.predecessors(nid):
+            if G.edges[pred, nid].get("type") == "CONTAINS":
+                pred_level = G.nodes[pred].get("level", 0)
+                if pred_level == 2:
+                    return pred
+                elif pred_level > 2:
+                    return get_l2_ancestor(pred)
+        return None
+
+    # Get the L2 pairs covered by new bridges
+    covered_pairs = set()
+    for b in new_bridges:
+        covered_pairs.add((b["from"], b["to"]))
+
+    # Load existing bridge edges
+    edges, bridge_path = _load_bridge_edges()
+
+    # Separate: keep edges NOT covered by L2 bridges
+    kept = []
+    removed = []
+    for e in edges:
+        src_cat = _get_node_category(G, e["from"])
+        dst_cat = _get_node_category(G, e["to"])
+        if not (src_cat.startswith("T") and dst_cat.startswith("I")):
+            kept.append(e)
+            continue
+
+        src_l2 = get_l2_ancestor(e["from"])
+        dst_l2 = get_l2_ancestor(e["to"])
+        if src_l2 and dst_l2 and (src_l2, dst_l2) in covered_pairs:
+            removed.append(e)
+        else:
+            kept.append(e)  # Keep narrow edges not covered by L2 bridges
+
+    print(f"Existing T→I leaf edges removed (covered by L2): {len(removed)}")
+    print(f"Existing edges kept (narrow or non-T→I): {len(kept)}")
+
+    if args.dry_run:
+        print(f"\n--- DRY RUN ---")
+        print(f"Would add {len(new_bridges)} L2 bridges")
+        print(f"Would remove {len(removed)} redundant leaf edges")
+        return 0
+
+    # Build new bridge_edges.yaml: kept edges + new L2 bridges
+    l2_bridge_edges = []
+    for b in new_bridges:
+        l2_bridge_edges.append({
+            "from": b["from"],
+            "to": b["to"],
+            "type": b.get("type", "AFFECTS"),
+            "weight": b.get("weight", 0.5),
+            "polarity": b.get("polarity", 1),
+            "delay": b.get("delay", "SHORT_TERM"),
+            "description": b.get("description", ""),
+        })
+
+    final_edges = kept + l2_bridge_edges
+    _save_bridge_edges(final_edges, bridge_path)
+
+    print(f"\nNew bridge_edges.yaml: {len(final_edges)} edges")
+    print(f"  Kept from old: {len(kept)}")
+    print(f"  New L2 bridges: {len(l2_bridge_edges)}")
+
+    # Post-apply validation
+    print("\n--- Post-apply validation ---")
+    merger2 = TaxonomyMerger(root=PROJECT_ROOT)
+    G2 = merger2.merge()
+    apply_defaults(G2)
+    apply_fan_out_penalty(G2)
+    print(f"Graph: {G2.number_of_nodes()} nodes, {G2.number_of_edges()} edges")
+
+    return 0
+
+
+def cmd_generate_l2_laterals(args: argparse.Namespace) -> int:
+    """Phase 5: Generate same-world L2→L2 lateral edges using Gemini."""
+    from graph.merge import TaxonomyMerger
+
+    merger = TaxonomyMerger(root=PROJECT_ROOT)
+    G = merger.merge()
+
+    world = args.world
+    if world not in ("impact", "trigger"):
+        print("ERROR: --world must be 'impact' or 'trigger'")
+        return 1
+
+    l1s = IMPACT_L1S if world == "impact" else TRIGGER_L1S
+
+    # Collect L2 nodes by L1
+    l2_by_l1: dict[str, list[dict]] = {}
+    for nid, attrs in G.nodes(data=True):
+        level = attrs.get("level", 0)
+        cat = attrs.get("category", "")
+        if level != 2 or cat not in l1s:
+            continue
+        children = [
+            succ for succ in G.successors(nid)
+            if G.edges[nid, succ].get("type") == "CONTAINS"
+        ]
+        l2_by_l1.setdefault(cat, []).append({
+            "id": nid,
+            "aliases": attrs.get("aliases", [])[:3],
+            "children": children,
+        })
+
+    # Build full world text
+    world_text = ""
+    for l1_id in sorted(l2_by_l1):
+        l1_name = l1s.get(l1_id, l1_id)
+        world_text += f"\n### {l1_id}: {l1_name}\n"
+        for l2 in l2_by_l1[l1_id]:
+            children_str = ", ".join(l2["children"][:8])
+            if len(l2["children"]) > 8:
+                children_str += f", ... (+{len(l2['children']) - 8} more)"
+            world_text += f"  - **{l2['id']}** ({', '.join(l2['aliases'][:2])}): [{children_str}]\n"
+
+    constitution = load_constitution()
+    gemini = GraphGemini()
+
+    # Get L1 pairs to evaluate
+    l1_ids = sorted(l2_by_l1.keys())
+    all_laterals = []
+
+    for i, src_l1 in enumerate(l1_ids):
+        for dst_l1 in l1_ids[i + 1:]:
+            src_name = l1s[src_l1]
+            dst_name = l1s[dst_l1]
+
+            prompt = f"""You are designing L2→L2 lateral edges within the {world} world of an Indian citizen impact knowledge graph.
+
+## Context
+The graph has L2 subcategories under each L1. We need lateral (same-world) edges connecting
+L2 nodes across different L1s where direct causal mechanisms exist.
+
+The traversal engine follows CONTAINS edges downward, so one L2→L2 edge
+automatically propagates to ALL children.
+
+## {world.title()} World L2 Subcategories:
+{world_text}
+
+## Task
+Find L2→L2 causal connections between {src_l1} ({src_name}) and {dst_l1} ({dst_name}).
+Consider BOTH directions: {src_l1}→{dst_l1} AND {dst_l1}→{src_l1}.
+
+## Rules
+1. Each edge must represent ONE direct causal mechanism
+2. Mechanism must apply to most/all children of the target L2
+3. Use edge types: AFFECTS, PRODUCES, DISRUPTS, SUPPLIES, DEPENDS_ON, FUNDS, COMPETES_WITH
+4. Weight: 0.4-0.9
+5. Polarity: +1 or -1
+6. Be selective — only include strong, well-established causal links
+
+## Output Format (YAML only):
+```yaml
+laterals:
+  - from: src_l2_id
+    to: dst_l2_id
+    type: AFFECTS
+    weight: 0.7
+    polarity: 1
+    delay: SHORT_TERM
+    description: "Direct causal mechanism"
+```
+
+If no strong connections exist between these two L1s, output:
+```yaml
+laterals: []
+```"""
+
+            print(f"  {src_l1}↔{dst_l1}...", end=" ", flush=True)
+            try:
+                response = gemini.call(prompt, temperature=0.1, thinking_budget=16000)
+                data = parse_yaml_from_response(response)
+                laterals = data.get("laterals", [])
+                for lat in laterals:
+                    lat["source_pair"] = f"{src_l1}↔{dst_l1}"
+                all_laterals.extend(laterals)
+                print(f"{len(laterals)} edges")
+            except Exception as e:
+                print(f"FAILED: {e}")
+                continue
+
+    # Write laterals
+    output_path = TAXONOMY_DIR / "patches" / f"l2_laterals_{world}.yaml"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    output = {
+        "metadata": {
+            "world": world,
+            "total_laterals": len(all_laterals),
+        },
+        "laterals": all_laterals,
+    }
+
+    output_path.write_text(
+        yaml.dump(output, default_flow_style=False, sort_keys=False, allow_unicode=True)
+    )
+
+    print(f"\nTotal {world} L2 laterals: {len(all_laterals)}")
+    print(f"Written to {output_path}")
+
+    return 0
+
+
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
@@ -1148,6 +2607,60 @@ def main() -> int:
     # full-review
     sub.add_parser("full-review", help="End-to-end validation with Gemini")
 
+    # test
+    p = sub.add_parser("test", help="Run scenario tests against the graph")
+    p.add_argument("--domain", help="Filter by domain (e.g., energy, monetary)")
+    p.add_argument("--id", help="Run a single scenario by ID")
+    p.add_argument("--export", help="Export failures to this path")
+    p.add_argument("--scenarios", help="Path to scenarios YAML (default: taxonomy/scenarios.yaml)")
+    p.add_argument("--verbose", "-v", action="store_true", help="Verbose output")
+
+    # diagnose
+    p = sub.add_parser("diagnose", help="Diagnose failed scenarios and generate patch recipe")
+    p.add_argument("--input", help="Path to failed_scenarios.json (default: data/failed_scenarios.json)")
+    p.add_argument("--output", help="Path for patch recipe output (default: taxonomy/patches/patch_recipe.yaml)")
+
+    # generate-scenarios
+    p = sub.add_parser("generate-scenarios", help="Generate test scenarios via Gemini")
+    p.add_argument("--domain", required=True, help="Domain (energy, monetary, tech, climate, employment, trade, social, governance)")
+    p.add_argument("--headlines", help="Path to headlines file for grounding")
+    p.add_argument("--count", type=int, default=20, help="Number of scenarios to generate")
+
+    # patch
+    p = sub.add_parser("patch", help="Apply a patch recipe to the graph")
+    p.add_argument("recipe", help="Path to patch recipe YAML")
+    p.add_argument("--dry-run", action="store_true", help="Print changes without applying")
+    p.add_argument("--force", action="store_true", help="Apply despite validation issues")
+
+    # --- Bridge Redesign Commands ---
+
+    # convert-regulatory (Phase 1)
+    p = sub.add_parser("convert-regulatory", help="Convert REGULATES/MANAGES cross-world edges to node metadata")
+    p.add_argument("--dry-run", action="store_true", help="Preview without modifying files")
+
+    # remove-feedback (Phase 2a)
+    p = sub.add_parser("remove-feedback", help="Remove I→T feedback edges from bridge_edges.yaml")
+    p.add_argument("--dry-run", action="store_true", help="Preview without modifying files")
+
+    # audit-nodes (Phase 2b)
+    sub.add_parser("audit-nodes", help="Audit I-world nodes for T-world migration candidates")
+
+    # classify-bridges (Phase 3 prep)
+    p = sub.add_parser("classify-bridges", help="Classify T→I edges by L2 parent pairs")
+    p.add_argument("--verbose", "-v", action="store_true", help="Show individual edges per pair")
+
+    # generate-l2-bridges (Phase 3)
+    sub.add_parser("generate-l2-bridges", help="Generate L2→L2 T→I bridge matrix via Gemini")
+
+    # apply-l2-bridges (Phase 4)
+    p = sub.add_parser("apply-l2-bridges", help="Apply L2 bridges and remove redundant leaf edges")
+    p.add_argument("--matrix", help="Path to bridge matrix YAML (default: taxonomy/patches/bridge_matrix.yaml)")
+    p.add_argument("--dry-run", action="store_true", help="Preview without modifying files")
+
+    # generate-l2-laterals (Phase 5)
+    p = sub.add_parser("generate-l2-laterals", help="Generate same-world L2→L2 lateral edges via Gemini")
+    p.add_argument("--world", required=True, choices=["impact", "trigger"])
+
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -1165,6 +2678,18 @@ def main() -> int:
         "generate-bridges": cmd_generate_bridges,
         "generate-feedback": cmd_generate_feedback,
         "full-review": cmd_full_review,
+        "test": cmd_test,
+        "diagnose": cmd_diagnose,
+        "generate-scenarios": cmd_generate_scenarios,
+        "patch": cmd_patch,
+        # Bridge redesign commands
+        "convert-regulatory": cmd_convert_regulatory,
+        "remove-feedback": cmd_remove_feedback,
+        "audit-nodes": cmd_audit_nodes,
+        "classify-bridges": cmd_classify_bridges,
+        "generate-l2-bridges": cmd_generate_l2_bridges,
+        "apply-l2-bridges": cmd_apply_l2_bridges,
+        "generate-l2-laterals": cmd_generate_l2_laterals,
     }
 
     return dispatch[args.command](args)

@@ -864,3 +864,121 @@ edges:
   delay: SHORT_TERM
   description: The reach and affordability of the railway network facilitates the
     mass movement of seasonal migrant workers across states.
+- from: energy_power_infrastructure
+  to: meteorological_systems
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: Greenhouse gas emissions from coal power plants and fossil fuel infrastructure
+    alter macro climate drivers and atmospheric temperatures.
+- from: civic_urban_infrastructure
+  to: hydrological_systems
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: Inadequate sewage and drainage networks discharge untreated urban effluent
+    into major river basins and subsurface water systems, degrading water quality.
+- from: transport_logistics_infrastructure
+  to: biophysical_and_ecological_systems
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: LONG_TERM
+  description: The expansion of highway networks and freight corridors fragments terrestrial
+    ecosystems and disrupts biological populations and wildlife corridors.
+- from: energy_power_infrastructure
+  to: biophysical_and_ecological_systems
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: LONG_TERM
+  description: The construction of power plants, dams, and pipeline networks leads
+    to deforestation and habitat loss, disrupting terrestrial ecosystems.
+- from: digital_telecom_infrastructure
+  to: indian_union_government
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Digital Public Infrastructure (DPI) and data centers supply the foundational
+    technological rails for the Union government's welfare delivery and tax collection
+    systems.
+- from: digital_telecom_infrastructure
+  to: state_and_local_governments
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Optical fibre networks and telecom infrastructure provide the necessary
+    connectivity backbone for state-level e-governance and municipal administration.
+- from: transport_logistics_infrastructure
+  to: international_trade_and_supply_chains
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The capacity and efficiency of major seaports, commercial airports,
+    and freight corridors directly determine a nation's trade balance metrics and
+    integration into global supply chains.
+- from: energy_power_infrastructure
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Reliable power infrastructure drives industrial output and GDP growth,
+    while the operational cost of energy grids heavily influences domestic inflation
+    indices.
+- from: transport_logistics_infrastructure
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Efficient logistics networks reduce supply-side bottlenecks and transit
+    costs, directly lowering inflation and boosting national economic output.
+- from: digital_telecom_infrastructure
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Digital public infrastructure and telecom networks drive economic formalization
+    and service-sector efficiency, boosting national output and creating new employment
+    aggregates.
+- from: digital_telecom_infrastructure
+  to: financial_and_capital_markets
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Telecom networks, data centers, and digital public infrastructure form
+    the foundational physical layer enabling digital payments, high-frequency trading,
+    and modern capital market operations.
+- from: transport_logistics_infrastructure
+  to: migration_and_mobility
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Expansion of transport networks (railways, highways, airports) directly
+    facilitates and accelerates domestic and international population mobility.
+- from: digital_telecom_infrastructure
+  to: macro_behavioral_shifts
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Deep penetration of digital public infrastructure and telecom networks
+    directly drives shifts in consumer sentiment and civic participation by enabling
+    real-time information access and digital transactions.
+- from: civic_urban_infrastructure
+  to: demographics_and_population
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: The availability and quality of municipal grids (water, sewage) directly
+    dictate the carrying capacity for urbanization and population density in cities.

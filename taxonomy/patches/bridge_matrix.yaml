@@ -1,0 +1,917 @@
+metadata:
+  total_bridges: 91
+  strong: 74
+  moderate: 17
+  description: L2→L2 T→I bridge matrix for human review
+bridges:
+- from: meteorological_systems
+  to: fresh_produce
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  strength: strong
+  description: Extreme weather and monsoon deficits directly reduce the yield and
+    availability of fruits and vegetables.
+  source_t_l1: T1
+- from: meteorological_systems
+  to: staple_grains
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: Monsoon variations and temperature shocks disrupt the cultivation cycles
+    of major cereal crops.
+  source_t_l1: T1
+- from: meteorological_systems
+  to: pulses_and_legumes
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: Erratic rainfall patterns severely impact the production of rain-fed
+    pulse and legume crops.
+  source_t_l1: T1
+- from: meteorological_systems
+  to: road_infrastructure_experience
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  strength: strong
+  description: Heavy rainfall and extreme weather directly degrade urban road surfaces
+    and highway conditions.
+  source_t_l1: T1
+- from: meteorological_systems
+  to: informal_and_daily_wage
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  strength: strong
+  description: Adverse weather conditions force immediate halts to outdoor manual
+    labor in agriculture and construction.
+  source_t_l1: T1
+- from: meteorological_systems
+  to: infectious_diseases
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Monsoon systems and temperature shifts create ideal breeding conditions
+    for vector-borne and water-borne diseases.
+  source_t_l1: T1
+- from: meteorological_systems
+  to: weather_and_thermal_environment
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Macro meteorological systems directly dictate the local ambient temperature
+    and humidity experienced by citizens.
+  source_t_l1: T1
+- from: meteorological_systems
+  to: air_quality_environment
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  strength: strong
+  description: Active meteorological systems like high wind speeds and rain disperse
+    particulate matter, improving local air quality.
+  source_t_l1: T1
+- from: meteorological_systems
+  to: urban_hydrology
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Intense monsoon systems and heavy rainfall directly cause urban flooding
+    and swell local water bodies.
+  source_t_l1: T1
+- from: meteorological_systems
+  to: intercity_travel
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: IMMEDIATE
+  strength: moderate
+  description: Severe weather phenomena force cancellations, delays, and rerouting
+    in air and railway travel.
+  source_t_l1: T1
+- from: geological_and_tectonic_systems
+  to: accidents_and_hazards
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Tectonic plate movements directly cause earthquakes and landslides,
+    creating severe physical infrastructure hazards.
+  source_t_l1: T1
+- from: geological_and_tectonic_systems
+  to: shelter_and_accommodation
+  type: DISRUPTS
+  weight: 0.5
+  polarity: -1
+  delay: IMMEDIATE
+  strength: moderate
+  description: Seismic activity and landslides cause structural damage to housing
+    and rental properties in vulnerable geographic zones.
+  source_t_l1: T1
+- from: hydrological_systems
+  to: water_and_sanitation
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Major river basins and subsurface aquifers directly provide the raw
+    water required for residential water supply.
+  source_t_l1: T1
+- from: hydrological_systems
+  to: staple_grains
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: River basins and groundwater reserves provide essential irrigation
+    for water-intensive cereal crops like rice and wheat.
+  source_t_l1: T1
+- from: hydrological_systems
+  to: meat_and_seafood
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Oceanic systems and major rivers directly sustain the populations of
+    marine and freshwater fish consumed by citizens.
+  source_t_l1: T1
+- from: hydrological_systems
+  to: urban_hydrology
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: The water levels in major river basins directly influence the state
+    of local urban water bodies and regional flood risks.
+  source_t_l1: T1
+- from: biophysical_and_ecological_systems
+  to: infectious_diseases
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Biological populations act as vectors and reservoirs for communicable
+    and zoonotic diseases.
+  source_t_l1: T1
+- from: biophysical_and_ecological_systems
+  to: urban_ecology
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  strength: strong
+  description: Broader terrestrial ecosystems provide the baseline biodiversity that
+    populates neighborhood flora and fauna.
+  source_t_l1: T1
+- from: biophysical_and_ecological_systems
+  to: accidents_and_hazards
+  type: PRODUCES
+  weight: 0.5
+  polarity: 1
+  delay: IMMEDIATE
+  strength: moderate
+  description: Shifts in biological populations and habitat loss drive human-wildlife
+    conflicts and animal threats in human settlements.
+  source_t_l1: T1
+- from: indian_union_government
+  to: government_and_psu
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Central government budget allocations and ministry policies directly
+    fund and expand public sector employment opportunities.
+  source_t_l1: T2
+- from: indian_union_government
+  to: taxation_and_compliance
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Union government finance ministries directly set the direct tax slabs,
+    surcharges, and compliance rules for citizens.
+  source_t_l1: T2
+- from: indian_union_government
+  to: intercity_travel
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: Central infrastructure ministries directly fund and develop the national
+    railway, highway, and aviation networks.
+  source_t_l1: T2
+- from: indian_regulatory_bodies
+  to: borrowing_and_credit
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Central bank monetary policies and repo rate adjustments directly dictate
+    the interest rates and availability of retail loans.
+  source_t_l1: T2
+- from: indian_regulatory_bodies
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Financial regulators dictate the baseline interest rates and regulatory
+    frameworks for bank deposits and small savings schemes.
+  source_t_l1: T2
+- from: indian_regulatory_bodies
+  to: market_investments
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Capital market regulators directly alter the compliance, margin requirements,
+    and operational rules for equity and mutual fund investments.
+  source_t_l1: T2
+- from: indian_regulatory_bodies
+  to: insurance_premiums
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Insurance regulatory bodies directly approve and mandate changes to
+    life and general insurance premium rates and coverage rules.
+  source_t_l1: T2
+- from: indian_regulatory_bodies
+  to: telecom_and_internet_access
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Telecom regulators directly set tariff floors, spectrum rules, and
+    service quality mandates that dictate consumer mobile and broadband costs.
+  source_t_l1: T2
+- from: indian_regulatory_bodies
+  to: pharmaceuticals_and_supplies
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  strength: moderate
+  description: National pharmaceutical pricing authorities and health regulators directly
+    control the price caps and market approvals for essential medicines.
+  source_t_l1: T2
+- from: indian_judiciary_and_law_enforcement
+  to: physical_crime_and_law_enforcement
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  strength: strong
+  description: Active policing, investigative agency actions, and judicial interventions
+    directly disrupt and reduce the incidence of violent and property crimes.
+  source_t_l1: T2
+- from: indian_judiciary_and_law_enforcement
+  to: public_order_and_emergencies
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  strength: strong
+  description: Law enforcement deployments and judicial orders directly suppress civil
+    unrest, riots, and crowd emergencies.
+  source_t_l1: T2
+- from: indian_statutory_frameworks_and_councils
+  to: employment_metrics_and_conditions
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: Statutory wage boards and labor frameworks directly dictate minimum
+    wages, working hours, and formal workplace conditions.
+  source_t_l1: T2
+- from: state_and_local_governments
+  to: water_and_sanitation
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Municipal corporations and local civic bodies directly manage and supply
+    residential piped water and sewage infrastructure.
+  source_t_l1: T2
+- from: state_and_local_governments
+  to: public_transit
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: State transport boards and metro corporations directly fund, operate,
+    and set fares for urban bus and rail transit systems.
+  source_t_l1: T2
+- from: state_and_local_governments
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Local municipal bodies directly execute solid waste management, street
+    sweeping, and neighborhood sanitation programs.
+  source_t_l1: T2
+- from: state_and_local_governments
+  to: road_infrastructure_experience
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Local civic bodies and state public works departments directly maintain
+    urban roads, fix potholes, and manage street infrastructure.
+  source_t_l1: T2
+- from: state_and_local_governments
+  to: urban_hydrology
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: Municipal stormwater management and local body zoning directly determine
+    the severity of urban flooding and the health of local water bodies.
+  source_t_l1: T2
+- from: state_and_local_governments
+  to: school_education
+  type: FUNDS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: moderate
+  description: State governments directly fund state-board public schools and administer
+    student welfare programs like mid-day meals.
+  source_t_l1: T2
+- from: state_and_local_governments
+  to: healthcare_services
+  type: FUNDS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: moderate
+  description: State health departments directly fund and operate primary health centers
+    and state-run public hospitals.
+  source_t_l1: T2
+- from: global_sovereign_entities
+  to: market_investments
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Interest rate decisions by global central banks dictate foreign institutional
+    capital flows into Indian equity and mutual fund markets.
+  source_t_l1: T2
+- from: global_sovereign_entities
+  to: higher_education
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: moderate
+  description: Foreign government immigration and education policies directly affect
+    the availability and cost of overseas university programs for Indian students.
+  source_t_l1: T2
+- from: global_commodity_markets
+  to: edible_oils
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Global agricultural commodity prices directly dictate the retail cost
+    of imported edible oils like palm and sunflower oil.
+  source_t_l1: T3
+- from: global_commodity_markets
+  to: household_energy
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Global energy commodity prices determine the retail cost of domestic
+    cooking fuels like LPG and piped natural gas.
+  source_t_l1: T3
+- from: global_commodity_markets
+  to: private_vehicle_ownership
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Global crude oil prices directly drive retail petrol and diesel costs
+    for private vehicle owners.
+  source_t_l1: T3
+- from: global_commodity_markets
+  to: physical_and_alternative_assets
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Global precious metal markets dictate the domestic retail price of
+    gold and silver investments.
+  source_t_l1: T3
+- from: indian_macroeconomic_indicators
+  to: corporate_employment
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: Domestic economic growth and national output levels drive hiring demand
+    and salary increments in the formal private sector.
+  source_t_l1: T3
+- from: indian_macroeconomic_indicators
+  to: employment_metrics_and_conditions
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Macroeconomic employment aggregates directly translate to the unemployment
+    levels and wage conditions experienced by citizens.
+  source_t_l1: T3
+- from: indian_macroeconomic_indicators
+  to: borrowing_and_credit
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Domestic inflation indices drive central bank rate decisions, which
+    directly dictate retail loan interest rates.
+  source_t_l1: T3
+- from: indian_macroeconomic_indicators
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Macroeconomic inflation and policy rates determine the interest yields
+    on retail bank deposits and small savings schemes.
+  source_t_l1: T3
+- from: financial_and_capital_markets
+  to: market_investments
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Performance of domestic equity and debt markets directly determines
+    the portfolio value of retail mutual funds and direct stock investments.
+  source_t_l1: T3
+- from: financial_and_capital_markets
+  to: retirement_and_provident_funds
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: Institutional debt and bond market yields dictate the annual interest
+    rates declared for statutory provident funds and pension schemes.
+  source_t_l1: T3
+- from: financial_and_capital_markets
+  to: corporate_employment
+  type: FUNDS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: moderate
+  description: Capital market liquidity and institutional investment flows fund corporate
+    expansion, driving job creation in startups and IT.
+  source_t_l1: T3
+- from: international_trade_and_supply_chains
+  to: pharmaceuticals_and_supplies
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Global supply chain efficiency dictates the import volume of active
+    pharmaceutical ingredients (APIs), affecting medicine availability and cost.
+  source_t_l1: T3
+- from: international_trade_and_supply_chains
+  to: consumer_tech_devices
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Global supply chain flows and semiconductor trade dictate the availability
+    and retail pricing of personal computing and smart devices.
+  source_t_l1: T3
+- from: international_trade_and_supply_chains
+  to: corporate_employment
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: Global macroeconomic demand and trade balances directly drive hiring
+    and job security in export-oriented sectors like IT services and manufacturing.
+  source_t_l1: T3
+- from: energy_power_infrastructure
+  to: household_energy
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: National power grids and gas pipelines directly supply electricity
+    and cooking fuel to residential households.
+  source_t_l1: T4
+- from: energy_power_infrastructure
+  to: private_vehicle_ownership
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  strength: moderate
+  description: Oil and gas pipelines, along with power grids for EV charging, determine
+    the availability and cost of vehicle fuels.
+  source_t_l1: T4
+- from: digital_telecom_infrastructure
+  to: telecom_and_internet_access
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Telecom towers, optical fiber networks, and spectrum allocation directly
+    provide mobile and broadband connectivity to citizens.
+  source_t_l1: T4
+- from: digital_telecom_infrastructure
+  to: digital_identity_and_egovernance
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Digital Public Infrastructure (DPI) and data centers form the foundational
+    backbone for core digital identity and online citizen services.
+  source_t_l1: T4
+- from: digital_telecom_infrastructure
+  to: digital_payments_interface
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Digital Public Infrastructure and telecom networks directly enable
+    the functioning of the UPI ecosystem and digital payment systems.
+  source_t_l1: T4
+- from: digital_telecom_infrastructure
+  to: digital_communication_platforms
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Data centers and optical fibre networks provide the essential hosting
+    and bandwidth required for instant messaging and social media platforms.
+  source_t_l1: T4
+- from: digital_telecom_infrastructure
+  to: gig_and_platform_economy
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Robust telecom and digital infrastructure is the primary enabler for
+    platform-based gig work like ride-hailing and delivery services.
+  source_t_l1: T4
+- from: digital_telecom_infrastructure
+  to: edtech_platforms
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  strength: moderate
+  description: The penetration of telecom and broadband infrastructure directly enables
+    the adoption and delivery of online K-12 and higher education platforms.
+  source_t_l1: T4
+- from: digital_telecom_infrastructure
+  to: digital_and_cyber_security
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  strength: moderate
+  description: The expansion of digital public infrastructure and telecom networks
+    proportionally increases the surface area for financial cyber fraud and digital
+    harassment.
+  source_t_l1: T4
+- from: transport_logistics_infrastructure
+  to: intercity_travel
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Railway networks, highways, and commercial airports directly provide
+    the physical capacity for long-distance passenger travel.
+  source_t_l1: T4
+- from: transport_logistics_infrastructure
+  to: road_infrastructure_experience
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: The expansion and maintenance of highway networks directly dictate
+    toll costs and the physical condition of roads experienced by commuters.
+  source_t_l1: T4
+- from: transport_logistics_infrastructure
+  to: travel_and_tourism
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: The development of airports, railways, and highways directly increases
+    accessibility to tourism services and holiday destinations.
+  source_t_l1: T4
+- from: transport_logistics_infrastructure
+  to: accidents_and_hazards
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  strength: moderate
+  description: The scale and operational intensity of transport networks directly
+    correlate with the frequency of transit accidents and infrastructure hazards.
+  source_t_l1: T4
+- from: transport_logistics_infrastructure
+  to: packaged_and_processed_foods
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  strength: moderate
+  description: Dedicated freight corridors and shipping routes reduce logistics costs,
+    inversely affecting the final retail price of packaged FMCG foods.
+  source_t_l1: T4
+- from: transport_logistics_infrastructure
+  to: fresh_produce
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  strength: moderate
+  description: Efficient transport and logistics networks directly improve the availability
+    and reduce spoilage of fresh fruits and vegetables.
+  source_t_l1: T4
+- from: civic_urban_infrastructure
+  to: water_and_sanitation
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Municipal water grids and sewage networks directly deliver residential
+    water supply and manage household sanitation.
+  source_t_l1: T4
+- from: civic_urban_infrastructure
+  to: urban_hydrology
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  strength: strong
+  description: The capacity and quality of municipal drainage networks inversely affect
+    the severity and frequency of urban flooding.
+  source_t_l1: T4
+- from: civic_urban_infrastructure
+  to: infectious_diseases
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: Proper sewage and drainage infrastructure significantly reduces the
+    prevalence of water-borne and vector-borne diseases.
+  source_t_l1: T4
+- from: civic_urban_infrastructure
+  to: civic_cleanliness
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Municipal waste and sanitation grids directly determine the cleanliness
+    and solid waste environment of local neighborhoods.
+  source_t_l1: T4
+- from: advanced_tech_infrastructure
+  to: consumer_tech_devices
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: moderate
+  description: Semiconductor fabrication plants dictate the supply chain availability
+    and cost of personal computing and smart devices.
+  source_t_l1: T4
+- from: advanced_tech_infrastructure
+  to: telecom_and_internet_access
+  type: SUPPLIES
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: moderate
+  description: Satellite networks provide critical backhaul and direct connectivity
+    for remote and rural internet access.
+  source_t_l1: T4
+- from: demographics_and_population
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  strength: strong
+  description: Urbanization trends and population growth directly drive up demand
+    and costs for rental housing and home construction.
+  source_t_l1: T5
+- from: demographics_and_population
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  strength: strong
+  description: Aging demographics directly increase the prevalence and healthcare
+    burden of chronic, metabolic, and cardiovascular conditions.
+  source_t_l1: T5
+- from: demographics_and_population
+  to: employment_metrics_and_conditions
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  strength: strong
+  description: Working-age population growth directly increases labor market competition,
+    impacting unemployment levels and wage stagnation.
+  source_t_l1: T5
+- from: migration_and_mobility
+  to: shelter_and_accommodation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: strong
+  description: Inward domestic migration directly increases localized demand and pricing
+    for rental housing and accommodation.
+  source_t_l1: T5
+- from: migration_and_mobility
+  to: informal_and_daily_wage
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Domestic migration directly supplies the labor force required for construction,
+    agriculture, and domestic care sectors.
+  source_t_l1: T5
+- from: migration_and_mobility
+  to: intercity_travel
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Migrant populations directly drive cyclical surges in demand for railway
+    and highway bus travel.
+  source_t_l1: T5
+- from: social_movements_and_collectives
+  to: public_order_and_emergencies
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Mass social movements and identity protests directly trigger civil
+    unrest and crowd control emergencies.
+  source_t_l1: T5
+- from: social_movements_and_collectives
+  to: intercity_travel
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  strength: strong
+  description: Agrarian and labor collective actions frequently manifest as blockades
+    that disrupt railway and highway travel efficiency.
+  source_t_l1: T5
+- from: social_movements_and_collectives
+  to: informal_and_daily_wage
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  strength: moderate
+  description: Labor and agrarian collectives directly negotiate and influence statutory
+    wages and working conditions for unorganized sector workers.
+  source_t_l1: T5
+- from: cultural_and_religious_forces
+  to: cultural_and_religious_life
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Major cultural observances and religious institutions directly dictate
+    the scale, frequency, and expenditure of festivals, weddings, and pilgrimages.
+  source_t_l1: T5
+- from: cultural_and_religious_forces
+  to: intercity_travel
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Major festivals and religious observances directly drive massive, predictable
+    surges in railway, air, and highway travel.
+  source_t_l1: T5
+- from: cultural_and_religious_forces
+  to: sensory_environment
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  strength: strong
+  description: Festivals and religious observances directly produce significant, localized
+    spikes in noise and light pollution.
+  source_t_l1: T5
+- from: macro_behavioral_shifts
+  to: entertainment_and_media
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Positive consumer sentiment directly drives discretionary spending
+    on cinema, digital entertainment, and live events.
+  source_t_l1: T5
+- from: macro_behavioral_shifts
+  to: market_investments
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Retail consumer sentiment directly dictates the volume of capital inflows
+    into equity investments and mutual funds.
+  source_t_l1: T5
+- from: macro_behavioral_shifts
+  to: travel_and_tourism
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Consumer sentiment and confidence directly impact household discretionary
+    spending on holiday accommodation and tourism services.
+  source_t_l1: T5
+- from: macro_behavioral_shifts
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  strength: strong
+  description: Positive consumer sentiment directly increases the frequency and budget
+    allocated to restaurants and food delivery services.
+  source_t_l1: T5

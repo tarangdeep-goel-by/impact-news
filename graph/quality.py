@@ -187,6 +187,24 @@ class InferenceValidation(BaseModel):
     missing_nodes: list[str] = Field(default_factory=list)
 
 
+class BridgeArchitectureReport(BaseModel):
+    """Rule 18/19 enforcement: L2 highway bridge checks."""
+    total_cross_world: int = 0
+    l2_bridges: int = 0
+    leaf_bridges: int = 0
+    regulates_manages_edges: int = 0
+    feedback_edges_it: int = 0
+    violations: list[str] = Field(default_factory=list, description="Rule violation details")
+
+
+class ScenarioReport(BaseModel):
+    total: int = 0
+    passed: int = 0
+    failed: int = 0
+    errors: int = 0
+    pass_rate: float = 0.0
+
+
 class QualityScorecard(BaseModel):
     timestamp: str = ""
     node_count: int = 0
@@ -200,6 +218,8 @@ class QualityScorecard(BaseModel):
     connectivity: ConnectivityReport = Field(default_factory=ConnectivityReport)
     user_coverage: UserCoverageReport = Field(default_factory=UserCoverageReport)
     inference_refs: InferenceValidation = Field(default_factory=InferenceValidation)
+    bridge_architecture: BridgeArchitectureReport = Field(default_factory=BridgeArchitectureReport)
+    scenarios: ScenarioReport | None = Field(default=None, description="Scenario test results (if scenarios.yaml exists)")
 
 
 # ---------------------------------------------------------------------------
@@ -240,6 +260,8 @@ class QualityAnalyzer:
             connectivity=self._analyze_connectivity(G),
             user_coverage=self._simulate_personas(G),
             inference_refs=self._validate_inference_refs(G),
+            bridge_architecture=self._analyze_bridge_architecture(G),
+            scenarios=self._run_scenarios(G, self.root),
         )
         return sc
 
@@ -476,6 +498,94 @@ class QualityAnalyzer:
             missing_nodes=missing,
         )
 
+    @staticmethod
+    def _analyze_bridge_architecture(G: nx.DiGraph) -> BridgeArchitectureReport:
+        """Enforce Rule 18/19: L2 highway bridges, no REGULATES/MANAGES edges, no I→T."""
+        T_CATS = {"T1", "T2", "T3", "T4", "T5"}
+        I_CATS = {"I1", "I2", "I3", "I4", "I5", "I6", "I7", "I8", "I9", "I10", "I11"}
+
+        total_cross = 0
+        l2_count = 0
+        leaf_count = 0
+        reg_manages = 0
+        feedback_it = 0
+        violations: list[str] = []
+
+        for u, v, attrs in G.edges(data=True):
+            etype = attrs.get("type", "")
+
+            # Skip taxonomy edges
+            if etype in ("CONTAINS", "IS_A"):
+                continue
+
+            u_cat = G.nodes[u].get("category", "") if G.has_node(u) else ""
+            v_cat = G.nodes[v].get("category", "") if G.has_node(v) else ""
+            u_lvl = G.nodes[u].get("level", 0) if G.has_node(u) else 0
+            v_lvl = G.nodes[v].get("level", 0) if G.has_node(v) else 0
+
+            # Check cross-world REGULATES/MANAGES edges (should be metadata)
+            if etype in ("REGULATES", "MANAGES"):
+                u_is_cross = (u_cat in T_CATS and v_cat in I_CATS) or (u_cat in I_CATS and v_cat in T_CATS)
+                if u_is_cross:
+                    reg_manages += 1
+                    if len(violations) < 20:
+                        violations.append(f"Cross-world REGULATES/MANAGES: {u} ({u_cat}) → {v} ({v_cat}) (should be metadata)")
+
+            # Check I→T feedback edges (forbidden)
+            u_is_i = u_cat in I_CATS
+            v_is_t = v_cat in T_CATS
+            if u_is_i and v_is_t:
+                feedback_it += 1
+                if len(violations) < 20:
+                    violations.append(f"I→T feedback edge: {u} ({u_cat}) → {v} ({v_cat})")
+
+            # Cross-world bridge analysis (T→I only)
+            u_is_t = u_cat in T_CATS
+            v_is_i = v_cat in I_CATS
+            if u_is_t and v_is_i:
+                total_cross += 1
+                if u_lvl == 2 and v_lvl == 2:
+                    l2_count += 1
+                else:
+                    leaf_count += 1
+
+        return BridgeArchitectureReport(
+            total_cross_world=total_cross,
+            l2_bridges=l2_count,
+            leaf_bridges=leaf_count,
+            regulates_manages_edges=reg_manages,
+            feedback_edges_it=feedback_it,
+            violations=violations,
+        )
+
+    @staticmethod
+    def _run_scenarios(G: nx.DiGraph, root: Path) -> ScenarioReport | None:
+        """Run scenario tests if scenarios.yaml exists."""
+        scenarios_path = root / "taxonomy" / "scenarios.yaml"
+        if not scenarios_path.exists():
+            return None
+
+        try:
+            from graph.scenarios import load_scenarios, run_all
+            scenarios = load_scenarios(scenarios_path)
+            if not scenarios:
+                return None
+            results = run_all(G, scenarios)
+            passed = sum(1 for r in results if r["status"] == "PASS")
+            failed = sum(1 for r in results if r["status"] == "FAIL")
+            errors = sum(1 for r in results if r["status"] == "ERROR")
+            total = len(results)
+            return ScenarioReport(
+                total=total,
+                passed=passed,
+                failed=failed,
+                errors=errors,
+                pass_rate=round(passed / total * 100, 1) if total else 0.0,
+            )
+        except Exception as e:
+            log.warning("Scenario tests failed: %s", e)
+            return None
+
 
 # ---------------------------------------------------------------------------
 # CLI display
@@ -571,6 +681,37 @@ def print_scorecard(sc: QualityScorecard) -> None:
         "ok" if sc.inference_refs.missing_count == 0 else f"!! {sc.inference_refs.missing_count} missing",
     ))
 
+    # Scenarios
+    if sc.scenarios is not None:
+        rows.append((
+            "Scenario pass rate",
+            f"{sc.scenarios.pass_rate:.1f}%",
+            "ok" if sc.scenarios.pass_rate >= 90 else f"!! {sc.scenarios.failed + sc.scenarios.errors} failing",
+        ))
+
+    # Bridge architecture (Rule 18/19)
+    ba = sc.bridge_architecture
+    rows.append((
+        "L2 bridges (T→I)",
+        str(ba.l2_bridges),
+        "",
+    ))
+    rows.append((
+        "Leaf bridges (grandfathered)",
+        str(ba.leaf_bridges),
+        "",
+    ))
+    rows.append((
+        "REGULATES/MANAGES edges",
+        str(ba.regulates_manages_edges),
+        "ok" if ba.regulates_manages_edges == 0 else f"!! {ba.regulates_manages_edges} should be metadata",
+    ))
+    rows.append((
+        "I→T feedback edges",
+        str(ba.feedback_edges_it),
+        "ok" if ba.feedback_edges_it == 0 else f"!! {ba.feedback_edges_it} forbidden",
+    ))
+
     # User coverage
     rows.append((
         "Avg persona coverage",
@@ -615,6 +756,12 @@ def print_scorecard(sc: QualityScorecard) -> None:
         for nid in sc.inference_refs.missing_nodes:
             print(f"  {nid}")
 
+    # Detail: bridge architecture violations
+    if sc.bridge_architecture.violations:
+        print(f"\nBridge architecture violations ({len(sc.bridge_architecture.violations)}):")
+        for v in sc.bridge_architecture.violations:
+            print(f"  {v}")
+
     # Detail: persona coverage
     print("\nPersona coverage breakdown:")
     for p in sc.user_coverage.personas:
@@ -622,6 +769,11 @@ def print_scorecard(sc: QualityScorecard) -> None:
             f"  {p.name:<20} edges={p.direct_edges:>3}  "
             f"reachable={p.reachable_count:>5}  ({p.reachable_pct:.1f}%)"
         )
+
+    # Detail: scenario results
+    if sc.scenarios is not None:
+        print(f"\nScenario tests: {sc.scenarios.passed}/{sc.scenarios.total} passed"
+              f" ({sc.scenarios.failed} failed, {sc.scenarios.errors} errors)")
 
 
 # ---------------------------------------------------------------------------

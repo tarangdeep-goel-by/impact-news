@@ -81,6 +81,8 @@ nodes:
   is_category: false
   portal: true
   port: true
+  regulated_by:
+  - cpcb
 - id: particulate_matter_levels
   aliases:
   - PM 2.5
@@ -175,6 +177,8 @@ nodes:
   is_category: false
   portal: true
   port: true
+  managed_by:
+  - municipal_corporations
 - id: basement_flooding
   aliases:
   - Flooded basements
@@ -209,6 +213,8 @@ nodes:
   is_category: false
   portal: true
   port: true
+  regulated_by:
+  - national_green_tribunal
 - id: solid_waste_environment
   aliases:
   - Solid Waste
@@ -232,6 +238,8 @@ nodes:
   is_category: false
   portal: true
   port: true
+  regulated_by:
+  - municipal_corporations
 - id: urban_landfills
   aliases:
   - Garbage mountains
@@ -245,6 +253,8 @@ nodes:
   is_category: false
   portal: true
   port: true
+  managed_by:
+  - municipal_corporations
 - id: sanitation_environment
   aliases:
   - Sanitation Environment
@@ -1042,3 +1052,389 @@ edges:
   delay: SHORT_TERM
   description: The proliferation of mosquitoes from stagnant water drives housing
     societies to frequently hire pest control and fogging services.
+- from: weather_and_thermal_environment
+  to: fresh_produce
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme ambient temperatures and heatwaves accelerate the spoilage
+    of fresh fruits and vegetables in informal transit and retail markets, reducing
+    quality and availability.
+- from: urban_hydrology
+  to: out_of_home_dining
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding and severe waterlogging directly halt food delivery
+    services, restrict restaurant access, and force street food vendors to shut down.
+- from: urban_hydrology
+  to: fresh_produce
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding disrupts local mandi (wholesale market) operations and
+    peri-urban transport routes, causing immediate shortages and price spikes for
+    perishable vegetables.
+- from: urban_hydrology
+  to: telecom_and_internet_access
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding and waterlogging damage underground optical fiber networks
+    and disrupt power supply to cellular towers, causing widespread internet and telecom
+    outages.
+- from: weather_and_thermal_environment
+  to: telecom_and_internet_access
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme weather events such as cyclones, heavy rainfall, and severe
+    heatwaves damage overhead cables and telecom infrastructure, disrupting mobile
+    and broadband connectivity.
+- from: urban_ecology
+  to: telecom_and_internet_access
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Fallen trees and branches from urban flora during storms frequently
+    snap overhead broadband and telecom cables, causing localized connectivity disruptions.
+- from: air_quality_environment
+  to: sports_and_recreation
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: High particulate matter and winter smog force the cancellation or reduction
+    of outdoor spectator sports and recreational activities.
+- from: weather_and_thermal_environment
+  to: sports_and_recreation
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme ambient temperatures and high humidity severely restrict the
+    usage of outdoor recreational facilities and sports events.
+- from: weather_and_thermal_environment
+  to: travel_and_tourism
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme weather conditions, such as heatwaves or heavy monsoons, disrupt
+    holiday travel and tourism services.
+- from: urban_hydrology
+  to: community_and_civic_life
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding directly inundates public spaces and disrupts neighborhood
+    civic activities.
+- from: urban_ecology
+  to: community_and_civic_life
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: Healthy urban flora and green spaces enhance the quality, aesthetics,
+    and usage of neighborhood public spaces.
+- from: urban_hydrology
+  to: shelter_and_accommodation
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding directly damages ground-level housing, disrupts residential
+    accommodation, and forces temporary displacement.
+- from: urban_hydrology
+  to: water_and_sanitation
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding disrupts residential water supply infrastructure and
+    causes backflow and failure in sanitation systems.
+- from: weather_and_thermal_environment
+  to: household_energy
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Extreme ambient temperatures directly drive up residential electricity
+    consumption for cooling (ACs/coolers) and heating purposes.
+- from: urban_ecology
+  to: residential_maintenance_and_services
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Urban fauna such as monkeys, rodents, and pigeons directly increase
+    the maintenance, cleaning, and upkeep requirements for residential properties.
+- from: urban_hydrology
+  to: road_infrastructure_experience
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding and waterlogging severely degrade road surface integrity,
+    causing potholes and massive traffic congestion.
+- from: urban_hydrology
+  to: public_transit
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Flooded tracks and waterlogged arterial streets halt urban rail and
+    bus transit operations during heavy monsoons.
+- from: air_quality_environment
+  to: intercity_travel
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Severe winter smog and resulting low visibility cause widespread delays,
+    rescheduling, and cancellations in air and railway travel.
+- from: weather_and_thermal_environment
+  to: on_demand_transit
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Extreme heatwaves and heavy rainfall drive up immediate demand for
+    ride-hailing services and autos, often triggering surge pricing.
+- from: weather_and_thermal_environment
+  to: road_infrastructure_experience
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme thermal conditions (which melt asphalt) and heavy monsoons
+    degrade road surface integrity over time.
+- from: weather_and_thermal_environment
+  to: informal_and_daily_wage
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme heatwaves and high humidity directly reduce the safe working
+    hours and productivity of outdoor manual laborers in construction and agriculture.
+- from: weather_and_thermal_environment
+  to: gig_and_platform_economy
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme ambient temperatures and harsh weather conditions severely
+    impact the health, safety, and operational capacity of delivery and gig workers.
+- from: air_quality_environment
+  to: informal_and_daily_wage
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Severe winter smog and hazardous AQI levels trigger government-mandated
+    bans on construction activities, directly halting daily wage labor.
+- from: urban_hydrology
+  to: informal_and_daily_wage
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding and severe waterlogging disrupt street vending, construction
+    sites, and daily wage labor opportunities.
+- from: urban_hydrology
+  to: gig_and_platform_economy
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding makes roads impassable, severely disrupting delivery
+    logistics and ride-hailing operations.
+- from: urban_hydrology
+  to: self_employment_and_msme
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding damages retail inventory and disrupts daily operations
+    for small businesses and local shops.
+- from: air_quality_environment
+  to: insurance_premiums
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: Chronic poor air quality increases respiratory illnesses and overall
+    mortality, leading to higher claims and subsequently driving up premiums for both
+    health (general) and life insurance.
+- from: weather_and_thermal_environment
+  to: insurance_premiums
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: LONG_TERM
+  description: Extreme thermal conditions and erratic weather increase health risks,
+    crop failures, and mortality, driving up premiums across general (health/crop)
+    and life insurance.
+- from: urban_hydrology
+  to: insurance_premiums
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Frequent urban flooding causes significant property and vehicle damage
+    while increasing water-borne disease risks, directly driving up claims and premiums
+    for general insurance.
+- from: air_quality_environment
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: High levels of particulate matter and winter smog directly exacerbate
+    chronic respiratory and cardiovascular conditions over time.
+- from: air_quality_environment
+  to: infectious_diseases
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Poor ambient air quality and smog increase population susceptibility
+    to acute respiratory infections.
+- from: urban_hydrology
+  to: infectious_diseases
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Urban flooding and stagnant local water bodies create breeding grounds
+    for vector-borne diseases (like dengue and malaria) and spread water-borne pathogens.
+- from: civic_cleanliness
+  to: infectious_diseases
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Improved solid waste management and neighborhood sanitation directly
+    reduce the incidence of vector, water, and food-borne diseases.
+- from: weather_and_thermal_environment
+  to: infectious_diseases
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Specific ambient temperature and outdoor humidity ranges create optimal
+    conditions for the proliferation of vectors (mosquitoes) and related diseases.
+- from: weather_and_thermal_environment
+  to: chronic_and_lifestyle_conditions
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Extreme ambient temperatures and heatwaves trigger or exacerbate cardiovascular
+    stress and metabolic disorders.
+- from: sensory_environment
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: High levels of urban noise and light pollution disrupt sleep patterns,
+    increase stress, and negatively impact overall mental wellbeing.
+- from: air_quality_environment
+  to: school_education
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Severe air pollution and winter smog frequently lead to mandated school
+    closures and suspension of outdoor activities, disrupting K-12 education.
+- from: air_quality_environment
+  to: early_childhood_education
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Hazardous air quality levels prompt the emergency closure of preschools
+    and anganwadis to protect the respiratory health of young children.
+- from: weather_and_thermal_environment
+  to: school_education
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme temperatures, such as severe heatwaves or intense cold waves,
+    force alterations in school timings, early dismissals, or temporary closures.
+- from: weather_and_thermal_environment
+  to: early_childhood_education
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme thermal conditions necessitate the closure of early childhood
+    education centers to protect highly vulnerable young children from heatstroke
+    or hypothermia.
+- from: urban_hydrology
+  to: school_education
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Urban flooding and severe waterlogging disrupt student and teacher
+    commutes, frequently leading to emergency school closures during monsoons.
+- from: urban_hydrology
+  to: higher_education
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Severe urban flooding disrupts local transit, preventing access to
+    university campuses and leading to the cancellation of college classes and exams.
+- from: urban_hydrology
+  to: accidents_and_hazards
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Urban flooding directly causes transit accidents, infrastructure hazards
+    (such as open manholes and electrocution risks), and displaces wildlife leading
+    to animal threats.
+- from: air_quality_environment
+  to: accidents_and_hazards
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Winter smog and severe particulate matter pollution drastically reduce
+    visibility, directly causing highway pile-ups and other transit accidents.
+- from: urban_ecology
+  to: accidents_and_hazards
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Unmanaged urban fauna (such as stray dogs, cattle, and monkeys) directly
+    cause animal attacks and sudden transit accidents on roads.
+- from: civic_cleanliness
+  to: women_and_child_safety
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Poor sanitation environments and lack of safe public toilets force
+    women and children into vulnerable situations (like open defecation), directly
+    compromising their physical safety.
+- from: civic_cleanliness
+  to: accidents_and_hazards
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Unmanaged solid waste dumps attract stray animals (increasing animal
+    threats) and obscure infrastructure hazards like open drains.

@@ -94,6 +94,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - rbi
 - id: microfinance_loan
   aliases:
   - Microfinance Loan
@@ -226,6 +228,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - sebi
 - id: ipo_allotment
   aliases:
   - IPO Allotment
@@ -296,6 +300,8 @@ nodes:
   status: active
   portal: true
   port: true
+  managed_by:
+  - epfo
 - id: ppf_investment
   aliases:
   - PPF Investment
@@ -391,6 +397,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - irda
 - id: motor_insurance_premium
   aliases:
   - Motor Insurance Premium
@@ -433,6 +441,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - union_budget_framework
 - id: capital_gains_tax
   aliases:
   - Capital Gains Tax
@@ -444,6 +454,8 @@ nodes:
   level: 4
   status: active
   port: true
+  regulated_by:
+  - union_budget_framework
 - id: tds_deduction
   aliases:
   - TDS Deduction
@@ -484,6 +496,8 @@ nodes:
   status: active
   portal: true
   port: true
+  regulated_by:
+  - ministry_of_finance
 - id: retail_silver_investment
   aliases:
   - Retail Silver Investment
@@ -1253,3 +1267,184 @@ edges:
   delay: IMMEDIATE
   description: Higher mandatory motor insurance premiums directly increase the final
     on-road price of two-wheelers.
+- from: taxation_and_compliance
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher direct tax burdens reduce net disposable income, leading to
+    an immediate decrease in highly elastic discretionary spending such as restaurants
+    and food delivery.
+- from: market_investments
+  to: out_of_home_dining
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Positive returns from equity and mutual fund investments create a wealth
+    effect, boosting lifestyle inflation and discretionary spending on fine dining
+    and food delivery.
+- from: borrowing_and_credit
+  to: consumer_tech_devices
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Consumer durable loans, EMIs, and credit cards directly finance the
+    acquisition of smartphones, laptops, and other personal computing devices.
+- from: savings_and_deposits
+  to: cultural_and_religious_life
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Household savings are heavily utilized to fund major life milestones
+    like weddings and large-scale religious pilgrimages.
+- from: borrowing_and_credit
+  to: travel_and_tourism
+  type: FUNDS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Access to consumer credit, credit cards, and travel loans directly
+    finances holiday travel and tourism services.
+- from: savings_and_deposits
+  to: travel_and_tourism
+  type: FUNDS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Accumulated household savings provide the necessary discretionary budget
+    for undertaking travel and tourism.
+- from: borrowing_and_credit
+  to: shelter_and_accommodation
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Availability of secured credit (home loans) directly funds home construction,
+    modification, and acquisition.
+- from: physical_and_alternative_assets
+  to: shelter_and_accommodation
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Real estate investments directly increase the supply of rental housing
+    and drive home construction activity.
+- from: retirement_and_provident_funds
+  to: shelter_and_accommodation
+  type: FUNDS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Statutory provident fund withdrawals are frequently utilized by households
+    to finance home construction and modification.
+- from: borrowing_and_credit
+  to: private_vehicle_ownership
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The availability and interest rates of retail credit (specifically
+    secured auto loans and unsecured personal loans) directly dictate the affordability
+    and acquisition of private vehicles.
+- from: insurance_premiums
+  to: private_vehicle_ownership
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher general insurance premiums increase the recurring cost of vehicle
+    maintenance and compliance, negatively impacting the overall affordability of
+    vehicle ownership.
+- from: borrowing_and_credit
+  to: self_employment_and_msme
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Business loans, working capital credit, and schemes like Mudra directly
+    fund the operations, survival, and expansion of MSMEs.
+- from: market_investments
+  to: corporate_employment
+  type: FUNDS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Capital market investments, mutual funds, and equity funding provide
+    capital for corporate expansion, driving formal job creation.
+- from: insurance_premiums
+  to: healthcare_services
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Health insurance policies (under general insurance) provide financial
+    coverage that directly funds access to inpatient and outpatient healthcare services.
+- from: borrowing_and_credit
+  to: mental_health_and_wellbeing
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: High debt burdens, aggressive recovery practices, and the stress of
+    loan repayments significantly deteriorate mental health and psychological wellbeing.
+- from: savings_and_deposits
+  to: healthcare_services
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Household savings act as the primary financial buffer used by citizens
+    to fund out-of-pocket healthcare and medical emergencies.
+- from: borrowing_and_credit
+  to: education_economics
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Availability of education loans and retail credit provides the liquidity
+    needed to meet rising school, college, and coaching fees.
+- from: savings_and_deposits
+  to: education_economics
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Dedicated small savings schemes (like Sukanya Samriddhi) and bank deposits
+    are primary vehicles used to accumulate and deploy funds for educational costs.
+- from: retirement_and_provident_funds
+  to: education_economics
+  type: FUNDS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Statutory provident fund (EPF) rules allow partial withdrawals specifically
+    to fund children's higher education and professional courses.
+- from: taxation_and_compliance
+  to: education_economics
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Income tax deductions for tuition fees (Section 80C) and education
+    loan interest (Section 80E) effectively reduce the net financial burden of education
+    costs.
+- from: physical_and_alternative_assets
+  to: physical_crime_and_law_enforcement
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Accumulation of physical assets like precious metals and cash at home
+    increases vulnerability to property crimes such as theft and burglary.
+- from: savings_and_deposits
+  to: women_and_child_safety
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: Accumulated savings and financial independence provide women with the
+    necessary resources to escape abusive environments, improving overall safety.
