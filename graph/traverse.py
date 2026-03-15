@@ -21,7 +21,13 @@ def get_causal_entry(g: nx.DiGraph, node_id: str) -> str:
 
     Supports both IS_A (child→parent as successor) and CONTAINS (parent→child,
     so we walk up by checking predecessors with CONTAINS type).
+
+    If node_id is not in the graph, returns node_id unchanged (caller should
+    handle the missing-node case).
     """
+    if node_id not in g:
+        return node_id
+
     visited: set[str] = set()
     current = node_id
 
