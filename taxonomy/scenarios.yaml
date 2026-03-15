@@ -1,7 +1,7 @@
 # scenarios.yaml — Seed scenarios for graph path validation
-# 47 scenarios across 8 domains
+# 52 scenarios across 8 domains
 # Types: A (path_exists), B (reachability), C (score_threshold)
-# Mix: ~60% A, ~25% B, ~15% C, with ~10% negative tests
+# Mix: ~60% A, ~25% B, ~15% C, with ~15% negative tests
 
 scenarios:
 
@@ -495,4 +495,48 @@ scenarios:
     trigger_node: nifty_50
     target_node: retail_diesel
     max_hops: 2
+    expected: UNREACHABLE
+
+  # ============================================================
+  # CROSS-DOMAIN ISOLATION TESTS (separate commodity/economic domains)
+  # ============================================================
+
+  - id: gold_not_wheat
+    description: "Gold prices should not reach wheat flour — separate commodity domains"
+    domain: energy
+    type: A
+    trigger_node: international_gold_prices
+    target_node: wheat_flour
+    expected: UNREACHABLE
+
+  - id: silver_not_petrol
+    description: "Silver prices should not reach petrol — metals don't affect fuel"
+    domain: energy
+    type: A
+    trigger_node: international_silver_prices
+    target_node: retail_petrol
+    expected: UNREACHABLE
+
+  - id: gold_not_retail_diesel
+    description: "Gold prices should not reach diesel — separate commodity chains"
+    domain: energy
+    type: A
+    trigger_node: international_gold_prices
+    target_node: retail_diesel
+    expected: UNREACHABLE
+
+  - id: coal_not_dairy
+    description: "Coal prices should not reach dairy — no direct causal link"
+    domain: energy
+    type: A
+    trigger_node: international_coal_prices
+    target_node: dairy_and_eggs
+    expected: UNREACHABLE
+
+  - id: sensex_not_wheat
+    description: "Stock index should not reach wheat flour — different economic domains"
+    domain: monetary
+    type: A
+    trigger_node: sensex
+    target_node: wheat_flour
     expected: UNREACHABLE

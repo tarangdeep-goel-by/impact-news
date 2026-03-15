@@ -8,7 +8,8 @@ import networkx as nx
 
 from models import UserGraph
 
-CAUSAL_TYPES = {"AFFECTS", "PRODUCES", "REGULATES", "DISRUPTS", "SUPPLIES", "DEPENDS_ON"}
+CAUSAL_TYPES = {"AFFECTS", "PRODUCES", "REGULATES", "DISRUPTS", "SUPPLIES", "DEPENDS_ON",
+                "FUNDS", "COMPETES_WITH", "EMPLOYS", "MANAGES"}
 TAXONOMY_TYPES = {"IS_A"}  # CONTAINS is followed for downward hierarchy propagation
 
 DELAY_RANK = {"IMMEDIATE": 0, "SHORT_TERM": 1, "MEDIUM_TERM": 2, "LONG_TERM": 3}
@@ -89,17 +90,107 @@ def _get_contains_ancestors(g: nx.DiGraph, node_id: str) -> list[tuple[str, floa
     return ancestors
 
 
+def _has_causal_outedges(g: nx.DiGraph, node: str) -> bool:
+    """Check if node has any outgoing causal (non-CONTAINS, non-IS_A) edges."""
+    for _, _, data in g.out_edges(node, data=True):
+        if data.get('type') in CAUSAL_TYPES:
+            return True
+    return False
+
+
+def _get_contains_parent(g: nx.DiGraph, node: str) -> str | None:
+    """Get the CONTAINS parent of a node (one level up)."""
+    for pred in g.predecessors(node):
+        if g[pred][node].get('type') == 'CONTAINS':
+            return pred
+    return None
+
+
+def _aggregate_upward(
+    g: nx.DiGraph,
+    reached_scores: dict[str, float],
+) -> dict[str, dict]:
+    """Roll up leaf impact scores to parent category nodes.
+
+    For each category node (is_category=True), computes:
+    - score: mean score of hit children * coverage
+    - coverage: fraction of direct children that were reached
+    - diversity: fraction of distinct L3 branches hit (for L2 parents)
+    - hit_children: list of reached child node IDs
+    - total_children: total child count
+
+    Returns dict: {parent_id: {score, coverage, diversity, hit_children, total_children}}
+    """
+    aggregated: dict[str, dict] = {}
+
+    for node in g.nodes():
+        node_data = g.nodes[node]
+        if not node_data.get('is_category'):
+            continue
+
+        # Get direct CONTAINS children
+        children = []
+        for _, child, data in g.out_edges(node, data=True):
+            if data.get('type') == 'CONTAINS':
+                children.append(child)
+
+        if not children:
+            continue
+
+        # Find which children were reached
+        hit_children = [c for c in children if c in reached_scores]
+        if not hit_children:
+            continue
+
+        coverage = len(hit_children) / len(children)
+        mean_score = sum(reached_scores[c] for c in hit_children) / len(hit_children)
+
+        # Diversity: for L2 parents, count distinct L3 branches hit
+        # For L3 parents, diversity = 1 (they ARE the branch)
+        node_level = node_data.get('level', 0)
+        if node_level <= 2:
+            category_children = [c for c in children if g.nodes.get(c, {}).get('is_category')]
+            l3_branches_hit: set[str] = set()
+            for child in hit_children:
+                child_data = g.nodes.get(child, {})
+                if child_data.get('is_category'):
+                    l3_branches_hit.add(child)
+                else:
+                    # Walk up to find the L3 parent
+                    for pred in g.predecessors(child):
+                        if g[pred][child].get('type') == 'CONTAINS':
+                            l3_branches_hit.add(pred)
+                            break
+            diversity = len(l3_branches_hit) / max(len(category_children), 1)
+        else:
+            diversity = 1.0
+
+        aggregated[node] = {
+            'score': mean_score * coverage,
+            'coverage': coverage,
+            'diversity': diversity,
+            'hit_children': hit_children,
+            'total_children': len(children),
+        }
+
+    return aggregated
+
+
 def analyze_impact(
     g: nx.DiGraph,
     trigger_node: str,
     event_direction: int = 1,
     threshold: float = 0.05,
     max_depth: int = 6,
-) -> list[dict]:
+    include_aggregation: bool = False,
+) -> list[dict] | tuple[list[dict], dict[str, dict]]:
     """Modified Dijkstra with max-product paths for impact propagation.
 
-    Seeds traversal from the trigger node AND all its CONTAINS ancestors.
-    This enables L2 bridges to be reached from leaf trigger nodes.
+    Seeds from the trigger entry point. If the entry has no causal out-edges,
+    tries one CONTAINS parent up (scoped elevator) to reach nearby bridges.
+
+    If include_aggregation=True, returns (results, aggregation) where aggregation
+    maps category node IDs to coverage/diversity/score metrics.
     """
     entry = get_causal_entry(g, trigger_node)
 
@@ -110,11 +201,15 @@ def analyze_impact(
 
     max_weight_seen: dict[str, float] = {entry: 1.0}
 
-    # Also seed from CONTAINS ancestors (for L2 bridge access)
-    for ancestor, cum_weight in _get_contains_ancestors(g, entry):
-        if cum_weight >= threshold:
-            heapq.heappush(heap, (-cum_weight, ancestor, event_direction, [entry, ancestor], "IMMEDIATE"))
-            max_weight_seen[ancestor] = cum_weight
+    # Scoped elevator: always seed from one CONTAINS parent up.
+    # This gives leaf nodes access to their L3 parent's bridges without
+    # climbing all the way to L2 (which caused false cross-domain paths).
+    parent = _get_contains_parent(g, entry)
+    if parent and parent != entry:
+        parent_weight = g[parent][entry]['weight'] if g.has_edge(parent, entry) else 0.9
+        heapq.heappush(heap, (-parent_weight, parent, event_direction,
+                              [entry, parent], "IMMEDIATE"))
+        max_weight_seen[parent] = parent_weight
 
     results: list[dict] = []
 
@@ -206,12 +301,19 @@ def analyze_impact(
 
     # Sort by score descending
     results.sort(key=lambda x: x["score"], reverse=True)
+
+    if include_aggregation:
+        score_map = {r["node"]: r["score"] for r in results}
+        aggregation = _aggregate_upward(g, score_map)
+        return results, aggregation
+
     return results
 
 
 def compute_relevance(
     article_impacts: list[dict],
     user_graph: UserGraph,
+    aggregation: dict[str, dict] | None = None,
 ) -> tuple[float, list[str]]:
     """Sparse dot product: article impact × user importance.
 
@@ -220,6 +322,8 @@ def compute_relevance(
     Scoring:
       For direct UserEdge nodes: article_score × user_importance
       For reachable-only nodes:  article_score × 0.3 (indirect relevance)
+      For aggregated category nodes: agg_score × user_importance (when user
+        tracks a category node not directly in article_impacts)
     """
     article_vector = {impact["node"]: impact["score"] for impact in article_impacts}
     user_direct = {edge.node_id: edge.importance for edge in user_graph.edges}
@@ -234,6 +338,18 @@ def compute_relevance(
         elif node in user_graph.reachable_nodes:
             score += article_score * 0.3
             overlap.append(node)
+
+    # Upward aggregation: if user tracks a category node (L2/L3) that isn't
+    # directly in article_impacts but has children that were reached, use the
+    # aggregated score to credit that category.
+    if aggregation:
+        for node_id, importance in user_direct.items():
+            if node_id in aggregation and node_id not in article_vector:
+                agg = aggregation[node_id]
+                agg_score = agg['score'] * importance
+                if agg_score > 0:
+                    score += agg_score
+                    overlap.append(node_id)
 
     return score, overlap
 

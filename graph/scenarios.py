@@ -15,7 +15,7 @@ from pathlib import Path
 import networkx as nx
 import yaml
 
-from graph.traverse import analyze_impact, get_causal_entry, _get_contains_ancestors, TAXONOMY_TYPES
+from graph.traverse import analyze_impact, get_causal_entry, _has_causal_outedges, _get_contains_parent, TAXONOMY_TYPES
 
 log = logging.getLogger(__name__)
 
@@ -72,16 +72,16 @@ def _run_path_exists(G: nx.DiGraph, G_causal: nx.DiGraph, sc: dict) -> dict:
     expected = sc.get("expected", "REACHABLE")
     cutoff = sc.get("max_hops", 6)
 
-    # Elevator: try from the node itself, its causal entry, and all CONTAINS ancestors.
-    # This mirrors analyze_impact's multi-seed traversal for L2 bridge access.
+    # Scoped elevator: mirrors analyze_impact's scoped seeding.
+    # Try from the node itself, its causal entry, and one parent up.
     sources = [src]
     if G.has_node(src):
         entry = get_causal_entry(G, src)
         if entry != src:
             sources.append(entry)
-        for ancestor, _ in _get_contains_ancestors(G, entry):
-            if ancestor not in sources:
-                sources.append(ancestor)
+        parent = _get_contains_parent(G, entry)
+        if parent and parent not in sources:
+            sources.append(parent)
 
     paths: list[list[str]] = []
     for s in sources:
