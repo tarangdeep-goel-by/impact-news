@@ -9,7 +9,6 @@ from config import settings
 from graph.embeddings import NodeMatcher
 from graph.graph import ImpactGraph
 from graph.markov_engine import CausalMarkovEngine
-from graph.traverse import analyze_impact
 from models import Article, ArticleImpact, TagExtractionResult, UserGraph
 from pipeline.database import Database
 from pipeline.gemini import GeminiClient, parse_json_response
@@ -102,9 +101,12 @@ def match_tags_to_graph(
     For each tag:
     1. FAISS match → top graph nodes
     2. Filter to nodes in user's reachable_nodes
-    3. analyze_impact() → check if propagated nodes hit user's direct edges
+    3. PPR impact propagation → check if propagated nodes hit user's direct edges
     4. Combined score = tag_match × graph_score × user_importance
     """
+    if engine is None:
+        engine = CausalMarkovEngine(graph.g)
+
     user_direct_nodes = {e.node_id: e.importance for e in user_graph.edges}
     matches = []
 
@@ -122,11 +124,8 @@ def match_tags_to_graph(
 
             tag_match_score = nm.score
 
-            # Run impact propagation from this node
-            if engine:
-                impacts = engine.evaluate_impact(nm.node_id, prob_threshold=0.0001)
-            else:
-                impacts = analyze_impact(graph.g, nm.node_id, threshold=0.05, max_depth=4)
+            # Run PPR impact propagation from this node
+            impacts = engine.evaluate_impact(nm.node_id, prob_threshold=0.0001)
 
             # Find best hit among user's direct edges
             best_graph_score = 0.0
@@ -137,9 +136,8 @@ def match_tags_to_graph(
 
             for impact in impacts:
                 if impact["node"] in user_direct_nodes:
-                    score_key = "probability" if engine else "score"
-                    if impact[score_key] > best_graph_score:
-                        best_graph_score = impact[score_key]
+                    if impact["probability"] > best_graph_score:
+                        best_graph_score = impact["probability"]
                         best_user_node = impact["node"]
                         best_path = impact["path"]
                         best_polarity = impact["polarity"]

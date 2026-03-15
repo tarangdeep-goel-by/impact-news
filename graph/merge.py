@@ -277,21 +277,6 @@ def main() -> None:
         export_graph(G, out)
         print(f"\nExported to {out}")
 
-    # Post-merge validation: check inference refs
-    try:
-        from graph.quality import QualityAnalyzer
-
-        validation = QualityAnalyzer(root=args.root)._validate_inference_refs(G)
-        if validation.missing_nodes:
-            print(f"\n⚠ {len(validation.missing_nodes)} inference refs missing from graph:")
-            for nid in validation.missing_nodes[:10]:
-                print(f"  - {nid}")
-            if len(validation.missing_nodes) > 10:
-                print(f"  ... and {len(validation.missing_nodes) - 10} more")
-        else:
-            print("\n✓ All inference refs valid")
-    except Exception as e:
-        log.warning("Post-merge validation skipped: %s", e)
 
 
 if __name__ == "__main__":

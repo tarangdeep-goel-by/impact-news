@@ -22,7 +22,7 @@ from pydantic import BaseModel, Field
 
 from graph.merge import TaxonomyMerger
 from graph.migrate_weights import apply_defaults
-from graph.traverse import CAUSAL_TYPES, TAXONOMY_TYPES
+from graph.markov_engine import CAUSAL_TYPES, TAXONOMY_TYPES
 
 log = logging.getLogger(__name__)
 
@@ -181,12 +181,6 @@ class UserCoverageReport(BaseModel):
     avg_reachable_pct: float = 0.0
 
 
-class InferenceValidation(BaseModel):
-    total_refs: int = 0
-    missing_count: int = 0
-    missing_nodes: list[str] = Field(default_factory=list)
-
-
 class BridgeArchitectureReport(BaseModel):
     """Rule 18/19 enforcement: L2 highway bridge checks."""
     total_cross_world: int = 0
@@ -217,7 +211,6 @@ class QualityScorecard(BaseModel):
     overlap: OverlapReport = Field(default_factory=OverlapReport)
     connectivity: ConnectivityReport = Field(default_factory=ConnectivityReport)
     user_coverage: UserCoverageReport = Field(default_factory=UserCoverageReport)
-    inference_refs: InferenceValidation = Field(default_factory=InferenceValidation)
     bridge_architecture: BridgeArchitectureReport = Field(default_factory=BridgeArchitectureReport)
     scenarios: ScenarioReport | None = Field(default=None, description="Scenario test results (if scenarios.yaml exists)")
 
@@ -258,7 +251,6 @@ class QualityAnalyzer:
             overlap=self._analyze_overlap(),
             connectivity=self._analyze_connectivity(G),
             user_coverage=self._simulate_personas(G),
-            inference_refs=self._validate_inference_refs(G),
             bridge_architecture=self._analyze_bridge_architecture(G),
             scenarios=self._run_scenarios(G, self.root),
         )
@@ -432,70 +424,8 @@ class QualityAnalyzer:
 
     @staticmethod
     def _simulate_personas(G: nx.DiGraph) -> UserCoverageReport:
-        """Run connect_user_to_graph for each persona, report reachable %."""
-        from graph.graph import ImpactGraph
-        from user.inference import connect_user_to_graph
-
-        # Build an ImpactGraph backed by the already-merged DiGraph
-        ig = ImpactGraph.__new__(ImpactGraph)
-        ig.g = G
-
-        total_nodes = G.number_of_nodes()
-        results: list[PersonaCoverage] = []
-
-        for name, answers in PERSONAS.items():
-            ug = connect_user_to_graph(answers, ig, user_id=name)
-            reachable = len(ug.reachable_nodes)
-            pct = round(reachable / total_nodes * 100, 2) if total_nodes else 0.0
-            results.append(
-                PersonaCoverage(
-                    name=name,
-                    direct_edges=len(ug.edges),
-                    reachable_count=reachable,
-                    reachable_pct=pct,
-                )
-            )
-
-        avg = round(sum(p.reachable_pct for p in results) / len(results), 2) if results else 0.0
-        return UserCoverageReport(personas=results, avg_reachable_pct=avg)
-
-    @staticmethod
-    def _validate_inference_refs(G: nx.DiGraph) -> InferenceValidation:
-        """Check that every node_id referenced in inference maps exists in graph.
-
-        Callable standalone — used by merge.py post-merge hook.
-        """
-        import user.inference as _inf
-
-        all_refs: set[str] = set()
-
-        # City map: nested dict[str, dict[str, list[str]]]
-        city_map = getattr(_inf, "CITY_GRAPH_MAP", {})
-        for _city, categories in city_map.items():
-            for _cat, node_ids in categories.items():
-                for nid in node_ids:
-                    all_refs.add(nid)
-
-        # Tuple maps: dict[str, list[tuple[str, str, float]]]
-        _MAP_NAMES = [
-            "WORK_SECTOR_MAP", "HOUSING_MAP", "COMMUTE_MAP",
-            "LOANS_MAP", "INVESTMENTS_MAP", "DIET_MAP",
-            "DEPENDENTS_MAP", "HEALTH_MAP",
-        ]
-        tuple_maps = [getattr(_inf, n) for n in _MAP_NAMES if hasattr(_inf, n)]
-        for mapping in tuple_maps:
-            for _key, tuples in mapping.items():
-                for node_id, _rel, _imp in tuples:
-                    all_refs.add(node_id)
-
-        node_ids = set(G.nodes())
-        missing = sorted(all_refs - node_ids)
-
-        return InferenceValidation(
-            total_refs=len(all_refs),
-            missing_count=len(missing),
-            missing_nodes=missing,
-        )
+        """Placeholder — user profiling will be rebuilt for new graph."""
+        return UserCoverageReport(personas=[], avg_reachable_pct=0.0)
 
     @staticmethod
     def _analyze_bridge_architecture(G: nx.DiGraph) -> BridgeArchitectureReport:
@@ -673,13 +603,6 @@ def print_scorecard(sc: QualityScorecard) -> None:
     # Overlap
     rows.append(("Node overlaps (multi-file)", str(sc.overlap.total_overlapping), ""))
 
-    # Inference refs
-    rows.append((
-        "Inference missing refs",
-        str(sc.inference_refs.missing_count),
-        "ok" if sc.inference_refs.missing_count == 0 else f"!! {sc.inference_refs.missing_count} missing",
-    ))
-
     # Scenarios
     if sc.scenarios is not None:
         rows.append((
@@ -747,12 +670,6 @@ def print_scorecard(sc: QualityScorecard) -> None:
     if sc.dead_ends.examples:
         print(f"\nDead-end examples (first {len(sc.dead_ends.examples)}):")
         for nid in sc.dead_ends.examples:
-            print(f"  {nid}")
-
-    # Detail: missing inference refs
-    if sc.inference_refs.missing_nodes:
-        print(f"\nMissing inference refs ({sc.inference_refs.missing_count}):")
-        for nid in sc.inference_refs.missing_nodes:
             print(f"  {nid}")
 
     # Detail: bridge architecture violations

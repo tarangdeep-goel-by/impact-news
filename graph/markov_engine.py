@@ -1,6 +1,6 @@
 """Personalized PageRank impact scoring engine.
 
-Replaces Dijkstra max-product traversal with a 3-layer scoring system:
+3-layer scoring system:
 - Layer 1 (Probability): PPR steady-state distribution from trigger node
 - Layer 2 (Magnitude): Hub-penalized causal strength along dominant path
 - Layer 3 (Timing): Delay aggregation along dominant path
@@ -13,16 +13,158 @@ import logging
 
 import networkx as nx
 
-from graph.traverse import (
-    get_causal_entry,
-    _get_contains_parent,
-    _aggregate_upward,
-    CAUSAL_TYPES,
-    DELAY_RANK,
-    DELAY_LABELS,
-)
-
 logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# Constants (shared across graph modules)
+# ---------------------------------------------------------------------------
+
+CAUSAL_TYPES = {"AFFECTS", "PRODUCES", "REGULATES", "DISRUPTS", "SUPPLIES", "DEPENDS_ON",
+                "FUNDS", "COMPETES_WITH", "EMPLOYS", "MANAGES"}
+TAXONOMY_TYPES = {"IS_A"}  # CONTAINS is followed for downward hierarchy propagation
+
+DELAY_RANK = {"IMMEDIATE": 0, "SHORT_TERM": 1, "MEDIUM_TERM": 2, "LONG_TERM": 3}
+DELAY_LABELS = {v: k for k, v in DELAY_RANK.items()}
+
+
+# ---------------------------------------------------------------------------
+# Graph utilities (shared across graph modules)
+# ---------------------------------------------------------------------------
+
+
+def get_causal_entry(g: nx.DiGraph, node_id: str) -> str:
+    """Walk UP the hierarchy until finding a node with causal out-edges.
+
+    Supports both IS_A (child→parent as successor) and CONTAINS (parent→child,
+    so we walk up by checking predecessors with CONTAINS type).
+
+    If node_id is not in the graph, returns node_id unchanged (caller should
+    handle the missing-node case).
+    """
+    if node_id not in g:
+        return node_id
+
+    visited: set[str] = set()
+    current = node_id
+
+    while current not in visited:
+        visited.add(current)
+
+        # Check if current node has any outgoing causal edges
+        has_causal = any(
+            g.edges[current, succ].get("type") in CAUSAL_TYPES
+            for succ in g.successors(current)
+        )
+        if has_causal:
+            return current
+
+        # Try IS_A upward (child → parent as successor)
+        parent = None
+        for succ in g.successors(current):
+            if g.edges[current, succ].get("type") == "IS_A":
+                if succ not in visited:
+                    parent = succ
+                    break
+
+        # Try CONTAINS upward (parent → child, so parent is a predecessor)
+        if parent is None:
+            for pred in g.predecessors(current):
+                if g.edges[pred, current].get("type") == "CONTAINS":
+                    if pred not in visited:
+                        parent = pred
+                        break
+
+        if parent is None:
+            break
+        current = parent
+
+    return node_id
+
+
+def _has_causal_outedges(g: nx.DiGraph, node: str) -> bool:
+    """Check if node has any outgoing causal (non-CONTAINS, non-IS_A) edges."""
+    for _, _, data in g.out_edges(node, data=True):
+        if data.get('type') in CAUSAL_TYPES:
+            return True
+    return False
+
+
+def _get_contains_parent(g: nx.DiGraph, node: str) -> str | None:
+    """Get the CONTAINS parent of a node (one level up)."""
+    for pred in g.predecessors(node):
+        if g[pred][node].get('type') == 'CONTAINS':
+            return pred
+    return None
+
+
+def _aggregate_upward(
+    g: nx.DiGraph,
+    reached_scores: dict[str, float],
+) -> dict[str, dict]:
+    """Roll up leaf impact scores to parent category nodes.
+
+    For each category node (is_category=True), computes:
+    - score: mean score of hit children * coverage
+    - coverage: fraction of direct children that were reached
+    - diversity: fraction of distinct L3 branches hit (for L2 parents)
+    - hit_children: list of reached child node IDs
+    - total_children: total child count
+
+    Returns dict: {parent_id: {score, coverage, diversity, hit_children, total_children}}
+    """
+    aggregated: dict[str, dict] = {}
+
+    for node in g.nodes():
+        node_data = g.nodes[node]
+        if not node_data.get('is_category'):
+            continue
+
+        # Get direct CONTAINS children
+        children = []
+        for _, child, data in g.out_edges(node, data=True):
+            if data.get('type') == 'CONTAINS':
+                children.append(child)
+
+        if not children:
+            continue
+
+        # Find which children were reached
+        hit_children = [c for c in children if c in reached_scores]
+        if not hit_children:
+            continue
+
+        coverage = len(hit_children) / len(children)
+        mean_score = sum(reached_scores[c] for c in hit_children) / len(hit_children)
+
+        # Diversity: for L2 parents, count distinct L3 branches hit
+        # For L3 parents, diversity = 1 (they ARE the branch)
+        node_level = node_data.get('level', 0)
+        if node_level <= 2:
+            category_children = [c for c in children if g.nodes.get(c, {}).get('is_category')]
+            l3_branches_hit: set[str] = set()
+            for child in hit_children:
+                child_data = g.nodes.get(child, {})
+                if child_data.get('is_category'):
+                    l3_branches_hit.add(child)
+                else:
+                    # Walk up to find the L3 parent
+                    for pred in g.predecessors(child):
+                        if g[pred][child].get('type') == 'CONTAINS':
+                            l3_branches_hit.add(pred)
+                            break
+            diversity = len(l3_branches_hit) / max(len(category_children), 1)
+        else:
+            diversity = 1.0
+
+        aggregated[node] = {
+            'score': mean_score * coverage,
+            'coverage': coverage,
+            'diversity': diversity,
+            'hit_children': hit_children,
+            'total_children': len(children),
+        }
+
+    return aggregated
 
 
 class CausalMarkovEngine:
@@ -60,7 +202,7 @@ class CausalMarkovEngine:
         return causal_G
 
     def _precompute_path_costs(self) -> None:
-        """Precompute -log(P) edge costs for Dijkstra dominant path extraction.
+        """Precompute -log(P) edge costs for dominant path extraction.
 
         Row-normalizes outgoing causal weights per node, then sets
         cost = -log(normalized_prob) for shortest-path computation.
@@ -77,7 +219,7 @@ class CausalMarkovEngine:
             for _, v, d in out_edges:
                 raw_w = d.get("weight", 0.5)
                 prob = raw_w / total_weight
-                # -log for Dijkstra: shortest path = highest probability path
+                # -log transform: shortest path = highest probability path
                 d["cost"] = -math.log(prob) if prob > 0 else float("inf")
                 d["norm_prob"] = prob
 
@@ -128,7 +270,7 @@ class CausalMarkovEngine:
     def _get_dominant_path(self, trigger: str, target: str) -> list[str] | None:
         """Find the highest-probability path from trigger to target.
 
-        Uses Dijkstra on -log(P) costs (shortest = most probable).
+        Uses shortest-path on -log(P) costs (shortest = most probable).
         """
         if not self.causal_G.has_node(trigger) or not self.causal_G.has_node(target):
             return None
@@ -269,7 +411,7 @@ class CausalMarkovEngine:
         # Step 1: Elevator — find causal entry point
         entry = get_causal_entry(self.base_G, trigger_node)
 
-        # Scoped elevator: also try one CONTAINS parent up (same logic as traverse.py)
+        # Scoped elevator: also try one CONTAINS parent up
         trigger_for_ppr = entry
         if not any(self.causal_G.has_edge(entry, s) for s in self.causal_G.successors(entry)):
             parent = _get_contains_parent(self.base_G, entry)
