@@ -8,6 +8,7 @@ import logging
 from config import settings
 from graph.embeddings import NodeMatcher
 from graph.graph import ImpactGraph
+from graph.markov_engine import CausalMarkovEngine
 from graph.traverse import analyze_impact
 from models import Article, ArticleImpact, TagExtractionResult, UserGraph
 from pipeline.database import Database
@@ -94,6 +95,7 @@ def match_tags_to_graph(
     node_matcher: NodeMatcher,
     user_graph: UserGraph,
     graph: ImpactGraph,
+    engine: CausalMarkovEngine | None = None,
 ) -> list[dict]:
     """Match extracted tags to graph nodes and score against user profile.
 
@@ -121,7 +123,10 @@ def match_tags_to_graph(
             tag_match_score = nm.score
 
             # Run impact propagation from this node
-            impacts = analyze_impact(graph.g, nm.node_id, threshold=0.05, max_depth=4)
+            if engine:
+                impacts = engine.evaluate_impact(nm.node_id, prob_threshold=0.0001)
+            else:
+                impacts = analyze_impact(graph.g, nm.node_id, threshold=0.05, max_depth=4)
 
             # Find best hit among user's direct edges
             best_graph_score = 0.0
@@ -132,8 +137,9 @@ def match_tags_to_graph(
 
             for impact in impacts:
                 if impact["node"] in user_direct_nodes:
-                    if impact["score"] > best_graph_score:
-                        best_graph_score = impact["score"]
+                    score_key = "probability" if engine else "score"
+                    if impact[score_key] > best_graph_score:
+                        best_graph_score = impact[score_key]
                         best_user_node = impact["node"]
                         best_path = impact["path"]
                         best_polarity = impact["polarity"]
@@ -226,6 +232,7 @@ def process_articles(
     graph: ImpactGraph,
     user_graph: UserGraph,
     gemini: GeminiClient,
+    engine: CausalMarkovEngine | None = None,
 ) -> list[ArticleImpact]:
     """Full pipeline: extract tags → match → score → explain → persist."""
     articles = db.get_unprocessed_articles()
@@ -248,7 +255,7 @@ def process_articles(
             db.mark_processed(article.id, {"tags": [], "indirect_effects": [], "domains": []})
             continue
 
-        matched = match_tags_to_graph(tags, node_matcher, user_graph, graph)
+        matched = match_tags_to_graph(tags, node_matcher, user_graph, graph, engine=engine)
         top_score = matched[0]["combined"] if matched else 0.0
         severity = _severity(top_score)
 

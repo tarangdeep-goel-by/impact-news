@@ -22,15 +22,6 @@ STRUCTURAL_DEFAULTS = {
     "AFFECTS":    {"weight": 0.4, "polarity": 0, "delay": "SHORT_TERM"},
 }
 
-# Nodes exempt from fan-out penalty
-MACRO_HUBS = {
-    "crude_oil", "rbi_repo_rate", "monsoon", "nifty_50", "usd_inr",
-    "cpi_inflation", "gdp_growth", "it_services_sector", "agriculture_sector",
-    "electricity_tariff", "real_estate_prices",
-}
-
-FAN_OUT_THRESHOLD = 15
-FAN_OUT_CAP = 0.4
 
 
 def apply_defaults(G):
@@ -60,29 +51,6 @@ def apply_defaults(G):
 
     return filled, type_counts
 
-
-def apply_fan_out_penalty(G):
-    """Cap weight on high-fan-out nodes not in MACRO_HUBS."""
-    penalized = 0
-
-    for node in G.nodes():
-        if node in MACRO_HUBS:
-            continue
-
-        out_affects = [
-            (node, succ) for succ in G.successors(node)
-            if G.edges[node, succ].get("type") == "AFFECTS"
-        ]
-
-        if len(out_affects) > FAN_OUT_THRESHOLD:
-            for src, dst in out_affects:
-                if G.edges[src, dst]["weight"] > FAN_OUT_CAP:
-                    G.edges[src, dst]["weight"] = FAN_OUT_CAP
-                    penalized += 1
-            log.info("Fan-out penalty: %s has %d AFFECTS edges, capped %d",
-                     node, len(out_affects), penalized)
-
-    return penalized
 
 
 def print_stats(G, type_counts):
@@ -131,10 +99,8 @@ def main():
     print(f"Loaded: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
 
     updated, type_counts = apply_defaults(G)
-    penalized = apply_fan_out_penalty(G)
 
     print(f"\nUpdated {updated} edges with structural defaults")
-    print(f"Penalized {penalized} edges via fan-out cap")
 
     print_stats(G, type_counts)
 

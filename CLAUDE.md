@@ -13,7 +13,7 @@ Core concept: "Not what interests you. What affects you." — causal chains from
 ```
 RSS Feeds → Collector (async) → Dedup (fingerprint+URL) → SQLite
   → Matcher (Gemini tag extraction + FAISS embedding match)
-  → Traverse (causal impact propagation, modified Dijkstra)
+  → PPR Engine (Personalized PageRank probability + hub-penalized magnitude)
   → Scorer (article impacts × user dependency graph)
   → Telegram Bot (high-priority alerts + daily digest)
 ```
@@ -21,14 +21,15 @@ RSS Feeds → Collector (async) → Dedup (fingerprint+URL) → SQLite
 **Three layers:**
 1. **Personal Life Graph** — user answers 9 onboarding questions → inference rules map to graph nodes → BFS reachability
 2. **Causal Knowledge Graph** — taxonomy of 5 trigger L1s (system) + 11 impact L1s (citizen), merged from domain YAML files + edge patches, loaded via NetworkX
-3. **Delivery & Scoring** — sparse dot product scoring, 0.3x decay for indirect reachability
+3. **Impact Scoring** — PPR (probability: will this reach me?) + hub-penalized path product (magnitude: how hard?) + delay sum (timing: when?). Replaces Dijkstra max-product traversal. Legacy Dijkstra available via `--legacy` flag.
+4. **Delivery & Scoring** — sparse dot product scoring, PPR probability × user importance
 
 ## Key Directories
 
 | Directory | Purpose |
 |-----------|---------|
 | `pipeline/` | Article collection (`collector.py`), tag extraction + scoring (`matcher.py`), SQLite (`database.py`), dedup (`dedup.py`), Gemini client (`gemini.py`) |
-| `graph/` | NetworkX graph (`graph.py`), YAML merge (`merge.py`), impact propagation (`traverse.py`), FAISS embeddings (`embeddings.py`), quality audit (`quality.py`), coverage gaps (`coverage.py`), validation (`admin.py`) |
+| `graph/` | NetworkX graph (`graph.py`), YAML merge (`merge.py`), PPR engine (`markov_engine.py`), legacy Dijkstra (`traverse.py`), FAISS embeddings (`embeddings.py`), quality audit (`quality.py`), coverage gaps (`coverage.py`), validation (`admin.py`) |
 | `user/` | Onboarding questions (`onboarding.py`), answer→node inference with city/sector mappings (`inference.py`) |
 | `bot/` | Telegram bot handlers, delivery jobs (`bot.py`) |
 | `audit/` | Graph maintenance scripts (eval, patch generation, analysis) |
@@ -52,7 +53,10 @@ python -m graph.quality --json    # Quality scorecard
 python -m graph.coverage gaps     # Taxonomy gap analysis
 python -m graph.merge             # Rebuild merged graph from YAML sources
 python -m graph.admin validate    # Check duplicates, lint node IDs
-python -m graph.traverse <node>   # Trace impact propagation from a node
+python -m graph.traverse <node>   # PPR impact analysis (default)
+python -m graph.traverse <node> --legacy  # Dijkstra impact propagation
+python -m graph.markov_engine <node>      # PPR engine standalone (detailed output)
+python -m graph.scenarios --ppr  # Run 58 scenarios with PPR engine
 ```
 
 ### Docker
@@ -83,7 +87,7 @@ Required in `.env`:
 - **Edge properties:** `weight` (0-1), `polarity` (±1), `delay` (IMMEDIATE/SHORT_TERM/MEDIUM_TERM/LONG_TERM)
 - **Categories:** 15 canonical L1 categories defined in `taxonomy/TAXONOMY.md`
 - **Embeddings:** `all-MiniLM-L6-v2` (384-dim), indexes all node aliases + node ID via FAISS
-- **Scoring thresholds:** high ≥ 0.5, medium ≥ 0.2
+- **Scoring:** PPR engine (Personalized PageRank) with restart_prob=0.20, prob_threshold=0.005. Legacy Dijkstra available via `--legacy`
 
 ## Project History
 
@@ -91,6 +95,7 @@ Required in `.env`:
 - **Mar 10:** Built full pipeline infrastructure (collector, dedup, matcher, scorer, bot, graph engine). Multiple worktree sessions for graph v2 (edge weights, traversal) and user profiling redesign.
 - **Mar 11-12:** Graph governance — taxonomy normalization, dedup, Gemini-generated nodes, fixed 74 node ID mismatches, redesigned profiling to tiered questions.
 - **Mar 13:** v4 taxonomy locked (Trigger/Impact split, 5+11 L1s, boundary rules, stress tested). "Clean slate" commit — removed old graph YAML data, kept scripts + v4 design.
+- **Mar 15:** Replaced Dijkstra traversal with PPR (Personalized PageRank) engine. 3-layer scoring: probability (PPR), magnitude (hub-penalized path product), timing (delay sum). Reduces node reach from ~90% to 10-30% per trigger. 58 scenarios passing.
 
 ## Current State
 

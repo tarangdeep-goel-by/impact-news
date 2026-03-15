@@ -21,7 +21,7 @@ import yaml
 from pydantic import BaseModel, Field
 
 from graph.merge import TaxonomyMerger
-from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+from graph.migrate_weights import apply_defaults
 from graph.traverse import CAUSAL_TYPES, TAXONOMY_TYPES
 
 log = logging.getLogger(__name__)
@@ -245,7 +245,6 @@ class QualityAnalyzer:
         merger = TaxonomyMerger(root=self.root)
         G = merger.merge()
         apply_defaults(G)
-        apply_fan_out_penalty(G)
 
         sc = QualityScorecard(
             timestamp=datetime.now(timezone.utc).isoformat(),
