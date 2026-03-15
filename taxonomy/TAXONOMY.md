@@ -226,18 +226,39 @@ Every node carries a `status` field:
 
 ---
 
-### Rule 18: L2 Highway Bridge Architecture
+### Rule 18: Bridge Targeting (Homogeneity Principle)
 
-Cross-world bridges (T→I) connect at the **L2 level**, not at leaves. One L2→L2 bridge replaces 3-10 leaf edges and automatically covers future child nodes via CONTAINS propagation.
+> **Rationale:** The original L2→L2 mandate was too coarse — many triggers affect only specific children of an Impact L2, producing false paths when CONTAINS propagation pushes the effect to all siblings. The homogeneity test below lets each bridge target the right level based on causal precision, not a blanket structural rule.
 
-**Rules:**
-1. **New bridges MUST target L2→L2.** Connect at the highest level where the causal mechanism holds for ALL children of both the source and target L2. Only use L3/L4 targeting when the effect genuinely doesn't apply to the whole L2.
-2. **No new leaf-to-leaf cross-world edges.** Existing narrow leaf edges (78 as of v4) are grandfathered but should not be expanded. New connections go through L2 highways.
-3. **CONTAINS propagation handles depth.** The traversal engine seeds from ancestors and post-processes CONTAINS edges downward. You do not need to wire individual leaves — reaching the L2 parent is sufficient.
-4. **Cross-world REGULATES/MANAGES are metadata, not edges.** Administrative relationships that cross worlds (e.g., `rbi REGULATES credit_card_dues`) are stored as node properties (`regulated_by`, `managed_by`), not as graph edges. They short-circuit actual causal chains. Same-world REGULATES/MANAGES (e.g., `ministry_of_finance MANAGES union_budget_framework`, both T2) are fine as edges — they represent legitimate institutional relationships within a world.
-5. **No I→T edges.** The graph is forward-only: Trigger→Impact. See Rule 7.
+Bridge edges connect Trigger nodes to Impact nodes across worlds.
+The target level is determined by the homogeneity of the causal effect:
 
-**Validation:** `python -m graph.quality` reports bridge level distribution. Any new L3/L4 cross-world edge triggers a warning.
+**(a) HOMOGENEITY TEST:** "Does this trigger affect ALL L3 siblings under
+the target L2 with the same mechanism, weight, polarity, and delay?"
+- **YES** → target the L2 (CONTAINS propagation handles children)
+- **NO** → target specific L3s (or L4s if L3 is also heterogeneous)
+
+**(b) SOURCE LEVEL:** Trigger sources should be the most specific node
+where the causal mechanism originates. Prefer L3/L4 leaves over
+L2 categories. Only use T-L2 as source when the entire subcategory
+acts as a unit (e.g., `meteorological_systems` as a whole).
+
+**(c) LEAF BRIDGES:** Permitted when the causal link has unique specificity
+not captured at L3 level (e.g., `monetary_policy_committee → home_loan_emi`).
+Must not duplicate coverage already provided by an L3 bridge.
+
+**(d) NO UPWARD BRIDGING:** Bridges must not target L1 categories.
+If an entire L1 is affected, it should emerge from multiple L2/L3
+bridges via upward aggregation, not from a single L1 bridge.
+
+**(e) VALIDATION:** Every new bridge requires:
+1. Homogeneity test documented in description
+2. At least one positive scenario in `scenarios.yaml`
+3. One negative scenario proving it doesn't create false paths
+
+**Additional rules (unchanged from prior version):**
+- **Cross-world REGULATES/MANAGES are metadata, not edges.** Administrative relationships that cross worlds (e.g., `rbi REGULATES credit_card_dues`) are stored as node properties (`regulated_by`, `managed_by`), not as graph edges. They short-circuit actual causal chains. Same-world REGULATES/MANAGES (e.g., `ministry_of_finance MANAGES union_budget_framework`, both T2) are fine as edges — they represent legitimate institutional relationships within a world.
+- **No I→T edges.** The graph is forward-only: Trigger→Impact. See Rule 7.
 
 ---
 
@@ -245,11 +266,11 @@ Cross-world bridges (T→I) connect at the **L2 level**, not at leaves. One L2�
 
 When adding new edges or bridges to the graph:
 
-1. **Check if an L2 bridge already covers the path.** Use `python -m graph.traverse <trigger_node>` to trace reachability. If the target is already reached via CONTAINS propagation from an existing L2 bridge, no new edge is needed.
-2. **Prefer adding L2 bridges over leaf edges.** If the mechanism applies broadly (e.g., "trade policy affects SME income"), add it at L2 (`international_trade_and_supply_chains → self_employment_and_msme`), not at L3/L4.
-3. **Same-world laterals at L2.** When adding I→I or T→T connections, prefer L2→L2 laterals. These create multi-hop highways within each world.
+1. **Check if an existing bridge already covers the path.** Use `python -m graph.traverse <trigger_node>` to trace reachability. If the target is already reached via CONTAINS propagation from an existing bridge (at any level), no new edge is needed.
+2. **Apply the Homogeneity Test (Rule 18a) before choosing target level.** If the mechanism applies uniformly to all children of a target L2, bridge to the L2. If only specific children are affected, bridge to the relevant L3s or L4s. Do not default to any level — let causal precision decide.
+3. **Same-world laterals: prefer the most specific shared level.** When adding I→I or T→T connections, target the level where the mechanism holds uniformly. L2→L2 laterals are fine when appropriate, but L3→L3 or mixed-level laterals are equally valid.
 4. **No new nodes without justification.** The L2 taxonomy is MECE. Adding a new L2 requires demonstrating that no existing L2 covers the concept. New L3/L4 leaves are fine if they pass the Leaf Node Test (Rule 5).
-5. **Every patch needs a scenario.** When adding a bridge to fix a gap, add a corresponding scenario to `taxonomy/scenarios.yaml` that validates the path. Patches without test coverage will regress silently.
+5. **Every patch needs a scenario.** When adding a bridge to fix a gap, add a corresponding scenario to `taxonomy/scenarios.yaml` that validates the path. Include both a positive scenario (bridge reaches the right target) and a negative scenario (bridge does not create false paths). Patches without test coverage will regress silently.
 6. **Run the full validation suite after every patch:**
    ```bash
    python3 scripts/graph_builder.py test    # 47+ scenarios must pass
