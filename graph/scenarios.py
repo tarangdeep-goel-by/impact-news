@@ -15,8 +15,7 @@ from pathlib import Path
 import networkx as nx
 import yaml
 
-from graph.traverse import analyze_impact, get_causal_entry, _has_causal_outedges, _get_contains_parent, TAXONOMY_TYPES
-from graph.markov_engine import CausalMarkovEngine
+from graph.markov_engine import CausalMarkovEngine, get_causal_entry, _has_causal_outedges, _get_contains_parent, TAXONOMY_TYPES
 
 log = logging.getLogger(__name__)
 
@@ -73,7 +72,7 @@ def _run_path_exists(G: nx.DiGraph, G_causal: nx.DiGraph, sc: dict) -> dict:
     expected = sc.get("expected", "REACHABLE")
     cutoff = sc.get("max_hops", 6)
 
-    # Scoped elevator: mirrors analyze_impact's scoped seeding.
+    # Scoped elevator: mirrors PPR engine's scoped seeding.
     # Try from the node itself, its causal entry, and one parent up.
     # For T-world entries, only seed parent if L3+ (prevents false cross-domain paths).
     sources = [src]
@@ -119,14 +118,11 @@ def _run_reachability(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None
     trigger = sc["trigger_node"]
     targets = sc.get("target_nodes", [])
     direction = sc.get("direction", 1)
-    threshold = sc.get("threshold", 0.05)
 
-    if engine:
-        results = engine.evaluate_impact(trigger, event_direction=direction, prob_threshold=0.0001)
-        hit_nodes = {r["node"] for r in results if r["probability"] > 0.001}
-    else:
-        results = analyze_impact(G, trigger, event_direction=direction, threshold=threshold)
-        hit_nodes = {r["node"] for r in results}
+    if engine is None:
+        engine = CausalMarkovEngine(G)
+    results = engine.evaluate_impact(trigger, event_direction=direction, prob_threshold=0.0001)
+    hit_nodes = {r["node"] for r in results if r["probability"] > 0.001}
 
     missing = [t for t in targets if t not in hit_nodes]
     ok = len(missing) == 0
@@ -141,29 +137,19 @@ def _run_reachability(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None
 def _run_score_threshold(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = None) -> dict:
     trigger = sc["trigger_node"]
     target = sc["target_node"]
-    min_score = sc.get("min_score", 0.1)
     direction = sc.get("direction", 1)
 
-    if engine:
-        results = engine.evaluate_impact(trigger, event_direction=direction, prob_threshold=0.0001)
-        hit = next((r for r in results if r["node"] == target), None)
-        if hit is None:
-            return {
-                "id": sc["id"], "type": "C", "status": "FAIL",
-                "detail": f"target '{target}' not reached",
-            }
-        ok = hit["probability"] > 0.001  # PPR threshold instead of min_score
-        detail = f"prob {hit['probability']:.6f} mag {hit['magnitude']:.6f} (PPR)"
-    else:
-        results = analyze_impact(G, trigger, event_direction=direction)
-        hit = next((r for r in results if r["node"] == target), None)
-        if hit is None:
-            return {
-                "id": sc["id"], "type": "C", "status": "FAIL",
-                "detail": f"target '{target}' not reached",
-            }
-        ok = hit["score"] >= min_score
-        detail = f"score {hit['score']:.3f} (need >= {min_score})"
+    if engine is None:
+        engine = CausalMarkovEngine(G)
+    results = engine.evaluate_impact(trigger, event_direction=direction, prob_threshold=0.0001)
+    hit = next((r for r in results if r["node"] == target), None)
+    if hit is None:
+        return {
+            "id": sc["id"], "type": "C", "status": "FAIL",
+            "detail": f"target '{target}' not reached",
+        }
+    ok = hit["probability"] > 0.001
+    detail = f"prob {hit['probability']:.6f} mag {hit['magnitude']:.6f}"
 
     return {"id": sc["id"], "type": "C", "status": "PASS" if ok else "FAIL", "detail": detail}
 
@@ -276,19 +262,14 @@ if __name__ == "__main__":
     from graph.migrate_weights import apply_defaults
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ppr", action="store_true", help="Use PPR engine instead of Dijkstra")
-    args = parser.parse_args()
+    parser.parse_args()
 
     merger = TaxonomyMerger()
     G = merger.merge()
     apply_defaults(G)
 
-    engine = None
-    if args.ppr:
-        engine = CausalMarkovEngine(G)
-        print("Using PPR engine")
-    else:
-        print("Using Dijkstra engine")
+    engine = CausalMarkovEngine(G)
+    print("Using PPR engine")
 
     scenarios = load_scenarios()
     errors = validate_scenario_refs(scenarios, set(G.nodes()))

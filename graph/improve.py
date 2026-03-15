@@ -4,7 +4,6 @@ CLI usage:
     python3 -m graph.improve normalize-categories [--dry-run | --apply]
     python3 -m graph.improve normalize-edge-types [--dry-run | --apply]
     python3 -m graph.improve deduplicate [--dry-run | --apply]
-    python3 -m graph.improve add-inference-nodes [--dry-run | --apply]
     python3 -m graph.improve generate-descriptions [--dry-run | --apply]
     python3 -m graph.improve generate-causal-edges [--dry-run | --apply]
     python3 -m graph.improve all-deterministic --apply   # 1A + 1B + 1C
@@ -511,122 +510,6 @@ def _lookup_node_category(nid: str, files: list[str]) -> str:
 # ---------------------------------------------------------------------------
 
 
-def run_add_inference_nodes(dry_run: bool = False, apply: bool = False) -> None:
-    print("=== Add Missing Inference Nodes ===")
-
-    from graph.merge import TaxonomyMerger
-    from graph.quality import QualityAnalyzer
-
-    merger = TaxonomyMerger(root=PROJECT_ROOT)
-    G = merger.merge()
-    validation = QualityAnalyzer._validate_inference_refs(G)
-
-    missing = validation.missing_nodes
-    if not missing:
-        print("No missing inference nodes.")
-        return
-
-    print(f"Missing inference nodes: {len(missing)}")
-
-    # Check which are already in generated patches
-    output_data = _load_output()
-    existing_ids = {n["id"] for n in output_data.get("new_nodes", [])}
-    remaining = [nid for nid in missing if nid not in existing_ids]
-
-    if not remaining:
-        print(f"All {len(missing)} already in generated patches.")
-        return
-
-    print(f"Already generated: {len(missing) - len(remaining)}")
-    print(f"Remaining: {len(remaining)}")
-
-    if dry_run:
-        batches = [remaining[i:i + BATCH_SIZE_NODES] for i in range(0, len(remaining), BATCH_SIZE_NODES)]
-        for i, batch in enumerate(batches, 1):
-            print(f"\n--- Batch {i}/{len(batches)} ({len(batch)} nodes) ---")
-            print(f"  {', '.join(batch[:10])}")
-        return
-
-    canonical_cats = sorted(CANONICAL_CATEGORIES)
-    canonical_types = sorted(CANONICAL_EDGE_TYPES - {"CONTAINS", "IS_A"})
-    client = _get_client()
-
-    batches = [remaining[i:i + BATCH_SIZE_NODES] for i in range(0, len(remaining), BATCH_SIZE_NODES)]
-    for i, batch in enumerate(batches, 1):
-        print(f"Batch {i}/{len(batches)}: generating {len(batch)} node definitions...")
-
-        prompt = f"""You are an expert on Indian governance, infrastructure, and economy.
-
-For each node_id below, generate:
-1. aliases: 3+ human-readable names (including abbreviations Indians commonly use)
-2. category: STRICTLY one of {json.dumps(canonical_cats)}
-3. edges: 1-2 causal edges connecting this node to the broader Indian economy graph.
-   Edge types must be one of: {json.dumps(canonical_types)}
-
-Node IDs to define:
-{json.dumps(batch)}
-
-Output ONLY a JSON array:
-[{{"id": "...", "aliases": ["..."], "category": "...", "edges": [{{"from": "...", "to": "...", "type": "...", "description": "...", "weight": 0.7, "polarity": 1, "delay": "SHORT_TERM"}}]}}]
-
-Return valid JSON only. No markdown, no explanation."""
-
-        try:
-            response = _call_gemini(client, prompt)
-            parsed = _parse_json_response(response)
-        except Exception as e:
-            print(f"  ERROR: {e}", file=sys.stderr)
-            time.sleep(RATE_LIMIT_SLEEP)
-            continue
-
-        if not parsed or not isinstance(parsed, list):
-            print(f"  WARNING: Could not parse batch {i}")
-            time.sleep(RATE_LIMIT_SLEEP)
-            continue
-
-        for item in parsed:
-            if not isinstance(item, dict):
-                continue
-            nid = item.get("id", "")
-            aliases = item.get("aliases", [])
-            cat = item.get("category", "")
-            edges = item.get("edges", [])
-
-            # Validate category
-            if cat not in CANONICAL_CATEGORIES:
-                cat = CATEGORY_MAP.get(cat, "demographics_and_social")
-
-            if nid and nid not in existing_ids:
-                output_data.setdefault("new_nodes", []).append({
-                    "id": nid,
-                    "aliases": aliases,
-                    "category": cat,
-                })
-                existing_ids.add(nid)
-
-            # Add edges
-            for edge in edges:
-                if isinstance(edge, dict) and edge.get("from") and edge.get("to"):
-                    etype = edge.get("type", "AFFECTS")
-                    if etype not in CANONICAL_EDGE_TYPES:
-                        etype = EDGE_TYPE_MAP.get(etype, "AFFECTS")
-                    output_data.setdefault("edges", []).append({
-                        "from": edge["from"],
-                        "to": edge["to"],
-                        "type": etype,
-                        "description": edge.get("description", ""),
-                        "weight": edge.get("weight", 0.7),
-                        "polarity": edge.get("polarity", 1),
-                        "delay": edge.get("delay", "SHORT_TERM"),
-                    })
-
-        _save_output(output_data)
-        print(f"  Saved. Total new_nodes: {len(output_data.get('new_nodes', []))}")
-        time.sleep(RATE_LIMIT_SLEEP)
-
-    print(f"\nDone. {len(output_data.get('new_nodes', []))} total new nodes in {GENERATED_PATCH_FILE}")
-
-
 # ---------------------------------------------------------------------------
 # Mode 3A: generate-descriptions
 # ---------------------------------------------------------------------------
@@ -781,7 +664,7 @@ def run_generate_causal_edges(dry_run: bool = False, apply: bool = False) -> Non
     print("=== Generate Causal Edges for Dead-Ends ===")
 
     from graph.merge import TaxonomyMerger
-    from graph.traverse import CAUSAL_TYPES, TAXONOMY_TYPES
+    from graph.markov_engine import CAUSAL_TYPES, TAXONOMY_TYPES
 
     merger = TaxonomyMerger(root=PROJECT_ROOT)
     G = merger.merge()
@@ -926,7 +809,6 @@ def main() -> None:
             "normalize-categories",
             "normalize-edge-types",
             "deduplicate",
-            "add-inference-nodes",
             "generate-descriptions",
             "generate-causal-edges",
             "all-deterministic",
@@ -945,7 +827,6 @@ def main() -> None:
         "normalize-categories": run_normalize_categories,
         "normalize-edge-types": run_normalize_edge_types,
         "deduplicate": run_deduplicate,
-        "add-inference-nodes": run_add_inference_nodes,
         "generate-descriptions": run_generate_descriptions,
         "generate-causal-edges": run_generate_causal_edges,
     }

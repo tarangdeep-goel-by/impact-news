@@ -357,7 +357,7 @@ def cmd_validate_dag(args: argparse.Namespace) -> int:
     merger = TaxonomyMerger(root=root)
     G = merger.merge()
 
-    from graph.traverse import TAXONOMY_TYPES
+    from graph.markov_engine import TAXONOMY_TYPES
 
     # Build subgraph of only lateral edges (exclude CONTAINS, IS_A)
     lateral = nx.DiGraph()
@@ -384,7 +384,7 @@ def cmd_validate_orphans(args: argparse.Namespace) -> int:
     merger = TaxonomyMerger(root=root)
     G = merger.merge()
 
-    from graph.traverse import TAXONOMY_TYPES
+    from graph.markov_engine import TAXONOMY_TYPES
 
     orphan_leaves: list[str] = []
     for node in G.nodes():
@@ -451,7 +451,7 @@ def cmd_validate_bridges(args: argparse.Namespace) -> int:
         print("  Warning: no port nodes found in graph")
 
     # Check feedback edges (I→T) have delay >= MEDIUM_TERM
-    from graph.traverse import DELAY_RANK
+    from graph.markov_engine import DELAY_RANK
     for src, dst, attrs in G.edges(data=True):
         src_cat = G.nodes[src].get("category", "") if src in G.nodes else ""
         dst_cat = G.nodes[dst].get("category", "") if dst in G.nodes else ""
@@ -494,42 +494,13 @@ def cmd_validate_components(args: argparse.Namespace) -> int:
 
 
 def cmd_validate(args: argparse.Namespace) -> int:
-    """Validate inference.py references against the merged graph."""
+    """Validate graph: check edge refs and structural integrity."""
     root: Path = args.root
 
     merger = TaxonomyMerger(root=root)
     G = merger.merge()
 
-    import user.inference as _inf
-
     node_ids = set(G.nodes())
-    missing: list[tuple[str, str]] = []  # (node_id, source_context)
-    total_refs = 0
-
-    # City map
-    city_map = getattr(_inf, "CITY_GRAPH_MAP", {})
-    for city, categories in city_map.items():
-        for cat, nids in categories.items():
-            for nid in nids:
-                total_refs += 1
-                if nid not in node_ids:
-                    missing.append((nid, f"CITY_GRAPH_MAP[{city}][{cat}]"))
-
-    # Tuple maps
-    _MAP_NAMES = [
-        "WORK_SECTOR_MAP", "HOUSING_MAP", "COMMUTE_MAP",
-        "LOANS_MAP", "INVESTMENTS_MAP", "DIET_MAP",
-        "DEPENDENTS_MAP", "HEALTH_MAP",
-    ]
-    tuple_maps: list[tuple[str, dict]] = [
-        (n, getattr(_inf, n)) for n in _MAP_NAMES if hasattr(_inf, n)
-    ]
-    for map_name, mapping in tuple_maps:
-        for key, tuples in mapping.items():
-            for node_id, _rel, _imp in tuples:
-                total_refs += 1
-                if node_id not in node_ids:
-                    missing.append((node_id, f"{map_name}[{key}]"))
 
     # Edge validation: every edge from/to must exist as a node
     broken_edges: list[tuple[str, str, str]] = []
@@ -540,33 +511,14 @@ def cmd_validate(args: argparse.Namespace) -> int:
         if dst not in node_ids:
             broken_edges.append((dst, f"{src}->{dst}", source_file))
 
-    # Report
-    ok = True
-
-    if missing:
-        ok = False
-        # Deduplicate by node_id, collect contexts
-        by_node: dict[str, list[str]] = {}
-        for nid, ctx in missing:
-            by_node.setdefault(nid, []).append(ctx)
-        print(f"Missing inference refs ({len(by_node)} nodes, {len(missing)} refs):")
-        for nid in sorted(by_node):
-            contexts = ", ".join(by_node[nid][:3])
-            if len(by_node[nid]) > 3:
-                contexts += f" (+{len(by_node[nid]) - 3} more)"
-            print(f"  {nid} <- {contexts}")
-    else:
-        print(f"Inference refs: all {total_refs} OK")
-
     if broken_edges:
-        ok = False
-        print(f"\nBroken edge refs ({len(broken_edges)}):")
+        print(f"Broken edge refs ({len(broken_edges)}):")
         for nid, edge_str, source in broken_edges[:20]:
             print(f"  {nid} in edge {edge_str} ({source})")
-    else:
-        print("Edge refs: all OK")
+        return 1
 
-    return 0 if ok else 1
+    print("Edge refs: all OK")
+    return 0
 
 
 def cmd_lint(args: argparse.Namespace) -> int:
@@ -695,7 +647,7 @@ def main() -> int:
     p_search.add_argument("query", help="Search query")
 
     # validate
-    sub.add_parser("validate", help="Validate inference.py refs against merged graph")
+    sub.add_parser("validate", help="Validate graph edge refs and structural integrity")
 
     # lint
     sub.add_parser("lint", help="Lint YAML files for naming/quality conventions")
