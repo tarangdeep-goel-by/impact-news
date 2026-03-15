@@ -431,7 +431,6 @@ nodes:
   level: 4
   status: active
   portal: true
-  port: true
   regulated_by:
   - trai
 - id: personal_data_privacy

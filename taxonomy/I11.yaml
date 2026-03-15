@@ -378,7 +378,6 @@ nodes:
   level: 4
   status: active
   portal: true
-  port: true
   managed_by:
   - municipal_corporations
 - id: community_hall
@@ -391,7 +390,6 @@ nodes:
   category: I11
   level: 4
   status: active
-  port: true
   managed_by:
   - municipal_corporations
 - id: holiday_accommodation

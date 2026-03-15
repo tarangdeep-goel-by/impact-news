@@ -562,7 +562,7 @@ edges:
     improve intercity bus connectivity and travel times.
 - from: indian_regulatory_bodies
   to: equity_investments
-  type: REGULATES
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
@@ -571,7 +571,7 @@ edges:
     liquidity, volatility, and retail investor participation.
 - from: indian_regulatory_bodies
   to: mutual_funds
-  type: REGULATES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -580,7 +580,7 @@ edges:
     mutual fund cost-effectiveness and return profiles.
 - from: indian_regulatory_bodies
   to: prescription_drugs
-  type: REGULATES
+  type: AFFECTS
   weight: 0.8
   polarity: -1
   delay: SHORT_TERM
@@ -589,7 +589,7 @@ edges:
     for prescription medications.
 - from: indian_regulatory_bodies
   to: over_the_counter_products
-  type: REGULATES
+  type: AFFECTS
   weight: 0.5
   polarity: -1
   delay: SHORT_TERM
@@ -598,7 +598,7 @@ edges:
     on availability and retail pricing.
 - from: indian_regulatory_bodies
   to: home_medical_devices
-  type: REGULATES
+  type: AFFECTS
   weight: 0.6
   polarity: -1
   delay: MEDIUM_TERM
@@ -652,7 +652,7 @@ edges:
     reduce stampede and crush risk.
 - from: state_and_local_governments
   to: highway_tolls
-  type: REGULATES
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: SHORT_TERM
@@ -2796,3 +2796,23 @@ edges:
   delay: SHORT_TERM
   description: >-
     Rupee depreciation increases crude oil import costs, pushing up petrol, diesel, and CNG prices.
+
+# Education economics bridge (T→I)
+- from: indian_union_government
+  to: education_economics
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: >-
+    Union budget education allocations, NEP policy changes, scholarship schemes, and fee regulation
+    directives from MHRD/UGC directly affect tuition fees, loan subsidies, and education affordability.
+- from: indian_regulatory_bodies
+  to: education_economics
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    UGC and AICTE fee cap directives, accreditation requirements, and NAAC grading norms affect
+    institutional costs passed to students via tuition and examination fees.

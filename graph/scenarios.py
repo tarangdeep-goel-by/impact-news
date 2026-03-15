@@ -157,7 +157,7 @@ def _run_score_threshold(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | N
 def _run_ranking(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = None) -> dict:
     """Type D: verify higher_node ranks above lower_node in PPR probability."""
     if engine is None:
-        return {"id": sc["id"], "type": "D", "status": "SKIP", "detail": "requires --ppr"}
+        engine = CausalMarkovEngine(G)
 
     trigger = sc["trigger_node"]
     higher = sc["higher_node"]
@@ -177,7 +177,7 @@ def _run_ranking(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = No
 def _run_isolation(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = None) -> dict:
     """Type E: verify target has near-zero PPR probability from trigger."""
     if engine is None:
-        return {"id": sc["id"], "type": "E", "status": "SKIP", "detail": "requires --ppr"}
+        engine = CausalMarkovEngine(G)
 
     trigger = sc["trigger_node"]
     target = sc["target_node"]
