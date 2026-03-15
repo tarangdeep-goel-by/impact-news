@@ -56,6 +56,11 @@ class Settings(BaseSettings):
     indirect_weight: float = 0.7
     gemini_model: str = "gemini-2.0-flash"
 
+    # PPR engine
+    ppr_restart_prob: float = 0.20          # α — restart probability for PageRank
+    ppr_prob_threshold: float = 0.005       # Min probability to consider a node impacted
+    ppr_magnitude_blend: float = 0.5        # How much magnitude affects final score
+
     # Delivery
     digest_hour: int = 8
     pipeline_interval_seconds: int = 7200

@@ -21,7 +21,13 @@ def get_causal_entry(g: nx.DiGraph, node_id: str) -> str:
 
     Supports both IS_A (child→parent as successor) and CONTAINS (parent→child,
     so we walk up by checking predecessors with CONTAINS type).
+
+    If node_id is not in the graph, returns node_id unchanged (caller should
+    handle the missing-node case).
     """
+    if node_id not in g:
+        return node_id
+
     visited: set[str] = set()
     current = node_id
 
@@ -320,6 +326,7 @@ def compute_relevance(
     article_impacts: list[dict],
     user_graph: UserGraph,
     aggregation: dict[str, dict] | None = None,
+    use_ppr: bool = False,
 ) -> tuple[float, list[str]]:
     """Sparse dot product: article impact × user importance.
 
@@ -327,12 +334,14 @@ def compute_relevance(
 
     Scoring:
       For direct UserEdge nodes: article_score × user_importance
-      For reachable-only nodes:  article_score × 0.3 (indirect relevance)
+      For reachable-only nodes:  article_score × 0.3 (Dijkstra) or 0.5 (PPR)
       For aggregated category nodes: agg_score × user_importance (when user
         tracks a category node not directly in article_impacts)
     """
     article_vector = {impact["node"]: impact["score"] for impact in article_impacts}
     user_direct = {edge.node_id: edge.importance for edge in user_graph.edges}
+
+    indirect_decay = 0.5 if use_ppr else 0.3
 
     score = 0.0
     overlap: list[str] = []
@@ -342,7 +351,7 @@ def compute_relevance(
             score += article_score * user_direct[node]
             overlap.append(node)
         elif node in user_graph.reachable_nodes:
-            score += article_score * 0.3
+            score += article_score * indirect_decay
             overlap.append(node)
 
     # Upward aggregation: if user tracks a category node (L2/L3) that isn't
@@ -381,37 +390,59 @@ def main():
     import argparse
 
     from graph.merge import TaxonomyMerger
-    from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+    from graph.migrate_weights import apply_defaults
 
     parser = argparse.ArgumentParser(description="Analyze impact propagation")
     parser.add_argument("node", help="Trigger node ID")
     parser.add_argument("--direction", choices=["up", "down"], default="up", help="Event direction")
-    parser.add_argument("--threshold", type=float, default=0.05)
+    parser.add_argument("--threshold", type=float, default=None,
+                        help="Score threshold (default: 0.005 for PPR, 0.05 for legacy)")
     parser.add_argument("--max-depth", type=int, default=6)
+    parser.add_argument("--legacy", action="store_true", help="Use Dijkstra engine instead of PPR")
     args = parser.parse_args()
+
+    if args.threshold is None:
+        args.threshold = 0.05 if args.legacy else 0.005
 
     merger = TaxonomyMerger()
     G = merger.merge()
     apply_defaults(G)
-    apply_fan_out_penalty(G)
 
     direction = 1 if args.direction == "up" else -1
 
-    entry = get_causal_entry(G, args.node)
-    if entry != args.node:
-        print(f"Elevator: {args.node} → {entry}")
+    if not args.legacy:
+        from graph.markov_engine import CausalMarkovEngine
 
-    impacts = analyze_impact(G, args.node, direction, args.threshold, args.max_depth)
+        engine = CausalMarkovEngine(G)
+        impacts = engine.evaluate_impact(args.node, direction, restart_prob=0.20,
+                                         prob_threshold=args.threshold, max_depth=args.max_depth)
 
-    print(f"\nImpact analysis for '{args.node}' (direction={'↑' if direction == 1 else '↓'}):")
-    print(f"{'Node':<35} {'Score':>6} {'Pol':>4} {'Delay':<12} Path")
-    print("-" * 100)
-    for imp in impacts[:30]:
-        pol_sym = {1: "+", -1: "−", 0: "?"}[imp["polarity"]]
-        path_str = " → ".join(imp["path"][-3:])
-        print(f"{imp['node']:<35} {imp['score']:>6.3f} {pol_sym:>4} {imp['delay']:<12} {path_str}")
+        print(f"\nPPR Impact analysis for '{args.node}' (direction={'↑' if direction == 1 else '↓'}):")
+        print(f"{'Node':<35} {'Prob':>8} {'Mag':>8} {'Score':>8} {'Pol':>4} {'Delay':<12} Path")
+        print("-" * 110)
+        for imp in impacts[:30]:
+            pol_sym = {1: "+", -1: "−", 0: "?"}[imp["polarity"]]
+            path_str = " → ".join(imp["path"][-3:])
+            print(f"{imp['node']:<35} {imp['probability']:>8.5f} {imp['magnitude']:>8.5f} "
+                  f"{imp['score']:>8.6f} {pol_sym:>4} {imp['delay']:<12} {path_str}")
 
-    print(f"\nTotal impacted nodes: {len(impacts)}")
+        print(f"\nTotal impacted nodes: {len(impacts)}")
+    else:
+        entry = get_causal_entry(G, args.node)
+        if entry != args.node:
+            print(f"Elevator: {args.node} → {entry}")
+
+        impacts = analyze_impact(G, args.node, direction, args.threshold, args.max_depth)
+
+        print(f"\nImpact analysis for '{args.node}' (direction={'↑' if direction == 1 else '↓'}):")
+        print(f"{'Node':<35} {'Score':>6} {'Pol':>4} {'Delay':<12} Path")
+        print("-" * 100)
+        for imp in impacts[:30]:
+            pol_sym = {1: "+", -1: "−", 0: "?"}[imp["polarity"]]
+            path_str = " → ".join(imp["path"][-3:])
+            print(f"{imp['node']:<35} {imp['score']:>6.3f} {pol_sym:>4} {imp['delay']:<12} {path_str}")
+
+        print(f"\nTotal impacted nodes: {len(impacts)}")
 
 
 if __name__ == "__main__":

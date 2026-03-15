@@ -1106,14 +1106,13 @@ def cmd_full_review(args: argparse.Namespace) -> int:
 def cmd_test(args: argparse.Namespace) -> int:
     """Run scenario tests against the merged graph."""
     from graph.merge import TaxonomyMerger
-    from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+    from graph.migrate_weights import apply_defaults
     from graph.scenarios import load_scenarios, validate_scenario_refs, run_all, print_results, export_failures
 
     # Load graph
     merger = TaxonomyMerger(root=PROJECT_ROOT)
     G = merger.merge()
     apply_defaults(G)
-    apply_fan_out_penalty(G)
     print(f"Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
 
     # Load scenarios
@@ -1289,7 +1288,7 @@ def cmd_diagnose(args: argparse.Namespace) -> int:
     """Diagnose failed scenarios and generate patch recipe."""
     import json
     from graph.merge import TaxonomyMerger
-    from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+    from graph.migrate_weights import apply_defaults
 
     input_path = Path(args.input) if args.input else PROJECT_ROOT / "data" / "failed_scenarios.json"
     output_path = Path(args.output) if args.output else TAXONOMY_DIR / "patches" / "patch_recipe.yaml"
@@ -1310,7 +1309,6 @@ def cmd_diagnose(args: argparse.Namespace) -> int:
     merger = TaxonomyMerger(root=PROJECT_ROOT)
     G = merger.merge()
     apply_defaults(G)
-    apply_fan_out_penalty(G)
     print(f"Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
 
     constitution = load_constitution()
@@ -1557,7 +1555,7 @@ def cmd_patch(args: argparse.Namespace) -> int:
     import networkx as nx
 
     from graph.merge import TaxonomyMerger
-    from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+    from graph.migrate_weights import apply_defaults
     from graph.scenarios import load_scenarios, run_all, print_results
 
     recipe_path = Path(args.recipe)
@@ -1765,7 +1763,6 @@ def cmd_patch(args: argparse.Namespace) -> int:
     merger2 = TaxonomyMerger(root=PROJECT_ROOT)
     G2 = merger2.merge()
     apply_defaults(G2)
-    apply_fan_out_penalty(G2)
 
     # Check connectivity
     wcc = nx.number_weakly_connected_components(G2)
@@ -2333,7 +2330,7 @@ bridges:
 def cmd_apply_l2_bridges(args: argparse.Namespace) -> int:
     """Phase 4: Apply approved L2 bridges and remove redundant leaf edges."""
     from graph.merge import TaxonomyMerger
-    from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+    from graph.migrate_weights import apply_defaults
 
     matrix_path = Path(args.matrix) if args.matrix else TAXONOMY_DIR / "patches" / "bridge_matrix.yaml"
     if not matrix_path.exists():
@@ -2426,7 +2423,6 @@ def cmd_apply_l2_bridges(args: argparse.Namespace) -> int:
     merger2 = TaxonomyMerger(root=PROJECT_ROOT)
     G2 = merger2.merge()
     apply_defaults(G2)
-    apply_fan_out_penalty(G2)
     print(f"Graph: {G2.number_of_nodes()} nodes, {G2.number_of_edges()} edges")
 
     return 0

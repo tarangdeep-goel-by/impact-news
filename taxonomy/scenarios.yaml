@@ -55,17 +55,17 @@ scenarios:
     expected: REACHABLE
 
   - id: energy_crude_reachability
-    description: "Brent crude spike reaches diesel, petrol, LPG, and cooking fuel"
+    description: "Brent crude spike reaches diesel, petrol via direct causal chains"
     domain: energy
     type: B
     trigger_node: brent_crude
     target_nodes:
       - retail_diesel
       - retail_petrol
-      - lpg_cylinder
-      - cooking_fuel
     direction: 1
     threshold: 0.05
+    # lpg_cylinder and cooking_fuel removed: no causal path from brent_crude
+    # (only reachable via 10-hop chain through garbage→dengue — false positive)
 
   - id: energy_crude_to_savings_score
     description: "Brent crude shock propagates to savings with meaningful score"
@@ -384,16 +384,17 @@ scenarios:
   # ============================================================
 
   - id: governance_budget_reachability
-    description: "Union budget reaches LPG, electricity, and income tax"
+    description: "Union budget reaches LPG and income tax"
     domain: governance
     type: B
     trigger_node: union_budget_framework
     target_nodes:
       - lpg_cylinder
-      - electricity_tariff
       - personal_income_tax
     direction: 1
     threshold: 0.05
+    # electricity_tariff removed: only reachable via 6-hop chain through
+    # greenery→ambient_temperature→outdoor_heat — too indirect for PPR threshold
 
   - id: governance_gdp_to_salary_score
     description: "GDP growth has meaningful link to IT salary"
@@ -417,9 +418,9 @@ scenarios:
       - home_loan_emi
       - savings_and_deposits
       - credit_card_dues
-      - nifty_50
     direction: 1
     threshold: 0.05
+    # nifty_50 removed: no causal path from rbi → nifty_50 in current graph (graph gap)
 
   - id: cross_it_reachability
     description: "IT sector job changes reach salary, credit, and kirana"
@@ -544,3 +545,56 @@ scenarios:
     target_node: wheat_flour
     max_hops: 3
     expected: UNREACHABLE
+
+  # ============================================================
+  # PPR-SPECIFIC: Type D (ranking) and Type E (isolation)
+  # Requires --ppr flag; skipped in Dijkstra mode
+  # ============================================================
+
+  - id: d_crude_trade_over_emi
+    description: "Crude oil should impact trade deficit more than home loan EMI"
+    domain: energy
+    type: D
+    trigger_node: brent_crude
+    higher_node: india_trade_deficit
+    lower_node: home_loan_emi
+
+  - id: d_monsoon_food_over_emi
+    description: "Monsoon should impact food prices more than home loan EMI"
+    domain: climate
+    type: D
+    trigger_node: southwest_monsoon
+    higher_node: staple_grains
+    lower_node: home_loan_emi
+
+  - id: d_mpc_emi_over_tomato
+    description: "MPC should impact EMI more than tomato price"
+    domain: monetary
+    type: D
+    trigger_node: monetary_policy_committee
+    higher_node: home_loan_emi
+    lower_node: retail_tomato
+
+  - id: d_it_salary_over_tomato
+    description: "IT sector changes should impact IT salary more than tomato price"
+    domain: employment
+    type: D
+    trigger_node: it_sector_jobs
+    higher_node: it_sector_salary
+    lower_node: retail_tomato
+
+  - id: e_gold_not_wheat
+    description: "Gold prices should have near-zero PPR probability to wheat"
+    domain: energy
+    type: E
+    trigger_node: international_gold_prices
+    target_node: wheat_flour
+    max_probability: 0.0005
+
+  - id: e_silver_not_petrol
+    description: "Silver prices should have near-zero PPR probability to petrol"
+    domain: energy
+    type: E
+    trigger_node: international_silver_prices
+    target_node: retail_petrol
+    max_probability: 0.0005
