@@ -18,46 +18,52 @@ RSS Feeds → Collector (async) → Dedup (fingerprint+URL) → SQLite
   → Telegram Bot (high-priority alerts + daily digest)
 ```
 
-**Three layers:**
-1. **Personal Life Graph** — user answers 9 onboarding questions → inference rules map to graph nodes → BFS reachability
+**Three layers (user profiling not yet rebuilt for new graph):**
+1. **Personal Life Graph** — *needs rebuild*: user onboarding → inference rules → graph nodes → BFS reachability
 2. **Causal Knowledge Graph** — taxonomy of 5 trigger L1s (system) + 11 impact L1s (citizen), merged from domain YAML files + edge patches, loaded via NetworkX
-3. **Impact Scoring** — PPR (probability: will this reach me?) + hub-penalized path product (magnitude: how hard?) + delay sum (timing: when?). Replaces Dijkstra max-product traversal. Legacy Dijkstra available via `--legacy` flag.
-4. **Delivery & Scoring** — sparse dot product scoring, PPR probability × user importance
+3. **Impact Scoring** — PPR (probability: will this reach me?) + hub-penalized path product (magnitude: how hard?) + delay sum (timing: when?). Constants and shared utilities live in `graph/markov_engine.py`.
+4. **Delivery** — Telegram bot delivers HIGH alerts every 5min + MEDIUM digest at 8am
 
 ## Key Directories
 
 | Directory | Purpose |
 |-----------|---------|
 | `pipeline/` | Article collection (`collector.py`), tag extraction + scoring (`matcher.py`), SQLite (`database.py`), dedup (`dedup.py`), Gemini client (`gemini.py`) |
-| `graph/` | NetworkX graph (`graph.py`), YAML merge (`merge.py`), PPR engine (`markov_engine.py`), legacy Dijkstra (`traverse.py`), FAISS embeddings (`embeddings.py`), quality audit (`quality.py`), coverage gaps (`coverage.py`), validation (`admin.py`) |
-| `user/` | Onboarding questions (`onboarding.py`), answer→node inference with city/sector mappings (`inference.py`) |
-| `bot/` | Telegram bot handlers, delivery jobs (`bot.py`) |
+| `graph/` | NetworkX graph (`graph.py`), YAML merge (`merge.py`), PPR engine + shared constants (`markov_engine.py`), FAISS embeddings (`embeddings.py`), quality audit (`quality.py`), coverage gaps (`coverage.py`), validation (`admin.py`) |
+| `bot/` | Telegram bot: delivery jobs + feedback (`bot.py`). Onboarding removed — needs rebuild for new graph |
 | `audit/` | Graph maintenance scripts (eval, patch generation, analysis) |
 | `taxonomy/` | `TAXONOMY.md` — v4 taxonomy design (locked). YAML source files removed in latest clean slate commit; need to be regenerated |
-| `data/` | Runtime: `impact_news.db`, `embeddings.faiss`, `user_graph.json`, `merged_graph.yaml` |
+| `data/` | Runtime: `impact_news.db`, `embeddings.faiss`, `merged_graph.yaml` |
 
 ## Commands
 
 ### Run the app
 ```bash
-python main.py run        # Full: bot + periodic pipeline (collect + process + deliver)
-python main.py bot        # Bot only (onboarding + delivery, no pipeline)
+python main.py run        # Bot + delivery jobs
+python main.py bot        # Bot only (delivery + feedback)
 python main.py collect    # One-shot article collection
-python main.py process    # One-shot tag extraction + matching (requires user profile)
 python main.py            # Default: init, collect once, test embedding queries
 ```
 
+Note: Article scoring (`process`) requires user profiling which needs rebuilding for the new graph.
+
 ### Graph maintenance
 ```bash
-python -m graph.quality --json    # Quality scorecard
-python -m graph.coverage gaps     # Taxonomy gap analysis
-python -m graph.merge             # Rebuild merged graph from YAML sources
-python -m graph.admin validate    # Check duplicates, lint node IDs
-python -m graph.traverse <node>   # PPR impact analysis (default)
-python -m graph.traverse <node> --legacy  # Dijkstra impact propagation
-python -m graph.markov_engine <node>      # PPR engine standalone (detailed output)
-python -m graph.scenarios --ppr  # Run 58 scenarios with PPR engine
+python -m graph.quality --json           # Quality scorecard
+python -m graph.coverage gaps            # Taxonomy gap analysis
+python -m graph.merge                    # Rebuild merged graph from YAML sources
+python -m graph.admin validate           # Check edge refs, structural integrity
+python -m graph.admin lint               # Lint YAML files for naming conventions
+python -m graph.markov_engine <node>     # PPR impact analysis (standalone)
+python -m graph.scenarios                # Run scenario suite with PPR engine
 ```
+
+### Tests
+```bash
+python -m graph.scenarios                # Run scenario suite (PPR engine)
+```
+
+Golden test harness (`tests/golden/run.py`) was removed — needs rebuild with new user profiling. Test case definitions kept in `tests/golden/cases.yaml` as reference for test design patterns (band assertions, must_hit/must_miss, score separation).
 
 ### Docker
 ```bash
@@ -80,14 +86,36 @@ Required in `.env`:
 - `TELEGRAM_BOT_TOKEN` — Telegram bot token
 - `TELEGRAM_CHAT_ID` — Target chat for delivery
 
+## Configuration
+
+All tunable parameters are in `config.py` via Pydantic Settings (loaded from `.env`):
+
+| Parameter | Default | Purpose |
+|-----------|---------|---------|
+| `ppr_restart_prob` | 0.20 | PPR restart probability (shock intensity) |
+| `ppr_prob_threshold` | 0.005 | PPR cutoff (nodes below this are discarded) |
+| `ppr_magnitude_blend` | 0.5 | Weight of magnitude vs probability |
+| `hub_dampening_threshold` | 20 | Penalize high fan-in nodes above this degree |
+| `match_threshold` | 0.55 | FAISS embedding similarity cutoff |
+| `max_hops` | 3 | BFS depth for user graph reachability |
+| `score_high_threshold` | 0.5 | Score ≥ 0.5 → HIGH severity |
+| `score_medium_threshold` | 0.2 | Score ≥ 0.2 → MEDIUM severity |
+| `indirect_weight` | 0.7 | Discount for indirect effects |
+| `gemini_model` | `gemini-2.0-flash` | Gemini model for tag extraction |
+| `pipeline_interval_seconds` | 7200 | Pipeline run interval (2 hours) |
+| `digest_hour` | 8 | Daily digest delivery hour |
+
+RSS feeds are also configured in `config.py` as `RSS_FEEDS` list.
+
 ## Conventions
 
 - **Node IDs:** `snake_case`, regex `^[a-z][a-z0-9_]*$` (e.g., `crude_oil`, `home_loan_emi`)
 - **Edge types:** 12 canonical types in UPPER_SNAKE_CASE: `AFFECTS`, `PRODUCES`, `REGULATES`, `DISRUPTS`, `SUPPLIES`, `DEPENDS_ON`, `CONTAINS`, `IS_A`, `FUNDS`, `COMPETES_WITH`, `EMPLOYS`, `MANAGES`
 - **Edge properties:** `weight` (0-1), `polarity` (±1), `delay` (IMMEDIATE/SHORT_TERM/MEDIUM_TERM/LONG_TERM)
 - **Categories:** 15 canonical L1 categories defined in `taxonomy/TAXONOMY.md`
-- **Embeddings:** `all-MiniLM-L6-v2` (384-dim), indexes all node aliases + node ID via FAISS
-- **Scoring:** PPR engine (Personalized PageRank) with restart_prob=0.20, prob_threshold=0.005. Legacy Dijkstra available via `--legacy`
+- **Embeddings:** `all-MiniLM-L6-v2` (384-dim), indexes all node aliases + node ID via FAISS IndexFlatIP
+- **Scoring:** PPR engine (Personalized PageRank) with restart_prob=0.20, prob_threshold=0.005
+- **No linting config:** No formal linter/formatter configured. Code follows PEP 8 informally.
 
 ## Project History
 
@@ -95,21 +123,34 @@ Required in `.env`:
 - **Mar 10:** Built full pipeline infrastructure (collector, dedup, matcher, scorer, bot, graph engine). Multiple worktree sessions for graph v2 (edge weights, traversal) and user profiling redesign.
 - **Mar 11-12:** Graph governance — taxonomy normalization, dedup, Gemini-generated nodes, fixed 74 node ID mismatches, redesigned profiling to tiered questions.
 - **Mar 13:** v4 taxonomy locked (Trigger/Impact split, 5+11 L1s, boundary rules, stress tested). "Clean slate" commit — removed old graph YAML data, kept scripts + v4 design.
-- **Mar 15:** Replaced Dijkstra traversal with PPR (Personalized PageRank) engine. 3-layer scoring: probability (PPR), magnitude (hub-penalized path product), timing (delay sum). Reduces node reach from ~90% to 10-30% per trigger. 58 scenarios passing.
+- **Mar 15:** Replaced Dijkstra traversal with PPR (Personalized PageRank) engine. 3-layer scoring: probability (PPR), magnitude (hub-penalized path product), timing (delay sum). Reduces node reach from ~90% to 10-30% per trigger. 58 scenarios passing. Removed legacy Dijkstra (`traverse.py`) and old user profiling (`user/`) — both will be rebuilt for the new graph.
 
 ## Current State
 
-All infrastructure code is complete and ready. The v4 taxonomy design is locked in `taxonomy/TAXONOMY.md`. Graph YAML data files were removed in the clean slate commit and need to be rebuilt from the v4 design.
+Infrastructure code complete. v4 taxonomy design locked in `taxonomy/TAXONOMY.md`. **Graph is fully built**: 738 nodes, 1831 edges across all 16 L1 categories.
 
-**Next steps:** L2 subcategories → L3 leaf nodes → edges → rebuild YAML graph files.
+**Graph data files** (all present):
+- `taxonomy/I1.yaml` through `I11.yaml` — 11 Impact L1 vertical trees + lateral edges
+- `taxonomy/T1.yaml` through `T5.yaml` — 5 Trigger L1 vertical trees + lateral edges
+- `taxonomy/bridge_edges.yaml` — T→I bridge edges + I→T feedback edges
+- `taxonomy/scenarios.yaml` — 58 scenario test definitions
+- `data/merged_graph.yaml` — merged output (built by `python -m graph.merge`)
 
-Expected YAML files (not yet present):
-- `taxonomy/universal_life_dependency_graph.yaml`
-- `taxonomy/employment_domain_graph.yaml`
-- `taxonomy/financial_system_domain_graph.yaml`
-- `taxonomy/food_energy_graph.yaml`
-- `taxonomy/local_governance_graph.yaml`
-- `taxonomy/edge_patches.yaml`
+**Removed (will rebuild for new graph):**
+- `graph/traverse.py` — Dijkstra engine (replaced by PPR in `markov_engine.py`)
+- `user/onboarding.py` — questionnaire definitions
+- `user/inference.py` — answer→node inference maps (50+ mapping tables)
+- `tests/golden/run.py` — golden test harness (depends on old user profiling)
+
+**Shared utilities** (constants, elevator logic, graph helpers) moved from `traverse.py` into `graph/markov_engine.py`.
+
+**Next steps:** Rebuild user profiling (onboarding + inference) for the current 738-node graph.
+
+Graph YAML files (all present — 738 nodes, 1831 edges):
+- `taxonomy/I1.yaml` through `I11.yaml` — Impact L1s (food, housing, transport, livelihood, finance, health, education, safety, environment, digital, leisure)
+- `taxonomy/T1.yaml` through `T5.yaml` — Trigger L1s (natural, institutional, macro, infra, social)
+- `taxonomy/bridge_edges.yaml` — cross-world T→I bridges + I→T feedback
+- `taxonomy/scenarios.yaml` — 58 scenario tests
 
 ## Key Design Docs
 

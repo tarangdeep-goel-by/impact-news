@@ -155,50 +155,8 @@ class CoverageTracker:
     # -- user coverage detail -----------------------------------------------
 
     def user_coverage_detail(self) -> UserCoverageDetail:
-        """Detailed per-persona coverage using personas from quality.py."""
-        from graph.graph import ImpactGraph
-        from graph.merge import TaxonomyMerger
-        from graph.migrate_weights import apply_defaults
-        from graph.quality import PERSONAS
-        from user.inference import connect_user_to_graph
-
-        merger = TaxonomyMerger(root=self.root)
-        G = merger.merge()
-        apply_defaults(G)
-
-        # Build ImpactGraph backed by the merged DiGraph
-        ig = ImpactGraph.__new__(ImpactGraph)
-        ig.g = G
-
-        total_nodes = G.number_of_nodes()
-        all_node_ids = set(G.nodes())
-
-        # Pre-compute degree for unreachable ranking
-        degree_map = {n: G.in_degree(n) + G.out_degree(n) for n in G.nodes()}
-
-        results: list[PersonaCoverage] = []
-        for name, answers in PERSONAS.items():
-            ug = connect_user_to_graph(answers, ig, user_id=name)
-            direct = len(ug.edges)
-            reachable = len(ug.reachable_nodes)
-            pct = round(reachable / total_nodes * 100, 2) if total_nodes else 0.0
-
-            # Top unreachable high-degree nodes
-            unreachable = all_node_ids - ug.reachable_nodes
-            top_unreachable = sorted(unreachable, key=lambda n: degree_map[n], reverse=True)[:10]
-
-            results.append(
-                PersonaCoverage(
-                    name=name,
-                    direct_nodes=direct,
-                    reachable_nodes=reachable,
-                    reachable_pct=pct,
-                    top_unreachable=top_unreachable,
-                )
-            )
-
-        avg = round(sum(p.reachable_pct for p in results) / len(results), 2) if results else 0.0
-        return UserCoverageDetail(personas=results, avg_reachable_pct=avg)
+        """Placeholder — user profiling will be rebuilt for new graph."""
+        return UserCoverageDetail(personas=[], avg_reachable_pct=0.0)
 
     # -- summary ------------------------------------------------------------
 
