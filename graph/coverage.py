@@ -158,14 +158,13 @@ class CoverageTracker:
         """Detailed per-persona coverage using personas from quality.py."""
         from graph.graph import ImpactGraph
         from graph.merge import TaxonomyMerger
-        from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+        from graph.migrate_weights import apply_defaults
         from graph.quality import PERSONAS
         from user.inference import connect_user_to_graph
 
         merger = TaxonomyMerger(root=self.root)
         G = merger.merge()
         apply_defaults(G)
-        apply_fan_out_penalty(G)
 
         # Build ImpactGraph backed by the merged DiGraph
         ig = ImpactGraph.__new__(ImpactGraph)

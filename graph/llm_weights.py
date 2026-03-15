@@ -12,7 +12,7 @@ from pathlib import Path
 from google import genai
 
 from graph.merge import TaxonomyMerger, export_graph
-from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+from graph.migrate_weights import apply_defaults
 
 log = logging.getLogger(__name__)
 
@@ -102,7 +102,6 @@ def main():
     merger = TaxonomyMerger(root=args.root)
     G = merger.merge()
     apply_defaults(G)
-    apply_fan_out_penalty(G)
 
     out_path = args.root / "data" / "llm_weights.json"
 
