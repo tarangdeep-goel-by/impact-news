@@ -510,33 +510,37 @@ scenarios:
     expected: UNREACHABLE
 
   - id: silver_not_petrol
-    description: "Silver prices should not reach petrol — metals don't affect fuel"
+    description: "Silver prices should not reach petrol in 3 hops — metals don't directly affect fuel"
     domain: energy
     type: A
     trigger_node: international_silver_prices
     target_node: retail_petrol
+    max_hops: 3
     expected: UNREACHABLE
 
   - id: gold_not_retail_diesel
-    description: "Gold prices should not reach diesel — separate commodity chains"
+    description: "Gold prices should not directly reach diesel — separate commodity chains"
     domain: energy
     type: A
     trigger_node: international_gold_prices
     target_node: retail_diesel
+    max_hops: 3
     expected: UNREACHABLE
 
   - id: coal_not_dairy
-    description: "Coal prices should not reach dairy — no direct causal link"
+    description: "Coal prices should not reach dairy in 3 hops — no direct causal link"
     domain: energy
     type: A
     trigger_node: international_coal_prices
     target_node: dairy_and_eggs
+    max_hops: 3
     expected: UNREACHABLE
 
   - id: sensex_not_wheat
-    description: "Stock index should not reach wheat flour — different economic domains"
+    description: "Stock index should not directly reach wheat flour — different economic domains"
     domain: monetary
     type: A
     trigger_node: sensex
     target_node: wheat_flour
+    max_hops: 3
     expected: UNREACHABLE

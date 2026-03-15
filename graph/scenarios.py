@@ -74,6 +74,7 @@ def _run_path_exists(G: nx.DiGraph, G_causal: nx.DiGraph, sc: dict) -> dict:
 
     # Scoped elevator: mirrors analyze_impact's scoped seeding.
     # Try from the node itself, its causal entry, and one parent up.
+    # For T-world entries, only seed parent if L3+ (prevents false cross-domain paths).
     sources = [src]
     if G.has_node(src):
         entry = get_causal_entry(G, src)
@@ -81,7 +82,11 @@ def _run_path_exists(G: nx.DiGraph, G_causal: nx.DiGraph, sc: dict) -> dict:
             sources.append(entry)
         parent = _get_contains_parent(G, entry)
         if parent and parent not in sources:
-            sources.append(parent)
+            entry_cat = G.nodes[entry].get('category', '') if G.has_node(entry) else ''
+            parent_level = G.nodes[parent].get('level', 0) if G.has_node(parent) else 0
+            seed_parent = parent_level >= 3 if entry_cat.startswith('T') else True
+            if seed_parent:
+                sources.append(parent)
 
     paths: list[list[str]] = []
     for s in sources:

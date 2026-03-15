@@ -201,15 +201,21 @@ def analyze_impact(
 
     max_weight_seen: dict[str, float] = {entry: 1.0}
 
-    # Scoped elevator: always seed from one CONTAINS parent up.
-    # This gives leaf nodes access to their L3 parent's bridges without
-    # climbing all the way to L2 (which caused false cross-domain paths).
+    # Scoped elevator: seed from one CONTAINS parent up.
+    # For T-world entries, only seed if parent is L3+ (prevents T-L3
+    # entries from climbing to T-L2, which exposes all sibling L3 bridges
+    # and creates false cross-domain T→I paths like silver→petrol).
+    # I-world entries are unrestricted since their laterals are within-world.
     parent = _get_contains_parent(g, entry)
     if parent and parent != entry:
-        parent_weight = g[parent][entry]['weight'] if g.has_edge(parent, entry) else 0.9
-        heapq.heappush(heap, (-parent_weight, parent, event_direction,
-                              [entry, parent], "IMMEDIATE"))
-        max_weight_seen[parent] = parent_weight
+        entry_cat = g.nodes[entry].get('category', '') if g.has_node(entry) else ''
+        parent_level = g.nodes[parent].get('level', 0) if g.has_node(parent) else 0
+        seed_parent = parent_level >= 3 if entry_cat.startswith('T') else True
+        if seed_parent:
+            parent_weight = g[parent][entry]['weight'] if g.has_edge(parent, entry) else 0.9
+            heapq.heappush(heap, (-parent_weight, parent, event_direction,
+                                  [entry, parent], "IMMEDIATE"))
+            max_weight_seen[parent] = parent_weight
 
     results: list[dict] = []
 

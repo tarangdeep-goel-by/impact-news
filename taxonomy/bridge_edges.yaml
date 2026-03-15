@@ -2542,3 +2542,257 @@ edges:
   description: >-
     Rapid, unplanned real estate development and road widening in emerging cities lead to the widespread
     felling of mature neighborhood trees.
+
+# === Scenario coverage bridges (added to fix failing scenarios) ===
+
+# Equity markets → I5 (stops sensex elevator at L3, enables nifty→nps)
+- from: equity_markets
+  to: equity_investments
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: >-
+    Stock market index movements directly determine equity portfolio valuations and capital gains.
+- from: equity_markets
+  to: mutual_funds
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    Equity market performance drives equity-linked mutual fund NAV changes and SIP returns.
+- from: equity_markets
+  to: retirement_and_provident_funds
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    Market movements affect NPS and EPF equity allocation returns and corpus growth.
+
+# GST council → food prices
+- from: gst_council
+  to: packaged_and_processed_foods
+  type: AFFECTS
+  weight: 0.85
+  polarity: -1
+  delay: SHORT_TERM
+  description: >-
+    GST rate decisions on packaged food items directly change retail shelf prices for consumers.
+
+# Union budget → fuel subsidy and taxation
+- from: union_budget_framework
+  to: cooking_fuel
+  type: FUNDS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    Union budget petroleum subsidy allocations determine LPG cylinder price and cooking fuel costs.
+- from: union_budget_framework
+  to: direct_taxes
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    Union budget sets income tax slabs, exemptions, and direct tax policy for individuals.
+
+# Monsoon → food supply
+- from: southwest_monsoon
+  to: staple_grains
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    Southwest monsoon rainfall determines kharif crop yields, directly affecting rice, wheat, and
+    grain supply and prices.
+- from: southwest_monsoon
+  to: vegetables
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    Monsoon rainfall patterns directly affect vegetable cultivation, availability, and mandi prices.
+- from: southwest_monsoon
+  to: farm_labor_wages
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    Good monsoons increase agricultural activity and labor demand, pushing up farm wage rates.
+
+# Heat → labor and food
+- from: outdoor_heat
+  to: informal_and_daily_wage
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: IMMEDIATE
+  description: >-
+    Extreme heat directly reduces outdoor labor capacity for construction, agriculture, and daily-wage
+    workers, cutting their productivity and earnings.
+- from: outdoor_heat
+  to: staple_grains
+  type: DISRUPTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: >-
+    Prolonged heat waves damage standing crops, reduce yields, and raise grain procurement costs.
+
+# Cyclone → fish (T→T lateral)
+- from: cyclonic_storm_systems
+  to: marine_fish_stocks
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: IMMEDIATE
+  description: >-
+    Cyclonic storms disrupt marine habitats, damage fishing infrastructure, and force extended fishing bans.
+
+# Farm labor → unemployment (I→I lateral)
+- from: farm_labor_wages
+  to: rural_unemployment_rate
+  type: AFFECTS
+  weight: 0.75
+  polarity: -1
+  delay: SHORT_TERM
+  description: >-
+    Falling farm labor wages reduce rural livelihood viability, driving higher rural unemployment.
+
+# IT jobs → credit stress (I4→I5 bridge)
+- from: it_sector_jobs
+  to: unsecured_loans
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: >-
+    IT layoffs and salary cuts increase credit card payment stress, personal loan defaults, and
+    unsecured loan delinquency.
+
+# IT salary → retail spending (I→I lateral)
+- from: it_sector_salary
+  to: retail_and_trade
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    IT sector salary levels drive urban consumer spending at local kirana stores and retail outlets.
+
+# US demand → Indian manufacturing (T→I bridge)
+- from: us_consumer_demand
+  to: manufacturing_and_core
+  type: AFFECTS
+  weight: 0.65
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: >-
+    US consumer demand drives Indian manufacturing exports and factory production volumes.
+
+# Trade deficit → MSME (T→I bridge)
+- from: india_trade_deficit
+  to: msme_manufacturing
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: >-
+    Rising trade deficit signals competitive pressure on domestic small manufacturers from cheaper
+    imports.
+
+# Russia → grain supply (T→T lateral)
+- from: russian_government
+  to: global_food_grain_supply
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: SHORT_TERM
+  description: >-
+    Russian export bans and conflict disrupt global wheat and grain supply chains.
+
+# Smartphone → UPI (I→I lateral)
+- from: smartphone_device
+  to: upi_ecosystem
+  type: SUPPLIES
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: >-
+    Smartphone adoption is the primary enabler for UPI transaction access and digital payment growth.
+
+# Telecom infra → mobile connectivity (T→I bridge)
+- from: digital_telecom_infrastructure
+  to: mobile_connectivity
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: >-
+    Telecom tower and fiber infrastructure investments directly determine mobile network quality
+    and data service availability.
+
+# Himalayan rivers → agriculture (T→I bridge)
+- from: himalayan_river_systems
+  to: staple_grains
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: >-
+    Himalayan river systems provide irrigation for the Indo-Gangetic plain, directly affecting rice
+    and wheat cultivation.
+
+# Consumer confidence → retail and credit (T→I bridges)
+- from: aggregate_consumer_confidence
+  to: retail_and_trade
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    Consumer confidence levels directly drive discretionary spending at local retail stores.
+- from: aggregate_consumer_confidence
+  to: unsecured_loans
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: >-
+    Falling consumer confidence increases precautionary saving and credit card spending stress.
+
+# GDP → IT sector (T→I bridge)
+- from: india_gdp_growth
+  to: it_and_tech_sector
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: >-
+    GDP growth rates drive IT sector hiring, project volumes, and salary growth trajectories.
+
+# RBI → savings (T→I bridge)
+- from: rbi
+  to: savings_and_deposits
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: >-
+    RBI repo rate decisions directly affect bank deposit interest rates and savings account returns.
+
+# USD/INR → vehicle fuel (T→I bridge, broader than individual fuel nodes)
+- from: usd_inr_exchange
+  to: vehicle_fuel
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: >-
+    Rupee depreciation increases crude oil import costs, pushing up petrol, diesel, and CNG prices.
