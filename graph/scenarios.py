@@ -168,6 +168,44 @@ def _run_score_threshold(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | N
     return {"id": sc["id"], "type": "C", "status": "PASS" if ok else "FAIL", "detail": detail}
 
 
+def _run_ranking(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = None) -> dict:
+    """Type D: verify higher_node ranks above lower_node in PPR probability."""
+    if engine is None:
+        return {"id": sc["id"], "type": "D", "status": "SKIP", "detail": "requires --ppr"}
+
+    trigger = sc["trigger_node"]
+    higher = sc["higher_node"]
+    lower = sc["lower_node"]
+
+    results = engine.evaluate_impact(trigger, prob_threshold=0.0001)
+    prob_map = {r["node"]: r["probability"] for r in results}
+
+    h_prob = prob_map.get(higher, 0.0)
+    l_prob = prob_map.get(lower, 0.0)
+
+    ok = h_prob > l_prob
+    detail = f"{higher}={h_prob:.6f} {'>' if ok else '<='} {lower}={l_prob:.6f}"
+    return {"id": sc["id"], "type": "D", "status": "PASS" if ok else "FAIL", "detail": detail}
+
+
+def _run_isolation(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = None) -> dict:
+    """Type E: verify target has near-zero PPR probability from trigger."""
+    if engine is None:
+        return {"id": sc["id"], "type": "E", "status": "SKIP", "detail": "requires --ppr"}
+
+    trigger = sc["trigger_node"]
+    target = sc["target_node"]
+    max_prob = sc.get("max_probability", 0.0005)
+
+    results = engine.evaluate_impact(trigger, prob_threshold=0.00001)
+    prob_map = {r["node"]: r["probability"] for r in results}
+
+    actual_prob = prob_map.get(target, 0.0)
+    ok = actual_prob < max_prob
+    detail = f"prob={actual_prob:.8f} (max={max_prob})"
+    return {"id": sc["id"], "type": "E", "status": "PASS" if ok else "FAIL", "detail": detail}
+
+
 def run_scenario(G: nx.DiGraph, scenario: dict, engine: CausalMarkovEngine | None = None) -> dict:
     """Run a single scenario and return result dict."""
     stype = scenario.get("type", "")
@@ -179,6 +217,10 @@ def run_scenario(G: nx.DiGraph, scenario: dict, engine: CausalMarkovEngine | Non
         return _run_reachability(G, scenario, engine=engine)
     elif stype == "C":
         return _run_score_threshold(G, scenario, engine=engine)
+    elif stype == "D":
+        return _run_ranking(G, scenario, engine=engine)
+    elif stype == "E":
+        return _run_isolation(G, scenario, engine=engine)
     else:
         return {
             "id": scenario.get("id", "?"), "type": "?", "status": "ERROR",
@@ -231,7 +273,7 @@ def export_failures(results: list[dict], path: Path) -> None:
 if __name__ == "__main__":
     import argparse
     from graph.merge import TaxonomyMerger
-    from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+    from graph.migrate_weights import apply_defaults
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--ppr", action="store_true", help="Use PPR engine instead of Dijkstra")
@@ -240,7 +282,6 @@ if __name__ == "__main__":
     merger = TaxonomyMerger()
     G = merger.merge()
     apply_defaults(G)
-    apply_fan_out_penalty(G)
 
     engine = None
     if args.ppr:

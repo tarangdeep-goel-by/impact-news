@@ -15,7 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from graph.merge import TaxonomyMerger
-from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+from graph.migrate_weights import apply_defaults
 from graph.traverse import analyze_impact, get_causal_entry
 
 
@@ -24,7 +24,6 @@ def load_graph():
     merger = TaxonomyMerger(root=root)
     G = merger.merge()
     apply_defaults(G)
-    apply_fan_out_penalty(G)
     return G
 
 

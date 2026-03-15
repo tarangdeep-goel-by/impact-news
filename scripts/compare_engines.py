@@ -7,7 +7,7 @@ Usage:
 import yaml
 from pathlib import Path
 from graph.merge import TaxonomyMerger
-from graph.migrate_weights import apply_defaults, apply_fan_out_penalty
+from graph.migrate_weights import apply_defaults
 from graph.traverse import analyze_impact as dijkstra_impact
 from graph.markov_engine import CausalMarkovEngine
 
@@ -17,7 +17,6 @@ def main():
     merger = TaxonomyMerger()
     G = merger.merge()
     apply_defaults(G)
-    apply_fan_out_penalty(G)
 
     # Build PPR engine
     engine = CausalMarkovEngine(G)
