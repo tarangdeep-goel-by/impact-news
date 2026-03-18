@@ -223,25 +223,68 @@ class CausalMarkovEngine:
                 d["cost"] = -math.log(prob) if prob > 0 else float("inf")
                 d["norm_prob"] = prob
 
+    def _build_seed_vector(self, trigger_node: str, decay: float = 0.5, max_levels: int = 3) -> dict[str, float]:
+        """Walk UP CONTAINS hierarchy with exponential decay. Returns PPR seed dict.
+
+        Only includes ancestors that have causal out-edges in self.causal_G.
+        Normalizes values to sum to 1.0 (required by nx.pagerank personalization).
+        """
+        seeds: dict[str, float] = {}
+
+        # Always include trigger if it has causal edges
+        if trigger_node in self.causal_G and self.causal_G.out_degree(trigger_node) > 0:
+            seeds[trigger_node] = 1.0
+
+        # Walk up CONTAINS hierarchy
+        current = trigger_node
+        weight = 1.0
+        for _ in range(max_levels):
+            parent = _get_contains_parent(self.base_G, current)
+            if parent is None:
+                break
+            weight *= decay
+            # Only include if parent has causal out-edges in causal_G
+            if parent in self.causal_G and self.causal_G.out_degree(parent) > 0:
+                seeds[parent] = weight
+            current = parent
+
+        # If no seeds found (trigger has no causal edges and no ancestors do either),
+        # fall back to just the trigger node with weight 1.0
+        if not seeds:
+            seeds[trigger_node] = 1.0
+
+        # Normalize to sum to 1.0
+        total = sum(seeds.values())
+        if total > 0:
+            seeds = {k: v / total for k, v in seeds.items()}
+
+        return seeds
+
     def _compute_ppr(
-        self, trigger: str, restart_prob: float = 0.20
+        self, seed_vector: dict[str, float], restart_prob: float = 0.20
     ) -> dict[str, float]:
-        """Run Personalized PageRank from a trigger node.
+        """Run Personalized PageRank from a seed vector (multi-seed).
 
         Args:
-            trigger: The trigger node ID (must be in causal_G)
-            restart_prob: Probability of restarting at trigger (α).
-                Higher = shock stays closer to trigger.
+            seed_vector: Dict mapping node_id → weight (must sum to 1.0).
+                Represents the restart distribution for PPR.
+            restart_prob: Probability of restarting at seed distribution (α).
+                Higher = shock stays closer to seed nodes.
 
         Returns:
             Dict mapping node_id → PPR probability score.
         """
-        if trigger not in self.causal_G:
-            logger.warning("Trigger '%s' not in causal graph", trigger)
+        # Filter seed vector to nodes that exist in causal_G
+        valid_seeds = {k: v for k, v in seed_vector.items() if k in self.causal_G}
+        if not valid_seeds:
+            logger.warning("No seed nodes found in causal graph")
             return {}
+        # Re-normalize
+        total = sum(valid_seeds.values())
+        valid_seeds = {k: v / total for k, v in valid_seeds.items()}
 
-        personalization = {trigger: 1.0}
-        dangling = {trigger: 1.0}  # Dangling nodes restart at trigger
+        personalization = valid_seeds
+        dangling = valid_seeds  # Dangling nodes restart at seed distribution
 
         try:
             scores = nx.pagerank(
@@ -254,7 +297,7 @@ class CausalMarkovEngine:
                 tol=1e-8,
             )
         except nx.PowerIterationFailedConvergence:
-            logger.warning("PPR failed to converge for trigger '%s'", trigger)
+            logger.warning("PPR failed to converge for seeds %s", list(seed_vector.keys())[:3])
             scores = nx.pagerank(
                 self.causal_G,
                 alpha=1.0 - restart_prob,
@@ -373,6 +416,7 @@ class CausalMarkovEngine:
                         "polarity": parent_result["polarity"],
                         "delay": parent_result["delay"],
                         "path": parent_result["path"] + [succ],
+                        "via_contains": True,
                     }
                     queue.append(succ)
 
@@ -408,18 +452,12 @@ class CausalMarkovEngine:
             List of dicts with keys: node, probability, magnitude, score, polarity, delay, path
             If include_aggregation: tuple of (results, aggregation_dict)
         """
-        # Step 1: Elevator — find causal entry point
-        entry = get_causal_entry(self.base_G, trigger_node)
+        # Step 1: Seed expansion — build multi-seed vector from trigger hierarchy
+        seed_vector = self._build_seed_vector(trigger_node, decay=0.5, max_levels=3)
+        seed_nodes = set(seed_vector.keys())
 
-        # Scoped elevator: also try one CONTAINS parent up
-        trigger_for_ppr = entry
-        if not any(self.causal_G.has_edge(entry, s) for s in self.causal_G.successors(entry)):
-            parent = _get_contains_parent(self.base_G, entry)
-            if parent and parent in self.causal_G:
-                trigger_for_ppr = parent
-
-        # Step 2: PPR
-        ppr_scores = self._compute_ppr(trigger_for_ppr, restart_prob)
+        # Step 2: Multi-seed PPR
+        ppr_scores = self._compute_ppr(seed_vector, restart_prob)
         if not ppr_scores:
             if include_aggregation:
                 return [], {}
@@ -429,13 +467,17 @@ class CausalMarkovEngine:
         reached_scores: dict[str, dict] = {}
 
         for node, prob in ppr_scores.items():
-            if node == trigger_for_ppr:
-                continue  # Skip the trigger itself
+            if node in seed_nodes:
+                continue  # Skip seed nodes
             if prob < prob_threshold:
                 continue
 
-            # Get dominant path
-            path = self._get_dominant_path(trigger_for_ppr, node)
+            # Try path from each seed node, highest weight first
+            path = None
+            for seed_node in sorted(seed_vector, key=seed_vector.get, reverse=True):
+                path = self._get_dominant_path(seed_node, node)
+                if path is not None:
+                    break
             if path is None:
                 # Node reached by PPR but no direct path (dangling redistribution)
                 continue
@@ -508,9 +550,10 @@ def main():
 
     direction = 1 if args.direction == "up" else -1
 
-    entry = get_causal_entry(G, args.node)
-    if entry != args.node:
-        print(f"Elevator: {args.node} → {entry}")
+    seed_vector = engine._build_seed_vector(args.node)
+    if len(seed_vector) > 1:
+        seed_str = ", ".join(f"{k}:{v:.2f}" for k, v in sorted(seed_vector.items(), key=lambda x: -x[1]))
+        print(f"Seed vector: {seed_str}")
 
     results = engine.evaluate_impact(
         args.node,

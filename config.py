@@ -61,6 +61,10 @@ class Settings(BaseSettings):
     ppr_prob_threshold: float = 0.005       # Min probability to consider a node impacted
     ppr_magnitude_blend: float = 0.5        # How much magnitude affects final score
 
+    # Multi-phase activation
+    upward_seed_decay: float = 0.5          # Decay factor per CONTAINS level for seed expansion
+    max_seed_levels: int = 3                 # Max CONTAINS levels to walk up for seed expansion
+
     # Delivery
     digest_hour: int = 8
     pipeline_interval_seconds: int = 7200

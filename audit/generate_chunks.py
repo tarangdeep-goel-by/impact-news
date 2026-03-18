@@ -116,6 +116,23 @@ CATEGORY_TO_DOMAIN = {
     "technology": "employment",
     "technology_and_innovation": "employment",
     "user": "consumer_life",
+    # v4 taxonomy L1 category codes
+    "i1": "food_agriculture",
+    "i2": "consumer_life",       # Housing & Shelter
+    "i3": "infrastructure",      # Transport & Mobility
+    "i4": "employment",          # Livelihood & Employment
+    "i5": "financial",           # Personal Finance
+    "i6": "consumer_life",       # Health & Healthcare
+    "i7": "consumer_life",       # Education & Learning
+    "i8": "governance",          # Safety & Security
+    "i9": "consumer_life",       # Environment & Climate
+    "i10": "consumer_life",      # Digital Life & Connectivity
+    "i11": "consumer_life",      # Recreation & Culture
+    "t1": "consumer_life",       # Natural & Environmental Systems
+    "t2": "governance",          # Institutional & Sovereign Entities
+    "t3": "macro_geopolitics",   # Macro-Economic Forces
+    "t4": "infrastructure",      # Physical Infrastructure
+    "t5": "macro_geopolitics",   # Social, Demographic & Cultural Forces
 }
 
 DEFAULT_DOMAIN = "consumer_life"
