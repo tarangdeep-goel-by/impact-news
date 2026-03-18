@@ -137,28 +137,26 @@ RSS feeds are also configured in `config.py` as `RSS_FEEDS` list.
 
 Infrastructure code complete. v4 taxonomy design locked in `taxonomy/TAXONOMY.md`. **Graph is fully built**: 738 nodes, 1831 edges across all 16 L1 categories.
 
-**Graph data files** (all present):
-- `taxonomy/I1.yaml` through `I11.yaml` — 11 Impact L1 vertical trees + lateral edges
-- `taxonomy/T1.yaml` through `T5.yaml` — 5 Trigger L1 vertical trees + lateral edges
-- `taxonomy/bridge_edges.yaml` — T→I bridge edges + I→T feedback edges
-- `taxonomy/scenarios.yaml` — 58 scenario test definitions
+**Graph data files** (all present, all Gemini 3.1 Pro audited):
+- `taxonomy/I1.yaml` through `I11.yaml` — 11 Impact L1 trees (CONTAINS + social movements in I4)
+- `taxonomy/T1.yaml` through `T5.yaml` — 5 Trigger L1 trees (CONTAINS + T→T laterals)
+- `taxonomy/bridge_edges.yaml` — 286 T→I bridge edges (L2 targets decomposed per Rule 18)
+- `taxonomy/lateral_edges.yaml` — 219 I→I lateral edges (intra-L1 + cross-L1 portals)
+- `taxonomy/scenarios.yaml` — 58 scenario tests (all T-world triggered, all passing)
+- `taxonomy/laterals/` — per-L1 lateral edge source files
 - `data/merged_graph.yaml` — merged output (built by `python -m graph.merge`)
 
-**Removed (will rebuild for new graph):**
-- `graph/traverse.py` — Dijkstra engine (replaced by PPR in `markov_engine.py`)
-- `user/onboarding.py` — questionnaire definitions
-- `user/inference.py` — answer→node inference maps (50+ mapping tables)
-- `tests/golden/run.py` — golden test harness (depends on old user profiling)
+**Scoring engine:** Multi-seed PPR in `graph/markov_engine.py`
+- 3-phase: seed expansion (walk UP CONTAINS) → PPR on causal subgraph → CONTAINS propagation down
+- Config in `config.py`: upward_seed_decay=0.5, max_seed_levels=3
 
-**Shared utilities** (constants, elevator logic, graph helpers) moved from `traverse.py` into `graph/markov_engine.py`.
+**Audit tooling** (in `audit/`):
+- `generate_laterals.py` / `generate_portals.py` — Gemini edge generation
+- `review_laterals.py` / `fix_laterals.py` — Gemini edge review + fix
+- `review_taxonomy.py` — Gemini constitution review
+- `eval_graph.py` — domain-level evaluation
 
-**Next steps:** Rebuild user profiling (onboarding + inference) for the current 738-node graph.
-
-Graph YAML files (all present — 738 nodes, 1831 edges):
-- `taxonomy/I1.yaml` through `I11.yaml` — Impact L1s (food, housing, transport, livelihood, finance, health, education, safety, environment, digital, leisure)
-- `taxonomy/T1.yaml` through `T5.yaml` — Trigger L1s (natural, institutional, macro, infra, social)
-- `taxonomy/bridge_edges.yaml` — cross-world T→I bridges + I→T feedback
-- `taxonomy/scenarios.yaml` — 58 scenario tests
+**Next steps:** Weight calibration (structural heuristics → Gemini re-rating → historical event replay), then user profiling rebuild.
 
 ## Key Design Docs
 
