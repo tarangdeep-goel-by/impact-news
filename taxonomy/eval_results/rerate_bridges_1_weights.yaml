@@ -1,0 +1,852 @@
+batch_id: bridges_1
+updates:
+- from: meteorological_systems
+  to: fresh_produce
+  old_weight: 0.45
+  new_weight: 0.5
+  reasoning: Weather shocks directly impact perishable crop yields, though geographic
+    diversification provides some buffer.
+- from: meteorological_systems
+  to: staple_grains
+  old_weight: 0.45
+  new_weight: 0.35
+  reasoning: Government reserves and irrigation heavily buffer staple grains against
+    direct meteorological shocks.
+- from: meteorological_systems
+  to: pulses_and_legumes
+  old_weight: 0.45
+  new_weight: 0.6
+  reasoning: Pulses are predominantly rain-fed in India, making their yields highly
+    sensitive to monsoon variations.
+- from: meteorological_systems
+  to: vector_borne_diseases
+  old_weight: 0.69
+  new_weight: 0.75
+  reasoning: Monsoon rains and temperature shifts are the primary direct drivers of
+    vector breeding cycles and disease outbreaks.
+- from: meteorological_systems
+  to: water_and_food_borne_diseases
+  old_weight: 0.69
+  new_weight: 0.7
+  reasoning: Heavy rains and flooding directly compromise water sanitation, leading
+    to strong seasonal spikes in water-borne diseases.
+- from: meteorological_systems
+  to: weather_and_thermal_environment
+  old_weight: 0.65
+  new_weight: 0.9
+  reasoning: Macro meteorological systems directly and almost fully determine local
+    ambient temperature and weather conditions.
+- from: meteorological_systems
+  to: air_quality_environment
+  old_weight: 0.33
+  new_weight: 0.7
+  reasoning: Rain and wind speed act as primary dispersion mechanisms, strongly and
+    rapidly improving local air quality.
+- from: meteorological_systems
+  to: urban_hydrology
+  old_weight: 0.65
+  new_weight: 0.8
+  reasoning: Intense rainfall events directly overwhelm urban drainage, leading to
+    highly correlated urban flooding.
+- from: hydrological_systems
+  to: water_and_sanitation
+  old_weight: 0.56
+  new_weight: 0.75
+  reasoning: Municipal water supply is heavily dependent on the raw water availability
+    in local reservoirs and aquifers.
+- from: hydrological_systems
+  to: staple_grains
+  old_weight: 0.56
+  new_weight: 0.65
+  reasoning: Groundwater and river basin levels strongly dictate the irrigation capacity
+    for water-intensive cereal crops.
+- from: hydrological_systems
+  to: urban_hydrology
+  old_weight: 0.33
+  new_weight: 0.5
+  reasoning: Regional river levels moderately influence urban water bodies, though
+    local drainage plays a larger immediate role.
+- from: biophysical_and_ecological_systems
+  to: infectious_diseases
+  old_weight: 0.65
+  new_weight: 0.3
+  reasoning: While ecological systems act as reservoirs, zoonotic spillovers into
+    human populations are infrequent and indirect.
+- from: biophysical_and_ecological_systems
+  to: urban_ecology
+  old_weight: 0.56
+  new_weight: 0.4
+  reasoning: Broader ecosystems provide baseline biodiversity, but urban ecology is
+    heavily modified by human infrastructure.
+- from: indian_regulatory_bodies
+  to: borrowing_and_credit
+  old_weight: 0.33
+  new_weight: 0.8
+  reasoning: RBI repo rate adjustments are directly and mandatorily linked to retail
+    loan interest rates via external benchmark lending rates.
+- from: indian_regulatory_bodies
+  to: savings_and_deposits
+  old_weight: 0.33
+  new_weight: 0.7
+  reasoning: Central bank policy rates strongly dictate the interest yields offered
+    by banks on retail deposits.
+- from: indian_regulatory_bodies
+  to: insurance_premiums
+  old_weight: 0.33
+  new_weight: 0.85
+  reasoning: IRDAI regulations and approvals directly and strictly dictate the premium
+    rates and coverage rules for insurance policies.
+- from: indian_regulatory_bodies
+  to: telecom_and_internet_access
+  old_weight: 0.33
+  new_weight: 0.75
+  reasoning: TRAI's tariff floors and spectrum pricing directly and strongly influence
+    consumer mobile and broadband costs.
+- from: indian_statutory_frameworks_and_councils
+  to: employment_metrics_and_conditions
+  old_weight: 0.33
+  new_weight: 0.6
+  reasoning: Statutory frameworks directly set formal minimum wages, though informal
+    sector non-compliance dilutes the overall impact.
+- from: state_and_local_governments
+  to: water_and_sanitation
+  old_weight: 0.56
+  new_weight: 0.85
+  reasoning: Local civic bodies have near-total direct control over the operation
+    and supply of residential piped water.
+- from: state_and_local_governments
+  to: public_transit
+  old_weight: 0.56
+  new_weight: 0.9
+  reasoning: State and local governments directly fund, operate, and set fares for
+    urban bus and metro transit systems.
+- from: state_and_local_governments
+  to: civic_cleanliness
+  old_weight: 0.33
+  new_weight: 0.85
+  reasoning: Local municipal bodies are directly and solely responsible for neighborhood
+    sanitation and solid waste management.
+- from: state_and_local_governments
+  to: urban_hydrology
+  old_weight: 0.33
+  new_weight: 0.75
+  reasoning: Municipal drainage infrastructure maintenance directly determines the
+    severity of local urban flooding during rains.
+- from: state_and_local_governments
+  to: healthcare_services
+  old_weight: 0.59
+  new_weight: 0.8
+  reasoning: State health department budgets directly dictate the staffing, resources,
+    and operation of public healthcare facilities.
+- from: indian_macroeconomic_indicators
+  to: employment_metrics_and_conditions
+  old_weight: 0.33
+  new_weight: 0.5
+  reasoning: Macroeconomic growth moderately translates to local employment conditions,
+    buffered by informal sector dynamics.
+- from: indian_macroeconomic_indicators
+  to: borrowing_and_credit
+  old_weight: 0.33
+  new_weight: 0.6
+  reasoning: Macro inflation indices strongly influence RBI rate decisions, which
+    then pass through to retail borrowing costs.
+- from: indian_macroeconomic_indicators
+  to: savings_and_deposits
+  old_weight: 0.33
+  new_weight: 0.6
+  reasoning: Macroeconomic inflation and policy rates strongly influence the real
+    and nominal interest yields on retail deposits.
+- from: financial_and_capital_markets
+  to: retirement_and_provident_funds
+  old_weight: 0.33
+  new_weight: 0.7
+  reasoning: Institutional debt market yields are the primary determinant for the
+    annual interest rates declared for statutory provident funds.
+- from: transport_logistics_infrastructure
+  to: travel_and_tourism
+  old_weight: 0.33
+  new_weight: 0.65
+  reasoning: Infrastructure development strongly enables and reduces the cost of access
+    to tourism and holiday destinations.
+- from: transport_logistics_infrastructure
+  to: fresh_produce
+  old_weight: 0.56
+  new_weight: 0.55
+  reasoning: Efficient transport networks noticeably reduce spoilage and improve the
+    retail availability of perishable produce.
+- from: civic_urban_infrastructure
+  to: water_and_sanitation
+  old_weight: 0.56
+  new_weight: 0.9
+  reasoning: Municipal water and sewage grids are the direct, 1:1 physical delivery
+    mechanisms for household water and sanitation.
+- from: civic_urban_infrastructure
+  to: urban_hydrology
+  old_weight: 0.33
+  new_weight: 0.8
+  reasoning: The capacity of municipal drainage networks directly and strongly dictates
+    the frequency and severity of urban flooding.
+- from: civic_urban_infrastructure
+  to: vector_borne_diseases
+  old_weight: 0.47
+  new_weight: 0.65
+  reasoning: Proper drainage infrastructure strongly disrupts mosquito breeding, significantly
+    reducing vector-borne disease prevalence.
+- from: civic_urban_infrastructure
+  to: water_and_food_borne_diseases
+  old_weight: 0.47
+  new_weight: 0.7
+  reasoning: Enclosed sewage and clean water infrastructure directly prevent the contamination
+    that causes water-borne diseases.
+- from: civic_urban_infrastructure
+  to: civic_cleanliness
+  old_weight: 0.33
+  new_weight: 0.85
+  reasoning: Municipal waste infrastructure directly and visibly determines the solid
+    waste environment of local neighborhoods.
+- from: advanced_tech_infrastructure
+  to: telecom_and_internet_access
+  old_weight: 0.56
+  new_weight: 0.4
+  reasoning: Advanced tech like satellite backhaul provides noticeable but indirect
+    support to overall consumer internet access.
+- from: demographics_and_population
+  to: chronic_and_lifestyle_conditions
+  old_weight: 0.33
+  new_weight: 0.5
+  reasoning: Demographic aging steadily and noticeably increases the population-level
+    prevalence of chronic health conditions over time.
+- from: demographics_and_population
+  to: employment_metrics_and_conditions
+  old_weight: 0.33
+  new_weight: 0.45
+  reasoning: Population growth noticeably increases labor supply, exerting gradual
+    downward pressure on wages and employment rates.
+- from: cultural_and_religious_forces
+  to: sensory_environment
+  old_weight: 0.33
+  new_weight: 0.75
+  reasoning: Religious observances and festivals directly cause massive, highly correlated
+    localized spikes in noise and light pollution.
+- from: macro_behavioral_shifts
+  to: travel_and_tourism
+  old_weight: 0.33
+  new_weight: 0.6
+  reasoning: Consumer confidence and sentiment shifts strongly dictate discretionary
+    household spending on travel and tourism.
+- from: macro_behavioral_shifts
+  to: out_of_home_dining
+  old_weight: 0.33
+  new_weight: 0.6
+  reasoning: Positive consumer sentiment noticeably increases the frequency and budget
+    allocated to discretionary dining out.
+- from: indian_statutory_frameworks_and_councils
+  to: cooking_fuel
+  old_weight: 0.34
+  new_weight: 0.85
+  reasoning: Statutory bodies and ministries directly set the administered prices
+    and subsidy levels for household cooking fuels like LPG.
+- from: macro_behavioral_shifts
+  to: savings_and_deposits
+  old_weight: 0.33
+  new_weight: 0.5
+  reasoning: Behavioral sentiment noticeably shifts household propensity to save versus
+    spend, impacting deposit patterns.
+- from: meteorological_systems
+  to: urban_road_conditions
+  old_weight: 0.47
+  new_weight: 0.75
+  reasoning: Heavy monsoon rains directly and severely degrade urban road surfaces,
+    causing widespread potholes and waterlogging.
+- from: meteorological_systems
+  to: agriculture_and_allied
+  old_weight: 0.47
+  new_weight: 0.8
+  reasoning: Extreme weather directly and immediately halts outdoor agricultural labor,
+    directly eliminating daily wages.
+- from: meteorological_systems
+  to: construction_and_manual
+  old_weight: 0.47
+  new_weight: 0.8
+  reasoning: Heavy rainfall and extreme heat directly force construction site shutdowns,
+    suspending wages for manual laborers.
+- from: meteorological_systems
+  to: rural_employment_schemes
+  old_weight: 0.47
+  new_weight: 0.8
+  reasoning: Monsoon and extreme heat directly halt outdoor earthwork for rural employment
+    schemes, reducing wage-days.
+- from: meteorological_systems
+  to: railway_travel
+  old_weight: 0.47
+  new_weight: 0.7
+  reasoning: Extreme weather events like flooding and dense fog directly cause significant
+    train cancellations and multi-hour delays.
+- from: meteorological_systems
+  to: air_travel
+  old_weight: 0.47
+  new_weight: 0.75
+  reasoning: Thunderstorms and dense fog directly force runway closures and flight
+    cancellations at affected airports.
+- from: meteorological_systems
+  to: highway_bus_travel
+  old_weight: 0.47
+  new_weight: 0.7
+  reasoning: Waterlogged highways and fog directly cause bus cancellations, detours,
+    and significant travel delays.
+- from: geological_and_tectonic_systems
+  to: transit_accidents
+  old_weight: 0.69
+  new_weight: 0.4
+  reasoning: While earthquakes cause severe accidents, they are rare events, making
+    the overall pass-through to daily transit accidents diluted.
+- from: geological_and_tectonic_systems
+  to: infrastructure_hazards
+  old_weight: 0.69
+  new_weight: 0.5
+  reasoning: Earthquakes directly produce severe infrastructure hazards, though their
+    infrequency dilutes the continuous causal weight.
+- from: geological_and_tectonic_systems
+  to: rental_housing
+  old_weight: 0.47
+  new_weight: 0.3
+  reasoning: Seismic damage locally disrupts housing markets, but this is a rare,
+    geographically isolated shock.
+- from: geological_and_tectonic_systems
+  to: home_construction_and_modification
+  old_weight: 0.47
+  new_weight: 0.35
+  reasoning: Earthquakes force localized reconstruction, and building codes slowly
+    impact overall construction costs.
+- from: hydrological_systems
+  to: poultry_chicken
+  old_weight: 0.34
+  new_weight: 0.4
+  reasoning: Hydrological deficits indirectly raise poultry costs through feed grain
+    prices, heavily buffered by supply chains.
+- from: hydrological_systems
+  to: mutton_and_lamb
+  old_weight: 0.34
+  new_weight: 0.45
+  reasoning: Water scarcity noticeably degrades pastureland, impacting livestock health
+    and moderately raising meat prices.
+- from: hydrological_systems
+  to: freshwater_fish
+  old_weight: 0.6
+  new_weight: 0.75
+  reasoning: River and reservoir water levels directly and strongly dictate freshwater
+    fish breeding and catch volumes.
+- from: hydrological_systems
+  to: marine_fish
+  old_weight: 0.34
+  new_weight: 0.25
+  reasoning: Altered river hydrology has a weak, indirect effect on near-shore marine
+    fish stocks compared to oceanographic factors.
+- from: biophysical_and_ecological_systems
+  to: animal_threats
+  old_weight: 0.69
+  new_weight: 0.6
+  reasoning: Ecological disruption and habitat loss directly and noticeably increase
+    the frequency of human-wildlife conflicts.
+- from: indian_union_government
+  to: central_government
+  old_weight: 0.63
+  new_weight: 0.9
+  reasoning: Union Budget allocations directly and almost 1:1 determine central government
+    ministry staffing and pay revisions.
+- from: indian_union_government
+  to: state_government
+  old_weight: 0.63
+  new_weight: 0.75
+  reasoning: Central transfers and sponsored schemes strongly dictate state government
+    fiscal capacity and employment budgets.
+- from: indian_union_government
+  to: public_sector_undertakings
+  old_weight: 0.63
+  new_weight: 0.8
+  reasoning: Union government policy directives and capital infusions directly dictate
+    PSU workforce size, mergers, and compensation.
+- from: indian_union_government
+  to: direct_taxes
+  old_weight: 0.34
+  new_weight: 0.95
+  reasoning: Union Budget decisions on tax slabs and surcharges directly and exactly
+    determine citizens' direct tax liabilities.
+- from: indian_union_government
+  to: railway_travel
+  old_weight: 0.63
+  new_weight: 0.85
+  reasoning: Union budget allocations directly fund railway infrastructure, strongly
+    dictating service frequency and ticket pricing.
+- from: indian_union_government
+  to: air_travel
+  old_weight: 0.34
+  new_weight: 0.6
+  reasoning: Central aviation policies and taxation noticeably influence airline route
+    availability and ticket affordability.
+- from: indian_union_government
+  to: highway_bus_travel
+  old_weight: 0.63
+  new_weight: 0.7
+  reasoning: Central funding for national highways strongly improves intercity bus
+    connectivity and reduces travel times.
+- from: indian_regulatory_bodies
+  to: equity_investments
+  old_weight: 0.34
+  new_weight: 0.75
+  reasoning: SEBI regulations on margins and disclosures directly and strongly dictate
+    equity market mechanics and retail participation.
+- from: indian_regulatory_bodies
+  to: mutual_funds
+  old_weight: 0.34
+  new_weight: 0.85
+  reasoning: SEBI regulations directly and strictly cap mutual fund expense ratios
+    and dictate categorization norms.
+- from: indian_regulatory_bodies
+  to: prescription_drugs
+  old_weight: 0.34
+  new_weight: 0.9
+  reasoning: NPPA price ceiling orders directly and legally cap the retail prices
+    of essential prescription medications.
+- from: indian_regulatory_bodies
+  to: over_the_counter_products
+  old_weight: 0.34
+  new_weight: 0.5
+  reasoning: Regulatory compliance for OTC products noticeably affects manufacturing
+    costs and retail availability.
+- from: indian_regulatory_bodies
+  to: home_medical_devices
+  old_weight: 0.34
+  new_weight: 0.8
+  reasoning: NPPA price caps and import duties directly and strongly dictate the retail
+    pricing of essential home medical devices.
+- from: indian_judiciary_and_law_enforcement
+  to: violent_crime
+  old_weight: 0.47
+  new_weight: 0.6
+  reasoning: Effective policing and judicial convictions noticeably deter violent
+    crime, though systemic delays dilutes the immediate impact.
+- from: indian_judiciary_and_law_enforcement
+  to: property_crime
+  old_weight: 0.47
+  new_weight: 0.65
+  reasoning: Active law enforcement patrolling strongly and directly deters property
+    crimes like theft and burglary in residential areas.
+- from: indian_judiciary_and_law_enforcement
+  to: law_enforcement_interface
+  old_weight: 0.34
+  new_weight: 0.55
+  reasoning: Judicial rulings on custodial rights and FIRs noticeably shape police
+    protocols, though ground-level implementation varies.
+- from: indian_judiciary_and_law_enforcement
+  to: civil_unrest
+  old_weight: 0.47
+  new_weight: 0.8
+  reasoning: Police crowd control and judicial orders like Section 144 directly and
+    strongly suppress or contain civil unrest.
+- from: indian_judiciary_and_law_enforcement
+  to: crowd_emergencies
+  old_weight: 0.34
+  new_weight: 0.7
+  reasoning: Mandated crowd management protocols and active police deployment strongly
+    reduce the risk of stampedes at large gatherings.
+- from: state_and_local_governments
+  to: highway_tolls
+  old_weight: 0.34
+  new_weight: 0.85
+  reasoning: State governments and municipal bodies directly and legally set the toll
+    rates for state highways and bypasses.
+- from: state_and_local_governments
+  to: urban_road_conditions
+  old_weight: 0.34
+  new_weight: 0.8
+  reasoning: Municipal budget allocations and contractor efficiency directly determine
+    the quality and repair speed of urban roads.
+- from: state_and_local_governments
+  to: school_examinations
+  old_weight: 0.34
+  new_weight: 0.9
+  reasoning: State education boards directly and absolutely control the schedules,
+    syllabi, and grading policies for school examinations.
+- from: state_and_local_governments
+  to: school_types
+  old_weight: 0.63
+  new_weight: 0.85
+  reasoning: State budgets directly fund and dictate the establishment, operation,
+    and teacher recruitment for government schools.
+- from: state_and_local_governments
+  to: student_welfare_programs
+  old_weight: 0.63
+  new_weight: 0.9
+  reasoning: State education department allocations directly and entirely fund student
+    welfare programs like mid-day meals and free textbooks.
+- from: global_sovereign_entities
+  to: equity_investments
+  old_weight: 0.34
+  new_weight: 0.7
+  reasoning: Global sovereign decisions, especially US Fed rates, strongly drive FII
+    flows, directly impacting Indian equity market volatility.
+- from: global_sovereign_entities
+  to: mutual_funds
+  old_weight: 0.34
+  new_weight: 0.6
+  reasoning: Global macroeconomic policies noticeably impact mutual fund NAVs through
+    their effect on underlying domestic and international equities.
+- from: global_sovereign_entities
+  to: undergraduate_programs
+  old_weight: 0.34
+  new_weight: 0.75
+  reasoning: Foreign government visa policies and bilateral agreements strongly and
+    directly dictate overseas study options for Indian students.
+- from: global_sovereign_entities
+  to: postgraduate_research
+  old_weight: 0.34
+  new_weight: 0.65
+  reasoning: Foreign government R&D funding and fellowship programs strongly influence
+    postgraduate research opportunities and grants.
+- from: agricultural_commodities
+  to: palm_oil
+  old_weight: 0.36
+  new_weight: 0.85
+  reasoning: Because India imports the majority of its edible oil, global palm oil
+    commodity prices pass through almost directly to retail costs.
+- from: agricultural_commodities
+  to: sunflower_oil
+  old_weight: 0.36
+  new_weight: 0.85
+  reasoning: High import dependence means global sunflower oil price shocks pass through
+    strongly and directly to Indian retail prices.
+- from: energy_commodities
+  to: household_energy
+  old_weight: 0.6
+  new_weight: 0.75
+  reasoning: International energy prices strongly dictate retail LPG and PNG costs,
+    though government subsidies provide a partial buffer.
+- from: energy_commodities
+  to: vehicle_fuel
+  old_weight: 0.63
+  new_weight: 0.8
+  reasoning: International crude prices strongly dictate retail petrol and diesel
+    prices, buffered slightly by excise duty adjustments.
+- from: precious_and_industrial_metals
+  to: vehicle_acquisition
+  old_weight: 0.36
+  new_weight: 0.5
+  reasoning: Global metal prices noticeably impact manufacturing costs, which automakers
+    partially pass through to ex-showroom vehicle prices.
+- from: precious_and_industrial_metals
+  to: vehicle_maintenance_and_compliance
+  old_weight: 0.36
+  new_weight: 0.4
+  reasoning: Industrial metal prices have a noticeable but diluted impact on the retail
+    cost of vehicle spare parts and maintenance.
+- from: precious_and_industrial_metals
+  to: precious_metals
+  old_weight: 0.36
+  new_weight: 0.95
+  reasoning: International COMEX/LBMA prices pass through almost 1:1 and instantaneously
+    to domestic retail gold and silver prices.
+- from: precious_and_industrial_metals
+  to: real_estate_investment
+  old_weight: 0.36
+  new_weight: 0.55
+  reasoning: Industrial metal prices noticeably increase construction costs, which
+    developers pass through to property prices over time.
+- from: indian_macroeconomic_indicators
+  to: it_and_tech_sector
+  old_weight: 0.34
+  new_weight: 0.65
+  reasoning: Macroeconomic indicators strongly influence corporate order books, directly
+    driving IT sector hiring cycles and layoffs.
+- from: indian_macroeconomic_indicators
+  to: startup_ecosystem
+  old_weight: 0.34
+  new_weight: 0.75
+  reasoning: Macro interest rates and liquidity conditions strongly and directly dictate
+    VC funding appetite and startup workforce stability.
+- from: indian_macroeconomic_indicators
+  to: manufacturing_and_core
+  old_weight: 0.34
+  new_weight: 0.7
+  reasoning: Industrial output and capacity utilization metrics strongly and directly
+    drive manufacturing employment and factory hiring cycles.
+- from: indian_macroeconomic_indicators
+  to: bfsi_sector
+  old_weight: 0.34
+  new_weight: 0.75
+  reasoning: Macro interest rates and credit growth strongly dictate bank profitability,
+    directly driving BFSI sector hiring and compensation.
+warnings:
+- from: meteorological_systems
+  to: air_quality_environment
+  old_weight: 0.33
+  new_weight: 0.7
+  reasoning: Rain and wind speed act as primary dispersion mechanisms, strongly and
+    rapidly improving local air quality.
+  reason: 'Large delta: 0.33 -> 0.70 (diff=0.37)'
+- from: biophysical_and_ecological_systems
+  to: infectious_diseases
+  old_weight: 0.65
+  new_weight: 0.3
+  reasoning: While ecological systems act as reservoirs, zoonotic spillovers into
+    human populations are infrequent and indirect.
+  reason: 'Large delta: 0.65 -> 0.30 (diff=0.35)'
+- from: indian_regulatory_bodies
+  to: borrowing_and_credit
+  old_weight: 0.33
+  new_weight: 0.8
+  reasoning: RBI repo rate adjustments are directly and mandatorily linked to retail
+    loan interest rates via external benchmark lending rates.
+  reason: 'Large delta: 0.33 -> 0.80 (diff=0.47)'
+- from: indian_regulatory_bodies
+  to: savings_and_deposits
+  old_weight: 0.33
+  new_weight: 0.7
+  reasoning: Central bank policy rates strongly dictate the interest yields offered
+    by banks on retail deposits.
+  reason: 'Large delta: 0.33 -> 0.70 (diff=0.37)'
+- from: indian_regulatory_bodies
+  to: insurance_premiums
+  old_weight: 0.33
+  new_weight: 0.85
+  reasoning: IRDAI regulations and approvals directly and strictly dictate the premium
+    rates and coverage rules for insurance policies.
+  reason: 'Large delta: 0.33 -> 0.85 (diff=0.52)'
+- from: indian_regulatory_bodies
+  to: telecom_and_internet_access
+  old_weight: 0.33
+  new_weight: 0.75
+  reasoning: TRAI's tariff floors and spectrum pricing directly and strongly influence
+    consumer mobile and broadband costs.
+  reason: 'Large delta: 0.33 -> 0.75 (diff=0.42)'
+- from: state_and_local_governments
+  to: public_transit
+  old_weight: 0.56
+  new_weight: 0.9
+  reasoning: State and local governments directly fund, operate, and set fares for
+    urban bus and metro transit systems.
+  reason: 'Large delta: 0.56 -> 0.90 (diff=0.34)'
+- from: state_and_local_governments
+  to: civic_cleanliness
+  old_weight: 0.33
+  new_weight: 0.85
+  reasoning: Local municipal bodies are directly and solely responsible for neighborhood
+    sanitation and solid waste management.
+  reason: 'Large delta: 0.33 -> 0.85 (diff=0.52)'
+- from: state_and_local_governments
+  to: urban_hydrology
+  old_weight: 0.33
+  new_weight: 0.75
+  reasoning: Municipal drainage infrastructure maintenance directly determines the
+    severity of local urban flooding during rains.
+  reason: 'Large delta: 0.33 -> 0.75 (diff=0.42)'
+- from: financial_and_capital_markets
+  to: retirement_and_provident_funds
+  old_weight: 0.33
+  new_weight: 0.7
+  reasoning: Institutional debt market yields are the primary determinant for the
+    annual interest rates declared for statutory provident funds.
+  reason: 'Large delta: 0.33 -> 0.70 (diff=0.37)'
+- from: transport_logistics_infrastructure
+  to: travel_and_tourism
+  old_weight: 0.33
+  new_weight: 0.65
+  reasoning: Infrastructure development strongly enables and reduces the cost of access
+    to tourism and holiday destinations.
+  reason: 'Large delta: 0.33 -> 0.65 (diff=0.32)'
+- from: civic_urban_infrastructure
+  to: water_and_sanitation
+  old_weight: 0.56
+  new_weight: 0.9
+  reasoning: Municipal water and sewage grids are the direct, 1:1 physical delivery
+    mechanisms for household water and sanitation.
+  reason: 'Large delta: 0.56 -> 0.90 (diff=0.34)'
+- from: civic_urban_infrastructure
+  to: urban_hydrology
+  old_weight: 0.33
+  new_weight: 0.8
+  reasoning: The capacity of municipal drainage networks directly and strongly dictates
+    the frequency and severity of urban flooding.
+  reason: 'Large delta: 0.33 -> 0.80 (diff=0.47)'
+- from: civic_urban_infrastructure
+  to: civic_cleanliness
+  old_weight: 0.33
+  new_weight: 0.85
+  reasoning: Municipal waste infrastructure directly and visibly determines the solid
+    waste environment of local neighborhoods.
+  reason: 'Large delta: 0.33 -> 0.85 (diff=0.52)'
+- from: cultural_and_religious_forces
+  to: sensory_environment
+  old_weight: 0.33
+  new_weight: 0.75
+  reasoning: Religious observances and festivals directly cause massive, highly correlated
+    localized spikes in noise and light pollution.
+  reason: 'Large delta: 0.33 -> 0.75 (diff=0.42)'
+- from: indian_statutory_frameworks_and_councils
+  to: cooking_fuel
+  old_weight: 0.34
+  new_weight: 0.85
+  reasoning: Statutory bodies and ministries directly set the administered prices
+    and subsidy levels for household cooking fuels like LPG.
+  reason: 'Large delta: 0.34 -> 0.85 (diff=0.51)'
+- from: meteorological_systems
+  to: agriculture_and_allied
+  old_weight: 0.47
+  new_weight: 0.8
+  reasoning: Extreme weather directly and immediately halts outdoor agricultural labor,
+    directly eliminating daily wages.
+  reason: 'Large delta: 0.47 -> 0.80 (diff=0.33)'
+- from: meteorological_systems
+  to: construction_and_manual
+  old_weight: 0.47
+  new_weight: 0.8
+  reasoning: Heavy rainfall and extreme heat directly force construction site shutdowns,
+    suspending wages for manual laborers.
+  reason: 'Large delta: 0.47 -> 0.80 (diff=0.33)'
+- from: meteorological_systems
+  to: rural_employment_schemes
+  old_weight: 0.47
+  new_weight: 0.8
+  reasoning: Monsoon and extreme heat directly halt outdoor earthwork for rural employment
+    schemes, reducing wage-days.
+  reason: 'Large delta: 0.47 -> 0.80 (diff=0.33)'
+- from: indian_union_government
+  to: direct_taxes
+  old_weight: 0.34
+  new_weight: 0.95
+  reasoning: Union Budget decisions on tax slabs and surcharges directly and exactly
+    determine citizens' direct tax liabilities.
+  reason: 'Large delta: 0.34 -> 0.95 (diff=0.61)'
+- from: indian_regulatory_bodies
+  to: equity_investments
+  old_weight: 0.34
+  new_weight: 0.75
+  reasoning: SEBI regulations on margins and disclosures directly and strongly dictate
+    equity market mechanics and retail participation.
+  reason: 'Large delta: 0.34 -> 0.75 (diff=0.41)'
+- from: indian_regulatory_bodies
+  to: mutual_funds
+  old_weight: 0.34
+  new_weight: 0.85
+  reasoning: SEBI regulations directly and strictly cap mutual fund expense ratios
+    and dictate categorization norms.
+  reason: 'Large delta: 0.34 -> 0.85 (diff=0.51)'
+- from: indian_regulatory_bodies
+  to: prescription_drugs
+  old_weight: 0.34
+  new_weight: 0.9
+  reasoning: NPPA price ceiling orders directly and legally cap the retail prices
+    of essential prescription medications.
+  reason: 'Large delta: 0.34 -> 0.90 (diff=0.56)'
+- from: indian_regulatory_bodies
+  to: home_medical_devices
+  old_weight: 0.34
+  new_weight: 0.8
+  reasoning: NPPA price caps and import duties directly and strongly dictate the retail
+    pricing of essential home medical devices.
+  reason: 'Large delta: 0.34 -> 0.80 (diff=0.46)'
+- from: indian_judiciary_and_law_enforcement
+  to: civil_unrest
+  old_weight: 0.47
+  new_weight: 0.8
+  reasoning: Police crowd control and judicial orders like Section 144 directly and
+    strongly suppress or contain civil unrest.
+  reason: 'Large delta: 0.47 -> 0.80 (diff=0.33)'
+- from: indian_judiciary_and_law_enforcement
+  to: crowd_emergencies
+  old_weight: 0.34
+  new_weight: 0.7
+  reasoning: Mandated crowd management protocols and active police deployment strongly
+    reduce the risk of stampedes at large gatherings.
+  reason: 'Large delta: 0.34 -> 0.70 (diff=0.36)'
+- from: state_and_local_governments
+  to: highway_tolls
+  old_weight: 0.34
+  new_weight: 0.85
+  reasoning: State governments and municipal bodies directly and legally set the toll
+    rates for state highways and bypasses.
+  reason: 'Large delta: 0.34 -> 0.85 (diff=0.51)'
+- from: state_and_local_governments
+  to: urban_road_conditions
+  old_weight: 0.34
+  new_weight: 0.8
+  reasoning: Municipal budget allocations and contractor efficiency directly determine
+    the quality and repair speed of urban roads.
+  reason: 'Large delta: 0.34 -> 0.80 (diff=0.46)'
+- from: state_and_local_governments
+  to: school_examinations
+  old_weight: 0.34
+  new_weight: 0.9
+  reasoning: State education boards directly and absolutely control the schedules,
+    syllabi, and grading policies for school examinations.
+  reason: 'Large delta: 0.34 -> 0.90 (diff=0.56)'
+- from: global_sovereign_entities
+  to: equity_investments
+  old_weight: 0.34
+  new_weight: 0.7
+  reasoning: Global sovereign decisions, especially US Fed rates, strongly drive FII
+    flows, directly impacting Indian equity market volatility.
+  reason: 'Large delta: 0.34 -> 0.70 (diff=0.36)'
+- from: global_sovereign_entities
+  to: undergraduate_programs
+  old_weight: 0.34
+  new_weight: 0.75
+  reasoning: Foreign government visa policies and bilateral agreements strongly and
+    directly dictate overseas study options for Indian students.
+  reason: 'Large delta: 0.34 -> 0.75 (diff=0.41)'
+- from: global_sovereign_entities
+  to: postgraduate_research
+  old_weight: 0.34
+  new_weight: 0.65
+  reasoning: Foreign government R&D funding and fellowship programs strongly influence
+    postgraduate research opportunities and grants.
+  reason: 'Large delta: 0.34 -> 0.65 (diff=0.31)'
+- from: agricultural_commodities
+  to: palm_oil
+  old_weight: 0.36
+  new_weight: 0.85
+  reasoning: Because India imports the majority of its edible oil, global palm oil
+    commodity prices pass through almost directly to retail costs.
+  reason: 'Large delta: 0.36 -> 0.85 (diff=0.49)'
+- from: agricultural_commodities
+  to: sunflower_oil
+  old_weight: 0.36
+  new_weight: 0.85
+  reasoning: High import dependence means global sunflower oil price shocks pass through
+    strongly and directly to Indian retail prices.
+  reason: 'Large delta: 0.36 -> 0.85 (diff=0.49)'
+- from: precious_and_industrial_metals
+  to: precious_metals
+  old_weight: 0.36
+  new_weight: 0.95
+  reasoning: International COMEX/LBMA prices pass through almost 1:1 and instantaneously
+    to domestic retail gold and silver prices.
+  reason: 'Large delta: 0.36 -> 0.95 (diff=0.59)'
+- from: indian_macroeconomic_indicators
+  to: it_and_tech_sector
+  old_weight: 0.34
+  new_weight: 0.65
+  reasoning: Macroeconomic indicators strongly influence corporate order books, directly
+    driving IT sector hiring cycles and layoffs.
+  reason: 'Large delta: 0.34 -> 0.65 (diff=0.31)'
+- from: indian_macroeconomic_indicators
+  to: startup_ecosystem
+  old_weight: 0.34
+  new_weight: 0.75
+  reasoning: Macro interest rates and liquidity conditions strongly and directly dictate
+    VC funding appetite and startup workforce stability.
+  reason: 'Large delta: 0.34 -> 0.75 (diff=0.41)'
+- from: indian_macroeconomic_indicators
+  to: manufacturing_and_core
+  old_weight: 0.34
+  new_weight: 0.7
+  reasoning: Industrial output and capacity utilization metrics strongly and directly
+    drive manufacturing employment and factory hiring cycles.
+  reason: 'Large delta: 0.34 -> 0.70 (diff=0.36)'
+- from: indian_macroeconomic_indicators
+  to: bfsi_sector
+  old_weight: 0.34
+  new_weight: 0.75
+  reasoning: Macro interest rates and credit growth strongly dictate bank profitability,
+    directly driving BFSI sector hiring and compensation.
+  reason: 'Large delta: 0.34 -> 0.75 (diff=0.41)'

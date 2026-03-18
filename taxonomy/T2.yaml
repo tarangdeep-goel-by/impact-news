@@ -1174,7 +1174,7 @@ edges:
 - from: ministry_of_finance
   to: union_budget_framework
   type: PRODUCES
-  weight: 1.0
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: The Ministry of Finance directly drafts, allocates, and manages the
@@ -1182,7 +1182,7 @@ edges:
 - from: rbi
   to: monetary_policy_committee
   type: PRODUCES
-  weight: 1.0
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: The RBI Governor chairs the MPC and the central bank provides the data
@@ -1190,7 +1190,7 @@ edges:
 - from: supreme_court_of_india
   to: enforcement_directorate
   type: AFFECTS
-  weight: 0.8
+  weight: 0.5
   polarity: -1
   delay: SHORT_TERM
   description: Supreme Court rulings on bail and PMLA provisions constrain the arbitrary
@@ -1198,7 +1198,7 @@ edges:
 - from: gst_council
   to: union_budget_framework
   type: FUNDS
-  weight: 0.9
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: GST Council decisions on tax slabs directly determine the indirect
@@ -1206,7 +1206,7 @@ edges:
 - from: gst_council
   to: state_governments
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: GST compensation cess and revenue sharing formulas directly fund state
@@ -1214,7 +1214,7 @@ edges:
 - from: state_governments
   to: municipal_corporations
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: State finance commission grants and budget allocations provide the
@@ -1222,7 +1222,7 @@ edges:
 - from: state_governments
   to: state_electricity_boards
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: State government subsidies and financial bailout packages keep debt-laden
@@ -1230,7 +1230,7 @@ edges:
 - from: us_federal_reserve
   to: rbi
   type: AFFECTS
-  weight: 0.8
+  weight: 0.55
   polarity: 1
   delay: SHORT_TERM
   description: US Fed rate hikes pressure the RBI to raise domestic interest rates
@@ -1238,7 +1238,7 @@ edges:
 - from: ministry_of_finance
   to: india_10yr_bond_yield
   type: AFFECTS
-  weight: 0.9
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Higher government borrowing targets set by the Finance Ministry increase
@@ -1246,7 +1246,7 @@ edges:
 - from: union_budget_framework
   to: india_gdp_growth
   type: FUNDS
-  weight: 0.8
+  weight: 0.45
   polarity: 1
   delay: MEDIUM_TERM
   description: Increased capital expenditure allocations in the Union Budget stimulate
@@ -1254,7 +1254,7 @@ edges:
 - from: ministry_of_commerce_and_industry
   to: india_trade_deficit
   type: AFFECTS
-  weight: 0.7
+  weight: 0.35
   polarity: -1
   delay: MEDIUM_TERM
   description: Export promotion schemes (like PLI) and import substitution policies
@@ -1262,7 +1262,7 @@ edges:
 - from: ministry_of_commerce_and_industry
   to: fii_fpi_flows
   type: AFFECTS
-  weight: 0.8
+  weight: 0.3
   polarity: 1
   delay: MEDIUM_TERM
   description: Liberalization of Foreign Direct Investment (FDI) limits by the Commerce
@@ -1270,7 +1270,7 @@ edges:
 - from: ministry_of_agriculture
   to: global_food_grain_supply
   type: AFFECTS
-  weight: 0.8
+  weight: 0.55
   polarity: 1
   delay: MEDIUM_TERM
   description: Indian agriculture ministry decisions on export quotas or bans significantly
@@ -1278,7 +1278,7 @@ edges:
 - from: ministry_of_consumer_affairs
   to: wpi
   type: AFFECTS
-  weight: 0.8
+  weight: 0.35
   polarity: -1
   delay: SHORT_TERM
   description: Releasing buffer stocks of pulses and onions into the open market suppresses
@@ -1286,7 +1286,7 @@ edges:
 - from: rbi
   to: usd_inr_exchange
   type: AFFECTS
-  weight: 0.9
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: RBI intervention by selling dollars in the forex market prevents rupee
@@ -1294,7 +1294,7 @@ edges:
 - from: rbi
   to: india_forex_reserves
   type: AFFECTS
-  weight: 1.0
+  weight: 0.95
   polarity: 1
   delay: SHORT_TERM
   description: RBI's dollar purchasing activities directly build up the national foreign
@@ -1302,7 +1302,7 @@ edges:
 - from: monetary_policy_committee
   to: india_10yr_bond_yield
   type: AFFECTS
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Increases in the repo rate by the MPC immediately drive up benchmark
@@ -1310,7 +1310,7 @@ edges:
 - from: monetary_policy_committee
   to: wpi
   type: AFFECTS
-  weight: 0.8
+  weight: 0.4
   polarity: -1
   delay: MEDIUM_TERM
   description: Rate hikes by the MPC suppress aggregate demand and corporate borrowing,
@@ -1318,7 +1318,7 @@ edges:
 - from: sebi
   to: nifty_50
   type: AFFECTS
-  weight: 0.7
+  weight: 0.35
   polarity: -1
   delay: SHORT_TERM
   description: Stricter SEBI margin requirements and curbs on derivatives trading
@@ -1326,7 +1326,7 @@ edges:
 - from: epfo
   to: dii_flows
   type: FUNDS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: EPFO mandates to invest a percentage of corpus in equities channel
@@ -1334,7 +1334,7 @@ edges:
 - from: us_federal_reserve
   to: us_treasury_yields
   type: AFFECTS
-  weight: 1.0
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Federal Reserve interest rate hikes directly and immediately increase
@@ -1342,7 +1342,7 @@ edges:
 - from: us_federal_reserve
   to: us_dollar_index
   type: AFFECTS
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Higher Fed rates attract global capital seeking yield, strengthening
@@ -1350,7 +1350,7 @@ edges:
 - from: us_federal_reserve
   to: fii_fpi_flows
   type: AFFECTS
-  weight: 0.9
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Fed monetary tightening pulls foreign portfolio capital out of emerging
@@ -1358,7 +1358,7 @@ edges:
 - from: european_central_bank
   to: us_dollar_index
   type: AFFECTS
-  weight: 0.8
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: ECB rate hikes strengthen the Euro, which inversely lowers the value
@@ -1366,7 +1366,7 @@ edges:
 - from: us_government
   to: us_consumer_demand
   type: AFFECTS
-  weight: 0.8
+  weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Federal stimulus packages and tax cuts boost disposable income, driving
@@ -1374,7 +1374,7 @@ edges:
 - from: us_government
   to: global_semiconductor_supply_chain
   type: DISRUPTS
-  weight: 0.9
+  weight: 0.8
   polarity: -1
   delay: MEDIUM_TERM
   description: US export controls and sanctions restrict the flow of advanced microchips
@@ -1382,7 +1382,7 @@ edges:
 - from: chinese_government
   to: china_manufacturing_output
   type: FUNDS
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: State subsidies, credit easing, and infrastructure spending by Beijing
@@ -1398,7 +1398,7 @@ edges:
 - from: russian_government
   to: global_natural_gas
   type: DISRUPTS
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Russian state decisions to restrict pipeline flows or weaponize energy
@@ -1406,7 +1406,7 @@ edges:
 - from: opec
   to: brent_crude
   type: AFFECTS
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: OPEC+ coordinated production cuts artificially restrict global oil
@@ -1414,7 +1414,7 @@ edges:
 - from: wto
   to: india_trade_deficit
   type: REGULATES
-  weight: 0.6
+  weight: 0.25
   polarity: 1
   delay: MEDIUM_TERM
   description: WTO mandates against protective import tariffs force India to open
@@ -1422,7 +1422,7 @@ edges:
 - from: imf
   to: india_forex_reserves
   type: FUNDS
-  weight: 0.7
+  weight: 0.95
   polarity: 1
   delay: SHORT_TERM
   description: IMF Special Drawing Rights (SDR) allocations directly increase India's
@@ -1430,7 +1430,7 @@ edges:
 - from: ministry_of_road_transport
   to: highway_network
   type: FUNDS
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
   description: MoRTH budget allocations and NHAI project approvals directly expand
@@ -1438,7 +1438,7 @@ edges:
 - from: ministry_of_railways
   to: indian_railways_network
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Railway Ministry capital expenditure drives track electrification,
@@ -1446,7 +1446,7 @@ edges:
 - from: ministry_of_railways
   to: dedicated_freight_corridors
   type: FUNDS
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Ministry funding and land acquisition support accelerate the completion
@@ -1454,7 +1454,7 @@ edges:
 - from: ministry_of_power
   to: national_power_grid
   type: FUNDS
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Power Ministry policies and investments strengthen transmission capacity
@@ -1462,7 +1462,7 @@ edges:
 - from: ministry_of_power
   to: renewable_energy_parks
   type: FUNDS
-  weight: 0.8
+  weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: Subsidies, PLI schemes, and policy targets set by the Power Ministry
@@ -1470,7 +1470,7 @@ edges:
 - from: rbi
   to: upi_platform
   type: AFFECTS
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: RBI regulatory frameworks and NPCI oversight expand the capacity, security,
@@ -1478,7 +1478,7 @@ edges:
 - from: trai
   to: telecom_spectrum
   type: REGULATES
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: TRAI pricing recommendations and auction rules determine the volume
@@ -1486,7 +1486,7 @@ edges:
 - from: trai
   to: telecom_towers_network
   type: REGULATES
-  weight: 0.8
+  weight: 0.45
   polarity: 1
   delay: MEDIUM_TERM
   description: Infrastructure sharing regulations by TRAI facilitate the expansion
@@ -1494,7 +1494,7 @@ edges:
 - from: cci
   to: ondc_platform
   type: AFFECTS
-  weight: 0.7
+  weight: 0.3
   polarity: 1
   delay: MEDIUM_TERM
   description: Antitrust actions by CCI against e-commerce duopolies drive merchants
@@ -1502,7 +1502,7 @@ edges:
 - from: dgca
   to: commercial_airports
   type: REGULATES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: DGCA safety clearances, aerodrome licensing, and slot allocations increase
@@ -1510,7 +1510,7 @@ edges:
 - from: cpcb
   to: coal_power_plants
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.5
   polarity: -1
   delay: MEDIUM_TERM
   description: Strict CPCB emission norms force the closure or reduced output of older,
@@ -1518,7 +1518,7 @@ edges:
 - from: national_green_tribunal
   to: coal_power_plants
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: NGT shutdown orders halt operations at thermal plants violating environmental
@@ -1526,7 +1526,7 @@ edges:
 - from: national_green_tribunal
   to: highway_network
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.6
   polarity: -1
   delay: MEDIUM_TERM
   description: Environmental clearance stays and ecological mandates by the NGT delay
@@ -1534,7 +1534,7 @@ edges:
 - from: uidai
   to: aadhaar_database
   type: FUNDS
-  weight: 1.0
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: UIDAI policies, server upgrades, and biometric drives expand the capacity
@@ -1542,7 +1542,7 @@ edges:
 - from: municipal_corporations
   to: municipal_water_grid
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Civic body investments and public works projects expand piped water
@@ -1550,7 +1550,7 @@ edges:
 - from: municipal_corporations
   to: sewage_drainage_network
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Municipal funding and urban planning improve stormwater drains and
@@ -1566,7 +1566,7 @@ edges:
 - from: european_union
   to: global_shipping_routes
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.6
   polarity: -1
   delay: MEDIUM_TERM
   description: EU carbon border taxes and maritime emission norms restrict older,
@@ -1574,7 +1574,7 @@ edges:
 - from: municipal_corporations
   to: urban_population_density
   type: REGULATES
-  weight: 0.8
+  weight: 0.65
   polarity: -1
   delay: LONG_TERM
   description: Strict municipal zoning laws and Floor Space Index (FSI) limits restrict
@@ -1582,7 +1582,7 @@ edges:
 - from: state_and_local_governments
   to: hydrological_systems
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: -1
   delay: MEDIUM_TERM
   description: Local civic body policies on groundwater extraction, sewage management,
@@ -1591,7 +1591,7 @@ edges:
 - from: indian_union_government
   to: biophysical_and_ecological_systems
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.65
   polarity: -1
   delay: LONG_TERM
   description: Infrastructure and economic ministry projects (e.g., highways, mining,
@@ -1600,7 +1600,7 @@ edges:
 - from: indian_regulatory_bodies
   to: biophysical_and_ecological_systems
   type: AFFECTS
-  weight: 0.7
+  weight: 0.45
   polarity: 1
   delay: MEDIUM_TERM
   description: Health, safety, and environmental regulators enforce conservation laws,
@@ -1609,7 +1609,7 @@ edges:
 - from: indian_judiciary_and_law_enforcement
   to: biophysical_and_ecological_systems
   type: AFFECTS
-  weight: 0.6
+  weight: 0.55
   polarity: 1
   delay: MEDIUM_TERM
   description: Higher judiciary rulings (e.g., National Green Tribunal orders) directly
@@ -1618,7 +1618,7 @@ edges:
 - from: indian_union_government
   to: indian_macroeconomic_indicators
   type: AFFECTS
-  weight: 0.8
+  weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: Union government fiscal policy (budgets, subsidies, tax reforms) directly
@@ -1626,7 +1626,7 @@ edges:
 - from: indian_regulatory_bodies
   to: financial_and_capital_markets
   type: AFFECTS
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Financial regulators (RBI, SEBI) set monetary policy, liquidity measures,
@@ -1634,7 +1634,7 @@ edges:
 - from: indian_statutory_frameworks_and_councils
   to: indian_macroeconomic_indicators
   type: AFFECTS
-  weight: 0.8
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: Statutory fiscal policies and tax frameworks (e.g., GST Council decisions)
@@ -1642,7 +1642,7 @@ edges:
 - from: global_sovereign_entities
   to: financial_and_capital_markets
   type: AFFECTS
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Global central bank rate decisions (e.g., US Federal Reserve) directly
@@ -1651,7 +1651,7 @@ edges:
 - from: global_sovereign_entities
   to: global_commodity_markets
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Geopolitical states (e.g., OPEC+ nations) control production quotas
@@ -1659,7 +1659,7 @@ edges:
 - from: global_sovereign_entities
   to: international_trade_and_supply_chains
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Geopolitical states enact tariffs, sanctions, and trade agreements
@@ -1667,7 +1667,7 @@ edges:
 - from: indian_union_government
   to: transport_logistics_infrastructure
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: LONG_TERM
   description: Union infrastructure ministries allocate capital and drive the expansion
@@ -1683,7 +1683,7 @@ edges:
 - from: indian_union_government
   to: advanced_tech_infrastructure
   type: FUNDS
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: LONG_TERM
   description: Union government strategic missions directly fund and develop satellite
@@ -1691,7 +1691,7 @@ edges:
 - from: state_and_local_governments
   to: civic_urban_infrastructure
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Local civic bodies and state governments directly finance, build, and
@@ -1699,7 +1699,7 @@ edges:
 - from: indian_regulatory_bodies
   to: energy_power_infrastructure
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Energy regulators (e.g., CERC, PNGRB) set tariffs, grid codes, and
@@ -1707,7 +1707,7 @@ edges:
 - from: indian_judiciary_and_law_enforcement
   to: transport_logistics_infrastructure
   type: DISRUPTS
-  weight: 0.6
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: Higher judiciary interventions on environmental or land acquisition
@@ -1715,7 +1715,7 @@ edges:
 - from: indian_judiciary_and_law_enforcement
   to: energy_power_infrastructure
   type: DISRUPTS
-  weight: 0.6
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Court rulings on environmental clearances and resource allocations
@@ -1723,7 +1723,7 @@ edges:
 - from: global_sovereign_entities
   to: transport_logistics_infrastructure
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Geopolitical conflicts and sanctions by foreign states disrupt global
@@ -1731,7 +1731,7 @@ edges:
 - from: global_sovereign_entities
   to: migration_and_mobility
   type: AFFECTS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Foreign government immigration policies, visa quotas, and geopolitical
@@ -1739,7 +1739,7 @@ edges:
 - from: indian_judiciary_and_law_enforcement
   to: cultural_and_religious_forces
   type: AFFECTS
-  weight: 0.8
+  weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Higher judiciary rulings frequently intervene in, regulate, or redefine
@@ -1747,7 +1747,7 @@ edges:
 - from: state_and_local_governments
   to: migration_and_mobility
   type: AFFECTS
-  weight: 0.7
+  weight: 0.55
   polarity: -1
   delay: MEDIUM_TERM
   description: State-level domicile reservation policies and local nativist regulations

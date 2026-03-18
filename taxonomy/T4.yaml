@@ -523,7 +523,7 @@ edges:
 - from: coal_power_plants
   to: national_power_grid
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Baseload thermal generation provides the primary electricity supply
@@ -531,7 +531,7 @@ edges:
 - from: renewable_energy_parks
   to: national_power_grid
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.2
   polarity: 1
   delay: IMMEDIATE
   description: Solar and wind generation injects intermittent renewable electricity
@@ -539,7 +539,7 @@ edges:
 - from: nuclear_power_plants
   to: national_power_grid
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.1
   polarity: 1
   delay: IMMEDIATE
   description: Atomic power stations provide zero-carbon baseload electricity to the
@@ -547,7 +547,7 @@ edges:
 - from: oil_gas_pipelines
   to: national_power_grid
   type: SUPPLIES
-  weight: 0.5
+  weight: 0.1
   polarity: 1
   delay: IMMEDIATE
   description: Natural gas pipelines supply fuel to gas-fired power plants, which
@@ -555,7 +555,7 @@ edges:
 - from: renewable_energy_parks
   to: coal_power_plants
   type: DISRUPTS
-  weight: 0.6
+  weight: 0.3
   polarity: -1
   delay: LONG_TERM
   description: Expansion of renewable energy capacity displaces thermal generation,
@@ -563,7 +563,7 @@ edges:
 - from: telecom_spectrum
   to: telecom_towers_network
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Allocation of radio frequencies dictates the data carrying capacity
@@ -571,7 +571,7 @@ edges:
 - from: optical_fibre_network
   to: telecom_towers_network
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Fiber optic backhaul provides the high-speed data transmission capacity
@@ -579,7 +579,7 @@ edges:
 - from: submarine_internet_cables
   to: data_centers
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Undersea cables provide the international bandwidth necessary for data
@@ -603,7 +603,7 @@ edges:
 - from: aadhaar_database
   to: upi_platform
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.4
   polarity: 1
   delay: IMMEDIATE
   description: Aadhaar eKYC and authentication infrastructure enables rapid user onboarding
@@ -611,7 +611,7 @@ edges:
 - from: upi_platform
   to: ondc_platform
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: The UPI payment switch provides the frictionless settlement layer required
@@ -619,7 +619,7 @@ edges:
 - from: telecom_towers_network
   to: upi_platform
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Mobile internet access provided by cell towers is the primary prerequisite
@@ -627,7 +627,7 @@ edges:
 - from: national_power_grid
   to: data_centers
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.3
   polarity: 1
   delay: IMMEDIATE
   description: Continuous, high-capacity grid power is essential for data center uptime
@@ -635,7 +635,7 @@ edges:
 - from: national_power_grid
   to: telecom_towers_network
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.35
   polarity: 1
   delay: IMMEDIATE
   description: Grid electricity powers base transceiver stations, reducing their reliance
@@ -643,7 +643,7 @@ edges:
 - from: national_power_grid
   to: indian_railways_network
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Railway electrification relies entirely on the national power grid
@@ -651,7 +651,7 @@ edges:
 - from: national_power_grid
   to: municipal_water_grid
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Municipal water pumping and purification stations require continuous
@@ -659,7 +659,7 @@ edges:
 - from: satellite_network
   to: telecom_towers_network
   type: SUPPLIES
-  weight: 0.5
+  weight: 0.15
   polarity: 1
   delay: IMMEDIATE
   description: Communication satellites provide vital backhaul connectivity for cell
@@ -667,7 +667,7 @@ edges:
 - from: satellite_network
   to: commercial_airports
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: GPS and NavIC satellite systems provide the precise navigation and
@@ -675,7 +675,7 @@ edges:
 - from: semiconductor_fabs
   to: data_centers
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.1
   polarity: 1
   delay: MEDIUM_TERM
   description: Domestic chip manufacturing supplies the microprocessors and memory
@@ -683,7 +683,7 @@ edges:
 - from: semiconductor_fabs
   to: telecom_towers_network
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.1
   polarity: 1
   delay: MEDIUM_TERM
   description: Wafer fabs produce the specialized silicon components needed for 5G
@@ -691,7 +691,7 @@ edges:
 - from: dedicated_freight_corridors
   to: indian_railways_network
   type: AFFECTS
-  weight: 0.7
+  weight: 0.45
   polarity: 1
   delay: IMMEDIATE
   description: Shifting goods trains to dedicated corridors frees up track capacity
@@ -699,7 +699,7 @@ edges:
 - from: dedicated_freight_corridors
   to: highway_network
   type: DISRUPTS
-  weight: 0.6
+  weight: 0.3
   polarity: -1
   delay: MEDIUM_TERM
   description: Efficient rail freight corridors divert cargo traffic away from roads,
@@ -707,7 +707,7 @@ edges:
 - from: dedicated_freight_corridors
   to: major_seaports
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Freight rail links accelerate the evacuation of containers from seaports
@@ -723,7 +723,7 @@ edges:
 - from: global_shipping_routes
   to: major_seaports
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: International sea lanes dictate the volume of commercial vessel traffic
@@ -739,7 +739,7 @@ edges:
 - from: national_power_grid
   to: index_of_industrial_production
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Stable and abundant grid power prevents factory downtime, directly
@@ -747,7 +747,7 @@ edges:
 - from: dedicated_freight_corridors
   to: index_of_industrial_production
   type: AFFECTS
-  weight: 0.6
+  weight: 0.25
   polarity: 1
   delay: MEDIUM_TERM
   description: Faster and cheaper freight movement lowers logistics costs, stimulating
@@ -755,7 +755,7 @@ edges:
 - from: major_seaports
   to: india_trade_deficit
   type: AFFECTS
-  weight: 0.7
+  weight: 0.25
   polarity: -1
   delay: SHORT_TERM
   description: Improved port turnaround times and capacity boost export volumes, helping
@@ -763,7 +763,7 @@ edges:
 - from: global_shipping_routes
   to: global_shipping_freight_rates
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: SHORT_TERM
   description: Expansion or clearing of maritime chokepoints increases effective vessel
@@ -771,7 +771,7 @@ edges:
 - from: upi_platform
   to: pmi_services
   type: AFFECTS
-  weight: 0.7
+  weight: 0.35
   polarity: 1
   delay: SHORT_TERM
   description: Frictionless digital payments increase transaction velocity and formalize
@@ -779,7 +779,7 @@ edges:
 - from: aadhaar_database
   to: epfo_payroll_additions
   type: AFFECTS
-  weight: 0.6
+  weight: 0.3
   polarity: 1
   delay: SHORT_TERM
   description: Digital identity verification accelerates the onboarding of workers
@@ -787,7 +787,7 @@ edges:
 - from: semiconductor_fabs
   to: india_trade_deficit
   type: AFFECTS
-  weight: 0.6
+  weight: 0.2
   polarity: -1
   delay: LONG_TERM
   description: Domestic semiconductor manufacturing substitutes imports, significantly
@@ -795,7 +795,7 @@ edges:
 - from: semiconductor_fabs
   to: global_semiconductor_supply_chain
   type: SUPPLIES
-  weight: 0.5
+  weight: 0.1
   polarity: 1
   delay: MEDIUM_TERM
   description: Indian wafer fabs add net new manufacturing capacity to the global
@@ -803,7 +803,7 @@ edges:
 - from: telecom_spectrum
   to: fii_fpi_flows
   type: AFFECTS
-  weight: 0.5
+  weight: 0.15
   polarity: 1
   delay: SHORT_TERM
   description: Spectrum auctions and subsequent telecom infrastructure rollouts attract
@@ -811,7 +811,7 @@ edges:
 - from: renewable_energy_parks
   to: global_surface_temperature
   type: AFFECTS
-  weight: 0.5
+  weight: 0.05
   polarity: -1
   delay: LONG_TERM
   description: Displacement of fossil fuels by zero-emission solar and wind energy
@@ -819,7 +819,7 @@ edges:
 - from: highway_network
   to: tier_2_3_city_expansion
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: 1
   delay: MEDIUM_TERM
   description: Expressway connectivity drives economic investment and real estate
@@ -827,7 +827,7 @@ edges:
 - from: commercial_airports
   to: tier_2_3_city_expansion
   type: AFFECTS
-  weight: 0.6
+  weight: 0.55
   polarity: 1
   delay: MEDIUM_TERM
   description: Airport announcements (UDAN scheme, Jewar, Navi Mumbai) catalyze real
@@ -835,7 +835,7 @@ edges:
 - from: municipal_water_grid
   to: urban_population_density
   type: AFFECTS
-  weight: 0.8
+  weight: 0.7
   polarity: 1
   delay: LONG_TERM
   description: Reliable piped water infrastructure is a hard prerequisite that enables
@@ -843,7 +843,7 @@ edges:
 - from: sewage_drainage_network
   to: urban_population_density
   type: AFFECTS
-  weight: 0.8
+  weight: 0.65
   polarity: 1
   delay: LONG_TERM
   description: Underground drainage and sewage treatment capacity dictates the maximum
@@ -851,7 +851,7 @@ edges:
 - from: indian_railways_network
   to: seasonal_migrant_labor
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: The reach and affordability of the railway network facilitates the
@@ -859,7 +859,7 @@ edges:
 - from: transport_logistics_infrastructure
   to: biophysical_and_ecological_systems
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.65
   polarity: -1
   delay: LONG_TERM
   description: The expansion of highway networks and freight corridors fragments terrestrial
@@ -867,7 +867,7 @@ edges:
 - from: energy_power_infrastructure
   to: biophysical_and_ecological_systems
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.6
   polarity: -1
   delay: LONG_TERM
   description: The construction of power plants, dams, and pipeline networks leads
@@ -875,7 +875,7 @@ edges:
 - from: digital_telecom_infrastructure
   to: indian_union_government
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Digital Public Infrastructure (DPI) and data centers supply the foundational
@@ -884,7 +884,7 @@ edges:
 - from: transport_logistics_infrastructure
   to: international_trade_and_supply_chains
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: The capacity and efficiency of major seaports, commercial airports,
@@ -893,7 +893,7 @@ edges:
 - from: digital_telecom_infrastructure
   to: indian_macroeconomic_indicators
   type: AFFECTS
-  weight: 0.8
+  weight: 0.4
   polarity: 1
   delay: MEDIUM_TERM
   description: Digital public infrastructure and telecom networks drive economic formalization
@@ -902,7 +902,7 @@ edges:
 - from: digital_telecom_infrastructure
   to: financial_and_capital_markets
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Telecom networks, data centers, and digital public infrastructure form
@@ -911,7 +911,7 @@ edges:
 - from: transport_logistics_infrastructure
   to: migration_and_mobility
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: Expansion of transport networks (railways, highways, airports) directly
@@ -919,7 +919,7 @@ edges:
 - from: digital_telecom_infrastructure
   to: macro_behavioral_shifts
   type: AFFECTS
-  weight: 0.8
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Deep penetration of digital public infrastructure and telecom networks

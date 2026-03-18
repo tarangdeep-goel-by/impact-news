@@ -821,7 +821,7 @@ edges:
 - from: brent_crude
   to: wpi
   type: AFFECTS
-  weight: 0.9
+  weight: 0.25
   polarity: 1
   delay: SHORT_TERM
   description: Higher global crude oil prices increase domestic transport and manufacturing
@@ -829,7 +829,7 @@ edges:
 - from: brent_crude
   to: india_trade_deficit
   type: PRODUCES
-  weight: 0.95
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Since India imports over 80% of its oil, rising Brent crude prices
@@ -837,7 +837,7 @@ edges:
 - from: us_dollar_index
   to: usd_inr_exchange
   type: AFFECTS
-  weight: 0.9
+  weight: 0.65
   polarity: 1
   delay: IMMEDIATE
   description: A strengthening global US dollar index mechanically depreciates emerging
@@ -854,7 +854,7 @@ edges:
 - from: us_treasury_yields
   to: fii_fpi_flows
   type: AFFECTS
-  weight: 0.85
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Rising US treasury yields offer attractive risk-free returns, prompting
@@ -862,7 +862,7 @@ edges:
 - from: fii_fpi_flows
   to: nifty_50
   type: FUNDS
-  weight: 0.8
+  weight: 0.45
   polarity: 1
   delay: IMMEDIATE
   description: Strong foreign institutional capital inflows provide liquidity and
@@ -870,7 +870,7 @@ edges:
 - from: fii_fpi_flows
   to: usd_inr_exchange
   type: AFFECTS
-  weight: 0.75
+  weight: 0.35
   polarity: -1
   delay: IMMEDIATE
   description: Foreign capital inflows increase the supply of dollars in the domestic
@@ -878,7 +878,7 @@ edges:
 - from: dii_flows
   to: nifty_50
   type: FUNDS
-  weight: 0.85
+  weight: 0.55
   polarity: 1
   delay: IMMEDIATE
   description: Consistent capital injections from domestic institutional investors
@@ -886,7 +886,7 @@ edges:
 - from: india_trade_deficit
   to: india_current_account_deficit
   type: AFFECTS
-  weight: 0.95
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: A widening gap between merchandise imports and exports directly expands
@@ -894,7 +894,7 @@ edges:
 - from: india_current_account_deficit
   to: usd_inr_exchange
   type: AFFECTS
-  weight: 0.8
+  weight: 0.45
   polarity: 1
   delay: MEDIUM_TERM
   description: A higher current account deficit increases the structural demand for
@@ -902,7 +902,7 @@ edges:
 - from: usd_inr_exchange
   to: india_forex_reserves
   type: AFFECTS
-  weight: 0.85
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: A rapidly depreciating Rupee (higher USD-INR rate) prompts the central
@@ -910,7 +910,7 @@ edges:
 - from: global_shipping_freight_rates
   to: wpi
   type: AFFECTS
-  weight: 0.75
+  weight: 0.2
   polarity: 1
   delay: SHORT_TERM
   description: Elevated maritime shipping costs increase the landed price of imported
@@ -926,7 +926,7 @@ edges:
 - from: us_consumer_demand
   to: china_manufacturing_output
   type: AFFECTS
-  weight: 0.8
+  weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Robust retail spending by US consumers drives export orders, stimulating
@@ -934,7 +934,7 @@ edges:
 - from: global_semiconductor_supply_chain
   to: index_of_industrial_production
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.3
   polarity: 1
   delay: SHORT_TERM
   description: Adequate global microchip supply enables uninterrupted domestic manufacturing
@@ -942,7 +942,7 @@ edges:
 - from: pmi_manufacturing
   to: index_of_industrial_production
   type: AFFECTS
-  weight: 0.85
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Expansionary sentiment and new orders recorded in the manufacturing
@@ -950,7 +950,7 @@ edges:
 - from: pmi_services
   to: india_gdp_growth
   type: AFFECTS
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Since the services sector constitutes over 50% of India's economy,
@@ -958,7 +958,7 @@ edges:
 - from: index_of_industrial_production
   to: india_gdp_growth
   type: PRODUCES
-  weight: 0.85
+  weight: 0.35
   polarity: 1
   delay: SHORT_TERM
   description: Higher industrial and manufacturing output directly contributes to
@@ -966,7 +966,7 @@ edges:
 - from: india_gdp_growth
   to: epfo_payroll_additions
   type: AFFECTS
-  weight: 0.8
+  weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: Broad economic expansion encourages formal sector enterprises to hire
@@ -974,7 +974,7 @@ edges:
 - from: epfo_payroll_additions
   to: national_unemployment_rate
   type: AFFECTS
-  weight: 0.85
+  weight: 0.25
   polarity: -1
   delay: SHORT_TERM
   description: Increased formal job creation absorbs the labor force, reducing the
@@ -982,7 +982,7 @@ edges:
 - from: wpi
   to: india_10yr_bond_yield
   type: AFFECTS
-  weight: 0.8
+  weight: 0.35
   polarity: 1
   delay: SHORT_TERM
   description: Rising wholesale inflation expectations lead bond market investors
@@ -990,7 +990,7 @@ edges:
 - from: global_equity_indices
   to: nifty_50
   type: AFFECTS
-  weight: 0.85
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Bullish sentiment and capital flows in global markets like Wall Street
@@ -1006,7 +1006,7 @@ edges:
 - from: international_gold_prices
   to: india_trade_deficit
   type: AFFECTS
-  weight: 0.8
+  weight: 0.3
   polarity: 1
   delay: SHORT_TERM
   description: Higher global gold prices inflate the value of India's massive precious
@@ -1014,7 +1014,7 @@ edges:
 - from: global_edible_oil_supply
   to: wpi
   type: AFFECTS
-  weight: 0.75
+  weight: 0.2
   polarity: -1
   delay: SHORT_TERM
   description: Abundant global supplies of palm and sunflower oil reduce import costs,
@@ -1022,7 +1022,7 @@ edges:
 - from: global_natural_gas
   to: wpi
   type: AFFECTS
-  weight: 0.75
+  weight: 0.25
   polarity: 1
   delay: SHORT_TERM
   description: Higher global LNG prices increase the cost of power generation and
@@ -1030,7 +1030,7 @@ edges:
 - from: international_coal_prices
   to: wpi
   type: AFFECTS
-  weight: 0.8
+  weight: 0.3
   polarity: 1
   delay: SHORT_TERM
   description: Elevated international thermal coal prices increase input costs for
@@ -1038,7 +1038,7 @@ edges:
 - from: global_food_grain_supply
   to: wpi
   type: AFFECTS
-  weight: 0.75
+  weight: 0.2
   polarity: -1
   delay: SHORT_TERM
   description: Robust global harvests of wheat and other grains suppress international
@@ -1054,7 +1054,7 @@ edges:
 - from: global_semiconductor_supply_chain
   to: telecom_towers_network
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.5
   polarity: 1
   delay: MEDIUM_TERM
   description: Global microchip supply is essential for manufacturing the base station
@@ -1062,7 +1062,7 @@ edges:
 - from: national_unemployment_rate
   to: rural_urban_migration_corridors
   type: AFFECTS
-  weight: 0.75
+  weight: 0.55
   polarity: 1
   delay: MEDIUM_TERM
   description: High aggregate joblessness drives distress migration as rural populations
@@ -1070,7 +1070,7 @@ edges:
 - from: national_unemployment_rate
   to: aggregate_consumer_confidence
   type: AFFECTS
-  weight: 0.85
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Rising unemployment creates income uncertainty, directly depressing
@@ -1078,7 +1078,7 @@ edges:
 - from: india_gdp_growth
   to: tier_2_3_city_expansion
   type: FUNDS
-  weight: 0.8
+  weight: 0.65
   polarity: 1
   delay: LONG_TERM
   description: Sustained national economic growth creates wealth that fuels real estate
@@ -1086,7 +1086,7 @@ edges:
 - from: india_gdp_growth
   to: commercial_airports
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: LONG_TERM
   description: Macroeconomic expansion increases business activity and disposable
@@ -1094,7 +1094,7 @@ edges:
 - from: wpi
   to: aggregate_consumer_confidence
   type: AFFECTS
-  weight: 0.8
+  weight: 0.3
   polarity: -1
   delay: SHORT_TERM
   description: High wholesale inflation eventually passes to retail prices, eroding
@@ -1102,7 +1102,7 @@ edges:
 - from: nifty_50
   to: aggregate_consumer_confidence
   type: AFFECTS
-  weight: 0.7
+  weight: 0.25
   polarity: 1
   delay: SHORT_TERM
   description: A booming benchmark stock market creates a wealth effect among the
@@ -1110,7 +1110,7 @@ edges:
 - from: global_commodity_markets
   to: biophysical_and_ecological_systems
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.5
   polarity: -1
   delay: LONG_TERM
   description: High global demand and extraction of energy, metals, and agricultural
@@ -1118,7 +1118,7 @@ edges:
 - from: indian_macroeconomic_indicators
   to: indian_regulatory_bodies
   type: AFFECTS
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Domestic inflation indices and growth metrics directly trigger monetary
@@ -1126,7 +1126,7 @@ edges:
 - from: global_commodity_markets
   to: indian_macroeconomic_indicators
   type: AFFECTS
-  weight: 0.8
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Global energy and agricultural commodity prices directly import inflation
@@ -1134,7 +1134,7 @@ edges:
 - from: global_commodity_markets
   to: energy_power_infrastructure
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.55
   polarity: 1
   delay: SHORT_TERM
   description: Global energy commodities (coal, crude oil, natural gas) provide the
@@ -1142,7 +1142,7 @@ edges:
 - from: financial_and_capital_markets
   to: transport_logistics_infrastructure
   type: FUNDS
-  weight: 0.8
+  weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: Debt markets, institutional investments, and equity markets provide
@@ -1151,7 +1151,7 @@ edges:
 - from: financial_and_capital_markets
   to: energy_power_infrastructure
   type: FUNDS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Capital markets and institutional investment flows finance capital-intensive
@@ -1159,7 +1159,7 @@ edges:
 - from: international_trade_and_supply_chains
   to: advanced_tech_infrastructure
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Global supply chains provide the critical components, specialized machinery,
@@ -1168,7 +1168,7 @@ edges:
 - from: indian_macroeconomic_indicators
   to: macro_behavioral_shifts
   type: AFFECTS
-  weight: 0.9
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Changes in inflation, employment, and GDP growth directly dictate consumer
@@ -1176,7 +1176,7 @@ edges:
 - from: indian_macroeconomic_indicators
   to: migration_and_mobility
   type: AFFECTS
-  weight: 0.8
+  weight: 0.55
   polarity: 1
   delay: MEDIUM_TERM
   description: Domestic economic growth and employment aggregates drive rural-to-urban

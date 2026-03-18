@@ -1,0 +1,190 @@
+events:
+- id: crude_2022
+  name: "Crude oil surge to $120/barrel"
+  date: "2022-03"
+  trigger: brent_crude
+  direction: 1
+  description: "Global crude oil prices surged to $120/barrel following Russia-Ukraine conflict"
+  ground_truth:
+  - node: retail_diesel
+    rank: 1
+    reasoning: "Direct petroleum product, retail prices track crude within days"
+  - node: retail_petrol
+    rank: 2
+    reasoning: "Direct petroleum product, immediate pass-through"
+  - node: lpg_cylinder
+    rank: 3
+    reasoning: "LPG prices directly linked to international benchmarks"
+  - node: auto_rickshaw_fare
+    rank: 4
+    reasoning: "CNG/petrol fuel cost is largest component of auto fare"
+  - node: delivery_and_logistics
+    rank: 5
+    reasoning: "Diesel is 40-60% of trucking costs"
+  - node: retail_tomato
+    rank: 6
+    reasoning: "Perishable, high transport cost component"
+  - node: retail_onion
+    rank: 7
+    reasoning: "Similar to tomato, transport-sensitive"
+  - node: cooking_fuel
+    rank: 8
+    reasoning: "LPG and kerosene prices track crude"
+  - node: vehicle_fuel
+    rank: 9
+    reasoning: "Direct petrol consumption for two-wheelers and all vehicles"
+  - node: electricity_tariff
+    rank: 10
+    reasoning: "Natural gas and imported coal component in power generation"
+
+- id: rbi_2022
+  name: "RBI rate hike cycle 250bps"
+  date: "2022-2023"
+  trigger: rbi
+  direction: 1
+  description: "RBI hiked repo rate by 250bps from 4.0% to 6.5% between May 2022 and Feb 2023"
+  ground_truth:
+  - node: home_loan_emi
+    rank: 1
+    reasoning: "Most Indian home loans are floating rate, EMI adjusts within 1-2 months"
+  - node: personal_loan_emi
+    rank: 2
+    reasoning: "Personal loans reprice quickly on rate changes"
+  - node: credit_card_dues
+    rank: 3
+    reasoning: "Credit card rates benchmarked to repo/MCLR"
+  - node: auto_loan_emi
+    rank: 4
+    reasoning: "Auto loans are large-ticket floating rate"
+  - node: savings_account_balance
+    rank: 5
+    reasoning: "Banks pass rate hikes to deposit rates (with lag)"
+  - node: fixed_deposits
+    rank: 6
+    reasoning: "FD rates rise with repo rate, benefits savers"
+  - node: residential_rent
+    rank: 7
+    reasoning: "Higher mortgage costs get passed to rental market over time"
+  - node: real_estate_investment
+    rank: 8
+    reasoning: "Higher borrowing costs dampen demand, slowing price growth"
+  - node: direct_equity_portfolio
+    rank: 9
+    reasoning: "Rate hikes generally negative for equity valuations"
+  - node: retail_gold_investment
+    rank: 10
+    reasoning: "Higher rates increase opportunity cost of holding gold"
+
+- id: monsoon_2023
+  name: "Monsoon deficit 40%"
+  date: "2023-08"
+  trigger: southwest_monsoon
+  direction: -1
+  description: "August 2023 saw 40% monsoon rainfall deficit, worst in decades for several states"
+  ground_truth:
+  - node: retail_rice
+    rank: 1
+    reasoning: "Rice is heavily monsoon-dependent, deficit directly impacts kharif crop"
+  - node: retail_tomato
+    rank: 2
+    reasoning: "Tomato prices spiked to Rs 200/kg in 2023 due to weather disruption"
+  - node: retail_onion
+    rank: 3
+    reasoning: "Onion storage and cultivation highly weather-sensitive"
+  - node: tur_dal
+    rank: 4
+    reasoning: "Pulses are rain-fed crops, deficit causes sharp supply drops"
+  - node: green_vegetables
+    rank: 5
+    reasoning: "Leafy vegetables are perishable and weather-dependent"
+  - node: farm_labor_wages
+    rank: 6
+    reasoning: "Crop failure reduces demand for agricultural labor"
+  - node: rural_unemployment_rate
+    rank: 7
+    reasoning: "Agriculture employment drops when crops fail"
+  - node: groundwater_aquifers
+    rank: 8
+    reasoning: "Monsoon deficit directly reduces groundwater recharge"
+  - node: hydrological_systems
+    rank: 9
+    reasoning: "Reservoirs and river systems depend on monsoon for annual refill"
+  - node: liquid_milk
+    rank: 10
+    reasoning: "Fodder availability and cattle health affected by drought"
+
+- id: aqi_delhi_2023
+  name: "Delhi AQI 500+ episode"
+  date: "2023-11"
+  trigger: meteorological_systems
+  direction: -1
+  description: "Delhi NCR AQI crossed 500 for multiple days in Nov 2023, emergency measures invoked"
+  ground_truth:
+  - node: respiratory_conditions
+    rank: 1
+    reasoning: "Direct health impact — hospital admissions for asthma/COPD spike 3-5x"
+  - node: construction_worker_wages
+    rank: 2
+    reasoning: "Construction workers, auto drivers, street vendors exposed directly"
+  - node: school_education
+    rank: 3
+    reasoning: "Schools close or shift online during severe AQI episodes"
+  - node: hospital_beds
+    rank: 4
+    reasoning: "Respiratory admissions strain hospital capacity"
+  - node: fresh_produce
+    rank: 5
+    reasoning: "Crop damage from smog and reduced farm labor availability"
+  - node: recreational_facilities
+    rank: 6
+    reasoning: "Parks, playgrounds, outdoor sports become unusable"
+  - node: real_estate_investment
+    rank: 7
+    reasoning: "Persistent pollution reduces Delhi property values/demand"
+  - node: mental_health_services
+    rank: 8
+    reasoning: "Prolonged indoor confinement and health anxiety increase mental health needs"
+  - node: urban_road_conditions
+    rank: 9
+    reasoning: "Reduced visibility, vehicle restrictions, longer commutes"
+  - node: travel_and_tourism
+    rank: 10
+    reasoning: "Domestic and international tourists avoid Delhi during AQI crises"
+
+- id: it_layoffs_2023
+  name: "IT sector layoff wave"
+  date: "2023-01"
+  trigger: us_federal_reserve
+  direction: 1
+  description: "Fed rate hikes caused US tech downturn, leading to mass layoffs in Indian IT sector"
+  ground_truth:
+  - node: it_sector_jobs
+    rank: 1
+    reasoning: "Direct impact — Indian IT companies cut workforce following US client budget cuts"
+  - node: startup_ecosystem
+    rank: 2
+    reasoning: "VC funding dried up as interest rates rose, causing startup layoffs"
+  - node: direct_equity_portfolio
+    rank: 3
+    reasoning: "IT stocks fell 15-25%, directly hitting investor portfolios"
+  - node: residential_rent
+    rank: 4
+    reasoning: "IT hub cities (Bangalore, Hyderabad) saw rental market softening"
+  - node: credit_card_dues
+    rank: 5
+    reasoning: "Fed hikes transmitted to Indian rates, raising credit costs"
+  - node: personal_loan_emi
+    rank: 6
+    reasoning: "Rate transmission raises EMI burden"
+  - node: home_loan_emi
+    rank: 7
+    reasoning: "Mortgage rates rose as RBI followed Fed hiking cycle"
+  - node: gig_worker_payouts
+    rank: 8
+    reasoning: "Laid-off tech workers entered gig economy, increasing supply"
+  - node: college_university_fees
+    rank: 9
+    reasoning: "Increased demand for upskilling/MBA programs from displaced workers"
+  - node: savings_account_balance
+    rank: 10
+    reasoning: "Higher rates benefited fixed-income savers"

@@ -606,7 +606,7 @@ edges:
 - from: india_working_age_population
   to: india_gdp_growth
   type: PRODUCES
-  weight: 0.9
+  weight: 0.6
   polarity: 1
   delay: LONG_TERM
   description: An expanding working-age population increases the aggregate labor supply,
@@ -614,7 +614,7 @@ edges:
 - from: india_working_age_population
   to: national_unemployment_rate
   type: AFFECTS
-  weight: 0.8
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: When the working-age population grows faster than job creation, the
@@ -622,7 +622,7 @@ edges:
 - from: india_aging_population
   to: epfo
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: A rising elderly demographic increases the volume of pension withdrawals
@@ -630,7 +630,7 @@ edges:
 - from: female_labor_force_participation
   to: india_gdp_growth
   type: PRODUCES
-  weight: 0.8
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: Higher female participation in the workforce expands the productive
@@ -638,7 +638,7 @@ edges:
 - from: rural_urban_migration_corridors
   to: urban_population_density
   type: PRODUCES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Sustained inflows of rural migrants into urban centers directly increase
@@ -646,7 +646,7 @@ edges:
 - from: rural_urban_migration_corridors
   to: indian_railways_network
   type: DEPENDS_ON
-  weight: 0.8
+  weight: 0.45
   polarity: 1
   delay: SHORT_TERM
   description: Mass movement of rural migrants to urban centers heavily relies on
@@ -654,7 +654,7 @@ edges:
 - from: indian_diaspora_nri
   to: india_forex_reserves
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: Remittances sent by the growing Indian diaspora directly increase the
@@ -670,7 +670,7 @@ edges:
 - from: autumn_festive_season
   to: aggregate_consumer_confidence
   type: AFFECTS
-  weight: 0.9
+  weight: 0.45
   polarity: 1
   delay: SHORT_TERM
   description: The autumn festive season triggers a surge in retail spending and cultural
@@ -678,7 +678,7 @@ edges:
 - from: autumn_festive_season
   to: index_of_industrial_production
   type: PRODUCES
-  weight: 0.8
+  weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Heightened consumer demand during the autumn festive season drives
@@ -686,7 +686,7 @@ edges:
 - from: spring_harvest_festivals
   to: rural_urban_migration_corridors
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.55
   polarity: -1
   delay: SHORT_TERM
   description: Workers returning to their villages for spring harvest festivals temporarily
@@ -694,7 +694,7 @@ edges:
 - from: wedding_season_aggregate
   to: international_gold_prices
   type: AFFECTS
-  weight: 0.8
+  weight: 0.5
   polarity: 1
   delay: SHORT_TERM
   description: Massive demand for gold jewelry during the Indian wedding season creates
@@ -702,7 +702,7 @@ edges:
 - from: major_temple_trusts
   to: dii_flows
   type: FUNDS
-  weight: 0.6
+  weight: 0.1
   polarity: 1
   delay: MEDIUM_TERM
   description: Large temple trusts channel surplus devotee donations into domestic
@@ -710,7 +710,7 @@ edges:
 - from: waqf_boards
   to: state_governments
   type: AFFECTS
-  weight: 0.7
+  weight: 0.2
   polarity: 1
   delay: MEDIUM_TERM
   description: Disputes over the administration of Islamic endowments require direct
@@ -718,7 +718,7 @@ edges:
 - from: regional_language_movements
   to: state_governments
   type: AFFECTS
-  weight: 0.8
+  weight: 0.6
   polarity: 1
   delay: MEDIUM_TERM
   description: Linguistic pride movements pressure state governments to mandate the
@@ -726,7 +726,7 @@ edges:
 - from: mass_boycott_movements
   to: fii_fpi_flows
   type: DISRUPTS
-  weight: 0.6
+  weight: 0.15
   polarity: -1
   delay: SHORT_TERM
   description: Large-scale consumer boycotts of multinational brands create market
@@ -734,7 +734,7 @@ edges:
 - from: voter_turnout_aggregates
   to: union_budget_framework
   type: AFFECTS
-  weight: 0.7
+  weight: 0.45
   polarity: 1
   delay: MEDIUM_TERM
   description: High voter turnout aggregates signal strong democratic engagement,
@@ -742,7 +742,7 @@ edges:
 - from: demographics_and_population
   to: hydrological_systems
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: LONG_TERM
   description: Rapid urbanization and population density increases lead to the over-extraction
@@ -750,7 +750,7 @@ edges:
 - from: demographics_and_population
   to: biophysical_and_ecological_systems
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.7
   polarity: -1
   delay: LONG_TERM
   description: Urban sprawl and population expansion encroach upon terrestrial ecosystems,
@@ -758,7 +758,7 @@ edges:
 - from: cultural_and_religious_forces
   to: hydrological_systems
   type: DISRUPTS
-  weight: 0.5
+  weight: 0.55
   polarity: -1
   delay: SHORT_TERM
   description: Major festivals and mass religious observances (e.g., idol immersions,
@@ -766,7 +766,7 @@ edges:
 - from: demographics_and_population
   to: indian_statutory_frameworks_and_councils
   type: AFFECTS
-  weight: 0.7
+  weight: 0.35
   polarity: 1
   delay: LONG_TERM
   description: Long-term demographic shifts, such as a youth bulge or an aging population,
@@ -775,7 +775,7 @@ edges:
 - from: cultural_and_religious_forces
   to: state_and_local_governments
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Linguistic and regional identity forces strongly dictate the political
@@ -784,7 +784,7 @@ edges:
 - from: demographics_and_population
   to: indian_macroeconomic_indicators
   type: AFFECTS
-  weight: 0.9
+  weight: 0.65
   polarity: 1
   delay: LONG_TERM
   description: The demographic dividend (working-age population and urbanization)
@@ -792,7 +792,7 @@ edges:
 - from: cultural_and_religious_forces
   to: indian_macroeconomic_indicators
   type: AFFECTS
-  weight: 0.7
+  weight: 0.45
   polarity: 1
   delay: SHORT_TERM
   description: Major festival seasons create massive cyclical spikes in domestic consumption,
@@ -800,7 +800,7 @@ edges:
 - from: cultural_and_religious_forces
   to: global_commodity_markets
   type: AFFECTS
-  weight: 0.6
+  weight: 0.45
   polarity: 1
   delay: SHORT_TERM
   description: Indian festival and wedding seasons significantly drive global demand
@@ -809,7 +809,7 @@ edges:
 - from: demographics_and_population
   to: civic_urban_infrastructure
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: LONG_TERM
   description: Rapid urbanization trends and population density increases severely
@@ -817,7 +817,7 @@ edges:
 - from: cultural_and_religious_forces
   to: transport_logistics_infrastructure
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: Major cultural festivals and religious observances create massive,

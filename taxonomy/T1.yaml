@@ -598,7 +598,7 @@ edges:
 - from: el_nino_southern_oscillation
   to: southwest_monsoon
   type: DISRUPTS
-  weight: 0.85
+  weight: 0.55
   polarity: -1
   delay: MEDIUM_TERM
   description: El Nino events warm the central Pacific Ocean, shifting global atmospheric
@@ -607,7 +607,7 @@ edges:
 - from: el_nino_southern_oscillation
   to: global_surface_temperature
   type: AFFECTS
-  weight: 0.75
+  weight: 0.25
   polarity: 1
   delay: MEDIUM_TERM
   description: During an El Nino phase, the Pacific Ocean releases massive amounts
@@ -616,7 +616,7 @@ edges:
 - from: indian_ocean_dipole
   to: southwest_monsoon
   type: AFFECTS
-  weight: 0.7
+  weight: 0.45
   polarity: 1
   delay: SHORT_TERM
   description: A positive Indian Ocean Dipole creates a sea surface temperature gradient
@@ -625,7 +625,7 @@ edges:
 - from: global_surface_temperature
   to: himalayan_glaciers
   type: DISRUPTS
-  weight: 0.9
+  weight: 0.5
   polarity: -1
   delay: LONG_TERM
   description: Rising global atmospheric temperatures accelerate the melting rate
@@ -633,7 +633,7 @@ edges:
 - from: global_surface_temperature
   to: arabian_sea_marine_system
   type: AFFECTS
-  weight: 0.8
+  weight: 0.6
   polarity: 1
   delay: LONG_TERM
   description: Long-term increases in global surface temperatures lead to the absorption
@@ -642,7 +642,7 @@ edges:
 - from: southwest_monsoon
   to: groundwater_aquifers
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: Heavy seasonal rainfall from the southwest monsoon percolates through
@@ -651,7 +651,7 @@ edges:
 - from: southwest_monsoon
   to: peninsular_river_systems
   type: SUPPLIES
-  weight: 0.95
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Summer monsoon precipitation directly dictates the water volume and
@@ -659,7 +659,7 @@ edges:
 - from: southwest_monsoon
   to: arable_topsoil
   type: AFFECTS
-  weight: 0.85
+  weight: 0.5
   polarity: 1
   delay: SHORT_TERM
   description: Adequate monsoon rainfall maintains the critical soil moisture necessary
@@ -676,7 +676,7 @@ edges:
 - from: western_disturbances
   to: himalayan_glaciers
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Winter storm systems originating in the Mediterranean drop heavy snow
@@ -684,7 +684,7 @@ edges:
 - from: western_disturbances
   to: himalayan_river_systems
   type: SUPPLIES
-  weight: 0.75
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: Snowmelt from precipitation brought by western disturbances feeds northern
@@ -692,7 +692,7 @@ edges:
 - from: bay_of_bengal_marine_system
   to: cyclonic_storm_systems
   type: PRODUCES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Elevated sea surface temperatures and thermal energy in the Bay of
@@ -701,7 +701,7 @@ edges:
 - from: arabian_sea_marine_system
   to: southwest_monsoon
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Evaporation from the warming Arabian Sea provides the bulk of the atmospheric
@@ -709,7 +709,7 @@ edges:
 - from: cyclonic_storm_systems
   to: forest_cover
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.35
   polarity: -1
   delay: SHORT_TERM
   description: High-velocity cyclone winds uproot trees and storm surges inundate
@@ -718,7 +718,7 @@ edges:
 - from: cyclonic_storm_systems
   to: arable_topsoil
   type: DISRUPTS
-  weight: 0.75
+  weight: 0.4
   polarity: -1
   delay: SHORT_TERM
   description: Cyclone-induced storm surges cause coastal flooding that deposits salt
@@ -726,7 +726,7 @@ edges:
 - from: himalayan_tectonic_plates
   to: himalayan_river_systems
   type: DISRUPTS
-  weight: 0.6
+  weight: 0.25
   polarity: -1
   delay: IMMEDIATE
   description: Earthquakes and tectonic shifts trigger massive landslides that can
@@ -734,7 +734,7 @@ edges:
 - from: himalayan_glaciers
   to: himalayan_river_systems
   type: SUPPLIES
-  weight: 0.95
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Glacial meltwater provides the crucial base flow for perennial northern
@@ -742,7 +742,7 @@ edges:
 - from: himalayan_river_systems
   to: groundwater_aquifers
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.6
   polarity: 1
   delay: LONG_TERM
   description: Continuous flow from perennial rivers slowly percolates downward, recharging
@@ -750,7 +750,7 @@ edges:
 - from: forest_cover
   to: groundwater_aquifers
   type: SUPPLIES
-  weight: 0.75
+  weight: 0.45
   polarity: 1
   delay: LONG_TERM
   description: Dense forest canopies and root systems slow down surface water runoff,
@@ -758,7 +758,7 @@ edges:
 - from: forest_cover
   to: arable_topsoil
   type: AFFECTS
-  weight: 0.8
+  weight: 0.4
   polarity: 1
   delay: LONG_TERM
   description: Tree roots bind the earth and forest canopies break the impact of heavy
@@ -767,7 +767,7 @@ edges:
 - from: migratory_pest_populations
   to: arable_topsoil
   type: DISRUPTS
-  weight: 0.65
+  weight: 0.2
   polarity: -1
   delay: SHORT_TERM
   description: Swarms of locusts and other migratory pests strip vegetation cover
@@ -775,7 +775,7 @@ edges:
 - from: bay_of_bengal_marine_system
   to: marine_fish_stocks
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: LONG_TERM
   description: Nutrient upwelling and the overall ecological health of the Bay of
@@ -783,7 +783,7 @@ edges:
 - from: el_nino_southern_oscillation
   to: global_food_grain_supply
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.35
   polarity: -1
   delay: MEDIUM_TERM
   description: ENSO-driven droughts in major agricultural basins (like India and Australia)
@@ -791,7 +791,7 @@ edges:
 - from: southwest_monsoon
   to: global_food_grain_supply
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.45
   polarity: 1
   delay: MEDIUM_TERM
   description: Abundant monsoon rains ensure high yields for India's Kharif crops
@@ -799,7 +799,7 @@ edges:
 - from: southwest_monsoon
   to: global_sugar_supply
   type: SUPPLIES
-  weight: 0.75
+  weight: 0.5
   polarity: 1
   delay: MEDIUM_TERM
   description: Good monsoon rains in Maharashtra and Uttar Pradesh boost sugarcane
@@ -807,7 +807,7 @@ edges:
 - from: southwest_monsoon
   to: seasonal_migrant_labor
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Strong monsoons increase agricultural sowing and harvesting activity,
@@ -815,7 +815,7 @@ edges:
 - from: western_disturbances
   to: global_food_grain_supply
   type: AFFECTS
-  weight: 0.7
+  weight: 0.25
   polarity: 1
   delay: MEDIUM_TERM
   description: Winter rains brought by western disturbances are crucial for the success
@@ -823,7 +823,7 @@ edges:
 - from: cyclonic_storm_systems
   to: major_seaports
   type: DISRUPTS
-  weight: 0.85
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: High-velocity winds and storm surges from cyclones force the suspension
@@ -831,7 +831,7 @@ edges:
 - from: cyclonic_storm_systems
   to: national_power_grid
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.3
   polarity: -1
   delay: SHORT_TERM
   description: Severe cyclone winds and falling trees snap high-tension transmission
@@ -840,7 +840,7 @@ edges:
 - from: himalayan_tectonic_plates
   to: national_power_grid
   type: DISRUPTS
-  weight: 0.65
+  weight: 0.25
   polarity: -1
   delay: IMMEDIATE
   description: Major seismic events along Himalayan fault lines can structurally damage
@@ -848,7 +848,7 @@ edges:
 - from: himalayan_river_systems
   to: coal_power_plants
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Perennial river flows provide the massive volumes of continuous cooling
@@ -856,7 +856,7 @@ edges:
 - from: peninsular_river_systems
   to: municipal_water_grid
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Southern rivers and their associated reservoirs are the primary source
@@ -864,7 +864,7 @@ edges:
 - from: groundwater_aquifers
   to: municipal_water_grid
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Borewells drawing from deep groundwater aquifers heavily supplement
@@ -872,7 +872,7 @@ edges:
 - from: arable_topsoil
   to: global_food_grain_supply
   type: AFFECTS
-  weight: 0.9
+  weight: 0.3
   polarity: 1
   delay: LONG_TERM
   description: The health and fertility of India's topsoil directly dictate the long-term
@@ -881,7 +881,7 @@ edges:
 - from: arable_topsoil
   to: farmer_unions
   type: AFFECTS
-  weight: 0.7
+  weight: 0.25
   polarity: -1
   delay: MEDIUM_TERM
   description: The degradation of fertile topsoil reduces crop yields and farm profitability,
@@ -889,7 +889,7 @@ edges:
 - from: migratory_pest_populations
   to: global_food_grain_supply
   type: DISRUPTS
-  weight: 0.75
+  weight: 0.25
   polarity: -1
   delay: SHORT_TERM
   description: Swarms of locusts consume vast tracts of standing crops, drastically
@@ -898,7 +898,7 @@ edges:
 - from: marine_fish_stocks
   to: global_supply_chains
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.55
   polarity: 1
   delay: MEDIUM_TERM
   description: Healthy marine fish populations support India's commercial seafood
@@ -906,7 +906,7 @@ edges:
 - from: meteorological_systems
   to: state_and_local_governments
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Extreme weather events and monsoon anomalies directly disrupt state
@@ -915,7 +915,7 @@ edges:
 - from: meteorological_systems
   to: indian_union_government
   type: AFFECTS
-  weight: 0.7
+  weight: 0.5
   polarity: 1
   delay: MEDIUM_TERM
   description: Monsoon performance and climate drivers dictate policy shifts, relief
@@ -923,7 +923,7 @@ edges:
 - from: geological_and_tectonic_systems
   to: state_and_local_governments
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Tectonic activities (earthquakes) and cryosphere events (glacial lake
@@ -932,7 +932,7 @@ edges:
 - from: meteorological_systems
   to: indian_macroeconomic_indicators
   type: AFFECTS
-  weight: 0.9
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Monsoon performance and regional weather patterns directly dictate
@@ -941,7 +941,7 @@ edges:
 - from: meteorological_systems
   to: global_commodity_markets
   type: AFFECTS
-  weight: 0.8
+  weight: 0.4
   polarity: 1
   delay: SHORT_TERM
   description: Macro climate drivers (e.g., El Niño) and extreme weather events determine
@@ -950,7 +950,7 @@ edges:
 - from: meteorological_systems
   to: international_trade_and_supply_chains
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.55
   polarity: -1
   delay: SHORT_TERM
   description: Extreme weather phenomena (cyclones, severe storms) disrupt global
@@ -958,7 +958,7 @@ edges:
 - from: hydrological_systems
   to: indian_macroeconomic_indicators
   type: AFFECTS
-  weight: 0.7
+  weight: 0.45
   polarity: 1
   delay: MEDIUM_TERM
   description: Water availability in major river basins and subsurface aquifers sustains
@@ -967,7 +967,7 @@ edges:
 - from: geological_and_tectonic_systems
   to: international_trade_and_supply_chains
   type: DISRUPTS
-  weight: 0.6
+  weight: 0.3
   polarity: -1
   delay: SHORT_TERM
   description: Tectonic events (earthquakes, tsunamis) cause sudden, severe disruptions
@@ -975,7 +975,7 @@ edges:
 - from: meteorological_systems
   to: transport_logistics_infrastructure
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Extreme weather events, such as heavy monsoons and cyclones, disrupt
@@ -983,7 +983,7 @@ edges:
 - from: meteorological_systems
   to: civic_urban_infrastructure
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: SHORT_TERM
   description: Intense rainfall and monsoon systems frequently overwhelm municipal
@@ -991,7 +991,7 @@ edges:
 - from: meteorological_systems
   to: energy_power_infrastructure
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Weather systems and macro climate drivers directly dictate the generation
@@ -999,7 +999,7 @@ edges:
 - from: hydrological_systems
   to: civic_urban_infrastructure
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: LONG_TERM
   description: Major river basins and subsurface water aquifers supply the raw water
@@ -1007,7 +1007,7 @@ edges:
 - from: hydrological_systems
   to: energy_power_infrastructure
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: River basins provide essential cooling water for thermal and nuclear
@@ -1023,7 +1023,7 @@ edges:
 - from: meteorological_systems
   to: migration_and_mobility
   type: AFFECTS
-  weight: 0.8
+  weight: 0.55
   polarity: 1
   delay: MEDIUM_TERM
   description: Extreme weather events, climate shifts, and monsoon failures drive
@@ -1031,7 +1031,7 @@ edges:
 - from: meteorological_systems
   to: social_movements_and_collectives
   type: AFFECTS
-  weight: 0.7
+  weight: 0.5
   polarity: 1
   delay: SHORT_TERM
   description: Monsoon deficits and extreme weather directly trigger agrarian distress,
@@ -1039,7 +1039,7 @@ edges:
 - from: meteorological_systems
   to: macro_behavioral_shifts
   type: AFFECTS
-  weight: 0.8
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Monsoon performance directly dictates rural income expectations, heavily
@@ -1047,7 +1047,7 @@ edges:
 - from: hydrological_systems
   to: migration_and_mobility
   type: AFFECTS
-  weight: 0.7
+  weight: 0.5
   polarity: 1
   delay: MEDIUM_TERM
   description: Severe depletion of subsurface water and flooding of major river basins
@@ -1055,7 +1055,7 @@ edges:
 - from: cyclonic_storm_systems
   to: marine_fish_stocks
   type: DISRUPTS
-  weight: 0.85
+  weight: 0.3
   polarity: -1
   delay: IMMEDIATE
   description: Cyclonic storms cause severe ocean turbulence and temperature changes,
