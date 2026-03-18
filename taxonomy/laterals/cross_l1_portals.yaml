@@ -102,7 +102,7 @@
   to: construction_and_manual
   type: DISRUPTS
   weight: 0.8
-  polarity: 1
+  polarity: -1
   delay: IMMEDIATE
   source_l1: I6
   target_l1: I4
@@ -142,7 +142,7 @@
   to: retail_and_trade
   type: DISRUPTS
   weight: 0.9
-  polarity: 1
+  polarity: -1
   delay: IMMEDIATE
   source_l1: I8
   target_l1: I4
@@ -170,7 +170,7 @@
     volumes of heavy metals and fine particulate matter into the local air.
 - from: religious_pilgrimage
   to: railway_travel
-  type: AFFECTS
+  type: PRODUCES
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -220,7 +220,7 @@
     result in the accumulation of unmanaged garbage dumps on neighborhood streets.
 - from: urban_flooding
   to: repair_service_charges
-  type: AFFECTS
+  type: PRODUCES
   weight: 0.7
   polarity: 1
   delay: SHORT_TERM
@@ -250,7 +250,7 @@
     massive household capital flows into physical retail gold investments.
 - from: weddings_and_milestones
   to: personal_loan_emi
-  type: AFFECTS
+  type: PRODUCES
   weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
@@ -321,7 +321,7 @@
     conditions.
 - from: municipal_water_supply
   to: water_and_food_borne_diseases
-  type: PRODUCES
+  type: DISRUPTS
   weight: 0.7
   polarity: -1
   delay: SHORT_TERM
@@ -350,20 +350,20 @@
   description: Concentrations of high-paying IT sector jobs in tech corridors inflate
     local real estate demand, driving up residential rents for the entire area.
 - from: k12_edtech
-  to: laptop_computer
-  type: AFFECTS
+  to: personal_computing_devices
+  type: PRODUCES
   weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   source_l1: I7
   target_l1: I10
-  description: The adoption of online K-12 tuition and edtech platforms forces parents
-    to invest in personal computing devices like laptops for their children.
+  description: The mandatory shift to online K-12 tuition and edtech platforms forces
+    households to purchase personal computing devices like tablets and laptops.
 - from: civil_unrest
   to: urban_bus_transit
   type: DISRUPTS
   weight: 0.8
-  polarity: 1
+  polarity: -1
   delay: IMMEDIATE
   source_l1: I8
   target_l1: I3
@@ -371,7 +371,7 @@
     forcing transport authorities to suspend urban bus transit operations.
 - from: childhood_malnutrition
   to: school_examinations
-  type: AFFECTS
+  type: DISRUPTS
   weight: 0.7
   polarity: -1
   delay: LONG_TERM
@@ -392,7 +392,7 @@
     rents.
 - from: festivals_and_celebrations
   to: retail_sugar
-  type: AFFECTS
+  type: PRODUCES
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -412,7 +412,7 @@
     frequently catalyzes localized mob violence and riots.
 - from: startup_layoffs
   to: credit_card_dues
-  type: AFFECTS
+  type: PRODUCES
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -442,7 +442,7 @@
     exercise, gradually reducing the prevalence of hypertension and heart disease.
 - from: investment_and_job_scams
   to: savings_account_balance
-  type: AFFECTS
+  type: DISRUPTS
   weight: 0.9
   polarity: -1
   delay: IMMEDIATE
@@ -460,3 +460,36 @@
   target_l1: I6
   description: Severe trauma from child abuse and POCSO-related crimes directly produces
     long-term psychological conditions like severe depression and PTSD.
+- from: urban_flooding
+  to: construction_and_manual
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Severe urban flooding inundates construction sites and halts outdoor
+    manual labor, resulting in immediate loss of daily wages for informal workers.
+- from: equity_investments
+  to: startup_ecosystem
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Venture capital and private equity investments provide the critical
+    cash runway required to sustain hiring, operations, and valuations in the startup
+    ecosystem.
+- from: urban_flooding
+  to: vegetables
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Heavy monsoons and urban flooding destroy peri-urban agricultural yields
+    and disrupt wholesale mandi supply chains, causing severe shortages in fresh produce.
+- from: upi_ecosystem
+  to: food_delivery_services
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cloud kitchens and food delivery platforms structurally depend on the
+    UPI ecosystem to process seamless, high-volume retail customer transactions.
