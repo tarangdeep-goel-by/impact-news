@@ -365,14 +365,14 @@ def cmd_validate_dag(args: argparse.Namespace) -> int:
         if attrs.get("type") not in TAXONOMY_TYPES:
             lateral.add_edge(src, dst)
 
-    cycles = list(nx.simple_cycles(lateral))
-    if cycles:
-        print(f"DAG violation: {len(cycles)} cycle(s) found:")
-        for i, cycle in enumerate(cycles[:10]):
-            print(f"  {i+1}. {' -> '.join(cycle)} -> {cycle[0]}")
-        if len(cycles) > 10:
-            print(f"  ... and {len(cycles) - 10} more")
+    try:
+        cycle = nx.find_cycle(lateral, orientation="original")
+        path = [e[0] for e in cycle] + [cycle[-1][1]]
+        print(f"DAG violation: cycle found:")
+        print(f"  {' -> '.join(path)}")
         return 1
+    except nx.NetworkXNoCycle:
+        pass
 
     print("DAG check: no cycles found in lateral edges.")
     return 0

@@ -34,6 +34,7 @@ RSS Feeds → Collector (async) → Dedup (fingerprint+URL) → SQLite
 | `audit/` | Graph maintenance scripts (eval, patch generation, analysis) |
 | `taxonomy/` | `TAXONOMY.md` — v4 taxonomy design (locked). YAML source files removed in latest clean slate commit; need to be regenerated |
 | `data/` | Runtime: `impact_news.db`, `embeddings.faiss`, `merged_graph.yaml` |
+| `viz/` | Impact Atlas: Cytoscape.js interactive graph visualizer (top-down, street view, PPR shockwave) |
 
 ## Commands
 
@@ -61,6 +62,13 @@ python -m graph.scenarios                # Run scenario suite with PPR engine
 ### Tests
 ```bash
 python -m graph.scenarios                # Run scenario suite (PPR engine)
+python -m graph.export_viz               # Export graph.json for Impact Atlas visualizer
+```
+
+### Impact Atlas (Interactive Visualizer)
+```bash
+python -m graph.export_viz               # Generate viz/data/graph.json (run after graph changes)
+cd viz && python -m http.server 8080     # Serve at http://localhost:8080
 ```
 
 Golden test harness (`tests/golden/run.py`) was removed — needs rebuild with new user profiling. Test case definitions kept in `tests/golden/cases.yaml` as reference for test design patterns (band assertions, must_hit/must_miss, score separation).
