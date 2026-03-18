@@ -1627,14 +1627,8 @@ edges:
   delay: MEDIUM_TERM
   description: EU carbon border taxes and maritime emission norms restrict older,
     polluting vessels from European shipping routes.
-- from: ministry_of_agriculture
-  to: arable_topsoil
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: LONG_TERM
-  description: Long-term fertilizer subsidies encourage chemical overuse, gradually
-    degrading arable topsoil health.
+  # Removed: ministry_of_agriculture → arable_topsoil
+  # Ministry policies don't create soil. Agriculture policy affects farming practices, not soil itself. Broke farmer cycle.
 - from: municipal_corporations
   to: urban_population_density
   type: REGULATES
@@ -1679,14 +1673,8 @@ edges:
   description: Higher judiciary rulings (e.g., National Green Tribunal orders) directly
     enforce the protection and restoration of terrestrial ecosystems and biological
     habitats.
-- from: indian_union_government
-  to: indian_macroeconomic_indicators
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Union government capital expenditure, taxation, and welfare spending
-    directly drive national output, economic growth, and employment aggregates.
+  # Removed: indian_union_government → indian_macroeconomic_indicators
+  # Weakest link in cycle: indian_macroeconomic_indicators → macro_behavioral_shifts → indian_union_government → indian_macroeconomic_indicators. Rule 14.
 - from: indian_regulatory_bodies
   to: financial_and_capital_markets
   type: AFFECTS
@@ -1760,14 +1748,8 @@ edges:
   delay: MEDIUM_TERM
   description: Local civic bodies and state governments directly finance, build, and
     manage municipal water grids and sewage drainage networks.
-- from: indian_regulatory_bodies
-  to: digital_telecom_infrastructure
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Telecom regulators (e.g., TRAI) dictate spectrum allocation, pricing,
-    and operational frameworks for telecom towers and optical fibre networks.
+  # Removed: indian_regulatory_bodies → digital_telecom_infrastructure
+  # Regulators don't create telecom infra. This is a REGULATES relationship (metadata per Rule 18). Broke 2408 cycles.
 - from: indian_regulatory_bodies
   to: energy_power_infrastructure
   type: AFFECTS
@@ -1808,15 +1790,8 @@ edges:
   delay: SHORT_TERM
   description: Foreign government immigration policies, visa quotas, and geopolitical
     actions directly dictate international migration flows and diaspora mobility.
-- from: indian_statutory_frameworks_and_councils
-  to: social_movements_and_collectives
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: The introduction or alteration of labor, welfare, and agricultural
-    statutory frameworks directly triggers mobilization by trade unions and agrarian
-    collectives.
+  # Removed: indian_statutory_frameworks_and_councils → social_movements_and_collectives
+  # Weakest link in cycle: social_movements_and_collectives → indian_statutory_frameworks_and_councils → social_movements_and_collectives. Rule 14.
 - from: indian_judiciary_and_law_enforcement
   to: cultural_and_religious_forces
   type: AFFECTS
@@ -1825,14 +1800,8 @@ edges:
   delay: SHORT_TERM
   description: Higher judiciary rulings frequently intervene in, regulate, or redefine
     the administration of religious trusts, festival observances, and cultural practices.
-- from: indian_union_government
-  to: macro_behavioral_shifts
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Major economic and social welfare policy announcements by central ministries
-    directly drive shifts in aggregate consumer sentiment and civic behavior.
+  # Removed: indian_union_government → macro_behavioral_shifts
+  # Weakest link in cycle: macro_behavioral_shifts → indian_union_government → macro_behavioral_shifts. Rule 14.
 - from: state_and_local_governments
   to: migration_and_mobility
   type: AFFECTS

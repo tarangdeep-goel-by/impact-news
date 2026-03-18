@@ -929,24 +929,10 @@ edges:
   description: Tectonic activities (earthquakes) and cryosphere events (glacial lake
     outbursts) cause immediate disruption to state and local government infrastructure
     and administration.
-- from: hydrological_systems
-  to: state_and_local_governments
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: River basin levels and subsurface water availability directly dictate
-    the operational capacity of local civic bodies and state utility boards for municipal
-    water distribution.
-- from: biophysical_and_ecological_systems
-  to: indian_regulatory_bodies
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Biological population dynamics (e.g., zoonotic disease outbreaks, agricultural
-    pest swarms) trigger immediate responses and mandate changes from health and safety
-    regulators.
+  # Removed: hydrological_systems → state_and_local_governments
+  # 2-node cycle. Governments manage water (T2→T1) is dominant flow. Rule 14.
+  # Removed: biophysical_and_ecological_systems → indian_regulatory_bodies
+  # Ecosystems don't create regulators. Regulatory response is an event, not entity covariation. Broke 2305 cycles.
 - from: meteorological_systems
   to: indian_macroeconomic_indicators
   type: AFFECTS

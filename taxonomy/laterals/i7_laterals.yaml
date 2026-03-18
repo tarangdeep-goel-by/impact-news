@@ -129,11 +129,3 @@
   delay: SHORT_TERM
   description: Working professionals seeking corporate upskilling and career advancement
     drive enrollment in flexible online degree programs and distance education.
-- from: coaching_fees
-  to: educational_loans
-  type: PRODUCES
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High coaching fees for competitive exams drive students and parents
-    to seek educational loans to finance their test preparation.

@@ -82,11 +82,3 @@
   description: High volumes of religious pilgrims increase the demand and pricing
     for local travel agencies, guides, and transport services operating in pilgrimage
     circuits.
-- from: tour_package
-  to: tourism_services
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: The sale and fulfillment of bundled tour packages directly produces
-    revenue and operational demand for broader tourism services and travel agencies.

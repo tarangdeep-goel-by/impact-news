@@ -1067,14 +1067,10 @@ edges:
   delay: MEDIUM_TERM
   description: High aggregate joblessness drives distress migration as rural populations
     move to urban centers in search of livelihood.
-- from: national_unemployment_rate
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.85
-  polarity: -1
-  delay: SHORT_TERM
-  description: Rising unemployment creates income uncertainty, directly depressing
-    the public's willingness to spend and overall economic optimism.
+  # Removed: national_unemployment_rate → aggregate_consumer_confidence
+  # Creates macro feedback cycle (confidence→GDP→jobs→confidence).
+  # Unemployment is one input to confidence but the reverse direction
+  # (confidence→spending→GDP→jobs) is the dominant causal flow. Rule 14.
 - from: india_gdp_growth
   to: tier_2_3_city_expansion
   type: AFFECTS
@@ -1115,15 +1111,8 @@ edges:
   delay: LONG_TERM
   description: High global demand and extraction of energy, metals, and agricultural
     commodities drive deforestation, habitat loss, and widespread ecological degradation.
-- from: global_commodity_markets
-  to: meteorological_systems
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: The extraction, trade, and subsequent combustion of fossil energy commodities
-    directly drive greenhouse gas emissions, fundamentally altering macro climate
-    drivers and atmospheric temperatures.
+  # Removed: global_commodity_markets → meteorological_systems
+  # Markets don't cause weather. Broke cycle.
 - from: indian_macroeconomic_indicators
   to: indian_regulatory_bodies
   type: AFFECTS
@@ -1140,24 +1129,10 @@ edges:
   delay: SHORT_TERM
   description: Global energy and agricultural commodity prices directly import inflation
     into the Indian economy, driving up domestic inflation indices.
-- from: financial_and_capital_markets
-  to: indian_union_government
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Debt and bond market yields determine sovereign borrowing costs, directly
-    influencing the Union Government's fiscal deficit targets and infrastructure spending
-    capacity.
-- from: international_trade_and_supply_chains
-  to: indian_union_government
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Global supply chain disruptions and trade imbalances force economic
-    ministries to adjust import duties and launch domestic manufacturing incentives
-    (e.g., PLI schemes).
+  # Removed: financial_and_capital_markets → indian_union_government
+  # Weakest link in cycle: indian_macroeconomic_indicators → indian_regulatory_bodies → financial_and_capital_markets → indian_union_government → indian_macroeconomic_indicators. Rule 14.
+  # Removed: international_trade_and_supply_chains → indian_union_government
+  # Weakest link in cycle: indian_macroeconomic_indicators → indian_regulatory_bodies → financial_and_capital_markets → transport_logistics_infrastructure → international_trade_and_supply_chains → indian_union_government → indian_macroeconomic_indicators. Rule 14.
 - from: global_commodity_markets
   to: energy_power_infrastructure
   type: SUPPLIES
@@ -1208,11 +1183,5 @@ edges:
   delay: MEDIUM_TERM
   description: Domestic economic growth and employment aggregates drive rural-to-urban
     domestic migration and influence international labor migration.
-- from: indian_macroeconomic_indicators
-  to: social_movements_and_collectives
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Macroeconomic distress (high inflation, low employment) triggers mobilization
-    of labor unions and agrarian collectives.
+  # Removed: indian_macroeconomic_indicators → social_movements_and_collectives
+  # Weakest link in cycle: indian_macroeconomic_indicators → social_movements_and_collectives → indian_statutory_frameworks_and_councils → indian_macroeconomic_indicators. Rule 14.
