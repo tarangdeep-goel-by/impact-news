@@ -1,6 +1,6 @@
 # Taxonomy v4 — Impact News Knowledge Graph
 
-## Status: CONSTITUTION LOCKED (2026-03-13). L1s LOCKED. L2s pending.
+## Status: CONSTITUTION v4.1 (2026-03-18). L1s LOCKED. Rules updated per Gemini 3.1 Pro review.
 
 ---
 
@@ -101,9 +101,9 @@ The graph has three kinds of non-hierarchical connections:
 |------|----------|---------|----------|
 | **Intra-tree** | Nodes within same L1 | `retail_diesel` → `freight_cost` (both I3) | Phase 1b / 2b |
 | **Portal** | Nodes across different L1s, same world | `freight_cost` (I3) → `retail_tomato` (I1) | Phase 1b / 2b |
-| **Bridge** | Trigger L2 → Impact L2 | `global_commodity_markets` (T3) → `petroleum_products` (I3) | Phase 3 |
+| **Bridge** | Trigger node → Impact node (level per Rule 18) | `brent_crude` (T3-L4) → `lpg_cylinder` (I2-L4) | Phase 3 |
 
-Portal edges can connect nodes at **any level** — an L3 in one tree can link to an L2 in another. Causal links don't respect taxonomy depth.
+Portal edges can connect nodes at **any level** — an L3 in one tree can link to an L3 in another. In the Impact world, L2 nodes must not be targeted (Rule 20); in the Trigger world, L2 targets are permitted when homogeneous (Rule 18).
 
 **No I→T feedback edges.** Earlier designs included feedback edges (Impact→Trigger) modeling how citizen outcomes influence system entities. These were removed because they create cycles and "everything affects everything" paths. If an I-world node is actually an aggregate metric (e.g., `urban_unemployment_rate`), it likely belongs in T-world — fix the classification rather than adding feedback edges.
 
@@ -164,11 +164,34 @@ Every **lateral** (non-hierarchical) edge must carry ALL of:
 
 | Property | Values | Purpose |
 |----------|--------|---------|
-| `type` | One of 12 canonical types | What kind of relationship |
+| `type` | One of 12 canonical types (see Rule 12b) | What kind of relationship |
 | `weight` | 0.0–1.0 | Strength of causal link |
 | `polarity` | +1 or -1 | Covariation direction (see Rule 1) |
 | `delay` | IMMEDIATE / SHORT_TERM / MEDIUM_TERM / LONG_TERM | Temporal lag |
 | `description` | Non-empty string | Human-readable explanation of mechanism |
+
+---
+
+### Rule 12b: Edge Type Semantics
+
+When assigning an edge type, evaluate in this priority order. Pick the **first** that fits:
+
+| Priority | Type | Test | Example |
+|----------|------|------|---------|
+| 1 | `PRODUCES` | Does A literally create or generate B? | `rooftop_solar` PRODUCES `household_electricity` |
+| 2 | `SUPPLIES` | Does A provide physical goods, data, or labor to B? | `wholesale_market` SUPPLIES `retail_tomato` |
+| 3 | `FUNDS` | Does A directly pay for or financially back B? | `personal_savings` FUNDS `mutual_fund_portfolio` |
+| 4 | `DISRUPTS` | Does A physically or systematically block, break, or halt B? | `urban_flooding` DISRUPTS `daily_commute` |
+| 5 | `DEPENDS_ON` | Is B structurally unable to function without A? | `upi_transactions` DEPENDS_ON `mobile_internet` |
+| 6 | `REGULATES` | Does A set rules/constraints that B must operate within? (same-world only) | `gst_council` REGULATES `tax_framework` |
+| 7 | `MANAGES` | Does A have administrative authority over B? (same-world only) | `ministry_of_finance` MANAGES `union_budget` |
+| 8 | `EMPLOYS` | Does A hire/engage B as labor? | `it_company` EMPLOYS `software_engineers` |
+| 9 | `COMPETES_WITH` | Does A take market share from B? (unidirectional, see Rule 14) | `swiggy` COMPETES_WITH `zomato` |
+| 10 | `AFFECTS` | **Fallback.** A changes the price, frequency, or quality of B. | `retail_diesel` AFFECTS `freight_costs` |
+
+**`AFFECTS` is the fallback, not the default.** If a more specific verb applies, use it. `AFFECTS` should be the minority type in a well-authored graph.
+
+**Cross-world restriction:** `REGULATES` and `MANAGES` must NOT cross the T→I boundary. Administrative relationships across worlds (e.g., `rbi REGULATES credit_card_dues`) are stored as node metadata (`regulated_by`), not graph edges — they short-circuit causal chains.
 
 ---
 
@@ -195,7 +218,9 @@ Lateral edges within the same world (I→I or T→T) must form a **Directed Acyc
 
 No cycles allowed: `healthcare_costs` → `personal_savings` → `mental_health` → `healthcare_costs` is forbidden.
 
-Validation: run `python -m graph.admin validate` after every edge addition to detect cycles. If a real-world feedback loop exists, model it as two separate unidirectional paths with different delays, not a cycle.
+**`COMPETES_WITH` exception:** Competition is inherently bidirectional, which would create 2-node cycles. To preserve DAG: `COMPETES_WITH` edges must be **unidirectional** — model only the dominant competitive direction (market share taker → market share loser). If both directions are equally valid, pick alphabetical order and document. `COMPETES_WITH` edges are excluded from cycle validation.
+
+Validation: run `python -m graph.admin validate-dag` after every edge addition to detect cycles. If a real-world feedback loop exists, model it as two separate unidirectional paths with different delays, not a cycle.
 
 ---
 
@@ -220,7 +245,7 @@ Every node carries a `status` field:
 | `deprecated` | Marked for removal, still resolves in lookups but excluded from new scoring | Set when entity becomes irrelevant |
 | `merged` | Subsumed into another node | Must include `merged_into: <target_node_id>`. Lookups redirect to target |
 
-**Temporal entities** (e.g., `covid_19_lockdown`, `demonetisation`) are allowed as nodes if they pass the Leaf Node Test (Rule 5). When the entity ceases to be relevant, set status to `deprecated`. The node remains in git history and can be reactivated if the entity recurs.
+**Temporal conditions** that persist long enough to function as entities are allowed as nodes if they pass the Leaf Node Test (Rule 5). Name them as the **enduring condition**, not the event: `pandemic_movement_restrictions` (not `covid_19_lockdown`), `currency_demonetisation_regime` (not `demonetisation`). When the condition ceases to be relevant, set status to `deprecated`. The node remains in git history and can be reactivated if the condition recurs.
 
 **Mergers** (e.g., `hdfc_ltd` merges into `hdfc_bank`): set the absorbed node to `merged`, update `merged_into`, and transfer all inbound/outbound edges to the target node.
 
@@ -235,8 +260,13 @@ The target level is determined by the homogeneity of the causal effect:
 
 **(a) HOMOGENEITY TEST:** "Does this trigger affect ALL L3 siblings under
 the target L2 with the same mechanism, weight, polarity, and delay?"
-- **YES** → target the L2 (CONTAINS propagation handles children)
+- **YES** → target the L3 (preferred) or L2 only if ALL L3 children are also homogeneous
 - **NO** → target specific L3s (or L4s if L3 is also heterogeneous)
+
+> **Preference:** Target L3 over L2 even when homogeneous. L2 targeting is
+> permitted for T→I bridges when the effect is truly universal across ALL
+> descendants, but L3 is safer and should be the default. For I→I edges,
+> L2 targeting is forbidden (see Rule 20).
 
 **(b) SOURCE LEVEL:** Trigger sources should be the most specific node
 where the causal mechanism originates. Prefer L3/L4 leaves over
@@ -262,18 +292,51 @@ bridges via upward aggregation, not from a single L1 bridge.
 
 ---
 
+### Rule 20: I→I Lateral Edge Targeting
+
+Impact-to-Impact lateral edges follow the same "Highest Level of Universal Truth"
+principle as bridges (Rule 18), with additional constraints:
+
+**(a) NEVER TARGET L2.** Impact L2 nodes are organizational groupings, not causal
+entities. An I→I edge to `fresh_produce` (L2) would falsely propagate to all
+vegetables, fruits, and produce children. Instead, target the L3 or L4 where
+the mechanism actually applies.
+
+**(b) TARGET L3 BY DEFAULT.** Most citizen-level cascades operate at the L3 level.
+CONTAINS propagation (Phase 3 of the PPR engine) handles L4 children automatically.
+
+Example: `electricity_tariff` (I2-L4) → `electric_vehicle_charging` (I3-L3).
+This correctly propagates to all EV charging children without false paths.
+
+**(c) TARGET L4 ONLY FOR EXCEPTIONS.** When the causal mechanism affects only one
+specific child under an L3, bypass the L3 and target the L4 directly.
+
+Example: `monetary_policy_committee` (T2-L4) → `home_loan_emi` (I5-L4).
+This is specific because MPC rate changes affect home loans differently than
+education loans or gold loans.
+
+**(d) HOMOGENEITY TEST (same as Rule 18a):** Before targeting an L3, verify:
+"Does this source affect ALL L4 children under this L3 with the same mechanism,
+weight, polarity, and delay?" YES → target L3. NO → decompose to specific L4s.
+
+**(e) SOURCE LEVEL:** The source of an I→I edge follows the same precision rule.
+Use the most specific node where the causal mechanism originates.
+
+---
+
 ### Rule 19: Patch and Edge Addition Protocol
 
 When adding new edges or bridges to the graph:
 
 1. **Check if an existing bridge already covers the path.** Use `python -m graph.traverse <trigger_node>` to trace reachability. If the target is already reached via CONTAINS propagation from an existing bridge (at any level), no new edge is needed.
-2. **Apply the Homogeneity Test (Rule 18a) before choosing target level.** If the mechanism applies uniformly to all children of a target L2, bridge to the L2. If only specific children are affected, bridge to the relevant L3s or L4s. Do not default to any level — let causal precision decide.
-3. **Same-world laterals: prefer the most specific shared level.** When adding I→I or T→T connections, target the level where the mechanism holds uniformly. L2→L2 laterals are fine when appropriate, but L3→L3 or mixed-level laterals are equally valid.
+2. **Apply the Homogeneity Test (Rule 18a/20d) before choosing target level.** Prefer L3 targets. For T→I bridges, L2 is permitted only if the effect is truly universal across all descendants. For I→I edges, L2 is forbidden (Rule 20). If only specific children are affected, target the relevant L3s or L4s.
+3. **Same-world laterals: prefer the most specific shared level.** When adding I→I or T→T connections, target the level where the mechanism holds uniformly. For I→I edges, L2 targets are forbidden (Rule 20). L3→L3 or mixed-level laterals are the standard.
 4. **No new nodes without justification.** The L2 taxonomy is MECE. Adding a new L2 requires demonstrating that no existing L2 covers the concept. New L3/L4 leaves are fine if they pass the Leaf Node Test (Rule 5).
 5. **Every patch needs a scenario.** When adding a bridge to fix a gap, add a corresponding scenario to `taxonomy/scenarios.yaml` that validates the path. Include both a positive scenario (bridge reaches the right target) and a negative scenario (bridge does not create false paths). Patches without test coverage will regress silently.
 6. **Run the full validation suite after every patch:**
    ```bash
-   python3 scripts/graph_builder.py test    # 47+ scenarios must pass
+   python3 -m graph.scenarios               # scenario suite must not regress
+   python3 -m graph.admin validate-dag      # no cycles
    python3 -m graph.quality                 # scorecard must not regress
    ```
 
@@ -289,7 +352,7 @@ At each phase boundary, run these checks before proceeding:
 | **1b → 2a** | Impact subgraph is connected DAG, no isolated components | `graph.admin validate --dag --components` |
 | **2a → 2b** | Every Trigger node has a hypothetical path to at least one Impact node ("So What?" test) | Manual review |
 | **2b → 3** | Trigger subgraph is connected DAG | `graph.admin validate --dag` |
-| **3 → 4** | All port nodes have at least one bridge edge, all feedback edges have delay >= MEDIUM_TERM | `graph.admin validate --bridges` |
+| **3 → 4** | All port nodes have at least one bridge edge | `graph.admin validate --bridges` |
 | **Phase 4** | Trace 15+ real scenarios end-to-end, verify traversal reaches expected Impact nodes | Manual + `graph.traverse` |
 
 Do not proceed to the next phase until validation passes.
@@ -358,8 +421,8 @@ Do not proceed to the next phase until validation passes.
 | home_loan | Impact | I5: Personal Finance & Wealth |
 | bmrcl_metro | Trigger | T4: Tech & Physical Infrastructure |
 | tomato | Impact | I1: Food & Nutrition |
-| tcs (corporation) | Trigger | T3: Macro & Global Markets |
-| tcs_salary | Impact | I4: Livelihood & Employment |
+| indian_it_industry (sector aggregate) | Trigger | T3: Macro & Global Markets |
+| it_sector_salary | Impact | I4: Livelihood & Employment |
 | upi (protocol) | Trigger | T4: Tech & Physical Infrastructure |
 | upi_transaction | Impact | I10: Digital Life & Connectivity |
 | hospital_beds | Impact | I6: Health & Physiology |
@@ -367,8 +430,8 @@ Do not proceed to the next phase until validation passes.
 | gold | Impact | I5: Personal Finance & Wealth |
 | bangalore_traffic | Impact | I3: Transport & Mobility |
 | gst | Trigger | T2: Institutional & Sovereign |
-| farmer_protest | Trigger | T5: Social, Demographic & Cultural |
-| diwali_festival | Trigger | T5: Social, Demographic & Cultural |
+| farmer_unions | Trigger | T5: Social, Demographic & Cultural |
+| autumn_festive_season | Trigger | T5: Social, Demographic & Cultural |
 | netflix_subscription | Impact | I11: Leisure, Culture & Community |
 
 ---
@@ -377,20 +440,20 @@ Do not proceed to the next phase until validation passes.
 
 ### Chain 1: Inflation Cascade (Macro → Plate)
 ```
-[T3] Brent Crude → [T2] Oil Marketing Policy → [I3] Retail Diesel →
-[I3] Trucking Freight → [I1] Retail Tomato Price → [I5] Household Savings
+[T3] brent_crude → [T2] oil_marketing_companies → [I3] retail_diesel →
+[I3] freight_cost → [I1] retail_tomato → [I5] savings_account_balance
 ```
 
 ### Chain 2: Climate-Health Nexus (Planet → Lungs)
 ```
-[T1] Post-Monsoon Winds → [T3] Punjab Stubble Burning →
-[I9] Delhi AQI → [I6] Pediatric Asthma → [I6] Inhaler Demand
+[T1] post_monsoon_wind_patterns → [T1] agricultural_stubble_biomass →
+[I9] ambient_aqi → [I6] hospital_beds → [I6] generic_medicines
 ```
 
 ### Chain 3: Digital Infrastructure Shock (Regulation → Wallet)
 ```
-[T2] RBI Regulatory Action → [T4] Paytm Payments Bank →
-[I10] FASTag Wallet → [I3] Toll Plaza Wait Times → [I4] Gig Worker Earnings
+[T2] rbi → [T4] paytm_payments_bank →
+[I10] fastag_wallet → [I3] toll_plaza → [I4] gig_worker_payouts
 ```
 
 ---
@@ -404,6 +467,81 @@ When "US Fed cuts rates by 50bps" happens:
 - **I4 (Livelihood):** US tech budgets expand → IT hiring improves. "Better appraisal conditions next quarter."
 - **I5 (Finance):** RBI may follow → home loan EMI drops. "Your ₹50k EMI could decrease."
 - **I1 (Food):** Global wheat prices dip slightly → suppressed, low relevance for this user.
+
+---
+
+## Scoring Algorithm: Multi-Phase Activation (PPR)
+
+The scoring engine uses Personalized PageRank with a 3-phase activation model
+to trace how a trigger event propagates through the graph to citizen-level impacts.
+
+### Phase 1: Upward Seed Expansion (Pre-PPR)
+
+When a trigger node fires (e.g., `brent_crude`), walk UP the CONTAINS hierarchy
+with exponential decay to build a multi-seed vector:
+
+```
+{brent_crude: 0.67, energy_commodities: 0.33}  (normalized, decay=0.5)
+```
+
+- Only ancestors with causal out-edges in the causal subgraph are included
+- Config: `upward_seed_decay=0.5`, `max_seed_levels=3`
+- **Rationale:** If a news event triggers an L4 leaf (e.g., `hdfc_bank`),
+  upward expansion ensures that category-level bridges attached to its
+  L3 parent (`private_banks`) are still activated by the PPR walk
+
+### Phase 2: Pure Causal Walk (PPR)
+
+Run NetworkX `pagerank()` on the causal subgraph (CONTAINS/IS_A edges stripped):
+
+- `personalization` = seed vector from Phase 1
+- `dangling` = seed vector (dangling nodes restart at seed distribution)
+- `alpha` = 1 - restart_prob (default restart_prob=0.20)
+- Nodes below `prob_threshold` (default 0.005) are discarded
+
+The causal subgraph only contains the 10 causal edge types:
+AFFECTS, PRODUCES, REGULATES, DISRUPTS, SUPPLIES, DEPENDS_ON,
+FUNDS, COMPETES_WITH, EMPLOYS, MANAGES.
+
+### Phase 3: Downward CONTAINS Propagation (Post-PPR)
+
+For each category node reached by PPR, propagate scores down through
+CONTAINS edges to leaf children:
+
+```
+child_score = MAX(direct_ppr_score, parent_score × contains_weight)
+```
+
+MAX semantics ensure that if a leaf was directly reached by PPR with a
+higher score than what propagation would give, the direct score wins.
+
+### 3-Layer Scoring
+
+Each reached node gets three scores computed along its dominant path
+(shortest path on -log(P) costs):
+
+| Layer | Metric | How | Range |
+|-------|--------|-----|-------|
+| **Probability** | PPR steady-state | PageRank output | 0.0–1.0 |
+| **Magnitude** | Hub-penalized path product | ∏(weight × hub_penalty) along path | 0.0–1.0 |
+| **Timing** | Delay sum | Σ(delay_rank) along path → label | IMMEDIATE–LONG_TERM |
+
+Hub penalty: `1 / log2(out_degree + 1)` for nodes with out_degree > 1.
+Polarity: ∏(edge_polarity) along path × event_direction.
+
+**Polarity example:** News headline "Monsoon deficit this year" →
+`southwest_monsoon` fires with event_direction = **-1** (decrease).
+Edge: monsoon → crop_yield has polarity **+1** (more monsoon = more yield).
+Final polarity on crop_yield: (-1) × (+1) = **-1** → crop yield decreases. Correct.
+
+### Config Parameters
+
+| Parameter | Default | Purpose |
+|-----------|---------|---------|
+| `ppr_restart_prob` | 0.20 | PPR restart probability (α) |
+| `ppr_prob_threshold` | 0.005 | Min probability to include a node |
+| `upward_seed_decay` | 0.5 | Decay per CONTAINS level in seed expansion |
+| `max_seed_levels` | 3 | Max levels to walk up for seeding |
 
 ---
 
@@ -426,9 +564,9 @@ No existing product or framework combines causal chain modeling with citizen-cen
 
 | Metric | Target | Rationale |
 |--------|--------|-----------|
-| Impact leaf nodes | 150-180 | ~15-20 per L1, enough to cover Indian life without bloat |
-| Trigger leaf nodes | 70-100 | Domestic institutions + geopolitical entities with ≤4 hop paths |
-| Total nodes (with L2 categories) | 300-350 | Leaves + ~85 L2s + 16 L1s |
+| Impact leaf nodes | 400-500 | ~35-50 per L1 at L3/L4 depth |
+| Trigger leaf nodes | 150-200 | Domestic institutions + geopolitical entities with ≤4 hop paths |
+| Total nodes (incl. categories) | 700-850 | Leaves + L2/L3 categories + 16 L1s |
 | Lateral edges per leaf | 3-5 avg | Meaningfully connected, not over-wired |
 | Dead-end ratio | < 5% | Almost every node in a causal chain |
 | Orphan nodes | 0 | No disconnected nodes |
@@ -449,7 +587,7 @@ No existing product or framework combines causal chain modeling with citizen-cen
 | **1b** | Impact lateral edges (intra-tree + portals) | AFFECTS, DISRUPTS, SUPPLIES, etc. | Connected Impact subgraph |
 | **2a** | Trigger vertical trees | CONTAINS, IS_A only | 5 Trigger tree structures |
 | **2b** | Trigger lateral edges (intra-tree + portals) | AFFECTS, DISRUPTS, SUPPLIES, etc. | Connected Trigger subgraph |
-| **3** | Bridge + Feedback edges (T→I and I→T) | Any lateral type | Full connected graph |
+| **3** | Bridge edges (T→I only) | Any lateral type | Full connected graph |
 | **4** | End-to-end validation | — | 15+ traced scenarios, gap-fill |
 
 Within each phase: build nodes → tag ports/portals → add edges → validate (Rule 17 checks at each boundary).
