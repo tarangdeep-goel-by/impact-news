@@ -1052,3 +1052,11 @@ edges:
   delay: MEDIUM_TERM
   description: Severe depletion of subsurface water and flooding of major river basins
     force population displacement and out-migration from affected regions.
+- from: cyclonic_storm_systems
+  to: marine_fish_stocks
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: IMMEDIATE
+  description: Cyclonic storms cause severe ocean turbulence and temperature changes,
+    disrupting and scattering marine fish populations.

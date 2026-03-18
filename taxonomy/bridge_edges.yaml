@@ -24,7 +24,15 @@ edges:
   description: Erratic rainfall patterns severely impact the production of rain-fed
     pulse and legume crops.
 - from: meteorological_systems
-  to: infectious_diseases
+  to: vector_borne_diseases
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Monsoon systems and temperature shifts create ideal breeding conditions
+    for vector-borne and water-borne diseases.
+- from: meteorological_systems
+  to: water_and_food_borne_diseases
   type: PRODUCES
   weight: 0.9
   polarity: 1
@@ -217,7 +225,7 @@ edges:
     accessibility to tourism services and holiday destinations.
 - from: transport_logistics_infrastructure
   to: fresh_produce
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.6
   polarity: 1
   delay: SHORT_TERM
@@ -240,7 +248,15 @@ edges:
   description: The capacity and quality of municipal drainage networks inversely affect
     the severity and frequency of urban flooding.
 - from: civic_urban_infrastructure
-  to: infectious_diseases
+  to: vector_borne_diseases
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Proper sewage and drainage infrastructure significantly reduces the
+    prevalence of water-borne and vector-borne diseases.
+- from: civic_urban_infrastructure
+  to: water_and_food_borne_diseases
   type: DISRUPTS
   weight: 0.8
   polarity: -1
@@ -304,7 +320,7 @@ edges:
   description: Positive consumer sentiment directly increases the frequency and budget
     allocated to restaurants and food delivery services.
 - from: indian_statutory_frameworks_and_councils
-  to: household_energy
+  to: cooking_fuel
   type: AFFECTS
   weight: 0.8
   polarity: 1
@@ -669,17 +685,24 @@ edges:
     government R&D funding decisions directly affect postgraduate research opportunities
     and funding.
 - from: agricultural_commodities
-  to: edible_oils
+  to: palm_oil
   type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
-  description: Global prices of palm oil, soybean oil, and sunflower oil on international
-    commodity exchanges directly set the import cost for India, which imports over
-    60% of its edible oil demand.
+  description: Global palm oil commodity prices directly dictate Indian retail palm
+    oil costs, as India imports over 60% of its edible oil.
+- from: agricultural_commodities
+  to: sunflower_oil
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Global sunflower oil prices (driven by Ukraine/Russia supply) directly
+    affect Indian retail sunflower oil costs.
 - from: energy_commodities
   to: household_energy
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.9
   polarity: 1
   delay: SHORT_TERM
@@ -687,7 +710,7 @@ edges:
     retail cost of LPG cylinders, piped natural gas, and kerosene for Indian households.
 - from: energy_commodities
   to: vehicle_fuel
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.9
   polarity: 1
   delay: SHORT_TERM
@@ -887,7 +910,7 @@ edges:
     BFSI sector activity; the effect on BFSI employment is indirect through overall
     economic health.
 - from: national_power_grid
-  to: household_energy
+  to: residential_electricity
   type: SUPPLIES
   weight: 0.95
   polarity: 1
@@ -896,7 +919,7 @@ edges:
     households; grid failures and load shedding immediately disrupt domestic electricity
     supply.
 - from: coal_power_plants
-  to: household_energy
+  to: residential_electricity
   type: SUPPLIES
   weight: 0.7
   polarity: 1
@@ -905,7 +928,7 @@ edges:
     coal shortages at power plants trigger grid frequency drops and domestic power
     cuts.
 - from: renewable_energy_parks
-  to: household_energy
+  to: residential_electricity
   type: SUPPLIES
   weight: 0.5
   polarity: 1
@@ -914,7 +937,7 @@ edges:
     their expansion gradually reduces household electricity tariffs through lower
     generation costs.
 - from: oil_gas_pipelines
-  to: household_energy
+  to: cooking_fuel
   type: SUPPLIES
   weight: 0.85
   polarity: 1
@@ -923,7 +946,7 @@ edges:
     kitchens; pipeline disruptions or capacity constraints directly affect cooking
     fuel availability.
 - from: nuclear_power_plants
-  to: household_energy
+  to: residential_electricity
   type: SUPPLIES
   weight: 0.3
   polarity: 1
@@ -1787,10 +1810,10 @@ edges:
   to: marine_fish
   type: SUPPLIES
   weight: 0.8
-  polarity: -1
+  polarity: 1
   delay: MEDIUM_TERM
-  description: Abundant marine fish stocks in the Bay of Bengal and Arabian Sea increase
-    the catch volume, lowering the retail price of marine fish and seafood.
+  description: Marine fish stock abundance directly determines the physical supply
+    and availability of marine fish for retail consumption.
 - from: forest_cover
   to: ambient_aqi
   type: AFFECTS
@@ -1819,7 +1842,7 @@ edges:
   to: it_sector_salary
   type: AFFECTS
   weight: 0.7
-  polarity: 1
+  polarity: -1
   delay: MEDIUM_TERM
   description: US Fed rate cuts lower the cost of capital, boosting tech investments
     and driving up hiring budgets and salaries in the Indian IT sector.
@@ -1951,7 +1974,7 @@ edges:
     increases checkout conversion rates and order volumes for food delivery services.
 - from: autumn_festive_season
   to: retail_sugar
-  type: AFFECTS
+  type: PRODUCES
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -2443,7 +2466,7 @@ edges:
     for individuals.
 - from: southwest_monsoon
   to: staple_grains
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.9
   polarity: 1
   delay: SHORT_TERM
@@ -2451,7 +2474,7 @@ edges:
     affecting rice, wheat, and grain supply and prices.
 - from: southwest_monsoon
   to: vegetables
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
@@ -2465,14 +2488,6 @@ edges:
   delay: SHORT_TERM
   description: Good monsoons increase agricultural activity and labor demand, pushing
     up farm wage rates.
-- from: cyclonic_storm_systems
-  to: marine_fish_stocks
-  type: DISRUPTS
-  weight: 0.85
-  polarity: -1
-  delay: IMMEDIATE
-  description: Cyclonic storms disrupt marine habitats, damage fishing infrastructure,
-    and force extended fishing bans.
 - from: us_consumer_demand
   to: manufacturing_and_core
   type: AFFECTS
@@ -2549,7 +2564,7 @@ edges:
   to: vehicle_fuel
   type: AFFECTS
   weight: 0.8
-  polarity: -1
+  polarity: 1
   delay: SHORT_TERM
   description: Rupee depreciation increases crude oil import costs, pushing up petrol,
     diesel, and CNG prices.
@@ -2563,7 +2578,7 @@ edges:
     schemes, and fee regulation directives from MHRD/UGC directly affect tuition fees,
     loan subsidies, and education affordability.
 - from: indian_regulatory_bodies
-  to: education_economics
+  to: college_university_fees
   type: AFFECTS
   weight: 0.7
   polarity: 1
