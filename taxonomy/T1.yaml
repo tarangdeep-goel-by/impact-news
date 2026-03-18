@@ -700,7 +700,7 @@ edges:
     tropical cyclones.
 - from: arabian_sea_marine_system
   to: southwest_monsoon
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
@@ -749,7 +749,7 @@ edges:
     the deep alluvial groundwater aquifers of the Indo-Gangetic plain.
 - from: forest_cover
   to: groundwater_aquifers
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.75
   polarity: 1
   delay: LONG_TERM
@@ -929,10 +929,6 @@ edges:
   description: Tectonic activities (earthquakes) and cryosphere events (glacial lake
     outbursts) cause immediate disruption to state and local government infrastructure
     and administration.
-  # Removed: hydrological_systems → state_and_local_governments
-  # 2-node cycle. Governments manage water (T2→T1) is dominant flow. Rule 14.
-  # Removed: biophysical_and_ecological_systems → indian_regulatory_bodies
-  # Ecosystems don't create regulators. Regulatory response is an event, not entity covariation. Broke 2305 cycles.
 - from: meteorological_systems
   to: indian_macroeconomic_indicators
   type: AFFECTS
@@ -994,7 +990,7 @@ edges:
     sewage and drainage networks, causing severe urban flooding.
 - from: meteorological_systems
   to: energy_power_infrastructure
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.7
   polarity: 1
   delay: SHORT_TERM

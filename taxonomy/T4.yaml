@@ -738,7 +738,7 @@ edges:
     of wastewater that the sewage network must process.
 - from: national_power_grid
   to: index_of_industrial_production
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -808,8 +808,6 @@ edges:
   delay: SHORT_TERM
   description: Spectrum auctions and subsequent telecom infrastructure rollouts attract
     significant foreign institutional investment.
-  # Removed: coal_power_plants → global_surface_temperature
-  # Climate change is decades-scale, beyond system's causal scope. Broke glacier cycle.
 - from: renewable_energy_parks
   to: global_surface_temperature
   type: AFFECTS
@@ -832,8 +830,8 @@ edges:
   weight: 0.6
   polarity: 1
   delay: MEDIUM_TERM
-  description: Airport announcements (UDAN scheme, Jewar, Navi Mumbai) catalyze
-    real estate booms and economic expansion in tier 2/3 cities.
+  description: Airport announcements (UDAN scheme, Jewar, Navi Mumbai) catalyze real
+    estate booms and economic expansion in tier 2/3 cities.
 - from: municipal_water_grid
   to: urban_population_density
   type: AFFECTS
@@ -858,10 +856,6 @@ edges:
   delay: SHORT_TERM
   description: The reach and affordability of the railway network facilitates the
     mass movement of seasonal migrant workers across states.
-  # Removed: energy_power_infrastructure → meteorological_systems
-  # Power infra doesn't cause weather. Climate change is decades-scale. Broke 2887 cycles.
-  # Removed: civic_urban_infrastructure → hydrological_systems
-  # Weakest link in cycle: hydrological_systems → civic_urban_infrastructure → hydrological_systems. Rule 14.
 - from: transport_logistics_infrastructure
   to: biophysical_and_ecological_systems
   type: DISRUPTS
@@ -887,21 +881,15 @@ edges:
   description: Digital Public Infrastructure (DPI) and data centers supply the foundational
     technological rails for the Union government's welfare delivery and tax collection
     systems.
-  # Removed: digital_telecom_infrastructure → state_and_local_governments
-  # Telecom doesn't cause governments. e-governance depends on telecom (reverse). Broke 1617 cycles.
 - from: transport_logistics_infrastructure
   to: international_trade_and_supply_chains
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: The capacity and efficiency of major seaports, commercial airports,
     and freight corridors directly determine a nation's trade balance metrics and
     integration into global supply chains.
-  # Removed: energy_power_infrastructure → indian_macroeconomic_indicators
-  # Weakest link in cycle: indian_macroeconomic_indicators → indian_regulatory_bodies → financial_and_capital_markets → energy_power_infrastructure → indian_macroeconomic_indicators. Rule 14.
-  # Removed: transport_logistics_infrastructure → indian_macroeconomic_indicators
-  # Weakest link in cycle: indian_macroeconomic_indicators → indian_regulatory_bodies → financial_and_capital_markets → transport_logistics_infrastructure → indian_macroeconomic_indicators. Rule 14.
 - from: digital_telecom_infrastructure
   to: indian_macroeconomic_indicators
   type: AFFECTS
@@ -913,7 +901,7 @@ edges:
     aggregates.
 - from: digital_telecom_infrastructure
   to: financial_and_capital_markets
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.9
   polarity: 1
   delay: SHORT_TERM
@@ -937,5 +925,3 @@ edges:
   description: Deep penetration of digital public infrastructure and telecom networks
     directly drives shifts in consumer sentiment and civic participation by enabling
     real-time information access and digital transactions.
-  # Removed: civic_urban_infrastructure → demographics_and_population
-  # Infrastructure doesn't cause population. Reverse (demographics strain infra) is the valid flow. Broke 1816 cycles.

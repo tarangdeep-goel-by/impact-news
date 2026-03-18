@@ -816,13 +816,6 @@ edges:
   delay: MEDIUM_TERM
   description: Sustained inflows of rural migrants into urban centers directly increase
     city population density and housing congestion.
-  # Removed: urban_population_density → municipal_water_grid/sewage_drainage_network
-  # These create a cycle with T4 edges (infra enables density). The dominant
-  # causal direction (T4: infra → density) is kept. The reverse (density strains
-  # infra) is a feedback loop forbidden by Rule 14.
-  # Removed: tier_2_3_city_expansion → commercial_airports
-  # Swapped direction per Gemini review: airport announcements catalyze city
-  # expansion (T4→T5), not the reverse. See T4.yaml for restored edge.
 - from: rural_urban_migration_corridors
   to: indian_railways_network
   type: DEPENDS_ON
@@ -831,9 +824,6 @@ edges:
   delay: SHORT_TERM
   description: Mass movement of rural migrants to urban centers heavily relies on
     and increases passenger load on the Indian Railways network.
-  # Removed: seasonal_migrant_labor → global_food_grain_supply
-  # Creates 10-hop cycle. Indian migrant labor contributes to domestic harvest,
-  # not global grain supply. Dubious causal claim removed per Rule 14.
 - from: indian_diaspora_nri
   to: india_forex_reserves
   type: SUPPLIES
@@ -962,10 +952,6 @@ edges:
   delay: MEDIUM_TERM
   description: Linguistic pride movements pressure state governments to mandate the
     use of regional languages in local commerce and education.
-  # Removed: aggregate_consumer_confidence → pmi_services
-  # Consumer confidence is one of many inputs to services PMI, not the primary driver. Removed to break unemployment→confidence→GDP→employment cycle. Rule 14.
-  # Removed: aggregate_consumer_confidence → india_gdp_growth
-  # Confidence→GDP is a long-term aggregate effect, not a direct causal edge. The reverse (GDP→confidence via employment) is the dominant news-relevant direction. Rule 14.
 - from: mass_boycott_movements
   to: fii_fpi_flows
   type: DISRUPTS
@@ -1000,7 +986,7 @@ edges:
     driving habitat loss and disrupting biological populations.
 - from: cultural_and_religious_forces
   to: hydrological_systems
-  type: AFFECTS
+  type: DISRUPTS
   weight: 0.5
   polarity: -1
   delay: SHORT_TERM
@@ -1032,8 +1018,6 @@ edges:
   description: Linguistic and regional identity forces strongly dictate the political
     priorities, administrative boundaries, and cultural policies of state and local
     governments.
-  # Removed: macro_behavioral_shifts → indian_union_government
-  # Public sentiment influences elections (LONG_TERM) but doesn't directly drive policy in news timeframes. Government→macro is the dominant causal flow. Rule 14.
 - from: demographics_and_population
   to: indian_macroeconomic_indicators
   type: AFFECTS
@@ -1042,8 +1026,6 @@ edges:
   delay: LONG_TERM
   description: The demographic dividend (working-age population and urbanization)
     is the primary structural driver of long-term national output and employment aggregates.
-  # Removed: macro_behavioral_shifts → indian_macroeconomic_indicators
-  # Weakest link in cycle: indian_macroeconomic_indicators → macro_behavioral_shifts → indian_macroeconomic_indicators. Rule 14.
 - from: cultural_and_religious_forces
   to: indian_macroeconomic_indicators
   type: AFFECTS
@@ -1077,8 +1059,6 @@ edges:
   delay: SHORT_TERM
   description: Widespread agrarian or industrial strikes disrupt national output,
     manufacturing growth, and inflation indices via supply shocks.
-  # Removed: migration_and_mobility → financial_and_capital_markets
-  # Migration funds capital markets too indirect at L2→L2. Specific remittance chains exist at L4. Broke 2031 cycles.
 - from: demographics_and_population
   to: civic_urban_infrastructure
   type: DISRUPTS
@@ -1097,7 +1077,7 @@ edges:
     blockade or disrupt highway networks, railways, and logistics corridors.
 - from: cultural_and_religious_forces
   to: transport_logistics_infrastructure
-  type: AFFECTS
+  type: DISRUPTS
   weight: 0.7
   polarity: -1
   delay: SHORT_TERM

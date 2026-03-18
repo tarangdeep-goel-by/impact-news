@@ -828,7 +828,7 @@ edges:
     energy costs, driving up the wholesale price index.
 - from: brent_crude
   to: india_trade_deficit
-  type: AFFECTS
+  type: PRODUCES
   weight: 0.95
   polarity: 1
   delay: IMMEDIATE
@@ -957,7 +957,7 @@ edges:
     expansion in the services PMI strongly drives overall GDP growth.
 - from: index_of_industrial_production
   to: india_gdp_growth
-  type: AFFECTS
+  type: PRODUCES
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
@@ -1077,7 +1077,7 @@ edges:
     the public's willingness to spend and overall economic optimism.
 - from: india_gdp_growth
   to: tier_2_3_city_expansion
-  type: AFFECTS
+  type: FUNDS
   weight: 0.8
   polarity: 1
   delay: LONG_TERM
@@ -1115,8 +1115,6 @@ edges:
   delay: LONG_TERM
   description: High global demand and extraction of energy, metals, and agricultural
     commodities drive deforestation, habitat loss, and widespread ecological degradation.
-  # Removed: global_commodity_markets → meteorological_systems
-  # Markets don't cause weather. Broke cycle.
 - from: indian_macroeconomic_indicators
   to: indian_regulatory_bodies
   type: AFFECTS
@@ -1133,10 +1131,6 @@ edges:
   delay: SHORT_TERM
   description: Global energy and agricultural commodity prices directly import inflation
     into the Indian economy, driving up domestic inflation indices.
-  # Removed: financial_and_capital_markets → indian_union_government
-  # Weakest link in cycle: indian_macroeconomic_indicators → indian_regulatory_bodies → financial_and_capital_markets → indian_union_government → indian_macroeconomic_indicators. Rule 14.
-  # Removed: international_trade_and_supply_chains → indian_union_government
-  # Weakest link in cycle: indian_macroeconomic_indicators → indian_regulatory_bodies → financial_and_capital_markets → transport_logistics_infrastructure → international_trade_and_supply_chains → indian_union_government → indian_macroeconomic_indicators. Rule 14.
 - from: global_commodity_markets
   to: energy_power_infrastructure
   type: SUPPLIES
@@ -1187,5 +1181,3 @@ edges:
   delay: MEDIUM_TERM
   description: Domestic economic growth and employment aggregates drive rural-to-urban
     domestic migration and influence international labor migration.
-  # Removed: indian_macroeconomic_indicators → social_movements_and_collectives
-  # Weakest link in cycle: indian_macroeconomic_indicators → social_movements_and_collectives → indian_statutory_frameworks_and_councils → indian_macroeconomic_indicators. Rule 14.
