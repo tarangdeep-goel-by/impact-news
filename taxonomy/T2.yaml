@@ -1673,8 +1673,14 @@ edges:
   description: Higher judiciary rulings (e.g., National Green Tribunal orders) directly
     enforce the protection and restoration of terrestrial ecosystems and biological
     habitats.
-  # Removed: indian_union_government → indian_macroeconomic_indicators
-  # Weakest link in cycle: indian_macroeconomic_indicators → macro_behavioral_shifts → indian_union_government → indian_macroeconomic_indicators. Rule 14.
+- from: indian_union_government
+  to: indian_macroeconomic_indicators
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Union government fiscal policy (budgets, subsidies, tax reforms) directly
+    drives national GDP growth, inflation indices, and employment aggregates.
 - from: indian_regulatory_bodies
   to: financial_and_capital_markets
   type: AFFECTS

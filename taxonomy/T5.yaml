@@ -820,14 +820,9 @@ edges:
   # These create a cycle with T4 edges (infra enables density). The dominant
   # causal direction (T4: infra → density) is kept. The reverse (density strains
   # infra) is a feedback loop forbidden by Rule 14.
-- from: tier_2_3_city_expansion
-  to: commercial_airports
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: The economic expansion of tier 2 and 3 cities drives demand for regional
-    connectivity, accelerating the development of commercial airports.
+  # Removed: tier_2_3_city_expansion → commercial_airports
+  # Swapped direction per Gemini review: airport announcements catalyze city
+  # expansion (T4→T5), not the reverse. See T4.yaml for restored edge.
 - from: rural_urban_migration_corridors
   to: indian_railways_network
   type: DEPENDS_ON
@@ -967,22 +962,10 @@ edges:
   delay: MEDIUM_TERM
   description: Linguistic pride movements pressure state governments to mandate the
     use of regional languages in local commerce and education.
-- from: aggregate_consumer_confidence
-  to: pmi_services
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Higher aggregate consumer confidence translates into increased discretionary
-    spending, driving growth in the services PMI.
-- from: aggregate_consumer_confidence
-  to: india_gdp_growth
-  type: PRODUCES
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Sustained consumer optimism and willingness to spend drive aggregate
-    demand, contributing to higher national GDP growth.
+  # Removed: aggregate_consumer_confidence → pmi_services
+  # Consumer confidence is one of many inputs to services PMI, not the primary driver. Removed to break unemployment→confidence→GDP→employment cycle. Rule 14.
+  # Removed: aggregate_consumer_confidence → india_gdp_growth
+  # Confidence→GDP is a long-term aggregate effect, not a direct causal edge. The reverse (GDP→confidence via employment) is the dominant news-relevant direction. Rule 14.
 - from: mass_boycott_movements
   to: fii_fpi_flows
   type: DISRUPTS
@@ -1049,15 +1032,8 @@ edges:
   description: Linguistic and regional identity forces strongly dictate the political
     priorities, administrative boundaries, and cultural policies of state and local
     governments.
-- from: macro_behavioral_shifts
-  to: indian_union_government
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Shifts in mass civic participation and public sentiment directly influence
-    the policy priorities, welfare distribution, and electoral mandates of the Union
-    Government.
+  # Removed: macro_behavioral_shifts → indian_union_government
+  # Public sentiment influences elections (LONG_TERM) but doesn't directly drive policy in news timeframes. Government→macro is the dominant causal flow. Rule 14.
 - from: demographics_and_population
   to: indian_macroeconomic_indicators
   type: AFFECTS

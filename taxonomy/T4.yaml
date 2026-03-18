@@ -826,10 +826,14 @@ edges:
   delay: MEDIUM_TERM
   description: Expressway connectivity drives economic investment and real estate
     development in smaller regional cities.
-  # Removed: commercial_airports → tier_2_3_city_expansion
-  # Creates 2-node cycle with T5 (city expansion → airports). The dominant
-  # direction is cities driving airport demand (T5→T4), not airports causing
-  # city expansion. Rule 14.
+- from: commercial_airports
+  to: tier_2_3_city_expansion
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Airport announcements (UDAN scheme, Jewar, Navi Mumbai) catalyze
+    real estate booms and economic expansion in tier 2/3 cities.
 - from: municipal_water_grid
   to: urban_population_density
   type: AFFECTS
