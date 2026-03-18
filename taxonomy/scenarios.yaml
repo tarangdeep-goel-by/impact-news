@@ -1,7 +1,6 @@
-# scenarios.yaml — Seed scenarios for graph path validation
-# 52 scenarios across 8 domains
-# Types: A (path_exists), B (reachability), C (score_threshold)
-# Mix: ~60% A, ~25% B, ~15% C, with ~15% negative tests
+# scenarios.yaml — End-to-end scenario validation
+# All scenarios trigger from T-world (news events) and trace to I-world (citizen impacts)
+# Types: A (path_exists), B (reachability), C (score_threshold), D (ranking), E (isolation)
 
 scenarios:
 
@@ -64,8 +63,6 @@ scenarios:
       - retail_petrol
     direction: 1
     threshold: 0.05
-    # lpg_cylinder and cooking_fuel removed: no causal path from brent_crude
-    # (only reachable via 10-hop chain through garbage→dengue — false positive)
 
   - id: energy_crude_to_savings_score
     description: "Brent crude shock propagates to savings with meaningful score"
@@ -144,7 +141,7 @@ scenarios:
     expected: REACHABLE
 
   # ============================================================
-  # DOMAIN: climate (7 scenarios)
+  # DOMAIN: climate (7 scenarios) — all T-world triggered
   # ============================================================
 
   - id: climate_monsoon_to_rice
@@ -168,22 +165,22 @@ scenarios:
     direction: 1
     threshold: 0.05
 
-  - id: climate_aqi_to_hospital
-    description: "Air quality crisis increases hospital bed demand"
+  - id: climate_stubble_to_hospital
+    description: "Post-monsoon stubble burning causes respiratory hospital admissions"
     domain: climate
     type: A
-    trigger_node: ambient_aqi
-    target_node: hospital_beds
-    max_hops: 4
+    trigger_node: meteorological_systems
+    target_node: respiratory_conditions
+    max_hops: 5
     expected: REACHABLE
 
-  - id: climate_heat_to_labor
-    description: "Outdoor heat reduces informal/daily wage labor productivity"
+  - id: climate_monsoon_to_labor
+    description: "Monsoon disruption reduces outdoor construction worker wages"
     domain: climate
     type: A
-    trigger_node: outdoor_heat
-    target_node: informal_and_daily_wage
-    max_hops: 4
+    trigger_node: southwest_monsoon
+    target_node: construction_worker_wages
+    max_hops: 5
     expected: REACHABLE
 
   - id: climate_cyclone_to_fish
@@ -195,61 +192,61 @@ scenarios:
     max_hops: 3
     expected: REACHABLE
 
-  - id: climate_aqi_to_schools
-    description: "Air quality crisis forces school closures"
+  - id: climate_monsoon_to_schools
+    description: "Monsoon-driven pollution forces school closures"
     domain: climate
     type: A
-    trigger_node: ambient_aqi
-    target_node: government_schools
+    trigger_node: meteorological_systems
+    target_node: school_types
+    max_hops: 6
+    expected: REACHABLE
+
+  - id: climate_himalayan_to_rice
+    description: "Himalayan river system changes reach retail rice price"
+    domain: climate
+    type: A
+    trigger_node: himalayan_river_systems
+    target_node: retail_rice
     max_hops: 5
     expected: REACHABLE
 
-  - id: climate_heat_to_hospital
-    description: "Extreme heat increases hospital admissions"
-    domain: climate
-    type: A
-    trigger_node: outdoor_heat
-    target_node: hospital_beds
-    max_hops: 4
-    expected: REACHABLE
-
   # ============================================================
-  # DOMAIN: employment (4 scenarios)
+  # DOMAIN: employment (4 scenarios) — T-world triggered
   # ============================================================
 
-  - id: employment_it_to_salary
-    description: "IT sector job market affects IT sector salary"
+  - id: employment_fed_to_it_salary
+    description: "US Fed policy reaches Indian IT sector salary via tech budgets"
     domain: employment
     type: A
-    trigger_node: it_sector_jobs
+    trigger_node: us_federal_reserve
     target_node: it_sector_salary
-    max_hops: 3
+    max_hops: 5
     expected: REACHABLE
 
-  - id: employment_mgnrega_to_kirana
-    description: "MGNREGA wage payments reach kirana store income"
+  - id: employment_budget_to_mgnrega
+    description: "Union budget allocation reaches MGNREGA farm labor wages"
     domain: employment
     type: A
-    trigger_node: mgnrega_wages
-    target_node: kirana_store_income
+    trigger_node: union_budget_framework
+    target_node: farm_labor_wages
+    max_hops: 5
+    expected: REACHABLE
+
+  - id: employment_monsoon_to_farm_wages
+    description: "Monsoon deficit affects farm labor wages"
+    domain: employment
+    type: A
+    trigger_node: southwest_monsoon
+    target_node: farm_labor_wages
     max_hops: 4
     expected: REACHABLE
 
-  - id: employment_farm_to_unemployment
-    description: "Farm labor wage changes affect rural unemployment"
+  - id: employment_gdp_to_startup_layoffs
+    description: "GDP slowdown triggers startup layoffs"
     domain: employment
     type: A
-    trigger_node: farm_labor_wages
-    target_node: rural_unemployment_rate
-    max_hops: 3
-    expected: REACHABLE
-
-  - id: employment_it_to_credit
-    description: "IT layoffs reach credit card payment stress"
-    domain: employment
-    type: A
-    trigger_node: it_sector_jobs
-    target_node: credit_card_dues
+    trigger_node: india_gdp_growth
+    target_node: startup_layoffs
     max_hops: 4
     expected: REACHABLE
 
@@ -297,17 +294,8 @@ scenarios:
     threshold: 0.05
 
   # ============================================================
-  # DOMAIN: tech (4 scenarios)
+  # DOMAIN: tech (3 scenarios) — T-world triggered
   # ============================================================
-
-  - id: tech_phone_to_upi
-    description: "Smartphone adoption enables UPI transaction success"
-    domain: tech
-    type: A
-    trigger_node: smartphone_device
-    target_node: upi_transaction_success
-    max_hops: 5
-    expected: REACHABLE
 
   - id: tech_telecom_to_data
     description: "Telecom infrastructure affects mobile data tariff"
@@ -318,44 +306,35 @@ scenarios:
     max_hops: 3
     expected: REACHABLE
 
-  - id: tech_aadhaar_to_epf
-    description: "Aadhaar authentication enables EPF balance access"
+  - id: tech_telecom_to_upi
+    description: "Telecom infra disruption reaches UPI transaction success"
     domain: tech
     type: A
-    trigger_node: aadhaar_authentication
-    target_node: epf_balance
-    max_hops: 4
-    expected: REACHABLE
-
-  - id: tech_himalayan_to_rice
-    description: "Himalayan river system changes reach retail rice price"
-    domain: climate
-    type: A
-    trigger_node: himalayan_river_systems
-    target_node: retail_rice
+    trigger_node: digital_telecom_infrastructure
+    target_node: upi_transaction_success
     max_hops: 5
     expected: REACHABLE
 
-  # ============================================================
-  # DOMAIN: social (4 scenarios)
-  # ============================================================
-
-  - id: social_confidence_to_kirana
-    description: "Consumer confidence drop reaches kirana store income"
-    domain: social
+  - id: tech_semiconductor_to_phone
+    description: "Global semiconductor shortage reaches smartphone prices"
+    domain: tech
     type: A
-    trigger_node: aggregate_consumer_confidence
-    target_node: kirana_store_income
+    trigger_node: global_semiconductor_supply_chain
+    target_node: smartphone_device
     max_hops: 4
     expected: REACHABLE
 
-  - id: social_tomato_to_savings
-    description: "Tomato price spike erodes household savings"
+  # ============================================================
+  # DOMAIN: social (4 scenarios) — T-world triggered
+  # ============================================================
+
+  - id: social_monsoon_to_savings
+    description: "Monsoon deficit erodes household savings via food inflation"
     domain: social
     type: A
-    trigger_node: retail_tomato
+    trigger_node: southwest_monsoon
     target_node: savings_account_balance
-    max_hops: 5
+    max_hops: 6
     expected: REACHABLE
 
   - id: social_confidence_reachability
@@ -379,6 +358,15 @@ scenarios:
     direction: 1
     min_score: 0.05
 
+  - id: social_crude_to_tomato
+    description: "Brent crude spike reaches retail tomato via freight costs"
+    domain: social
+    type: A
+    trigger_node: brent_crude
+    target_node: retail_tomato
+    max_hops: 5
+    expected: REACHABLE
+
   # ============================================================
   # DOMAIN: governance (3 scenarios)
   # ============================================================
@@ -393,8 +381,6 @@ scenarios:
       - personal_income_tax
     direction: 1
     threshold: 0.05
-    # electricity_tariff removed: only reachable via 6-hop chain through
-    # greenery→ambient_temperature→outdoor_heat — too indirect for PPR threshold
 
   - id: governance_gdp_to_salary_score
     description: "GDP growth has meaningful link to IT salary"
@@ -405,8 +391,17 @@ scenarios:
     direction: 1
     min_score: 0.05
 
+  - id: governance_rbi_to_credit
+    description: "RBI rate hike reaches credit card dues via lending rates"
+    domain: governance
+    type: A
+    trigger_node: rbi
+    target_node: credit_card_dues
+    max_hops: 5
+    expected: REACHABLE
+
   # ============================================================
-  # CROSS-DOMAIN REACHABILITY (additional Type B)
+  # CROSS-DOMAIN REACHABILITY (end-to-end T→I→I chains)
   # ============================================================
 
   - id: cross_rbi_reachability
@@ -420,41 +415,39 @@ scenarios:
       - credit_card_dues
     direction: 1
     threshold: 0.05
-    # nifty_50 removed: no causal path from rbi → nifty_50 in current graph (graph gap)
 
-  - id: cross_it_reachability
-    description: "IT sector job changes reach salary, credit, and kirana"
-    domain: employment
+  - id: cross_fed_reachability
+    description: "US Fed rate hike reaches IT salary, home loan EMI, and Nifty"
+    domain: monetary
     type: B
-    trigger_node: it_sector_jobs
+    trigger_node: us_federal_reserve
     target_nodes:
       - it_sector_salary
-      - credit_card_dues
-      - kirana_store_income
+      - home_loan_emi
+      - nifty_50
     direction: 1
     threshold: 0.05
 
-  - id: cross_heat_reachability
-    description: "Extreme heat reaches daily wage, hospitals, and rice"
+  - id: cross_monsoon_reachability
+    description: "Monsoon reaches food prices, farm wages, and savings"
     domain: climate
     type: B
-    trigger_node: outdoor_heat
+    trigger_node: southwest_monsoon
     target_nodes:
-      - informal_and_daily_wage
-      - hospital_beds
       - retail_rice
+      - farm_labor_wages
+      - savings_account_balance
     direction: 1
     threshold: 0.05
 
   - id: cross_gst_reachability
-    description: "GST council reaches packaged food, biscuits, and retail tomato"
+    description: "GST council reaches packaged food and biscuits"
     domain: monetary
     type: B
     trigger_node: gst_council
     target_nodes:
       - packaged_and_processed_foods
       - biscuits_and_snacks
-      - retail_tomato
     direction: 1
     threshold: 0.05
 
@@ -499,7 +492,7 @@ scenarios:
     expected: UNREACHABLE
 
   # ============================================================
-  # CROSS-DOMAIN ISOLATION TESTS (separate commodity/economic domains)
+  # CROSS-DOMAIN ISOLATION TESTS
   # ============================================================
 
   - id: gold_not_wheat
@@ -511,7 +504,7 @@ scenarios:
     expected: UNREACHABLE
 
   - id: silver_not_petrol
-    description: "Silver prices should not reach petrol in 3 hops — metals don't directly affect fuel"
+    description: "Silver prices should not reach petrol in 3 hops"
     domain: energy
     type: A
     trigger_node: international_silver_prices
@@ -520,7 +513,7 @@ scenarios:
     expected: UNREACHABLE
 
   - id: gold_not_retail_diesel
-    description: "Gold prices should not directly reach diesel — separate commodity chains"
+    description: "Gold prices should not directly reach diesel"
     domain: energy
     type: A
     trigger_node: international_gold_prices
@@ -529,7 +522,7 @@ scenarios:
     expected: UNREACHABLE
 
   - id: coal_not_dairy
-    description: "Coal prices should not reach dairy in 3 hops — no direct causal link"
+    description: "Coal prices should not reach dairy in 3 hops"
     domain: energy
     type: A
     trigger_node: international_coal_prices
@@ -538,7 +531,7 @@ scenarios:
     expected: UNREACHABLE
 
   - id: sensex_not_wheat
-    description: "Stock index should not directly reach wheat flour — different economic domains"
+    description: "Stock index should not directly reach wheat flour"
     domain: monetary
     type: A
     trigger_node: sensex
@@ -548,7 +541,6 @@ scenarios:
 
   # ============================================================
   # PPR-SPECIFIC: Type D (ranking) and Type E (isolation)
-  # Requires --ppr flag; skipped in Dijkstra mode
   # ============================================================
 
   - id: d_crude_trade_over_emi
@@ -575,13 +567,13 @@ scenarios:
     higher_node: home_loan_emi
     lower_node: retail_tomato
 
-  - id: d_it_salary_over_tomato
-    description: "IT sector changes should impact IT salary more than tomato price"
-    domain: employment
+  - id: d_fed_nifty_over_rice
+    description: "US Fed should impact Nifty more than rice prices"
+    domain: monetary
     type: D
-    trigger_node: it_sector_jobs
-    higher_node: it_sector_salary
-    lower_node: retail_tomato
+    trigger_node: us_federal_reserve
+    higher_node: nifty_50
+    lower_node: retail_rice
 
   - id: e_gold_not_wheat
     description: "Gold prices should have near-zero PPR probability to wheat"

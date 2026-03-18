@@ -1,0 +1,462 @@
+- from: particulate_matter_levels
+  to: respiratory_conditions
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I9
+  target_l1: I6
+  description: High concentrations of fine particulate matter (PM2.5) directly inflame
+    airways, triggering asthma attacks and COPD exacerbations.
+- from: stagnant_water_pools
+  to: vector_borne_diseases
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I9
+  target_l1: I6
+  description: Stagnant water accumulation after monsoons provides breeding grounds
+    for mosquitoes, directly causing localized dengue and malaria outbreaks.
+- from: ambient_aqi
+  to: school_types
+  type: DISRUPTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I9
+  target_l1: I7
+  description: Severe spikes in the Air Quality Index force state governments to mandate
+    immediate physical school closures to protect children from toxic exposure.
+- from: outdoor_heat
+  to: construction_worker_wages
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  source_l1: I9
+  target_l1: I4
+  description: Extreme summer heatwaves force halts in outdoor manual labor, directly
+    reducing the daily billable hours and wages of construction workers.
+- from: retail_diesel
+  to: vegetables
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I3
+  target_l1: I1
+  description: Increases in commercial diesel prices raise the freight transport costs
+    for perishable goods, which are immediately passed on to retail vegetable prices.
+- from: vehicle_fuel
+  to: ride_hailing
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  source_l1: I3
+  target_l1: I4
+  description: Rising CNG and diesel prices directly eat into the daily net profit
+    margins and take-home earnings of auto-rickshaw and cab drivers.
+- from: vegetables
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  source_l1: I1
+  target_l1: I5
+  description: Sudden inflationary spikes in staple vegetables (like onions and tomatoes)
+    increase household grocery budgets, eroding monthly disposable savings.
+- from: it_sector_salary
+  to: home_loan_emi
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  source_l1: I4
+  target_l1: I5
+  description: High disposable incomes in the IT sector provide the primary cash flow
+    required to secure and service large home loan EMIs in urban metros.
+- from: unemployment_levels
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  source_l1: I4
+  target_l1: I5
+  description: Prolonged periods of unemployment force households to liquidate their
+    bank deposits and drain savings accounts to cover basic living expenses.
+- from: inpatient_care
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  source_l1: I6
+  target_l1: I5
+  description: High out-of-pocket expenditures for sudden hospitalizations and surgeries
+    rapidly deplete middle-class household savings.
+- from: respiratory_infections
+  to: construction_and_manual
+  type: DISRUPTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I6
+  target_l1: I4
+  description: Bouts of severe viral fever or flu physically incapacitate manual laborers,
+    resulting in an immediate total loss of daily wages for the sick days.
+- from: residential_rent
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  source_l1: I2
+  target_l1: I5
+  description: Steep annual hikes in urban residential rent consume a larger share
+    of the monthly paycheck, reducing the capital left for bank savings.
+- from: e_mandate_autopay
+  to: mutual_funds
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I10
+  target_l1: I5
+  description: UPI e-mandates provide the frictionless, automated payment infrastructure
+    that drives the volume and consistency of retail mutual fund SIP investments.
+- from: mobile_connectivity
+  to: delivery_and_logistics
+  type: DEPENDS_ON
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I10
+  target_l1: I4
+  description: Gig delivery workers structurally cannot receive orders, navigate to
+    customers, or complete payouts without active mobile internet connectivity.
+- from: civil_unrest
+  to: retail_and_trade
+  type: DISRUPTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I8
+  target_l1: I4
+  description: Riots and the imposition of Section 144 curfews force the immediate
+    physical closure of kirana stores and street vendors, halting daily trade.
+- from: engineering_education
+  to: it_sector_jobs
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  source_l1: I7
+  target_l1: I4
+  description: Undergraduate engineering programs (B.Tech) supply the foundational
+    entry-level talent pool required by the Indian IT services sector.
+- from: firecracker
+  to: particulate_matter_levels
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I11
+  target_l1: I9
+  description: The mass combustion of firecrackers during Diwali directly emits massive
+    volumes of heavy metals and fine particulate matter into the local air.
+- from: religious_pilgrimage
+  to: railway_travel
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I11
+  target_l1: I3
+  description: Major religious festivals and pilgrimage seasons drive massive surges
+    in IRCTC train ticket bookings and railway passenger density.
+- from: traffic_congestion
+  to: particulate_matter_levels
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I3
+  target_l1: I9
+  description: Idling internal combustion engines in severe urban traffic jams directly
+    produce localized spikes in vehicular exhaust and PM2.5.
+- from: social_media_presence
+  to: cyberbullying_and_trolling
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I10
+  target_l1: I8
+  description: Increased exposure and activity on social media platforms directly
+    expand the surface area for users to become targets of cyberbullying and trolling.
+- from: upi_ecosystem
+  to: upi_and_bank_scams
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I10
+  target_l1: I8
+  description: The ubiquitous adoption of UPI creates a massive, high-velocity attack
+    surface that cybercriminals exploit for phishing and payment scams.
+- from: waste_collection_services
+  to: street_garbage
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  source_l1: I2
+  target_l1: I9
+  description: Failures or strikes in municipal waste collection services immediately
+    result in the accumulation of unmanaged garbage dumps on neighborhood streets.
+- from: urban_flooding
+  to: repair_service_charges
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I9
+  target_l1: I2
+  description: Waterlogged streets and flooded basements drive a sudden surge in demand
+    for plumbers and electricians, spiking home repair service charges.
+- from: coaching_fees
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  source_l1: I7
+  target_l1: I5
+  description: Exorbitant fees for competitive exam coaching (JEE/NEET/UPSC) force
+    middle-class parents to drain their accumulated bank savings.
+- from: weddings_and_milestones
+  to: retail_gold_investment
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I11
+  target_l1: I5
+  description: Cultural mandates for bridal jewelry during the wedding season drive
+    massive household capital flows into physical retail gold investments.
+- from: weddings_and_milestones
+  to: personal_loan_emi
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  source_l1: I11
+  target_l1: I5
+  description: The intense social pressure to host lavish weddings frequently forces
+    families to take out high-interest unsecured personal loans, increasing EMI burdens.
+- from: retail_sugar
+  to: diabetes
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  source_l1: I1
+  target_l1: I6
+  description: Sustained high consumption of refined retail sugar in daily diets is
+    a primary metabolic driver for the onset of Type 2 Diabetes.
+- from: instant_noodles
+  to: obesity
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  source_l1: I1
+  target_l1: I6
+  description: High reliance on ultra-processed, high-sodium, and high-fat packaged
+    foods like instant noodles contributes significantly to childhood and adult obesity.
+- from: road_traffic_accidents
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I8
+  target_l1: I6
+  description: Severe road traffic accidents immediately consume critical care and
+    trauma hospital beds, straining local inpatient healthcare capacity.
+- from: home_broadband
+  to: ott_subscription
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I10
+  target_l1: I11
+  description: High-bandwidth home fiber broadband is a structural prerequisite for
+    households to reliably stream high-definition content on OTT platforms.
+- from: fastag_wallet
+  to: highway_tolls
+  type: DEPENDS_ON
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I10
+  target_l1: I3
+  description: The national highway toll collection infrastructure structurally depends
+    on the FASTag digital wallet ecosystem to process vehicle payments.
+- from: lpg_cylinder
+  to: respiratory_conditions
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  source_l1: I2
+  target_l1: I6
+  description: When LPG cylinder prices become unaffordable, lower-income households
+    revert to burning biomass, producing indoor smoke that exacerbates respiratory
+    conditions.
+- from: municipal_water_supply
+  to: water_and_food_borne_diseases
+  type: PRODUCES
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  source_l1: I2
+  target_l1: I6
+  description: Reliable, treated municipal water supply prevents the consumption of
+    contaminated groundwater, directly reducing the incidence of cholera and typhoid.
+- from: urban_rail_transit
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  source_l1: I3
+  target_l1: I2
+  description: The expansion of metro rail networks increases the connectivity premium
+    of nearby neighborhoods, driving up local residential rental rates.
+- from: it_sector_salary
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  source_l1: I4
+  target_l1: I2
+  description: Concentrations of high-paying IT sector jobs in tech corridors inflate
+    local real estate demand, driving up residential rents for the entire area.
+- from: k12_edtech
+  to: laptop_computer
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I7
+  target_l1: I10
+  description: The adoption of online K-12 tuition and edtech platforms forces parents
+    to invest in personal computing devices like laptops for their children.
+- from: civil_unrest
+  to: urban_bus_transit
+  type: DISRUPTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I8
+  target_l1: I3
+  description: Violent protests and civil unrest frequently target public infrastructure,
+    forcing transport authorities to suspend urban bus transit operations.
+- from: childhood_malnutrition
+  to: school_examinations
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: LONG_TERM
+  source_l1: I6
+  target_l1: I7
+  description: Chronic childhood malnutrition impairs cognitive development and focus,
+    negatively impacting a student's performance in school board examinations.
+- from: home_loan_emi
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  source_l1: I5
+  target_l1: I2
+  description: When home loan interest rates and EMIs become prohibitively expensive,
+    more families are forced to remain in the rental market, increasing demand and
+    rents.
+- from: festivals_and_celebrations
+  to: retail_sugar
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I11
+  target_l1: I1
+  description: Major Indian festivals trigger massive, concentrated spikes in the
+    household and commercial consumption of retail sugar for traditional sweets.
+- from: whatsapp_messaging
+  to: riots_and_clashes
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  source_l1: I10
+  target_l1: I8
+  description: The rapid viral spread of misinformation and hate speech on WhatsApp
+    frequently catalyzes localized mob violence and riots.
+- from: startup_layoffs
+  to: credit_card_dues
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I4
+  target_l1: I5
+  description: Sudden job losses in the startup ecosystem force professionals to rely
+    on revolving credit card debt to maintain their urban lifestyles.
+- from: street_food
+  to: water_and_food_borne_diseases
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  source_l1: I1
+  target_l1: I6
+  description: Unhygienic preparation and contaminated water used in street food vending
+    frequently cause outbreaks of typhoid and gastroenteritis.
+- from: public_park
+  to: cardiovascular_health
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: LONG_TERM
+  source_l1: I11
+  target_l1: I6
+  description: Access to well-maintained public parks encourages daily walking and
+    exercise, gradually reducing the prevalence of hypertension and heart disease.
+- from: investment_and_job_scams
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  source_l1: I8
+  target_l1: I5
+  description: Fraudulent job offers and Ponzi investment schemes directly siphon
+    off and deplete the life savings of vulnerable citizens.
+- from: child_abuse_and_pocso
+  to: mental_health_conditions
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  source_l1: I8
+  target_l1: I6
+  description: Severe trauma from child abuse and POCSO-related crimes directly produces
+    long-term psychological conditions like severe depression and PTSD.
