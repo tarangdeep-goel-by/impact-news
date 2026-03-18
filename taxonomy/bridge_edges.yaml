@@ -1489,159 +1489,6 @@ edges:
   delay: SHORT_TERM
   description: Interstate migrant workers heavily use private and state-run buses
     for intercity travel; seasonal migration waves spike bus demand and ticket prices.
-- from: labor_and_trade_unions
-  to: civil_unrest
-  type: PRODUCES
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: Industrial strikes, bandh calls, and protest marches by labor and trade
-    unions directly create civil unrest situations including road blockades, factory
-    lockouts, and market shutdowns.
-- from: labor_and_trade_unions
-  to: crowd_emergencies
-  type: PRODUCES
-  weight: 0.6
-  polarity: 1
-  delay: IMMEDIATE
-  description: Large-scale worker rallies and union demonstrations at factory gates
-    or industrial townships can escalate into crowd crush situations when management-worker
-    tensions peak.
-- from: agrarian_collectives
-  to: civil_unrest
-  type: PRODUCES
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: Farmer union agitations (MSP protests, land acquisition resistance)
-    directly create civil unrest through highway blockades, rail rokos, and prolonged
-    sit-in protests at borders.
-- from: agrarian_collectives
-  to: crowd_emergencies
-  type: PRODUCES
-  weight: 0.6
-  polarity: 1
-  delay: IMMEDIATE
-  description: Massive farmer marches and mahapanchayat gatherings can lead to crowd
-    emergencies when police use force or when organizational crowd control fails at
-    protest sites.
-- from: identity_and_rights_movements
-  to: civil_unrest
-  type: PRODUCES
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: Caste reservation agitations, student protests, and rights movements
-    directly trigger civil unrest through bandh calls, institutional shutdowns, and
-    public property damage.
-- from: identity_and_rights_movements
-  to: crowd_emergencies
-  type: PRODUCES
-  weight: 0.6
-  polarity: 1
-  delay: IMMEDIATE
-  description: Large-scale identity-based rallies and reservation protests can escalate
-    into violent crowd emergencies, especially when police resort to lathi charges
-    or tear gas.
-- from: labor_and_trade_unions
-  to: railway_travel
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: IMMEDIATE
-  description: Railway worker union strikes and rail roko agitations by industrial
-    unions directly cancel trains and strand passengers; transport union bandhs paralyze
-    railway operations.
-- from: labor_and_trade_unions
-  to: highway_bus_travel
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: IMMEDIATE
-  description: Transport worker strikes and union-called bandhs directly halt private
-    and state bus services; truck union blockades on highways prevent intercity bus
-    movement.
-- from: agrarian_collectives
-  to: railway_travel
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: IMMEDIATE
-  description: Farmer union rail roko protests (like the 2020-21 farm law agitations)
-    blockade railway tracks and occupy stations, causing mass train cancellations
-    on key routes.
-- from: agrarian_collectives
-  to: highway_bus_travel
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: IMMEDIATE
-  description: Farmer union highway blockades (toll plaza occupation, tractor marches)
-    directly disrupt intercity bus services; vehicles are stranded or rerouted during
-    sustained agitations.
-- from: identity_and_rights_movements
-  to: railway_travel
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: IMMEDIATE
-  description: Student and reservation movement protests frequently target railway
-    infrastructure through rail rokos and station vandalism, causing service disruptions
-    on affected routes.
-- from: identity_and_rights_movements
-  to: highway_bus_travel
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: IMMEDIATE
-  description: Bandh calls by caste and rights movements force bus services off roads;
-    roadblocks during agitations directly prevent intercity bus operations in affected
-    regions.
-- from: labor_and_trade_unions
-  to: construction_and_manual
-  type: AFFECTS
-  weight: 0.5
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Labor union pressure for minimum wage compliance, safety standards,
-    and overtime regulations on construction sites improves daily-wage worker conditions
-    but may also slow project timelines.
-- from: labor_and_trade_unions
-  to: domestic_and_care
-  type: AFFECTS
-  weight: 0.3
-  polarity: 1
-  delay: LONG_TERM
-  description: Nascent domestic worker unions advocate for minimum wages, weekly offs,
-    and working hour limits; their growing influence is gradually formalizing conditions
-    for household help.
-- from: agrarian_collectives
-  to: agriculture_and_allied
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Farmer unions negotiate MSP increases, input subsidies, and crop insurance
-    coverage, directly improving income security and working conditions for agricultural
-    laborers.
-- from: agrarian_collectives
-  to: rural_employment_schemes
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Farmer organizations and rural collectives demand increased MGNREGA
-    allocations, timely wage payments, and expanded work categories, pressuring governments
-    to improve scheme implementation.
-- from: identity_and_rights_movements
-  to: rural_employment_schemes
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Social justice movements demanding employment quotas and expanded MGNREGA
-    eligibility for marginalized communities pressure governments to increase scheme
-    budgets and coverage.
 - from: cultural_and_religious_forces
   to: festivals_and_celebrations
   type: PRODUCES
@@ -1790,14 +1637,6 @@ edges:
   description: High aggregate unemployment floods the gig economy with desperate labor,
     allowing platform algorithms to suppress per-task payouts due to an oversupply
     of workers.
-- from: organized_labor_unions
-  to: minimum_wage
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Collective bargaining and strikes by organized labor unions pressure
-    state governments to revise and increase statutory minimum wage floors.
 - from: migratory_pest_populations
   to: wheat_flour
   type: AFFECTS
@@ -1922,23 +1761,6 @@ edges:
   delay: MEDIUM_TERM
   description: As more women enter the formal workforce, households increasingly outsource
     childcare and chores, driving up the demand and wages for domestic help.
-- from: gig_worker_unions
-  to: gig_worker_payouts
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Successful strikes and collective bargaining by gig worker unions force
-    aggregator platforms to revise their rate cards and increase per-task payouts.
-- from: farmer_unions
-  to: retail_tomato
-  type: DISRUPTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Highway blockades and procurement boycotts by farmer unions disrupt
-    the supply chain of perishables, causing immediate price spikes for vegetables
-    like tomatoes.
 - from: wedding_season_aggregate
   to: retail_gold_investment
   type: AFFECTS
@@ -2311,14 +2133,6 @@ edges:
   description: A massive and growing youth demographic bulge directly increases the
     absolute number of high school graduates competing for limited seats in engineering
     entrance exams like JEE.
-- from: caste_reservation_movements
-  to: medical_entrance
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Quota agitations and subsequent policy changes alter the seat matrices
-    and category-wise cutoffs for highly competitive exams like NEET UG.
 - from: tier_2_3_city_expansion
   to: offline_coaching_centers
   type: AFFECTS

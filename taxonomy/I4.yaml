@@ -587,6 +587,109 @@ nodes:
   port: true
   regulated_by:
   - indian_union_government
+- id: social_movements_and_collectives
+  aliases:
+  - Social Movements & Collectives
+  - Mass Movements
+  - Samajik Andolan
+  - Activism
+  category: I4
+  level: 2
+  status: active
+  is_category: true
+- id: labor_and_trade_unions
+  aliases:
+  - Labor & Trade Unions
+  - Worker Collectives
+  - Mazdoor Sangh
+  - Trade Associations
+  category: I4
+  level: 3
+  status: active
+  is_category: true
+- id: agrarian_collectives
+  aliases:
+  - Agrarian Collectives
+  - Farmer Organizations
+  - Kisan Sangathan
+  - Agricultural Movements
+  category: I4
+  level: 3
+  status: active
+  is_category: true
+- id: identity_and_rights_movements
+  aliases:
+  - Identity & Rights Movements
+  - Civil Rights Groups
+  - Adhikar Andolan
+  - Social Justice Movements
+  category: I4
+  level: 3
+  status: active
+  is_category: true
+- id: organized_labor_unions
+  aliases:
+  - Organized Labor Unions
+  - Central Trade Unions
+  - Bank Unions
+  - Sangatit Mazdoor Sangh
+  - PSU Unions
+  category: I4
+  level: 4
+  status: active
+  portal: true
+- id: gig_worker_unions
+  aliases:
+  - Gig Worker Unions
+  - Platform Worker Collectives
+  - Delivery Partner Associations
+  - Gig Workers Union
+  category: I4
+  level: 4
+  status: active
+  portal: true
+- id: transport_worker_unions
+  aliases:
+  - Transport Worker Unions
+  - Trucker Associations
+  - Taxi Unions
+  - Auto Rickshaw Unions
+  - Transport Strike Committees
+  category: I4
+  level: 4
+  status: active
+  portal: true
+- id: farmer_unions
+  aliases:
+  - Farmer Unions
+  - Kisan Morcha
+  - Bharatiya Kisan Union
+  - Kisan Andolan
+  - Agricultural Unions
+  category: I4
+  level: 4
+  status: active
+  portal: true
+- id: caste_reservation_movements
+  aliases:
+  - Caste Reservation Movements
+  - Quota Agitations
+  - Aarakshan Andolan
+  - Backward Class Movements
+  category: I4
+  level: 4
+  status: active
+  portal: true
+- id: student_unions
+  aliases:
+  - Student Unions
+  - University Political Wings
+  - Chhatra Sangh
+  - Campus Political Groups
+  category: I4
+  level: 4
+  status: active
+  portal: true
 edges:
 - from: i4
   to: corporate_employment
@@ -978,3 +1081,73 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Workplace conditions contains maternity leave benefits and duration
+- from: i4
+  to: social_movements_and_collectives
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Livelihood & Employment contains Social Movements & Collectives
+- from: social_movements_and_collectives
+  to: labor_and_trade_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social Movements & Collectives contains Labor & Trade Unions
+- from: social_movements_and_collectives
+  to: agrarian_collectives
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social Movements & Collectives contains Agrarian Collectives
+- from: social_movements_and_collectives
+  to: identity_and_rights_movements
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social Movements & Collectives contains Identity & Rights Movements
+- from: labor_and_trade_unions
+  to: organized_labor_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Labor & Trade Unions contains Organized Labor Unions
+- from: labor_and_trade_unions
+  to: gig_worker_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Labor & Trade Unions contains Gig Worker Unions
+- from: labor_and_trade_unions
+  to: transport_worker_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Labor & Trade Unions contains Transport Worker Unions
+- from: agrarian_collectives
+  to: farmer_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Agrarian Collectives contains Farmer Unions
+- from: identity_and_rights_movements
+  to: caste_reservation_movements
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Identity & Rights Movements contains Caste Reservation Movements
+- from: identity_and_rights_movements
+  to: student_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Identity & Rights Movements contains Student Unions

@@ -177,109 +177,6 @@ nodes:
   level: 4
   status: active
   portal: true
-- id: social_movements_and_collectives
-  aliases:
-  - Social Movements & Collectives
-  - Mass Movements
-  - Samajik Andolan
-  - Activism
-  category: T5
-  level: 2
-  status: active
-  is_category: true
-- id: labor_and_trade_unions
-  aliases:
-  - Labor & Trade Unions
-  - Worker Collectives
-  - Mazdoor Sangh
-  - Trade Associations
-  category: T5
-  level: 3
-  status: active
-  is_category: true
-- id: agrarian_collectives
-  aliases:
-  - Agrarian Collectives
-  - Farmer Organizations
-  - Kisan Sangathan
-  - Agricultural Movements
-  category: T5
-  level: 3
-  status: active
-  is_category: true
-- id: identity_and_rights_movements
-  aliases:
-  - Identity & Rights Movements
-  - Civil Rights Groups
-  - Adhikar Andolan
-  - Social Justice Movements
-  category: T5
-  level: 3
-  status: active
-  is_category: true
-- id: organized_labor_unions
-  aliases:
-  - Organized Labor Unions
-  - Central Trade Unions
-  - Bank Unions
-  - Sangatit Mazdoor Sangh
-  - PSU Unions
-  category: T5
-  level: 4
-  status: active
-  portal: true
-- id: gig_worker_unions
-  aliases:
-  - Gig Worker Unions
-  - Platform Worker Collectives
-  - Delivery Partner Associations
-  - Gig Workers Union
-  category: T5
-  level: 4
-  status: active
-  portal: true
-- id: transport_worker_unions
-  aliases:
-  - Transport Worker Unions
-  - Trucker Associations
-  - Taxi Unions
-  - Auto Rickshaw Unions
-  - Transport Strike Committees
-  category: T5
-  level: 4
-  status: active
-  portal: true
-- id: farmer_unions
-  aliases:
-  - Farmer Unions
-  - Kisan Morcha
-  - Bharatiya Kisan Union
-  - Kisan Andolan
-  - Agricultural Unions
-  category: T5
-  level: 4
-  status: active
-  portal: true
-- id: caste_reservation_movements
-  aliases:
-  - Caste Reservation Movements
-  - Quota Agitations
-  - Aarakshan Andolan
-  - Backward Class Movements
-  category: T5
-  level: 4
-  status: active
-  portal: true
-- id: student_unions
-  aliases:
-  - Student Unions
-  - University Political Wings
-  - Chhatra Sangh
-  - Campus Political Groups
-  category: T5
-  level: 4
-  status: active
-  portal: true
 - id: cultural_and_religious_forces
   aliases:
   - Cultural & Religious Forces
@@ -482,13 +379,6 @@ edges:
   delay: IMMEDIATE
   description: Social, Demographic & Cultural Forces contains Migration & Mobility
 - from: t5
-  to: social_movements_and_collectives
-  type: CONTAINS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Social, Demographic & Cultural Forces contains Social Movements & Collectives
-- from: t5
   to: cultural_and_religious_forces
   type: CONTAINS
   weight: 0.9
@@ -601,69 +491,6 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: International Migration contains Skilled Emigration
-- from: social_movements_and_collectives
-  to: labor_and_trade_unions
-  type: CONTAINS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Social Movements & Collectives contains Labor & Trade Unions
-- from: social_movements_and_collectives
-  to: agrarian_collectives
-  type: CONTAINS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Social Movements & Collectives contains Agrarian Collectives
-- from: social_movements_and_collectives
-  to: identity_and_rights_movements
-  type: CONTAINS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Social Movements & Collectives contains Identity & Rights Movements
-- from: labor_and_trade_unions
-  to: organized_labor_unions
-  type: CONTAINS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Labor & Trade Unions contains Organized Labor Unions
-- from: labor_and_trade_unions
-  to: gig_worker_unions
-  type: CONTAINS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Labor & Trade Unions contains Gig Worker Unions
-- from: labor_and_trade_unions
-  to: transport_worker_unions
-  type: CONTAINS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Labor & Trade Unions contains Transport Worker Unions
-- from: agrarian_collectives
-  to: farmer_unions
-  type: CONTAINS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Agrarian Collectives contains Farmer Unions
-- from: identity_and_rights_movements
-  to: caste_reservation_movements
-  type: CONTAINS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Identity & Rights Movements contains Caste Reservation Movements
-- from: identity_and_rights_movements
-  to: student_unions
-  type: CONTAINS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Identity & Rights Movements contains Student Unions
 - from: cultural_and_religious_forces
   to: major_festivals_and_observances
   type: CONTAINS
@@ -840,62 +667,6 @@ edges:
   delay: LONG_TERM
   description: The outflow of skilled professionals to foreign countries directly
     expands the size and economic footprint of the Indian diaspora.
-- from: organized_labor_unions
-  to: epfo_payroll_additions
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Pressure from organized labor unions forces companies to formalize
-    employment, leading to higher EPFO payroll additions.
-- from: gig_worker_unions
-  to: ondc_platform
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Collective bargaining by gig worker unions pushes for fairer digital
-    commerce frameworks, accelerating the adoption of the ONDC platform.
-- from: transport_worker_unions
-  to: highway_network
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: Strikes and blockades by transport worker unions disrupt logistics,
-    leading to a decrease in highway network throughput.
-- from: farmer_unions
-  to: global_food_grain_supply
-  type: DISRUPTS
-  weight: 0.7
-  polarity: -1
-  delay: SHORT_TERM
-  description: Agitations by farmer unions disrupt agricultural procurement and supply
-    chains, reducing the volume of food grains available for export.
-- from: farmer_unions
-  to: ministry_of_agriculture
-  type: AFFECTS
-  weight: 0.9
-  polarity: 1
-  delay: SHORT_TERM
-  description: Farmer union protests compel the Ministry of Agriculture to alter procurement
-    policies and subsidy frameworks.
-- from: caste_reservation_movements
-  to: state_governments
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Caste-based reservation movements force state governments to implement
-    new quota policies in education and public employment.
-- from: student_unions
-  to: ministry_of_education
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Campus agitations by student unions compel the Ministry of Education
-    to intervene in university administration and exam policies.
 - from: autumn_festive_season
   to: aggregate_consumer_confidence
   type: AFFECTS
@@ -992,14 +763,6 @@ edges:
   delay: SHORT_TERM
   description: Major festivals and mass religious observances (e.g., idol immersions,
     mass bathing) temporarily degrade water quality in major river basins.
-- from: social_movements_and_collectives
-  to: indian_statutory_frameworks_and_councils
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Mass social movements, labor strikes, and agrarian protests pressure
-    the state to amend, repeal, or create new statutory and welfare frameworks.
 - from: demographics_and_population
   to: indian_statutory_frameworks_and_councils
   type: AFFECTS
@@ -1043,22 +806,6 @@ edges:
   description: Indian festival and wedding seasons significantly drive global demand
     and pricing for precious metals (gold/silver) and agricultural commodities (edible
     oils, sugar).
-- from: social_movements_and_collectives
-  to: international_trade_and_supply_chains
-  type: DISRUPTS
-  weight: 0.7
-  polarity: -1
-  delay: SHORT_TERM
-  description: Large-scale labor and transport union strikes disrupt export-import
-    logistics, port operations, and global supply chains.
-- from: social_movements_and_collectives
-  to: indian_macroeconomic_indicators
-  type: DISRUPTS
-  weight: 0.6
-  polarity: -1
-  delay: SHORT_TERM
-  description: Widespread agrarian or industrial strikes disrupt national output,
-    manufacturing growth, and inflation indices via supply shocks.
 - from: demographics_and_population
   to: civic_urban_infrastructure
   type: DISRUPTS
@@ -1067,14 +814,6 @@ edges:
   delay: LONG_TERM
   description: Rapid urbanization trends and population density increases severely
     strain and disrupt the capacity of municipal water and sewage grids.
-- from: social_movements_and_collectives
-  to: transport_logistics_infrastructure
-  type: DISRUPTS
-  weight: 0.7
-  polarity: -1
-  delay: SHORT_TERM
-  description: Mass social movements, agrarian protests, and labor strikes frequently
-    blockade or disrupt highway networks, railways, and logistics corridors.
 - from: cultural_and_religious_forces
   to: transport_logistics_infrastructure
   type: DISRUPTS
