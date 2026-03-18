@@ -1,0 +1,1180 @@
+
+# I1 (16 edges)
+- from: liquid_milk
+  to: paneer_and_cheese
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Liquid milk is the primary raw material for paneer and cheese; changes
+    in milk procurement costs directly dictate their production costs and retail prices.
+- from: liquid_milk
+  to: butter_and_ghee
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Butter and ghee are direct fat derivatives of liquid milk, making their
+    market prices highly sensitive to wholesale milk price fluctuations.
+- from: wheat_flour
+  to: biscuits_and_snacks
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Wheat flour is the foundational base ingredient for most packaged biscuits
+    and snacks, directly impacting FMCG manufacturing margins.
+- from: wheat_flour
+  to: instant_noodles
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Wheat flour (maida) is the primary structural ingredient for instant
+    noodles, making noodle production costs highly dependent on wheat prices.
+- from: palm_oil
+  to: biscuits_and_snacks
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Palm oil is the most widely used edible oil in Indian packaged snacks
+    due to its low cost and stability; price shocks directly influence FMCG pricing.
+- from: palm_oil
+  to: instant_noodles
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Instant noodles are pre-fried in palm oil during manufacturing; international
+    palm oil price fluctuations directly affect production margins.
+- from: retail_sugar
+  to: biscuits_and_snacks
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Sugar is a key bulk ingredient in sweet biscuits and snacks; sustained
+    increases in retail sugar prices raise input costs for these packaged foods.
+- from: retail_potato
+  to: biscuits_and_snacks
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Potatoes are the primary raw material for packaged potato chips and
+    namkeens; agricultural price spikes directly impact FMCG snack margins.
+- from: retail_potato
+  to: street_food
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Potatoes are foundational to Indian street food (samosas, aloo tikki,
+    vada pav); price changes immediately affect vendor costs and portion sizes.
+- from: retail_onion
+  to: street_food
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Onions are a staple base and garnish for most Indian street food; sudden
+    price increases directly squeeze vendor profitability and force price hikes.
+- from: retail_tomato
+  to: street_food
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: IMMEDIATE
+  description: Tomatoes are heavily used in Indian street food like chaat and pav
+    bhaji; price spikes immediately reduce vendor margins or lead to increased per-plate
+    prices.
+- from: liquid_milk
+  to: street_food
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Liquid milk is the core ingredient for roadside tea (chai) stalls;
+    milk price hikes directly lead to immediate increases in the per-cup price of
+    street chai.
+- from: poultry_chicken
+  to: quick_service_restaurants
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Chicken is the primary protein for many major QSR chains in India;
+    wholesale poultry prices directly dictate menu pricing and promotional offers.
+- from: tur_dal
+  to: chana_dal
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: Tur dal and chana dal act as partial substitutes in Indian households;
+    a price spike in tur dal shifts consumer demand to chana dal, driving up its price.
+- from: mutton_and_lamb
+  to: poultry_chicken
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: As mutton prices rise, consumers frequently substitute it with more
+    affordable poultry, driving up demand and subsequently prices for chicken.
+- from: food_delivery_services
+  to: quick_service_restaurants
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Commission rates and delivery fees charged by food delivery aggregators
+    force QSRs to adjust their online menu prices upward to maintain operational margins.
+
+# I10 (9 edges)
+- from: smartphone_device
+  to: instant_messaging
+  type: DEPENDS_ON
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Instant messaging platforms structurally require a smartphone device
+    for application installation and daily usage.
+- from: mobile_network_quality
+  to: upi_transaction_success
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Reliable mobile network quality is essential for the real-time server
+    handshake required to complete UPI transactions successfully.
+- from: mobile_network_quality
+  to: aadhaar_authentication
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Aadhaar OTP delivery and real-time biometric authentication rely heavily
+    on stable mobile network connectivity.
+- from: aadhaar_authentication
+  to: digital_document_storage
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accessing and fetching official documents into platforms like DigiLocker
+    structurally requires successful Aadhaar authentication to verify identity.
+- from: aadhaar_authentication
+  to: online_citizen_services
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: National Single Sign-On (ePramaan) and various e-Seva portals rely
+    on Aadhaar authentication as the primary trust anchor for verifying citizen identity.
+- from: upi_ecosystem
+  to: transit_and_toll_payments
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: The UPI ecosystem serves as the primary funding source used by citizens
+    to instantly recharge FASTag wallets and NCMC smart cards.
+- from: upi_ecosystem
+  to: recurring_digital_payments
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: e-Mandate autopay systems for subscriptions are built on top of and
+    structurally depend on the UPI ecosystem's recurring payment infrastructure.
+- from: personal_data_privacy
+  to: telemarketing_and_spam
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Stronger personal data privacy and fewer data leaks reduce the availability
+    of citizen phone numbers to telemarketers, thereby decreasing spam communications.
+- from: smartphone_device
+  to: social_media_presence
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Active maintenance of social media accounts is highly dependent on
+    smartphone devices for content creation, app access, and real-time engagement.
+
+# I11 (10 edges)
+- from: digital_entertainment
+  to: cinema_and_theatre
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Increased adoption and content availability on OTT platforms and gaming
+    reduces the frequency of consumer visits to physical cinemas and theatres.
+- from: holiday_accommodation
+  to: tour_package
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Hotel and resort room tariffs directly dictate the baseline costs and
+    overall pricing of bundled holiday tour packages.
+- from: rwa_regulation
+  to: community_gathering
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Stricter Resident Welfare Association (RWA) regulations restrict the
+    frequency, scale, and permitted timings of community gatherings within housing
+    societies.
+- from: rwa_regulation
+  to: festivals_and_celebrations
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: IMMEDIATE
+  description: RWA rules regarding noise limits, space usage, and safety protocols
+    constrain the scale of puja pandals and firecracker usage during festivals in
+    residential areas.
+- from: festivals_and_celebrations
+  to: religious_pilgrimage
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Major religious festivals and auspicious calendar dates trigger surges
+    in demand for religious pilgrimages and related travel.
+- from: festivals_and_celebrations
+  to: live_events
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Festive seasons directly increase the organization, sponsorship, and
+    consumer attendance of live cultural events, concerts, and stage shows.
+- from: wedding_venue
+  to: wedding_planning_service
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The cost and availability of wedding venues dictate the budget constraints
+    and logistical requirements that event managers must navigate, raising overall
+    planning costs.
+- from: public_spaces
+  to: community_gathering
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public parks and community halls provide the necessary physical infrastructure
+    and space for hosting neighborhood community gatherings.
+- from: tourist_attraction_ticket
+  to: tour_package
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increases in entry fees for major monuments and tourist attractions
+    are passed on to consumers through higher total costs for holiday tour packages.
+- from: religious_pilgrimage
+  to: tourism_services
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: High volumes of religious pilgrims increase the demand and pricing
+    for local travel agencies, guides, and transport services operating in pilgrimage
+    circuits.
+
+# I2 (7 edges)
+- from: municipal_water_supply
+  to: private_water_tanker
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Shortages or disruptions in municipal water supply immediately drive
+    up the demand and pricing for private water tankers in residential areas.
+- from: residential_power_supply
+  to: residential_water_supply
+  type: DEPENDS_ON
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential water supply systems, including municipal pumping stations
+    and apartment borewells, structurally depend on consistent power supply to function.
+- from: electricity_tariff
+  to: rwa_maintenance_fees
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increases in residential electricity tariffs raise the cost of powering
+    common area lighting, elevators, and pumps, which is passed on to residents through
+    higher RWA maintenance fees.
+- from: private_water_tanker
+  to: rwa_maintenance_fees
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Heavy reliance on expensive private water tankers during municipal
+    shortages significantly inflates the monthly maintenance bills charged by housing
+    societies.
+- from: home_construction_and_modification
+  to: rental_housing
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: LONG_TERM
+  description: Higher costs for building materials and construction labor increase
+    the capital expenditure for homeowners, prompting them to raise rents to maintain
+    their rental yields.
+- from: piped_natural_gas
+  to: lpg_cylinder
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: The expansion and adoption of piped natural gas (PNG) networks in urban
+    areas directly reduces household dependency on and demand for LPG cylinders.
+- from: sewage_infrastructure
+  to: pest_control_services
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: Poorly maintained or overflowing sewage infrastructure creates breeding
+    grounds for insects and rodents, increasing household expenditure on pest control
+    services.
+
+# I3 (10 edges)
+- from: retail_diesel
+  to: highway_bus_travel
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher retail diesel prices directly increase the operating costs for
+    intercity bus operators, leading to higher ticket fares.
+- from: cng_fuel
+  to: auto_rickshaw_fare
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Since CNG is the primary fuel for auto-rickshaws in most Indian cities,
+    price hikes prompt unions to secure higher base fares from transport authorities.
+- from: cng_fuel
+  to: cab_aggregator_fare
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: With a large portion of city cab fleets running on CNG, rising fuel
+    costs lead aggregators to increase per-kilometer charges to maintain driver earnings.
+- from: road_potholes
+  to: vehicle_servicing_cost
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Poor urban road conditions and potholes accelerate vehicle wear and
+    tear, increasing the frequency and cost of suspension and tire repairs.
+- from: road_potholes
+  to: traffic_congestion
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Damaged roads and potholes force vehicles to slow down significantly,
+    directly generating traffic bottlenecks and congestion.
+- from: traffic_congestion
+  to: ride_hailing_services
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Heavy traffic congestion triggers surge pricing algorithms and increases
+    ride-time charges for app-based cabs and bike taxis.
+- from: vehicle_acquisition
+  to: vehicle_insurance_premium
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher prices for new vehicles directly increase the Insured Declared
+    Value (IDV), resulting in proportionally higher motor insurance premiums.
+- from: highway_toll_fare
+  to: highway_bus_travel
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased toll taxes on national and state highways are passed on to
+    passengers through higher intercity bus fares.
+- from: retail_petrol
+  to: bike_taxi_fare
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Bike taxis primarily run on petrol; increases in retail petrol prices
+    lead aggregators to raise fares to sustain driver margins.
+- from: ev_charging_tariff
+  to: e_rickshaw_fare
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Higher commercial EV charging tariffs increase the daily operating
+    costs for e-rickshaw drivers, leading to upward pressure on ride fares.
+
+# I4 (13 edges)
+- from: mgnrega_wages
+  to: agriculture_and_allied
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher MGNREGA payouts establish a higher reservation wage in rural
+    areas, forcing private agricultural employers to raise daily farm labor wages
+    to attract workers.
+- from: minimum_wage
+  to: construction_and_manual
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Upward revisions in statutory minimum wages establish a higher legal
+    pay floor, pushing up daily wage rates for construction and manual building site
+    labor.
+- from: urban_unemployment_rate
+  to: delivery_and_logistics
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: High urban joblessness creates an oversupply of willing gig workers,
+    allowing platform aggregators to reduce per-delivery payouts and incentive structures.
+- from: startup_ecosystem
+  to: delivery_and_logistics
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Venture capital injected into the startup ecosystem directly finances
+    the cash burn required to subsidize payouts for food delivery and quick commerce
+    gig workers.
+- from: msme_manufacturing
+  to: manufacturing_and_core
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Growth and capacity expansion in small-scale MSME industries directly
+    generate new shop floor roles and industrial jobs for factory workers.
+- from: startup_layoffs
+  to: urban_unemployment_rate
+  type: PRODUCES
+  weight: 0.5
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mass downsizing and role eliminations in venture-backed tech companies
+    directly add to the pool of unemployed white-collar professionals in urban centers.
+- from: mgnrega_wages
+  to: construction_and_manual
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Attractive MGNREGA wages reduce distress migration from villages to
+    cities, tightening the urban manual labor supply and forcing builders to offer
+    higher construction wages.
+- from: minimum_wage
+  to: msme_manufacturing
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Mandatory increases in base legal pay directly inflate labor costs
+    for small-scale industries, squeezing the profit margins and income of SME factory
+    owners.
+- from: startup_layoffs
+  to: freelance_and_services
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Tech sector downsizing pushes displaced software engineers and digital
+    professionals into the gig economy, increasing the supply of freelance and independent
+    platform workers.
+- from: it_sector_jobs
+  to: urban_unemployment_rate
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Mass recruitment drives by major IT services firms absorb hundreds
+    of thousands of engineering graduates, significantly reducing urban youth joblessness.
+- from: startup_ecosystem
+  to: ride_hailing
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Venture capital backing allows mobility startups to heavily subsidize
+    driver earnings and offer lucrative incentives to cab and auto drivers on their
+    platforms.
+- from: maternity_leave_benefits
+  to: manufacturing_and_core
+  type: AFFECTS
+  weight: 0.4
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Strict mandates requiring employers to fully fund extended maternity
+    leave can inadvertently disincentivize the hiring of female factory workers in
+    cost-sensitive industrial sectors.
+- from: working_hours
+  to: urban_unemployment_rate
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Increases in mandatory shift timings and average working hours per
+    employee reduce the total headcount required by corporations, marginally increasing
+    urban unemployment.
+
+# I5 (18 edges)
+- from: home_loan_emi
+  to: personal_income_tax
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Home loan principal and interest payments provide tax deductions under
+    sections 80C and 24(b), reducing overall personal income tax liability.
+- from: life_insurance
+  to: personal_income_tax
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Life insurance premiums qualify for Section 80C deductions, directly
+    lowering taxable income and personal income tax.
+- from: health_insurance_premium
+  to: personal_income_tax
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Health insurance premiums provide tax deductions under Section 80D,
+    reducing the individual's income tax burden.
+- from: ppf_investment
+  to: personal_income_tax
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Contributions to the Public Provident Fund (PPF) are fully deductible
+    under Section 80C, lowering personal income tax.
+- from: nps_portfolio
+  to: personal_income_tax
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Investments in the National Pension System (NPS) offer exclusive tax
+    deductions under Section 80CCD(1B), reducing income tax.
+- from: fixed_deposits
+  to: tds_deduction
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Interest earned on fixed deposits exceeding the exemption limit automatically
+    triggers Tax Deducted at Source (TDS) by banks.
+- from: direct_equity_portfolio
+  to: capital_gains_tax
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Profits booked from selling direct equity holdings generate Short-Term
+    or Long-Term Capital Gains (STCG/LTCG) tax liabilities.
+- from: mutual_funds
+  to: capital_gains_tax
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Redeeming mutual fund units at a profit incurs capital gains tax, with
+    rates varying by holding period and fund type.
+- from: investment_property_value
+  to: capital_gains_tax
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Selling investment real estate at an appreciated value directly triggers
+    significant Long-Term Capital Gains (LTCG) tax.
+- from: cryptocurrency_portfolio
+  to: tds_deduction
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Selling or trading cryptocurrency assets mandates a 1% TDS deduction
+    under Section 194S of Indian tax regulations.
+- from: cryptocurrency_portfolio
+  to: capital_gains_tax
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Profits from cryptocurrency investments are taxed at a flat 30% rate
+    under Section 115BBH, significantly increasing capital gains tax liability.
+- from: ipo_allotment
+  to: direct_equity_portfolio
+  type: SUPPLIES
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Successful allotment of shares in an Initial Public Offering (IPO)
+    directly adds new stocks to the retail investor's direct equity portfolio.
+- from: credit_card_dues
+  to: personal_loan_emi
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Accumulation of high-interest credit card dues often forces consumers
+    to take personal loans for debt consolidation, increasing personal loan EMIs.
+- from: retail_gold_investment
+  to: gold_loan_interest
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Holding physical retail gold provides the necessary collateral to access
+    gold loans, enabling the generation of gold loan interest obligations.
+- from: savings_account_balance
+  to: mutual_funds
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Surplus liquidity in savings accounts is the primary funding source
+    for systematic investment plans (SIPs) and lump-sum mutual fund investments.
+- from: savings_account_balance
+  to: equity_investments
+  type: FUNDS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Available balances in retail savings accounts are transferred to trading
+    accounts to fund direct equity and IPO investments.
+- from: personal_income_tax
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Higher personal income tax outflows directly reduce the disposable
+    income available to be retained in savings accounts.
+- from: home_loan_emi
+  to: savings_account_balance
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Monthly deductions for home loan EMIs directly deplete the available
+    balance in household savings accounts.
+
+# I6 (18 edges)
+- from: vector_borne_diseases
+  to: blood_tests
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Outbreaks of dengue and malaria directly drive high volumes of pathology
+    lab tests for diagnosis and platelet monitoring.
+- from: vector_borne_diseases
+  to: hospital_beds
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Severe cases of vector-borne diseases require immediate hospitalization,
+    increasing the occupancy of hospital and ICU beds.
+- from: respiratory_infections
+  to: doctor_consultation
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Surges in airborne diseases like flu and COVID-19 lead to immediate
+    spikes in outpatient doctor visits.
+- from: respiratory_infections
+  to: antibiotics
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Bacterial respiratory infections, as well as secondary infections from
+    viral illnesses, drive the prescription and sale of antibiotics.
+- from: obesity
+  to: diabetes
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Excess body fat causes insulin resistance over time, directly leading
+    to the development of Type 2 diabetes.
+- from: diabetes
+  to: cardiovascular_health
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Chronic high blood sugar damages blood vessels and nerves, significantly
+    increasing the risk of hypertension and heart disease.
+- from: hypertension
+  to: heart_disease
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Prolonged high blood pressure exerts continuous strain on the heart
+    and arteries, directly causing ischemic heart disease.
+- from: metabolic_disorders
+  to: chronic_disease_medication
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The management of metabolic issues like diabetes necessitates the long-term,
+    recurring purchase of medications such as insulin.
+- from: cardiovascular_health
+  to: chronic_disease_medication
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Patients with heart conditions and high blood pressure require lifelong
+    adherence to prescription drugs for disease management.
+- from: doctor_consultation
+  to: prescription_drugs
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Outpatient consultations are the primary mechanism generating medical
+    prescriptions, directly driving pharmaceutical sales.
+- from: doctor_consultation
+  to: diagnostic_services
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physicians order blood tests and medical imaging during OPD visits
+    to confirm diagnoses, driving diagnostic service volumes.
+- from: mental_health_conditions
+  to: mental_health_services
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Rising prevalence of depression, anxiety, and substance abuse increases
+    the demand for therapy counseling and psychiatric care.
+- from: pediatric_vaccines
+  to: respiratory_infections
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Childhood immunization programs build herd immunity, significantly
+    reducing the incidence of communicable respiratory diseases like TB.
+- from: water_and_food_borne_diseases
+  to: childhood_malnutrition
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Repeated bouts of diarrhea and cholera in children cause severe nutrient
+    loss and malabsorption, leading to chronic stunting and wasting.
+- from: surgical_procedures
+  to: painkillers_and_antipyretics
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Post-operative recovery protocols heavily rely on analgesics, driving
+    the consumption of painkillers.
+- from: oncology
+  to: inpatient_care
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Cancer treatments, including surgeries and intensive chemotherapy,
+    require frequent and prolonged hospital admissions.
+- from: respiratory_conditions
+  to: home_monitoring_devices
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Chronic lung diseases like asthma and COPD drive patients to purchase
+    home medical equipment such as pulse oximeters and nebulizers.
+- from: maternity_services
+  to: surgical_procedures
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: A high rate of institutional deliveries, particularly the increasing
+    prevalence of C-sections, directly boosts surgical procedure volumes.
+
+# I7 (16 edges)
+- from: mid_day_meal
+  to: government_schools
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Provision of free mid-day meals significantly boosts student enrollment
+    and daily attendance in government schools by addressing classroom hunger.
+- from: free_textbooks_uniforms
+  to: government_schools
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Distribution of free textbooks and uniforms reduces out-of-pocket expenses
+    for parents, improving retention rates specifically in government schools.
+- from: private_schools
+  to: school_fees
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Expansion and premiumization of private school infrastructure directly
+    drive up average school and admission fees.
+- from: entrance_examinations
+  to: test_prep_industry
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: High competition and difficulty levels in college entrance exams directly
+    generate massive demand for specialized coaching and test prep services.
+- from: government_job_exams
+  to: test_prep_industry
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The pursuit of secure government employment drives millions of aspirants
+    to enroll in offline and online coaching institutes.
+- from: test_prep_industry
+  to: coaching_fees
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The corporatization, marketing costs, and expansion of the test prep
+    industry lead to structured and consistently higher coaching fees for aspirants.
+- from: test_prep_edtech
+  to: offline_coaching_centers
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Affordable online mock tests and test prep platforms act as substitutes,
+    pulling some student volume and revenue away from traditional offline coaching
+    centers.
+- from: k12_edtech
+  to: private_tutors
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Adoption of K-12 online learning apps reduces the dependency on traditional
+    neighborhood private home tutors for supplemental education.
+- from: educational_scholarships
+  to: college_university_fees
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Government and institutional scholarships directly reduce the net out-of-pocket
+    college and university fees paid by students.
+- from: educational_scholarships
+  to: undergraduate_programs
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Availability of fee waivers and scholarships increases gross enrollment
+    ratios in undergraduate degree programs by improving affordability for lower-income
+    students.
+- from: anganwadi_system
+  to: government_schools
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: Anganwadi centers provide foundational early childhood education and
+    nutrition, acting as the primary feeder system for primary enrollment in government
+    schools.
+- from: private_preschools
+  to: private_schools
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Private play schools and nurseries prepare and channel children directly
+    into private K-12 school admissions.
+- from: school_examinations
+  to: private_tutors
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The intense pressure to score high in 10th and 12th board exams drives
+    massive demand for private home tutors and local tuition centers.
+- from: undergraduate_programs
+  to: postgraduate_research
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Graduates completing bachelor's degrees form the direct applicant pool
+    for master's and PhD programs.
+- from: college_university_fees
+  to: higher_ed_online_degrees
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Rising costs of traditional on-campus college fees push price-sensitive
+    students toward more affordable online degrees and distance education.
+- from: corporate_upskilling
+  to: higher_ed_online_degrees
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Working professionals seeking corporate upskilling and career advancement
+    drive enrollment in flexible online degree programs and distance education.
+
+# I8 (12 edges)
+- from: riots_and_clashes
+  to: violent_crime
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public disturbances and mob violence directly generate incidents of
+    physical assaults and homicides.
+- from: riots_and_clashes
+  to: property_crime
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mobs during civil unrest frequently engage in arson, looting, and vandalism
+    of private and public property.
+- from: riots_and_clashes
+  to: curfews_and_section_144
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Severe public disturbances force authorities to impose curfews and
+    internet shutdowns to restore civic order.
+- from: curfews_and_section_144
+  to: street_harassment
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Strict restrictions on public movement physically remove perpetrators
+    and potential victims from public spaces, halting street harassment.
+- from: electrocution_hazard
+  to: fire_hazards
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Electrical short circuits from open wires and poor civic infrastructure
+    are a primary ignition source for building fires.
+- from: deepfake_and_identity_theft
+  to: financial_cyber_fraud
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Stolen identities and AI-morphed media are weaponized to execute UPI
+    scams and investment frauds by impersonating trusted contacts.
+- from: fir_registration
+  to: criminal_litigation_risk
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The formal filing of a police complaint legally initiates the investigative
+    process, directly creating court summons and litigation risk for the accused.
+- from: child_kidnapping
+  to: child_abuse_and_pocso
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Abducted children are highly vulnerable to trafficking networks, directly
+    leading to severe child exploitation and abuse.
+- from: domestic_violence
+  to: violent_crime
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Severe domestic abuse frequently escalates into physical altercations
+    that result in formal charges of assault, battery, or homicide.
+- from: structural_collapse
+  to: transit_accidents
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: The collapse of civic infrastructure like bridges or overpasses directly
+    causes severe road and railway accidents.
+- from: violent_crime
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Increases in violent crimes like assault and murder directly drive
+    up the volume of mandatory police complaints and FIRs registered.
+- from: property_crime
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Thefts and burglaries require victims to file FIRs to claim insurance
+    and recover losses, directly increasing police registration volumes.
+
+# I9 (13 edges)
+- from: particulate_matter_levels
+  to: ambient_aqi
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Concentrations of PM 2.5 and PM 10 directly dictate the mathematical
+    calculation and severity of the local Air Quality Index.
+- from: particulate_matter_levels
+  to: winter_smog
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: High levels of suspended particulate matter combine with atmospheric
+    moisture to physically form dense winter smog.
+- from: outdoor_cold
+  to: winter_smog
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Winter cold waves cause temperature inversions that trap particulate
+    matter close to the ground, preventing dispersion and exacerbating smog.
+- from: street_garbage
+  to: open_drains
+  type: DISRUPTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Uncollected street garbage washes into open neighborhood drains, physically
+    blocking water flow and causing sewage overflow.
+- from: open_drains
+  to: polluted_surface_water
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Untreated sewage and runoff from open neighborhood drains frequently
+    discharge directly into local lakes and rivers, increasing surface water toxicity.
+- from: street_waterlogging
+  to: stagnant_water_pools
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Receding floodwaters from waterlogged streets leave behind stagnant
+    pools that become prime breeding grounds for mosquitoes.
+- from: street_garbage
+  to: stray_animals
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Overflowing neighborhood garbage bins provide a steady, accessible
+    food source that attracts and sustains local stray dog and cattle populations.
+- from: neighborhood_greenery
+  to: outdoor_heat
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: IMMEDIATE
+  description: Tree canopies in neighborhoods provide physical shade and cooling through
+    evapotranspiration, mitigating localized urban heat island effects.
+- from: neighborhood_greenery
+  to: particulate_matter_levels
+  type: AFFECTS
+  weight: 0.4
+  polarity: -1
+  delay: IMMEDIATE
+  description: Urban flora and tree leaves act as physical filters, trapping airborne
+    dust and reducing ambient particulate matter levels in the immediate vicinity.
+- from: neighborhood_greenery
+  to: noise_pollution
+  type: AFFECTS
+  weight: 0.4
+  polarity: -1
+  delay: IMMEDIATE
+  description: Dense neighborhood greenery acts as an acoustic buffer, absorbing and
+    deflecting ambient traffic and construction noise.
+- from: urban_landfills
+  to: particulate_matter_levels
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Frequent spontaneous fires at urban garbage mountains release massive
+    amounts of smoke and toxic particulate matter into the local atmosphere.
+- from: urban_landfills
+  to: polluted_surface_water
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Toxic leachate from unlined urban landfills seeps into groundwater
+    and nearby local water bodies, causing severe chemical and biological pollution.
+- from: street_waterlogging
+  to: traffic_noise
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Waterlogged streets cause severe traffic bottlenecks, leading to increased
+    vehicular congestion, frustration, and excessive honking.

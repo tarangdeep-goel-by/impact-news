@@ -1,0 +1,100 @@
+- from: mgnrega_wages
+  to: farm_labor_wages
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher MGNREGA wage rates establish a higher reservation wage in rural
+    areas, forcing private agricultural employers to increase daily farm labor wages
+    to attract workers.
+- from: mgnrega_wages
+  to: construction_worker_wages
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: By providing alternative local employment, MGNREGA reduces distress
+    migration to cities, tightening the urban manual labor supply and pushing up construction
+    worker wages.
+- from: minimum_wage
+  to: domestic_help_wages
+  type: PRODUCES
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increases in statutory minimum wages create a societal benchmark that
+    informally pulls up the prevailing wages for domestic help and care workers.
+- from: urban_unemployment_rate
+  to: food_delivery_payouts
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: High urban joblessness increases the supply of gig workers, allowing
+    platforms to reduce food delivery payouts due to the abundance of available labor.
+- from: urban_unemployment_rate
+  to: cab_driver_earnings
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: A lack of formal jobs drives more individuals to ride-hailing platforms,
+    increasing driver competition and diluting individual cab driver earnings.
+- from: startup_layoffs
+  to: urban_unemployment_rate
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Tech downsizing and startup layoffs directly add to the pool of unemployed
+    professionals, increasing the urban unemployment rate.
+- from: rural_unemployment_rate
+  to: farm_labor_wages
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: High rural unemployment indicates an excess supply of agricultural
+    labor, which depresses the daily wages farmers are willing to pay.
+- from: it_sector_jobs
+  to: urban_unemployment_rate
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Growth in IT sector hiring absorbs educated urban youth, directly reducing
+    the open urban unemployment rate.
+- from: small_factory_owner_income
+  to: factory_worker_jobs
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased profitability for MSME manufacturers provides the capital
+    needed to expand shop floor operations and hire more factory workers.
+- from: defense_agniveer_roles
+  to: rural_unemployment_rate
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Recruitment for Armed Forces Agniveer roles absorbs a significant number
+    of rural youth, directly lowering the rural unemployment rate.
+- from: minimum_wage
+  to: factory_worker_jobs
+  type: AFFECTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher statutory minimum wages increase the cost of formal labor, potentially
+    reducing the total number of formal factory worker jobs as employers automate
+    or shift to informal labor.
+- from: working_hours
+  to: factory_worker_jobs
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  description: Relaxing working hours (e.g., allowing 12-hour shifts) reduces the
+    total headcount needed for factory worker jobs as fewer workers cover the same
+    operational time.

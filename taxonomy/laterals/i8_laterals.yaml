@@ -1,0 +1,96 @@
+- from: riots_and_clashes
+  to: violent_crime
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public disturbances and mob violence directly generate incidents of
+    physical assaults and homicides.
+- from: riots_and_clashes
+  to: property_crime
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mobs during civil unrest frequently engage in arson, looting, and vandalism
+    of private and public property.
+- from: riots_and_clashes
+  to: curfews_and_section_144
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Severe public disturbances force authorities to impose curfews and
+    internet shutdowns to restore civic order.
+- from: curfews_and_section_144
+  to: street_harassment
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Strict restrictions on public movement physically remove perpetrators
+    and potential victims from public spaces, halting street harassment.
+- from: electrocution_hazard
+  to: fire_hazards
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Electrical short circuits from open wires and poor civic infrastructure
+    are a primary ignition source for building fires.
+- from: deepfake_and_identity_theft
+  to: financial_cyber_fraud
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Stolen identities and AI-morphed media are weaponized to execute UPI
+    scams and investment frauds by impersonating trusted contacts.
+- from: fir_registration
+  to: criminal_litigation_risk
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The formal filing of a police complaint legally initiates the investigative
+    process, directly creating court summons and litigation risk for the accused.
+- from: child_kidnapping
+  to: child_abuse_and_pocso
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Abducted children are highly vulnerable to trafficking networks, directly
+    leading to severe child exploitation and abuse.
+- from: domestic_violence
+  to: violent_crime
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Severe domestic abuse frequently escalates into physical altercations
+    that result in formal charges of assault, battery, or homicide.
+- from: structural_collapse
+  to: transit_accidents
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: The collapse of civic infrastructure like bridges or overpasses directly
+    causes severe road and railway accidents.
+- from: violent_crime
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Increases in violent crimes like assault and murder directly drive
+    up the volume of mandatory police complaints and FIRs registered.
+- from: property_crime
+  to: fir_registration
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Thefts and burglaries require victims to file FIRs to claim insurance
+    and recover losses, directly increasing police registration volumes.
