@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impact Atlas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/cytoscape@3.30.4/dist/cytoscape.min.js"></script>
+  <script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+  <script src="https://unpkg.com/cose-base@2.2.0/cose-base.js"></script>
+  <script>
+    // Bridge globals: cose-bilkent expects coseBase.layoutBase to exist
+    if (window.coseBase && window.layoutBase) {
+      window.coseBase.layoutBase = window.layoutBase;
+    }
+  </script>
+  <script src="https://unpkg.com/cytoscape-cose-bilkent@4.1.0/cytoscape-cose-bilkent.js"></script>
+  <script src="https://unpkg.com/3d-force-graph@1.73.4/dist/3d-force-graph.min.js"></script>
+</head>
+<body>
+  <!-- Top bar -->
+  <header id="topbar">
+    <div class="topbar-left">
+      <h1>IMPACT ATLAS</h1>
+      <span class="topbar-subtitle">Causal Knowledge Graph Explorer</span>
+    </div>
+    <div class="topbar-center">
+      <div id="breadcrumbs"></div>
+      <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search nodes... (/)">
+        <div id="search-results"></div>
+      </div>
+    </div>
+    <div class="topbar-right">
+    </div>
+  </header>
+
+  <!-- Category sidebar (left) -->
+  <aside id="sidebar"><!-- populated by topdown.js --></aside>
+
+  <!-- Node detail panel (right) -->
+  <aside id="detail-panel" class="hidden"><!-- populated on selection --></aside>
+
+  <!-- Context menu -->
+  <div id="context-menu" class="hidden">
+    <div class="context-item" id="ctx-street-view">Enter Street View</div>
+    <div class="context-item" id="ctx-shockwave">Run PPR Shockwave</div>
+  </div>
+
+  <!-- Edge filter panel (floating, always on top) -->
+  <div id="edge-filter-panel">
+    <div class="filter-panel-title">EDGES</div>
+    <button class="filter-btn" data-filter="hierarchy"><span class="filter-dot" style="background:#888;"></span>Hierarchy</button>
+    <div class="filter-group">
+      <button class="filter-btn filter-group-btn" data-filter="tt"><span class="filter-dot" style="background:#4DD0E1;"></span>T→T</button>
+      <div class="filter-l1-list hidden" data-group="tt"></div>
+    </div>
+    <div class="filter-group">
+      <button class="filter-btn filter-group-btn" data-filter="ti"><span class="filter-dot" style="background:#FFD700;"></span>T→I</button>
+      <div class="filter-l1-list hidden" data-group="ti"></div>
+    </div>
+    <div class="filter-group">
+      <button class="filter-btn filter-group-btn" data-filter="it"><span class="filter-dot" style="background:#FF9800;"></span>I→T</button>
+      <div class="filter-l1-list hidden" data-group="it"></div>
+    </div>
+  </div>
+
+  <!-- Cytoscape container -->
+  <div id="cy"></div>
+  <div id="cy3d" style="display:none;"></div>
+
+  <!-- Stats bar (bottom) -->
+  <footer id="statsbar">
+    <span id="stats-text"></span>
+    <span id="zoom-indicator"></span>
+  </footer>
+
+  <!-- Loading overlay -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <p>Loading Impact Atlas...</p>
+  </div>
+
+  <!-- Onboarding hint -->
+  <div id="onboarding-hint" class="hidden">
+    <p>Scroll to zoom · Click nodes to explore · Press <kbd>/</kbd> to search</p>
+    <p class="hint-sub">Tab to switch views · Right-click for actions</p>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

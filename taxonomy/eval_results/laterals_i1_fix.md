@@ -1,0 +1,178 @@
+# I1 Lateral Fix
+
+Thinking:
+**Edge Case Analysis and Remediation**
+
+Okay, let's break this down. I've got a tree structure here and some edges that need fixing based on review feedback. The ultimate goal is to generate a clean YAML array of edges, so I'm looking at input, process and output.
+
+First, I need to understand the problem. The input consists of a tree structure, existing edges, and review feedback. The primary task is to resolve inconsistencies in the edge types and add any missing edges. The final output needs to be a valid YAML array of these complete edge entries.
+
+Next up, the review feedback. Seems straightforward: I need to update two edges and add one. Specifically:
+
+*   I need to change `retail_onion` to `street_food` from `AFFECTS` to `SUPPLIES`.
+*   Similarly, I have to update `retail_tomato` to `street_food` from `AFFECTS` to `SUPPLIES`.
+*   Finally, I need to add a new edge: `wheat_flour` to `street_food` with a `SUPPLIES` type and a description.
+
+Now, I'll go through the existing edges, applying those fixes and making sure I'm not accidentally removing or changing anything else that's correct. I'll need to go through each one systematically. So I've got to ensure the updates are correct: `retail_onion` and `retail_tomato`, I need to make sure I switch those to `SUPPLIES`.
+
+Finally, for the missing edge, I have to determine the edge metadata. I'll define it as:
+
+*   Type: `SUPPLIES`
+*   Weight: 0.7 (seems appropriate for a staple supply)
+*   Polarity: 1
+*   Delay: `IMMEDIATE` or `SHORT_TERM` (leaning towards `IMMEDIATE` since we're talking street food)
+*   Description: Detailed description about what wheat flour is used for.
+
+After this, I need to format everything into a YAML array, ensuring all the required keys are present and correctly filled for each edge. I'll need to verify the format.
+
+A quick double-check:
+*   Did I change the `retail_onion` edge? Yes.
+*   Did I change the `retail_tomato` edge? Yes.
+*   Did I add the `wheat_flour` edge? Yes.
+*   Are we on level 2 targets? No.
+*   Is it pure YAML? Yes.
+
+Okay, everything should be in order now!
+
+Response:
+```yaml
+```yaml
+- from: liquid_milk
+  to: paneer_and_cheese
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Liquid milk is the primary raw material for paneer and cheese; changes
+    in milk procurement costs directly dictate their production costs and retail prices.
+- from: liquid_milk
+  to: butter_and_ghee
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Butter and ghee are direct fat derivatives of liquid milk, making their
+    market prices highly sensitive to wholesale milk price fluctuations.
+- from: wheat_flour
+  to: biscuits_and_snacks
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Wheat flour is the foundational base ingredient for most packaged biscuits
+    and snacks, directly impacting FMCG manufacturing margins.
+- from: wheat_flour
+  to: instant_noodles
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Wheat flour (maida) is the primary structural ingredient for instant
+    noodles, making noodle production costs highly dependent on wheat prices.
+- from: palm_oil
+  to: biscuits_and_snacks
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Palm oil is the most widely used edible oil in Indian packaged snacks
+    due to its low cost and stability; price shocks directly influence FMCG pricing.
+- from: palm_oil
+  to: instant_noodles
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Instant noodles are pre-fried in palm oil during manufacturing; international
+    palm oil price fluctuations directly affect production margins.
+- from: retail_sugar
+  to: biscuits_and_snacks
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Sugar is a key bulk ingredient in sweet biscuits and snacks; sustained
+    increases in retail sugar prices raise input costs for these packaged foods.
+- from: retail_potato
+  to: biscuits_and_snacks
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Potatoes are the primary raw material for packaged potato chips and
+    namkeens; agricultural price spikes directly impact FMCG snack margins.
+- from: retail_potato
+  to: street_food
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Potatoes are foundational to Indian street food (samosas, aloo tikki,
+    vada pav); price changes immediately affect vendor costs and portion sizes.
+- from: retail_onion
+  to: street_food
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Onions are a staple base and garnish for most Indian street food; sudden
+    price increases directly squeeze vendor profitability and force price hikes.
+- from: retail_tomato
+  to: street_food
+  type: SUPPLIES
+  weight: 0.5
+  polarity: 1
+  delay: IMMEDIATE
+  description: Tomatoes are heavily used in Indian street food like chaat and pav
+    bhaji; price spikes immediately reduce vendor margins or lead to increased per-plate
+    prices.
+- from: liquid_milk
+  to: street_food
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Liquid milk is the core ingredient for roadside tea (chai) stalls;
+    milk price hikes directly lead to immediate increases in the per-cup price of
+    street chai.
+- from: poultry_chicken
+  to: quick_service_restaurants
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Chicken is the primary protein for many major QSR chains in India;
+    wholesale poultry prices directly dictate menu pricing and promotional offers.
+- from: tur_dal
+  to: chana_dal
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: Tur dal and chana dal act as partial substitutes in Indian households;
+    a price spike in tur dal shifts consumer demand to chana dal, driving up its price.
+- from: mutton_and_lamb
+  to: poultry_chicken
+  type: AFFECTS
+  weight: 0.5
+  polarity: 1
+  delay: SHORT_TERM
+  description: As mutton prices rise, consumers frequently substitute it with more
+    affordable poultry, driving up demand and subsequently prices for chicken.
+- from: food_delivery_services
+  to: quick_service_restaurants
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Commission rates and delivery fees charged by food delivery aggregators
+    force QSRs to adjust their online menu prices upward to maintain operational margins.
+- from: wheat_flour
+  to: street_food
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: IMMEDIATE
+  description: Wheat flour (maida/atta) is the foundational base for popular street foods like samosas, kachoris, and bhatures; price changes directly impact vendor costs.
+```
+```

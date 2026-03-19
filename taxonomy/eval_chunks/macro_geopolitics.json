@@ -1,0 +1,3745 @@
+{
+  "domain": "macro_geopolitics",
+  "node_count": 99,
+  "edge_count": 415,
+  "internal_edge_count": 162,
+  "cross_domain_edge_count": 253,
+  "nodes": [
+    {
+      "id": "active_pharmaceutical_ingredients_supply",
+      "aliases": [
+        "API Supply",
+        "bulk drugs",
+        "pharma raw materials",
+        "active pharmaceutical ingredients"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "age_demographics",
+      "aliases": [
+        "Age Demographics",
+        "Age Distribution",
+        "Generational Cohorts",
+        "Aayu Varg"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "aggregate_consumer_confidence",
+      "aliases": [
+        "Aggregate Consumer Confidence",
+        "Willingness to Spend",
+        "Consumer Optimism",
+        "Upbhokta Vishwas",
+        "Retail Sentiment"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "agrarian_collectives",
+      "aliases": [
+        "Agrarian Collectives",
+        "Farmer Organizations",
+        "Kisan Sangathan",
+        "Agricultural Movements"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "agricultural_commodities",
+      "aliases": [
+        "Agricultural Commodities",
+        "Global Agri Markets",
+        "krishi utpad bazar"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "autumn_festive_season",
+      "aliases": [
+        "Autumn Festive Season",
+        "Diwali Season",
+        "Durga Puja Season",
+        "Tyohar Ka Mausam",
+        "Festive Demand Period"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "brent_crude",
+      "aliases": [
+        "Brent Crude",
+        "kachcha tel",
+        "global oil prices",
+        "crude oil"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "caste_reservation_movements",
+      "aliases": [
+        "Caste Reservation Movements",
+        "Quota Agitations",
+        "Aarakshan Andolan",
+        "Backward Class Movements"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "china_manufacturing_output",
+      "aliases": [
+        "China Manufacturing Output",
+        "China factory output",
+        "Chinese industrial production",
+        "cheen audyogik utpadan"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "civic_participation",
+      "aliases": [
+        "Civic Participation",
+        "Democratic Engagement",
+        "Nagrik Bhagidari",
+        "Electoral Participation"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "consumer_sentiment",
+      "aliases": [
+        "Consumer Sentiment",
+        "Public Confidence",
+        "Upbhokta Bhavna",
+        "Market Mood"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "cultural_and_religious_forces",
+      "aliases": [
+        "Cultural & Religious Forces",
+        "Cultural Shifts",
+        "Sanskritik Bal",
+        "Religious Dynamics"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "currency_and_forex_markets",
+      "aliases": [
+        "Currency & Forex Markets",
+        "Foreign Exchange",
+        "mudra bazar"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "debt_and_bond_markets",
+      "aliases": [
+        "Debt & Bond Markets",
+        "Fixed Income Markets",
+        "bond bazar"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "demographics_and_population",
+      "aliases": [
+        "Demographics & Population",
+        "Population Metrics",
+        "Janasankhya",
+        "Demographic Trends"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "dii_flows",
+      "aliases": [
+        "DII Flows",
+        "Domestic institutional investors",
+        "mutual fund inflows",
+        "gharelu nivesh"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "domestic_migration",
+      "aliases": [
+        "Domestic Migration",
+        "Internal Migration",
+        "Antarik Pravas",
+        "Inter-state Migration"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "employment_aggregates",
+      "aliases": [
+        "Employment Aggregates",
+        "Macro Job Metrics",
+        "berozgari ankde"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "energy_commodities",
+      "aliases": [
+        "Energy Commodities",
+        "Global Energy Markets",
+        "urja bazar"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "epfo_payroll_additions",
+      "aliases": [
+        "EPFO Payroll Additions",
+        "formal job creation",
+        "EPFO data",
+        "provident fund subscriptions"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "equity_markets",
+      "aliases": [
+        "Equity Markets",
+        "Stock Indices",
+        "share bazar"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "farmer_unions",
+      "aliases": [
+        "Farmer Unions",
+        "Kisan Morcha",
+        "Bharatiya Kisan Union",
+        "Kisan Andolan",
+        "Agricultural Unions"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "female_labor_force_participation",
+      "aliases": [
+        "Female Labor Force Participation",
+        "FLFP",
+        "Women in Workforce",
+        "Mahila Shramik",
+        "Working Women Aggregate"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "fii_fpi_flows",
+      "aliases": [
+        "FII/FPI Flows",
+        "Foreign institutional investors",
+        "videshi nivesh",
+        "foreign portfolio investment"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "financial_and_capital_markets",
+      "aliases": [
+        "Financial & Capital Markets",
+        "Market Indices",
+        "vittiya bazar"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "gender_demographics",
+      "aliases": [
+        "Gender Demographics",
+        "Gender Ratios",
+        "Ling Anupat",
+        "Gender Distribution"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "gig_worker_unions",
+      "aliases": [
+        "Gig Worker Unions",
+        "Platform Worker Collectives",
+        "Delivery Partner Associations",
+        "Gig Workers Union"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "global_commodity_markets",
+      "aliases": [
+        "Global Commodity Markets",
+        "International Commodities",
+        "vishwa commodity bazar"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "global_edible_oil_supply",
+      "aliases": [
+        "Global Edible Oil Supply",
+        "Palm oil prices",
+        "sunflower oil imports",
+        "khadya tel market"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "global_equity_indices",
+      "aliases": [
+        "Global Equity Indices",
+        "S&P 500",
+        "Nasdaq",
+        "Dow Jones",
+        "wall street"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "global_food_grain_supply",
+      "aliases": [
+        "Global Food Grain Supply",
+        "Chicago wheat",
+        "international grain prices",
+        "gehun market"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "global_macro_demand",
+      "aliases": [
+        "Global Macro Demand",
+        "International Consumption",
+        "vishwa mang"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "global_natural_gas",
+      "aliases": [
+        "Global Natural Gas",
+        "Henry Hub",
+        "LNG prices",
+        "prakritik gas bhaw"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "global_semiconductor_supply_chain",
+      "aliases": [
+        "Global Semiconductor Supply Chain",
+        "chip shortage",
+        "microchips",
+        "semiconductor supply"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "global_shipping_freight_rates",
+      "aliases": [
+        "Global Shipping Freight Rates",
+        "Baltic Dry Index",
+        "container costs",
+        "shipping rates"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "global_sugar_supply",
+      "aliases": [
+        "Global Sugar Supply",
+        "International sugar prices",
+        "chini market",
+        "global sweetener supply"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "global_supply_chains",
+      "aliases": [
+        "Global Supply Chains",
+        "International Logistics",
+        "v वैश्विक aapurti shrinkhala"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "identity_and_rights_movements",
+      "aliases": [
+        "Identity & Rights Movements",
+        "Civil Rights Groups",
+        "Adhikar Andolan",
+        "Social Justice Movements"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "index_of_industrial_production",
+      "aliases": [
+        "Index of Industrial Production",
+        "IIP",
+        "factory output",
+        "audyogik utpadan"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "india_10yr_bond_yield",
+      "aliases": [
+        "India 10-Year Bond Yield",
+        "G-sec yields",
+        "sovereign yield",
+        "government bond rates"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "india_aging_population",
+      "aliases": [
+        "India Aging Population",
+        "Senior Citizens Aggregate",
+        "Elderly Population",
+        "Vridh Aabadi",
+        "Geriatric Demographic"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "india_current_account_deficit",
+      "aliases": [
+        "India Current Account Deficit",
+        "CAD",
+        "current account balance",
+        "external deficit"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "india_forex_reserves",
+      "aliases": [
+        "India Forex Reserves",
+        "FX reserves",
+        "videshi mudra bhandar",
+        "foreign exchange reserves"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "india_gdp_growth",
+      "aliases": [
+        "India GDP Growth",
+        "Gross Domestic Product",
+        "arthvyavastha",
+        "national growth rate"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "india_trade_deficit",
+      "aliases": [
+        "India Trade Deficit",
+        "vyapar ghata",
+        "import-export gap",
+        "merchandise trade balance"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "india_working_age_population",
+      "aliases": [
+        "India Working Age Population",
+        "Demographic Dividend",
+        "Youth Workforce",
+        "Yuva Aabadi",
+        "Working Class Population"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "indian_diaspora_nri",
+      "aliases": [
+        "Indian Diaspora",
+        "NRI Population",
+        "Non-Resident Indians",
+        "Pravasi Bhartiya",
+        "Overseas Indians"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "indian_macroeconomic_indicators",
+      "aliases": [
+        "Indian Macroeconomic Indicators",
+        "Domestic Macro",
+        "rashtriya arthik ankde"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "industrial_metals_index",
+      "aliases": [
+        "Industrial Metals Index",
+        "LME copper",
+        "global steel prices",
+        "base metals"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "inflation_indices",
+      "aliases": [
+        "Inflation Indices",
+        "Macro Inflation Metrics",
+        "mehengai dar ankde"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "inr_usd_exchange_rate",
+      "aliases": [
+        "Rupee Dollar Rate",
+        "USD INR",
+        "Rupee Depreciation",
+        "Currency Exchange Rate"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "institutional_investment_flows",
+      "aliases": [
+        "Institutional Investment Flows",
+        "Market Liquidity",
+        "sansthagat nivesh"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "international_coal_prices",
+      "aliases": [
+        "International Coal Prices",
+        "Newcastle coal",
+        "thermal coal prices",
+        "koyla bhaw"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "international_gold_prices",
+      "aliases": [
+        "International Gold Prices",
+        "Spot gold",
+        "sona bhaw",
+        "global gold market"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "international_migration",
+      "aliases": [
+        "International Migration",
+        "Cross-border Migration",
+        "Antarrashtriya Pravas",
+        "Emigration"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "international_silver_prices",
+      "aliases": [
+        "International Silver Prices",
+        "Spot silver",
+        "chandi bhaw",
+        "global silver market"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "international_trade_and_supply_chains",
+      "aliases": [
+        "International Trade & Supply Chains",
+        "Global Trade",
+        "antarrashtriya vyapar"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "islamic_festivals",
+      "aliases": [
+        "Islamic Festivals",
+        "Eid Season",
+        "Ramadan",
+        "Ramzan",
+        "Bakrid"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "labor_and_trade_unions",
+      "aliases": [
+        "Labor & Trade Unions",
+        "Worker Collectives",
+        "Mazdoor Sangh",
+        "Trade Associations"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "linguistic_and_regional_identity",
+      "aliases": [
+        "Linguistic & Regional Identity",
+        "Language Movements",
+        "Bhashayi Asmita",
+        "Regional Pride"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "macro_behavioral_shifts",
+      "aliases": [
+        "Macro Behavioral Shifts",
+        "Public Sentiment",
+        "Jan Bhavna",
+        "Collective Behavior"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "major_festivals_and_observances",
+      "aliases": [
+        "Major Festivals & Observances",
+        "Festive Seasons",
+        "Tyohar",
+        "Cultural Celebrations"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "major_temple_trusts",
+      "aliases": [
+        "Major Temple Trusts",
+        "Hindu Endowments",
+        "Mandir Trust",
+        "Tirupati Devasthanam",
+        "Pilgrimage Boards"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "mass_boycott_movements",
+      "aliases": [
+        "Mass Boycott Movements",
+        "Cancel Culture",
+        "Brand Boycotts",
+        "Bahishkar Andolan",
+        "Social Media Boycotts"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "migration_and_mobility",
+      "aliases": [
+        "Migration & Mobility",
+        "Population Movement",
+        "Pravas",
+        "Human Relocation"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "national_output_and_growth",
+      "aliases": [
+        "National Output & Growth",
+        "Economic Growth Metrics",
+        "arthik vikas dar"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "national_unemployment_rate",
+      "aliases": [
+        "National Unemployment Rate",
+        "berozgari dar",
+        "aggregate joblessness",
+        "CMIE unemployment data"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "nifty_50",
+      "aliases": [
+        "Nifty 50",
+        "NSE benchmark",
+        "share bazar",
+        "National Stock Exchange index"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "organized_labor_unions",
+      "aliases": [
+        "Organized Labor Unions",
+        "Central Trade Unions",
+        "Bank Unions",
+        "Sangatit Mazdoor Sangh",
+        "PSU Unions"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "pmi_manufacturing",
+      "aliases": [
+        "PMI Manufacturing",
+        "Purchasing Managers Index",
+        "manufacturing activity",
+        "factory orders"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "pmi_services",
+      "aliases": [
+        "PMI Services",
+        "Services PMI",
+        "service sector growth",
+        "business activity index"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "precious_and_industrial_metals",
+      "aliases": [
+        "Precious & Industrial Metals",
+        "Global Metals Market",
+        "dhatu bazar"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "regional_language_movements",
+      "aliases": [
+        "Regional Language Movements",
+        "Pro-Language Agitations",
+        "Bhasha Andolan",
+        "Linguistic Pride Movements"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "regional_new_year_festivals",
+      "aliases": [
+        "Regional New Year Festivals",
+        "Ugadi",
+        "Gudi Padwa",
+        "Vishu",
+        "Bihu"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "religious_institutions_and_trusts",
+      "aliases": [
+        "Religious Institutions & Trusts",
+        "Faith-based Organizations",
+        "Dharmik Sansthan",
+        "Religious Boards"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "rice_crop_yield",
+      "aliases": [
+        "Paddy Yield",
+        "Rice Production",
+        "Dhan ki Fasal"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "rural_urban_migration_corridors",
+      "aliases": [
+        "Rural-Urban Migration Corridors",
+        "Village to City Migration",
+        "Gaon Se Shahar Pravas",
+        "Labor Corridors"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "seasonal_migrant_labor",
+      "aliases": [
+        "Seasonal Migrant Labor",
+        "Migrant Workers",
+        "Pravasi Mazdoor",
+        "Dihadi Mazdoor",
+        "Agricultural Migrants"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "sensex",
+      "aliases": [
+        "Sensex",
+        "BSE benchmark",
+        "stock market index",
+        "Bombay Stock Exchange"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "skilled_emigration",
+      "aliases": [
+        "Skilled Emigration",
+        "Brain Drain",
+        "Student Outflow",
+        "Videsh Padhai",
+        "Tech Worker Migration"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "social_movements_and_collectives",
+      "aliases": [
+        "Social Movements & Collectives",
+        "Mass Movements",
+        "Samajik Andolan",
+        "Activism"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "spring_harvest_festivals",
+      "aliases": [
+        "Spring Harvest Festivals",
+        "Holi Season",
+        "Baisakhi",
+        "Pongal",
+        "Makar Sankranti"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "student_unions",
+      "aliases": [
+        "Student Unions",
+        "University Political Wings",
+        "Chhatra Sangh",
+        "Campus Political Groups"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "t3",
+      "aliases": [
+        "Macroeconomic & Global Markets",
+        "Global Markets",
+        "Macro Indicators",
+        "T3"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "t5",
+      "aliases": [
+        "Social, Demographic & Cultural Forces",
+        "Macro-Cultural Shifts",
+        "Population Dynamics",
+        "Samajik Aur Janasankhyikiy Bal"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "tier_2_3_city_expansion",
+      "aliases": [
+        "Tier 2/3 City Expansion",
+        "Small Town Growth",
+        "Rurbanization",
+        "Chhote Shaharon Ka Vikas",
+        "Emerging Cities"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "trade_balance_metrics",
+      "aliases": [
+        "Trade Balance Metrics",
+        "Import Export Data",
+        "vyapar ghata ankde"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "transport_worker_unions",
+      "aliases": [
+        "Transport Worker Unions",
+        "Trucker Associations",
+        "Taxi Unions",
+        "Auto Rickshaw Unions",
+        "Transport Strike Committees"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "urban_population_density",
+      "aliases": [
+        "Urban Population Density",
+        "City Crowding",
+        "Metro Density",
+        "Shahar Ki Bheed",
+        "Urban Congestion"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "urbanization_trends",
+      "aliases": [
+        "Urbanization Trends",
+        "City Growth",
+        "Shaharikaran",
+        "Urban Sprawl"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "us_consumer_demand",
+      "aliases": [
+        "US Consumer Demand",
+        "US retail sales",
+        "American consumer spending",
+        "US market demand"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "us_dollar_index",
+      "aliases": [
+        "US Dollar Index",
+        "DXY",
+        "dollar strength",
+        "global dollar value"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "us_treasury_yields",
+      "aliases": [
+        "US Treasury Yields",
+        "US 10-year yield",
+        "treasury bonds",
+        "US debt market"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "usd_inr_exchange",
+      "aliases": [
+        "USD-INR Exchange Rate",
+        "rupee dollar rate",
+        "dollar bhaw",
+        "rupee depreciation"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "vegetable_crops",
+      "aliases": [
+        "Vegetable Crops",
+        "Horticulture Produce",
+        "Sabzi Ki Kheti"
+      ],
+      "category": "T3"
+    },
+    {
+      "id": "voter_turnout_aggregates",
+      "aliases": [
+        "Voter Turnout Aggregates",
+        "Election Participation Rates",
+        "Matdaan Pratishat",
+        "Voting Percentages"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "waqf_boards",
+      "aliases": [
+        "Waqf Boards",
+        "Islamic Endowments",
+        "Waqf Properties",
+        "Muslim Trust Boards"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "wedding_season_aggregate",
+      "aliases": [
+        "Indian Wedding Season",
+        "Shaadi Season",
+        "Marriage Season",
+        "Lagan",
+        "Saaya"
+      ],
+      "category": "T5"
+    },
+    {
+      "id": "wpi",
+      "aliases": [
+        "Wholesale Price Index",
+        "WPI",
+        "thok mehengai",
+        "wholesale inflation"
+      ],
+      "category": "T3"
+    }
+  ],
+  "edges": [
+    {
+      "from": "global_food_grain_supply",
+      "to": "wpi",
+      "type": "AFFECTS",
+      "description": "Robust global harvests of wheat and other grains suppress international prices, helping to cool domestic wholesale food inflation."
+    },
+    {
+      "from": "seasonal_migrant_labor",
+      "to": "global_food_grain_supply",
+      "type": "PRODUCES",
+      "description": "The availability of seasonal migrant labor ensures timely agricultural harvesting, directly boosting the supply of food grains."
+    },
+    {
+      "from": "farmer_unions",
+      "to": "global_food_grain_supply",
+      "type": "DISRUPTS",
+      "description": "Agitations by farmer unions disrupt agricultural procurement and supply chains, reducing the volume of food grains available for export."
+    },
+    {
+      "from": "global_supply_chains",
+      "to": "global_semiconductor_supply_chain",
+      "type": "CONTAINS",
+      "description": "Global supply chains contains the global semiconductor supply chain"
+    },
+    {
+      "from": "global_supply_chains",
+      "to": "global_shipping_freight_rates",
+      "type": "CONTAINS",
+      "description": "Global supply chains contains global shipping freight rates"
+    },
+    {
+      "from": "global_supply_chains",
+      "to": "active_pharmaceutical_ingredients_supply",
+      "type": "CONTAINS",
+      "description": "Global supply chains contains active pharmaceutical ingredients supply"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "inflation_indices",
+      "type": "CONTAINS",
+      "description": "Indian macroeconomic indicators contains inflation indices"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "national_output_and_growth",
+      "type": "CONTAINS",
+      "description": "Indian macroeconomic indicators contains national output and growth metrics"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "employment_aggregates",
+      "type": "CONTAINS",
+      "description": "Indian macroeconomic indicators contains employment aggregates"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "macro_behavioral_shifts",
+      "type": "AFFECTS",
+      "description": "Changes in inflation, employment, and GDP growth directly dictate consumer sentiment and civic participation levels."
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "migration_and_mobility",
+      "type": "AFFECTS",
+      "description": "Domestic economic growth and employment aggregates drive rural-to-urban domestic migration and influence international labor migration."
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "social_movements_and_collectives",
+      "type": "AFFECTS",
+      "description": "Macroeconomic distress (high inflation, low employment) triggers mobilization of labor unions and agrarian collectives."
+    },
+    {
+      "from": "global_commodity_markets",
+      "to": "energy_commodities",
+      "type": "CONTAINS",
+      "description": "Global commodity markets contains energy commodities"
+    },
+    {
+      "from": "global_commodity_markets",
+      "to": "agricultural_commodities",
+      "type": "CONTAINS",
+      "description": "Global commodity markets contains agricultural commodities"
+    },
+    {
+      "from": "global_commodity_markets",
+      "to": "precious_and_industrial_metals",
+      "type": "CONTAINS",
+      "description": "Global commodity markets contains precious and industrial metals"
+    },
+    {
+      "from": "global_commodity_markets",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Global energy and agricultural commodity prices directly import inflation into the Indian economy, driving up domestic inflation indices."
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "trade_balance_metrics",
+      "type": "CONTAINS",
+      "description": "International trade and supply chains contains trade balance metrics"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "global_supply_chains",
+      "type": "CONTAINS",
+      "description": "International trade and supply chains contains global supply chains"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "global_macro_demand",
+      "type": "CONTAINS",
+      "description": "International trade and supply chains contains global macro demand"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "domestic_migration",
+      "type": "CONTAINS",
+      "description": "Migration & Mobility contains Domestic Migration"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "international_migration",
+      "type": "CONTAINS",
+      "description": "Migration & Mobility contains International Migration"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "financial_and_capital_markets",
+      "type": "FUNDS",
+      "description": "International migration drives massive inward remittance flows, directly supporting India's currency and forex markets."
+    },
+    {
+      "from": "social_movements_and_collectives",
+      "to": "labor_and_trade_unions",
+      "type": "CONTAINS",
+      "description": "Social Movements & Collectives contains Labor & Trade Unions"
+    },
+    {
+      "from": "social_movements_and_collectives",
+      "to": "agrarian_collectives",
+      "type": "CONTAINS",
+      "description": "Social Movements & Collectives contains Agrarian Collectives"
+    },
+    {
+      "from": "social_movements_and_collectives",
+      "to": "identity_and_rights_movements",
+      "type": "CONTAINS",
+      "description": "Social Movements & Collectives contains Identity & Rights Movements"
+    },
+    {
+      "from": "social_movements_and_collectives",
+      "to": "international_trade_and_supply_chains",
+      "type": "DISRUPTS",
+      "description": "Large-scale labor and transport union strikes disrupt export-import logistics, port operations, and global supply chains."
+    },
+    {
+      "from": "social_movements_and_collectives",
+      "to": "indian_macroeconomic_indicators",
+      "type": "DISRUPTS",
+      "description": "Widespread agrarian or industrial strikes disrupt national output, manufacturing growth, and inflation indices via supply shocks."
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "consumer_sentiment",
+      "type": "CONTAINS",
+      "description": "Macro Behavioral Shifts contains Consumer Sentiment"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "civic_participation",
+      "type": "CONTAINS",
+      "description": "Macro Behavioral Shifts contains Civic Participation"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Consumer sentiment directly drives aggregate demand, which heavily influences national output, growth, and inflation indices."
+    },
+    {
+      "from": "india_gdp_growth",
+      "to": "epfo_payroll_additions",
+      "type": "AFFECTS",
+      "description": "Broad economic expansion encourages formal sector enterprises to hire more workers, increasing provident fund subscriptions."
+    },
+    {
+      "from": "india_gdp_growth",
+      "to": "tier_2_3_city_expansion",
+      "type": "AFFECTS",
+      "description": "Sustained national economic growth creates wealth that fuels real estate development and urbanization in emerging tier 2 and 3 cities."
+    },
+    {
+      "from": "india_trade_deficit",
+      "to": "india_current_account_deficit",
+      "type": "AFFECTS",
+      "description": "A widening gap between merchandise imports and exports directly expands the broader current account deficit."
+    },
+    {
+      "from": "india_trade_deficit",
+      "to": "inr_usd_exchange_rate",
+      "type": "AFFECTS",
+      "description": "Widening trade deficit increases foreign currency demand, depreciating the rupee."
+    },
+    {
+      "from": "india_trade_deficit",
+      "to": "currency_and_forex_markets",
+      "type": "AFFECTS",
+      "description": "Widening trade deficit directly depresses the domestic currency exchange rate."
+    },
+    {
+      "from": "fii_fpi_flows",
+      "to": "nifty_50",
+      "type": "FUNDS",
+      "description": "Strong foreign institutional capital inflows provide liquidity and buying pressure that drive up benchmark Indian equity indices."
+    },
+    {
+      "from": "fii_fpi_flows",
+      "to": "usd_inr_exchange",
+      "type": "AFFECTS",
+      "description": "Foreign capital inflows increase the supply of dollars in the domestic market, appreciating the Rupee and lowering the USD-INR rate."
+    },
+    {
+      "from": "wpi",
+      "to": "india_10yr_bond_yield",
+      "type": "AFFECTS",
+      "description": "Rising wholesale inflation expectations lead bond market investors to demand higher yields to compensate for the loss of purchasing power."
+    },
+    {
+      "from": "wpi",
+      "to": "aggregate_consumer_confidence",
+      "type": "AFFECTS",
+      "description": "High wholesale inflation eventually passes to retail prices, eroding purchasing power and dampening consumer sentiment."
+    },
+    {
+      "from": "usd_inr_exchange",
+      "to": "india_forex_reserves",
+      "type": "AFFECTS",
+      "description": "A rapidly depreciating Rupee (higher USD-INR rate) prompts the central bank to sell dollars from its reserves to stabilize the currency."
+    },
+    {
+      "from": "usd_inr_exchange",
+      "to": "brent_crude",
+      "type": "AFFECTS",
+      "description": "Weaker INR increases effective purchasing cost of Brent crude for Indian importers."
+    },
+    {
+      "from": "nifty_50",
+      "to": "sensex",
+      "type": "AFFECTS",
+      "description": "The Nifty 50 and Sensex are highly correlated benchmark indices that move in tandem based on identical macroeconomic sentiment and large-cap performance."
+    },
+    {
+      "from": "nifty_50",
+      "to": "aggregate_consumer_confidence",
+      "type": "AFFECTS",
+      "description": "A booming benchmark stock market creates a wealth effect among the investing class, boosting broader consumer optimism."
+    },
+    {
+      "from": "epfo_payroll_additions",
+      "to": "national_unemployment_rate",
+      "type": "AFFECTS",
+      "description": "Increased formal job creation absorbs the labor force, reducing the aggregate national unemployment rate."
+    },
+    {
+      "from": "dii_flows",
+      "to": "nifty_50",
+      "type": "FUNDS",
+      "description": "Consistent capital injections from domestic institutional investors (like mutual funds) provide a strong baseline of support for Indian equity markets."
+    },
+    {
+      "from": "us_treasury_yields",
+      "to": "fii_fpi_flows",
+      "type": "AFFECTS",
+      "description": "Rising US treasury yields offer attractive risk-free returns, prompting foreign investors to pull capital out of emerging markets like India."
+    },
+    {
+      "from": "us_dollar_index",
+      "to": "usd_inr_exchange",
+      "type": "AFFECTS",
+      "description": "A strengthening global US dollar index mechanically depreciates emerging market currencies, leading to a higher USD-INR exchange rate."
+    },
+    {
+      "from": "us_dollar_index",
+      "to": "international_gold_prices",
+      "type": "AFFECTS",
+      "description": "Because gold is priced in dollars, a stronger US dollar makes the metal more expensive for holders of other currencies, suppressing global demand and prices."
+    },
+    {
+      "from": "us_consumer_demand",
+      "to": "china_manufacturing_output",
+      "type": "AFFECTS",
+      "description": "Robust retail spending by US consumers drives export orders, stimulating Chinese industrial production and factory output."
+    },
+    {
+      "from": "global_semiconductor_supply_chain",
+      "to": "index_of_industrial_production",
+      "type": "SUPPLIES",
+      "description": "Adequate global microchip supply enables uninterrupted domestic manufacturing of automobiles and electronics, boosting the IIP."
+    },
+    {
+      "from": "china_manufacturing_output",
+      "to": "industrial_metals_index",
+      "type": "AFFECTS",
+      "description": "Expansion in Chinese factory activity increases global demand for base metals like copper, aluminum, and steel, driving up their index prices."
+    },
+    {
+      "from": "global_natural_gas",
+      "to": "wpi",
+      "type": "AFFECTS",
+      "description": "Higher global LNG prices increase the cost of power generation and industrial heating, passing through to wholesale inflation."
+    },
+    {
+      "from": "brent_crude",
+      "to": "wpi",
+      "type": "AFFECTS",
+      "description": "Higher global crude oil prices increase domestic transport and manufacturing energy costs, driving up the wholesale price index."
+    },
+    {
+      "from": "brent_crude",
+      "to": "india_trade_deficit",
+      "type": "AFFECTS",
+      "description": "Since India imports over 80% of its oil, rising Brent crude prices directly inflate the import bill and widen the merchandise trade deficit."
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "equity_markets",
+      "type": "CONTAINS",
+      "description": "Financial and capital markets contains equity markets"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "currency_and_forex_markets",
+      "type": "CONTAINS",
+      "description": "Financial and capital markets contains currency and forex markets"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "debt_and_bond_markets",
+      "type": "CONTAINS",
+      "description": "Financial and capital markets contains debt and bond markets"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "institutional_investment_flows",
+      "type": "CONTAINS",
+      "description": "Financial and capital markets contains institutional investment flows"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "major_festivals_and_observances",
+      "type": "CONTAINS",
+      "description": "Cultural & Religious Forces contains Major Festivals & Observances"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "religious_institutions_and_trusts",
+      "type": "CONTAINS",
+      "description": "Cultural & Religious Forces contains Religious Institutions & Trusts"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "linguistic_and_regional_identity",
+      "type": "CONTAINS",
+      "description": "Cultural & Religious Forces contains Linguistic & Regional Identity"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Major festival seasons create massive cyclical spikes in domestic consumption, temporarily boosting national output and employment."
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "global_commodity_markets",
+      "type": "AFFECTS",
+      "description": "Indian festival and wedding seasons significantly drive global demand and pricing for precious metals (gold/silver) and agricultural commodities (edible oils, sugar)."
+    },
+    {
+      "from": "t3",
+      "to": "global_commodity_markets",
+      "type": "CONTAINS",
+      "description": "Macroeconomic & Global Markets contains global commodity markets"
+    },
+    {
+      "from": "t3",
+      "to": "indian_macroeconomic_indicators",
+      "type": "CONTAINS",
+      "description": "Macroeconomic & Global Markets contains Indian macroeconomic indicators"
+    },
+    {
+      "from": "t3",
+      "to": "financial_and_capital_markets",
+      "type": "CONTAINS",
+      "description": "Macroeconomic & Global Markets contains financial and capital markets"
+    },
+    {
+      "from": "t3",
+      "to": "international_trade_and_supply_chains",
+      "type": "CONTAINS",
+      "description": "Macroeconomic & Global Markets contains international trade and supply chains"
+    },
+    {
+      "from": "energy_commodities",
+      "to": "brent_crude",
+      "type": "CONTAINS",
+      "description": "Energy commodities contains Brent crude oil"
+    },
+    {
+      "from": "energy_commodities",
+      "to": "global_natural_gas",
+      "type": "CONTAINS",
+      "description": "Energy commodities contains global natural gas markets"
+    },
+    {
+      "from": "energy_commodities",
+      "to": "international_coal_prices",
+      "type": "CONTAINS",
+      "description": "Energy commodities contains international coal prices"
+    },
+    {
+      "from": "agricultural_commodities",
+      "to": "global_edible_oil_supply",
+      "type": "CONTAINS",
+      "description": "Agricultural commodities contains global edible oil supply"
+    },
+    {
+      "from": "agricultural_commodities",
+      "to": "global_food_grain_supply",
+      "type": "CONTAINS",
+      "description": "Agricultural commodities contains global food grain supply"
+    },
+    {
+      "from": "agricultural_commodities",
+      "to": "global_sugar_supply",
+      "type": "CONTAINS",
+      "description": "Agricultural commodities contains global sugar supply"
+    },
+    {
+      "from": "agricultural_commodities",
+      "to": "rice_crop_yield",
+      "type": "CONTAINS",
+      "description": "Agricultural Commodities contains Rice Crop Yield"
+    },
+    {
+      "from": "agricultural_commodities",
+      "to": "vegetable_crops",
+      "type": "CONTAINS",
+      "description": "Agricultural Commodities contains Vegetable Crops"
+    },
+    {
+      "from": "precious_and_industrial_metals",
+      "to": "international_gold_prices",
+      "type": "CONTAINS",
+      "description": "Precious and industrial metals contains international gold prices"
+    },
+    {
+      "from": "precious_and_industrial_metals",
+      "to": "international_silver_prices",
+      "type": "CONTAINS",
+      "description": "Precious and industrial metals contains international silver prices"
+    },
+    {
+      "from": "precious_and_industrial_metals",
+      "to": "industrial_metals_index",
+      "type": "CONTAINS",
+      "description": "Precious and industrial metals contains industrial metals indices"
+    },
+    {
+      "from": "international_coal_prices",
+      "to": "wpi",
+      "type": "AFFECTS",
+      "description": "Elevated international thermal coal prices increase input costs for domestic steel, cement, and power sectors, driving up the WPI."
+    },
+    {
+      "from": "global_edible_oil_supply",
+      "to": "wpi",
+      "type": "AFFECTS",
+      "description": "Abundant global supplies of palm and sunflower oil reduce import costs, helping to lower domestic wholesale food inflation."
+    },
+    {
+      "from": "international_gold_prices",
+      "to": "india_trade_deficit",
+      "type": "AFFECTS",
+      "description": "Higher global gold prices inflate the value of India's massive precious metal imports, widening the merchandise trade deficit."
+    },
+    {
+      "from": "inflation_indices",
+      "to": "wpi",
+      "type": "CONTAINS",
+      "description": "Inflation indices contains the wholesale price index"
+    },
+    {
+      "from": "national_output_and_growth",
+      "to": "india_gdp_growth",
+      "type": "CONTAINS",
+      "description": "National output and growth contains India GDP growth"
+    },
+    {
+      "from": "national_output_and_growth",
+      "to": "index_of_industrial_production",
+      "type": "CONTAINS",
+      "description": "National output and growth contains the index of industrial production"
+    },
+    {
+      "from": "national_output_and_growth",
+      "to": "pmi_manufacturing",
+      "type": "CONTAINS",
+      "description": "National output and growth contains PMI manufacturing"
+    },
+    {
+      "from": "national_output_and_growth",
+      "to": "pmi_services",
+      "type": "CONTAINS",
+      "description": "National output and growth contains PMI services"
+    },
+    {
+      "from": "employment_aggregates",
+      "to": "national_unemployment_rate",
+      "type": "CONTAINS",
+      "description": "Employment aggregates contains the national unemployment rate"
+    },
+    {
+      "from": "employment_aggregates",
+      "to": "epfo_payroll_additions",
+      "type": "CONTAINS",
+      "description": "Employment aggregates contains EPFO payroll additions"
+    },
+    {
+      "from": "index_of_industrial_production",
+      "to": "india_gdp_growth",
+      "type": "AFFECTS",
+      "description": "Higher industrial and manufacturing output directly contributes to the expansion of the national gross domestic product."
+    },
+    {
+      "from": "pmi_manufacturing",
+      "to": "index_of_industrial_production",
+      "type": "AFFECTS",
+      "description": "Expansionary sentiment and new orders recorded in the manufacturing PMI reliably translate into actual factory output growth."
+    },
+    {
+      "from": "pmi_services",
+      "to": "india_gdp_growth",
+      "type": "AFFECTS",
+      "description": "Since the services sector constitutes over 50% of India's economy, expansion in the services PMI strongly drives overall GDP growth."
+    },
+    {
+      "from": "national_unemployment_rate",
+      "to": "rural_urban_migration_corridors",
+      "type": "AFFECTS",
+      "description": "High aggregate joblessness drives distress migration as rural populations move to urban centers in search of livelihood."
+    },
+    {
+      "from": "national_unemployment_rate",
+      "to": "aggregate_consumer_confidence",
+      "type": "AFFECTS",
+      "description": "Rising unemployment creates income uncertainty, directly depressing the public's willingness to spend and overall economic optimism."
+    },
+    {
+      "from": "equity_markets",
+      "to": "nifty_50",
+      "type": "CONTAINS",
+      "description": "Equity markets contains the Nifty 50 index"
+    },
+    {
+      "from": "equity_markets",
+      "to": "sensex",
+      "type": "CONTAINS",
+      "description": "Equity markets contains the Sensex index"
+    },
+    {
+      "from": "equity_markets",
+      "to": "global_equity_indices",
+      "type": "CONTAINS",
+      "description": "Equity markets contains global equity indices"
+    },
+    {
+      "from": "currency_and_forex_markets",
+      "to": "usd_inr_exchange",
+      "type": "CONTAINS",
+      "description": "Currency and forex markets contains the USD-INR exchange rate"
+    },
+    {
+      "from": "currency_and_forex_markets",
+      "to": "india_forex_reserves",
+      "type": "CONTAINS",
+      "description": "Currency and forex markets contains India forex reserves"
+    },
+    {
+      "from": "currency_and_forex_markets",
+      "to": "us_dollar_index",
+      "type": "CONTAINS",
+      "description": "Currency and forex markets contains the US Dollar Index"
+    },
+    {
+      "from": "currency_and_forex_markets",
+      "to": "inr_usd_exchange_rate",
+      "type": "CONTAINS",
+      "description": "Currency & Forex Markets contains INR/USD Exchange Rate"
+    },
+    {
+      "from": "debt_and_bond_markets",
+      "to": "india_10yr_bond_yield",
+      "type": "CONTAINS",
+      "description": "Debt and bond markets contains the India 10-year bond yield"
+    },
+    {
+      "from": "debt_and_bond_markets",
+      "to": "us_treasury_yields",
+      "type": "CONTAINS",
+      "description": "Debt and bond markets contains US treasury yields"
+    },
+    {
+      "from": "institutional_investment_flows",
+      "to": "fii_fpi_flows",
+      "type": "CONTAINS",
+      "description": "Institutional investment flows contains FII and FPI flows"
+    },
+    {
+      "from": "institutional_investment_flows",
+      "to": "dii_flows",
+      "type": "CONTAINS",
+      "description": "Institutional investment flows contains DII flows"
+    },
+    {
+      "from": "global_equity_indices",
+      "to": "nifty_50",
+      "type": "AFFECTS",
+      "description": "Bullish sentiment and capital flows in global markets like Wall Street create positive psychological and liquidity spillover effects for Indian equities."
+    },
+    {
+      "from": "trade_balance_metrics",
+      "to": "india_trade_deficit",
+      "type": "CONTAINS",
+      "description": "Trade balance metrics contains the India trade deficit"
+    },
+    {
+      "from": "trade_balance_metrics",
+      "to": "india_current_account_deficit",
+      "type": "CONTAINS",
+      "description": "Trade balance metrics contains the India current account deficit"
+    },
+    {
+      "from": "global_macro_demand",
+      "to": "china_manufacturing_output",
+      "type": "CONTAINS",
+      "description": "Global macro demand contains China manufacturing output"
+    },
+    {
+      "from": "global_macro_demand",
+      "to": "us_consumer_demand",
+      "type": "CONTAINS",
+      "description": "Global macro demand contains US consumer demand"
+    },
+    {
+      "from": "india_current_account_deficit",
+      "to": "usd_inr_exchange",
+      "type": "AFFECTS",
+      "description": "A higher current account deficit increases the structural demand for foreign currency to settle international obligations, depreciating the Rupee."
+    },
+    {
+      "from": "global_shipping_freight_rates",
+      "to": "wpi",
+      "type": "AFFECTS",
+      "description": "Elevated maritime shipping costs increase the landed price of imported raw materials and intermediate goods, passing through to wholesale inflation."
+    },
+    {
+      "from": "rural_urban_migration_corridors",
+      "to": "urban_population_density",
+      "type": "PRODUCES",
+      "description": "Sustained inflows of rural migrants into urban centers directly increase city population density and housing congestion."
+    },
+    {
+      "from": "aggregate_consumer_confidence",
+      "to": "pmi_services",
+      "type": "PRODUCES",
+      "description": "Higher aggregate consumer confidence translates into increased discretionary spending, driving growth in the services PMI."
+    },
+    {
+      "from": "aggregate_consumer_confidence",
+      "to": "india_gdp_growth",
+      "type": "PRODUCES",
+      "description": "Sustained consumer optimism and willingness to spend drive aggregate demand, contributing to higher national GDP growth."
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "age_demographics",
+      "type": "CONTAINS",
+      "description": "Demographics & Population contains Age Demographics"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "gender_demographics",
+      "type": "CONTAINS",
+      "description": "Demographics & Population contains Gender Demographics"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "urbanization_trends",
+      "type": "CONTAINS",
+      "description": "Demographics & Population contains Urbanization Trends"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "The demographic dividend (working-age population and urbanization) is the primary structural driver of long-term national output and employment aggregates."
+    },
+    {
+      "from": "t5",
+      "to": "demographics_and_population",
+      "type": "CONTAINS",
+      "description": "Social, Demographic & Cultural Forces contains Demographics & Population"
+    },
+    {
+      "from": "t5",
+      "to": "migration_and_mobility",
+      "type": "CONTAINS",
+      "description": "Social, Demographic & Cultural Forces contains Migration & Mobility"
+    },
+    {
+      "from": "t5",
+      "to": "social_movements_and_collectives",
+      "type": "CONTAINS",
+      "description": "Social, Demographic & Cultural Forces contains Social Movements & Collectives"
+    },
+    {
+      "from": "t5",
+      "to": "cultural_and_religious_forces",
+      "type": "CONTAINS",
+      "description": "Social, Demographic & Cultural Forces contains Cultural & Religious Forces"
+    },
+    {
+      "from": "t5",
+      "to": "macro_behavioral_shifts",
+      "type": "CONTAINS",
+      "description": "Social, Demographic & Cultural Forces contains Macro Behavioral Shifts"
+    },
+    {
+      "from": "age_demographics",
+      "to": "india_working_age_population",
+      "type": "CONTAINS",
+      "description": "Age Demographics contains India Working Age Population"
+    },
+    {
+      "from": "age_demographics",
+      "to": "india_aging_population",
+      "type": "CONTAINS",
+      "description": "Age Demographics contains India Aging Population"
+    },
+    {
+      "from": "gender_demographics",
+      "to": "female_labor_force_participation",
+      "type": "CONTAINS",
+      "description": "Gender Demographics contains Female Labor Force Participation"
+    },
+    {
+      "from": "urbanization_trends",
+      "to": "urban_population_density",
+      "type": "CONTAINS",
+      "description": "Urbanization Trends contains Urban Population Density"
+    },
+    {
+      "from": "urbanization_trends",
+      "to": "tier_2_3_city_expansion",
+      "type": "CONTAINS",
+      "description": "Urbanization Trends contains Tier 2/3 City Expansion"
+    },
+    {
+      "from": "india_working_age_population",
+      "to": "india_gdp_growth",
+      "type": "PRODUCES",
+      "description": "An expanding working-age population increases the aggregate labor supply, which drives higher national economic output and GDP growth."
+    },
+    {
+      "from": "india_working_age_population",
+      "to": "national_unemployment_rate",
+      "type": "AFFECTS",
+      "description": "When the working-age population grows faster than job creation, the surplus labor force directly increases the national unemployment rate."
+    },
+    {
+      "from": "female_labor_force_participation",
+      "to": "india_gdp_growth",
+      "type": "PRODUCES",
+      "description": "Higher female participation in the workforce expands the productive labor pool, directly boosting national economic output."
+    },
+    {
+      "from": "domestic_migration",
+      "to": "rural_urban_migration_corridors",
+      "type": "CONTAINS",
+      "description": "Domestic Migration contains Rural-Urban Migration Corridors"
+    },
+    {
+      "from": "domestic_migration",
+      "to": "seasonal_migrant_labor",
+      "type": "CONTAINS",
+      "description": "Domestic Migration contains Seasonal Migrant Labor"
+    },
+    {
+      "from": "international_migration",
+      "to": "indian_diaspora_nri",
+      "type": "CONTAINS",
+      "description": "International Migration contains Indian Diaspora NRI"
+    },
+    {
+      "from": "international_migration",
+      "to": "skilled_emigration",
+      "type": "CONTAINS",
+      "description": "International Migration contains Skilled Emigration"
+    },
+    {
+      "from": "indian_diaspora_nri",
+      "to": "india_forex_reserves",
+      "type": "SUPPLIES",
+      "description": "Remittances sent by the growing Indian diaspora directly increase the country's foreign exchange reserves."
+    },
+    {
+      "from": "skilled_emigration",
+      "to": "indian_diaspora_nri",
+      "type": "PRODUCES",
+      "description": "The outflow of skilled professionals to foreign countries directly expands the size and economic footprint of the Indian diaspora."
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "organized_labor_unions",
+      "type": "CONTAINS",
+      "description": "Labor & Trade Unions contains Organized Labor Unions"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "gig_worker_unions",
+      "type": "CONTAINS",
+      "description": "Labor & Trade Unions contains Gig Worker Unions"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "transport_worker_unions",
+      "type": "CONTAINS",
+      "description": "Labor & Trade Unions contains Transport Worker Unions"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "farmer_unions",
+      "type": "CONTAINS",
+      "description": "Agrarian Collectives contains Farmer Unions"
+    },
+    {
+      "from": "identity_and_rights_movements",
+      "to": "caste_reservation_movements",
+      "type": "CONTAINS",
+      "description": "Identity & Rights Movements contains Caste Reservation Movements"
+    },
+    {
+      "from": "identity_and_rights_movements",
+      "to": "student_unions",
+      "type": "CONTAINS",
+      "description": "Identity & Rights Movements contains Student Unions"
+    },
+    {
+      "from": "organized_labor_unions",
+      "to": "epfo_payroll_additions",
+      "type": "AFFECTS",
+      "description": "Pressure from organized labor unions forces companies to formalize employment, leading to higher EPFO payroll additions."
+    },
+    {
+      "from": "major_festivals_and_observances",
+      "to": "autumn_festive_season",
+      "type": "CONTAINS",
+      "description": "Major Festivals & Observances contains Autumn Festive Season"
+    },
+    {
+      "from": "major_festivals_and_observances",
+      "to": "spring_harvest_festivals",
+      "type": "CONTAINS",
+      "description": "Major Festivals & Observances contains Spring Harvest Festivals"
+    },
+    {
+      "from": "major_festivals_and_observances",
+      "to": "islamic_festivals",
+      "type": "CONTAINS",
+      "description": "Major Festivals & Observances contains Islamic Festivals"
+    },
+    {
+      "from": "major_festivals_and_observances",
+      "to": "regional_new_year_festivals",
+      "type": "CONTAINS",
+      "description": "Major Festivals & Observances contains Regional New Year Festivals"
+    },
+    {
+      "from": "major_festivals_and_observances",
+      "to": "wedding_season_aggregate",
+      "type": "CONTAINS",
+      "description": "Major Festivals & Observances contains Wedding Season Aggregate"
+    },
+    {
+      "from": "religious_institutions_and_trusts",
+      "to": "major_temple_trusts",
+      "type": "CONTAINS",
+      "description": "Religious Institutions & Trusts contains Major Temple Trusts"
+    },
+    {
+      "from": "religious_institutions_and_trusts",
+      "to": "waqf_boards",
+      "type": "CONTAINS",
+      "description": "Religious Institutions & Trusts contains Waqf Boards"
+    },
+    {
+      "from": "linguistic_and_regional_identity",
+      "to": "regional_language_movements",
+      "type": "CONTAINS",
+      "description": "Linguistic & Regional Identity contains Regional Language Movements"
+    },
+    {
+      "from": "autumn_festive_season",
+      "to": "aggregate_consumer_confidence",
+      "type": "AFFECTS",
+      "description": "The autumn festive season triggers a surge in retail spending and cultural celebration, directly boosting aggregate consumer confidence."
+    },
+    {
+      "from": "autumn_festive_season",
+      "to": "index_of_industrial_production",
+      "type": "PRODUCES",
+      "description": "Heightened consumer demand during the autumn festive season drives a temporary spike in factory output and the IIP."
+    },
+    {
+      "from": "spring_harvest_festivals",
+      "to": "rural_urban_migration_corridors",
+      "type": "DISRUPTS",
+      "description": "Workers returning to their villages for spring harvest festivals temporarily reduce the flow of rural-urban migration corridors."
+    },
+    {
+      "from": "wedding_season_aggregate",
+      "to": "international_gold_prices",
+      "type": "AFFECTS",
+      "description": "Massive demand for gold jewelry during the Indian wedding season creates upward price pressure on international gold markets."
+    },
+    {
+      "from": "major_temple_trusts",
+      "to": "dii_flows",
+      "type": "FUNDS",
+      "description": "Large temple trusts channel surplus devotee donations into domestic mutual funds, increasing DII flows into the equity market."
+    },
+    {
+      "from": "consumer_sentiment",
+      "to": "aggregate_consumer_confidence",
+      "type": "CONTAINS",
+      "description": "Consumer Sentiment contains Aggregate Consumer Confidence"
+    },
+    {
+      "from": "consumer_sentiment",
+      "to": "mass_boycott_movements",
+      "type": "CONTAINS",
+      "description": "Consumer Sentiment contains Mass Boycott Movements"
+    },
+    {
+      "from": "civic_participation",
+      "to": "voter_turnout_aggregates",
+      "type": "CONTAINS",
+      "description": "Civic Participation contains Voter Turnout Aggregates"
+    },
+    {
+      "from": "mass_boycott_movements",
+      "to": "fii_fpi_flows",
+      "type": "DISRUPTS",
+      "description": "Large-scale consumer boycotts of multinational brands create market uncertainty, leading to a decrease in foreign portfolio investment flows."
+    },
+    {
+      "from": "voter_turnout_aggregates",
+      "to": "aggregate_consumer_confidence",
+      "type": "AFFECTS",
+      "description": "High voter turnout leads to decisive mandates, reducing uncertainty and boosting confidence."
+    },
+    {
+      "from": "retail_diesel",
+      "to": "inflation_indices",
+      "type": "AFFECTS",
+      "description": "Diesel price increases raise freight costs economy-wide, driving up inflation indices.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "farm_labor_wages",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Farm labor wage changes alter rural employment dynamics and agricultural production costs.",
+      "cross": "employment"
+    },
+    {
+      "from": "outdoor_heat",
+      "to": "rice_crop_yield",
+      "type": "DISRUPTS",
+      "description": "Heat stress during growing season reduces rice crop yields.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Monsoon performance and regional weather patterns directly dictate agricultural yields, driving rural consumption, food inflation, and overall national GDP growth.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "global_commodity_markets",
+      "type": "AFFECTS",
+      "description": "Macro climate drivers (e.g., El Niño) and extreme weather events determine global agricultural harvests, directly impacting the supply and pricing of agricultural commodities.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "international_trade_and_supply_chains",
+      "type": "DISRUPTS",
+      "description": "Extreme weather phenomena (cyclones, severe storms) disrupt global shipping routes, port operations, and physical supply chain logistics.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "migration_and_mobility",
+      "type": "AFFECTS",
+      "description": "Extreme weather events, climate shifts, and monsoon failures drive domestic climate-induced migration and rural-to-urban displacement.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "social_movements_and_collectives",
+      "type": "AFFECTS",
+      "description": "Monsoon deficits and extreme weather directly trigger agrarian distress, mobilizing agrarian collectives and farmer protests.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "macro_behavioral_shifts",
+      "type": "AFFECTS",
+      "description": "Monsoon performance directly dictates rural income expectations, heavily influencing nationwide consumer sentiment and spending behavior.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "geological_and_tectonic_systems",
+      "to": "international_trade_and_supply_chains",
+      "type": "DISRUPTS",
+      "description": "Tectonic events (earthquakes, tsunamis) cause sudden, severe disruptions to global manufacturing hubs and maritime shipping routes.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "hydrological_systems",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Water availability in major river basins and subsurface aquifers sustains agricultural output and industrial production capacity, fundamentally underpinning national economic growth.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "hydrological_systems",
+      "to": "migration_and_mobility",
+      "type": "AFFECTS",
+      "description": "Severe depletion of subsurface water and flooding of major river basins force population displacement and out-migration from affected regions.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "southwest_monsoon",
+      "to": "global_food_grain_supply",
+      "type": "SUPPLIES",
+      "description": "Abundant monsoon rains ensure high yields for India's Kharif crops (like rice), increasing the volume of grains available for global export markets.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "southwest_monsoon",
+      "to": "global_sugar_supply",
+      "type": "SUPPLIES",
+      "description": "Good monsoon rains in Maharashtra and Uttar Pradesh boost sugarcane yields, increasing India's capacity to export sugar to global markets.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "southwest_monsoon",
+      "to": "seasonal_migrant_labor",
+      "type": "AFFECTS",
+      "description": "Strong monsoons increase agricultural sowing and harvesting activity, driving up the demand for seasonal migrant labor in rural farming hubs.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "southwest_monsoon",
+      "to": "vegetable_crops",
+      "type": "AFFECTS",
+      "description": "Adequate southwest monsoon rainfall increases vegetable crop yields.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "el_nino_southern_oscillation",
+      "to": "global_food_grain_supply",
+      "type": "DISRUPTS",
+      "description": "ENSO-driven droughts in major agricultural basins (like India and Australia) reduce crop yields, shrinking the total volume of grains available in global markets.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "western_disturbances",
+      "to": "global_food_grain_supply",
+      "type": "AFFECTS",
+      "description": "Winter rains brought by western disturbances are crucial for the success of the Rabi wheat crop in northwest India, impacting global wheat supplies.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "arable_topsoil",
+      "to": "global_food_grain_supply",
+      "type": "AFFECTS",
+      "description": "The health and fertility of India's topsoil directly dictate the long-term yield potential of staple crops that feed into international agricultural supply chains.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "arable_topsoil",
+      "to": "farmer_unions",
+      "type": "AFFECTS",
+      "description": "The degradation of fertile topsoil reduces crop yields and farm profitability, driving agrarian distress that mobilizes farmer unions for protests and demands.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "migratory_pest_populations",
+      "to": "global_food_grain_supply",
+      "type": "DISRUPTS",
+      "description": "Swarms of locusts consume vast tracts of standing crops, drastically reducing the harvest yields that feed into domestic and international agricultural markets.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "marine_fish_stocks",
+      "to": "global_supply_chains",
+      "type": "SUPPLIES",
+      "description": "Healthy marine fish populations support India's commercial seafood export industry, feeding directly into global food and logistics supply chains.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "global_food_grain_supply",
+      "to": "wheat_flour",
+      "type": "AFFECTS",
+      "description": "Abundant global wheat harvests suppress international grain prices, helping to keep domestic retail wheat flour (atta) prices affordable.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "major_seaports",
+      "to": "india_trade_deficit",
+      "type": "AFFECTS",
+      "description": "Improved port turnaround times and capacity boost export volumes, helping to narrow the national trade deficit.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "national_power_grid",
+      "to": "index_of_industrial_production",
+      "type": "AFFECTS",
+      "description": "Stable and abundant grid power prevents factory downtime, directly boosting national manufacturing output.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "municipal_water_grid",
+      "to": "urban_population_density",
+      "type": "AFFECTS",
+      "description": "Reliable piped water infrastructure is a hard prerequisite that enables higher residential density in urban centers.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "farmer_unions",
+      "to": "ministry_of_agriculture",
+      "type": "AFFECTS",
+      "description": "Farmer union protests compel the Ministry of Agriculture to alter procurement policies and subsidy frameworks.",
+      "cross": "governance"
+    },
+    {
+      "from": "farmer_unions",
+      "to": "retail_tomato",
+      "type": "DISRUPTS",
+      "description": "Highway blockades and procurement boycotts by farmer unions disrupt the supply chain of perishables, causing immediate price spikes for vegetables like tomatoes.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "migration_and_mobility",
+      "type": "AFFECTS",
+      "description": "State-level domicile reservation policies and local nativist regulations often restrict or alter the flow of domestic inter-state migration.",
+      "cross": "governance"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Union government capital expenditure, taxation, and welfare spending directly drive national output, economic growth, and employment aggregates.",
+      "cross": "governance"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "macro_behavioral_shifts",
+      "type": "AFFECTS",
+      "description": "Major economic and social welfare policy announcements by central ministries directly drive shifts in aggregate consumer sentiment and civic behavior.",
+      "cross": "governance"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "financial_and_capital_markets",
+      "type": "AFFECTS",
+      "description": "Financial regulators (RBI, SEBI) set monetary policy, liquidity measures, and market rules that directly govern equity, debt, and currency markets.",
+      "cross": "governance"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "indian_regulatory_bodies",
+      "type": "AFFECTS",
+      "description": "Domestic inflation indices and growth metrics directly trigger monetary policy interventions and rate adjustments by financial regulators.",
+      "cross": "governance"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "employment_metrics_and_conditions",
+      "type": "AFFECTS",
+      "description": "Macroeconomic employment aggregates directly translate to the unemployment levels and wage conditions experienced by citizens.",
+      "cross": "employment"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "borrowing_and_credit",
+      "type": "AFFECTS",
+      "description": "Domestic inflation indices drive central bank rate decisions, which directly dictate retail loan interest rates.",
+      "cross": "financial"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "savings_and_deposits",
+      "type": "AFFECTS",
+      "description": "Macroeconomic inflation and policy rates determine the interest yields on retail bank deposits and small savings schemes.",
+      "cross": "financial"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "it_and_tech_sector",
+      "type": "AFFECTS",
+      "description": "GDP growth rate, rupee strength, and inflation influence IT sector order books and margins; strong macro outlook drives hiring while weakness triggers bench-marking and layoffs.",
+      "cross": "employment"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "startup_ecosystem",
+      "type": "AFFECTS",
+      "description": "Macro indicators like GDP growth and interest rates shape VC/PE funding appetite; tight money conditions reduce startup funding and trigger workforce reductions.",
+      "cross": "employment"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "manufacturing_and_core",
+      "type": "AFFECTS",
+      "description": "IIP, PMI, and capacity utilization rates directly drive manufacturing hiring cycles; strong industrial output expands factory employment.",
+      "cross": "employment"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "bfsi_sector",
+      "type": "AFFECTS",
+      "description": "Interest rate environment, credit growth, and NPA ratios shape bank profitability and NBFC health, directly determining BFSI sector hiring and compensation.",
+      "cross": "employment"
+    },
+    {
+      "from": "global_commodity_markets",
+      "to": "biophysical_and_ecological_systems",
+      "type": "DISRUPTS",
+      "description": "High global demand and extraction of energy, metals, and agricultural commodities drive deforestation, habitat loss, and widespread ecological degradation.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "global_commodity_markets",
+      "to": "meteorological_systems",
+      "type": "AFFECTS",
+      "description": "The extraction, trade, and subsequent combustion of fossil energy commodities directly drive greenhouse gas emissions, fundamentally altering macro climate drivers and atmospheric temperatures.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "global_commodity_markets",
+      "to": "energy_power_infrastructure",
+      "type": "SUPPLIES",
+      "description": "Global energy commodities (coal, crude oil, natural gas) provide the primary fuel inputs required to operate thermal power plants and pipeline networks.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "indian_union_government",
+      "type": "AFFECTS",
+      "description": "Global supply chain disruptions and trade imbalances force economic ministries to adjust import duties and launch domestic manufacturing incentives (e.g., PLI schemes).",
+      "cross": "governance"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "advanced_tech_infrastructure",
+      "type": "SUPPLIES",
+      "description": "Global supply chains provide the critical components, specialized machinery, and raw materials required to build and operate semiconductor fabs and satellite networks.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "prescription_drugs",
+      "type": "SUPPLIES",
+      "description": "India imports 70%+ of bulk drug APIs from China; supply chain disruptions (shipping delays, export bans) cause drug shortages and price spikes for essential prescriptions.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "over_the_counter_products",
+      "type": "SUPPLIES",
+      "description": "OTC products use imported active ingredients and packaging materials; trade disruptions moderately affect availability and pricing of items like paracetamol and antacids.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "home_medical_devices",
+      "type": "SUPPLIES",
+      "description": "Home medical devices (glucometers, pulse oximeters, BP monitors) rely heavily on imported components and finished goods; supply chain disruptions raise prices and cause stockouts.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "personal_computing_devices",
+      "type": "SUPPLIES",
+      "description": "Laptops, tablets, and smartphones depend on imported chipsets, displays, and batteries; global semiconductor shortages or trade restrictions directly spike retail prices.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "it_and_tech_sector",
+      "type": "AFFECTS",
+      "description": "IT export order flows depend on global trade health; protectionist policies (visa restrictions, data localization) and offshore outsourcing trends shape Indian IT hiring.",
+      "cross": "employment"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "startup_ecosystem",
+      "type": "AFFECTS",
+      "description": "Cross-border VC funding flows and international market access for D2C brands depend on trade openness; restrictive policies limit startup growth and employment.",
+      "cross": "employment"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "manufacturing_and_core",
+      "type": "AFFECTS",
+      "description": "Export orders, raw material imports, and PLI scheme-linked production targets directly drive manufacturing employment; trade disruptions cause factory shutdowns and layoffs.",
+      "cross": "employment"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "bfsi_sector",
+      "type": "AFFECTS",
+      "description": "Trade finance volumes and cross-border payment flows moderately influence BFSI sector activity; the effect on BFSI employment is indirect through overall economic health.",
+      "cross": "employment"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "retail_and_trade",
+      "type": "AFFECTS",
+      "description": "Cheap Chinese imports via e-commerce and open trade agreements undercut local retailers and small traders; FTA-driven import surges displace kirana and small shop revenues.",
+      "cross": "employment"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "msme_manufacturing",
+      "type": "AFFECTS",
+      "description": "Import competition from lower-cost manufacturing nations squeezes MSME margins; simultaneously, export access to global markets creates growth opportunities for competitive MSMEs.",
+      "cross": "employment"
+    },
+    {
+      "from": "transport_logistics_infrastructure",
+      "to": "international_trade_and_supply_chains",
+      "type": "AFFECTS",
+      "description": "The capacity and efficiency of major seaports, commercial airports, and freight corridors directly determine a nation's trade balance metrics and integration into global supply chains.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "transport_logistics_infrastructure",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Efficient logistics networks reduce supply-side bottlenecks and transit costs, directly lowering inflation and boosting national economic output.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "transport_logistics_infrastructure",
+      "to": "migration_and_mobility",
+      "type": "AFFECTS",
+      "description": "Expansion of transport networks (railways, highways, airports) directly facilitates and accelerates domestic and international population mobility.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "civic_urban_infrastructure",
+      "to": "demographics_and_population",
+      "type": "AFFECTS",
+      "description": "The availability and quality of municipal grids (water, sewage) directly dictate the carrying capacity for urbanization and population density in cities.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "energy_power_infrastructure",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Reliable power infrastructure drives industrial output and GDP growth, while the operational cost of energy grids heavily influences domestic inflation indices.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "rental_housing",
+      "type": "AFFECTS",
+      "description": "Rural-to-urban migration and inter-city job mobility create acute rental demand in destination cities; IT hub migration waves visibly spike rents in Bangalore, Pune, Hyderabad.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "home_construction_and_modification",
+      "type": "AFFECTS",
+      "description": "Migration-driven urbanization stimulates peri-urban housing construction; remittance-funded rural home construction by migrant workers is a secondary effect.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "agriculture_and_allied",
+      "type": "SUPPLIES",
+      "description": "Seasonal agricultural labor migration supplies harvest and sowing workforce; reverse migration (as during COVID lockdowns) creates acute farm labor shortages.",
+      "cross": "employment"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "construction_and_manual",
+      "type": "SUPPLIES",
+      "description": "Interstate migrant workers form the backbone of urban construction labor; migration patterns directly determine construction labor availability and wage rates.",
+      "cross": "employment"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "domestic_and_care",
+      "type": "SUPPLIES",
+      "description": "Rural-to-urban female migration supplies domestic help and care workers; migration restrictions or reverse flows create acute shortages and wage inflation.",
+      "cross": "employment"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "rural_employment_schemes",
+      "type": "AFFECTS",
+      "description": "When out-migration reduces rural labor pools, MGNREGA demand drops; conversely, reverse migration spikes MGNREGA enrollment as returnees seek guaranteed employment.",
+      "cross": "employment"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "railway_travel",
+      "type": "AFFECTS",
+      "description": "Seasonal migrant waves (festival return, post-harvest) create massive demand surges for unreserved and sleeper-class rail travel, driving overcrowding and waitlists.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "air_travel",
+      "type": "AFFECTS",
+      "description": "Professional migration and NRI travel create demand for air routes; effect is moderate since most migrant workers use rail or road rather than air.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "highway_bus_travel",
+      "type": "AFFECTS",
+      "description": "Interstate migrant workers heavily use private and state-run buses for intercity travel; seasonal migration waves spike bus demand and ticket prices.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "social_movements_and_collectives",
+      "to": "indian_statutory_frameworks_and_councils",
+      "type": "AFFECTS",
+      "description": "Mass social movements, labor strikes, and agrarian protests pressure the state to amend, repeal, or create new statutory and welfare frameworks.",
+      "cross": "governance"
+    },
+    {
+      "from": "social_movements_and_collectives",
+      "to": "transport_logistics_infrastructure",
+      "type": "DISRUPTS",
+      "description": "Mass social movements, agrarian protests, and labor strikes frequently blockade or disrupt highway networks, railways, and logistics corridors.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "indian_union_government",
+      "type": "AFFECTS",
+      "description": "Shifts in mass civic participation and public sentiment directly influence the policy priorities, welfare distribution, and electoral mandates of the Union Government.",
+      "cross": "governance"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "travel_and_tourism",
+      "type": "AFFECTS",
+      "description": "Consumer sentiment and confidence directly impact household discretionary spending on holiday accommodation and tourism services.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "out_of_home_dining",
+      "type": "AFFECTS",
+      "description": "Positive consumer sentiment directly increases the frequency and budget allocated to restaurants and food delivery services.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "savings_and_deposits",
+      "type": "AFFECTS",
+      "description": "Consumer confidence and behavioral sentiment shifts directly influence household savings rates and deposit patterns.",
+      "cross": "financial"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "cinema_and_theatre",
+      "type": "AFFECTS",
+      "description": "Shifts in consumer behavior (post-COVID preference for OTT vs theatrical, multiplex vs single-screen) reshape box office revenues and cinema hall economics.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "digital_entertainment",
+      "type": "AFFECTS",
+      "description": "Behavioral shifts toward screen time, binge-watching culture, and short-form video consumption directly drive OTT subscription growth and digital entertainment spending.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "live_events",
+      "type": "AFFECTS",
+      "description": "Consumer appetite for experiential spending (concerts, comedy shows, sports events) fluctuates with behavioral trends; post-COVID revenge spending boosted live events.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "equity_investments",
+      "type": "AFFECTS",
+      "description": "Retail investor behavior shifts (Zerodha-led demat account surge, social media-driven stock tips, FOMO trading) drive equity market retail participation and volatility.",
+      "cross": "financial"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "mutual_funds",
+      "type": "FUNDS",
+      "description": "SIP culture adoption, financial literacy campaigns, and behavioral shift from physical savings to market instruments drive mutual fund AUM growth.",
+      "cross": "financial"
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "cultural_and_religious_forces",
+      "type": "AFFECTS",
+      "description": "Higher judiciary rulings frequently intervene in, regulate, or redefine the administration of religious trusts, festival observances, and cultural practices.",
+      "cross": "governance"
+    },
+    {
+      "from": "indian_statutory_frameworks_and_councils",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Statutory fiscal policies and tax frameworks (e.g., GST Council decisions) directly impact domestic inflation indices and national output.",
+      "cross": "governance"
+    },
+    {
+      "from": "indian_statutory_frameworks_and_councils",
+      "to": "social_movements_and_collectives",
+      "type": "PRODUCES",
+      "description": "The introduction or alteration of labor, welfare, and agricultural statutory frameworks directly triggers mobilization by trade unions and agrarian collectives.",
+      "cross": "governance"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "financial_and_capital_markets",
+      "type": "AFFECTS",
+      "description": "Global central bank rate decisions (e.g., US Federal Reserve) directly drive institutional investment flows (FPI/FDI) and currency market valuations in India.",
+      "cross": "governance"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "global_commodity_markets",
+      "type": "AFFECTS",
+      "description": "Geopolitical states (e.g., OPEC+ nations) control production quotas and strategic reserves, directly dictating global energy and metal commodity supplies.",
+      "cross": "governance"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "international_trade_and_supply_chains",
+      "type": "AFFECTS",
+      "description": "Geopolitical states enact tariffs, sanctions, and trade agreements that directly shape global supply chains and trade balances.",
+      "cross": "governance"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "migration_and_mobility",
+      "type": "AFFECTS",
+      "description": "Foreign government immigration policies, visa quotas, and geopolitical actions directly dictate international migration flows and diaspora mobility.",
+      "cross": "governance"
+    },
+    {
+      "from": "ministry_of_finance",
+      "to": "india_10yr_bond_yield",
+      "type": "AFFECTS",
+      "description": "Higher government borrowing targets set by the Finance Ministry increase the supply of G-secs, pushing up bond yields.",
+      "cross": "governance"
+    },
+    {
+      "from": "ministry_of_commerce_and_industry",
+      "to": "india_trade_deficit",
+      "type": "AFFECTS",
+      "description": "Export promotion schemes (like PLI) and import substitution policies reduce the national trade deficit.",
+      "cross": "governance"
+    },
+    {
+      "from": "ministry_of_commerce_and_industry",
+      "to": "fii_fpi_flows",
+      "type": "AFFECTS",
+      "description": "Liberalization of Foreign Direct Investment (FDI) limits by the Commerce Ministry increases foreign capital inflows.",
+      "cross": "governance"
+    },
+    {
+      "from": "ministry_of_agriculture",
+      "to": "global_food_grain_supply",
+      "type": "AFFECTS",
+      "description": "Indian agriculture ministry decisions on export quotas or bans significantly alter the global supply of rice and wheat.",
+      "cross": "governance"
+    },
+    {
+      "from": "ministry_of_consumer_affairs",
+      "to": "wpi",
+      "type": "AFFECTS",
+      "description": "Releasing buffer stocks of pulses and onions into the open market suppresses wholesale food inflation.",
+      "cross": "governance"
+    },
+    {
+      "from": "rbi",
+      "to": "usd_inr_exchange",
+      "type": "AFFECTS",
+      "description": "RBI intervention by selling dollars in the forex market prevents rupee depreciation (lowering the USD-INR rate).",
+      "cross": "governance"
+    },
+    {
+      "from": "rbi",
+      "to": "india_forex_reserves",
+      "type": "MANAGES",
+      "description": "RBI's dollar purchasing activities directly build up the national foreign exchange reserves.",
+      "cross": "governance"
+    },
+    {
+      "from": "sebi",
+      "to": "nifty_50",
+      "type": "REGULATES",
+      "description": "Stricter SEBI margin requirements and curbs on derivatives trading suppress speculative volumes and index volatility.",
+      "cross": "governance"
+    },
+    {
+      "from": "union_budget_framework",
+      "to": "india_gdp_growth",
+      "type": "AFFECTS",
+      "description": "Increased capital expenditure allocations in the Union Budget stimulate infrastructure creation and national GDP growth.",
+      "cross": "governance"
+    },
+    {
+      "from": "monetary_policy_committee",
+      "to": "india_10yr_bond_yield",
+      "type": "AFFECTS",
+      "description": "Increases in the repo rate by the MPC immediately drive up benchmark sovereign bond yields.",
+      "cross": "governance"
+    },
+    {
+      "from": "monetary_policy_committee",
+      "to": "wpi",
+      "type": "AFFECTS",
+      "description": "Rate hikes by the MPC suppress aggregate demand and corporate borrowing, eventually cooling wholesale inflation.",
+      "cross": "governance"
+    },
+    {
+      "from": "epfo",
+      "to": "epfo_payroll_additions",
+      "type": "MANAGES",
+      "description": "EPFO administrative drives and compliance enforcement directly increase the recorded formal payroll additions.",
+      "cross": "governance"
+    },
+    {
+      "from": "epfo",
+      "to": "dii_flows",
+      "type": "FUNDS",
+      "description": "EPFO mandates to invest a percentage of corpus in equities channel massive funds into Domestic Institutional Investors.",
+      "cross": "governance"
+    },
+    {
+      "from": "municipal_corporations",
+      "to": "urban_population_density",
+      "type": "REGULATES",
+      "description": "Strict municipal zoning laws and Floor Space Index (FSI) limits restrict urban crowding and density.",
+      "cross": "governance"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "us_treasury_yields",
+      "type": "AFFECTS",
+      "description": "Federal Reserve interest rate hikes directly and immediately increase yields on US Treasury bonds.",
+      "cross": "governance"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "us_dollar_index",
+      "type": "AFFECTS",
+      "description": "Higher Fed rates attract global capital seeking yield, strengthening the US Dollar against other currencies.",
+      "cross": "governance"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "fii_fpi_flows",
+      "type": "AFFECTS",
+      "description": "Fed monetary tightening pulls foreign portfolio capital out of emerging markets like India back to US assets.",
+      "cross": "governance"
+    },
+    {
+      "from": "european_central_bank",
+      "to": "us_dollar_index",
+      "type": "AFFECTS",
+      "description": "ECB rate hikes strengthen the Euro, which inversely lowers the value of the US Dollar Index (DXY).",
+      "cross": "governance"
+    },
+    {
+      "from": "us_government",
+      "to": "us_consumer_demand",
+      "type": "AFFECTS",
+      "description": "Federal stimulus packages and tax cuts boost disposable income, driving American consumer spending.",
+      "cross": "governance"
+    },
+    {
+      "from": "us_government",
+      "to": "global_semiconductor_supply_chain",
+      "type": "REGULATES",
+      "description": "US export controls and sanctions restrict the flow of advanced microchips and manufacturing equipment globally.",
+      "cross": "governance"
+    },
+    {
+      "from": "chinese_government",
+      "to": "china_manufacturing_output",
+      "type": "AFFECTS",
+      "description": "State subsidies, credit easing, and infrastructure spending by Beijing directly boost Chinese factory production.",
+      "cross": "governance"
+    },
+    {
+      "from": "chinese_government",
+      "to": "industrial_metals_index",
+      "type": "AFFECTS",
+      "description": "Chinese state-backed property and infrastructure stimulus drives massive global demand for steel, copper, and aluminum.",
+      "cross": "governance"
+    },
+    {
+      "from": "russian_government",
+      "to": "global_natural_gas",
+      "type": "DISRUPTS",
+      "description": "Russian state decisions to restrict pipeline flows or weaponize energy exports spike global natural gas prices.",
+      "cross": "governance"
+    },
+    {
+      "from": "russian_government",
+      "to": "global_food_grain_supply",
+      "type": "AFFECTS",
+      "description": "Russian export bans and geopolitical actions restrict global food grain supply.",
+      "cross": "governance"
+    },
+    {
+      "from": "opec",
+      "to": "brent_crude",
+      "type": "AFFECTS",
+      "description": "OPEC+ coordinated production cuts artificially restrict global oil supply, driving up Brent crude prices.",
+      "cross": "governance"
+    },
+    {
+      "from": "wto",
+      "to": "india_trade_deficit",
+      "type": "REGULATES",
+      "description": "WTO mandates against protective import tariffs force India to open markets, potentially widening the trade deficit.",
+      "cross": "governance"
+    },
+    {
+      "from": "imf",
+      "to": "india_forex_reserves",
+      "type": "FUNDS",
+      "description": "IMF Special Drawing Rights (SDR) allocations directly increase India's foreign exchange reserves.",
+      "cross": "governance"
+    },
+    {
+      "from": "india_10yr_bond_yield",
+      "to": "home_loan_emi",
+      "type": "AFFECTS",
+      "description": "The 10-year government bond yield serves as a benchmark for interest rates; higher yields prompt banks to raise floating home loan rates, increasing EMIs.",
+      "cross": "financial"
+    },
+    {
+      "from": "india_10yr_bond_yield",
+      "to": "fixed_deposits",
+      "type": "AFFECTS",
+      "description": "As sovereign bond yields rise, commercial banks increase their fixed deposit interest rates to remain competitive in attracting retail liquidity.",
+      "cross": "financial"
+    },
+    {
+      "from": "india_gdp_growth",
+      "to": "commercial_airports",
+      "type": "AFFECTS",
+      "description": "Macroeconomic expansion increases business activity and disposable income, driving the need for expanded commercial aviation infrastructure.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "india_gdp_growth",
+      "to": "it_and_tech_sector",
+      "type": "AFFECTS",
+      "description": "GDP growth rates drive IT sector hiring, project volumes, and salary growth trajectories.",
+      "cross": "employment"
+    },
+    {
+      "from": "india_trade_deficit",
+      "to": "msme_manufacturing",
+      "type": "DISRUPTS",
+      "description": "Rising trade deficit signals competitive pressure on domestic small manufacturers from cheaper imports.",
+      "cross": "employment"
+    },
+    {
+      "from": "wpi",
+      "to": "school_fees",
+      "type": "AFFECTS",
+      "description": "Rising wholesale inflation increases the operational, real estate, and administrative costs for private schools, which are passed down to parents via annual fee hikes.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "usd_inr_exchange",
+      "to": "domestic_flight_ticket",
+      "type": "AFFECTS",
+      "description": "A depreciating Rupee (higher USD-INR) increases the cost of aviation turbine fuel and aircraft leases (priced in dollars), driving up domestic flight tickets.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "usd_inr_exchange",
+      "to": "laptop_computer",
+      "type": "AFFECTS",
+      "description": "A depreciating Rupee (higher USD-INR rate) increases the import cost of electronics and components, driving up the retail price of laptop computers.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "usd_inr_exchange",
+      "to": "retail_petrol",
+      "type": "AFFECTS",
+      "description": "A depreciating Rupee makes dollar-denominated crude oil imports more expensive, raising domestic retail petrol prices.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "usd_inr_exchange",
+      "to": "vehicle_fuel",
+      "type": "AFFECTS",
+      "description": "Rupee depreciation increases crude oil import costs, pushing up petrol, diesel, and CNG prices.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "nifty_50",
+      "to": "nps_portfolio",
+      "type": "AFFECTS",
+      "description": "NPS equity schemes (Scheme E) directly track Nifty 50 movements.",
+      "cross": "financial"
+    },
+    {
+      "from": "us_consumer_demand",
+      "to": "manufacturing_and_core",
+      "type": "AFFECTS",
+      "description": "US consumer demand drives Indian manufacturing exports and factory production volumes.",
+      "cross": "employment"
+    },
+    {
+      "from": "global_semiconductor_supply_chain",
+      "to": "data_centers",
+      "type": "SUPPLIES",
+      "description": "Increased availability of advanced server chips and semiconductors enables the physical expansion and upgrading of data center infrastructure.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "global_semiconductor_supply_chain",
+      "to": "telecom_towers_network",
+      "type": "SUPPLIES",
+      "description": "Global microchip supply is essential for manufacturing the base station equipment needed to expand and upgrade telecom tower networks.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "global_semiconductor_supply_chain",
+      "to": "four_wheeler_price",
+      "type": "AFFECTS",
+      "description": "Robust global microchip supplies eliminate production bottlenecks, reducing wait times and dealer markups on four-wheelers.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "industrial_metals_index",
+      "to": "building_materials_cost",
+      "type": "AFFECTS",
+      "description": "Surges in global industrial metal indices increase the raw material costs for domestic steel rebars and construction materials.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "global_natural_gas",
+      "to": "auto_rickshaw_fare",
+      "type": "AFFECTS",
+      "description": "Natural gas prices determine CNG costs, directly affecting auto-rickshaw fares.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "brent_crude",
+      "to": "retail_tomato",
+      "type": "AFFECTS",
+      "description": "Higher Brent crude prices increase diesel costs for trucking, which are passed on as higher freight charges, inflating the retail price of transported tomatoes.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "brent_crude",
+      "to": "tour_package",
+      "type": "AFFECTS",
+      "description": "Spikes in global Brent crude prices increase aviation turbine fuel (ATF) and diesel costs, which travel agencies pass on by raising overall tour package prices.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "brent_crude",
+      "to": "cooking_fuel",
+      "type": "AFFECTS",
+      "description": "Crude oil spikes increase retail cost of petroleum-derived cooking fuels (LPG, kerosene).",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "highway_network",
+      "to": "tier_2_3_city_expansion",
+      "type": "AFFECTS",
+      "description": "Expressway connectivity drives economic investment and real estate development in smaller regional cities.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_railways_network",
+      "to": "seasonal_migrant_labor",
+      "type": "AFFECTS",
+      "description": "The reach and affordability of the railway network facilitates the mass movement of seasonal migrant workers across states.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "dedicated_freight_corridors",
+      "to": "index_of_industrial_production",
+      "type": "AFFECTS",
+      "description": "Faster and cheaper freight movement lowers logistics costs, stimulating industrial manufacturing activity.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "upi_platform",
+      "to": "pmi_services",
+      "type": "AFFECTS",
+      "description": "Frictionless digital payments increase transaction velocity and formalize revenue in the services sector, boosting PMI.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "telecom_spectrum",
+      "to": "fii_fpi_flows",
+      "type": "AFFECTS",
+      "description": "Spectrum auctions and subsequent telecom infrastructure rollouts attract significant foreign institutional investment.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "commercial_airports",
+      "to": "tier_2_3_city_expansion",
+      "type": "AFFECTS",
+      "description": "Regional air connectivity (UDAN scheme) integrates smaller towns into the national economy, accelerating their urbanization.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "aadhaar_database",
+      "to": "epfo_payroll_additions",
+      "type": "AFFECTS",
+      "description": "Digital identity verification accelerates the onboarding of workers into the formal economy and provident fund system.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "sewage_drainage_network",
+      "to": "urban_population_density",
+      "type": "AFFECTS",
+      "description": "Underground drainage and sewage treatment capacity dictates the maximum sustainable population density of a city.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "global_shipping_routes",
+      "to": "global_shipping_freight_rates",
+      "type": "AFFECTS",
+      "description": "Expansion or clearing of maritime chokepoints increases effective vessel supply, lowering global container freight rates.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "urban_population_density",
+      "to": "traffic_congestion",
+      "type": "PRODUCES",
+      "description": "Increased population density in cities puts more commuters on existing road networks, leading to severe and frequent traffic congestion.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "urban_population_density",
+      "to": "ambient_aqi",
+      "type": "PRODUCES",
+      "description": "Higher urban density concentrates vehicular emissions, cooking fuels, and waste generation, significantly degrading the local Air Quality Index.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "urban_population_density",
+      "to": "domestic_help_wages",
+      "type": "AFFECTS",
+      "description": "Increasing population density in premium urban high-rises concentrates demand for household labor, driving up the monthly wages commanded by domestic help.",
+      "cross": "employment"
+    },
+    {
+      "from": "urban_population_density",
+      "to": "tuberculosis",
+      "type": "AFFECTS",
+      "description": "High crowding and poor ventilation in dense urban slums accelerate the airborne transmission of the tuberculosis bacterium.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "urban_population_density",
+      "to": "street_harassment",
+      "type": "AFFECTS",
+      "description": "Extreme crowding in urban public transport and markets provides perpetrators with anonymity, emboldening acts of eve-teasing and street harassment.",
+      "cross": "governance"
+    },
+    {
+      "from": "urban_population_density",
+      "to": "street_garbage",
+      "type": "PRODUCES",
+      "description": "Higher population density generates more per-capita solid waste, frequently overwhelming local bins and increasing street garbage.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "urban_population_density",
+      "to": "open_drains",
+      "type": "DISRUPTS",
+      "description": "Overcrowding in unauthorized urban colonies leads to the proliferation of makeshift, open drains to handle excess domestic wastewater.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "indian_union_government",
+      "type": "AFFECTS",
+      "description": "Debt and bond market yields determine sovereign borrowing costs, directly influencing the Union Government's fiscal deficit targets and infrastructure spending capacity.",
+      "cross": "governance"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "transport_logistics_infrastructure",
+      "type": "FUNDS",
+      "description": "Debt markets, institutional investments, and equity markets provide the massive capital required to build and expand highways, railways, and commercial airports.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "energy_power_infrastructure",
+      "type": "FUNDS",
+      "description": "Capital markets and institutional investment flows finance capital-intensive energy projects, including renewable energy parks and national power grid expansions.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "retirement_and_provident_funds",
+      "type": "AFFECTS",
+      "description": "Institutional debt and bond market yields dictate the annual interest rates declared for statutory provident funds and pension schemes.",
+      "cross": "financial"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "equity_investments",
+      "type": "AFFECTS",
+      "description": "Stock market indices (Sensex/Nifty) directly determine the value of retail equity portfolios; market crashes or rallies have immediate P&L impact.",
+      "cross": "financial"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "mutual_funds",
+      "type": "AFFECTS",
+      "description": "Bond yields, equity index levels, and currency markets drive mutual fund NAVs across debt, equity, and hybrid categories, affecting SIP and lump-sum returns.",
+      "cross": "financial"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "it_and_tech_sector",
+      "type": "FUNDS",
+      "description": "IPO markets and secondary equity funding enable IT companies to raise growth capital; buoyant markets support hiring while downturns trigger cost optimization.",
+      "cross": "employment"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "startup_ecosystem",
+      "type": "FUNDS",
+      "description": "VC funding availability, IPO exit windows, and public market valuations directly govern startup funding rounds, burn rates, and workforce scaling decisions.",
+      "cross": "employment"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "manufacturing_and_core",
+      "type": "FUNDS",
+      "description": "Corporate bond markets and equity issuance fund manufacturing capex; capital market freeze delays factory expansion and associated job creation.",
+      "cross": "employment"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "bfsi_sector",
+      "type": "AFFECTS",
+      "description": "BFSI sector employment is directly tied to capital market activity — trading volumes, AUM growth, and new product launches drive hiring across banks, AMCs, and brokerages.",
+      "cross": "employment"
+    },
+    {
+      "from": "digital_telecom_infrastructure",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Digital public infrastructure and telecom networks drive economic formalization and service-sector efficiency, boosting national output and creating new employment aggregates.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "digital_telecom_infrastructure",
+      "to": "financial_and_capital_markets",
+      "type": "AFFECTS",
+      "description": "Telecom networks, data centers, and digital public infrastructure form the foundational physical layer enabling digital payments, high-frequency trading, and modern capital market operations.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "digital_telecom_infrastructure",
+      "to": "macro_behavioral_shifts",
+      "type": "AFFECTS",
+      "description": "Deep penetration of digital public infrastructure and telecom networks directly drives shifts in consumer sentiment and civic participation by enabling real-time information access and digital transactions.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "hydrological_systems",
+      "type": "AFFECTS",
+      "description": "Major festivals and mass religious observances (e.g., idol immersions, mass bathing) temporarily degrade water quality in major river basins.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "state_and_local_governments",
+      "type": "AFFECTS",
+      "description": "Linguistic and regional identity forces strongly dictate the political priorities, administrative boundaries, and cultural policies of state and local governments.",
+      "cross": "governance"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "transport_logistics_infrastructure",
+      "type": "AFFECTS",
+      "description": "Major cultural festivals and religious observances create massive, concentrated surges in passenger traffic, temporarily straining railway and highway networks.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "sensory_environment",
+      "type": "AFFECTS",
+      "description": "Festivals and religious observances directly produce significant, localized spikes in noise and light pollution.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "festivals_and_celebrations",
+      "type": "PRODUCES",
+      "description": "Religious calendars, cultural traditions, and community norms directly determine the timing, scale, and nature of festivals (Diwali, Eid, Pongal, Durga Puja) and associated spending.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "weddings_and_milestones",
+      "type": "PRODUCES",
+      "description": "Auspicious dates from Hindu/Muslim calendars, dowry customs, and community wedding norms shape wedding season timing and expenditure expectations.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "religious_pilgrimage",
+      "type": "PRODUCES",
+      "description": "Religious traditions drive pilgrimage demand (Char Dham, Amarnath, Vaishno Devi, Hajj); cultural reverence directly determines pilgrim volumes and seasonal patterns.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "railway_travel",
+      "type": "AFFECTS",
+      "description": "Festival seasons (Diwali, Chhath, Eid) create massive surges in rail demand as millions travel to hometowns; Indian Railways runs special festival trains to meet demand.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "air_travel",
+      "type": "AFFECTS",
+      "description": "Festival and wedding travel drives domestic air fare surges during peak seasons; airlines use dynamic pricing that amplifies cultural demand spikes.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "highway_bus_travel",
+      "type": "AFFECTS",
+      "description": "Regional festival travel and pilgrimage routes drive intercity bus demand; state transport corporations add extra services during Navratri, Pongal, and regional festivals.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "energy_commodities",
+      "to": "household_energy",
+      "type": "AFFECTS",
+      "description": "International crude oil and natural gas prices directly determine the retail cost of LPG cylinders, piped natural gas, and kerosene for Indian households.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "energy_commodities",
+      "to": "vehicle_fuel",
+      "type": "AFFECTS",
+      "description": "International crude oil and natural gas prices directly determine the retail cost of petrol, diesel, and CNG at Indian fuel pumps, the primary recurring expense of vehicle ownership.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "agricultural_commodities",
+      "to": "edible_oils",
+      "type": "AFFECTS",
+      "description": "Global prices of palm oil, soybean oil, and sunflower oil on international commodity exchanges directly set the import cost for India, which imports over 60% of its edible oil demand.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "precious_and_industrial_metals",
+      "to": "vehicle_acquisition",
+      "type": "AFFECTS",
+      "description": "Global steel, aluminum, and copper prices affect vehicle manufacturing costs; automakers pass through material cost increases via higher ex-showroom prices for cars and two-wheelers.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "precious_and_industrial_metals",
+      "to": "vehicle_maintenance_and_compliance",
+      "type": "AFFECTS",
+      "description": "International metal prices affect the cost of spare parts (steel body panels, copper wiring, aluminum alloy wheels) and tires (rubber), moderately raising vehicle maintenance expenses.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "precious_and_industrial_metals",
+      "to": "precious_metals",
+      "type": "AFFECTS",
+      "description": "International gold and silver prices on COMEX/LBMA set the baseline for domestic retail precious metal prices; spot movements are transmitted within hours to Indian jewelers and bullion dealers.",
+      "cross": "financial"
+    },
+    {
+      "from": "precious_and_industrial_metals",
+      "to": "real_estate_investment",
+      "type": "AFFECTS",
+      "description": "Rising global steel and industrial metal prices increase construction costs, which developers pass through to property purchase prices, affecting real estate investment returns.",
+      "cross": "financial"
+    },
+    {
+      "from": "international_coal_prices",
+      "to": "electricity_tariff",
+      "type": "AFFECTS",
+      "description": "Coal price increases raise thermal power input costs, passed on via higher electricity tariffs.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "international_gold_prices",
+      "to": "gold_loan_interest",
+      "type": "AFFECTS",
+      "description": "Gold price movements directly affect gold loan-to-value ratios and interest rates.",
+      "cross": "financial"
+    },
+    {
+      "from": "inflation_indices",
+      "to": "savings_account_balance",
+      "type": "AFFECTS",
+      "description": "Higher inflation reduces surplus income, depleting savings account balances.",
+      "cross": "financial"
+    },
+    {
+      "from": "national_unemployment_rate",
+      "to": "gig_worker_payouts",
+      "type": "AFFECTS",
+      "description": "High aggregate unemployment floods the gig economy with desperate labor, allowing platform algorithms to suppress per-task payouts due to an oversupply of workers.",
+      "cross": "employment"
+    },
+    {
+      "from": "national_unemployment_rate",
+      "to": "banking_ssc_exams",
+      "type": "AFFECTS",
+      "description": "High aggregate joblessness in the private sector drives millions of youth to seek job security, drastically increasing the applicant pool for banking and SSC recruitment exams.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "national_unemployment_rate",
+      "to": "civil_services_exam",
+      "type": "AFFECTS",
+      "description": "A lack of lucrative private sector opportunities pushes a larger demographic of graduates to invest years preparing for the highly secure UPSC civil services exam.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "national_unemployment_rate",
+      "to": "burglary_and_theft",
+      "type": "AFFECTS",
+      "description": "High aggregate joblessness drives economic desperation, leading to a statistical increase in petty property crimes like theft and chain snatching.",
+      "cross": "governance"
+    },
+    {
+      "from": "national_unemployment_rate",
+      "to": "investment_and_job_scams",
+      "type": "AFFECTS",
+      "description": "A large pool of desperate, unemployed youth creates a highly susceptible target demographic for fraudulent work-from-home and Telegram task scams.",
+      "cross": "governance"
+    },
+    {
+      "from": "equity_markets",
+      "to": "equity_investments",
+      "type": "AFFECTS",
+      "description": "Stock market index movements directly determine equity portfolio valuations and capital gains.",
+      "cross": "financial"
+    },
+    {
+      "from": "equity_markets",
+      "to": "mutual_funds",
+      "type": "AFFECTS",
+      "description": "Equity market performance drives equity-linked mutual fund NAV changes and SIP returns.",
+      "cross": "financial"
+    },
+    {
+      "from": "equity_markets",
+      "to": "retirement_and_provident_funds",
+      "type": "AFFECTS",
+      "description": "Market movements affect NPS and EPF equity allocation returns and corpus growth.",
+      "cross": "financial"
+    },
+    {
+      "from": "currency_and_forex_markets",
+      "to": "self_employment_and_msme",
+      "type": "AFFECTS",
+      "description": "Currency depreciation raises imported raw material costs for small businesses.",
+      "cross": "employment"
+    },
+    {
+      "from": "rural_urban_migration_corridors",
+      "to": "indian_railways_network",
+      "type": "DEPENDS_ON",
+      "description": "Mass movement of rural migrants to urban centers heavily relies on and increases passenger load on the Indian Railways network.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "aggregate_consumer_confidence",
+      "to": "retail_and_trade",
+      "type": "AFFECTS",
+      "description": "Consumer confidence levels directly drive discretionary spending at local retail stores.",
+      "cross": "employment"
+    },
+    {
+      "from": "aggregate_consumer_confidence",
+      "to": "unsecured_loans",
+      "type": "AFFECTS",
+      "description": "Falling consumer confidence increases precautionary saving and credit card spending stress.",
+      "cross": "financial"
+    },
+    {
+      "from": "aggregate_consumer_confidence",
+      "to": "kirana_store_income",
+      "type": "AFFECTS",
+      "description": "Higher consumer confidence increases daily goods spending, boosting kirana income.",
+      "cross": "employment"
+    },
+    {
+      "from": "aggregate_consumer_confidence",
+      "to": "credit_card_dues",
+      "type": "AFFECTS",
+      "description": "Consumer confidence drives discretionary spending via credit cards.",
+      "cross": "financial"
+    },
+    {
+      "from": "aggregate_consumer_confidence",
+      "to": "borrowing_and_credit",
+      "type": "AFFECTS",
+      "description": "Consumer optimism encourages higher spending through credit and personal loans.",
+      "cross": "financial"
+    },
+    {
+      "from": "tier_2_3_city_expansion",
+      "to": "commercial_airports",
+      "type": "AFFECTS",
+      "description": "The economic expansion of tier 2 and 3 cities drives demand for regional connectivity, accelerating the development of commercial airports.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "tier_2_3_city_expansion",
+      "to": "investment_property_value",
+      "type": "AFFECTS",
+      "description": "Infrastructure development and economic expansion in emerging cities drive up land demand, significantly appreciating the value of investment properties in those regions.",
+      "cross": "financial"
+    },
+    {
+      "from": "tier_2_3_city_expansion",
+      "to": "offline_coaching_centers",
+      "type": "AFFECTS",
+      "description": "The economic growth and urbanization of smaller cities attract national test prep chains to open local offline coaching branches, decentralizing the industry from traditional hubs.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "tier_2_3_city_expansion",
+      "to": "neighborhood_greenery",
+      "type": "DISRUPTS",
+      "description": "Rapid, unplanned real estate development and road widening in emerging cities lead to the widespread felling of mature neighborhood trees.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "semiconductor_fabs",
+      "to": "india_trade_deficit",
+      "type": "AFFECTS",
+      "description": "Domestic semiconductor manufacturing substitutes imports, significantly reducing the electronics import bill.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "semiconductor_fabs",
+      "to": "global_semiconductor_supply_chain",
+      "type": "SUPPLIES",
+      "description": "Indian wafer fabs add net new manufacturing capacity to the global microchip supply chain.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "hydrological_systems",
+      "type": "DISRUPTS",
+      "description": "Rapid urbanization and population density increases lead to the over-extraction of subsurface water and severe pollution of major river basins.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "biophysical_and_ecological_systems",
+      "type": "DISRUPTS",
+      "description": "Urban sprawl and population expansion encroach upon terrestrial ecosystems, driving habitat loss and disrupting biological populations.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "indian_statutory_frameworks_and_councils",
+      "type": "AFFECTS",
+      "description": "Long-term demographic shifts, such as a youth bulge or an aging population, necessitate structural adaptations in national fiscal policies and labor/welfare frameworks.",
+      "cross": "governance"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "civic_urban_infrastructure",
+      "type": "DISRUPTS",
+      "description": "Rapid urbanization trends and population density increases severely strain and disrupt the capacity of municipal water and sewage grids.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "chronic_and_lifestyle_conditions",
+      "type": "AFFECTS",
+      "description": "Aging demographics directly increase the prevalence and healthcare burden of chronic, metabolic, and cardiovascular conditions.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "employment_metrics_and_conditions",
+      "type": "AFFECTS",
+      "description": "Working-age population growth directly increases labor market competition, impacting unemployment levels and wage stagnation.",
+      "cross": "employment"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "rental_housing",
+      "type": "AFFECTS",
+      "description": "Population growth and urbanization increase housing demand; rising nuclear family count and young workforce migration to cities drive up rental demand and prices.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "home_construction_and_modification",
+      "type": "AFFECTS",
+      "description": "Demographic shifts (aging population needing accessible homes, growing families needing expansion) drive demand for home construction and modification projects.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "india_working_age_population",
+      "to": "engineering_entrance",
+      "type": "AFFECTS",
+      "description": "A massive and growing youth demographic bulge directly increases the absolute number of high school graduates competing for limited seats in engineering entrance exams like JEE.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "india_aging_population",
+      "to": "epfo",
+      "type": "AFFECTS",
+      "description": "A rising elderly demographic increases the volume of pension withdrawals and financial liabilities managed by the EPFO.",
+      "cross": "governance"
+    },
+    {
+      "from": "india_aging_population",
+      "to": "chronic_disease_medication",
+      "type": "AFFECTS",
+      "description": "A growing geriatric demographic structurally increases the aggregate demand for lifelong medications managing hypertension, diabetes, and heart disease.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "india_aging_population",
+      "to": "hospital_beds",
+      "type": "AFFECTS",
+      "description": "An aging population has a naturally higher baseline rate of severe illness and surgical needs, driving up the structural demand for hospital beds.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "female_labor_force_participation",
+      "to": "domestic_help_cost",
+      "type": "AFFECTS",
+      "description": "As more women enter the formal workforce, households increasingly outsource childcare and chores, driving up the demand and wages for domestic help.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "civil_unrest",
+      "type": "PRODUCES",
+      "description": "Industrial strikes, bandh calls, and protest marches by labor and trade unions directly create civil unrest situations including road blockades, factory lockouts, and market shutdowns.",
+      "cross": "governance"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "crowd_emergencies",
+      "type": "PRODUCES",
+      "description": "Large-scale worker rallies and union demonstrations at factory gates or industrial townships can escalate into crowd crush situations when management-worker tensions peak.",
+      "cross": "governance"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "railway_travel",
+      "type": "DISRUPTS",
+      "description": "Railway worker union strikes and rail roko agitations by industrial unions directly cancel trains and strand passengers; transport union bandhs paralyze railway operations.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "highway_bus_travel",
+      "type": "DISRUPTS",
+      "description": "Transport worker strikes and union-called bandhs directly halt private and state bus services; truck union blockades on highways prevent intercity bus movement.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "construction_and_manual",
+      "type": "AFFECTS",
+      "description": "Labor union pressure for minimum wage compliance, safety standards, and overtime regulations on construction sites improves daily-wage worker conditions but may also slow project timelines.",
+      "cross": "employment"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "domestic_and_care",
+      "type": "AFFECTS",
+      "description": "Nascent domestic worker unions advocate for minimum wages, weekly offs, and working hour limits; their growing influence is gradually formalizing conditions for household help.",
+      "cross": "employment"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "civil_unrest",
+      "type": "PRODUCES",
+      "description": "Farmer union agitations (MSP protests, land acquisition resistance) directly create civil unrest through highway blockades, rail rokos, and prolonged sit-in protests at borders.",
+      "cross": "governance"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "crowd_emergencies",
+      "type": "PRODUCES",
+      "description": "Massive farmer marches and mahapanchayat gatherings can lead to crowd emergencies when police use force or when organizational crowd control fails at protest sites.",
+      "cross": "governance"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "railway_travel",
+      "type": "DISRUPTS",
+      "description": "Farmer union rail roko protests (like the 2020-21 farm law agitations) blockade railway tracks and occupy stations, causing mass train cancellations on key routes.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "highway_bus_travel",
+      "type": "DISRUPTS",
+      "description": "Farmer union highway blockades (toll plaza occupation, tractor marches) directly disrupt intercity bus services; vehicles are stranded or rerouted during sustained agitations.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "agriculture_and_allied",
+      "type": "AFFECTS",
+      "description": "Farmer unions negotiate MSP increases, input subsidies, and crop insurance coverage, directly improving income security and working conditions for agricultural laborers.",
+      "cross": "employment"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "rural_employment_schemes",
+      "type": "AFFECTS",
+      "description": "Farmer organizations and rural collectives demand increased MGNREGA allocations, timely wage payments, and expanded work categories, pressuring governments to improve scheme implementation.",
+      "cross": "employment"
+    },
+    {
+      "from": "identity_and_rights_movements",
+      "to": "civil_unrest",
+      "type": "PRODUCES",
+      "description": "Caste reservation agitations, student protests, and rights movements directly trigger civil unrest through bandh calls, institutional shutdowns, and public property damage.",
+      "cross": "governance"
+    },
+    {
+      "from": "identity_and_rights_movements",
+      "to": "crowd_emergencies",
+      "type": "PRODUCES",
+      "description": "Large-scale identity-based rallies and reservation protests can escalate into violent crowd emergencies, especially when police resort to lathi charges or tear gas.",
+      "cross": "governance"
+    },
+    {
+      "from": "identity_and_rights_movements",
+      "to": "railway_travel",
+      "type": "DISRUPTS",
+      "description": "Student and reservation movement protests frequently target railway infrastructure through rail rokos and station vandalism, causing service disruptions on affected routes.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "identity_and_rights_movements",
+      "to": "highway_bus_travel",
+      "type": "DISRUPTS",
+      "description": "Bandh calls by caste and rights movements force bus services off roads; roadblocks during agitations directly prevent intercity bus operations in affected regions.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "identity_and_rights_movements",
+      "to": "rural_employment_schemes",
+      "type": "AFFECTS",
+      "description": "Social justice movements demanding employment quotas and expanded MGNREGA eligibility for marginalized communities pressure governments to increase scheme budgets and coverage.",
+      "cross": "employment"
+    },
+    {
+      "from": "organized_labor_unions",
+      "to": "minimum_wage",
+      "type": "AFFECTS",
+      "description": "Collective bargaining and strikes by organized labor unions pressure state governments to revise and increase statutory minimum wage floors.",
+      "cross": "employment"
+    },
+    {
+      "from": "gig_worker_unions",
+      "to": "ondc_platform",
+      "type": "AFFECTS",
+      "description": "Collective bargaining by gig worker unions pushes for fairer digital commerce frameworks, accelerating the adoption of the ONDC platform.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "gig_worker_unions",
+      "to": "gig_worker_payouts",
+      "type": "AFFECTS",
+      "description": "Successful strikes and collective bargaining by gig worker unions force aggregator platforms to revise their rate cards and increase per-task payouts.",
+      "cross": "employment"
+    },
+    {
+      "from": "transport_worker_unions",
+      "to": "highway_network",
+      "type": "DISRUPTS",
+      "description": "Strikes and blockades by transport worker unions disrupt logistics, leading to a decrease in highway network throughput.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "caste_reservation_movements",
+      "to": "state_governments",
+      "type": "AFFECTS",
+      "description": "Caste-based reservation movements force state governments to implement new quota policies in education and public employment.",
+      "cross": "governance"
+    },
+    {
+      "from": "caste_reservation_movements",
+      "to": "medical_entrance",
+      "type": "AFFECTS",
+      "description": "Quota agitations and subsequent policy changes alter the seat matrices and category-wise cutoffs for highly competitive exams like NEET UG.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "student_unions",
+      "to": "ministry_of_education",
+      "type": "AFFECTS",
+      "description": "Campus agitations by student unions compel the Ministry of Education to intervene in university administration and exam policies.",
+      "cross": "governance"
+    },
+    {
+      "from": "autumn_festive_season",
+      "to": "retail_sugar",
+      "type": "AFFECTS",
+      "description": "The autumn festive season triggers massive household and commercial demand for traditional sweets, temporarily spiking retail sugar prices.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "autumn_festive_season",
+      "to": "credit_card_dues",
+      "type": "PRODUCES",
+      "description": "Aggressive consumer spending on electronics, apparel, and gifts during the Diwali festive season leads to a sharp spike in outstanding credit card balances.",
+      "cross": "financial"
+    },
+    {
+      "from": "autumn_festive_season",
+      "to": "stampedes",
+      "type": "PRODUCES",
+      "description": "Massive, concentrated crowd surges at pandals and markets during Diwali and Durga Puja significantly elevate the risk of fatal crowd crushes.",
+      "cross": "governance"
+    },
+    {
+      "from": "autumn_festive_season",
+      "to": "ambient_aqi",
+      "type": "PRODUCES",
+      "description": "Massive bursting of firecrackers during Diwali and autumn festivals releases dense smoke, causing an immediate and hazardous spike in ambient AQI.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "wedding_season_aggregate",
+      "to": "retail_gold_investment",
+      "type": "AFFECTS",
+      "description": "Traditional gifting and dowry requirements during the wedding season drive a massive surge in retail gold and jewelry purchases.",
+      "cross": "financial"
+    },
+    {
+      "from": "waqf_boards",
+      "to": "state_governments",
+      "type": "AFFECTS",
+      "description": "Disputes over the administration of Islamic endowments require direct legal and administrative intervention from state governments.",
+      "cross": "governance"
+    },
+    {
+      "from": "regional_language_movements",
+      "to": "state_governments",
+      "type": "AFFECTS",
+      "description": "Linguistic pride movements pressure state governments to mandate the use of regional languages in local commerce and education.",
+      "cross": "governance"
+    },
+    {
+      "from": "voter_turnout_aggregates",
+      "to": "union_budget_framework",
+      "type": "AFFECTS",
+      "description": "High voter turnout aggregates signal strong democratic engagement, which influences the Union Budget framework toward more populist allocations.",
+      "cross": "governance"
+    },
+    {
+      "from": "rice_crop_yield",
+      "to": "retail_rice",
+      "type": "AFFECTS",
+      "description": "Lower rice yields reduce market supply, raising retail rice prices.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "rice_crop_yield",
+      "to": "staple_grains",
+      "type": "AFFECTS",
+      "description": "Lower rice yields reduce market supply of staple grains, driving up prices.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "inr_usd_exchange_rate",
+      "to": "small_factory_owner_income",
+      "type": "AFFECTS",
+      "description": "Weaker rupee raises imported raw material costs, squeezing small factory margins.",
+      "cross": "employment"
+    },
+    {
+      "from": "vegetable_crops",
+      "to": "fresh_produce",
+      "type": "SUPPLIES",
+      "description": "Higher vegetable crop yields increase market supply, reducing fresh produce prices.",
+      "cross": "food_agriculture"
+    }
+  ]
+}

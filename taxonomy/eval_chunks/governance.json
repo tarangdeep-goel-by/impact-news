@@ -1,0 +1,3115 @@
+{
+  "domain": "governance",
+  "node_count": 114,
+  "edge_count": 302,
+  "internal_edge_count": 132,
+  "cross_domain_edge_count": 170,
+  "nodes": [
+    {
+      "id": "accidents_and_hazards",
+      "aliases": [
+        "Accidents & Hazards",
+        "Physical Hazards",
+        "Durghatna",
+        "Public Safety Risks"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "animal_threats",
+      "aliases": [
+        "Animal Threats",
+        "Animal Attacks",
+        "Janwar Ka Hamla"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "assault_and_battery",
+      "aliases": [
+        "Assault & Battery",
+        "Physical Altercation",
+        "Marpeet",
+        "Grievous Hurt"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "burglary_and_theft",
+      "aliases": [
+        "Burglary & Theft",
+        "Housebreaking",
+        "Chori",
+        "Chain Snatching",
+        "Pickpocketing"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "cbi",
+      "aliases": [
+        "Central Bureau of Investigation",
+        "CBI",
+        "Kendriya Anveshan Bureau",
+        "Federal Probe Agency"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "cci",
+      "aliases": [
+        "Competition Commission of India",
+        "Antitrust Regulator",
+        "CCI",
+        "Fair Trade Regulator"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "cdsco",
+      "aliases": [
+        "Central Drugs Standard Control Organisation",
+        "Drug Controller",
+        "DCGI",
+        "Pharma Regulator"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "central_investigative_agencies",
+      "aliases": [
+        "Federal Agencies",
+        "Probe Agencies",
+        "Janch Agenicy"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "child_abuse_and_pocso",
+      "aliases": [
+        "Child Abuse & POCSO",
+        "Child Exploitation",
+        "Bal Shoshan",
+        "POCSO Cases"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "child_kidnapping",
+      "aliases": [
+        "Child Kidnapping",
+        "Bachha Chori",
+        "Child Abduction",
+        "Missing Children"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "child_safety",
+      "aliases": [
+        "Child Safety",
+        "Child Protection",
+        "Bacchon Ki Suraksha"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "chinese_government",
+      "aliases": [
+        "Beijing",
+        "PRC Government",
+        "Chinese State",
+        "CCP"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "civil_unrest",
+      "aliases": [
+        "Civil Unrest",
+        "Public Disturbances",
+        "Asahmati Aur Hinsa"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "commercial_and_telecom_regulators",
+      "aliases": [
+        "Business Regulators",
+        "Telecom and Aviation Watchdogs",
+        "Vyapar Niyamak"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "cpcb",
+      "aliases": [
+        "Central Pollution Control Board",
+        "Pollution Board",
+        "CPCB",
+        "Pradushan Niyantran Board"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "criminal_litigation_risk",
+      "aliases": [
+        "Criminal Litigation Risk",
+        "Court Summons",
+        "Bail Hearings",
+        "Mukadma",
+        "False Cases"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "crowd_emergencies",
+      "aliases": [
+        "Crowd Emergencies",
+        "Mass Gathering Risks",
+        "Bheed Ka Khatra"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "curfews_and_section_144",
+      "aliases": [
+        "Curfews & Section 144",
+        "Internet Shutdowns",
+        "Prohibitory Orders",
+        "Lockdown Orders"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "cyberbullying_and_trolling",
+      "aliases": [
+        "Cyberbullying & Trolling",
+        "Online Harassment",
+        "Social Media Abuse",
+        "Doxxing"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "deepfake_and_identity_theft",
+      "aliases": [
+        "Deepfake & Identity Theft",
+        "Morphing",
+        "Fake Profiles",
+        "AI Voice Scams"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "dgca",
+      "aliases": [
+        "Directorate General of Civil Aviation",
+        "Aviation Regulator",
+        "DGCA",
+        "Flight Safety Watchdog"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "digital_and_cyber_security",
+      "aliases": [
+        "Digital & Cyber Security",
+        "Cyber Crime",
+        "Online Fraud",
+        "Cyber Suraksha"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "digital_harassment_and_privacy",
+      "aliases": [
+        "Digital Harassment & Privacy",
+        "Online Abuse",
+        "Cyber Privacy Threats"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "domestic_violence",
+      "aliases": [
+        "Domestic Violence",
+        "Gharelu Hinsa",
+        "Dowry Harassment",
+        "Intimate Partner Violence"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "economic_ministries",
+      "aliases": [
+        "Finance and Commerce Ministries",
+        "Economic Departments",
+        "Arthik Mantralaya"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "electrocution_hazard",
+      "aliases": [
+        "Electrocution Hazard",
+        "Open Wires",
+        "Current Lagna",
+        "Transformer Blasts"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "enforcement_directorate",
+      "aliases": [
+        "ED",
+        "Pravartan Nideshalaya",
+        "Anti-Money Laundering Agency",
+        "Financial Probe Agency"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "epfo",
+      "aliases": [
+        "Employees Provident Fund Organisation",
+        "PF Office",
+        "Bhavishya Nidhi Sangathan",
+        "EPF Board"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "european_central_bank",
+      "aliases": [
+        "ECB",
+        "Eurozone Central Bank",
+        "European Bank",
+        "Frankfurt Bank"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "european_union",
+      "aliases": [
+        "EU",
+        "Brussels",
+        "European Commission",
+        "European Bloc"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "financial_cyber_fraud",
+      "aliases": [
+        "Financial Cyber Fraud",
+        "Online Scams",
+        "Digital Thagi"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "financial_regulators",
+      "aliases": [
+        "Market Regulators",
+        "Financial Watchdogs",
+        "Vittiya Niyamak"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "fir_registration",
+      "aliases": [
+        "FIR Registration",
+        "Police Complaint",
+        "Thana Process",
+        "Police Station Harassment"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "fire_hazards",
+      "aliases": [
+        "Fire Hazards",
+        "Building Fires",
+        "Aag Lagna",
+        "Industrial Fires",
+        "Fire NOC Violations"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "fiscal_policies_and_councils",
+      "aliases": [
+        "Tax and Budget Councils",
+        "Fiscal Frameworks",
+        "Rajkoshiya Niti"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "fssai",
+      "aliases": [
+        "Food Safety and Standards Authority of India",
+        "Food Regulator",
+        "FSSAI",
+        "Khadya Suraksha Niyamak"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "geopolitical_states",
+      "aliases": [
+        "Foreign Governments",
+        "Global Powers",
+        "Videshi Sarkar"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "global_central_banks",
+      "aliases": [
+        "International Central Banks",
+        "Foreign Reserve Banks",
+        "Videshi Central Bank"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "global_sovereign_entities",
+      "aliases": [
+        "Global Institutions",
+        "Foreign Governments",
+        "International Bodies",
+        "Geopolitical Entities"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "gst_council",
+      "aliases": [
+        "Goods and Services Tax Council",
+        "GST Panel",
+        "GST Board",
+        "GST Samiti"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "health_and_safety_regulators",
+      "aliases": [
+        "Safety Regulators",
+        "Health Watchdogs",
+        "Suraksha Niyamak"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "high_courts",
+      "aliases": [
+        "High Court",
+        "HC",
+        "Uchha Nyayalaya",
+        "State Apex Courts"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "higher_judiciary",
+      "aliases": [
+        "Apex Courts",
+        "Constitutional Courts",
+        "Uchhatam Nyayalaya"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "homicide",
+      "aliases": [
+        "Homicide",
+        "Murder",
+        "Hatya",
+        "Killings"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "i8",
+      "aliases": [
+        "Safety & Security",
+        "Physical Safety",
+        "Law and Order",
+        "Suraksha"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "imf",
+      "aliases": [
+        "International Monetary Fund",
+        "IMF",
+        "Global Lender",
+        "Washington Lender"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "income_tax_department",
+      "aliases": [
+        "IT Dept",
+        "Aaykar Vibhag",
+        "Taxman",
+        "CBDT"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "indian_judiciary_and_law_enforcement",
+      "aliases": [
+        "Judiciary",
+        "Courts and Agencies",
+        "Nyayapalika",
+        "Investigative Agencies"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "indian_regulatory_bodies",
+      "aliases": [
+        "Regulators",
+        "Statutory Regulators",
+        "Niyamak",
+        "Watchdogs"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "indian_statutory_frameworks_and_councils",
+      "aliases": [
+        "Statutory Frameworks",
+        "Policy Councils",
+        "Government Committees",
+        "Statutory Bodies"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "indian_union_government",
+      "aliases": [
+        "Central Government",
+        "Union Government",
+        "Kendriya Sarkar",
+        "Government of India",
+        "GoI"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "infrastructure_hazards",
+      "aliases": [
+        "Infrastructure Hazards",
+        "Civic Hazards",
+        "Structural Risks"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "infrastructure_ministries",
+      "aliases": [
+        "Infra Ministries",
+        "Transport and Power Ministries",
+        "B बुनियादी ढांचा मंत्रालय"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "international_organizations",
+      "aliases": [
+        "Global Bodies",
+        "Multilateral Organizations",
+        "Antarrashtriya Sangathan"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "investment_and_job_scams",
+      "aliases": [
+        "Investment & Job Scams",
+        "Telegram Task Fraud",
+        "Work From Home Scams",
+        "Crypto Scams"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "irda",
+      "aliases": [
+        "Insurance Regulatory and Development Authority",
+        "IRDAI",
+        "Bima Niyamak",
+        "Insurance Regulator"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "labor_and_welfare_frameworks",
+      "aliases": [
+        "Employment Frameworks",
+        "Social Security Bodies",
+        "Kalyan Framework"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "law_enforcement_interface",
+      "aliases": [
+        "Law Enforcement Interface",
+        "Police Interaction",
+        "Police Administration"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "local_civic_bodies",
+      "aliases": [
+        "Municipalities",
+        "Panchayats",
+        "Sthaniya Nikay"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "ministry_of_agriculture",
+      "aliases": [
+        "Agriculture Ministry",
+        "Krishi Mantralaya",
+        "MoA",
+        "Farmers Welfare Ministry"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "ministry_of_civil_aviation",
+      "aliases": [
+        "Aviation Ministry",
+        "MoCA",
+        "Nagar Vimanan Mantralaya",
+        "Civil Aviation Dept"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "ministry_of_commerce_and_industry",
+      "aliases": [
+        "Commerce Ministry",
+        "Vanijya Mantralaya",
+        "DPIIT",
+        "MoCI"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "ministry_of_consumer_affairs",
+      "aliases": [
+        "Consumer Affairs Ministry",
+        "Upbhokta Mantralaya",
+        "Food Ministry",
+        "Public Distribution Dept"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "ministry_of_education",
+      "aliases": [
+        "Education Ministry",
+        "Shiksha Mantralaya",
+        "MoE",
+        "HRD Ministry"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "ministry_of_finance",
+      "aliases": [
+        "Finance Ministry",
+        "Vitt Mantralaya",
+        "FinMin",
+        "MoF"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "ministry_of_health",
+      "aliases": [
+        "Health Ministry",
+        "Swasthya Mantralaya",
+        "MoHFW",
+        "Health Dept"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "ministry_of_power",
+      "aliases": [
+        "Power Ministry",
+        "Urja Mantralaya",
+        "MoP",
+        "Energy Ministry"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "ministry_of_railways",
+      "aliases": [
+        "Railway Ministry",
+        "Rail Mantralaya",
+        "Indian Railways Board",
+        "Rail Bhavan"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "ministry_of_road_transport",
+      "aliases": [
+        "MoRTH",
+        "Road Ministry",
+        "Sadak Parivahan Mantralaya",
+        "Highways Ministry"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "monetary_policy_committee",
+      "aliases": [
+        "MPC",
+        "Rate Setting Panel",
+        "RBI MPC",
+        "Monetary Policy Board"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "municipal_corporations",
+      "aliases": [
+        "Nagar Nigam",
+        "Mahanagar Palika",
+        "Civic Body",
+        "Municipality",
+        "BBMP",
+        "BMC"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "national_green_tribunal",
+      "aliases": [
+        "NGT",
+        "Green Court",
+        "Harit Pradhikaran",
+        "Environmental Tribunal"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "nia",
+      "aliases": [
+        "National Investigation Agency",
+        "NIA",
+        "Anti-Terror Agency",
+        "Rashtriya Janch Agency"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "opec",
+      "aliases": [
+        "Organization of the Petroleum Exporting Countries",
+        "OPEC+",
+        "Oil Cartel",
+        "Petroleum Exporting Bloc"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "panchayati_raj_institutions",
+      "aliases": [
+        "Gram Panchayat",
+        "Zila Parishad",
+        "Village Council",
+        "Panchayat"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "pfrda",
+      "aliases": [
+        "Pension Fund Regulatory and Development Authority",
+        "Pension Regulator",
+        "NPS Trust",
+        "PFRDA"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "physical_crime_and_law_enforcement",
+      "aliases": [
+        "Physical Crime & Law Enforcement",
+        "Police and Crime",
+        "Kanoon Vyavastha"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "police_response_time",
+      "aliases": [
+        "Police Response Time",
+        "Dial 112 Response",
+        "Police Patrolling",
+        "PCR Van Arrival"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "property_crime",
+      "aliases": [
+        "Property Crime",
+        "Theft and Burglary",
+        "Sampatti Ki Chori"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "public_order_and_emergencies",
+      "aliases": [
+        "Public Order & Emergencies",
+        "Civic Safety",
+        "Public Disturbances",
+        "Law and Order Situations"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "railway_accidents",
+      "aliases": [
+        "Railway Accidents",
+        "Train Derailment",
+        "Track Crossing Accidents",
+        "Train Collision"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "rbi",
+      "aliases": [
+        "Reserve Bank of India",
+        "Central Bank",
+        "Kendriya Bank",
+        "Mint Street"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "regional_transport_office",
+      "aliases": [
+        "RTO",
+        "Transport Department",
+        "Parivahan Vibhag",
+        "Motor Vehicles Dept"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "rera",
+      "aliases": [
+        "Real Estate Regulatory Authority",
+        "Real Estate Regulator",
+        "RERA",
+        "Housing Watchdog"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "riots_and_clashes",
+      "aliases": [
+        "Riots & Clashes",
+        "Dange",
+        "Communal Violence",
+        "Stone Pelting",
+        "Mob Violence"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "road_traffic_accidents",
+      "aliases": [
+        "Road Traffic Accidents",
+        "Sadak Durghatna",
+        "Hit and Run",
+        "Highway Crashes"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "russian_government",
+      "aliases": [
+        "Kremlin",
+        "Russian Federation",
+        "Moscow",
+        "Russian State"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "sebi",
+      "aliases": [
+        "Securities and Exchange Board of India",
+        "Market Regulator",
+        "SEBI",
+        "Capital Markets Watchdog"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "sexual_assault",
+      "aliases": [
+        "Sexual Assault",
+        "Rape",
+        "Balatkar",
+        "Molestation"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "social_and_welfare_ministries",
+      "aliases": [
+        "Welfare Ministries",
+        "Social Sector Departments",
+        "Kalyan Mantralaya"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "stampedes",
+      "aliases": [
+        "Stampedes",
+        "Bhagdar",
+        "Crowd Crush",
+        "Temple Stampede",
+        "Festival Rush"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "state_and_local_governments",
+      "aliases": [
+        "State Governments",
+        "Local Bodies",
+        "Rajya Sarkar",
+        "Civic Authorities"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "state_electricity_boards",
+      "aliases": [
+        "Discoms",
+        "Electricity Board",
+        "Vidyut Vibhag",
+        "Power Distribution Companies"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "state_executive_bodies",
+      "aliases": [
+        "State Administrations",
+        "Provincial Governments",
+        "Rajya Prashasan"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "state_governments",
+      "aliases": [
+        "State Govt",
+        "Rajya Sarkar",
+        "Provincial Government",
+        "Chief Minister Office"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "state_transport_and_utility_boards",
+      "aliases": [
+        "State Utilities",
+        "Transport Departments",
+        "Rajya Board"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "stray_animal_attacks",
+      "aliases": [
+        "Stray Animal Attacks",
+        "Dog Bites",
+        "Kutta Katna",
+        "Stray Cattle Menace",
+        "Monkey Menace"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "street_harassment",
+      "aliases": [
+        "Street Harassment",
+        "Eve Teasing",
+        "Chhedchad",
+        "Public Harassment"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "structural_collapse",
+      "aliases": [
+        "Structural Collapse",
+        "Building Collapse",
+        "Imarat Girna",
+        "Bridge Collapse",
+        "Roof Fall"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "supreme_court_of_india",
+      "aliases": [
+        "Supreme Court",
+        "SC",
+        "Sarvochha Nyayalaya",
+        "Apex Court"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "t2",
+      "aliases": [
+        "Institutional & Sovereign Entities",
+        "State Bodies",
+        "Government & Regulators",
+        "Sovereign Institutions"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "trai",
+      "aliases": [
+        "Telecom Regulatory Authority of India",
+        "Telecom Regulator",
+        "TRAI",
+        "Telecom Watchdog"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "transit_accidents",
+      "aliases": [
+        "Transit Accidents",
+        "Transportation Mishaps",
+        "Yatayat Durghatna"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "uidai",
+      "aliases": [
+        "Unique Identification Authority of India",
+        "Aadhaar Authority",
+        "UIDAI",
+        "Aadhaar Board"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "union_budget_framework",
+      "aliases": [
+        "Union Budget",
+        "Kendriya Budget",
+        "Annual Financial Statement",
+        "Central Budget"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "upi_and_bank_scams",
+      "aliases": [
+        "UPI & Bank Scams",
+        "OTP Fraud",
+        "Jamtara Scams",
+        "Phishing Links",
+        "KYC Fraud"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "us_federal_reserve",
+      "aliases": [
+        "US Fed",
+        "Federal Reserve",
+        "American Central Bank",
+        "Fed"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "us_government",
+      "aliases": [
+        "United States Government",
+        "Washington",
+        "US Admin",
+        "White House"
+      ],
+      "category": "T2"
+    },
+    {
+      "id": "vehicle_theft",
+      "aliases": [
+        "Vehicle Theft",
+        "Bike Chori",
+        "Car Theft",
+        "Auto Theft"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "violent_crime",
+      "aliases": [
+        "Violent Crime",
+        "Physical Assaults",
+        "Hinsa"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "wildlife_encounters",
+      "aliases": [
+        "Wildlife Encounters",
+        "Leopard Sightings",
+        "Snake Bites",
+        "Human-Animal Conflict",
+        "Elephant Attacks"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "women_and_child_safety",
+      "aliases": [
+        "Women & Child Safety",
+        "Mahila Suraksha",
+        "Child Protection"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "women_safety",
+      "aliases": [
+        "Women Safety",
+        "Female Security",
+        "Mahila Suraksha"
+      ],
+      "category": "I8"
+    },
+    {
+      "id": "wto",
+      "aliases": [
+        "World Trade Organization",
+        "WTO",
+        "Global Trade Body",
+        "International Trade Organization"
+      ],
+      "category": "T2"
+    }
+  ],
+  "edges": [
+    {
+      "from": "i8",
+      "to": "physical_crime_and_law_enforcement",
+      "type": "CONTAINS",
+      "description": "Safety & Security contains physical crime and law enforcement entities"
+    },
+    {
+      "from": "i8",
+      "to": "women_and_child_safety",
+      "type": "CONTAINS",
+      "description": "Safety & Security contains women and child safety entities"
+    },
+    {
+      "from": "i8",
+      "to": "digital_and_cyber_security",
+      "type": "CONTAINS",
+      "description": "Safety & Security contains digital and cyber security entities"
+    },
+    {
+      "from": "i8",
+      "to": "accidents_and_hazards",
+      "type": "CONTAINS",
+      "description": "Safety & Security contains accidents and physical hazards"
+    },
+    {
+      "from": "i8",
+      "to": "public_order_and_emergencies",
+      "type": "CONTAINS",
+      "description": "Safety & Security contains public order and emergency entities"
+    },
+    {
+      "from": "physical_crime_and_law_enforcement",
+      "to": "violent_crime",
+      "type": "CONTAINS",
+      "description": "Physical crime contains violent crime categories"
+    },
+    {
+      "from": "physical_crime_and_law_enforcement",
+      "to": "property_crime",
+      "type": "CONTAINS",
+      "description": "Physical crime contains property crime categories"
+    },
+    {
+      "from": "physical_crime_and_law_enforcement",
+      "to": "law_enforcement_interface",
+      "type": "CONTAINS",
+      "description": "Law enforcement contains citizen interface entities"
+    },
+    {
+      "from": "women_and_child_safety",
+      "to": "women_safety",
+      "type": "CONTAINS",
+      "description": "Women and child safety contains women safety categories"
+    },
+    {
+      "from": "women_and_child_safety",
+      "to": "child_safety",
+      "type": "CONTAINS",
+      "description": "Women and child safety contains child safety categories"
+    },
+    {
+      "from": "digital_and_cyber_security",
+      "to": "financial_cyber_fraud",
+      "type": "CONTAINS",
+      "description": "Digital security contains financial cyber fraud"
+    },
+    {
+      "from": "digital_and_cyber_security",
+      "to": "digital_harassment_and_privacy",
+      "type": "CONTAINS",
+      "description": "Digital security contains digital harassment and privacy threats"
+    },
+    {
+      "from": "accidents_and_hazards",
+      "to": "transit_accidents",
+      "type": "CONTAINS",
+      "description": "Accidents and hazards contains transit accidents"
+    },
+    {
+      "from": "accidents_and_hazards",
+      "to": "infrastructure_hazards",
+      "type": "CONTAINS",
+      "description": "Accidents and hazards contains infrastructure hazards"
+    },
+    {
+      "from": "accidents_and_hazards",
+      "to": "animal_threats",
+      "type": "CONTAINS",
+      "description": "Accidents and hazards contains animal threats"
+    },
+    {
+      "from": "public_order_and_emergencies",
+      "to": "civil_unrest",
+      "type": "CONTAINS",
+      "description": "Public order contains civil unrest"
+    },
+    {
+      "from": "public_order_and_emergencies",
+      "to": "crowd_emergencies",
+      "type": "CONTAINS",
+      "description": "Public order contains crowd emergencies"
+    },
+    {
+      "from": "violent_crime",
+      "to": "homicide",
+      "type": "CONTAINS",
+      "description": "Violent crime contains homicide"
+    },
+    {
+      "from": "violent_crime",
+      "to": "assault_and_battery",
+      "type": "CONTAINS",
+      "description": "Violent crime contains assault and battery"
+    },
+    {
+      "from": "property_crime",
+      "to": "burglary_and_theft",
+      "type": "CONTAINS",
+      "description": "Property crime contains burglary and theft"
+    },
+    {
+      "from": "property_crime",
+      "to": "vehicle_theft",
+      "type": "CONTAINS",
+      "description": "Property crime contains vehicle theft"
+    },
+    {
+      "from": "law_enforcement_interface",
+      "to": "police_response_time",
+      "type": "CONTAINS",
+      "description": "Law enforcement interface contains police response time"
+    },
+    {
+      "from": "law_enforcement_interface",
+      "to": "fir_registration",
+      "type": "CONTAINS",
+      "description": "Law enforcement interface contains FIR registration processes"
+    },
+    {
+      "from": "law_enforcement_interface",
+      "to": "criminal_litigation_risk",
+      "type": "CONTAINS",
+      "description": "Law enforcement interface contains criminal litigation risk"
+    },
+    {
+      "from": "women_safety",
+      "to": "street_harassment",
+      "type": "CONTAINS",
+      "description": "Women safety contains street harassment"
+    },
+    {
+      "from": "women_safety",
+      "to": "domestic_violence",
+      "type": "CONTAINS",
+      "description": "Women safety contains domestic violence"
+    },
+    {
+      "from": "women_safety",
+      "to": "sexual_assault",
+      "type": "CONTAINS",
+      "description": "Women safety contains sexual assault"
+    },
+    {
+      "from": "child_safety",
+      "to": "child_abuse_and_pocso",
+      "type": "CONTAINS",
+      "description": "Child safety contains child abuse and POCSO cases"
+    },
+    {
+      "from": "child_safety",
+      "to": "child_kidnapping",
+      "type": "CONTAINS",
+      "description": "Child safety contains child kidnapping"
+    },
+    {
+      "from": "financial_cyber_fraud",
+      "to": "upi_and_bank_scams",
+      "type": "CONTAINS",
+      "description": "Financial cyber fraud contains UPI and bank scams"
+    },
+    {
+      "from": "financial_cyber_fraud",
+      "to": "investment_and_job_scams",
+      "type": "CONTAINS",
+      "description": "Financial cyber fraud contains investment and job scams"
+    },
+    {
+      "from": "digital_harassment_and_privacy",
+      "to": "cyberbullying_and_trolling",
+      "type": "CONTAINS",
+      "description": "Digital harassment contains cyberbullying and trolling"
+    },
+    {
+      "from": "digital_harassment_and_privacy",
+      "to": "deepfake_and_identity_theft",
+      "type": "CONTAINS",
+      "description": "Digital harassment contains deepfake and identity theft"
+    },
+    {
+      "from": "transit_accidents",
+      "to": "road_traffic_accidents",
+      "type": "CONTAINS",
+      "description": "Transit accidents contains road traffic accidents"
+    },
+    {
+      "from": "transit_accidents",
+      "to": "railway_accidents",
+      "type": "CONTAINS",
+      "description": "Transit accidents contains railway accidents"
+    },
+    {
+      "from": "infrastructure_hazards",
+      "to": "fire_hazards",
+      "type": "CONTAINS",
+      "description": "Infrastructure hazards contains fire hazards"
+    },
+    {
+      "from": "infrastructure_hazards",
+      "to": "structural_collapse",
+      "type": "CONTAINS",
+      "description": "Infrastructure hazards contains structural collapse"
+    },
+    {
+      "from": "infrastructure_hazards",
+      "to": "electrocution_hazard",
+      "type": "CONTAINS",
+      "description": "Infrastructure hazards contains electrocution hazards"
+    },
+    {
+      "from": "animal_threats",
+      "to": "stray_animal_attacks",
+      "type": "CONTAINS",
+      "description": "Animal threats contains stray animal attacks"
+    },
+    {
+      "from": "animal_threats",
+      "to": "wildlife_encounters",
+      "type": "CONTAINS",
+      "description": "Animal threats contains wildlife encounters"
+    },
+    {
+      "from": "civil_unrest",
+      "to": "riots_and_clashes",
+      "type": "CONTAINS",
+      "description": "Civil unrest contains riots and clashes"
+    },
+    {
+      "from": "civil_unrest",
+      "to": "curfews_and_section_144",
+      "type": "CONTAINS",
+      "description": "Civil unrest contains curfews and section 144 orders"
+    },
+    {
+      "from": "crowd_emergencies",
+      "to": "stampedes",
+      "type": "CONTAINS",
+      "description": "Crowd emergencies contains stampedes"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "state_executive_bodies",
+      "type": "CONTAINS",
+      "description": "State and Local Governments contains State Executive Bodies"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "local_civic_bodies",
+      "type": "CONTAINS",
+      "description": "State and Local Governments contains Local Civic Bodies"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "state_transport_and_utility_boards",
+      "type": "CONTAINS",
+      "description": "State and Local Governments contains State Transport and Utility Boards"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "economic_ministries",
+      "type": "CONTAINS",
+      "description": "Indian Union Government contains Economic Ministries"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "infrastructure_ministries",
+      "type": "CONTAINS",
+      "description": "Indian Union Government contains Infrastructure Ministries"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "social_and_welfare_ministries",
+      "type": "CONTAINS",
+      "description": "Indian Union Government contains Social and Welfare Ministries"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "financial_regulators",
+      "type": "CONTAINS",
+      "description": "Indian Regulatory Bodies contains Financial Regulators"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "commercial_and_telecom_regulators",
+      "type": "CONTAINS",
+      "description": "Indian Regulatory Bodies contains Commercial and Telecom Regulators"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "health_and_safety_regulators",
+      "type": "CONTAINS",
+      "description": "Indian Regulatory Bodies contains Health and Safety Regulators"
+    },
+    {
+      "from": "t2",
+      "to": "indian_union_government",
+      "type": "CONTAINS",
+      "description": "Institutional & Sovereign Entities contains the Indian Union Government"
+    },
+    {
+      "from": "t2",
+      "to": "indian_regulatory_bodies",
+      "type": "CONTAINS",
+      "description": "Institutional & Sovereign Entities contains Indian Regulatory Bodies"
+    },
+    {
+      "from": "t2",
+      "to": "indian_judiciary_and_law_enforcement",
+      "type": "CONTAINS",
+      "description": "Institutional & Sovereign Entities contains Indian Judiciary and Law Enforcement"
+    },
+    {
+      "from": "t2",
+      "to": "indian_statutory_frameworks_and_councils",
+      "type": "CONTAINS",
+      "description": "Institutional & Sovereign Entities contains Indian Statutory Frameworks and Councils"
+    },
+    {
+      "from": "t2",
+      "to": "state_and_local_governments",
+      "type": "CONTAINS",
+      "description": "Institutional & Sovereign Entities contains State and Local Governments"
+    },
+    {
+      "from": "t2",
+      "to": "global_sovereign_entities",
+      "type": "CONTAINS",
+      "description": "Institutional & Sovereign Entities contains Global Sovereign Entities"
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "higher_judiciary",
+      "type": "CONTAINS",
+      "description": "Indian Judiciary and Law Enforcement contains the Higher Judiciary"
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "central_investigative_agencies",
+      "type": "CONTAINS",
+      "description": "Indian Judiciary and Law Enforcement contains Central Investigative Agencies"
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "violent_crime",
+      "type": "DISRUPTS",
+      "description": "Swift judicial convictions and effective policing deter violent crime through credible punishment; slow courts and under-staffed police enable impunity."
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "property_crime",
+      "type": "DISRUPTS",
+      "description": "Active law enforcement patrolling and judicial enforcement of property rights deter theft, burglary, and encroachment in residential areas."
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "law_enforcement_interface",
+      "type": "AFFECTS",
+      "description": "Judicial directives on police reform, FIR registration mandates, and custodial rights rulings directly shape how citizens experience interactions with law enforcement."
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "civil_unrest",
+      "type": "DISRUPTS",
+      "description": "Judicial orders (Section 144 enforcement, protest bans) and police crowd control directly suppress or contain civil unrest situations."
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "crowd_emergencies",
+      "type": "AFFECTS",
+      "description": "Court-mandated crowd management protocols and police planning for large gatherings (Kumbh Mela, rallies) reduce stampede and crush risk."
+    },
+    {
+      "from": "indian_statutory_frameworks_and_councils",
+      "to": "fiscal_policies_and_councils",
+      "type": "CONTAINS",
+      "description": "Indian Statutory Frameworks and Councils contains Fiscal Policies and Councils"
+    },
+    {
+      "from": "indian_statutory_frameworks_and_councils",
+      "to": "labor_and_welfare_frameworks",
+      "type": "CONTAINS",
+      "description": "Indian Statutory Frameworks and Councils contains Labor and Welfare Frameworks"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "global_central_banks",
+      "type": "CONTAINS",
+      "description": "Global Sovereign Entities contains Global Central Banks"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "geopolitical_states",
+      "type": "CONTAINS",
+      "description": "Global Sovereign Entities contains Geopolitical States"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "international_organizations",
+      "type": "CONTAINS",
+      "description": "Global Sovereign Entities contains International Organizations"
+    },
+    {
+      "from": "economic_ministries",
+      "to": "ministry_of_finance",
+      "type": "CONTAINS",
+      "description": "Economic Ministries contains the Ministry of Finance"
+    },
+    {
+      "from": "economic_ministries",
+      "to": "ministry_of_commerce_and_industry",
+      "type": "CONTAINS",
+      "description": "Economic Ministries contains the Ministry of Commerce and Industry"
+    },
+    {
+      "from": "infrastructure_ministries",
+      "to": "ministry_of_road_transport",
+      "type": "CONTAINS",
+      "description": "Infrastructure Ministries contains the Ministry of Road Transport"
+    },
+    {
+      "from": "infrastructure_ministries",
+      "to": "ministry_of_railways",
+      "type": "CONTAINS",
+      "description": "Infrastructure Ministries contains the Ministry of Railways"
+    },
+    {
+      "from": "infrastructure_ministries",
+      "to": "ministry_of_civil_aviation",
+      "type": "CONTAINS",
+      "description": "Infrastructure Ministries contains the Ministry of Civil Aviation"
+    },
+    {
+      "from": "infrastructure_ministries",
+      "to": "ministry_of_power",
+      "type": "CONTAINS",
+      "description": "Infrastructure Ministries contains the Ministry of Power"
+    },
+    {
+      "from": "social_and_welfare_ministries",
+      "to": "ministry_of_health",
+      "type": "CONTAINS",
+      "description": "Social and Welfare Ministries contains the Ministry of Health"
+    },
+    {
+      "from": "social_and_welfare_ministries",
+      "to": "ministry_of_education",
+      "type": "CONTAINS",
+      "description": "Social and Welfare Ministries contains the Ministry of Education"
+    },
+    {
+      "from": "social_and_welfare_ministries",
+      "to": "ministry_of_agriculture",
+      "type": "CONTAINS",
+      "description": "Social and Welfare Ministries contains the Ministry of Agriculture"
+    },
+    {
+      "from": "social_and_welfare_ministries",
+      "to": "ministry_of_consumer_affairs",
+      "type": "CONTAINS",
+      "description": "Social and Welfare Ministries contains the Ministry of Consumer Affairs"
+    },
+    {
+      "from": "ministry_of_finance",
+      "to": "union_budget_framework",
+      "type": "MANAGES",
+      "description": "The Ministry of Finance directly drafts, allocates, and manages the Union Budget framework."
+    },
+    {
+      "from": "ministry_of_finance",
+      "to": "income_tax_department",
+      "type": "MANAGES",
+      "description": "The Finance Ministry oversees the CBDT, which dictates the operational capacity of the Income Tax Department."
+    },
+    {
+      "from": "ministry_of_civil_aviation",
+      "to": "dgca",
+      "type": "MANAGES",
+      "description": "The Aviation Ministry sets the overarching policy framework that the DGCA enforces."
+    },
+    {
+      "from": "ministry_of_health",
+      "to": "cdsco",
+      "type": "MANAGES",
+      "description": "The Health Ministry directs the administrative and policy priorities of the central drug regulator."
+    },
+    {
+      "from": "ministry_of_health",
+      "to": "fssai",
+      "type": "MANAGES",
+      "description": "The Health Ministry oversees the Food Safety and Standards Authority of India."
+    },
+    {
+      "from": "financial_regulators",
+      "to": "rbi",
+      "type": "CONTAINS",
+      "description": "Financial Regulators contains the Reserve Bank of India"
+    },
+    {
+      "from": "financial_regulators",
+      "to": "sebi",
+      "type": "CONTAINS",
+      "description": "Financial Regulators contains the Securities and Exchange Board of India"
+    },
+    {
+      "from": "financial_regulators",
+      "to": "irda",
+      "type": "CONTAINS",
+      "description": "Financial Regulators contains the Insurance Regulatory and Development Authority"
+    },
+    {
+      "from": "financial_regulators",
+      "to": "pfrda",
+      "type": "CONTAINS",
+      "description": "Financial Regulators contains the Pension Fund Regulatory and Development Authority"
+    },
+    {
+      "from": "commercial_and_telecom_regulators",
+      "to": "trai",
+      "type": "CONTAINS",
+      "description": "Commercial and Telecom Regulators contains the Telecom Regulatory Authority of India"
+    },
+    {
+      "from": "commercial_and_telecom_regulators",
+      "to": "cci",
+      "type": "CONTAINS",
+      "description": "Commercial and Telecom Regulators contains the Competition Commission of India"
+    },
+    {
+      "from": "commercial_and_telecom_regulators",
+      "to": "dgca",
+      "type": "CONTAINS",
+      "description": "Commercial and Telecom Regulators contains the Directorate General of Civil Aviation"
+    },
+    {
+      "from": "commercial_and_telecom_regulators",
+      "to": "rera",
+      "type": "CONTAINS",
+      "description": "Commercial and Telecom Regulators contains the Real Estate Regulatory Authority"
+    },
+    {
+      "from": "health_and_safety_regulators",
+      "to": "fssai",
+      "type": "CONTAINS",
+      "description": "Health and Safety Regulators contains the Food Safety and Standards Authority of India"
+    },
+    {
+      "from": "health_and_safety_regulators",
+      "to": "cdsco",
+      "type": "CONTAINS",
+      "description": "Health and Safety Regulators contains the Central Drugs Standard Control Organisation"
+    },
+    {
+      "from": "health_and_safety_regulators",
+      "to": "cpcb",
+      "type": "CONTAINS",
+      "description": "Health and Safety Regulators contains the Central Pollution Control Board"
+    },
+    {
+      "from": "rbi",
+      "to": "monetary_policy_committee",
+      "type": "MANAGES",
+      "description": "The RBI Governor chairs the MPC and the central bank provides the data and operational framework for its rate decisions."
+    },
+    {
+      "from": "higher_judiciary",
+      "to": "supreme_court_of_india",
+      "type": "CONTAINS",
+      "description": "Higher Judiciary contains the Supreme Court of India"
+    },
+    {
+      "from": "higher_judiciary",
+      "to": "high_courts",
+      "type": "CONTAINS",
+      "description": "Higher Judiciary contains the High Courts"
+    },
+    {
+      "from": "higher_judiciary",
+      "to": "national_green_tribunal",
+      "type": "CONTAINS",
+      "description": "Higher Judiciary contains the National Green Tribunal"
+    },
+    {
+      "from": "central_investigative_agencies",
+      "to": "enforcement_directorate",
+      "type": "CONTAINS",
+      "description": "Central Investigative Agencies contains the Enforcement Directorate"
+    },
+    {
+      "from": "central_investigative_agencies",
+      "to": "cbi",
+      "type": "CONTAINS",
+      "description": "Central Investigative Agencies contains the Central Bureau of Investigation"
+    },
+    {
+      "from": "central_investigative_agencies",
+      "to": "income_tax_department",
+      "type": "CONTAINS",
+      "description": "Central Investigative Agencies contains the Income Tax Department"
+    },
+    {
+      "from": "central_investigative_agencies",
+      "to": "nia",
+      "type": "CONTAINS",
+      "description": "Central Investigative Agencies contains the National Investigation Agency"
+    },
+    {
+      "from": "supreme_court_of_india",
+      "to": "high_courts",
+      "type": "MANAGES",
+      "description": "Supreme Court collegium decisions and judicial precedents directly dictate High Court appointments and rulings."
+    },
+    {
+      "from": "supreme_court_of_india",
+      "to": "enforcement_directorate",
+      "type": "REGULATES",
+      "description": "Supreme Court rulings on bail and PMLA provisions constrain the arbitrary arrest and attachment powers of the ED."
+    },
+    {
+      "from": "fiscal_policies_and_councils",
+      "to": "gst_council",
+      "type": "CONTAINS",
+      "description": "Fiscal Policies and Councils contains the GST Council"
+    },
+    {
+      "from": "fiscal_policies_and_councils",
+      "to": "union_budget_framework",
+      "type": "CONTAINS",
+      "description": "Fiscal Policies and Councils contains the Union Budget Framework"
+    },
+    {
+      "from": "fiscal_policies_and_councils",
+      "to": "monetary_policy_committee",
+      "type": "CONTAINS",
+      "description": "Fiscal Policies and Councils contains the Monetary Policy Committee"
+    },
+    {
+      "from": "labor_and_welfare_frameworks",
+      "to": "epfo",
+      "type": "CONTAINS",
+      "description": "Labor and Welfare Frameworks contains the Employees Provident Fund Organisation"
+    },
+    {
+      "from": "labor_and_welfare_frameworks",
+      "to": "uidai",
+      "type": "CONTAINS",
+      "description": "Labor and Welfare Frameworks contains the Unique Identification Authority of India"
+    },
+    {
+      "from": "gst_council",
+      "to": "union_budget_framework",
+      "type": "AFFECTS",
+      "description": "GST Council decisions on tax slabs directly determine the indirect tax revenue available for the Union Budget."
+    },
+    {
+      "from": "gst_council",
+      "to": "state_governments",
+      "type": "FUNDS",
+      "description": "GST compensation cess and revenue sharing formulas directly fund state exchequers."
+    },
+    {
+      "from": "state_executive_bodies",
+      "to": "state_governments",
+      "type": "CONTAINS",
+      "description": "State Executive Bodies contains State Governments"
+    },
+    {
+      "from": "local_civic_bodies",
+      "to": "municipal_corporations",
+      "type": "CONTAINS",
+      "description": "Local Civic Bodies contains Municipal Corporations"
+    },
+    {
+      "from": "local_civic_bodies",
+      "to": "panchayati_raj_institutions",
+      "type": "CONTAINS",
+      "description": "Local Civic Bodies contains Panchayati Raj Institutions"
+    },
+    {
+      "from": "state_transport_and_utility_boards",
+      "to": "regional_transport_office",
+      "type": "CONTAINS",
+      "description": "State Transport and Utility Boards contains the Regional Transport Office"
+    },
+    {
+      "from": "state_transport_and_utility_boards",
+      "to": "state_electricity_boards",
+      "type": "CONTAINS",
+      "description": "State Transport and Utility Boards contains State Electricity Boards"
+    },
+    {
+      "from": "state_governments",
+      "to": "municipal_corporations",
+      "type": "FUNDS",
+      "description": "State finance commission grants and budget allocations provide the primary funding for municipal civic bodies."
+    },
+    {
+      "from": "state_governments",
+      "to": "state_electricity_boards",
+      "type": "FUNDS",
+      "description": "State government subsidies and financial bailout packages keep debt-laden power discoms operational."
+    },
+    {
+      "from": "state_governments",
+      "to": "regional_transport_office",
+      "type": "MANAGES",
+      "description": "State transport departments directly administer RTO operations, staffing, and fee structures."
+    },
+    {
+      "from": "state_governments",
+      "to": "police_response_time",
+      "type": "AFFECTS",
+      "description": "Increased state government funding for police modernization, staffing, and PCR vans directly reduces emergency response times."
+    },
+    {
+      "from": "global_central_banks",
+      "to": "us_federal_reserve",
+      "type": "CONTAINS",
+      "description": "Global Central Banks contains the US Federal Reserve"
+    },
+    {
+      "from": "global_central_banks",
+      "to": "european_central_bank",
+      "type": "CONTAINS",
+      "description": "Global Central Banks contains the European Central Bank"
+    },
+    {
+      "from": "geopolitical_states",
+      "to": "us_government",
+      "type": "CONTAINS",
+      "description": "Geopolitical States contains the US Government"
+    },
+    {
+      "from": "geopolitical_states",
+      "to": "chinese_government",
+      "type": "CONTAINS",
+      "description": "Geopolitical States contains the Chinese Government"
+    },
+    {
+      "from": "geopolitical_states",
+      "to": "russian_government",
+      "type": "CONTAINS",
+      "description": "Geopolitical States contains the Russian Government"
+    },
+    {
+      "from": "geopolitical_states",
+      "to": "european_union",
+      "type": "CONTAINS",
+      "description": "Geopolitical States contains the European Union"
+    },
+    {
+      "from": "international_organizations",
+      "to": "opec",
+      "type": "CONTAINS",
+      "description": "International Organizations contains OPEC"
+    },
+    {
+      "from": "international_organizations",
+      "to": "wto",
+      "type": "CONTAINS",
+      "description": "International Organizations contains the World Trade Organization"
+    },
+    {
+      "from": "international_organizations",
+      "to": "imf",
+      "type": "CONTAINS",
+      "description": "International Organizations contains the International Monetary Fund"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "rbi",
+      "type": "AFFECTS",
+      "description": "US Fed rate hikes pressure the RBI to raise domestic interest rates to maintain yield differentials and prevent capital flight."
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "state_and_local_governments",
+      "type": "DISRUPTS",
+      "description": "Extreme weather events and monsoon anomalies directly disrupt state executive and local civic body operations, forcing emergency disaster management and resource diversion.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "indian_union_government",
+      "type": "AFFECTS",
+      "description": "Monsoon performance and climate drivers dictate policy shifts, relief packages, and budget allocations in economic and social welfare ministries.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "geological_and_tectonic_systems",
+      "to": "state_and_local_governments",
+      "type": "DISRUPTS",
+      "description": "Tectonic activities (earthquakes) and cryosphere events (glacial lake outbursts) cause immediate disruption to state and local government infrastructure and administration.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "geological_and_tectonic_systems",
+      "to": "transit_accidents",
+      "type": "PRODUCES",
+      "description": "Earthquakes and landslides destabilize roads and rail tracks, causing derailments, bridge collapses, and vehicular pileups in affected zones.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "geological_and_tectonic_systems",
+      "to": "infrastructure_hazards",
+      "type": "PRODUCES",
+      "description": "Seismic activity causes building collapses, dam breaches, and structural failures in bridges and flyovers, creating life-threatening infrastructure hazards.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "hydrological_systems",
+      "to": "state_and_local_governments",
+      "type": "AFFECTS",
+      "description": "River basin levels and subsurface water availability directly dictate the operational capacity of local civic bodies and state utility boards for municipal water distribution.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "biophysical_and_ecological_systems",
+      "to": "indian_regulatory_bodies",
+      "type": "AFFECTS",
+      "description": "Biological population dynamics (e.g., zoonotic disease outbreaks, agricultural pest swarms) trigger immediate responses and mandate changes from health and safety regulators.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "biophysical_and_ecological_systems",
+      "to": "animal_threats",
+      "type": "PRODUCES",
+      "description": "Habitat loss, deforestation, and ecological disruption push wild animals (leopards, elephants, snakes) into human settlements, increasing human-wildlife conflict.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "cyclonic_storm_systems",
+      "to": "structural_collapse",
+      "type": "AFFECTS",
+      "description": "High-velocity winds and storm surges from severe cyclones directly cause the collapse of weak buildings, roofs, and coastal infrastructure.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "farmer_unions",
+      "to": "ministry_of_agriculture",
+      "type": "AFFECTS",
+      "description": "Farmer union protests compel the Ministry of Agriculture to alter procurement policies and subsidy frameworks.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "hydrological_systems",
+      "type": "AFFECTS",
+      "description": "Local civic body policies on groundwater extraction, sewage management, and urban planning directly impact subsurface water tables and river basin pollution levels.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "civic_urban_infrastructure",
+      "type": "FUNDS",
+      "description": "Local civic bodies and state governments directly finance, build, and manage municipal water grids and sewage drainage networks.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "migration_and_mobility",
+      "type": "AFFECTS",
+      "description": "State-level domicile reservation policies and local nativist regulations often restrict or alter the flow of domestic inter-state migration.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "water_and_sanitation",
+      "type": "SUPPLIES",
+      "description": "Municipal corporations and local civic bodies directly manage and supply residential piped water and sewage infrastructure.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "public_transit",
+      "type": "SUPPLIES",
+      "description": "State transport boards and metro corporations directly fund, operate, and set fares for urban bus and rail transit systems.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "civic_cleanliness",
+      "type": "AFFECTS",
+      "description": "Local municipal bodies directly execute solid waste management, street sweeping, and neighborhood sanitation programs.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "urban_hydrology",
+      "type": "AFFECTS",
+      "description": "Municipal stormwater management and local body zoning directly determine the severity of urban flooding and the health of local water bodies.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "healthcare_services",
+      "type": "FUNDS",
+      "description": "State health departments directly fund and operate primary health centers and state-run public hospitals.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "highway_tolls",
+      "type": "AFFECTS",
+      "description": "State governments set state highway toll rates and grant concessions; municipal bodies manage bypass road tolls affecting daily commuter costs.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "urban_road_conditions",
+      "type": "AFFECTS",
+      "description": "Municipal corporations and PWD departments are responsible for urban road maintenance; budget allocations and contractor efficiency directly determine pothole repair and road quality.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "school_examinations",
+      "type": "AFFECTS",
+      "description": "State education boards set exam schedules, syllabi, and grading policies; government decisions on exam mode (online/offline) directly affect students.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "school_types",
+      "type": "FUNDS",
+      "description": "State budgets fund government and aided school operations; policy decisions on new school establishment and teacher recruitment shape school availability.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "state_and_local_governments",
+      "to": "student_welfare_programs",
+      "type": "FUNDS",
+      "description": "State-funded mid-day meals, scholarship schemes, free textbook programs, and school bus subsidies are directly controlled by state education department allocations.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "biophysical_and_ecological_systems",
+      "type": "AFFECTS",
+      "description": "Infrastructure and economic ministry projects (e.g., highways, mining, industrial corridors) often lead to the fragmentation or degradation of terrestrial ecosystems and biological populations.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Union government capital expenditure, taxation, and welfare spending directly drive national output, economic growth, and employment aggregates.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "transport_logistics_infrastructure",
+      "type": "FUNDS",
+      "description": "Union infrastructure ministries allocate capital and drive the expansion of national highways, railways, and dedicated freight corridors.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "energy_power_infrastructure",
+      "type": "FUNDS",
+      "description": "Central government policies and capital outlays finance the development of national power grids, renewable energy parks, and nuclear plants.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "advanced_tech_infrastructure",
+      "type": "FUNDS",
+      "description": "Union government strategic missions directly fund and develop satellite networks and semiconductor fabrication facilities.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "macro_behavioral_shifts",
+      "type": "AFFECTS",
+      "description": "Major economic and social welfare policy announcements by central ministries directly drive shifts in aggregate consumer sentiment and civic behavior.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "central_government",
+      "type": "FUNDS",
+      "description": "Union Budget allocations directly determine central government ministry staffing, pay revisions, and departmental hiring freezes or expansions.",
+      "cross": "employment"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "state_government",
+      "type": "FUNDS",
+      "description": "Finance Commission transfers and centrally-sponsored schemes fund state government employment; reduced grants force state hiring freezes.",
+      "cross": "employment"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "public_sector_undertakings",
+      "type": "FUNDS",
+      "description": "Disinvestment policy, capital infusion decisions, and PSU merger directives from the Union government directly reshape PSU workforce size and compensation.",
+      "cross": "employment"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "direct_taxes",
+      "type": "AFFECTS",
+      "description": "Union Budget changes to income tax slabs, surcharges, and deduction limits directly alter citizens' direct tax liability and compliance burden.",
+      "cross": "financial"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "railway_travel",
+      "type": "FUNDS",
+      "description": "Union Railway Budget allocations fund new trains, track upgrades, and station modernization, directly determining service frequency, speed, and ticket pricing.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "air_travel",
+      "type": "AFFECTS",
+      "description": "Aviation policy (ATF taxation, airport privatization, UDAN regional connectivity scheme) shapes route availability and ticket affordability.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "highway_bus_travel",
+      "type": "FUNDS",
+      "description": "National highway expansion (Bharatmala) and bus terminal modernization funded by the Union government improve intercity bus connectivity and travel times.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "education_economics",
+      "type": "AFFECTS",
+      "description": "Union budget education allocations, NEP policy changes, scholarship schemes, and fee regulation directives from MHRD/UGC directly affect tuition fees, loan subsidies, and education affordability.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "biophysical_and_ecological_systems",
+      "type": "AFFECTS",
+      "description": "Health, safety, and environmental regulators enforce conservation laws, emissions standards, and pollution controls that protect terrestrial ecosystems and biological populations.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "financial_and_capital_markets",
+      "type": "AFFECTS",
+      "description": "Financial regulators (RBI, SEBI) set monetary policy, liquidity measures, and market rules that directly govern equity, debt, and currency markets.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "digital_telecom_infrastructure",
+      "type": "AFFECTS",
+      "description": "Telecom regulators (e.g., TRAI) dictate spectrum allocation, pricing, and operational frameworks for telecom towers and optical fibre networks.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "energy_power_infrastructure",
+      "type": "AFFECTS",
+      "description": "Energy regulators (e.g., CERC, PNGRB) set tariffs, grid codes, and operational rules for power grids, pipelines, and power plants.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "borrowing_and_credit",
+      "type": "AFFECTS",
+      "description": "Central bank monetary policies and repo rate adjustments directly dictate the interest rates and availability of retail loans.",
+      "cross": "financial"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "savings_and_deposits",
+      "type": "AFFECTS",
+      "description": "Financial regulators dictate the baseline interest rates and regulatory frameworks for bank deposits and small savings schemes.",
+      "cross": "financial"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "insurance_premiums",
+      "type": "AFFECTS",
+      "description": "Insurance regulatory bodies directly approve and mandate changes to life and general insurance premium rates and coverage rules.",
+      "cross": "financial"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "telecom_and_internet_access",
+      "type": "AFFECTS",
+      "description": "Telecom regulators directly set tariff floors, spectrum rules, and service quality mandates that dictate consumer mobile and broadband costs.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "equity_investments",
+      "type": "AFFECTS",
+      "description": "SEBI regulations on margin requirements, FPI limits, and disclosure norms directly affect equity market liquidity, volatility, and retail investor participation.",
+      "cross": "financial"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "mutual_funds",
+      "type": "AFFECTS",
+      "description": "SEBI and AMFI regulations on expense ratios, categorization norms, and exit load structures determine mutual fund cost-effectiveness and return profiles.",
+      "cross": "financial"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "prescription_drugs",
+      "type": "AFFECTS",
+      "description": "NPPA price ceiling orders under DPCO cap essential drug prices, directly reducing out-of-pocket costs for prescription medications.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "over_the_counter_products",
+      "type": "AFFECTS",
+      "description": "FSSAI and CDSCO regulations on OTC product labeling, composition, and pricing have moderate impact on availability and retail pricing.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "home_medical_devices",
+      "type": "AFFECTS",
+      "description": "Medical device price caps (stents, knee implants) by NPPA and import duty changes by CBIC affect retail pricing of home medical devices like glucometers and BP monitors.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_regulatory_bodies",
+      "to": "education_economics",
+      "type": "AFFECTS",
+      "description": "UGC and AICTE fee cap directives, accreditation requirements, and NAAC grading norms affect institutional costs passed to students via tuition and examination fees.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "indian_regulatory_bodies",
+      "type": "AFFECTS",
+      "description": "Domestic inflation indices and growth metrics directly trigger monetary policy interventions and rate adjustments by financial regulators.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "indian_union_government",
+      "type": "AFFECTS",
+      "description": "Global supply chain disruptions and trade imbalances force economic ministries to adjust import duties and launch domestic manufacturing incentives (e.g., PLI schemes).",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "transport_logistics_infrastructure",
+      "to": "transit_accidents",
+      "type": "PRODUCES",
+      "description": "Poor road design (missing medians, sharp curves), inadequate signage, and unmanned rail crossings in transport infrastructure directly cause transit accidents.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "transport_logistics_infrastructure",
+      "to": "infrastructure_hazards",
+      "type": "PRODUCES",
+      "description": "Aging bridges, poorly maintained flyovers, and under-construction metro sites create structural hazards; collapse incidents (Morbi bridge, under-construction flyovers) are direct consequences.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "social_movements_and_collectives",
+      "to": "indian_statutory_frameworks_and_councils",
+      "type": "AFFECTS",
+      "description": "Mass social movements, labor strikes, and agrarian protests pressure the state to amend, repeal, or create new statutory and welfare frameworks.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "indian_union_government",
+      "type": "AFFECTS",
+      "description": "Shifts in mass civic participation and public sentiment directly influence the policy priorities, welfare distribution, and electoral mandates of the Union Government.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "biophysical_and_ecological_systems",
+      "type": "AFFECTS",
+      "description": "Higher judiciary rulings (e.g., National Green Tribunal orders) directly enforce the protection and restoration of terrestrial ecosystems and biological habitats.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "transport_logistics_infrastructure",
+      "type": "DISRUPTS",
+      "description": "Higher judiciary interventions on environmental or land acquisition grounds frequently halt or delay major transport infrastructure projects.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "energy_power_infrastructure",
+      "type": "DISRUPTS",
+      "description": "Court rulings on environmental clearances and resource allocations can suspend operations at coal power plants and halt pipeline constructions.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "indian_judiciary_and_law_enforcement",
+      "to": "cultural_and_religious_forces",
+      "type": "AFFECTS",
+      "description": "Higher judiciary rulings frequently intervene in, regulate, or redefine the administration of religious trusts, festival observances, and cultural practices.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_statutory_frameworks_and_councils",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Statutory fiscal policies and tax frameworks (e.g., GST Council decisions) directly impact domestic inflation indices and national output.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_statutory_frameworks_and_councils",
+      "to": "social_movements_and_collectives",
+      "type": "PRODUCES",
+      "description": "The introduction or alteration of labor, welfare, and agricultural statutory frameworks directly triggers mobilization by trade unions and agrarian collectives.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_statutory_frameworks_and_councils",
+      "to": "employment_metrics_and_conditions",
+      "type": "AFFECTS",
+      "description": "Statutory wage boards and labor frameworks directly dictate minimum wages, working hours, and formal workplace conditions.",
+      "cross": "employment"
+    },
+    {
+      "from": "indian_statutory_frameworks_and_councils",
+      "to": "household_energy",
+      "type": "AFFECTS",
+      "description": "Statutory bodies like GST Council and petroleum ministry set administered prices and subsidies for household cooking and heating fuels.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_statutory_frameworks_and_councils",
+      "to": "direct_taxes",
+      "type": "AFFECTS",
+      "description": "GST Council rate revisions and Finance Act amendments to IT Act slabs directly alter tax liability; CBDT circulars change compliance procedures and deadlines.",
+      "cross": "financial"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "financial_and_capital_markets",
+      "type": "AFFECTS",
+      "description": "Global central bank rate decisions (e.g., US Federal Reserve) directly drive institutional investment flows (FPI/FDI) and currency market valuations in India.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "global_commodity_markets",
+      "type": "AFFECTS",
+      "description": "Geopolitical states (e.g., OPEC+ nations) control production quotas and strategic reserves, directly dictating global energy and metal commodity supplies.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "international_trade_and_supply_chains",
+      "type": "AFFECTS",
+      "description": "Geopolitical states enact tariffs, sanctions, and trade agreements that directly shape global supply chains and trade balances.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "transport_logistics_infrastructure",
+      "type": "DISRUPTS",
+      "description": "Geopolitical conflicts and sanctions by foreign states disrupt global shipping routes and international logistics corridors.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "migration_and_mobility",
+      "type": "AFFECTS",
+      "description": "Foreign government immigration policies, visa quotas, and geopolitical actions directly dictate international migration flows and diaspora mobility.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "equity_investments",
+      "type": "AFFECTS",
+      "description": "US Fed rate decisions, EU sanctions, and geopolitical tensions drive FII/FPI flows into Indian equities; hawkish global stance triggers sell-offs affecting retail portfolios.",
+      "cross": "financial"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "mutual_funds",
+      "type": "AFFECTS",
+      "description": "Global sovereign decisions affect mutual fund NAVs through their impact on underlying equity and debt markets; international fund exposure amplifies the effect.",
+      "cross": "financial"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "undergraduate_programs",
+      "type": "AFFECTS",
+      "description": "Foreign university visa policies, scholarship programs, and bilateral education agreements shape overseas undergraduate study options for Indian students.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "global_sovereign_entities",
+      "to": "postgraduate_research",
+      "type": "AFFECTS",
+      "description": "International research grants, PhD fellowship programs, and foreign government R&D funding decisions directly affect postgraduate research opportunities and funding.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "ministry_of_finance",
+      "to": "india_10yr_bond_yield",
+      "type": "AFFECTS",
+      "description": "Higher government borrowing targets set by the Finance Ministry increase the supply of G-secs, pushing up bond yields.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "ministry_of_commerce_and_industry",
+      "to": "india_trade_deficit",
+      "type": "AFFECTS",
+      "description": "Export promotion schemes (like PLI) and import substitution policies reduce the national trade deficit.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "ministry_of_commerce_and_industry",
+      "to": "fii_fpi_flows",
+      "type": "AFFECTS",
+      "description": "Liberalization of Foreign Direct Investment (FDI) limits by the Commerce Ministry increases foreign capital inflows.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "ministry_of_road_transport",
+      "to": "highway_network",
+      "type": "MANAGES",
+      "description": "MoRTH budget allocations and NHAI project approvals directly expand the national highway and expressway network.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "ministry_of_railways",
+      "to": "indian_railways_network",
+      "type": "MANAGES",
+      "description": "Railway Ministry capital expenditure drives track electrification, gauge conversion, and network expansion.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "ministry_of_railways",
+      "to": "dedicated_freight_corridors",
+      "type": "MANAGES",
+      "description": "Ministry funding and land acquisition support accelerate the completion of Dedicated Freight Corridors.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "ministry_of_power",
+      "to": "national_power_grid",
+      "type": "MANAGES",
+      "description": "Power Ministry policies and investments strengthen transmission capacity and grid integration.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "ministry_of_power",
+      "to": "renewable_energy_parks",
+      "type": "FUNDS",
+      "description": "Subsidies, PLI schemes, and policy targets set by the Power Ministry increase solar and wind park capacity.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "ministry_of_health",
+      "to": "pediatric_vaccines",
+      "type": "SUPPLIES",
+      "description": "The Ministry of Health funds and administers the Universal Immunization Programme, directly dictating the availability and coverage of pediatric vaccines.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "ministry_of_education",
+      "to": "government_schools",
+      "type": "FUNDS",
+      "description": "Central government budget allocations through the Ministry of Education directly fund the infrastructure and teacher salaries of Kendriya Vidyalayas and Navodaya Vidyalayas.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "ministry_of_agriculture",
+      "to": "global_food_grain_supply",
+      "type": "AFFECTS",
+      "description": "Indian agriculture ministry decisions on export quotas or bans significantly alter the global supply of rice and wheat.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "ministry_of_agriculture",
+      "to": "arable_topsoil",
+      "type": "AFFECTS",
+      "description": "Long-term fertilizer subsidies encourage chemical overuse, gradually degrading arable topsoil health.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "ministry_of_agriculture",
+      "to": "wheat_flour",
+      "type": "AFFECTS",
+      "description": "Minimum Support Price (MSP) and export bans by the Agriculture Ministry directly dictate domestic wheat availability and retail flour prices.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "ministry_of_agriculture",
+      "to": "tur_dal",
+      "type": "AFFECTS",
+      "description": "Increases in the Minimum Support Price (MSP) for pulses set by the Agriculture Ministry raise the baseline procurement cost, pushing up retail tur dal prices.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "ministry_of_consumer_affairs",
+      "to": "wpi",
+      "type": "AFFECTS",
+      "description": "Releasing buffer stocks of pulses and onions into the open market suppresses wholesale food inflation.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "rbi",
+      "to": "usd_inr_exchange",
+      "type": "AFFECTS",
+      "description": "RBI intervention by selling dollars in the forex market prevents rupee depreciation (lowering the USD-INR rate).",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "rbi",
+      "to": "india_forex_reserves",
+      "type": "MANAGES",
+      "description": "RBI's dollar purchasing activities directly build up the national foreign exchange reserves.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "rbi",
+      "to": "upi_platform",
+      "type": "REGULATES",
+      "description": "RBI regulatory frameworks and NPCI oversight expand the capacity, security, and adoption of the UPI ecosystem.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "rbi",
+      "to": "residential_rent",
+      "type": "AFFECTS",
+      "description": "RBI interest rate hikes increase developer borrowing costs, slowing down new housing supply and pushing up residential rents.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "rbi",
+      "to": "private_bank_jobs",
+      "type": "AFFECTS",
+      "description": "Accommodative RBI monetary policies lower the cost of capital, spurring credit growth and prompting private banks to expand their branch networks and sales teams.",
+      "cross": "employment"
+    },
+    {
+      "from": "rbi",
+      "to": "savings_and_deposits",
+      "type": "AFFECTS",
+      "description": "RBI repo rate adjustments directly influence bank savings and FD interest rates.",
+      "cross": "financial"
+    },
+    {
+      "from": "sebi",
+      "to": "nifty_50",
+      "type": "REGULATES",
+      "description": "Stricter SEBI margin requirements and curbs on derivatives trading suppress speculative volumes and index volatility.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "trai",
+      "to": "telecom_spectrum",
+      "type": "REGULATES",
+      "description": "TRAI pricing recommendations and auction rules determine the volume of spectrum deployed by telcos.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "trai",
+      "to": "telecom_towers_network",
+      "type": "REGULATES",
+      "description": "Infrastructure sharing regulations by TRAI facilitate the expansion of mobile tower density.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cci",
+      "to": "ondc_platform",
+      "type": "AFFECTS",
+      "description": "Antitrust actions by CCI against e-commerce duopolies drive merchants to adopt the open ONDC network.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "dgca",
+      "to": "commercial_airports",
+      "type": "REGULATES",
+      "description": "DGCA safety clearances, aerodrome licensing, and slot allocations increase operational airport capacity.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cpcb",
+      "to": "coal_power_plants",
+      "type": "REGULATES",
+      "description": "Strict CPCB emission norms force the closure or reduced output of older, polluting thermal power plants.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cpcb",
+      "to": "asthma",
+      "type": "AFFECTS",
+      "description": "Stricter enforcement of industrial and vehicular emission norms by the CPCB reduces ambient particulate matter, lowering the incidence of asthma attacks.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "national_green_tribunal",
+      "to": "coal_power_plants",
+      "type": "REGULATES",
+      "description": "NGT shutdown orders halt operations at thermal plants violating environmental clearances.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "national_green_tribunal",
+      "to": "highway_network",
+      "type": "REGULATES",
+      "description": "Environmental clearance stays and ecological mandates by the NGT delay highway construction projects.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "national_green_tribunal",
+      "to": "outdoor_heat",
+      "type": "AFFECTS",
+      "description": "NGT orders halting the felling of urban trees preserve the local green canopy, mitigating the urban heat island effect.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "gst_council",
+      "to": "packaged_and_processed_foods",
+      "type": "AFFECTS",
+      "description": "GST slab changes directly impact retail prices of packaged and processed foods.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "gst_council",
+      "to": "retail_tomato",
+      "type": "AFFECTS",
+      "description": "GST on agricultural inputs, packaging, and transport affects retail vegetable prices.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "gst_council",
+      "to": "biscuits_and_snacks",
+      "type": "AFFECTS",
+      "description": "GST Council tax slab decisions directly affect MRP of biscuits and snacks.",
+      "cross": "food_agriculture"
+    },
+    {
+      "from": "union_budget_framework",
+      "to": "india_gdp_growth",
+      "type": "AFFECTS",
+      "description": "Increased capital expenditure allocations in the Union Budget stimulate infrastructure creation and national GDP growth.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "union_budget_framework",
+      "to": "mgnrega_wages",
+      "type": "FUNDS",
+      "description": "Annual financial allocations made in the Union Budget directly determine the total pool of funds available for MGNREGA wage payouts across the country.",
+      "cross": "employment"
+    },
+    {
+      "from": "union_budget_framework",
+      "to": "mid_day_meal",
+      "type": "FUNDS",
+      "description": "Annual allocations in the Union Budget for the PM Poshan scheme dictate the scale, nutritional quality, and reach of the mid-day meal program in schools.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "union_budget_framework",
+      "to": "cooking_fuel",
+      "type": "FUNDS",
+      "description": "Union budget petroleum subsidy allocations determine LPG cylinder price and cooking fuel costs.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "union_budget_framework",
+      "to": "direct_taxes",
+      "type": "AFFECTS",
+      "description": "Union budget sets income tax slabs, exemptions, and direct tax policy for individuals.",
+      "cross": "financial"
+    },
+    {
+      "from": "union_budget_framework",
+      "to": "lpg_cylinder",
+      "type": "AFFECTS",
+      "description": "Budget allocations for cooking fuel subsidies (Ujjwala) reduce LPG cylinder price.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "union_budget_framework",
+      "to": "electricity_tariff",
+      "type": "AFFECTS",
+      "description": "Budget allocations for power sector and renewables influence consumer electricity tariffs.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "monetary_policy_committee",
+      "to": "india_10yr_bond_yield",
+      "type": "AFFECTS",
+      "description": "Increases in the repo rate by the MPC immediately drive up benchmark sovereign bond yields.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "monetary_policy_committee",
+      "to": "wpi",
+      "type": "AFFECTS",
+      "description": "Rate hikes by the MPC suppress aggregate demand and corporate borrowing, eventually cooling wholesale inflation.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "monetary_policy_committee",
+      "to": "home_loan_emi",
+      "type": "AFFECTS",
+      "description": "When the MPC hikes the benchmark repo rate, commercial banks immediately pass the increased cost of funds to consumers by raising floating interest rates on home loans, increasing the EMI burden.",
+      "cross": "financial"
+    },
+    {
+      "from": "monetary_policy_committee",
+      "to": "residential_rent",
+      "type": "AFFECTS",
+      "description": "When the MPC raises interest rates, home loan EMIs become unaffordable for many, forcing potential buyers to rent instead, which increases rental demand and prices.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "monetary_policy_committee",
+      "to": "auto_loan_emi",
+      "type": "AFFECTS",
+      "description": "Tightening monetary policy raises the cost of funds for auto financiers, leading to higher interest rates and EMIs for new vehicle loans.",
+      "cross": "financial"
+    },
+    {
+      "from": "monetary_policy_committee",
+      "to": "personal_loan_emi",
+      "type": "AFFECTS",
+      "description": "Repo rate hikes increase the baseline cost of unsecured credit, driving up the EMIs for newly issued personal loans.",
+      "cross": "financial"
+    },
+    {
+      "from": "epfo",
+      "to": "epfo_payroll_additions",
+      "type": "MANAGES",
+      "description": "EPFO administrative drives and compliance enforcement directly increase the recorded formal payroll additions.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "epfo",
+      "to": "dii_flows",
+      "type": "FUNDS",
+      "description": "EPFO mandates to invest a percentage of corpus in equities channel massive funds into Domestic Institutional Investors.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "uidai",
+      "to": "aadhaar_database",
+      "type": "MANAGES",
+      "description": "UIDAI policies, server upgrades, and biometric drives expand the capacity and reach of the Aadhaar database.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "municipal_corporations",
+      "to": "municipal_water_grid",
+      "type": "MANAGES",
+      "description": "Civic body investments and public works projects expand piped water supply networks in urban areas.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "municipal_corporations",
+      "to": "sewage_drainage_network",
+      "type": "MANAGES",
+      "description": "Municipal funding and urban planning improve stormwater drains and sewage treatment infrastructure.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "municipal_corporations",
+      "to": "urban_population_density",
+      "type": "REGULATES",
+      "description": "Strict municipal zoning laws and Floor Space Index (FSI) limits restrict urban crowding and density.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "municipal_corporations",
+      "to": "public_wifi",
+      "type": "FUNDS",
+      "description": "Budget allocations and smart city initiatives by municipal corporations fund the deployment and maintenance of free public WiFi zones.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "state_electricity_boards",
+      "to": "national_power_grid",
+      "type": "DEPENDS_ON",
+      "description": "The financial health of state discoms determines their ability to purchase and draw power from the national grid.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "us_treasury_yields",
+      "type": "AFFECTS",
+      "description": "Federal Reserve interest rate hikes directly and immediately increase yields on US Treasury bonds.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "us_dollar_index",
+      "type": "AFFECTS",
+      "description": "Higher Fed rates attract global capital seeking yield, strengthening the US Dollar against other currencies.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "fii_fpi_flows",
+      "type": "AFFECTS",
+      "description": "Fed monetary tightening pulls foreign portfolio capital out of emerging markets like India back to US assets.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "it_sector_salary",
+      "type": "AFFECTS",
+      "description": "US Fed rate cuts lower the cost of capital, boosting tech investments and driving up hiring budgets and salaries in the Indian IT sector.",
+      "cross": "employment"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "it_sector_jobs",
+      "type": "AFFECTS",
+      "description": "US Federal Reserve interest rate hikes increase borrowing costs for American corporations, leading to tightened tech budgets and reduced outsourcing demand, which suppresses hiring in the Indian IT sector.",
+      "cross": "employment"
+    },
+    {
+      "from": "european_central_bank",
+      "to": "us_dollar_index",
+      "type": "AFFECTS",
+      "description": "ECB rate hikes strengthen the Euro, which inversely lowers the value of the US Dollar Index (DXY).",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_government",
+      "to": "us_consumer_demand",
+      "type": "AFFECTS",
+      "description": "Federal stimulus packages and tax cuts boost disposable income, driving American consumer spending.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_government",
+      "to": "global_semiconductor_supply_chain",
+      "type": "REGULATES",
+      "description": "US export controls and sanctions restrict the flow of advanced microchips and manufacturing equipment globally.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "chinese_government",
+      "to": "china_manufacturing_output",
+      "type": "AFFECTS",
+      "description": "State subsidies, credit easing, and infrastructure spending by Beijing directly boost Chinese factory production.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "chinese_government",
+      "to": "industrial_metals_index",
+      "type": "AFFECTS",
+      "description": "Chinese state-backed property and infrastructure stimulus drives massive global demand for steel, copper, and aluminum.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "russian_government",
+      "to": "global_natural_gas",
+      "type": "DISRUPTS",
+      "description": "Russian state decisions to restrict pipeline flows or weaponize energy exports spike global natural gas prices.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "russian_government",
+      "to": "global_food_grain_supply",
+      "type": "AFFECTS",
+      "description": "Russian export bans and geopolitical actions restrict global food grain supply.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "european_union",
+      "to": "global_shipping_routes",
+      "type": "REGULATES",
+      "description": "EU carbon border taxes and maritime emission norms restrict older, polluting vessels from European shipping routes.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "opec",
+      "to": "brent_crude",
+      "type": "AFFECTS",
+      "description": "OPEC+ coordinated production cuts artificially restrict global oil supply, driving up Brent crude prices.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "wto",
+      "to": "india_trade_deficit",
+      "type": "REGULATES",
+      "description": "WTO mandates against protective import tariffs force India to open markets, potentially widening the trade deficit.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "imf",
+      "to": "india_forex_reserves",
+      "type": "FUNDS",
+      "description": "IMF Special Drawing Rights (SDR) allocations directly increase India's foreign exchange reserves.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "telecom_towers_network",
+      "to": "digital_and_cyber_security",
+      "type": "PRODUCES",
+      "description": "Mobile network expansion brings more users online, proportionally increasing exposure to SIM swap fraud, phishing calls, and OTP interception attacks.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "urban_population_density",
+      "to": "street_harassment",
+      "type": "AFFECTS",
+      "description": "Extreme crowding in urban public transport and markets provides perpetrators with anonymity, emboldening acts of eve-teasing and street harassment.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "indian_union_government",
+      "type": "AFFECTS",
+      "description": "Debt and bond market yields determine sovereign borrowing costs, directly influencing the Union Government's fiscal deficit targets and infrastructure spending capacity.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "digital_telecom_infrastructure",
+      "to": "indian_union_government",
+      "type": "SUPPLIES",
+      "description": "Digital Public Infrastructure (DPI) and data centers supply the foundational technological rails for the Union government's welfare delivery and tax collection systems.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "digital_telecom_infrastructure",
+      "to": "state_and_local_governments",
+      "type": "SUPPLIES",
+      "description": "Optical fibre networks and telecom infrastructure provide the necessary connectivity backbone for state-level e-governance and municipal administration.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "cultural_and_religious_forces",
+      "to": "state_and_local_governments",
+      "type": "AFFECTS",
+      "description": "Linguistic and regional identity forces strongly dictate the political priorities, administrative boundaries, and cultural policies of state and local governments.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "national_unemployment_rate",
+      "to": "burglary_and_theft",
+      "type": "AFFECTS",
+      "description": "High aggregate joblessness drives economic desperation, leading to a statistical increase in petty property crimes like theft and chain snatching.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "national_unemployment_rate",
+      "to": "investment_and_job_scams",
+      "type": "AFFECTS",
+      "description": "A large pool of desperate, unemployed youth creates a highly susceptible target demographic for fraudulent work-from-home and Telegram task scams.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "data_centers",
+      "to": "digital_and_cyber_security",
+      "type": "PRODUCES",
+      "description": "Concentrated citizen data in data centers creates high-value targets for breaches; data leaks from government or fintech servers expose citizens to identity theft.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "digital_public_infrastructure",
+      "to": "digital_and_cyber_security",
+      "type": "PRODUCES",
+      "description": "Widespread UPI and Aadhaar adoption expands the attack surface for financial cyber fraud; phishing attacks exploiting DPI trust directly target citizens.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "indian_statutory_frameworks_and_councils",
+      "type": "AFFECTS",
+      "description": "Long-term demographic shifts, such as a youth bulge or an aging population, necessitate structural adaptations in national fiscal policies and labor/welfare frameworks.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "india_aging_population",
+      "to": "epfo",
+      "type": "AFFECTS",
+      "description": "A rising elderly demographic increases the volume of pension withdrawals and financial liabilities managed by the EPFO.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "civil_unrest",
+      "type": "PRODUCES",
+      "description": "Industrial strikes, bandh calls, and protest marches by labor and trade unions directly create civil unrest situations including road blockades, factory lockouts, and market shutdowns.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "crowd_emergencies",
+      "type": "PRODUCES",
+      "description": "Large-scale worker rallies and union demonstrations at factory gates or industrial townships can escalate into crowd crush situations when management-worker tensions peak.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "civil_unrest",
+      "type": "PRODUCES",
+      "description": "Farmer union agitations (MSP protests, land acquisition resistance) directly create civil unrest through highway blockades, rail rokos, and prolonged sit-in protests at borders.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "crowd_emergencies",
+      "type": "PRODUCES",
+      "description": "Massive farmer marches and mahapanchayat gatherings can lead to crowd emergencies when police use force or when organizational crowd control fails at protest sites.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "identity_and_rights_movements",
+      "to": "civil_unrest",
+      "type": "PRODUCES",
+      "description": "Caste reservation agitations, student protests, and rights movements directly trigger civil unrest through bandh calls, institutional shutdowns, and public property damage.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "identity_and_rights_movements",
+      "to": "crowd_emergencies",
+      "type": "PRODUCES",
+      "description": "Large-scale identity-based rallies and reservation protests can escalate into violent crowd emergencies, especially when police resort to lathi charges or tear gas.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "caste_reservation_movements",
+      "to": "state_governments",
+      "type": "AFFECTS",
+      "description": "Caste-based reservation movements force state governments to implement new quota policies in education and public employment.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "student_unions",
+      "to": "ministry_of_education",
+      "type": "AFFECTS",
+      "description": "Campus agitations by student unions compel the Ministry of Education to intervene in university administration and exam policies.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "autumn_festive_season",
+      "to": "stampedes",
+      "type": "PRODUCES",
+      "description": "Massive, concentrated crowd surges at pandals and markets during Diwali and Durga Puja significantly elevate the risk of fatal crowd crushes.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "waqf_boards",
+      "to": "state_governments",
+      "type": "AFFECTS",
+      "description": "Disputes over the administration of Islamic endowments require direct legal and administrative intervention from state governments.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "regional_language_movements",
+      "to": "state_governments",
+      "type": "AFFECTS",
+      "description": "Linguistic pride movements pressure state governments to mandate the use of regional languages in local commerce and education.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "voter_turnout_aggregates",
+      "to": "union_budget_framework",
+      "type": "AFFECTS",
+      "description": "High voter turnout aggregates signal strong democratic engagement, which influences the Union Budget framework toward more populist allocations.",
+      "cross": "macro_geopolitics"
+    }
+  ]
+}

@@ -1,0 +1,1438 @@
+{
+  "domain": "employment",
+  "node_count": 56,
+  "edge_count": 132,
+  "internal_edge_count": 58,
+  "cross_domain_edge_count": 74,
+  "nodes": [
+    {
+      "id": "agriculture_and_allied",
+      "aliases": [
+        "Agriculture & Allied Labor",
+        "Farming Work",
+        "Rural Farm Employment",
+        "Kheti Ka Kaam"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "auto_driver_earnings",
+      "aliases": [
+        "Auto Driver Earnings",
+        "Ola/Uber Auto Income",
+        "Rickshaw Driver Pay",
+        "Auto Wale Ki Kamai"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "bfsi_sector",
+      "aliases": [
+        "BFSI Sector",
+        "Banking and Finance Jobs",
+        "Insurance Sector Employment",
+        "Private Bank Jobs"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "cab_driver_earnings",
+      "aliases": [
+        "Cab Driver Earnings",
+        "Ola/Uber Driver Income",
+        "Taxi Driver Pay",
+        "Cab Partner Earnings"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "central_government",
+      "aliases": [
+        "Central Government",
+        "Union Government Jobs",
+        "Kendriya Vidyalaya/Central Roles",
+        "Central Govt Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "construction_and_manual",
+      "aliases": [
+        "Construction & Manual Labor",
+        "Building Site Work",
+        "Physical Labor",
+        "Nirman Karya"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "construction_worker_wages",
+      "aliases": [
+        "Construction Worker Wages",
+        "Builder Labor Pay",
+        "Mistri/Majdoor Income",
+        "Construction Dihadi"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "corporate_employment",
+      "aliases": [
+        "Corporate Employment",
+        "Formal Private Sector Jobs",
+        "White Collar Jobs",
+        "Private Company Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "defense_agniveer_roles",
+      "aliases": [
+        "Defense Agniveer Roles",
+        "Armed Forces Jobs",
+        "Agnipath Scheme Jobs",
+        "Fauj Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "delivery_and_logistics",
+      "aliases": [
+        "Delivery & Logistics",
+        "Last Mile Delivery Work",
+        "Courier Partner Roles",
+        "Delivery Work"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "domestic_and_care",
+      "aliases": [
+        "Domestic & Care Work",
+        "Household Help",
+        "Caregiving Labor",
+        "Gharelu Kaam"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "domestic_help_wages",
+      "aliases": [
+        "Domestic Help Wages",
+        "Maid Salary",
+        "House Help Pay",
+        "Kaamwali Bai Salary"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "employment_metrics_and_conditions",
+      "aliases": [
+        "Employment Metrics & Conditions",
+        "Labor Market Indicators",
+        "Workplace Rules",
+        "Rozgar Niyam"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "factory_worker_jobs",
+      "aliases": [
+        "Factory Worker Jobs",
+        "Shop Floor Roles",
+        "Manufacturing Labor",
+        "Karkhana Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "farm_labor_wages",
+      "aliases": [
+        "Farm Labor Wages",
+        "Agricultural Daily Wage",
+        "Kisan Mazdoor Pay",
+        "Khet Mazdoori"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "food_delivery_payouts",
+      "aliases": [
+        "Food Delivery Payouts",
+        "Swiggy/Zomato Earnings",
+        "Delivery Partner Pay",
+        "Food Delivery Income"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "freelance_and_services",
+      "aliases": [
+        "Freelance & Services",
+        "Home Services Platform Work",
+        "Independent Contracting",
+        "Freelance Work"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "gig_and_platform_economy",
+      "aliases": [
+        "Gig & Platform Economy",
+        "Platform Work",
+        "Freelance Delivery and Rides",
+        "Gig Work"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "gig_worker_payouts",
+      "aliases": [
+        "Gig Worker Payouts",
+        "Overall Platform Earnings",
+        "Gig Economy Wages",
+        "Platform Worker Income"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "government_and_psu",
+      "aliases": [
+        "Government & PSU Employment",
+        "Public Sector Jobs",
+        "Sarkari Naukri",
+        "Govt Jobs"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "government_teacher_jobs",
+      "aliases": [
+        "Government Teacher Jobs",
+        "TET Qualified Roles",
+        "Sarkari Master",
+        "Govt School Teacher"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "i4",
+      "aliases": [
+        "Livelihood & Employment",
+        "Jobs and Careers",
+        "Earning Capacity",
+        "Rozgar"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "informal_and_daily_wage",
+      "aliases": [
+        "Informal & Daily Wage Labor",
+        "Unorganized Sector Labor",
+        "Dihadi Majdoori",
+        "Daily Wage Work"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "it_and_tech_sector",
+      "aliases": [
+        "IT & Tech Sector",
+        "Information Technology Jobs",
+        "Software Industry",
+        "IT Sector"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "it_sector_jobs",
+      "aliases": [
+        "IT Sector Jobs",
+        "Software Engineering Roles",
+        "Tech Hiring",
+        "IT Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "it_sector_salary",
+      "aliases": [
+        "IT Sector Salary",
+        "TCS Salary",
+        "Infosys Pay",
+        "Tech Compensation",
+        "Software Engineer Package"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "kirana_store_income",
+      "aliases": [
+        "Kirana Store Income",
+        "Grocery Shop Earnings",
+        "Retail Shop Profit",
+        "Kirana Dukaan Aamdani"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "manufacturing_and_core",
+      "aliases": [
+        "Manufacturing & Core Sector",
+        "Industrial Jobs",
+        "Factory Employment",
+        "Core Engineering"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "maternity_leave_benefits",
+      "aliases": [
+        "Maternity Leave Benefits",
+        "Pregnancy Leave",
+        "Paid Maternity Time",
+        "Matritva Avkash"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "mgnrega_wages",
+      "aliases": [
+        "MGNREGA Wages",
+        "NREGA Pay",
+        "100 Days Work Wage",
+        "Manrega Majdoori"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "minimum_wage",
+      "aliases": [
+        "Minimum Wage",
+        "Base Legal Pay",
+        "Floor Wage",
+        "N न्यूनतम मजदूरी (Nyuntam Majdoori)"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "msme_manufacturing",
+      "aliases": [
+        "MSME Manufacturing",
+        "Small Scale Industries",
+        "Micro Enterprises",
+        "Laghu Udyog"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "private_bank_jobs",
+      "aliases": [
+        "Private Bank Jobs",
+        "HDFC/ICICI Roles",
+        "Banking Executive Jobs",
+        "Private Bank Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "psu_bank_jobs",
+      "aliases": [
+        "PSU Bank Jobs",
+        "SBI/BOB Roles",
+        "IBPS PO Jobs",
+        "Sarkari Bank Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "public_sector_undertakings",
+      "aliases": [
+        "Public Sector Undertakings",
+        "PSU Companies",
+        "Maharatna/Navratna Jobs",
+        "PSU Sector"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "quick_commerce_payouts",
+      "aliases": [
+        "Quick Commerce Payouts",
+        "Blinkit/Zepto Earnings",
+        "10-Minute Delivery Pay",
+        "Q-Commerce Income"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "railway_rrb_jobs",
+      "aliases": [
+        "Railway RRB Jobs",
+        "Indian Railways Employment",
+        "Group D Railway Jobs",
+        "Railway Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "retail_and_trade",
+      "aliases": [
+        "Retail & Trade",
+        "Shopkeeping",
+        "Merchant Business",
+        "Dukandari"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "ride_hailing",
+      "aliases": [
+        "Ride Hailing",
+        "Taxi Aggregator Work",
+        "Mobility Platform Jobs",
+        "Cab Driving"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "rural_employment_schemes",
+      "aliases": [
+        "Rural Employment Schemes",
+        "Government Wage Programs",
+        "Village Job Guarantees",
+        "Gramin Rozgar Yojana"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "rural_unemployment_rate",
+      "aliases": [
+        "Rural Unemployment Rate",
+        "Village Joblessness",
+        "Agricultural Underemployment",
+        "Gramin Berozgari"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "self_employment_and_msme",
+      "aliases": [
+        "Self Employment & MSME",
+        "Small Business Ownership",
+        "Entrepreneurship",
+        "Apna Vyapar"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "small_factory_owner_income",
+      "aliases": [
+        "Small Factory Owner Income",
+        "SME Manufacturing Profit",
+        "Workshop Owner Earnings",
+        "Karkhana Malik Aamdani"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "startup_ecosystem",
+      "aliases": [
+        "Startup Ecosystem",
+        "Venture Backed Companies",
+        "Indian Startups",
+        "New Age Tech Companies"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "startup_jobs",
+      "aliases": [
+        "Startup Jobs",
+        "Unicorn Company Roles",
+        "Early Stage Startup Hiring",
+        "Startup Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "startup_layoffs",
+      "aliases": [
+        "Startup Layoffs",
+        "Tech Downsizing",
+        "Startup Firing Volume",
+        "Pink Slips in Startups"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "state_government",
+      "aliases": [
+        "State Government",
+        "Provincial Government Jobs",
+        "State PSC Roles",
+        "Rajya Sarkar Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "state_police_jobs",
+      "aliases": [
+        "State Police Jobs",
+        "Constable Roles",
+        "Police Inspector Jobs",
+        "Police Ki Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "statutory_wages",
+      "aliases": [
+        "Statutory Wages",
+        "Legal Pay Floors",
+        "Government Mandated Pay",
+        "Kanooni Vetna"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "street_vendor_income",
+      "aliases": [
+        "Street Vendor Income",
+        "Thela/Hawker Earnings",
+        "Roadside Stall Profit",
+        "Rehri Patri Aamdani"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "unemployment_levels",
+      "aliases": [
+        "Unemployment Levels",
+        "Joblessness Rates",
+        "Lack of Jobs",
+        "Berozgari Dar"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "upsc_civil_services",
+      "aliases": [
+        "UPSC Civil Services",
+        "IAS/IPS Jobs",
+        "Civil Servant Roles",
+        "UPSC Naukri"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "urban_company_partner_earnings",
+      "aliases": [
+        "Urban Company Partner Earnings",
+        "Home Service Professional Pay",
+        "Beautician/Plumber Platform Income",
+        "UC Partner Payouts"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "urban_unemployment_rate",
+      "aliases": [
+        "Urban Unemployment Rate",
+        "City Joblessness",
+        "Urban Youth Unemployment",
+        "Shehari Berozgari"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "working_hours",
+      "aliases": [
+        "Working Hours",
+        "Shift Timings",
+        "Overtime Rules",
+        "Kaam Ke Ghante"
+      ],
+      "category": "I4"
+    },
+    {
+      "id": "workplace_conditions",
+      "aliases": [
+        "Workplace Conditions",
+        "Employment Terms",
+        "Labor Rules",
+        "Kaam Ke Halat"
+      ],
+      "category": "I4"
+    }
+  ],
+  "edges": [
+    {
+      "from": "i4",
+      "to": "corporate_employment",
+      "type": "CONTAINS",
+      "description": "Livelihood & Employment contains formal corporate and private sector jobs"
+    },
+    {
+      "from": "i4",
+      "to": "government_and_psu",
+      "type": "CONTAINS",
+      "description": "Livelihood & Employment contains public sector and government jobs"
+    },
+    {
+      "from": "i4",
+      "to": "gig_and_platform_economy",
+      "type": "CONTAINS",
+      "description": "Livelihood & Employment contains platform-based gig work"
+    },
+    {
+      "from": "i4",
+      "to": "informal_and_daily_wage",
+      "type": "CONTAINS",
+      "description": "Livelihood & Employment contains unorganized and daily wage labor"
+    },
+    {
+      "from": "i4",
+      "to": "self_employment_and_msme",
+      "type": "CONTAINS",
+      "description": "Livelihood & Employment contains small business and self-employment"
+    },
+    {
+      "from": "i4",
+      "to": "employment_metrics_and_conditions",
+      "type": "CONTAINS",
+      "description": "Livelihood & Employment contains overarching labor market metrics and conditions"
+    },
+    {
+      "from": "corporate_employment",
+      "to": "it_and_tech_sector",
+      "type": "CONTAINS",
+      "description": "Corporate employment contains the IT and technology sector"
+    },
+    {
+      "from": "corporate_employment",
+      "to": "startup_ecosystem",
+      "type": "CONTAINS",
+      "description": "Corporate employment contains the venture-backed startup ecosystem"
+    },
+    {
+      "from": "corporate_employment",
+      "to": "manufacturing_and_core",
+      "type": "CONTAINS",
+      "description": "Corporate employment contains formal manufacturing and core industrial jobs"
+    },
+    {
+      "from": "corporate_employment",
+      "to": "bfsi_sector",
+      "type": "CONTAINS",
+      "description": "Corporate employment contains the banking, financial services, and insurance sector"
+    },
+    {
+      "from": "government_and_psu",
+      "to": "central_government",
+      "type": "CONTAINS",
+      "description": "Government employment contains central union government roles"
+    },
+    {
+      "from": "government_and_psu",
+      "to": "state_government",
+      "type": "CONTAINS",
+      "description": "Government employment contains state-level provincial roles"
+    },
+    {
+      "from": "government_and_psu",
+      "to": "public_sector_undertakings",
+      "type": "CONTAINS",
+      "description": "Government employment contains public sector undertaking (PSU) roles"
+    },
+    {
+      "from": "gig_and_platform_economy",
+      "to": "delivery_and_logistics",
+      "type": "CONTAINS",
+      "description": "Gig economy contains delivery and logistics platform work"
+    },
+    {
+      "from": "gig_and_platform_economy",
+      "to": "ride_hailing",
+      "type": "CONTAINS",
+      "description": "Gig economy contains ride-hailing and mobility platform work"
+    },
+    {
+      "from": "gig_and_platform_economy",
+      "to": "freelance_and_services",
+      "type": "CONTAINS",
+      "description": "Gig economy contains freelance and home services platform work"
+    },
+    {
+      "from": "informal_and_daily_wage",
+      "to": "agriculture_and_allied",
+      "type": "CONTAINS",
+      "description": "Informal labor contains agricultural and farming daily wage work"
+    },
+    {
+      "from": "informal_and_daily_wage",
+      "to": "construction_and_manual",
+      "type": "CONTAINS",
+      "description": "Informal labor contains construction and manual physical labor"
+    },
+    {
+      "from": "informal_and_daily_wage",
+      "to": "domestic_and_care",
+      "type": "CONTAINS",
+      "description": "Informal labor contains domestic help and caregiving work"
+    },
+    {
+      "from": "informal_and_daily_wage",
+      "to": "rural_employment_schemes",
+      "type": "CONTAINS",
+      "description": "Informal labor contains government-backed rural employment schemes"
+    },
+    {
+      "from": "self_employment_and_msme",
+      "to": "retail_and_trade",
+      "type": "CONTAINS",
+      "description": "Self-employment contains retail, shopkeeping, and street vending"
+    },
+    {
+      "from": "self_employment_and_msme",
+      "to": "msme_manufacturing",
+      "type": "CONTAINS",
+      "description": "Self-employment contains micro and small scale manufacturing enterprises"
+    },
+    {
+      "from": "employment_metrics_and_conditions",
+      "to": "statutory_wages",
+      "type": "CONTAINS",
+      "description": "Employment metrics contains statutory and legally mandated wage floors"
+    },
+    {
+      "from": "employment_metrics_and_conditions",
+      "to": "unemployment_levels",
+      "type": "CONTAINS",
+      "description": "Employment metrics contains aggregate unemployment and joblessness rates"
+    },
+    {
+      "from": "employment_metrics_and_conditions",
+      "to": "workplace_conditions",
+      "type": "CONTAINS",
+      "description": "Employment metrics contains workplace rules, hours, and benefits"
+    },
+    {
+      "from": "it_and_tech_sector",
+      "to": "it_sector_jobs",
+      "type": "CONTAINS",
+      "description": "IT sector contains software engineering and tech jobs"
+    },
+    {
+      "from": "it_and_tech_sector",
+      "to": "it_sector_salary",
+      "type": "CONTAINS",
+      "description": "IT sector contains compensation and salary levels for tech workers"
+    },
+    {
+      "from": "it_sector_salary",
+      "to": "kirana_store_income",
+      "type": "AFFECTS",
+      "description": "IT salaries drive local urban consumption, affecting kirana store income."
+    },
+    {
+      "from": "startup_ecosystem",
+      "to": "startup_jobs",
+      "type": "CONTAINS",
+      "description": "Startup ecosystem contains jobs at venture-backed companies"
+    },
+    {
+      "from": "startup_ecosystem",
+      "to": "startup_layoffs",
+      "type": "CONTAINS",
+      "description": "Startup ecosystem contains the volume of layoffs and downsizing events"
+    },
+    {
+      "from": "manufacturing_and_core",
+      "to": "factory_worker_jobs",
+      "type": "CONTAINS",
+      "description": "Manufacturing sector contains shop floor and factory worker jobs"
+    },
+    {
+      "from": "bfsi_sector",
+      "to": "private_bank_jobs",
+      "type": "CONTAINS",
+      "description": "BFSI sector contains jobs at private banks and financial institutions"
+    },
+    {
+      "from": "central_government",
+      "to": "upsc_civil_services",
+      "type": "CONTAINS",
+      "description": "Central government contains UPSC civil service roles"
+    },
+    {
+      "from": "central_government",
+      "to": "railway_rrb_jobs",
+      "type": "CONTAINS",
+      "description": "Central government contains Indian Railways employment"
+    },
+    {
+      "from": "central_government",
+      "to": "defense_agniveer_roles",
+      "type": "CONTAINS",
+      "description": "Central government contains armed forces and Agniveer roles"
+    },
+    {
+      "from": "state_government",
+      "to": "state_police_jobs",
+      "type": "CONTAINS",
+      "description": "State government contains state police and constabulary jobs"
+    },
+    {
+      "from": "state_government",
+      "to": "government_teacher_jobs",
+      "type": "CONTAINS",
+      "description": "State government contains public school teaching jobs"
+    },
+    {
+      "from": "public_sector_undertakings",
+      "to": "psu_bank_jobs",
+      "type": "CONTAINS",
+      "description": "PSU sector contains jobs at public sector banks"
+    },
+    {
+      "from": "delivery_and_logistics",
+      "to": "food_delivery_payouts",
+      "type": "CONTAINS",
+      "description": "Delivery logistics contains payouts for food delivery partners"
+    },
+    {
+      "from": "delivery_and_logistics",
+      "to": "quick_commerce_payouts",
+      "type": "CONTAINS",
+      "description": "Delivery logistics contains payouts for quick commerce delivery partners"
+    },
+    {
+      "from": "ride_hailing",
+      "to": "cab_driver_earnings",
+      "type": "CONTAINS",
+      "description": "Ride hailing contains earnings for cab and taxi drivers"
+    },
+    {
+      "from": "ride_hailing",
+      "to": "auto_driver_earnings",
+      "type": "CONTAINS",
+      "description": "Ride hailing contains earnings for auto rickshaw drivers"
+    },
+    {
+      "from": "freelance_and_services",
+      "to": "urban_company_partner_earnings",
+      "type": "CONTAINS",
+      "description": "Freelance services contains earnings for home service platform partners"
+    },
+    {
+      "from": "freelance_and_services",
+      "to": "gig_worker_payouts",
+      "type": "CONTAINS",
+      "description": "Freelance services contains overall gig worker payouts and wages"
+    },
+    {
+      "from": "agriculture_and_allied",
+      "to": "farm_labor_wages",
+      "type": "CONTAINS",
+      "description": "Agriculture labor contains daily wages for farm workers"
+    },
+    {
+      "from": "farm_labor_wages",
+      "to": "rural_unemployment_rate",
+      "type": "AFFECTS",
+      "description": "Higher farm wages push mechanization, reducing hiring and increasing rural unemployment."
+    },
+    {
+      "from": "construction_and_manual",
+      "to": "construction_worker_wages",
+      "type": "CONTAINS",
+      "description": "Construction labor contains daily wages for construction workers"
+    },
+    {
+      "from": "domestic_and_care",
+      "to": "domestic_help_wages",
+      "type": "CONTAINS",
+      "description": "Domestic work contains wages for household help and maids"
+    },
+    {
+      "from": "rural_employment_schemes",
+      "to": "mgnrega_wages",
+      "type": "CONTAINS",
+      "description": "Rural employment schemes contains MGNREGA daily wages"
+    },
+    {
+      "from": "mgnrega_wages",
+      "to": "kirana_store_income",
+      "type": "AFFECTS",
+      "description": "MGNREGA wage payments increase rural purchasing power, boosting kirana store sales."
+    },
+    {
+      "from": "retail_and_trade",
+      "to": "kirana_store_income",
+      "type": "CONTAINS",
+      "description": "Retail trade contains income generated by kirana store owners"
+    },
+    {
+      "from": "retail_and_trade",
+      "to": "street_vendor_income",
+      "type": "CONTAINS",
+      "description": "Retail trade contains income generated by street vendors and hawkers"
+    },
+    {
+      "from": "msme_manufacturing",
+      "to": "small_factory_owner_income",
+      "type": "CONTAINS",
+      "description": "MSME manufacturing contains income generated by small factory owners"
+    },
+    {
+      "from": "statutory_wages",
+      "to": "minimum_wage",
+      "type": "CONTAINS",
+      "description": "Statutory wages contains the legally mandated minimum wage"
+    },
+    {
+      "from": "unemployment_levels",
+      "to": "urban_unemployment_rate",
+      "type": "CONTAINS",
+      "description": "Unemployment levels contains the urban unemployment rate"
+    },
+    {
+      "from": "unemployment_levels",
+      "to": "rural_unemployment_rate",
+      "type": "CONTAINS",
+      "description": "Unemployment levels contains the rural unemployment rate"
+    },
+    {
+      "from": "workplace_conditions",
+      "to": "working_hours",
+      "type": "CONTAINS",
+      "description": "Workplace conditions contains standard working hours and shift lengths"
+    },
+    {
+      "from": "workplace_conditions",
+      "to": "maternity_leave_benefits",
+      "type": "CONTAINS",
+      "description": "Workplace conditions contains maternity leave benefits and duration"
+    },
+    {
+      "from": "retail_diesel",
+      "to": "farm_labor_wages",
+      "type": "AFFECTS",
+      "description": "Higher diesel prices increase agricultural mechanization costs, affecting farm labor demand.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "informal_and_daily_wage",
+      "to": "savings_account_balance",
+      "type": "AFFECTS",
+      "description": "Daily wage earnings directly determine household savings for informal workers.",
+      "cross": "financial"
+    },
+    {
+      "from": "it_sector_jobs",
+      "to": "credit_card_dues",
+      "type": "AFFECTS",
+      "description": "IT job losses lead to income loss, increasing outstanding credit card dues.",
+      "cross": "financial"
+    },
+    {
+      "from": "it_sector_jobs",
+      "to": "bank_deposits",
+      "type": "PRODUCES",
+      "description": "IT sector employment generates salary income that accumulates as bank deposits.",
+      "cross": "financial"
+    },
+    {
+      "from": "it_sector_salary",
+      "to": "savings_account_balance",
+      "type": "AFFECTS",
+      "description": "IT salary changes directly affect household savings capacity.",
+      "cross": "financial"
+    },
+    {
+      "from": "it_sector_salary",
+      "to": "credit_card_dues",
+      "type": "AFFECTS",
+      "description": "IT salary drops lead to higher unpaid credit card dues.",
+      "cross": "financial"
+    },
+    {
+      "from": "farm_labor_wages",
+      "to": "savings_account_balance",
+      "type": "AFFECTS",
+      "description": "Farm labor wage levels determine rural household savings capacity.",
+      "cross": "financial"
+    },
+    {
+      "from": "farm_labor_wages",
+      "to": "indian_macroeconomic_indicators",
+      "type": "AFFECTS",
+      "description": "Farm labor wage changes alter rural employment dynamics and agricultural production costs.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "mgnrega_wages",
+      "to": "savings_account_balance",
+      "type": "AFFECTS",
+      "description": "MGNREGA wage payments improve rural household savings capacity.",
+      "cross": "financial"
+    },
+    {
+      "from": "hospital_beds",
+      "to": "informal_and_daily_wage",
+      "type": "DISRUPTS",
+      "description": "Hospitalization causes lost working days and income for daily wage earners.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "ambient_aqi",
+      "to": "construction_and_manual",
+      "type": "DISRUPTS",
+      "description": "Severe air pollution reduces outdoor work capacity for construction laborers.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "outdoor_heat",
+      "to": "construction_and_manual",
+      "type": "DISRUPTS",
+      "description": "Extreme heat directly reduces construction worker productivity and hours.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "outdoor_heat",
+      "to": "informal_and_daily_wage",
+      "type": "DISRUPTS",
+      "description": "Extreme heat reduces working hours and productivity for outdoor laborers.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "upi_transaction_success",
+      "to": "kirana_store_income",
+      "type": "AFFECTS",
+      "description": "UPI payment availability increases digital transactions at kirana stores, boosting income.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "agriculture_and_allied",
+      "type": "DISRUPTS",
+      "description": "Extreme heat, unseasonal rain, or drought directly halts outdoor agricultural work (sowing, harvesting, threshing), eliminating daily wages for farm laborers.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "construction_and_manual",
+      "type": "DISRUPTS",
+      "description": "Heavy rainfall, storms, and extreme heat force construction site shutdowns, suspending wages for daily-wage masons, helpers, and laborers.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "rural_employment_schemes",
+      "type": "DISRUPTS",
+      "description": "MGNREGA and similar schemes involve outdoor earthwork and road building; monsoon and extreme heat halt work sites, reducing available wage-days.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "southwest_monsoon",
+      "to": "farm_labor_wages",
+      "type": "AFFECTS",
+      "description": "Good monsoons increase agricultural activity and labor demand, pushing up farm wage rates.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "central_government",
+      "type": "FUNDS",
+      "description": "Union Budget allocations directly determine central government ministry staffing, pay revisions, and departmental hiring freezes or expansions.",
+      "cross": "governance"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "state_government",
+      "type": "FUNDS",
+      "description": "Finance Commission transfers and centrally-sponsored schemes fund state government employment; reduced grants force state hiring freezes.",
+      "cross": "governance"
+    },
+    {
+      "from": "indian_union_government",
+      "to": "public_sector_undertakings",
+      "type": "FUNDS",
+      "description": "Disinvestment policy, capital infusion decisions, and PSU merger directives from the Union government directly reshape PSU workforce size and compensation.",
+      "cross": "governance"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "employment_metrics_and_conditions",
+      "type": "AFFECTS",
+      "description": "Macroeconomic employment aggregates directly translate to the unemployment levels and wage conditions experienced by citizens.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "it_and_tech_sector",
+      "type": "AFFECTS",
+      "description": "GDP growth rate, rupee strength, and inflation influence IT sector order books and margins; strong macro outlook drives hiring while weakness triggers bench-marking and layoffs.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "startup_ecosystem",
+      "type": "AFFECTS",
+      "description": "Macro indicators like GDP growth and interest rates shape VC/PE funding appetite; tight money conditions reduce startup funding and trigger workforce reductions.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "manufacturing_and_core",
+      "type": "AFFECTS",
+      "description": "IIP, PMI, and capacity utilization rates directly drive manufacturing hiring cycles; strong industrial output expands factory employment.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_macroeconomic_indicators",
+      "to": "bfsi_sector",
+      "type": "AFFECTS",
+      "description": "Interest rate environment, credit growth, and NPA ratios shape bank profitability and NBFC health, directly determining BFSI sector hiring and compensation.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "it_and_tech_sector",
+      "type": "AFFECTS",
+      "description": "IT export order flows depend on global trade health; protectionist policies (visa restrictions, data localization) and offshore outsourcing trends shape Indian IT hiring.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "startup_ecosystem",
+      "type": "AFFECTS",
+      "description": "Cross-border VC funding flows and international market access for D2C brands depend on trade openness; restrictive policies limit startup growth and employment.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "manufacturing_and_core",
+      "type": "AFFECTS",
+      "description": "Export orders, raw material imports, and PLI scheme-linked production targets directly drive manufacturing employment; trade disruptions cause factory shutdowns and layoffs.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "bfsi_sector",
+      "type": "AFFECTS",
+      "description": "Trade finance volumes and cross-border payment flows moderately influence BFSI sector activity; the effect on BFSI employment is indirect through overall economic health.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "retail_and_trade",
+      "type": "AFFECTS",
+      "description": "Cheap Chinese imports via e-commerce and open trade agreements undercut local retailers and small traders; FTA-driven import surges displace kirana and small shop revenues.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "international_trade_and_supply_chains",
+      "to": "msme_manufacturing",
+      "type": "AFFECTS",
+      "description": "Import competition from lower-cost manufacturing nations squeezes MSME margins; simultaneously, export access to global markets creates growth opportunities for competitive MSMEs.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "agriculture_and_allied",
+      "type": "SUPPLIES",
+      "description": "Seasonal agricultural labor migration supplies harvest and sowing workforce; reverse migration (as during COVID lockdowns) creates acute farm labor shortages.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "construction_and_manual",
+      "type": "SUPPLIES",
+      "description": "Interstate migrant workers form the backbone of urban construction labor; migration patterns directly determine construction labor availability and wage rates.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "domestic_and_care",
+      "type": "SUPPLIES",
+      "description": "Rural-to-urban female migration supplies domestic help and care workers; migration restrictions or reverse flows create acute shortages and wage inflation.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "migration_and_mobility",
+      "to": "rural_employment_schemes",
+      "type": "AFFECTS",
+      "description": "When out-migration reduces rural labor pools, MGNREGA demand drops; conversely, reverse migration spikes MGNREGA enrollment as returnees seek guaranteed employment.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "indian_statutory_frameworks_and_councils",
+      "to": "employment_metrics_and_conditions",
+      "type": "AFFECTS",
+      "description": "Statutory wage boards and labor frameworks directly dictate minimum wages, working hours, and formal workplace conditions.",
+      "cross": "governance"
+    },
+    {
+      "from": "rbi",
+      "to": "private_bank_jobs",
+      "type": "AFFECTS",
+      "description": "Accommodative RBI monetary policies lower the cost of capital, spurring credit growth and prompting private banks to expand their branch networks and sales teams.",
+      "cross": "governance"
+    },
+    {
+      "from": "union_budget_framework",
+      "to": "mgnrega_wages",
+      "type": "FUNDS",
+      "description": "Annual financial allocations made in the Union Budget directly determine the total pool of funds available for MGNREGA wage payouts across the country.",
+      "cross": "governance"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "it_sector_salary",
+      "type": "AFFECTS",
+      "description": "US Fed rate cuts lower the cost of capital, boosting tech investments and driving up hiring budgets and salaries in the Indian IT sector.",
+      "cross": "governance"
+    },
+    {
+      "from": "us_federal_reserve",
+      "to": "it_sector_jobs",
+      "type": "AFFECTS",
+      "description": "US Federal Reserve interest rate hikes increase borrowing costs for American corporations, leading to tightened tech budgets and reduced outsourcing demand, which suppresses hiring in the Indian IT sector.",
+      "cross": "governance"
+    },
+    {
+      "from": "india_gdp_growth",
+      "to": "it_and_tech_sector",
+      "type": "AFFECTS",
+      "description": "GDP growth rates drive IT sector hiring, project volumes, and salary growth trajectories.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "india_trade_deficit",
+      "to": "msme_manufacturing",
+      "type": "DISRUPTS",
+      "description": "Rising trade deficit signals competitive pressure on domestic small manufacturers from cheaper imports.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "us_consumer_demand",
+      "to": "manufacturing_and_core",
+      "type": "AFFECTS",
+      "description": "US consumer demand drives Indian manufacturing exports and factory production volumes.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "highway_network",
+      "to": "construction_worker_wages",
+      "type": "AFFECTS",
+      "description": "Large-scale expansion of the national highway and expressway network creates massive demand for manual labor, driving up daily wages for construction workers.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "upi_platform",
+      "to": "street_vendor_income",
+      "type": "AFFECTS",
+      "description": "The ubiquitous adoption of the UPI platform eliminates the friction of exact change and credit risk, increasing impulse purchases and daily sales volumes for street vendors.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "telecom_towers_network",
+      "to": "delivery_and_logistics",
+      "type": "SUPPLIES",
+      "description": "Delivery platforms (Swiggy, Zomato, Dunzo) require continuous mobile connectivity for real-time GPS tracking, order dispatch, and payment processing; tower outages directly halt operations.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "telecom_towers_network",
+      "to": "ride_hailing",
+      "type": "SUPPLIES",
+      "description": "Ride-hailing apps (Uber, Ola) depend on uninterrupted mobile data for driver-rider matching, live navigation, and fare computation; network dead zones make ride-hailing unavailable.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "telecom_towers_network",
+      "to": "freelance_and_services",
+      "type": "SUPPLIES",
+      "description": "Urban service professionals (plumbers, electricians via UrbanClap) and gig workers receive job notifications and customer communications through mobile networks; tower coverage gaps reduce earning opportunities.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "urban_population_density",
+      "to": "domestic_help_wages",
+      "type": "AFFECTS",
+      "description": "Increasing population density in premium urban high-rises concentrates demand for household labor, driving up the monthly wages commanded by domestic help.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "it_and_tech_sector",
+      "type": "FUNDS",
+      "description": "IPO markets and secondary equity funding enable IT companies to raise growth capital; buoyant markets support hiring while downturns trigger cost optimization.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "startup_ecosystem",
+      "type": "FUNDS",
+      "description": "VC funding availability, IPO exit windows, and public market valuations directly govern startup funding rounds, burn rates, and workforce scaling decisions.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "manufacturing_and_core",
+      "type": "FUNDS",
+      "description": "Corporate bond markets and equity issuance fund manufacturing capex; capital market freeze delays factory expansion and associated job creation.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "financial_and_capital_markets",
+      "to": "bfsi_sector",
+      "type": "AFFECTS",
+      "description": "BFSI sector employment is directly tied to capital market activity — trading volumes, AUM growth, and new product launches drive hiring across banks, AMCs, and brokerages.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "national_unemployment_rate",
+      "to": "gig_worker_payouts",
+      "type": "AFFECTS",
+      "description": "High aggregate unemployment floods the gig economy with desperate labor, allowing platform algorithms to suppress per-task payouts due to an oversupply of workers.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "currency_and_forex_markets",
+      "to": "self_employment_and_msme",
+      "type": "AFFECTS",
+      "description": "Currency depreciation raises imported raw material costs for small businesses.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "data_centers",
+      "to": "delivery_and_logistics",
+      "type": "SUPPLIES",
+      "description": "Delivery platform backends (order management, routing algorithms, payment processing) run on data center servers; server capacity and uptime directly affect platform reliability during peak hours.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "data_centers",
+      "to": "ride_hailing",
+      "type": "SUPPLIES",
+      "description": "Ride-hailing surge pricing algorithms, driver allocation systems, and trip settlement engines operate from data centers; compute capacity directly affects ride availability and matching speed.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "data_centers",
+      "to": "freelance_and_services",
+      "type": "SUPPLIES",
+      "description": "Freelance platforms (Upwork, Fiverr, UrbanClap) host their marketplace logic and payment processing in data centers; outages or slowdowns block service bookings and payments.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "aggregate_consumer_confidence",
+      "to": "retail_and_trade",
+      "type": "AFFECTS",
+      "description": "Consumer confidence levels directly drive discretionary spending at local retail stores.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "aggregate_consumer_confidence",
+      "to": "kirana_store_income",
+      "type": "AFFECTS",
+      "description": "Higher consumer confidence increases daily goods spending, boosting kirana income.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "optical_fibre_network",
+      "to": "freelance_and_services",
+      "type": "SUPPLIES",
+      "description": "Remote freelancers and work-from-home service providers depend on stable broadband fibre connections for video conferences, file transfers, and platform access; poor connectivity reduces productivity and earnings.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "digital_public_infrastructure",
+      "to": "delivery_and_logistics",
+      "type": "SUPPLIES",
+      "description": "UPI payment integration enables seamless COD-free delivery transactions; Aadhaar-based onboarding streamlines delivery partner registration and compliance verification.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "digital_public_infrastructure",
+      "to": "ride_hailing",
+      "type": "SUPPLIES",
+      "description": "UPI AutoPay and in-app payment via DPI rails enable frictionless ride fare collection; Aadhaar eKYC speeds up driver onboarding and regulatory compliance.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "digital_public_infrastructure",
+      "to": "freelance_and_services",
+      "type": "SUPPLIES",
+      "description": "UPI enables instant payment settlement for gig workers after task completion; DigiLocker-based credential verification streamlines professional service provider onboarding.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "demographics_and_population",
+      "to": "employment_metrics_and_conditions",
+      "type": "AFFECTS",
+      "description": "Working-age population growth directly increases labor market competition, impacting unemployment levels and wage stagnation.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "construction_and_manual",
+      "type": "AFFECTS",
+      "description": "Labor union pressure for minimum wage compliance, safety standards, and overtime regulations on construction sites improves daily-wage worker conditions but may also slow project timelines.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "labor_and_trade_unions",
+      "to": "domestic_and_care",
+      "type": "AFFECTS",
+      "description": "Nascent domestic worker unions advocate for minimum wages, weekly offs, and working hour limits; their growing influence is gradually formalizing conditions for household help.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "agriculture_and_allied",
+      "type": "AFFECTS",
+      "description": "Farmer unions negotiate MSP increases, input subsidies, and crop insurance coverage, directly improving income security and working conditions for agricultural laborers.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "agrarian_collectives",
+      "to": "rural_employment_schemes",
+      "type": "AFFECTS",
+      "description": "Farmer organizations and rural collectives demand increased MGNREGA allocations, timely wage payments, and expanded work categories, pressuring governments to improve scheme implementation.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "identity_and_rights_movements",
+      "to": "rural_employment_schemes",
+      "type": "AFFECTS",
+      "description": "Social justice movements demanding employment quotas and expanded MGNREGA eligibility for marginalized communities pressure governments to increase scheme budgets and coverage.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "organized_labor_unions",
+      "to": "minimum_wage",
+      "type": "AFFECTS",
+      "description": "Collective bargaining and strikes by organized labor unions pressure state governments to revise and increase statutory minimum wage floors.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "gig_worker_unions",
+      "to": "gig_worker_payouts",
+      "type": "AFFECTS",
+      "description": "Successful strikes and collective bargaining by gig worker unions force aggregator platforms to revise their rate cards and increase per-task payouts.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "inr_usd_exchange_rate",
+      "to": "small_factory_owner_income",
+      "type": "AFFECTS",
+      "description": "Weaker rupee raises imported raw material costs, squeezing small factory margins.",
+      "cross": "macro_geopolitics"
+    }
+  ]
+}

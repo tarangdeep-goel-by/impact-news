@@ -1,0 +1,1129 @@
+{
+  "domain": "food_agriculture",
+  "node_count": 51,
+  "edge_count": 91,
+  "internal_edge_count": 50,
+  "cross_domain_edge_count": 41,
+  "nodes": [
+    {
+      "id": "biscuits_and_snacks",
+      "aliases": [
+        "Biscuits",
+        "Namkeen",
+        "Packaged Snacks",
+        "Chips",
+        "Bhujia"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "butter_and_ghee",
+      "aliases": [
+        "Butter",
+        "Ghee",
+        "Clarified Butter",
+        "Makhan",
+        "Desi Ghee"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "chana_dal",
+      "aliases": [
+        "Chana Dal",
+        "Bengal Gram",
+        "Chickpea Split",
+        "Kadalai Paruppu"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "coconut_oil",
+      "aliases": [
+        "Coconut Oil",
+        "Nariyal Tel",
+        "Thengai Ennai",
+        "Copra Oil"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "coffee_powder",
+      "aliases": [
+        "Coffee Powder",
+        "Instant Coffee",
+        "Filter Coffee",
+        "Kapi"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "dairy_and_eggs",
+      "aliases": [
+        "Dairy and Eggs",
+        "Milk Products",
+        "Dairy",
+        "Doodh aur Ande"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "dry_red_chilli",
+      "aliases": [
+        "Dry Red Chilli",
+        "Lal Mirch",
+        "Milagai",
+        "Chilli Powder"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "edible_oils",
+      "aliases": [
+        "Edible Oils",
+        "Cooking Oil",
+        "Khane ka Tel",
+        "Vegetable Oils"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "fine_dining_restaurants",
+      "aliases": [
+        "Fine Dining",
+        "Sit-down Restaurants",
+        "Restaurant Dining",
+        "Eating Out"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "food_delivery_services",
+      "aliases": [
+        "Food Delivery",
+        "Swiggy",
+        "Zomato",
+        "Cloud Kitchens",
+        "Online Food Order"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "fresh_produce",
+      "aliases": [
+        "Fresh Produce",
+        "Fruits and Vegetables",
+        "Sabzi aur Phal",
+        "Fresh Groceries"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "freshwater_fish",
+      "aliases": [
+        "Freshwater Fish",
+        "Rohu",
+        "Katla",
+        "Inland Fish",
+        "Machli"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "fruits",
+      "aliases": [
+        "Fruits",
+        "Phal",
+        "Pazham",
+        "Fresh Fruits"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "garlic_and_ginger",
+      "aliases": [
+        "Garlic",
+        "Ginger",
+        "Lahsun",
+        "Adrak",
+        "Ginger Garlic Paste"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "green_vegetables",
+      "aliases": [
+        "Green Vegetables",
+        "Hari Sabzi",
+        "Leafy Greens",
+        "Palak",
+        "Bhaji"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "i1",
+      "aliases": [
+        "Food & Nutrition",
+        "Food",
+        "Diet",
+        "Groceries",
+        "Khana"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "instant_noodles",
+      "aliases": [
+        "Instant Noodles",
+        "Maggi",
+        "Ramen",
+        "Packaged Noodles"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "liquid_milk",
+      "aliases": [
+        "Liquid Milk",
+        "Doodh",
+        "Dairy Milk",
+        "Paal",
+        "Packet Milk"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "marine_fish",
+      "aliases": [
+        "Marine Fish",
+        "Sea Fish",
+        "Surmai",
+        "Pomfret",
+        "Prawns",
+        "Seafood"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "meat_and_seafood",
+      "aliases": [
+        "Meat and Seafood",
+        "Non-Veg",
+        "Poultry and Fish",
+        "Maans aur Machli"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "millets",
+      "aliases": [
+        "Millets",
+        "Bajra",
+        "Jowar",
+        "Ragi",
+        "Shree Anna",
+        "Nutri-cereals"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "moong_dal",
+      "aliases": [
+        "Moong Dal",
+        "Green Gram",
+        "Mung Bean",
+        "Paasi Paruppu"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "mustard_oil",
+      "aliases": [
+        "Mustard Oil",
+        "Sarson ka Tel",
+        "Kachi Ghani",
+        "Kadugu Ennai"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "mutton_and_lamb",
+      "aliases": [
+        "Mutton",
+        "Goat Meat",
+        "Lamb",
+        "Bakra",
+        "Meat"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "out_of_home_dining",
+      "aliases": [
+        "Out of Home Dining",
+        "Restaurant Food",
+        "Food Delivery",
+        "Bahar ka Khana"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "packaged_and_processed_foods",
+      "aliases": [
+        "Packaged Foods",
+        "FMCG Foods",
+        "Processed Foods",
+        "Snacks and Beverages"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "palm_oil",
+      "aliases": [
+        "Palm Oil",
+        "Palmolein",
+        "Pam Tel",
+        "Imported Palm Oil"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "paneer_and_cheese",
+      "aliases": [
+        "Paneer",
+        "Cottage Cheese",
+        "Processed Cheese",
+        "Dairy Cheese"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "poultry_chicken",
+      "aliases": [
+        "Chicken",
+        "Murgh",
+        "Poultry Meat",
+        "Broiler Chicken",
+        "Kozhi"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "poultry_eggs",
+      "aliases": [
+        "Eggs",
+        "Ande",
+        "Poultry Eggs",
+        "Muttai",
+        "Table Eggs"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "pulses_and_legumes",
+      "aliases": [
+        "Pulses and Legumes",
+        "Dals",
+        "Lentils",
+        "Dalhan"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "quick_service_restaurants",
+      "aliases": [
+        "QSR",
+        "Fast Food",
+        "Burger Chains",
+        "Pizza Delivery",
+        "Fast Food Outlets"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "retail_apple",
+      "aliases": [
+        "Retail Apple",
+        "Seb",
+        "Apple Prices",
+        "Kashmiri Apple"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "retail_banana",
+      "aliases": [
+        "Retail Banana",
+        "Kela",
+        "Vazhaikkai",
+        "Banana Prices"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "retail_mango",
+      "aliases": [
+        "Retail Mango",
+        "Aam",
+        "Alphonso",
+        "Mango Prices"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "retail_onion",
+      "aliases": [
+        "Retail Onion",
+        "Pyaaz",
+        "Kanda",
+        "Vengayam",
+        "Onion Prices"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "retail_potato",
+      "aliases": [
+        "Retail Potato",
+        "Aloo",
+        "Urulaikizhangu",
+        "Batata"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "retail_rice",
+      "aliases": [
+        "Retail Rice",
+        "Chawal",
+        "Basmati",
+        "Non-Basmati Rice",
+        "Arisi"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "retail_salt",
+      "aliases": [
+        "Retail Salt",
+        "Namak",
+        "Iodized Salt",
+        "Uppu"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "retail_sugar",
+      "aliases": [
+        "Retail Sugar",
+        "Cheeni",
+        "Shakkar",
+        "Sarkkarai",
+        "White Sugar"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "retail_tomato",
+      "aliases": [
+        "Retail Tomato",
+        "Tamatar",
+        "Thakkali",
+        "Tomato Prices"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "spices_and_condiments",
+      "aliases": [
+        "Spices and Condiments",
+        "Masalas",
+        "Seasonings",
+        "Sugar and Salt"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "staple_grains",
+      "aliases": [
+        "Staple Grains",
+        "Cereals",
+        "Anaaj",
+        "Foodgrains"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "street_food",
+      "aliases": [
+        "Street Food",
+        "Chaat",
+        "Thela Food",
+        "Roadside Eateries",
+        "Vada Pav"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "sunflower_oil",
+      "aliases": [
+        "Sunflower Oil",
+        "Surajmukhi Tel",
+        "Refined Sunflower Oil"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "tea_leaves",
+      "aliases": [
+        "Tea Leaves",
+        "Chai Patti",
+        "Tea Powder",
+        "Chai"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "tur_dal",
+      "aliases": [
+        "Tur Dal",
+        "Arhar Dal",
+        "Pigeon Pea",
+        "Toor Dal",
+        "Tuvaram Paruppu"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "turmeric_powder",
+      "aliases": [
+        "Turmeric Powder",
+        "Haldi",
+        "Manjal",
+        "Turmeric"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "urad_dal",
+      "aliases": [
+        "Urad Dal",
+        "Black Gram",
+        "Ulutham Paruppu",
+        "Kaali Dal"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "vegetables",
+      "aliases": [
+        "Vegetables",
+        "Sabzi",
+        "Karkari",
+        "Tarkari"
+      ],
+      "category": "I1"
+    },
+    {
+      "id": "wheat_flour",
+      "aliases": [
+        "Wheat Flour",
+        "Atta",
+        "Gehu ka Atta",
+        "Chakki Atta",
+        "Godhumai Maavu"
+      ],
+      "category": "I1"
+    }
+  ],
+  "edges": [
+    {
+      "from": "i1",
+      "to": "staple_grains",
+      "type": "CONTAINS",
+      "description": "Food & Nutrition category contains staple grains and cereals."
+    },
+    {
+      "from": "i1",
+      "to": "pulses_and_legumes",
+      "type": "CONTAINS",
+      "description": "Food & Nutrition category contains pulses and legumes."
+    },
+    {
+      "from": "i1",
+      "to": "fresh_produce",
+      "type": "CONTAINS",
+      "description": "Food & Nutrition category contains fresh fruits and vegetables."
+    },
+    {
+      "from": "i1",
+      "to": "dairy_and_eggs",
+      "type": "CONTAINS",
+      "description": "Food & Nutrition category contains dairy products and eggs."
+    },
+    {
+      "from": "i1",
+      "to": "meat_and_seafood",
+      "type": "CONTAINS",
+      "description": "Food & Nutrition category contains meat, poultry, and seafood."
+    },
+    {
+      "from": "i1",
+      "to": "edible_oils",
+      "type": "CONTAINS",
+      "description": "Food & Nutrition category contains edible cooking oils."
+    },
+    {
+      "from": "i1",
+      "to": "spices_and_condiments",
+      "type": "CONTAINS",
+      "description": "Food & Nutrition category contains spices, sugar, and salt."
+    },
+    {
+      "from": "i1",
+      "to": "packaged_and_processed_foods",
+      "type": "CONTAINS",
+      "description": "Food & Nutrition category contains packaged FMCG foods and beverages."
+    },
+    {
+      "from": "i1",
+      "to": "out_of_home_dining",
+      "type": "CONTAINS",
+      "description": "Food & Nutrition category contains restaurant and delivery food services."
+    },
+    {
+      "from": "staple_grains",
+      "to": "wheat_flour",
+      "type": "CONTAINS",
+      "description": "Staple grains category contains wheat flour (atta)."
+    },
+    {
+      "from": "staple_grains",
+      "to": "retail_rice",
+      "type": "CONTAINS",
+      "description": "Staple grains category contains retail rice."
+    },
+    {
+      "from": "staple_grains",
+      "to": "millets",
+      "type": "CONTAINS",
+      "description": "Staple grains category contains millets like bajra and jowar."
+    },
+    {
+      "from": "pulses_and_legumes",
+      "to": "tur_dal",
+      "type": "CONTAINS",
+      "description": "Pulses category contains tur dal (pigeon pea)."
+    },
+    {
+      "from": "pulses_and_legumes",
+      "to": "chana_dal",
+      "type": "CONTAINS",
+      "description": "Pulses category contains chana dal (bengal gram)."
+    },
+    {
+      "from": "pulses_and_legumes",
+      "to": "moong_dal",
+      "type": "CONTAINS",
+      "description": "Pulses category contains moong dal (green gram)."
+    },
+    {
+      "from": "pulses_and_legumes",
+      "to": "urad_dal",
+      "type": "CONTAINS",
+      "description": "Pulses category contains urad dal (black gram)."
+    },
+    {
+      "from": "fresh_produce",
+      "to": "vegetables",
+      "type": "CONTAINS",
+      "description": "Fresh produce category contains vegetables."
+    },
+    {
+      "from": "fresh_produce",
+      "to": "fruits",
+      "type": "CONTAINS",
+      "description": "Fresh produce category contains fruits."
+    },
+    {
+      "from": "dairy_and_eggs",
+      "to": "liquid_milk",
+      "type": "CONTAINS",
+      "description": "Dairy and eggs category contains liquid milk."
+    },
+    {
+      "from": "dairy_and_eggs",
+      "to": "paneer_and_cheese",
+      "type": "CONTAINS",
+      "description": "Dairy and eggs category contains paneer and cheese."
+    },
+    {
+      "from": "dairy_and_eggs",
+      "to": "butter_and_ghee",
+      "type": "CONTAINS",
+      "description": "Dairy and eggs category contains butter and ghee."
+    },
+    {
+      "from": "dairy_and_eggs",
+      "to": "poultry_eggs",
+      "type": "CONTAINS",
+      "description": "Dairy and eggs category contains poultry eggs."
+    },
+    {
+      "from": "meat_and_seafood",
+      "to": "poultry_chicken",
+      "type": "CONTAINS",
+      "description": "Meat and seafood category contains poultry chicken."
+    },
+    {
+      "from": "meat_and_seafood",
+      "to": "mutton_and_lamb",
+      "type": "CONTAINS",
+      "description": "Meat and seafood category contains mutton and lamb."
+    },
+    {
+      "from": "meat_and_seafood",
+      "to": "freshwater_fish",
+      "type": "CONTAINS",
+      "description": "Meat and seafood category contains freshwater fish."
+    },
+    {
+      "from": "meat_and_seafood",
+      "to": "marine_fish",
+      "type": "CONTAINS",
+      "description": "Meat and seafood category contains marine fish and seafood."
+    },
+    {
+      "from": "edible_oils",
+      "to": "mustard_oil",
+      "type": "CONTAINS",
+      "description": "Edible oils category contains mustard oil."
+    },
+    {
+      "from": "edible_oils",
+      "to": "palm_oil",
+      "type": "CONTAINS",
+      "description": "Edible oils category contains palm oil."
+    },
+    {
+      "from": "edible_oils",
+      "to": "sunflower_oil",
+      "type": "CONTAINS",
+      "description": "Edible oils category contains sunflower oil."
+    },
+    {
+      "from": "edible_oils",
+      "to": "coconut_oil",
+      "type": "CONTAINS",
+      "description": "Edible oils category contains coconut oil."
+    },
+    {
+      "from": "spices_and_condiments",
+      "to": "retail_sugar",
+      "type": "CONTAINS",
+      "description": "Spices and condiments category contains retail sugar."
+    },
+    {
+      "from": "spices_and_condiments",
+      "to": "retail_salt",
+      "type": "CONTAINS",
+      "description": "Spices and condiments category contains retail salt."
+    },
+    {
+      "from": "spices_and_condiments",
+      "to": "dry_red_chilli",
+      "type": "CONTAINS",
+      "description": "Spices and condiments category contains dry red chilli."
+    },
+    {
+      "from": "spices_and_condiments",
+      "to": "turmeric_powder",
+      "type": "CONTAINS",
+      "description": "Spices and condiments category contains turmeric powder."
+    },
+    {
+      "from": "spices_and_condiments",
+      "to": "garlic_and_ginger",
+      "type": "CONTAINS",
+      "description": "Spices and condiments category contains garlic and ginger."
+    },
+    {
+      "from": "packaged_and_processed_foods",
+      "to": "biscuits_and_snacks",
+      "type": "CONTAINS",
+      "description": "Packaged foods category contains biscuits and snacks."
+    },
+    {
+      "from": "packaged_and_processed_foods",
+      "to": "instant_noodles",
+      "type": "CONTAINS",
+      "description": "Packaged foods category contains instant noodles."
+    },
+    {
+      "from": "packaged_and_processed_foods",
+      "to": "tea_leaves",
+      "type": "CONTAINS",
+      "description": "Packaged foods category contains tea leaves."
+    },
+    {
+      "from": "packaged_and_processed_foods",
+      "to": "coffee_powder",
+      "type": "CONTAINS",
+      "description": "Packaged foods category contains coffee powder."
+    },
+    {
+      "from": "out_of_home_dining",
+      "to": "food_delivery_services",
+      "type": "CONTAINS",
+      "description": "Out of home dining category contains food delivery services."
+    },
+    {
+      "from": "out_of_home_dining",
+      "to": "quick_service_restaurants",
+      "type": "CONTAINS",
+      "description": "Out of home dining category contains quick service restaurants."
+    },
+    {
+      "from": "out_of_home_dining",
+      "to": "street_food",
+      "type": "CONTAINS",
+      "description": "Out of home dining category contains street food."
+    },
+    {
+      "from": "out_of_home_dining",
+      "to": "fine_dining_restaurants",
+      "type": "CONTAINS",
+      "description": "Out of home dining category contains fine dining restaurants."
+    },
+    {
+      "from": "vegetables",
+      "to": "retail_tomato",
+      "type": "CONTAINS",
+      "description": "Vegetables category contains retail tomatoes."
+    },
+    {
+      "from": "vegetables",
+      "to": "retail_onion",
+      "type": "CONTAINS",
+      "description": "Vegetables category contains retail onions."
+    },
+    {
+      "from": "vegetables",
+      "to": "retail_potato",
+      "type": "CONTAINS",
+      "description": "Vegetables category contains retail potatoes."
+    },
+    {
+      "from": "vegetables",
+      "to": "green_vegetables",
+      "type": "CONTAINS",
+      "description": "Vegetables category contains leafy green vegetables."
+    },
+    {
+      "from": "fruits",
+      "to": "retail_apple",
+      "type": "CONTAINS",
+      "description": "Fruits category contains retail apples."
+    },
+    {
+      "from": "fruits",
+      "to": "retail_mango",
+      "type": "CONTAINS",
+      "description": "Fruits category contains retail mangoes."
+    },
+    {
+      "from": "fruits",
+      "to": "retail_banana",
+      "type": "CONTAINS",
+      "description": "Fruits category contains retail bananas."
+    },
+    {
+      "from": "staple_grains",
+      "to": "savings_account_balance",
+      "type": "AFFECTS",
+      "description": "Higher staple grain prices increase food expenditure, eroding household savings.",
+      "cross": "financial"
+    },
+    {
+      "from": "retail_rice",
+      "to": "savings_account_balance",
+      "type": "AFFECTS",
+      "description": "Higher rice prices increase food expenditure, reducing household savings.",
+      "cross": "financial"
+    },
+    {
+      "from": "retail_tomato",
+      "to": "savings_account_balance",
+      "type": "AFFECTS",
+      "description": "Spikes in essential vegetable prices reduce household surplus, depleting savings.",
+      "cross": "financial"
+    },
+    {
+      "from": "retail_diesel",
+      "to": "retail_tomato",
+      "type": "AFFECTS",
+      "description": "Higher diesel prices increase freight costs, raising retail vegetable prices.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "retail_diesel",
+      "to": "retail_rice",
+      "type": "AFFECTS",
+      "description": "Higher diesel prices increase grain transport costs, raising retail rice prices.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "ambient_aqi",
+      "to": "fresh_produce",
+      "type": "DISRUPTS",
+      "description": "Severe pollution damages crop yields in peri-urban farming zones.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "fresh_produce",
+      "type": "DISRUPTS",
+      "description": "Extreme weather and monsoon deficits directly reduce the yield and availability of fruits and vegetables.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "staple_grains",
+      "type": "DISRUPTS",
+      "description": "Monsoon variations and temperature shocks disrupt the cultivation cycles of major cereal crops.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "meteorological_systems",
+      "to": "pulses_and_legumes",
+      "type": "DISRUPTS",
+      "description": "Erratic rainfall patterns severely impact the production of rain-fed pulse and legume crops.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "hydrological_systems",
+      "to": "staple_grains",
+      "type": "SUPPLIES",
+      "description": "River basins and groundwater reserves provide essential irrigation for water-intensive cereal crops like rice and wheat.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "hydrological_systems",
+      "to": "poultry_chicken",
+      "type": "AFFECTS",
+      "description": "Droughts reduce feed grain availability and increase water costs for poultry farms, raising production costs and retail chicken prices.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "hydrological_systems",
+      "to": "mutton_and_lamb",
+      "type": "AFFECTS",
+      "description": "Water scarcity degrades pastureland and reduces fodder availability for sheep and goats, increasing livestock mortality and raising mutton prices.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "hydrological_systems",
+      "to": "freshwater_fish",
+      "type": "SUPPLIES",
+      "description": "River flows, reservoir levels, and flood-plain inundation directly determine freshwater fish breeding and catch volumes, with abundant water lowering prices.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "hydrological_systems",
+      "to": "marine_fish",
+      "type": "AFFECTS",
+      "description": "River discharge into coastal waters carries nutrients that support marine breeding grounds; altered hydrology can reduce near-shore fish stocks.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "southwest_monsoon",
+      "to": "staple_grains",
+      "type": "AFFECTS",
+      "description": "Southwest monsoon rainfall determines kharif crop yields, directly affecting rice, wheat, and grain supply and prices.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "southwest_monsoon",
+      "to": "vegetables",
+      "type": "AFFECTS",
+      "description": "Adequate monsoon rainfall improves vegetable yields, increasing supply and lowering prices.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "himalayan_river_systems",
+      "to": "staple_grains",
+      "type": "AFFECTS",
+      "description": "Himalayan river systems provide irrigation for the Indo-Gangetic plain, directly affecting rice and wheat cultivation.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "arable_topsoil",
+      "to": "green_vegetables",
+      "type": "AFFECTS",
+      "description": "Degradation of arable topsoil reduces the yield of local vegetable farms, restricting supply and driving up the retail prices of green vegetables.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "migratory_pest_populations",
+      "to": "wheat_flour",
+      "type": "AFFECTS",
+      "description": "Locust swarms and pest infestations decimate standing wheat crops, reducing grain supply and driving up the retail price of wheat flour (atta).",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "marine_fish_stocks",
+      "to": "marine_fish",
+      "type": "SUPPLIES",
+      "description": "Abundant marine fish stocks in the Bay of Bengal and Arabian Sea increase the catch volume, lowering the retail price of marine fish and seafood.",
+      "cross": "consumer_life"
+    },
+    {
+      "from": "global_food_grain_supply",
+      "to": "wheat_flour",
+      "type": "AFFECTS",
+      "description": "Abundant global wheat harvests suppress international grain prices, helping to keep domestic retail wheat flour (atta) prices affordable.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "farmer_unions",
+      "to": "retail_tomato",
+      "type": "DISRUPTS",
+      "description": "Highway blockades and procurement boycotts by farmer unions disrupt the supply chain of perishables, causing immediate price spikes for vegetables like tomatoes.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "transport_logistics_infrastructure",
+      "to": "fresh_produce",
+      "type": "AFFECTS",
+      "description": "Efficient transport and logistics networks directly improve the availability and reduce spoilage of fresh fruits and vegetables.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "transport_logistics_infrastructure",
+      "to": "biscuits_and_snacks",
+      "type": "AFFECTS",
+      "description": "Cold chain and highway logistics determine distribution costs for FMCG snacks; better infrastructure lowers last-mile delivery costs, keeping retail prices down.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "transport_logistics_infrastructure",
+      "to": "instant_noodles",
+      "type": "AFFECTS",
+      "description": "Instant noodle supply chains from factories to distributors depend on highway networks; logistics disruptions increase costs and shelf availability gaps.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "transport_logistics_infrastructure",
+      "to": "tea_leaves",
+      "type": "AFFECTS",
+      "description": "Tea is transported from Assam/Darjeeling/Nilgiri plantations to auction houses and retail; road quality and transport costs directly affect retail tea prices.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "transport_logistics_infrastructure",
+      "to": "coffee_powder",
+      "type": "AFFECTS",
+      "description": "Coffee beans move from Karnataka/Kerala estates to processing units via road; logistics infrastructure quality affects processing-to-retail cost and freshness.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "macro_behavioral_shifts",
+      "to": "out_of_home_dining",
+      "type": "AFFECTS",
+      "description": "Positive consumer sentiment directly increases the frequency and budget allocated to restaurants and food delivery services.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "ministry_of_agriculture",
+      "to": "wheat_flour",
+      "type": "AFFECTS",
+      "description": "Minimum Support Price (MSP) and export bans by the Agriculture Ministry directly dictate domestic wheat availability and retail flour prices.",
+      "cross": "governance"
+    },
+    {
+      "from": "ministry_of_agriculture",
+      "to": "tur_dal",
+      "type": "AFFECTS",
+      "description": "Increases in the Minimum Support Price (MSP) for pulses set by the Agriculture Ministry raise the baseline procurement cost, pushing up retail tur dal prices.",
+      "cross": "governance"
+    },
+    {
+      "from": "gst_council",
+      "to": "packaged_and_processed_foods",
+      "type": "AFFECTS",
+      "description": "GST slab changes directly impact retail prices of packaged and processed foods.",
+      "cross": "governance"
+    },
+    {
+      "from": "gst_council",
+      "to": "retail_tomato",
+      "type": "AFFECTS",
+      "description": "GST on agricultural inputs, packaging, and transport affects retail vegetable prices.",
+      "cross": "governance"
+    },
+    {
+      "from": "gst_council",
+      "to": "biscuits_and_snacks",
+      "type": "AFFECTS",
+      "description": "GST Council tax slab decisions directly affect MRP of biscuits and snacks.",
+      "cross": "governance"
+    },
+    {
+      "from": "brent_crude",
+      "to": "retail_tomato",
+      "type": "AFFECTS",
+      "description": "Higher Brent crude prices increase diesel costs for trucking, which are passed on as higher freight charges, inflating the retail price of transported tomatoes.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "upi_platform",
+      "to": "food_delivery_services",
+      "type": "AFFECTS",
+      "description": "The frictionless payment experience provided by the UPI platform directly increases checkout conversion rates and order volumes for food delivery services.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "global_shipping_routes",
+      "to": "palm_oil",
+      "type": "AFFECTS",
+      "description": "Increased capacity and smooth transit through global shipping routes lower maritime freight costs, reducing the landed retail price of imported palm oil.",
+      "cross": "infrastructure"
+    },
+    {
+      "from": "agricultural_commodities",
+      "to": "edible_oils",
+      "type": "AFFECTS",
+      "description": "Global prices of palm oil, soybean oil, and sunflower oil on international commodity exchanges directly set the import cost for India, which imports over 60% of its edible oil demand.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "autumn_festive_season",
+      "to": "retail_sugar",
+      "type": "AFFECTS",
+      "description": "The autumn festive season triggers massive household and commercial demand for traditional sweets, temporarily spiking retail sugar prices.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "rice_crop_yield",
+      "to": "retail_rice",
+      "type": "AFFECTS",
+      "description": "Lower rice yields reduce market supply, raising retail rice prices.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "rice_crop_yield",
+      "to": "staple_grains",
+      "type": "AFFECTS",
+      "description": "Lower rice yields reduce market supply of staple grains, driving up prices.",
+      "cross": "macro_geopolitics"
+    },
+    {
+      "from": "vegetable_crops",
+      "to": "fresh_produce",
+      "type": "SUPPLIES",
+      "description": "Higher vegetable crop yields increase market supply, reducing fresh produce prices.",
+      "cross": "macro_geopolitics"
+    }
+  ]
+}
