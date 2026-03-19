@@ -121,7 +121,7 @@ def evaluate_event(
         prob_threshold=0.001,
     )
 
-    # Top 20 results ranked by probability (already sorted)
+    # Top 20 results ranked by CIS (already sorted)
     predicted_nodes = [r["node"] for r in results[:20]]
     predicted_set = set(predicted_nodes)
     gt_node_set = {item["node"] for item in valid_gt}
@@ -130,27 +130,45 @@ def evaluate_event(
     ndcg = ndcg_at_k(predicted_nodes, valid_gt, k=10)
 
     # Hits: ground truth nodes found in top 20
+    # Build full result lookup for path tracking
+    result_map = {r["node"]: r for r in results}
+
     hits = []
     for item in valid_gt:
         if item["node"] in predicted_set:
             pred_rank = predicted_nodes.index(item["node"]) + 1
+            r = result_map[item["node"]]
             hits.append({
                 "node": item["node"],
                 "predicted_rank": pred_rank,
                 "expected_rank": item["rank"],
+                "probability": r["probability"],
+                "magnitude": r["magnitude"],
+                "cis": r["cis"],
+                "path": r["path"],
+                "delay": r["delay"],
+                "via_contains": r.get("via_contains", False),
             })
 
     # Misses: ground truth nodes NOT in top 20
     misses = []
     for item in valid_gt:
         if item["node"] not in predicted_set:
-            # Check if node exists at all in results beyond top 20
-            all_nodes = [r["node"] for r in results]
-            actual_rank = (all_nodes.index(item["node"]) + 1) if item["node"] in all_nodes else None
+            r = result_map.get(item["node"])
+            actual_rank = None
+            if r:
+                all_nodes = [x["node"] for x in results]
+                actual_rank = all_nodes.index(item["node"]) + 1
             misses.append({
                 "node": item["node"],
                 "expected_rank": item["rank"],
                 "actual_rank": actual_rank,
+                "probability": r["probability"] if r else 0.0,
+                "magnitude": r["magnitude"] if r else 0.0,
+                "cis": r["cis"] if r else 0.0,
+                "path": r["path"] if r else [],
+                "delay": r["delay"] if r else "",
+                "via_contains": r.get("via_contains", False) if r else False,
             })
 
     # False positives: top-5 PPR nodes not in ground truth
@@ -203,15 +221,23 @@ def print_event_result(result: dict, verbose: bool = False) -> None:
     valid_gt = result["valid_gt"]
     print(f"\n  Hits ({len(hits)}/{valid_gt}):")
     for h in sorted(hits, key=lambda x: x["predicted_rank"]):
-        print(f"    {h['node']:<30} predicted #{h['predicted_rank']}, expected #{h['expected_rank']}")
+        contains = " [C]" if h.get("via_contains") else ""
+        path_str = " → ".join(h["path"][-3:]) if h.get("path") else ""
+        print(f"    #{h['predicted_rank']:<3} {h['node']:<30} exp#{h['expected_rank']}  prob={h['probability']:.5f} mag={h['magnitude']:.5f} cis={h['cis']:.5f}{contains}")
+        print(f"         path: {path_str}")
 
     # Misses
     misses = result["misses"]
     if misses:
         print(f"\n  Misses ({len(misses)}/{valid_gt}):")
         for m in misses:
-            rank_info = f"actual #{m['actual_rank']}" if m["actual_rank"] else "not in results"
-            print(f"    {m['node']:<30} expected #{m['expected_rank']} ({rank_info})")
+            if m["actual_rank"]:
+                contains = " [C]" if m.get("via_contains") else ""
+                path_str = " → ".join(m["path"][-3:]) if m.get("path") else ""
+                print(f"    #{m['actual_rank']:<3} {m['node']:<30} exp#{m['expected_rank']}  prob={m['probability']:.5f} mag={m['magnitude']:.5f} cis={m['cis']:.5f}{contains}")
+                print(f"         path: {path_str}")
+            else:
+                print(f"    --- {m['node']:<30} exp#{m['expected_rank']}  not in results")
 
     # False positives
     fps = result["false_positives"]

@@ -65,6 +65,12 @@ class Settings(BaseSettings):
     upward_seed_decay: float = 0.5          # Decay factor per CONTAINS level for seed expansion
     max_seed_levels: int = 3                 # Max CONTAINS levels to walk up for seed expansion
 
+    # Citizen Impact Score (CIS) — post-PPR reranking
+    i_world_boost: float = 3.0
+    category_penalty: float = 0.3
+    leaf_boost_l4: float = 2.0
+    leaf_boost_l3: float = 1.2
+
     # Delivery
     digest_hour: int = 8
     pipeline_interval_seconds: int = 7200

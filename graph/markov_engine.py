@@ -170,8 +170,14 @@ def _aggregate_upward(
 class CausalMarkovEngine:
     """PPR-based impact scoring engine."""
 
-    def __init__(self, base_graph: nx.DiGraph):
+    def __init__(self, base_graph: nx.DiGraph, i_world_boost: float = 3.0,
+                 category_penalty: float = 0.3, leaf_boost_l4: float = 2.0,
+                 leaf_boost_l3: float = 1.2):
         self.base_G = base_graph
+        self.i_world_boost = i_world_boost
+        self.category_penalty = category_penalty
+        self.leaf_boost_l4 = leaf_boost_l4
+        self.leaf_boost_l3 = leaf_boost_l3
         self.causal_G = self._build_causal_graph()
         self._precompute_path_costs()
 
@@ -179,23 +185,35 @@ class CausalMarkovEngine:
         """Build a subgraph with only causal edges (no CONTAINS/IS_A).
 
         Strips hierarchy edges. Removes self-loops. Only causal edge types
-        from CAUSAL_TYPES are included.
+        from CAUSAL_TYPES are included. Nodes with no causal edges are
+        excluded to prevent dangling-node probability dilution in PPR.
         """
         causal_G = nx.DiGraph()
 
-        # Add all nodes (needed for PPR even if they have no causal edges)
-        for node, data in self.base_G.nodes(data=True):
-            causal_G.add_node(node, **data)
-
+        # Collect causal edges first
+        causal_edges = []
         for u, v, d in self.base_G.edges(data=True):
-            if u == v:  # Skip self-loops
+            if u == v:
                 continue
             if d.get("type") in CAUSAL_TYPES:
-                causal_G.add_edge(u, v, **d)
+                causal_edges.append((u, v, d))
+
+        # Only add nodes that participate in at least one causal edge
+        causal_nodes = set()
+        for u, v, _ in causal_edges:
+            causal_nodes.add(u)
+            causal_nodes.add(v)
+
+        for node in causal_nodes:
+            causal_G.add_node(node, **self.base_G.nodes[node])
+
+        for u, v, d in causal_edges:
+            causal_G.add_edge(u, v, **d)
 
         logger.info(
-            "Causal subgraph: %d nodes, %d edges (from %d total)",
+            "Causal subgraph: %d nodes (%d excluded), %d edges (from %d total)",
             causal_G.number_of_nodes(),
+            self.base_G.number_of_nodes() - causal_G.number_of_nodes(),
             causal_G.number_of_edges(),
             self.base_G.number_of_edges(),
         )
@@ -369,6 +387,35 @@ class CausalMarkovEngine:
 
         return magnitude, delay_label, polarity
 
+    def _compute_cis(self, node: str, probability: float, magnitude: float) -> float:
+        """Compute Citizen Impact Score for post-PPR reranking.
+
+        CIS = probability × magnitude × world_boost × leaf_boost
+        """
+        nd = self.base_G.nodes.get(node, {})
+        cat = nd.get('category', '')
+        level = nd.get('level', 3)
+        is_cat = nd.get('is_category', False)
+
+        # World boost: I-world nodes get boosted
+        w_boost = self.i_world_boost if cat.startswith('I') else 1.0
+
+        # Leaf boost (with childless category safeguard)
+        if is_cat:
+            has_children = any(
+                self.base_G[node][s].get('type') == 'CONTAINS'
+                for s in self.base_G.successors(node)
+            )
+            l_boost = self.leaf_boost_l3 if not has_children else self.category_penalty
+        elif level == 4:
+            l_boost = self.leaf_boost_l4
+        elif level == 3:
+            l_boost = self.leaf_boost_l3
+        else:
+            l_boost = self.category_penalty
+
+        return probability * magnitude * w_boost * l_boost
+
     def _propagate_contains_down(
         self,
         reached_scores: dict[str, dict],
@@ -379,13 +426,19 @@ class CausalMarkovEngine:
         If a category node (e.g. agriculture) is reached by PPR,
         its CONTAINS children inherit the score × CONTAINS weight.
 
+        Uses a max-heap so higher-probability parents are processed first,
+        ensuring children get the best possible inherited scores.
         Uses the base graph (which has CONTAINS edges), not causal_G.
         """
-        queue = list(reached_scores.keys())
+        import heapq
+
+        # Max-heap: negate probability for max-first ordering
+        heap = [(-reached_scores[n]["probability"], n) for n in reached_scores]
+        heapq.heapify(heap)
         visited: set[str] = set()
 
-        while queue:
-            node = queue.pop(0)
+        while heap:
+            neg_prob, node = heapq.heappop(heap)
             if node in visited:
                 continue
             visited.add(node)
@@ -408,17 +461,19 @@ class CausalMarkovEngine:
                 child_score = child_prob * child_mag
 
                 if succ not in reached_scores or reached_scores[succ]["probability"] < child_prob:
+                    child_cis = self._compute_cis(succ, child_prob, child_mag)
                     reached_scores[succ] = {
                         "node": succ,
                         "probability": child_prob,
                         "magnitude": child_mag,
                         "score": child_score,
+                        "cis": child_cis,
                         "polarity": parent_result["polarity"],
                         "delay": parent_result["delay"],
                         "path": parent_result["path"] + [succ],
                         "via_contains": True,
                     }
-                    queue.append(succ)
+                    heapq.heappush(heap, (-child_prob, succ))
 
         return reached_scores
 
@@ -472,30 +527,35 @@ class CausalMarkovEngine:
             if prob < prob_threshold:
                 continue
 
-            # Try path from each seed node, highest weight first
-            path = None
-            for seed_node in sorted(seed_vector, key=seed_vector.get, reverse=True):
-                path = self._get_dominant_path(seed_node, node)
-                if path is not None:
-                    break
-            if path is None:
-                # Node reached by PPR but no direct path (dangling redistribution)
+            # Try path from each seed node, pick the one with highest magnitude
+            best_path = None
+            best_mag = -1.0
+            best_delay = "LONG_TERM"
+            best_polarity = 0
+            for seed_node in seed_vector:
+                candidate = self._get_dominant_path(seed_node, node)
+                if candidate is None or len(candidate) - 1 > max_depth:
+                    continue
+                mag, dly, pol = self._compute_path_metrics(candidate)
+                if mag > best_mag:
+                    best_path, best_mag, best_delay, best_polarity = candidate, mag, dly, pol
+
+            if best_path is None:
                 continue
 
-            if len(path) - 1 > max_depth:
-                continue
-
-            # Compute path metrics
-            magnitude, delay, polarity = self._compute_path_metrics(path)
+            path = best_path
+            magnitude, delay, polarity = best_mag, best_delay, best_polarity
 
             # Apply event direction to polarity
             final_polarity = polarity * event_direction
 
+            cis = self._compute_cis(node, prob, magnitude)
             reached_scores[node] = {
                 "node": node,
                 "probability": prob,
                 "magnitude": magnitude,
                 "score": prob * magnitude,  # Combined score
+                "cis": cis,
                 "polarity": final_polarity,
                 "delay": delay,
                 "path": path,
@@ -508,7 +568,7 @@ class CausalMarkovEngine:
 
         # Build results list, sorted by probability descending
         results = list(reached_scores.values())
-        results.sort(key=lambda x: x["probability"], reverse=True)
+        results.sort(key=lambda x: x["cis"], reverse=True)
 
         if include_aggregation:
             score_map = {r["node"]: r["probability"] for r in results}
@@ -546,7 +606,14 @@ def main():
             print(f"Did you mean: {', '.join(matches)}")
         return
 
-    engine = CausalMarkovEngine(G)
+    from config import settings
+    engine = CausalMarkovEngine(
+        G,
+        i_world_boost=settings.i_world_boost,
+        category_penalty=settings.category_penalty,
+        leaf_boost_l4=settings.leaf_boost_l4,
+        leaf_boost_l3=settings.leaf_boost_l3,
+    )
 
     direction = 1 if args.direction == "up" else -1
 
@@ -564,7 +631,7 @@ def main():
     )
 
     print(f"\nPPR Impact Analysis for '{args.node}' (α={args.restart}, direction={'↑' if direction == 1 else '↓'}):")
-    print(f"{'Node':<35} {'Prob':>8} {'Mag':>8} {'Score':>8} {'Pol':>4} {'Delay':<12} Path")
+    print(f"{'Node':<35} {'Prob':>8} {'Mag':>8} {'CIS':>8} {'Pol':>4} {'Delay':<12} Path")
     print("-" * 110)
 
     for imp in results[:args.top]:
@@ -572,7 +639,7 @@ def main():
         path_str = " → ".join(imp["path"][-3:])
         print(
             f"{imp['node']:<35} {imp['probability']:>8.5f} {imp['magnitude']:>8.5f} "
-            f"{imp['score']:>8.6f} {pol_sym:>4} {imp['delay']:<12} {path_str}"
+            f"{imp['cis']:>8.6f} {pol_sym:>4} {imp['delay']:<12} {path_str}"
         )
 
     print(f"\nTotal impacted nodes: {len(results)}")

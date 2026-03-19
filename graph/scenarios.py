@@ -122,16 +122,35 @@ def _run_reachability(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None
     if engine is None:
         engine = CausalMarkovEngine(G)
     results = engine.evaluate_impact(trigger, event_direction=direction, prob_threshold=0.0001)
-    hit_nodes = {r["node"] for r in results if r["probability"] > 0.001}
+    result_map = {r["node"]: r for r in results}
 
-    missing = [t for t in targets if t not in hit_nodes]
+    missing = [t for t in targets if t not in result_map or result_map[t]["probability"] <= 0.001]
     ok = len(missing) == 0
 
     detail = f"{len(targets) - len(missing)}/{len(targets)} targets hit"
     if missing:
         detail += f"; missing: {', '.join(missing)}"
 
-    return {"id": sc["id"], "type": "B", "status": "PASS" if ok else "FAIL", "detail": detail}
+    # Build per-target verbose info
+    target_details = []
+    for t in targets:
+        r = result_map.get(t)
+        if r:
+            rank = [x["node"] for x in results].index(t) + 1
+            target_details.append({
+                "node": t,
+                "rank": rank,
+                "probability": r["probability"],
+                "magnitude": r["magnitude"],
+                "cis": r["cis"],
+                "path": r["path"],
+                "delay": r["delay"],
+                "via_contains": r.get("via_contains", False),
+            })
+        else:
+            target_details.append({"node": t, "rank": None, "probability": 0.0, "magnitude": 0.0, "cis": 0.0, "path": [], "delay": "", "via_contains": False})
+
+    return {"id": sc["id"], "type": "B", "status": "PASS" if ok else "FAIL", "detail": detail, "target_details": target_details}
 
 
 def _run_score_threshold(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = None) -> dict:
@@ -147,15 +166,24 @@ def _run_score_threshold(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | N
         return {
             "id": sc["id"], "type": "C", "status": "FAIL",
             "detail": f"target '{target}' not reached",
+            "target_details": {"node": target, "rank": None, "probability": 0.0, "magnitude": 0.0, "cis": 0.0, "path": [], "delay": ""},
         }
+    rank = [r["node"] for r in results].index(target) + 1
     ok = hit["probability"] > 0.001
-    detail = f"prob {hit['probability']:.6f} mag {hit['magnitude']:.6f}"
+    detail = f"prob {hit['probability']:.6f} mag {hit['magnitude']:.6f} cis {hit['cis']:.6f}"
 
-    return {"id": sc["id"], "type": "C", "status": "PASS" if ok else "FAIL", "detail": detail}
+    return {
+        "id": sc["id"], "type": "C", "status": "PASS" if ok else "FAIL", "detail": detail,
+        "target_details": {
+            "node": target, "rank": rank,
+            "probability": hit["probability"], "magnitude": hit["magnitude"], "cis": hit["cis"],
+            "path": hit["path"], "delay": hit["delay"], "via_contains": hit.get("via_contains", False),
+        },
+    }
 
 
 def _run_ranking(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = None) -> dict:
-    """Type D: verify higher_node ranks above lower_node in PPR probability."""
+    """Type D: verify higher_node ranks above lower_node in CIS score."""
     if engine is None:
         engine = CausalMarkovEngine(G)
 
@@ -164,14 +192,31 @@ def _run_ranking(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = No
     lower = sc["lower_node"]
 
     results = engine.evaluate_impact(trigger, prob_threshold=0.0001)
-    prob_map = {r["node"]: r["probability"] for r in results}
+    result_map = {r["node"]: r for r in results}
+    ranked_nodes = [r["node"] for r in results]
 
-    h_prob = prob_map.get(higher, 0.0)
-    l_prob = prob_map.get(lower, 0.0)
+    h_r = result_map.get(higher)
+    l_r = result_map.get(lower)
+    h_cis = h_r["cis"] if h_r else 0.0
+    l_cis = l_r["cis"] if l_r else 0.0
 
-    ok = h_prob > l_prob
-    detail = f"{higher}={h_prob:.6f} {'>' if ok else '<='} {lower}={l_prob:.6f}"
-    return {"id": sc["id"], "type": "D", "status": "PASS" if ok else "FAIL", "detail": detail}
+    ok = h_cis > l_cis
+    detail = f"{higher}={h_cis:.6f} {'>' if ok else '<='} {lower}={l_cis:.6f}"
+
+    def _node_detail(node_id, r):
+        if r is None:
+            return {"node": node_id, "rank": None, "probability": 0.0, "magnitude": 0.0, "cis": 0.0, "path": [], "delay": "", "via_contains": False}
+        return {
+            "node": node_id, "rank": ranked_nodes.index(node_id) + 1,
+            "probability": r["probability"], "magnitude": r["magnitude"], "cis": r["cis"],
+            "path": r["path"], "delay": r["delay"], "via_contains": r.get("via_contains", False),
+        }
+
+    return {
+        "id": sc["id"], "type": "D", "status": "PASS" if ok else "FAIL", "detail": detail,
+        "higher_detail": _node_detail(higher, h_r),
+        "lower_detail": _node_detail(lower, l_r),
+    }
 
 
 def _run_isolation(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = None) -> dict:
@@ -184,12 +229,22 @@ def _run_isolation(G: nx.DiGraph, sc: dict, engine: CausalMarkovEngine | None = 
     max_prob = sc.get("max_probability", 0.0005)
 
     results = engine.evaluate_impact(trigger, prob_threshold=0.00001)
-    prob_map = {r["node"]: r["probability"] for r in results}
+    result_map = {r["node"]: r for r in results}
 
-    actual_prob = prob_map.get(target, 0.0)
+    hit = result_map.get(target)
+    actual_prob = hit["probability"] if hit else 0.0
     ok = actual_prob < max_prob
     detail = f"prob={actual_prob:.8f} (max={max_prob})"
-    return {"id": sc["id"], "type": "E", "status": "PASS" if ok else "FAIL", "detail": detail}
+
+    target_detail = None
+    if hit:
+        target_detail = {
+            "node": target, "rank": [r["node"] for r in results].index(target) + 1,
+            "probability": hit["probability"], "magnitude": hit["magnitude"], "cis": hit["cis"],
+            "path": hit["path"], "delay": hit["delay"], "via_contains": hit.get("via_contains", False),
+        }
+
+    return {"id": sc["id"], "type": "E", "status": "PASS" if ok else "FAIL", "detail": detail, "target_details": target_detail}
 
 
 def run_scenario(G: nx.DiGraph, scenario: dict, engine: CausalMarkovEngine | None = None) -> dict:
@@ -248,6 +303,56 @@ def print_results(results: list[dict]) -> None:
     print(f"\nPASSED: {passed}  FAILED: {failed}  ERRORS: {errors}")
 
 
+def print_verbose_results(results: list[dict]) -> None:
+    """Print detailed path and scoring info for each scenario."""
+    for r in results:
+        if r["status"] == "PASS" and r["type"] in ("A", "E"):
+            continue  # Skip passing A/E types (not interesting)
+
+        print(f"\n{'─'*70}")
+        print(f"  {r['id']} ({r['type']}) — {r['status']}")
+
+        if r["type"] == "B" and "target_details" in r:
+            for td in r["target_details"]:
+                path_str = " → ".join(td["path"][-4:]) if td["path"] else "—"
+                contains = " [CONTAINS]" if td.get("via_contains") else ""
+                if td["rank"]:
+                    print(f"    #{td['rank']:<4} {td['node']:<30} prob={td['probability']:.5f} mag={td['magnitude']:.5f} cis={td['cis']:.5f}{contains}")
+                    print(f"          path: {path_str}")
+                else:
+                    print(f"    MISS {td['node']:<30}")
+
+        elif r["type"] == "C" and "target_details" in r:
+            td = r["target_details"]
+            path_str = " → ".join(td["path"][-4:]) if td["path"] else "—"
+            contains = " [CONTAINS]" if td.get("via_contains") else ""
+            if td["rank"]:
+                print(f"    #{td['rank']:<4} {td['node']:<30} prob={td['probability']:.5f} mag={td['magnitude']:.5f} cis={td['cis']:.5f}{contains}")
+                print(f"          path: {path_str}")
+            else:
+                print(f"    MISS {td['node']}")
+
+        elif r["type"] == "D":
+            for key in ("higher_detail", "lower_detail"):
+                td = r.get(key)
+                if not td:
+                    continue
+                label = "HIGHER" if key == "higher_detail" else "LOWER "
+                path_str = " → ".join(td["path"][-4:]) if td["path"] else "—"
+                contains = " [CONTAINS]" if td.get("via_contains") else ""
+                if td["rank"]:
+                    print(f"    {label} #{td['rank']:<4} {td['node']:<30} prob={td['probability']:.5f} mag={td['magnitude']:.5f} cis={td['cis']:.5f}{contains}")
+                    print(f"            path: {path_str}")
+                else:
+                    print(f"    {label} MISS {td['node']}")
+
+        elif r["type"] == "E" and r.get("target_details"):
+            td = r["target_details"]
+            path_str = " → ".join(td["path"][-4:]) if td["path"] else "—"
+            print(f"    #{td['rank']:<4} {td['node']:<30} prob={td['probability']:.5f} cis={td['cis']:.5f}")
+            print(f"          path: {path_str}")
+
+
 def export_failures(results: list[dict], path: Path) -> None:
     """Export failed/error scenarios to JSON."""
     failures = [r for r in results if r["status"] in ("FAIL", "ERROR")]
@@ -262,7 +367,8 @@ if __name__ == "__main__":
     from graph.migrate_weights import apply_defaults
 
     parser = argparse.ArgumentParser()
-    parser.parse_args()
+    parser.add_argument("--verbose", "-v", action="store_true", help="Show detailed path/scoring info")
+    args = parser.parse_args()
 
     merger = TaxonomyMerger()
     G = merger.merge()
@@ -279,3 +385,5 @@ if __name__ == "__main__":
 
     results = run_all(G, scenarios, engine=engine)
     print_results(results)
+    if args.verbose:
+        print_verbose_results(results)
