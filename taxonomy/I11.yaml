@@ -79,6 +79,16 @@ nodes:
   level: 3
   status: active
   is_category: true
+- id: real_money_gaming_and_betting
+  aliases:
+  - Real Money Gaming
+  - Online Betting
+  - Fantasy Sports
+  - Dream11 and RMG
+  - Online Poker and Rummy
+  category: I11
+  level: 4
+  status: active
 - id: live_events
   aliases:
   - Live Events
@@ -113,6 +123,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  port: true
 - id: ott_subscription
   aliases:
   - OTT Subscription
@@ -148,6 +159,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: spectator_sports
   aliases:
   - Spectator Sports
@@ -179,6 +191,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: football_match_ticket
   aliases:
   - Football Match Ticket
@@ -210,6 +223,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  port: true
 - id: festivals_and_celebrations
   aliases:
   - Festivals & Celebrations
@@ -277,6 +291,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: wedding_venue
   aliases:
   - Wedding Venue
@@ -357,6 +372,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: community_gathering
   aliases:
   - Community Gathering
@@ -367,6 +383,7 @@ nodes:
   category: I11
   level: 4
   status: active
+  port: true
 - id: public_park
   aliases:
   - Public Park
@@ -380,6 +397,7 @@ nodes:
   portal: true
   managed_by:
   - municipal_corporations
+  port: true
 - id: community_hall
   aliases:
   - Community Hall
@@ -392,6 +410,7 @@ nodes:
   status: active
   managed_by:
   - municipal_corporations
+  port: true
 - id: holiday_accommodation
   aliases:
   - Holiday Accommodation
@@ -448,6 +467,15 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
+- id: religious_tourism_demand
+  aliases:
+  - Religious Tourism Demand
+  - Pilgrimage Season Demand
+  - Dharmic Tourism Surge
+  category: I11
+  level: 4
+  status: active
 edges:
 - from: i11
   to: entertainment_and_media
@@ -533,6 +561,13 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Digital Entertainment contains Video Game
+- from: digital_entertainment
+  to: real_money_gaming_and_betting
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Entertainment contains Real Money Gaming and Betting
 - from: live_events
   to: concert_ticket
   type: CONTAINS
@@ -729,3 +764,10 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Tourism Services contains Tourist Attraction Ticket
+- from: religious_pilgrimage
+  to: religious_tourism_demand
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Religious Pilgrimage contains Religious Tourism Demand

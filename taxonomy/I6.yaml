@@ -39,6 +39,7 @@ nodes:
   level: 3
   status: active
   is_category: true
+  port: true
 - id: diagnostic_services
   aliases:
   - Diagnostic Services
@@ -49,6 +50,7 @@ nodes:
   level: 3
   status: active
   is_category: true
+  port: true
 - id: hospital_beds
   aliases:
   - Hospital Beds
@@ -70,6 +72,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: doctor_consultation
   aliases:
   - Doctor Consultation
@@ -80,6 +83,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: dental_care
   aliases:
   - Dental Care
@@ -101,6 +105,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: blood_tests
   aliases:
   - Blood Tests
@@ -142,6 +147,7 @@ nodes:
   level: 3
   status: active
   is_category: true
+  port: true
 - id: over_the_counter_products
   aliases:
   - Over The Counter Products
@@ -217,6 +223,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: home_monitoring_devices
   aliases:
   - Home Monitoring Devices
@@ -247,6 +254,7 @@ nodes:
   level: 3
   status: active
   is_category: true
+  port: true
 - id: water_and_food_borne_diseases
   aliases:
   - Water & Food Borne Diseases
@@ -303,6 +311,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: cholera_and_diarrhea
   aliases:
   - Cholera & Diarrhea
@@ -335,6 +344,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: covid_19
   aliases:
   - COVID-19
@@ -345,6 +355,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: chronic_and_lifestyle_conditions
   aliases:
   - Chronic & Lifestyle Conditions
@@ -401,6 +412,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: obesity
   aliases:
   - Obesity
@@ -410,6 +422,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: hypertension
   aliases:
   - Hypertension
@@ -428,6 +441,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: asthma
   aliases:
   - Asthma
@@ -494,6 +508,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: anxiety_disorders
   aliases:
   - Anxiety Disorders
@@ -503,6 +518,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: substance_abuse
   aliases:
   - Substance Abuse
@@ -571,6 +587,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: fertility_treatments
   aliases:
   - Fertility Treatments
@@ -602,6 +619,7 @@ nodes:
   category: I6
   level: 4
   status: active
+  port: true
 - id: alternative_medicine
   aliases:
   - Alternative Medicine

@@ -196,6 +196,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: urban_rail_transit
   aliases:
   - Urban Rail Transit
@@ -238,6 +239,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  port: true
 - id: city_bus_fare
   aliases:
   - City Bus Fare
@@ -280,6 +282,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: bike_taxi_fare
   aliases:
   - Bike Taxi Fare
@@ -290,6 +293,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: auto_rickshaw_fare
   aliases:
   - Auto Rickshaw Fare
@@ -301,6 +305,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: e_rickshaw_fare
   aliases:
   - E-Rickshaw Fare
@@ -310,6 +315,7 @@ nodes:
   category: I3
   level: 4
   status: active
+  port: true
 - id: railway_travel
   aliases:
   - Railway Travel
@@ -458,6 +464,14 @@ nodes:
   port: true
   regulated_by:
   - municipal_corporations
+- id: train_cancellations_and_delays
+  aliases:
+  - Train Cancellations
+  - Train Delays
+  - Railway Disruptions
+  category: I3
+  level: 4
+  status: active
 edges:
 - from: i3
   to: private_vehicle_ownership
@@ -747,3 +761,10 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Urban Road Conditions contains parking fees
+- from: railway_travel
+  to: train_cancellations_and_delays
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Railway Travel contains Train Cancellations And Delays

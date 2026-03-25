@@ -301,6 +301,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: domestic_help_cost
   aliases:
   - domestic help cost
@@ -324,6 +325,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: pest_control_services
   aliases:
   - pest control
@@ -335,6 +337,25 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
+- id: residential_borewells
+  aliases:
+  - Residential Borewells
+  - Borewell Water Supply
+  - Tubewell
+  category: I2
+  level: 4
+  status: active
+- id: drinking_water_quality
+  aliases:
+  - Drinking Water Quality
+  - Water Contamination
+  - Water Potability
+  - Safe Drinking Water
+  category: I2
+  level: 3
+  status: active
+  is_category: true
 edges:
 - from: i2
   to: shelter_and_accommodation
@@ -540,3 +561,17 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Home upkeep contains pest control services entity
+- from: residential_water_supply
+  to: residential_borewells
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Residential Water Supply contains Residential Borewells
+- from: water_and_sanitation
+  to: drinking_water_quality
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Water And Sanitation contains Drinking Water Quality

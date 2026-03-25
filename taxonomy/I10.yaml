@@ -241,6 +241,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: broadband_network_quality
   aliases:
   - Broadband Network Quality
@@ -321,6 +322,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: upi_transaction_success
   aliases:
   - UPI Transaction Success
@@ -380,6 +382,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: e_mandate_autopay
   aliases:
   - e-Mandate Autopay
@@ -406,6 +409,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: social_media_accounts
   aliases:
   - Social Media Accounts
@@ -418,6 +422,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: spam_calls
   aliases:
   - Spam Calls
@@ -433,6 +438,7 @@ nodes:
   portal: true
   regulated_by:
   - trai
+  port: true
 - id: personal_data_privacy
   aliases:
   - Personal Data Privacy
@@ -445,6 +451,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: smartphone_device
   aliases:
   - Smartphone Device
@@ -474,6 +481,43 @@ nodes:
   status: active
   portal: true
   port: true
+- id: internet_shutdowns
+  aliases:
+  - Internet Shutdowns
+  - Network Blackouts
+  - Government Internet Ban
+  - Mobile Internet Suspension
+  category: I10
+  level: 4
+  status: active
+- id: data_breaches_and_leaks
+  aliases:
+  - Data Breaches
+  - Data Leaks
+  - Personal Data Theft
+  - Information Security Breach
+  category: I10
+  level: 4
+  status: active
+- id: digital_payment_infrastructure
+  aliases:
+  - Digital Payment Infrastructure
+  - Fintech Payment Apps
+  - Merchant Payment Devices
+  - POS and Soundbox
+  - PhonePe and GPay
+  category: I10
+  level: 4
+  status: active
+- id: content_moderation_policies
+  aliases:
+  - Content Moderation Policies
+  - Platform Takedowns
+  - Social Media Censorship
+  - IT Rules Compliance
+  category: I10
+  level: 4
+  status: active
 edges:
 - from: i10
   to: telecom_and_internet_access
@@ -748,3 +792,31 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Personal Computing Devices contains Laptop Computer
+- from: mobile_connectivity
+  to: internet_shutdowns
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mobile Connectivity contains Internet Shutdowns
+- from: personal_data_control
+  to: data_breaches_and_leaks
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Personal Data Control contains Data Breaches And Leaks
+- from: upi_ecosystem
+  to: digital_payment_infrastructure
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Upi Ecosystem contains Digital Payment Infrastructure
+- from: social_media_presence
+  to: content_moderation_policies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social Media Presence contains Content Moderation Policies

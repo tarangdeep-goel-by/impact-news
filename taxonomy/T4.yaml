@@ -313,6 +313,38 @@ nodes:
   level: 3
   status: active
   portal: true
+- id: railway_freight_movement
+  aliases:
+  - Railway Freight
+  - Goods Train Movement
+  - Rail Cargo
+  category: T4
+  level: 4
+  status: active
+- id: road_freight_movement
+  aliases:
+  - Road Freight
+  - Trucking and Logistics
+  - Highway Cargo Movement
+  category: T4
+  level: 4
+  status: active
+- id: water_treatment_plants
+  aliases:
+  - Water Treatment Plants
+  - WTP
+  - Municipal Water Processing
+  category: T4
+  level: 4
+  status: active
+- id: power_substations
+  aliases:
+  - Power Substations
+  - Electricity Distribution
+  - Grid Substations
+  category: T4
+  level: 4
+  status: active
 edges:
 - from: t4
   to: energy_power_infrastructure
@@ -520,408 +552,31 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Advanced Tech & Space Infrastructure contains Semiconductor Fabs
-- from: coal_power_plants
-  to: national_power_grid
-  type: SUPPLIES
-  weight: 0.7
-  polarity: 1
-  delay: IMMEDIATE
-  description: Baseload thermal generation provides the primary electricity supply
-    to the national power grid.
-- from: renewable_energy_parks
-  to: national_power_grid
-  type: SUPPLIES
-  weight: 0.2
-  polarity: 1
-  delay: IMMEDIATE
-  description: Solar and wind generation injects intermittent renewable electricity
-    into the national power grid.
-- from: nuclear_power_plants
-  to: national_power_grid
-  type: SUPPLIES
-  weight: 0.1
-  polarity: 1
-  delay: IMMEDIATE
-  description: Atomic power stations provide zero-carbon baseload electricity to the
-    national grid.
-- from: oil_gas_pipelines
-  to: national_power_grid
-  type: SUPPLIES
-  weight: 0.1
-  polarity: 1
-  delay: IMMEDIATE
-  description: Natural gas pipelines supply fuel to gas-fired power plants, which
-    in turn feed electricity to the grid.
-- from: renewable_energy_parks
-  to: coal_power_plants
-  type: DISRUPTS
-  weight: 0.3
-  polarity: -1
-  delay: LONG_TERM
-  description: Expansion of renewable energy capacity displaces thermal generation,
-    reducing the plant load factor of coal power plants.
-- from: telecom_spectrum
-  to: telecom_towers_network
-  type: SUPPLIES
-  weight: 0.75
-  polarity: 1
-  delay: IMMEDIATE
-  description: Allocation of radio frequencies dictates the data carrying capacity
-    and bandwidth of the mobile tower network.
-- from: optical_fibre_network
-  to: telecom_towers_network
-  type: SUPPLIES
-  weight: 0.7
-  polarity: 1
-  delay: IMMEDIATE
-  description: Fiber optic backhaul provides the high-speed data transmission capacity
-    required by 4G/5G cell towers.
-- from: submarine_internet_cables
-  to: data_centers
-  type: SUPPLIES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: Undersea cables provide the international bandwidth necessary for data
-    centers to sync with global cloud networks.
-- from: data_centers
-  to: upi_platform
-  type: SUPPLIES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Server farms and cloud infrastructure provide the compute power required
-    to process high-volume UPI transactions.
-- from: data_centers
-  to: aadhaar_database
-  type: SUPPLIES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Secure colocation facilities host the CIDR servers that maintain and
-    authenticate the Aadhaar biometric database.
-- from: aadhaar_database
-  to: upi_platform
-  type: SUPPLIES
-  weight: 0.4
-  polarity: 1
-  delay: IMMEDIATE
-  description: Aadhaar eKYC and authentication infrastructure enables rapid user onboarding
-    and verification for the UPI payment layer.
-- from: upi_platform
-  to: ondc_platform
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: The UPI payment switch provides the frictionless settlement layer required
-    for the Open Network for Digital Commerce.
-- from: telecom_towers_network
-  to: upi_platform
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: Mobile internet access provided by cell towers is the primary prerequisite
-    for citizens to execute UPI transactions.
-- from: national_power_grid
-  to: data_centers
-  type: SUPPLIES
-  weight: 0.3
-  polarity: 1
-  delay: IMMEDIATE
-  description: Continuous, high-capacity grid power is essential for data center uptime
-    and cooling systems.
-- from: national_power_grid
-  to: telecom_towers_network
-  type: SUPPLIES
-  weight: 0.35
-  polarity: 1
-  delay: IMMEDIATE
-  description: Grid electricity powers base transceiver stations, reducing their reliance
-    on backup diesel generators.
-- from: national_power_grid
-  to: indian_railways_network
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: Railway electrification relies entirely on the national power grid
-    to run passenger and freight locomotives.
-- from: national_power_grid
-  to: municipal_water_grid
-  type: SUPPLIES
-  weight: 0.75
-  polarity: 1
-  delay: IMMEDIATE
-  description: Municipal water pumping and purification stations require continuous
-    grid power to maintain water pressure.
-- from: satellite_network
-  to: telecom_towers_network
-  type: SUPPLIES
-  weight: 0.15
-  polarity: 1
-  delay: IMMEDIATE
-  description: Communication satellites provide vital backhaul connectivity for cell
-    towers in remote and difficult terrains.
-- from: satellite_network
-  to: commercial_airports
-  type: SUPPLIES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: GPS and NavIC satellite systems provide the precise navigation and
-    timing data required for commercial aviation.
-- from: semiconductor_fabs
-  to: data_centers
-  type: SUPPLIES
-  weight: 0.1
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Domestic chip manufacturing supplies the microprocessors and memory
-    chips required to build out server farms.
-- from: semiconductor_fabs
-  to: telecom_towers_network
-  type: SUPPLIES
-  weight: 0.1
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Wafer fabs produce the specialized silicon components needed for 5G
-    base stations and telecom routing equipment.
-- from: dedicated_freight_corridors
-  to: indian_railways_network
-  type: AFFECTS
-  weight: 0.45
-  polarity: 1
-  delay: IMMEDIATE
-  description: Shifting goods trains to dedicated corridors frees up track capacity
-    on the main Indian Railways network for passenger trains.
-- from: dedicated_freight_corridors
-  to: highway_network
-  type: DISRUPTS
-  weight: 0.3
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Efficient rail freight corridors divert cargo traffic away from roads,
-    reducing congestion on the national highway network.
-- from: dedicated_freight_corridors
-  to: major_seaports
-  type: SUPPLIES
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Freight rail links accelerate the evacuation of containers from seaports
-    to the hinterland, increasing port throughput.
-- from: highway_network
-  to: major_seaports
-  type: SUPPLIES
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Expressway connectivity allows trucking fleets to rapidly move export/import
-    cargo in and out of maritime ports.
-- from: global_shipping_routes
-  to: major_seaports
-  type: SUPPLIES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: International sea lanes dictate the volume of commercial vessel traffic
-    arriving at major cargo terminals.
-- from: municipal_water_grid
-  to: sewage_drainage_network
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: Increased municipal water supply directly generates higher volumes
-    of wastewater that the sewage network must process.
-- from: national_power_grid
-  to: index_of_industrial_production
-  type: SUPPLIES
-  weight: 0.65
-  polarity: 1
-  delay: SHORT_TERM
-  description: Stable and abundant grid power prevents factory downtime, directly
-    boosting national manufacturing output.
-- from: dedicated_freight_corridors
-  to: index_of_industrial_production
-  type: AFFECTS
-  weight: 0.25
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Faster and cheaper freight movement lowers logistics costs, stimulating
-    industrial manufacturing activity.
-- from: major_seaports
-  to: india_trade_deficit
-  type: AFFECTS
-  weight: 0.25
-  polarity: -1
-  delay: SHORT_TERM
-  description: Improved port turnaround times and capacity boost export volumes, helping
-    to narrow the national trade deficit.
-- from: global_shipping_routes
-  to: global_shipping_freight_rates
-  type: AFFECTS
-  weight: 0.85
-  polarity: -1
-  delay: SHORT_TERM
-  description: Expansion or clearing of maritime chokepoints increases effective vessel
-    supply, lowering global container freight rates.
-- from: upi_platform
-  to: pmi_services
-  type: AFFECTS
-  weight: 0.35
-  polarity: 1
-  delay: SHORT_TERM
-  description: Frictionless digital payments increase transaction velocity and formalize
-    revenue in the services sector, boosting PMI.
-- from: aadhaar_database
-  to: epfo_payroll_additions
-  type: AFFECTS
-  weight: 0.3
-  polarity: 1
-  delay: SHORT_TERM
-  description: Digital identity verification accelerates the onboarding of workers
-    into the formal economy and provident fund system.
-- from: semiconductor_fabs
-  to: india_trade_deficit
-  type: AFFECTS
-  weight: 0.2
-  polarity: -1
-  delay: LONG_TERM
-  description: Domestic semiconductor manufacturing substitutes imports, significantly
-    reducing the electronics import bill.
-- from: semiconductor_fabs
-  to: global_semiconductor_supply_chain
-  type: SUPPLIES
-  weight: 0.1
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Indian wafer fabs add net new manufacturing capacity to the global
-    microchip supply chain.
-- from: telecom_spectrum
-  to: fii_fpi_flows
-  type: AFFECTS
-  weight: 0.15
-  polarity: 1
-  delay: SHORT_TERM
-  description: Spectrum auctions and subsequent telecom infrastructure rollouts attract
-    significant foreign institutional investment.
-- from: renewable_energy_parks
-  to: global_surface_temperature
-  type: AFFECTS
-  weight: 0.05
-  polarity: -1
-  delay: LONG_TERM
-  description: Displacement of fossil fuels by zero-emission solar and wind energy
-    helps mitigate global warming trends.
-- from: highway_network
-  to: tier_2_3_city_expansion
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Expressway connectivity drives economic investment and real estate
-    development in smaller regional cities.
-- from: commercial_airports
-  to: tier_2_3_city_expansion
-  type: AFFECTS
-  weight: 0.55
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Airport announcements (UDAN scheme, Jewar, Navi Mumbai) catalyze real
-    estate booms and economic expansion in tier 2/3 cities.
-- from: municipal_water_grid
-  to: urban_population_density
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: Reliable piped water infrastructure is a hard prerequisite that enables
-    higher residential density in urban centers.
-- from: sewage_drainage_network
-  to: urban_population_density
-  type: AFFECTS
-  weight: 0.65
-  polarity: 1
-  delay: LONG_TERM
-  description: Underground drainage and sewage treatment capacity dictates the maximum
-    sustainable population density of a city.
 - from: indian_railways_network
-  to: seasonal_migrant_labor
-  type: AFFECTS
-  weight: 0.75
+  to: railway_freight_movement
+  type: CONTAINS
+  weight: 0.9
   polarity: 1
-  delay: SHORT_TERM
-  description: The reach and affordability of the railway network facilitates the
-    mass movement of seasonal migrant workers across states.
-- from: transport_logistics_infrastructure
-  to: biophysical_and_ecological_systems
-  type: DISRUPTS
-  weight: 0.65
-  polarity: -1
-  delay: LONG_TERM
-  description: The expansion of highway networks and freight corridors fragments terrestrial
-    ecosystems and disrupts biological populations and wildlife corridors.
-- from: energy_power_infrastructure
-  to: biophysical_and_ecological_systems
-  type: DISRUPTS
-  weight: 0.6
-  polarity: -1
-  delay: LONG_TERM
-  description: The construction of power plants, dams, and pipeline networks leads
-    to deforestation and habitat loss, disrupting terrestrial ecosystems.
-- from: digital_telecom_infrastructure
-  to: indian_union_government
-  type: SUPPLIES
-  weight: 0.8
+  delay: IMMEDIATE
+  description: Indian Railways Network contains Railway Freight Movement
+- from: highway_network
+  to: road_freight_movement
+  type: CONTAINS
+  weight: 0.9
   polarity: 1
-  delay: SHORT_TERM
-  description: Digital Public Infrastructure (DPI) and data centers supply the foundational
-    technological rails for the Union government's welfare delivery and tax collection
-    systems.
-- from: transport_logistics_infrastructure
-  to: international_trade_and_supply_chains
-  type: SUPPLIES
-  weight: 0.75
+  delay: IMMEDIATE
+  description: Highway Network contains Road Freight Movement
+- from: municipal_water_grid
+  to: water_treatment_plants
+  type: CONTAINS
+  weight: 0.9
   polarity: 1
-  delay: SHORT_TERM
-  description: The capacity and efficiency of major seaports, commercial airports,
-    and freight corridors directly determine a nation's trade balance metrics and
-    integration into global supply chains.
-- from: digital_telecom_infrastructure
-  to: indian_macroeconomic_indicators
-  type: AFFECTS
-  weight: 0.4
+  delay: IMMEDIATE
+  description: Municipal Water Grid contains Water Treatment Plants
+- from: national_power_grid
+  to: power_substations
+  type: CONTAINS
+  weight: 0.9
   polarity: 1
-  delay: MEDIUM_TERM
-  description: Digital public infrastructure and telecom networks drive economic formalization
-    and service-sector efficiency, boosting national output and creating new employment
-    aggregates.
-- from: digital_telecom_infrastructure
-  to: financial_and_capital_markets
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: SHORT_TERM
-  description: Telecom networks, data centers, and digital public infrastructure form
-    the foundational physical layer enabling digital payments, high-frequency trading,
-    and modern capital market operations.
-- from: transport_logistics_infrastructure
-  to: migration_and_mobility
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: LONG_TERM
-  description: Expansion of transport networks (railways, highways, airports) directly
-    facilitates and accelerates domestic and international population mobility.
-- from: digital_telecom_infrastructure
-  to: macro_behavioral_shifts
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Deep penetration of digital public infrastructure and telecom networks
-    directly drives shifts in consumer sentiment and civic participation by enabling
-    real-time information access and digital transactions.
+  delay: IMMEDIATE
+  description: National Power Grid contains Power Substations

@@ -1,483 +1,546 @@
 scenarios:
-- id: energy_crude_to_diesel
-  description: Brent crude spike reaches retail diesel
+- id: a_brent_crude_to_retail_petrol
+  description: Global brent crude prices reach retail petrol
   domain: energy
   type: A
   trigger_node: brent_crude
-  target_node: retail_diesel
-  max_hops: 4
+  target_node: retail_petrol
   expected: REACHABLE
-- id: energy_crude_to_lpg
-  description: Brent crude price hike reaches LPG cylinder cost
+- id: a_brent_crude_to_lpg_cylinder
+  description: Brent crude affects residential cooking fuel (LPG)
   domain: energy
   type: A
   trigger_node: brent_crude
   target_node: lpg_cylinder
-  max_hops: 4
   expected: REACHABLE
-- id: energy_gold_to_loan
-  description: Gold price movement reaches gold loan interest
-  domain: energy
+- id: a_southwest_monsoon_to_retail_rice
+  description: Southwest monsoon impacts retail rice prices
+  domain: climate
   type: A
-  trigger_node: international_gold_prices
-  target_node: gold_loan_interest
-  max_hops: 4
+  trigger_node: southwest_monsoon
+  target_node: retail_rice
   expected: REACHABLE
-- id: energy_natgas_to_auto
-  description: Natural gas price reaches auto rickshaw fare via CNG
-  domain: energy
+- id: a_southwest_monsoon_to_retail_tomato
+  description: Southwest monsoon impacts fresh tomato supply/prices
+  domain: climate
   type: A
-  trigger_node: global_natural_gas
-  target_node: auto_rickshaw_fare
-  max_hops: 4
+  trigger_node: southwest_monsoon
+  target_node: retail_tomato
   expected: REACHABLE
-- id: energy_coal_to_tariff
-  description: Coal prices affect electricity tariff
-  domain: energy
-  type: A
-  trigger_node: international_coal_prices
-  target_node: electricity_tariff
-  max_hops: 4
-  expected: REACHABLE
-- id: energy_crude_reachability
-  description: Brent crude spike reaches diesel, petrol via direct causal chains
-  domain: energy
-  type: B
-  trigger_node: brent_crude
-  target_nodes:
-  - retail_diesel
-  - retail_petrol
-  direction: 1
-  threshold: 0.05
-- id: energy_crude_to_savings_score
-  description: Brent crude shock propagates to savings with meaningful score
-  domain: energy
-  type: C
-  trigger_node: brent_crude
-  target_node: savings_account_balance
-  direction: 1
-  min_score: 0.05
-- id: monetary_rbi_to_emi
-  description: RBI policy reaches home loan EMI
+- id: a_rbi_to_home_loan_emi
+  description: RBI repo rate changes affect home loan EMIs
   domain: monetary
   type: A
   trigger_node: rbi
   target_node: home_loan_emi
-  max_hops: 4
   expected: REACHABLE
-- id: monetary_rbi_to_emi_score
-  description: RBI has strong causal link to home loan EMI
-  domain: monetary
-  type: C
-  trigger_node: rbi
-  target_node: home_loan_emi
-  direction: 1
-  min_score: 0.15
-- id: monetary_fed_to_nifty
-  description: US Fed rate decision reaches Nifty 50 via FII flows
+- id: a_gst_council_to_biscuits_and_snacks
+  description: GST Council tax slabs reach packaged biscuits and snacks
+  domain: governance
+  type: A
+  trigger_node: gst_council
+  target_node: biscuits_and_snacks
+  expected: REACHABLE
+- id: a_us_federal_reserve_to_nifty_50
+  description: US Federal Reserve rate hikes affect Nifty 50
   domain: monetary
   type: A
   trigger_node: us_federal_reserve
   target_node: nifty_50
-  max_hops: 4
   expected: REACHABLE
-- id: monetary_gst_to_food
-  description: GST council decision reaches packaged food prices
-  domain: monetary
-  type: A
-  trigger_node: gst_council
-  target_node: packaged_and_processed_foods
-  max_hops: 4
-  expected: REACHABLE
-- id: monetary_budget_to_lpg
-  description: Union budget subsidy changes reach LPG cylinder price
-  domain: monetary
-  type: A
-  trigger_node: union_budget_framework
-  target_node: lpg_cylinder
-  max_hops: 4
-  expected: REACHABLE
-- id: monetary_mpc_to_emi_score
-  description: MPC decision strongly affects home loan EMI
-  domain: monetary
-  type: C
-  trigger_node: monetary_policy_committee
-  target_node: home_loan_emi
-  direction: 1
-  min_score: 0.15
-- id: monetary_nifty_to_nps
-  description: Nifty 50 movement reaches NPS portfolio value
-  domain: monetary
-  type: A
-  trigger_node: nifty_50
-  target_node: nps_portfolio
-  max_hops: 3
-  expected: REACHABLE
-- id: climate_monsoon_to_rice
-  description: Southwest monsoon affects retail rice price
-  domain: climate
-  type: A
-  trigger_node: southwest_monsoon
-  target_node: retail_rice
-  max_hops: 4
-  expected: REACHABLE
-- id: climate_monsoon_reachability
-  description: Southwest monsoon reaches rice, vegetables, and farm labor
-  domain: climate
-  type: B
-  trigger_node: southwest_monsoon
-  target_nodes:
-  - retail_rice
-  - vegetables
-  - farm_labor_wages
-  direction: 1
-  threshold: 0.05
-- id: climate_stubble_to_hospital
-  description: Post-monsoon stubble burning causes respiratory hospital admissions
-  domain: climate
-  type: A
-  trigger_node: meteorological_systems
-  target_node: respiratory_conditions
-  max_hops: 5
-  expected: REACHABLE
-- id: climate_monsoon_to_labor
-  description: Monsoon disruption reaches construction worker wages via PPR
-  domain: climate
-  type: B
-  trigger_node: southwest_monsoon
-  target_nodes:
-  - construction_worker_wages
-  direction: 1
-  threshold: 0.001
-- id: climate_cyclone_to_fish
-  description: Cyclonic storms disrupt marine fish stocks
+- id: a_cyclonic_storm_systems_to_marine_fish
+  description: Cyclonic storms disrupt marine fish supply
   domain: climate
   type: A
   trigger_node: cyclonic_storm_systems
-  target_node: marine_fish_stocks
-  max_hops: 3
+  target_node: marine_fish
   expected: REACHABLE
-- id: climate_monsoon_to_schools
-  description: Monsoon-driven pollution forces school closures
-  domain: climate
+- id: a_winter_smog_to_asthma
+  description: Winter smog levels drive asthma conditions
+  domain: health
   type: A
-  trigger_node: meteorological_systems
-  target_node: school_types
-  max_hops: 6
+  trigger_node: winter_smog
+  target_node: asthma
   expected: REACHABLE
-- id: climate_himalayan_to_rice
-  description: Himalayan river system changes reach retail rice price
-  domain: climate
-  type: A
-  trigger_node: himalayan_river_systems
-  target_node: retail_rice
-  max_hops: 5
-  expected: REACHABLE
-- id: employment_fed_to_it_salary
-  description: US Fed policy reaches Indian IT sector salary via tech budgets
-  domain: employment
-  type: A
-  trigger_node: us_federal_reserve
-  target_node: it_sector_salary
-  max_hops: 5
-  expected: REACHABLE
-- id: employment_budget_to_mgnrega
-  description: Union budget allocation reaches MGNREGA farm labor wages
-  domain: employment
-  type: A
-  trigger_node: union_budget_framework
-  target_node: farm_labor_wages
-  max_hops: 5
-  expected: REACHABLE
-- id: employment_monsoon_to_farm_wages
-  description: Monsoon deficit affects farm labor wages
-  domain: employment
-  type: A
-  trigger_node: southwest_monsoon
-  target_node: farm_labor_wages
-  max_hops: 4
-  expected: REACHABLE
-- id: employment_gdp_to_startup_layoffs
-  description: GDP slowdown triggers startup layoffs
+- id: a_india_gdp_growth_to_startup_jobs
+  description: India GDP growth impacts startup jobs
   domain: employment
   type: A
   trigger_node: india_gdp_growth
-  target_node: startup_layoffs
-  max_hops: 8
+  target_node: startup_jobs
   expected: REACHABLE
-- id: trade_us_to_factory
-  description: US trade policy reaches Indian factory worker jobs
-  domain: trade
-  type: A
-  trigger_node: us_government
-  target_node: factory_worker_jobs
-  max_hops: 5
-  expected: REACHABLE
-- id: trade_deficit_to_sme
-  description: Trade deficit affects small factory owner income
-  domain: trade
-  type: A
-  trigger_node: india_trade_deficit
-  target_node: small_factory_owner_income
-  max_hops: 4
-  expected: REACHABLE
-- id: trade_russia_to_grain
-  description: Russian government action reaches global food grain supply
-  domain: trade
-  type: A
-  trigger_node: russian_government
-  target_node: global_food_grain_supply
-  max_hops: 5
-  expected: REACHABLE
-- id: trade_usd_reachability
-  description: USD/INR movement reaches petrol, diesel, and laptop costs
-  domain: trade
-  type: B
-  trigger_node: usd_inr_exchange
-  target_nodes:
-  - retail_petrol
-  - retail_diesel
-  - laptop_computer
-  direction: 1
-  threshold: 0.05
-- id: tech_telecom_to_data
-  description: Telecom infrastructure affects mobile data tariff
-  domain: tech
-  type: A
-  trigger_node: digital_telecom_infrastructure
-  target_node: mobile_data_tariff
-  max_hops: 3
-  expected: REACHABLE
-- id: tech_telecom_to_upi
-  description: Telecom infra disruption reaches UPI transaction success
-  domain: tech
-  type: A
-  trigger_node: digital_telecom_infrastructure
-  target_node: upi_transaction_success
-  max_hops: 5
-  expected: REACHABLE
-- id: tech_semiconductor_to_phone
-  description: Global semiconductor shortage reaches smartphone prices
+- id: a_global_semiconductor_supply_chain_to_smartphone_device
+  description: Semiconductor supply chain impacts smartphone devices
   domain: tech
   type: A
   trigger_node: global_semiconductor_supply_chain
   target_node: smartphone_device
-  max_hops: 8
   expected: REACHABLE
-- id: social_monsoon_to_savings
-  description: Monsoon deficit erodes household savings via food inflation
-  domain: social
+- id: a_telecom_spectrum_to_mobile_data_tariff
+  description: Telecom spectrum auctions affect mobile data tariffs
+  domain: tech
   type: A
-  trigger_node: southwest_monsoon
-  target_node: savings_account_balance
-  max_hops: 6
+  trigger_node: telecom_spectrum
+  target_node: mobile_data_tariff
   expected: REACHABLE
-- id: social_confidence_reachability
-  description: Consumer confidence reaches kirana, savings, and credit cards
-  domain: social
-  type: B
-  trigger_node: aggregate_consumer_confidence
-  target_nodes:
-  - kirana_store_income
-  - savings_account_balance
-  - credit_card_dues
-  direction: 1
-  threshold: 0.05
-- id: social_inflation_score
-  description: Inflation indices have meaningful impact on savings
-  domain: social
-  type: C
-  trigger_node: inflation_indices
-  target_node: savings_account_balance
-  direction: 1
-  min_score: 0.05
-- id: social_crude_to_tomato
-  description: Brent crude spike reaches retail tomato via freight costs
-  domain: social
+- id: a_upi_platform_to_street_vendor_income
+  description: UPI platform disruptions affect street vendor income
+  domain: digital
   type: A
-  trigger_node: brent_crude
-  target_node: retail_tomato
-  max_hops: 5
+  trigger_node: upi_platform
+  target_node: street_vendor_income
   expected: REACHABLE
-- id: governance_budget_reachability
-  description: Union budget reaches LPG and income tax
-  domain: governance
-  type: B
-  trigger_node: union_budget_framework
-  target_nodes:
-  - lpg_cylinder
-  - personal_income_tax
-  direction: 1
-  threshold: 0.05
-- id: governance_gdp_to_salary_score
-  description: GDP growth has meaningful link to IT salary
-  domain: governance
-  type: C
-  trigger_node: india_gdp_growth
-  target_node: it_sector_salary
-  direction: 1
-  min_score: 0.05
-- id: governance_rbi_to_credit
-  description: RBI rate hike reaches credit card dues via lending rates
+- id: a_autumn_festive_season_to_butter_and_ghee
+  description: Autumn festive season drives demand for butter and ghee
+  domain: culture
+  type: A
+  trigger_node: autumn_festive_season
+  target_node: butter_and_ghee
+  expected: REACHABLE
+- id: a_autumn_festive_season_to_irctc_train_ticket
+  description: Autumn festive season drives IRCTC train ticket demand
+  domain: travel
+  type: A
+  trigger_node: autumn_festive_season
+  target_node: irctc_train_ticket
+  expected: REACHABLE
+- id: a_street_waterlogging_to_traffic_congestion
+  description: Street waterlogging deteriorates traffic congestion
+  domain: infrastructure
+  type: A
+  trigger_node: street_waterlogging
+  target_node: traffic_congestion
+  expected: REACHABLE
+- id: a_street_waterlogging_to_dengue
+  description: Street waterlogging leads to dengue outbreaks
+  domain: health
+  type: A
+  trigger_node: street_waterlogging
+  target_node: dengue
+  expected: REACHABLE
+- id: a_ministry_of_finance_to_personal_income_tax
+  description: Ministry of Finance budget affects personal income tax
   domain: governance
   type: A
-  trigger_node: rbi
-  target_node: credit_card_dues
-  max_hops: 5
+  trigger_node: ministry_of_finance
+  target_node: personal_income_tax
   expected: REACHABLE
-- id: cross_rbi_reachability
-  description: RBI reaches EMI, deposits, and credit cards
-  domain: monetary
-  type: B
-  trigger_node: rbi
-  target_nodes:
-  - home_loan_emi
-  - savings_and_deposits
-  - credit_card_dues
-  direction: 1
-  threshold: 0.05
-- id: cross_fed_reachability
-  description: US Fed rate hike reaches IT salary, home loan EMI, and Nifty
-  domain: monetary
-  type: B
-  trigger_node: us_federal_reserve
-  target_nodes:
-  - it_sector_salary
-  - home_loan_emi
-  - nifty_50
-  direction: 1
-  threshold: 0.05
-- id: cross_monsoon_reachability
-  description: Monsoon reaches food prices, farm wages, and savings
+- id: a_ministry_of_agriculture_to_mgnrega_wages
+  description: Ministry of Agriculture policies affect MGNREGA wages
+  domain: employment
+  type: A
+  trigger_node: ministry_of_agriculture
+  target_node: mgnrega_wages
+  expected: REACHABLE
+- id: a_commercial_airports_to_domestic_flight_ticket
+  description: Commercial airports infrastructure affects domestic flight tickets
+  domain: infrastructure
+  type: A
+  trigger_node: commercial_airports
+  target_node: domestic_flight_ticket
+  expected: REACHABLE
+- id: a_global_edible_oil_supply_to_mustard_oil
+  description: Global edible oil supply affects mustard oil prices
+  domain: agriculture
+  type: A
+  trigger_node: global_edible_oil_supply
+  target_node: mustard_oil
+  expected: REACHABLE
+- id: a_international_gold_prices_to_retail_gold_investment
+  description: International gold prices affect retail gold investment
+  domain: culture
+  type: A
+  trigger_node: international_gold_prices
+  target_node: retail_gold_investment
+  expected: REACHABLE
+- id: a_aadhaar_database_to_pan_aadhaar_linkage
+  description: Aadhaar database infrastructure affects PAN-Aadhaar linkage
+  domain: digital
+  type: A
+  trigger_node: aadhaar_database
+  target_node: pan_aadhaar_linkage
+  expected: REACHABLE
+- id: a_municipal_corporations_to_street_garbage
+  description: Municipal corporations manage street garbage
+  domain: environment
+  type: A
+  trigger_node: municipal_corporations
+  target_node: street_garbage
+  expected: REACHABLE
+- id: a_cdsco_to_generic_medicines
+  description: CDSCO regulations impact generic medicines availability
+  domain: health
+  type: A
+  trigger_node: cdsco
+  target_node: generic_medicines
+  expected: REACHABLE
+- id: b_southwest_monsoon_fanout
+  description: Southwest monsoon reaches food, farming, and rural employment
   domain: climate
   type: B
   trigger_node: southwest_monsoon
   target_nodes:
   - retail_rice
   - farm_labor_wages
-  - savings_account_balance
+  - mgnrega_wages
   direction: 1
-  threshold: 0.05
-- id: cross_gst_reachability
-  description: GST council reaches packaged food and biscuits
+  threshold: 0.01
+- id: b_rbi_fanout
+  description: RBI reaches various credit and deposit vehicles
   domain: monetary
   type: B
-  trigger_node: gst_council
+  trigger_node: rbi
   target_nodes:
-  - packaged_and_processed_foods
-  - biscuits_and_snacks
+  - home_loan_emi
+  - personal_loan_emi
+  - fixed_deposits
   direction: 1
-  threshold: 0.05
-- id: neg_gold_to_schools
-  description: Gold price should NOT reach school operations in 3 hops
+  threshold: 0.01
+- id: b_brent_crude_fanout
+  description: Brent crude reaches fuel and travel sectors
   domain: energy
-  type: A
-  trigger_node: international_gold_prices
-  target_node: government_schools
-  max_hops: 3
-  expected: UNREACHABLE
-- id: neg_monsoon_to_nps
-  description: Monsoon should NOT directly reach NPS portfolio in 2 hops
-  domain: climate
-  type: A
-  trigger_node: southwest_monsoon
-  target_node: nps_portfolio
-  max_hops: 2
-  expected: UNREACHABLE
-- id: neg_aadhaar_to_fish
-  description: Aadhaar auth should NOT reach marine fish stocks in 3 hops
-  domain: tech
-  type: A
-  trigger_node: aadhaar_authentication
-  target_node: marine_fish_stocks
-  max_hops: 3
-  expected: UNREACHABLE
-- id: neg_nifty_to_diesel
-  description: Nifty should NOT directly reach diesel price in 2 hops
+  type: B
+  trigger_node: brent_crude
+  target_nodes:
+  - retail_petrol
+  - retail_diesel
+  - domestic_flight_ticket
+  direction: 1
+  threshold: 0.01
+- id: b_street_waterlogging_fanout
+  description: Street waterlogging reaches roads, disease, and power
+  domain: infrastructure
+  type: B
+  trigger_node: street_waterlogging
+  target_nodes:
+  - traffic_congestion
+  - dengue
+  - residential_power_supply
+  direction: 1
+  threshold: 0.01
+- id: b_autumn_festive_season_fanout
+  description: Autumn festive season reaches food, travel, and cultural milestones
+  domain: culture
+  type: B
+  trigger_node: autumn_festive_season
+  target_nodes:
+  - butter_and_ghee
+  - irctc_train_ticket
+  - wedding_venue
+  direction: 1
+  threshold: 0.01
+- id: b_upi_platform_fanout
+  description: UPI platform reaches transactions, vendors, and cabs
+  domain: digital
+  type: B
+  trigger_node: upi_platform
+  target_nodes:
+  - upi_transaction_success
+  - street_vendor_income
+  - cab_aggregator_fare
+  direction: 1
+  threshold: 0.01
+- id: b_nifty_50_fanout
+  description: Nifty 50 reaches mutual funds, investments, and pensions
   domain: monetary
-  type: A
+  type: B
   trigger_node: nifty_50
-  target_node: retail_diesel
-  max_hops: 2
-  expected: UNREACHABLE
-- id: gold_not_wheat
-  description: Gold prices should not reach wheat flour — separate commodity domains
-  domain: energy
-  type: A
-  trigger_node: international_gold_prices
-  target_node: wheat_flour
-  expected: UNREACHABLE
-- id: silver_not_petrol
-  description: Silver prices should not reach petrol in 3 hops
-  domain: energy
-  type: A
-  trigger_node: international_silver_prices
-  target_node: retail_petrol
-  max_hops: 3
-  expected: UNREACHABLE
-- id: gold_not_retail_diesel
-  description: Gold prices should not directly reach diesel
-  domain: energy
-  type: A
-  trigger_node: international_gold_prices
-  target_node: retail_diesel
-  max_hops: 3
-  expected: UNREACHABLE
-- id: coal_not_dairy
-  description: Coal prices should not reach dairy in 3 hops
-  domain: energy
-  type: A
-  trigger_node: international_coal_prices
-  target_node: dairy_and_eggs
-  max_hops: 3
-  expected: UNREACHABLE
-- id: sensex_not_wheat
-  description: Stock index should not directly reach wheat flour
+  target_nodes:
+  - equity_mutual_funds
+  - direct_equity_portfolio
+  - nps_portfolio
+  direction: 1
+  threshold: 0.01
+- id: b_wpi_fanout
+  description: WPI reaches deposits, sentiment, and retail trade
+  domain: macro
+  type: B
+  trigger_node: wpi
+  target_nodes:
+  - fixed_deposits
+  - aggregate_consumer_confidence
+  - kirana_store_income
+  direction: 1
+  threshold: 0.01
+- id: b_winter_smog_fanout
+  description: Winter smog reaches health and air quality
+  domain: environment
+  type: B
+  trigger_node: winter_smog
+  target_nodes:
+  - asthma
+  - doctor_consultation
+  - ambient_aqi
+  direction: 1
+  threshold: 0.01
+- id: b_us_federal_reserve_fanout
+  description: US Federal Reserve reaches forex, flows, and gold
+  domain: macro
+  type: B
+  trigger_node: us_federal_reserve
+  target_nodes:
+  - usd_inr_exchange
+  - fii_fpi_flows
+  - international_gold_prices
+  direction: 1
+  threshold: 0.01
+- id: c_rbi_to_home_loan_emi_score
+  description: RBI has strong causal link to home loan EMIs
   domain: monetary
-  type: A
-  trigger_node: sensex
-  target_node: wheat_flour
-  max_hops: 3
-  expected: UNREACHABLE
-- id: d_crude_trade_over_emi
-  description: Crude oil should impact trade deficit more than home loan EMI
+  type: C
+  trigger_node: rbi
+  target_node: home_loan_emi
+  direction: 1
+  min_score: 0.15
+- id: c_southwest_monsoon_to_farm_labor_wages_score
+  description: Southwest monsoon has strong causal link to farm labor wages
+  domain: climate
+  type: C
+  trigger_node: southwest_monsoon
+  target_node: farm_labor_wages
+  direction: 1
+  min_score: 0.10
+- id: c_brent_crude_to_retail_petrol_score
+  description: Brent crude strongly affects retail petrol
+  domain: energy
+  type: C
+  trigger_node: brent_crude
+  target_node: retail_petrol
+  direction: 1
+  min_score: 0.15
+- id: c_street_waterlogging_to_traffic_congestion_score
+  description: Street waterlogging strongly impacts traffic congestion
+  domain: infrastructure
+  type: C
+  trigger_node: street_waterlogging
+  target_node: traffic_congestion
+  direction: 1
+  min_score: 0.10
+- id: c_winter_smog_to_asthma_score
+  description: Winter smog strongly impacts asthma
+  domain: health
+  type: C
+  trigger_node: winter_smog
+  target_node: asthma
+  direction: 1
+  min_score: 0.10
+- id: c_upi_platform_to_upi_transaction_success_score
+  description: UPI platform strongly enables UPI transaction success
+  domain: digital
+  type: C
+  trigger_node: upi_platform
+  target_node: upi_transaction_success
+  direction: 1
+  min_score: 0.15
+- id: c_wedding_season_aggregate_to_wedding_venue_score
+  description: Wedding season strongly links to wedding venues
+  domain: culture
+  type: C
+  trigger_node: wedding_season_aggregate
+  target_node: wedding_venue
+  direction: 1
+  min_score: 0.10
+- id: c_india_gdp_growth_to_epfo_payroll_additions_score
+  description: India GDP growth strongly links to EPFO payroll additions
+  domain: macro
+  type: C
+  trigger_node: india_gdp_growth
+  target_node: epfo_payroll_additions
+  direction: 1
+  min_score: 0.10
+- id: d_southwest_monsoon_rice_over_smartphones
+  description: Southwest monsoon impacts retail rice more than smartphones
+  domain: climate
+  type: D
+  trigger_node: southwest_monsoon
+  higher_node: retail_rice
+  lower_node: smartphone_device
+- id: d_rbi_loans_over_tomato
+  description: RBI impacts home loan EMIs more than retail tomatoes
+  domain: monetary
+  type: D
+  trigger_node: rbi
+  higher_node: home_loan_emi
+  lower_node: retail_tomato
+- id: d_brent_crude_petrol_over_schools
+  description: Brent crude impacts retail petrol more than school fees
   domain: energy
   type: D
   trigger_node: brent_crude
-  higher_node: india_trade_deficit
-  lower_node: home_loan_emi
-- id: d_monsoon_food_over_emi
-  description: Monsoon should impact food prices more than home loan EMI
-  domain: climate
+  higher_node: retail_petrol
+  lower_node: school_fees
+- id: d_street_waterlogging_traffic_over_funds
+  description: Street waterlogging impacts traffic more than mutual funds
+  domain: infrastructure
   type: D
-  trigger_node: southwest_monsoon
-  higher_node: staple_grains
-  lower_node: home_loan_emi
-- id: d_mpc_emi_over_tomato
-  description: MPC should impact EMI more than tomato price
+  trigger_node: street_waterlogging
+  higher_node: traffic_congestion
+  lower_node: equity_mutual_funds
+- id: d_wedding_season_venues_over_taxes
+  description: Wedding season impacts venues more than personal income tax
+  domain: culture
+  type: D
+  trigger_node: wedding_season_aggregate
+  higher_node: wedding_venue
+  lower_node: personal_income_tax
+- id: d_winter_smog_asthma_over_deposits
+  description: Winter smog impacts asthma more than fixed deposits
+  domain: environment
+  type: D
+  trigger_node: winter_smog
+  higher_node: asthma
+  lower_node: fixed_deposits
+- id: d_upi_platform_success_over_fish
+  description: UPI platform impacts transaction success more than marine fish
+  domain: digital
+  type: D
+  trigger_node: upi_platform
+  higher_node: upi_transaction_success
+  lower_node: marine_fish
+- id: d_nifty_50_funds_over_lpg
+  description: Nifty 50 impacts equity mutual funds more than LPG cylinders
   domain: monetary
   type: D
-  trigger_node: monetary_policy_committee
-  higher_node: home_loan_emi
-  lower_node: retail_tomato
-- id: d_fed_nifty_over_rice
-  description: US Fed should impact Nifty more than rice prices
-  domain: monetary
-  type: D
-  trigger_node: us_federal_reserve
-  higher_node: nifty_50
-  lower_node: retail_rice
+  trigger_node: nifty_50
+  higher_node: equity_mutual_funds
+  lower_node: lpg_cylinder
 - id: e_gold_not_wheat
-  description: Gold prices should have near-zero PPR probability to wheat
-  domain: energy
+  description: International gold prices should have near-zero probability to wheat flour
+  domain: isolation
   type: E
   trigger_node: international_gold_prices
   target_node: wheat_flour
   max_probability: 0.0005
-- id: e_silver_not_petrol
-  description: Silver prices should have near-zero PPR probability to petrol
-  domain: energy
+- id: e_gold_not_exams
+  description: International gold prices should have near-zero probability to CBSE exams
+  domain: isolation
   type: E
-  trigger_node: international_silver_prices
-  target_node: retail_petrol
+  trigger_node: international_gold_prices
+  target_node: cbse_exams
+  max_probability: 0.0005
+- id: e_nifty_not_monsoon
+  description: Nifty 50 should not affect southwest monsoon
+  domain: isolation
+  type: E
+  trigger_node: nifty_50
+  target_node: southwest_monsoon
+  max_probability: 0.0005
+- id: e_nifty_not_fish
+  description: Nifty 50 should not affect marine fish
+  domain: isolation
+  type: E
+  trigger_node: nifty_50
+  target_node: marine_fish
+  max_probability: 0.0005
+- id: e_monsoon_not_smartphones
+  description: Southwest monsoon should not affect smartphone devices
+  domain: isolation
+  type: E
+  trigger_node: southwest_monsoon
+  target_node: smartphone_device
+  max_probability: 0.0005
+- id: e_monsoon_not_funds
+  description: Southwest monsoon should not directly affect equity mutual funds
+  domain: isolation
+  type: E
+  trigger_node: southwest_monsoon
+  target_node: equity_mutual_funds
+  max_probability: 0.0005
+- id: e_rbi_not_smog
+  description: RBI should not affect winter smog
+  domain: isolation
+  type: E
+  trigger_node: rbi
+  target_node: winter_smog
+  max_probability: 0.0005
+- id: e_rbi_not_dengue
+  description: RBI should not affect dengue
+  domain: isolation
+  type: E
+  trigger_node: rbi
+  target_node: dengue
+  max_probability: 0.0005
+- id: e_brent_not_exams
+  description: Brent crude should not affect CBSE exams
+  domain: isolation
+  type: E
+  trigger_node: brent_crude
+  target_node: cbse_exams
+  max_probability: 0.0005
+- id: e_brent_not_weddings
+  description: Brent crude should not affect wedding venues
+  domain: isolation
+  type: E
+  trigger_node: brent_crude
+  target_node: wedding_venue
+  max_probability: 0.0005
+- id: e_festivals_not_chips
+  description: Autumn festive season should not affect semiconductor fabs
+  domain: isolation
+  type: E
+  trigger_node: autumn_festive_season
+  target_node: semiconductor_fabs
+  max_probability: 0.0005
+- id: e_festivals_not_tectonic
+  description: Autumn festive season should not affect Himalayan tectonic plates
+  domain: isolation
+  type: E
+  trigger_node: autumn_festive_season
+  target_node: himalayan_tectonic_plates
+  max_probability: 0.0005
+- id: e_upi_not_fish
+  description: UPI platform should not affect marine fish
+  domain: isolation
+  type: E
+  trigger_node: upi_platform
+  target_node: marine_fish
+  max_probability: 0.0005
+- id: e_upi_not_smog
+  description: UPI platform should not affect winter smog
+  domain: isolation
+  type: E
+  trigger_node: upi_platform
+  target_node: winter_smog
+  max_probability: 0.0005
+- id: e_smog_not_funds
+  description: Winter smog should not affect equity mutual funds
+  domain: isolation
+  type: E
+  trigger_node: winter_smog
+  target_node: equity_mutual_funds
+  max_probability: 0.0005
+- id: e_smog_not_loans
+  description: Winter smog should not affect home loan EMIs
+  domain: isolation
+  type: E
+  trigger_node: winter_smog
+  target_node: home_loan_emi
+  max_probability: 0.0005
+- id: e_waterlogging_not_fed
+  description: Street waterlogging should not affect US Federal Reserve
+  domain: isolation
+  type: E
+  trigger_node: street_waterlogging
+  target_node: us_federal_reserve
+  max_probability: 0.0005
+- id: e_waterlogging_not_forex
+  description: Street waterlogging should not affect USD INR exchange
+  domain: isolation
+  type: E
+  trigger_node: street_waterlogging
+  target_node: usd_inr_exchange
+  max_probability: 0.0005
+- id: e_edible_oil_not_smartphones
+  description: Global edible oil supply should not affect smartphone devices
+  domain: isolation
+  type: E
+  trigger_node: global_edible_oil_supply
+  target_node: smartphone_device
+  max_probability: 0.0005
+- id: e_edible_oil_not_spectrum
+  description: Global edible oil supply should not affect telecom spectrum
+  domain: isolation
+  type: E
+  trigger_node: global_edible_oil_supply
+  target_node: telecom_spectrum
   max_probability: 0.0005

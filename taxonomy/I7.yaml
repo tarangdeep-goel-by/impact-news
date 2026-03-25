@@ -88,6 +88,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: private_preschools
   aliases:
   - Play School
@@ -98,6 +99,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  port: true
 - id: school_examinations
   aliases:
   - School Board Examinations
@@ -170,6 +172,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  port: true
 - id: student_welfare_programs
   aliases:
   - Student Welfare
@@ -219,6 +222,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: medical_education
   aliases:
   - MBBS
@@ -230,6 +234,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: arts_science_commerce
   aliases:
   - BA
@@ -271,6 +276,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: phd_research_programs
   aliases:
   - PhD
@@ -328,6 +334,7 @@ nodes:
   category: I7
   level: 4
   status: active
+  port: true
 - id: government_job_exams
   aliases:
   - Government Job Exams
@@ -372,6 +379,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: test_prep_industry
   aliases:
   - Test Prep Industry
@@ -413,6 +421,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: language_soft_skills
   aliases:
   - English Speaking Course
@@ -423,6 +432,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: corporate_upskilling
   aliases:
   - Professional Certification
@@ -433,6 +443,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: k12_edtech
   aliases:
   - Online Tuition App
@@ -456,6 +467,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: test_prep_edtech
   aliases:
   - Online Mock Tests
@@ -502,6 +514,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: educational_scholarships
   aliases:
   - Student Scholarship
@@ -512,6 +525,7 @@ nodes:
   category: I7
   level: 3
   status: active
+  port: true
 edges:
 - from: i7
   to: early_childhood_education

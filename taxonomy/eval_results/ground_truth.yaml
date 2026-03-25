@@ -1,190 +1,731 @@
 events:
-- id: crude_2022
-  name: "Crude oil surge to $120/barrel"
-  date: "2022-03"
-  trigger: brent_crude
-  direction: 1
-  description: "Global crude oil prices surged to $120/barrel following Russia-Ukraine conflict"
+- id: bangalore_water_crisis_2024
+  name: Bangalore Water Crisis
+  date: 2024-03
+  trigger: groundwater_aquifers
+  direction: -1
+  description: Severe depletion of groundwater and failed monsoons led to a massive
+    water shortage in Bangalore
   ground_truth:
-  - node: retail_diesel
+  - node: private_water_tanker
     rank: 1
-    reasoning: "Direct petroleum product, retail prices track crude within days"
-  - node: retail_petrol
+    reasoning: Tanker prices surged 3x to Rs 2000+ as borewells dried up across the
+      city
+  - node: municipal_water_supply
     rank: 2
-    reasoning: "Direct petroleum product, immediate pass-through"
-  - node: lpg_cylinder
+    reasoning: BWSSB cut piped supply by 20% to manage the severe shortage
+  - node: rwa_maintenance_fees
     rank: 3
-    reasoning: "LPG prices directly linked to international benchmarks"
-  - node: auto_rickshaw_fare
+    reasoning: Housing societies hiked monthly maintenance to cover exorbitant private
+      tanker costs
+  - node: residential_rent
     rank: 4
-    reasoning: "CNG/petrol fuel cost is largest component of auto fare"
-  - node: delivery_and_logistics
+    reasoning: Tenants began vacating severely affected IT corridors like Whitefield
+  - node: it_sector_jobs
     rank: 5
-    reasoning: "Diesel is 40-60% of trucking costs"
-  - node: retail_tomato
+    reasoning: Tech parks mandated work-from-home as office facilities ran out of
+      water
+  - node: vehicle_servicing_cost
     rank: 6
-    reasoning: "Perishable, high transport cost component"
-  - node: retail_onion
+    reasoning: Government banned the use of potable water for car washing, impacting
+      service centers
+  - node: fine_dining_restaurants
     rank: 7
-    reasoning: "Similar to tomato, transport-sensitive"
-  - node: cooking_fuel
+    reasoning: Restaurants shifted to disposable plates and limited menus to save
+      washing water
+  - node: private_schools
     rank: 8
-    reasoning: "LPG and kerosene prices track crude"
-  - node: vehicle_fuel
+    reasoning: Several private schools shifted to online classes due to dry washrooms
+  - node: cholera_and_diarrhea
     rank: 9
-    reasoning: "Direct petrol consumption for two-wheelers and all vehicles"
-  - node: electricity_tariff
+    reasoning: Consumption of contaminated tanker water led to a spike in water-borne
+      diseases
+  - node: stray_animals
     rank: 10
-    reasoning: "Natural gas and imported coal component in power generation"
-
-- id: rbi_2022
-  name: "RBI rate hike cycle 250bps"
-  date: "2022-2023"
+    reasoning: Severe lack of drinking water sources impacted urban fauna and stray
+      dogs
+- id: paytm_bank_ban_2024
+  name: RBI bans Paytm Payments Bank
+  date: 2024-01
   trigger: rbi
   direction: 1
-  description: "RBI hiked repo rate by 250bps from 4.0% to 6.5% between May 2022 and Feb 2023"
+  description: RBI directed Paytm Payments Bank to stop accepting new deposits and
+    credit transactions due to non-compliance
   ground_truth:
-  - node: home_loan_emi
+  - node: fastag_wallet
     rank: 1
-    reasoning: "Most Indian home loans are floating rate, EMI adjusts within 1-2 months"
-  - node: personal_loan_emi
+    reasoning: Millions of Paytm FASTags became invalid, forcing vehicle owners to
+      buy replacements
+  - node: upi_transaction_success
     rank: 2
-    reasoning: "Personal loans reprice quickly on rate changes"
-  - node: credit_card_dues
+    reasoning: Temporary disruption and confusion caused transaction failures for
+      merchants
+  - node: street_vendor_income
     rank: 3
-    reasoning: "Credit card rates benchmarked to repo/MCLR"
-  - node: auto_loan_emi
+    reasoning: Street vendors heavily reliant on Paytm soundboxes faced settlement
+      delays
+  - node: kirana_store_income
     rank: 4
-    reasoning: "Auto loans are large-ticket floating rate"
+    reasoning: Local grocers had to rapidly switch QR codes to competitor banks to
+      receive payments
   - node: savings_account_balance
     rank: 5
-    reasoning: "Banks pass rate hikes to deposit rates (with lag)"
-  - node: fixed_deposits
+    reasoning: Users were forced to transfer their balances out of PPBL before the
+      deadline
+  - node: ncmc_smart_card
     rank: 6
-    reasoning: "FD rates rise with repo rate, benefits savers"
-  - node: residential_rent
-    rank: 7
-    reasoning: "Higher mortgage costs get passed to rental market over time"
-  - node: real_estate_investment
-    rank: 8
-    reasoning: "Higher borrowing costs dampen demand, slowing price growth"
+    reasoning: Paytm-issued transit cards for metros stopped working for commuters
   - node: direct_equity_portfolio
+    rank: 7
+    reasoning: One97 Communications stock crashed 50% in a month, wiping out retail
+      wealth
+  - node: food_delivery_payouts
+    rank: 8
+    reasoning: Gig workers using PPBL as their primary account faced delayed weekly
+      payouts
+  - node: cab_driver_earnings
     rank: 9
-    reasoning: "Rate hikes generally negative for equity valuations"
-  - node: retail_gold_investment
+    reasoning: Uber and Ola drivers had to urgently update bank details to receive
+      earnings
+  - node: startup_jobs
     rank: 10
-    reasoning: "Higher rates increase opportunity cost of holding gold"
-
-- id: monsoon_2023
-  name: "Monsoon deficit 40%"
-  date: "2023-08"
-  trigger: southwest_monsoon
-  direction: -1
-  description: "August 2023 saw 40% monsoon rainfall deficit, worst in decades for several states"
+    reasoning: Regulatory chill led to hiring freezes across the Indian fintech startup
+      ecosystem
+- id: gold_price_rally_2024
+  name: Gold Price Rally to 73k
+  date: 2024-04
+  trigger: international_gold_prices
+  direction: 1
+  description: Domestic gold prices crossed Rs 73,000 per 10 grams tracking global
+    geopolitical tensions
   ground_truth:
-  - node: retail_rice
+  - node: retail_gold_investment
     rank: 1
-    reasoning: "Rice is heavily monsoon-dependent, deficit directly impacts kharif crop"
-  - node: retail_tomato
+    reasoning: Physical gold buying volumes dropped significantly due to record high
+      prices
+  - node: gold_loan_interest
     rank: 2
-    reasoning: "Tomato prices spiked to Rs 200/kg in 2023 due to weather disruption"
-  - node: retail_onion
+    reasoning: NBFCs offered higher loan amounts per gram, driving a surge in gold
+      loan uptake
+  - node: wedding_planning_service
     rank: 3
-    reasoning: "Onion storage and cultivation highly weather-sensitive"
-  - node: tur_dal
+    reasoning: Jewelry budgets squeezed, forcing families to cut back on other wedding
+      expenses
+  - node: wedding_venue
     rank: 4
-    reasoning: "Pulses are rain-fed crops, deficit causes sharp supply drops"
+    reasoning: Spillover effect of reduced overall wedding budgets impacted venue
+      bookings
+  - node: retail_silver_investment
+    rank: 5
+    reasoning: Retail investors shifted to silver as a relatively cheaper precious
+      metal alternative
+  - node: india_trade_deficit
+    rank: 6
+    reasoning: Higher import bill for gold widened the national trade deficit
+  - node: usd_inr_exchange
+    rank: 7
+    reasoning: Rupee faced pressure due to the high dollar outflow for gold imports
+  - node: burglary_and_theft
+    rank: 8
+    reasoning: Record prices incentivized a spike in chain-snatching and gold smuggling
+  - node: microfinance_loan
+    rank: 9
+    reasoning: Increased reliance on gold pledging reduced demand for unsecured micro-credit
+  - node: festive_idol
+    rank: 10
+    reasoning: Akshaya Tritiya sales volume for gold idols and coins dropped year-on-year
+- id: gst_online_gaming_2023
+  name: 28% GST on Online Gaming
+  date: 2023-10
+  trigger: gst_council
+  direction: 1
+  description: GST Council implemented a flat 28% tax on the full face value of bets
+    in online real-money gaming
+  ground_truth:
+  - node: video_game
+    rank: 1
+    reasoning: Real-money gaming platforms passed the massive 28% tax burden directly
+      to users
+  - node: startup_layoffs
+    rank: 2
+    reasoning: Gaming unicorns laid off hundreds of staff due to immediate margin
+      compression
+  - node: startup_jobs
+    rank: 3
+    reasoning: Complete hiring freeze in the real-money gaming and fantasy sports
+      sector
+  - node: fii_fpi_flows
+    rank: 4
+    reasoning: Foreign investors wrote off investments in Indian gaming startups,
+      halting capital inflow
+  - node: cricket_match_ticket
+    rank: 5
+    reasoning: Fantasy sports sponsorships for cricket tournaments reduced significantly
+  - node: ott_subscription
+    rank: 6
+    reasoning: Users shifted entertainment budgets away from gaming to OTT platforms
+  - node: social_media_accounts
+    rank: 7
+    reasoning: Gaming ad spends on social media plummeted, impacting influencer revenues
+  - node: upi_transaction_limits
+    rank: 8
+    reasoning: Volume of micro-transactions (Rs 10-50) on gaming apps dropped drastically
+  - node: investment_and_job_scams
+    rank: 9
+    reasoning: Rise in illegal offshore betting apps evading GST, leading to user
+      fraud
+  - node: personal_income_tax
+    rank: 10
+    reasoning: TDS rules were simultaneously tightened for net winnings from online
+      games
+- id: balasore_train_tragedy_2023
+  name: Balasore Train Tragedy
+  date: 2023-06
+  trigger: indian_railways_network
+  direction: -1
+  description: Triple-train collision in Odisha's Balasore district resulted in 290+
+    fatalities and massive network disruption
+  ground_truth:
+  - node: railway_accidents
+    rank: 1
+    reasoning: Direct event impact with massive loss of life and destruction of rolling
+      stock
+  - node: irctc_train_ticket
+    rank: 2
+    reasoning: Hundreds of trains on the eastern corridor were cancelled or diverted
+      for weeks
+  - node: domestic_flight_ticket
+    rank: 3
+    reasoning: Airfares on Kolkata-Chennai routes surged 3x due to train cancellations
+  - node: intercity_bus_fare
+    rank: 4
+    reasoning: Private bus operators hiked fares on affected routes to exploit stranded
+      passengers
+  - node: seasonal_migrant_labor
+    rank: 5
+    reasoning: Coromandel Express is a key route for migrant workers; severe impact
+      on their mobility
+  - node: construction_worker_wages
+    rank: 6
+    reasoning: Delayed arrival of migrant labor affected construction projects in
+      South India
+  - node: hospital_beds
+    rank: 7
+    reasoning: Local hospitals in Odisha were completely overwhelmed with over 1,000
+      casualties
+  - node: blood_tests
+    rank: 8
+    reasoning: Massive blood donation drives organized locally required rapid screening
+      and testing
+  - node: term_insurance_premium
+    rank: 9
+    reasoning: Spike in claims and public awareness drove up demand for travel and
+      life insurance
+  - node: index_of_industrial_production
+    rank: 10
+    reasoning: Coal and iron ore freight delayed on the critical eastern freight corridor
+- id: biparjoy_cyclone_2023
+  name: Biparjoy Cyclone
+  date: 2023-06
+  trigger: cyclonic_storm_systems
+  direction: 1
+  description: Severe cyclonic storm Biparjoy made landfall in Gujarat, causing massive
+    evacuations and infrastructure damage
+  ground_truth:
+  - node: residential_power_supply
+    rank: 1
+    reasoning: Thousands of villages in Gujarat lost power due to downed electricity
+      poles
+  - node: telecom_towers_network
+    rank: 2
+    reasoning: Mobile networks were severely disrupted in Kutch and Saurashtra coastal
+      districts
+  - node: marine_fish
+    rank: 3
+    reasoning: Fishing suspended for weeks, causing local supply shortages and price
+      spikes
+  - node: farm_labor_wages
+    rank: 4
+    reasoning: Agricultural activity halted completely in the Saurashtra region
+  - node: structural_collapse
+    rank: 5
+    reasoning: Kutcha houses, hoardings, and temporary structures destroyed by 115
+      kmph winds
+  - node: tourist_attraction_ticket
+    rank: 6
+    reasoning: Major tourist sites like Dwarka and Somnath temples closed to visitors
+  - node: hotel_room
+    rank: 7
+    reasoning: Mass cancellations in Gujarat coastal tourism and hospitality sector
+  - node: major_seaports
+    rank: 8
+    reasoning: Kandla and Mundra ports suspended operations, delaying cargo ships
+  - node: india_trade_deficit
+    rank: 9
+    reasoning: Export and import delays due to port closures temporarily impacted
+      trade metrics
+  - node: stray_animals
+    rank: 10
+    reasoning: Thousands of livestock and stray animals were displaced or killed in
+      the floods
+- id: wheat_export_ban_2022
+  name: Wheat Export Ban
+  date: 2022-05
+  trigger: ministry_of_commerce_and_industry
+  direction: 1
+  description: India banned wheat exports to control rising domestic prices amid the
+    Russia-Ukraine war and heatwave
+  ground_truth:
+  - node: wheat_flour
+    rank: 1
+    reasoning: Domestic atta prices immediately stabilized after the export ban was
+      announced
+  - node: biscuits_and_snacks
+    rank: 2
+    reasoning: FMCG companies faced lower input cost pressure for baked goods and
+      biscuits
+  - node: farm_labor_wages
+    rank: 3
+    reasoning: Reduced export demand impacted farmer realizations and their wage-paying
+      capacity
+  - node: global_food_grain_supply
+    rank: 4
+    reasoning: Global wheat prices spiked further as India restricted a critical supply
+      source
+  - node: rural_unemployment_rate
+    rank: 5
+    reasoning: Agrarian distress from lower profits slightly increased rural unemployment
+  - node: street_food
+    rank: 6
+    reasoning: Cost of bread, pav, and rotis stabilized for street vendors, protecting
+      margins
+  - node: quick_service_restaurants
+    rank: 7
+    reasoning: Burger and pizza chains benefited from stable flour costs in their
+      supply chain
+  - node: wpi
+    rank: 8
+    reasoning: Wholesale inflation for food articles cooled down due to the supply
+      glut
+  - node: mgnrega_wages
+    rank: 9
+    reasoning: Rural distress led to higher demand for MGNREGA work in wheat-belt
+      states
+  - node: retail_rice
+    rank: 10
+    reasoning: Substitution effect as government pushed rice through PDS to save wheat
+      stocks
+- id: deepfake_regulation_2023
+  name: Deepfake Regulations & Advisories
+  date: 2023-11
+  trigger: deepfake_and_identity_theft
+  direction: 1
+  description: Government issued strict advisories under IT Rules following viral
+    deepfakes of Indian actors and politicians
+  ground_truth:
+  - node: social_media_accounts
+    rank: 1
+    reasoning: Platforms like Meta and X forced to remove deepfakes within 24 hours
+      of reporting
+  - node: cyberbullying_and_trolling
+    rank: 2
+    reasoning: Increased reporting and awareness of AI-generated harassment against
+      women
+  - node: fir_registration
+    rank: 3
+    reasoning: Delhi Police and cyber cells registered multiple FIRs against deepfake
+      creators
+  - node: investment_and_job_scams
+    rank: 4
+    reasoning: Scammers increasingly used AI voice clones for financial fraud, prompting
+      RBI warnings
+  - node: upi_and_bank_scams
+    rank: 5
+    reasoning: Fraudsters used deepfake video calls on WhatsApp to extort money from
+      victims
+  - node: whatsapp_messaging
+    rank: 6
+    reasoning: Spread of deepfake videos led to platforms introducing new warning
+      labels
+  - node: personal_data_privacy
+    rank: 7
+    reasoning: Heightened public awareness about biometric data scraping from social
+      media
+  - node: criminal_litigation_risk
+    rank: 8
+    reasoning: Government threatened legal action and loss of safe harbor for non-compliant
+      platforms
+  - node: police_response_time
+    rank: 9
+    reasoning: Cyber cells were overwhelmed with complex AI fraud complaints, slowing
+      response
+  - node: cinema_ticket
+    rank: 10
+    reasoning: Actors sought legal protection for their digital likeness, impacting
+      film marketing
+- id: farmers_protest_2024
+  name: Farmers Protest 2.0
+  date: 2024-02
+  trigger: farmer_unions
+  direction: 1
+  description: Farmers from Punjab and Haryana marched to Delhi demanding legal guarantee
+    for MSP, leading to border blockades
+  ground_truth:
+  - node: highway_toll_fare
+    rank: 1
+    reasoning: Protesters blocked toll plazas, making them free for commuters in Punjab
+      and Haryana
+  - node: traffic_congestion
+    rank: 2
+    reasoning: Massive barricading and cement blocks at Delhi borders caused severe
+      gridlock
+  - node: intercity_bus_fare
+    rank: 3
+    reasoning: Buses between Delhi and Punjab/Haryana were cancelled or heavily rerouted
+  - node: mobile_network_quality
+    rank: 4
+    reasoning: Government suspended mobile internet in several Haryana districts to
+      curb mobilization
   - node: green_vegetables
     rank: 5
-    reasoning: "Leafy vegetables are perishable and weather-dependent"
-  - node: farm_labor_wages
+    reasoning: Supply chains disrupted, raising perishable vegetable prices in Delhi
+      NCR
+  - node: poultry_eggs
     rank: 6
-    reasoning: "Crop failure reduces demand for agricultural labor"
-  - node: rural_unemployment_rate
-    rank: 7
-    reasoning: "Agriculture employment drops when crops fail"
-  - node: groundwater_aquifers
-    rank: 8
-    reasoning: "Monsoon deficit directly reduces groundwater recharge"
-  - node: hydrological_systems
-    rank: 9
-    reasoning: "Reservoirs and river systems depend on monsoon for annual refill"
+    reasoning: Supply of eggs and poultry from Punjab to Delhi was severely restricted
   - node: liquid_milk
-    rank: 10
-    reasoning: "Fodder availability and cattle health affected by drought"
-
-- id: aqi_delhi_2023
-  name: "Delhi AQI 500+ episode"
-  date: "2023-11"
-  trigger: meteorological_systems
-  direction: -1
-  description: "Delhi NCR AQI crossed 500 for multiple days in Nov 2023, emergency measures invoked"
-  ground_truth:
-  - node: respiratory_conditions
-    rank: 1
-    reasoning: "Direct health impact — hospital admissions for asthma/COPD spike 3-5x"
-  - node: construction_worker_wages
-    rank: 2
-    reasoning: "Construction workers, auto drivers, street vendors exposed directly"
-  - node: school_education
-    rank: 3
-    reasoning: "Schools close or shift online during severe AQI episodes"
-  - node: hospital_beds
-    rank: 4
-    reasoning: "Respiratory admissions strain hospital capacity"
-  - node: fresh_produce
-    rank: 5
-    reasoning: "Crop damage from smog and reduced farm labor availability"
-  - node: recreational_facilities
-    rank: 6
-    reasoning: "Parks, playgrounds, outdoor sports become unusable"
-  - node: real_estate_investment
     rank: 7
-    reasoning: "Persistent pollution reduces Delhi property values/demand"
-  - node: mental_health_services
+    reasoning: Dairy supply trucks faced massive delays at the Singhu and Tikri borders
+  - node: curfews_and_section_144
     rank: 8
-    reasoning: "Prolonged indoor confinement and health anxiety increase mental health needs"
-  - node: urban_road_conditions
+    reasoning: Section 144 imposed across Delhi NCR to prevent tractor rallies from
+      entering
+  - node: riots_and_clashes
     rank: 9
-    reasoning: "Reduced visibility, vehicle restrictions, longer commutes"
-  - node: travel_and_tourism
+    reasoning: Police used tear gas and drones during clashes with farmers at the
+      Shambhu border
+  - node: dedicated_freight_corridors
     rank: 10
-    reasoning: "Domestic and international tourists avoid Delhi during AQI crises"
-
-- id: it_layoffs_2023
-  name: "IT sector layoff wave"
-  date: "2023-01"
-  trigger: us_federal_reserve
+    reasoning: Rail roko agitations delayed freight movement across northern railway
+      networks
+- id: ram_mandir_consecration_2024
+  name: Ram Mandir Consecration
+  date: 2024-01
+  trigger: major_temple_trusts
   direction: 1
-  description: "Fed rate hikes caused US tech downturn, leading to mass layoffs in Indian IT sector"
+  description: The consecration (Pran Pratishtha) of the Ram Mandir in Ayodhya drove
+    a massive nationwide economic and social surge
   ground_truth:
-  - node: it_sector_jobs
+  - node: pilgrimage_package
     rank: 1
-    reasoning: "Direct impact — Indian IT companies cut workforce following US client budget cuts"
-  - node: startup_ecosystem
+    reasoning: Massive surge in Ayodhya tour bookings and religious tourism nationwide
+  - node: hotel_room
     rank: 2
-    reasoning: "VC funding dried up as interest rates rose, causing startup layoffs"
-  - node: direct_equity_portfolio
+    reasoning: Ayodhya and Lucknow hotel rates surged 5-10x due to unprecedented demand
+  - node: domestic_flight_ticket
     rank: 3
-    reasoning: "IT stocks fell 15-25%, directly hitting investor portfolios"
-  - node: residential_rent
+    reasoning: Flights to the newly opened Ayodhya airport were fully booked at premium
+      rates
+  - node: temple_donation
     rank: 4
-    reasoning: "IT hub cities (Bangalore, Hyderabad) saw rental market softening"
-  - node: credit_card_dues
+    reasoning: Record-breaking UPI and cash donations flowed to the temple trust
+  - node: festive_idol
     rank: 5
-    reasoning: "Fed hikes transmitted to Indian rates, raising credit costs"
-  - node: personal_loan_emi
+    reasoning: Huge retail demand for Ram Lalla idols, saffron flags, and merchandise
+      across India
+  - node: firecracker
     rank: 6
-    reasoning: "Rate transmission raises EMI burden"
-  - node: home_loan_emi
+    reasoning: Unseasonal spike in firecracker sales as citizens celebrated a second
+      Diwali
+  - node: retail_sugar
     rank: 7
-    reasoning: "Mortgage rates rose as RBI followed Fed hiking cycle"
-  - node: gig_worker_payouts
+    reasoning: Increased demand for prasad and sweets drove up local sugar and dairy
+      consumption
+  - node: irctc_train_ticket
     rank: 8
-    reasoning: "Laid-off tech workers entered gig economy, increasing supply"
-  - node: college_university_fees
+    reasoning: Indian Railways launched hundreds of Aastha special trains to Ayodhya
+  - node: investment_property_value
     rank: 9
-    reasoning: "Increased demand for upskilling/MBA programs from displaced workers"
-  - node: savings_account_balance
+    reasoning: Real estate and property prices in Ayodhya skyrocketed due to investor
+      interest
+  - node: curfews_and_section_144
     rank: 10
-    reasoning: "Higher rates benefited fixed-income savers"
+    reasoning: Security tightened and public holidays declared in many states to manage
+      crowds
+- id: ondc_food_delivery_2023
+  name: ONDC Expansion in Food Delivery
+  date: 2023-05
+  trigger: ondc_platform
+  direction: 1
+  description: ONDC gained massive traction in food delivery, offering prices 30-40%
+    lower than Swiggy and Zomato
+  ground_truth:
+  - node: food_delivery_services
+    rank: 1
+    reasoning: Consumers shifted to buyer apps like Paytm and Magicpin for cheaper
+      food delivery
+  - node: quick_service_restaurants
+    rank: 2
+    reasoning: Brands like McDonald's and Domino's joined ONDC to save on 25% aggregator
+      commissions
+  - node: cab_aggregator_fare
+    rank: 3
+    reasoning: Namma Yatri on ONDC challenged Ola/Uber pricing with zero-commission
+      rides
+  - node: auto_rickshaw_fare
+    rank: 4
+    reasoning: Zero-commission auto rides gained massive traction among drivers in
+      Bangalore
+  - node: food_delivery_payouts
+    rank: 5
+    reasoning: Delivery partners explored direct-to-restaurant logistics apps like
+      Shadowfax
+  - node: kirana_store_income
+    rank: 6
+    reasoning: Local grocers started receiving digital orders directly without aggregator
+      fees
+  - node: upi_transaction_success
+    rank: 7
+    reasoning: Increased volume of direct UPI payments to merchants via the open network
+  - node: fine_dining_restaurants
+    rank: 8
+    reasoning: Premium restaurants pushed ONDC to avoid high discounting forced by
+      aggregators
+  - node: street_vendor_income
+    rank: 9
+    reasoning: Pilot programs successfully onboarded street food vendors to digital
+      delivery
+  - node: startup_jobs
+    rank: 10
+    reasoning: Surge in hiring for logistics and tech roles at ONDC-focused buyer/seller
+      apps
+- id: hdfc_stock_crash_2024
+  name: HDFC Bank Stock Crash
+  date: 2024-01
+  trigger: fii_fpi_flows
+  direction: -1
+  description: FIIs dumped HDFC Bank shares after disappointing Q3 margins, causing
+    the stock to crash 15% in a week
+  ground_truth:
+  - node: direct_equity_portfolio
+    rank: 1
+    reasoning: Retail investors saw portfolio values drop sharply as HDFC carries
+      high weightage
+  - node: equity_mutual_funds
+    rank: 2
+    reasoning: Large-cap mutual fund NAVs dropped significantly due to heavy HDFC
+      exposure
+  - node: nifty_50
+    rank: 3
+    reasoning: The benchmark index was dragged down by 3% entirely due to HDFC's 14%
+      weight
+  - node: sensex
+    rank: 4
+    reasoning: Corresponding massive point drop in the BSE benchmark index
+  - node: fixed_deposits
+    rank: 5
+    reasoning: Bank aggressively hiked FD rates to fix its strained credit-deposit
+      ratio
+  - node: savings_account_balance
+    rank: 6
+    reasoning: Intense push by the bank to acquire CASA deposits to lower cost of
+      funds
+  - node: private_bank_jobs
+    rank: 7
+    reasoning: Extreme pressure on bank employees and branch managers to mobilize
+      deposits
+  - node: personal_loan_emi
+    rank: 8
+    reasoning: Unsecured lending rates tightened to manage margins and regulatory
+      scrutiny
+  - node: credit_card_dues
+    rank: 9
+    reasoning: Stricter issuance and lower limits for new credit cards to control
+      risk
+  - node: india_10yr_bond_yield
+    rank: 10
+    reasoning: Liquidity deficit in the banking system pushed up short-term bond yields
+- id: red_sea_shipping_crisis_2024
+  name: Red Sea Shipping Crisis
+  date: 2024-01
+  trigger: global_shipping_routes
+  direction: -1
+  description: Houthi attacks in the Red Sea forced commercial ships to reroute around
+    Africa, disrupting Indian trade
+  ground_truth:
+  - node: global_shipping_freight_rates
+    rank: 1
+    reasoning: Freight costs from India to Europe and the US spiked 300% due to longer
+      routes
+  - node: india_trade_deficit
+    rank: 2
+    reasoning: Export competitiveness hit by high freight costs, widening the trade
+      deficit
+  - node: active_pharmaceutical_ingredients_supply
+    rank: 3
+    reasoning: Delays in pharma exports to Europe and raw material imports impacted
+      drug makers
+  - node: global_edible_oil_supply
+    rank: 4
+    reasoning: Sunflower oil imports from the Black Sea region faced severe transit
+      delays
+  - node: sunflower_oil
+    rank: 5
+    reasoning: Retail prices of sunflower oil edged up due to supply chain risk premiums
+  - node: retail_rice
+    rank: 6
+    reasoning: Premium basmati rice exports to the Middle East and Europe faced margin
+      pressure
+  - node: factory_worker_jobs
+    rank: 7
+    reasoning: Textile and handicraft exporters cut shifts due to delayed shipments
+      and inventory pile-up
+  - node: brent_crude
+    rank: 8
+    reasoning: Oil prices remained volatile due to Middle East tensions and rerouted
+      tankers
+  - node: retail_diesel
+    rank: 9
+    reasoning: Under-recoveries for oil marketing companies increased due to higher
+      crude transit costs
+  - node: major_seaports
+    rank: 10
+    reasoning: Container pile-ups at JNPT and Mundra due to vessel delays and schedule
+      disruptions
+- id: aadhaar_data_breach_2023
+  name: Aadhaar Data Breach Leak
+  date: 2023-10
+  trigger: aadhaar_database
+  direction: -1
+  description: Reports emerged that personal data of 815 million Indians, including
+    Aadhaar details, was leaked on the dark web
+  ground_truth:
+  - node: personal_data_privacy
+    rank: 1
+    reasoning: Massive violation of privacy as demographic data became available to
+      cybercriminals
+  - node: aadhaar_authentication
+    rank: 2
+    reasoning: Severe concerns raised over biometric and OTP security for financial
+      transactions
+  - node: upi_and_bank_scams
+    rank: 3
+    reasoning: Leaked data was weaponized for highly targeted phishing and financial
+      fraud
+  - node: pan_aadhaar_linkage
+    rank: 4
+    reasoning: Compromised linked PAN data increased the risk of severe identity theft
+  - node: deepfake_and_identity_theft
+    rank: 5
+    reasoning: Scammers used real Aadhaar details to build trust in deepfake video
+      frauds
+  - node: spam_calls
+    rank: 6
+    reasoning: Surge in targeted telemarketing and scam calls using leaked demographic
+      data
+  - node: epramaan_and_sso
+    rank: 7
+    reasoning: Government mandated stricter security audits for all state SSO portals
+  - node: digilocker_documents
+    rank: 8
+    reasoning: Users were advised to monitor unauthorized access to their digital
+      lockers
+  - node: fir_registration
+    rank: 9
+    reasoning: CBI and CERT-In launched investigations, leading to multiple FIRs against
+      hackers
+  - node: personal_loan_emi
+    rank: 10
+    reasoning: Fraudulent instant loans were taken out using stolen identities, ruining
+      credit scores
+- id: delhi_floods_2023
+  name: Delhi Floods
+  date: 2023-07
+  trigger: himalayan_river_systems
+  direction: 1
+  description: The Yamuna river crossed the danger mark, causing unprecedented flooding
+    in central and eastern Delhi
+  ground_truth:
+  - node: street_waterlogging
+    rank: 1
+    reasoning: Arterial roads including the Ring Road and ITO were completely submerged
+      for days
+  - node: municipal_water_supply
+    rank: 2
+    reasoning: Three major water treatment plants flooded, causing a severe drinking
+      water shortage
+  - node: private_water_tanker
+    rank: 3
+    reasoning: Demand surged as piped supply stopped for millions of residents
+  - node: traffic_congestion
+    rank: 4
+    reasoning: Massive gridlock across the city as key bridges and roads were closed
+  - node: intercity_bus_fare
+    rank: 5
+    reasoning: ISBT Kashmere Gate flooded, halting interstate buses and stranding
+      passengers
+  - node: residential_power_supply
+    rank: 6
+    reasoning: Power was preemptively cut off in low-lying areas to prevent accidents
+  - node: electrocution_hazard
+    rank: 7
+    reasoning: Severe risk of electrocution in flooded unauthorized colonies and slums
+  - node: stray_animals
+    rank: 8
+    reasoning: Hundreds of cows and street dogs drowned or were displaced by the rising
+      waters
+  - node: dengue
+    rank: 9
+    reasoning: Post-flood stagnant water led to a massive spike in vector-borne diseases
+  - node: polluted_surface_water
+    rank: 10
+    reasoning: Sewage mixed with floodwaters, contaminating neighborhoods and groundwater
+- id: rmg_ban_2025
+  name: Real Money Gaming Ban (Online Gaming Act 2025)
+  date: 2025-08
+  trigger: gst_council
+  direction: 1
+  description: After 28% GST in 2023, India passed the Online Gaming Act 2025 banning
+    all real money games. 85% of $3.2B gaming revenue wiped, $840M write-downs, 7000+
+    layoffs across Dream11, MPL, WinZO and others.
+  ground_truth:
+  - node: real_money_gaming_and_betting
+    rank: 1
+    reasoning: Direct target of the ban — all RMG platforms shut down operations,
+      450M users lost access overnight
+  - node: startup_layoffs
+    rank: 2
+    reasoning: MPL, WinZO, Gameskraft and others laid off 7000+ employees within weeks
+      of the ban
+  - node: venture_capital_and_pe_flows
+    rank: 3
+    reasoning: $840M in write-downs by Tiger Global, Sequoia, and others. VC funding
+      to Indian gaming sector went to zero
+  - node: startup_jobs
+    rank: 4
+    reasoning: Hiring freeze across gaming startups, adjacent ad-tech and payment
+      companies also cut headcount
+  - node: creator_and_digital_earnings
+    rank: 5
+    reasoning: Gaming streamers, esports pros, and fantasy sports influencers lost
+      primary income source
+  - node: indirect_taxes
+    rank: 6
+    reasoning: States lost Rs 20,000 Cr annually in GST and income tax from the RMG
+      sector
+  - node: cricket_match_ticket
+    rank: 7
+    reasoning: IPL and cricket sponsorship deals collapsed — Dream11, MPL were top
+      sponsors. Reduced fan engagement without fantasy overlay
+  - node: direct_equity_portfolio
+    rank: 8
+    reasoning: Listed gaming-adjacent companies (Nazara, Delta Corp) crashed 30-50%.
+      Retail investors hit
+  - node: mental_health_conditions
+    rank: 9
+    reasoning: 'Government cited 450M affected Indians, addiction, financial ruin,
+      and suicides as ban rationale. Post-ban: withdrawal and income-loss anxiety'
+  - node: gig_worker_payouts
+    rank: 10
+    reasoning: Laid-off gaming employees entered gig economy, increasing supply and
+      suppressing per-worker payouts

@@ -195,6 +195,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: railway_rrb_jobs
   aliases:
   - Railway RRB Jobs
@@ -303,6 +304,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: ride_hailing
   aliases:
   - Ride Hailing
@@ -323,6 +325,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: auto_driver_earnings
   aliases:
   - Auto Driver Earnings
@@ -343,6 +346,16 @@ nodes:
   level: 3
   status: active
   is_category: true
+- id: creator_and_digital_earnings
+  aliases:
+  - Creator Economy Income
+  - Digital Creator Earnings
+  - Streamer and Influencer Income
+  - Esports Professional Pay
+  - YouTube and Instagram Earnings
+  category: I4
+  level: 4
+  status: active
 - id: urban_company_partner_earnings
   aliases:
   - Urban Company Partner Earnings
@@ -469,6 +482,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: street_vendor_income
   aliases:
   - Street Vendor Income
@@ -500,6 +514,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: statutory_wages
   aliases:
   - Statutory Wages
@@ -574,6 +589,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: maternity_leave_benefits
   aliases:
   - Maternity Leave Benefits
@@ -638,6 +654,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: gig_worker_unions
   aliases:
   - Gig Worker Unions
@@ -659,6 +676,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: farmer_unions
   aliases:
   - Farmer Unions
@@ -670,6 +688,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: caste_reservation_movements
   aliases:
   - Caste Reservation Movements
@@ -680,6 +699,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: student_unions
   aliases:
   - Student Unions
@@ -690,6 +710,16 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
+- id: agricultural_crop_damage
+  aliases:
+  - Crop Damage
+  - Crop Failure
+  - Agricultural Loss
+  - Kharif Crop Failure
+  category: I4
+  level: 4
+  status: active
 edges:
 - from: i4
   to: corporate_employment
@@ -997,6 +1027,13 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Freelance services contains overall gig worker payouts and wages
+- from: freelance_and_services
+  to: creator_and_digital_earnings
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Freelance services contains creator economy and digital earnings
 - from: agriculture_and_allied
   to: farm_labor_wages
   type: CONTAINS
@@ -1151,3 +1188,10 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Identity & Rights Movements contains Student Unions
+- from: agriculture_and_allied
+  to: agricultural_crop_damage
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Agriculture And Allied contains Agricultural Crop Damage

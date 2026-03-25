@@ -145,6 +145,7 @@ nodes:
   category: I8
   level: 4
   status: active
+  port: true
 - id: criminal_litigation_risk
   aliases:
   - Criminal Litigation Risk
@@ -198,6 +199,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: sexual_assault
   aliases:
   - Sexual Assault
@@ -279,6 +281,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: deepfake_and_identity_theft
   aliases:
   - Deepfake & Identity Theft
@@ -444,6 +447,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: stampedes
   aliases:
   - Stampedes
@@ -458,6 +462,23 @@ nodes:
   port: true
   regulated_by:
   - major_temple_trusts
+- id: highway_blockades
+  aliases:
+  - Highway Blockades
+  - Road Blockades
+  - Chakka Jam
+  - Highway Protests
+  category: I8
+  level: 4
+  status: active
+- id: cyber_crime_investigation
+  aliases:
+  - Cyber Crime Investigation
+  - Cyber Police
+  - Online Fraud Investigation
+  category: I8
+  level: 4
+  status: active
 edges:
 - from: i8
   to: physical_crime_and_law_enforcement
@@ -760,3 +781,17 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Crowd emergencies contains stampedes
+- from: civil_unrest
+  to: highway_blockades
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civil Unrest contains Highway Blockades
+- from: law_enforcement_interface
+  to: cyber_crime_investigation
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Law Enforcement Interface contains Cyber Crime Investigation

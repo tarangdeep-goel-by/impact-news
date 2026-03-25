@@ -282,6 +282,16 @@ nodes:
   level: 3
   status: active
   is_category: true
+- id: venture_capital_and_pe_flows
+  aliases:
+  - Venture Capital Flows
+  - PE Funding
+  - Startup Funding Rounds
+  - VC Investment
+  - Private Equity
+  category: T3
+  level: 4
+  status: active
 - id: nifty_50
   aliases:
   - Nifty 50
@@ -465,6 +475,33 @@ nodes:
   category: T3
   level: 4
   status: active
+- id: agricultural_exports
+  aliases:
+  - Agricultural Exports
+  - Farm Export Policy
+  - Agri Commodity Exports
+  - Grain Export Ban
+  category: T3
+  level: 4
+  status: active
+- id: export_competitiveness
+  aliases:
+  - Export Competitiveness
+  - Trade Competitiveness
+  - Manufacturing Export Edge
+  category: T3
+  level: 4
+  status: active
+- id: bank_liquidity_and_credit
+  aliases:
+  - Bank Liquidity
+  - Credit Conditions
+  - Banking System Liquidity
+  - Lending Rate Transmission
+  category: T3
+  level: 3
+  status: active
+  is_category: true
 edges:
 - from: t3
   to: global_commodity_markets
@@ -748,6 +785,13 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Institutional investment flows contains DII flows
+- from: institutional_investment_flows
+  to: venture_capital_and_pe_flows
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Institutional investment flows contains venture capital and PE flows
 - from: international_trade_and_supply_chains
   to: trade_balance_metrics
   type: CONTAINS
@@ -818,366 +862,24 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Global macro demand contains US consumer demand
-- from: brent_crude
-  to: wpi
-  type: AFFECTS
-  weight: 0.25
-  polarity: 1
-  delay: SHORT_TERM
-  description: Higher global crude oil prices increase domestic transport and manufacturing
-    energy costs, driving up the wholesale price index.
-- from: brent_crude
-  to: india_trade_deficit
-  type: PRODUCES
-  weight: 0.75
-  polarity: 1
-  delay: IMMEDIATE
-  description: Since India imports over 80% of its oil, rising Brent crude prices
-    directly inflate the import bill and widen the merchandise trade deficit.
-- from: us_dollar_index
-  to: usd_inr_exchange
-  type: AFFECTS
-  weight: 0.65
-  polarity: 1
-  delay: IMMEDIATE
-  description: A strengthening global US dollar index mechanically depreciates emerging
-    market currencies, leading to a higher USD-INR exchange rate.
-- from: us_dollar_index
-  to: international_gold_prices
-  type: AFFECTS
-  weight: 0.85
-  polarity: -1
-  delay: IMMEDIATE
-  description: Because gold is priced in dollars, a stronger US dollar makes the metal
-    more expensive for holders of other currencies, suppressing global demand and
-    prices.
-- from: us_treasury_yields
-  to: fii_fpi_flows
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: SHORT_TERM
-  description: Rising US treasury yields offer attractive risk-free returns, prompting
-    foreign investors to pull capital out of emerging markets like India.
-- from: fii_fpi_flows
-  to: nifty_50
-  type: FUNDS
-  weight: 0.45
-  polarity: 1
-  delay: IMMEDIATE
-  description: Strong foreign institutional capital inflows provide liquidity and
-    buying pressure that drive up benchmark Indian equity indices.
-- from: fii_fpi_flows
-  to: usd_inr_exchange
-  type: AFFECTS
-  weight: 0.35
-  polarity: -1
-  delay: IMMEDIATE
-  description: Foreign capital inflows increase the supply of dollars in the domestic
-    market, appreciating the Rupee and lowering the USD-INR rate.
-- from: dii_flows
-  to: nifty_50
-  type: FUNDS
-  weight: 0.55
-  polarity: 1
-  delay: IMMEDIATE
-  description: Consistent capital injections from domestic institutional investors
-    (like mutual funds) provide a strong baseline of support for Indian equity markets.
-- from: india_trade_deficit
-  to: india_current_account_deficit
-  type: AFFECTS
+- from: global_supply_chains
+  to: agricultural_exports
+  type: CONTAINS
   weight: 0.9
   polarity: 1
-  delay: SHORT_TERM
-  description: A widening gap between merchandise imports and exports directly expands
-    the broader current account deficit.
-- from: india_current_account_deficit
-  to: usd_inr_exchange
-  type: AFFECTS
-  weight: 0.45
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: A higher current account deficit increases the structural demand for
-    foreign currency to settle international obligations, depreciating the Rupee.
-- from: usd_inr_exchange
-  to: india_forex_reserves
-  type: AFFECTS
-  weight: 0.65
-  polarity: -1
-  delay: SHORT_TERM
-  description: A rapidly depreciating Rupee (higher USD-INR rate) prompts the central
-    bank to sell dollars from its reserves to stabilize the currency.
-- from: global_shipping_freight_rates
-  to: wpi
-  type: AFFECTS
-  weight: 0.2
-  polarity: 1
-  delay: SHORT_TERM
-  description: Elevated maritime shipping costs increase the landed price of imported
-    raw materials and intermediate goods, passing through to wholesale inflation.
-- from: china_manufacturing_output
-  to: industrial_metals_index
-  type: AFFECTS
-  weight: 0.85
-  polarity: 1
-  delay: SHORT_TERM
-  description: Expansion in Chinese factory activity increases global demand for base
-    metals like copper, aluminum, and steel, driving up their index prices.
-- from: us_consumer_demand
-  to: china_manufacturing_output
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Robust retail spending by US consumers drives export orders, stimulating
-    Chinese industrial production and factory output.
-- from: global_semiconductor_supply_chain
-  to: index_of_industrial_production
-  type: SUPPLIES
-  weight: 0.3
-  polarity: 1
-  delay: SHORT_TERM
-  description: Adequate global microchip supply enables uninterrupted domestic manufacturing
-    of automobiles and electronics, boosting the IIP.
-- from: pmi_manufacturing
-  to: index_of_industrial_production
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: SHORT_TERM
-  description: Expansionary sentiment and new orders recorded in the manufacturing
-    PMI reliably translate into actual factory output growth.
-- from: pmi_services
-  to: india_gdp_growth
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: SHORT_TERM
-  description: Since the services sector constitutes over 50% of India's economy,
-    expansion in the services PMI strongly drives overall GDP growth.
-- from: index_of_industrial_production
-  to: india_gdp_growth
-  type: PRODUCES
-  weight: 0.35
-  polarity: 1
-  delay: SHORT_TERM
-  description: Higher industrial and manufacturing output directly contributes to
-    the expansion of the national gross domestic product.
-- from: india_gdp_growth
-  to: epfo_payroll_additions
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Broad economic expansion encourages formal sector enterprises to hire
-    more workers, increasing provident fund subscriptions.
-- from: epfo_payroll_additions
-  to: national_unemployment_rate
-  type: AFFECTS
-  weight: 0.25
-  polarity: -1
-  delay: SHORT_TERM
-  description: Increased formal job creation absorbs the labor force, reducing the
-    aggregate national unemployment rate.
-- from: wpi
-  to: india_10yr_bond_yield
-  type: AFFECTS
-  weight: 0.35
-  polarity: 1
-  delay: SHORT_TERM
-  description: Rising wholesale inflation expectations lead bond market investors
-    to demand higher yields to compensate for the loss of purchasing power.
-- from: global_equity_indices
-  to: nifty_50
-  type: AFFECTS
-  weight: 0.7
+  delay: IMMEDIATE
+  description: Global Supply Chains contains Agricultural Exports
+- from: trade_balance_metrics
+  to: export_competitiveness
+  type: CONTAINS
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
-  description: Bullish sentiment and capital flows in global markets like Wall Street
-    create positive psychological and liquidity spillover effects for Indian equities.
-- from: nifty_50
-  to: sensex
-  type: AFFECTS
-  weight: 0.95
+  description: Trade Balance Metrics contains Export Competitiveness
+- from: financial_and_capital_markets
+  to: bank_liquidity_and_credit
+  type: CONTAINS
+  weight: 1.0
   polarity: 1
   delay: IMMEDIATE
-  description: The Nifty 50 and Sensex are highly correlated benchmark indices that
-    move in tandem based on identical macroeconomic sentiment and large-cap performance.
-- from: international_gold_prices
-  to: india_trade_deficit
-  type: AFFECTS
-  weight: 0.3
-  polarity: 1
-  delay: SHORT_TERM
-  description: Higher global gold prices inflate the value of India's massive precious
-    metal imports, widening the merchandise trade deficit.
-- from: global_edible_oil_supply
-  to: wpi
-  type: AFFECTS
-  weight: 0.2
-  polarity: -1
-  delay: SHORT_TERM
-  description: Abundant global supplies of palm and sunflower oil reduce import costs,
-    helping to lower domestic wholesale food inflation.
-- from: global_natural_gas
-  to: wpi
-  type: AFFECTS
-  weight: 0.25
-  polarity: 1
-  delay: SHORT_TERM
-  description: Higher global LNG prices increase the cost of power generation and
-    industrial heating, passing through to wholesale inflation.
-- from: international_coal_prices
-  to: wpi
-  type: AFFECTS
-  weight: 0.3
-  polarity: 1
-  delay: SHORT_TERM
-  description: Elevated international thermal coal prices increase input costs for
-    domestic steel, cement, and power sectors, driving up the WPI.
-- from: global_food_grain_supply
-  to: wpi
-  type: AFFECTS
-  weight: 0.2
-  polarity: -1
-  delay: SHORT_TERM
-  description: Robust global harvests of wheat and other grains suppress international
-    prices, helping to cool domestic wholesale food inflation.
-- from: global_semiconductor_supply_chain
-  to: data_centers
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Increased availability of advanced server chips and semiconductors
-    enables the physical expansion and upgrading of data center infrastructure.
-- from: global_semiconductor_supply_chain
-  to: telecom_towers_network
-  type: SUPPLIES
-  weight: 0.5
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Global microchip supply is essential for manufacturing the base station
-    equipment needed to expand and upgrade telecom tower networks.
-- from: national_unemployment_rate
-  to: rural_urban_migration_corridors
-  type: AFFECTS
-  weight: 0.55
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High aggregate joblessness drives distress migration as rural populations
-    move to urban centers in search of livelihood.
-- from: national_unemployment_rate
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: SHORT_TERM
-  description: Rising unemployment creates income uncertainty, directly depressing
-    the public's willingness to spend and overall economic optimism.
-- from: india_gdp_growth
-  to: tier_2_3_city_expansion
-  type: FUNDS
-  weight: 0.65
-  polarity: 1
-  delay: LONG_TERM
-  description: Sustained national economic growth creates wealth that fuels real estate
-    development and urbanization in emerging tier 2 and 3 cities.
-- from: india_gdp_growth
-  to: commercial_airports
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: Macroeconomic expansion increases business activity and disposable
-    income, driving the need for expanded commercial aviation infrastructure.
-- from: wpi
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.3
-  polarity: -1
-  delay: SHORT_TERM
-  description: High wholesale inflation eventually passes to retail prices, eroding
-    purchasing power and dampening consumer sentiment.
-- from: nifty_50
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.25
-  polarity: 1
-  delay: SHORT_TERM
-  description: A booming benchmark stock market creates a wealth effect among the
-    investing class, boosting broader consumer optimism.
-- from: global_commodity_markets
-  to: biophysical_and_ecological_systems
-  type: DISRUPTS
-  weight: 0.5
-  polarity: -1
-  delay: LONG_TERM
-  description: High global demand and extraction of energy, metals, and agricultural
-    commodities drive deforestation, habitat loss, and widespread ecological degradation.
-- from: indian_macroeconomic_indicators
-  to: indian_regulatory_bodies
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Domestic inflation indices and growth metrics directly trigger monetary
-    policy interventions and rate adjustments by financial regulators.
-- from: global_commodity_markets
-  to: indian_macroeconomic_indicators
-  type: AFFECTS
-  weight: 0.65
-  polarity: 1
-  delay: SHORT_TERM
-  description: Global energy and agricultural commodity prices directly import inflation
-    into the Indian economy, driving up domestic inflation indices.
-- from: global_commodity_markets
-  to: energy_power_infrastructure
-  type: SUPPLIES
-  weight: 0.55
-  polarity: 1
-  delay: SHORT_TERM
-  description: Global energy commodities (coal, crude oil, natural gas) provide the
-    primary fuel inputs required to operate thermal power plants and pipeline networks.
-- from: financial_and_capital_markets
-  to: transport_logistics_infrastructure
-  type: FUNDS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Debt markets, institutional investments, and equity markets provide
-    the massive capital required to build and expand highways, railways, and commercial
-    airports.
-- from: financial_and_capital_markets
-  to: energy_power_infrastructure
-  type: FUNDS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Capital markets and institutional investment flows finance capital-intensive
-    energy projects, including renewable energy parks and national power grid expansions.
-- from: international_trade_and_supply_chains
-  to: advanced_tech_infrastructure
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: SHORT_TERM
-  description: Global supply chains provide the critical components, specialized machinery,
-    and raw materials required to build and operate semiconductor fabs and satellite
-    networks.
-- from: indian_macroeconomic_indicators
-  to: macro_behavioral_shifts
-  type: AFFECTS
-  weight: 0.65
-  polarity: 1
-  delay: SHORT_TERM
-  description: Changes in inflation, employment, and GDP growth directly dictate consumer
-    sentiment and civic participation levels.
-- from: indian_macroeconomic_indicators
-  to: migration_and_mobility
-  type: AFFECTS
-  weight: 0.55
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Domestic economic growth and employment aggregates drive rural-to-urban
-    domestic migration and influence international labor migration.
+  description: Financial And Capital Markets contains Bank Liquidity And Credit

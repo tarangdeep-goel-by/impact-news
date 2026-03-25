@@ -269,6 +269,7 @@ nodes:
   category: I1
   level: 4
   status: active
+  port: true
 - id: liquid_milk
   aliases:
   - Liquid Milk
@@ -280,6 +281,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: paneer_and_cheese
   aliases:
   - Paneer
@@ -301,6 +303,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: poultry_eggs
   aliases:
   - Eggs
@@ -323,6 +326,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: mutton_and_lamb
   aliases:
   - Mutton
@@ -334,6 +338,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: freshwater_fish
   aliases:
   - Freshwater Fish
@@ -390,6 +395,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: coconut_oil
   aliases:
   - Coconut Oil
@@ -422,6 +428,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: dry_red_chilli
   aliases:
   - Dry Red Chilli
@@ -463,6 +470,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: instant_noodles
   aliases:
   - Instant Noodles
@@ -473,6 +481,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: tea_leaves
   aliases:
   - Tea Leaves
@@ -516,6 +525,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 - id: street_food
   aliases:
   - Street Food
@@ -540,6 +550,7 @@ nodes:
   level: 3
   status: active
   portal: true
+  port: true
 edges:
 - from: i1
   to: staple_grains

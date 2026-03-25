@@ -63,6 +63,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: unsecured_loans
   aliases:
   - Unsecured Loans
@@ -158,6 +159,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: savings_account_balance
   aliases:
   - Savings Account Balance
@@ -168,6 +170,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: small_savings_schemes
   aliases:
   - Small Savings Schemes
@@ -187,6 +190,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: sukanya_samriddhi_yojana
   aliases:
   - Sukanya Samriddhi Yojana
@@ -197,6 +201,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: market_investments
   aliases:
   - Market Investments
@@ -239,6 +244,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: mutual_funds
   aliases:
   - Mutual Funds
@@ -311,6 +317,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: pension_schemes
   aliases:
   - Pension Schemes
@@ -329,6 +336,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: atal_pension_yojana
   aliases:
   - Atal Pension Yojana
@@ -338,6 +346,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: insurance_premiums
   aliases:
   - Insurance Premiums
@@ -366,6 +375,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: endowment_policy_premium
   aliases:
   - Endowment Policy Premium
@@ -376,6 +386,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: general_insurance
   aliases:
   - General Insurance
@@ -410,6 +421,7 @@ nodes:
   level: 4
   status: active
   portal: true
+  port: true
 - id: taxation_and_compliance
   aliases:
   - Taxation & Compliance
@@ -465,6 +477,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: physical_and_alternative_assets
   aliases:
   - Physical & Alternative Assets
@@ -548,6 +561,7 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
 - id: cryptocurrency_portfolio
   aliases:
   - Cryptocurrency Portfolio
@@ -557,6 +571,17 @@ nodes:
   category: I5
   level: 4
   status: active
+  port: true
+- id: indirect_taxes
+  aliases:
+  - Indirect Taxes
+  - GST Compliance
+  - Excise and Customs
+  - Indirect Tax Burden
+  category: I5
+  level: 3
+  status: active
+  is_category: true
 edges:
 - from: i5
   to: borrowing_and_credit
@@ -930,3 +955,10 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Digital alternatives contain cryptocurrency portfolios
+- from: taxation_and_compliance
+  to: indirect_taxes
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Taxation And Compliance contains Indirect Taxes

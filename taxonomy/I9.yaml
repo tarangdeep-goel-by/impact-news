@@ -107,6 +107,7 @@ nodes:
   status: active
   is_category: false
   portal: true
+  port: true
 - id: ambient_temperature
   aliases:
   - Outdoor Temperature
@@ -190,6 +191,7 @@ nodes:
   status: active
   is_category: false
   portal: true
+  port: true
 - id: local_water_bodies
   aliases:
   - Neighborhood Lakes
@@ -289,6 +291,7 @@ nodes:
   status: active
   is_category: false
   portal: true
+  port: true
 - id: noise_pollution
   aliases:
   - Noise Pollution
@@ -336,6 +339,7 @@ nodes:
   level: 3
   status: active
   is_category: false
+  port: true
 - id: urban_flora
   aliases:
   - City Flora
@@ -381,6 +385,7 @@ nodes:
   status: active
   is_category: false
   portal: true
+  port: true
 - id: stagnant_water_pools
   aliases:
   - Mosquito breeding grounds
@@ -393,6 +398,7 @@ nodes:
   status: active
   is_category: false
   portal: true
+  port: true
 edges:
 - from: i9
   to: air_quality_environment

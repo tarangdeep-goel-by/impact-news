@@ -260,18 +260,28 @@ The target level is determined by the homogeneity of the causal effect:
 
 **(a) HOMOGENEITY TEST:** "Does this trigger affect ALL L3 siblings under
 the target L2 with the same mechanism, weight, polarity, and delay?"
-- **YES** → target the L3 (preferred) or L2 only if ALL L3 children are also homogeneous
+- **YES** → target L3 (preferred)
 - **NO** → target specific L3s (or L4s if L3 is also heterogeneous)
 
-> **Preference:** Target L3 over L2 even when homogeneous. L2 targeting is
-> permitted for T→I bridges when the effect is truly universal across ALL
-> descendants, but L3 is safer and should be the default. For I→I edges,
-> L2 targeting is forbidden (see Rule 20).
+> **L2 incoming edges are permitted ONLY when ALL L3 children under
+> that L2 would be affected by the same source with the same mechanism,
+> weight, polarity, and delay.** "Majority" is NOT enough — Phase 3
+> downward CONTAINS propagation pushes scores to 100% of children,
+> so targeting L2 when only some children are affected creates false
+> paths. When in doubt, target individual L3s or L4s.
+> For I→I edges, L2 targeting is forbidden (Rule 20).
 
-**(b) SOURCE LEVEL:** Trigger sources should be the most specific node
-where the causal mechanism originates. Prefer L3/L4 leaves over
-L2 categories. Only use T-L2 as source when the entire subcategory
-acts as a unit (e.g., `meteorological_systems` as a whole).
+**(b) SOURCE LEVEL (STRICT):** Causal edges MUST originate from L3 or L4
+nodes — the specific mechanism, not the category. L2 nodes are
+classifications (groupings of mechanisms), not causal agents.
+
+- `southwest_monsoon` (L4) causes crop disruption, NOT `meteorological_systems` (L2)
+- `rbi` (L4) sets repo rates, NOT `financial_regulators` (L3) or `indian_regulatory_bodies` (L2)
+
+**L2 outgoing edges are permitted ONLY when ALL L3/L4 children produce
+the SAME effect with the SAME mechanism, weight, polarity, and delay.**
+This is rare — most L2s contain children with different causal behaviors.
+When in doubt, decompose to L3/L4 sources.
 
 **(c) LEAF BRIDGES:** Permitted when the causal link has unique specificity
 not captured at L3 level (e.g., `monetary_policy_committee → home_loan_emi`).
@@ -285,6 +295,19 @@ bridges via upward aggregation, not from a single L1 bridge.
 1. Homogeneity test documented in description
 2. At least one positive scenario in `scenarios.yaml`
 3. One negative scenario proving it doesn't create false paths
+
+**(f) T→T LATERAL SOURCE LEVEL:** Same rule as (b) — T→T lateral edges
+MUST originate from L3 or L4. L2→L2 laterals are forbidden unless ALL
+children of the source L2 produce the same effect on ALL children of
+the target L2. In practice, this means almost all T→T laterals should
+be L3→L3, L3→L4, L4→L3, or L4→L4.
+
+**(g) LLM GENERATION DIRECTIVE:** When generating edges, always default
+to L3 or L4 sources and targets. Assume L2 categories are heterogeneous
+unless explicitly proven otherwise. **Never use an L2 as a source or
+target simply to group things.** If a macro event affects "agriculture",
+do not link to the L2 `agriculture_and_allied` — link to the specific
+L3s: `crop_yields`, `fertilizer_costs`, `farm_labor`, etc.
 
 **Additional rules (unchanged from prior version):**
 - **Cross-world REGULATES/MANAGES are metadata, not edges.** Administrative relationships that cross worlds (e.g., `rbi REGULATES credit_card_dues`) are stored as node properties (`regulated_by`, `managed_by`), not as graph edges. They short-circuit actual causal chains. Same-world REGULATES/MANAGES (e.g., `ministry_of_finance MANAGES union_budget_framework`, both T2) are fine as edges — they represent legitimate institutional relationships within a world.
@@ -324,12 +347,62 @@ Use the most specific node where the causal mechanism originates.
 
 ---
 
+### Rule 21: Direct Causation Principle (No Bypassing)
+
+Every causal edge (T→T, I→I, T→I) must represent a **direct causal mechanism**. You must not draw an edge from A to C if the causal signal must pass through an intermediate node B to get there.
+
+**Trees define structure. Edges define immediate cause.**
+
+#### The Bypassing Test
+
+Before creating an edge A→B, articulate the exact physical, economic, or behavioral mechanism. If your explanation requires a third entity that exists (or should exist) in the taxonomy, your edge is invalid.
+
+- **Invalid (Bypass):** `brent_crude` (T3) → `retail_tomato` (I1). *Mechanism: Crude raises fuel prices, which raises freight costs, which raises tomato prices. Bypasses `vehicle_fuel` and `road_freight_movement`.*
+- **Valid (Direct):** `brent_crude` (T3) → `vehicle_fuel` (I3). *Crude price directly sets fuel price.*
+- **Valid (Direct):** `vehicle_fuel` (I3) → `road_freight_movement` (T4). *Fuel cost is 40-60% of trucking cost.*
+- **Valid (Direct):** `road_freight_movement` (T4) → `retail_tomato` (I1). *Freight cost directly passes to perishable produce.*
+
+This applies uniformly to all edge types:
+
+- **T→I bridges** terminate at the **first point of impact** in I-world. A bridge is valid only if the trigger directly affects the I-world node without requiring signal to pass through any other I-world node first. Multiple bridges per trigger are fine (fan-out) — crude legitimately hits `vehicle_fuel`, `cooking_fuel`, and `lpg_cylinder` independently.
+- **T→T laterals** follow the same test within trigger world. `rbi → monetary_policy_committee` is direct (institutional control). `rbi → nifty_50` is not (goes through `repo_rate → fii_fpi_flows`).
+- **I→I laterals** follow the same test within impact world. `vehicle_fuel → auto_rickshaw_fare` is direct (cost pass-through). `vehicle_fuel → retail_tomato` is not (needs `road_freight_movement`).
+
+#### The Administrative Exemption
+
+"Direct" means **causally** direct, not **administratively** direct. If an intermediary is merely a passive conduit that cannot independently alter, veto, or scale the effect, skip it.
+
+- **Valid:** `union_budget_framework` (T2) → `mgnrega_wages` (I4). *State governments and panchayats are administrative pass-throughs for this specific budget allocation — they cannot independently change the wage amount.*
+
+#### The Multi-Mechanism Exception (Valid Triangles)
+
+If A affects B, and B affects C, you may ONLY draw an edge from A to C if A has a **completely independent, parallel mechanism** for affecting C that does not involve B.
+
+- **Valid Triangle:** `urban_flooding` → `road_freight_movement` (trucks can't move) AND `urban_flooding` → `retail_tomato` (floodwater directly rots peri-urban crops on the vine). The crop-rot mechanism is independent of the freight mechanism.
+- **Requirement:** If you create a triangle, the `description` field of the A→C edge MUST explicitly describe the parallel mechanism.
+
+#### Handling Missing Intermediaries
+
+If A affects C through B, but B does not exist in the taxonomy:
+
+- **DO NOT** draw A→C as a temporary fix. This creates permanent technical debt.
+- **DO** propose the addition of Node B (following Rule 5 and Rule 9), then draw A→B and B→C.
+
+#### Automated Validation
+
+- **Triangle Detection:** If the graph contains A→B, B→C, and A→C, flag A→C for manual review. It is only valid if its `description` describes a mechanism independent of B.
+- **Cross-World Hop Check:** If a trigger has bridges to two I-world nodes X and Y, and X→Y also exists as a lateral, flag the deeper bridge for review.
+
+Run: `python -m graph.admin validate-directness`
+
+---
+
 ### Rule 19: Patch and Edge Addition Protocol
 
 When adding new edges or bridges to the graph:
 
 1. **Check if an existing bridge already covers the path.** Use `python -m graph.traverse <trigger_node>` to trace reachability. If the target is already reached via CONTAINS propagation from an existing bridge (at any level), no new edge is needed.
-2. **Apply the Homogeneity Test (Rule 18a/20d) before choosing target level.** Prefer L3 targets. For T→I bridges, L2 is permitted only if the effect is truly universal across all descendants. For I→I edges, L2 is forbidden (Rule 20). If only specific children are affected, target the relevant L3s or L4s.
+2. **Apply the Homogeneity Test (Rule 18a/20d) before choosing target level.** Prefer L3 targets. For T→I bridges, L2 is permitted only if the effect is truly universal across ALL descendants (100%) — "majority" is not enough because CONTAINS propagation pushes to all children. For I→I edges, L2 is forbidden (Rule 20). For sources, use L3/L4 per Rule 18(b). If only specific children are affected, target the relevant L3s or L4s.
 3. **Same-world laterals: prefer the most specific shared level.** When adding I→I or T→T connections, target the level where the mechanism holds uniformly. For I→I edges, L2 targets are forbidden (Rule 20). L3→L3 or mixed-level laterals are the standard.
 4. **No new nodes without justification.** The L2 taxonomy is MECE. Adding a new L2 requires demonstrating that no existing L2 covers the concept. New L3/L4 leaves are fine if they pass the Leaf Node Test (Rule 5).
 5. **Every patch needs a scenario.** When adding a bridge to fix a gap, add a corresponding scenario to `taxonomy/scenarios.yaml` that validates the path. Include both a positive scenario (bridge reaches the right target) and a negative scenario (bridge does not create false paths). Patches without test coverage will regress silently.
@@ -351,7 +424,7 @@ At each phase boundary, run these checks before proceeding:
 | **1a → 1b** | No orphan leaves — every leaf has `degree >= 1` lateral edge potential | `graph.admin validate --orphans` |
 | **1b → 2a** | Impact subgraph is connected DAG, no isolated components | `graph.admin validate --dag --components` |
 | **2a → 2b** | Every Trigger node has a hypothetical path to at least one Impact node ("So What?" test) | Manual review |
-| **2b → 3** | Trigger subgraph is connected DAG | `graph.admin validate --dag` |
+| **2b → 3** | Trigger subgraph is connected DAG. **No causal orphans:** every T-world L4 leaf must have at least one causal out-edge, OR its L3 parent must have one. Dead-end triggers cannot propagate signal. | `graph.admin validate --dag --causal-orphans` |
 | **3 → 4** | All port nodes have at least one bridge edge | `graph.admin validate --bridges` |
 | **Phase 4** | Trace 15+ real scenarios end-to-end, verify traversal reaches expected Impact nodes | Manual + `graph.traverse` |
 
