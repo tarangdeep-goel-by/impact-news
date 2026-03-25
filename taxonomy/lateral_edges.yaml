@@ -4016,3 +4016,1475 @@ edges:
   delay: IMMEDIATE
   description: Visitors driving to monuments and attractions must pay local parking
     fees upon arrival.
+- from: el_nino_southern_oscillation
+  to: southwest_monsoon
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: El Nino warming in the Pacific alters atmospheric circulation, suppressing
+    the moisture-bearing winds of the Indian summer monsoon.
+- from: indian_ocean_dipole
+  to: southwest_monsoon
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: A positive Indian Ocean Dipole increases sea surface temperatures in
+    the western Indian Ocean, enhancing monsoon rainfall over the subcontinent.
+- from: global_surface_temperature
+  to: himalayan_glaciers
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: LONG_TERM
+  description: Higher global atmospheric temperatures accelerate the melting rate
+    and permanent retreat of high-altitude ice reserves.
+- from: himalayan_glaciers
+  to: himalayan_river_systems
+  type: SUPPLIES
+  weight: 0.95
+  polarity: 1
+  delay: LONG_TERM
+  description: Glacial meltwater provides the critical base flow for perennial northern
+    rivers like the Ganga and Brahmaputra during dry seasons.
+- from: southwest_monsoon
+  to: peninsular_river_systems
+  type: SUPPLIES
+  weight: 0.95
+  polarity: 1
+  delay: SHORT_TERM
+  description: Summer monsoon precipitation is the primary source of water volume
+    for rain-fed southern rivers like the Godavari and Krishna.
+- from: northeast_monsoon
+  to: peninsular_river_systems
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Winter retreating monsoon rains provide essential water volume to southeastern
+    river basins, particularly the Kaveri.
+- from: southwest_monsoon
+  to: groundwater_aquifers
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Sustained seasonal rainfall percolates through the soil to directly
+    recharge subterranean water tables across India.
+- from: bay_of_bengal_marine_system
+  to: cyclonic_storm_systems
+  type: PRODUCES
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: High sea surface temperatures and low-pressure troughs in the Bay of
+    Bengal provide the thermal energy that generates tropical cyclones.
+- from: arabian_sea_marine_system
+  to: cyclonic_storm_systems
+  type: PRODUCES
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: Warming waters in the Arabian Sea increasingly fuel the formation of
+    severe cyclonic storms on India's western coast.
+- from: western_disturbances
+  to: himalayan_glaciers
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Winter storm systems from the Mediterranean drop heavy snow over the
+    Himalayas, replenishing glacial ice mass.
+- from: global_surface_temperature
+  to: bay_of_bengal_marine_system
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: LONG_TERM
+  description: Rising global temperatures directly increase the baseline sea surface
+    temperature and heat content of the Bay of Bengal.
+- from: cyclonic_storm_systems
+  to: forest_cover
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Extreme cyclonic winds and storm surges physically uproot trees and
+    destroy coastal mangrove ecosystems.
+- from: southwest_monsoon
+  to: global_food_grain_supply
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Strong monsoon rains ensure high yields in Indian rice and wheat harvests,
+    significantly boosting global grain availability.
+- from: southwest_monsoon
+  to: global_sugar_supply
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Adequate monsoon rainfall in Maharashtra and UP drives sugarcane yields,
+    directly increasing India's contribution to global sugar markets.
+- from: cyclonic_storm_systems
+  to: global_shipping_routes
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: IMMEDIATE
+  description: Severe storms force commercial vessels to reroute or halt, physically
+    blocking maritime logistics corridors.
+- from: cyclonic_storm_systems
+  to: telecom_towers_network
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: High-velocity winds and falling debris physically destroy cellular
+    towers and sever communication lines.
+- from: cyclonic_storm_systems
+  to: power_substations
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: Flooding and wind damage from cyclones short-circuit and physically
+    destroy electrical grid substations.
+- from: cyclonic_storm_systems
+  to: major_seaports
+  type: DISRUPTS
+  weight: 0.95
+  polarity: -1
+  delay: IMMEDIATE
+  description: Storm surges and extreme weather force the immediate operational shutdown
+    of coastal shipping ports.
+- from: himalayan_tectonic_plates
+  to: highway_network
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Seismic activity triggers landslides and surface ruptures that physically
+    sever mountain road infrastructure.
+- from: southwest_monsoon
+  to: road_freight_movement
+  type: DISRUPTS
+  weight: 0.65
+  polarity: -1
+  delay: IMMEDIATE
+  description: Heavy seasonal flooding washes out roads and drastically reduces the
+    speed and volume of trucking logistics.
+- from: western_disturbances
+  to: commercial_airports
+  type: DISRUPTS
+  weight: 0.75
+  polarity: -1
+  delay: IMMEDIATE
+  description: Winter weather systems generate dense radiation fog across North India,
+    grounding flights and halting airport operations.
+- from: southwest_monsoon
+  to: seasonal_migrant_labor
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: A robust monsoon increases local agricultural labor demand, reducing
+    the volume of rural workers migrating to cities for seasonal work.
+- from: groundwater_aquifers
+  to: rural_urban_migration_corridors
+  type: AFFECTS
+  weight: 0.65
+  polarity: -1
+  delay: LONG_TERM
+  description: The depletion of local water tables destroys farming viability, forcing
+    rural populations to migrate to urban centers.
+- from: cpcb
+  to: groundwater_aquifers
+  type: REGULATES
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The Central Pollution Control Board enforces effluent discharge limits
+    that prevent industrial toxins from contaminating subterranean water.
+- from: national_green_tribunal
+  to: forest_cover
+  type: REGULATES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: NGT rulings legally block the diversion of protected woodlands for
+    industrial and infrastructure projects.
+- from: agricultural_exports
+  to: groundwater_aquifers
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: LONG_TERM
+  description: High export volumes of water-intensive crops like rice and sugarcane
+    drive aggressive over-extraction of local water tables.
+- from: industrial_metals_index
+  to: forest_cover
+  type: DISRUPTS
+  weight: 0.65
+  polarity: -1
+  delay: LONG_TERM
+  description: Surging global metal prices incentivize the expansion of mining operations
+    into heavily forested regions.
+- from: coal_power_plants
+  to: global_surface_temperature
+  type: PRODUCES
+  weight: 0.85
+  polarity: 1
+  delay: LONG_TERM
+  description: Thermal power generation releases massive volumes of greenhouse gases
+    that directly trap heat in the atmosphere.
+- from: highway_network
+  to: forest_cover
+  type: DISRUPTS
+  weight: 0.75
+  polarity: -1
+  delay: LONG_TERM
+  description: The physical construction of expressways fragments contiguous forest
+    biomes and requires mass tree felling.
+- from: urban_population_density
+  to: arable_topsoil
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: LONG_TERM
+  description: The outward sprawl of dense urban settlements physically paves over
+    fertile peri-urban agricultural land.
+- from: bay_of_bengal_marine_system
+  to: marine_fish_stocks
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: The nutrient-rich waters and coastal ecosystems of the Bay of Bengal
+    provide the biological habitat for eastern fishery reserves.
+- from: arabian_sea_marine_system
+  to: marine_fish_stocks
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: Upwelling currents in the Arabian Sea sustain the phytoplankton base
+    required for western commercial fish populations.
+- from: migratory_pest_populations
+  to: global_food_grain_supply
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Locust swarms physically consume standing crops across vast agricultural
+    tracts, destroying harvest yields.
+- from: arable_topsoil
+  to: global_food_grain_supply
+  type: SUPPLIES
+  weight: 0.95
+  polarity: 1
+  delay: LONG_TERM
+  description: Nutrient-rich agricultural soil is the fundamental biophysical requirement
+    for cultivating commercial grain harvests.
+- from: southwest_monsoon
+  to: coal_power_plants
+  type: DISRUPTS
+  weight: 0.75
+  polarity: -1
+  delay: SHORT_TERM
+  description: Extreme monsoon flooding inundates open-cast coal mines, physically
+    halting the extraction and supply of fuel to thermal plants.
+- from: himalayan_river_systems
+  to: renewable_energy_parks
+  type: SUPPLIES
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: High-volume flow in northern river basins provides the kinetic energy
+    required to operate hydroelectric power installations.
+- from: ministry_of_finance
+  to: union_budget_framework
+  type: MANAGES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Ministry of Finance directly drafts, allocates, and manages the
+    Union Budget framework annually.
+- from: union_budget_framework
+  to: ministry_of_road_transport
+  type: FUNDS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Capital expenditure allocations in the Union Budget directly fund the
+    Ministry of Road Transport's infrastructure projects.
+- from: ministry_of_road_transport
+  to: highway_network
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The Ministry of Road Transport directly oversees the construction and
+    expansion of the national highway network.
+- from: ministry_of_railways
+  to: indian_railways_network
+  type: MANAGES
+  weight: 0.95
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The Ministry of Railways holds direct administrative and operational
+    control over the Indian Railways network.
+- from: ministry_of_power
+  to: national_power_grid
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The Ministry of Power sets the operational policies and capacity targets
+    for the national electricity grid.
+- from: rbi
+  to: monetary_policy_committee
+  type: MANAGES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Reserve Bank of India convenes and operationally manages the Monetary
+    Policy Committee to set benchmark interest rates.
+- from: monetary_policy_committee
+  to: india_10yr_bond_yield
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: MPC repo rate hikes directly push up the yields on 10-year government
+    securities.
+- from: us_federal_reserve
+  to: us_treasury_yields
+  type: AFFECTS
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: Federal Reserve interest rate decisions directly dictate the baseline
+    yields of US Treasury bonds.
+- from: us_treasury_yields
+  to: fii_fpi_flows
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher US Treasury yields pull foreign institutional capital out of
+    emerging markets like India seeking safer returns.
+- from: fii_fpi_flows
+  to: nifty_50
+  type: FUNDS
+  weight: 0.75
+  polarity: 1
+  delay: IMMEDIATE
+  description: Heavy foreign institutional buying directly drives up the valuation
+    of the Nifty 50 index.
+- from: fii_fpi_flows
+  to: usd_inr_exchange
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Strong foreign capital inflows increase dollar supply in India, strengthening
+    the Rupee and lowering the USD-INR exchange rate.
+- from: sebi
+  to: fii_fpi_flows
+  type: REGULATES
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: SEBI sets the compliance and registration rules that dictate how easily
+    foreign portfolio investors can bring capital into India.
+- from: sebi
+  to: nifty_50
+  type: REGULATES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: SEBI's market integrity and margin rules structurally support the stability
+    and valuation of benchmark equity indices.
+- from: opec
+  to: brent_crude
+  type: AFFECTS
+  weight: 0.85
+  polarity: -1
+  delay: SHORT_TERM
+  description: Increases in OPEC production quotas directly increase global oil supply,
+    lowering Brent crude prices.
+- from: brent_crude
+  to: india_trade_deficit
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher global crude prices directly inflate India's import bill, widening
+    the national trade deficit.
+- from: india_trade_deficit
+  to: usd_inr_exchange
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: A widening trade deficit increases domestic demand for dollars to pay
+    for imports, weakening the Rupee and raising the USD-INR rate.
+- from: usd_inr_exchange
+  to: india_forex_reserves
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: A rising USD-INR rate forces the RBI to sell dollars from its reserves
+    to defend the depreciating Rupee.
+- from: rbi
+  to: india_forex_reserves
+  type: MANAGES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: The RBI directly holds, manages, and deploys India's foreign exchange
+    reserves.
+- from: epfo
+  to: dii_flows
+  type: FUNDS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: The EPFO allocates a mandated percentage of its provident fund corpus
+    into domestic equity markets via ETFs.
+- from: dii_flows
+  to: nifty_50
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sustained buying by domestic institutional investors directly supports
+    and lifts the Nifty 50 index.
+- from: ministry_of_consumer_affairs
+  to: public_distribution_system
+  type: MANAGES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Ministry of Consumer Affairs directly administers the procurement
+    and allocation policies of the Public Distribution System.
+- from: public_distribution_system
+  to: global_food_grain_supply
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Massive domestic grain procurement for the Indian PDS reduces the exportable
+    surplus available to global food grain markets.
+- from: gst_council
+  to: wpi
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: Upward revisions in GST slabs by the Council directly increase the
+    wholesale prices of manufactured goods.
+- from: wpi
+  to: monetary_policy_committee
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Rising wholesale inflation pressures the Monetary Policy Committee
+    to hike benchmark interest rates to cool the economy.
+- from: trai
+  to: telecom_spectrum
+  type: REGULATES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: TRAI sets the pricing, allocation rules, and auction frameworks for
+    national telecom spectrum.
+- from: uidai
+  to: aadhaar_database
+  type: MANAGES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: UIDAI directly builds, maintains, and secures the central Aadhaar biometric
+    and demographic database.
+- from: aadhaar_database
+  to: upi_platform
+  type: SUPPLIES
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Aadhaar database supplies the e-KYC and identity mapping infrastructure
+    required to onboard users to the UPI platform.
+- from: meity_regulations
+  to: data_centers
+  type: REGULATES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: MeitY's data localization mandates force the expansion and construction
+    of domestic data centers.
+- from: dgca
+  to: commercial_airports
+  type: REGULATES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The DGCA enforces safety, operational, and licensing regulations across
+    all commercial airports in India.
+- from: cpcb
+  to: coal_power_plants
+  type: REGULATES
+  weight: 0.85
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Stricter emission norms enforced by the CPCB force older, polluting
+    coal power plants to reduce output or shut down.
+- from: national_green_tribunal
+  to: coal_power_plants
+  type: REGULATES
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: NGT judicial orders frequently halt or restrict the operations of thermal
+    power plants violating environmental clearances.
+- from: state_governments
+  to: state_electricity_boards
+  type: MANAGES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: State governments hold direct administrative and financial control
+    over their respective electricity distribution companies (Discoms).
+- from: state_electricity_boards
+  to: national_power_grid
+  type: FUNDS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Payments from state Discoms fund the generation and transmission companies
+    that keep the national power grid operational.
+- from: municipal_corporations
+  to: municipal_water_grid
+  type: MANAGES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: Municipal corporations directly operate and maintain the urban water
+    supply pipelines and treatment facilities.
+- from: municipal_corporations
+  to: sewage_drainage_network
+  type: MANAGES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local civic bodies are directly responsible for the construction and
+    clearing of urban stormwater and sewage drains.
+- from: regional_transport_office
+  to: road_freight_movement
+  type: REGULATES
+  weight: 0.75
+  polarity: -1
+  delay: SHORT_TERM
+  description: Stricter RTO enforcement of vehicle fitness and overloading rules temporarily
+    slows down trucking fleet operations.
+- from: supreme_court_of_india
+  to: telecom_spectrum
+  type: REGULATES
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Apex court rulings can cancel spectrum allocations or impose massive
+    AGR dues, restricting spectrum utilization.
+- from: enforcement_directorate
+  to: fii_fpi_flows
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: ED probes into money laundering or beneficial ownership trigger capital
+    flight by foreign portfolio investors.
+- from: chinese_government
+  to: china_manufacturing_output
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Beijing's state subsidies, energy policies, and export quotas directly
+    dictate the volume of Chinese industrial production.
+- from: china_manufacturing_output
+  to: active_pharmaceutical_ingredients_supply
+  type: SUPPLIES
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Chinese chemical factories produce and supply the vast majority of
+    the world's active pharmaceutical ingredients.
+- from: china_manufacturing_output
+  to: global_semiconductor_supply_chain
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Chinese electronics manufacturing provides critical assembly, testing,
+    and packaging capacity to the global semiconductor supply chain.
+- from: us_government
+  to: us_consumer_demand
+  type: FUNDS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: US federal fiscal stimulus and tax policies directly increase the disposable
+    income and spending power of American consumers.
+- from: us_consumer_demand
+  to: china_manufacturing_output
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: High retail demand in the United States drives massive export orders,
+    boosting Chinese factory output.
+- from: russian_government
+  to: brent_crude
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: SHORT_TERM
+  description: Geopolitical actions and export bans by the Kremlin restrict global
+    oil supply, driving up Brent crude prices.
+- from: european_central_bank
+  to: us_dollar_index
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: ECB interest rate hikes strengthen the Euro, which inversely weakens
+    the US Dollar Index due to the Euro's heavy weighting in the basket.
+- from: us_dollar_index
+  to: international_gold_prices
+  type: AFFECTS
+  weight: 0.85
+  polarity: -1
+  delay: IMMEDIATE
+  description: A stronger US dollar makes gold more expensive for holders of other
+    currencies, reducing global demand and lowering spot prices.
+- from: ministry_of_commerce_and_industry
+  to: export_competitiveness
+  type: MANAGES
+  weight: 0.85
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The Commerce Ministry's Production Linked Incentive (PLI) schemes directly
+    boost the cost competitiveness of Indian exports.
+- from: export_competitiveness
+  to: india_trade_deficit
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Improved manufacturing export competitiveness increases outbound shipments,
+    narrowing the national trade deficit.
+- from: ministry_of_civil_aviation
+  to: commercial_airports
+  type: MANAGES
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The Ministry of Civil Aviation sets the policy framework for the privatization,
+    expansion, and modernization of commercial airports.
+- from: cci
+  to: ondc_platform
+  type: REGULATES
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: Competition Commission rulings against proprietary e-commerce monopolies
+    structurally incentivize merchants to adopt the open ONDC platform.
+- from: brent_crude
+  to: wpi
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Crude oil and its derivatives form a major direct component of the
+    Wholesale Price Index basket.
+- from: international_gold_prices
+  to: india_trade_deficit
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: Surges in international gold prices directly increase the dollar outflow
+    required for India's massive gold imports.
+- from: india_trade_deficit
+  to: india_current_account_deficit
+  type: PRODUCES
+  weight: 0.95
+  polarity: 1
+  delay: SHORT_TERM
+  description: The merchandise trade deficit is the primary mathematical component
+    that generates the current account deficit.
+- from: india_current_account_deficit
+  to: usd_inr_exchange
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: A widening current account deficit increases structural demand for
+    dollars, depreciating the rupee.
+- from: usd_inr_exchange
+  to: wpi
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: A depreciating rupee directly increases the landed INR cost of imported
+    wholesale goods and raw materials.
+- from: global_equity_indices
+  to: nifty_50
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global market sentiment and overnight index closures directly dictate
+    the opening gaps of Indian equity benchmarks.
+- from: us_dollar_index
+  to: usd_inr_exchange
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Broad strength in the US Dollar Index mathematically necessitates a
+    higher USD-INR exchange rate.
+- from: rbi
+  to: usd_inr_exchange
+  type: MANAGES
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: The RBI directly intervenes in forex markets by selling dollars to
+    suppress extreme spikes in the USD-INR rate.
+- from: fii_fpi_flows
+  to: india_forex_reserves
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Net positive foreign portfolio inflows directly supply foreign currency
+    to the national reserves.
+- from: wpi
+  to: india_10yr_bond_yield
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: Rising wholesale inflation expectations directly cause bond markets
+    to demand higher yields.
+- from: india_10yr_bond_yield
+  to: nifty_50
+  type: AFFECTS
+  weight: 0.65
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher risk-free sovereign yields lower the present value of future
+    corporate earnings, depressing equity valuations.
+- from: china_manufacturing_output
+  to: industrial_metals_index
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Chinese factory output is the primary global demand driver for industrial
+    metals like copper and steel.
+- from: china_manufacturing_output
+  to: global_shipping_freight_rates
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: High Chinese export manufacturing directly increases demand for outbound
+    shipping containers, raising global freight rates.
+- from: global_shipping_freight_rates
+  to: wpi
+  type: AFFECTS
+  weight: 0.65
+  polarity: 1
+  delay: SHORT_TERM
+  description: Elevated international shipping costs are directly passed through to
+    the wholesale prices of imported goods.
+- from: semiconductor_fabs
+  to: global_semiconductor_supply_chain
+  type: PRODUCES
+  weight: 0.95
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Fabrication plants physically manufacture the microchips that constitute
+    the global semiconductor supply chain.
+- from: global_semiconductor_supply_chain
+  to: pmi_manufacturing
+  type: SUPPLIES
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Adequate semiconductor supply directly enables production volumes in
+    the automotive and electronics manufacturing sectors.
+- from: pmi_manufacturing
+  to: index_of_industrial_production
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Purchasing managers' activity is a direct leading indicator that translates
+    into realized industrial production output.
+- from: index_of_industrial_production
+  to: india_gdp_growth
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Industrial production output is a direct mathematical component of
+    the national GDP calculation.
+- from: india_gdp_growth
+  to: national_unemployment_rate
+  type: AFFECTS
+  weight: 0.75
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Macroeconomic expansion directly drives corporate hiring, absorbing
+    labor and reducing the unemployment rate.
+- from: epfo_payroll_additions
+  to: national_unemployment_rate
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Net additions to formal payrolls directly reduce the aggregate national
+    unemployment rate.
+- from: epfo
+  to: epfo_payroll_additions
+  type: PRODUCES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Employees Provident Fund Organisation directly generates and publishes
+    the formal payroll addition metrics.
+- from: southwest_monsoon
+  to: agricultural_exports
+  type: PRODUCES
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Adequate monsoon rainfall directly produces the crop surplus required
+    for India's agricultural exports.
+- from: el_nino_southern_oscillation
+  to: global_sugar_supply
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: El Nino weather patterns disrupt rainfall in key sugarcane regions
+    like India and Brazil, lowering global supply.
+- from: global_food_grain_supply
+  to: wpi
+  type: AFFECTS
+  weight: 0.65
+  polarity: -1
+  delay: SHORT_TERM
+  description: Abundant global grain supplies directly lower the food component of
+    the wholesale price index.
+- from: global_edible_oil_supply
+  to: wpi
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Increased global palm and sunflower oil supplies directly reduce wholesale
+    inflation in India, a major importer.
+- from: autumn_festive_season
+  to: pmi_manufacturing
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: The autumn festive season directly triggers inventory build-ups, driving
+    manufacturing purchasing activity.
+- from: aggregate_consumer_confidence
+  to: pmi_services
+  type: FUNDS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Higher consumer optimism directly translates into increased discretionary
+    spending, boosting services sector activity.
+- from: india_working_age_population
+  to: india_gdp_growth
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: LONG_TERM
+  description: An expanding demographic of working-age citizens directly increases
+    the macroeconomic production possibility frontier.
+- from: dedicated_freight_corridors
+  to: export_competitiveness
+  type: PRODUCES
+  weight: 0.75
+  polarity: 1
+  delay: LONG_TERM
+  description: Dedicated rail freight infrastructure directly lowers logistics costs
+    and transit times, improving export competitiveness.
+- from: active_pharmaceutical_ingredients_supply
+  to: export_competitiveness
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Reliable API supply directly dictates the production and export capacity
+    of India's pharmaceutical sector.
+- from: ministry_of_commerce_and_industry
+  to: agricultural_exports
+  type: REGULATES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Commerce Ministry directly imposes or lifts export bans and duties
+    on agricultural commodities.
+- from: venture_capital_and_pe_flows
+  to: epfo_payroll_additions
+  type: FUNDS
+  weight: 0.65
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Startup and private equity funding directly finances the creation of
+    formal white-collar jobs added to EPFO rolls.
+- from: coal_power_plants
+  to: national_power_grid
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Thermal power stations directly generate the base-load electricity
+    that powers the national grid.
+- from: renewable_energy_parks
+  to: national_power_grid
+  type: PRODUCES
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: Solar and wind farms generate clean electricity that is fed directly
+    into the national power grid.
+- from: nuclear_power_plants
+  to: national_power_grid
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Atomic power stations provide uninterrupted, high-density electricity
+    generation to the national grid.
+- from: national_power_grid
+  to: power_substations
+  type: SUPPLIES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: The national electricity grid provides the high-voltage power that
+    substations step down for local distribution.
+- from: telecom_towers_network
+  to: national_power_grid
+  type: DEPENDS_ON
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cellular towers structurally require continuous electricity from the
+    national power grid to maintain network uptime.
+- from: data_centers
+  to: national_power_grid
+  type: DEPENDS_ON
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: Server farms and cloud infrastructure structurally require massive,
+    uninterrupted power from the grid to operate and cool equipment.
+- from: data_centers
+  to: optical_fibre_network
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cloud infrastructure structurally relies on high-bandwidth optical
+    fibre networks to transmit data to end users and other nodes.
+- from: telecom_towers_network
+  to: optical_fibre_network
+  type: DEPENDS_ON
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mobile cell towers structurally require optical fibre backhaul to route
+    cellular data traffic to the broader internet.
+- from: telecom_towers_network
+  to: telecom_spectrum
+  type: DEPENDS_ON
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cell towers structurally cannot transmit wireless signals to mobile
+    devices without allocated telecom spectrum frequencies.
+- from: submarine_internet_cables
+  to: optical_fibre_network
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Undersea cables provide the international data bandwidth that feeds
+    into the domestic optical fibre backbone.
+- from: upi_platform
+  to: telecom_towers_network
+  type: DEPENDS_ON
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Unified Payments Interface switch structurally requires mobile
+    internet connectivity provided by telecom towers to process user transactions.
+- from: aadhaar_database
+  to: data_centers
+  type: DEPENDS_ON
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: The UIDAI biometric database structurally requires secure data center
+    infrastructure to host records and process authentication requests.
+- from: ondc_platform
+  to: data_centers
+  type: DEPENDS_ON
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The Open Network for Digital Commerce structurally relies on cloud
+    data centers to host its decentralized protocol and routing systems.
+- from: indian_railways_network
+  to: railway_freight_movement
+  type: SUPPLIES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: The national railway track infrastructure provides the physical pathways
+    required for the movement of goods trains.
+- from: dedicated_freight_corridors
+  to: railway_freight_movement
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Specialized freight railway lines provide high-speed, unhindered track
+    infrastructure that increases rail cargo volume and efficiency.
+- from: highway_network
+  to: road_freight_movement
+  type: SUPPLIES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: National highways and expressways provide the physical road infrastructure
+    required for commercial trucking and logistics.
+- from: major_seaports
+  to: global_shipping_routes
+  type: SUPPLIES
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: Deep-water shipping ports provide the docking and cargo-handling infrastructure
+    that connects domestic supply chains to global sea lanes.
+- from: water_treatment_plants
+  to: municipal_water_grid
+  type: SUPPLIES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: Water treatment facilities provide the purified potable water that
+    flows through municipal supply networks to end consumers.
+- from: semiconductor_fabs
+  to: data_centers
+  type: SUPPLIES
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Chip manufacturing plants produce the advanced silicon processors required
+    to build and upgrade data center servers.
+- from: satellite_network
+  to: telecom_towers_network
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: IMMEDIATE
+  description: Communication satellites provide essential data backhaul for telecom
+    towers located in remote or difficult terrain where fibre is unavailable.
+- from: cyclonic_storm_systems
+  to: national_power_grid
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: IMMEDIATE
+  description: Severe tropical cyclones uproot transmission towers and snap high-voltage
+    lines, causing widespread grid failures.
+- from: southwest_monsoon
+  to: highway_network
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Intense monsoon rainfall causes landslides, road washouts, and severe
+    potholing that degrades the national highway network.
+- from: international_coal_prices
+  to: coal_power_plants
+  type: AFFECTS
+  weight: 0.75
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher international thermal coal prices increase input costs for import-dependent
+    power plants, reducing their operational viability and output.
+- from: brent_crude
+  to: road_freight_movement
+  type: AFFECTS
+  weight: 0.85
+  polarity: -1
+  delay: SHORT_TERM
+  description: Surges in global crude oil prices increase domestic fuel costs, which
+    compresses logistics margins and reduces the volume of road freight movement.
+- from: road_freight_movement
+  to: wpi
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Increased road freight volumes and logistics costs pass directly through
+    to the Wholesale Price Index as transport overheads for goods.
+- from: global_shipping_routes
+  to: global_shipping_freight_rates
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: The expansion and smooth operation of global shipping routes increases
+    vessel capacity and turnaround, lowering international freight rates.
+- from: sewage_drainage_network
+  to: peninsular_river_systems
+  type: DISRUPTS
+  weight: 0.75
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Untreated discharge and overflow from municipal drainage networks severely
+    degrades the water quality and ecology of peninsular rivers.
+- from: sewage_drainage_network
+  to: himalayan_river_systems
+  type: DISRUPTS
+  weight: 0.75
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Untreated sewage discharge from northern urban centers flows directly
+    into the Ganga-Brahmaputra basin, degrading water quality.
+- from: urban_population_density
+  to: sewage_drainage_network
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Rapid increases in urban population density overload the physical capacity
+    of municipal sewage and drainage systems, causing frequent failures.
+- from: urban_population_density
+  to: municipal_water_grid
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Higher urban density strains the municipal water grid's supply capacity,
+    leading to reduced pressure and rationing.
+- from: rural_urban_migration_corridors
+  to: urban_population_density
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  description: The continuous influx of migrants from villages directly drives up
+    the population density of major metropolitan areas.
+- from: skilled_emigration
+  to: indian_diaspora_nri
+  type: PRODUCES
+  weight: 0.95
+  polarity: 1
+  delay: LONG_TERM
+  description: The outflow of skilled professionals and students directly builds and
+    expands the non-resident Indian diaspora population.
+- from: tier_2_3_city_expansion
+  to: rural_urban_migration_corridors
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: The economic growth and job creation in smaller towns reduces the necessity
+    for rural populations to migrate to Tier-1 metros.
+- from: india_working_age_population
+  to: skilled_emigration
+  type: SUPPLIES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: India's massive demographic dividend supplies the raw human capital
+    that seeks higher education and employment abroad.
+- from: autumn_festive_season
+  to: aggregate_consumer_confidence
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: The cultural momentum of the Diwali and Durga Puja season temporarily
+    boosts public optimism and willingness to spend.
+- from: wedding_season_aggregate
+  to: aggregate_consumer_confidence
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: The concentrated period of marriages drives mandatory social spending,
+    temporarily elevating aggregate consumer market activity.
+- from: global_surface_temperature
+  to: rural_urban_migration_corridors
+  type: PRODUCES
+  weight: 0.5
+  polarity: 1
+  delay: LONG_TERM
+  description: Long-term climate warming degrades agricultural viability, forcing
+    rural populations to permanently migrate to urban centers for survival.
+- from: us_government
+  to: skilled_emigration
+  type: REGULATES
+  weight: 0.85
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: United States immigration policies and H1-B visa caps directly restrict
+    the volume of skilled Indian professionals able to emigrate.
+- from: ministry_of_road_transport
+  to: tier_2_3_city_expansion
+  type: PRODUCES
+  weight: 0.75
+  polarity: 1
+  delay: LONG_TERM
+  description: Central highway development policies and corridor planning directly
+    enable the economic and physical expansion of smaller cities.
+- from: epfo
+  to: female_labor_force_participation
+  type: REGULATES
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Formal provident fund rules and statutory maternity benefit enforcement
+    encourage the retention of women in the formal workforce.
+- from: national_unemployment_rate
+  to: skilled_emigration
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: High domestic joblessness drives skilled workers and fresh graduates
+    to aggressively seek employment opportunities abroad.
+- from: wpi
+  to: aggregate_consumer_confidence
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: High wholesale inflation eventually passes through to retail prices,
+    suppressing the public's overall willingness to make discretionary purchases.
+- from: epfo_payroll_additions
+  to: urban_population_density
+  type: PRODUCES
+  weight: 0.65
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: The creation of formal sector jobs, which are heavily concentrated
+    in cities, draws population inward and increases urban density.
+- from: highway_network
+  to: tier_2_3_city_expansion
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: LONG_TERM
+  description: Physical highway connectivity integrates smaller towns into national
+    supply chains, driving their industrial and residential growth.
+- from: optical_fibre_network
+  to: tier_2_3_city_expansion
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: High-speed broadband penetration enables IT and service sector companies
+    to establish operations in non-metro cities.
+- from: indian_railways_network
+  to: seasonal_migrant_labor
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The unreserved and sleeper class railway network provides the primary
+    physical transport mechanism that makes seasonal labor migration possible.
+- from: voter_turnout_aggregates
+  to: state_governments
+  type: PRODUCES
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: High voter turnout and electoral participation directly determine the
+    formation, mandate, and stability of state administrations.
+- from: regional_language_movements
+  to: state_governments
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Linguistic identity movements heavily influence state-level political
+    priorities, forcing governments to adopt specific cultural policies.
+- from: india_working_age_population
+  to: epfo_payroll_additions
+  type: SUPPLIES
+  weight: 0.85
+  polarity: 1
+  delay: LONG_TERM
+  description: The expanding demographic dividend supplies the raw human capital required
+    for formal sector job creation and payroll expansion.
+- from: female_labor_force_participation
+  to: india_gdp_growth
+  type: PRODUCES
+  weight: 0.75
+  polarity: 1
+  delay: LONG_TERM
+  description: Increased female participation in the workforce directly expands the
+    national labor pool and boosts overall economic output.
+- from: indian_diaspora_nri
+  to: india_forex_reserves
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Inward remittances from the non-resident Indian population provide
+    a massive, direct funding source for the country's foreign exchange reserves.
+- from: autumn_festive_season
+  to: index_of_industrial_production
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The concentrated festive period drives a massive surge in factory output
+    as companies build inventory to meet consumer demand.
+- from: wedding_season_aggregate
+  to: international_gold_prices
+  type: AFFECTS
+  weight: 0.65
+  polarity: 1
+  delay: SHORT_TERM
+  description: The sheer volume of physical gold purchased for Indian weddings creates
+    significant demand shocks in global precious metal markets.
+- from: aggregate_consumer_confidence
+  to: pmi_manufacturing
+  type: PRODUCES
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: High consumer optimism translates directly into new manufacturing orders,
+    driving expansion in factory activity indices.
+- from: mass_boycott_movements
+  to: fii_fpi_flows
+  type: DISRUPTS
+  weight: 0.5
+  polarity: -1
+  delay: SHORT_TERM
+  description: Large-scale consumer boycotts or social unrest can trigger foreign
+    investor anxiety, leading to capital flight from domestic markets.
+- from: seasonal_migrant_labor
+  to: road_freight_movement
+  type: SUPPLIES
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: Migrant workers supply the critical labor force required to operate
+    trucking fleets and load/unload cargo in logistics networks.
+- from: seasonal_migrant_labor
+  to: commercial_airports
+  type: SUPPLIES
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Migrant labor provides the essential workforce for the physical construction
+    and expansion of large-scale airport infrastructure.
+- from: autumn_festive_season
+  to: railway_freight_movement
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: SHORT_TERM
+  description: Festive consumer demand causes a sharp spike in the volume of manufactured
+    goods transported via the railway freight network.
+- from: tier_2_3_city_expansion
+  to: commercial_airports
+  type: PRODUCES
+  weight: 0.7
+  polarity: 1
+  delay: LONG_TERM
+  description: The economic rise of smaller cities directly necessitates and produces
+    new regional airport infrastructure to handle business travel.
+- from: india_aging_population
+  to: female_labor_force_participation
+  type: DISRUPTS
+  weight: 0.65
+  polarity: -1
+  delay: LONG_TERM
+  description: A growing elderly population increases unpaid domestic care burdens,
+    which disproportionately pulls women out of the formal workforce.
+- from: urban_population_density
+  to: voter_turnout_aggregates
+  type: AFFECTS
+  weight: 0.55
+  polarity: -1
+  delay: SHORT_TERM
+  description: High urban density and transient migrant populations typically correlate
+    with lower localized voter turnout compared to rural areas.
+- from: regional_language_movements
+  to: mass_boycott_movements
+  type: PRODUCES
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Linguistic chauvinism and regional identity politics often trigger
+    targeted boycotts against non-local businesses or media properties.
+- from: arable_topsoil
+  to: seasonal_migrant_labor
+  type: AFFECTS
+  weight: 0.65
+  polarity: -1
+  delay: LONG_TERM
+  description: The preservation of fertile topsoil keeps farming viable, whereas its
+    degradation forces agricultural workers into seasonal migrant labor.
+- from: union_budget_framework
+  to: tier_2_3_city_expansion
+  type: FUNDS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Central budget allocations for urban renewal missions directly finance
+    the civic infrastructure required for small city growth.
+- from: usd_inr_exchange
+  to: skilled_emigration
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: A weaker rupee (higher USD-INR rate) increases the financial arbitrage
+    incentive for skilled workers to earn abroad and remit money home.
+- from: telecom_towers_network
+  to: female_labor_force_participation
+  type: PRODUCES
+  weight: 0.55
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Widespread mobile connectivity enables remote work and gig economy
+    participation, bringing more women into the flexible workforce.
