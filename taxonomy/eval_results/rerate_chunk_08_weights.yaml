@@ -1,0 +1,4 @@
+edges:
+- from: sebi
+  to: nifty_50
+  weight: 0.40

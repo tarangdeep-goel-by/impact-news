@@ -41,8 +41,6 @@ TAXONOMY_MD = TAXONOMY_DIR / "TAXONOMY.md"
 # Gemini model fallback chain (thinking-capable only)
 MODEL_CHAIN = [
     "gemini-3.1-pro-preview",
-    "gemini-3-pro-preview",
-    "gemini-2.5-pro",
 ]
 
 # Retry config

@@ -1,0 +1,4 @@
+edges:
+- from: influenza_and_viral_fever
+  to: school_examinations
+  weight: 0.40

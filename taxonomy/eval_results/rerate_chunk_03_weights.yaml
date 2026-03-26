@@ -1,0 +1,16 @@
+edges:
+- from: bike_taxi_fare
+  to: gig_worker_payouts
+  weight: 0.80
+- from: highway_toll_fare
+  to: cab_aggregator_fare
+  weight: 0.70
+- from: parking_fees
+  to: cab_aggregator_fare
+  weight: 0.70
+- from: retail_diesel
+  to: marine_fish
+  weight: 0.60
+- from: retail_diesel
+  to: particulate_matter_levels
+  weight: 0.80

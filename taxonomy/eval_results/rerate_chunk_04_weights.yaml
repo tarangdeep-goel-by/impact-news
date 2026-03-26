@@ -1,0 +1,4 @@
+edges:
+- from: childhood_malnutrition
+  to: school_examinations
+  weight: 0.60

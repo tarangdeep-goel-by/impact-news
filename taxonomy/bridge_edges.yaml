@@ -17,14 +17,6 @@ edges:
   description: Adequate summer monsoon rainfall directly hydrates crops, preventing
     drought conditions and reducing overall crop failure rates.
 - from: southwest_monsoon
-  to: residential_borewells
-  type: SUPPLIES
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Monsoon rains percolate into the ground, directly recharging the water
-    table that supplies residential borewells.
-- from: southwest_monsoon
   to: traffic_congestion
   type: PRODUCES
   weight: 0.85
@@ -32,30 +24,6 @@ edges:
   delay: IMMEDIATE
   description: Heavy monsoon downpours directly slow down vehicular movement and cause
     immediate traffic bottlenecks due to poor visibility and surface water.
-- from: southwest_monsoon
-  to: ride_hailing_services
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: IMMEDIATE
-  description: Sudden monsoon rains trigger immediate surge pricing algorithms on
-    ride-hailing platforms due to localized demand spikes.
-- from: southwest_monsoon
-  to: delivery_and_logistics
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: IMMEDIATE
-  description: Delivery platforms offer immediate rain surge incentives to gig workers
-    to maintain fleet availability during heavy showers.
-- from: southwest_monsoon
-  to: construction_worker_wages
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: Heavy monsoon rains physically halt outdoor building activities, directly
-    causing a loss of daily wages for construction workers.
 - from: southwest_monsoon
   to: stagnant_water_pools
   type: PRODUCES
@@ -72,12 +40,6 @@ edges:
   delay: SHORT_TERM
   description: Continuous heavy monsoon rain physically erodes asphalt and washes
     away road base, directly creating potholes.
-- from: southwest_monsoon
-  to: open_drains
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
 - from: monetary_policy_committee
   to: home_loan_emi
   type: AFFECTS
@@ -102,25 +64,9 @@ edges:
   delay: SHORT_TERM
   description: Banks adjust their fixed deposit interest rates in direct response
     to MPC repo rate changes.
-- from: us_federal_reserve
-  to: direct_equity_portfolio
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: IMMEDIATE
-  description: US Federal Reserve rate hikes trigger foreign institutional investor
-    outflows, directly lowering Indian equity portfolio values.
-- from: us_federal_reserve
-  to: retail_gold_investment
-  type: AFFECTS
-  weight: 0.75
-  polarity: -1
-  delay: IMMEDIATE
-  description: Higher US Fed rates strengthen the dollar, which directly depresses
-    global and retail gold prices.
 - from: epfo
   to: epf_balance
-  type: MANAGES
+  type: AFFECTS
   weight: 0.95
   polarity: 1
   delay: LONG_TERM
@@ -272,7 +218,7 @@ edges:
     telecom operators' mobile data plans.
 - from: trai
   to: spam_calls
-  type: AFFECTS
+  type: DISRUPTS
   weight: 0.75
   polarity: -1
   delay: MEDIUM_TERM
@@ -485,14 +431,6 @@ edges:
   delay: SHORT_TERM
   description: International natural gas benchmarks directly determine the input costs
     for domestic piped natural gas.
-- from: international_coal_prices
-  to: electricity_tariff
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Imported thermal coal prices directly impact the variable cost of power
-    generation, which is passed to consumers via fuel surcharge adjustments.
 - from: global_edible_oil_supply
   to: palm_oil
   type: SUPPLIES
@@ -511,7 +449,7 @@ edges:
     sunflower oil imported for Indian retail consumption.
 - from: global_food_grain_supply
   to: wheat_flour
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.6
   polarity: -1
   delay: MEDIUM_TERM
@@ -519,7 +457,7 @@ edges:
     which can depress domestic wheat flour prices.
 - from: global_sugar_supply
   to: retail_sugar
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.7
   polarity: -1
   delay: MEDIUM_TERM
@@ -527,7 +465,7 @@ edges:
     pressure on domestic retail sugar costs.
 - from: international_gold_prices
   to: retail_gold_investment
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.95
   polarity: 1
   delay: IMMEDIATE
@@ -616,7 +554,7 @@ edges:
 - from: usd_inr_exchange
   to: smartphone_device
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Depreciation of the INR against the USD directly increases the import
@@ -624,7 +562,7 @@ edges:
 - from: usd_inr_exchange
   to: laptop_computer
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Depreciation of the INR against the USD directly increases the import
@@ -653,14 +591,6 @@ edges:
   delay: SHORT_TERM
   description: Sovereign bond yields serve as the benchmark for banks to price their
     retail fixed deposit interest rates.
-- from: india_10yr_bond_yield
-  to: home_loan_emi
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Increases in benchmark government bond yields raise the cost of funds
-    for lenders, which is passed on as higher home loan interest rates.
 - from: global_semiconductor_supply_chain
   to: smartphone_device
   type: SUPPLIES
@@ -709,22 +639,6 @@ edges:
   delay: SHORT_TERM
   description: Global API supply directly provides the raw chemical ingredients required
     to manufacture chronic disease medications like insulin and BP pills.
-- from: us_consumer_demand
-  to: it_sector_jobs
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Strong US consumer demand drives corporate technology spending, which
-    directly translates into hiring mandates for Indian IT service firms.
-- from: us_consumer_demand
-  to: it_sector_salary
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Strong US consumer demand increases revenues for Indian IT firms, directly
-    enabling higher salary hikes and bonuses for tech workers.
 - from: agricultural_exports
   to: retail_onion
   type: AFFECTS
@@ -751,7 +665,7 @@ edges:
     sugar, directly driving up retail prices.
 - from: global_shipping_freight_rates
   to: building_materials_cost
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.6
   polarity: 1
   delay: MEDIUM_TERM
@@ -759,7 +673,7 @@ edges:
     of imported raw materials like coking coal used in steel production.
 - from: global_shipping_freight_rates
   to: smartphone_device
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.6
   polarity: 1
   delay: MEDIUM_TERM
@@ -773,14 +687,6 @@ edges:
   delay: MEDIUM_TERM
   description: Chinese manufacturing output directly provides the physical electronic
     components and finished devices imported for the Indian smartphone market.
-- from: national_power_grid
-  to: residential_power_supply
-  type: SUPPLIES
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: The national power grid directly supplies the bulk electricity that
-    local distribution networks route to residential households.
 - from: power_substations
   to: residential_power_supply
   type: SUPPLIES
@@ -791,20 +697,12 @@ edges:
     to household connections, determining local power availability.
 - from: power_substations
   to: ev_charging_tariff
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Local power substations directly supply the high-voltage electricity
     required by commercial EV charging stations.
-- from: coal_power_plants
-  to: residential_power_supply
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: Thermal power plants directly generate the majority of the baseload
-    electricity supplied to residential consumers.
 - from: coal_power_plants
   to: particulate_matter_levels
   type: PRODUCES
@@ -813,22 +711,6 @@ edges:
   delay: IMMEDIATE
   description: Thermal power plants directly emit particulate matter and fly ash into
     the local atmosphere during power generation.
-- from: renewable_energy_parks
-  to: electricity_tariff
-  type: AFFECTS
-  weight: 0.65
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: The integration of low-cost solar and wind power from renewable parks
-    directly lowers the average power purchase cost, reducing consumer tariffs.
-- from: nuclear_power_plants
-  to: residential_power_supply
-  type: SUPPLIES
-  weight: 0.6
-  polarity: 1
-  delay: IMMEDIATE
-  description: Nuclear power stations directly feed stable baseload electricity into
-    the grid, preventing residential load shedding.
 - from: oil_gas_pipelines
   to: piped_natural_gas
   type: SUPPLIES
@@ -847,7 +729,7 @@ edges:
     to retail fuel stations.
 - from: telecom_towers_network
   to: mobile_network_quality
-  type: AFFECTS
+  type: SUPPLIES
   weight: 0.9
   polarity: 1
   delay: IMMEDIATE
@@ -880,19 +762,11 @@ edges:
 - from: optical_fibre_network
   to: fiber_broadband_tariff
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: -1
   delay: MEDIUM_TERM
   description: The expansion of optical fibre networks directly increases bandwidth
     supply, lowering the per-GB cost of home broadband.
-- from: submarine_internet_cables
-  to: broadband_network_quality
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: Submarine cable capacity and physical cuts directly impact the international
-    bandwidth available to domestic broadband users.
 - from: data_centers
   to: digilocker_documents
   type: SUPPLIES
@@ -951,7 +825,7 @@ edges:
     to successfully link a PAN card with Aadhaar.
 - from: aadhaar_database
   to: data_breaches_and_leaks
-  type: AFFECTS
+  type: PRODUCES
   weight: 0.7
   polarity: 1
   delay: IMMEDIATE
@@ -967,7 +841,7 @@ edges:
     food delivery aggregators by offering zero-commission ordering.
 - from: ondc_platform
   to: cab_aggregator_fare
-  type: COMPETES_WITH
+  type: AFFECTS
   weight: 0.7
   polarity: -1
   delay: SHORT_TERM
@@ -975,7 +849,7 @@ edges:
     forcing downward adjustments in ride fares.
 - from: road_freight_movement
   to: retail_tomato
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
@@ -983,7 +857,7 @@ edges:
     of highly perishable goods like tomatoes.
 - from: road_freight_movement
   to: retail_onion
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
@@ -991,7 +865,7 @@ edges:
     transported vegetables like onions.
 - from: road_freight_movement
   to: retail_potato
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
@@ -999,7 +873,7 @@ edges:
     of potatoes.
 - from: road_freight_movement
   to: liquid_milk
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: IMMEDIATE
@@ -1007,7 +881,7 @@ edges:
     the retail price of highly perishable liquid milk.
 - from: road_freight_movement
   to: poultry_chicken
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.75
   polarity: 1
   delay: SHORT_TERM
@@ -1015,7 +889,7 @@ edges:
     affect retail poultry prices.
 - from: road_freight_movement
   to: building_materials_cost
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
@@ -1023,23 +897,15 @@ edges:
     construction materials like cement and steel.
 - from: railway_freight_movement
   to: building_materials_cost
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Railway freight tariffs directly affect the bulk transport costs of
     cement and steel rebars.
-- from: dedicated_freight_corridors
-  to: building_materials_cost
-  type: SUPPLIES
-  weight: 0.65
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Dedicated freight lines directly reduce the transit time and cost of
-    moving bulk construction materials, lowering retail prices.
 - from: global_shipping_routes
   to: palm_oil
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
@@ -1047,7 +913,7 @@ edges:
     the import cost of palm oil.
 - from: global_shipping_routes
   to: sunflower_oil
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
@@ -1077,17 +943,9 @@ edges:
   delay: IMMEDIATE
   description: The operational efficiency of municipal water treatment plants directly
     determines the potability and safety of tap water.
-- from: water_treatment_plants
-  to: cholera_and_diarrhea
-  type: AFFECTS
-  weight: 0.85
-  polarity: -1
-  delay: SHORT_TERM
-  description: Effective municipal water purification directly reduces the incidence
-    of waterborne diseases like cholera and diarrhea.
 - from: sewage_drainage_network
   to: street_waterlogging
-  type: AFFECTS
+  type: DISRUPTS
   weight: 0.9
   polarity: -1
   delay: IMMEDIATE
@@ -1095,20 +953,12 @@ edges:
     reduce the incidence of street waterlogging during rains.
 - from: sewage_drainage_network
   to: polluted_surface_water
-  type: AFFECTS
+  type: DISRUPTS
   weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Adequate sewage treatment and drainage directly prevents the discharge
     of untreated effluents into local lakes and rivers.
-- from: sewage_drainage_network
-  to: cholera_and_diarrhea
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: Proper functioning of sewage networks directly prevents the contamination
-    of surface water that causes cholera outbreaks.
 - from: satellite_network
   to: broadband_network_quality
   type: SUPPLIES
@@ -1117,38 +967,6 @@ edges:
   delay: IMMEDIATE
   description: Communication satellites directly provide internet bandwidth to remote
     and rural broadband networks.
-- from: semiconductor_fabs
-  to: smartphone_device
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Semiconductor fabrication plants directly supply the essential microchips
-    required for smartphone manufacturing, increasing device availability.
-- from: semiconductor_fabs
-  to: laptop_computer
-  type: SUPPLIES
-  weight: 0.85
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Chip foundries directly produce the processors and memory modules that
-    dictate laptop manufacturing capacity.
-- from: semiconductor_fabs
-  to: four_wheeler_price
-  type: AFFECTS
-  weight: 0.75
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: The supply volume of automotive semiconductors directly impacts car
-    production capacity, lowering vehicle pricing when abundant.
-- from: semiconductor_fabs
-  to: two_wheeler_price
-  type: AFFECTS
-  weight: 0.75
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: The availability of microcontrollers from semiconductor fabs directly
-    dictates the manufacturing cost and retail price of modern two-wheelers.
 - from: highway_network
   to: highway_toll_fare
   type: AFFECTS
@@ -1157,14 +975,6 @@ edges:
   delay: IMMEDIATE
   description: The expansion and monetization of national highways directly result
     in new toll plazas and higher toll fares for commuters.
-- from: highway_network
-  to: intercity_bus_fare
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Improved highway infrastructure directly reduces fuel consumption and
-    travel time, lowering operating costs and bus fares.
 - from: highway_network
   to: road_traffic_accidents
   type: AFFECTS
@@ -1181,14 +991,6 @@ edges:
   delay: IMMEDIATE
   description: High-speed vehicular movement on national highways and expressways
     directly produces ambient traffic noise for nearby residents.
-- from: highway_network
-  to: tour_package
-  type: SUPPLIES
-  weight: 0.65
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Improved highway connectivity directly reduces travel time and logistics
-    costs for road-based tourism packages.
 - from: commercial_airports
   to: domestic_flight_ticket
   type: AFFECTS
@@ -1200,7 +1002,7 @@ edges:
 - from: commercial_airports
   to: noise_pollution
   type: PRODUCES
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Flight operations at commercial airports directly generate significant
@@ -1232,7 +1034,7 @@ edges:
 - from: india_working_age_population
   to: urban_unemployment_rate
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: A growing working-age population increases labor supply, which raises
@@ -1248,7 +1050,7 @@ edges:
 - from: india_aging_population
   to: home_monitoring_devices
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: A larger aging population drives sustained retail demand for home health
@@ -1256,7 +1058,7 @@ edges:
 - from: india_aging_population
   to: health_insurance_premium
   type: AFFECTS
-  weight: 0.6
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: An aging demographic profile increases the overall risk pool's morbidity,
@@ -1272,7 +1074,7 @@ edges:
 - from: female_labor_force_participation
   to: private_preschools
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: More women entering the workforce increases the reliance on and demand
@@ -1293,22 +1095,6 @@ edges:
   delay: IMMEDIATE
   description: High concentration of residents and vehicles in urban centers directly
     produces severe traffic congestion on city roads.
-- from: urban_population_density
-  to: municipal_water_supply
-  type: DISRUPTS
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: Surging urban density overburdens existing civic infrastructure, disrupting
-    reliable municipal water supply to households.
-- from: urban_population_density
-  to: particulate_matter_levels
-  type: PRODUCES
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High urban density concentrates vehicular and domestic emissions in
-    a confined area, directly producing higher particulate matter levels.
 - from: tier_2_3_city_expansion
   to: investment_property_value
   type: AFFECTS
@@ -1327,7 +1113,7 @@ edges:
     directly increases demand and fees for PG and hostel accommodations.
 - from: seasonal_migrant_labor
   to: construction_worker_wages
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.75
   polarity: -1
   delay: SHORT_TERM
@@ -1336,7 +1122,7 @@ edges:
 - from: seasonal_migrant_labor
   to: farm_labor_wages
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: -1
   delay: SHORT_TERM
   description: The influx of seasonal migrant workers during harvest seasons increases
@@ -1359,7 +1145,7 @@ edges:
     purchases, driving up investment property values in home states.
 - from: skilled_emigration
   to: phd_research_programs
-  type: DISRUPTS
+  type: AFFECTS
   weight: 0.6
   polarity: -1
   delay: LONG_TERM
@@ -1375,7 +1161,7 @@ edges:
     directly spiking retail sugar prices.
 - from: autumn_festive_season
   to: firecracker
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.95
   polarity: 1
   delay: IMMEDIATE
@@ -1399,44 +1185,20 @@ edges:
     for puja pandal contributions.
 - from: autumn_festive_season
   to: festive_idol
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Major autumn festivals directly drive the mass production and sale
     of festive idols for home and community worship.
 - from: autumn_festive_season
-  to: gig_worker_payouts
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: IMMEDIATE
-  description: The festive e-commerce and food delivery rush increases task volumes,
-    boosting gig worker payouts through incentives and surge pricing.
-- from: autumn_festive_season
   to: crowd_emergencies
   type: PRODUCES
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Massive gatherings at pandals and markets during autumn festivals directly
     produce risks of stampedes and crowd emergencies.
-- from: autumn_festive_season
-  to: winter_smog
-  type: PRODUCES
-  weight: 0.85
-  polarity: 1
-  delay: SHORT_TERM
-  description: Massive firecracker emissions during Diwali directly contribute to
-    the formation of severe winter smog in northern India.
-- from: spring_harvest_festivals
-  to: domestic_flight_ticket
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Spring harvest festivals like Holi and Baisakhi drive short-term surges
-    in domestic airfares due to holiday travel demand.
 - from: islamic_festivals
   to: mutton_and_lamb
   type: AFFECTS
@@ -1447,7 +1209,7 @@ edges:
     spikes that directly drive up mutton and lamb prices.
 - from: wedding_season_aggregate
   to: retail_gold_investment
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
@@ -1480,7 +1242,7 @@ edges:
 - from: major_temple_trusts
   to: religious_tourism_demand
   type: PRODUCES
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
   description: Infrastructure development and marketing by major temple trusts directly
@@ -1501,26 +1263,10 @@ edges:
   delay: SHORT_TERM
   description: Regional language agitations often force social media platforms to
     update content moderation policies to handle localized hate speech or protests.
-- from: aggregate_consumer_confidence
-  to: two_wheeler_price
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High consumer confidence increases willingness to spend on discretionary
-    items, supporting higher two-wheeler sales and prices.
-- from: aggregate_consumer_confidence
-  to: home_loan_emi
-  type: AFFECTS
-  weight: 0.65
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Strong consumer optimism drives higher uptake of home loans, expanding
-    the overall EMI burden in the retail economy.
 - from: mass_boycott_movements
   to: cinema_ticket
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.8
   polarity: -1
   delay: IMMEDIATE
   description: Organized mass boycott movements directly disrupt cinema ticket sales
@@ -1573,38 +1319,14 @@ edges:
   delay: IMMEDIATE
   description: Festival homecoming travel directly surges IRCTC train bookings as
     workers return to native towns.
-- from: autumn_festive_season
-  to: wedding_venue
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: The festive season overlaps with peak shaadi season, directly spiking
-    demand for wedding venues.
-- from: southwest_monsoon
-  to: mgnrega_wages
-  type: AFFECTS
-  weight: 0.75
-  polarity: -1
-  delay: SHORT_TERM
-  description: Monsoon failure destroys kharif crops, directly triggering mass MGNREGA
-    enrollment and wage demand.
 - from: ministry_of_agriculture
   to: mgnrega_wages
-  type: MANAGES
+  type: FUNDS
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: The Ministry of Agriculture directly administers MGNREGA budget allocation
     and wage disbursement.
-- from: brent_crude
-  to: domestic_flight_ticket
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: SHORT_TERM
-  description: Aviation turbine fuel is a crude derivative — crude price surges directly
-    raise airline fuel surcharges passed to ticket prices.
 - from: wpi
   to: kirana_store_income
   type: AFFECTS
@@ -1621,3 +1343,153 @@ edges:
   delay: IMMEDIATE
   description: Ocean fish populations directly supply the catch volume available at
     coastal fish markets and retail.
+
+## Phase 4b gap-fill: T→I bridges (Gemini-reviewed, Rule 21 validated)
+
+# Round 1 approved/modified edges
+- from: forest_cover
+  to: wildlife_encounters
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Habitat loss from deforestation directly pushes wildlife into human
+    settlements, increasing human-animal conflict encounters.
+- from: peninsular_river_systems
+  to: municipal_water_supply
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Krishna, Godavari, Kaveri, and Narmada river systems directly supply
+    piped municipal water to southern and western Indian cities.
+- from: northeast_monsoon
+  to: agricultural_crop_damage
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Northeast monsoon rains directly hydrate Tamil Nadu and coastal Andhra
+    rice and pulses crops during the rabi season, preventing drought-driven crop failure.
+- from: northeast_monsoon
+  to: urban_flooding
+  type: PRODUCES
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intense northeast monsoon rainfall directly inundates Chennai and
+    coastal Tamil Nadu cities with severe urban flooding.
+- from: groundwater_aquifers
+  to: residential_borewells
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Aquifer water table depth directly determines whether residential
+    borewells produce water or run dry.
+- from: high_courts
+  to: criminal_litigation_risk
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: High court bail orders, sentencing decisions, and acquittals directly
+    determine criminal litigation outcomes and personal legal risk.
+- from: high_courts
+  to: residential_rent
+  type: AFFECTS
+  weight: 0.55
+  polarity: 1
+  delay: LONG_TERM
+  description: High court rulings on rent control acts and tenant eviction disputes
+    directly shape enforceable residential rental terms and pricing floors.
+- from: migratory_pest_populations
+  to: agricultural_crop_damage
+  type: PRODUCES
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: Desert locust swarms and pink bollworm infestations directly destroy
+    standing crops across Rajasthan, Gujarat, and Maharashtra farmlands.
+- from: regional_new_year_festivals
+  to: retail_gold_investment
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: SHORT_TERM
+  description: Gold purchases spike during Ugadi, Puthandu, Vishu, and Bihu as
+    auspicious buying dates directly drive retail gold demand.
+- from: regional_new_year_festivals
+  to: irctc_train_ticket
+  type: AFFECTS
+  weight: 0.65
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mass hometown travel during regional new year celebrations directly
+    spikes IRCTC train ticket demand and waitlist lengths.
+
+# Round 2: Direct edges restored (Gemini re-review overturned overly strict rejections)
+- from: cyclonic_storm_systems
+  to: structural_collapse
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: High-velocity cyclonic winds directly cause structural failure and
+    roof collapse in vulnerable residential buildings.
+- from: himalayan_tectonic_plates
+  to: structural_collapse
+  type: PRODUCES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Seismic shifts in the Himalayan fault lines directly cause structural
+    failure in northern Indian real estate.
+- from: indian_plate_interior
+  to: structural_collapse
+  type: PRODUCES
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intra-plate earthquakes directly compromise building foundations and
+    cause structural collapses in peninsular India.
+- from: forest_cover
+  to: ambient_aqi
+  type: AFFECTS
+  weight: 0.6
+  polarity: -1
+  delay: LONG_TERM
+  description: Tree canopies directly act as physical sinks for airborne pollutants,
+    lowering the ambient AQI and improving air quality.
+- from: forest_cover
+  to: urban_flooding
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Root systems and forest floors directly absorb heavy rainfall, reducing
+    the volume of water that reaches urban centers.
+- from: it_services_exports
+  to: it_sector_jobs
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Growth in IT export revenues directly funds the expansion of headcount
+    and hiring in the Indian tech sector.
+- from: commercial_bank_lending_rates
+  to: home_loan_emi
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Changes in bank benchmark lending rates are directly passed on to
+    floating-rate retail home loan EMIs.
+- from: commercial_bank_lending_rates
+  to: personal_loan_emi
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Increases in commercial lending rates directly raise the interest
+    burden and EMIs for unsecured personal loans.

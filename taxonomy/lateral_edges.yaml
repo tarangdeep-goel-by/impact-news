@@ -3,7 +3,7 @@
 edges:
 - from: liquid_milk
   to: paneer_and_cheese
-  type: PRODUCES
+  type: SUPPLIES
   weight: 0.95
   polarity: 1
   delay: SHORT_TERM
@@ -11,7 +11,7 @@ edges:
     to manufacture paneer and cheese.
 - from: liquid_milk
   to: butter_and_ghee
-  type: PRODUCES
+  type: SUPPLIES
   weight: 0.95
   polarity: 1
   delay: SHORT_TERM
@@ -19,7 +19,7 @@ edges:
     milk.
 - from: wheat_flour
   to: biscuits_and_snacks
-  type: PRODUCES
+  type: SUPPLIES
   weight: 0.9
   polarity: 1
   delay: SHORT_TERM
@@ -27,7 +27,7 @@ edges:
     biscuits and packaged snacks.
 - from: wheat_flour
   to: instant_noodles
-  type: PRODUCES
+  type: SUPPLIES
   weight: 0.9
   polarity: 1
   delay: SHORT_TERM
@@ -257,46 +257,14 @@ edges:
   delay: IMMEDIATE
   description: Fine dining kitchens rely heavily on commercial LPG, making fuel price
     hikes a direct driver of menu price inflation.
-- from: electricity_tariff
-  to: liquid_milk
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Higher commercial electricity tariffs increase the cost of operating
-    bulk milk chillers and cold chain logistics, raising retail milk prices.
 - from: retail_diesel
   to: marine_fish
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: 1
   delay: IMMEDIATE
   description: Diesel is the primary fuel for mechanized fishing trawlers, directly
     impacting the operational cost of marine fish harvesting.
-- from: farm_labor_wages
-  to: retail_rice
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Rising daily wages for agricultural laborers increase the cost of paddy
-    transplantation and harvesting, pushing up retail rice prices.
-- from: farm_labor_wages
-  to: retail_onion
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Manual labor is required for weeding and harvesting onions; higher
-    rural wages directly increase the farm-gate price of the crop.
-- from: farm_labor_wages
-  to: retail_sugar
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Sugarcane harvesting is highly labor-intensive, meaning rising farm
-    wages directly increase mill procurement costs and retail sugar prices.
 - from: outdoor_heat
   to: green_vegetables
   type: DISRUPTS
@@ -345,14 +313,6 @@ edges:
   delay: IMMEDIATE
   description: Food delivery apps rely almost entirely on real-time UPI payment gateways
     to process customer orders and confirm dispatch.
-- from: minimum_wage
-  to: fine_dining_restaurants
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Hikes in statutory minimum wages increase the payroll costs for waitstaff
-    and kitchen crews, squeezing restaurant margins.
 - from: retail_sugar
   to: diabetes
   type: AFFECTS
@@ -563,20 +523,12 @@ edges:
     from private tankers.
 - from: private_water_tanker
   to: rwa_maintenance_fees
-  type: FUNDS
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Housing societies pass the high cost of purchasing private tanker water
     directly into monthly maintenance bills.
-- from: residential_power_supply
-  to: rwa_maintenance_fees
-  type: FUNDS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Frequent power cuts force housing societies to run diesel generators,
-    increasing maintenance charges.
 - from: municipal_water_supply
   to: drinking_water_quality
   type: PRODUCES
@@ -595,7 +547,7 @@ edges:
     or borewells, degrading drinking water safety.
 - from: sewage_infrastructure
   to: drinking_water_quality
-  type: DISRUPTS
+  type: AFFECTS
   weight: 0.8
   polarity: -1
   delay: IMMEDIATE
@@ -627,7 +579,7 @@ edges:
     accommodations to raise their per-bed fees.
 - from: waste_collection_services
   to: rwa_maintenance_fees
-  type: FUNDS
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: SHORT_TERM
@@ -643,7 +595,7 @@ edges:
     staff for housing society common areas.
 - from: repair_service_charges
   to: rwa_maintenance_fees
-  type: FUNDS
+  type: AFFECTS
   weight: 0.6
   polarity: 1
   delay: SHORT_TERM
@@ -651,20 +603,12 @@ edges:
     expenses of housing societies.
 - from: retail_diesel
   to: private_water_tanker
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Diesel prices directly dictate the freight costs charged by private
     water tanker operators.
-- from: retail_diesel
-  to: building_materials_cost
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Transporting heavy construction materials like cement and steel is
-    highly sensitive to diesel fuel prices.
 - from: retail_diesel
   to: waste_collection_services
   type: AFFECTS
@@ -697,30 +641,6 @@ edges:
   delay: IMMEDIATE
   description: Informal sector wage standards directly determine what households must
     pay for maids and cooks.
-- from: urban_company_partner_earnings
-  to: repair_service_charges
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Gig platform pricing models set a new baseline that independent repair
-    technicians use to benchmark their charges.
-- from: urban_company_partner_earnings
-  to: pest_control_services
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Standardized payouts on home service apps drive up the market rates
-    for residential pest control.
-- from: outdoor_heat
-  to: residential_power_supply
-  type: DISRUPTS
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: Extreme summer heat triggers massive air conditioning usage, overloading
-    local transformers and causing power cuts.
 - from: street_waterlogging
   to: sewage_infrastructure
   type: DISRUPTS
@@ -737,17 +657,9 @@ edges:
   delay: SHORT_TERM
   description: High pollution levels in source rivers and lakes force municipalities
     to halt water intake and treatment.
-- from: minimum_wage
-  to: rwa_maintenance_fees
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Hikes in statutory minimum wages increase the payroll costs for society
-    security guards and maintenance staff.
 - from: building_materials_cost
   to: investment_property_value
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
@@ -755,7 +667,7 @@ edges:
     inflates real estate investment valuations.
 - from: drinking_water_quality
   to: cholera_and_diarrhea
-  type: PRODUCES
+  type: DISRUPTS
   weight: 0.9
   polarity: -1
   delay: IMMEDIATE
@@ -763,36 +675,12 @@ edges:
     of waterborne diarrheal diseases.
 - from: drinking_water_quality
   to: typhoid
-  type: PRODUCES
+  type: DISRUPTS
   weight: 0.8
   polarity: -1
   delay: IMMEDIATE
   description: Safe residential drinking water eliminates the primary transmission
     vector for Salmonella typhi.
-- from: sewage_infrastructure
-  to: dengue
-  type: PRODUCES
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Proper underground sewage prevents the formation of stagnant water
-    pools where Aedes mosquitoes breed.
-- from: sewage_infrastructure
-  to: malaria
-  type: PRODUCES
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Effective drainage systems eliminate the stagnant surface water required
-    for Anopheles mosquito reproduction.
-- from: lpg_cylinder
-  to: asthma
-  type: AFFECTS
-  weight: 0.6
-  polarity: -1
-  delay: LONG_TERM
-  description: Transitioning to clean-burning LPG from biomass fuels significantly
-    reduces indoor smoke, lowering asthma risks.
 - from: pg_and_hostel_fees
   to: college_university_fees
   type: AFFECTS
@@ -801,22 +689,6 @@ edges:
   delay: SHORT_TERM
   description: Rising accommodation costs are often bundled into or directly inflate
     the total cost of higher education for outstation students.
-- from: residential_power_supply
-  to: electrocution_hazard
-  type: PRODUCES
-  weight: 0.6
-  polarity: 1
-  delay: IMMEDIATE
-  description: Unstable power supply and voltage fluctuations degrade home wiring
-    insulation, increasing shock risks.
-- from: building_materials_cost
-  to: structural_collapse
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: Prohibitive material costs often lead to the use of substandard cement
-    and steel, increasing the risk of building failures.
 - from: lpg_cylinder
   to: fire_hazards
   type: PRODUCES
@@ -835,7 +707,7 @@ edges:
     from dumping household trash on streets.
 - from: sewage_infrastructure
   to: open_drains
-  type: PRODUCES
+  type: DISRUPTS
   weight: 0.9
   polarity: -1
   delay: LONG_TERM
@@ -843,7 +715,7 @@ edges:
     eliminates open street drains.
 - from: sewage_infrastructure
   to: polluted_surface_water
-  type: PRODUCES
+  type: DISRUPTS
   weight: 0.8
   polarity: -1
   delay: IMMEDIATE
@@ -875,7 +747,7 @@ edges:
     time on chores, reducing their available working hours.
 - from: electricity_tariff
   to: ev_charging_tariff
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.9
   polarity: 1
   delay: IMMEDIATE
@@ -883,7 +755,7 @@ edges:
     electric vehicles at home.
 - from: retail_diesel
   to: intercity_bus_fare
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -891,7 +763,7 @@ edges:
     intercity bus operators, leading to higher passenger fares.
 - from: retail_diesel
   to: city_bus_fare
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
@@ -899,7 +771,7 @@ edges:
     to revise city bus fares upwards to cover fuel costs.
 - from: retail_diesel
   to: cab_aggregator_fare
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.6
   polarity: 1
   delay: SHORT_TERM
@@ -907,7 +779,7 @@ edges:
     prompting aggregators to raise base fares.
 - from: cng_fuel
   to: auto_rickshaw_fare
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -915,7 +787,7 @@ edges:
     directly trigger demands for higher meter fares.
 - from: cng_fuel
   to: cab_aggregator_fare
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: SHORT_TERM
@@ -923,7 +795,7 @@ edges:
     leading to upward revisions in ride-hailing fares.
 - from: retail_petrol
   to: bike_taxi_fare
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -931,7 +803,7 @@ edges:
     push up the per-kilometer rates charged on aggregator apps.
 - from: ev_charging_tariff
   to: e_rickshaw_fare
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: SHORT_TERM
@@ -939,7 +811,7 @@ edges:
     costs for e-rickshaw drivers, leading to higher passenger fares.
 - from: four_wheeler_price
   to: vehicle_insurance_premium
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.9
   polarity: 1
   delay: IMMEDIATE
@@ -947,7 +819,7 @@ edges:
     price, so higher four-wheeler prices directly produce higher insurance premiums.
 - from: two_wheeler_price
   to: vehicle_insurance_premium
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.9
   polarity: 1
   delay: IMMEDIATE
@@ -955,7 +827,7 @@ edges:
     value, directly resulting in higher insurance premiums.
 - from: road_potholes
   to: vehicle_servicing_cost
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -1028,7 +900,7 @@ edges:
 - from: highway_toll_fare
   to: cab_aggregator_fare
   type: AFFECTS
-  weight: 0.5
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Highway and state border tolls are added directly to the final bill
@@ -1036,19 +908,11 @@ edges:
 - from: parking_fees
   to: cab_aggregator_fare
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: High parking fees at airports and railway stations are directly passed
     on to consumers in their cab aggregator fares.
-- from: traffic_congestion
-  to: parking_fees
-  type: AFFECTS
-  weight: 0.5
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Municipalities often raise urban parking fees as a demand-management
-    strategy to deter private vehicle use and reduce traffic congestion.
 - from: street_waterlogging
   to: traffic_congestion
   type: PRODUCES
@@ -1065,41 +929,17 @@ edges:
   delay: SHORT_TERM
   description: Stagnant water from street waterlogging seeps into asphalt, weakening
     the road surface and rapidly producing potholes under vehicle weight.
-- from: winter_smog
-  to: domestic_flight_ticket
-  type: DISRUPTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Severe winter smog causes mass flight cancellations and delays, reducing
-    available seat supply and driving up last-minute domestic flight tickets.
 - from: riots_and_clashes
   to: traffic_congestion
-  type: DISRUPTS
+  type: PRODUCES
   weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Civil riots and clashes physically block major intersections and arterial
     roads, causing immediate and severe traffic congestion.
-- from: minimum_wage
-  to: city_bus_fare
-  type: AFFECTS
-  weight: 0.5
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Increases in statutory minimum wages raise the payroll costs for municipal
-    transport workers, eventually pushing up city bus fares.
-- from: residential_power_supply
-  to: ev_charging_tariff
-  type: DEPENDS_ON
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: Home and local EV charging tariffs depend entirely on the availability
-    and stability of the residential power supply grid.
 - from: mobile_network_quality
   to: cab_aggregator_fare
-  type: DEPENDS_ON
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: IMMEDIATE
@@ -1125,14 +965,14 @@ edges:
 - from: bike_taxi_fare
   to: gig_worker_payouts
   type: PRODUCES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: The per-ride fares charged for bike taxis directly fund the payouts
     distributed to gig workers operating on those platforms.
 - from: traffic_congestion
   to: food_delivery_payouts
-  type: DISRUPTS
+  type: AFFECTS
   weight: 0.6
   polarity: -1
   delay: IMMEDIATE
@@ -1165,14 +1005,14 @@ edges:
 - from: retail_diesel
   to: particulate_matter_levels
   type: PRODUCES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: The combustion of retail diesel in commercial and private vehicles
     directly produces high levels of particulate matter emissions.
 - from: domestic_flight_ticket
   to: tour_package
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -1180,7 +1020,7 @@ edges:
     directly producing higher overall prices for holiday tour packages.
 - from: intercity_bus_fare
   to: pilgrimage_package
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: SHORT_TERM
@@ -1188,7 +1028,7 @@ edges:
     directly affecting the pricing of religious pilgrimage packages.
 - from: irctc_train_ticket
   to: pilgrimage_package
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: SHORT_TERM
@@ -1212,39 +1052,23 @@ edges:
     depleting the stored value on NCMC smart cards faster.
 - from: traffic_congestion
   to: police_response_time
-  type: DISRUPTS
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Severe traffic congestion physically blocks law enforcement vehicles,
     directly increasing (worsening) police response times to emergencies.
-- from: highway_toll_fare
-  to: building_materials_cost
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Commercial highway tolls add to the logistics overhead of transporting
-    heavy construction goods, increasing the final building materials cost.
 - from: traffic_congestion
   to: quick_commerce_payouts
-  type: DISRUPTS
+  type: AFFECTS
   weight: 0.7
   polarity: -1
   delay: IMMEDIATE
   description: Traffic delays reduce the total number of 10-minute grocery deliveries
     a rider can complete per shift, directly lowering their quick commerce payouts.
-- from: road_potholes
-  to: food_delivery_payouts
-  type: DISRUPTS
-  weight: 0.5
-  polarity: -1
-  delay: IMMEDIATE
-  description: Navigating badly potholed roads slows down delivery riders, reducing
-    their total completed trips and thereby lowering their daily payouts.
 - from: retail_petrol
   to: food_delivery_payouts
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.8
   polarity: -1
   delay: IMMEDIATE
@@ -1266,14 +1090,6 @@ edges:
   delay: SHORT_TERM
   description: Mass terminations in the startup ecosystem directly increase the number
     of unemployed professionals in urban centers.
-- from: startup_layoffs
-  to: gig_worker_payouts
-  type: AFFECTS
-  weight: 0.6
-  polarity: -1
-  delay: SHORT_TERM
-  description: Laid-off formal workers entering the gig economy increase labor supply,
-    driving down per-task payouts for existing gig workers.
 - from: it_sector_jobs
   to: startup_jobs
   type: COMPETES_WITH
@@ -1282,14 +1098,6 @@ edges:
   delay: MEDIUM_TERM
   description: Established IT sector companies compete directly with startups for
     the same pool of software engineering talent.
-- from: minimum_wage
-  to: factory_worker_jobs
-  type: AFFECTS
-  weight: 0.5
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Sharp increases in statutory minimum wages can lead small manufacturers
-    to automate or reduce their formal factory workforce.
 - from: minimum_wage
   to: construction_worker_wages
   type: AFFECTS
@@ -1308,20 +1116,12 @@ edges:
     less labor and depress daily farm wages.
 - from: agricultural_crop_damage
   to: rural_unemployment_rate
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Destruction of crops eliminates seasonal harvesting jobs, directly
     spiking unemployment in rural agricultural belts.
-- from: rural_unemployment_rate
-  to: urban_unemployment_rate
-  type: PRODUCES
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Lack of rural jobs drives distress migration to cities, swelling the
-    urban labor pool and increasing urban unemployment.
 - from: gig_worker_unions
   to: food_delivery_payouts
   type: AFFECTS
@@ -1346,30 +1146,6 @@ edges:
   delay: MEDIUM_TERM
   description: Organized protests by ride-hailing unions compel platforms to reduce
     commission rates, improving net driver earnings.
-- from: transport_worker_unions
-  to: auto_driver_earnings
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Auto-rickshaw unions successfully lobby local transport authorities
-    for higher base meter fares, boosting daily earnings.
-- from: farmer_unions
-  to: mgnrega_wages
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Agrarian collectives politically lobby the government to increase the
-    daily wage allocation under rural employment schemes.
-- from: organized_labor_unions
-  to: factory_worker_jobs
-  type: AFFECTS
-  weight: 0.5
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Aggressive union demands can sometimes lead manufacturing units to
-    freeze hiring or relocate to less unionized states.
 - from: organized_labor_unions
   to: working_hours
   type: AFFECTS
@@ -1378,46 +1154,6 @@ edges:
   delay: MEDIUM_TERM
   description: Trade unions actively negotiate and enforce strict limits on maximum
     working hours and mandatory overtime pay.
-- from: caste_reservation_movements
-  to: upsc_civil_services
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Social identity movements alter the quota matrices, directly changing
-    the demographic intake of central civil services.
-- from: caste_reservation_movements
-  to: state_police_jobs
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: State-level reservation agitations lead to revised recruitment rosters
-    for state police constabulary and officer roles.
-- from: caste_reservation_movements
-  to: government_teacher_jobs
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Changes in reservation policies directly impact the allocation of vacancies
-    in state government teacher recruitment drives.
-- from: startup_layoffs
-  to: creator_and_digital_earnings
-  type: SUPPLIES
-  weight: 0.5
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Professionals laid off from tech startups often pivot to independent
-    content creation and digital freelancing.
-- from: it_sector_salary
-  to: startup_jobs
-  type: AFFECTS
-  weight: 0.6
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Inflated salaries in established IT firms force early-stage startups
-    to hire fewer people due to budget constraints.
 - from: quick_commerce_payouts
   to: kirana_store_income
   type: COMPETES_WITH
@@ -1434,14 +1170,6 @@ edges:
   delay: MEDIUM_TERM
   description: Informal street vendors selling fresh produce and daily items compete
     for the same local consumer spend as fixed kirana stores.
-- from: maternity_leave_benefits
-  to: factory_worker_jobs
-  type: AFFECTS
-  weight: 0.4
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Unsubsidized mandatory maternity benefits can inadvertently cause smaller
-    factories to hire fewer female workers to avoid costs.
 - from: defense_agniveer_roles
   to: rural_unemployment_rate
   type: AFFECTS
@@ -1450,14 +1178,6 @@ edges:
   delay: MEDIUM_TERM
   description: Short-term military recruitment schemes absorb rural youth, temporarily
     lowering the rural unemployment rate.
-- from: two_wheeler_price
-  to: food_delivery_payouts
-  type: AFFECTS
-  weight: 0.6
-  polarity: -1
-  delay: SHORT_TERM
-  description: Higher acquisition costs for motorcycles increase the EMI burden on
-    delivery workers, reducing their net effective payouts.
 - from: engineering_education
   to: it_sector_jobs
   type: SUPPLIES
@@ -1492,7 +1212,7 @@ edges:
     prerequisite supplying candidates for government teacher jobs.
 - from: upi_transaction_success
   to: street_vendor_income
-  type: DEPENDS_ON
+  type: FUNDS
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -1524,7 +1244,7 @@ edges:
     them to suppress daily wages for construction labor.
 - from: agricultural_crop_damage
   to: retail_onion
-  type: DISRUPTS
+  type: AFFECTS
   weight: 0.9
   polarity: 1
   delay: SHORT_TERM
@@ -1532,7 +1252,7 @@ edges:
     and sharp retail price inflation.
 - from: agricultural_crop_damage
   to: retail_tomato
-  type: DISRUPTS
+  type: AFFECTS
   weight: 0.9
   polarity: 1
   delay: SHORT_TERM
@@ -1554,54 +1274,14 @@ edges:
   delay: MEDIUM_TERM
   description: Excessive working hours and lack of rest contribute directly to the
     onset of lifestyle conditions like hypertension.
-- from: factory_worker_jobs
-  to: asthma
-  type: PRODUCES
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Prolonged exposure to particulate matter and poor ventilation in manufacturing
-    jobs increases the incidence of occupational asthma.
-- from: it_sector_salary
-  to: engineering_education
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Lucrative IT salary packages drive massive societal demand and willingness
-    to pay premium fees for engineering education.
-- from: upsc_civil_services
-  to: offline_coaching_centers
-  type: FUNDS
-  weight: 0.9
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The intense competition for limited civil service roles directly funds
-    the multi-billion rupee offline test prep industry.
 - from: urban_unemployment_rate
   to: burglary_and_theft
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Spikes in urban joblessness often correlate with increased desperation,
     leading to higher rates of petty property crime and theft.
-- from: creator_and_digital_earnings
-  to: social_media_accounts
-  type: DEPENDS_ON
-  weight: 1.0
-  polarity: 1
-  delay: SHORT_TERM
-  description: Digital creators absolutely depend on active and growing social media
-    accounts to monetize their content and secure brand deals.
-- from: government_teacher_jobs
-  to: private_schools
-  type: COMPETES_WITH
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Secure, high-paying government teaching jobs pull quality educators
-    away from the private school system.
 - from: retail_gold_investment
   to: direct_equity_portfolio
   type: COMPETES_WITH
@@ -1786,14 +1466,6 @@ edges:
   delay: IMMEDIATE
   description: Successful IPO allotments directly add new shares to an investor's
     direct equity portfolio.
-- from: retail_gold_investment
-  to: gold_loan_interest
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: Possession of retail gold investments enables individuals to pledge
-    them as collateral, leading to gold loan interest obligations.
 - from: it_sector_salary
   to: personal_income_tax
   type: PRODUCES
@@ -1828,7 +1500,7 @@ edges:
     victims' savings account balances.
 - from: pan_aadhaar_linkage
   to: tds_deduction
-  type: DEPENDS_ON
+  type: DISRUPTS
   weight: 0.8
   polarity: -1
   delay: IMMEDIATE
@@ -2004,7 +1676,7 @@ edges:
     CT scan imaging.
 - from: asthma
   to: chronic_disease_medication
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: IMMEDIATE
@@ -2052,7 +1724,7 @@ edges:
     regimens for treatment.
 - from: cholera_and_diarrhea
   to: hospital_beds
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: IMMEDIATE
@@ -2122,22 +1794,6 @@ edges:
   delay: LONG_TERM
   description: High consumption of retail sugar and sweets directly contributes to
     caloric surplus and rising obesity rates.
-- from: open_drains
-  to: dengue
-  type: PRODUCES
-  weight: 0.85
-  polarity: 1
-  delay: SHORT_TERM
-  description: Open civic drains provide ideal breeding grounds for Aedes mosquitoes,
-    directly causing dengue outbreaks.
-- from: open_drains
-  to: malaria
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Stagnant water in open drains breeds Anopheles mosquitoes, directly
-    facilitating the spread of malaria.
 - from: polluted_surface_water
   to: typhoid
   type: PRODUCES
@@ -2226,14 +1882,6 @@ edges:
   delay: IMMEDIATE
   description: The utilization of maternity services directly triggers the activation
     of statutory maternity leave benefits at workplaces.
-- from: hospital_beds
-  to: working_hours
-  type: AFFECTS
-  weight: 0.85
-  polarity: -1
-  delay: IMMEDIATE
-  description: Inpatient hospital stays directly reduce a person's available working
-    hours due to medical absenteeism.
 - from: surgical_procedures
   to: health_insurance_premium
   type: AFFECTS
@@ -2467,7 +2115,7 @@ edges:
     services.
 - from: broadband_network_quality
   to: k12_edtech
-  type: DEPENDS_ON
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: IMMEDIATE
@@ -2505,22 +2153,6 @@ edges:
   delay: IMMEDIATE
   description: Pulses are a mandatory protein component supplied to school kitchens
     for mid-day meals.
-- from: city_bus_fare
-  to: government_schools
-  type: AFFECTS
-  weight: 0.6
-  polarity: -1
-  delay: SHORT_TERM
-  description: Increased public transit costs can deter daily attendance for economically
-    weaker students.
-- from: childhood_malnutrition
-  to: anganwadi_system
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: High rates of child undernourishment drive state investment and enrollment
-    in anganwadi care centers.
 - from: medical_education
   to: doctor_consultation
   type: SUPPLIES
@@ -2555,7 +2187,7 @@ edges:
     and clerical roles in public banks.
 - from: offline_coaching_centers
   to: pg_and_hostel_fees
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: IMMEDIATE
@@ -2779,7 +2411,7 @@ edges:
     digital harassment and coordinated trolling.
 - from: personal_data_privacy
   to: deepfake_and_identity_theft
-  type: AFFECTS
+  type: DISRUPTS
   weight: 0.8
   polarity: -1
   delay: SHORT_TERM
@@ -2801,14 +2433,6 @@ edges:
   delay: IMMEDIATE
   description: Scammers use unsolicited calls and messages to lure victims into fake
     cryptocurrency and employment schemes.
-- from: startup_layoffs
-  to: investment_and_job_scams
-  type: PRODUCES
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Mass layoffs create a pool of desperate job seekers who become highly
-    vulnerable to employment scams.
 - from: firecracker
   to: fire_hazards
   type: PRODUCES
@@ -2825,17 +2449,9 @@ edges:
   delay: IMMEDIATE
   description: Unmanaged large-scale community and religious gatherings create dangerous
     crowd densities prone to stampedes.
-- from: traffic_fines
-  to: road_traffic_accidents
-  type: AFFECTS
-  weight: 0.6
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: Strict enforcement of traffic fines deters reckless driving, thereby
-    reducing the frequency of road accidents.
 - from: aadhaar_authentication
   to: deepfake_and_identity_theft
-  type: AFFECTS
+  type: DISRUPTS
   weight: 0.6
   polarity: -1
   delay: SHORT_TERM
@@ -3441,14 +3057,6 @@ edges:
   delay: IMMEDIATE
   description: Filing personal income tax returns legally requires the linkage of
     PAN and Aadhaar cards.
-- from: aadhaar_authentication
-  to: epf_balance
-  type: DEPENDS_ON
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: Withdrawing or transferring an EPF balance requires Aadhaar authentication
-    for KYC compliance.
 - from: data_breaches_and_leaks
   to: upi_and_bank_scams
   type: PRODUCES
@@ -3467,7 +3075,7 @@ edges:
     deepfakes and commit identity theft.
 - from: broadband_network_quality
   to: ott_subscription
-  type: DEPENDS_ON
+  type: AFFECTS
   weight: 0.85
   polarity: 1
   delay: IMMEDIATE
@@ -3475,7 +3083,7 @@ edges:
     broadband network quality.
 - from: laptop_computer
   to: video_game
-  type: DEPENDS_ON
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: IMMEDIATE
@@ -3490,7 +3098,7 @@ edges:
     MGNREGA rural wages to workers.
 - from: digilocker_documents
   to: traffic_fines
-  type: AFFECTS
+  type: DISRUPTS
   weight: 0.8
   polarity: -1
   delay: IMMEDIATE
@@ -3586,7 +3194,7 @@ edges:
     of purchasing cinema tickets.
 - from: cricket_match_ticket
   to: real_money_gaming_and_betting
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.65
   polarity: 1
   delay: IMMEDIATE
@@ -3602,7 +3210,7 @@ edges:
     of firecrackers within residential premises.
 - from: rwa_regulation
   to: community_hall
-  type: AFFECTS
+  type: REGULATES
   weight: 0.7
   polarity: 1
   delay: IMMEDIATE
@@ -3610,7 +3218,7 @@ edges:
     for booking the local community hall.
 - from: concert_ticket
   to: hotel_room
-  type: FUNDS
+  type: AFFECTS
   weight: 0.6
   polarity: 1
   delay: SHORT_TERM
@@ -3666,7 +3274,7 @@ edges:
     OTT subscription content.
 - from: upi_transaction_success
   to: real_money_gaming_and_betting
-  type: SUPPLIES
+  type: FUNDS
   weight: 0.85
   polarity: 1
   delay: IMMEDIATE
@@ -3688,14 +3296,6 @@ edges:
   delay: MEDIUM_TERM
   description: Viral travel content on social media accounts directly generates consumer
     demand for specific tour packages.
-- from: puja_pandal_contribution
-  to: street_food
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: Large crowds gathered at funded puja pandals directly drive up sales
-    for surrounding street food vendors.
 - from: wedding_planning_service
   to: fine_dining_restaurants
   type: FUNDS
@@ -3712,17 +3312,9 @@ edges:
   delay: IMMEDIATE
   description: Thousands of fans converging to use their match tickets causes severe
     localized traffic congestion around stadiums.
-- from: puja_pandal_contribution
-  to: traffic_congestion
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: The construction of large pandals on public roads directly bottlenecks
-    traffic and causes congestion.
 - from: wedding_planning_service
   to: gig_worker_payouts
-  type: EMPLOYS
+  type: FUNDS
   weight: 0.8
   polarity: 1
   delay: IMMEDIATE
@@ -3730,7 +3322,7 @@ edges:
     and event management.
 - from: puja_pandal_contribution
   to: construction_worker_wages
-  type: EMPLOYS
+  type: FUNDS
   weight: 0.85
   polarity: 1
   delay: SHORT_TERM
@@ -3744,14 +3336,6 @@ edges:
   delay: IMMEDIATE
   description: Poor crowd management during the physical sale or entry validation
     of match tickets can trigger stampedes.
-- from: puja_pandal_contribution
-  to: fire_hazards
-  type: PRODUCES
-  weight: 0.6
-  polarity: 1
-  delay: IMMEDIATE
-  description: The use of cheap, temporary electrical wiring in budget-constrained
-    pandals creates significant fire hazards.
 - from: firecracker
   to: winter_smog
   type: PRODUCES
@@ -3760,14 +3344,6 @@ edges:
   delay: IMMEDIATE
   description: The mass burning of firecrackers during winter festivals directly thickens
     and exacerbates urban winter smog.
-- from: puja_pandal_contribution
-  to: event_and_construction_noise
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: Pandals funded by community contributions rent heavy loudspeaker systems,
-    producing intense event noise.
 - from: amusement_park
   to: event_and_construction_noise
   type: PRODUCES
@@ -3888,22 +3464,6 @@ edges:
   delay: IMMEDIATE
   description: Extreme cyclonic winds and storm surges physically uproot trees and
     destroy coastal mangrove ecosystems.
-- from: southwest_monsoon
-  to: global_food_grain_supply
-  type: AFFECTS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Strong monsoon rains ensure high yields in Indian rice and wheat harvests,
-    significantly boosting global grain availability.
-- from: southwest_monsoon
-  to: global_sugar_supply
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Adequate monsoon rainfall in Maharashtra and UP drives sugarcane yields,
-    directly increasing India's contribution to global sugar markets.
 - from: cyclonic_storm_systems
   to: global_shipping_routes
   type: DISRUPTS
@@ -3944,14 +3504,6 @@ edges:
   delay: IMMEDIATE
   description: Seismic activity triggers landslides and surface ruptures that physically
     sever mountain road infrastructure.
-- from: southwest_monsoon
-  to: road_freight_movement
-  type: DISRUPTS
-  weight: 0.65
-  polarity: -1
-  delay: IMMEDIATE
-  description: Heavy seasonal flooding washes out roads and drastically reduces the
-    speed and volume of trucking logistics.
 - from: western_disturbances
   to: commercial_airports
   type: DISRUPTS
@@ -3960,22 +3512,6 @@ edges:
   delay: IMMEDIATE
   description: Winter weather systems generate dense radiation fog across North India,
     grounding flights and halting airport operations.
-- from: southwest_monsoon
-  to: seasonal_migrant_labor
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: SHORT_TERM
-  description: A robust monsoon increases local agricultural labor demand, reducing
-    the volume of rural workers migrating to cities for seasonal work.
-- from: groundwater_aquifers
-  to: rural_urban_migration_corridors
-  type: AFFECTS
-  weight: 0.65
-  polarity: -1
-  delay: LONG_TERM
-  description: The depletion of local water tables destroys farming viability, forcing
-    rural populations to migrate to urban centers.
 - from: cpcb
   to: groundwater_aquifers
   type: REGULATES
@@ -4000,38 +3536,14 @@ edges:
   delay: LONG_TERM
   description: High export volumes of water-intensive crops like rice and sugarcane
     drive aggressive over-extraction of local water tables.
-- from: industrial_metals_index
-  to: forest_cover
-  type: DISRUPTS
-  weight: 0.65
-  polarity: -1
-  delay: LONG_TERM
-  description: Surging global metal prices incentivize the expansion of mining operations
-    into heavily forested regions.
-- from: coal_power_plants
-  to: global_surface_temperature
-  type: PRODUCES
-  weight: 0.85
-  polarity: 1
-  delay: LONG_TERM
-  description: Thermal power generation releases massive volumes of greenhouse gases
-    that directly trap heat in the atmosphere.
 - from: highway_network
   to: forest_cover
-  type: DISRUPTS
-  weight: 0.75
-  polarity: -1
-  delay: LONG_TERM
-  description: The physical construction of expressways fragments contiguous forest
-    biomes and requires mass tree felling.
-- from: urban_population_density
-  to: arable_topsoil
   type: DISRUPTS
   weight: 0.8
   polarity: -1
   delay: LONG_TERM
-  description: The outward sprawl of dense urban settlements physically paves over
-    fertile peri-urban agricultural land.
+  description: The physical construction of expressways fragments contiguous forest
+    biomes and requires mass tree felling.
 - from: bay_of_bengal_marine_system
   to: marine_fish_stocks
   type: SUPPLIES
@@ -4048,30 +3560,6 @@ edges:
   delay: LONG_TERM
   description: Upwelling currents in the Arabian Sea sustain the phytoplankton base
     required for western commercial fish populations.
-- from: migratory_pest_populations
-  to: global_food_grain_supply
-  type: DISRUPTS
-  weight: 0.7
-  polarity: -1
-  delay: SHORT_TERM
-  description: Locust swarms physically consume standing crops across vast agricultural
-    tracts, destroying harvest yields.
-- from: arable_topsoil
-  to: global_food_grain_supply
-  type: SUPPLIES
-  weight: 0.95
-  polarity: 1
-  delay: LONG_TERM
-  description: Nutrient-rich agricultural soil is the fundamental biophysical requirement
-    for cultivating commercial grain harvests.
-- from: southwest_monsoon
-  to: coal_power_plants
-  type: DISRUPTS
-  weight: 0.75
-  polarity: -1
-  delay: SHORT_TERM
-  description: Extreme monsoon flooding inundates open-cast coal mines, physically
-    halting the extraction and supply of fuel to thermal plants.
 - from: himalayan_river_systems
   to: renewable_energy_parks
   type: SUPPLIES
@@ -4179,7 +3667,7 @@ edges:
 - from: sebi
   to: nifty_50
   type: REGULATES
-  weight: 0.7
+  weight: 0.4
   polarity: 1
   delay: SHORT_TERM
   description: SEBI's market integrity and margin rules structurally support the stability
@@ -4267,7 +3755,7 @@ edges:
 - from: wpi
   to: monetary_policy_committee
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Rising wholesale inflation pressures the Monetary Policy Committee
@@ -4418,7 +3906,7 @@ edges:
     income and spending power of American consumers.
 - from: us_consumer_demand
   to: china_manufacturing_output
-  type: FUNDS
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
@@ -4472,14 +3960,6 @@ edges:
   delay: MEDIUM_TERM
   description: The Ministry of Civil Aviation sets the policy framework for the privatization,
     expansion, and modernization of commercial airports.
-- from: cci
-  to: ondc_platform
-  type: REGULATES
-  weight: 0.75
-  polarity: 1
-  delay: SHORT_TERM
-  description: Competition Commission rulings against proprietary e-commerce monopolies
-    structurally incentivize merchants to adopt the open ONDC platform.
 - from: brent_crude
   to: wpi
   type: AFFECTS
@@ -4498,7 +3978,7 @@ edges:
     required for India's massive gold imports.
 - from: india_trade_deficit
   to: india_current_account_deficit
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.95
   polarity: 1
   delay: SHORT_TERM
@@ -4515,7 +3995,7 @@ edges:
 - from: usd_inr_exchange
   to: wpi
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: A depreciating rupee directly increases the landed INR cost of imported
@@ -4538,7 +4018,7 @@ edges:
     higher USD-INR exchange rate.
 - from: rbi
   to: usd_inr_exchange
-  type: MANAGES
+  type: AFFECTS
   weight: 0.8
   polarity: -1
   delay: IMMEDIATE
@@ -4602,7 +4082,7 @@ edges:
     the global semiconductor supply chain.
 - from: global_semiconductor_supply_chain
   to: pmi_manufacturing
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: SHORT_TERM
@@ -4618,7 +4098,7 @@ edges:
     into realized industrial production output.
 - from: index_of_industrial_production
   to: india_gdp_growth
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: SHORT_TERM
@@ -4648,22 +4128,6 @@ edges:
   delay: IMMEDIATE
   description: The Employees Provident Fund Organisation directly generates and publishes
     the formal payroll addition metrics.
-- from: southwest_monsoon
-  to: agricultural_exports
-  type: PRODUCES
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Adequate monsoon rainfall directly produces the crop surplus required
-    for India's agricultural exports.
-- from: el_nino_southern_oscillation
-  to: global_sugar_supply
-  type: DISRUPTS
-  weight: 0.7
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: El Nino weather patterns disrupt rainfall in key sugarcane regions
-    like India and Brazil, lowering global supply.
 - from: global_food_grain_supply
   to: wpi
   type: AFFECTS
@@ -4680,41 +4144,17 @@ edges:
   delay: SHORT_TERM
   description: Increased global palm and sunflower oil supplies directly reduce wholesale
     inflation in India, a major importer.
-- from: autumn_festive_season
-  to: pmi_manufacturing
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: SHORT_TERM
-  description: The autumn festive season directly triggers inventory build-ups, driving
-    manufacturing purchasing activity.
-- from: aggregate_consumer_confidence
-  to: pmi_services
-  type: FUNDS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Higher consumer optimism directly translates into increased discretionary
-    spending, boosting services sector activity.
 - from: india_working_age_population
   to: india_gdp_growth
   type: PRODUCES
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: LONG_TERM
   description: An expanding demographic of working-age citizens directly increases
     the macroeconomic production possibility frontier.
-- from: dedicated_freight_corridors
-  to: export_competitiveness
-  type: PRODUCES
-  weight: 0.75
-  polarity: 1
-  delay: LONG_TERM
-  description: Dedicated rail freight infrastructure directly lowers logistics costs
-    and transit times, improving export competitiveness.
 - from: active_pharmaceutical_ingredients_supply
   to: export_competitiveness
-  type: SUPPLIES
+  type: AFFECTS
   weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
@@ -4728,17 +4168,9 @@ edges:
   delay: IMMEDIATE
   description: The Commerce Ministry directly imposes or lifts export bans and duties
     on agricultural commodities.
-- from: venture_capital_and_pe_flows
-  to: epfo_payroll_additions
-  type: FUNDS
-  weight: 0.65
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Startup and private equity funding directly finances the creation of
-    formal white-collar jobs added to EPFO rolls.
 - from: coal_power_plants
   to: national_power_grid
-  type: PRODUCES
+  type: SUPPLIES
   weight: 0.9
   polarity: 1
   delay: IMMEDIATE
@@ -4746,7 +4178,7 @@ edges:
     that powers the national grid.
 - from: renewable_energy_parks
   to: national_power_grid
-  type: PRODUCES
+  type: SUPPLIES
   weight: 0.85
   polarity: 1
   delay: IMMEDIATE
@@ -4754,7 +4186,7 @@ edges:
     into the national power grid.
 - from: nuclear_power_plants
   to: national_power_grid
-  type: PRODUCES
+  type: SUPPLIES
   weight: 0.8
   polarity: 1
   delay: IMMEDIATE
@@ -4768,46 +4200,6 @@ edges:
   delay: IMMEDIATE
   description: The national electricity grid provides the high-voltage power that
     substations step down for local distribution.
-- from: telecom_towers_network
-  to: national_power_grid
-  type: DEPENDS_ON
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: Cellular towers structurally require continuous electricity from the
-    national power grid to maintain network uptime.
-- from: data_centers
-  to: national_power_grid
-  type: DEPENDS_ON
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: Server farms and cloud infrastructure structurally require massive,
-    uninterrupted power from the grid to operate and cool equipment.
-- from: data_centers
-  to: optical_fibre_network
-  type: DEPENDS_ON
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Cloud infrastructure structurally relies on high-bandwidth optical
-    fibre networks to transmit data to end users and other nodes.
-- from: telecom_towers_network
-  to: optical_fibre_network
-  type: DEPENDS_ON
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: Mobile cell towers structurally require optical fibre backhaul to route
-    cellular data traffic to the broader internet.
-- from: telecom_towers_network
-  to: telecom_spectrum
-  type: DEPENDS_ON
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: Cell towers structurally cannot transmit wireless signals to mobile
-    devices without allocated telecom spectrum frequencies.
 - from: submarine_internet_cables
   to: optical_fibre_network
   type: SUPPLIES
@@ -4816,30 +4208,6 @@ edges:
   delay: IMMEDIATE
   description: Undersea cables provide the international data bandwidth that feeds
     into the domestic optical fibre backbone.
-- from: upi_platform
-  to: telecom_towers_network
-  type: DEPENDS_ON
-  weight: 0.85
-  polarity: 1
-  delay: IMMEDIATE
-  description: The Unified Payments Interface switch structurally requires mobile
-    internet connectivity provided by telecom towers to process user transactions.
-- from: aadhaar_database
-  to: data_centers
-  type: DEPENDS_ON
-  weight: 0.95
-  polarity: 1
-  delay: IMMEDIATE
-  description: The UIDAI biometric database structurally requires secure data center
-    infrastructure to host records and process authentication requests.
-- from: ondc_platform
-  to: data_centers
-  type: DEPENDS_ON
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The Open Network for Digital Commerce structurally relies on cloud
-    data centers to host its decentralized protocol and routing systems.
 - from: indian_railways_network
   to: railway_freight_movement
   type: SUPPLIES
@@ -4880,14 +4248,6 @@ edges:
   delay: IMMEDIATE
   description: Water treatment facilities provide the purified potable water that
     flows through municipal supply networks to end consumers.
-- from: semiconductor_fabs
-  to: data_centers
-  type: SUPPLIES
-  weight: 0.75
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Chip manufacturing plants produce the advanced silicon processors required
-    to build and upgrade data center servers.
 - from: satellite_network
   to: telecom_towers_network
   type: SUPPLIES
@@ -4920,18 +4280,10 @@ edges:
   delay: SHORT_TERM
   description: Higher international thermal coal prices increase input costs for import-dependent
     power plants, reducing their operational viability and output.
-- from: brent_crude
-  to: road_freight_movement
-  type: AFFECTS
-  weight: 0.85
-  polarity: -1
-  delay: SHORT_TERM
-  description: Surges in global crude oil prices increase domestic fuel costs, which
-    compresses logistics margins and reduces the volume of road freight movement.
 - from: road_freight_movement
   to: wpi
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Increased road freight volumes and logistics costs pass directly through
@@ -4947,7 +4299,7 @@ edges:
 - from: sewage_drainage_network
   to: peninsular_river_systems
   type: DISRUPTS
-  weight: 0.75
+  weight: 0.8
   polarity: -1
   delay: MEDIUM_TERM
   description: Untreated discharge and overflow from municipal drainage networks severely
@@ -4955,7 +4307,7 @@ edges:
 - from: sewage_drainage_network
   to: himalayan_river_systems
   type: DISRUPTS
-  weight: 0.75
+  weight: 0.8
   polarity: -1
   delay: MEDIUM_TERM
   description: Untreated sewage discharge from northern urban centers flows directly
@@ -5016,22 +4368,6 @@ edges:
   delay: SHORT_TERM
   description: The cultural momentum of the Diwali and Durga Puja season temporarily
     boosts public optimism and willingness to spend.
-- from: wedding_season_aggregate
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.75
-  polarity: 1
-  delay: SHORT_TERM
-  description: The concentrated period of marriages drives mandatory social spending,
-    temporarily elevating aggregate consumer market activity.
-- from: global_surface_temperature
-  to: rural_urban_migration_corridors
-  type: PRODUCES
-  weight: 0.5
-  polarity: 1
-  delay: LONG_TERM
-  description: Long-term climate warming degrades agricultural viability, forcing
-    rural populations to permanently migrate to urban centers for survival.
 - from: us_government
   to: skilled_emigration
   type: REGULATES
@@ -5058,60 +4394,28 @@ edges:
     encourage the retention of women in the formal workforce.
 - from: national_unemployment_rate
   to: skilled_emigration
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: High domestic joblessness drives skilled workers and fresh graduates
     to aggressively seek employment opportunities abroad.
-- from: wpi
-  to: aggregate_consumer_confidence
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: High wholesale inflation eventually passes through to retail prices,
-    suppressing the public's overall willingness to make discretionary purchases.
-- from: epfo_payroll_additions
-  to: urban_population_density
-  type: PRODUCES
-  weight: 0.65
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: The creation of formal sector jobs, which are heavily concentrated
-    in cities, draws population inward and increases urban density.
 - from: highway_network
-  to: tier_2_3_city_expansion
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: LONG_TERM
-  description: Physical highway connectivity integrates smaller towns into national
-    supply chains, driving their industrial and residential growth.
-- from: optical_fibre_network
   to: tier_2_3_city_expansion
   type: PRODUCES
   weight: 0.7
   polarity: 1
   delay: LONG_TERM
-  description: High-speed broadband penetration enables IT and service sector companies
-    to establish operations in non-metro cities.
+  description: Physical highway connectivity integrates smaller towns into national
+    supply chains, driving their industrial and residential growth.
 - from: indian_railways_network
   to: seasonal_migrant_labor
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: The unreserved and sleeper class railway network provides the primary
     physical transport mechanism that makes seasonal labor migration possible.
-- from: voter_turnout_aggregates
-  to: state_governments
-  type: PRODUCES
-  weight: 0.85
-  polarity: 1
-  delay: SHORT_TERM
-  description: High voter turnout and electoral participation directly determine the
-    formation, mandate, and stability of state administrations.
 - from: regional_language_movements
   to: state_governments
   type: AFFECTS
@@ -5144,42 +4448,10 @@ edges:
   delay: SHORT_TERM
   description: Inward remittances from the non-resident Indian population provide
     a massive, direct funding source for the country's foreign exchange reserves.
-- from: autumn_festive_season
-  to: index_of_industrial_production
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: The concentrated festive period drives a massive surge in factory output
-    as companies build inventory to meet consumer demand.
-- from: wedding_season_aggregate
-  to: international_gold_prices
-  type: AFFECTS
-  weight: 0.65
-  polarity: 1
-  delay: SHORT_TERM
-  description: The sheer volume of physical gold purchased for Indian weddings creates
-    significant demand shocks in global precious metal markets.
-- from: aggregate_consumer_confidence
-  to: pmi_manufacturing
-  type: PRODUCES
-  weight: 0.75
-  polarity: 1
-  delay: SHORT_TERM
-  description: High consumer optimism translates directly into new manufacturing orders,
-    driving expansion in factory activity indices.
-- from: mass_boycott_movements
-  to: fii_fpi_flows
-  type: DISRUPTS
-  weight: 0.5
-  polarity: -1
-  delay: SHORT_TERM
-  description: Large-scale consumer boycotts or social unrest can trigger foreign
-    investor anxiety, leading to capital flight from domestic markets.
 - from: seasonal_migrant_labor
   to: road_freight_movement
   type: SUPPLIES
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Migrant workers supply the critical labor force required to operate
@@ -5192,22 +4464,6 @@ edges:
   delay: MEDIUM_TERM
   description: Migrant labor provides the essential workforce for the physical construction
     and expansion of large-scale airport infrastructure.
-- from: autumn_festive_season
-  to: railway_freight_movement
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Festive consumer demand causes a sharp spike in the volume of manufactured
-    goods transported via the railway freight network.
-- from: tier_2_3_city_expansion
-  to: commercial_airports
-  type: PRODUCES
-  weight: 0.7
-  polarity: 1
-  delay: LONG_TERM
-  description: The economic rise of smaller cities directly necessitates and produces
-    new regional airport infrastructure to handle business travel.
 - from: india_aging_population
   to: female_labor_force_participation
   type: DISRUPTS
@@ -5227,19 +4483,11 @@ edges:
 - from: regional_language_movements
   to: mass_boycott_movements
   type: PRODUCES
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Linguistic chauvinism and regional identity politics often trigger
     targeted boycotts against non-local businesses or media properties.
-- from: arable_topsoil
-  to: seasonal_migrant_labor
-  type: AFFECTS
-  weight: 0.65
-  polarity: -1
-  delay: LONG_TERM
-  description: The preservation of fertile topsoil keeps farming viable, whereas its
-    degradation forces agricultural workers into seasonal migrant labor.
 - from: union_budget_framework
   to: tier_2_3_city_expansion
   type: FUNDS
@@ -5251,22 +4499,14 @@ edges:
 - from: usd_inr_exchange
   to: skilled_emigration
   type: AFFECTS
-  weight: 0.6
+  weight: 0.5
   polarity: 1
   delay: MEDIUM_TERM
   description: A weaker rupee (higher USD-INR rate) increases the financial arbitrage
     incentive for skilled workers to earn abroad and remit money home.
-- from: telecom_towers_network
-  to: female_labor_force_participation
-  type: PRODUCES
-  weight: 0.55
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Widespread mobile connectivity enables remote work and gig economy
-    participation, bringing more women into the flexible workforce.
 - from: india_gdp_growth
   to: epfo_payroll_additions
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
@@ -5290,7 +4530,7 @@ edges:
     investment into India.
 - from: winter_smog
   to: ambient_aqi
-  type: PRODUCES
+  type: AFFECTS
   weight: 0.95
   polarity: -1
   delay: IMMEDIATE
@@ -5327,3 +4567,21 @@ edges:
   delay: IMMEDIATE
   description: Cyclonic storms force fishing fleet to dock and disrupt marine breeding
     grounds, directly reducing available fish stocks.
+
+## Phase 4b gap-fill: I→I lateral edges (intermediary wiring)
+- from: municipal_water_supply
+  to: drinking_water_quality
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The treatment and distribution quality of municipal water directly
+    determines the safety of household drinking water.
+- from: residential_borewells
+  to: drinking_water_quality
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groundwater extracted via borewells directly dictates the mineral and
+    contaminant levels in household drinking water.

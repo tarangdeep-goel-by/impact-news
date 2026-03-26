@@ -1,0 +1,10 @@
+edges:
+- from: broadband_network_quality
+  to: ott_subscription
+  weight: 0.60
+- from: broadband_network_quality
+  to: k12_edtech
+  weight: 0.70
+- from: laptop_computer
+  to: video_game
+  weight: 0.60

@@ -1,0 +1,133 @@
+## Phase 4b: New intermediary nodes + T→T lateral edges
+## 4 new nodes + CONTAINS edges + T→T laterals
+
+new_nodes:
+- id: canal_irrigation_networks
+  aliases: [canal systems, irrigation canals, agricultural water supply, canal network]
+  category: T4
+- id: it_services_exports
+  aliases: [tech exports, software exports, IT BPM revenues, IT outsourcing exports]
+  category: T3
+- id: sovereign_credit_rating
+  aliases: [India credit rating, Moody rating, S&P rating, Fitch rating, sovereign rating]
+  category: T3
+- id: commercial_bank_lending_rates
+  aliases: [MCLR, RLLR, bank interest rates, base rate, repo linked lending rate]
+  category: T3
+
+edges:
+## CONTAINS edges for new nodes
+- from: municipal_water_grid
+  to: canal_irrigation_networks
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Municipal Water Grid contains Canal Irrigation Networks
+- from: global_supply_chains
+  to: it_services_exports
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Supply Chains contains IT Services Exports
+- from: debt_and_bond_markets
+  to: sovereign_credit_rating
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Debt And Bond Markets contains Sovereign Credit Rating
+- from: bank_liquidity_and_credit
+  to: commercial_bank_lending_rates
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Bank Liquidity And Credit contains Commercial Bank Lending Rates
+
+## T→T laterals: T1 source nodes
+- from: forest_cover
+  to: peninsular_river_systems
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Forest catchments regulate water flow into peninsular rivers, maintaining
+    base flows during non-monsoon months.
+- from: forest_cover
+  to: himalayan_river_systems
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Himalayan forest cover prevents soil erosion and regulates glacial melt
+    runoff into northern river systems.
+- from: indian_plate_interior
+  to: power_substations
+  type: DISRUPTS
+  weight: 0.7
+  polarity: -1
+  delay: IMMEDIATE
+  description: Seismic activity physically damages transformers and grid substations,
+    reducing operational capacity.
+- from: cyclonic_storm_systems
+  to: commercial_airports
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: High winds and flooding from cyclones force commercial airports to halt
+    operations and ground flights.
+- from: peninsular_river_systems
+  to: canal_irrigation_networks
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Peninsular rivers act as the primary water source feeding state-level
+    agricultural canal networks.
+
+## T→T laterals: T2 source nodes (cross-L1 to T3)
+- from: european_union
+  to: it_services_exports
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Economic health and digital policies of the EU directly dictate the volume
+    of IT service contracts outsourced to India.
+- from: wto
+  to: it_services_exports
+  type: REGULATES
+  weight: 0.5
+  polarity: 1
+  delay: LONG_TERM
+  description: WTO agreements on cross-border data flows and digital trade tariffs directly
+    govern the profitability of Indian IT exports.
+- from: imf
+  to: sovereign_credit_rating
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: IMF macroeconomic assessments and growth outlooks heavily influence the
+    sovereign credit ratings assigned to India.
+
+## T→T laterals: T3 intra-L1
+- from: sovereign_credit_rating
+  to: india_10yr_bond_yield
+  type: AFFECTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: An upgrade in sovereign credit rating lowers the perceived risk of Indian
+    debt, directly decreasing the 10-year bond yield.
+- from: bank_liquidity_and_credit
+  to: commercial_bank_lending_rates
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher systemic liquidity reduces the cost of funds for banks, prompting
+    them to lower their benchmark lending rates.
