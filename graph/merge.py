@@ -277,6 +277,23 @@ def main() -> None:
         export_graph(G, out)
         print(f"\nExported to {out}")
 
+        # Auto-regenerate adjacency dump
+        try:
+            from scripts.dump_adjacency import build_adjacency, write_yaml, chunk_entries
+            from graph.migrate_weights import apply_defaults
+            apply_defaults(G)
+            entries = build_adjacency(G)
+            adj_path = args.root / "taxonomy" / "eval_results" / "adjacency.yaml"
+            write_yaml(entries, adj_path)
+            chunks = chunk_entries(entries, 50)
+            chunk_dir = args.root / "taxonomy" / "eval_results" / "adjacency_chunks"
+            chunk_dir.mkdir(exist_ok=True)
+            for i, chunk in enumerate(chunks):
+                write_yaml(chunk, chunk_dir / f"chunk_{i+1:02d}.yaml")
+            print(f"Adjacency: {len(entries)} nodes, {len(chunks)} chunks")
+        except Exception as e:
+            log.warning("Adjacency dump failed: %s", e)
+
 
 
 if __name__ == "__main__":
