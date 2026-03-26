@@ -1613,3 +1613,11 @@ edges:
   delay: SHORT_TERM
   description: Rising wholesale prices squeeze kirana store margins as small retailers
     cannot fully pass costs to price-sensitive customers.
+- from: marine_fish_stocks
+  to: marine_fish
+  type: SUPPLIES
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ocean fish populations directly supply the catch volume available at
+    coastal fish markets and retail.

@@ -265,14 +265,6 @@ edges:
   delay: SHORT_TERM
   description: Higher commercial electricity tariffs increase the cost of operating
     bulk milk chillers and cold chain logistics, raising retail milk prices.
-- from: electricity_tariff
-  to: marine_fish
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Electricity costs dictate the price of industrial ice, which is essential
-    for preserving marine fish during transport and retail.
 - from: retail_diesel
   to: marine_fish
   type: AFFECTS
@@ -537,14 +529,6 @@ edges:
   delay: IMMEDIATE
   description: The concentration of fine dining restaurants in commercial hubs drives
     up local demand and pricing for valet and municipal parking.
-- from: street_food
-  to: stray_animals
-  type: PRODUCES
-  weight: 0.6
-  polarity: 1
-  delay: IMMEDIATE
-  description: Unsecured food waste and edible scraps discarded around street food
-    clusters directly attract and sustain urban stray animal populations.
 - from: residential_power_supply
   to: residential_borewells
   type: DEPENDS_ON
@@ -5335,3 +5319,11 @@ edges:
   delay: IMMEDIATE
   description: Waterlogged streets submerge transformers and short-circuit ground-level
     electrical infrastructure, causing power outages.
+- from: cyclonic_storm_systems
+  to: marine_fish_stocks
+  type: DISRUPTS
+  weight: 0.85
+  polarity: -1
+  delay: IMMEDIATE
+  description: Cyclonic storms force fishing fleet to dock and disrupt marine breeding
+    grounds, directly reducing available fish stocks.
