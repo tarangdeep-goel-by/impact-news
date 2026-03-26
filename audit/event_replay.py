@@ -198,8 +198,26 @@ def evaluate_event(
 # ---------------------------------------------------------------------------
 
 
-def print_event_result(result: dict, verbose: bool = False) -> None:
-    """Print results for a single event."""
+def format_full_path(path: list[str], graph=None) -> str:
+    """Format a full causal path with hop count and edge types."""
+    if not path or len(path) < 2:
+        return "(no path)"
+    hops = len(path) - 1
+    parts = []
+    for i in range(len(path) - 1):
+        u, v = path[i], path[i + 1]
+        edge_type = ""
+        if graph and graph.has_edge(u, v):
+            edge_type = graph.edges[u, v].get("type", "")
+        if edge_type:
+            parts.append(f"{u} →[{edge_type}]→ {v}")
+        else:
+            parts.append(f"{u} → {v}")
+    return f"({hops} hops) " + " | ".join(parts)
+
+
+def print_event_result(result: dict, verbose: bool = False, graph=None) -> None:
+    """Print results for a single event with full hop tracing."""
     status = "pass" if result["ndcg"] >= 0.5 else "FAIL"
     print(f"\nEvent: {result['event_name']}")
     print(f"  Trigger: {result['trigger']} (direction: {'+1' if result['direction'] == 1 else '-1'})")
@@ -222,9 +240,10 @@ def print_event_result(result: dict, verbose: bool = False) -> None:
     print(f"\n  Hits ({len(hits)}/{valid_gt}):")
     for h in sorted(hits, key=lambda x: x["predicted_rank"]):
         contains = " [C]" if h.get("via_contains") else ""
-        path_str = " → ".join(h["path"][-3:]) if h.get("path") else ""
-        print(f"    #{h['predicted_rank']:<3} {h['node']:<30} exp#{h['expected_rank']}  prob={h['probability']:.5f} mag={h['magnitude']:.5f} cis={h['cis']:.5f}{contains}")
-        print(f"         path: {path_str}")
+        hops = len(h["path"]) - 1 if h.get("path") and len(h["path"]) > 1 else 0
+        print(f"    #{h['predicted_rank']:<3} {h['node']:<30} exp#{h['expected_rank']}  cis={h['cis']:.5f}  [{hops} hops]{contains}")
+        if h.get("path"):
+            print(f"         {format_full_path(h['path'], graph)}")
 
     # Misses
     misses = result["misses"]
@@ -233,9 +252,10 @@ def print_event_result(result: dict, verbose: bool = False) -> None:
         for m in misses:
             if m["actual_rank"]:
                 contains = " [C]" if m.get("via_contains") else ""
-                path_str = " → ".join(m["path"][-3:]) if m.get("path") else ""
-                print(f"    #{m['actual_rank']:<3} {m['node']:<30} exp#{m['expected_rank']}  prob={m['probability']:.5f} mag={m['magnitude']:.5f} cis={m['cis']:.5f}{contains}")
-                print(f"         path: {path_str}")
+                hops = len(m["path"]) - 1 if m.get("path") and len(m["path"]) > 1 else 0
+                print(f"    #{m['actual_rank']:<3} {m['node']:<30} exp#{m['expected_rank']}  cis={m['cis']:.5f}  [{hops} hops]{contains}")
+                if m.get("path"):
+                    print(f"         {format_full_path(m['path'], graph)}")
             else:
                 print(f"    --- {m['node']:<30} exp#{m['expected_rank']}  not in results")
 
@@ -341,7 +361,7 @@ def main():
         print(json.dumps(results, indent=2))
     else:
         for result in results:
-            print_event_result(result, verbose=args.verbose)
+            print_event_result(result, verbose=args.verbose, graph=G)
         print_summary(results)
 
 
