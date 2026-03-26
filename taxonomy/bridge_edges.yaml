@@ -1,12 +1,4 @@
-## Bridge edges: T→I causal connections between trigger and impact domains
-## Format:
-##   - from: <trigger_node_id>    # T-world node (L3/L4)
-##     to: <impact_node_id>       # I-world node (L3/L4)
-##     type: <EDGE_TYPE>          # AFFECTS | PRODUCES | DISRUPTS | SUPPLIES | DEPENDS_ON | FUNDS | COMPETES_WITH | EMPLOYS
-##     weight: <0.0-1.0>         # Causal strength
-##     polarity: <1|-1>          # 1=positive/amplifying, -1=negative/dampening
-##     delay: <DELAY>            # IMMEDIATE | SHORT_TERM | MEDIUM_TERM | LONG_TERM
-##     description: <string>     # One-line causal rationale
+## Bridge edges: T→I causal connections
 edges:
 - from: southwest_monsoon
   to: urban_flooding
@@ -1549,3 +1541,75 @@ edges:
   delay: IMMEDIATE
   description: High voter turnout events inherently produce massive community gatherings
     at polling booths and political rallies.
+- from: nifty_50
+  to: nps_portfolio
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: NPS Tier I allocates up to 50% in equities tracking Nifty, so index
+    moves directly affect portfolio value.
+- from: monetary_policy_committee
+  to: personal_loan_emi
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: MPC repo rate changes directly set the benchmark that banks use to
+    price personal loan interest rates.
+- from: autumn_festive_season
+  to: butter_and_ghee
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Festive sweet-making (mithai, halwa, laddu) directly spikes retail
+    demand for butter and ghee.
+- from: autumn_festive_season
+  to: irctc_train_ticket
+  type: AFFECTS
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: Festival homecoming travel directly surges IRCTC train bookings as
+    workers return to native towns.
+- from: autumn_festive_season
+  to: wedding_venue
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The festive season overlaps with peak shaadi season, directly spiking
+    demand for wedding venues.
+- from: southwest_monsoon
+  to: mgnrega_wages
+  type: AFFECTS
+  weight: 0.75
+  polarity: -1
+  delay: SHORT_TERM
+  description: Monsoon failure destroys kharif crops, directly triggering mass MGNREGA
+    enrollment and wage demand.
+- from: ministry_of_agriculture
+  to: mgnrega_wages
+  type: MANAGES
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  description: The Ministry of Agriculture directly administers MGNREGA budget allocation
+    and wage disbursement.
+- from: brent_crude
+  to: domestic_flight_ticket
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  description: Aviation turbine fuel is a crude derivative — crude price surges directly
+    raise airline fuel surcharges passed to ticket prices.
+- from: wpi
+  to: kirana_store_income
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: Rising wholesale prices squeeze kirana store margins as small retailers
+    cannot fully pass costs to price-sensitive customers.

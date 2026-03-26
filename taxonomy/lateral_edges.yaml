@@ -1,13 +1,5 @@
 ## Lateral edges: within-world causal connections
 ## Includes: I→I (intra-L1 + cross-L1 portals) and T→T laterals
-## Format:
-##   - from: <node_id>           # Source node (L3/L4)
-##     to: <node_id>             # Target node (L3/L4)
-##     type: <EDGE_TYPE>         # AFFECTS | PRODUCES | DISRUPTS | SUPPLIES | DEPENDS_ON | FUNDS | COMPETES_WITH | EMPLOYS
-##     weight: <0.0-1.0>         # Causal strength
-##     polarity: <1|-1>          # 1=positive/amplifying, -1=negative/dampening
-##     delay: <DELAY>            # IMMEDIATE | SHORT_TERM | MEDIUM_TERM | LONG_TERM
-##     description: <string>     # One-line causal rationale
 edges:
 - from: liquid_milk
   to: paneer_and_cheese
@@ -361,14 +353,6 @@ edges:
   delay: IMMEDIATE
   description: Food delivery apps rely almost entirely on real-time UPI payment gateways
     to process customer orders and confirm dispatch.
-- from: upi_transaction_success
-  to: street_food
-  type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: IMMEDIATE
-  description: High UPI success rates enable frictionless micro-payments, directly
-    supporting sales volumes for street food vendors.
 - from: minimum_wage
   to: fine_dining_restaurants
   type: AFFECTS
@@ -497,14 +481,6 @@ edges:
   delay: SHORT_TERM
   description: State governments procure millions of poultry eggs weekly to fulfill
     mandatory protein requirements in school mid-day meals.
-- from: fine_dining_restaurants
-  to: credit_card_dues
-  type: AFFECTS
-  weight: 0.5
-  polarity: 1
-  delay: SHORT_TERM
-  description: High-ticket discretionary spending at fine dining restaurants is frequently
-    financed via credit cards, increasing outstanding consumer dues.
 - from: fine_dining_restaurants
   to: wedding_venue
   type: SUPPLIES
@@ -785,30 +761,6 @@ edges:
   delay: SHORT_TERM
   description: Hikes in statutory minimum wages increase the payroll costs for society
     security guards and maintenance staff.
-- from: residential_rent
-  to: savings_account_balance
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: IMMEDIATE
-  description: Monthly rent payments are the largest recurring deduction from urban
-    household savings accounts.
-- from: electricity_tariff
-  to: savings_account_balance
-  type: AFFECTS
-  weight: 0.6
-  polarity: -1
-  delay: IMMEDIATE
-  description: Higher electricity bills directly reduce the disposable income available
-    for household savings.
-- from: building_materials_cost
-  to: home_loan_emi
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Expensive construction materials increase the total cost of building
-    a house, requiring larger principal loan amounts.
 - from: building_materials_cost
   to: investment_property_value
   type: PRODUCES
@@ -929,14 +881,6 @@ edges:
   delay: SHORT_TERM
   description: A portion of society maintenance collections is directly allocated
     to fund neighborhood cultural and social events.
-- from: residential_rent
-  to: personal_income_tax
-  type: AFFECTS
-  weight: 0.7
-  polarity: -1
-  delay: SHORT_TERM
-  description: High residential rent payments allow salaried employees to claim HRA
-    exemptions, reducing their direct tax liability.
 - from: domestic_help_cost
   to: working_hours
   type: AFFECTS
@@ -1210,22 +1154,6 @@ edges:
   delay: IMMEDIATE
   description: Severe traffic congestion increases delivery times, reducing the number
     of trips a rider can complete and thereby lowering their daily food delivery payouts.
-- from: four_wheeler_price
-  to: auto_loan_emi
-  type: PRODUCES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: The principal purchase price of a four-wheeler directly determines
-    the principal amount financed, producing higher auto loan EMIs.
-- from: two_wheeler_price
-  to: auto_loan_emi
-  type: PRODUCES
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: Higher upfront prices for two-wheelers require larger loan amounts,
-    directly producing higher monthly auto loan EMIs for buyers.
 - from: road_potholes
   to: road_traffic_accidents
   type: PRODUCES
@@ -1306,14 +1234,6 @@ edges:
   delay: IMMEDIATE
   description: Severe traffic congestion physically blocks law enforcement vehicles,
     directly increasing (worsening) police response times to emergencies.
-- from: retail_petrol
-  to: savings_account_balance
-  type: AFFECTS
-  weight: 0.6
-  polarity: -1
-  delay: SHORT_TERM
-  description: Sustained high retail petrol prices consume a larger share of household
-    disposable income, directly reducing monthly additions to savings account balances.
 - from: highway_toll_fare
   to: building_materials_cost
   type: AFFECTS
@@ -1634,30 +1554,6 @@ edges:
   delay: SHORT_TERM
   description: Unseasonal rains damaging tomato crops lead to severe supply shortages
     and immediate spikes in retail tomato prices.
-- from: it_sector_salary
-  to: home_loan_emi
-  type: FUNDS
-  weight: 0.8
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: High disposable incomes from IT sector salaries provide the primary
-    cash flow to service large home loan EMIs in urban centers.
-- from: it_sector_salary
-  to: equity_mutual_funds
-  type: FUNDS
-  weight: 0.8
-  polarity: 1
-  delay: SHORT_TERM
-  description: Surplus income from tech sector salaries is heavily channeled into
-    systematic investment plans for equity mutual funds.
-- from: startup_layoffs
-  to: credit_card_dues
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Sudden loss of income due to startup layoffs forces individuals to
-    rely on credit cards, increasing outstanding dues and defaults.
 - from: working_hours
   to: anxiety_disorders
   type: PRODUCES
@@ -1915,14 +1811,6 @@ edges:
   description: Possession of retail gold investments enables individuals to pledge
     them as collateral, leading to gold loan interest obligations.
 - from: it_sector_salary
-  to: savings_account_balance
-  type: FUNDS
-  weight: 0.9
-  polarity: 1
-  delay: IMMEDIATE
-  description: High formal salaries from the IT sector directly fund retail savings
-    account balances.
-- from: it_sector_salary
   to: personal_income_tax
   type: PRODUCES
   weight: 0.9
@@ -1946,70 +1834,6 @@ edges:
   delay: IMMEDIATE
   description: State government teacher salaries include mandatory deductions that
     directly fund their NPS portfolios.
-- from: gig_worker_payouts
-  to: microfinance_loan
-  type: FUNDS
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Earnings from gig work are frequently used to fund repayments for microfinance
-    loans.
-- from: urban_company_partner_earnings
-  to: microfinance_loan
-  type: FUNDS
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Earnings from urban gig platforms are used by service partners to repay
-    microfinance loans.
-- from: kirana_store_income
-  to: chit_fund_contribution
-  type: FUNDS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Daily cash flows from kirana stores are commonly channeled into local
-    chit fund contributions.
-- from: mgnrega_wages
-  to: savings_account_balance
-  type: FUNDS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Direct benefit transfers of MGNREGA wages directly fund rural savings
-    account balances.
-- from: farm_labor_wages
-  to: microfinance_loan
-  type: FUNDS
-  weight: 0.6
-  polarity: 1
-  delay: SHORT_TERM
-  description: Agricultural daily wages are utilized by rural households to service
-    microfinance loan installments.
-- from: maternity_leave_benefits
-  to: savings_account_balance
-  type: AFFECTS
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Paid maternity leave benefits help sustain household savings account
-    balances during periods of non-working.
-- from: surgical_procedures
-  to: savings_account_balance
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: IMMEDIATE
-  description: Out-of-pocket expenses for major surgical procedures severely deplete
-    household savings account balances.
-- from: college_university_fees
-  to: savings_account_balance
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: SHORT_TERM
-  description: Lump-sum payments for college and university fees significantly drain
-    retail savings account balances.
 - from: upi_and_bank_scams
   to: savings_account_balance
   type: DISRUPTS
@@ -2026,14 +1850,6 @@ edges:
   delay: IMMEDIATE
   description: Successful PAN-Aadhaar linkage prevents the application of penal higher
     TDS deduction rates on financial transactions.
-- from: smartphone_device
-  to: bnpl_installments
-  type: PRODUCES
-  weight: 0.8
-  polarity: 1
-  delay: IMMEDIATE
-  description: The purchase of expensive smartphone devices frequently produces new
-    Buy Now Pay Later (BNPL) installment obligations.
 - from: e_mandate_autopay
   to: equity_mutual_funds
   type: FUNDS
@@ -2442,22 +2258,6 @@ edges:
   delay: LONG_TERM
   description: High volumes of expensive surgical claims directly force insurers to
     raise general health insurance premiums.
-- from: hospital_beds
-  to: personal_loan_emi
-  type: PRODUCES
-  weight: 0.7
-  polarity: 1
-  delay: SHORT_TERM
-  description: Expensive, uninsured inpatient hospital stays frequently force families
-    to take out personal loans, creating new EMIs.
-- from: chronic_disease_medication
-  to: savings_account_balance
-  type: AFFECTS
-  weight: 0.8
-  polarity: -1
-  delay: MEDIUM_TERM
-  description: The continuous out-of-pocket cost of chronic disease medications directly
-    depletes household savings account balances.
 - from: childhood_malnutrition
   to: school_examinations
   type: AFFECTS
@@ -2777,14 +2577,6 @@ edges:
   delay: IMMEDIATE
   description: The migration of students to coaching hubs directly drives demand for
     local PG accommodations.
-- from: college_university_fees
-  to: personal_loan_emi
-  type: PRODUCES
-  weight: 0.7
-  polarity: 1
-  delay: MEDIUM_TERM
-  description: Exorbitant higher education costs force families into debt, resulting
-    in recurring loan EMIs.
 - from: mid_day_meal
   to: childhood_malnutrition
   type: DISRUPTS
@@ -5488,3 +5280,58 @@ edges:
   delay: MEDIUM_TERM
   description: Widespread mobile connectivity enables remote work and gig economy
     participation, bringing more women into the flexible workforce.
+- from: india_gdp_growth
+  to: epfo_payroll_additions
+  type: PRODUCES
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: GDP expansion creates formal sector jobs that register as new EPFO
+    payroll additions.
+- from: us_federal_reserve
+  to: us_dollar_index
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Federal Reserve rate hikes directly strengthen the US dollar, raising
+    the Dollar Index.
+- from: india_gdp_growth
+  to: venture_capital_and_pe_flows
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Strong GDP growth signals attract venture capital and private equity
+    investment into India.
+- from: winter_smog
+  to: ambient_aqi
+  type: PRODUCES
+  weight: 0.95
+  polarity: -1
+  delay: IMMEDIATE
+  description: Winter temperature inversions trap pollutants, directly producing hazardous
+    AQI readings.
+- from: asthma
+  to: doctor_consultation
+  type: PRODUCES
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: Asthma attacks directly produce urgent doctor consultations and OPD
+    visits.
+- from: copd
+  to: doctor_consultation
+  type: PRODUCES
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  description: COPD exacerbations directly produce specialist pulmonologist consultations.
+- from: street_waterlogging
+  to: residential_power_supply
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Waterlogged streets submerge transformers and short-circuit ground-level
+    electrical infrastructure, causing power outages.
