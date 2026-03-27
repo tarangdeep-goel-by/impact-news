@@ -1,429 +1,400 @@
 # bridges_1 Weight Re-Rating — Gemini 3.1 Pro
 
-<details><summary>Thinking (3679 chars)</summary>
+<details><summary>Thinking (1942 chars)</summary>
 
-**Calibrating Causal Knowledge Graph Edge Weights**
+**Edge Calibration Thought Process**
 
-Alright, let's get down to brass tacks. I need to take this list of causal edges within the knowledge graph and assign them weights reflecting the "causal pass-through rate," going from 0 to 1. This means, I need to evaluate each edge, considering the context and scale provided, and provide a YAML output with the updated weights and reasoning.
+Alright, let's get down to brass tacks. My task is to meticulously calibrate the edge properties (weight, polarity, and delay) for a causal knowledge graph centered on macro events and their impact on Indian citizens. The ultimate goal is a clean YAML array, no fluff, just the calibrated values and a concise, one-sentence justification for each. I'm operating under the constraint that the output must be a pure YAML array; no Markdown, no extra commentary, just the data.
 
-Here's how I see it: I've got a scale in my head – 0.85 to 0.95 means a nearly direct, 1:1 impact; 0.65 to 0.85 means strong, but with some buffering; 0.40 to 0.65 indicates it's noticeable, but diluted; 0.20 to 0.40 means it's weak or indirect, and below 0.20, it's time to consider removing the edge altogether.
+I've got the rules etched in my mind: the weight scale (near 1:1, strong but buffered, noticeable but diluted, weak/indirect, or remove), polarity (+1 or -1), and the delay categories (IMMEDIATE, SHORT_TERM, MEDIUM_TERM, LONG_TERM). I've run through the existing data and considered each edge in this way.
 
-Now, let's dive into these edges, one by one. I'm going to base the new values on my in-depth subject matter knowledge, making sure I'm giving a valid rationale for each updated weight:
+For each causal link, I started with the given properties, and the description of the causal relationship. Then I used my knowledge to translate that into a value.
 
-*   **meteorological_systems -> fresh_produce:** Weather shocks are a direct disruptor, but there's geographic diversification. So, I will value this as **0.50**.
-*   **meteorological_systems -> staple_grains:** Irrigation and reserves provide significant buffer here. Thus, I'll go with **0.35**.
-*   **meteorological_systems -> pulses_and_legumes:** Pulses are highly rain-fed in India. So, a new value of **0.60**.
-*   **meteorological_systems -> vector_borne_diseases:** The monsoon is a direct driver of disease outbreaks. The value is **0.75**.
-*   **meteorological_systems -> water_and_food_borne_diseases:** Flooding is a direct contaminant. **0.70**.
-*   **meteorological_systems -> weather_and_thermal_environment:** This is near 1:1, as systems dictate local weather. **0.90**.
-*   **meteorological_systems -> air_quality_environment:** Rain and wind are key dispersion factors. I will go with **0.70**.
-*   **meteorological_systems -> urban_hydrology:** Heavy rain causes flooding, so the causal pass-through is **0.80**.
-*   **hydrological_systems -> water_and_sanitation:** River levels dictate supply, so it is **0.75**.
-*   **hydrological_systems -> staple_grains:** Irrigation is critical, making it **0.65**.
-*   **hydrological_systems -> urban_hydrology:** This has a moderate relationship, valuing at **0.50**.
-*   **biophysical_and_ecological_systems -> infectious_diseases:** The pass-through from zoonotic spillover is indirect and infrequent at **0.30**.
-*   **biophysical_and_ecological_systems -> urban_ecology:** Baseline biodiversity has little relevance. Value is **0.40**.
-*   **indian_regulatory_bodies -> borrowing_and_credit:** Repo rate is directly passed, making it **0.80**.
-*   **indian_regulatory_bodies -> savings_and_deposits:** Policy rate has a strong influence, valued at **0.70**.
-*   **indian_regulatory_bodies -> insurance_premiums:** IRDAI controls premiums. I will mark it as **0.85**.
-*   **indian_regulatory_bodies -> telecom_and_internet_access:** TRAI's role makes this **0.75**.
-*   **indian_statutory_frameworks_and_councils -> employment_metrics_and_conditions:** Formal minimum wages have an impact, with the value **0.60**.
-*   **state_and_local_governments -> water_and_sanitation:** This is a nearly 1:1 relationship with **0.85**.
-*   **state_and_local_governments -> public_transit:** Direct funding and operation give this **0.90**.
-*   **state_and_local_governments -> civic_cleanliness:** Municipal waste management makes this **0.85**.
-*   **state_and_local_governments -> urban_hydrology:** Drainage directly controls flooding, I set the weight at **0.75**.
-*   **state_and_local_governments -> healthcare_services:** State budgets directly dictate service. Thus, **0.80**.
-*   **indian_macroeconomic_indicators
+*   **Weight:** I judged the strength of the relationship based on the descriptions, and applied the scale.
+*   **Polarity:** I confirmed that the descriptions matched the stated polarity of the edge.
+*   **Delay:** This one I considered based on the description, and the time-scales of the processes involved.
+
+I've double-checked my work. For example, for the edge `national_green_tribunal` -> `firecracker`, the description suggests that NGT bans reduce firecrackers. Therefore the polarity must be -1. I've corrected the edge for this. I've also checked each of the other potential negative relationships.
+
+My goal is to create a knowledge graph that an expert can trust. The polarities of the edge have been reviewed based on the descriptions. The weights and delays have been estimated, and the relationships are supported by a succinct one-sentence reasoning.
+
+Now, let's output that YAML array, no extraneous characters, just pure, calibrated data.
 
 </details>
 
 ## Response
 
 ```yaml
-```yaml
-- from: meteorological_systems
-  to: fresh_produce
-  weight: 0.50
-  reasoning: "Weather shocks directly impact perishable crop yields, though geographic diversification provides some buffer."
-- from: meteorological_systems
-  to: staple_grains
-  weight: 0.35
-  reasoning: "Government reserves and irrigation heavily buffer staple grains against direct meteorological shocks."
-- from: meteorological_systems
-  to: pulses_and_legumes
-  weight: 0.60
-  reasoning: "Pulses are predominantly rain-fed in India, making their yields highly sensitive to monsoon variations."
-- from: meteorological_systems
-  to: vector_borne_diseases
+- from: southwest_monsoon
+  to: urban_flooding
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Heavy monsoon downpours directly and immediately overwhelm urban drainage systems, causing near 1:1 flooding events.
+- from: southwest_monsoon
+  to: agricultural_crop_damage
   weight: 0.75
-  reasoning: "Monsoon rains and temperature shifts are the primary direct drivers of vector breeding cycles and disease outbreaks."
-- from: meteorological_systems
-  to: water_and_food_borne_diseases
-  weight: 0.70
-  reasoning: "Heavy rains and flooding directly compromise water sanitation, leading to strong seasonal spikes in water-borne diseases."
-- from: meteorological_systems
-  to: weather_and_thermal_environment
-  weight: 0.90
-  reasoning: "Macro meteorological systems directly and almost fully determine local ambient temperature and weather conditions."
-- from: meteorological_systems
-  to: air_quality_environment
-  weight: 0.70
-  reasoning: "Rain and wind speed act as primary dispersion mechanisms, strongly and rapidly improving local air quality."
-- from: meteorological_systems
-  to: urban_hydrology
-  weight: 0.80
-  reasoning: "Intense rainfall events directly overwhelm urban drainage, leading to highly correlated urban flooding."
-- from: hydrological_systems
-  to: water_and_sanitation
-  weight: 0.75
-  reasoning: "Municipal water supply is heavily dependent on the raw water availability in local reservoirs and aquifers."
-- from: hydrological_systems
-  to: staple_grains
-  weight: 0.65
-  reasoning: "Groundwater and river basin levels strongly dictate the irrigation capacity for water-intensive cereal crops."
-- from: hydrological_systems
-  to: urban_hydrology
-  weight: 0.50
-  reasoning: "Regional river levels moderately influence urban water bodies, though local drainage plays a larger immediate role."
-- from: biophysical_and_ecological_systems
-  to: infectious_diseases
-  weight: 0.30
-  reasoning: "While ecological systems act as reservoirs, zoonotic spillovers into human populations are infrequent and indirect."
-- from: biophysical_and_ecological_systems
-  to: urban_ecology
-  weight: 0.40
-  reasoning: "Broader ecosystems provide baseline biodiversity, but urban ecology is heavily modified by human infrastructure."
-- from: indian_regulatory_bodies
-  to: borrowing_and_credit
-  weight: 0.80
-  reasoning: "RBI repo rate adjustments are directly and mandatorily linked to retail loan interest rates via external benchmark lending rates."
-- from: indian_regulatory_bodies
-  to: savings_and_deposits
-  weight: 0.70
-  reasoning: "Central bank policy rates strongly dictate the interest yields offered by banks on retail deposits."
-- from: indian_regulatory_bodies
-  to: insurance_premiums
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: Adequate monsoon rainfall significantly reduces drought-related crop failure, though irrigation buffers the exact 1:1 pass-through.
+- from: southwest_monsoon
+  to: traffic_congestion
   weight: 0.85
-  reasoning: "IRDAI regulations and approvals directly and strictly dictate the premium rates and coverage rules for insurance policies."
-- from: indian_regulatory_bodies
-  to: telecom_and_internet_access
-  weight: 0.75
-  reasoning: "TRAI's tariff floors and spectrum pricing directly and strongly influence consumer mobile and broadband costs."
-- from: indian_statutory_frameworks_and_councils
-  to: employment_metrics_and_conditions
-  weight: 0.60
-  reasoning: "Statutory frameworks directly set formal minimum wages, though informal sector non-compliance dilutes the overall impact."
-- from: state_and_local_governments
-  to: water_and_sanitation
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Monsoon rains immediately reduce visibility and cause waterlogging, directly translating to severe traffic bottlenecks.
+- from: southwest_monsoon
+  to: stagnant_water_pools
   weight: 0.85
-  reasoning: "Local civic bodies have near-total direct control over the operation and supply of residential piped water."
-- from: state_and_local_governments
-  to: public_transit
-  weight: 0.90
-  reasoning: "State and local governments directly fund, operate, and set fares for urban bus and metro transit systems."
-- from: state_and_local_governments
-  to: civic_cleanliness
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Post-rain water accumulation reliably forms stagnant pools over a few days, directly increasing mosquito breeding risks.
+- from: southwest_monsoon
+  to: road_potholes
   weight: 0.85
-  reasoning: "Local municipal bodies are directly and solely responsible for neighborhood sanitation and solid waste management."
-- from: state_and_local_governments
-  to: urban_hydrology
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Continuous heavy rain strongly and visibly erodes road surfaces over days to weeks, leading to pothole formation.
+- from: monetary_policy_committee
+  to: home_loan_emi
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Banks almost entirely pass on MPC repo rate changes to floating-rate home loan EMIs within weeks.
+- from: monetary_policy_committee
+  to: auto_loan_emi
   weight: 0.75
-  reasoning: "Municipal drainage infrastructure maintenance directly determines the severity of local urban flooding during rains."
-- from: state_and_local_governments
-  to: healthcare_services
-  weight: 0.80
-  reasoning: "State health department budgets directly dictate the staffing, resources, and operation of public healthcare facilities."
-- from: indian_macroeconomic_indicators
-  to: employment_metrics_and_conditions
-  weight: 0.50
-  reasoning: "Macroeconomic growth moderately translates to local employment conditions, buffered by informal sector dynamics."
-- from: indian_macroeconomic_indicators
-  to: borrowing_and_credit
-  weight: 0.60
-  reasoning: "Macro inflation indices strongly influence RBI rate decisions, which then pass through to retail borrowing costs."
-- from: indian_macroeconomic_indicators
-  to: savings_and_deposits
-  weight: 0.60
-  reasoning: "Macroeconomic inflation and policy rates strongly influence the real and nominal interest yields on retail deposits."
-- from: financial_and_capital_markets
-  to: retirement_and_provident_funds
-  weight: 0.70
-  reasoning: "Institutional debt market yields are the primary determinant for the annual interest rates declared for statutory provident funds."
-- from: transport_logistics_infrastructure
-  to: travel_and_tourism
-  weight: 0.65
-  reasoning: "Infrastructure development strongly enables and reduces the cost of access to tourism and holiday destinations."
-- from: transport_logistics_infrastructure
-  to: fresh_produce
-  weight: 0.55
-  reasoning: "Efficient transport networks noticeably reduce spoilage and improve the retail availability of perishable produce."
-- from: civic_urban_infrastructure
-  to: water_and_sanitation
-  weight: 0.90
-  reasoning: "Municipal water and sewage grids are the direct, 1:1 physical delivery mechanisms for household water and sanitation."
-- from: civic_urban_infrastructure
-  to: urban_hydrology
-  weight: 0.80
-  reasoning: "The capacity of municipal drainage networks directly and strongly dictates the frequency and severity of urban flooding."
-- from: civic_urban_infrastructure
-  to: vector_borne_diseases
-  weight: 0.65
-  reasoning: "Proper drainage infrastructure strongly disrupts mosquito breeding, significantly reducing vector-borne disease prevalence."
-- from: civic_urban_infrastructure
-  to: water_and_food_borne_diseases
-  weight: 0.70
-  reasoning: "Enclosed sewage and clean water infrastructure directly prevent the contamination that causes water-borne diseases."
-- from: civic_urban_infrastructure
-  to: civic_cleanliness
-  weight: 0.85
-  reasoning: "Municipal waste infrastructure directly and visibly determines the solid waste environment of local neighborhoods."
-- from: advanced_tech_infrastructure
-  to: telecom_and_internet_access
-  weight: 0.40
-  reasoning: "Advanced tech like satellite backhaul provides noticeable but indirect support to overall consumer internet access."
-- from: demographics_and_population
-  to: chronic_and_lifestyle_conditions
-  weight: 0.50
-  reasoning: "Demographic aging steadily and noticeably increases the population-level prevalence of chronic health conditions over time."
-- from: demographics_and_population
-  to: employment_metrics_and_conditions
-  weight: 0.45
-  reasoning: "Population growth noticeably increases labor supply, exerting gradual downward pressure on wages and employment rates."
-- from: cultural_and_religious_forces
-  to: sensory_environment
-  weight: 0.75
-  reasoning: "Religious observances and festivals directly cause massive, highly correlated localized spikes in noise and light pollution."
-- from: macro_behavioral_shifts
-  to: travel_and_tourism
-  weight: 0.60
-  reasoning: "Consumer confidence and sentiment shifts strongly dictate discretionary household spending on travel and tourism."
-- from: macro_behavioral_shifts
-  to: out_of_home_dining
-  weight: 0.60
-  reasoning: "Positive consumer sentiment noticeably increases the frequency and budget allocated to discretionary dining out."
-- from: indian_statutory_frameworks_and_councils
-  to: cooking_fuel
-  weight: 0.85
-  reasoning: "Statutory bodies and ministries directly set the administered prices and subsidy levels for household cooking fuels like LPG."
-- from: macro_behavioral_shifts
-  to: savings_and_deposits
-  weight: 0.50
-  reasoning: "Behavioral sentiment noticeably shifts household propensity to save versus spend, impacting deposit patterns."
-- from: meteorological_systems
-  to: urban_road_conditions
-  weight: 0.75
-  reasoning: "Heavy monsoon rains directly and severely degrade urban road surfaces, causing widespread potholes and waterlogging."
-- from: meteorological_systems
-  to: agriculture_and_allied
-  weight: 0.80
-  reasoning: "Extreme weather directly and immediately halts outdoor agricultural labor, directly eliminating daily wages."
-- from: meteorological_systems
-  to: construction_and_manual
-  weight: 0.80
-  reasoning: "Heavy rainfall and extreme heat directly force construction site shutdowns, suspending wages for manual laborers."
-- from: meteorological_systems
-  to: rural_employment_schemes
-  weight: 0.80
-  reasoning: "Monsoon and extreme heat directly halt outdoor earthwork for rural employment schemes, reducing wage-days."
-- from: meteorological_systems
-  to: railway_travel
-  weight: 0.70
-  reasoning: "Extreme weather events like flooding and dense fog directly cause significant train cancellations and multi-hour delays."
-- from: meteorological_systems
-  to: air_travel
-  weight: 0.75
-  reasoning: "Thunderstorms and dense fog directly force runway closures and flight cancellations at affected airports."
-- from: meteorological_systems
-  to: highway_bus_travel
-  weight: 0.70
-  reasoning: "Waterlogged highways and fog directly cause bus cancellations, detours, and significant travel delays."
-- from: geological_and_tectonic_systems
-  to: transit_accidents
-  weight: 0.40
-  reasoning: "While earthquakes cause severe accidents, they are rare events, making the overall pass-through to daily transit accidents diluted."
-- from: geological_and_tectonic_systems
-  to: infrastructure_hazards
-  weight: 0.50
-  reasoning: "Earthquakes directly produce severe infrastructure hazards, though their infrequency dilutes the continuous causal weight."
-- from: geological_and_tectonic_systems
-  to: rental_housing
-  weight: 0.30
-  reasoning: "Seismic damage locally disrupts housing markets, but this is a rare, geographically isolated shock."
-- from: geological_and_tectonic_systems
-  to: home_construction_and_modification
-  weight: 0.35
-  reasoning: "Earthquakes force localized reconstruction, and building codes slowly impact overall construction costs."
-- from: hydrological_systems
-  to: poultry_chicken
-  weight: 0.40
-  reasoning: "Hydrological deficits indirectly raise poultry costs through feed grain prices, heavily buffered by supply chains."
-- from: hydrological_systems
-  to: mutton_and_lamb
-  weight: 0.45
-  reasoning: "Water scarcity noticeably degrades pastureland, impacting livestock health and moderately raising meat prices."
-- from: hydrological_systems
-  to: freshwater_fish
-  weight: 0.75
-  reasoning: "River and reservoir water levels directly and strongly dictate freshwater fish breeding and catch volumes."
-- from: hydrological_systems
-  to: marine_fish
-  weight: 0.25
-  reasoning: "Altered river hydrology has a weak, indirect effect on near-shore marine fish stocks compared to oceanographic factors."
-- from: biophysical_and_ecological_systems
-  to: animal_threats
-  weight: 0.60
-  reasoning: "Ecological disruption and habitat loss directly and noticeably increase the frequency of human-wildlife conflicts."
-- from: indian_union_government
-  to: central_government
-  weight: 0.90
-  reasoning: "Union Budget allocations directly and almost 1:1 determine central government ministry staffing and pay revisions."
-- from: indian_union_government
-  to: state_government
-  weight: 0.75
-  reasoning: "Central transfers and sponsored schemes strongly dictate state government fiscal capacity and employment budgets."
-- from: indian_union_government
-  to: public_sector_undertakings
-  weight: 0.80
-  reasoning: "Union government policy directives and capital infusions directly dictate PSU workforce size, mergers, and compensation."
-- from: indian_union_government
-  to: direct_taxes
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Repo rate changes strongly affect new auto loan rates, though existing fixed-rate loans buffer the overall market impact.
+- from: monetary_policy_committee
+  to: fixed_deposits
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Banks adjust FD rates in the same direction as MPC rates within weeks, though they may absorb some margin.
+- from: epfo
+  to: epf_balance
   weight: 0.95
-  reasoning: "Union Budget decisions on tax slabs and surcharges directly and exactly determine citizens' direct tax liabilities."
-- from: indian_union_government
-  to: railway_travel
-  weight: 0.85
-  reasoning: "Union budget allocations directly fund railway infrastructure, strongly dictating service frequency and ticket pricing."
-- from: indian_union_government
-  to: air_travel
-  weight: 0.60
-  reasoning: "Central aviation policies and taxation noticeably influence airline route availability and ticket affordability."
-- from: indian_union_government
-  to: highway_bus_travel
-  weight: 0.70
-  reasoning: "Central funding for national highways strongly improves intercity bus connectivity and reduces travel times."
-- from: indian_regulatory_bodies
-  to: equity_investments
+  polarity: 1
+  delay: LONG_TERM
+  reasoning: The EPFO central board's annual interest rate declaration has a near 1:1 direct impact on accumulated provident fund balances over the year.
+- from: uidai
+  to: aadhaar_authentication
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: UIDAI's infrastructure status has a near 1:1 immediate pass-through to the success or failure of Aadhaar authentications.
+- from: gst_council
+  to: indirect_taxes
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: GST Council slab revisions are immediately and fully passed on to the consumer's indirect tax burden at the point of sale.
+- from: income_tax_department
+  to: personal_income_tax
   weight: 0.75
-  reasoning: "SEBI regulations on margins and disclosures directly and strongly dictate equity market mechanics and retail participation."
-- from: indian_regulatory_bodies
-  to: mutual_funds
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: While the Budget sets rates, IT Department enforcement strongly dictates actual compliance and tax collection over the financial year.
+- from: union_budget_framework
+  to: personal_income_tax
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Union Budget slab and exemption changes have a near 1:1 immediate mathematical impact on a citizen's tax liability.
+- from: union_budget_framework
+  to: capital_gains_tax
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Budget legislation directly and immediately alters the capital gains tax rates applied to asset sales.
+- from: union_budget_framework
+  to: mgnrega_wages
   weight: 0.85
-  reasoning: "SEBI regulations directly and strictly cap mutual fund expense ratios and dictate categorization norms."
-- from: indian_regulatory_bodies
-  to: prescription_drugs
-  weight: 0.90
-  reasoning: "NPPA price ceiling orders directly and legally cap the retail prices of essential prescription medications."
-- from: indian_regulatory_bodies
-  to: over_the_counter_products
-  weight: 0.50
-  reasoning: "Regulatory compliance for OTC products noticeably affects manufacturing costs and retail availability."
-- from: indian_regulatory_bodies
-  to: home_medical_devices
-  weight: 0.80
-  reasoning: "NPPA price caps and import duties directly and strongly dictate the retail pricing of essential home medical devices."
-- from: indian_judiciary_and_law_enforcement
-  to: violent_crime
-  weight: 0.60
-  reasoning: "Effective policing and judicial convictions noticeably deter violent crime, though systemic delays dilutes the immediate impact."
-- from: indian_judiciary_and_law_enforcement
-  to: property_crime
-  weight: 0.65
-  reasoning: "Active law enforcement patrolling strongly and directly deters property crimes like theft and burglary in residential areas."
-- from: indian_judiciary_and_law_enforcement
-  to: law_enforcement_interface
-  weight: 0.55
-  reasoning: "Judicial rulings on custodial rights and FIRs noticeably shape police protocols, though ground-level implementation varies."
-- from: indian_judiciary_and_law_enforcement
-  to: civil_unrest
-  weight: 0.80
-  reasoning: "Police crowd control and judicial orders like Section 144 directly and strongly suppress or contain civil unrest."
-- from: indian_judiciary_and_law_enforcement
-  to: crowd_emergencies
-  weight: 0.70
-  reasoning: "Mandated crowd management protocols and active police deployment strongly reduce the risk of stampedes at large gatherings."
-- from: state_and_local_governments
-  to: highway_tolls
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: Central budget allocations strongly dictate the availability of funds for MGNREGA wages, though state-level distribution takes weeks to months.
+- from: public_distribution_system
+  to: retail_rice
   weight: 0.85
-  reasoning: "State governments and municipal bodies directly and legally set the toll rates for state highways and bypasses."
-- from: state_and_local_governments
-  to: urban_road_conditions
-  weight: 0.80
-  reasoning: "Municipal budget allocations and contractor efficiency directly determine the quality and repair speed of urban roads."
-- from: state_and_local_governments
-  to: school_examinations
-  weight: 0.90
-  reasoning: "State education boards directly and absolutely control the schedules, syllabi, and grading policies for school examinations."
-- from: state_and_local_governments
-  to: school_types
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: PDS directly and immediately increases the physical availability of subsidized rice for ration card holders.
+- from: public_distribution_system
+  to: wheat_flour
   weight: 0.85
-  reasoning: "State budgets directly fund and dictate the establishment, operation, and teacher recruitment for government schools."
-- from: state_and_local_governments
-  to: student_welfare_programs
-  weight: 0.90
-  reasoning: "State education department allocations directly and entirely fund student welfare programs like mid-day meals and free textbooks."
-- from: global_sovereign_entities
-  to: equity_investments
-  weight: 0.70
-  reasoning: "Global sovereign decisions, especially US Fed rates, strongly drive FII flows, directly impacting Indian equity market volatility."
-- from: global_sovereign_entities
-  to: mutual_funds
-  weight: 0.60
-  reasoning: "Global macroeconomic policies noticeably impact mutual fund NAVs through their effect on underlying domestic and international equities."
-- from: global_sovereign_entities
-  to: undergraduate_programs
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: PDS wheat distributions strongly increase household wheat flour availability, with a short delay for local milling.
+- from: state_electricity_boards
+  to: electricity_tariff
+  weight: 0.95
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: State electricity board tariff revisions are directly and fully passed on to consumer electricity bills within the next billing cycle.
+- from: state_electricity_boards
+  to: residential_power_supply
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: State discom load shedding decisions have a 1:1 immediate impact on residential power outages.
+- from: municipal_corporations
+  to: municipal_water_supply
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Municipal corporation operations and maintenance directly and immediately govern the daily availability of piped water.
+- from: municipal_corporations
+  to: waste_collection_services
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Municipal deployment of sanitation workers has a direct, immediate impact on daily household waste collection.
+- from: municipal_corporations
+  to: street_waterlogging
   weight: 0.75
-  reasoning: "Foreign government visa policies and bilateral agreements strongly and directly dictate overseas study options for Indian students."
-- from: global_sovereign_entities
-  to: postgraduate_research
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: Pre-monsoon municipal desilting strongly reduces street waterlogging severity, though extreme weather can still overwhelm drains.
+- from: regional_transport_office
+  to: traffic_fines
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: RTO penalty revisions and enforcement drives immediately and directly increase the traffic fines paid by violators.
+- from: ministry_of_railways
+  to: irctc_train_ticket
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Ministry of Railways scheduling and train operations directly and immediately dictate the availability of IRCTC tickets.
+- from: ministry_of_railways
+  to: premium_train_fare
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Railway Board dynamic pricing algorithms have a near 1:1 immediate effect on the final fares of premium trains.
+- from: dgca
+  to: domestic_flight_ticket
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: DGCA fare band regulations strongly constrain ticket prices, though airlines still optimize within those limits based on demand.
+- from: trai
+  to: mobile_data_tariff
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: TRAI regulatory floor prices and tariff rules strongly and quickly dictate the baseline costs of consumer mobile data plans.
+- from: trai
+  to: spam_calls
   weight: 0.65
-  reasoning: "Foreign government R&D funding and fellowship programs strongly influence postgraduate research opportunities and grants."
-- from: agricultural_commodities
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: TRAI's DND enforcement noticeably reduces spam calls, but the effect is diluted by unregistered telemarketers bypassing the system.
+- from: cpcb
+  to: ambient_aqi
+  weight: 0.6
+  polarity: -1
+  delay: SHORT_TERM
+  reasoning: CPCB's GRAP measures noticeably reduce pollution levels within days, though weather patterns heavily dilute the overall control.
+- from: national_green_tribunal
+  to: firecracker
+  weight: 0.75
+  polarity: -1
+  delay: IMMEDIATE
+  reasoning: NGT bans immediately reduce firecracker sales and usage, though black market sales buffer a complete 1:1 elimination.
+- from: cdsco
+  to: generic_medicines
+  weight: 0.8
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: CDSCO approvals strongly increase the market availability of generic medicines over a few months as manufacturing scales up.
+- from: us_government
+  to: it_sector_jobs
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: US visa and offshoring policies strongly dictate Indian IT hiring volumes, though domestic and non-US markets provide some buffer.
+- from: meity_regulations
+  to: content_moderation_policies
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: MeitY's IT Rules have a near 1:1 direct impact on how social media platforms update their compliance and content takedown policies.
+- from: meity_regulations
+  to: internet_shutdowns
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Government telecom suspension orders are immediately and fully executed by ISPs, resulting in localized internet shutdowns.
+- from: state_governments
+  to: state_police_jobs
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  reasoning: State government recruitment drives directly create police vacancies, though the actual hiring and onboarding process takes months to years.
+- from: state_governments
+  to: government_teacher_jobs
+  weight: 0.9
+  polarity: 1
+  delay: LONG_TERM
+  reasoning: State authorizations directly create public school teacher jobs, but the exam and placement cycle introduces a long-term delay.
+- from: state_governments
+  to: curfews_and_section_144
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: District magistrate orders immediately and fully enact Section 144 curfews to control public order.
+- from: ministry_of_health
+  to: pediatric_vaccines
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: Union Health Ministry procurement directly dictates the supply volume of pediatric vaccines available in government dispensaries.
+- from: ministry_of_road_transport
+  to: highway_toll_fare
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: NHAI annual toll fare revisions are immediately and fully implemented at highway toll plazas on the notified date.
+- from: sebi
+  to: ipo_allotment
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: SEBI's regulatory framework directly and immediately governs the mathematical allotment procedures for retail IPO applications.
+- from: sebi
+  to: equity_mutual_funds
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: SEBI regulations on total expense ratios and portfolio categorizations are strictly and quickly adopted by all mutual fund houses.
+- from: irda
+  to: health_insurance_premium
+  weight: 0.85
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: IRDAI approvals strongly dictate allowable health insurance premium hikes, which insurers roll out to customers over the following months.
+- from: irda
+  to: motor_insurance_premium
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: IRDAI's annual notification of mandatory third-party motor insurance rates is immediately and exactly passed on to vehicle owners.
+- from: pfrda
+  to: nps_portfolio
+  weight: 0.95
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: PFRDA regulations directly and quickly alter the permissible asset allocation limits and fund manager options for NPS subscribers.
+- from: cci
+  to: cab_aggregator_fare
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: Competition Commission rulings strongly restrict excessive surge pricing, though aggregators buffer this by adjusting base fares over time.
+- from: panchayati_raj_institutions
+  to: mgnrega_wages
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Gram Panchayats strongly control local MGNREGA job allocation and measurement, directly leading to wage generation within weeks.
+- from: ministry_of_education
+  to: university_entrance
+  weight: 0.95
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: Ministry of Education mandates completely and directly restructure the centralized examination process for central university admissions.
+- from: fssai
+  to: street_food
+  weight: 0.5
+  polarity: -1
+  delay: LONG_TERM
+  reasoning: FSSAI hygiene enforcement noticeably reduces informal street food vendor volume, but the effect is heavily diluted by weak local implementation.
+- from: supreme_court_of_india
+  to: criminal_litigation_risk
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Supreme Court rulings immediately establish binding legal precedents that strongly alter the risk and outcomes of ongoing criminal litigation.
+- from: brent_crude
+  to: retail_petrol
+  weight: 0.65
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Brent crude prices strongly influence retail petrol costs, but government excise duties and OMC margin adjustments heavily buffer the pass-through.
+- from: brent_crude
+  to: retail_diesel
+  weight: 0.65
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Global crude prices drive retail diesel costs, but the final consumer price is significantly buffered by domestic taxes and OMC pricing freezes.
+- from: brent_crude
+  to: lpg_cylinder
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: Crude oil prices noticeably impact domestic LPG import parity prices, but government subsidies heavily dilute the final cost to consumers.
+- from: global_natural_gas
+  to: cng_fuel
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: International natural gas benchmarks strongly affect CNG input costs, though domestic pricing mechanisms and blending buffer the immediate retail impact.
+- from: global_natural_gas
+  to: piped_natural_gas
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: Global benchmarks strongly influence domestic PNG costs, but government administered pricing formulas buffer and delay the retail pass-through.
+- from: global_edible_oil_supply
   to: palm_oil
   weight: 0.85
-  reasoning: "Because India imports the majority of its edible oil, global palm oil commodity prices pass through almost directly to retail costs."
-- from: agricultural_commodities
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Global edible oil production volumes strongly and quickly dictate the physical availability and wholesale price of imported palm oil in India.
+- from: global_edible_oil_supply
   to: sunflower_oil
   weight: 0.85
-  reasoning: "High import dependence means global sunflower oil price shocks pass through strongly and directly to Indian retail prices."
-- from: energy_commodities
-  to: household_energy
-  weight: 0.75
-  reasoning: "International energy prices strongly dictate retail LPG and PNG costs, though government subsidies provide a partial buffer."
-- from: energy_commodities
-  to: vehicle_fuel
-  weight: 0.80
-  reasoning: "International crude prices strongly dictate retail petrol and diesel prices, buffered slightly by excise duty adjustments."
-- from: precious_and_industrial_metals
-  to: vehicle_acquisition
-  weight: 0.50
-  reasoning: "Global metal prices noticeably impact manufacturing costs, which automakers partially pass through to ex-showroom vehicle prices."
-- from: precious_and_industrial_metals
-  to: vehicle_maintenance_and_compliance
-  weight: 0.40
-  reasoning: "Industrial metal prices have a noticeable but diluted impact on the retail cost of vehicle spare parts and maintenance."
-- from: precious_and_industrial_metals
-  to: precious_metals
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: India's heavy reliance on imports means global sunflower oil supply fluctuations are strongly and quickly passed through to domestic retail markets.
+- from: global_food_grain_supply
+  to: wheat_flour
+  weight: 0.4
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: Increases in global food grain supply exert noticeable downward pressure on prices, but India's MSP and trade restrictions heavily dilute the domestic impact.
+- from: global_sugar_supply
+  to: retail_sugar
+  weight: 0.45
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: Global sugar supply increases noticeably lower international prices, but strict domestic pricing controls and export quotas heavily dilute the retail effect.
+- from: international_gold_prices
+  to: retail_gold_investment
   weight: 0.95
-  reasoning: "International COMEX/LBMA prices pass through almost 1:1 and instantaneously to domestic retail gold and silver prices."
-- from: precious_and_industrial_metals
-  to: real_estate_investment
-  weight: 0.55
-  reasoning: "Industrial metal prices noticeably increase construction costs, which developers pass through to property prices over time."
-- from: indian_macroeconomic_indicators
-  to: it_and_tech_sector
-  weight: 0.65
-  reasoning: "Macroeconomic indicators strongly influence corporate order books, directly driving IT sector hiring cycles and layoffs."
-- from: indian_macroeconomic_indicators
-  to: startup_ecosystem
-  weight: 0.75
-  reasoning: "Macro interest rates and liquidity conditions strongly and directly dictate VC funding appetite and startup workforce stability."
-- from: indian_macroeconomic_indicators
-  to: manufacturing_and_core
-  weight: 0.70
-  reasoning: "Industrial output and capacity utilization metrics strongly and directly drive manufacturing employment and factory hiring cycles."
-- from: indian_macroeconomic_indicators
-  to: bfsi_sector
-  weight: 0.75
-  reasoning: "Macro interest rates and credit growth strongly dictate bank profitability, directly driving BFSI sector hiring and compensation."
-```
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: International spot gold prices have a near 1:1 immediate mathematical pass-through to domestic retail gold and sovereign gold bond pricing.
+- from: international_silver_prices
+  to: retail_silver_investment
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: International spot silver prices are immediately and almost perfectly passed through to domestic retail silver pricing.
+- from: industrial_metals_index
+  to: building_materials_cost
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Global industrial metal prices strongly and quickly dictate the wholesale cost of steel rebars and aluminum used in domestic construction.
+- from: industrial_metals_index
+  to: two_wheeler_price
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: Global metal prices noticeably impact two-wheeler manufacturing costs, but manufacturers absorb margins and delay ex-showroom price hikes to remain competitive.
 ```

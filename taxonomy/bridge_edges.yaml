@@ -1,4 +1,3 @@
-## Bridge edges: T→I causal connections
 edges:
 - from: southwest_monsoon
   to: urban_flooding
@@ -11,7 +10,7 @@ edges:
 - from: southwest_monsoon
   to: agricultural_crop_damage
   type: AFFECTS
-  weight: 0.85
+  weight: 0.75
   polarity: -1
   delay: MEDIUM_TERM
   description: Adequate summer monsoon rainfall directly hydrates crops, preventing
@@ -27,7 +26,7 @@ edges:
 - from: southwest_monsoon
   to: stagnant_water_pools
   type: PRODUCES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Post-monsoon water accumulation directly creates stagnant pools that
@@ -51,7 +50,7 @@ edges:
 - from: monetary_policy_committee
   to: auto_loan_emi
   type: AFFECTS
-  weight: 0.85
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: MPC repo rate changes directly influence the interest rates charged
@@ -59,7 +58,7 @@ edges:
 - from: monetary_policy_committee
   to: fixed_deposits
   type: AFFECTS
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Banks adjust their fixed deposit interest rates in direct response
@@ -91,9 +90,9 @@ edges:
 - from: income_tax_department
   to: personal_income_tax
   type: AFFECTS
-  weight: 0.9
+  weight: 0.75
   polarity: 1
-  delay: IMMEDIATE
+  delay: MEDIUM_TERM
   description: The Income Tax Department enforces tax collection and compliance, directly
     impacting the personal income tax paid by citizens.
 - from: union_budget_framework
@@ -115,9 +114,9 @@ edges:
 - from: union_budget_framework
   to: mgnrega_wages
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: The Union Budget directly allocates the central funding pool that pays
     for MGNREGA rural wages.
 - from: public_distribution_system
@@ -133,7 +132,7 @@ edges:
   type: SUPPLIES
   weight: 0.85
   polarity: 1
-  delay: IMMEDIATE
+  delay: SHORT_TERM
   description: The PDS directly supplies subsidized wheat, which is milled into flour
     for household consumption.
 - from: state_electricity_boards
@@ -171,9 +170,9 @@ edges:
 - from: municipal_corporations
   to: street_waterlogging
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Municipal desilting and drainage maintenance directly reduces the severity
     of street waterlogging during rains.
 - from: regional_transport_office
@@ -195,7 +194,7 @@ edges:
 - from: ministry_of_railways
   to: premium_train_fare
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: The Railway Board directly sets the dynamic pricing and base fares
@@ -203,7 +202,7 @@ edges:
 - from: dgca
   to: domestic_flight_ticket
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: The DGCA directly regulates fare bands and safety compliances that
@@ -219,7 +218,7 @@ edges:
 - from: trai
   to: spam_calls
   type: DISRUPTS
-  weight: 0.75
+  weight: 0.65
   polarity: -1
   delay: MEDIUM_TERM
   description: TRAI's direct enforcement of the Do Not Disturb (DND) registry and
@@ -227,16 +226,16 @@ edges:
 - from: cpcb
   to: ambient_aqi
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: SHORT_TERM
   description: CPCB's direct enforcement of industrial emission norms and GRAP measures
     reduces ambient air pollution levels.
 - from: national_green_tribunal
   to: firecracker
   type: DISRUPTS
-  weight: 0.85
-  polarity: 1
+  weight: 0.75
+  polarity: -1
   delay: IMMEDIATE
   description: NGT orders directly ban or restrict the sale and bursting of firecrackers
     in polluted cities.
@@ -259,7 +258,7 @@ edges:
 - from: meity_regulations
   to: content_moderation_policies
   type: AFFECTS
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: MeitY's IT Rules directly mandate how social media platforms must moderate
@@ -267,7 +266,7 @@ edges:
 - from: meity_regulations
   to: internet_shutdowns
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Government orders under telecom suspension rules directly produce localized
@@ -277,7 +276,7 @@ edges:
   type: PRODUCES
   weight: 0.9
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: State governments directly authorize and conduct recruitment drives
     for state police constables and inspectors.
 - from: state_governments
@@ -285,7 +284,7 @@ edges:
   type: PRODUCES
   weight: 0.9
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: State education departments directly create vacancies and hire teachers
     for state-run public schools.
 - from: state_governments
@@ -299,7 +298,7 @@ edges:
 - from: ministry_of_health
   to: pediatric_vaccines
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: MEDIUM_TERM
   description: The Union Health Ministry directly procures and supplies pediatric
@@ -307,23 +306,23 @@ edges:
 - from: ministry_of_road_transport
   to: highway_toll_fare
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: MoRTH and NHAI directly notify the annual revisions to toll plaza fares
     on national highways.
 - from: sebi
   to: ipo_allotment
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: SEBI directly sets the retail quota rules and allotment procedures
     for initial public offerings.
 - from: sebi
   to: equity_mutual_funds
   type: AFFECTS
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: SEBI directly regulates the total expense ratios and portfolio categorization
@@ -331,31 +330,31 @@ edges:
 - from: irda
   to: health_insurance_premium
   type: AFFECTS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: IRDAI directly approves or rejects premium hike requests submitted
     by health insurance companies.
 - from: irda
   to: motor_insurance_premium
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: IRDAI directly notifies the mandatory third-party motor insurance premium
     rates every year.
 - from: pfrda
   to: nps_portfolio
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
-  delay: LONG_TERM
+  delay: SHORT_TERM
   description: PFRDA directly regulates the asset allocation limits and fund manager
     options for the National Pension System.
 - from: cci
   to: cab_aggregator_fare
   type: AFFECTS
-  weight: 0.75
+  weight: 0.7
   polarity: -1
   delay: MEDIUM_TERM
   description: Competition Commission antitrust rulings against ride-hailing duopolies
@@ -363,15 +362,15 @@ edges:
 - from: panchayati_raj_institutions
   to: mgnrega_wages
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
-  delay: IMMEDIATE
+  delay: SHORT_TERM
   description: Gram Panchayats directly issue job cards, measure work, and supply
     the wage employment under MGNREGA.
 - from: ministry_of_education
   to: university_entrance
   type: AFFECTS
-  weight: 0.85
+  weight: 0.95
   polarity: 1
   delay: MEDIUM_TERM
   description: The Ministry of Education directly mandates and structures centralized
@@ -379,15 +378,15 @@ edges:
 - from: fssai
   to: street_food
   type: AFFECTS
-  weight: 0.65
+  weight: 0.5
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: FSSAI's direct enforcement of street food hygiene ratings and vendor
     licensing increases compliance costs, reducing informal vendor volume.
 - from: supreme_court_of_india
   to: criminal_litigation_risk
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Supreme Court rulings directly establish binding legal precedents that
@@ -395,7 +394,7 @@ edges:
 - from: brent_crude
   to: retail_petrol
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Global crude oil prices directly dictate the base cost of retail petrol
@@ -403,38 +402,38 @@ edges:
 - from: brent_crude
   to: retail_diesel
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Global crude oil prices directly dictate the base cost of retail diesel.
 - from: brent_crude
   to: lpg_cylinder
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.6
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Crude oil prices directly influence the import parity price of liquefied
     petroleum gas used for domestic cylinders.
 - from: global_natural_gas
   to: cng_fuel
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.7
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: International natural gas benchmarks directly determine the input costs
     for city gas distribution networks supplying CNG.
 - from: global_natural_gas
   to: piped_natural_gas
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.7
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: International natural gas benchmarks directly determine the input costs
     for domestic piped natural gas.
 - from: global_edible_oil_supply
   to: palm_oil
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Global edible oil production volumes directly provide the physical
@@ -442,7 +441,7 @@ edges:
 - from: global_edible_oil_supply
   to: sunflower_oil
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Global edible oil production volumes directly provide the physical
@@ -450,7 +449,7 @@ edges:
 - from: global_food_grain_supply
   to: wheat_flour
   type: AFFECTS
-  weight: 0.6
+  weight: 0.4
   polarity: -1
   delay: MEDIUM_TERM
   description: Increases in global food grain supply lower international wheat prices,
@@ -458,7 +457,7 @@ edges:
 - from: global_sugar_supply
   to: retail_sugar
   type: AFFECTS
-  weight: 0.7
+  weight: 0.45
   polarity: -1
   delay: MEDIUM_TERM
   description: Higher global sugar supply reduces international prices, exerting downward
@@ -482,7 +481,7 @@ edges:
 - from: industrial_metals_index
   to: building_materials_cost
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Global industrial metal prices directly dictate the cost of steel rebars
@@ -490,7 +489,7 @@ edges:
 - from: industrial_metals_index
   to: two_wheeler_price
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: 1
   delay: MEDIUM_TERM
   description: Global prices for steel, aluminum, and copper directly impact the manufacturing
@@ -498,7 +497,7 @@ edges:
 - from: industrial_metals_index
   to: four_wheeler_price
   type: AFFECTS
-  weight: 0.7
+  weight: 0.45
   polarity: 1
   delay: MEDIUM_TERM
   description: Global prices for steel, aluminum, and copper directly impact the manufacturing
@@ -506,9 +505,9 @@ edges:
 - from: venture_capital_and_pe_flows
   to: startup_jobs
   type: FUNDS
-  weight: 0.85
+  weight: 0.75
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Venture capital inflows directly provide the financial runway for startups
     to expand their workforce and hire new employees.
 - from: venture_capital_and_pe_flows
@@ -522,7 +521,7 @@ edges:
 - from: nifty_50
   to: direct_equity_portfolio
   type: AFFECTS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Movements in the Nifty 50 benchmark directly correlate with the valuation
@@ -530,7 +529,7 @@ edges:
 - from: nifty_50
   to: equity_mutual_funds
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Movements in the Nifty 50 benchmark directly determine the Net Asset
@@ -538,7 +537,7 @@ edges:
 - from: sensex
   to: direct_equity_portfolio
   type: AFFECTS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Movements in the BSE Sensex directly correlate with the valuation of
@@ -546,7 +545,7 @@ edges:
 - from: sensex
   to: equity_mutual_funds
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Movements in the BSE Sensex directly determine the Net Asset Value
@@ -554,7 +553,7 @@ edges:
 - from: usd_inr_exchange
   to: smartphone_device
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Depreciation of the INR against the USD directly increases the import
@@ -562,7 +561,7 @@ edges:
 - from: usd_inr_exchange
   to: laptop_computer
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Depreciation of the INR against the USD directly increases the import
@@ -570,7 +569,7 @@ edges:
 - from: usd_inr_exchange
   to: tour_package
   type: AFFECTS
-  weight: 0.8
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: A stronger USD directly increases the INR cost of international holiday
@@ -578,7 +577,7 @@ edges:
 - from: india_10yr_bond_yield
   to: debt_mutual_funds
   type: AFFECTS
-  weight: 0.85
+  weight: 0.9
   polarity: -1
   delay: IMMEDIATE
   description: Increases in the 10-year government bond yield directly reduce the
@@ -588,13 +587,13 @@ edges:
   type: AFFECTS
   weight: 0.7
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Sovereign bond yields serve as the benchmark for banks to price their
     retail fixed deposit interest rates.
 - from: global_semiconductor_supply_chain
   to: smartphone_device
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: The global semiconductor supply chain directly provides the microchips
@@ -602,7 +601,7 @@ edges:
 - from: global_semiconductor_supply_chain
   to: laptop_computer
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: The global semiconductor supply chain directly provides the processors
@@ -610,7 +609,7 @@ edges:
 - from: global_semiconductor_supply_chain
   to: four_wheeler_price
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: -1
   delay: MEDIUM_TERM
   description: Improvements in semiconductor supply reduce component scarcity, lowering
@@ -642,7 +641,7 @@ edges:
 - from: agricultural_exports
   to: retail_onion
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Higher volumes of agricultural exports reduce the domestic supply of
@@ -650,23 +649,23 @@ edges:
 - from: agricultural_exports
   to: retail_rice
   type: AFFECTS
-  weight: 0.8
+  weight: 0.6
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Higher volumes of agricultural exports reduce the domestic supply of
     rice, directly driving up retail prices.
 - from: agricultural_exports
   to: retail_sugar
   type: AFFECTS
-  weight: 0.8
+  weight: 0.65
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Higher volumes of agricultural exports reduce the domestic supply of
     sugar, directly driving up retail prices.
 - from: global_shipping_freight_rates
   to: building_materials_cost
   type: AFFECTS
-  weight: 0.6
+  weight: 0.4
   polarity: 1
   delay: MEDIUM_TERM
   description: Higher global shipping freight rates directly increase the landed cost
@@ -674,7 +673,7 @@ edges:
 - from: global_shipping_freight_rates
   to: smartphone_device
   type: AFFECTS
-  weight: 0.6
+  weight: 0.25
   polarity: 1
   delay: MEDIUM_TERM
   description: Higher global shipping freight rates directly increase the logistics
@@ -682,7 +681,7 @@ edges:
 - from: china_manufacturing_output
   to: smartphone_device
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Chinese manufacturing output directly provides the physical electronic
@@ -698,7 +697,7 @@ edges:
 - from: power_substations
   to: ev_charging_tariff
   type: AFFECTS
-  weight: 0.85
+  weight: 0.15
   polarity: 1
   delay: IMMEDIATE
   description: Local power substations directly supply the high-voltage electricity
@@ -746,7 +745,7 @@ edges:
 - from: telecom_spectrum
   to: mobile_data_tariff
   type: AFFECTS
-  weight: 0.85
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: The cost of telecom spectrum acquired at government auctions is directly
@@ -762,7 +761,7 @@ edges:
 - from: optical_fibre_network
   to: fiber_broadband_tariff
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: MEDIUM_TERM
   description: The expansion of optical fibre networks directly increases bandwidth
@@ -770,7 +769,7 @@ edges:
 - from: data_centers
   to: digilocker_documents
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Domestic data centers provide the physical server infrastructure that
@@ -778,9 +777,9 @@ edges:
 - from: data_centers
   to: ott_subscription
   type: AFFECTS
-  weight: 0.65
+  weight: 0.35
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Localized data centers directly reduce the content delivery network
     (CDN) costs for streaming platforms, allowing for cheaper subscription pricing.
 - from: upi_platform
@@ -794,7 +793,7 @@ edges:
 - from: upi_platform
   to: e_mandate_autopay
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: The UPI AutoPay infrastructure directly processes and executes recurring
@@ -818,7 +817,7 @@ edges:
 - from: aadhaar_database
   to: pan_aadhaar_linkage
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: The UIDAI database directly provides the demographic verification required
@@ -826,7 +825,7 @@ edges:
 - from: aadhaar_database
   to: data_breaches_and_leaks
   type: PRODUCES
-  weight: 0.7
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Vulnerabilities or leaks in the central Aadhaar database directly expose
@@ -834,23 +833,23 @@ edges:
 - from: ondc_platform
   to: food_delivery_services
   type: COMPETES_WITH
-  weight: 0.75
+  weight: 0.45
   polarity: -1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: The Open Network for Digital Commerce directly competes with proprietary
     food delivery aggregators by offering zero-commission ordering.
 - from: ondc_platform
   to: cab_aggregator_fare
   type: AFFECTS
-  weight: 0.7
+  weight: 0.5
   polarity: -1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: ONDC-backed mobility apps directly compete with traditional cab aggregators,
     forcing downward adjustments in ride fares.
 - from: road_freight_movement
   to: retail_tomato
   type: AFFECTS
-  weight: 0.85
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Trucking freight rates are directly passed through to the retail prices
@@ -858,7 +857,7 @@ edges:
 - from: road_freight_movement
   to: retail_onion
   type: AFFECTS
-  weight: 0.85
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Road logistics costs directly impact the final retail price of bulk
@@ -866,7 +865,7 @@ edges:
 - from: road_freight_movement
   to: retail_potato
   type: AFFECTS
-  weight: 0.85
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Freight transportation costs are a direct component of the retail price
@@ -898,7 +897,7 @@ edges:
 - from: railway_freight_movement
   to: building_materials_cost
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Railway freight tariffs directly affect the bulk transport costs of
@@ -908,7 +907,7 @@ edges:
   type: AFFECTS
   weight: 0.85
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: SHORT_TERM
   description: Disruptions and freight rates on global shipping lanes directly impact
     the import cost of palm oil.
 - from: global_shipping_routes
@@ -916,13 +915,13 @@ edges:
   type: AFFECTS
   weight: 0.85
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: SHORT_TERM
   description: Sea freight costs and route availability directly determine the landed
     price of imported sunflower oil.
 - from: major_seaports
   to: palm_oil
   type: AFFECTS
-  weight: 0.75
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: Efficient handling and turnaround times at major seaports directly
@@ -938,7 +937,7 @@ edges:
 - from: water_treatment_plants
   to: drinking_water_quality
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: The operational efficiency of municipal water treatment plants directly
@@ -962,7 +961,7 @@ edges:
 - from: satellite_network
   to: broadband_network_quality
   type: SUPPLIES
-  weight: 0.65
+  weight: 0.3
   polarity: 1
   delay: IMMEDIATE
   description: Communication satellites directly provide internet bandwidth to remote
@@ -970,17 +969,17 @@ edges:
 - from: highway_network
   to: highway_toll_fare
   type: AFFECTS
-  weight: 0.95
+  weight: 0.9
   polarity: 1
-  delay: IMMEDIATE
+  delay: MEDIUM_TERM
   description: The expansion and monetization of national highways directly result
     in new toll plazas and higher toll fares for commuters.
 - from: highway_network
   to: road_traffic_accidents
   type: AFFECTS
-  weight: 0.8
+  weight: 0.6
   polarity: -1
-  delay: IMMEDIATE
+  delay: LONG_TERM
   description: The construction of access-controlled expressways directly reduces
     the frequency of fatal head-on road collisions.
 - from: highway_network
@@ -994,15 +993,15 @@ edges:
 - from: commercial_airports
   to: domestic_flight_ticket
   type: AFFECTS
-  weight: 0.8
+  weight: 0.5
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: Airport development fees and user charges levied by commercial airports
     are directly added to passenger flight tickets.
 - from: commercial_airports
   to: noise_pollution
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Flight operations at commercial airports directly generate significant
@@ -1010,7 +1009,7 @@ edges:
 - from: commercial_airports
   to: tour_package
   type: AFFECTS
-  weight: 0.65
+  weight: 0.4
   polarity: 1
   delay: SHORT_TERM
   description: Airport connectivity and associated aviation fees directly influence
@@ -1018,15 +1017,15 @@ edges:
 - from: indian_railways_network
   to: irctc_train_ticket
   type: SUPPLIES
-  weight: 0.95
+  weight: 0.9
   polarity: 1
-  delay: IMMEDIATE
+  delay: LONG_TERM
   description: The physical railway network provides the direct capacity that determines
     the availability of train tickets.
 - from: indian_railways_network
   to: train_cancellations_and_delays
   type: AFFECTS
-  weight: 0.9
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: The maintenance status and track capacity of the railway network directly
@@ -1034,15 +1033,15 @@ edges:
 - from: india_working_age_population
   to: urban_unemployment_rate
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: A growing working-age population increases labor supply, which raises
     urban unemployment rates if job creation lags behind demographic growth.
 - from: india_aging_population
   to: senior_citizen_savings_scheme
   type: FUNDS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: LONG_TERM
   description: An expanding elderly demographic directly increases the capital flowing
@@ -1058,7 +1057,7 @@ edges:
 - from: india_aging_population
   to: health_insurance_premium
   type: AFFECTS
-  weight: 0.75
+  weight: 0.7
   polarity: 1
   delay: LONG_TERM
   description: An aging demographic profile increases the overall risk pool's morbidity,
@@ -1066,7 +1065,7 @@ edges:
 - from: female_labor_force_participation
   to: domestic_help_wages
   type: AFFECTS
-  weight: 0.7
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: Higher female labor force participation increases household demand
@@ -1074,7 +1073,7 @@ edges:
 - from: female_labor_force_participation
   to: private_preschools
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: More women entering the workforce increases the reliance on and demand
@@ -1098,7 +1097,7 @@ edges:
 - from: tier_2_3_city_expansion
   to: investment_property_value
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: The expansion and infrastructural upgrading of tier 2 and 3 cities
@@ -1108,13 +1107,13 @@ edges:
   type: AFFECTS
   weight: 0.8
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: A steady influx of student and working migrants into urban corridors
     directly increases demand and fees for PG and hostel accommodations.
 - from: seasonal_migrant_labor
   to: construction_worker_wages
   type: AFFECTS
-  weight: 0.75
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: The arrival of seasonal migrant labor increases the supply of manual
@@ -1122,7 +1121,7 @@ edges:
 - from: seasonal_migrant_labor
   to: farm_labor_wages
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: The influx of seasonal migrant workers during harvest seasons increases
@@ -1130,15 +1129,15 @@ edges:
 - from: seasonal_migrant_labor
   to: irctc_train_ticket
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: The mass movement of seasonal migrant workers spikes demand for unreserved
     and sleeper class IRCTC train tickets.
 - from: indian_diaspora_nri
   to: investment_property_value
   type: FUNDS
-  weight: 0.65
+  weight: 0.6
   polarity: 1
   delay: MEDIUM_TERM
   description: NRI remittances and cross-border investments directly fund real estate
@@ -1146,7 +1145,7 @@ edges:
 - from: skilled_emigration
   to: phd_research_programs
   type: AFFECTS
-  weight: 0.6
+  weight: 0.5
   polarity: -1
   delay: LONG_TERM
   description: The brain drain of skilled graduates to foreign universities reduces
@@ -1154,7 +1153,7 @@ edges:
 - from: autumn_festive_season
   to: retail_sugar
   type: AFFECTS
-  weight: 0.85
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: The autumn festive season triggers massive demand for traditional sweets,
@@ -1194,7 +1193,7 @@ edges:
 - from: autumn_festive_season
   to: crowd_emergencies
   type: PRODUCES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Massive gatherings at pandals and markets during autumn festivals directly
@@ -1202,7 +1201,7 @@ edges:
 - from: islamic_festivals
   to: mutton_and_lamb
   type: AFFECTS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Islamic festivals, particularly Eid al-Adha, create massive demand
@@ -1212,7 +1211,7 @@ edges:
   type: AFFECTS
   weight: 0.85
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: The Indian wedding season drives massive retail purchases of physical
     gold for bridal jewelry and gifting.
 - from: wedding_season_aggregate
@@ -1250,7 +1249,7 @@ edges:
 - from: waqf_boards
   to: rental_housing
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.4
   polarity: 1
   delay: LONG_TERM
   description: Waqf boards supply and manage significant portfolios of affordable
@@ -1266,7 +1265,7 @@ edges:
 - from: mass_boycott_movements
   to: cinema_ticket
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: IMMEDIATE
   description: Organized mass boycott movements directly disrupt cinema ticket sales
@@ -1274,7 +1273,7 @@ edges:
 - from: mass_boycott_movements
   to: quick_service_restaurants
   type: DISRUPTS
-  weight: 0.65
+  weight: 0.6
   polarity: -1
   delay: IMMEDIATE
   description: Brand boycotts driven by social media directly disrupt footfall and
@@ -1282,7 +1281,7 @@ edges:
 - from: voter_turnout_aggregates
   to: community_gathering
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: High voter turnout events inherently produce massive community gatherings
@@ -1290,7 +1289,7 @@ edges:
 - from: nifty_50
   to: nps_portfolio
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: NPS Tier I allocates up to 50% in equities tracking Nifty, so index
@@ -1298,7 +1297,7 @@ edges:
 - from: monetary_policy_committee
   to: personal_loan_emi
   type: AFFECTS
-  weight: 0.85
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: MPC repo rate changes directly set the benchmark that banks use to
@@ -1306,7 +1305,7 @@ edges:
 - from: autumn_festive_season
   to: butter_and_ghee
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Festive sweet-making (mithai, halwa, laddu) directly spikes retail
@@ -1314,7 +1313,7 @@ edges:
 - from: autumn_festive_season
   to: irctc_train_ticket
   type: AFFECTS
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Festival homecoming travel directly surges IRCTC train bookings as
@@ -1322,7 +1321,7 @@ edges:
 - from: ministry_of_agriculture
   to: mgnrega_wages
   type: FUNDS
-  weight: 0.85
+  weight: 0.1
   polarity: 1
   delay: SHORT_TERM
   description: The Ministry of Agriculture directly administers MGNREGA budget allocation
@@ -1330,7 +1329,7 @@ edges:
 - from: wpi
   to: kirana_store_income
   type: AFFECTS
-  weight: 0.7
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: Rising wholesale prices squeeze kirana store margins as small retailers
@@ -1338,21 +1337,17 @@ edges:
 - from: marine_fish_stocks
   to: marine_fish
   type: SUPPLIES
-  weight: 0.95
+  weight: 0.9
   polarity: 1
-  delay: IMMEDIATE
+  delay: SHORT_TERM
   description: Ocean fish populations directly supply the catch volume available at
     coastal fish markets and retail.
-
-## Phase 4b gap-fill: T→I bridges (Gemini-reviewed, Rule 21 validated)
-
-# Round 1 approved/modified edges
 - from: forest_cover
   to: wildlife_encounters
   type: AFFECTS
-  weight: 0.6
-  polarity: 1
-  delay: MEDIUM_TERM
+  weight: 0.65
+  polarity: -1
+  delay: LONG_TERM
   description: Habitat loss from deforestation directly pushes wildlife into human
     settlements, increasing human-animal conflict encounters.
 - from: peninsular_river_systems
@@ -1368,7 +1363,7 @@ edges:
   type: AFFECTS
   weight: 0.8
   polarity: -1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Northeast monsoon rains directly hydrate Tamil Nadu and coastal Andhra
     rice and pulses crops during the rabi season, preventing drought-driven crop failure.
 - from: northeast_monsoon
@@ -1377,20 +1372,20 @@ edges:
   weight: 0.85
   polarity: 1
   delay: IMMEDIATE
-  description: Intense northeast monsoon rainfall directly inundates Chennai and
-    coastal Tamil Nadu cities with severe urban flooding.
+  description: Intense northeast monsoon rainfall directly inundates Chennai and coastal
+    Tamil Nadu cities with severe urban flooding.
 - from: groundwater_aquifers
   to: residential_borewells
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
-  delay: SHORT_TERM
-  description: Aquifer water table depth directly determines whether residential
-    borewells produce water or run dry.
+  delay: IMMEDIATE
+  description: Aquifer water table depth directly determines whether residential borewells
+    produce water or run dry.
 - from: high_courts
   to: criminal_litigation_risk
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: MEDIUM_TERM
   description: High court bail orders, sentencing decisions, and acquittals directly
@@ -1398,7 +1393,7 @@ edges:
 - from: high_courts
   to: residential_rent
   type: AFFECTS
-  weight: 0.55
+  weight: 0.45
   polarity: 1
   delay: LONG_TERM
   description: High court rulings on rent control acts and tenant eviction disputes
@@ -1414,25 +1409,23 @@ edges:
 - from: regional_new_year_festivals
   to: retail_gold_investment
   type: AFFECTS
-  weight: 0.6
+  weight: 0.75
   polarity: 1
-  delay: SHORT_TERM
-  description: Gold purchases spike during Ugadi, Puthandu, Vishu, and Bihu as
-    auspicious buying dates directly drive retail gold demand.
+  delay: IMMEDIATE
+  description: Gold purchases spike during Ugadi, Puthandu, Vishu, and Bihu as auspicious
+    buying dates directly drive retail gold demand.
 - from: regional_new_year_festivals
   to: irctc_train_ticket
   type: AFFECTS
-  weight: 0.65
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Mass hometown travel during regional new year celebrations directly
     spikes IRCTC train ticket demand and waitlist lengths.
-
-# Round 2: Direct edges restored (Gemini re-review overturned overly strict rejections)
 - from: cyclonic_storm_systems
   to: structural_collapse
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: High-velocity cyclonic winds directly cause structural failure and
@@ -1456,7 +1449,7 @@ edges:
 - from: forest_cover
   to: ambient_aqi
   type: AFFECTS
-  weight: 0.6
+  weight: 0.5
   polarity: -1
   delay: LONG_TERM
   description: Tree canopies directly act as physical sinks for airborne pollutants,
@@ -1464,32 +1457,32 @@ edges:
 - from: forest_cover
   to: urban_flooding
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.65
   polarity: -1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: Root systems and forest floors directly absorb heavy rainfall, reducing
     the volume of water that reaches urban centers.
 - from: it_services_exports
   to: it_sector_jobs
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Growth in IT export revenues directly funds the expansion of headcount
     and hiring in the Indian tech sector.
 - from: commercial_bank_lending_rates
   to: home_loan_emi
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
-  delay: IMMEDIATE
-  description: Changes in bank benchmark lending rates are directly passed on to
-    floating-rate retail home loan EMIs.
+  delay: SHORT_TERM
+  description: Changes in bank benchmark lending rates are directly passed on to floating-rate
+    retail home loan EMIs.
 - from: commercial_bank_lending_rates
   to: personal_loan_emi
   type: AFFECTS
-  weight: 0.8
+  weight: 0.7
   polarity: 1
-  delay: IMMEDIATE
-  description: Increases in commercial lending rates directly raise the interest
-    burden and EMIs for unsecured personal loans.
+  delay: MEDIUM_TERM
+  description: Increases in commercial lending rates directly raise the interest burden
+    and EMIs for unsecured personal loans.

@@ -1,448 +1,478 @@
 # bridges_2 Weight Re-Rating — Gemini 3.1 Pro
 
-<details><summary>Thinking (3545 chars)</summary>
+<details><summary>Thinking (3800 chars)</summary>
 
-**Recalibrating Causal Knowledge Graph Edge Weights**
+**Edge Property Calibration Summary**
 
-Okay, here's what I've got. I've gone through each edge, considered the specific relationship, and assigned a weight based on the potential impact. I've kept in mind the scale we're using: near 1:1 pass-through is 0.85-0.95, strong but buffered is 0.65-0.85, noticeable but diluted is 0.40-0.65, weak and indirect is 0.20-0.40, and anything below 0.20 is going to be weak enough to consider removing. I've made sure to factor in things like government controls, market competition, and lead times where appropriate, adjusting the weights accordingly. I've also double-checked everything to ensure the YAML array format is correct, with no extra commentary or markdown formatting, just the `from`, `to`, `weight`, and `reasoning` keys for each edge. I'm satisfied this should be a reliable set of edge weights.
+Okay, here's the YAML array representing the calibrated edge properties for this causal knowledge graph, just as requested. I've considered the weight, polarity, and delay for each edge, taking into account the nuances of how these factors interact within their respective domains. I've also kept in mind the provided guidelines, including considering the below 0.20 threshold for removal. Here we go:
 
 ```yaml
-- from: financial_and_capital_markets
-  to: equity_investments
-  weight: 0.90
-  reasoning: Stock market indices directly determine the value of retail equity portfolios. If the market drops 10%, the portfolio drops ~10% (beta ~1). Near 1:1 pass-through.
-- from: financial_and_capital_markets
-  to: mutual_funds
-  weight: 0.85
-  reasoning: Bond yields, equity indices drive MF NAVs. Very direct pass-through, almost 1:1 for index funds, slightly buffered for active/debt.
-- from: financial_and_capital_markets
-  to: it_and_tech_sector
-  weight: 0.60
-  reasoning: IPOs and secondary funding enable IT companies to raise capital. A 10% drop in capital markets might lead to a 4-6% drop in IT funding/hiring. Strong but buffered.
-- from: financial_and_capital_markets
-  to: startup_ecosystem
-  weight: 0.75
-  reasoning: VC funding, IPO windows directly govern startup funding. A 10% drop in public markets heavily impacts VC funding (maybe 7-8% drop). Strong pass-through.
-- from: financial_and_capital_markets
-  to: manufacturing_and_core
-  weight: 0.50
-  reasoning: Corporate bond markets fund capex. A 10% change in capital markets affects capex, but manufacturing has long lead times and internal accruals. Noticeable but diluted.
-- from: financial_and_capital_markets
-  to: bfsi_sector
-  weight: 0.55
-  reasoning: BFSI employment tied to capital markets. A 10% change in markets might change BFSI hiring/activity by 4-6%.
-- from: international_trade_and_supply_chains
-  to: prescription_drugs
-  weight: 0.50
-  reasoning: India imports 70%+ APIs from China. 10% disruption in supply chain -> significant drug shortages/price spikes, but government price controls (DPCO) buffer retail prices.
-- from: international_trade_and_supply_chains
-  to: over_the_counter_products
+- from: industrial_metals_index
+  to: four_wheeler_price
   weight: 0.45
-  reasoning: OTC uses imported ingredients. Less price control than prescription, but highly competitive market buffers prices.
-- from: international_trade_and_supply_chains
-  to: home_medical_devices
-  weight: 0.70
-  reasoning: Heavily rely on imported components. 10% disruption -> 6-8% price rise. Strong pass-through.
-- from: international_trade_and_supply_chains
-  to: personal_computing_devices
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: Metal costs are a fraction of total vehicle manufacturing costs and are heavily buffered by long-term supply contracts.
+- from: venture_capital_and_pe_flows
+  to: startup_jobs
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: VC funding directly dictates the runway and expansion budgets for startup hiring, though recruitment takes time.
+- from: venture_capital_and_pe_flows
+  to: startup_layoffs
   weight: 0.80
-  reasoning: Laptops/smartphones depend on imported chips. 10% disruption -> 7-9% price spike. Strong pass-through.
-- from: international_trade_and_supply_chains
-  to: it_and_tech_sector
-  weight: 0.65
-  reasoning: IT exports depend on global trade. 10% drop in global trade -> 6-8% drop in IT orders. Strong but buffered by long-term contracts.
-- from: international_trade_and_supply_chains
-  to: startup_ecosystem
-  weight: 0.55
-  reasoning: Cross-border VC flows. 10%
+  polarity: -1
+  delay: SHORT_TERM
+  reasoning: Funding winters rapidly force startups to cut burn rates through immediate workforce reductions.
+- from: nifty_50
+  to: direct_equity_portfolio
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Large-cap retail portfolios closely track the benchmark index movements in real-time.
+- from: nifty_50
+  to: equity_mutual_funds
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Mutual fund NAVs are calculated daily based directly on the closing prices of their underlying index constituents.
+- from: sensex
+  to: direct_equity_portfolio
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Retail equity portfolios highly correlate with the broader market sentiment captured by the Sensex.
+- from: sensex
+  to: equity_mutual_funds
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: Large-cap mutual fund NAVs are directly derived from the daily closing prices of Sensex stocks.
+- from: usd_inr_exchange
+  to: smartphone_device
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Exchange rate fluctuations directly impact the import costs of electronic components, passed to consumers after inventory clears.
+- from: usd_inr_exchange
+  to: laptop_computer
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: Laptops have high import content, making their retail prices highly sensitive to INR depreciation.
+- from: usd_inr_exchange
+  to: tour_package
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: International travel and accommodation costs are directly denominated in foreign currency, reflecting exchange rates instantly.
+- from: india_10yr_bond_yield
+  to: debt_mutual_funds
+  weight: 0.90
+  polarity: -1
+  delay: IMMEDIATE
+  reasoning: Bond yields have an immediate, mathematical inverse relationship with the mark-to-market NAV of existing debt funds.
+- from: india_10yr_bond_yield
+  to: fixed_deposits
+  weight: 0.70
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: Banks adjust retail FD rates based on sovereign yields, but transmission is delayed by internal liquidity requirements.
+- from: global_semiconductor_supply_chain
+  to: smartphone_device
+  weight: 0.85
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: Semiconductor availability dictates smartphone production volumes, with lead times of several months.
+- from: global_semiconductor_supply_chain
+  to: laptop_computer
+  weight: 0.85
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: Laptop manufacturing is entirely dependent on global processor and memory chip supply chains.
+- from: global_semiconductor_supply_chain
+  to: four_wheeler_price
+  weight: 0.60
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: Better chip supply reduces manufacturing bottlenecks and wait times, easing upward pressure on vehicle prices.
 
 </details>
 
 ## Response
 
 ```yaml
-- from: financial_and_capital_markets
-  to: equity_investments
-  weight: 0.90
-  reasoning: "Stock market index movements translate almost 1:1 into the valuation of retail equity portfolios."
-- from: financial_and_capital_markets
-  to: mutual_funds
-  weight: 0.85
-  reasoning: "Bond yields and equity indices directly and strongly drive mutual fund NAVs, with minor buffering from cash holdings."
-- from: financial_and_capital_markets
-  to: it_and_tech_sector
-  weight: 0.60
-  reasoning: "Capital market health noticeably affects IT funding and hiring, but is diluted by long-term client contracts and internal reserves."
-- from: financial_and_capital_markets
-  to: startup_ecosystem
-  weight: 0.75
-  reasoning: "Public market valuations and IPO windows strongly dictate VC funding availability and startup burn rates."
-- from: financial_and_capital_markets
-  to: manufacturing_and_core
-  weight: 0.50
-  reasoning: "Capital markets fund manufacturing capex, but the effect is diluted by long project lead times and internal corporate accruals."
-- from: financial_and_capital_markets
-  to: bfsi_sector
-  weight: 0.55
-  reasoning: "Capital market activity noticeably drives BFSI hiring and trading volumes, though core banking operations provide a buffer."
-- from: international_trade_and_supply_chains
-  to: prescription_drugs
-  weight: 0.50
-  reasoning: "Import disruptions cause severe API shortages, but government price controls (DPCO) heavily buffer retail price pass-through."
-- from: international_trade_and_supply_chains
-  to: over_the_counter_products
+- from: industrial_metals_index
+  to: four_wheeler_price
   weight: 0.45
-  reasoning: "Trade disruptions affect OTC ingredients, but intense domestic market competition and alternative sourcing dilute the price impact."
-- from: international_trade_and_supply_chains
-  to: home_medical_devices
-  weight: 0.70
-  reasoning: "Heavy reliance on imported finished goods and components means trade disruptions strongly pass through to retail prices."
-- from: international_trade_and_supply_chains
-  to: personal_computing_devices
-  weight: 0.80
-  reasoning: "Near-total dependence on imported chipsets and displays means global supply chain shocks strongly and directly spike retail prices."
-- from: international_trade_and_supply_chains
-  to: it_and_tech_sector
-  weight: 0.65
-  reasoning: "Global trade health and protectionist policies strongly influence IT export orders, buffered slightly by multi-year contracts."
-- from: international_trade_and_supply_chains
-  to: startup_ecosystem
-  weight: 0.55
-  reasoning: "Cross-border VC flows and trade openness noticeably affect startup scaling, though domestic consumption provides a baseline."
-- from: international_trade_and_supply_chains
-  to: manufacturing_and_core
-  weight: 0.60
-  reasoning: "Export orders and raw material imports noticeably drive manufacturing employment, diluted by domestic market demand."
-- from: international_trade_and_supply_chains
-  to: bfsi_sector
-  weight: 0.25
-  reasoning: "Trade finance is only a fraction of overall BFSI activity, making the employment impact weak and indirect."
-- from: national_power_grid
-  to: residential_electricity
-  weight: 0.90
-  reasoning: "Grid failures result in immediate, near 1:1 pass-through to domestic power cuts and load shedding."
-- from: coal_power_plants
-  to: residential_electricity
-  weight: 0.70
-  reasoning: "Coal shortages strongly impact baseload power generation, though buffered slightly by grid reserves and alternative energy sources."
-- from: renewable_energy_parks
-  to: residential_electricity
-  weight: 0.35
-  reasoning: "Renewables are a growing but supplementary share of the grid, making their impact on household tariffs noticeable but weak."
-- from: oil_gas_pipelines
-  to: cooking_fuel
-  weight: 0.80
-  reasoning: "Pipeline disruptions strongly and directly restrict the physical availability of LPG and PNG in household kitchens."
-- from: nuclear_power_plants
-  to: residential_electricity
-  weight: 0.15
-  reasoning: "Nuclear power forms a very small percentage of India's baseload, making its impact on household supply too weak for strong causal modeling."
-- from: national_power_grid
-  to: vehicle_fuel
-  weight: 0.65
-  reasoning: "Grid stability strongly dictates EV charging availability, though currently buffered by the low overall penetration of EVs."
-- from: national_power_grid
-  to: vehicle_acquisition
-  weight: 0.30
-  reasoning: "Grid reliability is a weak, indirect factor in vehicle purchase decisions compared to upfront costs and range anxiety."
-- from: oil_gas_pipelines
-  to: vehicle_fuel
-  weight: 0.85
-  reasoning: "Petroleum pipeline disruptions lead to immediate and strong localized shortages of petrol and diesel at retail outlets."
-- from: telecom_spectrum
-  to: telecom_and_internet_access
-  weight: 0.70
-  reasoning: "Spectrum allocation strongly determines network bandwidth and speed, though buffered by existing tower infrastructure."
-- from: telecom_towers_network
-  to: telecom_and_internet_access
-  weight: 0.85
-  reasoning: "Cell tower outages or coverage gaps result in an almost 1:1 loss of mobile signal and internet access for consumers."
-- from: optical_fibre_network
-  to: telecom_and_internet_access
-  weight: 0.80
-  reasoning: "Fibre backhaul cuts strongly and directly disrupt high-speed residential broadband and mobile network data offloading."
-- from: submarine_internet_cables
-  to: telecom_and_internet_access
-  weight: 0.65
-  reasoning: "Submarine cable cuts strongly degrade international bandwidth, but local edge caching buffers the impact for many users."
-- from: data_centers
-  to: telecom_and_internet_access
-  weight: 0.50
-  reasoning: "Data center capacity noticeably improves latency, but its absence only dilutes perceived speed rather than cutting access."
-- from: digital_public_infrastructure
-  to: telecom_and_internet_access
-  weight: 0.30
-  reasoning: "DPI platforms encourage smartphone adoption, but the causal link to telecom access expansion is weak and indirect."
-- from: data_centers
-  to: digital_identity_and_egovernance
-  weight: 0.90
-  reasoning: "Government data center downtime translates almost 1:1 into the unavailability of Aadhaar and e-governance services."
-- from: digital_public_infrastructure
-  to: digital_identity_and_egovernance
-  weight: 0.90
-  reasoning: "DPI forms the foundational architecture; its failure results in near 1:1 disruption of digital identity verification."
-- from: optical_fibre_network
-  to: digital_identity_and_egovernance
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "Metal costs are a fraction of total vehicle manufacturing costs and are heavily buffered by long-term supply contracts."
+- from: venture_capital_and_pe_flows
+  to: startup_jobs
   weight: 0.75
-  reasoning: "BharatNet fibre disruptions strongly cut off rural Common Service Centres from central e-governance platforms."
-- from: telecom_towers_network
-  to: digital_identity_and_egovernance
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "VC funding directly dictates the runway and expansion budgets for startup hiring, though recruitment takes time."
+- from: venture_capital_and_pe_flows
+  to: startup_layoffs
   weight: 0.80
-  reasoning: "Mobile network outages strongly block Aadhaar OTPs and biometric authentication in areas lacking broadband."
-- from: digital_public_infrastructure
-  to: digital_payments_interface
+  polarity: -1
+  delay: SHORT_TERM
+  reasoning: "Funding winters rapidly force startups to cut burn rates through immediate workforce reductions."
+- from: nifty_50
+  to: direct_equity_portfolio
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Large-cap retail portfolios closely track the benchmark index movements in real-time."
+- from: nifty_50
+  to: equity_mutual_funds
   weight: 0.95
-  reasoning: "UPI is the core DPI for payments; architectural or capacity failures result in a 1:1 pass-through to transaction failures."
-- from: telecom_towers_network
-  to: digital_payments_interface
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Mutual fund NAVs are calculated daily based directly on the closing prices of their underlying index constituents."
+- from: sensex
+  to: direct_equity_portfolio
   weight: 0.85
-  reasoning: "Mobile network dead zones at the point of sale strongly and directly block consumers from completing UPI transactions."
-- from: data_centers
-  to: digital_payments_interface
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Retail equity portfolios highly correlate with the broader market sentiment captured by the Sensex."
+- from: sensex
+  to: equity_mutual_funds
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Large-cap mutual fund NAVs are directly derived from the daily closing prices of Sensex stocks."
+- from: usd_inr_exchange
+  to: smartphone_device
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Exchange rate fluctuations directly impact the import costs of electronic components, passed to consumers after inventory clears."
+- from: usd_inr_exchange
+  to: laptop_computer
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Laptops have high import content, making their retail prices highly sensitive to INR depreciation."
+- from: usd_inr_exchange
+  to: tour_package
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "International travel and accommodation costs are directly denominated in foreign currency, reflecting exchange rates instantly."
+- from: india_10yr_bond_yield
+  to: debt_mutual_funds
   weight: 0.90
-  reasoning: "NPCI and bank server downtime in data centers causes near 1:1 immediate failure of real-time payment settlements."
-- from: optical_fibre_network
-  to: digital_payments_interface
-  weight: 0.80
-  reasoning: "Fibre link disruptions between bank data centers and NPCI nodes strongly cascade into routing and payment failures."
-- from: telecom_spectrum
-  to: digital_payments_interface
-  weight: 0.20
-  reasoning: "UPI transactions require very little bandwidth, making spectrum availability a weak and indirect factor in payment success."
-- from: data_centers
-  to: digital_communication_platforms
+  polarity: -1
+  delay: IMMEDIATE
+  reasoning: "Bond yields have an immediate, mathematical inverse relationship with the mark-to-market NAV of existing debt funds."
+- from: india_10yr_bond_yield
+  to: fixed_deposits
   weight: 0.70
-  reasoning: "Local edge caching in data centers strongly dictates platform latency, though buffered by global server fallbacks."
-- from: optical_fibre_network
-  to: digital_communication_platforms
-  weight: 0.80
-  reasoning: "Fibre bandwidth disruptions strongly degrade the ability to support video calls and live streaming."
-- from: telecom_towers_network
-  to: digital_communication_platforms
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "Banks adjust retail FD rates based on sovereign yields, but transmission is delayed by internal liquidity requirements."
+- from: global_semiconductor_supply_chain
+  to: smartphone_device
   weight: 0.85
-  reasoning: "Tower outages strongly and directly cut off last-mile access to smartphone-based messaging and social media."
-- from: submarine_internet_cables
-  to: digital_communication_platforms
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "Semiconductor availability dictates smartphone production volumes, with lead times of several months."
+- from: global_semiconductor_supply_chain
+  to: laptop_computer
+  weight: 0.85
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "Laptop manufacturing is entirely dependent on global processor and memory chip supply chains."
+- from: global_semiconductor_supply_chain
+  to: four_wheeler_price
+  weight: 0.60
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: "Better chip supply reduces manufacturing bottlenecks and wait times, easing upward pressure on vehicle prices."
+- from: active_pharmaceutical_ingredients_supply
+  to: generic_medicines
+  weight: 0.90
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Generic medicine production is directly constrained by the volume of imported active pharmaceutical ingredients."
+- from: active_pharmaceutical_ingredients_supply
+  to: antibiotics
+  weight: 0.90
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Antibiotic manufacturing relies heavily on continuous API imports, making supply highly sensitive."
+- from: active_pharmaceutical_ingredients_supply
+  to: chronic_disease_medication
+  weight: 0.90
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Chronic medications require steady API supplies to maintain production volumes for daily consumers."
+- from: agricultural_exports
+  to: retail_onion
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Exporting bulk agricultural commodities tightens domestic supply, quickly driving up local retail prices."
+- from: agricultural_exports
+  to: retail_rice
+  weight: 0.60
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "While exports reduce domestic supply, massive government buffer stocks dilute the immediate price impact on retail rice."
+- from: agricultural_exports
+  to: retail_sugar
   weight: 0.65
-  reasoning: "Cable cuts strongly slow down access to overseas servers, though local caching of popular content buffers the impact."
-- from: telecom_spectrum
-  to: digital_communication_platforms
-  weight: 0.60
-  reasoning: "Spectrum congestion noticeably degrades video streaming quality, though platforms auto-adjust resolution to dilute the impact."
-- from: telecom_towers_network
-  to: delivery_and_logistics
-  weight: 0.85
-  reasoning: "Mobile network outages strongly and directly halt GPS tracking, order dispatch, and delivery partner operations."
-- from: telecom_towers_network
-  to: ride_hailing
-  weight: 0.85
-  reasoning: "Network dead zones strongly prevent driver-rider matching and live navigation, making ride-hailing unavailable."
-- from: telecom_towers_network
-  to: freelance_and_services
-  weight: 0.80
-  reasoning: "Tower coverage gaps strongly reduce the ability of gig workers to receive job notifications and communicate with customers."
-- from: optical_fibre_network
-  to: freelance_and_services
-  weight: 0.80
-  reasoning: "Broadband disruptions strongly impact the productivity and earnings of remote freelancers dependent on video conferencing."
-- from: data_centers
-  to: delivery_and_logistics
-  weight: 0.90
-  reasoning: "Delivery platform backend downtime in data centers translates near 1:1 to complete platform failure during peak hours."
-- from: data_centers
-  to: ride_hailing
-  weight: 0.90
-  reasoning: "Data center outages hosting surge algorithms and allocation engines cause near 1:1 failure of ride-hailing apps."
-- from: data_centers
-  to: freelance_and_services
-  weight: 0.90
-  reasoning: "Marketplace logic hosted in data centers means server outages result in near 1:1 blocking of service bookings."
-- from: digital_public_infrastructure
-  to: delivery_and_logistics
-  weight: 0.50
-  reasoning: "UPI failures noticeably disrupt seamless deliveries, but the impact is diluted by the availability of cash-on-delivery fallbacks."
-- from: digital_public_infrastructure
-  to: ride_hailing
-  weight: 0.50
-  reasoning: "UPI outages noticeably disrupt ride fare collection, but cash payments act as a strong buffer against total failure."
-- from: digital_public_infrastructure
-  to: freelance_and_services
-  weight: 0.50
-  reasoning: "UPI failures noticeably delay gig worker settlements, but do not immediately stop the physical provision of services."
-- from: telecom_towers_network
-  to: edtech_platforms
-  weight: 0.85
-  reasoning: "Mobile network outages strongly and directly cut off edtech access for students in semi-urban and rural areas."
-- from: optical_fibre_network
-  to: edtech_platforms
-  weight: 0.80
-  reasoning: "Broadband disruptions strongly cause buffering and drop-offs, directly breaking online learning continuity."
-- from: data_centers
-  to: edtech_platforms
-  weight: 0.60
-  reasoning: "Local data center capacity noticeably reduces latency for video streaming, though cloud fallbacks dilute the impact of local outages."
-- from: digital_public_infrastructure
-  to: digital_and_cyber_security
-  weight: 0.75
-  reasoning: "Widespread DPI adoption strongly expands the attack surface, directly leading to proportional increases in financial cyber fraud."
-- from: data_centers
-  to: digital_and_cyber_security
-  weight: 0.70
-  reasoning: "Concentrated citizen data strongly creates high-value targets, directly increasing the severity of potential data breaches."
-- from: telecom_towers_network
-  to: digital_and_cyber_security
-  weight: 0.60
-  reasoning: "Bringing more users online noticeably increases exposure to phishing and SIM swap fraud, though user awareness buffers the success rate."
-- from: transport_logistics_infrastructure
-  to: railway_travel
-  weight: 0.85
-  reasoning: "Track and signaling infrastructure capacity strongly and directly dictates train frequency and route availability."
-- from: transport_logistics_infrastructure
-  to: air_travel
-  weight: 0.85
-  reasoning: "Airport runway and terminal capacity strongly and directly limits flight frequency and domestic route connectivity."
-- from: transport_logistics_infrastructure
-  to: highway_bus_travel
-  weight: 0.80
-  reasoning: "National highway quality and expressway availability strongly determine intercity bus journey times and service frequency."
-- from: transport_logistics_infrastructure
-  to: highway_tolls
-  weight: 0.85
-  reasoning: "NHAI infrastructure costs and concession agreements pass through strongly and directly to commuter toll rates."
-- from: transport_logistics_infrastructure
-  to: urban_road_conditions
-  weight: 0.75
-  reasoning: "Metro and flyover construction strongly disrupts urban road availability and surface conditions for commuters."
-- from: transport_logistics_infrastructure
-  to: transit_accidents
-  weight: 0.70
-  reasoning: "Poor road design and unmanned crossings strongly contribute to transit accidents, though driver behavior is also a factor."
-- from: transport_logistics_infrastructure
-  to: infrastructure_hazards
-  weight: 0.80
-  reasoning: "Aging bridges and poorly maintained flyovers strongly and directly create structural collapse hazards."
-- from: transport_logistics_infrastructure
-  to: biscuits_and_snacks
-  weight: 0.35
-  reasoning: "Logistics costs affect distribution, but high FMCG margins and localized manufacturing heavily buffer retail price impacts."
-- from: transport_logistics_infrastructure
-  to: instant_noodles
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "Sugar exports increase domestic prices, though government quotas and release mechanisms buffer the shock."
+- from: global_shipping_freight_rates
+  to: building_materials_cost
   weight: 0.40
-  reasoning: "Highway disruptions noticeably affect shelf availability, but regional warehousing dilutes the immediate impact."
-- from: transport_logistics_infrastructure
-  to: tea_leaves
-  weight: 0.50
-  reasoning: "Transporting tea from distant estates to retail noticeably impacts prices, diluted slightly by auction dynamics."
-- from: transport_logistics_infrastructure
-  to: coffee_powder
-  weight: 0.50
-  reasoning: "Road logistics from southern estates noticeably affect processing-to-retail costs and freshness."
-- from: advanced_tech_infrastructure
-  to: personal_computing_devices
-  weight: 0.30
-  reasoning: "Domestic semiconductor fabs are currently at a very low base, making their impact on retail device prices weak and indirect."
-- from: demographics_and_population
-  to: rental_housing
-  weight: 0.75
-  reasoning: "Urbanization and nuclear family growth strongly drive up rental housing demand and prices in cities."
-- from: demographics_and_population
-  to: home_construction_and_modification
-  weight: 0.60
-  reasoning: "Aging populations and growing families noticeably drive home modification demand, diluted by affordability constraints."
-- from: migration_and_mobility
-  to: rental_housing
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "Freight rates affect imported raw materials like coking coal, but this is only a partial component of final building material costs."
+- from: global_shipping_freight_rates
+  to: smartphone_device
+  weight: 0.25
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "Shipping costs form a very small percentage of the final retail price of high-value, low-weight electronics."
+- from: china_manufacturing_output
+  to: smartphone_device
   weight: 0.85
-  reasoning: "IT hub migration waves and inter-city job mobility strongly and directly spike rental prices in destination cities."
-- from: migration_and_mobility
-  to: home_construction_and_modification
-  weight: 0.60
-  reasoning: "Migration-driven urbanization noticeably stimulates peri-urban construction, buffered by land availability and zoning."
-- from: migration_and_mobility
-  to: agriculture_and_allied
-  weight: 0.80
-  reasoning: "Seasonal migration strongly dictates the availability of harvest labor; reverse migration causes acute farm labor shortages."
-- from: migration_and_mobility
-  to: construction_and_manual
-  weight: 0.85
-  reasoning: "Interstate migrant workers are the backbone of urban construction; migration drops strongly halt construction activity."
-- from: migration_and_mobility
-  to: domestic_and_care
-  weight: 0.80
-  reasoning: "Rural-to-urban female migration strongly supplies domestic help; disruptions cause acute shortages and wage inflation."
-- from: migration_and_mobility
-  to: rural_employment_schemes
-  weight: 0.85
-  reasoning: "Reverse migration strongly and directly spikes MGNREGA enrollment as returnees immediately seek guaranteed employment."
-- from: migration_and_mobility
-  to: railway_travel
-  weight: 0.90
-  reasoning: "Seasonal migrant waves translate near 1:1 into massive demand surges and overcrowding for unreserved rail travel."
-- from: migration_and_mobility
-  to: air_travel
-  weight: 0.45
-  reasoning: "Professional migration noticeably creates air route demand, but is diluted because the vast majority of migrants use rail/road."
-- from: migration_and_mobility
-  to: highway_bus_travel
-  weight: 0.85
-  reasoning: "Interstate migrant workers heavily rely on buses; seasonal waves strongly spike bus demand and ticket prices."
-- from: cultural_and_religious_forces
-  to: festivals_and_celebrations
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "Indian smartphone assembly is heavily dependent on the steady output of components from Chinese factories."
+- from: power_substations
+  to: residential_power_supply
   weight: 0.95
-  reasoning: "Religious calendars and cultural traditions have a near 1:1 direct pass-through in determining the timing and scale of festivals."
-- from: cultural_and_religious_forces
-  to: weddings_and_milestones
-  weight: 0.90
-  reasoning: "Auspicious calendar dates strongly and directly dictate the timing of wedding seasons and associated expenditures."
-- from: cultural_and_religious_forces
-  to: religious_pilgrimage
-  weight: 0.85
-  reasoning: "Cultural reverence and religious traditions strongly drive seasonal pilgrim volumes to major shrines."
-- from: cultural_and_religious_forces
-  to: railway_travel
-  weight: 0.85
-  reasoning: "Festival seasons (Diwali, Chhath) strongly create massive, predictable surges in railway travel demand."
-- from: cultural_and_religious_forces
-  to: air_travel
-  weight: 0.70
-  reasoning: "Festival and wedding travel strongly drives peak season airfares, though dynamic pricing and capacity limits buffer the volume."
-- from: cultural_and_religious_forces
-  to: highway_bus_travel
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Local substations are the final node in electricity distribution, directly and instantly determining household power availability."
+- from: power_substations
+  to: ev_charging_tariff
+  weight: 0.15
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Substation capacity enables charging infrastructure but has minimal direct impact on heavily regulated commercial charging tariffs."
+- from: coal_power_plants
+  to: particulate_matter_levels
   weight: 0.80
-  reasoning: "Regional festivals and pilgrimages strongly drive intercity bus demand and the deployment of extra state transport services."
-- from: macro_behavioral_shifts
-  to: cinema_and_theatre
-  weight: 0.80
-  reasoning: "Consumer behavioral shifts toward OTT strongly and directly reshape theatrical box office revenues and multiplex economics."
-- from: macro_behavioral_shifts
-  to: digital_entertainment
-  weight: 0.85
-  reasoning: "Behavioral shifts toward binge-watching and short-form video strongly drive OTT subscription growth and digital spending."
-- from: macro_behavioral_shifts
-  to: live_events
-  weight: 0.75
-  reasoning: "Consumer appetite for experiential spending strongly dictates the revenue and frequency of concerts and live comedy shows."
-- from: macro_behavioral_shifts
-  to: equity_investments
-  weight: 0.70
-  reasoning: "Retail FOMO and social media trends strongly drive equity market participation, though actual market performance buffers long-term retention."
-- from: macro_behavioral_shifts
-  to: mutual_funds
-  weight: 0.80
-  reasoning: "The behavioral shift toward financialization and SIP culture strongly and directly drives mutual fund AUM growth."
-- from: indian_statutory_frameworks_and_councils
-  to: direct_taxes
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Thermal power generation directly and continuously emits particulate matter into the immediate surrounding atmosphere."
+- from: oil_gas_pipelines
+  to: piped_natural_gas
   weight: 0.95
-  reasoning: "Finance Act amendments to IT slabs have a near 1:1 immediate pass-through to citizen tax liabilities."
-- from: international_trade_and_supply_chains
-  to: retail_and_trade
-  weight: 0.60
-  reasoning: "Cheap imports noticeably undercut local retailers, though local credit relationships and convenience dilute the total displacement."
-- from: international_trade_and_supply_chains
-  to: msme_manufacturing
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "City gas distribution is entirely dependent on the physical supply from national gas pipelines."
+- from: oil_gas_pipelines
+  to: cng_fuel
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Retail CNG stations rely directly on continuous supply from the underlying gas pipeline network."
+- from: telecom_towers_network
+  to: mobile_network_quality
+  weight: 0.90
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Tower density and operational uptime are the primary physical determinants of mobile signal strength and call quality."
+- from: telecom_towers_network
+  to: public_wifi
+  weight: 0.70
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Telecom backhaul infrastructure provides the necessary internet bandwidth for municipal public WiFi hotspots."
+- from: telecom_spectrum
+  to: mobile_data_tariff
   weight: 0.65
-  reasoning: "Import competition strongly squeezes MSME margins, buffered slightly by local supply chain agility and government tariffs."
-- from: monetary_policy_committee
-  to: home_loan_emi
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "High spectrum auction costs are eventually passed to consumers, though competitive pressures buffer immediate tariff hikes."
+- from: optical_fibre_network
+  to: broadband_network_quality
+  weight: 0.90
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Optical fibre provides the physical bandwidth capacity that directly dictates home broadband speeds and reliability."
+- from: optical_fibre_network
+  to: fiber_broadband_tariff
   weight: 0.75
-  reasoning: "MPC repo rate hikes are strongly passed through by banks to floating rate home loans, directly increasing EMI burdens."
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: "Expanding fibre networks increases bandwidth supply and competition, driving down the per-GB cost of broadband."
+- from: data_centers
+  to: digilocker_documents
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Domestic data centers provide the essential physical infrastructure required to host and access government cloud services."
+- from: data_centers
+  to: ott_subscription
+  weight: 0.35
+  polarity: -1
+  delay: LONG_TERM
+  reasoning: "Localized data centers reduce CDN costs, but content acquisition remains the primary driver of OTT subscription prices."
+- from: upi_platform
+  to: upi_transaction_success
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "The NPCI UPI switch's uptime directly and instantly dictates the success rate of all consumer UPI transactions."
+- from: upi_platform
+  to: e_mandate_autopay
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "The UPI AutoPay infrastructure is the sole processing engine for executing recurring digital mandates."
+- from: upi_platform
+  to: fastag_wallet
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "UPI infrastructure directly facilitates the instant payment processing required for FASTag wallet recharges."
+- from: aadhaar_database
+  to: aadhaar_authentication
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "The central CIDR database is strictly required to process and verify any Aadhaar authentication request."
+- from: aadhaar_database
+  to: pan_aadhaar_linkage
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Linking PAN with Aadhaar relies entirely on the UIDAI database for demographic verification and validation."
+- from: aadhaar_database
+  to: data_breaches_and_leaks
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Vulnerabilities in the centralized Aadhaar database directly expose massive amounts of personal data to potential breaches."
+- from: ondc_platform
+  to: food_delivery_services
+  weight: 0.45
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: "ONDC introduces zero-commission competition, gradually forcing proprietary aggregators to adjust their pricing and margins."
+- from: ondc_platform
+  to: cab_aggregator_fare
+  weight: 0.50
+  polarity: -1
+  delay: MEDIUM_TERM
+  reasoning: "ONDC-backed mobility apps increase local competition, putting downward pressure on traditional cab aggregator fares."
+- from: road_freight_movement
+  to: retail_tomato
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Trucking rates form a significant portion of the retail price for highly perishable, bulk-transported vegetables like tomatoes."
+- from: road_freight_movement
+  to: retail_onion
+  weight: 0.70
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Road logistics costs are directly passed through to the final retail price of bulk agricultural commodities."
+- from: road_freight_movement
+  to: retail_potato
+  weight: 0.70
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Freight transportation costs are a direct and significant component of the retail price of potatoes."
+- from: road_freight_movement
+  to: liquid_milk
+  weight: 0.80
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "The cost of specialized refrigerated road freight directly impacts the retail price of highly perishable liquid milk."
+- from: road_freight_movement
+  to: poultry_chicken
+  weight: 0.75
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Logistics costs for transporting live birds and processed meat are directly factored into retail poultry prices."
+- from: road_freight_movement
+  to: building_materials_cost
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Road freight dictates the landed price of heavy construction materials, as transport forms a massive part of their cost."
+- from: railway_freight_movement
+  to: building_materials_cost
+  weight: 0.80
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "Railway freight tariffs directly affect the bulk transportation costs of heavy materials like cement and steel rebars."
+- from: global_shipping_routes
+  to: palm_oil
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "India heavily relies on palm oil imports, making domestic prices highly sensitive to global shipping freight rates and disruptions."
+- from: global_shipping_routes
+  to: sunflower_oil
+  weight: 0.85
+  polarity: 1
+  delay: SHORT_TERM
+  reasoning: "The landed price of imported sunflower oil is directly determined by sea freight costs and shipping route availability."
+- from: major_seaports
+  to: palm_oil
+  weight: 0.65
+  polarity: -1
+  delay: SHORT_TERM
+  reasoning: "Efficient handling at major seaports reduces demurrage and storage costs, slightly lowering the final price of imported edible oils."
+- from: municipal_water_grid
+  to: municipal_water_supply
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "The municipal pipeline network is the direct physical mechanism for delivering piped water to residential households."
+- from: water_treatment_plants
+  to: drinking_water_quality
+  weight: 0.95
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "The operational efficiency of treatment plants directly and instantly determines the potability and safety of municipal tap water."
+- from: sewage_drainage_network
+  to: street_waterlogging
+  weight: 0.90
+  polarity: -1
+  delay: IMMEDIATE
+  reasoning: "The capacity and clearance of stormwater drains directly mitigate the severity and duration of street waterlogging during heavy rains."
+- from: sewage_drainage_network
+  to: polluted_surface_water
+  weight: 0.85
+  polarity: -1
+  delay: IMMEDIATE
+  reasoning: "Adequate sewage treatment directly prevents the discharge of untreated effluents, protecting local lakes and rivers from pollution."
+- from: satellite_network
+  to: broadband_network_quality
+  weight: 0.30
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "Satellite networks provide crucial backhaul for remote areas, but have a diluted impact on overall national broadband quality."
+- from: highway_network
+  to: highway_toll_fare
+  weight: 0.90
+  polarity: 1
+  delay: MEDIUM_TERM
+  reasoning: "The expansion and monetization of national highways directly result in the establishment of new toll plazas and higher commuter fares."
+- from: highway_network
+  to: road_traffic_accidents
+  weight: 0.60
+  polarity: -1
+  delay: LONG_TERM
+  reasoning: "Access-controlled expressways reduce fatal head-on collisions, though high-speed accidents partially offset the safety gains."
+- from: highway_network
+  to: traffic_noise
+  weight: 0.85
+  polarity: 1
+  delay: IMMEDIATE
+  reasoning: "High-speed vehicular movement on expanded highway networks directly generates continuous ambient traffic noise for nearby residents."
 ```

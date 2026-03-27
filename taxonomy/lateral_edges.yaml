@@ -1,10 +1,8 @@
-## Lateral edges: within-world causal connections
-## Includes: I→I (intra-L1 + cross-L1 portals) and T→T laterals
 edges:
 - from: liquid_milk
   to: paneer_and_cheese
   type: SUPPLIES
-  weight: 0.95
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: Liquid milk is the primary raw material that is curdled and pressed
@@ -12,7 +10,7 @@ edges:
 - from: liquid_milk
   to: butter_and_ghee
   type: SUPPLIES
-  weight: 0.95
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: Butter and ghee are direct fat-extracted byproducts produced from liquid
@@ -20,7 +18,7 @@ edges:
 - from: wheat_flour
   to: biscuits_and_snacks
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Wheat flour serves as the foundational base ingredient for baking commercial
@@ -28,7 +26,7 @@ edges:
 - from: wheat_flour
   to: instant_noodles
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Refined wheat flour (maida) is the primary structural ingredient extruded
@@ -36,7 +34,7 @@ edges:
 - from: retail_sugar
   to: biscuits_and_snacks
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Sugar is a critical sweetening input whose wholesale price directly
@@ -44,7 +42,7 @@ edges:
 - from: palm_oil
   to: biscuits_and_snacks
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Cheap palm oil is the dominant industrial frying and binding fat used
@@ -52,7 +50,7 @@ edges:
 - from: palm_oil
   to: instant_noodles
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Instant noodles are pre-fried in palm oil before packaging, making
@@ -60,17 +58,17 @@ edges:
 - from: palm_oil
   to: street_food
   type: SUPPLIES
-  weight: 0.75
+  weight: 0.8
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: Street food vendors heavily rely on affordable palm oil for deep-frying
     snacks to maintain low consumer prices.
 - from: mustard_oil
   to: street_food
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.7
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: Mustard oil is a key flavoring and cooking medium for regional street
     foods, especially in North and East India.
 - from: retail_potato
@@ -78,7 +76,7 @@ edges:
   type: SUPPLIES
   weight: 0.85
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: Potatoes are the high-volume base ingredient for ubiquitous Indian
     street foods like samosas, aloo tikki, and vada pav.
 - from: retail_onion
@@ -86,21 +84,21 @@ edges:
   type: SUPPLIES
   weight: 0.8
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: Onions are essential for gravies, garnishes, and pakoras, making their
     price spikes a direct margin threat to street vendors.
 - from: poultry_chicken
   to: quick_service_restaurants
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.6
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Broiler chicken is the core protein input for fast-food chains specializing
     in burgers, wings, and fried chicken.
 - from: retail_tomato
   to: quick_service_restaurants
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.5
   polarity: 1
   delay: SHORT_TERM
   description: Fresh tomatoes are required daily for burger slices, pizza bases, and
@@ -108,23 +106,23 @@ edges:
 - from: paneer_and_cheese
   to: quick_service_restaurants
   type: SUPPLIES
-  weight: 0.75
+  weight: 0.6
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Processed cheese and paneer are high-cost dairy inputs essential for
     pizzas, burgers, and vegetarian fast-food options.
 - from: mutton_and_lamb
   to: fine_dining_restaurants
   type: SUPPLIES
-  weight: 0.65
+  weight: 0.55
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Premium red meats are high-value ingredients that dictate the pricing
     of signature dishes in fine dining establishments.
 - from: marine_fish
   to: fine_dining_restaurants
   type: SUPPLIES
-  weight: 0.55
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: High-grade marine fish and seafood are critical, expensive inputs for
@@ -132,7 +130,7 @@ edges:
 - from: garlic_and_ginger
   to: fine_dining_restaurants
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.3
   polarity: 1
   delay: SHORT_TERM
   description: Ginger and garlic pastes form the foundational aromatic base for almost
@@ -140,7 +138,7 @@ edges:
 - from: quick_service_restaurants
   to: food_delivery_services
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Fast-food chains provide the highest volume of standardized, easily
@@ -148,7 +146,7 @@ edges:
 - from: fine_dining_restaurants
   to: food_delivery_services
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.5
   polarity: 1
   delay: IMMEDIATE
   description: Premium restaurants supply high-ticket-value orders to delivery platforms,
@@ -156,7 +154,7 @@ edges:
 - from: street_food
   to: food_delivery_services
   type: SUPPLIES
-  weight: 0.5
+  weight: 0.45
   polarity: 1
   delay: IMMEDIATE
   description: Organized street food vendors increasingly supply budget-friendly,
@@ -164,23 +162,23 @@ edges:
 - from: millets
   to: retail_rice
   type: COMPETES_WITH
-  weight: 0.4
+  weight: 0.3
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: As health awareness grows, consumers substitute traditional white rice
     with nutrient-dense millets in their daily diets.
 - from: millets
   to: wheat_flour
   type: COMPETES_WITH
-  weight: 0.4
+  weight: 0.3
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Millet flours (like jowar and bajra) act as gluten-free substitutes,
     taking market share from refined wheat flour.
 - from: sunflower_oil
   to: mustard_oil
   type: COMPETES_WITH
-  weight: 0.5
+  weight: 0.4
   polarity: -1
   delay: SHORT_TERM
   description: Urban households frequently switch between sunflower and mustard oil
@@ -188,7 +186,7 @@ edges:
 - from: palm_oil
   to: sunflower_oil
   type: COMPETES_WITH
-  weight: 0.6
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: Commercial kitchens substitute expensive sunflower oil with cheaper
@@ -196,15 +194,15 @@ edges:
 - from: coffee_powder
   to: tea_leaves
   type: COMPETES_WITH
-  weight: 0.3
+  weight: 0.25
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Rising cafe culture and instant coffee adoption slowly cannibalize
     traditional domestic tea consumption among younger demographics.
 - from: poultry_eggs
   to: biscuits_and_snacks
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.4
   polarity: 1
   delay: SHORT_TERM
   description: Industrial liquid eggs and egg powders are crucial binding and leavening
@@ -212,15 +210,15 @@ edges:
 - from: chana_dal
   to: street_food
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: Chana dal is milled into besan (gram flour), the indispensable batter
     ingredient for deep-fried street snacks like pakoras.
 - from: tur_dal
   to: moong_dal
   type: COMPETES_WITH
-  weight: 0.6
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Indian households actively substitute expensive tur dal with cheaper
@@ -228,7 +226,7 @@ edges:
 - from: retail_salt
   to: biscuits_and_snacks
   type: SUPPLIES
-  weight: 0.5
+  weight: 0.2
   polarity: 1
   delay: SHORT_TERM
   description: Industrial salt is a non-negotiable preservative and flavor enhancer
@@ -236,7 +234,7 @@ edges:
 - from: turmeric_powder
   to: street_food
   type: SUPPLIES
-  weight: 0.5
+  weight: 0.3
   polarity: 1
   delay: SHORT_TERM
   description: Turmeric is a mandatory base spice used by street vendors for coloring
@@ -244,7 +242,7 @@ edges:
 - from: lpg_cylinder
   to: street_food
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Commercial LPG cylinder prices directly dictate the daily fuel operating
@@ -252,23 +250,23 @@ edges:
 - from: lpg_cylinder
   to: fine_dining_restaurants
   type: AFFECTS
-  weight: 0.7
+  weight: 0.5
   polarity: 1
-  delay: IMMEDIATE
+  delay: SHORT_TERM
   description: Fine dining kitchens rely heavily on commercial LPG, making fuel price
     hikes a direct driver of menu price inflation.
 - from: retail_diesel
   to: marine_fish
   type: AFFECTS
-  weight: 0.6
+  weight: 0.8
   polarity: 1
-  delay: IMMEDIATE
+  delay: SHORT_TERM
   description: Diesel is the primary fuel for mechanized fishing trawlers, directly
     impacting the operational cost of marine fish harvesting.
 - from: outdoor_heat
   to: green_vegetables
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Severe heatwaves cause rapid wilting and field spoilage of leafy green
@@ -276,9 +274,9 @@ edges:
 - from: outdoor_heat
   to: liquid_milk
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.65
   polarity: -1
-  delay: IMMEDIATE
+  delay: SHORT_TERM
   description: Extreme outdoor heat induces thermal stress in dairy cattle, directly
     depressing daily milk yields and tightening supply.
 - from: outdoor_heat
@@ -292,9 +290,9 @@ edges:
 - from: polluted_surface_water
   to: freshwater_fish
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: Industrial effluents and sewage in lakes and rivers cause mass fish
     kills and contaminate surviving freshwater fish stocks.
 - from: street_waterlogging
@@ -308,7 +306,7 @@ edges:
 - from: upi_transaction_success
   to: food_delivery_services
   type: DEPENDS_ON
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Food delivery apps rely almost entirely on real-time UPI payment gateways
@@ -316,7 +314,7 @@ edges:
 - from: retail_sugar
   to: diabetes
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: Chronic high consumption of refined retail sugar is a direct dietary
@@ -332,7 +330,7 @@ edges:
 - from: instant_noodles
   to: obesity
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: 1
   delay: LONG_TERM
   description: High-carbohydrate, palm-oil-fried instant noodles provide empty calories
@@ -348,7 +346,7 @@ edges:
 - from: street_food
   to: cholera_and_diarrhea
   type: AFFECTS
-  weight: 0.6
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Unhygienic water and poor sanitation in street food preparation directly
@@ -356,31 +354,31 @@ edges:
 - from: green_vegetables
   to: childhood_malnutrition
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Adequate intake of micronutrient-rich green vegetables directly reduces
     the incidence of stunting and malnutrition in children.
 - from: liquid_milk
   to: childhood_malnutrition
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Regular consumption of liquid milk provides essential complete proteins
     and calcium, directly combating childhood wasting.
 - from: poultry_eggs
   to: childhood_malnutrition
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Eggs are a highly bioavailable source of protein and fats that directly
     improve nutritional outcomes in growing children.
 - from: street_food
   to: street_vendor_income
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: The daily sale of street food is the primary mechanism generating cash
@@ -388,7 +386,7 @@ edges:
 - from: food_delivery_services
   to: food_delivery_payouts
   type: FUNDS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: The volume of orders processed by food delivery platforms directly
@@ -396,7 +394,7 @@ edges:
 - from: retail_rice
   to: kirana_store_income
   type: PRODUCES
-  weight: 0.8
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Bulk sales of staple grains like rice form the consistent baseline
@@ -412,7 +410,7 @@ edges:
 - from: liquid_milk
   to: mid_day_meal
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Government procurement of liquid milk directly supplies the nutritional
@@ -420,7 +418,7 @@ edges:
 - from: retail_rice
   to: mid_day_meal
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: Fortified retail-grade rice is the bulk caloric foundation supplied
@@ -428,7 +426,7 @@ edges:
 - from: poultry_eggs
   to: mid_day_meal
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: State governments procure millions of poultry eggs weekly to fulfill
@@ -436,15 +434,15 @@ edges:
 - from: fine_dining_restaurants
   to: wedding_venue
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.4
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Premium restaurant groups often supply the high-end catering services
     required to operate luxury wedding venues.
 - from: food_delivery_services
   to: street_garbage
   type: PRODUCES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: The massive volume of single-use plastic containers from food delivery
@@ -452,7 +450,7 @@ edges:
 - from: instant_noodles
   to: street_garbage
   type: PRODUCES
-  weight: 0.6
+  weight: 0.65
   polarity: 1
   delay: IMMEDIATE
   description: Non-biodegradable, multi-layered plastic wrappers from instant noodles
@@ -460,7 +458,7 @@ edges:
 - from: biscuits_and_snacks
   to: street_garbage
   type: PRODUCES
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Discarded metallic and plastic wrappers from packaged snacks directly
@@ -468,7 +466,7 @@ edges:
 - from: street_food
   to: street_garbage
   type: PRODUCES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Informal street food stalls generate significant localized waste through
@@ -476,7 +474,7 @@ edges:
 - from: food_delivery_services
   to: traffic_congestion
   type: AFFECTS
-  weight: 0.5
+  weight: 0.45
   polarity: 1
   delay: IMMEDIATE
   description: The high density of two-wheeler delivery riders rushing to meet algorithmic
@@ -484,7 +482,7 @@ edges:
 - from: fine_dining_restaurants
   to: parking_fees
   type: AFFECTS
-  weight: 0.4
+  weight: 0.3
   polarity: 1
   delay: IMMEDIATE
   description: The concentration of fine dining restaurants in commercial hubs drives
@@ -492,7 +490,7 @@ edges:
 - from: residential_power_supply
   to: residential_borewells
   type: DEPENDS_ON
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Electric pumps are required to extract groundwater from residential
@@ -500,7 +498,7 @@ edges:
 - from: residential_power_supply
   to: municipal_water_supply
   type: DEPENDS_ON
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Municipal water pumping stations require continuous electricity to
@@ -508,7 +506,7 @@ edges:
 - from: municipal_water_supply
   to: private_water_tanker
   type: COMPETES_WITH
-  weight: 0.8
+  weight: 0.9
   polarity: -1
   delay: IMMEDIATE
   description: Reliable municipal water reduces the dependency on expensive private
@@ -516,7 +514,7 @@ edges:
 - from: residential_borewells
   to: private_water_tanker
   type: COMPETES_WITH
-  weight: 0.7
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Functional borewells decrease the need for households to purchase water
@@ -524,7 +522,7 @@ edges:
 - from: private_water_tanker
   to: rwa_maintenance_fees
   type: AFFECTS
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: Housing societies pass the high cost of purchasing private tanker water
@@ -532,7 +530,7 @@ edges:
 - from: municipal_water_supply
   to: drinking_water_quality
   type: PRODUCES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: The treatment level of municipal water directly determines the baseline
@@ -540,7 +538,7 @@ edges:
 - from: private_water_tanker
   to: drinking_water_quality
   type: AFFECTS
-  weight: 0.7
+  weight: 0.8
   polarity: -1
   delay: IMMEDIATE
   description: Unregulated private tankers often source water from contaminated lakes
@@ -548,7 +546,7 @@ edges:
 - from: sewage_infrastructure
   to: drinking_water_quality
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Leaking underground sewage pipes frequently contaminate parallel municipal
@@ -556,23 +554,23 @@ edges:
 - from: piped_natural_gas
   to: lpg_cylinder
   type: COMPETES_WITH
-  weight: 0.9
+  weight: 0.95
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Expansion of city gas distribution networks directly replaces household
     reliance on LPG cylinders.
 - from: building_materials_cost
   to: residential_rent
   type: AFFECTS
-  weight: 0.6
+  weight: 0.4
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Higher construction costs force landlords to demand higher rents to
     achieve their target rental yields.
 - from: residential_rent
   to: pg_and_hostel_fees
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Increases in baseline residential rents force operators of paying guest
@@ -580,47 +578,47 @@ edges:
 - from: waste_collection_services
   to: rwa_maintenance_fees
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Privatized door-to-door garbage collection contracts are paid directly
     from housing society maintenance pools.
 - from: domestic_help_cost
   to: rwa_maintenance_fees
   type: AFFECTS
-  weight: 0.5
+  weight: 0.6
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Rising wages for domestic labor increase the cost of hiring cleaning
     staff for housing society common areas.
 - from: repair_service_charges
   to: rwa_maintenance_fees
   type: AFFECTS
-  weight: 0.6
+  weight: 0.4
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Higher costs for plumbers and electricians increase the routine upkeep
     expenses of housing societies.
 - from: retail_diesel
   to: private_water_tanker
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
-  delay: IMMEDIATE
+  delay: SHORT_TERM
   description: Diesel prices directly dictate the freight costs charged by private
     water tanker operators.
 - from: retail_diesel
   to: waste_collection_services
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Fuel costs for municipal and private garbage trucks directly impact
     waste collection operational expenses.
 - from: retail_petrol
   to: repair_service_charges
   type: AFFECTS
-  weight: 0.6
+  weight: 0.4
   polarity: 1
   delay: SHORT_TERM
   description: Higher petrol prices increase the commuting costs for independent plumbers
@@ -628,7 +626,7 @@ edges:
 - from: construction_worker_wages
   to: construction_labor_wages
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Macro-level construction wage trends directly set the daily rates for
@@ -636,7 +634,7 @@ edges:
 - from: domestic_help_wages
   to: domestic_help_cost
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Informal sector wage standards directly determine what households must
@@ -644,25 +642,25 @@ edges:
 - from: street_waterlogging
   to: sewage_infrastructure
   type: DISRUPTS
-  weight: 0.8
-  polarity: 1
+  weight: 0.85
+  polarity: -1
   delay: IMMEDIATE
   description: Flooded streets overwhelm underground drainage networks, causing sewage
     to back up into residential lines.
 - from: polluted_surface_water
   to: municipal_water_supply
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.8
   polarity: -1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: High pollution levels in source rivers and lakes force municipalities
     to halt water intake and treatment.
 - from: building_materials_cost
   to: investment_property_value
   type: AFFECTS
-  weight: 0.8
+  weight: 0.5
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: The replacement cost of a building, driven by material prices, directly
     inflates real estate investment valuations.
 - from: drinking_water_quality
@@ -676,7 +674,7 @@ edges:
 - from: drinking_water_quality
   to: typhoid
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Safe residential drinking water eliminates the primary transmission
@@ -684,15 +682,15 @@ edges:
 - from: pg_and_hostel_fees
   to: college_university_fees
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Rising accommodation costs are often bundled into or directly inflate
     the total cost of higher education for outstation students.
 - from: lpg_cylinder
   to: fire_hazards
   type: PRODUCES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Leaking or improperly maintained LPG cylinders are a primary cause
@@ -716,15 +714,15 @@ edges:
 - from: sewage_infrastructure
   to: polluted_surface_water
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
-  delay: IMMEDIATE
+  delay: LONG_TERM
   description: Functional sewage treatment prevents raw residential effluent from
     being discharged into local lakes and rivers.
 - from: residential_power_supply
   to: broadband_network_quality
   type: DEPENDS_ON
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Local ISP distribution switches and home Wi-Fi routers require continuous
@@ -732,15 +730,15 @@ edges:
 - from: rwa_maintenance_fees
   to: community_gathering
   type: FUNDS
-  weight: 0.6
+  weight: 0.4
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: A portion of society maintenance collections is directly allocated
     to fund neighborhood cultural and social events.
 - from: domestic_help_cost
   to: working_hours
   type: AFFECTS
-  weight: 0.5
+  weight: 0.45
   polarity: -1
   delay: MEDIUM_TERM
   description: Unaffordable domestic help forces working professionals to spend more
@@ -748,7 +746,7 @@ edges:
 - from: electricity_tariff
   to: ev_charging_tariff
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Residential electricity rates directly determine the cost of charging
@@ -756,7 +754,7 @@ edges:
 - from: retail_diesel
   to: intercity_bus_fare
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Higher retail diesel prices directly increase the operating costs for
@@ -764,17 +762,17 @@ edges:
 - from: retail_diesel
   to: city_bus_fare
   type: AFFECTS
-  weight: 0.7
+  weight: 0.4
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Sustained increases in diesel prices force municipal transport corporations
     to revise city bus fares upwards to cover fuel costs.
 - from: retail_diesel
   to: cab_aggregator_fare
   type: AFFECTS
-  weight: 0.6
+  weight: 0.65
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Diesel price hikes increase the running costs for commercial cab fleets,
     prompting aggregators to raise base fares.
 - from: cng_fuel
@@ -782,13 +780,13 @@ edges:
   type: AFFECTS
   weight: 0.8
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Since most urban auto-rickshaws run on CNG, spikes in CNG fuel prices
     directly trigger demands for higher meter fares.
 - from: cng_fuel
   to: cab_aggregator_fare
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Higher CNG prices increase operational costs for city-based cab fleets,
@@ -796,7 +794,7 @@ edges:
 - from: retail_petrol
   to: bike_taxi_fare
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Bike taxi riders rely on petrol, so increased petrol prices directly
@@ -804,7 +802,7 @@ edges:
 - from: ev_charging_tariff
   to: e_rickshaw_fare
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Increases in commercial EV charging tariffs raise the daily operating
@@ -812,7 +810,7 @@ edges:
 - from: four_wheeler_price
   to: vehicle_insurance_premium
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: The insured declared value (IDV) of a car is based on its purchase
@@ -820,7 +818,7 @@ edges:
 - from: two_wheeler_price
   to: vehicle_insurance_premium
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Higher acquisition costs for two-wheelers increase their replacement
@@ -836,7 +834,7 @@ edges:
 - from: road_potholes
   to: traffic_congestion
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Severe road potholes force vehicles to slow down and navigate carefully,
@@ -844,7 +842,7 @@ edges:
 - from: traffic_congestion
   to: cab_aggregator_fare
   type: AFFECTS
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Severe traffic congestion triggers surge pricing algorithms on cab
@@ -852,23 +850,23 @@ edges:
 - from: metro_fare
   to: cab_aggregator_fare
   type: COMPETES_WITH
-  weight: 0.6
+  weight: 0.5
   polarity: -1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Affordable and expansive metro networks compete directly with cab aggregators,
     forcing them to keep fares competitive on parallel routes.
 - from: city_bus_fare
   to: local_train_ticket
   type: COMPETES_WITH
-  weight: 0.5
+  weight: 0.3
   polarity: -1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: City bus networks compete with local train systems for daily commuters,
     influencing the pricing power of both transit modes.
 - from: auto_rickshaw_fare
   to: e_rickshaw_fare
   type: COMPETES_WITH
-  weight: 0.7
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: Traditional auto-rickshaws compete with cheaper e-rickshaws for last-mile
@@ -884,7 +882,7 @@ edges:
 - from: domestic_flight_ticket
   to: premium_train_fare
   type: COMPETES_WITH
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Discounted domestic flight tickets compete directly with premium train
@@ -892,7 +890,7 @@ edges:
 - from: highway_toll_fare
   to: intercity_bus_fare
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Increased highway toll fares add directly to the route costs of intercity
@@ -900,7 +898,7 @@ edges:
 - from: highway_toll_fare
   to: cab_aggregator_fare
   type: AFFECTS
-  weight: 0.7
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Highway and state border tolls are added directly to the final bill
@@ -908,7 +906,7 @@ edges:
 - from: parking_fees
   to: cab_aggregator_fare
   type: AFFECTS
-  weight: 0.7
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: High parking fees at airports and railway stations are directly passed
@@ -916,7 +914,7 @@ edges:
 - from: street_waterlogging
   to: traffic_congestion
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Street waterlogging reduces drivable road width and forces vehicles
@@ -924,7 +922,7 @@ edges:
 - from: street_waterlogging
   to: road_potholes
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Stagnant water from street waterlogging seeps into asphalt, weakening
@@ -932,7 +930,7 @@ edges:
 - from: riots_and_clashes
   to: traffic_congestion
   type: PRODUCES
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Civil riots and clashes physically block major intersections and arterial
@@ -940,8 +938,8 @@ edges:
 - from: mobile_network_quality
   to: cab_aggregator_fare
   type: AFFECTS
-  weight: 0.7
-  polarity: 1
+  weight: 0.6
+  polarity: -1
   delay: IMMEDIATE
   description: Cab aggregator platforms depend on mobile network quality to match
     riders and drivers; poor connectivity can artificially reduce local supply and
@@ -957,7 +955,7 @@ edges:
 - from: auto_rickshaw_fare
   to: auto_driver_earnings
   type: PRODUCES
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: The meter fares paid by daily commuters directly produce the take-home
@@ -965,7 +963,7 @@ edges:
 - from: bike_taxi_fare
   to: gig_worker_payouts
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: The per-ride fares charged for bike taxis directly fund the payouts
@@ -973,7 +971,7 @@ edges:
 - from: traffic_congestion
   to: food_delivery_payouts
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: -1
   delay: IMMEDIATE
   description: Severe traffic congestion increases delivery times, reducing the number
@@ -981,7 +979,7 @@ edges:
 - from: road_potholes
   to: road_traffic_accidents
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Deep road potholes cause drivers to swerve unpredictably or lose control
@@ -997,7 +995,7 @@ edges:
 - from: traffic_congestion
   to: particulate_matter_levels
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Vehicles idling in severe traffic congestion emit concentrated exhaust
@@ -1005,7 +1003,7 @@ edges:
 - from: retail_diesel
   to: particulate_matter_levels
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: The combustion of retail diesel in commercial and private vehicles
@@ -1013,7 +1011,7 @@ edges:
 - from: domestic_flight_ticket
   to: tour_package
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Domestic flight tickets are a major cost component of travel itineraries,
@@ -1021,7 +1019,7 @@ edges:
 - from: intercity_bus_fare
   to: pilgrimage_package
   type: AFFECTS
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: The cost of intercity bus travel is bundled into group travel costs,
@@ -1029,7 +1027,7 @@ edges:
 - from: irctc_train_ticket
   to: pilgrimage_package
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Railway ticket costs form the baseline transport expense for many religious
@@ -1037,7 +1035,7 @@ edges:
 - from: highway_toll_fare
   to: fastag_wallet
   type: AFFECTS
-  weight: 0.8
+  weight: 0.95
   polarity: -1
   delay: IMMEDIATE
   description: Deductions for higher highway toll fares directly and rapidly deplete
@@ -1045,7 +1043,7 @@ edges:
 - from: metro_fare
   to: ncmc_smart_card
   type: AFFECTS
-  weight: 0.7
+  weight: 0.95
   polarity: -1
   delay: IMMEDIATE
   description: Increased metro fares result in larger per-trip deductions, directly
@@ -1053,7 +1051,7 @@ edges:
 - from: traffic_congestion
   to: police_response_time
   type: AFFECTS
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Severe traffic congestion physically blocks law enforcement vehicles,
@@ -1061,7 +1059,7 @@ edges:
 - from: traffic_congestion
   to: quick_commerce_payouts
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: IMMEDIATE
   description: Traffic delays reduce the total number of 10-minute grocery deliveries
@@ -1069,7 +1067,7 @@ edges:
 - from: retail_petrol
   to: food_delivery_payouts
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Higher retail petrol costs directly eat into the net take-home earnings
@@ -1077,7 +1075,7 @@ edges:
 - from: mgnrega_wages
   to: farm_labor_wages
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Higher guaranteed MGNREGA wages force private agricultural employers
@@ -1085,7 +1083,7 @@ edges:
 - from: startup_layoffs
   to: urban_unemployment_rate
   type: PRODUCES
-  weight: 0.7
+  weight: 0.4
   polarity: 1
   delay: SHORT_TERM
   description: Mass terminations in the startup ecosystem directly increase the number
@@ -1093,15 +1091,15 @@ edges:
 - from: it_sector_jobs
   to: startup_jobs
   type: COMPETES_WITH
-  weight: 0.7
-  polarity: 1
+  weight: 0.6
+  polarity: -1
   delay: MEDIUM_TERM
   description: Established IT sector companies compete directly with startups for
     the same pool of software engineering talent.
 - from: minimum_wage
   to: construction_worker_wages
   type: AFFECTS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Revisions in state minimum wage laws directly elevate the baseline
@@ -1109,7 +1107,7 @@ edges:
 - from: agricultural_crop_damage
   to: farm_labor_wages
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Severe crop damage reduces the harvest volume, leading farmers to hire
@@ -1125,7 +1123,7 @@ edges:
 - from: gig_worker_unions
   to: food_delivery_payouts
   type: AFFECTS
-  weight: 0.7
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: Collective bargaining and strikes by gig worker unions force aggregator
@@ -1133,7 +1131,7 @@ edges:
 - from: gig_worker_unions
   to: quick_commerce_payouts
   type: AFFECTS
-  weight: 0.7
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: Unionized pressure on 10-minute delivery platforms leads to better
@@ -1141,7 +1139,7 @@ edges:
 - from: gig_worker_unions
   to: cab_driver_earnings
   type: AFFECTS
-  weight: 0.7
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: Organized protests by ride-hailing unions compel platforms to reduce
@@ -1149,7 +1147,7 @@ edges:
 - from: organized_labor_unions
   to: working_hours
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: MEDIUM_TERM
   description: Trade unions actively negotiate and enforce strict limits on maximum
@@ -1157,23 +1155,23 @@ edges:
 - from: quick_commerce_payouts
   to: kirana_store_income
   type: COMPETES_WITH
-  weight: 0.8
-  polarity: 1
+  weight: 0.75
+  polarity: -1
   delay: MEDIUM_TERM
   description: The expansion of quick commerce delivery networks directly cannibalizes
     the daily sales and income of neighborhood kirana stores.
 - from: street_vendor_income
   to: kirana_store_income
   type: COMPETES_WITH
-  weight: 0.5
-  polarity: 1
+  weight: 0.4
+  polarity: -1
   delay: MEDIUM_TERM
   description: Informal street vendors selling fresh produce and daily items compete
     for the same local consumer spend as fixed kirana stores.
 - from: defense_agniveer_roles
   to: rural_unemployment_rate
   type: AFFECTS
-  weight: 0.7
+  weight: 0.4
   polarity: -1
   delay: MEDIUM_TERM
   description: Short-term military recruitment schemes absorb rural youth, temporarily
@@ -1183,53 +1181,53 @@ edges:
   type: SUPPLIES
   weight: 0.9
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Engineering colleges produce the core graduate workforce that supplies
     talent to the IT and tech sector.
 - from: management_education
   to: startup_jobs
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.6
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Business schools supply the operational, marketing, and strategic talent
     required to fill startup ecosystem roles.
 - from: civil_services_exam
   to: upsc_civil_services
   type: SUPPLIES
-  weight: 1.0
+  weight: 0.95
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: The civil services examination pipeline directly supplies the candidates
     who fill central government administrative roles.
 - from: teaching_eligibility_exams
   to: government_teacher_jobs
   type: SUPPLIES
-  weight: 1.0
+  weight: 0.95
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Clearing state and central teaching eligibility tests is the direct
     prerequisite supplying candidates for government teacher jobs.
 - from: upi_transaction_success
   to: street_vendor_income
   type: FUNDS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: Street vendors increasingly rely on successful UPI transactions to
     capture sales from customers who no longer carry cash.
 - from: smartphone_device
   to: gig_worker_payouts
   type: DEPENDS_ON
-  weight: 0.9
+  weight: 0.95
   polarity: 1
-  delay: SHORT_TERM
+  delay: IMMEDIATE
   description: Gig workers absolutely require functional smartphones to receive orders,
     navigate, and secure their platform payouts.
 - from: wedding_planning_service
   to: urban_company_partner_earnings
   type: FUNDS
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: The booming wedding service industry drives massive demand and funds
@@ -1237,9 +1235,9 @@ edges:
 - from: building_materials_cost
   to: construction_worker_wages
   type: AFFECTS
-  weight: 0.6
+  weight: 0.5
   polarity: -1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Spikes in cement and steel prices squeeze contractor margins, leading
     them to suppress daily wages for construction labor.
 - from: agricultural_crop_damage
@@ -1261,31 +1259,31 @@ edges:
 - from: working_hours
   to: anxiety_disorders
   type: PRODUCES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Prolonged and unregulated working hours in corporate and gig roles
     directly trigger chronic stress and anxiety disorders.
 - from: working_hours
   to: hypertension
   type: PRODUCES
-  weight: 0.6
+  weight: 0.65
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Excessive working hours and lack of rest contribute directly to the
     onset of lifestyle conditions like hypertension.
 - from: urban_unemployment_rate
   to: burglary_and_theft
   type: AFFECTS
-  weight: 0.6
+  weight: 0.5
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Spikes in urban joblessness often correlate with increased desperation,
     leading to higher rates of petty property crime and theft.
 - from: retail_gold_investment
   to: direct_equity_portfolio
   type: COMPETES_WITH
-  weight: 0.5
+  weight: 0.4
   polarity: -1
   delay: MEDIUM_TERM
   description: Physical gold investments compete with direct equity portfolios for
@@ -1293,7 +1291,7 @@ edges:
 - from: credit_card_dues
   to: bnpl_installments
   type: COMPETES_WITH
-  weight: 0.6
+  weight: 0.5
   polarity: -1
   delay: SHORT_TERM
   description: Credit card usage competes with Buy Now Pay Later (BNPL) installments
@@ -1301,7 +1299,7 @@ edges:
 - from: chit_fund_contribution
   to: recurring_deposits
   type: COMPETES_WITH
-  weight: 0.6
+  weight: 0.5
   polarity: -1
   delay: MEDIUM_TERM
   description: Informal chit fund contributions compete with formal bank recurring
@@ -1309,7 +1307,7 @@ edges:
 - from: cryptocurrency_portfolio
   to: direct_equity_portfolio
   type: COMPETES_WITH
-  weight: 0.5
+  weight: 0.4
   polarity: -1
   delay: SHORT_TERM
   description: High-risk cryptocurrency portfolios compete with direct equity portfolios
@@ -1317,7 +1315,7 @@ edges:
 - from: endowment_policy_premium
   to: term_insurance_premium
   type: COMPETES_WITH
-  weight: 0.7
+  weight: 0.6
   polarity: -1
   delay: MEDIUM_TERM
   description: Traditional endowment policies compete with pure term insurance premiums
@@ -1333,7 +1331,7 @@ edges:
 - from: personal_loan_emi
   to: savings_account_balance
   type: AFFECTS
-  weight: 0.7
+  weight: 0.9
   polarity: -1
   delay: IMMEDIATE
   description: Monthly personal loan EMI deductions directly deplete available savings
@@ -1341,7 +1339,7 @@ edges:
 - from: home_loan_emi
   to: savings_account_balance
   type: AFFECTS
-  weight: 0.8
+  weight: 0.95
   polarity: -1
   delay: IMMEDIATE
   description: High home loan EMI obligations significantly reduce the monthly residual
@@ -1349,7 +1347,7 @@ edges:
 - from: credit_card_dues
   to: savings_account_balance
   type: AFFECTS
-  weight: 0.8
+  weight: 0.9
   polarity: -1
   delay: IMMEDIATE
   description: Clearing monthly credit card dues directly reduces the available savings
@@ -1357,7 +1355,7 @@ edges:
 - from: bnpl_installments
   to: savings_account_balance
   type: AFFECTS
-  weight: 0.7
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Auto-debit of BNPL installments directly depletes retail savings account
@@ -1365,7 +1363,7 @@ edges:
 - from: auto_loan_emi
   to: savings_account_balance
   type: AFFECTS
-  weight: 0.8
+  weight: 0.9
   polarity: -1
   delay: IMMEDIATE
   description: Monthly auto loan EMI deductions reduce the net disposable liquidity
@@ -1373,7 +1371,7 @@ edges:
 - from: microfinance_loan
   to: savings_account_balance
   type: AFFECTS
-  weight: 0.6
+  weight: 0.8
   polarity: -1
   delay: SHORT_TERM
   description: Repayment of microfinance loans drains the limited savings account
@@ -1381,7 +1379,7 @@ edges:
 - from: direct_equity_portfolio
   to: capital_gains_tax
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: SHORT_TERM
   description: Profitable liquidation of direct equity portfolios generates short-term
@@ -1389,7 +1387,7 @@ edges:
 - from: equity_mutual_funds
   to: capital_gains_tax
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: SHORT_TERM
   description: Redemptions from equity mutual funds trigger capital gains tax obligations
@@ -1397,7 +1395,7 @@ edges:
 - from: debt_mutual_funds
   to: capital_gains_tax
   type: PRODUCES
-  weight: 0.8
+  weight: 0.95
   polarity: 1
   delay: SHORT_TERM
   description: Redemption of debt mutual funds generates capital gains tax liabilities
@@ -1405,7 +1403,7 @@ edges:
 - from: investment_property_value
   to: capital_gains_tax
   type: PRODUCES
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: LONG_TERM
   description: Appreciation and subsequent sale of investment properties produce substantial
@@ -1413,7 +1411,7 @@ edges:
 - from: personal_income_tax
   to: savings_account_balance
   type: AFFECTS
-  weight: 0.9
+  weight: 0.95
   polarity: -1
   delay: IMMEDIATE
   description: Direct deduction of personal income tax reduces the net disposable
@@ -1421,7 +1419,7 @@ edges:
 - from: term_insurance_premium
   to: personal_income_tax
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Payment of term insurance premiums provides Section 80C deductions,
@@ -1429,7 +1427,7 @@ edges:
 - from: health_insurance_premium
   to: personal_income_tax
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Health insurance premium payments qualify for Section 80D deductions,
@@ -1437,7 +1435,7 @@ edges:
 - from: epf_balance
   to: personal_income_tax
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Employee contributions to the EPF balance reduce taxable income under
@@ -1445,7 +1443,7 @@ edges:
 - from: ppf_investment
   to: personal_income_tax
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Investments made into the Public Provident Fund (PPF) directly reduce
@@ -1453,7 +1451,7 @@ edges:
 - from: nps_portfolio
   to: personal_income_tax
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Contributions to the National Pension System (NPS) provide additional
@@ -1461,7 +1459,7 @@ edges:
 - from: ipo_allotment
   to: direct_equity_portfolio
   type: PRODUCES
-  weight: 0.8
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Successful IPO allotments directly add new shares to an investor's
@@ -1469,7 +1467,7 @@ edges:
 - from: it_sector_salary
   to: personal_income_tax
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Formal IT sector salaries generate substantial personal income tax
@@ -1485,7 +1483,7 @@ edges:
 - from: government_teacher_jobs
   to: nps_portfolio
   type: FUNDS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: State government teacher salaries include mandatory deductions that
@@ -1493,7 +1491,7 @@ edges:
 - from: upi_and_bank_scams
   to: savings_account_balance
   type: DISRUPTS
-  weight: 0.9
+  weight: 0.95
   polarity: -1
   delay: IMMEDIATE
   description: Financial cyber frauds and UPI scams directly siphon funds, depleting
@@ -1501,7 +1499,7 @@ edges:
 - from: pan_aadhaar_linkage
   to: tds_deduction
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.9
   polarity: -1
   delay: IMMEDIATE
   description: Successful PAN-Aadhaar linkage prevents the application of penal higher
@@ -1509,7 +1507,7 @@ edges:
 - from: e_mandate_autopay
   to: equity_mutual_funds
   type: FUNDS
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Digital e-mandate autopay systems directly execute the recurring transfer
@@ -1517,7 +1515,7 @@ edges:
 - from: e_mandate_autopay
   to: term_insurance_premium
   type: FUNDS
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: E-mandate autopay ensures the timely, automated funding of annual term
@@ -1525,7 +1523,7 @@ edges:
 - from: burglary_and_theft
   to: retail_gold_investment
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.9
   polarity: -1
   delay: IMMEDIATE
   description: Incidents of residential burglary and theft directly result in the
@@ -1533,17 +1531,17 @@ edges:
 - from: vehicle_theft
   to: motor_insurance_premium
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: High rates of vehicle theft in an area drive insurers to increase comprehensive
     motor insurance premiums.
 - from: road_traffic_accidents
   to: motor_insurance_premium
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
-  delay: MEDIUM_TERM
+  delay: LONG_TERM
   description: Frequent road traffic accidents lead to higher claim ratios, forcing
     up subsequent motor insurance premiums.
 - from: obesity
@@ -1565,7 +1563,7 @@ edges:
 - from: hypertension
   to: heart_disease
   type: PRODUCES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: LONG_TERM
   description: Chronic high blood pressure damages arterial walls, directly resulting
@@ -1573,7 +1571,7 @@ edges:
 - from: diabetes
   to: heart_disease
   type: PRODUCES
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: LONG_TERM
   description: Prolonged high blood sugar damages blood vessels and nerves that control
@@ -1621,7 +1619,7 @@ edges:
 - from: doctor_consultation
   to: medical_imaging
   type: PRODUCES
-  weight: 0.75
+  weight: 0.65
   polarity: 1
   delay: IMMEDIATE
   description: Clinical evaluations by doctors directly lead to orders for X-rays,
@@ -1629,7 +1627,7 @@ edges:
 - from: doctor_consultation
   to: generic_medicines
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Doctor consultations directly result in prescriptions that drive the
@@ -1645,7 +1643,7 @@ edges:
 - from: hypertension
   to: home_monitoring_devices
   type: PRODUCES
-  weight: 0.85
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Managing hypertension requires patients to purchase and use home blood
@@ -1653,7 +1651,7 @@ edges:
 - from: heart_disease
   to: surgical_procedures
   type: PRODUCES
-  weight: 0.8
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Advanced cardiovascular conditions directly necessitate surgical interventions
@@ -1661,7 +1659,7 @@ edges:
 - from: cancer
   to: surgical_procedures
   type: PRODUCES
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Oncology treatments frequently require surgical procedures to remove
@@ -1677,7 +1675,7 @@ edges:
 - from: asthma
   to: chronic_disease_medication
   type: AFFECTS
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Asthma directly requires the ongoing use of chronic disease medications
@@ -1701,7 +1699,7 @@ edges:
 - from: dengue
   to: hospital_beds
   type: PRODUCES
-  weight: 0.8
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Severe dengue hemorrhagic fever directly forces patients into inpatient
@@ -1725,7 +1723,7 @@ edges:
 - from: cholera_and_diarrhea
   to: hospital_beds
   type: AFFECTS
-  weight: 0.7
+  weight: 0.65
   polarity: 1
   delay: IMMEDIATE
   description: Severe dehydration from cholera and diarrhea directly necessitates
@@ -1733,7 +1731,7 @@ edges:
 - from: anxiety_disorders
   to: therapy_consultation
   type: PRODUCES
-  weight: 0.65
+  weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Diagnosed anxiety disorders directly drive patients to seek psychological
@@ -1741,7 +1739,7 @@ edges:
 - from: depression
   to: psychiatric_medication
   type: PRODUCES
-  weight: 0.75
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Clinical depression directly results in the prescription and use of
@@ -1757,7 +1755,7 @@ edges:
 - from: maternity_services
   to: nutritional_supplements
   type: PRODUCES
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Antenatal maternity care directly prescribes iron, calcium, and folic
@@ -1765,16 +1763,16 @@ edges:
 - from: ayurvedic_medicines
   to: generic_medicines
   type: COMPETES_WITH
-  weight: 0.5
-  polarity: 1
+  weight: 0.4
+  polarity: -1
   delay: IMMEDIATE
   description: Ayurvedic treatments compete directly with allopathic generic medicines
     for primary care symptom management.
 - from: homeopathic_medicines
   to: generic_medicines
   type: COMPETES_WITH
-  weight: 0.4
-  polarity: 1
+  weight: 0.3
+  polarity: -1
   delay: IMMEDIATE
   description: Homeopathic remedies serve as an alternative, competing with conventional
     generic medicines for minor ailments.
@@ -1789,7 +1787,7 @@ edges:
 - from: retail_sugar
   to: obesity
   type: AFFECTS
-  weight: 0.75
+  weight: 0.6
   polarity: 1
   delay: LONG_TERM
   description: High consumption of retail sugar and sweets directly contributes to
@@ -1797,7 +1795,7 @@ edges:
 - from: polluted_surface_water
   to: typhoid
   type: PRODUCES
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Contaminated local water bodies directly transmit Salmonella typhi,
@@ -1829,7 +1827,7 @@ edges:
 - from: outdoor_heat
   to: hospital_beds
   type: PRODUCES
-  weight: 0.75
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Extreme outdoor heatwaves directly cause heatstroke and severe dehydration,
@@ -1837,7 +1835,7 @@ edges:
 - from: road_traffic_accidents
   to: surgical_procedures
   type: PRODUCES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Severe road traffic accidents directly necessitate emergency orthopedic
@@ -1845,7 +1843,7 @@ edges:
 - from: road_traffic_accidents
   to: hospital_beds
   type: PRODUCES
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Victims of road traffic accidents directly require inpatient hospital
@@ -1853,9 +1851,9 @@ edges:
 - from: startup_layoffs
   to: depression
   type: PRODUCES
-  weight: 0.65
+  weight: 0.6
   polarity: 1
-  delay: SHORT_TERM
+  delay: MEDIUM_TERM
   description: Sudden job losses in the startup sector directly trigger financial
     panic and clinical depression among affected workers.
 - from: domestic_violence
@@ -1869,7 +1867,7 @@ edges:
 - from: child_abuse_and_pocso
   to: therapy_consultation
   type: PRODUCES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Survivors of child abuse directly require specialized psychological
@@ -1893,7 +1891,7 @@ edges:
 - from: childhood_malnutrition
   to: school_examinations
   type: AFFECTS
-  weight: 0.85
+  weight: 0.7
   polarity: -1
   delay: LONG_TERM
   description: Chronic childhood malnutrition impairs cognitive development, directly
@@ -1901,7 +1899,7 @@ edges:
 - from: influenza_and_viral_fever
   to: school_examinations
   type: AFFECTS
-  weight: 0.7
+  weight: 0.6
   polarity: -1
   delay: IMMEDIATE
   description: Outbreaks of viral fever directly cause student absenteeism, negatively
@@ -1909,7 +1907,7 @@ edges:
 - from: anganwadi_system
   to: government_schools
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: LONG_TERM
   description: Anganwadis provide early childhood care and foundational learning that
@@ -1925,7 +1923,7 @@ edges:
 - from: mid_day_meal
   to: government_schools
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Guaranteed daily meals strongly incentivize attendance and enrollment
@@ -1933,7 +1931,7 @@ edges:
 - from: free_textbooks_uniforms
   to: government_schools
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Free educational supplies reduce out-of-pocket costs for parents, boosting
@@ -1941,7 +1939,7 @@ edges:
 - from: private_schools
   to: school_fees
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Enrollment in private institutions directly generates recurring school
@@ -1965,7 +1963,7 @@ edges:
 - from: cbse_exams
   to: engineering_entrance
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Clearing senior secondary board exams is a strict prerequisite for
@@ -1973,7 +1971,7 @@ edges:
 - from: cbse_exams
   to: medical_entrance
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Board exam completion is mandatory before students can sit for medical
@@ -1997,7 +1995,7 @@ edges:
 - from: medical_entrance
   to: medical_education
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: SHORT_TERM
   description: Medical entrance scores are the sole gateway to securing admission
@@ -2013,7 +2011,7 @@ edges:
 - from: university_entrance
   to: arts_science_commerce
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: University entrance exams filter students into general undergraduate
@@ -2037,7 +2035,7 @@ edges:
 - from: civil_services_exam
   to: offline_coaching_centers
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: UPSC preparation heavily relies on structured guidance from offline
@@ -2045,7 +2043,7 @@ edges:
 - from: offline_coaching_centers
   to: coaching_fees
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Enrollment in physical test prep centers directly incurs substantial
@@ -2053,7 +2051,7 @@ edges:
 - from: private_tutors
   to: coaching_fees
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Hiring personal tutors for supplemental education adds directly to
@@ -2061,7 +2059,7 @@ edges:
 - from: test_prep_edtech
   to: offline_coaching_centers
   type: COMPETES_WITH
-  weight: 0.7
+  weight: 0.65
   polarity: -1
   delay: MEDIUM_TERM
   description: Online test prep platforms offer cheaper alternatives that draw students
@@ -2077,7 +2075,7 @@ edges:
 - from: educational_scholarships
   to: college_university_fees
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Scholarships directly offset and reduce the net tuition fees payable
@@ -2092,7 +2090,7 @@ edges:
 - from: medical_education
   to: college_university_fees
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Medical degrees, especially in private colleges, generate exorbitant
@@ -2108,7 +2106,7 @@ edges:
 - from: arts_science_commerce
   to: civil_services_exam
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: Graduates from arts and sciences frequently pursue careers in civil
@@ -2116,7 +2114,7 @@ edges:
 - from: broadband_network_quality
   to: k12_edtech
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Seamless streaming of online K-12 classes requires stable and high-speed
@@ -2132,7 +2130,7 @@ edges:
 - from: laptop_computer
   to: higher_ed_online_degrees
   type: DEPENDS_ON
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Completing online university coursework and proctored exams requires
@@ -2140,7 +2138,7 @@ edges:
 - from: government_teacher_jobs
   to: government_schools
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: State-appointed teachers provide the essential instructional labor
@@ -2148,7 +2146,7 @@ edges:
 - from: tur_dal
   to: mid_day_meal
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Pulses are a mandatory protein component supplied to school kitchens
@@ -2172,7 +2170,7 @@ edges:
 - from: technical_vocational_training
   to: factory_worker_jobs
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: ITIs and vocational institutes train skilled blue-collar workers for
@@ -2180,7 +2178,7 @@ edges:
 - from: banking_ssc_exams
   to: psu_bank_jobs
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: SHORT_TERM
   description: IBPS and SBI exams directly recruit candidates for probationary officer
@@ -2188,7 +2186,7 @@ edges:
 - from: offline_coaching_centers
   to: pg_and_hostel_fees
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: The migration of students to coaching hubs directly drives demand for
@@ -2212,7 +2210,7 @@ edges:
 - from: corporate_upskilling
   to: it_sector_salary
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Acquiring new certifications and tech skills directly enables IT professionals
@@ -2236,7 +2234,7 @@ edges:
 - from: language_soft_skills
   to: private_bank_jobs
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: English proficiency and communication training improve employability
@@ -2244,7 +2242,7 @@ edges:
 - from: riots_and_clashes
   to: curfews_and_section_144
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Violent civil unrest directly triggers authorities to impose curfews
@@ -2252,7 +2250,7 @@ edges:
 - from: riots_and_clashes
   to: assault_and_battery
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Mob violence during riots inherently involves physical assaults and
@@ -2260,7 +2258,7 @@ edges:
 - from: riots_and_clashes
   to: fire_hazards
   type: PRODUCES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Arson and vandalism during violent clashes create immediate urban fire
@@ -2284,7 +2282,7 @@ edges:
 - from: burglary_and_theft
   to: fir_registration
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Victims of property crimes must register an FIR to initiate police
@@ -2292,7 +2290,7 @@ edges:
 - from: vehicle_theft
   to: fir_registration
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: SHORT_TERM
   description: Stolen vehicles require an immediate FIR registration for tracking
@@ -2308,7 +2306,7 @@ edges:
 - from: sexual_assault
   to: fir_registration
   type: PRODUCES
-  weight: 0.6
+  weight: 0.5
   polarity: 1
   delay: SHORT_TERM
   description: Survivors of sexual violence register FIRs to initiate legal proceedings,
@@ -2316,7 +2314,7 @@ edges:
 - from: domestic_violence
   to: fir_registration
   type: PRODUCES
-  weight: 0.5
+  weight: 0.45
   polarity: 1
   delay: MEDIUM_TERM
   description: Prolonged domestic abuse eventually leads victims or their families
@@ -2324,7 +2322,7 @@ edges:
 - from: upi_and_bank_scams
   to: fir_registration
   type: PRODUCES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Victims of digital financial fraud must register cyber crime FIRs to
@@ -2340,7 +2338,7 @@ edges:
 - from: deepfake_and_identity_theft
   to: upi_and_bank_scams
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Stolen digital identities are weaponized to bypass banking security
@@ -2348,7 +2346,7 @@ edges:
 - from: fir_registration
   to: criminal_litigation_risk
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: MEDIUM_TERM
   description: The formal registration of an FIR initiates the legal process, directly
@@ -2364,7 +2362,7 @@ edges:
 - from: child_kidnapping
   to: fir_registration
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: The abduction of a child results in immediate FIR registration to trigger
@@ -2380,7 +2378,7 @@ edges:
 - from: stray_animals
   to: stray_animal_attacks
   type: PRODUCES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: High populations of unmanaged stray dogs and cattle in urban areas
@@ -2396,7 +2394,7 @@ edges:
 - from: street_waterlogging
   to: road_traffic_accidents
   type: PRODUCES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Waterlogged roads obscure potholes and reduce vehicle traction, leading
@@ -2404,7 +2402,7 @@ edges:
 - from: social_media_accounts
   to: cyberbullying_and_trolling
   type: PRODUCES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Increased presence on social media platforms exposes individuals to
@@ -2412,7 +2410,7 @@ edges:
 - from: personal_data_privacy
   to: deepfake_and_identity_theft
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Stronger personal data privacy controls reduce the availability of
@@ -2420,7 +2418,7 @@ edges:
 - from: spam_calls
   to: upi_and_bank_scams
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Fraudulent telemarketing and spam calls serve as the primary delivery
@@ -2428,7 +2426,7 @@ edges:
 - from: spam_calls
   to: investment_and_job_scams
   type: PRODUCES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Scammers use unsolicited calls and messages to lure victims into fake
@@ -2436,7 +2434,7 @@ edges:
 - from: firecracker
   to: fire_hazards
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: The unregulated bursting of firecrackers during festivals directly
@@ -2444,7 +2442,7 @@ edges:
 - from: community_gathering
   to: stampedes
   type: PRODUCES
-  weight: 0.7
+  weight: 0.65
   polarity: 1
   delay: IMMEDIATE
   description: Unmanaged large-scale community and religious gatherings create dangerous
@@ -2452,7 +2450,7 @@ edges:
 - from: aadhaar_authentication
   to: deepfake_and_identity_theft
   type: DISRUPTS
-  weight: 0.6
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Robust biometric Aadhaar authentication makes it significantly harder
@@ -2460,55 +2458,55 @@ edges:
 - from: railway_accidents
   to: irctc_train_ticket
   type: DISRUPTS
-  weight: 0.8
-  polarity: 1
+  weight: 0.85
+  polarity: -1
   delay: SHORT_TERM
   description: Train derailments and accidents force the cancellation of routes, disrupting
     IRCTC ticketing and travel plans.
 - from: curfews_and_section_144
   to: street_food
   type: DISRUPTS
-  weight: 0.9
-  polarity: 1
+  weight: 0.95
+  polarity: -1
   delay: IMMEDIATE
   description: Imposed curfews force the immediate shutdown of street food stalls
     and night markets.
 - from: curfews_and_section_144
   to: street_vendor_income
   type: DISRUPTS
-  weight: 0.9
-  polarity: 1
+  weight: 0.95
+  polarity: -1
   delay: IMMEDIATE
   description: Restrictions on public movement completely halt the daily operations
     and earnings of street vendors.
 - from: curfews_and_section_144
   to: gig_worker_payouts
   type: DISRUPTS
-  weight: 0.8
-  polarity: 1
+  weight: 0.9
+  polarity: -1
   delay: IMMEDIATE
   description: Section 144 and curfews block delivery personnel from operating, directly
     cutting off gig worker payouts.
 - from: curfews_and_section_144
   to: offline_coaching_centers
   type: DISRUPTS
-  weight: 0.8
-  polarity: 1
+  weight: 0.95
+  polarity: -1
   delay: IMMEDIATE
   description: Public order emergencies force the physical closure of offline coaching
     centers and educational institutes.
 - from: curfews_and_section_144
   to: cinema_ticket
   type: DISRUPTS
-  weight: 0.9
-  polarity: 1
+  weight: 0.95
+  polarity: -1
   delay: IMMEDIATE
   description: Curfews mandate the closure of entertainment venues, halting cinema
     ticket sales and movie screenings.
 - from: investment_and_job_scams
   to: savings_account_balance
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: SHORT_TERM
   description: Victims of fake investment schemes transfer large sums of money, depleting
@@ -2516,7 +2514,7 @@ edges:
 - from: vehicle_theft
   to: vehicle_insurance_premium
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: LONG_TERM
   description: High rates of vehicle theft in a region cause insurers to raise motor
@@ -2532,7 +2530,7 @@ edges:
 - from: cyberbullying_and_trolling
   to: anxiety_disorders
   type: PRODUCES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Relentless online harassment and public shaming trigger acute anxiety
@@ -2540,7 +2538,7 @@ edges:
 - from: stray_animal_attacks
   to: doctor_consultation
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Dog bites and animal attacks require immediate outpatient doctor consultations
@@ -2548,15 +2546,15 @@ edges:
 - from: riots_and_clashes
   to: public_park
   type: DISRUPTS
-  weight: 0.7
-  polarity: 1
+  weight: 0.85
+  polarity: -1
   delay: IMMEDIATE
   description: Violent clashes render public parks and community spaces unsafe and
     inaccessible to citizens.
 - from: particulate_matter_levels
   to: ambient_aqi
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: High concentrations of particulate matter directly increase the ambient
@@ -2564,7 +2562,7 @@ edges:
 - from: particulate_matter_levels
   to: winter_smog
   type: PRODUCES
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Suspended particulate matter forms the primary physical component of
@@ -2572,7 +2570,7 @@ edges:
 - from: outdoor_cold
   to: winter_smog
   type: PRODUCES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Cold outdoor temperatures create thermal inversions that trap pollutants
@@ -2580,7 +2578,7 @@ edges:
 - from: outdoor_humidity
   to: winter_smog
   type: PRODUCES
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: High humidity provides moisture that combines with particulate matter
@@ -2588,7 +2586,7 @@ edges:
 - from: street_garbage
   to: stray_animals
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
   description: Accumulated street garbage provides a direct food source that sustains
@@ -2596,15 +2594,15 @@ edges:
 - from: street_garbage
   to: open_drains
   type: DISRUPTS
-  weight: 0.8
-  polarity: 1
+  weight: 0.85
+  polarity: -1
   delay: SHORT_TERM
   description: Improperly disposed street garbage washes into and physically blocks
     open drainage systems.
 - from: open_drains
   to: public_urination_odour
   type: PRODUCES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Exposed sewage in open drains compounds with public urination to create
@@ -2612,7 +2610,7 @@ edges:
 - from: open_drains
   to: stagnant_water_pools
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Blocked or overflowing open drains spill over to form stagnant water
@@ -2628,7 +2626,7 @@ edges:
 - from: street_waterlogging
   to: basement_flooding
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Excess water from waterlogged streets cascades down into residential
@@ -2652,7 +2650,7 @@ edges:
 - from: neighborhood_greenery
   to: outdoor_heat
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: -1
   delay: LONG_TERM
   description: Tree canopies and vegetation provide shade and evaporative cooling,
@@ -2660,7 +2658,7 @@ edges:
 - from: neighborhood_greenery
   to: particulate_matter_levels
   type: AFFECTS
-  weight: 0.5
+  weight: 0.6
   polarity: -1
   delay: LONG_TERM
   description: Urban foliage acts as a physical filter, trapping airborne particulate
@@ -2668,7 +2666,7 @@ edges:
 - from: outdoor_heat
   to: polluted_surface_water
   type: PRODUCES
-  weight: 0.6
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: High outdoor heat accelerates evaporation in water bodies, concentrating
@@ -2676,7 +2674,7 @@ edges:
 - from: firecracker
   to: particulate_matter_levels
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Combustion of firecrackers releases massive immediate spikes of heavy
@@ -2684,7 +2682,7 @@ edges:
 - from: firecracker
   to: event_and_construction_noise
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Detonation of firecrackers generates acute, high-decibel noise pollution
@@ -2692,7 +2690,7 @@ edges:
 - from: festive_idol
   to: polluted_surface_water
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Immersion of painted festive idols introduces synthetic colors, plaster
@@ -2700,7 +2698,7 @@ edges:
 - from: particulate_matter_levels
   to: asthma
   type: PRODUCES
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: Inhalation of fine particulate matter triggers severe inflammation
@@ -2708,7 +2706,7 @@ edges:
 - from: particulate_matter_levels
   to: copd
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Chronic exposure to high particulate matter levels accelerates lung
@@ -2724,7 +2722,7 @@ edges:
 - from: stagnant_water_pools
   to: malaria
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Anopheles mosquitoes breed in stagnant water pools, directly facilitating
@@ -2732,7 +2730,7 @@ edges:
 - from: polluted_surface_water
   to: cholera_and_diarrhea
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Consumption of or contact with surface water polluted by fecal matter
@@ -2740,7 +2738,7 @@ edges:
 - from: street_waterlogging
   to: food_delivery_payouts
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.8
   polarity: -1
   delay: IMMEDIATE
   description: Flooded streets physically prevent gig workers from completing deliveries,
@@ -2748,7 +2746,7 @@ edges:
 - from: outdoor_heat
   to: residential_electricity
   type: PRODUCES
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Extreme outdoor heat drives massive surges in residential electricity
@@ -2756,7 +2754,7 @@ edges:
 - from: outdoor_heat
   to: farm_labor_wages
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: IMMEDIATE
   description: Severe outdoor heat limits the safe working hours for agricultural
@@ -2764,7 +2762,7 @@ edges:
 - from: outdoor_heat
   to: street_vendor_income
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: IMMEDIATE
   description: Intense daytime heat deters pedestrian footfall, directly reducing
@@ -2772,7 +2770,7 @@ edges:
 - from: stray_animals
   to: road_traffic_accidents
   type: PRODUCES
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Stray animals wandering onto busy roads force sudden swerving and braking,
@@ -2788,7 +2786,7 @@ edges:
 - from: neighborhood_greenery
   to: investment_property_value
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: Proximity to well-maintained neighborhood greenery and parks commands
@@ -2796,7 +2794,7 @@ edges:
 - from: basement_flooding
   to: repair_service_charges
   type: PRODUCES
-  weight: 0.8
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: Inundation of basements necessitates immediate hiring of water extraction
@@ -2804,7 +2802,7 @@ edges:
 - from: basement_flooding
   to: vehicle_servicing_cost
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Vehicles submerged during basement flooding suffer severe engine and
@@ -2812,7 +2810,7 @@ edges:
 - from: open_drains
   to: pest_control_services
   type: PRODUCES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Open drains harbor massive populations of roaches and rodents, driving
@@ -2820,7 +2818,7 @@ edges:
 - from: traffic_noise
   to: investment_property_value
   type: AFFECTS
-  weight: 0.5
+  weight: 0.6
   polarity: -1
   delay: LONG_TERM
   description: High levels of continuous traffic noise make residential properties
@@ -2828,7 +2826,7 @@ edges:
 - from: outdoor_cold
   to: residential_electricity
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Severe outdoor cold waves trigger widespread use of electric room heaters,
@@ -2844,7 +2842,7 @@ edges:
 - from: smartphone_device
   to: social_media_accounts
   type: DEPENDS_ON
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Active participation and content creation for social media accounts
@@ -2876,7 +2874,7 @@ edges:
 - from: internet_shutdowns
   to: broadband_network_quality
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Regional internet blackouts disrupt fixed broadband network quality
@@ -2908,7 +2906,7 @@ edges:
 - from: aadhaar_authentication
   to: epramaan_and_sso
   type: DEPENDS_ON
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Government Single Sign-On (SSO) services rely on Aadhaar authentication
@@ -2916,7 +2914,7 @@ edges:
 - from: aadhaar_authentication
   to: pan_aadhaar_linkage
   type: DEPENDS_ON
-  weight: 1.0
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: The process of linking a PAN card inherently requires a valid Aadhaar
@@ -2924,7 +2922,7 @@ edges:
 - from: aadhaar_authentication
   to: e_mandate_autopay
   type: DEPENDS_ON
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Setting up digital e-mandates often requires Aadhaar-based eSign for
@@ -2932,7 +2930,7 @@ edges:
 - from: data_breaches_and_leaks
   to: spam_calls
   type: PRODUCES
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: Leaked personal phone numbers are acquired by telemarketers to generate
@@ -2948,17 +2946,17 @@ edges:
 - from: mobile_data_tariff
   to: fiber_broadband_tariff
   type: COMPETES_WITH
-  weight: 0.7
-  polarity: -1
+  weight: 0.65
+  polarity: 1
   delay: MEDIUM_TERM
   description: Cheap mobile data plans compete directly with fixed fiber broadband
     subscriptions for household internet budgets.
 - from: public_wifi
   to: mobile_data_tariff
   type: COMPETES_WITH
-  weight: 0.6
+  weight: 0.5
   polarity: -1
-  delay: IMMEDIATE
+  delay: MEDIUM_TERM
   description: The availability of free public Wi-Fi reduces consumer reliance on
     paid mobile data tariffs.
 - from: upi_transaction_limits
@@ -2972,7 +2970,7 @@ edges:
 - from: digital_payment_infrastructure
   to: e_mandate_autopay
   type: DEPENDS_ON
-  weight: 0.9
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Recurring e-mandates depend on the continuous operation of the digital
@@ -2980,7 +2978,7 @@ edges:
 - from: upi_and_bank_scams
   to: upi_transaction_limits
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: -1
   delay: SHORT_TERM
   description: A rise in banking scams prompts financial institutions to lower UPI
@@ -2996,7 +2994,7 @@ edges:
 - from: rwa_regulation
   to: fiber_broadband_tariff
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Resident Welfare Associations often negotiate exclusive ISP contracts,
@@ -3052,7 +3050,7 @@ edges:
 - from: pan_aadhaar_linkage
   to: personal_income_tax
   type: DEPENDS_ON
-  weight: 1.0
+  weight: 0.95
   polarity: 1
   delay: IMMEDIATE
   description: Filing personal income tax returns legally requires the linkage of
@@ -3068,7 +3066,7 @@ edges:
 - from: data_breaches_and_leaks
   to: deepfake_and_identity_theft
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Stolen personal photos and data from breaches are utilized to produce
@@ -3084,7 +3082,7 @@ edges:
 - from: laptop_computer
   to: video_game
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Playing modern PC video games depends on having a capable laptop computer.
@@ -3099,7 +3097,7 @@ edges:
 - from: digilocker_documents
   to: traffic_fines
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Presenting valid digital driving licenses via DigiLocker prevents the
@@ -3107,7 +3105,7 @@ edges:
 - from: upi_transaction_success
   to: temple_donation
   type: FUNDS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Successful UPI transactions via QR codes directly fund digital temple
@@ -3115,7 +3113,7 @@ edges:
 - from: social_media_accounts
   to: fine_dining_restaurants
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Viral food reviews and aesthetic posts on social media accounts drive
@@ -3123,7 +3121,7 @@ edges:
 - from: social_media_accounts
   to: tourist_attraction_ticket
   type: AFFECTS
-  weight: 0.75
+  weight: 0.5
   polarity: 1
   delay: SHORT_TERM
   description: Travel influencers on social media accounts boost the sales of tourist
@@ -3131,7 +3129,7 @@ edges:
 - from: puja_pandal_contribution
   to: festive_idol
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Community contributions directly finance the commissioning and purchase
@@ -3147,7 +3145,7 @@ edges:
 - from: religious_tourism_demand
   to: pilgrimage_package
   type: PRODUCES
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
   description: High demand for religious tourism drives travel agencies to create
@@ -3155,7 +3153,7 @@ edges:
 - from: religious_tourism_demand
   to: temple_donation
   type: PRODUCES
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Increased footfall from religious tourism directly increases the volume
@@ -3171,7 +3169,7 @@ edges:
 - from: tour_package
   to: hotel_room
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Leisure tour packages directly fund the booking of holiday accommodation
@@ -3187,7 +3185,7 @@ edges:
 - from: ott_subscription
   to: cinema_ticket
   type: COMPETES_WITH
-  weight: 0.75
+  weight: 0.6
   polarity: -1
   delay: MEDIUM_TERM
   description: The availability of premium content on OTT platforms reduces the frequency
@@ -3195,7 +3193,7 @@ edges:
 - from: cricket_match_ticket
   to: real_money_gaming_and_betting
   type: AFFECTS
-  weight: 0.65
+  weight: 0.5
   polarity: 1
   delay: IMMEDIATE
   description: Attendance and engagement with live cricket matches directly spur participation
@@ -3203,7 +3201,7 @@ edges:
 - from: rwa_regulation
   to: firecracker
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: IMMEDIATE
   description: Strict neighborhood association rules ban or heavily restrict the bursting
@@ -3211,7 +3209,7 @@ edges:
 - from: rwa_regulation
   to: community_hall
   type: REGULATES
-  weight: 0.7
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Resident Welfare Associations set the pricing and availability rules
@@ -3219,7 +3217,7 @@ edges:
 - from: concert_ticket
   to: hotel_room
   type: AFFECTS
-  weight: 0.6
+  weight: 0.5
   polarity: 1
   delay: SHORT_TERM
   description: Fans traveling from other cities to attend live concerts directly book
@@ -3227,7 +3225,7 @@ edges:
 - from: amusement_park
   to: public_park
   type: COMPETES_WITH
-  weight: 0.5
+  weight: 0.4
   polarity: -1
   delay: MEDIUM_TERM
   description: Paid recreational facilities like amusement parks compete with free
@@ -3235,7 +3233,7 @@ edges:
 - from: cinema_ticket
   to: theatre_play
   type: COMPETES_WITH
-  weight: 0.6
+  weight: 0.4
   polarity: -1
   delay: MEDIUM_TERM
   description: Mainstream cinema viewing competes directly with live theatre plays
@@ -3243,7 +3241,7 @@ edges:
 - from: puja_pandal_contribution
   to: community_hall
   type: FUNDS
-  weight: 0.7
+  weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Pandal organizing committees use collected funds to rent community
@@ -3251,7 +3249,7 @@ edges:
 - from: school_examinations
   to: amusement_park
   type: DISRUPTS
-  weight: 0.85
+  weight: 0.8
   polarity: -1
   delay: SHORT_TERM
   description: Board and school examination seasons drastically reduce family visits
@@ -3259,7 +3257,7 @@ edges:
 - from: school_examinations
   to: cinema_ticket
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Exam preparation periods cause a sharp decline in cinema ticket sales
@@ -3267,7 +3265,7 @@ edges:
 - from: smartphone_device
   to: ott_subscription
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Smartphones provide the essential hardware platform required to consume
@@ -3275,7 +3273,7 @@ edges:
 - from: upi_transaction_success
   to: real_money_gaming_and_betting
   type: FUNDS
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Successful UPI transactions supply the instant wallet top-ups required
@@ -3283,7 +3281,7 @@ edges:
 - from: rwa_maintenance_fees
   to: rwa_regulation
   type: FUNDS
-  weight: 0.9
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Monthly maintenance fees fund the administrative bodies that enforce
@@ -3291,7 +3289,7 @@ edges:
 - from: social_media_accounts
   to: tour_package
   type: AFFECTS
-  weight: 0.7
+  weight: 0.5
   polarity: 1
   delay: MEDIUM_TERM
   description: Viral travel content on social media accounts directly generates consumer
@@ -3299,7 +3297,7 @@ edges:
 - from: wedding_planning_service
   to: fine_dining_restaurants
   type: FUNDS
-  weight: 0.7
+  weight: 0.6
   polarity: 1
   delay: SHORT_TERM
   description: Wedding planners book and pay fine dining restaurants for hosting pre-wedding
@@ -3307,7 +3305,7 @@ edges:
 - from: cricket_match_ticket
   to: traffic_congestion
   type: PRODUCES
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Thousands of fans converging to use their match tickets causes severe
@@ -3315,7 +3313,7 @@ edges:
 - from: wedding_planning_service
   to: gig_worker_payouts
   type: FUNDS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: IMMEDIATE
   description: Wedding planners hire temporary gig workers for catering, ushering,
@@ -3323,7 +3321,7 @@ edges:
 - from: puja_pandal_contribution
   to: construction_worker_wages
   type: FUNDS
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Pandal committees use collected funds to hire daily wage construction
@@ -3331,7 +3329,7 @@ edges:
 - from: cricket_match_ticket
   to: stampedes
   type: PRODUCES
-  weight: 0.4
+  weight: 0.3
   polarity: 1
   delay: IMMEDIATE
   description: Poor crowd management during the physical sale or entry validation
@@ -3339,7 +3337,7 @@ edges:
 - from: firecracker
   to: winter_smog
   type: PRODUCES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: The mass burning of firecrackers during winter festivals directly thickens
@@ -3347,7 +3345,7 @@ edges:
 - from: amusement_park
   to: event_and_construction_noise
   type: PRODUCES
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Mechanical rides and large crowds at amusement parks generate continuous
@@ -3355,7 +3353,7 @@ edges:
 - from: cinema_ticket
   to: parking_fees
   type: PRODUCES
-  weight: 0.75
+  weight: 0.7
   polarity: 1
   delay: IMMEDIATE
   description: Purchasing a cinema ticket at a mall directly necessitates paying for
@@ -3363,7 +3361,7 @@ edges:
 - from: tourist_attraction_ticket
   to: parking_fees
   type: PRODUCES
-  weight: 0.7
+  weight: 0.65
   polarity: 1
   delay: IMMEDIATE
   description: Visitors driving to monuments and attractions must pay local parking
@@ -3371,7 +3369,7 @@ edges:
 - from: el_nino_southern_oscillation
   to: southwest_monsoon
   type: DISRUPTS
-  weight: 0.85
+  weight: 0.8
   polarity: -1
   delay: MEDIUM_TERM
   description: El Nino warming in the Pacific alters atmospheric circulation, suppressing
@@ -3379,7 +3377,7 @@ edges:
 - from: indian_ocean_dipole
   to: southwest_monsoon
   type: AFFECTS
-  weight: 0.75
+  weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: A positive Indian Ocean Dipole increases sea surface temperatures in
@@ -3387,7 +3385,7 @@ edges:
 - from: global_surface_temperature
   to: himalayan_glaciers
   type: DISRUPTS
-  weight: 0.9
+  weight: 0.85
   polarity: -1
   delay: LONG_TERM
   description: Higher global atmospheric temperatures accelerate the melting rate
@@ -3395,7 +3393,7 @@ edges:
 - from: himalayan_glaciers
   to: himalayan_river_systems
   type: SUPPLIES
-  weight: 0.95
+  weight: 0.9
   polarity: 1
   delay: LONG_TERM
   description: Glacial meltwater provides the critical base flow for perennial northern
@@ -3403,7 +3401,7 @@ edges:
 - from: southwest_monsoon
   to: peninsular_river_systems
   type: SUPPLIES
-  weight: 0.95
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: Summer monsoon precipitation is the primary source of water volume
@@ -3411,7 +3409,7 @@ edges:
 - from: northeast_monsoon
   to: peninsular_river_systems
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Winter retreating monsoon rains provide essential water volume to southeastern
@@ -3419,7 +3417,7 @@ edges:
 - from: southwest_monsoon
   to: groundwater_aquifers
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: Sustained seasonal rainfall percolates through the soil to directly
@@ -3427,7 +3425,7 @@ edges:
 - from: bay_of_bengal_marine_system
   to: cyclonic_storm_systems
   type: PRODUCES
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: High sea surface temperatures and low-pressure troughs in the Bay of
@@ -3435,7 +3433,7 @@ edges:
 - from: arabian_sea_marine_system
   to: cyclonic_storm_systems
   type: PRODUCES
-  weight: 0.75
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Warming waters in the Arabian Sea increasingly fuel the formation of
@@ -3443,7 +3441,7 @@ edges:
 - from: western_disturbances
   to: himalayan_glaciers
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Winter storm systems from the Mediterranean drop heavy snow over the
@@ -3451,7 +3449,7 @@ edges:
 - from: global_surface_temperature
   to: bay_of_bengal_marine_system
   type: AFFECTS
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: LONG_TERM
   description: Rising global temperatures directly increase the baseline sea surface
@@ -3459,7 +3457,7 @@ edges:
 - from: cyclonic_storm_systems
   to: forest_cover
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.65
   polarity: -1
   delay: IMMEDIATE
   description: Extreme cyclonic winds and storm surges physically uproot trees and
@@ -3467,7 +3465,7 @@ edges:
 - from: cyclonic_storm_systems
   to: global_shipping_routes
   type: DISRUPTS
-  weight: 0.85
+  weight: 0.8
   polarity: -1
   delay: IMMEDIATE
   description: Severe storms force commercial vessels to reroute or halt, physically
@@ -3475,7 +3473,7 @@ edges:
 - from: cyclonic_storm_systems
   to: telecom_towers_network
   type: DISRUPTS
-  weight: 0.9
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: High-velocity winds and falling debris physically destroy cellular
@@ -3483,7 +3481,7 @@ edges:
 - from: cyclonic_storm_systems
   to: power_substations
   type: DISRUPTS
-  weight: 0.9
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Flooding and wind damage from cyclones short-circuit and physically
@@ -3491,7 +3489,7 @@ edges:
 - from: cyclonic_storm_systems
   to: major_seaports
   type: DISRUPTS
-  weight: 0.95
+  weight: 0.9
   polarity: -1
   delay: IMMEDIATE
   description: Storm surges and extreme weather force the immediate operational shutdown
@@ -3499,7 +3497,7 @@ edges:
 - from: himalayan_tectonic_plates
   to: highway_network
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: IMMEDIATE
   description: Seismic activity triggers landslides and surface ruptures that physically
@@ -3507,7 +3505,7 @@ edges:
 - from: western_disturbances
   to: commercial_airports
   type: DISRUPTS
-  weight: 0.75
+  weight: 0.7
   polarity: -1
   delay: IMMEDIATE
   description: Winter weather systems generate dense radiation fog across North India,
@@ -3515,7 +3513,7 @@ edges:
 - from: cpcb
   to: groundwater_aquifers
   type: REGULATES
-  weight: 0.75
+  weight: 0.6
   polarity: 1
   delay: MEDIUM_TERM
   description: The Central Pollution Control Board enforces effluent discharge limits
@@ -3523,7 +3521,7 @@ edges:
 - from: national_green_tribunal
   to: forest_cover
   type: REGULATES
-  weight: 0.8
+  weight: 0.7
   polarity: 1
   delay: MEDIUM_TERM
   description: NGT rulings legally block the diversion of protected woodlands for
@@ -3531,7 +3529,7 @@ edges:
 - from: agricultural_exports
   to: groundwater_aquifers
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: LONG_TERM
   description: High export volumes of water-intensive crops like rice and sugarcane
@@ -3539,7 +3537,7 @@ edges:
 - from: highway_network
   to: forest_cover
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: LONG_TERM
   description: The physical construction of expressways fragments contiguous forest
@@ -3547,7 +3545,7 @@ edges:
 - from: bay_of_bengal_marine_system
   to: marine_fish_stocks
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: LONG_TERM
   description: The nutrient-rich waters and coastal ecosystems of the Bay of Bengal
@@ -3555,7 +3553,7 @@ edges:
 - from: arabian_sea_marine_system
   to: marine_fish_stocks
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: LONG_TERM
   description: Upwelling currents in the Arabian Sea sustain the phytoplankton base
@@ -3563,7 +3561,7 @@ edges:
 - from: himalayan_river_systems
   to: renewable_energy_parks
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: High-volume flow in northern river basins provides the kinetic energy
@@ -3579,7 +3577,7 @@ edges:
 - from: union_budget_framework
   to: ministry_of_road_transport
   type: FUNDS
-  weight: 0.85
+  weight: 0.9
   polarity: 1
   delay: SHORT_TERM
   description: Capital expenditure allocations in the Union Budget directly fund the
@@ -3603,7 +3601,7 @@ edges:
 - from: ministry_of_power
   to: national_power_grid
   type: MANAGES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: The Ministry of Power sets the operational policies and capacity targets
@@ -3643,7 +3641,7 @@ edges:
 - from: fii_fpi_flows
   to: nifty_50
   type: FUNDS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Heavy foreign institutional buying directly drives up the valuation
@@ -3651,7 +3649,7 @@ edges:
 - from: fii_fpi_flows
   to: usd_inr_exchange
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: IMMEDIATE
   description: Strong foreign capital inflows increase dollar supply in India, strengthening
@@ -3659,7 +3657,7 @@ edges:
 - from: sebi
   to: fii_fpi_flows
   type: REGULATES
-  weight: 0.85
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: SEBI sets the compliance and registration rules that dictate how easily
@@ -3667,7 +3665,7 @@ edges:
 - from: sebi
   to: nifty_50
   type: REGULATES
-  weight: 0.4
+  weight: 0.5
   polarity: 1
   delay: SHORT_TERM
   description: SEBI's market integrity and margin rules structurally support the stability
@@ -3683,7 +3681,7 @@ edges:
 - from: brent_crude
   to: india_trade_deficit
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Higher global crude prices directly inflate India's import bill, widening
@@ -3691,7 +3689,7 @@ edges:
 - from: india_trade_deficit
   to: usd_inr_exchange
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: A widening trade deficit increases domestic demand for dollars to pay
@@ -3699,7 +3697,7 @@ edges:
 - from: usd_inr_exchange
   to: india_forex_reserves
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: A rising USD-INR rate forces the RBI to sell dollars from its reserves
@@ -3715,7 +3713,7 @@ edges:
 - from: epfo
   to: dii_flows
   type: FUNDS
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: The EPFO allocates a mandated percentage of its provident fund corpus
@@ -3739,7 +3737,7 @@ edges:
 - from: public_distribution_system
   to: global_food_grain_supply
   type: AFFECTS
-  weight: 0.6
+  weight: 0.5
   polarity: -1
   delay: MEDIUM_TERM
   description: Massive domestic grain procurement for the Indian PDS reduces the exportable
@@ -3747,7 +3745,7 @@ edges:
 - from: gst_council
   to: wpi
   type: AFFECTS
-  weight: 0.75
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Upward revisions in GST slabs by the Council directly increase the
@@ -3755,7 +3753,7 @@ edges:
 - from: wpi
   to: monetary_policy_committee
   type: AFFECTS
-  weight: 0.6
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Rising wholesale inflation pressures the Monetary Policy Committee
@@ -3787,7 +3785,7 @@ edges:
 - from: meity_regulations
   to: data_centers
   type: REGULATES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: MeitY's data localization mandates force the expansion and construction
@@ -3803,7 +3801,7 @@ edges:
 - from: cpcb
   to: coal_power_plants
   type: REGULATES
-  weight: 0.85
+  weight: 0.75
   polarity: -1
   delay: MEDIUM_TERM
   description: Stricter emission norms enforced by the CPCB force older, polluting
@@ -3811,7 +3809,7 @@ edges:
 - from: national_green_tribunal
   to: coal_power_plants
   type: REGULATES
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: MEDIUM_TERM
   description: NGT judicial orders frequently halt or restrict the operations of thermal
@@ -3827,7 +3825,7 @@ edges:
 - from: state_electricity_boards
   to: national_power_grid
   type: FUNDS
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Payments from state Discoms fund the generation and transmission companies
@@ -3835,7 +3833,7 @@ edges:
 - from: municipal_corporations
   to: municipal_water_grid
   type: MANAGES
-  weight: 0.95
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Municipal corporations directly operate and maintain the urban water
@@ -3843,7 +3841,7 @@ edges:
 - from: municipal_corporations
   to: sewage_drainage_network
   type: MANAGES
-  weight: 0.95
+  weight: 0.9
   polarity: 1
   delay: IMMEDIATE
   description: Local civic bodies are directly responsible for the construction and
@@ -3851,7 +3849,7 @@ edges:
 - from: regional_transport_office
   to: road_freight_movement
   type: REGULATES
-  weight: 0.75
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: Stricter RTO enforcement of vehicle fitness and overloading rules temporarily
@@ -3859,7 +3857,7 @@ edges:
 - from: supreme_court_of_india
   to: telecom_spectrum
   type: REGULATES
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: Apex court rulings can cancel spectrum allocations or impose massive
@@ -3867,7 +3865,7 @@ edges:
 - from: enforcement_directorate
   to: fii_fpi_flows
   type: DISRUPTS
-  weight: 0.7
+  weight: 0.65
   polarity: -1
   delay: SHORT_TERM
   description: ED probes into money laundering or beneficial ownership trigger capital
@@ -3875,7 +3873,7 @@ edges:
 - from: chinese_government
   to: china_manufacturing_output
   type: MANAGES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Beijing's state subsidies, energy policies, and export quotas directly
@@ -3891,7 +3889,7 @@ edges:
 - from: china_manufacturing_output
   to: global_semiconductor_supply_chain
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Chinese electronics manufacturing provides critical assembly, testing,
@@ -3899,7 +3897,7 @@ edges:
 - from: us_government
   to: us_consumer_demand
   type: FUNDS
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: US federal fiscal stimulus and tax policies directly increase the disposable
@@ -3915,7 +3913,7 @@ edges:
 - from: russian_government
   to: brent_crude
   type: DISRUPTS
-  weight: 0.85
+  weight: 0.8
   polarity: -1
   delay: SHORT_TERM
   description: Geopolitical actions and export bans by the Kremlin restrict global
@@ -3939,7 +3937,7 @@ edges:
 - from: ministry_of_commerce_and_industry
   to: export_competitiveness
   type: MANAGES
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
   description: The Commerce Ministry's Production Linked Incentive (PLI) schemes directly
@@ -3947,7 +3945,7 @@ edges:
 - from: export_competitiveness
   to: india_trade_deficit
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: MEDIUM_TERM
   description: Improved manufacturing export competitiveness increases outbound shipments,
@@ -3955,7 +3953,7 @@ edges:
 - from: ministry_of_civil_aviation
   to: commercial_airports
   type: MANAGES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: MEDIUM_TERM
   description: The Ministry of Civil Aviation sets the policy framework for the privatization,
@@ -3963,7 +3961,7 @@ edges:
 - from: brent_crude
   to: wpi
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Crude oil and its derivatives form a major direct component of the
@@ -3971,7 +3969,7 @@ edges:
 - from: international_gold_prices
   to: india_trade_deficit
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Surges in international gold prices directly increase the dollar outflow
@@ -3995,7 +3993,7 @@ edges:
 - from: usd_inr_exchange
   to: wpi
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: A depreciating rupee directly increases the landed INR cost of imported
@@ -4003,7 +4001,7 @@ edges:
 - from: global_equity_indices
   to: nifty_50
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: IMMEDIATE
   description: Global market sentiment and overnight index closures directly dictate
@@ -4019,7 +4017,7 @@ edges:
 - from: rbi
   to: usd_inr_exchange
   type: AFFECTS
-  weight: 0.8
+  weight: 0.85
   polarity: -1
   delay: IMMEDIATE
   description: The RBI directly intervenes in forex markets by selling dollars to
@@ -4027,7 +4025,7 @@ edges:
 - from: fii_fpi_flows
   to: india_forex_reserves
   type: SUPPLIES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Net positive foreign portfolio inflows directly supply foreign currency
@@ -4043,7 +4041,7 @@ edges:
 - from: india_10yr_bond_yield
   to: nifty_50
   type: AFFECTS
-  weight: 0.65
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Higher risk-free sovereign yields lower the present value of future
@@ -4067,7 +4065,7 @@ edges:
 - from: global_shipping_freight_rates
   to: wpi
   type: AFFECTS
-  weight: 0.65
+  weight: 0.7
   polarity: 1
   delay: SHORT_TERM
   description: Elevated international shipping costs are directly passed through to
@@ -4083,7 +4081,7 @@ edges:
 - from: global_semiconductor_supply_chain
   to: pmi_manufacturing
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Adequate semiconductor supply directly enables production volumes in
@@ -4091,7 +4089,7 @@ edges:
 - from: pmi_manufacturing
   to: index_of_industrial_production
   type: AFFECTS
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: Purchasing managers' activity is a direct leading indicator that translates
@@ -4107,7 +4105,7 @@ edges:
 - from: india_gdp_growth
   to: national_unemployment_rate
   type: AFFECTS
-  weight: 0.75
+  weight: 0.7
   polarity: -1
   delay: MEDIUM_TERM
   description: Macroeconomic expansion directly drives corporate hiring, absorbing
@@ -4115,7 +4113,7 @@ edges:
 - from: epfo_payroll_additions
   to: national_unemployment_rate
   type: AFFECTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Net additions to formal payrolls directly reduce the aggregate national
@@ -4131,7 +4129,7 @@ edges:
 - from: global_food_grain_supply
   to: wpi
   type: AFFECTS
-  weight: 0.65
+  weight: 0.7
   polarity: -1
   delay: SHORT_TERM
   description: Abundant global grain supplies directly lower the food component of
@@ -4139,7 +4137,7 @@ edges:
 - from: global_edible_oil_supply
   to: wpi
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: -1
   delay: SHORT_TERM
   description: Increased global palm and sunflower oil supplies directly reduce wholesale
@@ -4147,7 +4145,7 @@ edges:
 - from: india_working_age_population
   to: india_gdp_growth
   type: PRODUCES
-  weight: 0.7
+  weight: 0.65
   polarity: 1
   delay: LONG_TERM
   description: An expanding demographic of working-age citizens directly increases
@@ -4219,7 +4217,7 @@ edges:
 - from: dedicated_freight_corridors
   to: railway_freight_movement
   type: SUPPLIES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: Specialized freight railway lines provide high-speed, unhindered track
@@ -4251,7 +4249,7 @@ edges:
 - from: satellite_network
   to: telecom_towers_network
   type: SUPPLIES
-  weight: 0.6
+  weight: 0.5
   polarity: 1
   delay: IMMEDIATE
   description: Communication satellites provide essential data backhaul for telecom
@@ -4259,7 +4257,7 @@ edges:
 - from: cyclonic_storm_systems
   to: national_power_grid
   type: DISRUPTS
-  weight: 0.85
+  weight: 0.8
   polarity: -1
   delay: IMMEDIATE
   description: Severe tropical cyclones uproot transmission towers and snap high-voltage
@@ -4299,7 +4297,7 @@ edges:
 - from: sewage_drainage_network
   to: peninsular_river_systems
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: MEDIUM_TERM
   description: Untreated discharge and overflow from municipal drainage networks severely
@@ -4307,7 +4305,7 @@ edges:
 - from: sewage_drainage_network
   to: himalayan_river_systems
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: MEDIUM_TERM
   description: Untreated sewage discharge from northern urban centers flows directly
@@ -4331,7 +4329,7 @@ edges:
 - from: rural_urban_migration_corridors
   to: urban_population_density
   type: PRODUCES
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: LONG_TERM
   description: The continuous influx of migrants from villages directly drives up
@@ -4355,7 +4353,7 @@ edges:
 - from: india_working_age_population
   to: skilled_emigration
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: India's massive demographic dividend supplies the raw human capital
@@ -4363,7 +4361,7 @@ edges:
 - from: autumn_festive_season
   to: aggregate_consumer_confidence
   type: AFFECTS
-  weight: 0.85
+  weight: 0.8
   polarity: 1
   delay: SHORT_TERM
   description: The cultural momentum of the Diwali and Durga Puja season temporarily
@@ -4387,7 +4385,7 @@ edges:
 - from: epfo
   to: female_labor_force_participation
   type: REGULATES
-  weight: 0.6
+  weight: 0.5
   polarity: 1
   delay: MEDIUM_TERM
   description: Formal provident fund rules and statutory maternity benefit enforcement
@@ -4395,7 +4393,7 @@ edges:
 - from: national_unemployment_rate
   to: skilled_emigration
   type: AFFECTS
-  weight: 0.7
+  weight: 0.65
   polarity: 1
   delay: MEDIUM_TERM
   description: High domestic joblessness drives skilled workers and fresh graduates
@@ -4403,7 +4401,7 @@ edges:
 - from: highway_network
   to: tier_2_3_city_expansion
   type: PRODUCES
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: Physical highway connectivity integrates smaller towns into national
@@ -4427,7 +4425,7 @@ edges:
 - from: india_working_age_population
   to: epfo_payroll_additions
   type: SUPPLIES
-  weight: 0.85
+  weight: 0.75
   polarity: 1
   delay: LONG_TERM
   description: The expanding demographic dividend supplies the raw human capital required
@@ -4443,7 +4441,7 @@ edges:
 - from: indian_diaspora_nri
   to: india_forex_reserves
   type: FUNDS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: SHORT_TERM
   description: Inward remittances from the non-resident Indian population provide
@@ -4451,7 +4449,7 @@ edges:
 - from: seasonal_migrant_labor
   to: road_freight_movement
   type: SUPPLIES
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: SHORT_TERM
   description: Migrant workers supply the critical labor force required to operate
@@ -4467,7 +4465,7 @@ edges:
 - from: india_aging_population
   to: female_labor_force_participation
   type: DISRUPTS
-  weight: 0.65
+  weight: 0.6
   polarity: -1
   delay: LONG_TERM
   description: A growing elderly population increases unpaid domestic care burdens,
@@ -4475,7 +4473,7 @@ edges:
 - from: urban_population_density
   to: voter_turnout_aggregates
   type: AFFECTS
-  weight: 0.55
+  weight: 0.5
   polarity: -1
   delay: SHORT_TERM
   description: High urban density and transient migrant populations typically correlate
@@ -4483,7 +4481,7 @@ edges:
 - from: regional_language_movements
   to: mass_boycott_movements
   type: PRODUCES
-  weight: 0.7
+  weight: 0.65
   polarity: 1
   delay: SHORT_TERM
   description: Linguistic chauvinism and regional identity politics often trigger
@@ -4491,7 +4489,7 @@ edges:
 - from: union_budget_framework
   to: tier_2_3_city_expansion
   type: FUNDS
-  weight: 0.8
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Central budget allocations for urban renewal missions directly finance
@@ -4507,7 +4505,7 @@ edges:
 - from: india_gdp_growth
   to: epfo_payroll_additions
   type: AFFECTS
-  weight: 0.75
+  weight: 0.8
   polarity: 1
   delay: MEDIUM_TERM
   description: GDP expansion creates formal sector jobs that register as new EPFO
@@ -4523,7 +4521,7 @@ edges:
 - from: india_gdp_growth
   to: venture_capital_and_pe_flows
   type: AFFECTS
-  weight: 0.7
+  weight: 0.75
   polarity: 1
   delay: MEDIUM_TERM
   description: Strong GDP growth signals attract venture capital and private equity
@@ -4554,7 +4552,7 @@ edges:
 - from: street_waterlogging
   to: residential_power_supply
   type: DISRUPTS
-  weight: 0.8
+  weight: 0.75
   polarity: -1
   delay: IMMEDIATE
   description: Waterlogged streets submerge transformers and short-circuit ground-level
@@ -4562,17 +4560,15 @@ edges:
 - from: cyclonic_storm_systems
   to: marine_fish_stocks
   type: DISRUPTS
-  weight: 0.85
+  weight: 0.8
   polarity: -1
   delay: IMMEDIATE
   description: Cyclonic storms force fishing fleet to dock and disrupt marine breeding
     grounds, directly reducing available fish stocks.
-
-## Phase 4b gap-fill: I→I lateral edges (intermediary wiring)
 - from: municipal_water_supply
   to: drinking_water_quality
   type: AFFECTS
-  weight: 0.9
+  weight: 0.85
   polarity: 1
   delay: IMMEDIATE
   description: The treatment and distribution quality of municipal water directly
@@ -4585,3 +4581,83 @@ edges:
   delay: IMMEDIATE
   description: Groundwater extracted via borewells directly dictates the mineral and
     contaminant levels in household drinking water.
+- from: forest_cover
+  to: peninsular_river_systems
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Forest catchments regulate water flow into peninsular rivers, maintaining
+    base flows during non-monsoon months.
+- from: forest_cover
+  to: himalayan_river_systems
+  type: AFFECTS
+  weight: 0.6
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Himalayan forest cover prevents soil erosion and regulates glacial
+    melt runoff into northern river systems.
+- from: indian_plate_interior
+  to: power_substations
+  type: DISRUPTS
+  weight: 0.65
+  polarity: -1
+  delay: IMMEDIATE
+  description: Seismic activity physically damages transformers and grid substations,
+    reducing operational capacity.
+- from: cyclonic_storm_systems
+  to: commercial_airports
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: IMMEDIATE
+  description: High winds and flooding from cyclones force commercial airports to
+    halt operations and ground flights.
+- from: peninsular_river_systems
+  to: canal_irrigation_networks
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Peninsular rivers act as the primary water source feeding state-level
+    agricultural canal networks.
+- from: european_union
+  to: it_services_exports
+  type: AFFECTS
+  weight: 0.65
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: Economic health and digital policies of the EU directly dictate the
+    volume of IT service contracts outsourced to India.
+- from: wto
+  to: it_services_exports
+  type: REGULATES
+  weight: 0.5
+  polarity: 1
+  delay: LONG_TERM
+  description: WTO agreements on cross-border data flows and digital trade tariffs
+    directly govern the profitability of Indian IT exports.
+- from: imf
+  to: sovereign_credit_rating
+  type: AFFECTS
+  weight: 0.75
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: IMF macroeconomic assessments and growth outlooks heavily influence
+    the sovereign credit ratings assigned to India.
+- from: sovereign_credit_rating
+  to: india_10yr_bond_yield
+  type: AFFECTS
+  weight: 0.85
+  polarity: -1
+  delay: IMMEDIATE
+  description: An upgrade in sovereign credit rating lowers the perceived risk of
+    Indian debt, directly decreasing the 10-year bond yield.
+- from: bank_liquidity_and_credit
+  to: commercial_bank_lending_rates
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Higher systemic liquidity reduces the cost of funds for banks, prompting
+    them to lower their benchmark lending rates.

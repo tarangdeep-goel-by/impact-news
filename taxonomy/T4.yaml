@@ -345,6 +345,15 @@ nodes:
   category: T4
   level: 4
   status: active
+- id: canal_irrigation_networks
+  aliases:
+  - Canal Systems
+  - Irrigation Canals
+  - Agricultural Water Supply
+  - Canal Network
+  category: T4
+  level: 4
+  status: active
 edges:
 - from: t4
   to: energy_power_infrastructure
@@ -580,3 +589,10 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: National Power Grid contains Power Substations
+- from: municipal_water_grid
+  to: canal_irrigation_networks
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Municipal Water Grid contains Canal Irrigation Networks

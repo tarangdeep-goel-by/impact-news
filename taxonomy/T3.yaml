@@ -502,6 +502,35 @@ nodes:
   level: 3
   status: active
   is_category: true
+- id: it_services_exports
+  aliases:
+  - Tech Exports
+  - Software Exports
+  - IT BPM Revenues
+  - IT Outsourcing Exports
+  category: T3
+  level: 4
+  status: active
+- id: sovereign_credit_rating
+  aliases:
+  - India Credit Rating
+  - Moody Rating
+  - S&P Rating
+  - Fitch Rating
+  - Sovereign Rating
+  category: T3
+  level: 4
+  status: active
+- id: commercial_bank_lending_rates
+  aliases:
+  - MCLR
+  - RLLR
+  - Bank Interest Rates
+  - Base Rate
+  - Repo Linked Lending Rate
+  category: T3
+  level: 4
+  status: active
 edges:
 - from: t3
   to: global_commodity_markets
@@ -883,3 +912,24 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Financial And Capital Markets contains Bank Liquidity And Credit
+- from: global_supply_chains
+  to: it_services_exports
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Supply Chains contains IT Services Exports
+- from: debt_and_bond_markets
+  to: sovereign_credit_rating
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Debt And Bond Markets contains Sovereign Credit Rating
+- from: bank_liquidity_and_credit
+  to: commercial_bank_lending_rates
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Bank Liquidity And Credit contains Commercial Bank Lending Rates

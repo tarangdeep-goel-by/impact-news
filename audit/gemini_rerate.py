@@ -28,22 +28,6 @@ CAUSAL_TYPES = {"AFFECTS", "PRODUCES", "REGULATES", "DISRUPTS", "SUPPLIES",
 # Batch definitions: batch_id -> (source_files, filter_fn)
 # filter_fn takes (edges, index) and returns the slice for this batch
 BATCH_DEFS = {
-    "T1": {
-        "files": ["taxonomy/T1.yaml"],
-        "has_nodes": True,
-    },
-    "T2": {
-        "files": ["taxonomy/T2.yaml"],
-        "has_nodes": True,
-    },
-    "T3": {
-        "files": ["taxonomy/T3.yaml"],
-        "has_nodes": True,
-    },
-    "T4_T5": {
-        "files": ["taxonomy/T4.yaml", "taxonomy/T5.yaml"],
-        "has_nodes": True,
-    },
     "bridges_1": {
         "files": ["taxonomy/bridge_edges.yaml"],
         "has_nodes": False,
@@ -62,12 +46,17 @@ BATCH_DEFS = {
     "laterals_1": {
         "files": ["taxonomy/lateral_edges.yaml"],
         "has_nodes": False,
-        "split": (0, 2),  # first half
+        "split": (0, 3),  # first third
     },
     "laterals_2": {
         "files": ["taxonomy/lateral_edges.yaml"],
         "has_nodes": False,
-        "split": (1, 2),  # second half
+        "split": (1, 3),  # second third
+    },
+    "laterals_3": {
+        "files": ["taxonomy/lateral_edges.yaml"],
+        "has_nodes": False,
+        "split": (2, 3),  # final third
     },
 }
 
@@ -121,6 +110,7 @@ def format_edges_for_prompt(edges: list[dict]) -> str:
             "type": e.get("type", "AFFECTS"),
             "weight": e.get("weight", 0.5),
             "polarity": e.get("polarity", 1),
+            "delay": e.get("delay", "SHORT_TERM"),
             "description": e.get("description", ""),
         })
     return yaml.dump(simplified, default_flow_style=False, sort_keys=False, allow_unicode=True)
@@ -128,29 +118,37 @@ def format_edges_for_prompt(edges: list[dict]) -> str:
 
 def build_prompt(edges_yaml: str) -> str:
     """Build the Gemini re-rating prompt."""
-    return f"""You are calibrating edge weights for a causal knowledge graph modeling how macro events affect Indian citizens' daily lives.
+    return f"""You are calibrating edge properties for a causal knowledge graph modeling how macro events affect Indian citizens' daily lives.
 
-Weight = "causal pass-through rate" — if the source entity changes by 10%, what percentage of that change reaches the target?
+## Task: For each edge, verify and re-rate THREE properties:
 
-## Calibration Examples
-- brent_crude → retail_diesel: If crude rises 10%, diesel rises ~8%. Weight = 0.80
-- brent_crude → retail_tomato: If crude rises 10%, tomato rises ~2%. Weight = 0.20
-- monetary_policy_committee → home_loan_emi: If repo rate changes 10%, EMI changes ~7%. Weight = 0.70
-- southwest_monsoon → retail_rice: If monsoon deficit is 10%, rice price rises ~5%. Weight = 0.50
+### 1. Weight (causal pass-through rate)
+If the source entity changes by 10%, what percentage of that change reaches the target?
 
-## Weight Scale
+Weight Scale:
 - 0.85-0.95: Near 1:1 pass-through (wheat_flour → bread price)
 - 0.65-0.85: Strong but buffered (interest_rate → EMI)
 - 0.40-0.65: Noticeable but diluted (tariff → meal_cost)
 - 0.20-0.40: Weak, indirect (distant regulatory → local price)
 - Below 0.20: Consider removing (too weak for causal model)
 
-## Think About
-- Buffer mechanisms (government subsidies, reserves, imports)
-- Time delays and price stickiness
-- Alternative sources/substitution effects
-- Government intervention and price controls
-- Supply chain absorption
+Think about: buffer mechanisms, government subsidies, alternative sources, price stickiness, supply chain absorption.
+
+### 2. Polarity (direction of effect)
+- +1: Source increases → Target increases (or source decreases → target decreases)
+- -1: Source increases → Target decreases (or source decreases → target increases)
+
+Examples:
+- brent_crude → retail_diesel: polarity = +1 (crude up → diesel up)
+- rbi_repo_rate → home_loan_emi: polarity = +1 (rate up → EMI up)
+- forest_cover → urban_flooding: polarity = -1 (more forest → less flooding)
+- competition → prices: polarity = -1 (more competition → lower prices)
+
+### 3. Delay (time for effect to materialize)
+- IMMEDIATE: Hours to days (market prices, power outages, flight cancellations)
+- SHORT_TERM: Days to weeks (fuel price pass-through, supply disruptions)
+- MEDIUM_TERM: Weeks to months (policy effects, seasonal impacts, employment shifts)
+- LONG_TERM: Months to years (infrastructure effects, demographic shifts, climate impacts)
 
 ## Current Edges to Re-Rate
 {edges_yaml}
@@ -160,7 +158,9 @@ Return ONLY a YAML array. No commentary, no markdown fences:
 - from: source_node_id
   to: target_node_id
   weight: 0.XX
-  reasoning: "One sentence explaining the pass-through logic"
+  polarity: 1 or -1
+  delay: IMMEDIATE or SHORT_TERM or MEDIUM_TERM or LONG_TERM
+  reasoning: "One sentence explaining the calibration"
 """
 
 
@@ -181,30 +181,31 @@ def call_gemini(client, prompt: str, batch_id: str) -> tuple[str, str]:
     """Send prompt to Gemini 3.1 Pro with thinking."""
     from google.genai import types
 
-    chat = client.chats.create(
-        model="gemini-3.1-pro-preview",
-        config=types.GenerateContentConfig(
-            thinking_config=types.ThinkingConfig(
-                thinking_level="high",
-                include_thoughts=True,
-            ),
-            temperature=0.3,
-        ),
-    )
-
     print(f"\n{'='*60}")
     print(f"Re-rating batch {batch_id} ({len(prompt)} chars)...")
     print(f"{'='*60}")
 
+    config = types.GenerateContentConfig(
+        thinking_config=types.ThinkingConfig(
+            thinking_budget=16000,
+            include_thoughts=True,
+        ),
+        temperature=0.3,
+    )
+
     max_retries = 5
     for attempt in range(max_retries):
         try:
-            response = chat.send_message(prompt)
+            response = client.models.generate_content(
+                model="gemini-3.1-pro-preview",
+                contents=prompt,
+                config=config,
+            )
             break
         except Exception as e:
             if "503" in str(e) or "UNAVAILABLE" in str(e) or "429" in str(e):
                 wait = 30 * (attempt + 1)
-                print(f"  Retry {attempt + 1}/{max_retries} — waiting {wait}s...")
+                print(f"  Retry {attempt + 1}/{max_retries} — waiting {wait}s...", flush=True)
                 time.sleep(wait)
             else:
                 raise
@@ -223,7 +224,7 @@ def call_gemini(client, prompt: str, batch_id: str) -> tuple[str, str]:
     usage = response.usage_metadata
     print(f"  Thinking: {usage.thoughts_token_count} tokens")
     print(f"  Output: {usage.candidates_token_count} tokens")
-    print(f"  Total: {usage.total_token_count} tokens")
+    print(f"  Total: {usage.total_token_count} tokens", flush=True)
 
     return answer.strip(), thinking.strip()
 
@@ -245,14 +246,14 @@ def parse_yaml_response(response: str) -> list[dict]:
         return []
 
 
+VALID_DELAYS = {"IMMEDIATE", "SHORT_TERM", "MEDIUM_TERM", "LONG_TERM"}
+
+
 def match_and_validate(original_edges: list[dict], rerated: list[dict]) -> tuple[list[dict], list[dict]]:
     """Match rerated edges to originals and validate.
 
-    Returns (updates, warnings) where:
-    - updates: list of {from, to, old_weight, new_weight, reasoning}
-    - warnings: list of {from, to, old_weight, new_weight, reason}
+    Returns (updates, warnings) where each entry includes weight, polarity, delay.
     """
-    # Index originals by (from, to)
     orig_map = {}
     for e in original_edges:
         key = (e["from"], e["to"])
@@ -265,6 +266,8 @@ def match_and_validate(original_edges: list[dict], rerated: list[dict]) -> tuple
         src = r.get("from", "")
         dst = r.get("to", "")
         new_weight = r.get("weight")
+        new_polarity = r.get("polarity")
+        new_delay = r.get("delay")
         reasoning = r.get("reasoning", "")
         key = (src, dst)
 
@@ -285,40 +288,49 @@ def match_and_validate(original_edges: list[dict], rerated: list[dict]) -> tuple
             })
             continue
 
-        old_weight = orig_map[key].get("weight", 0.5)
-        diff = abs(new_weight - old_weight)
+        orig = orig_map[key]
+        old_weight = orig.get("weight", 0.5)
+        old_polarity = orig.get("polarity", 1)
+        old_delay = orig.get("delay", "SHORT_TERM")
+        weight_diff = abs(new_weight - old_weight)
 
         entry = {
             "from": src, "to": dst,
             "old_weight": old_weight, "new_weight": new_weight,
+            "old_polarity": old_polarity, "new_polarity": new_polarity if new_polarity in (1, -1) else old_polarity,
+            "old_delay": old_delay, "new_delay": new_delay if new_delay in VALID_DELAYS else old_delay,
             "reasoning": reasoning,
         }
 
-        if diff > 0.3:
+        # Flag polarity flips
+        if new_polarity in (1, -1) and new_polarity != old_polarity:
             warnings.append({
                 **entry,
-                "reason": f"Large delta: {old_weight:.2f} -> {new_weight:.2f} (diff={diff:.2f})",
+                "reason": f"Polarity flip: {old_polarity} -> {new_polarity}",
             })
-            # Still include in updates — user can review warnings
-            updates.append(entry)
+
+        if weight_diff > 0.3:
+            warnings.append({
+                **entry,
+                "reason": f"Large weight delta: {old_weight:.2f} -> {new_weight:.2f} (diff={weight_diff:.2f})",
+            })
         elif new_weight < 0.15:
             warnings.append({
                 **entry,
                 "reason": f"Candidate for removal: weight={new_weight:.2f}",
             })
-            updates.append(entry)
-        else:
-            updates.append(entry)
+
+        updates.append(entry)
 
     return updates, warnings
 
 
-def apply_weights_to_file(path: Path, weight_map: dict[tuple[str, str], float]) -> int:
-    """Update edge weights in a source YAML file.
+def apply_weights_to_file(path: Path, update_map: dict[tuple[str, str], dict]) -> int:
+    """Update edge weight, polarity, and delay in a source YAML file.
 
     Args:
         path: Path to YAML file
-        weight_map: {(from, to): new_weight}
+        update_map: {(from, to): {new_weight, new_polarity, new_delay}}
 
     Returns number of edges updated.
     """
@@ -328,8 +340,11 @@ def apply_weights_to_file(path: Path, weight_map: dict[tuple[str, str], float]) 
     count = 0
     for edge in edges:
         key = (edge.get("from"), edge.get("to"))
-        if key in weight_map:
-            edge["weight"] = weight_map[key]
+        if key in update_map:
+            u = update_map[key]
+            edge["weight"] = u["new_weight"]
+            edge["polarity"] = u["new_polarity"]
+            edge["delay"] = u["new_delay"]
             count += 1
 
     path.write_text(yaml.dump(data, default_flow_style=False, sort_keys=False, allow_unicode=True))
@@ -370,17 +385,21 @@ def load_saved_weights(batch_id: str) -> tuple[list[dict], list[dict]]:
 
 
 def apply_batch_weights(batch_id: str, updates: list[dict]):
-    """Apply weight updates to source YAML files for a batch."""
+    """Apply weight/polarity/delay updates to source YAML files for a batch."""
     defn = BATCH_DEFS[batch_id]
     source_paths = [Path(f) for f in defn["files"]]
 
-    weight_map = {}
+    update_map = {}
     for u in updates:
-        weight_map[(u["from"], u["to"])] = u["new_weight"]
+        update_map[(u["from"], u["to"])] = {
+            "new_weight": u["new_weight"],
+            "new_polarity": u.get("new_polarity", u.get("old_polarity", 1)),
+            "new_delay": u.get("new_delay", u.get("old_delay", "SHORT_TERM")),
+        }
 
     total = 0
     for path in source_paths:
-        count = apply_weights_to_file(path, weight_map)
+        count = apply_weights_to_file(path, update_map)
         total += count
         if count > 0:
             print(f"  Updated {count} edges in {path}")
