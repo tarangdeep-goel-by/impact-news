@@ -348,11 +348,15 @@ class CausalMarkovEngine:
     ) -> tuple[float, str, int]:
         """Compute magnitude, timing, and polarity along a path.
 
+        Magnitude uses bottleneck (min edge weight) — the weakest link in the
+        causal chain determines overall strength. No hub penalty: PPR already
+        distributes probability across outgoing edges.
+
         Returns:
             (magnitude, delay_label, polarity)
         """
         total_delay = 0
-        magnitude = 1.0
+        edge_weights: list[float] = []
         polarity = 1
 
         for i in range(len(path) - 1):
@@ -373,14 +377,11 @@ class CausalMarkovEngine:
             else:
                 polarity = 0
 
-            # Magnitude: raw weight × hub penalty
-            raw_w = edge.get("weight", 0.5)
-            out_degree = self.causal_G.out_degree(u)
-            if out_degree > 1:
-                hub_penalty = 1.0 / math.log2(out_degree + 1)
-            else:
-                hub_penalty = 1.0
-            magnitude *= raw_w * hub_penalty
+            # Collect edge weight (no hub penalty)
+            edge_weights.append(edge.get("weight", 0.5))
+
+        # Magnitude = bottleneck (weakest link in the chain)
+        magnitude = min(edge_weights) if edge_weights else 0.0
 
         # Map delay sum back to label (cap at LONG_TERM)
         delay_label = DELAY_LABELS.get(min(total_delay, 3), "LONG_TERM")
