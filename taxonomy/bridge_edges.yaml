@@ -1486,3 +1486,101 @@ edges:
   delay: MEDIUM_TERM
   description: Increases in commercial lending rates directly raise the interest burden
     and EMIs for unsecured personal loans.
+
+## Phase 4e: Structural break fixes (Gemini-reviewed, 2 rounds)
+- from: fssai
+  to: nutritional_supplements
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: FSSAI directly sets formulation, safety, and labeling standards for
+    nutritional supplements, affecting compliance costs and market availability.
+- from: ministry_of_education
+  to: cbse_exams
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The Ministry of Education directly sets policies, syllabus frameworks,
+    and operational guidelines for CBSE board exams.
+- from: ministry_of_education
+  to: mid_day_meal
+  type: FUNDS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: The Ministry of Education directly allocates the budget and administers
+    the PM POSHAN Mid-Day Meal scheme.
+- from: power_substations
+  to: small_factory_owner_income
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Stable power supply from local substations ensures continuous factory
+    operations, directly supporting MSME owner income.
+- from: autumn_festive_season
+  to: intercity_bus_fare
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: The autumn festive season triggers massive migrant travel home, causing
+    intercity private bus operators to surge ticket prices.
+- from: rural_urban_migration_corridors
+  to: domestic_help_wages
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Increased rural-urban migration expands the urban informal labor pool,
+    putting downward pressure on domestic help wages due to oversupply.
+- from: retail_inflation_cpi
+  to: minimum_wage
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: CPI directly dictates the Dearness Allowance and statutory minimum
+    wage revisions.
+- from: aviation_turbine_fuel
+  to: domestic_flight_ticket
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: ATF constitutes ~40% of airline operating costs, directly driving
+    domestic flight ticket pricing.
+- from: indirect_taxes
+  to: biscuits_and_snacks
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Changes in GST rates are directly passed on to the retail prices
+    of packaged biscuits and snacks.
+- from: indirect_taxes
+  to: instant_noodles
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Changes in GST rates are directly passed on to the retail prices
+    of instant noodles.
+- from: indirect_taxes
+  to: tea_leaves
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Changes in GST rates are directly passed on to the retail prices
+    of packaged tea.
+- from: indirect_taxes
+  to: coffee_powder
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: IMMEDIATE
+  description: Changes in GST rates are directly passed on to the retail prices
+    of packaged coffee.

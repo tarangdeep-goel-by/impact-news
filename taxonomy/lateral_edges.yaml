@@ -4661,3 +4661,103 @@ edges:
   delay: SHORT_TERM
   description: Higher systemic liquidity reduces the cost of funds for banks, prompting
     them to lower their benchmark lending rates.
+
+## Phase 4e: Structural break fixes
+# I→I laterals
+- from: agricultural_crop_damage
+  to: global_food_grain_supply
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: MEDIUM_TERM
+  description: Agricultural crop damage directly reduces the harvest yield of paddy
+    and wheat, restricting food grain supply.
+- from: agricultural_crop_damage
+  to: agricultural_household_income
+  type: DISRUPTS
+  weight: 0.9
+  polarity: -1
+  delay: SHORT_TERM
+  description: Crop failure directly destroys the primary income source of farming
+    households.
+- from: agricultural_household_income
+  to: mgnrega_wages
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: Loss of farm income forces rural workers to seek MGNREGA employment,
+    spiking demand and wage allocations.
+- from: upi_and_bank_scams
+  to: personal_data_privacy
+  type: DISRUPTS
+  weight: 0.8
+  polarity: -1
+  delay: IMMEDIATE
+  description: Financial scams involve phishing and credential theft, directly
+    compromising the victim's personal data privacy.
+- from: college_university_fees
+  to: personal_loan_emi
+  type: AFFECTS
+  weight: 0.7
+  polarity: 1
+  delay: MEDIUM_TERM
+  description: High university fees force parents to take unsecured personal loans,
+    directly increasing their EMI burden.
+- from: engineering_education
+  to: private_tutors
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: The competitive nature of engineering entrance exams directly drives
+    student demand for private tutoring and coaching.
+# T→T laterals
+- from: wpi
+  to: retail_inflation_cpi
+  type: AFFECTS
+  weight: 0.8
+  polarity: 1
+  delay: SHORT_TERM
+  description: Wholesale price increases are passed down the supply chain to consumer
+    retail prices measured by CPI.
+- from: retail_inflation_cpi
+  to: monetary_policy_committee
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: RBI's MPC statutorily targets CPI inflation since 2016, making CPI
+    the primary input for repo rate decisions.
+- from: retail_inflation_cpi
+  to: aggregate_consumer_confidence
+  type: AFFECTS
+  weight: 0.8
+  polarity: -1
+  delay: SHORT_TERM
+  description: High retail inflation erodes household purchasing power, directly
+    lowering aggregate consumer confidence.
+- from: national_unemployment_rate
+  to: aggregate_consumer_confidence
+  type: AFFECTS
+  weight: 0.7
+  polarity: -1
+  delay: SHORT_TERM
+  description: High unemployment signals economic distress, directly depressing
+    consumer confidence and spending sentiment.
+- from: brent_crude
+  to: aviation_turbine_fuel
+  type: SUPPLIES
+  weight: 0.9
+  polarity: 1
+  delay: SHORT_TERM
+  description: Brent crude is directly refined into aviation turbine fuel, dictating
+    its base cost.
+- from: autumn_festive_season
+  to: wedding_season_aggregate
+  type: AFFECTS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: The autumn festive calendar including Dev Uthani Ekadashi directly
+    marks the start of the auspicious Hindu wedding season.

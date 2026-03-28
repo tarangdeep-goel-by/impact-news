@@ -531,6 +531,23 @@ nodes:
   category: T3
   level: 4
   status: active
+- id: retail_inflation_cpi
+  aliases:
+  - Consumer Price Index
+  - CPI
+  - Retail Inflation
+  - CPI Inflation
+  category: T3
+  level: 4
+  status: active
+- id: aviation_turbine_fuel
+  aliases:
+  - Jet Fuel
+  - ATF Prices
+  - Aviation Fuel
+  category: T3
+  level: 4
+  status: active
 edges:
 - from: t3
   to: global_commodity_markets
@@ -933,3 +950,17 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Bank Liquidity And Credit contains Commercial Bank Lending Rates
+- from: inflation_indices
+  to: retail_inflation_cpi
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Inflation Indices contains Retail Inflation CPI
+- from: energy_commodities
+  to: aviation_turbine_fuel
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy Commodities contains Aviation Turbine Fuel

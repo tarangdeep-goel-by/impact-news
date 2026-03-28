@@ -720,6 +720,15 @@ nodes:
   category: I4
   level: 4
   status: active
+- id: agricultural_household_income
+  aliases:
+  - Farm Income
+  - Agricultural Household Earnings
+  - Rural Farm Income
+  - Kisan Income
+  category: I4
+  level: 4
+  status: active
 edges:
 - from: i4
   to: corporate_employment
@@ -1195,3 +1204,10 @@ edges:
   polarity: 1
   delay: IMMEDIATE
   description: Agriculture And Allied contains Agricultural Crop Damage
+- from: agriculture_and_allied
+  to: agricultural_household_income
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Agriculture And Allied contains Agricultural Household Income
