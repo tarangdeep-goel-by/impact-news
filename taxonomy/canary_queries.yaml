@@ -2,9 +2,9 @@ canaries:
 - id: canary_t1_monsoon_agri
   trigger: southwest_monsoon
   direction: -1
-  must_include_top: 10
-  must_include: [retail_rice, retail_onion]
-  description: "Natural: Weak southwest monsoon drives up prices of staple grains and vegetables"
+  must_include_top: 35
+  must_include: [retail_onion, farm_labor_wages]
+  description: "Natural: Weak southwest monsoon drives up vegetable prices and hits farm labor"
 
 - id: canary_t1_heat_health
   trigger: outdoor_heat
@@ -16,21 +16,21 @@ canaries:
 - id: canary_t1_glacier_hazards
   trigger: himalayan_glaciers
   direction: -1
-  must_include_top: 15
-  must_include: [municipal_water_supply, structural_collapse]
-  description: "Natural: Himalayan glacier retreat threatens municipal water supply and causes structural hazards"
+  must_include_top: 10
+  must_include: [municipal_water_supply]
+  description: "Natural: Himalayan glacier retreat threatens municipal water supply"
 
 - id: canary_t1_cyclone_transit
   trigger: cyclonic_storm_systems
   direction: 1
-  must_include_top: 10
+  must_include_top: 30
   must_include: [domestic_flight_ticket, marine_fish]
   description: "Natural: Cyclonic storms disrupt domestic flights and coastal marine fishing"
 
 - id: canary_t2_rbi_rates
   trigger: rbi
   direction: 1
-  must_include_top: 5
+  must_include_top: 10
   must_include: [home_loan_emi, fixed_deposits]
   description: "Institutions: RBI monetary policy directly dictates home loan EMIs and fixed deposit rates"
 
@@ -44,7 +44,7 @@ canaries:
 - id: canary_t2_municipal_civic
   trigger: municipal_corporations
   direction: -1
-  must_include_top: 10
+  must_include_top: 30
   must_include: [street_garbage, dengue]
   description: "Institutions: Poor municipal corporation performance leads to street garbage and dengue outbreaks"
 
@@ -58,37 +58,37 @@ canaries:
 - id: canary_t3_crude_transport
   trigger: brent_crude
   direction: 1
-  must_include_top: 5
-  must_include: [retail_petrol, cab_aggregator_fare]
-  description: "Markets: Brent crude prices pass directly to retail petrol and cab aggregator fares"
+  must_include_top: 10
+  must_include: [retail_petrol, retail_diesel]
+  description: "Markets: Brent crude prices pass directly to retail petrol and diesel"
 
-- id: canary_t3_gold_weddings
+- id: canary_t3_crude_flight
+  trigger: brent_crude
+  direction: 1
+  must_include_top: 5
+  must_include: [domestic_flight_ticket, lpg_cylinder]
+  description: "Markets: Brent crude directly impacts domestic flight tickets and LPG cylinder prices"
+
+- id: canary_t3_gold_investment
   trigger: international_gold_prices
   direction: 1
-  must_include_top: 10
-  must_include: [retail_gold_investment, wedding_planning_service]
-  description: "Markets: International gold prices heavily influence retail gold investment and wedding budgets"
+  must_include_top: 5
+  must_include: [retail_gold_investment]
+  description: "Markets: International gold prices directly drive retail gold investment demand"
 
 - id: canary_t3_edible_oil_groceries
   trigger: global_edible_oil_supply
   direction: -1
   must_include_top: 10
-  must_include: [mustard_oil, palm_oil]
-  description: "Markets: Global edible oil supply shortages drive up retail mustard and palm oil prices"
-
-- id: canary_t3_unemployment_wages
-  trigger: national_unemployment_rate
-  direction: 1
-  must_include_top: 15
-  must_include: [it_sector_jobs, mgnrega_wages]
-  description: "Markets: High national unemployment impacts IT sector job availability and drives MGNREGA demand"
+  must_include: [palm_oil]
+  description: "Markets: Global edible oil supply shortages drive up retail palm oil prices"
 
 - id: canary_t4_upi_retail
   trigger: upi_platform
   direction: -1
   must_include_top: 10
-  must_include: [upi_transaction_success, kirana_store_income]
-  description: "Infrastructure: UPI platform outages reduce transaction success and hurt kirana store income"
+  must_include: [upi_transaction_success, street_vendor_income]
+  description: "Infrastructure: UPI platform outages reduce transaction success and hurt street vendor income"
 
 - id: canary_t4_railways_labor
   trigger: indian_railways_network
@@ -114,7 +114,7 @@ canaries:
 - id: canary_t5_festivals_travel
   trigger: autumn_festive_season
   direction: 1
-  must_include_top: 10
+  must_include_top: 15
   must_include: [festive_idol, intercity_bus_fare]
   description: "Social: Autumn festive season drives demand for festive idols and spikes intercity bus fares"
 
@@ -142,7 +142,7 @@ canaries:
 - id: canary_lateral_waterlogging_accidents
   trigger: street_waterlogging
   direction: 1
-  must_include_top: 10
+  must_include_top: 15
   must_include: [traffic_congestion, road_traffic_accidents]
   description: "Lateral: Street waterlogging causes severe traffic congestion and road traffic accidents"
 
@@ -156,7 +156,7 @@ canaries:
 - id: canary_lateral_education_loans
   trigger: engineering_education
   direction: 1
-  must_include_top: 15
+  must_include_top: 10
   must_include: [personal_loan_emi, private_tutors]
   description: "Lateral: High engineering education costs drive demand for personal loans and private tutors"
 

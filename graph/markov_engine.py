@@ -478,6 +478,90 @@ class CausalMarkovEngine:
 
         return reached_scores
 
+    def _run_causal_shock(
+        self, trigger_node: str, hop_friction: float = 0.85,
+        score_threshold: float = 0.001, max_depth: int = 8,
+    ) -> dict[str, dict]:
+        """Max-Product causal shock propagation from trigger.
+
+        No fan-out penalty — trigger propagates full score × edge_weight × hop_friction
+        to ALL neighbors simultaneously. Each node keeps only the strongest path.
+
+        Returns dict of {node: {score, path, polarity, delay}}.
+        """
+        import heapq
+
+        # Seed expansion: trigger + ancestors with decay
+        seeds = self._build_seed_vector(trigger_node, decay=0.5, max_levels=3)
+        seed_nodes = set(seeds.keys())
+
+        # Impact scores and predecessor tracking
+        scores: dict[str, float] = {}
+        paths: dict[str, list[str]] = {}
+
+        # Initialize seeds
+        for seed, weight in seeds.items():
+            if seed in self.causal_G:
+                scores[seed] = weight
+                paths[seed] = [seed]
+
+        # Max-heap (negate for min-heap)
+        pq: list[tuple[float, str]] = [(-s, n) for n, s in scores.items()]
+        heapq.heapify(pq)
+
+        while pq:
+            neg_score, u = heapq.heappop(pq)
+            current_score = -neg_score
+
+            # Stale entry
+            if current_score < scores.get(u, 0.0):
+                continue
+
+            # Depth limit
+            if len(paths.get(u, [])) - 1 >= max_depth:
+                continue
+
+            for v in self.causal_G.successors(u):
+                edge_weight = self.causal_G[u][v].get("weight", 0.5)
+                new_score = current_score * edge_weight * hop_friction
+
+                if new_score < score_threshold:
+                    continue
+
+                if new_score > scores.get(v, 0.0):
+                    scores[v] = new_score
+                    paths[v] = paths[u] + [v]
+                    heapq.heappush(pq, (-new_score, v))
+
+        # Build result dicts with path metrics
+        reached: dict[str, dict] = {}
+        for node, score in scores.items():
+            if node in seed_nodes:
+                continue
+
+            path = paths.get(node, [])
+            _, delay, polarity = self._compute_path_metrics(path)
+
+            # Magnitude = bottleneck (min edge weight) along path
+            edge_weights = []
+            for i in range(len(path) - 1):
+                u, v = path[i], path[i + 1]
+                if self.causal_G.has_edge(u, v):
+                    edge_weights.append(self.causal_G[u][v].get("weight", 0.5))
+            magnitude = min(edge_weights) if edge_weights else 0.0
+
+            reached[node] = {
+                "node": node,
+                "probability": score,  # CSP score (compatible with existing interface)
+                "magnitude": magnitude,
+                "score": score,
+                "polarity": polarity,
+                "delay": delay,
+                "path": path,
+            }
+
+        return reached
+
     def evaluate_impact(
         self,
         trigger_node: str,
@@ -486,88 +570,85 @@ class CausalMarkovEngine:
         prob_threshold: float = 0.005,
         max_depth: int = 6,
         include_aggregation: bool = False,
+        method: str = "csp",
+        hop_friction: float = 0.85,
     ) -> list[dict] | tuple[list[dict], dict[str, dict]]:
-        """Evaluate impact of a trigger using PPR + path analysis.
+        """Evaluate impact of a trigger on the causal graph.
 
-        1. Elevator: walk trigger up to causal entry point
-        2. PPR: compute probability distribution from trigger
-        3. Paths: for each node above threshold, find dominant path
-        4. Metrics: compute magnitude, timing, polarity along path
-        5. CONTAINS: propagate scores to hierarchy children
-        6. Aggregation: optional upward roll-up for category nodes
+        Two methods available:
+        - "csp" (default): Causal Shock Propagation via Max-Product Dijkstra.
+          No fan-out penalty, edge weights determine signal strength.
+        - "ppr": Legacy Personalized PageRank.
 
         Args:
             trigger_node: Node ID where the shock originates
             event_direction: +1 (increase) or -1 (decrease)
-            restart_prob: PPR restart probability (α)
-            prob_threshold: Min PPR probability to include a node
-            max_depth: Max path length (for path filtering)
+            restart_prob: PPR restart probability (α) [ppr method only]
+            prob_threshold: Min score to include a node
+            max_depth: Max path length
             include_aggregation: If True, return (results, aggregation) tuple
+            method: "csp" or "ppr"
+            hop_friction: Per-hop decay for CSP (0.85 = 15% loss per hop)
 
         Returns:
             List of dicts with keys: node, probability, magnitude, score, polarity, delay, path
-            If include_aggregation: tuple of (results, aggregation_dict)
         """
-        # Step 1: Seed expansion — build multi-seed vector from trigger hierarchy
-        seed_vector = self._build_seed_vector(trigger_node, decay=0.5, max_levels=3)
-        seed_nodes = set(seed_vector.keys())
+        if method == "csp":
+            reached_scores = self._run_causal_shock(
+                trigger_node, hop_friction=hop_friction,
+                score_threshold=prob_threshold, max_depth=max_depth,
+            )
+        else:
+            # Legacy PPR method
+            seed_vector = self._build_seed_vector(trigger_node, decay=0.5, max_levels=3)
+            seed_nodes = set(seed_vector.keys())
 
-        # Step 2: Multi-seed PPR
-        ppr_scores = self._compute_ppr(seed_vector, restart_prob)
-        if not ppr_scores:
-            if include_aggregation:
-                return [], {}
-            return []
+            ppr_scores = self._compute_ppr(seed_vector, restart_prob)
+            if not ppr_scores:
+                if include_aggregation:
+                    return [], {}
+                return []
 
-        # Step 3-4: For each node above threshold, get path + metrics
-        reached_scores: dict[str, dict] = {}
-
-        for node, prob in ppr_scores.items():
-            if node in seed_nodes:
-                continue  # Skip seed nodes
-            if prob < prob_threshold:
-                continue
-
-            # Try path from each seed node, pick the one with highest magnitude
-            best_path = None
-            best_mag = -1.0
-            best_delay = "LONG_TERM"
-            best_polarity = 0
-            for seed_node in seed_vector:
-                candidate = self._get_dominant_path(seed_node, node)
-                if candidate is None or len(candidate) - 1 > max_depth:
+            reached_scores: dict[str, dict] = {}
+            for node, prob in ppr_scores.items():
+                if node in seed_nodes or prob < prob_threshold:
                     continue
-                mag, dly, pol = self._compute_path_metrics(candidate)
-                if mag > best_mag:
-                    best_path, best_mag, best_delay, best_polarity = candidate, mag, dly, pol
+                best_path = None
+                best_mag = -1.0
+                best_delay = "LONG_TERM"
+                best_polarity = 0
+                for seed_node in seed_vector:
+                    candidate = self._get_dominant_path(seed_node, node)
+                    if candidate is None or len(candidate) - 1 > max_depth:
+                        continue
+                    mag, dly, pol = self._compute_path_metrics(candidate)
+                    if mag > best_mag:
+                        best_path, best_mag, best_delay, best_polarity = candidate, mag, dly, pol
+                if best_path is None:
+                    continue
+                final_polarity = best_polarity * event_direction
+                cis = self._compute_cis(node, prob, best_mag)
+                reached_scores[node] = {
+                    "node": node, "probability": prob, "magnitude": best_mag,
+                    "score": prob * best_mag, "cis": cis,
+                    "polarity": final_polarity, "delay": best_delay, "path": best_path,
+                }
 
-            if best_path is None:
-                continue
+        # Apply event direction to polarity
+        for r in reached_scores.values():
+            if "polarity" in r:
+                r["polarity"] = r["polarity"] * event_direction if method == "csp" else r["polarity"]
 
-            path = best_path
-            magnitude, delay, polarity = best_mag, best_delay, best_polarity
-
-            # Apply event direction to polarity
-            final_polarity = polarity * event_direction
-
-            cis = self._compute_cis(node, prob, magnitude)
-            reached_scores[node] = {
-                "node": node,
-                "probability": prob,
-                "magnitude": magnitude,
-                "score": prob * magnitude,  # Combined score
-                "cis": cis,
-                "polarity": final_polarity,
-                "delay": delay,
-                "path": path,
-            }
-
-        # Step 5: CONTAINS propagation (downward)
+        # CONTAINS propagation (downward)
         reached_scores = self._propagate_contains_down(
             reached_scores, threshold=prob_threshold
         )
 
-        # Build results list, sorted by probability descending
+        # CIS scoring for ranking
+        for r in reached_scores.values():
+            r["cis"] = self._compute_cis(r["node"], r["probability"], r["magnitude"])
+
+        # Sort by CIS descending
         results = list(reached_scores.values())
         results.sort(key=lambda x: x["cis"], reverse=True)
 

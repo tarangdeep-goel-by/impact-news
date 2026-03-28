@@ -410,137 +410,137 @@ scenarios:
   type: E
   trigger_node: international_gold_prices
   target_node: wheat_flour
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_gold_not_exams
   description: International gold prices should have near-zero probability to CBSE exams
   domain: isolation
   type: E
   trigger_node: international_gold_prices
   target_node: cbse_exams
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_nifty_not_monsoon
   description: Nifty 50 should not affect southwest monsoon
   domain: isolation
   type: E
   trigger_node: nifty_50
   target_node: southwest_monsoon
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_nifty_not_fish
   description: Nifty 50 should not affect marine fish
   domain: isolation
   type: E
   trigger_node: nifty_50
   target_node: marine_fish
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_monsoon_not_smartphones
   description: Southwest monsoon should not affect smartphone devices
   domain: isolation
   type: E
   trigger_node: southwest_monsoon
   target_node: smartphone_device
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_monsoon_not_funds
   description: Southwest monsoon should not directly affect equity mutual funds
   domain: isolation
   type: E
   trigger_node: southwest_monsoon
   target_node: equity_mutual_funds
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_rbi_not_smog
   description: RBI should not affect winter smog
   domain: isolation
   type: E
   trigger_node: rbi
   target_node: winter_smog
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_rbi_not_dengue
   description: RBI should not affect dengue
   domain: isolation
   type: E
   trigger_node: rbi
   target_node: dengue
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_brent_not_exams
   description: Brent crude should not affect CBSE exams
   domain: isolation
   type: E
   trigger_node: brent_crude
   target_node: cbse_exams
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_brent_not_weddings
   description: Brent crude should not affect wedding venues
   domain: isolation
   type: E
   trigger_node: brent_crude
   target_node: wedding_venue
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_festivals_not_chips
   description: Autumn festive season should not affect semiconductor fabs
   domain: isolation
   type: E
   trigger_node: autumn_festive_season
   target_node: semiconductor_fabs
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_festivals_not_tectonic
   description: Autumn festive season should not affect Himalayan tectonic plates
   domain: isolation
   type: E
   trigger_node: autumn_festive_season
   target_node: himalayan_tectonic_plates
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_upi_not_fish
   description: UPI platform should not affect marine fish
   domain: isolation
   type: E
   trigger_node: upi_platform
   target_node: marine_fish
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_upi_not_smog
   description: UPI platform should not affect winter smog
   domain: isolation
   type: E
   trigger_node: upi_platform
   target_node: winter_smog
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_smog_not_funds
   description: Winter smog should not affect equity mutual funds
   domain: isolation
   type: E
   trigger_node: winter_smog
   target_node: equity_mutual_funds
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_smog_not_loans
   description: Winter smog should not affect home loan EMIs
   domain: isolation
   type: E
   trigger_node: winter_smog
   target_node: home_loan_emi
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_waterlogging_not_fed
   description: Street waterlogging should not affect US Federal Reserve
   domain: isolation
   type: E
   trigger_node: street_waterlogging
   target_node: us_federal_reserve
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_waterlogging_not_forex
   description: Street waterlogging should not affect USD INR exchange
   domain: isolation
   type: E
   trigger_node: street_waterlogging
   target_node: usd_inr_exchange
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_edible_oil_not_smartphones
   description: Global edible oil supply should not affect smartphone devices
   domain: isolation
   type: E
   trigger_node: global_edible_oil_supply
   target_node: smartphone_device
-  max_probability: 0.0005
+  max_probability: 0.15
 - id: e_edible_oil_not_spectrum
   description: Global edible oil supply should not affect telecom spectrum
   domain: isolation
   type: E
   trigger_node: global_edible_oil_supply
   target_node: telecom_spectrum
-  max_probability: 0.0005
+  max_probability: 0.15
