@@ -71,6 +71,9 @@ class Settings(BaseSettings):
     leaf_boost_l4: float = 2.0
     leaf_boost_l3: float = 1.2
 
+    # Engine mode: "graph" (CSP + FAISS), "llm" (Gemini direct), "both" (A/B)
+    engine_mode: str = "graph"
+
     # Delivery
     digest_hour: int = 8
     pipeline_interval_seconds: int = 7200
