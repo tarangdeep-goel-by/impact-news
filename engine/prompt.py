@@ -45,12 +45,15 @@ Summary: {summary}
    - mechanism: a 1-line causal chain from trigger to impact (e.g. "Crude oil price hike -> refinery costs -> retail petrol price")
 
 == CRITICAL RULES ==
+- Impacts MUST be I-world nodes only (from the IMPACT TAXONOMY above). Never return T-world nodes as impacts.
+  For example: "nifty_50" is a T-world trigger, NOT an impact. The citizen-level impact is "equity_markets" (I-world).
+  Similarly: "aviation_turbine_fuel" is T-world. The citizen impact is "domestic_flight_ticket" (I-world).
 - Only genuine causal mechanisms — not vague relatedness or thematic similarity.
 - If a whole branch is affected, use the parent node instead of listing every leaf.
 - Gold prices do NOT affect wheat or fuel. Stick to real causal chains.
 - Probability = likelihood this is affected (not every impact is certain). Magnitude = severity of impact.
 - Do NOT list impacts with probability below 0.2 — if it's that unlikely, skip it.
-- Use node IDs exactly as they appear in the taxonomy above (snake_case).
+- Use node IDs exactly as they appear in the taxonomy above (snake_case, e.g. "retail_petrol", NOT path-style like "i3:transport:retail_petrol").
 
 == OUTPUT FORMAT ==
 Return ONLY valid JSON, no commentary:
