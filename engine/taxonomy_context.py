@@ -21,6 +21,13 @@ class TaxonomyContext:
         self._children = children    # parent_id -> [child_id, ...] (CONTAINS)
         self._parent = parent        # child_id -> parent_id (CONTAINS)
 
+        # Cache: category string -> node_id for L1 roots (e.g., "I3" -> "i3", "T1" -> "t1")
+        self._cat_to_node: dict[str, str] = {
+            info.get("category", ""): nid
+            for nid, info in nodes.items()
+            if info.get("level") == 1
+        }
+
     # -- factory -----------------------------------------------------------
 
     @classmethod
@@ -68,6 +75,23 @@ class TaxonomyContext:
     def format_i_trees(self) -> str:
         """Format full I-tree hierarchy as indented text. Same format as T-trees."""
         roots = self._l1_roots("I")
+        return self._format_trees(roots)
+
+    def format_i_trees_excluding(self, exclude_l1s: list[str]) -> str:
+        """Format I-tree hierarchy excluding specified L1 categories.
+
+        Args:
+            exclude_l1s: L1 category codes to exclude, e.g. ["I7", "I11"].
+                If empty, returns the full I-tree.
+        """
+        if not exclude_l1s:
+            return self.format_i_trees()
+
+        exclude_set = set(exclude_l1s)
+        roots = [
+            nid for nid in self._l1_roots("I")
+            if self._nodes.get(nid, {}).get("category", "") not in exclude_set
+        ]
         return self._format_trees(roots)
 
     # -- queries -----------------------------------------------------------

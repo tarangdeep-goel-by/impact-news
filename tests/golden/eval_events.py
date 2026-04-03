@@ -20,7 +20,7 @@ import yaml
 
 from engine.base import ImpactResult
 from engine.taxonomy_context import TaxonomyContext
-from engine.llm_engine import LLMImpactEngine
+from engine.llm_engine import ImpactAnalyzer
 from config import settings
 
 logger = logging.getLogger(__name__)
@@ -34,15 +34,39 @@ GT_PATH = Path(__file__).parent / "ground_truth.yaml"
 
 
 class LLMEngine:
-    def __init__(self, taxonomy: TaxonomyContext) -> None:
-        self._engine = LLMImpactEngine(taxonomy=taxonomy)
-        self.taxonomy = taxonomy
+    def __init__(self, taxonomy: TaxonomyContext, use_v2: bool = False) -> None:
+        self._engine = ImpactAnalyzer(taxonomy=taxonomy)
+        self._taxonomy = taxonomy
+        self._use_v2 = use_v2
 
     def evaluate(self, event: dict) -> list[ImpactResult]:
         title = event["name"]
         summary = event["description"]
-        results, _meta = self._engine.evaluate_article(title, summary)
-        return results
+
+        if self._use_v2:
+            # Synthesize Tier 1 output from ground truth trigger
+            trigger_node = event.get("trigger", "")
+            triggers = [{"t_node": trigger_node, "context": summary[:120]}]
+            i_trees = self._taxonomy.format_i_trees()  # Full I-tree for eval
+            result = self._engine.analyze_new_v2(title, summary, triggers, i_trees)
+            # Flatten trigger_instances → ImpactResult-like dicts
+            results = []
+            for ti in result["trigger_instances"]:
+                for edge in ti.get("edges", []):
+                    results.append(ImpactResult(
+                        node=edge["i_node"],
+                        probability=edge["probability"],
+                        magnitude=edge["magnitude"],
+                        polarity=edge.get("polarity", 1),
+                        delay=str(edge.get("delay_days", 14)),
+                        mechanism=edge.get("mechanism", ""),
+                        path=[ti["t_node"], edge["i_node"]],
+                    ))
+            results.sort(key=lambda x: x["probability"] * x["magnitude"], reverse=True)
+            return results
+
+        result = self._engine.analyze_new(title, summary)
+        return result["impacts"]
 
 
 # ---------------------------------------------------------------------------
@@ -138,6 +162,7 @@ def compute_metrics(
 def main() -> None:
     parser = argparse.ArgumentParser(description="Event-based LLM engine evaluation")
     parser.add_argument("--event", type=str, default=None, help="Filter by event ID (substring)")
+    parser.add_argument("--v2", action="store_true", help="Use v2 causal edges pipeline")
     parser.add_argument("-v", "--verbose", action="store_true")
     args = parser.parse_args()
 
@@ -160,8 +185,9 @@ def main() -> None:
     taxonomy = TaxonomyContext.from_merged_graph(settings.graph_path)
     print("done.")
 
-    print(f"Initializing LLM engine...", end=" ", flush=True)
-    engine = LLMEngine(taxonomy)
+    mode = "v2 (causal edges)" if args.v2 else "v1 (flat)"
+    print(f"Initializing LLM engine ({mode})...", end=" ", flush=True)
+    engine = LLMEngine(taxonomy, use_v2=args.v2)
     print("done.")
 
     print(f"\nEvaluating {len(events)} events\n")

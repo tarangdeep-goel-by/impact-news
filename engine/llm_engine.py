@@ -1,11 +1,13 @@
-"""LLM impact engine — uses Gemini with full taxonomy context to score articles."""
+"""Tier 2 impact analyzer — deep analysis with full taxonomy context."""
 
 from __future__ import annotations
 
 import logging
 
-from engine.base import ImpactResult
-from engine.prompt import build_impact_prompt
+from config import settings
+from engine.base import AnalysisResult, AnalysisResultV2, ImpactResult, TriggerInstance, ImpactEdgeV2
+from engine.prompts.analyze_new import build_analyze_new_prompt
+from engine.prompts.analyze_update import build_analyze_update_prompt
 from engine.taxonomy_context import TaxonomyContext
 from pipeline.gemini import GeminiClient, parse_json_response
 
@@ -19,10 +21,10 @@ def _clamp(value: float, lo: float = 0.0, hi: float = 1.0) -> float:
     return max(lo, min(hi, value))
 
 
-class LLMImpactEngine:
-    """Score article impacts by sending full taxonomy context to Gemini.
+class ImpactAnalyzer:
+    """Tier 2: Deep impact analysis with full taxonomy context.
 
-    Satisfies the ImpactEngine protocol defined in engine.base.
+    Uses gemini-3.1-pro-preview for better reasoning on causal chains.
     """
 
     def __init__(
@@ -37,48 +39,52 @@ class LLMImpactEngine:
         self._valid_i_nodes = taxonomy.get_all_i_node_ids()
         self._valid_t_nodes = taxonomy.get_all_t_node_ids()
 
-    def evaluate_article(self, title: str, summary: str) -> tuple[list[ImpactResult], dict]:
-        """Call Gemini with full taxonomy context, parse and validate results.
+    def analyze_new(self, title: str, summary: str) -> AnalysisResult:
+        """Full analysis for a new event (no prior context)."""
+        prompt = build_analyze_new_prompt(self._t_trees, self._i_trees, title, summary)
+        return self._analyze(prompt)
 
-        Args:
-            title: Article headline
-            summary: Article body/summary text
+    def analyze_update(self, title: str, summary: str, event: dict) -> AnalysisResult:
+        """Update analysis given existing event context."""
+        prompt = build_analyze_update_prompt(
+            self._t_trees, self._i_trees, title, summary, event,
+        )
+        return self._analyze(prompt)
 
-        Returns:
-            Tuple of (impacts list, metadata dict).
-            metadata has: is_relevant (bool), triggers (list), rejection_reason (str|None).
-            Returns ([], metadata) for no-impact articles or errors.
-        """
-        prompt = build_impact_prompt(self._t_trees, self._i_trees, title, summary)
-
+    def _analyze(self, prompt: str) -> AnalysisResult:
+        """Shared analysis logic — call Gemini pro, parse, validate."""
         parsed = self._call_and_parse(prompt)
         if parsed is None:
-            return [], {"is_relevant": False, "triggers": [], "rejection_reason": "api_error"}
+            return AnalysisResult(
+                triggers=[], impacts=[], stage="new",
+                summary="", is_relevant=False, rejection_reason="api_error",
+            )
 
         # Handle no-impact response
         if parsed.get("no_impact"):
-            reason = parsed.get("reason", "no mass citizen impact")
-            return [], {"is_relevant": False, "triggers": [], "rejection_reason": reason}
+            return AnalysisResult(
+                triggers=[], impacts=[], stage="new",
+                summary="", is_relevant=False,
+                rejection_reason=parsed.get("reason", "no mass citizen impact"),
+            )
 
         triggers = parsed.get("triggers", [])
-        impacts = parsed.get("impacts", [])
+        impacts_raw = parsed.get("impacts", [])
 
         if not isinstance(triggers, list):
             triggers = []
-        if not isinstance(impacts, list):
-            logger.warning("Gemini returned non-list impacts: %s", type(impacts))
-            return []
+        if not isinstance(impacts_raw, list):
+            logger.warning("Gemini returned non-list impacts: %s", type(impacts_raw))
+            impacts_raw = []
 
         # Validate triggers
         valid_triggers = [t for t in triggers if t in self._valid_t_nodes]
         if triggers and not valid_triggers:
-            logger.warning(
-                "All Gemini triggers unknown: %s", triggers,
-            )
+            logger.warning("All Gemini triggers unknown: %s", triggers)
 
         # Convert to ImpactResult
         results: list[ImpactResult] = []
-        for imp in impacts:
+        for imp in impacts_raw:
             if not isinstance(imp, dict):
                 continue
 
@@ -111,30 +117,36 @@ class LLMImpactEngine:
                 path=path,
             ))
 
-        # Sort by probability * magnitude descending
         results.sort(key=lambda x: x["probability"] * x["magnitude"], reverse=True)
 
-        metadata = {
-            "is_relevant": len(results) > 0,
-            "triggers": valid_triggers,
-            "rejection_reason": None,
-        }
-        return results, metadata
+        stage = parsed.get("stage", "new")
+        if stage not in ("new", "escalating", "stable", "resolved"):
+            stage = "new"
+
+        summary_text = parsed.get("summary", "")
+
+        return AnalysisResult(
+            triggers=valid_triggers,
+            impacts=results,
+            stage=stage,
+            summary=summary_text,
+            is_relevant=len(results) > 0,
+            rejection_reason=None,
+        )
 
     def _call_and_parse(self, prompt: str) -> dict | None:
-        """Call Gemini and parse JSON response, with exponential backoff on rate limits."""
+        """Call Gemini pro and parse JSON response, with backoff on rate limits."""
         import time as _time
 
         max_attempts = 4
         for attempt in range(max_attempts):
             try:
-                raw = self.gemini.call(prompt)
+                raw = self.gemini.call(prompt, model=settings.gemini_pro_model)
             except Exception as exc:
                 logger.error("Gemini API call failed (attempt %d)", attempt + 1, exc_info=True)
-                # Backoff on rate limit / unavailable errors
                 err_str = str(exc)
                 if ("429" in err_str or "503" in err_str) and attempt < max_attempts - 1:
-                    wait = 2 ** attempt * 5  # 5, 10, 20s
+                    wait = 2 ** attempt * 5
                     logger.info("Rate limited, waiting %ds before retry", wait)
                     _time.sleep(wait)
                     continue
@@ -161,3 +173,126 @@ class LLMImpactEngine:
             return parsed
 
         return None
+
+    # -- V2 methods: Causal Edges architecture --------------------------------
+
+    def analyze_new_v2(
+        self,
+        title: str,
+        summary: str,
+        triggers: list[dict],
+        i_trees: str,
+    ) -> AnalysisResultV2:
+        """Tier 2 analysis for new events with pre-identified triggers and filtered taxonomy."""
+        prompt = build_analyze_new_prompt(triggers, i_trees, title, summary)
+        return self._analyze_v2(prompt, triggers)
+
+    def analyze_update_v2(
+        self,
+        title: str,
+        summary: str,
+        triggers: list[dict],
+        i_trees: str,
+        existing_instances: list[dict],
+    ) -> AnalysisResultV2:
+        """Tier 2 upsert analysis with existing causal edges."""
+        prompt = build_analyze_update_prompt(
+            triggers, i_trees, title, summary, existing_instances,
+        )
+        return self._analyze_v2(prompt, triggers)
+
+    def _analyze_v2(self, prompt: str, triggers: list[dict]) -> AnalysisResultV2:
+        """Shared v2 analysis logic — call Gemini pro, parse, validate causal edges."""
+        parsed = self._call_and_parse(prompt)
+        if parsed is None:
+            return AnalysisResultV2(
+                trigger_instances=[], stage="new",
+                summary="", is_relevant=False, rejection_reason="api_error",
+            )
+
+        # Handle no-impact response
+        if parsed.get("no_impact"):
+            return AnalysisResultV2(
+                trigger_instances=[], stage="new",
+                summary="", is_relevant=False,
+                rejection_reason=parsed.get("reason", "no mass citizen impact"),
+            )
+
+        raw_instances = parsed.get("trigger_instances", [])
+        if not isinstance(raw_instances, list):
+            logger.warning("Gemini returned non-list trigger_instances: %s", type(raw_instances))
+            raw_instances = []
+
+        # Validate and build TriggerInstance list
+        validated: list[dict] = []
+        for ti in raw_instances:
+            if not isinstance(ti, dict):
+                continue
+
+            t_node = ti.get("t_node", "")
+            if t_node and t_node not in self._valid_t_nodes:
+                logger.warning("Unknown T-node from Gemini: %s — keeping anyway", t_node)
+
+            # Validate edges
+            valid_edges: list[dict] = []
+            for edge in ti.get("edges", []):
+                if not isinstance(edge, dict):
+                    continue
+
+                i_node = edge.get("i_node", "")
+                if i_node not in self._valid_i_nodes:
+                    logger.warning("Unknown I-node: %s — skipping", i_node)
+                    continue
+
+                probability = _clamp(float(edge.get("probability", 0)))
+                magnitude = _clamp(float(edge.get("magnitude", 0)))
+
+                polarity = int(edge.get("polarity", 1))
+                if polarity not in (1, -1):
+                    polarity = 1
+
+                delay_days = int(edge.get("delay_days", 14))
+                if delay_days < 1:
+                    delay_days = 1
+                if delay_days > 365:
+                    delay_days = 365
+
+                valid_edge: dict = {
+                    "i_node": i_node,
+                    "probability": probability,
+                    "magnitude": magnitude,
+                    "delay_days": delay_days,
+                    "polarity": polarity,
+                    "mechanism": str(edge.get("mechanism", "")),
+                }
+                # Preserve ID if present (for upsert)
+                if edge.get("id"):
+                    valid_edge["id"] = edge["id"]
+
+                valid_edges.append(valid_edge)
+
+            # Sort edges by probability * magnitude descending
+            valid_edges.sort(key=lambda e: e["probability"] * e["magnitude"], reverse=True)
+
+            if valid_edges:
+                instance: dict = {
+                    "t_node": t_node,
+                    "context": ti.get("context", ""),
+                    "edges": valid_edges,
+                }
+                # Preserve ID if present (for upsert)
+                if ti.get("id"):
+                    instance["id"] = ti["id"]
+                validated.append(instance)
+
+        stage = parsed.get("stage", "new")
+        if stage not in ("new", "escalating", "stable", "resolved"):
+            stage = "new"
+
+        return AnalysisResultV2(
+            trigger_instances=validated,
+            stage=stage,
+            summary=parsed.get("summary", ""),
+            is_relevant=len(validated) > 0,
+            rejection_reason=None,
+        )
