@@ -33,7 +33,8 @@
     "reason": "Government intervention to prevent panic buying of LPG directly affects household cooking fuel availability and costs.",
     "triggers": [
       "ministry_of_consumer_affairs",
-      "state_governments"
+      "state_governments",
+      "public_distribution_system"
     ],
     "expected_impacts": [
       "lpg_cylinder",
@@ -75,7 +76,8 @@
     "reason": "India's largest pharma exporter facing sector-wide US tariffs \u2014 affects pharma employment and equity markets",
     "triggers": [
       "us_government",
-      "export_competitiveness"
+      "export_competitiveness",
+      "active_pharmaceutical_ingredients_supply"
     ],
     "expected_impacts": [
       "factory_worker_jobs",
@@ -142,7 +144,8 @@
     "triggers": [
       "brent_crude",
       "global_shipping_routes",
-      "us_government"
+      "us_government",
+      "geopolitical_states"
     ],
     "expected_impacts": [
       "vehicle_fuel",
@@ -197,7 +200,8 @@
     "reason": "Jet fuel price hike directly affects flight ticket prices for citizens.",
     "triggers": [
       "aviation_turbine_fuel",
-      "ministry_of_civil_aviation"
+      "ministry_of_civil_aviation",
+      "brent_crude"
     ],
     "expected_impacts": [
       "domestic_flight_ticket",
@@ -214,7 +218,8 @@
     "relevant": true,
     "reason": "First ship through Hormuz since war \u2014 shipping routes normalizing, direct impact on oil/goods imports to India",
     "triggers": [
-      "global_shipping_routes"
+      "global_shipping_routes",
+      "brent_crude"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -268,7 +273,8 @@
     "relevant": true,
     "reason": "Severe weather event affecting daily life, health, and commute of citizens in the NCR region.",
     "triggers": [
-      "atmospheric_temperature"
+      "atmospheric_temperature",
+      "regional_weather_phenomena"
     ],
     "expected_impacts": [
       "traffic_congestion"
@@ -418,7 +424,9 @@
     "relevant": true,
     "reason": "Agricultural shortfall in sugar production directly leads to higher retail prices for consumers.",
     "triggers": [
-      "agricultural_commodities"
+      "global_sugar_supply",
+      "agricultural_commodities",
+      "ministry_of_consumer_affairs"
     ],
     "expected_impacts": [
       "retail_sugar",
@@ -437,7 +445,8 @@
     "reason": "Implementation of a new Income Tax Act fundamentally alters tax compliance and liability for citizens.",
     "triggers": [
       "income_tax_department",
-      "ministry_of_finance"
+      "ministry_of_finance",
+      "union_budget_framework"
     ],
     "expected_impacts": [
       "personal_income_tax",
@@ -467,8 +476,8 @@
     "reason": "RBI regulatory action on forex markets impacts the INR/USD exchange rate, affecting import costs.",
     "triggers": [
       "rbi",
-      "currency_and_forex_markets",
-      "usd_inr_exchange"
+      "usd_inr_exchange",
+      "currency_and_forex_markets"
     ],
     "expected_impacts": [
       "travel_and_tourism",

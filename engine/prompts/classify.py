@@ -59,9 +59,11 @@ I11: Leisure, Culture & Community
 Filter out:
 - Sports results, celebrity news, entertainment, arts & culture
 - Individual crimes, accidents, court cases (unless precedent-setting or policy-changing)
-- Opinion pieces, editorials, lifestyle articles, personal finance tips
+- Opinion pieces, editorials, market commentary, investment advice, brokerage reports, lifestyle articles, personal finance tips
+- Market roundups ("Asian shares edge higher", "US stocks drop") — these are observations, not causal events
 - Foreign affairs with no India impact chain
 - Pure startup funding rounds, M&A, or IPOs unless they signal sector-wide shifts
+- Company-specific acquisitions, leadership changes, earnings reports (unless systemically important like top-3 banks)
 
 DO NOT filter out — these ARE relevant:
 - Central bank actions (RBI rate changes, forex interventions, liquidity measures)
@@ -97,6 +99,8 @@ Rules for triggers:
 - Each trigger MUST have a "context" field: a 1-line explanation of WHY this trigger is activated by the article
 - This context will be passed to the next stage for impact reasoning — make it specific and informative
 - 1-3 triggers per article. Only primary, direct triggers.
+- If you cannot identify a SPECIFIC trigger from the taxonomy that the article DIRECTLY activates, the article is NOT relevant. Do not guess or default to generic triggers like "ministry_of_finance" or "industrial_metals_index" as catch-alls.
+- The trigger must be something the article REPORTS AS HAPPENING, not something tangentially related.
 
 Rules for exclude_l1s:
 - List I-world L1 category codes that are DEFINITELY NOT causally affected by the identified triggers
