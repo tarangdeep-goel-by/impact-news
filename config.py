@@ -37,15 +37,6 @@ class Settings(BaseSettings):
     # Paths
     graph_path: str = "data/merged_graph.yaml"
     db_path: str = "data/impact_news.db"
-    embeddings_path: str = "data/"
-
-    # Embedding
-    embedding_model: str = "all-MiniLM-L6-v2"
-    match_threshold: float = 0.55
-
-    # Graph
-    max_hops: int = 3
-    hub_dampening_threshold: int = 20
 
     # Schedule
     collect_interval_hours: int = 2
@@ -53,23 +44,9 @@ class Settings(BaseSettings):
     # Scoring
     score_high_threshold: float = 0.5
     score_medium_threshold: float = 0.2
-    indirect_weight: float = 0.7
-    gemini_model: str = "gemini-2.0-flash"
 
-    # PPR engine
-    ppr_restart_prob: float = 0.20          # α — restart probability for PageRank
-    ppr_prob_threshold: float = 0.005       # Min probability to consider a node impacted
-    ppr_magnitude_blend: float = 0.5        # How much magnitude affects final score
-
-    # Multi-phase activation
-    upward_seed_decay: float = 0.5          # Decay factor per CONTAINS level for seed expansion
-    max_seed_levels: int = 3                 # Max CONTAINS levels to walk up for seed expansion
-
-    # Citizen Impact Score (CIS) — post-PPR reranking
-    i_world_boost: float = 3.0
-    category_penalty: float = 0.3
-    leaf_boost_l4: float = 2.0
-    leaf_boost_l3: float = 1.2
+    # LLM engine
+    gemini_model: str = "gemini-3.1-flash-lite-preview"
 
     # Delivery
     digest_hour: int = 8

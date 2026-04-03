@@ -143,7 +143,7 @@ cases:
     must_hit: []
     must_miss:
       - wheat_flour
-      - vegetable_prices
+      - vegetables
       - retail_petrol
     reason: "Gold is in commodities but has no causal link to food or fuel. This is the L2 bridge false positive."
 
@@ -199,7 +199,7 @@ cases:
     profile: retired_pune
     expected_band: MEDIUM
     must_hit:
-      - fd_rates
+      - fixed_deposits
     must_miss: []
     reason: "FD rates track repo rate — retired investor benefits from rate hikes"
 
@@ -231,8 +231,8 @@ cases:
     profile: car_commuter_homeloan
     expected_band: HIGH
     must_hit:
-      - equity_markets
-      - it_services_sector
+      - equity_investments
+      - it_sector_jobs
     must_miss: []
     reason: "IT sector depends on US economy; also holds stocks exposed to FII flows"
 
@@ -251,7 +251,7 @@ cases:
     profile: freelancer_mumbai
     expected_band: MEDIUM
     must_hit:
-      - crypto_currencies
+      - cryptocurrency_portfolio
     must_miss: []
     reason: "Freelancer holds crypto, directly affected by regulation"
 
@@ -262,8 +262,8 @@ cases:
     expected_band: ZERO
     must_hit: []
     must_miss:
-      - fd_rates
-      - gold
+      - fixed_deposits
+      - retail_gold_investment
     reason: "No crypto exposure — regulation should not reach traditional investments"
 
   # ── Infrastructure & Urban ──────────────────────────────
