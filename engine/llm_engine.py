@@ -111,13 +111,23 @@ class LLMImpactEngine:
         return results
 
     def _call_and_parse(self, prompt: str) -> dict | None:
-        """Call Gemini and parse JSON response, retrying once on parse failure."""
-        for attempt in range(2):
+        """Call Gemini and parse JSON response, with exponential backoff on rate limits."""
+        import time as _time
+
+        max_attempts = 4
+        for attempt in range(max_attempts):
             try:
                 raw = self.gemini.call(prompt)
-            except Exception:
+            except Exception as exc:
                 logger.error("Gemini API call failed (attempt %d)", attempt + 1, exc_info=True)
-                if attempt == 0:
+                # Backoff on rate limit / unavailable errors
+                err_str = str(exc)
+                if ("429" in err_str or "503" in err_str) and attempt < max_attempts - 1:
+                    wait = 2 ** attempt * 5  # 5, 10, 20s
+                    logger.info("Rate limited, waiting %ds before retry", wait)
+                    _time.sleep(wait)
+                    continue
+                if attempt < max_attempts - 1:
                     continue
                 return None
 

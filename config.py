@@ -54,7 +54,7 @@ class Settings(BaseSettings):
     score_high_threshold: float = 0.5
     score_medium_threshold: float = 0.2
     indirect_weight: float = 0.7
-    gemini_model: str = "gemini-2.0-flash"
+    gemini_model: str = "gemini-3.1-flash-lite-preview"
 
     # PPR engine
     ppr_restart_prob: float = 0.20          # α — restart probability for PageRank
