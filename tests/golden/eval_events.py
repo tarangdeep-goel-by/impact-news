@@ -20,7 +20,7 @@ import yaml
 
 from engine.base import ImpactResult
 from engine.taxonomy_context import TaxonomyContext
-from engine.llm_engine import LLMImpactEngine
+from engine.llm_engine import ImpactAnalyzer
 from config import settings
 
 logger = logging.getLogger(__name__)
@@ -35,13 +35,14 @@ GT_PATH = Path(__file__).parent / "ground_truth.yaml"
 
 class LLMEngine:
     def __init__(self, taxonomy: TaxonomyContext) -> None:
-        self._engine = LLMImpactEngine(taxonomy=taxonomy)
+        self._engine = ImpactAnalyzer(taxonomy=taxonomy)
         self.taxonomy = taxonomy
 
     def evaluate(self, event: dict) -> list[ImpactResult]:
         title = event["name"]
         summary = event["description"]
-        results, _meta = self._engine.evaluate_article(title, summary)
+        result = self._engine.analyze_new(title, summary)
+        results = result["impacts"]
         return results
 
 

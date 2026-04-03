@@ -4,24 +4,21 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 RSS_FEEDS: list[dict] = [
+    # Indian Economy & Policy (highest signal — 50%+ relevance)
+    {"name": "ET Economy", "url": "https://economictimes.indiatimes.com/news/economy/rssfeeds/1373380680.cms", "category": "economy"},
+    {"name": "IE Economy", "url": "https://indianexpress.com/section/business/economy/feed/", "category": "economy"},
+    {"name": "Moneycontrol Economy", "url": "https://www.moneycontrol.com/rss/economy.xml", "category": "economy"},
     # Indian Markets & Finance
     {"name": "ET Markets", "url": "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms", "category": "finance"},
-    {"name": "ET Economy", "url": "https://economictimes.indiatimes.com/news/economy/rssfeeds/1373380680.cms", "category": "finance"},
     {"name": "NDTV Profit", "url": "https://feeds.feedburner.com/ndtvprofit-latest", "category": "finance"},
+    {"name": "The Hindu Business", "url": "https://www.thehindubusinessline.com/feeder/default.rss", "category": "finance"},
+    {"name": "Livemint", "url": "https://www.livemint.com/rss/news", "category": "finance"},
     # Indian Business & Startups
     {"name": "Inc42", "url": "https://inc42.com/feed/", "category": "startups"},
-    # Tech & AI
-    {"name": "TechCrunch AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "tech"},
-    {"name": "MIT Tech Review AI", "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed/", "category": "tech"},
-    {"name": "Ars Technica", "url": "https://feeds.arstechnica.com/arstechnica/index", "category": "tech"},
-    {"name": "Hacker News", "url": "https://hnrss.org/frontpage?points=100", "category": "tech"},
-    # India Politics & News
-    {"name": "ET Politics", "url": "https://economictimes.indiatimes.com/news/politics-and-nation/rssfeeds/1052732854.cms", "category": "india"},
+    {"name": "IE Business", "url": "https://indianexpress.com/section/business/feed/", "category": "business"},
+    # India News & Geopolitics
     {"name": "NDTV India", "url": "https://feeds.feedburner.com/ndtvnews-india-news", "category": "india"},
     {"name": "NDTV World", "url": "https://feeds.feedburner.com/ndtvnews-world-news", "category": "world"},
-    # New India-specific sources
-    {"name": "Livemint", "url": "https://www.livemint.com/rss/news", "category": "finance"},
-    {"name": "The Hindu Business", "url": "https://www.thehindubusinessline.com/feeder/default.rss", "category": "finance"},
     {"name": "Reuters India", "url": "https://feeds.reuters.com/reuters/INtopNews", "category": "india"},
 ]
 
@@ -47,6 +44,7 @@ class Settings(BaseSettings):
 
     # LLM engine
     gemini_model: str = "gemini-3.1-flash-lite-preview"
+    gemini_pro_model: str = "gemini-3.1-pro-preview"
 
     # Delivery
     digest_hour: int = 8

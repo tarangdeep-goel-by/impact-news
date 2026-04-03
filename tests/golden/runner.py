@@ -15,7 +15,7 @@ from pathlib import Path
 import yaml
 
 from engine.base import ImpactResult
-from engine.llm_engine import LLMImpactEngine
+from engine.llm_engine import ImpactAnalyzer
 from engine.taxonomy_context import TaxonomyContext
 from config import settings
 
@@ -96,7 +96,7 @@ def main() -> None:
         cases = [c for c in cases if args.case in c["id"]]
 
     print(f"Initializing LLM engine...", end=" ", flush=True)
-    engine = LLMImpactEngine(taxonomy=taxonomy)
+    engine = ImpactAnalyzer(taxonomy=taxonomy)
     print("done.")
 
     print(f"\nRunning {len(cases)} cases\n")
@@ -110,7 +110,8 @@ def main() -> None:
         title, summary = trigger_to_article(trigger, taxonomy)
 
         t0 = time.time()
-        results, _meta = engine.evaluate_article(title, summary)
+        result = engine.analyze_new(title, summary)
+        results = result["impacts"]
         elapsed = time.time() - t0
 
         h_count, h_total, h_missed = check_must_hit(results, case.get("must_hit", []), taxonomy)

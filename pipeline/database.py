@@ -78,7 +78,62 @@ CREATE TABLE IF NOT EXISTS article_impacts (
     triggers_json TEXT,
     impacts_json TEXT,
     rejection_reason TEXT,
+    event_id TEXT REFERENCES events(event_id),
+    tier1_ms INTEGER,
+    tier2_ms INTEGER,
     processed_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS events (
+    event_id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    summary TEXT NOT NULL,
+    triggers_json TEXT NOT NULL,
+    current_impacts_json TEXT NOT NULL,
+    stage TEXT NOT NULL DEFAULT 'new',
+    category TEXT,
+    first_seen_at TEXT NOT NULL,
+    last_updated_at TEXT NOT NULL,
+    article_count INTEGER DEFAULT 1
+);
+
+CREATE TABLE IF NOT EXISTS event_articles (
+    event_id TEXT NOT NULL REFERENCES events(event_id),
+    article_id TEXT NOT NULL REFERENCES articles(id),
+    added_at TEXT NOT NULL DEFAULT (datetime('now')),
+    is_seed INTEGER DEFAULT 0,
+    PRIMARY KEY (event_id, article_id)
+);
+
+CREATE TABLE IF NOT EXISTS trigger_instances (
+    id TEXT PRIMARY KEY,
+    event_id TEXT NOT NULL REFERENCES events(event_id),
+    t_node TEXT NOT NULL,
+    context TEXT NOT NULL,
+    created_at TEXT DEFAULT (datetime('now')),
+    status TEXT DEFAULT 'active'
+);
+
+CREATE TABLE IF NOT EXISTS impact_edges (
+    id TEXT PRIMARY KEY,
+    trigger_instance_id TEXT NOT NULL REFERENCES trigger_instances(id),
+    i_node TEXT NOT NULL,
+    probability REAL NOT NULL,
+    magnitude REAL NOT NULL,
+    delay_days INTEGER NOT NULL,
+    polarity INTEGER NOT NULL DEFAULT 1,
+    mechanism TEXT NOT NULL,
+    maturity_date TEXT,
+    status TEXT DEFAULT 'active',
+    created_at TEXT DEFAULT (datetime('now')),
+    updated_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS edge_support (
+    edge_id TEXT NOT NULL REFERENCES impact_edges(id),
+    article_id TEXT NOT NULL REFERENCES articles(id),
+    added_at TEXT DEFAULT (datetime('now')),
+    PRIMARY KEY (edge_id, article_id)
 );
 
 CREATE INDEX IF NOT EXISTS idx_articles_processed ON articles(processed);
@@ -87,6 +142,18 @@ CREATE INDEX IF NOT EXISTS idx_articles_url_hash ON articles(url_hash);
 CREATE INDEX IF NOT EXISTS idx_seen_hashes ON seen_hashes(hash);
 CREATE INDEX IF NOT EXISTS idx_matches_severity ON article_matches(severity, delivered_at);
 CREATE INDEX IF NOT EXISTS idx_impacts_relevant ON article_impacts(is_relevant);
+CREATE INDEX IF NOT EXISTS idx_events_stage ON events(stage);
+CREATE INDEX IF NOT EXISTS idx_events_category ON events(category);
+CREATE INDEX IF NOT EXISTS idx_events_last_updated ON events(last_updated_at);
+CREATE INDEX IF NOT EXISTS idx_event_articles_event ON event_articles(event_id);
+CREATE INDEX IF NOT EXISTS idx_event_articles_article ON event_articles(article_id);
+CREATE INDEX IF NOT EXISTS idx_trigger_instances_event ON trigger_instances(event_id);
+CREATE INDEX IF NOT EXISTS idx_trigger_instances_t_node ON trigger_instances(t_node);
+CREATE INDEX IF NOT EXISTS idx_impact_edges_trigger ON impact_edges(trigger_instance_id);
+CREATE INDEX IF NOT EXISTS idx_impact_edges_i_node ON impact_edges(i_node);
+CREATE INDEX IF NOT EXISTS idx_impact_edges_status ON impact_edges(status);
+CREATE INDEX IF NOT EXISTS idx_impact_edges_maturity ON impact_edges(maturity_date);
+CREATE INDEX IF NOT EXISTS idx_edge_support_article ON edge_support(article_id);
 """
 
 
