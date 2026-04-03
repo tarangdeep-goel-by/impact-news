@@ -124,7 +124,8 @@
     "relevant": true,
     "reason": "Massive surge in global crude oil prices directly impacts Indian inflation, fuel costs, and transportation.",
     "triggers": [
-      "brent_crude"
+      "brent_crude",
+      "ministry_of_finance"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -255,7 +256,8 @@
     "reason": "Crude oil price rise impacting the textile value chain will affect retail clothing prices and sector employment.",
     "triggers": [
       "brent_crude",
-      "global_shipping_routes"
+      "global_shipping_routes",
+      "export_competitiveness"
     ],
     "expected_impacts": [
       "small_factory_owner_income",
@@ -303,6 +305,8 @@
     "reason": "LPG crisis triggering mass migration of gig and manufacturing workers, heavily impacting livelihoods and industry.",
     "triggers": [
       "brent_crude",
+      "industrial_metals_index",
+      "ministry_of_finance",
       "seasonal_migrant_labor"
     ],
     "expected_impacts": [
@@ -334,8 +338,9 @@
     "relevant": true,
     "reason": "Government review of tax concessions and duty reliefs directly impacts indirect tax revenues and consumer prices.",
     "triggers": [
-      "ministry_of_finance",
-      "global_supply_chains"
+      "global_supply_chains",
+      "industrial_metals_index",
+      "ministry_of_finance"
     ],
     "expected_impacts": [
       "vehicle_fuel"
@@ -542,8 +547,9 @@
     "relevant": true,
     "reason": "Agricultural seed stock availability directly affects millions of farmers' sowing seasons and broader national food security.",
     "triggers": [
+      "global_supply_chains",
       "ministry_of_agriculture",
-      "global_supply_chains"
+      "global_food_grain_supply"
     ],
     "expected_impacts": [
       "agricultural_household_income"
@@ -560,6 +566,7 @@
     "reason": "Industry lobbying for export bans and ethanol blending due to geopolitical conflict indicates severe supply chain stress that impacts raw material and fuel prices.",
     "triggers": [
       "global_supply_chains",
+      "export_competitiveness",
       "ministry_of_commerce_and_industry"
     ],
     "expected_impacts": [
@@ -612,8 +619,9 @@
     "relevant": true,
     "reason": "Government trade policy interventions and freight subsidies directly affect the export sector's viability and employment.",
     "triggers": [
-      "ministry_of_commerce_and_industry",
-      "global_shipping_routes"
+      "global_shipping_routes",
+      "export_competitiveness",
+      "ministry_of_commerce_and_industry"
     ],
     "expected_impacts": [
       "manufacturing_and_core"
@@ -647,6 +655,7 @@
     "relevant": true,
     "reason": "US stocks dropping on Trump Iran escalation directly affects Indian markets next day via FII sentiment",
     "triggers": [
+      "global_equity_indices",
       "us_government",
       "fii_fpi_flows"
     ],
@@ -697,6 +706,7 @@
     "reason": "Massive state infrastructure investment and capital city development affecting regional economy and real estate.",
     "triggers": [
       "state_governments",
+      "highway_network",
       "transport_logistics_infrastructure"
     ],
     "expected_impacts": [
@@ -715,7 +725,8 @@
     "reason": "Government action against LPG black marketing directly impacts household cooking gas availability and prices.",
     "triggers": [
       "ministry_of_consumer_affairs",
-      "state_governments"
+      "state_governments",
+      "oil_gas_pipelines"
     ],
     "expected_impacts": [
       "lpg_cylinder",
@@ -732,8 +743,9 @@
     "relevant": true,
     "reason": "Agricultural policy changes regarding fertilizer availability and MSP procurement directly affect millions of farmers.",
     "triggers": [
-      "ministry_of_agriculture",
-      "state_governments"
+      "state_governments",
+      "uidai",
+      "ministry_of_agriculture"
     ],
     "expected_impacts": [
       "agricultural_household_income",
@@ -750,8 +762,9 @@
     "relevant": true,
     "reason": "Trade expansion with China can significantly alter domestic manufacturing competitiveness and consumer goods prices.",
     "triggers": [
-      "ministry_of_commerce_and_industry",
-      "international_trade_and_supply_chains"
+      "chinese_government",
+      "international_trade_and_supply_chains",
+      "ministry_of_commerce_and_industry"
     ],
     "expected_impacts": [
       "consumer_tech_devices",
@@ -823,7 +836,8 @@
     "reason": "NATO crisis over Iran directly escalates oil supply risk for India",
     "triggers": [
       "brent_crude",
-      "global_shipping_routes"
+      "global_shipping_routes",
+      "us_government"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1041,7 +1055,8 @@
     "reason": "Shooting down US F-35s escalates conflict, threatens oil supply disruption to India",
     "triggers": [
       "brent_crude",
-      "global_shipping_routes"
+      "global_shipping_routes",
+      "geopolitical_states"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1107,6 +1122,7 @@
     "relevant": true,
     "reason": "Changes in Income Tax rules directly affect salaried citizens' take-home pay and tax liabilities.",
     "triggers": [
+      "union_budget_framework",
       "ministry_of_finance",
       "income_tax_department"
     ],
@@ -1144,7 +1160,8 @@
     "reason": "Global conflict disrupting auto supply chains affects vehicle prices and availability for consumers.",
     "triggers": [
       "global_supply_chains",
-      "global_shipping_routes"
+      "global_shipping_routes",
+      "ministry_of_finance"
     ],
     "expected_impacts": [
       "vehicle_acquisition"
@@ -1208,8 +1225,9 @@
     "relevant": true,
     "reason": "Government policy change removing airfare caps directly impacts flight ticket prices for citizens.",
     "triggers": [
-      "ministry_of_civil_aviation",
-      "dgca"
+      "dgca",
+      "commercial_airports",
+      "ministry_of_civil_aviation"
     ],
     "expected_impacts": [
       "domestic_flight_ticket",
@@ -1275,8 +1293,9 @@
     "relevant": true,
     "reason": "Parliamentary directives on road safety infrastructure aim to reduce fatalities, impacting citizen lives.",
     "triggers": [
-      "ministry_of_road_transport",
-      "indian_union_government"
+      "indian_union_government",
+      "highway_network",
+      "ministry_of_road_transport"
     ],
     "expected_impacts": [
       "road_traffic_accidents",
@@ -1314,6 +1333,7 @@
     "reason": "Disruption in global oil shipping routes impacts India's crude imports, threatening fuel price stability.",
     "triggers": [
       "global_shipping_routes",
+      "russian_government",
       "brent_crude"
     ],
     "expected_impacts": [
@@ -1331,7 +1351,8 @@
     "relevant": true,
     "reason": "Direct hike in LPG prices immediately affects household budgets and living costs.",
     "triggers": [
-      "ministry_of_consumer_affairs"
+      "ministry_of_consumer_affairs",
+      "brent_crude"
     ],
     "expected_impacts": [
       "lpg_cylinder",
@@ -1349,6 +1370,7 @@
     "reason": "Global conflict causing oil prices to soar directly impacts Indian inflation and retail fuel costs.",
     "triggers": [
       "brent_crude",
+      "global_shipping_routes",
       "us_government"
     ],
     "expected_impacts": [
@@ -1368,7 +1390,9 @@
     "reason": "Broad stock market decline impacts retail investors' wealth and mutual fund returns.",
     "triggers": [
       "nifty_50",
-      "fii_fpi_flows"
+      "sensex",
+      "fii_fpi_flows",
+      "brent_crude"
     ],
     "expected_impacts": [
       "market_investments",
@@ -1436,6 +1460,7 @@
     "reason": "Government order directly affecting household cooking gas supply and mandating a switch to piped gas.",
     "triggers": [
       "indian_union_government",
+      "oil_gas_pipelines",
       "ministry_of_consumer_affairs"
     ],
     "expected_impacts": [
@@ -1454,6 +1479,7 @@
     "relevant": true,
     "reason": "Major infrastructure milestone improving essential foodgrain supply to a state.",
     "triggers": [
+      "public_distribution_system",
       "indian_railways_network",
       "state_governments"
     ],
@@ -1472,6 +1498,7 @@
     "reason": "Government relief scheme for exporters affected by global crisis, impacting employment and businesses.",
     "triggers": [
       "indian_union_government",
+      "global_shipping_routes",
       "ministry_of_commerce_and_industry"
     ],
     "expected_impacts": [
@@ -1507,8 +1534,9 @@
     "relevant": true,
     "reason": "Evacuation and flight operations affecting stranded Indian citizens due to a geopolitical crisis.",
     "triggers": [
-      "ministry_of_civil_aviation",
-      "global_shipping_routes"
+      "global_shipping_routes",
+      "commercial_airports",
+      "ministry_of_civil_aviation"
     ],
     "expected_impacts": [
       "air_travel"
@@ -1536,8 +1564,9 @@
     "relevant": true,
     "reason": "Macro-level oil stockpile status directly influences future retail fuel prices and inflation for citizens.",
     "triggers": [
+      "indian_union_government",
       "brent_crude",
-      "indian_union_government"
+      "ministry_of_petroleum_and_natural_gas"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1568,7 +1597,9 @@
     "reason": "Policy incentive for states to expand piped gas infrastructure, affecting commercial and household energy supply.",
     "triggers": [
       "indian_union_government",
-      "state_governments"
+      "state_governments",
+      "oil_gas_pipelines",
+      "ministry_of_consumer_affairs"
     ],
     "expected_impacts": [
       "piped_natural_gas",
