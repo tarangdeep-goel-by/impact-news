@@ -4,164 +4,133 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Impact News is a causal news personalization engine for Telegram. It ingests articles from RSS feeds, uses Gemini LLM to extract what each article affects, matches those tags against a knowledge graph via embeddings, scores articles against a user's personal dependency graph, and delivers high-impact articles with explanations.
+Impact News is a causal news personalization engine for Telegram. It ingests articles from RSS feeds, sends each to Gemini LLM with the full T/I taxonomy as context, and in one call classifies whether the article has mass citizen impact and which specific trigger (T-node) and impact (I-node) dimensions are affected. Irrelevant articles (sports, celebrity, petty crime) are filtered. Results are stored for later matching against user profiles.
 
-Core concept: "Not what interests you. What affects you." — causal chains from macro events (oil price hike) → personal impacts (your EMI, your food costs).
+Core concept: "Not what interests you. What affects you."
 
 ## Architecture
 
 ```
-RSS Feeds → Collector (async) → Dedup (fingerprint+URL) → SQLite
-  → Matcher (Gemini tag extraction + FAISS embedding match)
-  → PPR Engine (Personalized PageRank probability + hub-penalized magnitude)
-  → Scorer (article impacts × user dependency graph)
-  → Telegram Bot (high-priority alerts + daily digest)
+RSS Feeds (14 sources)
+  → ArticleCollector (async feedparser)
+  → Deduplicator (URL hash + MinHash LSH)
+  → SQLite (articles table)
+  → LLMImpactEngine (one Gemini call per article)
+     ├── no_impact: true → filtered with reason
+     └── triggers: [T-nodes], impacts: [I-nodes with prob/mag/polarity/delay/mechanism]
+  → article_impacts table
+  → [Future] User Profile matching → Telegram delivery
 ```
 
-**Three layers (user profiling not yet rebuilt for new graph):**
-1. **Personal Life Graph** — *needs rebuild*: user onboarding → inference rules → graph nodes → BFS reachability
-2. **Causal Knowledge Graph** — taxonomy of 5 trigger L1s (system) + 11 impact L1s (citizen), merged from domain YAML files + edge patches, loaded via NetworkX
-3. **Impact Scoring** — PPR (probability: will this reach me?) + hub-penalized path product (magnitude: how hard?) + delay sum (timing: when?). Constants and shared utilities live in `graph/markov_engine.py`.
-4. **Delivery** — Telegram bot delivers HIGH alerts every 5min + MEDIUM digest at 8am
+**Two semantic worlds in the taxonomy:**
+- **T-world (Triggers):** 5 L1 categories (T1-T5), 237 nodes. Macro-level system events citizens can't directly experience (crude oil, RBI policy, monsoon systems).
+- **I-world (Impacts):** 11 L1 categories (I1-I11), 532 nodes. Citizen-level effects on body, wallet, schedule, environment (retail petrol, home loan EMI, school fees).
 
-## Key Directories
-
-| Directory | Purpose |
-|-----------|---------|
-| `pipeline/` | Article collection (`collector.py`), tag extraction + scoring (`matcher.py`), SQLite (`database.py`), dedup (`dedup.py`), Gemini client (`gemini.py`) |
-| `graph/` | NetworkX graph (`graph.py`), YAML merge (`merge.py`), PPR engine + shared constants (`markov_engine.py`), FAISS embeddings (`embeddings.py`), quality audit (`quality.py`), coverage gaps (`coverage.py`), validation (`admin.py`) |
-| `bot/` | Telegram bot: delivery jobs + feedback (`bot.py`). Onboarding removed — needs rebuild for new graph |
-| `audit/` | Graph maintenance scripts (eval, patch generation, analysis) |
-| `taxonomy/` | `TAXONOMY.md` — v4 taxonomy design (locked). YAML source files removed in latest clean slate commit; need to be regenerated |
-| `data/` | Runtime: `impact_news.db`, `embeddings.faiss`, `merged_graph.yaml` |
-| `viz/` | Impact Atlas: Cytoscape.js interactive graph visualizer (top-down, street view, PPR shockwave) |
+The LLM receives both full trees as prompt context and outputs structured JSON mapping articles to T-triggers and I-impacts. No graph traversal, no FAISS — the LLM reasons about causal chains directly.
 
 ## Commands
 
-### Run the app
 ```bash
-python main.py run        # Bot + delivery jobs
-python main.py bot        # Bot only (delivery + feedback)
-python main.py collect    # One-shot article collection
-python main.py            # Default: init, collect once, test embedding queries
-```
+# Collect articles from RSS feeds
+python main.py collect
 
-Note: Article scoring (`process`) requires user profiling which needs rebuilding for the new graph.
+# Classify articles via LLM engine (one Gemini call each)
+python -m pipeline.ingest                    # 100 diverse unprocessed articles
+python -m pipeline.ingest --limit 50         # Custom limit
+python -m pipeline.ingest --all              # All unprocessed
+python -m pipeline.ingest --stats            # Show classification stats
 
-### Graph maintenance
-```bash
-python -m graph.quality --json           # Quality scorecard
-python -m graph.coverage gaps            # Taxonomy gap analysis
-python -m graph.merge                    # Rebuild merged graph from YAML sources
-python -m graph.admin validate           # Check edge refs, structural integrity
-python -m graph.admin lint               # Lint YAML files for naming conventions
-python -m graph.markov_engine <node>     # PPR impact analysis (standalone)
-python -m graph.scenarios                # Run scenario suite with PPR engine
-```
+# Rebuild taxonomy hierarchy from YAML sources
+python -m graph.merge
 
-### Tests
-```bash
-python -m graph.scenarios                # Run scenario suite (PPR engine)
-python -m graph.export_viz               # Export graph.json for Impact Atlas visualizer
-```
+# Run golden test suite (must_hit/must_miss assertions)
+python -m tests.golden.runner
+python -m tests.golden.runner --case crude_oil_car
 
-### Impact Atlas (Interactive Visualizer)
-```bash
-python -m graph.export_viz               # Generate viz/data/graph.json (run after graph changes)
-cd viz && python -m http.server 8080     # Serve at http://localhost:8080
-```
+# Run event-based eval (NDCG, Recall@k against 16 ground truth events)
+python -m tests.golden.eval_events
+python -m tests.golden.eval_events --event gold_price
 
-Golden test harness (`tests/golden/run.py`) was removed — needs rebuild with new user profiling. Test case definitions kept in `tests/golden/cases.yaml` as reference for test design patterns (band assertions, must_hit/must_miss, score separation).
+# Bot + delivery
+python main.py bot
+python main.py run                           # Bot + periodic collection
 
-### Docker
-```bash
-docker compose up --build -d      # Start (dev mode: sleep infinity)
-docker exec -it impact-news bash  # Shell into container
-docker exec impact-news python main.py collect  # Run command inside
-```
-
-### Local development
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env  # Add GEMINI_API_KEY, TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+# Docker
+docker compose up --build -d
+docker exec -it impact-news bash
 ```
 
 ## Environment Variables
 
 Required in `.env`:
-- `GEMINI_API_KEY` — Google Gemini API
+- `GEMINI_API_KEY` — Google Gemini API key
 - `TELEGRAM_BOT_TOKEN` — Telegram bot token
 - `TELEGRAM_CHAT_ID` — Target chat for delivery
 
-## Configuration
+## Key Files
 
-All tunable parameters are in `config.py` via Pydantic Settings (loaded from `.env`):
+| File | Role |
+|------|------|
+| `engine/llm_engine.py` | `LLMImpactEngine` — sends article + full taxonomy to Gemini, parses structured JSON. Returns `(list[ImpactResult], metadata)` where metadata has `is_relevant`, `triggers`, `rejection_reason`. |
+| `engine/prompt.py` | `build_impact_prompt()` — assembles the Gemini prompt with T-trees, I-trees, article, rules, and JSON output schema. Includes no-impact classification path. |
+| `engine/taxonomy_context.py` | `TaxonomyContext` — loads `merged_graph.yaml`, builds CONTAINS hierarchy, formats trees as indented text for prompts. Key methods: `format_t_trees()`, `format_i_trees()`, `get_all_i_leaf_ids()`, `is_ancestor_of()`. |
+| `engine/base.py` | `ImpactResult` TypedDict (node, probability, magnitude, polarity, delay, mechanism, path) and `ImpactEngine` Protocol. |
+| `pipeline/ingest.py` | CLI pipeline: selects diverse articles, runs LLM engine, stores results in `article_impacts` table. |
+| `pipeline/collector.py` | Async RSS fetcher across 14 feeds. |
+| `pipeline/database.py` | SQLite schema: `articles`, `article_impacts`, `article_tags`, `article_matches`, `seen_hashes`, `execution_logs`. |
+| `pipeline/gemini.py` | `GeminiClient.call(prompt)` wrapper + `parse_json_response()` (strips markdown fences, finds JSON boundaries). |
+| `graph/merge.py` | `TaxonomyMerger` — merges T*.yaml + I*.yaml into `data/merged_graph.yaml`. Only CONTAINS edges matter now (hierarchy for taxonomy_context). |
+| `config.py` | Pydantic Settings. Key: `gemini_model` (default: `gemini-3.1-flash-lite-preview`), `RSS_FEEDS` list, scoring thresholds. |
 
-| Parameter | Default | Purpose |
-|-----------|---------|---------|
-| `ppr_restart_prob` | 0.20 | PPR restart probability (shock intensity) |
-| `ppr_prob_threshold` | 0.005 | PPR cutoff (nodes below this are discarded) |
-| `ppr_magnitude_blend` | 0.5 | Weight of magnitude vs probability |
-| `hub_dampening_threshold` | 20 | Penalize high fan-in nodes above this degree |
-| `match_threshold` | 0.55 | FAISS embedding similarity cutoff |
-| `max_hops` | 3 | BFS depth for user graph reachability |
-| `score_high_threshold` | 0.5 | Score ≥ 0.5 → HIGH severity |
-| `score_medium_threshold` | 0.2 | Score ≥ 0.2 → MEDIUM severity |
-| `indirect_weight` | 0.7 | Discount for indirect effects |
-| `gemini_model` | `gemini-2.0-flash` | Gemini model for tag extraction |
-| `pipeline_interval_seconds` | 7200 | Pipeline run interval (2 hours) |
-| `digest_hour` | 8 | Daily digest delivery hour |
+## Database Schema
 
-RSS feeds are also configured in `config.py` as `RSS_FEEDS` list.
+The `article_impacts` table is the core output:
+```sql
+article_impacts (
+    article_id TEXT PRIMARY KEY,
+    is_relevant INTEGER,        -- 1 = has mass citizen impact, 0 = filtered
+    triggers_json TEXT,         -- ["brent_crude", "global_shipping_routes"]
+    impacts_json TEXT,          -- [{node, probability, magnitude, polarity, delay, mechanism}]
+    rejection_reason TEXT,      -- "sports result", "individual crime", etc.
+    processed_at TEXT
+)
+```
 
-## Conventions
+## Taxonomy Conventions
 
 - **Node IDs:** `snake_case`, regex `^[a-z][a-z0-9_]*$` (e.g., `crude_oil`, `home_loan_emi`)
-- **Edge types:** 12 canonical types in UPPER_SNAKE_CASE: `AFFECTS`, `PRODUCES`, `REGULATES`, `DISRUPTS`, `SUPPLIES`, `DEPENDS_ON`, `CONTAINS`, `IS_A`, `FUNDS`, `COMPETES_WITH`, `EMPLOYS`, `MANAGES`
-- **Edge properties:** `weight` (0-1), `polarity` (±1), `delay` (IMMEDIATE/SHORT_TERM/MEDIUM_TERM/LONG_TERM)
-- **Categories:** 15 canonical L1 categories defined in `taxonomy/TAXONOMY.md`
-- **Embeddings:** `all-MiniLM-L6-v2` (384-dim), indexes all node aliases + node ID via FAISS IndexFlatIP
-- **Scoring:** PPR engine (Personalized PageRank) with restart_prob=0.20, prob_threshold=0.005
-- **No linting config:** No formal linter/formatter configured. Code follows PEP 8 informally.
+- **T/I split (Rule 2):** "Can a citizen directly experience this?" YES → I-world, NO → T-world
+- **One node, one world (Rule 3):** Two sides of same entity = two nodes (e.g., `crude_oil` T3 vs `retail_diesel` I3)
+- **Hierarchy:** L1 (root category) → L2 → L3 → L4 (leaf). Connected by CONTAINS edges.
+- **16 L1 categories:** T1-T5 (Natural, Regulatory, Macro/Global, Tech, Geopolitics) + I1-I11 (Food, Housing, Transport, Employment, Finance, Education, Health, Safety, Utilities, Digital, Governance)
+- **The LLM prompt tells Gemini to output I-world node IDs only as impacts, never T-world nodes.**
 
-## Project History
+## LLM Engine Behavior
 
-- **Mar 8:** Conceived the core idea — "not what interests you, what affects you." Research confirmed no existing product combines causal chain modeling with citizen-centric impact taxonomy. Built master plan, research docs, initial taxonomy + graph YAML files.
-- **Mar 10:** Built full pipeline infrastructure (collector, dedup, matcher, scorer, bot, graph engine). Multiple worktree sessions for graph v2 (edge weights, traversal) and user profiling redesign.
-- **Mar 11-12:** Graph governance — taxonomy normalization, dedup, Gemini-generated nodes, fixed 74 node ID mismatches, redesigned profiling to tiered questions.
-- **Mar 13:** v4 taxonomy locked (Trigger/Impact split, 5+11 L1s, boundary rules, stress tested). "Clean slate" commit — removed old graph YAML data, kept scripts + v4 design.
-- **Mar 15:** Replaced Dijkstra traversal with PPR (Personalized PageRank) engine. 3-layer scoring: probability (PPR), magnitude (hub-penalized path product), timing (delay sum). Reduces node reach from ~90% to 10-30% per trigger. 58 scenarios passing. Removed legacy Dijkstra (`traverse.py`) and old user profiling (`user/`) — both will be rebuilt for the new graph.
+- `evaluate_article(title, summary)` returns `(impacts, metadata)` tuple
+- For irrelevant articles: Gemini returns `{"no_impact": true, "reason": "..."}` → empty impacts list, `is_relevant=False`
+- For relevant articles: Gemini returns `{"triggers": [...], "impacts": [...]}` → validated ImpactResult list
+- Unknown node IDs from Gemini are logged and skipped (common: `retail_inflation_cpi`, `nifty_50` which are T-world)
+- Exponential backoff on 429/503 errors (5s, 10s, 20s, up to 4 attempts)
+- ~19K tokens per prompt (taxonomy context), ~3s per article on gemini-3.1-flash-lite
+
+## Test Infrastructure
+
+**Golden tests** (`tests/golden/cases.yaml`): 19 cases with synthetic user profiles + trigger nodes. Each case defines `must_hit` (nodes that MUST appear) and `must_miss` (false positive traps). Uses ancestor matching via taxonomy hierarchy.
+
+**Event eval** (`tests/golden/ground_truth.yaml`): 16 real Indian events (Bangalore water crisis, Paytm ban, gold rally, etc.) with 10 ranked I-node impacts each. Metrics: Recall@10, NDCG@10, MRR.
+
+Current: 80% must_hit recall, 83% must_miss precision, 0.460 NDCG on events.
 
 ## Current State
 
-Infrastructure code complete. v4 taxonomy design locked in `taxonomy/TAXONOMY.md`. **Graph is fully built**: 738 nodes, 1831 edges across all 16 L1 categories.
+- **Ingestion pipeline:** Working. 390 articles collected, 105 classified (23 relevant, 82 filtered).
+- **User profiling:** Not yet built for LLM architecture. Next major piece — match article I-nodes against user persona to determine personal relevance.
+- **Taxonomy:** Locked. 769 nodes (237 T, 532 I). Source YAMLs in `taxonomy/`.
 
-**Graph data files** (all present, all Gemini 3.1 Pro audited):
-- `taxonomy/I1.yaml` through `I11.yaml` — 11 Impact L1 trees (CONTAINS + social movements in I4)
-- `taxonomy/T1.yaml` through `T5.yaml` — 5 Trigger L1 trees (CONTAINS + T→T laterals)
-- `taxonomy/bridge_edges.yaml` — 286 T→I bridge edges (L2 targets decomposed per Rule 18)
-- `taxonomy/lateral_edges.yaml` — 219 I→I lateral edges (intra-L1 + cross-L1 portals)
-- `taxonomy/scenarios.yaml` — 58 scenario tests (all T-world triggered, all passing)
-- `taxonomy/laterals/` — per-L1 lateral edge source files
-- `data/merged_graph.yaml` — merged output (built by `python -m graph.merge`)
+## Project History
 
-**Scoring engine:** Multi-seed PPR in `graph/markov_engine.py`
-- 3-phase: seed expansion (walk UP CONTAINS) → PPR on causal subgraph → CONTAINS propagation down
-- Config in `config.py`: upward_seed_decay=0.5, max_seed_levels=3
-
-**Audit tooling** (in `audit/`):
-- `generate_laterals.py` / `generate_portals.py` — Gemini edge generation
-- `review_laterals.py` / `fix_laterals.py` — Gemini edge review + fix
-- `review_taxonomy.py` — Gemini constitution review
-- `eval_graph.py` — domain-level evaluation
-
-**Next steps:** Weight calibration (structural heuristics → Gemini re-rating → historical event replay), then user profiling rebuild.
-
-## Key Design Docs
-
-- `taxonomy/TAXONOMY.md` — v4 taxonomy: L1 categories, edge types, naming rules
-- `GRAPH_GOVERNANCE.md` — graph quality rules, normalization, dedup policies
-- `plans/MASTER-PLAN.md` — project vision and roadmap
-- `plans/IMPLEMENTATION-PLAN.md` — phased build plan
-- `research/` — design research for questionnaire, tag extraction, and taxonomy
+- **Mar 8:** Conceived the idea. Built taxonomy v4 (T/I split, 16 L1s).
+- **Mar 10-15:** Graph engine era: PPR, FAISS embeddings, 1831 causal edges, scenario suites.
+- **Mar 22-26:** Phase 4 quality: canary runner, Gemini edge review, weight calibration. NDCG 0.41.
+- **Apr 2-3:** LLM engine replaces graph engine. One Gemini call per article, no graph traversal. NDCG improved to 0.460. Graph code removed (-89K lines), taxonomy trees kept.
