@@ -1,0 +1,285 @@
+{
+  "metrics": {
+    "total": 10,
+    "errors": 0,
+    "relevance": {
+      "tp": 3,
+      "fp": 5,
+      "fn": 0,
+      "tn": 2,
+      "precision": 0.375,
+      "recall": 1.0,
+      "f1": 0.5454545454545454
+    },
+    "triggers": {
+      "exact_precision": 0.5,
+      "exact_recall": 0.5,
+      "ancestor_recall": 0.6666666666666666,
+      "total_expected": 6,
+      "total_predicted": 6,
+      "exact_hits": 3,
+      "ancestor_hits": 1
+    }
+  },
+  "results": [
+    {
+      "id": "b73e42419e701f7743e390f70e9130af40dc532b76e34659fd6a946574f2a14a",
+      "title": "F&O Talk: Is rebound from Thursday's low a sign of reversal or a bull trap? Sudeep Shah's take on market mood",
+      "summary": "Markets staged a late recovery, but technical indicators suggest indecision rather than a confirmed reversal. Sudeep Shah highlights key Nifty and Bank Nifty levels, cautioning that volatility remains elevated. While IT shows relative strength, rate-sensitive sectors may stay under pressure ahead of the RBI MPC decision and macro uncertainty.",
+      "source": "ET Markets",
+      "published_at": "2026-04-03",
+      "relevant": false,
+      "reason": "Opinion piece and technical analysis on stock market movements, not a macro event.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "ministry_of_finance",
+        "industrial_metals_index"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I11",
+        "I6"
+      ],
+      "error": false,
+      "ms": 5977
+    },
+    {
+      "id": "0042fcd73ebfd8b6210d57f50f7e9cc2f8880cba7594a607e81436324be355e4",
+      "title": "Bank Holiday Today: Are Banks Closed On April 3 For Good Friday 2026? Check State-Wise List",
+      "summary": "Good Friday is considered as a very important day for Christians, remembering the suffering and death of Jesus Christ on the cross.",
+      "source": "NDTV Profit",
+      "published_at": "2026-04-03",
+      "relevant": false,
+      "reason": "Routine bank holiday notification, not a causal macro event.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article pertains to routine bank holiday scheduling, which is a standard administrative calendar event and does not constitute a macro-level causal impact on the Indian economy or citizen welfare at scale.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 6782
+    },
+    {
+      "id": "2381d4625b4b366d5e63af54939983fab754ca378eb0595b2f6804e3a54e22ee",
+      "title": "LPG worries: Only 17 states hold briefings; Centre urges all to curb rumours, prevent panic buying",
+      "summary": "MoPNG also calls for strict enforcement against those exploiting the situation for profit",
+      "source": "The Hindu Business",
+      "published_at": "2026-04-03",
+      "relevant": true,
+      "reason": "Government intervention to prevent panic buying of LPG directly affects household cooking fuel availability and costs.",
+      "triggers": [
+        "ministry_of_consumer_affairs",
+        "state_governments"
+      ],
+      "expected_impacts": [
+        "lpg_cylinder",
+        "cooking_fuel"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "ministry_of_consumer_affairs",
+        "public_distribution_system"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 3976
+    },
+    {
+      "id": "3cd64ac0fcfbb97e877978f95f9e8d4693b180223148bb588bae92940cbb5dad",
+      "title": "The architecture of resilience: Why India\u2019s private credit stands apart",
+      "summary": "India\u2019s private credit market stands resilient amid global stress due to its conservative fund structures, strict leverage norms, and closed-ended AIF framework. Unlike global peers facing liquidity and redemption pressures, India\u2019s system aligns investor timelines with asset maturity, reducing systemic risks while offering significant growth headroom in an underpenetrated market.",
+      "source": "ET Markets",
+      "published_at": "2026-04-03",
+      "relevant": false,
+      "reason": "Opinion/analysis piece on the structure of India's private credit market.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "ministry_of_finance",
+        "industrial_metals_index"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 3638
+    },
+    {
+      "id": "0bc44975cadef8e7eb4a9cb987d33072dfbae99a725b02bbb93a26ee911bd896",
+      "title": "Elon Musk\u2019s SpaceX eyes over $2 trillion valuation in upcoming IPO",
+      "summary": "Elon Musk's SpaceX is reportedly targeting an IPO valuation exceeding $2 trillion, potentially making it the largest stock market listing ever. The company is in discussions with prospective investors, aiming to raise up to $75 billion. This ambitious valuation follows a recent merger with Musk's AI startup, xAI.",
+      "source": "ET Markets",
+      "published_at": "2026-04-03",
+      "relevant": false,
+      "reason": "Foreign company-specific news (SpaceX IPO) with no direct impact on ordinary Indian citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article discusses a private company's (SpaceX) valuation and potential IPO, which falls under the exclusion criteria for pure startup/corporate financial news that does not signal a sector-wide macro shift for the Indian economy.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 652926
+    },
+    {
+      "id": "aecbeaa7fb019bcbee078e1e0ea3ba1848db969f4f146374ec9c39c9c38a199a",
+      "title": "Sun Pharma most exposed Indian company to Trump's new tariff threat, warns Jefferies",
+      "summary": "Indian drug maker Sun Pharma faces significant exposure to potential US tariffs on medicines. Global brokerage Jefferies warns that while generics may be exempt, Sun Pharma's specialty and innovative products, manufactured in countries like South Korea and the EU, could face levies up to 15%. The US administration is reportedly preparing these tariffs, with an announcement possibly today.",
+      "source": "ET Markets",
+      "published_at": "2026-04-02",
+      "relevant": false,
+      "reason": "Company-specific news regarding export tariffs, unlikely to causally affect ordinary Indian citizens at scale.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "us_government",
+        "export_competitiveness"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I7",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 3286
+    },
+    {
+      "id": "7b77346cc7925e5891adfb8fbb4adcb452fd5f781bc7fcf6697cbb17f14de720",
+      "title": "Tehran's 'Hit-List' Of 8 Gulf Bridges After US Destroys The Biggest In Iran",
+      "summary": "Iran has released list of eight bridges across 4 nations that can be targeted",
+      "source": "NDTV World",
+      "published_at": "2026-04-03",
+      "relevant": false,
+      "reason": "Foreign affairs (threat list) with no immediate or direct chain to Indian citizens mentioned.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "brent_crude",
+        "global_shipping_routes"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2162
+    },
+    {
+      "id": "a7133a0ca5130813bb7fcf460ed5b0d9816c0c5688cdccb5aa23a7305e1cf4e5",
+      "title": "'Don't be a hero': CA Rudramurthy BV says stay away from longs; short Havells and Lodha instead",
+      "summary": "Vachana Investments MD CA Rudramurthy BV advises Indian equity investors to view market rallies as shorting opportunities until Brent crude falls below $95, the rupee drops below 92, and the VIX cools under 15. He emphasizes preserving capital and suggests hedging long-term portfolios with put options, identifying Havells and Lodha as specific short trade recommendations.",
+      "source": "ET Markets",
+      "published_at": "2026-04-02",
+      "relevant": false,
+      "reason": "Stock market trading advice and opinion piece.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "ministry_of_finance",
+        "industrial_metals_index"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1175
+    },
+    {
+      "id": "2a49c60bc2416380d3b32d962eece3c862e045a6c8075edad07fb553c7488407",
+      "title": "Oil prices surge while Asian share prices rise moderately",
+      "summary": "Benchmark US crude rose 11.4% to $111.54 a barrel, while Brent crude increased 7.8% to $109.03",
+      "source": "The Hindu Business",
+      "published_at": "2026-04-03",
+      "relevant": true,
+      "reason": "Massive surge in global crude oil prices directly impacts Indian inflation, fuel costs, and transportation.",
+      "triggers": [
+        "brent_crude"
+      ],
+      "expected_impacts": [
+        "retail_petrol",
+        "retail_diesel",
+        "public_transit"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "brent_crude",
+        "ministry_of_finance"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 5076
+    },
+    {
+      "id": "206a5ecab9a358437c5495cc73abfb431b96063cfc0c7a99d567e8804d8f61f5",
+      "title": "Iran fires missiles towards Israel, Gulf nations; Tel Aviv activates air defences",
+      "summary": "Iran launched missiles at Israel and Gulf nations, with explosions reported in Tehran and Isfahan. Israel's military confirmed interception efforts. The situation escalates following US-Israeli strikes on Iran, prompting Iran's leaders to vow self-defence.",
+      "source": "Livemint",
+      "published_at": "2026-04-03",
+      "relevant": true,
+      "reason": "Major geopolitical conflict in the Gulf directly disrupts global oil supply chains and impacts the Indian diaspora, leading to macro shocks in India.",
+      "triggers": [
+        "brent_crude",
+        "global_shipping_routes",
+        "us_government"
+      ],
+      "expected_impacts": [
+        "vehicle_fuel",
+        "retail_gold_investment"
+      ],
+      "difficulty": "hard",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "brent_crude",
+        "geopolitical_states"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I11",
+        "I10"
+      ],
+      "error": false,
+      "ms": 2540
+    }
+  ]
+}
