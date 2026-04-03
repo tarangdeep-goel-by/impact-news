@@ -58,7 +58,7 @@ def run_scenario(
 
     # Call LLM engine
     try:
-        impacts = engine.evaluate_article(title, summary)
+        impacts, _meta = engine.evaluate_article(title, summary)
     except Exception as e:
         logger.error("Engine failed on %s: %s", sid, e)
         return {"id": sid, "type": stype, "status": "ERROR", "detail": str(e)}

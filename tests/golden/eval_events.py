@@ -82,7 +82,8 @@ class LLMEngine:
     def evaluate(self, event: dict) -> list[ImpactResult]:
         title = f"{event['name']}"
         summary = event["description"]
-        return self._engine.evaluate_article(title, summary)
+        results, _meta = self._engine.evaluate_article(title, summary)
+        return results
 
 
 # ---------------------------------------------------------------------------

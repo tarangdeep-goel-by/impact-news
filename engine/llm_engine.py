@@ -37,7 +37,7 @@ class LLMImpactEngine:
         self._valid_i_nodes = taxonomy.get_all_i_node_ids()
         self._valid_t_nodes = taxonomy.get_all_t_node_ids()
 
-    def evaluate_article(self, title: str, summary: str) -> list[ImpactResult]:
+    def evaluate_article(self, title: str, summary: str) -> tuple[list[ImpactResult], dict]:
         """Call Gemini with full taxonomy context, parse and validate results.
 
         Args:
@@ -45,15 +45,20 @@ class LLMImpactEngine:
             summary: Article body/summary text
 
         Returns:
-            List of ImpactResult dicts, sorted by probability * magnitude descending.
-            Returns empty list on unrecoverable errors.
+            Tuple of (impacts list, metadata dict).
+            metadata has: is_relevant (bool), triggers (list), rejection_reason (str|None).
+            Returns ([], metadata) for no-impact articles or errors.
         """
         prompt = build_impact_prompt(self._t_trees, self._i_trees, title, summary)
 
-        # Call Gemini — retry once on parse failure
         parsed = self._call_and_parse(prompt)
         if parsed is None:
-            return []
+            return [], {"is_relevant": False, "triggers": [], "rejection_reason": "api_error"}
+
+        # Handle no-impact response
+        if parsed.get("no_impact"):
+            reason = parsed.get("reason", "no mass citizen impact")
+            return [], {"is_relevant": False, "triggers": [], "rejection_reason": reason}
 
         triggers = parsed.get("triggers", [])
         impacts = parsed.get("impacts", [])
@@ -108,7 +113,13 @@ class LLMImpactEngine:
 
         # Sort by probability * magnitude descending
         results.sort(key=lambda x: x["probability"] * x["magnitude"], reverse=True)
-        return results
+
+        metadata = {
+            "is_relevant": len(results) > 0,
+            "triggers": valid_triggers,
+            "rejection_reason": None,
+        }
+        return results, metadata
 
     def _call_and_parse(self, prompt: str) -> dict | None:
         """Call Gemini and parse JSON response, with exponential backoff on rate limits."""

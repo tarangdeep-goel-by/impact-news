@@ -72,11 +72,21 @@ CREATE TABLE IF NOT EXISTS article_matches (
     feedback TEXT
 );
 
+CREATE TABLE IF NOT EXISTS article_impacts (
+    article_id TEXT PRIMARY KEY REFERENCES articles(id),
+    is_relevant INTEGER NOT NULL DEFAULT 0,
+    triggers_json TEXT,
+    impacts_json TEXT,
+    rejection_reason TEXT,
+    processed_at TEXT DEFAULT (datetime('now'))
+);
+
 CREATE INDEX IF NOT EXISTS idx_articles_processed ON articles(processed);
 CREATE INDEX IF NOT EXISTS idx_articles_fingerprint ON articles(fingerprint);
 CREATE INDEX IF NOT EXISTS idx_articles_url_hash ON articles(url_hash);
 CREATE INDEX IF NOT EXISTS idx_seen_hashes ON seen_hashes(hash);
 CREATE INDEX IF NOT EXISTS idx_matches_severity ON article_matches(severity, delivered_at);
+CREATE INDEX IF NOT EXISTS idx_impacts_relevant ON article_impacts(is_relevant);
 """
 
 

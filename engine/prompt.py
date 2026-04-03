@@ -15,8 +15,9 @@ def build_impact_prompt(t_trees: str, i_trees: str, title: str, summary: str) ->
     Returns:
         Complete prompt string for Gemini.
     """
-    return f"""You are a causal impact analyst for Indian citizens. Your job is to identify \
-how a news article causally affects the daily life of ordinary Indians.
+    return f"""You are a causal impact analyst for Indian citizens. Your job is to determine \
+whether a news article has any meaningful causal impact on the daily life of ordinary Indians, \
+and if so, identify exactly what it affects.
 
 You have two reference taxonomies:
 
@@ -35,30 +36,48 @@ Title: {title}
 Summary: {summary}
 
 == TASK ==
+First, decide: does this article describe an event that CAUSALLY AFFECTS the masses?
+
+Many articles do NOT affect ordinary citizens at scale:
+- Sports results, celebrity news, entertainment, arts & culture
+- Individual crimes, accidents, or court cases (unless they set precedent or affect policy)
+- Company-specific news that doesn't ripple to consumers/employees at scale
+- Opinion pieces, editorials, lifestyle articles
+- Foreign affairs with no India impact chain
+
+If the article has NO mass citizen impact, return:
+{{"no_impact": true, "reason": "brief reason (e.g. sports result, individual crime, celebrity news)"}}
+
+If it DOES have mass impact:
 1. Identify which T-world node(s) this article triggers. Use the most specific node that fits.
-2. For each triggered node, trace the causal chain to every I-world node that is genuinely affected.
+2. Trace the causal chain to every I-world node that is genuinely affected.
 3. For each affected I-world node, assess:
-   - probability (0-1): likelihood this node is actually affected by this article
-   - magnitude (0-1): severity of the impact if it occurs
+   - probability (0-1): likelihood this node is actually affected
+   - magnitude (0-1): severity of the impact
    - polarity: +1 if the impact increases/worsens or -1 if it decreases/improves
    - delay: IMMEDIATE, SHORT_TERM, MEDIUM_TERM, or LONG_TERM
-   - mechanism: a 1-line causal chain from trigger to impact (e.g. "Crude oil price hike -> refinery costs -> retail petrol price")
+   - mechanism: 1-line causal chain (e.g. "Crude oil price hike -> refinery costs -> retail petrol price")
 
 == CRITICAL RULES ==
 - Impacts MUST be I-world nodes only (from the IMPACT TAXONOMY above). Never return T-world nodes as impacts.
-  For example: "nifty_50" is a T-world trigger, NOT an impact. The citizen-level impact is "equity_markets" (I-world).
+  For example: "nifty_50" is a T-world trigger, NOT an impact. The citizen-level impact is "equity_investments" (I-world).
   Similarly: "aviation_turbine_fuel" is T-world. The citizen impact is "domestic_flight_ticket" (I-world).
 - Only genuine causal mechanisms — not vague relatedness or thematic similarity.
 - If a whole branch is affected, use the parent node instead of listing every leaf.
 - Gold prices do NOT affect wheat or fuel. Stick to real causal chains.
-- Probability = likelihood this is affected (not every impact is certain). Magnitude = severity of impact.
 - Do NOT list impacts with probability below 0.2 — if it's that unlikely, skip it.
-- Use node IDs exactly as they appear in the taxonomy above (snake_case, e.g. "retail_petrol", NOT path-style like "i3:transport:retail_petrol").
+- Use node IDs exactly as they appear in the taxonomy above (snake_case).
+- Be AGGRESSIVE about filtering: if you're unsure whether an article affects citizens, return no_impact.
 
 == OUTPUT FORMAT ==
-Return ONLY valid JSON, no commentary:
+Return ONLY valid JSON, no commentary. Either:
+
+For irrelevant articles:
+{{"no_impact": true, "reason": "sports result"}}
+
+For impactful articles:
 {{
-  "triggers": ["t_node_id_1", "t_node_id_2"],
+  "triggers": ["t_node_id_1"],
   "impacts": [
     {{
       "node": "retail_petrol",

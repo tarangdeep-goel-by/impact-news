@@ -101,7 +101,8 @@ class LLMEngine:
 
     def evaluate_trigger(self, trigger_node: str) -> list[ImpactResult]:
         title, summary = trigger_to_article(trigger_node, self.taxonomy)
-        return self._engine.evaluate_article(title, summary)
+        results, _meta = self._engine.evaluate_article(title, summary)
+        return results
 
 
 # ---------------------------------------------------------------------------
