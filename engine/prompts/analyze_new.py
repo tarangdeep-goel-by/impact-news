@@ -57,7 +57,7 @@ If the article actually has NO mass citizen impact despite being flagged, return
 - If a whole branch is affected, use the parent node instead of listing every leaf.
 - Do NOT list impacts with probability below 0.2.
 - delay_days must be a positive integer (not a string like "SHORT_TERM").
-- 2-8 impact edges per trigger. Focus on the most significant ones.
+- Include ALL genuinely affected I-nodes, not just the top few. Black swan events can have many impacts.
 
 == OUTPUT FORMAT ==
 Return ONLY valid JSON:

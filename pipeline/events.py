@@ -161,10 +161,10 @@ class EventStore:
     def get_event_summary_list(self) -> list[dict]:
         """Short list of active events for Tier 1 prompt context.
 
-        Returns: [{event_id, name, triggers, stage, category, last_updated_at}]
+        Returns: [{event_id, name, summary, triggers, stage, category, last_updated_at}]
         """
         rows = self.conn.execute(
-            """SELECT event_id, name, triggers_json, stage, category, last_updated_at
+            """SELECT event_id, name, summary, triggers_json, stage, category, last_updated_at
                FROM events
                WHERE stage != 'resolved'
                ORDER BY last_updated_at DESC

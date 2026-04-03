@@ -18,13 +18,16 @@ def build_classify_prompt(
         title: Article headline.
         summary: Article body/summary text.
     """
-    # Format active events list (same logic as current)
+    # Format active events list with summaries and triggers for better matching
     if active_events:
         event_lines = []
         for ev in active_events:
-            triggers_str = ", ".join(ev.get("triggers", [])[:3])
+            triggers_str = ", ".join(ev.get("triggers", [])[:5])
+            summary = ev.get("summary", "")[:150]
             event_lines.append(
-                f"- [{ev['event_id']}] {ev['name']} ({ev.get('category', '?')}, {ev['stage']}) [{triggers_str}]"
+                f"- [{ev['event_id']}] {ev['name']} ({ev.get('category', '?')}, {ev['stage']})\n"
+                f"  Triggers: [{triggers_str}]\n"
+                f"  Summary: {summary}"
             )
         events_block = "Active events (match if this article belongs to one):\n" + "\n".join(event_lines)
     else:
@@ -102,9 +105,11 @@ Rules for exclude_l1s:
 - Example: a shipping crisis definitely does NOT affect I7 (Education) or I11 (Leisure)
 
 Rules for event matching:
-- Match semantically, not just by keywords
+- Match on ROOT CAUSE, not surface topic. An article about "textile exports hit by shipping costs" and an event about "Middle East energy supply disruption" share the SAME root cause (the conflict). They should match.
+- Read each event's summary and triggers carefully. If the article's situation is CAUSED BY or is a CONSEQUENCE OF an existing event, it belongs to that event.
+- Different sectors affected by the same crisis = same event. Government responses to a crisis = same event.
 - Only match if confidence >= 0.7. If unsure, set event_match to null (creates a new event)
-- An article can only match ONE event
+- An article can only match ONE event. Pick the closest root cause.
 
 Rules for event_name (only when event_match is null):
 - Short, descriptive name for the new event (3-7 words)
