@@ -136,6 +136,64 @@ CREATE TABLE IF NOT EXISTS edge_support (
     PRIMARY KEY (edge_id, article_id)
 );
 
+CREATE TABLE IF NOT EXISTS macro_shifts (
+    id TEXT PRIMARY KEY,
+    event_id TEXT NOT NULL REFERENCES events(event_id),
+    t_node TEXT NOT NULL,
+    trajectory TEXT NOT NULL,
+    context TEXT NOT NULL,
+    created_at TEXT DEFAULT (datetime('now')),
+    updated_at TEXT DEFAULT (datetime('now')),
+    status TEXT DEFAULT 'active',
+    UNIQUE(event_id, t_node)
+);
+
+CREATE TABLE IF NOT EXISTS micro_impact_revisions (
+    event_id TEXT NOT NULL REFERENCES events(event_id),
+    i_node TEXT NOT NULL,
+    article_id TEXT NOT NULL REFERENCES articles(id),
+    trajectory TEXT NOT NULL,
+    probability REAL NOT NULL,
+    magnitude REAL NOT NULL,
+    delay_days INTEGER NOT NULL,
+    rationale TEXT NOT NULL,
+    driving_t_nodes TEXT NOT NULL,
+    created_at TEXT DEFAULT (datetime('now')),
+    PRIMARY KEY (event_id, i_node, article_id)
+);
+
+CREATE TABLE IF NOT EXISTS impact_drivers (
+    event_id TEXT NOT NULL,
+    i_node TEXT NOT NULL,
+    macro_shift_id TEXT NOT NULL REFERENCES macro_shifts(id),
+    PRIMARY KEY (event_id, i_node, macro_shift_id)
+);
+
+CREATE TABLE IF NOT EXISTS shift_support (
+    macro_shift_id TEXT NOT NULL REFERENCES macro_shifts(id),
+    article_id TEXT NOT NULL REFERENCES articles(id),
+    added_at TEXT DEFAULT (datetime('now')),
+    PRIMARY KEY (macro_shift_id, article_id)
+);
+
+CREATE TABLE IF NOT EXISTS impact_support (
+    event_id TEXT NOT NULL,
+    i_node TEXT NOT NULL,
+    article_id TEXT NOT NULL REFERENCES articles(id),
+    added_at TEXT DEFAULT (datetime('now')),
+    PRIMARY KEY (event_id, i_node, article_id)
+);
+
+CREATE VIEW IF NOT EXISTS current_micro_impacts AS
+SELECT event_id, i_node, article_id, trajectory, probability,
+       magnitude, delay_days, rationale, driving_t_nodes, created_at
+FROM (
+    SELECT *, ROW_NUMBER() OVER(
+        PARTITION BY event_id, i_node ORDER BY created_at DESC
+    ) as rn
+    FROM micro_impact_revisions
+) WHERE rn = 1;
+
 CREATE INDEX IF NOT EXISTS idx_articles_processed ON articles(processed);
 CREATE INDEX IF NOT EXISTS idx_articles_fingerprint ON articles(fingerprint);
 CREATE INDEX IF NOT EXISTS idx_articles_url_hash ON articles(url_hash);
@@ -154,6 +212,12 @@ CREATE INDEX IF NOT EXISTS idx_impact_edges_i_node ON impact_edges(i_node);
 CREATE INDEX IF NOT EXISTS idx_impact_edges_status ON impact_edges(status);
 CREATE INDEX IF NOT EXISTS idx_impact_edges_maturity ON impact_edges(maturity_date);
 CREATE INDEX IF NOT EXISTS idx_edge_support_article ON edge_support(article_id);
+CREATE INDEX IF NOT EXISTS idx_macro_shifts_event ON macro_shifts(event_id);
+CREATE INDEX IF NOT EXISTS idx_macro_shifts_t_node ON macro_shifts(t_node);
+CREATE INDEX IF NOT EXISTS idx_micro_revisions_event ON micro_impact_revisions(event_id);
+CREATE INDEX IF NOT EXISTS idx_micro_revisions_inode ON micro_impact_revisions(i_node);
+CREATE INDEX IF NOT EXISTS idx_impact_drivers_shift ON impact_drivers(macro_shift_id);
+CREATE INDEX IF NOT EXISTS idx_shift_support_article ON shift_support(article_id);
 """
 
 

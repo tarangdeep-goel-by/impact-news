@@ -3,22 +3,28 @@
     "total": 100,
     "errors": 0,
     "relevance": {
-      "tp": 61,
-      "fp": 9,
-      "fn": 2,
-      "tn": 28,
-      "precision": 0.8714285714285714,
-      "recall": 0.9682539682539683,
-      "f1": 0.9172932330827068
+      "tp": 59,
+      "fp": 4,
+      "fn": 4,
+      "tn": 33,
+      "precision": 0.9365079365079365,
+      "recall": 0.9365079365079365,
+      "f1": 0.9365079365079365
     },
     "triggers": {
-      "exact_precision": 0.7129629629629629,
-      "exact_recall": 0.5746268656716418,
-      "ancestor_recall": 0.5895522388059702,
-      "total_expected": 134,
-      "total_predicted": 108,
-      "exact_hits": 77,
-      "ancestor_hits": 2
+      "exact_precision": 0.717948717948718,
+      "exact_recall": 0.5316455696202531,
+      "ancestor_recall": 0.5569620253164557,
+      "total_expected": 158,
+      "total_predicted": 117,
+      "exact_hits": 84,
+      "ancestor_hits": 4
+    },
+    "trajectories": {
+      "escalating": 49,
+      "disruption": 56,
+      "deescalating": 7,
+      "status_quo": 5
     }
   },
   "results": [
@@ -35,10 +41,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article is a market commentary/opinion piece regarding stock market technical analysis (F&O Talk), which is explicitly excluded by the instructions.",
+      "pred_trajectories": {},
+      "pred_reason": "The article is a market commentary/technical analysis piece discussing stock market volatility and trader sentiment, which is explicitly excluded by the instructions.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2812
+      "ms": 1646
     },
     {
       "id": "0042fcd73ebfd8b6210d57f50f7e9cc2f8880cba7594a607e81436324be355e4",
@@ -53,10 +60,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article is a routine service announcement regarding bank holiday schedules, which does not constitute a macro-level causal event affecting the Indian citizen impact engine.",
+      "pred_trajectories": {},
+      "pred_reason": "The article provides information regarding bank holidays, which is a routine administrative schedule and does not constitute a material shift in T-world systems or a causal impact on ordinary Indians at scale.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1573
+      "ms": 1056
     },
     {
       "id": "2381d4625b4b366d5e63af54939983fab754ca378eb0595b2f6804e3a54e22ee",
@@ -81,14 +89,18 @@
         "ministry_of_consumer_affairs",
         "public_distribution_system"
       ],
+      "pred_trajectories": {
+        "ministry_of_consumer_affairs": "escalating",
+        "public_distribution_system": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I9",
+        "I11",
         "I10"
       ],
       "error": false,
-      "ms": 1977
+      "ms": 4141
     },
     {
       "id": "3cd64ac0fcfbb97e877978f95f9e8d4693b180223148bb588bae92940cbb5dad",
@@ -101,22 +113,13 @@
       "triggers": [],
       "expected_impacts": [],
       "difficulty": "easy",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "ministry_of_finance",
-        "industrial_metals_index"
-      ],
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I1",
-        "I6",
-        "I7",
-        "I8",
-        "I10",
-        "I11"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_trajectories": {},
+      "pred_reason": "The article provides an analytical commentary on the structural resilience of the Indian private credit market and AIF frameworks. It does not report a material shift in a T-world system, but rather offers a qualitative assessment of existing market conditions.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2185
+      "ms": 2403
     },
     {
       "id": "0bc44975cadef8e7eb4a9cb987d33072dfbae99a725b02bbb93a26ee911bd896",
@@ -131,10 +134,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article discusses a private company's (SpaceX) potential valuation in a future IPO, which is a corporate/market-speculation event and does not causally affect ordinary Indians at scale or trigger any macro-level systemic changes.",
+      "pred_trajectories": {},
+      "pred_reason": "The article discusses a private company's (SpaceX) potential IPO valuation. This is a corporate financial event and does not represent a material shift in Indian macro-systems, sovereign policy, or national infrastructure as defined in the T-world taxonomy.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1581
+      "ms": 4422
     },
     {
       "id": "aecbeaa7fb019bcbee078e1e0ea3ba1848db969f4f146374ec9c39c9c38a199a",
@@ -159,15 +163,21 @@
         "us_government",
         "active_pharmaceutical_ingredients_supply"
       ],
+      "pred_trajectories": {
+        "us_government": "escalating",
+        "active_pharmaceutical_ingredients_supply": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I2",
         "I3",
+        "I7",
+        "I9",
         "I11"
       ],
       "error": false,
-      "ms": 2374
+      "ms": 2026
     },
     {
       "id": "7b77346cc7925e5891adfb8fbb4adcb452fd5f781bc7fcf6697cbb17f14de720",
@@ -188,16 +198,18 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
         "global_shipping_routes"
       ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 1963
+      "ms": 1607
     },
     {
       "id": "a7133a0ca5130813bb7fcf460ed5b0d9816c0c5688cdccb5aa23a7305e1cf4e5",
@@ -212,10 +224,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article is a market commentary/trading advice piece ('stay away from longs; short Havells and Lodha'), which is explicitly excluded by the instructions.",
+      "pred_trajectories": {},
+      "pred_reason": "The article is an opinion-based market commentary and investment advice piece, which is explicitly excluded by the instructions. It does not report on a material shift in T-world systems, but rather provides individual trading recommendations.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1713
+      "ms": 1826
     },
     {
       "id": "2a49c60bc2416380d3b32d962eece3c862e045a6c8075edad07fb553c7488407",
@@ -226,7 +239,8 @@
       "relevant": true,
       "reason": "Massive surge in global crude oil prices directly impacts Indian inflation, fuel costs, and transportation.",
       "triggers": [
-        "brent_crude"
+        "brent_crude",
+        "ministry_of_finance"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -236,16 +250,18 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "ministry_of_finance"
+        "brent_crude"
       ],
+      "pred_trajectories": {
+        "brent_crude": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2030
+      "ms": 2256
     },
     {
       "id": "206a5ecab9a358437c5495cc73abfb431b96063cfc0c7a99d567e8804d8f61f5",
@@ -272,14 +288,17 @@
         "brent_crude",
         "global_shipping_routes"
       ],
+      "pred_trajectories": {
+        "brent_crude": "escalating",
+        "global_shipping_routes": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2390
+      "ms": 22644
     },
     {
       "id": "73f87c505e2c99ff9a3e36f7dda859bce1a0b11846307b7db2b2e07389956c99",
@@ -294,10 +313,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article is a market roundup ('Asian shares edge higher') which is explicitly excluded by the instructions. The summary provided appears to be a copy-paste error from a previous event, as it does not match the title.",
+      "pred_trajectories": {},
+      "pred_reason": "The article is a market roundup/observation of Asian stock indices and global sentiment, which is explicitly excluded by the instructions as it does not report a material shift in an Indian T-world system.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1567
+      "ms": 2022
     },
     {
       "id": "90e333f7c9ef613aa66498d03b3a43af38d39f6911e905a49092dde7a45841e4",
@@ -312,10 +332,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article pertains to school board examination results, which is an educational/academic administrative update and does not causally affect ordinary Indians at a macro-level scale as defined by the T-world taxonomy.",
+      "pred_trajectories": {},
+      "pred_reason": "The article is a routine announcement regarding school board examination results, which does not constitute a material shift in any T-world macro systems or impact ordinary Indians at scale.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1563
+      "ms": 1584
     },
     {
       "id": "7edb4a8d9c90642ac5214aa06b2289cca1ffdf60a613ef8b255ec6139b0100cd",
@@ -330,10 +351,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article describes a company-specific M&A deal (Mirza International acquiring Solethreads), which is explicitly excluded by the instructions unless it signals a systemically important sector-wide shift.",
+      "pred_trajectories": {},
+      "pred_reason": "The article describes a company-specific M&A deal (Mirza International acquiring Solethreads), which does not constitute a material shift in any T-world macro system or impact ordinary Indians at scale.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1660
+      "ms": 1502
     },
     {
       "id": "b418da0c51a582e9267418958d21b56849c3c23722c9a3eb299c4b2199ebfbfe",
@@ -355,17 +377,20 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "aviation_turbine_fuel",
-        "brent_crude"
+        "aviation_turbine_fuel"
       ],
+      "pred_trajectories": {
+        "aviation_turbine_fuel": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I7",
-        "I9"
+        "I9",
+        "I11"
       ],
       "error": false,
-      "ms": 2302
+      "ms": 1131
     },
     {
       "id": "c34511135a7041a2fd8f06e458c767be168214482dab81eed294adbb459d7213",
@@ -389,13 +414,24 @@
         "global_shipping_routes",
         "brent_crude"
       ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption",
+        "brent_crude": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I4",
+        "I5",
+        "I6",
         "I7",
+        "I9",
+        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 1868
+      "ms": 3073
     },
     {
       "id": "a738c9fee1db863cbe812f1db6b4fc4a5e8ad76f6d354d1cc21a9b87fc7f220d",
@@ -416,16 +452,25 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "usd_inr_exchange"
+        "usd_inr_exchange",
+        "rbi"
       ],
+      "pred_trajectories": {
+        "usd_inr_exchange": "deescalating",
+        "rbi": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
         "I7",
-        "I11",
-        "I1"
+        "I9",
+        "I11"
       ],
       "error": false,
-      "ms": 2709
+      "ms": 2544
     },
     {
       "id": "95529d7476cf09583de86931980be92a464cc827120fe1aac0e01ce428f0b499",
@@ -437,7 +482,8 @@
       "reason": "Crude oil price rise impacting the textile value chain will affect retail clothing prices and sector employment.",
       "triggers": [
         "brent_crude",
-        "global_shipping_routes"
+        "global_shipping_routes",
+        "export_competitiveness"
       ],
       "expected_impacts": [
         "small_factory_owner_income",
@@ -447,19 +493,21 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "export_competitiveness"
+        "brent_crude",
+        "global_shipping_routes"
       ],
+      "pred_trajectories": {
+        "brent_crude": "escalating",
+        "global_shipping_routes": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
-        "I6",
         "I7",
-        "I10",
-        "I11"
+        "I11",
+        "I6"
       ],
       "error": false,
-      "ms": 2077
+      "ms": 1906
     },
     {
       "id": "9d5bd8bae4d3a0e369bc3ce315333f5915c8cc54c680f889e0e35422e60e8c89",
@@ -481,6 +529,9 @@
       "pred_triggers": [
         "regional_weather_phenomena"
       ],
+      "pred_trajectories": {
+        "regional_weather_phenomena": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -490,7 +541,7 @@
         "I10"
       ],
       "error": false,
-      "ms": 2045
+      "ms": 3061
     },
     {
       "id": "91297c1c951277ca13e472d74de294aa68f32a6b3a49528b9afc9631267256d0",
@@ -505,10 +556,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article concerns a sports-related dispute regarding a football match, which falls under entertainment/sports and does not causally affect ordinary Indians at a macro-economic or systemic level.",
+      "pred_trajectories": {},
+      "pred_reason": "The article concerns a sports-related dispute regarding a football match, which falls under entertainment and cultural events, and does not causally affect macro-level systems or ordinary Indian citizens at scale.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1615
+      "ms": 1245
     },
     {
       "id": "cd03d716c8e446f47ecca3610d61094b125dabe360ac1abd318643c44eb3b8f6",
@@ -520,6 +572,8 @@
       "reason": "LPG crisis triggering mass migration of gig and manufacturing workers, heavily impacting livelihoods and industry.",
       "triggers": [
         "brent_crude",
+        "industrial_metals_index",
+        "ministry_of_finance",
         "seasonal_migrant_labor"
       ],
       "expected_impacts": [
@@ -531,18 +585,20 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_finance",
-        "industrial_metals_index"
+        "seasonal_migrant_labor",
+        "rural_urban_migration_corridors"
       ],
+      "pred_trajectories": {
+        "seasonal_migrant_labor": "disruption",
+        "rural_urban_migration_corridors": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
-        "I6",
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 1834
+      "ms": 2244
     },
     {
       "id": "f82ccb30be7c0c6ee7542b34ca74808856ad2f7d93e599651a359c480a6214b7",
@@ -557,10 +613,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article is a market commentary/brokerage report ('Here's what Motilal Oswal says') regarding future market performance, which is explicitly excluded by the instructions.",
+      "pred_trajectories": {},
+      "pred_reason": "The article is a market commentary/outlook report from a brokerage firm (Motilal Oswal) regarding equity market performance and stock picks. It does not report on a material shift in T-world systems, but rather provides speculative analysis and investment advice.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1353
+      "ms": 1363
     },
     {
       "id": "7e103d3013b25cdeb11f2b263651c81d1922cf6dfd6b51017eab554718e59d5f",
@@ -571,8 +628,9 @@
       "relevant": true,
       "reason": "Government review of tax concessions and duty reliefs directly impacts indirect tax revenues and consumer prices.",
       "triggers": [
-        "ministry_of_finance",
-        "global_supply_chains"
+        "global_supply_chains",
+        "industrial_metals_index",
+        "ministry_of_finance"
       ],
       "expected_impacts": [
         "vehicle_fuel"
@@ -580,18 +638,21 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_finance",
-        "industrial_metals_index"
+        "india_trade_deficit",
+        "global_shipping_routes"
       ],
+      "pred_trajectories": {
+        "india_trade_deficit": "escalating",
+        "global_shipping_routes": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
         "I6",
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2695
+      "ms": 2725
     },
     {
       "id": "1ea242c869327df10226b660d4fe18417c49edb0a7a8b94d1c9283974fa7ca3c",
@@ -613,16 +674,24 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "state_governments"
+        "state_governments",
+        "tier_2_3_city_expansion"
       ],
+      "pred_trajectories": {
+        "state_governments": "disruption",
+        "tier_2_3_city_expansion": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I6",
-        "I10"
+        "I7",
+        "I8",
+        "I10",
+        "I11"
       ],
       "error": false,
-      "ms": 2187
+      "ms": 2849
     },
     {
       "id": "93bfea943c81f56695310cc399b4c047e7bc9c1bcc9a460f6a03996ad4873f3e",
@@ -643,18 +712,21 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_power",
-        "national_power_grid"
+        "national_power_grid",
+        "coal_power_plants"
       ],
+      "pred_trajectories": {
+        "national_power_grid": "escalating",
+        "coal_power_plants": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
         "I5",
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2075
+      "ms": 1820
     },
     {
       "id": "eb01514096d9c2b1a5f33e8b683570c12d130d1c3481b466e838d279bef150db",
@@ -675,18 +747,23 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_commerce_and_industry",
+        "active_pharmaceutical_ingredients_supply",
         "global_supply_chains"
       ],
+      "pred_trajectories": {
+        "active_pharmaceutical_ingredients_supply": "disruption",
+        "global_supply_chains": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
-        "I6",
+        "I3",
         "I7",
+        "I8",
         "I11"
       ],
       "error": false,
-      "ms": 1768
+      "ms": 2418
     },
     {
       "id": "87c78bd436da6895ddd0f0cd388347f59cf777df466928addbde75b2b1d98c57",
@@ -705,19 +782,13 @@
         "retail_silver_investment"
       ],
       "difficulty": "medium",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "international_gold_prices",
-        "usd_inr_exchange"
-      ],
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I7",
-        "I10",
-        "I11"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_trajectories": {},
+      "pred_reason": "The article is a market commentary/analysis piece on the long-term trend of gold as a reserve asset and de-dollarisation, rather than reporting on a specific, material, and immediate shift in Indian macro-systems or policy.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1955
+      "ms": 914
     },
     {
       "id": "a547256c4b7ff1f5398234cb6d2c77deb8d8c48c3891f9901ff0442704705d4b",
@@ -740,16 +811,22 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_sugar_supply"
+        "global_sugar_supply",
+        "agricultural_commodities"
       ],
+      "pred_trajectories": {
+        "global_sugar_supply": "disruption",
+        "agricultural_commodities": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I8",
-        "I10"
+        "I10",
+        "I11"
       ],
       "error": false,
-      "ms": 1824
+      "ms": 2303
     },
     {
       "id": "42fb684d6fc4df44dc49977de2f3478d7def302d708573c6d7c5ff7da0ff145b",
@@ -771,18 +848,22 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "union_budget_framework"
+        "income_tax_department"
       ],
+      "pred_trajectories": {
+        "income_tax_department": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I3",
         "I6",
         "I9",
-        "I10"
+        "I10",
+        "I11"
       ],
       "error": false,
-      "ms": 2326
+      "ms": 2973
     },
     {
       "id": "25acdea789c533970c17d31e14336577eb155f4b48d488a0df8219164d683a1c",
@@ -797,10 +878,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article is about sports commentary and player interviews, which is explicitly filtered out as entertainment/celebrity news.",
+      "pred_trajectories": {},
+      "pred_reason": "The article pertains to sports entertainment and celebrity commentary, which is explicitly excluded from the classification scope.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1649
+      "ms": 800
     },
     {
       "id": "13b3d36c4470e3ccb7ce358ce673140a4ada9cb95c72e588cd6bd9e19901bf48",
@@ -826,15 +908,22 @@
         "rbi",
         "usd_inr_exchange"
       ],
+      "pred_trajectories": {
+        "rbi": "disruption",
+        "usd_inr_exchange": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I2",
+        "I3",
         "I6",
         "I7",
+        "I9",
         "I11"
       ],
       "error": false,
-      "ms": 2063
+      "ms": 1244
     },
     {
       "id": "d90f933811e18972d4cb02b91d51608475ba73aa076cb739a43495339fb03480",
@@ -857,16 +946,22 @@
         "aviation_turbine_fuel",
         "ministry_of_civil_aviation"
       ],
+      "pred_trajectories": {
+        "aviation_turbine_fuel": "escalating",
+        "ministry_of_civil_aviation": "status_quo"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I2",
+        "I5",
         "I6",
         "I7",
         "I9",
         "I11"
       ],
       "error": false,
-      "ms": 3393
+      "ms": 12624
     },
     {
       "id": "c5c34898172584629e000a36ad1e980156ec0a75589ff049cb39a70042c73527",
@@ -887,18 +982,21 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_finance"
+        "ministry_of_finance",
+        "india_trade_deficit"
       ],
+      "pred_trajectories": {
+        "ministry_of_finance": "disruption",
+        "india_trade_deficit": "deescalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
-        "I6",
         "I7",
-        "I8",
-        "I11"
+        "I11",
+        "I6"
       ],
       "error": false,
-      "ms": 1663
+      "ms": 1286
     },
     {
       "id": "9f15af95195d10b4a3631d29ee6b5abc53e0c3f631fad121c804e22593ea7356",
@@ -913,10 +1011,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article is an opinion/commentary piece on stock market performance, which is explicitly excluded by the instructions.",
+      "pred_trajectories": {},
+      "pred_reason": "The article is an opinion piece/commentary on investment strategy and platform analytics, which is explicitly excluded by the instructions.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1354
+      "ms": 12331
     },
     {
       "id": "4fa8cdcc1119985c1a3668c1acbfec68cd80e2ac2582fa8923ddc6e55ee809a8",
@@ -927,8 +1026,9 @@
       "relevant": true,
       "reason": "Agricultural seed stock availability directly affects millions of farmers' sowing seasons and broader national food security.",
       "triggers": [
+        "global_supply_chains",
         "ministry_of_agriculture",
-        "global_supply_chains"
+        "global_food_grain_supply"
       ],
       "expected_impacts": [
         "agricultural_household_income"
@@ -936,19 +1036,22 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_food_grain_supply"
+        "agricultural_exports"
       ],
+      "pred_trajectories": {
+        "agricultural_exports": "status_quo"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I2",
         "I3",
         "I5",
         "I7",
+        "I8",
         "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2097
+      "ms": 2098
     },
     {
       "id": "9a8a7e42861ac35300847e708e60a1f7a3728a11cba1e7a5cc35541ae25ccb61",
@@ -960,6 +1063,7 @@
       "reason": "Industry lobbying for export bans and ethanol blending due to geopolitical conflict indicates severe supply chain stress that impacts raw material and fuel prices.",
       "triggers": [
         "global_supply_chains",
+        "export_competitiveness",
         "ministry_of_commerce_and_industry"
       ],
       "expected_impacts": [
@@ -968,18 +1072,22 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_commerce_and_industry",
-        "export_competitiveness"
+        "global_shipping_routes",
+        "india_trade_deficit",
+        "ministry_of_commerce_and_industry"
       ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption",
+        "india_trade_deficit": "escalating",
+        "ministry_of_commerce_and_industry": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I6",
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2895
+      "ms": 2250
     },
     {
       "id": "7ef5bded01ca5d52b77cf9937850a8137fc373bc4827f2cc0501d464ac539375",
@@ -994,16 +1102,21 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_finance"
+        "meity_regulations"
       ],
+      "pred_trajectories": {
+        "meity_regulations": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I7",
-        "I11",
-        "I8"
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I9"
       ],
       "error": false,
-      "ms": 2079
+      "ms": 2677
     },
     {
       "id": "258582a9299e76156f467c2612ab8230ede1c46b4a6e73da7fd2ba11dfe2fb23",
@@ -1018,10 +1131,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article describes a specific plane crash in Mexico, which is an isolated accident and does not causally affect ordinary Indians at scale or trigger any macro-level systemic changes.",
+      "pred_trajectories": {},
+      "pred_reason": "The article reports on a localized aviation accident in Mexico with no systemic impact on Indian macro-systems, infrastructure, or sovereign policy.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1893
+      "ms": 1391
     },
     {
       "id": "e1c673584ed8696670fa3bd6ac9280b6bb778fe86f3120344ce72964f0162b8a",
@@ -1036,10 +1150,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article is about box office collections for a film, which is classified as entertainment/arts and culture and does not have a causal impact on ordinary Indians at scale.",
+      "pred_trajectories": {},
+      "pred_reason": "The article pertains to entertainment and box office performance, which is explicitly excluded from the classification scope.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1335
+      "ms": 1673
     },
     {
       "id": "e5b9fc9a031f2f7a0e00296963e00fa0ca936475503b88723de86f449b45b562",
@@ -1050,8 +1165,9 @@
       "relevant": true,
       "reason": "Government trade policy interventions and freight subsidies directly affect the export sector's viability and employment.",
       "triggers": [
-        "ministry_of_commerce_and_industry",
-        "global_shipping_routes"
+        "global_shipping_routes",
+        "export_competitiveness",
+        "ministry_of_commerce_and_industry"
       ],
       "expected_impacts": [
         "manufacturing_and_core"
@@ -1059,19 +1175,24 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_commerce_and_industry",
-        "export_competitiveness"
+        "global_shipping_routes",
+        "india_trade_deficit",
+        "ministry_of_commerce_and_industry"
       ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption",
+        "india_trade_deficit": "deescalating",
+        "ministry_of_commerce_and_industry": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I6",
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2605
+      "ms": 4342
     },
     {
       "id": "269ccdab08d2421b055b23ab74a02e55108ffc25aa2531898786fc1f52a0e089",
@@ -1092,16 +1213,22 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "pmi_manufacturing",
-        "brent_crude"
+        "brent_crude",
+        "global_shipping_routes",
+        "pmi_manufacturing"
       ],
+      "pred_trajectories": {
+        "brent_crude": "escalating",
+        "global_shipping_routes": "disruption",
+        "pmi_manufacturing": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2082
+      "ms": 2099
     },
     {
       "id": "6977be1379ff434e326f554cb07a58a0ac094968722c1fb6c74b922b7edcb3f3",
@@ -1112,6 +1239,7 @@
       "relevant": true,
       "reason": "US stocks dropping on Trump Iran escalation directly affects Indian markets next day via FII sentiment",
       "triggers": [
+        "global_equity_indices",
         "us_government",
         "fii_fpi_flows"
       ],
@@ -1122,18 +1250,20 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "us_government",
-        "global_equity_indices"
+        "brent_crude",
+        "global_shipping_routes"
       ],
+      "pred_trajectories": {
+        "brent_crude": "escalating",
+        "global_shipping_routes": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
         "I7",
-        "I9",
         "I11"
       ],
       "error": false,
-      "ms": 2071
+      "ms": 1253
     },
     {
       "id": "161e0a9456880f5a43d3f5740df8b7f6e6c9c54f11e086dbc511eb2f46e79637",
@@ -1156,17 +1286,23 @@
       "pred_relevant": true,
       "pred_triggers": [
         "ministry_of_commerce_and_industry",
-        "us_government"
+        "wto"
       ],
+      "pred_trajectories": {
+        "ministry_of_commerce_and_industry": "escalating",
+        "wto": "status_quo"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I2",
         "I6",
-        "I7",
+        "I8",
+        "I9",
         "I11"
       ],
       "error": false,
-      "ms": 1868
+      "ms": 1934
     },
     {
       "id": "35494cd9819c7b238dcf09432fe29333c6cf4cdc89837fed9411953cc121b9b5",
@@ -1181,8 +1317,13 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "income_tax_department"
+        "income_tax_department",
+        "fii_fpi_flows"
       ],
+      "pred_trajectories": {
+        "income_tax_department": "disruption",
+        "fii_fpi_flows": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -1195,7 +1336,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 1038
+      "ms": 2410
     },
     {
       "id": "5ccc0e6f8932d32573663a601381237d063599220a92239cb3c77d3bcf4b6058",
@@ -1207,6 +1348,7 @@
       "reason": "Massive state infrastructure investment and capital city development affecting regional economy and real estate.",
       "triggers": [
         "state_governments",
+        "highway_network",
         "transport_logistics_infrastructure"
       ],
       "expected_impacts": [
@@ -1216,19 +1358,21 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "state_governments",
-        "highway_network"
+        "highway_network",
+        "state_governments"
       ],
+      "pred_trajectories": {
+        "highway_network": "escalating",
+        "state_governments": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
-        "I5",
         "I6",
-        "I7",
         "I10"
       ],
       "error": false,
-      "ms": 2093
+      "ms": 1981
     },
     {
       "id": "4d480cbee82c9ab79e824025c4f4b5382fe105d14543c934b295ba8c931a5158",
@@ -1240,7 +1384,8 @@
       "reason": "Government action against LPG black marketing directly impacts household cooking gas availability and prices.",
       "triggers": [
         "ministry_of_consumer_affairs",
-        "state_governments"
+        "state_governments",
+        "oil_gas_pipelines"
       ],
       "expected_impacts": [
         "lpg_cylinder",
@@ -1249,9 +1394,13 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_consumer_affairs",
-        "oil_gas_pipelines"
+        "public_distribution_system",
+        "ministry_of_consumer_affairs"
       ],
+      "pred_trajectories": {
+        "public_distribution_system": "disruption",
+        "ministry_of_consumer_affairs": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
@@ -1259,7 +1408,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 3112
+      "ms": 1952
     },
     {
       "id": "f0ce2a7f66bc76499983bf5df69ed7e87d7dbb22591f8865ffac617bc1e943e6",
@@ -1270,8 +1419,9 @@
       "relevant": true,
       "reason": "Agricultural policy changes regarding fertilizer availability and MSP procurement directly affect millions of farmers.",
       "triggers": [
-        "ministry_of_agriculture",
-        "state_governments"
+        "state_governments",
+        "uidai",
+        "ministry_of_agriculture"
       ],
       "expected_impacts": [
         "agricultural_household_income",
@@ -1281,15 +1431,23 @@
       "pred_relevant": true,
       "pred_triggers": [
         "ministry_of_agriculture",
-        "uidai"
+        "aadhaar_database",
+        "public_distribution_system"
       ],
+      "pred_trajectories": {
+        "ministry_of_agriculture": "escalating",
+        "aadhaar_database": "escalating",
+        "public_distribution_system": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I3",
+        "I7",
         "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2200
+      "ms": 2387
     },
     {
       "id": "5b119e00020399af6f3e99afcf01dfb0e4e87522c7aa95b878b4d1a84746e3e4",
@@ -1300,8 +1458,9 @@
       "relevant": true,
       "reason": "Trade expansion with China can significantly alter domestic manufacturing competitiveness and consumer goods prices.",
       "triggers": [
-        "ministry_of_commerce_and_industry",
-        "international_trade_and_supply_chains"
+        "chinese_government",
+        "international_trade_and_supply_chains",
+        "ministry_of_commerce_and_industry"
       ],
       "expected_impacts": [
         "consumer_tech_devices",
@@ -1311,17 +1470,23 @@
       "pred_relevant": true,
       "pred_triggers": [
         "chinese_government",
-        "ministry_of_commerce_and_industry"
+        "india_trade_deficit"
       ],
+      "pred_trajectories": {
+        "chinese_government": "disruption",
+        "india_trade_deficit": "status_quo"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I2",
         "I6",
         "I7",
+        "I8",
         "I11"
       ],
       "error": false,
-      "ms": 1970
+      "ms": 3679
     },
     {
       "id": "2e7369db52119b4f3413991503db747abb3620897cb38ebf759151dcd52b6e89",
@@ -1334,22 +1499,13 @@
       "triggers": [],
       "expected_impacts": [],
       "difficulty": "easy",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "ministry_of_civil_aviation"
-      ],
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I1",
-        "I2",
-        "I5",
-        "I7",
-        "I9",
-        "I10",
-        "I11"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_trajectories": {},
+      "pred_reason": "The article concerns a specific operational delay in a defense procurement contract (HAL/GE Aerospace) and the subsequent resolution, which does not constitute a material shift in macro-level systems or broad citizen impact.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2077
+      "ms": 3243
     },
     {
       "id": "821ce3abd86030c7ab00c01219b1d76431c93ef9009feb2f703f2dccf50e51dc",
@@ -1364,10 +1520,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article concerns a specific administrative clarification regarding CBSE exam security protocols, which does not constitute a macro-level causal trigger affecting ordinary Indians at scale.",
+      "pred_trajectories": {},
+      "pred_reason": "The article concerns a specific administrative clarification regarding exam paper security protocols and does not represent a material shift in any of the T-world macro systems.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1766
+      "ms": 9269
     },
     {
       "id": "f5d149cab053c50a23c5f3183a6af7bd1586cda5a0f83b057e16eb02b23c0693",
@@ -1382,10 +1539,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article reports on a routine stock market holiday, which is a scheduled event and does not causally affect ordinary Indians at scale or represent a macro-level trigger.",
+      "pred_trajectories": {},
+      "pred_reason": "The article reports a scheduled market holiday, which is a routine operational event and does not constitute a material shift in T-world systems or a causal impact on ordinary Indians at scale.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 5407
+      "ms": 4921
     },
     {
       "id": "4a434b522c3f354adb480982f31991ceeb223ae693f64312d69aa0439de1dcfd",
@@ -1409,13 +1567,17 @@
         "global_shipping_routes",
         "brent_crude"
       ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption",
+        "brent_crude": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2929
+      "ms": 2210
     },
     {
       "id": "ded2c92f67bd15bbdd29e4f784ccd153fd4b5380c2abf8e25543a930aa95d63c",
@@ -1427,24 +1589,21 @@
       "reason": "NATO crisis over Iran directly escalates oil supply risk for India",
       "triggers": [
         "brent_crude",
-        "global_shipping_routes"
+        "global_shipping_routes",
+        "us_government"
       ],
       "expected_impacts": [
         "retail_petrol",
         "retail_diesel"
       ],
       "difficulty": "hard",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "us_government"
-      ],
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I7",
-        "I11"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_trajectories": {},
+      "pred_reason": "The article discusses geopolitical tensions within NATO and potential US policy shifts regarding the alliance. While these have long-term strategic implications, the article does not report a material shift in Indian T-world systems or a direct causal impact on ordinary Indians at this stage.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2650
+      "ms": 2296
     },
     {
       "id": "fd390f72c5b5bb60fd24696c611730bcbf8f8dd95cf512f18a14e6950a88830a",
@@ -1469,14 +1628,17 @@
         "global_shipping_routes",
         "brent_crude"
       ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption",
+        "brent_crude": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 1108
+      "ms": 2399
     },
     {
       "id": "9e2b649e7b0c1a741317cf166d16cb25809b45b9c5306c887a4c4f395e7075ea",
@@ -1500,6 +1662,9 @@
       "pred_triggers": [
         "aviation_turbine_fuel"
       ],
+      "pred_trajectories": {
+        "aviation_turbine_fuel": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -1508,7 +1673,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 2810
+      "ms": 2200
     },
     {
       "id": "1a7fa59098c8c23f478e96e12091804956f7b96708c98f465a36a640e518f859",
@@ -1523,19 +1688,21 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_finance",
-        "industrial_metals_index"
+        "global_shipping_routes",
+        "india_trade_deficit"
       ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption",
+        "india_trade_deficit": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
-        "I6",
         "I7",
-        "I10",
-        "I11"
+        "I11",
+        "I6"
       ],
       "error": false,
-      "ms": 2070
+      "ms": 2885
     },
     {
       "id": "9874a475688bd15f61ee9e170ef1ff39b28c874f0bcb9e0bdfaeba1376806fa5",
@@ -1557,15 +1724,16 @@
       "pred_triggers": [
         "pmi_manufacturing"
       ],
+      "pred_trajectories": {
+        "pmi_manufacturing": "deescalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
-        "I6",
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 1974
+      "ms": 9687
     },
     {
       "id": "23fb27b2a0e182d4a405a9ffe541fa9cd66d058346ae40820a74b5af06c7903f",
@@ -1580,10 +1748,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article discusses a foreign corporate investment (Microsoft in Japan) which does not have a direct, scalable causal impact on the Indian economy, regulatory framework, or macro-indicators as defined in the T-world taxonomy.",
+      "pred_trajectories": {},
+      "pred_reason": "The article describes a corporate investment and partnership between Microsoft and Japanese firms. This does not constitute a material shift in any Indian macro-system (T-world) or a causal impact on ordinary Indians at scale.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1660
+      "ms": 1686
     },
     {
       "id": "cc71c01647c3e67afc6b42cc047aecd2c036142afc3f2820d03e36ca6e552977",
@@ -1598,10 +1767,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article reports on a private startup funding round, which is explicitly excluded by the instructions unless it signals a sector-wide shift, which this does not.",
+      "pred_trajectories": {},
+      "pred_reason": "The article reports on a private equity funding round for a specific startup, which is explicitly excluded by the instructions unless it signals a sector-wide shift, which this does not.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1766
+      "ms": 1475
     },
     {
       "id": "0dcb113a58c8f2f08cea99438669b171d9fd48e47bd0a322ee67230fac7d6e3d",
@@ -1614,20 +1784,13 @@
       "triggers": [],
       "expected_impacts": [],
       "difficulty": "medium",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "ministry_of_finance",
-        "industrial_metals_index"
-      ],
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I1",
-        "I6",
-        "I7",
-        "I11"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_trajectories": {},
+      "pred_reason": "The article is a market commentary/opinion piece regarding stock market sentiment and investment advice, which is explicitly excluded by the instructions.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2182
+      "ms": 2218
     },
     {
       "id": "ab296badb243e8d1504b7047980318cbec05f7fd9a09f5487a525d2709dec365",
@@ -1642,10 +1805,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article reports on a private startup funding round, which is explicitly excluded by the instructions unless it signals a sector-wide shift; this is an isolated company-specific event.",
+      "pred_trajectories": {},
+      "pred_reason": "The article reports on a private startup funding round, which is explicitly excluded by the instructions unless it signals a sector-wide shift, which this does not.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1775
+      "ms": 1889
     },
     {
       "id": "f3f68f82f1f59d8f1b6661038e1458e75b26fd1ec627572ff75267e946929e9a",
@@ -1660,10 +1824,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article is a routine informational guide regarding holiday closures for banks and markets, which does not constitute a macro-level causal trigger or systemic impact event.",
+      "pred_trajectories": {},
+      "pred_reason": "The article is a routine holiday announcement regarding closures of public and private institutions, which does not constitute a material shift in any T-world system.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1356
+      "ms": 3343
     },
     {
       "id": "d1679cc777de89de04b98c078b633fe2ecd64c9b0b82929ee4f8bba609ec7b44",
@@ -1688,6 +1853,10 @@
         "usd_inr_exchange",
         "rbi"
       ],
+      "pred_trajectories": {
+        "usd_inr_exchange": "deescalating",
+        "rbi": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -1696,7 +1865,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 1035
+      "ms": 2101
     },
     {
       "id": "31ec5ca34a65c5096f1ee82ee4f038f8997beee75afd718288b72ab2051ba2ec",
@@ -1715,12 +1884,22 @@
         "retail_diesel"
       ],
       "difficulty": "medium",
-      "pred_relevant": false,
-      "pred_triggers": [],
-      "pred_reason": "The article describes a specific maritime navigation route of three tankers, which does not constitute a macro-level causal event affecting the Indian economy or ordinary citizens at scale.",
-      "pred_exclude_l1s": [],
+      "pred_relevant": true,
+      "pred_triggers": [
+        "global_shipping_routes",
+        "brent_crude"
+      ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption",
+        "brent_crude": "escalating"
+      },
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I11"
+      ],
       "error": false,
-      "ms": 2024
+      "ms": 3643
     },
     {
       "id": "f231947193cc428847ade9ec65766838c13acf8d5bb0c7194d70fa26b9e6943a",
@@ -1735,10 +1914,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article discusses a company-specific IPO/DRHP filing, which is explicitly excluded by the instructions unless it signals a sector-wide shift, which is not indicated here.",
+      "pred_trajectories": {},
+      "pred_reason": "The article describes a company-specific IPO filing (Rediff.com), which is excluded under the provided rules as it does not signal a sector-wide shift or systemic macroeconomic impact.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2666
+      "ms": 2148
     },
     {
       "id": "836dd085642e3dcb9bfd6667e7e9972f2149365f8c8356a08b6983a324bc867d",
@@ -1753,10 +1933,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article reports on individual company stock performance (Tesla), which is excluded under the rules as it is not a systemically important event for the Indian economy.",
+      "pred_trajectories": {},
+      "pred_reason": "The article reports on company-specific performance (Tesla) and market commentary regarding US stock expectations, which falls under the exclusion criteria for individual company news and market roundups.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1450
+      "ms": 21917
     },
     {
       "id": "a91ca34b5053c228cdcd099b841f32edb3638c0b3eab3185055246d8f80b3e74",
@@ -1771,10 +1952,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article discusses US political personnel changes (Pam Bondi/Trump), which does not have a direct, causal macro-level impact on the Indian citizen impact engine's scope as defined by the provided taxonomy.",
+      "pred_trajectories": {},
+      "pred_reason": "The article describes political personnel changes within the US government, which does not constitute a material shift in Indian macro systems or sovereign entities as defined in the T-world taxonomy.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1451
+      "ms": 2861
     },
     {
       "id": "31be9b85b6deaa1e3dddc36045ee5a7052174a7f526ae4852a4a779bfa23b514",
@@ -1786,7 +1968,8 @@
       "reason": "Shooting down US F-35s escalates conflict, threatens oil supply disruption to India",
       "triggers": [
         "brent_crude",
-        "global_shipping_routes"
+        "global_shipping_routes",
+        "geopolitical_states"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -1796,17 +1979,20 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "geopolitical_states",
+        "global_shipping_routes",
         "brent_crude"
       ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption",
+        "brent_crude": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2088
+      "ms": 2004
     },
     {
       "id": "efde41bf921da499a9ad17e960377b7e55c35dab09b3337865dbbf2c171a1e90",
@@ -1821,10 +2007,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article describes a private company's product offering (wastewater solutions) rather than a macro-level policy change, regulatory shift, or systemic economic event affecting ordinary Indians at scale.",
+      "pred_trajectories": {},
+      "pred_reason": "The article describes a private company's product offering for industrial water recycling. This is a commercial product announcement, not a systemic material shift in national infrastructure, policy, or macroeconomic indicators.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1351
+      "ms": 56271
     },
     {
       "id": "7ff6eda57bc90b616f37c35a72bc57f1af237d4d535bb5b1f2294326d7b8da1a",
@@ -1839,10 +2026,11 @@
       "difficulty": "medium",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article discusses the cultural and political symbolism of fish in Bengal elections, which falls under cultural/political discourse and does not constitute a macro-level causal impact on Indian citizens as defined by the taxonomy.",
+      "pred_trajectories": {},
+      "pred_reason": "The article discusses cultural symbolism and political discourse regarding food habits, which does not constitute a material shift in any T-world macro system or a causal impact on ordinary Indians at scale.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1554
+      "ms": 3805
     },
     {
       "id": "d280336f7c57c712b70286f79500aed7e30b5e039f9afaf317e2f5a1e0120d09",
@@ -1857,10 +2045,11 @@
       "difficulty": "medium",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article describes a ceremonial defense commissioning event, which is a routine administrative/military activity and does not constitute a macro-level causal trigger affecting ordinary Indians at scale.",
+      "pred_trajectories": {},
+      "pred_reason": "The commissioning of a naval warship is a routine defense procurement and capability enhancement event. It does not constitute a material shift in macro-level T-world systems (such as trade, economy, or infrastructure) that causally affects ordinary Indians at scale.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 3419
+      "ms": 940
     },
     {
       "id": "7a45a2236c8db3f60ccfd08dcdb5aeb356d38159a90f8e0bfeda4f75370c170d",
@@ -1873,20 +2062,13 @@
       "triggers": [],
       "expected_impacts": [],
       "difficulty": "easy",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "ministry_of_finance"
-      ],
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I1",
-        "I6",
-        "I7",
-        "I8",
-        "I11"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_trajectories": {},
+      "pred_reason": "The article is a guide on social media growth and does not causally affect any T-world systems or Indian citizen impact categories.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1846
+      "ms": 1572
     },
     {
       "id": "27ec65ee7e6a7c04fb7fb195981e9e9d53fe46a6b760acf6aa87f1bfec1bd9a1",
@@ -1897,6 +2079,7 @@
       "relevant": true,
       "reason": "Changes in Income Tax rules directly affect salaried citizens' take-home pay and tax liabilities.",
       "triggers": [
+        "union_budget_framework",
         "ministry_of_finance",
         "income_tax_department"
       ],
@@ -1909,6 +2092,9 @@
       "pred_triggers": [
         "union_budget_framework"
       ],
+      "pred_trajectories": {
+        "union_budget_framework": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -1916,10 +2102,11 @@
         "I6",
         "I8",
         "I9",
-        "I10"
+        "I10",
+        "I11"
       ],
       "error": false,
-      "ms": 1266
+      "ms": 1764
     },
     {
       "id": "ae337ce409b4e926f85a0ac83486698b6580fb4d36b391d50940edd0d7dd6443",
@@ -1943,14 +2130,17 @@
         "brent_crude",
         "global_shipping_routes"
       ],
+      "pred_trajectories": {
+        "brent_crude": "deescalating",
+        "global_shipping_routes": "deescalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2661
+      "ms": 2555
     },
     {
       "id": "0bc4712c6b9fe799e3d64b4fad5176b520e630d99e8561a0310d28ee2bcbf2cf",
@@ -1962,7 +2152,8 @@
       "reason": "Global conflict disrupting auto supply chains affects vehicle prices and availability for consumers.",
       "triggers": [
         "global_supply_chains",
-        "global_shipping_routes"
+        "global_shipping_routes",
+        "ministry_of_finance"
       ],
       "expected_impacts": [
         "vehicle_acquisition"
@@ -1971,16 +2162,22 @@
       "pred_relevant": true,
       "pred_triggers": [
         "global_shipping_routes",
-        "ministry_of_finance"
+        "india_trade_deficit",
+        "index_of_industrial_production"
       ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption",
+        "india_trade_deficit": "escalating",
+        "index_of_industrial_production": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I1",
         "I7",
-        "I11",
-        "I6"
+        "I11"
       ],
       "error": false,
-      "ms": 2643
+      "ms": 2666
     },
     {
       "id": "bafa0350ff317b2b5cd590b8d9f50e6fd037b74e7b1beb533fb957e43cfc939b",
@@ -2001,21 +2198,24 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "us_government",
-        "export_competitiveness"
+        "export_competitiveness",
+        "ministry_of_commerce_and_industry"
       ],
+      "pred_trajectories": {
+        "export_competitiveness": "disruption",
+        "ministry_of_commerce_and_industry": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I2",
-        "I3",
         "I6",
-        "I7",
+        "I9",
         "I10",
         "I11"
       ],
       "error": false,
-      "ms": 1984
+      "ms": 2149
     },
     {
       "id": "9f8079028d8626ea39ca2cb84f18f0e0a806437f7bb02e1ec5af869bdb020359",
@@ -2036,16 +2236,22 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude"
+        "brent_crude",
+        "india_trade_deficit",
+        "global_shipping_routes"
       ],
+      "pred_trajectories": {
+        "brent_crude": "escalating",
+        "india_trade_deficit": "escalating",
+        "global_shipping_routes": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I11",
-        "I10"
+        "I11"
       ],
       "error": false,
-      "ms": 1557
+      "ms": 2982
     },
     {
       "id": "b688bc5dab2c5707f1ea101a3ed6e1e478b32e6e9d9e9aba886004c356814d41",
@@ -2060,18 +2266,21 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "female_labor_force_participation",
-        "commercial_bank_lending_rates"
+        "female_labor_force_participation"
       ],
+      "pred_trajectories": {
+        "female_labor_force_participation": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I3",
         "I6",
-        "I9"
+        "I9",
+        "I10"
       ],
       "error": false,
-      "ms": 1282
+      "ms": 1728
     },
     {
       "id": "b8775a21957bd13378ecc78c222f14c51431e7f78903a197bc329222290b432e",
@@ -2082,8 +2291,9 @@
       "relevant": true,
       "reason": "Government policy change removing airfare caps directly impacts flight ticket prices for citizens.",
       "triggers": [
-        "ministry_of_civil_aviation",
-        "dgca"
+        "dgca",
+        "commercial_airports",
+        "ministry_of_civil_aviation"
       ],
       "expected_impacts": [
         "domestic_flight_ticket",
@@ -2092,17 +2302,22 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_civil_aviation",
-        "commercial_airports"
+        "commercial_airports",
+        "aviation_turbine_fuel"
       ],
+      "pred_trajectories": {
+        "commercial_airports": "disruption",
+        "aviation_turbine_fuel": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I7",
-        "I9"
+        "I9",
+        "I11"
       ],
       "error": false,
-      "ms": 1761
+      "ms": 2865
     },
     {
       "id": "c1c20a07e0ea05caa45ace7ad5ef2d3180670027105e2692a049742dda14ee78",
@@ -2126,14 +2341,17 @@
         "brent_crude",
         "global_shipping_routes"
       ],
+      "pred_trajectories": {
+        "brent_crude": "escalating",
+        "global_shipping_routes": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 1996
+      "ms": 2388
     },
     {
       "id": "3d8754a6cab083a7975351955d2bf5255539bb22ce9d46a26d44418023b72ff7",
@@ -2146,23 +2364,13 @@
       "triggers": [],
       "expected_impacts": [],
       "difficulty": "hard",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "india_forex_reserves",
-        "rbi"
-      ],
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I1",
-        "I2",
-        "I3",
-        "I6",
-        "I7",
-        "I9",
-        "I11"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_trajectories": {},
+      "pred_reason": "The article is an analytical observation from an RBI publication regarding the adequacy of forex reserves; it does not report a material shift or policy change, but rather a status assessment of existing macroeconomic buffers.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2242
+      "ms": 2012
     },
     {
       "id": "1f58d58c0a0149824252cf85cf6f1c4205c3195fc5690b9c23418d14f4e5c6c4",
@@ -2184,9 +2392,11 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "highway_network",
-        "ministry_of_road_transport"
+        "highway_network"
       ],
+      "pred_trajectories": {
+        "highway_network": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -2197,7 +2407,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 1842
+      "ms": 1620
     },
     {
       "id": "55ec79d4df957cec18f9a8bbf51e8e5ce296441884848d8b3f1363722c2b663b",
@@ -2208,8 +2418,9 @@
       "relevant": true,
       "reason": "Parliamentary directives on road safety infrastructure aim to reduce fatalities, impacting citizen lives.",
       "triggers": [
-        "ministry_of_road_transport",
-        "indian_union_government"
+        "indian_union_government",
+        "highway_network",
+        "ministry_of_road_transport"
       ],
       "expected_impacts": [
         "road_traffic_accidents",
@@ -2220,15 +2431,19 @@
       "pred_triggers": [
         "highway_network"
       ],
+      "pred_trajectories": {
+        "highway_network": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I5",
         "I7",
-        "I10"
+        "I10",
+        "I11"
       ],
       "error": false,
-      "ms": 1731
+      "ms": 1035
     },
     {
       "id": "97890874ad4ace4ab81a105e128bf506d0bc6755d468237b744a65bef3d9cfc6",
@@ -2251,19 +2466,27 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "nifty_50",
+        "fii_fpi_flows",
         "usd_inr_exchange",
-        "fii_fpi_flows"
+        "nifty_50",
+        "sensex"
       ],
+      "pred_trajectories": {
+        "fii_fpi_flows": "disruption",
+        "usd_inr_exchange": "escalating",
+        "nifty_50": "disruption",
+        "sensex": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I2",
         "I6",
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2544
+      "ms": 2305
     },
     {
       "id": "332fdb5e838f2d7db8bd92dbdfa5f7577d46fd2108c81ddcff060ec4d6e7fc35",
@@ -2275,6 +2498,7 @@
       "reason": "Disruption in global oil shipping routes impacts India's crude imports, threatening fuel price stability.",
       "triggers": [
         "global_shipping_routes",
+        "russian_government",
         "brent_crude"
       ],
       "expected_impacts": [
@@ -2285,8 +2509,14 @@
       "pred_relevant": true,
       "pred_triggers": [
         "brent_crude",
-        "russian_government"
+        "global_shipping_routes",
+        "india_trade_deficit"
       ],
+      "pred_trajectories": {
+        "brent_crude": "disruption",
+        "global_shipping_routes": "disruption",
+        "india_trade_deficit": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
@@ -2294,7 +2524,7 @@
         "I10"
       ],
       "error": false,
-      "ms": 1920
+      "ms": 5219
     },
     {
       "id": "5f73c371ddf0bf3e81797b437b40452d5ba53723d63c46086fc6e58e6e261104",
@@ -2305,7 +2535,8 @@
       "relevant": true,
       "reason": "Direct hike in LPG prices immediately affects household budgets and living costs.",
       "triggers": [
-        "ministry_of_consumer_affairs"
+        "ministry_of_consumer_affairs",
+        "brent_crude"
       ],
       "expected_impacts": [
         "lpg_cylinder",
@@ -2317,6 +2548,10 @@
         "ministry_of_consumer_affairs",
         "brent_crude"
       ],
+      "pred_trajectories": {
+        "ministry_of_consumer_affairs": "disruption",
+        "brent_crude": "status_quo"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
@@ -2324,7 +2559,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 2356
+      "ms": 4668
     },
     {
       "id": "4032e6ffeac6e4361a699f0f3e9653dfa32c9c8c67177696fb6842f7c0be8752",
@@ -2336,6 +2571,7 @@
       "reason": "Global conflict causing oil prices to soar directly impacts Indian inflation and retail fuel costs.",
       "triggers": [
         "brent_crude",
+        "global_shipping_routes",
         "us_government"
       ],
       "expected_impacts": [
@@ -2347,8 +2583,14 @@
       "pred_relevant": true,
       "pred_triggers": [
         "brent_crude",
-        "global_shipping_routes"
+        "india_trade_deficit",
+        "usd_inr_exchange"
       ],
+      "pred_trajectories": {
+        "brent_crude": "escalating",
+        "india_trade_deficit": "escalating",
+        "usd_inr_exchange": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
@@ -2356,7 +2598,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 2204
+      "ms": 12799
     },
     {
       "id": "3bd2a2023a7a3a33fd2941d7fc223830b27b62c589b1c17006fb594cabc378de",
@@ -2368,26 +2610,22 @@
       "reason": "Broad stock market decline impacts retail investors' wealth and mutual fund returns.",
       "triggers": [
         "nifty_50",
-        "fii_fpi_flows"
+        "sensex",
+        "fii_fpi_flows",
+        "brent_crude"
       ],
       "expected_impacts": [
         "market_investments",
         "mutual_funds"
       ],
       "difficulty": "easy",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "brent_crude",
-        "sensex"
-      ],
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I7",
-        "I10",
-        "I11"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_trajectories": {},
+      "pred_reason": "The article reports on daily stock market fluctuations, which are excluded under the 'Market roundups' rule as they are observations rather than causal events with a material shift in T-world systems.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1957
+      "ms": 3378
     },
     {
       "id": "281aa247b4adef98f9391b51716e39c48a1c6208e72c8c12624f9fb2c2e94db2",
@@ -2412,14 +2650,17 @@
         "global_natural_gas",
         "ministry_of_power"
       ],
+      "pred_trajectories": {
+        "global_natural_gas": "disruption",
+        "ministry_of_power": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I11",
-        "I5"
+        "I11"
       ],
       "error": false,
-      "ms": 2106
+      "ms": 5019
     },
     {
       "id": "5309e9153b5719f0db612c0ee85767f1b0b6306e8f22c8fa7912f2cfb90ece8e",
@@ -2441,10 +2682,11 @@
       "difficulty": "hard",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article describes a corporate leadership change (HDFC Bank chairman resignation), which is explicitly excluded by the instructions unless it involves a systemically important entity in a way that signals a broader sector-wide shift or policy change. A resignation due to 'ethical concerns' is an individual corporate governance event, not a macro-level trigger.",
+      "pred_trajectories": {},
+      "pred_reason": "The resignation of a bank chairman, even for a major institution like HDFC Bank, is categorized as a company-specific leadership change and does not constitute a material shift in macro-level T-world systems or a systemic economic event.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1735
+      "ms": 935
     },
     {
       "id": "47fa4574c1371a71441df33cf9283eb9f23654a7862ad7896438bedce7a6f0a8",
@@ -2459,10 +2701,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article reports on a company-specific NCLT resolution plan (Jaiprakash Associates/Adani), which is excluded under the rules for company-specific M&A/corporate restructuring unless systemically important to the national economy.",
+      "pred_trajectories": {},
+      "pred_reason": "The approval of a resolution plan for a specific company (Jaiprakash Associates) by the NCLT is a corporate-specific insolvency proceeding. It does not constitute a material shift in macro-level T-world systems or a systemic impact on ordinary Indians at scale.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 880
+      "ms": 8190
     },
     {
       "id": "f8c70155f9adbed1ca8ce497e56da60ff96b56b33468039b7d4fb171e5ec76c7",
@@ -2474,6 +2717,7 @@
       "reason": "Government order directly affecting household cooking gas supply and mandating a switch to piped gas.",
       "triggers": [
         "indian_union_government",
+        "oil_gas_pipelines",
         "ministry_of_consumer_affairs"
       ],
       "expected_impacts": [
@@ -2484,17 +2728,24 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "oil_gas_pipelines",
+        "public_distribution_system",
         "ministry_of_consumer_affairs"
       ],
+      "pred_trajectories": {
+        "public_distribution_system": "disruption",
+        "ministry_of_consumer_affairs": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I1",
+        "I4",
+        "I5",
         "I7",
-        "I9",
+        "I8",
         "I11"
       ],
       "error": false,
-      "ms": 2262
+      "ms": 2237
     },
     {
       "id": "66d916cb65ee497e8bf1b7066f2ce5e4b7a231fab69566c9cdc92e637a4596eb",
@@ -2505,6 +2756,7 @@
       "relevant": true,
       "reason": "Major infrastructure milestone improving essential foodgrain supply to a state.",
       "triggers": [
+        "public_distribution_system",
         "indian_railways_network",
         "state_governments"
       ],
@@ -2517,6 +2769,10 @@
         "indian_railways_network",
         "public_distribution_system"
       ],
+      "pred_trajectories": {
+        "indian_railways_network": "disruption",
+        "public_distribution_system": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I5",
@@ -2525,7 +2781,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 2542
+      "ms": 2153
     },
     {
       "id": "bc251df8ff4bb63b8159f5b36587304986019ff8abd36d5c40675b080e311cbe",
@@ -2537,6 +2793,7 @@
       "reason": "Government relief scheme for exporters affected by global crisis, impacting employment and businesses.",
       "triggers": [
         "indian_union_government",
+        "global_shipping_routes",
         "ministry_of_commerce_and_industry"
       ],
       "expected_impacts": [
@@ -2545,19 +2802,21 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_commerce_and_industry",
-        "global_shipping_routes"
+        "global_shipping_routes",
+        "india_trade_deficit"
       ],
+      "pred_trajectories": {
+        "global_shipping_routes": "disruption",
+        "india_trade_deficit": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
         "I6",
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2557
+      "ms": 1942
     },
     {
       "id": "3429a79557c92853e13acee488d47f38aac178b5affe683f14eaa35b0426d62c",
@@ -2579,16 +2838,20 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
+        "public_distribution_system",
         "ministry_of_consumer_affairs"
       ],
+      "pred_trajectories": {
+        "public_distribution_system": "disruption",
+        "ministry_of_consumer_affairs": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2048
+      "ms": 3529
     },
     {
       "id": "f6eaa5639e39d689f7dcbfab77027bf43024c1da9b13d8cd5f29bb639f3c3d4f",
@@ -2599,8 +2862,9 @@
       "relevant": true,
       "reason": "Evacuation and flight operations affecting stranded Indian citizens due to a geopolitical crisis.",
       "triggers": [
-        "ministry_of_civil_aviation",
-        "global_shipping_routes"
+        "global_shipping_routes",
+        "commercial_airports",
+        "ministry_of_civil_aviation"
       ],
       "expected_impacts": [
         "air_travel"
@@ -2608,17 +2872,26 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "commercial_airports"
+        "commercial_airports",
+        "global_shipping_routes"
       ],
+      "pred_trajectories": {
+        "commercial_airports": "disruption",
+        "global_shipping_routes": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I2",
+        "I4",
+        "I5",
         "I7",
-        "I9"
+        "I9",
+        "I10",
+        "I11"
       ],
       "error": false,
-      "ms": 2213
+      "ms": 3269
     },
     {
       "id": "54482ea230d2ac7606ccb811aff51ad2c834fb8447b3ceb87ead468d6092e337",
@@ -2633,10 +2906,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article reports on mutual fund flow trends (AMFI data), which is categorized as market commentary/investment observation and does not represent a macro-level causal trigger affecting ordinary Indians at scale.",
+      "pred_trajectories": {},
+      "pred_reason": "The article reports on mutual fund investment trends (AMFI data), which is market commentary/observation rather than a material shift in a T-world system or a policy-driven event.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2021
+      "ms": 1599
     },
     {
       "id": "7d129e574fbf441be0f499057e52035ae58656214012d771cfc2f221ffee766c",
@@ -2647,8 +2921,9 @@
       "relevant": true,
       "reason": "Macro-level oil stockpile status directly influences future retail fuel prices and inflation for citizens.",
       "triggers": [
+        "indian_union_government",
         "brent_crude",
-        "indian_union_government"
+        "ministry_of_petroleum_and_natural_gas"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -2659,16 +2934,19 @@
       "pred_relevant": true,
       "pred_triggers": [
         "brent_crude",
-        "ministry_of_petroleum_and_natural_gas"
+        "global_shipping_routes"
       ],
+      "pred_trajectories": {
+        "brent_crude": "disruption",
+        "global_shipping_routes": "disruption"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2013
+      "ms": 2064
     },
     {
       "id": "e6773ab1ea0a237af6df641fe25761a424c1af7afbd8c61097007756f949877d",
@@ -2683,10 +2961,11 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_reason": "The article concerns internal corporate disciplinary actions regarding bond mis-selling, which is a company-specific legal/compliance matter and does not constitute a macro-level trigger affecting ordinary Indians at scale.",
+      "pred_trajectories": {},
+      "pred_reason": "The article describes an internal corporate disciplinary action regarding historical bond mis-selling, which is an individual company/legal matter and does not constitute a material shift in macro-level systems or systemic Indian impact.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2668
+      "ms": 1656
     },
     {
       "id": "cd1cc886d9f4af445462cfd04b9ff745ed952b1eb225a85c5d1423016eab06ea",
@@ -2698,7 +2977,9 @@
       "reason": "Policy incentive for states to expand piped gas infrastructure, affecting commercial and household energy supply.",
       "triggers": [
         "indian_union_government",
-        "state_governments"
+        "state_governments",
+        "oil_gas_pipelines",
+        "ministry_of_consumer_affairs"
       ],
       "expected_impacts": [
         "piped_natural_gas",
@@ -2710,14 +2991,17 @@
         "oil_gas_pipelines",
         "ministry_of_consumer_affairs"
       ],
+      "pred_trajectories": {
+        "oil_gas_pipelines": "escalating",
+        "ministry_of_consumer_affairs": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I9",
         "I11"
       ],
       "error": false,
-      "ms": 2181
+      "ms": 2409
     },
     {
       "id": "a1a82c71233a201d9f9474136c389a9c7ba4e75c404fe24280ce042d0489d77e",
@@ -2738,15 +3022,20 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude"
+        "brent_crude",
+        "india_trade_deficit"
       ],
+      "pred_trajectories": {
+        "brent_crude": "escalating",
+        "india_trade_deficit": "escalating"
+      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2709
+      "ms": 1342
     }
   ]
 }

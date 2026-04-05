@@ -85,6 +85,62 @@ class AnalysisResultV2(TypedDict):
     rejection_reason: str | None
 
 
+# ---------------------------------------------------------------------------
+# V3 types — MacroShift + MicroImpact (flat M:N)
+# ---------------------------------------------------------------------------
+
+
+class MacroShift(TypedDict, total=False):
+    """A macro-level state change in a T-world system."""
+    id: str                # DB ID (present only for existing shifts)
+    t_node: str            # T-world node ID
+    trajectory: str        # escalating | deescalating | status_quo | disruption
+    context: str           # 1-line: what changed and why
+
+
+class MicroImpact(TypedDict, total=False):
+    """A citizen-level impact driven by one or more MacroShifts."""
+    i_node: str
+    trajectory: str        # escalating | deescalating | status_quo
+    probability: float
+    magnitude: float
+    delay_days: int
+    rationale: str         # WHY this impact exists (synthesized from multiple shifts)
+    driving_t_nodes: list[str]  # T-node IDs that drive this impact
+
+
+class MicroImpactRevision(TypedDict):
+    """Immutable revision record — every Tier 2 output INSERTs one per changed i_node."""
+    event_id: str
+    i_node: str
+    article_id: str
+    trajectory: str
+    probability: float
+    magnitude: float
+    delay_days: int
+    rationale: str
+    driving_t_nodes: list[str]
+
+
+class ClassificationResultV3(TypedDict, total=False):
+    """Tier 1 output with MacroShift model."""
+    relevant: bool
+    macro_shifts: list[MacroShift]  # Was: triggers
+    exclude_l1s: list[str]
+    event_match: dict | None
+    event_name: str | None
+    reason: str
+
+
+class AnalysisResultV3(TypedDict, total=False):
+    """Tier 2 output — flat micro_impacts with driving_t_nodes."""
+    micro_impacts: list[MicroImpact]  # Flat list, not nested under triggers
+    stage: str
+    summary: str
+    is_relevant: bool
+    rejection_reason: str
+
+
 class ImpactEngine(Protocol):
     """Protocol for impact scoring engines."""
 

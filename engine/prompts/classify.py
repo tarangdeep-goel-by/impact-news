@@ -1,4 +1,4 @@
-"""Tier 1 classification prompt — relevance check + T-node triggers + event matching."""
+"""Tier 1 classification prompt — relevance check + macro shifts + event matching."""
 
 from __future__ import annotations
 
@@ -14,20 +14,23 @@ def build_classify_prompt(
     Args:
         t_trees: Formatted T-world taxonomy tree (from TaxonomyContext.format_t_trees()).
         active_events: From EventStore.get_event_summary_list().
-            Each dict has: event_id, name, triggers, stage, category.
+            Each dict has: event_id, name, macro_shifts, stage, category.
         title: Article headline.
         summary: Article body/summary text.
     """
-    # Format active events list with summaries and triggers for better matching
+    # Format active events list with macro_shifts and trajectory for better matching
     if active_events:
         event_lines = []
         for ev in active_events:
-            triggers_str = ", ".join(ev.get("triggers", [])[:5])
-            summary = ev.get("summary", "")[:150]
+            shifts_str = ", ".join(
+                f"{s['t_node']} ({s.get('trajectory', '?')})"
+                for s in ev.get("macro_shifts", [])[:5]
+            )
+            ev_summary = ev.get("summary", "")[:150]
             event_lines.append(
                 f"- [{ev['event_id']}] {ev['name']} ({ev.get('category', '?')}, {ev['stage']})\n"
-                f"  Triggers: [{triggers_str}]\n"
-                f"  Summary: {summary}"
+                f"  Shifts: [{shifts_str}]\n"
+                f"  Summary: {ev_summary}"
             )
         events_block = "Active events (match if this article belongs to one):\n" + "\n".join(event_lines)
     else:
@@ -35,10 +38,10 @@ def build_classify_prompt(
 
     return f"""You are a news classifier and trigger identifier for an Indian citizen impact engine.
 
-Your job: (1) determine if an article causally affects ordinary Indians at scale, (2) identify the specific macro-level TRIGGERS using the T-world taxonomy, and (3) indicate which I-world impact categories are definitely NOT affected.
+Your job: (1) determine if an article causally affects ordinary Indians at scale, (2) identify which T-world systems experienced a MATERIAL SHIFT in state, and (3) indicate which I-world impact categories are definitely NOT affected.
 
-== TRIGGER TAXONOMY (T-world) ==
-These are macro-level triggers — the events that SET OFF causal chains.
+== T-WORLD TAXONOMY (Macro Systems) ==
+These are macro-level systems. Identify which ones experienced a material shift in state.
 Use the most specific node that fits.
 
 {t_trees}
@@ -86,21 +89,27 @@ If the article is NOT relevant:
 If the article IS relevant:
 {{
     "relevant": true,
-    "triggers": [
-        {{"t_node": "brent_crude", "context": "Crude oil prices surged 12% due to Red Sea shipping disruption"}}
+    "macro_shifts": [
+        {{"t_node": "brent_crude", "trajectory": "escalating", "context": "Crude oil prices surged 12% due to Red Sea shipping disruption"}}
     ],
     "exclude_l1s": ["I7", "I11"],
     "event_match": {{"event_id": "abc123", "confidence": 0.9}},
     "event_name": null
 }}
 
-Rules for triggers:
+Rules for macro_shifts:
 - Use exact T-world node IDs from the taxonomy above (snake_case)
-- Each trigger MUST have a "context" field: a 1-line explanation of WHY this trigger is activated by the article
-- This context will be passed to the next stage for impact reasoning — make it specific and informative
-- 1-3 triggers per article. Only primary, direct triggers.
-- If you cannot identify a SPECIFIC trigger from the taxonomy that the article DIRECTLY activates, the article is NOT relevant. Do not guess or default to generic triggers like "ministry_of_finance" or "industrial_metals_index" as catch-alls.
-- The trigger must be something the article REPORTS AS HAPPENING, not something tangentially related.
+- Each shift MUST have:
+  - "t_node": the T-world node ID
+  - "trajectory": one of "escalating", "deescalating", "status_quo", "disruption"
+    - escalating: the situation is getting worse/more intense
+    - deescalating: the situation is calming down/reversing
+    - status_quo: expectations were defied — e.g., RBI holds rate when cut was expected. The NON-event is the event.
+    - disruption: sudden, unexpected shift (new sanctions, natural disaster, policy shock)
+  - "context": 1-line explanation of WHAT changed and WHY
+- Find ALL T-world systems that experienced a material shift. Do NOT cap at 1-3.
+- If you cannot identify a SPECIFIC shift from the taxonomy, the article is NOT relevant.
+- The shift must be something the article REPORTS AS HAPPENING, not something tangentially related.
 
 Rules for exclude_l1s:
 - List I-world L1 category codes that are DEFINITELY NOT causally affected by the identified triggers

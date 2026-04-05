@@ -1,11 +1,11 @@
-"""Tier 1 article classifier — relevance check + T-node triggers + event matching."""
+"""Tier 1 article classifier — relevance check + macro shifts + event matching."""
 
 from __future__ import annotations
 
 import logging
 import time as _time
 
-from engine.base import ClassificationResult, ClassificationResultV2
+from engine.base import ClassificationResult, ClassificationResultV2, ClassificationResultV3
 from engine.prompts.classify import build_classify_prompt
 from pipeline.gemini import GeminiClient, parse_json_response
 
@@ -67,6 +67,63 @@ class ArticleClassifier:
         return ClassificationResultV2(
             relevant=True,
             triggers=triggers,
+            exclude_l1s=exclude_l1s,
+            event_match=event_match,
+            event_name=parsed.get("event_name"),
+            reason=None,
+        )
+
+    def classify_v3(self, title: str, summary: str) -> ClassificationResultV3 | None:
+        """Classify with MacroShift model (V3)."""
+        # Use V3 event list with macro_shifts (trajectory) if available
+        if hasattr(self.event_store, 'get_event_summary_list_v3'):
+            active_events = self.event_store.get_event_summary_list_v3()
+        else:
+            active_events = self.event_store.get_event_summary_list()
+        prompt = build_classify_prompt(self._t_trees, active_events, title, summary)
+
+        parsed = self._call_and_parse(prompt)
+        if parsed is None:
+            return None
+
+        relevant = bool(parsed.get("relevant", False))
+
+        if not relevant:
+            return ClassificationResultV3(
+                relevant=False,
+                macro_shifts=[],
+                exclude_l1s=[],
+                event_match=None,
+                event_name=None,
+                reason=parsed.get("reason", "not relevant"),
+            )
+
+        # Parse macro_shifts
+        macro_shifts = parsed.get("macro_shifts", [])
+        if not isinstance(macro_shifts, list):
+            macro_shifts = []
+
+        # Validate trajectory values
+        valid_trajectories = {"escalating", "deescalating", "status_quo", "disruption"}
+        for shift in macro_shifts:
+            if shift.get("trajectory") not in valid_trajectories:
+                shift["trajectory"] = "escalating"  # safe default
+
+        # Parse exclude_l1s
+        exclude_l1s = parsed.get("exclude_l1s", [])
+        if not isinstance(exclude_l1s, list):
+            exclude_l1s = []
+
+        # Parse event match
+        event_match = parsed.get("event_match")
+        if isinstance(event_match, dict):
+            confidence = float(event_match.get("confidence", 0))
+            if confidence < 0.7:
+                event_match = None
+
+        return ClassificationResultV3(
+            relevant=True,
+            macro_shifts=macro_shifts,
             exclude_l1s=exclude_l1s,
             event_match=event_match,
             event_name=parsed.get("event_name"),

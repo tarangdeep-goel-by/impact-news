@@ -138,7 +138,7 @@ def process_articles(
     event_store: EventStore,
     articles: list[dict],
 ) -> dict:
-    """Process articles through two-tier causal edges pipeline.
+    """Process articles through two-tier MacroShift pipeline (V3).
 
     Returns stats dict.
     """
@@ -172,9 +172,9 @@ def process_articles(
             continue
         title_dedup.add(title)
 
-        # ── Tier 1: Classification + triggers + event matching ──
+        # ── Tier 1: Classification + macro_shifts + event matching ──
         t1_start = time.time()
-        classification = classifier.classify(title, summary)
+        classification = classifier.classify_v3(title, summary)
         tier1_ms = int((time.time() - t1_start) * 1000)
 
         if classification is None:
@@ -187,21 +187,21 @@ def process_articles(
             _store_result(
                 db, aid,
                 is_relevant=False,
-                rejection_reason=classification["reason"],
+                rejection_reason=classification.get("reason"),
                 tier1_ms=tier1_ms,
             )
             stats["no_impact"] += 1
             stats["tier1_only"] += 1
-            print(f"NO_IMPACT ({tier1_ms}ms) [{classification['reason']}]")
+            print(f"NO_IMPACT ({tier1_ms}ms) [{classification.get('reason', '?')}]")
             continue
 
         # ── Build filtered I-tree (exclusion-based spotlight) ──
-        triggers = classification["triggers"]
+        macro_shifts = classification["macro_shifts"]
         exclude_l1s = classification.get("exclude_l1s", [])
         i_trees = taxonomy.format_i_trees_excluding(exclude_l1s)
 
-        # ── Tier 2: Deep impact analysis with causal edges ──
-        event_match = classification["event_match"]
+        # ── Tier 2: Deep impact analysis — one call with full basket ──
+        event_match = classification.get("event_match")
         t2_start = time.time()
         event = None
 
@@ -213,76 +213,77 @@ def process_articles(
                 event_match = None
 
         if event_match and event:
-            # Mode B: Event update (upsert)
-            existing_edges = event_store.get_event_edges(event_id)
-            result = analyzer.analyze_update_v2(
-                title, summary, triggers, i_trees, existing_edges,
+            # Mode B: Event update — compressed state + delta output
+            compressed_state = event_store.get_compressed_state(event_id)
+            result = analyzer.analyze_update_v3(
+                title, summary, macro_shifts, i_trees, compressed_state,
             )
             tier2_ms = int((time.time() - t2_start) * 1000)
 
             if result["is_relevant"]:
-                event_store.upsert_event_edges(
+                event_store.upsert_event_v3(
                     event_id,
-                    trigger_instances=result["trigger_instances"],
+                    macro_shifts=macro_shifts,
+                    micro_impacts=result["micro_impacts"],
                     article_id=aid,
-                    summary=result["summary"],
-                    stage=result["stage"],
+                    summary=result.get("summary"),
+                    stage=result.get("stage"),
                 )
-                _store_result_v2(
-                    db, aid, result,
+                _store_result_v3(
+                    db, aid, macro_shifts, result,
                     event_id=event_id,
                     tier1_ms=tier1_ms, tier2_ms=tier2_ms,
                 )
                 stats["relevant"] += 1
                 stats["events_updated"] += 1
-                _update_stats_v2(stats, result)
-                impact_str = _top_impacts_str(result)
+                _update_stats_v3(stats, macro_shifts, result)
+                impact_str = _top_impacts_str_v3(result)
                 print(f"EVENT_UPDATE [{event['name'][:30]}] ({tier1_ms}+{tier2_ms}ms) [{impact_str}]")
             else:
                 _store_result(
                     db, aid, is_relevant=False,
-                    rejection_reason=result["rejection_reason"],
+                    rejection_reason=result.get("rejection_reason"),
                     tier1_ms=tier1_ms, tier2_ms=tier2_ms,
                 )
                 stats["no_impact"] += 1
-                print(f"NO_IMPACT (tier2 override, {tier1_ms}+{tier2_ms}ms) [{result['rejection_reason']}]")
+                print(f"NO_IMPACT (tier2 override, {tier1_ms}+{tier2_ms}ms) [{result.get('rejection_reason', '?')}]")
         else:
-            # Mode A: New event
-            result = analyzer.analyze_new_v2(title, summary, triggers, i_trees)
+            # Mode A: New event — full basket synthesis
+            result = analyzer.analyze_new_v3(title, summary, macro_shifts, i_trees)
             tier2_ms = int((time.time() - t2_start) * 1000)
 
             if result["is_relevant"]:
                 event_name = classification.get("event_name") or title[:60]
-                # Infer category from first trigger's L1
-                first_trigger = triggers[0]["t_node"] if triggers else ""
-                category = taxonomy.node_to_l1(first_trigger) if first_trigger else None
+                first_shift = macro_shifts[0]["t_node"] if macro_shifts else ""
+                category = taxonomy.node_to_l1(first_shift) if first_shift else None
 
-                event_id = event_store.create_event_v2(
+                event_id = event_store.create_event_v3(
                     name=event_name,
                     summary=result["summary"],
-                    trigger_instances=result["trigger_instances"],
+                    macro_shifts=macro_shifts,
+                    micro_impacts=result["micro_impacts"],
                     category=category,
                     seed_article_id=aid,
-                    stage=result["stage"],
+                    stage=result.get("stage", "new"),
                 )
-                _store_result_v2(
-                    db, aid, result,
+                _store_result_v3(
+                    db, aid, macro_shifts, result,
                     event_id=event_id,
                     tier1_ms=tier1_ms, tier2_ms=tier2_ms,
                 )
                 stats["relevant"] += 1
                 stats["events_created"] += 1
-                _update_stats_v2(stats, result)
-                impact_str = _top_impacts_str(result)
+                _update_stats_v3(stats, macro_shifts, result)
+                impact_str = _top_impacts_str_v3(result)
                 print(f"NEW_EVENT [{event_name[:30]}] ({tier1_ms}+{tier2_ms}ms) [{impact_str}]")
             else:
                 _store_result(
                     db, aid, is_relevant=False,
-                    rejection_reason=result["rejection_reason"],
+                    rejection_reason=result.get("rejection_reason"),
                     tier1_ms=tier1_ms, tier2_ms=tier2_ms,
                 )
                 stats["no_impact"] += 1
-                print(f"NO_IMPACT (tier2, {tier1_ms}+{tier2_ms}ms) [{result['rejection_reason']}]")
+                print(f"NO_IMPACT (tier2, {tier1_ms}+{tier2_ms}ms) [{result.get('rejection_reason', '?')}]")
 
     return stats
 
@@ -323,6 +324,44 @@ def _store_result(
         (now, article_id),
     )
     db.conn.commit()
+
+
+def _store_result_v3(
+    db: Database,
+    article_id: str,
+    macro_shifts: list[dict],
+    result,
+    *,
+    event_id: str | None = None,
+    tier1_ms: int | None = None,
+    tier2_ms: int | None = None,
+) -> None:
+    """Store V3 result — flatten macro_shifts + micro_impacts for article_impacts."""
+    triggers = [s["t_node"] for s in macro_shifts]
+    impacts = [dict(mi) for mi in result.get("micro_impacts", [])]
+    _store_result(
+        db, article_id,
+        is_relevant=True,
+        triggers=triggers,
+        impacts=impacts,
+        event_id=event_id,
+        tier1_ms=tier1_ms,
+        tier2_ms=tier2_ms,
+    )
+
+
+def _top_impacts_str_v3(result) -> str:
+    """Get top 3 impact node names from AnalysisResultV3."""
+    nodes = [mi["i_node"] for mi in result.get("micro_impacts", [])]
+    return ", ".join(nodes[:3])
+
+
+def _update_stats_v3(stats: dict, macro_shifts: list[dict], result) -> None:
+    """Update running stats counters from V3 result."""
+    for s in macro_shifts:
+        stats["triggers"][s["t_node"]] += 1
+    for mi in result.get("micro_impacts", [])[:3]:
+        stats["top_impacts"][mi["i_node"]] += 1
 
 
 def _store_result_v2(

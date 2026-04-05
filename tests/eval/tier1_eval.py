@@ -52,6 +52,7 @@ def run_eval(
     cases: list[dict],
     classifier: ArticleClassifier,
     taxonomy: TaxonomyContext,
+    v3: bool = False,
 ) -> dict:
     """Run Tier 1 on all cases and collect results."""
     results = []
@@ -63,7 +64,7 @@ def run_eval(
         print(f"[{i+1}/{len(cases)}] {title[:70]}...", end=" ", flush=True)
 
         t0 = time.time()
-        output = classifier.classify(title, summary)
+        output = classifier.classify_v3(title, summary) if v3 else classifier.classify(title, summary)
         elapsed_ms = int((time.time() - t0) * 1000)
 
         if output is None:
@@ -72,14 +73,20 @@ def run_eval(
             continue
 
         pred_relevant = output["relevant"]
-        pred_triggers = [t["t_node"] for t in output.get("triggers", [])]
+        if v3:
+            pred_triggers = [s["t_node"] for s in output.get("macro_shifts", [])]
+            pred_trajectories = {s["t_node"]: s.get("trajectory", "?") for s in output.get("macro_shifts", [])}
+        else:
+            pred_triggers = [t["t_node"] for t in output.get("triggers", [])]
+            pred_trajectories = {}
 
         expected = "REL" if case["relevant"] else "IRR"
         predicted = "REL" if pred_relevant else "IRR"
         match = "OK" if expected == predicted else "MISS"
 
         trigger_str = ", ".join(pred_triggers[:3]) if pred_triggers else "-"
-        print(f"{match} ({elapsed_ms}ms) [{predicted}] T:[{trigger_str}]")
+        traj_str = f" traj:[{', '.join(pred_trajectories.values())}]" if pred_trajectories else ""
+        print(f"{match} ({elapsed_ms}ms) [{predicted}] T:[{trigger_str}]{traj_str}")
 
         if match == "MISS":
             if pred_relevant and not case["relevant"]:
@@ -93,6 +100,7 @@ def run_eval(
             **case,
             "pred_relevant": pred_relevant,
             "pred_triggers": pred_triggers,
+            "pred_trajectories": pred_trajectories,
             "pred_reason": output.get("reason"),
             "pred_exclude_l1s": output.get("exclude_l1s", []),
             "error": False,
@@ -122,13 +130,23 @@ def compute_metrics(results: list[dict], taxonomy: TaxonomyContext) -> dict:
     trigger_expected = 0
     trigger_predicted = 0
     trigger_ancestor_hits = 0
+    trajectory_counts = Counter()
 
     for r in valid:
         if not r["relevant"] or not r["pred_relevant"]:
             continue
 
-        expected = set(r.get("triggers", []))
+        # Handle both old (list of strings) and new (list of dicts) ground truth formats
+        raw_triggers = r.get("triggers", [])
+        if raw_triggers and isinstance(raw_triggers[0], dict):
+            expected = set(t["t_node"] for t in raw_triggers)
+        else:
+            expected = set(raw_triggers)
         predicted = set(r.get("pred_triggers", []))
+
+        # Count trajectory distribution
+        for traj in r.get("pred_trajectories", {}).values():
+            trajectory_counts[traj] += 1
         trigger_expected += len(expected)
         trigger_predicted += len(predicted)
 
@@ -165,6 +183,7 @@ def compute_metrics(results: list[dict], taxonomy: TaxonomyContext) -> dict:
             "exact_hits": trigger_hits,
             "ancestor_hits": trigger_ancestor_hits,
         },
+        "trajectories": dict(trajectory_counts),
     }
 
 
@@ -187,6 +206,13 @@ def print_report(results: list[dict], metrics: dict) -> None:
     print(f"  Exact precision: {trg['exact_precision']:.1%}  ({trg['exact_hits']}/{trg['total_predicted']})")
     print(f"  Exact recall:    {trg['exact_recall']:.1%}  ({trg['exact_hits']}/{trg['total_expected']})")
     print(f"  Ancestor recall: {trg['ancestor_recall']:.1%}  ({trg['exact_hits']+trg['ancestor_hits']}/{trg['total_expected']})")
+
+    # Trajectory distribution (V3 only)
+    traj = metrics.get("trajectories", {})
+    if traj:
+        print(f"\n--- Trajectory Distribution ---")
+        for t, count in sorted(traj.items(), key=lambda x: -x[1]):
+            print(f"  {t}: {count}")
 
     # Per-difficulty breakdown
     valid = [r for r in results if not r.get("error")]
@@ -234,6 +260,7 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=None, help="Max cases to run")
     parser.add_argument("--difficulty", type=str, default=None, help="Filter by difficulty")
     parser.add_argument("--dry-run", action="store_true", help="Show cases without calling LLM")
+    parser.add_argument("--v3", action="store_true", help="Use V3 classifier (macro_shifts + trajectory)")
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -268,8 +295,11 @@ def main() -> None:
 
     print(f"Model: {settings.gemini_model}\n")
 
+    if args.v3:
+        print("Using V3 classifier (macro_shifts + trajectory)\n")
+
     # Run
-    results = run_eval(cases, classifier, taxonomy)
+    results = run_eval(cases, classifier, taxonomy, v3=args.v3)
     metrics = compute_metrics(results, taxonomy)
     print_report(results, metrics)
 

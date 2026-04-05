@@ -5,7 +5,7 @@ from __future__ import annotations
 import logging
 
 from config import settings
-from engine.base import AnalysisResult, AnalysisResultV2, ImpactResult, TriggerInstance, ImpactEdgeV2
+from engine.base import AnalysisResult, AnalysisResultV2, AnalysisResultV3, ImpactResult, TriggerInstance, ImpactEdgeV2, MicroImpact
 from engine.prompts.analyze_new import build_analyze_new_prompt
 from engine.prompts.analyze_update import build_analyze_update_prompt
 from engine.taxonomy_context import TaxonomyContext
@@ -291,6 +291,117 @@ class ImpactAnalyzer:
 
         return AnalysisResultV2(
             trigger_instances=validated,
+            stage=stage,
+            summary=parsed.get("summary", ""),
+            is_relevant=len(validated) > 0,
+            rejection_reason=None,
+        )
+
+    # -- V3 methods: MacroShift + MicroImpact (flat M:N) ----------------------
+
+    def analyze_new_v3(
+        self,
+        title: str,
+        summary: str,
+        macro_shifts: list[dict],
+        i_trees: str,
+    ) -> AnalysisResultV3:
+        """Tier 2 analysis for new events — flat M:N output."""
+        prompt = build_analyze_new_prompt(macro_shifts, i_trees, title, summary)
+        return self._analyze_v3(prompt, macro_shifts)
+
+    def analyze_update_v3(
+        self,
+        title: str,
+        summary: str,
+        macro_shifts: list[dict],
+        i_trees: str,
+        compressed_state: str,
+    ) -> AnalysisResultV3:
+        """Tier 2 delta analysis for event updates."""
+        prompt = build_analyze_update_prompt(
+            macro_shifts, i_trees, title, summary, compressed_state,
+        )
+        return self._analyze_v3(prompt, macro_shifts)
+
+    def _analyze_v3(self, prompt: str, macro_shifts: list[dict]) -> AnalysisResultV3:
+        """Shared V3 analysis — parse flat micro_impacts output."""
+        parsed = self._call_and_parse(prompt)
+        if parsed is None:
+            return AnalysisResultV3(
+                micro_impacts=[], stage="new",
+                summary="", is_relevant=False, rejection_reason="api_error",
+            )
+
+        # Handle no-impact response
+        if parsed.get("no_impact"):
+            return AnalysisResultV3(
+                micro_impacts=[], stage="new",
+                summary="", is_relevant=False,
+                rejection_reason=parsed.get("reason", "no mass citizen impact"),
+            )
+
+        raw_impacts = parsed.get("micro_impacts", [])
+        if not isinstance(raw_impacts, list):
+            logger.warning("Gemini returned non-list micro_impacts: %s", type(raw_impacts))
+            raw_impacts = []
+
+        # Build set of valid t_nodes from input macro_shifts
+        valid_shift_nodes = {s["t_node"] for s in macro_shifts if "t_node" in s}
+        valid_trajectories = {"escalating", "deescalating", "status_quo"}
+
+        validated: list[MicroImpact] = []
+        for imp in raw_impacts:
+            if not isinstance(imp, dict):
+                continue
+
+            i_node = imp.get("i_node", "")
+            if i_node not in self._valid_i_nodes:
+                logger.warning("Unknown I-node: %s — skipping", i_node)
+                continue
+
+            probability = _clamp(float(imp.get("probability", 0)))
+            magnitude = _clamp(float(imp.get("magnitude", 0)))
+
+            delay_days = int(imp.get("delay_days", 14))
+            if delay_days < 1:
+                delay_days = 1
+            if delay_days > 365:
+                delay_days = 365
+
+            trajectory = imp.get("trajectory", "escalating")
+            if trajectory not in valid_trajectories:
+                trajectory = "escalating"
+
+            # Validate driving_t_nodes — keep only those in macro_shifts + taxonomy
+            driving = imp.get("driving_t_nodes", [])
+            if not isinstance(driving, list):
+                driving = []
+            # Accept t_nodes from input shifts OR from taxonomy (for update mode where existing shifts aren't in this article's macro_shifts)
+            valid_driving = [t for t in driving if t in valid_shift_nodes or t in self._valid_t_nodes]
+            if not valid_driving and driving:
+                logger.warning("All driving_t_nodes unknown for %s: %s", i_node, driving)
+                valid_driving = driving[:3]  # Keep anyway, don't lose data
+
+            validated.append(MicroImpact(
+                i_node=i_node,
+                trajectory=trajectory,
+                probability=probability,
+                magnitude=magnitude,
+                delay_days=delay_days,
+                rationale=str(imp.get("rationale", "")),
+                driving_t_nodes=valid_driving,
+            ))
+
+        # Sort by probability * magnitude descending
+        validated.sort(key=lambda x: x["probability"] * x["magnitude"], reverse=True)
+
+        stage = parsed.get("stage", "new")
+        if stage not in ("new", "escalating", "stable", "resolved"):
+            stage = "new"
+
+        return AnalysisResultV3(
+            micro_impacts=validated,
             stage=stage,
             summary=parsed.get("summary", ""),
             is_relevant=len(validated) > 0,

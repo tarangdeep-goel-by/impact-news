@@ -1,46 +1,37 @@
-"""Tier 2 prompt for updating an existing event's causal edges (upsert)."""
+"""Tier 2 prompt for updating an existing event — delta output only."""
 
 from __future__ import annotations
 
-import json
-
 
 def build_analyze_update_prompt(
-    triggers: list[dict],
+    macro_shifts: list[dict],
     i_trees: str,
     title: str,
     summary: str,
-    existing_instances: list[dict],
+    compressed_state: str,
 ) -> str:
-    """Build Tier 2 prompt for updating an existing event's impact assessment.
+    """Build Tier 2 prompt for updating an existing event — delta output only.
 
     Args:
-        triggers: List of {t_node, context} from Tier 1 classifier.
+        macro_shifts: List of {t_node, trajectory, context} — NEW shifts from Tier 1 for this article.
         i_trees: Filtered I-world taxonomy.
         title: New article headline.
         summary: New article body.
-        existing_instances: Current TriggerInstances with IDs from EventStore.get_event_edges().
-            Each: {id, t_node, context, edges: [{id, i_node, probability, magnitude, delay_days, polarity, mechanism}]}
+        compressed_state: Compressed current state from EventStore.get_compressed_state().
     """
-    # Format triggers from Tier 1
-    trigger_lines = []
-    for t in triggers:
-        trigger_lines.append(f"- {t['t_node']}: {t.get('context', '')}")
-    triggers_block = "\n".join(trigger_lines) if trigger_lines else "(none identified)"
-
-    # Format existing causal edges
-    if existing_instances:
-        existing_block = json.dumps(existing_instances, indent=2)
-    else:
-        existing_block = "(no existing edges — treat as new analysis)"
+    # Format new macro shifts
+    shift_lines = []
+    for s in macro_shifts:
+        shift_lines.append(f"- {s['t_node']} [{s.get('trajectory', '?')}]: {s.get('context', '')}")
+    shifts_block = "\n".join(shift_lines) if shift_lines else "(none identified)"
 
     return f"""You are a causal impact analyst for Indian citizens. You are UPDATING an existing event's impact assessment based on a new article.
 
-== TRIGGERS IDENTIFIED IN NEW ARTICLE ==
-{triggers_block}
+== CURRENT EVENT STATE ==
+{compressed_state}
 
-== EXISTING CAUSAL EDGES (with IDs) ==
-{existing_block}
+== NEW MACRO SHIFTS FROM THIS ARTICLE ==
+{shifts_block}
 
 == IMPACT TAXONOMY (I-world) ==
 {i_trees}
@@ -50,12 +41,13 @@ Title: {title}
 Summary: {summary}
 
 == TASK ==
-Given this new article, produce an UPDATED set of causal edges using the UPSERT pattern:
+Given the current event state and this new article, determine what CHANGES:
+1. **New impacts**: citizen impacts not previously identified
+2. **Updated impacts**: existing impacts whose probability, magnitude, or trajectory changed
+3. **Do NOT repeat unchanged impacts** — they are retained automatically
 
-1. **UPDATE** existing edges: If the article changes the probability, magnitude, or delay of an existing edge, output it WITH its existing "id" field.
-2. **INSERT** new edges: If the article reveals new impacts, output them WITHOUT an "id" field.
-3. **REMOVE** by omission: If an impact edge is no longer relevant, simply omit it from the output.
-4. **NEW TRIGGERS**: If the article introduces a new trigger not in the existing edges, add a new trigger_instance WITHOUT an "id" field.
+For each changed or new impact:
+- i_node, trajectory, probability, magnitude, delay_days, rationale, driving_t_nodes
 
 Also determine:
 - What stage is this event in? (new/escalating/stable/resolved)
@@ -66,29 +58,21 @@ Also determine:
 - Only genuine causal mechanisms — not vague relatedness.
 - Do NOT list impacts with probability below 0.2.
 - delay_days must be a positive integer.
-- Do NOT accumulate tangential triggers. Only include triggers with direct causal chains to citizen impacts.
-- The output should reflect the CUMULATIVE state of the event, not just this article.
-- Preserve existing edge IDs when updating — this is critical for tracking provenance.
+- driving_t_nodes must reference T-nodes from the active macro shifts (both existing and new).
+- Output ONLY impacts that are NEW or CHANGED. Unchanged impacts are preserved automatically.
 
 == OUTPUT FORMAT ==
 Return ONLY valid JSON:
 {{
-  "trigger_instances": [
+  "micro_impacts": [
     {{
-      "id": "existing-trigger-id",
-      "t_node": "brent_crude",
-      "context": "Updated: Crude prices still elevated after Red Sea attacks",
-      "edges": [
-        {{"id": "existing-edge-id", "i_node": "retail_petrol", "probability": 0.95, "magnitude": 0.85, "delay_days": 5, "polarity": 1, "mechanism": "Updated mechanism"}},
-        {{"i_node": "lpg_cylinder", "probability": 0.7, "magnitude": 0.5, "delay_days": 14, "polarity": 1, "mechanism": "New impact discovered"}}
-      ]
-    }},
-    {{
-      "t_node": "ministry_of_finance",
-      "context": "New trigger: government announces fuel subsidy",
-      "edges": [
-        {{"i_node": "retail_diesel", "probability": 0.8, "magnitude": -0.3, "delay_days": 7, "polarity": -1, "mechanism": "Subsidy reduces pump price"}}
-      ]
+      "i_node": "retail_petrol",
+      "trajectory": "escalating",
+      "probability": 0.95,
+      "magnitude": 0.8,
+      "delay_days": 7,
+      "rationale": "Crude spike + rupee weakening both push import bill up, OMCs pass cost to consumers",
+      "driving_t_nodes": ["brent_crude", "usd_inr_exchange"]
     }}
   ],
   "summary": "Updated 2-3 line summary.",

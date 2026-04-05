@@ -416,3 +416,293 @@ class EventStore:
                WHERE event_id = ?""",
             (json.dumps(triggers), json.dumps(impacts), event_id),
         )
+
+    # -- V3: MacroShift + MicroImpact (flat M:N) ------------------------------
+
+    def create_event_v3(
+        self,
+        name: str,
+        summary: str,
+        macro_shifts: list[dict],
+        micro_impacts: list[dict],
+        category: str | None,
+        seed_article_id: str,
+        stage: str = "new",
+    ) -> str:
+        """Create event with flat MacroShift + MicroImpact model.
+
+        macro_shifts: list of {t_node, trajectory, context}
+        micro_impacts: list of {i_node, trajectory, probability, magnitude,
+                                delay_days, rationale, driving_t_nodes}
+        """
+        event_id = uuid.uuid4().hex[:12]
+        now = datetime.utcnow().isoformat()
+
+        self.conn.execute(
+            """INSERT INTO events
+               (event_id, name, summary, triggers_json, current_impacts_json,
+                stage, category, first_seen_at, last_updated_at, article_count)
+               VALUES (?, ?, ?, '[]', '[]', ?, ?, ?, ?, 1)""",
+            (event_id, name, summary, stage, category, now, now),
+        )
+        self.conn.execute(
+            """INSERT INTO event_articles (event_id, article_id, is_seed)
+               VALUES (?, ?, 1)""",
+            (event_id, seed_article_id),
+        )
+
+        for ms in macro_shifts:
+            shift_id = uuid.uuid4().hex[:12]
+            self.conn.execute(
+                """INSERT INTO macro_shifts (id, event_id, t_node, trajectory, context)
+                   VALUES (?, ?, ?, ?, ?)""",
+                (shift_id, event_id, ms["t_node"], ms["trajectory"], ms.get("context", "")),
+            )
+            self.conn.execute(
+                "INSERT INTO shift_support (macro_shift_id, article_id) VALUES (?, ?)",
+                (shift_id, seed_article_id),
+            )
+
+        for mi in micro_impacts:
+            self.conn.execute(
+                """INSERT INTO micro_impact_revisions
+                   (event_id, i_node, article_id, trajectory, probability,
+                    magnitude, delay_days, rationale, driving_t_nodes)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    event_id, mi["i_node"], seed_article_id,
+                    mi.get("trajectory", "escalating"),
+                    mi.get("probability", 0.5),
+                    mi.get("magnitude", 0.5),
+                    mi.get("delay_days", 14),
+                    mi.get("rationale", ""),
+                    json.dumps(mi.get("driving_t_nodes", [])),
+                ),
+            )
+            self.conn.execute(
+                """INSERT OR IGNORE INTO impact_support
+                   (event_id, i_node, article_id) VALUES (?, ?, ?)""",
+                (event_id, mi["i_node"], seed_article_id),
+            )
+            for t_node in mi.get("driving_t_nodes", []):
+                row = self.conn.execute(
+                    "SELECT id FROM macro_shifts WHERE event_id = ? AND t_node = ?",
+                    (event_id, t_node),
+                ).fetchone()
+                if row:
+                    self.conn.execute(
+                        """INSERT OR IGNORE INTO impact_drivers
+                           (event_id, i_node, macro_shift_id) VALUES (?, ?, ?)""",
+                        (event_id, mi["i_node"], row["id"]),
+                    )
+
+        self._recompute_event_denorm_v3(event_id)
+        self.conn.commit()
+        return event_id
+
+    def upsert_event_v3(
+        self,
+        event_id: str,
+        macro_shifts: list[dict],
+        micro_impacts: list[dict],
+        article_id: str,
+        summary: str | None = None,
+        stage: str | None = None,
+    ) -> None:
+        """Upsert macro shifts and append micro impact revisions for an event."""
+        now = datetime.utcnow().isoformat()
+
+        # Link article
+        self.conn.execute(
+            "INSERT OR IGNORE INTO event_articles (event_id, article_id) VALUES (?, ?)",
+            (event_id, article_id),
+        )
+
+        # Upsert macro shifts
+        for ms in macro_shifts:
+            shift_id = uuid.uuid4().hex[:12]
+            self.conn.execute(
+                """INSERT INTO macro_shifts (id, event_id, t_node, trajectory, context, updated_at)
+                   VALUES (?, ?, ?, ?, ?, ?)
+                   ON CONFLICT(event_id, t_node) DO UPDATE SET
+                     trajectory = excluded.trajectory,
+                     context = excluded.context,
+                     updated_at = excluded.updated_at""",
+                (shift_id, event_id, ms["t_node"], ms["trajectory"], ms.get("context", ""), now),
+            )
+            # Get the actual shift id (may be existing)
+            row = self.conn.execute(
+                "SELECT id FROM macro_shifts WHERE event_id = ? AND t_node = ?",
+                (event_id, ms["t_node"]),
+            ).fetchone()
+            if row:
+                self.conn.execute(
+                    "INSERT OR IGNORE INTO shift_support (macro_shift_id, article_id) VALUES (?, ?)",
+                    (row["id"], article_id),
+                )
+
+        # Append micro impact revisions (immutable)
+        for mi in micro_impacts:
+            self.conn.execute(
+                """INSERT INTO micro_impact_revisions
+                   (event_id, i_node, article_id, trajectory, probability,
+                    magnitude, delay_days, rationale, driving_t_nodes)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    event_id, mi["i_node"], article_id,
+                    mi.get("trajectory", "escalating"),
+                    mi.get("probability", 0.5),
+                    mi.get("magnitude", 0.5),
+                    mi.get("delay_days", 14),
+                    mi.get("rationale", ""),
+                    json.dumps(mi.get("driving_t_nodes", [])),
+                ),
+            )
+            self.conn.execute(
+                """INSERT OR IGNORE INTO impact_support
+                   (event_id, i_node, article_id) VALUES (?, ?, ?)""",
+                (event_id, mi["i_node"], article_id),
+            )
+
+        # Rebuild impact_drivers for this event
+        self.conn.execute(
+            "DELETE FROM impact_drivers WHERE event_id = ?", (event_id,)
+        )
+        cmi_rows = self.conn.execute(
+            "SELECT i_node, driving_t_nodes FROM current_micro_impacts WHERE event_id = ?",
+            (event_id,),
+        ).fetchall()
+        for cmi in cmi_rows:
+            t_nodes = json.loads(cmi["driving_t_nodes"])
+            for t_node in t_nodes:
+                ms_row = self.conn.execute(
+                    "SELECT id FROM macro_shifts WHERE event_id = ? AND t_node = ?",
+                    (event_id, t_node),
+                ).fetchone()
+                if ms_row:
+                    self.conn.execute(
+                        """INSERT OR IGNORE INTO impact_drivers
+                           (event_id, i_node, macro_shift_id) VALUES (?, ?, ?)""",
+                        (event_id, cmi["i_node"], ms_row["id"]),
+                    )
+
+        # Update event metadata
+        updates = ["last_updated_at = ?", "article_count = article_count + 1"]
+        params: list = [now]
+        if summary:
+            updates.append("summary = ?")
+            params.append(summary)
+        if stage:
+            updates.append("stage = ?")
+            params.append(stage)
+        params.append(event_id)
+        self.conn.execute(
+            f"UPDATE events SET {', '.join(updates)} WHERE event_id = ?", params
+        )
+
+        self._recompute_event_denorm_v3(event_id)
+        self.conn.commit()
+
+    def get_event_state(self, event_id: str) -> dict:
+        """Full current state: active macro shifts + latest micro impacts."""
+        ms_rows = self.conn.execute(
+            """SELECT id, t_node, trajectory, context FROM macro_shifts
+               WHERE event_id = ? AND status = 'active'
+               ORDER BY created_at""",
+            (event_id,),
+        ).fetchall()
+
+        cmi_rows = self.conn.execute(
+            """SELECT i_node, trajectory, probability, magnitude,
+                      delay_days, rationale, driving_t_nodes
+               FROM current_micro_impacts WHERE event_id = ?""",
+            (event_id,),
+        ).fetchall()
+
+        return {
+            "macro_shifts": [dict(r) for r in ms_rows],
+            "micro_impacts": [
+                {
+                    "i_node": r["i_node"],
+                    "trajectory": r["trajectory"],
+                    "probability": r["probability"],
+                    "magnitude": r["magnitude"],
+                    "delay_days": r["delay_days"],
+                    "rationale": r["rationale"],
+                    "driving_t_nodes": json.loads(r["driving_t_nodes"]),
+                }
+                for r in cmi_rows
+            ],
+        }
+
+    def get_compressed_state(self, event_id: str) -> str:
+        """Compressed text summary of event state for Tier 2 prompt."""
+        state = self.get_event_state(event_id)
+
+        shifts = ", ".join(
+            f"{ms['t_node']} ({ms['trajectory']})"
+            for ms in state["macro_shifts"]
+        )
+        impacts = ", ".join(
+            f"{mi['i_node']} (prob={mi['probability']}, mag={mi['magnitude']}, {mi['delay_days']}d)"
+            for mi in state["micro_impacts"]
+        )
+
+        lines = []
+        if shifts:
+            lines.append(f"Active Shifts: {shifts}")
+        if impacts:
+            lines.append(f"Active Impacts: {impacts}")
+        return "\n".join(lines)
+
+    def _recompute_event_denorm_v3(self, event_id: str) -> None:
+        """Rebuild triggers_json and current_impacts_json from V3 tables."""
+        t_rows = self.conn.execute(
+            "SELECT DISTINCT t_node FROM macro_shifts WHERE event_id = ?",
+            (event_id,),
+        ).fetchall()
+        triggers = [r["t_node"] for r in t_rows]
+
+        cmi_rows = self.conn.execute(
+            """SELECT i_node, probability, magnitude, delay_days, rationale
+               FROM current_micro_impacts WHERE event_id = ?""",
+            (event_id,),
+        ).fetchall()
+        impacts = [
+            {
+                "node": r["i_node"],
+                "probability": r["probability"],
+                "magnitude": r["magnitude"],
+                "delay_days": r["delay_days"],
+                "rationale": r["rationale"],
+            }
+            for r in cmi_rows
+        ]
+
+        self.conn.execute(
+            """UPDATE events SET triggers_json = ?, current_impacts_json = ?
+               WHERE event_id = ?""",
+            (json.dumps(triggers), json.dumps(impacts), event_id),
+        )
+
+    def get_event_summary_list_v3(self) -> list[dict]:
+        """Active events with macro shift details for Tier 1 prompt context."""
+        rows = self.conn.execute(
+            """SELECT event_id, name, summary, stage, category, last_updated_at
+               FROM events
+               WHERE stage != 'resolved'
+               ORDER BY last_updated_at DESC
+               LIMIT 50"""
+        ).fetchall()
+
+        results = []
+        for row in rows:
+            d = dict(row)
+            ms_rows = self.conn.execute(
+                """SELECT t_node, trajectory FROM macro_shifts
+                   WHERE event_id = ? AND status = 'active'""",
+                (d["event_id"],),
+            ).fetchall()
+            d["macro_shifts"] = [dict(r) for r in ms_rows]
+            results.append(d)
+        return results
