@@ -16,16 +16,18 @@ Event
        └─ ImpactEdge ...
 ```
 
-**After (flat M:N):**
+**After (flat M:N with event-sourced revisions):**
 ```
 Event
-  ├─ MacroShift (t_node + trajectory + context)
+  ├─ MacroShift (t_node + trajectory + context)      ← ONE per t_node per event
   ├─ MacroShift ...
   │
   ├─ MicroImpact (i_node + trajectory + prob + mag + delay + rationale)
   │    └─ driven by: [MacroShift A, MacroShift B]   ← M:N join
   ├─ MicroImpact ...
   │    └─ driven by: [MacroShift B]
+  │
+  └─ Revisions log: every Tier 2 output is an immutable INSERT, not an UPDATE
 ```
 
 Key differences:
@@ -33,52 +35,86 @@ Key differences:
 - Each MicroImpact has `driving_shifts` — M:N relationship to MacroShifts
 - Tier 2 synthesizes ALL shifts together, not per-trigger isolation
 - `trajectory` field: escalating / deescalating / status_quo / disruption
+- **Event-sourced:** every LLM output is appended as a revision, current state is a SQL view
+- **UNIQUE(event_id, t_node)** and **UNIQUE(event_id, i_node)** at the active-state level — one MacroShift per T-node per event, one MicroImpact per I-node per event
 
 ## Schema
 
 ```sql
--- Replace trigger_instances
+-- One active MacroShift per T-node per event
 CREATE TABLE macro_shifts (
     id TEXT PRIMARY KEY,
     event_id TEXT NOT NULL REFERENCES events(event_id),
     t_node TEXT NOT NULL,
     trajectory TEXT NOT NULL,  -- escalating | deescalating | status_quo | disruption
-    context TEXT NOT NULL,     -- 1-line: what changed and why
+    context TEXT NOT NULL,     -- 1-line: what changed and why (synthesized if multiple forces)
     created_at TEXT DEFAULT (datetime('now')),
-    status TEXT DEFAULT 'active'
+    updated_at TEXT DEFAULT (datetime('now')),
+    status TEXT DEFAULT 'active',
+    UNIQUE(event_id, t_node)
 );
 
--- Replace impact_edges
-CREATE TABLE micro_impacts (
-    id TEXT PRIMARY KEY,
+-- Immutable revision log — every Tier 2 output INSERTs here
+CREATE TABLE micro_impact_revisions (
     event_id TEXT NOT NULL REFERENCES events(event_id),
     i_node TEXT NOT NULL,
+    article_id TEXT NOT NULL REFERENCES articles(id),  -- which article caused this revision
     trajectory TEXT NOT NULL,  -- escalating | deescalating | status_quo
     probability REAL NOT NULL,
     magnitude REAL NOT NULL,
     delay_days INTEGER NOT NULL,
     rationale TEXT NOT NULL,    -- 1-line: WHY this impact exists (synthesized from multiple shifts)
-    maturity_date TEXT,
-    status TEXT DEFAULT 'active',
+    driving_t_nodes TEXT NOT NULL,  -- JSON array: ["brent_crude", "usd_inr_exchange"]
     created_at TEXT DEFAULT (datetime('now')),
-    updated_at TEXT DEFAULT (datetime('now'))
+    PRIMARY KEY (event_id, i_node, article_id)
 );
+
+-- Current state = latest revision per (event_id, i_node)
+CREATE VIEW current_micro_impacts AS
+SELECT event_id, i_node, article_id, trajectory, probability,
+       magnitude, delay_days, rationale, driving_t_nodes, created_at
+FROM (
+    SELECT *, ROW_NUMBER() OVER(
+        PARTITION BY event_id, i_node ORDER BY created_at DESC
+    ) as rn
+    FROM micro_impact_revisions
+) WHERE rn = 1;
 
 -- M:N join: which macro shifts drive which micro impacts
+-- Rebuilt from driving_t_nodes in current_micro_impacts
 CREATE TABLE impact_drivers (
-    micro_impact_id TEXT NOT NULL REFERENCES micro_impacts(id),
+    event_id TEXT NOT NULL,
+    i_node TEXT NOT NULL,
     macro_shift_id TEXT NOT NULL REFERENCES macro_shifts(id),
-    PRIMARY KEY (micro_impact_id, macro_shift_id)
+    PRIMARY KEY (event_id, i_node, macro_shift_id)
 );
 
--- Replace edge_support (article provenance)
-CREATE TABLE impact_support (
-    micro_impact_id TEXT NOT NULL REFERENCES micro_impacts(id),
+-- Article provenance for macro shifts
+CREATE TABLE shift_support (
+    macro_shift_id TEXT NOT NULL REFERENCES macro_shifts(id),
     article_id TEXT NOT NULL REFERENCES articles(id),
     added_at TEXT DEFAULT (datetime('now')),
-    PRIMARY KEY (micro_impact_id, article_id)
+    PRIMARY KEY (macro_shift_id, article_id)
+);
+
+-- Article provenance for micro impacts (derived from revisions)
+CREATE TABLE impact_support (
+    event_id TEXT NOT NULL,
+    i_node TEXT NOT NULL,
+    article_id TEXT NOT NULL REFERENCES articles(id),
+    added_at TEXT DEFAULT (datetime('now')),
+    PRIMARY KEY (event_id, i_node, article_id)
 );
 ```
+
+### Why event-sourced revisions
+
+The old model did UPSERT — read state, LLM outputs new values, overwrite row. This breaks when:
+1. **Concurrency:** Two articles on same event processed simultaneously → both read V1, both write V2, last write wins
+2. **LLM ghosting:** LLM silently drops impacts it considers irrelevant to current article
+3. **Lost provenance:** Can't trace WHY a value changed or WHEN
+
+With revisions: every Tier 2 output is an immutable INSERT. The SQL view gives current state. Old revisions are preserved for audit. Concurrent writes both land safely (different article_ids).
 
 ## Tier 1 Changes
 
@@ -112,8 +148,21 @@ CREATE TABLE impact_support (
 
 ## Tier 2 Changes
 
-**Input:** Basket of ALL macro_shifts + filtered I-tree + article
-**Output:** Flat list of MicroImpacts, each with driving_t_nodes
+**Input:** Compressed state summary + filtered I-tree + article
+
+For new events: macro_shifts from Tier 1 + filtered I-tree + article.
+
+For event updates: compressed current state + new article's macro_shifts + filtered I-tree + article.
+
+**Compressed state format** (not full JSON dump):
+```
+Active Shifts: brent_crude (escalating), usd_inr_exchange (escalating)
+Active Impacts: retail_petrol (prob=0.85, mag=0.6, 7d), edible_oils (prob=0.75, mag=0.5, 30d)
+```
+
+**Prompt instruction:** "Given this current state and the new article, output ONLY the I-nodes that change or are newly created. Provide new absolute values. Do NOT repeat unchanged impacts."
+
+**Output:** Flat list of MicroImpacts (only changed/new ones), each with driving_t_nodes:
 
 ```json
 {
@@ -133,19 +182,17 @@ CREATE TABLE impact_support (
 }
 ```
 
-**Key change:** Tier 2 no longer groups impacts under triggers. It sees the full basket of shifts and reasons about combined effects. A single MicroImpact can cite multiple MacroShifts as drivers.
+**Key change:** Tier 2 sees the full basket of shifts and reasons about combined effects. A single MicroImpact can cite multiple MacroShifts as drivers. Only outputs deltas — unchanged impacts are retained automatically by the revision model.
 
-## EventStore Changes
+## Store Logic
 
-- `create_event_v2` → uses new tables (macro_shifts, micro_impacts, impact_drivers)
-- `upsert_event` → upsert macro_shifts and micro_impacts independently
-  - MacroShifts with ID → update trajectory/context
-  - MacroShifts without ID → insert
-  - MicroImpacts with ID → update prob/mag/delay/rationale
-  - MicroImpacts without ID → insert
-  - Rebuild impact_drivers links after each upsert
-- `get_event_state` → returns all active macro_shifts + micro_impacts for an event
-- `decay_mature_impacts` → same logic, on micro_impacts table
+**On Tier 2 output:**
+1. **MacroShifts:** UPSERT by `(event_id, t_node)` — update trajectory/context if changed. Add to `shift_support`.
+2. **MicroImpact revisions:** INSERT into `micro_impact_revisions` — one row per changed i_node with the article_id that caused the revision. Never update or delete.
+3. **Impact drivers:** Rebuild from `driving_t_nodes` in `current_micro_impacts` view.
+4. **Impact support:** INSERT into `impact_support` — derived from the revision's article_id.
+
+**maturity_date calculation:** Tier 2 outputs `delay_days`. Backend deterministically calculates `maturity_date = article.published_at + delay_days`. The LLM never does time math.
 
 ## TypedDict Changes
 
@@ -157,7 +204,6 @@ class MacroShift(TypedDict, total=False):
     context: str
 
 class MicroImpact(TypedDict, total=False):
-    id: str
     i_node: str
     trajectory: str
     probability: float
@@ -165,6 +211,17 @@ class MicroImpact(TypedDict, total=False):
     delay_days: int
     rationale: str
     driving_t_nodes: list[str]  # T-node IDs, not MacroShift IDs (for prompt simplicity)
+
+class MicroImpactRevision(TypedDict):
+    event_id: str
+    i_node: str
+    article_id: str
+    trajectory: str
+    probability: float
+    magnitude: float
+    delay_days: int
+    rationale: str
+    driving_t_nodes: list[str]
 ```
 
 ## What Carries Forward (no changes needed)
@@ -179,37 +236,41 @@ class MicroImpact(TypedDict, total=False):
 
 ## What Gets Replaced
 
-- `trigger_instances` table → `macro_shifts` table
-- `impact_edges` table → `micro_impacts` table
-- `edge_support` table → `impact_support` table
-- TriggerInstance/ImpactEdgeV2 TypedDicts → MacroShift/MicroImpact
+- `trigger_instances` table → `macro_shifts` table (with UNIQUE constraint)
+- `impact_edges` table → `micro_impact_revisions` table + `current_micro_impacts` view
+- `edge_support` table → `shift_support` + `impact_support` tables
+- TriggerInstance/ImpactEdgeV2 TypedDicts → MacroShift/MicroImpact/MicroImpactRevision
 - Tier 1 prompt: "triggers" → "macro_shifts" with trajectory
-- Tier 2 prompts: grouped trigger_instances → flat basket synthesis
+- Tier 2 prompts: grouped trigger_instances → compressed state + basket synthesis
+- Tier 2 output: full state → deltas only (changed/new impacts)
 - ImpactAnalyzer v2 methods: parse new output format
-- pipeline/ingest.py: wire to new EventStore methods
-- pipeline/events.py: new CRUD methods
+- pipeline/ingest.py: wire to new store logic (INSERT revisions, not UPSERT)
+- pipeline/events.py: new CRUD methods with revision model
 
 ## Execution Order
 
 ```
-1. New TypedDicts in base.py (MacroShift, MicroImpact)
-2. New tables in database.py (macro_shifts, micro_impacts, impact_drivers, impact_support)
-3. EventStore new methods in events.py
+1. New TypedDicts in base.py (MacroShift, MicroImpact, MicroImpactRevision)
+2. New tables + view in database.py (macro_shifts, micro_impact_revisions, current_micro_impacts, impact_drivers, shift_support, impact_support)
+3. EventStore new methods in events.py (revision-based writes)
 4. Tier 1 prompt: macro_shifts + trajectory
-5. Tier 2 prompts: basket synthesis + flat output
+5. Tier 2 prompts: compressed state input + delta output
 6. ImpactAnalyzer: parse new format
 7. Ingest pipeline rewire
 8. Update Tier 1 eval ground truth with trajectory
 9. Run eval, verify no regression
-10. Run pipeline on 50 articles, verify M:N relationships
+10. Run pipeline on 50 articles, verify M:N relationships + revision history
 ```
 
 Steps 1-3 are independent. Steps 4-5 are independent. Both converge at 6-7.
 
 ## Verification
 
-- Run Tier 1 eval (190 cases) — relevance F1 should stay ≥90%
-- Run pipeline on 50 articles — check micro_impacts have multiple driving_t_nodes
+- Run Tier 1 eval (190 cases) — relevance F1 should stay >=90%
+- Run pipeline on 50 articles — check micro_impact_revisions has multiple rows per (event_id, i_node)
 - Check: "RBI holds rate" article produces status_quo trajectory
-- Check: impact_drivers table has M:N entries (one micro_impact driven by 2+ macro_shifts)
-- Tree view: events show macro_shifts alongside micro_impacts, not nested
+- Check: current_micro_impacts view returns latest revision per node
+- Check: impact_drivers table has M:N entries (one i_node driven by 2+ macro_shifts)
+- Check: shift_support tracks which articles support each MacroShift
+- Check: concurrent article processing doesn't lose data (both revisions preserved)
+- Tree view: events show macro_shifts alongside current micro_impacts, not nested
