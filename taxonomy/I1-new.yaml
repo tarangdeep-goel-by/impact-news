@@ -1,0 +1,521 @@
+nodes:
+- id: i1
+  aliases:
+  - Income & Livelihood
+  - Aay Evam Aajivika
+  - Earnings & Employment
+  - Money Coming In
+  - Kamai Aur Rozgar
+  category: I1
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Formal Sector Employment ===
+- id: formal_sector_employment
+  aliases:
+  - Formal Sector Employment
+  - Organized Sector Jobs
+  - Sarkari Aur Corporate Naukri
+  - Regular Employment
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: corporate_salaries
+  aliases:
+  - Corporate Salaries
+  - Private Sector Salary
+  - IT Sector Pay
+  - Vetan
+  - Corporate Increments
+  - Annual Appraisal Hike
+  category: I1
+  level: 3
+  status: active
+- id: corporate_hiring_and_layoffs
+  aliases:
+  - Corporate Hiring & Layoffs
+  - IT Sector Jobs
+  - Startup Layoffs
+  - Private Sector Hiring
+  - Naukri
+  - Job Cuts
+  - Tech Layoffs
+  category: I1
+  level: 3
+  status: active
+- id: upsc_and_ssc_jobs
+  aliases:
+  - UPSC & SSC Jobs
+  - Central Government Jobs
+  - Civil Services
+  - SSC Recruitment
+  - Sarkari Naukri
+  - UPSC Vacancies
+  category: I1
+  level: 3
+  status: active
+- id: railway_rrb_jobs
+  aliases:
+  - Railway RRB Jobs
+  - Railway Recruitment
+  - RRB Exams
+  - Loco Pilot Jobs
+  - Group D Jobs
+  - Railway Bharti
+  category: I1
+  level: 3
+  status: active
+- id: defense_agniveer_jobs
+  aliases:
+  - Defense & Agniveer Jobs
+  - Army Recruitment
+  - Agnipath Scheme
+  - Defense Jobs
+  - Sena Bharti
+  - Agniveer Recruitment
+  category: I1
+  level: 3
+  status: active
+- id: state_govt_jobs
+  aliases:
+  - State Government Jobs
+  - State Police Jobs
+  - Government Teacher Jobs
+  - Patwari Recruitment
+  - State PSC
+  - Rajya Sarkari Naukri
+  category: I1
+  level: 3
+  status: active
+- id: psu_and_bank_jobs
+  aliases:
+  - PSU & Bank Jobs
+  - SBI Recruitment
+  - IBPS Exams
+  - Public Sector Bank Jobs
+  - PSU Vacancies
+  - Bank PO Jobs
+  category: I1
+  level: 3
+  status: active
+
+# === L2: Gig & Platform Earnings ===
+- id: gig_and_platform_earnings
+  aliases:
+  - Gig & Platform Earnings
+  - Platform Worker Income
+  - Gig Economy Pay
+  - App-Based Earnings
+  - Digital Platform Kamai
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: food_and_grocery_delivery_payouts
+  aliases:
+  - Food & Grocery Delivery Payouts
+  - Zomato Swiggy Earnings
+  - Zepto Blinkit Payouts
+  - Delivery Boy Income
+  - Gig Work Payout
+  - Quick Commerce Delivery Pay
+  category: I1
+  level: 3
+  status: active
+- id: ride_hailing_earnings
+  aliases:
+  - Ride Hailing Earnings
+  - Ola Uber Earnings
+  - Rapido Driver Income
+  - Cab Driver Payout
+  - Auto Driver Gig Earnings
+  - App Taxi Driver Pay
+  category: I1
+  level: 3
+  status: active
+- id: home_services_payouts
+  aliases:
+  - Home Services Payouts
+  - Urban Company Partner
+  - At-Home Salon Earnings
+  - Gig Service Payouts
+  - Platform Service Income
+  - Home Repair Gig Pay
+  category: I1
+  level: 3
+  status: active
+- id: freelance_and_creator_income
+  aliases:
+  - Freelance & Creator Income
+  - YouTube Earnings
+  - Influencer Income
+  - Freelance Tech Work
+  - Creator Economy Monetization
+  - Independent Contractor Pay
+  category: I1
+  level: 3
+  status: active
+
+# === L2: Informal & Daily Wages ===
+- id: informal_and_daily_wages
+  aliases:
+  - Informal & Daily Wages
+  - Unorganized Sector Wages
+  - Dihari Mazdoori
+  - Daily Wage Labor
+  - Asangathit Kshetra Vetan
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: farm_labor_wages
+  aliases:
+  - Farm Labor Wages
+  - Khet Mazdoori
+  - Agricultural Worker Pay
+  - Farm Hand Daily Wage
+  - Krishi Mazdoor
+  - Rural Farm Wages
+  category: I1
+  level: 3
+  status: active
+- id: construction_worker_wages
+  aliases:
+  - Construction Worker Wages
+  - Mistri Wage
+  - Construction Labor Pay
+  - Dihari Majdoori
+  - Building Worker Income
+  - Mason Daily Wage
+  category: I1
+  level: 3
+  status: active
+- id: domestic_help_wages
+  aliases:
+  - Domestic Help Wages
+  - Maid Salary
+  - House Help Pay
+  - Kaamwali Bai Salary
+  - Domestic Worker Wages
+  - Household Staff Pay
+  category: I1
+  level: 3
+  status: active
+- id: factory_worker_wages
+  aliases:
+  - Factory Worker Wages
+  - Manufacturing Worker Pay
+  - Industrial Labor Wages
+  - Karkhana Majdoori
+  - Shopfloor Salary
+  - Assembly Line Worker Pay
+  category: I1
+  level: 3
+  status: active
+- id: mgnrega_wages
+  aliases:
+  - MGNREGA Wages
+  - NREGA Pay
+  - 100 Days Work Wage
+  - Rural Job Guarantee
+  - NREGA Haziri
+  - Mahatma Gandhi Rozgar Guarantee
+  category: I1
+  level: 3
+  status: active
+
+# === L2: Self Employment & Agriculture ===
+- id: self_employment_and_agriculture
+  aliases:
+  - Self Employment & Agriculture
+  - Swa-Rozgar Aur Krishi
+  - Own Business Income
+  - Farmer & Trader Earnings
+  - Khud Ka Kaam Kamai
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: farmer_income_and_msp
+  aliases:
+  - Farmer Income & MSP
+  - Kisan Aay
+  - MSP Hikes
+  - Agricultural Household Income
+  - Fasal Daam
+  - Crop Selling Price
+  category: I1
+  level: 3
+  status: active
+- id: kirana_and_retail_income
+  aliases:
+  - Kirana & Retail Income
+  - Kirana Store Profit
+  - Retail Trade Income
+  - Dukandaar Aay
+  - Shopkeeper Earnings
+  - Small Retail Business Income
+  category: I1
+  level: 3
+  status: active
+- id: street_vendor_income
+  aliases:
+  - Street Vendor Income
+  - Thela Aay
+  - Hawker Earnings
+  - Rehri Patri Income
+  - Street Seller Profit
+  - Footpath Vendor Kamai
+  category: I1
+  level: 3
+  status: active
+- id: msme_factory_owner_income
+  aliases:
+  - MSME & Factory Owner Income
+  - Small Factory Profit
+  - MSME Business Earnings
+  - Laghu Udyog Aay
+  - Small Enterprise Revenue
+  - Micro Business Owner Income
+  category: I1
+  level: 3
+  status: active
+
+# === L2: Statutory Pay & Benefits ===
+- id: statutory_pay_and_benefits
+  aliases:
+  - Statutory Pay & Benefits
+  - Vaidhanik Vetan Aur Labh
+  - Legal Wage Entitlements
+  - Mandatory Pay Benefits
+  - Kanuni Mazdoori Adhikar
+  category: I1
+  level: 2
+  status: active
+  is_category: true
+- id: statutory_minimum_wage
+  aliases:
+  - Statutory Minimum Wage
+  - Nyuntam Mazdoori
+  - Minimum Pay Hike
+  - Basic Wage Limit
+  - Legal Minimum Daily Wage
+  - Minimum Wages Act
+  category: I1
+  level: 3
+  status: active
+- id: maternity_and_leave_pay
+  aliases:
+  - Maternity & Leave Pay
+  - Maternity Leave Benefits
+  - Paid Sick Leave
+  - Chutti Allowance
+  - Paid Time Off Benefits
+  - Maternity Benefit Act
+  category: I1
+  level: 3
+  status: active
+
+edges:
+# I1 → L2
+- from: i1
+  to: formal_sector_employment
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Income & Livelihood contains Formal Sector Employment
+- from: i1
+  to: gig_and_platform_earnings
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Income & Livelihood contains Gig & Platform Earnings
+- from: i1
+  to: informal_and_daily_wages
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Income & Livelihood contains Informal & Daily Wages
+- from: i1
+  to: self_employment_and_agriculture
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Income & Livelihood contains Self Employment & Agriculture
+- from: i1
+  to: statutory_pay_and_benefits
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Income & Livelihood contains Statutory Pay & Benefits
+
+# Formal Sector Employment → L3
+- from: formal_sector_employment
+  to: corporate_salaries
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Formal Sector Employment contains Corporate Salaries
+- from: formal_sector_employment
+  to: corporate_hiring_and_layoffs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Formal Sector Employment contains Corporate Hiring & Layoffs
+- from: formal_sector_employment
+  to: upsc_and_ssc_jobs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Formal Sector Employment contains UPSC & SSC Jobs
+- from: formal_sector_employment
+  to: railway_rrb_jobs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Formal Sector Employment contains Railway RRB Jobs
+- from: formal_sector_employment
+  to: defense_agniveer_jobs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Formal Sector Employment contains Defense & Agniveer Jobs
+- from: formal_sector_employment
+  to: state_govt_jobs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Formal Sector Employment contains State Government Jobs
+- from: formal_sector_employment
+  to: psu_and_bank_jobs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Formal Sector Employment contains PSU & Bank Jobs
+
+# Gig & Platform Earnings → L3
+- from: gig_and_platform_earnings
+  to: food_and_grocery_delivery_payouts
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Gig & Platform Earnings contains Food & Grocery Delivery Payouts
+- from: gig_and_platform_earnings
+  to: ride_hailing_earnings
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Gig & Platform Earnings contains Ride Hailing Earnings
+- from: gig_and_platform_earnings
+  to: home_services_payouts
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Gig & Platform Earnings contains Home Services Payouts
+- from: gig_and_platform_earnings
+  to: freelance_and_creator_income
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Gig & Platform Earnings contains Freelance & Creator Income
+
+# Informal & Daily Wages → L3
+- from: informal_and_daily_wages
+  to: farm_labor_wages
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Informal & Daily Wages contains Farm Labor Wages
+- from: informal_and_daily_wages
+  to: construction_worker_wages
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Informal & Daily Wages contains Construction Worker Wages
+- from: informal_and_daily_wages
+  to: domestic_help_wages
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Informal & Daily Wages contains Domestic Help Wages
+- from: informal_and_daily_wages
+  to: factory_worker_wages
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Informal & Daily Wages contains Factory Worker Wages
+- from: informal_and_daily_wages
+  to: mgnrega_wages
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Informal & Daily Wages contains MGNREGA Wages
+
+# Self Employment & Agriculture → L3
+- from: self_employment_and_agriculture
+  to: farmer_income_and_msp
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Self Employment & Agriculture contains Farmer Income & MSP
+- from: self_employment_and_agriculture
+  to: kirana_and_retail_income
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Self Employment & Agriculture contains Kirana & Retail Income
+- from: self_employment_and_agriculture
+  to: street_vendor_income
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Self Employment & Agriculture contains Street Vendor Income
+- from: self_employment_and_agriculture
+  to: msme_factory_owner_income
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Self Employment & Agriculture contains MSME & Factory Owner Income
+
+# Statutory Pay & Benefits → L3
+- from: statutory_pay_and_benefits
+  to: statutory_minimum_wage
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Statutory Pay & Benefits contains Statutory Minimum Wage
+- from: statutory_pay_and_benefits
+  to: maternity_and_leave_pay
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Statutory Pay & Benefits contains Maternity & Leave Pay

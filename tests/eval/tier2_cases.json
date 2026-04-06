@@ -1,1057 +1,876 @@
 [
   {
-    "id": "bangalore_water_crisis_2024",
-    "name": "Bangalore Water Crisis",
-    "date": "2024-03",
-    "title": "Bangalore Water Crisis",
-    "summary": "Severe depletion of groundwater and failed monsoons led to a massive water shortage in Bangalore",
+    "id": "article_01",
+    "name": "LPG worries: Only 17 states hold briefings; Centre urges all to curb rumours, pr",
+    "date": "2026-04-03",
+    "title": "LPG worries: Only 17 states hold briefings; Centre urges all to curb rumours, prevent panic buying",
+    "summary": "MoPNG also calls for strict enforcement against those exploiting the situation for profit",
     "macro_shifts": [
       {
-        "t_node": "groundwater_aquifer_systems",
-        "trajectory": "deescalating",
-        "context": "Severe depletion of groundwater and failed monsoons led to a massive water shortage in Bangalore"
+        "t_node": "market_and_corporate_regulation",
+        "trajectory": "escalating",
+        "context": "LPG worries: Only 17 states hold briefings; Centre urges all to curb rumours, prevent panic buying"
+      },
+      {
+        "t_node": "energy_and_environment_policy",
+        "trajectory": "escalating",
+        "context": "LPG worries: Only 17 states hold briefings; Centre urges all to curb rumours, prevent panic buying"
       }
     ],
     "expected_impacts": [
       {
-        "i_node": "private_water_tanker",
+        "i_node": "lpg_cylinder",
         "rank": 1,
-        "reasoning": "Tanker prices surged 3x to Rs 2000+ as borewells dried up across the city"
+        "reasoning": "Direct subject — LPG supply disruption and panic buying means households face cylinder shortages and potential price spikes"
       },
       {
-        "i_node": "municipal_water_supply",
+        "i_node": "restaurant_and_street_food",
         "rank": 2,
-        "reasoning": "BWSSB cut piped supply by 20% to manage the severe shortage"
+        "reasoning": "Commercial kitchens — restaurants, dhabas, and street food vendors rely on commercial LPG; shortages raise their input costs"
       },
       {
-        "i_node": "rwa_maintenance_fees",
+        "i_node": "food_delivery_services",
         "rank": 3,
-        "reasoning": "Housing societies hiked monthly maintenance to cover exorbitant private tanker costs"
+        "reasoning": "Cloud kitchens and restaurant partners on Swiggy/Zomato face higher cooking fuel costs, reflected in delivery meal prices"
       },
       {
-        "i_node": "residential_rent",
+        "i_node": "piped_natural_gas",
         "rank": 4,
-        "reasoning": "Tenants began vacating severely affected IT corridors like Whitefield"
+        "reasoning": "LPG panic buying pushes households with dual access to switch to or increase PNG usage"
       },
       {
-        "i_node": "it_sector_jobs",
+        "i_node": "kirana_and_retail_income",
         "rank": 5,
-        "reasoning": "Tech parks mandated work-from-home as office facilities ran out of water"
-      },
-      {
-        "i_node": "vehicle_servicing_cost",
-        "rank": 6,
-        "reasoning": "Government banned the use of potable water for car washing, impacting service centers"
-      },
-      {
-        "i_node": "fine_dining_restaurants",
-        "rank": 7,
-        "reasoning": "Restaurants shifted to disposable plates and limited menus to save washing water"
-      },
-      {
-        "i_node": "private_schools",
-        "rank": 8,
-        "reasoning": "Several private schools shifted to online classes due to dry washrooms"
-      },
-      {
-        "i_node": "cholera_and_diarrhea",
-        "rank": 9,
-        "reasoning": "Consumption of contaminated tanker water led to a spike in water-borne diseases"
-      },
-      {
-        "i_node": "stray_animals",
-        "rank": 10,
-        "reasoning": "Severe lack of drinking water sources impacted urban fauna and stray dogs"
+        "reasoning": "LPG distributors face enforcement action against hoarding/black-marketing, disrupting their income"
       }
     ]
   },
   {
-    "id": "paytm_bank_ban_2024",
-    "name": "RBI bans Paytm Payments Bank",
-    "date": "2024-01",
-    "title": "RBI bans Paytm Payments Bank",
-    "summary": "RBI directed Paytm Payments Bank to stop accepting new deposits and credit transactions due to non-compliance",
+    "id": "article_02",
+    "name": "To cushion Indian flyers, jet fuel price for domestic flights hiked only partial",
+    "date": "2026-04-01",
+    "title": "To cushion Indian flyers, jet fuel price for domestic flights hiked only partially; price for international flights more than doubles",
+    "summary": "To cushion Indian flyers, jet fuel price for domestic flights hiked only partially; price for international flights more than doubles",
     "macro_shifts": [
+      {
+        "t_node": "energy_and_environment_policy",
+        "trajectory": "escalating",
+        "context": "To cushion Indian flyers, jet fuel price for domestic flights hiked only partially; price for international flights more than doubles"
+      },
+      {
+        "t_node": "transport_and_logistics_policy",
+        "trajectory": "escalating",
+        "context": "To cushion Indian flyers, jet fuel price for domestic flights hiked only partially; price for international flights more than doubles"
+      }
+    ],
+    "expected_impacts": [
+      {
+        "i_node": "domestic_flight_ticket",
+        "rank": 1,
+        "reasoning": "Partial ATF hike for domestic flights will be passed through as fuel surcharges, raising airfares"
+      },
+      {
+        "i_node": "intercity_bus_fare",
+        "rank": 2,
+        "reasoning": "As domestic flight tickets rise, price-sensitive travelers shift to Volvo and sleeper buses"
+      },
+      {
+        "i_node": "railway_ticketing_and_status",
+        "rank": 3,
+        "reasoning": "Higher airfares push travelers back to railways, worsening waitlist pressure on Tatkal and general quotas"
+      },
+      {
+        "i_node": "corporate_salaries",
+        "rank": 4,
+        "reasoning": "Companies with frequent domestic travel face higher T&E budgets, creating pressure on compensation budgets"
+      },
+      {
+        "i_node": "ride_hailing_cabs_bikes",
+        "rank": 5,
+        "reasoning": "Airport cab demand shifts as fewer international travelers arrive; domestic terminal cab queues grow"
+      }
+    ]
+  },
+  {
+    "id": "article_03",
+    "name": "Rupee logs biggest gain in 12 years",
+    "date": "2026-04-03",
+    "title": "Rupee logs biggest gain in 12 years",
+    "summary": "The Indian rupee saw a strong surge on Thursday, gaining nearly 1.8% against the dollar. This appreciation followed new regulations by the Reserve Bank of India aimed at curbing speculative trading. The currency reached its best single-day gain since September 2013. Traders anticipate the rupee to trade within a specific range next week as banks adjust their positions.",
+    "macro_shifts": [
+      {
+        "t_node": "inr_exchange_rates",
+        "trajectory": "escalating",
+        "context": "Rupee logs biggest gain in 12 years"
+      },
       {
         "t_node": "banking_and_credit_regulation",
         "trajectory": "escalating",
-        "context": "RBI directed Paytm Payments Bank to stop accepting new deposits and credit transactions due to non-compliance"
+        "context": "Rupee logs biggest gain in 12 years"
       }
     ],
     "expected_impacts": [
       {
-        "i_node": "fastag_wallet",
+        "i_node": "petrol_price",
         "rank": 1,
-        "reasoning": "Millions of Paytm FASTags became invalid, forcing vehicle owners to buy replacements"
+        "reasoning": "India imports 85% of crude oil priced in dollars — stronger rupee reduces import bill, easing petrol prices"
       },
       {
-        "i_node": "upi_transaction_success",
+        "i_node": "diesel_price",
         "rank": 2,
-        "reasoning": "Temporary disruption and confusion caused transaction failures for merchants"
+        "reasoning": "Same crude import mechanism — cheaper dollar-denominated crude in rupee terms eases diesel pricing pressure"
       },
       {
-        "i_node": "street_vendor_income",
+        "i_node": "edible_oils",
         "rank": 3,
-        "reasoning": "Street vendors heavily reliant on Paytm soundboxes faced settlement delays"
+        "reasoning": "India imports ~60% of edible oil priced in dollars; rupee appreciation directly lowers cooking oil prices"
       },
       {
-        "i_node": "kirana_store_income",
+        "i_node": "lpg_cylinder",
         "rank": 4,
-        "reasoning": "Local grocers had to rapidly switch QR codes to competitor banks to receive payments"
+        "reasoning": "LPG is partially imported and dollar-denominated — stronger rupee reduces import parity price"
       },
       {
-        "i_node": "savings_account_balance",
+        "i_node": "capital_gains_tax",
         "rank": 5,
-        "reasoning": "Users were forced to transfer their balances out of PPBL before the deadline"
-      },
-      {
-        "i_node": "ncmc_smart_card",
-        "rank": 6,
-        "reasoning": "Paytm-issued transit cards for metros stopped working for commuters"
-      },
-      {
-        "i_node": "direct_equity_portfolio",
-        "rank": 7,
-        "reasoning": "One97 Communications stock crashed 50% in a month, wiping out retail wealth"
-      },
-      {
-        "i_node": "food_delivery_payouts",
-        "rank": 8,
-        "reasoning": "Gig workers using PPBL as their primary account faced delayed weekly payouts"
-      },
-      {
-        "i_node": "cab_driver_earnings",
-        "rank": 9,
-        "reasoning": "Uber and Ola drivers had to urgently update bank details to receive earnings"
-      },
-      {
-        "i_node": "startup_jobs",
-        "rank": 10,
-        "reasoning": "Regulatory chill led to hiring freezes across the Indian fintech startup ecosystem"
+        "reasoning": "RBI curbs on speculative currency trading affect F&O traders, triggering capital gains/losses"
       }
     ]
   },
   {
-    "id": "gold_price_rally_2024",
-    "name": "Gold Price Rally to 73k",
-    "date": "2024-04",
-    "title": "Gold Price Rally to 73k",
-    "summary": "Domestic gold prices crossed Rs 73,000 per 10 grams tracking global geopolitical tensions",
+    "id": "article_04",
+    "name": "Manmade fibre exporters flag concerns arising from West Asia conflict",
+    "date": "2026-04-03",
+    "title": "Manmade fibre exporters flag concerns arising from West Asia conflict",
+    "summary": "Rising crude oil prices due to the West Asian conflict are significantly increasing the cost of manmade fibre raw materials. This is creating immense pressure across the entire textile value chain. Customers are unable to absorb these higher costs, leading to a cautious approach from spinners and weavers.",
     "macro_shifts": [
       {
-        "t_node": "precious_metals",
+        "t_node": "india_export_trends",
         "trajectory": "escalating",
-        "context": "Domestic gold prices crossed Rs 73,000 per 10 grams tracking global geopolitical tensions"
+        "context": "Manmade fibre exporters flag concerns arising from West Asia conflict"
+      },
+      {
+        "t_node": "global_crude_oil",
+        "trajectory": "escalating",
+        "context": "Manmade fibre exporters flag concerns arising from West Asia conflict"
       }
     ],
     "expected_impacts": [
       {
-        "i_node": "retail_gold_investment",
+        "i_node": "factory_worker_wages",
         "rank": 1,
-        "reasoning": "Physical gold buying volumes dropped significantly due to record high prices"
+        "reasoning": "Textile mills facing unviable input costs will cut shifts, directly threatening wages of factory workers in Surat, Bhilwara"
       },
       {
-        "i_node": "gold_loan_interest",
+        "i_node": "msme_factory_owner_income",
         "rank": 2,
-        "reasoning": "NBFCs offered higher loan amounts per gram, driving a surge in gold loan uptake"
+        "reasoning": "Small textile manufacturers face margin squeeze as crude-linked raw material costs rise but customers refuse higher prices"
       },
       {
-        "i_node": "wedding_planning_service",
+        "i_node": "petrol_price",
         "rank": 3,
-        "reasoning": "Jewelry budgets squeezed, forcing families to cut back on other wedding expenses"
+        "reasoning": "Rising crude oil prices from West Asia conflict increase upward pressure on retail petrol prices"
       },
       {
-        "i_node": "wedding_venue",
+        "i_node": "diesel_price",
         "rank": 4,
-        "reasoning": "Spillover effect of reduced overall wedding budgets impacted venue bookings"
+        "reasoning": "Same crude price surge pushes diesel prices up, raising transport costs affecting every supply chain"
       },
       {
-        "i_node": "retail_silver_investment",
+        "i_node": "packaged_foods_and_beverages",
         "rank": 5,
-        "reasoning": "Retail investors shifted to silver as a relatively cheaper precious metal alternative"
-      },
-      {
-        "i_node": "india_trade_deficit",
-        "rank": 6,
-        "reasoning": "Higher import bill for gold widened the national trade deficit"
-      },
-      {
-        "i_node": "usd_inr_exchange",
-        "rank": 7,
-        "reasoning": "Rupee faced pressure due to the high dollar outflow for gold imports"
-      },
-      {
-        "i_node": "burglary_and_theft",
-        "rank": 8,
-        "reasoning": "Record prices incentivized a spike in chain-snatching and gold smuggling"
-      },
-      {
-        "i_node": "microfinance_loan",
-        "rank": 9,
-        "reasoning": "Increased reliance on gold pledging reduced demand for unsecured micro-credit"
-      },
-      {
-        "i_node": "festive_idol",
-        "rank": 10,
-        "reasoning": "Akshaya Tritiya sales volume for gold idols and coins dropped year-on-year"
+        "reasoning": "Crude-linked packaging materials (PET bottles, plastic wraps) become costlier, raising packaged food prices"
       }
     ]
   },
   {
-    "id": "gst_online_gaming_2023",
-    "name": "28% GST on Online Gaming",
-    "date": "2023-10",
-    "title": "28% GST on Online Gaming",
-    "summary": "GST Council implemented a flat 28% tax on the full face value of bets in online real-money gaming",
+    "id": "article_05",
+    "name": "Delhi weather today: National capital wakes up to dust storm, haze — check IMD f",
+    "date": "2026-04-03",
+    "title": "Delhi weather today: National capital wakes up to dust storm, haze — check IMD forecast for Friday, 3 April 2026",
+    "summary": "Visuals from Delhi on Friday morning show dust storms sweeping across the city, obscuring visibility in several parts. The India Meteorological Department (IMD) had, in its latest bulletin, forecast a pleasant day for the national capital on Friday, 3 April. Check the forecast here.",
+    "macro_shifts": [
+      {
+        "t_node": "regional_aerosol_systems",
+        "trajectory": "escalating",
+        "context": "Delhi weather today: National capital wakes up to dust storm, haze — check IMD forecast for Friday, 3 April 2026"
+      }
+    ],
+    "expected_impacts": [
+      {
+        "i_node": "air_pollution",
+        "rank": 1,
+        "reasoning": "Dust storm directly degrades Delhi's air quality to hazardous levels, exposing 20M+ residents to dangerous particulate matter"
+      },
+      {
+        "i_node": "respiratory_and_viral_infections",
+        "rank": 2,
+        "reasoning": "Fine dust particles trigger acute asthma attacks and respiratory distress — hospitals see immediate OPD spikes"
+      },
+      {
+        "i_node": "road_traffic_accidents",
+        "rank": 3,
+        "reasoning": "Obscured visibility sharply increases accident risk for cars, two-wheelers, and pedestrians"
+      },
+      {
+        "i_node": "traffic_congestion",
+        "rank": 4,
+        "reasoning": "Reduced visibility forces slower driving speeds, and accidents cause bottlenecks"
+      },
+      {
+        "i_node": "domestic_flight_ticket",
+        "rank": 5,
+        "reasoning": "Low visibility at IGI Airport causes flight delays and diversions, forcing rebookings at higher fares"
+      }
+    ]
+  },
+  {
+    "id": "article_06",
+    "name": "LPG Crisis Triggers Another Exodus Of India’s Gig And Manufacturing Workers",
+    "date": "2026-04-02",
+    "title": "LPG Crisis Triggers Another Exodus Of India’s Gig And Manufacturing Workers",
+    "summary": "Six years ago, flyovers across India witnessed streams of migrant and gig workers walking miles to reach home. It was…",
+    "macro_shifts": [
+      {
+        "t_node": "domestic_labor_migration",
+        "trajectory": "escalating",
+        "context": "LPG Crisis Triggers Another Exodus Of India’s Gig And Manufacturing Workers"
+      },
+      {
+        "t_node": "macro_employment_trends",
+        "trajectory": "escalating",
+        "context": "LPG Crisis Triggers Another Exodus Of India’s Gig And Manufacturing Workers"
+      }
+    ],
+    "expected_impacts": [
+      {
+        "i_node": "lpg_cylinder",
+        "rank": 1,
+        "reasoning": "LPG crisis directly raises cooking fuel costs for households, especially migrant worker families"
+      },
+      {
+        "i_node": "factory_worker_wages",
+        "rank": 2,
+        "reasoning": "Manufacturing workers losing wages as they abandon jobs during exodus"
+      },
+      {
+        "i_node": "food_and_grocery_delivery_payouts",
+        "rank": 3,
+        "reasoning": "Gig delivery workers leaving cities means lost daily earnings from platforms like Swiggy/Zomato"
+      },
+      {
+        "i_node": "ride_hailing_earnings",
+        "rank": 4,
+        "reasoning": "Gig ride-hailing drivers abandoning work lose daily income during exodus"
+      },
+      {
+        "i_node": "construction_worker_wages",
+        "rank": 5,
+        "reasoning": "Migrant construction workers walking home lose daily wages and ongoing site work stalls"
+      }
+    ]
+  },
+  {
+    "id": "article_07",
+    "name": "India faces second year of sugar deficit as mills close early",
+    "date": "2026-04-02",
+    "title": "India faces second year of sugar deficit as mills close early",
+    "summary": "India's sugar output will fall short of demand for the second year. Lower cane yields are causing mills to close early. This will reduce domestic stockpiles and support local prices. Exports are also contributing to lower availability. The next season will begin with reduced opening stocks. This situation is expected to firm up sugar prices.",
+    "macro_shifts": [
+      {
+        "t_node": "global_sugar_markets",
+        "trajectory": "escalating",
+        "context": "India faces second year of sugar deficit as mills close early"
+      }
+    ],
+    "expected_impacts": [
+      {
+        "i_node": "spices_sugar_salt",
+        "rank": 1,
+        "reasoning": "Sugar deficit directly raises retail sugar prices for households buying for daily chai, cooking, and festivals"
+      },
+      {
+        "i_node": "packaged_foods_and_beverages",
+        "rank": 2,
+        "reasoning": "Sugar is a key input for biscuits, sweets, soft drinks — higher costs passed to consumers"
+      },
+      {
+        "i_node": "farmer_income_and_msp",
+        "rank": 3,
+        "reasoning": "Lower cane yields reduce sugarcane farmer revenue; early mill closures mean less cane purchased"
+      },
+      {
+        "i_node": "factory_worker_wages",
+        "rank": 4,
+        "reasoning": "Early mill closures leave sugar mill workers unemployed months ahead of schedule"
+      },
+      {
+        "i_node": "farm_labor_wages",
+        "rank": 5,
+        "reasoning": "Reduced cane harvesting season means less work for agricultural laborers in cane-belt regions"
+      }
+    ]
+  },
+  {
+    "id": "article_08",
+    "name": "New I-T Act marks new chapter in India's tax administration, step towards Viksit",
+    "date": "2026-04-01",
+    "title": "New I-T Act marks new chapter in India's tax administration, step towards Viksit Bharat: CBDT",
+    "summary": "India has a new Income Tax Act, 2025, effective April 1, 2026. This replaces the old 1961 Act, making tax rules simpler and easier to follow. The e-filing portal will support both old and new acts during the transition. Assessments for past years will follow the old Act. Advance tax payments from June 2026 will use the new Act.",
     "macro_shifts": [
       {
         "t_node": "fiscal_and_tax_policy",
         "trajectory": "escalating",
-        "context": "GST Council implemented a flat 28% tax on the full face value of bets in online real-money gaming"
+        "context": "New I-T Act marks new chapter in India's tax administration, step towards Viksit Bharat: CBDT"
+      },
+      {
+        "t_node": "legislative_amendments",
+        "trajectory": "escalating",
+        "context": "New I-T Act marks new chapter in India's tax administration, step towards Viksit Bharat: CBDT"
       }
     ],
     "expected_impacts": [
-      {
-        "i_node": "video_game",
-        "rank": 1,
-        "reasoning": "Real-money gaming platforms passed the massive 28% tax burden directly to users"
-      },
-      {
-        "i_node": "startup_layoffs",
-        "rank": 2,
-        "reasoning": "Gaming unicorns laid off hundreds of staff due to immediate margin compression"
-      },
-      {
-        "i_node": "startup_jobs",
-        "rank": 3,
-        "reasoning": "Complete hiring freeze in the real-money gaming and fantasy sports sector"
-      },
-      {
-        "i_node": "fii_fpi_flows",
-        "rank": 4,
-        "reasoning": "Foreign investors wrote off investments in Indian gaming startups, halting capital inflow"
-      },
-      {
-        "i_node": "cricket_match_ticket",
-        "rank": 5,
-        "reasoning": "Fantasy sports sponsorships for cricket tournaments reduced significantly"
-      },
-      {
-        "i_node": "ott_subscription",
-        "rank": 6,
-        "reasoning": "Users shifted entertainment budgets away from gaming to OTT platforms"
-      },
-      {
-        "i_node": "social_media_accounts",
-        "rank": 7,
-        "reasoning": "Gaming ad spends on social media plummeted, impacting influencer revenues"
-      },
-      {
-        "i_node": "upi_transaction_limits",
-        "rank": 8,
-        "reasoning": "Volume of micro-transactions (Rs 10-50) on gaming apps dropped drastically"
-      },
-      {
-        "i_node": "investment_and_job_scams",
-        "rank": 9,
-        "reasoning": "Rise in illegal offshore betting apps evading GST, leading to user fraud"
-      },
       {
         "i_node": "personal_income_tax",
-        "rank": 10,
-        "reasoning": "TDS rules were simultaneously tightened for net winnings from online games"
-      }
-    ]
-  },
-  {
-    "id": "balasore_train_tragedy_2023",
-    "name": "Balasore Train Tragedy",
-    "date": "2023-06",
-    "title": "Balasore Train Tragedy",
-    "summary": "Triple-train collision in Odisha's Balasore district resulted in 290+ fatalities and massive network disruption",
-    "macro_shifts": [
-      {
-        "t_node": "indian_railways_network",
-        "trajectory": "deescalating",
-        "context": "Triple-train collision in Odisha's Balasore district resulted in 290+ fatalities and massive network disruption"
-      }
-    ],
-    "expected_impacts": [
-      {
-        "i_node": "railway_accidents",
         "rank": 1,
-        "reasoning": "Direct event impact with massive loss of life and destruction of rolling stock"
+        "reasoning": "New I-T Act directly changes how every salaried Indian files and computes income tax from April 2026"
       },
       {
-        "i_node": "irctc_train_ticket",
+        "i_node": "tds_and_compliance",
         "rank": 2,
-        "reasoning": "Hundreds of trains on the eastern corridor were cancelled or diverted for weeks"
+        "reasoning": "Simplified Act changes TDS rules and compliance procedures for employers, freelancers, and businesses"
       },
       {
-        "i_node": "domestic_flight_ticket",
+        "i_node": "capital_gains_tax",
         "rank": 3,
-        "reasoning": "Airfares on Kolkata-Chennai routes surged 3x due to train cancellations"
+        "reasoning": "New Act restructures capital gains provisions affecting investors selling property, stocks, mutual funds"
       },
       {
-        "i_node": "intercity_bus_fare",
+        "i_node": "indirect_taxes_gst",
         "rank": 4,
-        "reasoning": "Private bus operators hiked fares on affected routes to exploit stranded passengers"
+        "reasoning": "Tax administration overhaul may harmonize procedures across direct and indirect tax compliance systems"
       },
       {
-        "i_node": "seasonal_migrant_labor",
+        "i_node": "corporate_salaries",
         "rank": 5,
-        "reasoning": "Coromandel Express is a key route for migrant workers; severe impact on their mobility"
-      },
-      {
-        "i_node": "construction_worker_wages",
-        "rank": 6,
-        "reasoning": "Delayed arrival of migrant labor affected construction projects in South India"
-      },
-      {
-        "i_node": "hospital_beds",
-        "rank": 7,
-        "reasoning": "Local hospitals in Odisha were completely overwhelmed with over 1,000 casualties"
-      },
-      {
-        "i_node": "blood_tests",
-        "rank": 8,
-        "reasoning": "Massive blood donation drives organized locally required rapid screening and testing"
-      },
-      {
-        "i_node": "term_insurance_premium",
-        "rank": 9,
-        "reasoning": "Spike in claims and public awareness drove up demand for travel and life insurance"
-      },
-      {
-        "i_node": "index_of_industrial_production",
-        "rank": 10,
-        "reasoning": "Coal and iron ore freight delayed on the critical eastern freight corridor"
+        "reasoning": "Simplified tax slabs and deductions change take-home pay calculations for salaried employees"
       }
     ]
   },
   {
-    "id": "biparjoy_cyclone_2023",
-    "name": "Biparjoy Cyclone",
-    "date": "2023-06",
-    "title": "Biparjoy Cyclone",
-    "summary": "Severe cyclonic storm Biparjoy made landfall in Gujarat, causing massive evacuations and infrastructure damage",
-    "macro_shifts": [
-      {
-        "t_node": "cyclonic_storm_dynamics",
-        "trajectory": "escalating",
-        "context": "Severe cyclonic storm Biparjoy made landfall in Gujarat, causing massive evacuations and infrastructure damage"
-      }
-    ],
-    "expected_impacts": [
-      {
-        "i_node": "residential_power_supply",
-        "rank": 1,
-        "reasoning": "Thousands of villages in Gujarat lost power due to downed electricity poles"
-      },
-      {
-        "i_node": "telecom_towers_network",
-        "rank": 2,
-        "reasoning": "Mobile networks were severely disrupted in Kutch and Saurashtra coastal districts"
-      },
-      {
-        "i_node": "marine_fish",
-        "rank": 3,
-        "reasoning": "Fishing suspended for weeks, causing local supply shortages and price spikes"
-      },
-      {
-        "i_node": "farm_labor_wages",
-        "rank": 4,
-        "reasoning": "Agricultural activity halted completely in the Saurashtra region"
-      },
-      {
-        "i_node": "structural_collapse",
-        "rank": 5,
-        "reasoning": "Kutcha houses, hoardings, and temporary structures destroyed by 115 kmph winds"
-      },
-      {
-        "i_node": "tourist_attraction_ticket",
-        "rank": 6,
-        "reasoning": "Major tourist sites like Dwarka and Somnath temples closed to visitors"
-      },
-      {
-        "i_node": "hotel_room",
-        "rank": 7,
-        "reasoning": "Mass cancellations in Gujarat coastal tourism and hospitality sector"
-      },
-      {
-        "i_node": "major_seaports",
-        "rank": 8,
-        "reasoning": "Kandla and Mundra ports suspended operations, delaying cargo ships"
-      },
-      {
-        "i_node": "india_trade_deficit",
-        "rank": 9,
-        "reasoning": "Export and import delays due to port closures temporarily impacted trade metrics"
-      },
-      {
-        "i_node": "stray_animals",
-        "rank": 10,
-        "reasoning": "Thousands of livestock and stray animals were displaced or killed in the floods"
-      }
-    ]
-  },
-  {
-    "id": "wheat_export_ban_2022",
-    "name": "Wheat Export Ban",
-    "date": "2022-05",
-    "title": "Wheat Export Ban",
-    "summary": "India banned wheat exports to control rising domestic prices amid the Russia-Ukraine war and heatwave",
+    "id": "article_09",
+    "name": "Govt gives full customs duty exemption on critical petrochemical products till J",
+    "date": "2026-04-02",
+    "title": "Govt gives full customs duty exemption on critical petrochemical products till June 30",
+    "summary": "Govt gives full customs duty exemption on critical petrochemical products till June 30",
     "macro_shifts": [
       {
         "t_node": "trade_and_tariff_policy",
         "trajectory": "escalating",
-        "context": "India banned wheat exports to control rising domestic prices amid the Russia-Ukraine war and heatwave"
+        "context": "Govt gives full customs duty exemption on critical petrochemical products till June 30"
+      },
+      {
+        "t_node": "fiscal_and_tax_policy",
+        "trajectory": "escalating",
+        "context": "Govt gives full customs duty exemption on critical petrochemical products till June 30"
       }
     ],
     "expected_impacts": [
       {
-        "i_node": "wheat_flour",
+        "i_node": "packaged_foods_and_beverages",
         "rank": 1,
-        "reasoning": "Domestic atta prices immediately stabilized after the export ban was announced"
+        "reasoning": "Petrochemicals are raw material for food packaging (PET bottles, wrappers) — duty exemption lowers packaging costs"
       },
       {
-        "i_node": "biscuits_and_snacks",
+        "i_node": "vehicle_purchase_cost",
         "rank": 2,
-        "reasoning": "FMCG companies faced lower input cost pressure for baked goods and biscuits"
+        "reasoning": "Cheaper petrochemical inputs reduce cost of plastic/rubber auto components, easing vehicle prices"
       },
       {
-        "i_node": "farm_labor_wages",
+        "i_node": "building_materials_and_labor",
         "rank": 3,
-        "reasoning": "Reduced export demand impacted farmer realizations and their wage-paying capacity"
+        "reasoning": "PVC pipes, paints, adhesives use petrochemical inputs — duty cut lowers construction material prices"
       },
       {
-        "i_node": "global_food_grain_supply",
+        "i_node": "medicines_and_pharmaceuticals",
         "rank": 4,
-        "reasoning": "Global wheat prices spiked further as India restricted a critical supply source"
+        "reasoning": "Petrochemicals are precursors for pharma intermediates — lower duty reduces medicine production costs"
       },
       {
-        "i_node": "rural_unemployment_rate",
+        "i_node": "consumer_tech_hardware",
         "rank": 5,
-        "reasoning": "Agrarian distress from lower profits slightly increased rural unemployment"
-      },
-      {
-        "i_node": "street_food",
-        "rank": 6,
-        "reasoning": "Cost of bread, pav, and rotis stabilized for street vendors, protecting margins"
-      },
-      {
-        "i_node": "quick_service_restaurants",
-        "rank": 7,
-        "reasoning": "Burger and pizza chains benefited from stable flour costs in their supply chain"
-      },
-      {
-        "i_node": "wpi",
-        "rank": 8,
-        "reasoning": "Wholesale inflation for food articles cooled down due to the supply glut"
-      },
-      {
-        "i_node": "mgnrega_wages",
-        "rank": 9,
-        "reasoning": "Rural distress led to higher demand for MGNREGA work in wheat-belt states"
-      },
-      {
-        "i_node": "retail_rice",
-        "rank": 10,
-        "reasoning": "Substitution effect as government pushed rice through PDS to save wheat stocks"
+        "reasoning": "Plastics and polymers in electronics housings and components become cheaper with duty exemption"
       }
     ]
   },
   {
-    "id": "deepfake_regulation_2023",
-    "name": "Deepfake Regulations & Advisories",
-    "date": "2023-11",
-    "title": "Deepfake Regulations & Advisories",
-    "summary": "Government issued strict advisories under IT Rules following viral deepfakes of Indian actors and politicians",
+    "id": "article_10",
+    "name": "National Highway quality complaints surge over 60% in FY26: MoRTH informs Rajya ",
+    "date": "2026-03-18",
+    "title": "National Highway quality complaints surge over 60% in FY26: MoRTH informs Rajya Sabha",
+    "summary": "National Highway quality complaints surge over 60% in FY26: MoRTH informs Rajya Sabha",
     "macro_shifts": [
       {
-        "t_node": "digital_and_telecom_regulation",
+        "t_node": "transport_and_logistics_policy",
         "trajectory": "escalating",
-        "context": "Government issued strict advisories under IT Rules following viral deepfakes of Indian actors and politicians"
+        "context": "National Highway quality complaints surge over 60% in FY26: MoRTH informs Rajya Sabha"
+      },
+      {
+        "t_node": "highway_expressway_network",
+        "trajectory": "escalating",
+        "context": "National Highway quality complaints surge over 60% in FY26: MoRTH informs Rajya Sabha"
       }
     ],
     "expected_impacts": [
       {
-        "i_node": "social_media_accounts",
+        "i_node": "road_conditions_and_closures",
         "rank": 1,
-        "reasoning": "Platforms like Meta and X forced to remove deepfakes within 24 hours of reporting"
+        "reasoning": "60%+ surge in complaints directly reflects deteriorating highway surfaces citizens drive on daily"
       },
       {
-        "i_node": "cyberbullying_and_trolling",
+        "i_node": "road_traffic_accidents",
         "rank": 2,
-        "reasoning": "Increased reporting and awareness of AI-generated harassment against women"
+        "reasoning": "Poor highway quality (potholes, uneven surfaces) is a leading cause of fatal road accidents in India"
       },
       {
-        "i_node": "fir_registration",
+        "i_node": "highway_tolls",
         "rank": 3,
-        "reasoning": "Delhi Police and cyber cells registered multiple FIRs against deepfake creators"
-      },
-      {
-        "i_node": "investment_and_job_scams",
-        "rank": 4,
-        "reasoning": "Scammers increasingly used AI voice clones for financial fraud, prompting RBI warnings"
-      },
-      {
-        "i_node": "upi_and_bank_scams",
-        "rank": 5,
-        "reasoning": "Fraudsters used deepfake video calls on WhatsApp to extort money from victims"
-      },
-      {
-        "i_node": "whatsapp_messaging",
-        "rank": 6,
-        "reasoning": "Spread of deepfake videos led to platforms introducing new warning labels"
-      },
-      {
-        "i_node": "personal_data_privacy",
-        "rank": 7,
-        "reasoning": "Heightened public awareness about biometric data scraping from social media"
-      },
-      {
-        "i_node": "criminal_litigation_risk",
-        "rank": 8,
-        "reasoning": "Government threatened legal action and loss of safe harbor for non-compliant platforms"
-      },
-      {
-        "i_node": "police_response_time",
-        "rank": 9,
-        "reasoning": "Cyber cells were overwhelmed with complex AI fraud complaints, slowing response"
-      },
-      {
-        "i_node": "cinema_ticket",
-        "rank": 10,
-        "reasoning": "Actors sought legal protection for their digital likeness, impacting film marketing"
-      }
-    ]
-  },
-  {
-    "id": "farmers_protest_2024",
-    "name": "Farmers Protest 2.0",
-    "date": "2024-02",
-    "title": "Farmers Protest 2.0",
-    "summary": "Farmers from Punjab and Haryana marched to Delhi demanding legal guarantee for MSP, leading to border blockades",
-    "macro_shifts": [
-      {
-        "t_node": "collective_social_dissent",
-        "trajectory": "escalating",
-        "context": "Farmers from Punjab and Haryana marched to Delhi demanding legal guarantee for MSP, leading to border blockades"
-      }
-    ],
-    "expected_impacts": [
-      {
-        "i_node": "highway_toll_fare",
-        "rank": 1,
-        "reasoning": "Protesters blocked toll plazas, making them free for commuters in Punjab and Haryana"
+        "reasoning": "Citizens paying full toll on degraded highways face poor value — toll-vs-quality mismatch"
       },
       {
         "i_node": "traffic_congestion",
-        "rank": 2,
-        "reasoning": "Massive barricading and cement blocks at Delhi borders caused severe gridlock"
-      },
-      {
-        "i_node": "intercity_bus_fare",
-        "rank": 3,
-        "reasoning": "Buses between Delhi and Punjab/Haryana were cancelled or heavily rerouted"
-      },
-      {
-        "i_node": "mobile_network_quality",
         "rank": 4,
-        "reasoning": "Government suspended mobile internet in several Haryana districts to curb mobilization"
+        "reasoning": "Highway repair work and poor surfaces slow traffic flow, increasing commute and freight transit times"
       },
       {
-        "i_node": "green_vegetables",
+        "i_node": "vehicle_purchase_cost",
         "rank": 5,
-        "reasoning": "Supply chains disrupted, raising perishable vegetable prices in Delhi NCR"
-      },
-      {
-        "i_node": "poultry_eggs",
-        "rank": 6,
-        "reasoning": "Supply of eggs and poultry from Punjab to Delhi was severely restricted"
-      },
-      {
-        "i_node": "liquid_milk",
-        "rank": 7,
-        "reasoning": "Dairy supply trucks faced massive delays at the Singhu and Tikri borders"
-      },
-      {
-        "i_node": "curfews_and_section_144",
-        "rank": 8,
-        "reasoning": "Section 144 imposed across Delhi NCR to prevent tractor rallies from entering"
-      },
-      {
-        "i_node": "riots_and_clashes",
-        "rank": 9,
-        "reasoning": "Police used tear gas and drones during clashes with farmers at the Shambhu border"
-      },
-      {
-        "i_node": "dedicated_freight_corridors",
-        "rank": 10,
-        "reasoning": "Rail roko agitations delayed freight movement across northern railway networks"
+        "reasoning": "Bad road surfaces accelerate vehicle wear on suspension, tyres — raising effective ownership costs"
       }
     ]
   },
   {
-    "id": "ram_mandir_consecration_2024",
-    "name": "Ram Mandir Consecration",
-    "date": "2024-01",
-    "title": "Ram Mandir Consecration",
-    "summary": "The consecration (Pran Pratishtha) of the Ram Mandir in Ayodhya drove a massive nationwide economic and social surge",
+    "id": "article_11",
+    "name": "Households must switch to piped gas where available, else lose LPG supply: Govt ",
+    "date": "2026-03-25",
+    "title": "Households must switch to piped gas where available, else lose LPG supply: Govt order",
+    "summary": "Households must switch to piped gas where available, else lose LPG supply: Govt order",
     "macro_shifts": [
       {
-        "t_node": "religious_institutional_economics",
+        "t_node": "hydrocarbon_pipeline_network",
         "trajectory": "escalating",
-        "context": "The consecration (Pran Pratishtha) of the Ram Mandir in Ayodhya drove a massive nationwide economic and social surge"
+        "context": "Households must switch to piped gas where available, else lose LPG supply: Govt order"
+      },
+      {
+        "t_node": "welfare_and_subsidy_schemes",
+        "trajectory": "escalating",
+        "context": "Households must switch to piped gas where available, else lose LPG supply: Govt order"
       }
     ],
     "expected_impacts": [
       {
-        "i_node": "pilgrimage_package",
+        "i_node": "piped_natural_gas",
         "rank": 1,
-        "reasoning": "Massive surge in Ayodhya tour bookings and religious tourism nationwide"
+        "reasoning": "Households forced to switch to PNG where available — direct mandate changing their cooking fuel source"
       },
       {
-        "i_node": "hotel_room",
+        "i_node": "lpg_cylinder",
         "rank": 2,
-        "reasoning": "Ayodhya and Lucknow hotel rates surged 5-10x due to unprecedented demand"
+        "reasoning": "Loss of LPG subsidy and eventually supply for non-compliant households removes their current cooking fuel option"
       },
       {
-        "i_node": "domestic_flight_ticket",
+        "i_node": "building_materials_and_labor",
         "rank": 3,
-        "reasoning": "Flights to the newly opened Ayodhya airport were fully booked at premium rates"
+        "reasoning": "Households may need internal plumbing modifications to connect PNG lines, incurring installation costs"
       },
       {
-        "i_node": "temple_donation",
+        "i_node": "food_delivery_services",
         "rank": 4,
-        "reasoning": "Record-breaking UPI and cash donations flowed to the temple trust"
+        "reasoning": "Restaurants and cloud kitchens in PNG areas also affected by fuel switch"
       },
       {
-        "i_node": "festive_idol",
+        "i_node": "restaurant_and_street_food",
         "rank": 5,
-        "reasoning": "Huge retail demand for Ram Lalla idols, saffron flags, and merchandise across India"
-      },
-      {
-        "i_node": "firecracker",
-        "rank": 6,
-        "reasoning": "Unseasonal spike in firecracker sales as citizens celebrated a second Diwali"
-      },
-      {
-        "i_node": "retail_sugar",
-        "rank": 7,
-        "reasoning": "Increased demand for prasad and sweets drove up local sugar and dairy consumption"
-      },
-      {
-        "i_node": "irctc_train_ticket",
-        "rank": 8,
-        "reasoning": "Indian Railways launched hundreds of Aastha special trains to Ayodhya"
-      },
-      {
-        "i_node": "investment_property_value",
-        "rank": 9,
-        "reasoning": "Real estate and property prices in Ayodhya skyrocketed due to investor interest"
-      },
-      {
-        "i_node": "curfews_and_section_144",
-        "rank": 10,
-        "reasoning": "Security tightened and public holidays declared in many states to manage crowds"
+        "reasoning": "Street food vendors relying on LPG cylinders in PNG areas face forced transition or loss of fuel supply"
       }
     ]
   },
   {
-    "id": "ondc_food_delivery_2023",
-    "name": "ONDC Expansion in Food Delivery",
-    "date": "2023-05",
-    "title": "ONDC Expansion in Food Delivery",
-    "summary": "ONDC gained massive traction in food delivery, offering prices 30-40% lower than Swiggy and Zomato",
+    "id": "article_12",
+    "name": "Zomato increases food delivery platform fee to Rs 14.90 per order; magicpin rule",
+    "date": "2026-03-20",
+    "title": "Zomato increases food delivery platform fee to Rs 14.90 per order; magicpin rules out hike",
+    "summary": "Zomato increases food delivery platform fee to Rs 14.90 per order; magicpin rules out hike",
     "macro_shifts": [
       {
-        "t_node": "ondc_commerce_network",
+        "t_node": "unknown",
         "trajectory": "escalating",
-        "context": "ONDC gained massive traction in food delivery, offering prices 30-40% lower than Swiggy and Zomato"
+        "context": "Zomato increases food delivery platform fee to Rs 14.90 per order; magicpin rules out hike"
       }
     ],
     "expected_impacts": [
       {
         "i_node": "food_delivery_services",
         "rank": 1,
-        "reasoning": "Consumers shifted to buyer apps like Paytm and Magicpin for cheaper food delivery"
+        "reasoning": "Direct cost increase — platform fee rises to Rs 14.90 per order, making every Zomato delivery more expensive"
       },
       {
-        "i_node": "quick_service_restaurants",
+        "i_node": "restaurant_and_street_food",
         "rank": 2,
-        "reasoning": "Brands like McDonald's and Domino's joined ONDC to save on 25% aggregator commissions"
+        "reasoning": "Higher platform fees may reduce order volumes, hurting restaurant revenue from delivery channel"
       },
       {
-        "i_node": "cab_aggregator_fare",
+        "i_node": "food_and_grocery_delivery_payouts",
         "rank": 3,
-        "reasoning": "Namma Yatri on ONDC challenged Ola/Uber pricing with zero-commission rides"
+        "reasoning": "If order volumes drop due to higher consumer costs, delivery partners earn less from fewer deliveries"
       },
       {
-        "i_node": "auto_rickshaw_fare",
+        "i_node": "packaged_foods_and_beverages",
         "rank": 4,
-        "reasoning": "Zero-commission auto rides gained massive traction among drivers in Bangalore"
+        "reasoning": "Some consumers may shift from ordering food delivery to buying packaged foods or cooking at home"
       },
       {
-        "i_node": "food_delivery_payouts",
+        "i_node": "mobile_tariffs",
         "rank": 5,
-        "reasoning": "Delivery partners explored direct-to-restaurant logistics apps like Shadowfax"
-      },
-      {
-        "i_node": "kirana_store_income",
-        "rank": 6,
-        "reasoning": "Local grocers started receiving digital orders directly without aggregator fees"
-      },
-      {
-        "i_node": "upi_transaction_success",
-        "rank": 7,
-        "reasoning": "Increased volume of direct UPI payments to merchants via the open network"
-      },
-      {
-        "i_node": "fine_dining_restaurants",
-        "rank": 8,
-        "reasoning": "Premium restaurants pushed ONDC to avoid high discounting forced by aggregators"
-      },
-      {
-        "i_node": "street_vendor_income",
-        "rank": 9,
-        "reasoning": "Pilot programs successfully onboarded street food vendors to digital delivery"
-      },
-      {
-        "i_node": "startup_jobs",
-        "rank": 10,
-        "reasoning": "Surge in hiring for logistics and tech roles at ONDC-focused buyer/seller apps"
+        "reasoning": "Platform fee hikes stack on top of data costs consumers already pay to use food delivery apps"
       }
     ]
   },
   {
-    "id": "hdfc_stock_crash_2024",
-    "name": "HDFC Bank Stock Crash",
-    "date": "2024-01",
-    "title": "HDFC Bank Stock Crash",
-    "summary": "FIIs dumped HDFC Bank shares after disappointing Q3 margins, causing the stock to crash 15% in a week",
+    "id": "article_13",
+    "name": "Customers to have zero liability in case of lender negligence: RBI’s draft guide",
+    "date": "2026-03-06",
+    "title": "Customers to have zero liability in case of lender negligence: RBI’s draft guidelines on digital fraud",
+    "summary": "Customers to have zero liability in case of lender negligence: RBI’s draft guidelines on digital fraud",
     "macro_shifts": [
       {
-        "t_node": "foreign_capital_flows",
-        "trajectory": "deescalating",
-        "context": "FIIs dumped HDFC Bank shares after disappointing Q3 margins, causing the stock to crash 15% in a week"
-      }
-    ],
-    "expected_impacts": [
-      {
-        "i_node": "direct_equity_portfolio",
-        "rank": 1,
-        "reasoning": "Retail investors saw portfolio values drop sharply as HDFC carries high weightage"
-      },
-      {
-        "i_node": "equity_mutual_funds",
-        "rank": 2,
-        "reasoning": "Large-cap mutual fund NAVs dropped significantly due to heavy HDFC exposure"
-      },
-      {
-        "i_node": "nifty_50",
-        "rank": 3,
-        "reasoning": "The benchmark index was dragged down by 3% entirely due to HDFC's 14% weight"
-      },
-      {
-        "i_node": "sensex",
-        "rank": 4,
-        "reasoning": "Corresponding massive point drop in the BSE benchmark index"
-      },
-      {
-        "i_node": "fixed_deposits",
-        "rank": 5,
-        "reasoning": "Bank aggressively hiked FD rates to fix its strained credit-deposit ratio"
-      },
-      {
-        "i_node": "savings_account_balance",
-        "rank": 6,
-        "reasoning": "Intense push by the bank to acquire CASA deposits to lower cost of funds"
-      },
-      {
-        "i_node": "private_bank_jobs",
-        "rank": 7,
-        "reasoning": "Extreme pressure on bank employees and branch managers to mobilize deposits"
-      },
-      {
-        "i_node": "personal_loan_emi",
-        "rank": 8,
-        "reasoning": "Unsecured lending rates tightened to manage margins and regulatory scrutiny"
-      },
-      {
-        "i_node": "credit_card_dues",
-        "rank": 9,
-        "reasoning": "Stricter issuance and lower limits for new credit cards to control risk"
-      },
-      {
-        "i_node": "india_10yr_bond_yield",
-        "rank": 10,
-        "reasoning": "Liquidity deficit in the banking system pushed up short-term bond yields"
-      }
-    ]
-  },
-  {
-    "id": "red_sea_shipping_crisis_2024",
-    "name": "Red Sea Shipping Crisis",
-    "date": "2024-01",
-    "title": "Red Sea Shipping Crisis",
-    "summary": "Houthi attacks in the Red Sea forced commercial ships to reroute around Africa, disrupting Indian trade",
-    "macro_shifts": [
-      {
-        "t_node": "maritime_chokepoint_disruptions",
-        "trajectory": "deescalating",
-        "context": "Houthi attacks in the Red Sea forced commercial ships to reroute around Africa, disrupting Indian trade"
-      }
-    ],
-    "expected_impacts": [
-      {
-        "i_node": "global_shipping_freight_rates",
-        "rank": 1,
-        "reasoning": "Freight costs from India to Europe and the US spiked 300% due to longer routes"
-      },
-      {
-        "i_node": "india_trade_deficit",
-        "rank": 2,
-        "reasoning": "Export competitiveness hit by high freight costs, widening the trade deficit"
-      },
-      {
-        "i_node": "active_pharmaceutical_ingredients_supply",
-        "rank": 3,
-        "reasoning": "Delays in pharma exports to Europe and raw material imports impacted drug makers"
-      },
-      {
-        "i_node": "global_edible_oil_supply",
-        "rank": 4,
-        "reasoning": "Sunflower oil imports from the Black Sea region faced severe transit delays"
-      },
-      {
-        "i_node": "sunflower_oil",
-        "rank": 5,
-        "reasoning": "Retail prices of sunflower oil edged up due to supply chain risk premiums"
-      },
-      {
-        "i_node": "retail_rice",
-        "rank": 6,
-        "reasoning": "Premium basmati rice exports to the Middle East and Europe faced margin pressure"
-      },
-      {
-        "i_node": "factory_worker_jobs",
-        "rank": 7,
-        "reasoning": "Textile and handicraft exporters cut shifts due to delayed shipments and inventory pile-up"
-      },
-      {
-        "i_node": "brent_crude",
-        "rank": 8,
-        "reasoning": "Oil prices remained volatile due to Middle East tensions and rerouted tankers"
-      },
-      {
-        "i_node": "retail_diesel",
-        "rank": 9,
-        "reasoning": "Under-recoveries for oil marketing companies increased due to higher crude transit costs"
-      },
-      {
-        "i_node": "major_seaports",
-        "rank": 10,
-        "reasoning": "Container pile-ups at JNPT and Mundra due to vessel delays and schedule disruptions"
-      }
-    ]
-  },
-  {
-    "id": "aadhaar_data_breach_2023",
-    "name": "Aadhaar Data Breach Leak",
-    "date": "2023-10",
-    "title": "Aadhaar Data Breach Leak",
-    "summary": "Reports emerged that personal data of 815 million Indians, including Aadhaar details, was leaked on the dark web",
-    "macro_shifts": [
-      {
-        "t_node": "aadhaar_identity_system",
-        "trajectory": "deescalating",
-        "context": "Reports emerged that personal data of 815 million Indians, including Aadhaar details, was leaked on the dark web"
-      }
-    ],
-    "expected_impacts": [
-      {
-        "i_node": "personal_data_privacy",
-        "rank": 1,
-        "reasoning": "Massive violation of privacy as demographic data became available to cybercriminals"
-      },
-      {
-        "i_node": "aadhaar_authentication",
-        "rank": 2,
-        "reasoning": "Severe concerns raised over biometric and OTP security for financial transactions"
-      },
-      {
-        "i_node": "upi_and_bank_scams",
-        "rank": 3,
-        "reasoning": "Leaked data was weaponized for highly targeted phishing and financial fraud"
-      },
-      {
-        "i_node": "pan_aadhaar_linkage",
-        "rank": 4,
-        "reasoning": "Compromised linked PAN data increased the risk of severe identity theft"
-      },
-      {
-        "i_node": "deepfake_and_identity_theft",
-        "rank": 5,
-        "reasoning": "Scammers used real Aadhaar details to build trust in deepfake video frauds"
-      },
-      {
-        "i_node": "spam_calls",
-        "rank": 6,
-        "reasoning": "Surge in targeted telemarketing and scam calls using leaked demographic data"
-      },
-      {
-        "i_node": "epramaan_and_sso",
-        "rank": 7,
-        "reasoning": "Government mandated stricter security audits for all state SSO portals"
-      },
-      {
-        "i_node": "digilocker_documents",
-        "rank": 8,
-        "reasoning": "Users were advised to monitor unauthorized access to their digital lockers"
-      },
-      {
-        "i_node": "fir_registration",
-        "rank": 9,
-        "reasoning": "CBI and CERT-In launched investigations, leading to multiple FIRs against hackers"
-      },
-      {
-        "i_node": "personal_loan_emi",
-        "rank": 10,
-        "reasoning": "Fraudulent instant loans were taken out using stolen identities, ruining credit scores"
-      }
-    ]
-  },
-  {
-    "id": "delhi_floods_2023",
-    "name": "Delhi Floods",
-    "date": "2023-07",
-    "title": "Delhi Floods",
-    "summary": "The Yamuna river crossed the danger mark, causing unprecedented flooding in central and eastern Delhi",
-    "macro_shifts": [
-      {
-        "t_node": "himalayan_river_basins",
+        "t_node": "banking_and_credit_regulation",
         "trajectory": "escalating",
-        "context": "The Yamuna river crossed the danger mark, causing unprecedented flooding in central and eastern Delhi"
+        "context": "Customers to have zero liability in case of lender negligence: RBI’s draft guidelines on digital fraud"
       }
     ],
     "expected_impacts": [
       {
-        "i_node": "street_waterlogging",
+        "i_node": "spam_and_scams",
         "rank": 1,
-        "reasoning": "Arterial roads including the Ring Road and ITO were completely submerged for days"
+        "reasoning": "Zero-liability protection directly shields citizens who fall victim to digital fraud caused by bank negligence"
       },
       {
-        "i_node": "municipal_water_supply",
+        "i_node": "cyber_crime_reporting",
         "rank": 2,
-        "reasoning": "Three major water treatment plants flooded, causing a severe drinking water shortage"
+        "reasoning": "Clearer liability framework incentivizes citizens to report digital fraud knowing banks bear the burden"
       },
       {
-        "i_node": "private_water_tanker",
+        "i_node": "digital_privacy_and_data",
         "rank": 3,
-        "reasoning": "Demand surged as piped supply stopped for millions of residents"
+        "reasoning": "Banks must strengthen data protection and security protocols to avoid bearing fraud liability"
       },
       {
-        "i_node": "traffic_congestion",
+        "i_node": "health_insurance_premium",
         "rank": 4,
-        "reasoning": "Massive gridlock across the city as key bridges and roads were closed"
+        "reasoning": "Banks may pass increased fraud-related costs into financial product pricing including bancassurance"
       },
       {
-        "i_node": "intercity_bus_fare",
+        "i_node": "personal_income_tax",
         "rank": 5,
-        "reasoning": "ISBT Kashmere Gate flooded, halting interstate buses and stranding passengers"
-      },
-      {
-        "i_node": "residential_power_supply",
-        "rank": 6,
-        "reasoning": "Power was preemptively cut off in low-lying areas to prevent accidents"
-      },
-      {
-        "i_node": "electrocution_hazard",
-        "rank": 7,
-        "reasoning": "Severe risk of electrocution in flooded unauthorized colonies and slums"
-      },
-      {
-        "i_node": "stray_animals",
-        "rank": 8,
-        "reasoning": "Hundreds of cows and street dogs drowned or were displaced by the rising waters"
-      },
-      {
-        "i_node": "dengue",
-        "rank": 9,
-        "reasoning": "Post-flood stagnant water led to a massive spike in vector-borne diseases"
-      },
-      {
-        "i_node": "polluted_surface_water",
-        "rank": 10,
-        "reasoning": "Sewage mixed with floodwaters, contaminating neighborhoods and groundwater"
+        "reasoning": "Fraud losses previously borne by citizens were unrecoverable; zero liability means citizens retain more post-tax income"
       }
     ]
   },
   {
-    "id": "rmg_ban_2025",
-    "name": "Real Money Gaming Ban (Online Gaming Act 2025)",
-    "date": "2025-08",
-    "title": "Real Money Gaming Ban (Online Gaming Act 2025)",
-    "summary": "After 28% GST in 2023, India passed the Online Gaming Act 2025 banning all real money games. 85% of $3.2B gaming revenue wiped, $840M write-downs, 7000+ layoffs across Dream11, MPL, WinZO and others.",
+    "id": "article_14",
+    "name": "India’s July retail inflation hits 8-year low of 1.55%, second-lowest ever",
+    "date": "2025-08-12",
+    "title": "India’s July retail inflation hits 8-year low of 1.55%, second-lowest ever",
+    "summary": "India’s July retail inflation hits 8-year low of 1.55%, second-lowest ever",
+    "macro_shifts": [
+      {
+        "t_node": "retail_inflation",
+        "trajectory": "escalating",
+        "context": "India’s July retail inflation hits 8-year low of 1.55%, second-lowest ever"
+      }
+    ],
+    "expected_impacts": [
+      {
+        "i_node": "staple_grains",
+        "rank": 1,
+        "reasoning": "Record-low CPI driven by falling food prices means staple grains are cheaper for households"
+      },
+      {
+        "i_node": "fresh_vegetables_and_fruits",
+        "rank": 2,
+        "reasoning": "Low food inflation directly reflects reduced prices of perishables"
+      },
+      {
+        "i_node": "petrol_price",
+        "rank": 3,
+        "reasoning": "Falling fuel prices contributed to the low CPI, meaning lower petrol costs at the pump"
+      },
+      {
+        "i_node": "diesel_price",
+        "rank": 4,
+        "reasoning": "Lower diesel prices reduce transport costs for consumers and supply chain logistics"
+      },
+      {
+        "i_node": "pulses_and_dals",
+        "rank": 5,
+        "reasoning": "Low food inflation indicates reduced dal prices, easing protein costs for households"
+      }
+    ]
+  },
+  {
+    "id": "article_15",
+    "name": "Real estate, infra sectors short of 20 lakh skilled workers: NAREDCO chair Hiran",
+    "date": "2025-08-01",
+    "title": "Real estate, infra sectors short of 20 lakh skilled workers: NAREDCO chair Hiranandani",
+    "summary": "Real estate, infra sectors short of 20 lakh skilled workers: NAREDCO chair Hiranandani",
+    "macro_shifts": [
+      {
+        "t_node": "macro_employment_trends",
+        "trajectory": "escalating",
+        "context": "Real estate, infra sectors short of 20 lakh skilled workers: NAREDCO chair Hiranandani"
+      }
+    ],
+    "expected_impacts": [
+      {
+        "i_node": "construction_worker_wages",
+        "rank": 1,
+        "reasoning": "20 lakh worker shortage means construction workers have strong bargaining power — wages rise"
+      },
+      {
+        "i_node": "building_materials_and_labor",
+        "rank": 2,
+        "reasoning": "Labor shortage drives up construction costs for homebuyers as builders pass through higher labor expenses"
+      },
+      {
+        "i_node": "residential_rent_and_pg",
+        "rank": 3,
+        "reasoning": "Delayed housing projects due to worker shortage constrain supply, pushing up rents in high-demand areas"
+      },
+      {
+        "i_node": "vocational_and_iti_training",
+        "rank": 4,
+        "reasoning": "Massive skill gap creates strong demand for ITI and vocational training in plumbing, electrical, masonry"
+      },
+      {
+        "i_node": "corporate_hiring_and_layoffs",
+        "rank": 5,
+        "reasoning": "Real estate and infra firms actively hiring — 20 lakh vacancies represent significant employment opportunity"
+      }
+    ]
+  },
+  {
+    "id": "article_16",
+    "name": "Repo rate cut 25 bp to 5.25%; ‘rare Goldilocks period’, says RBI Governor",
+    "date": "2025-12-05",
+    "title": "Repo rate cut 25 bp to 5.25%; ‘rare Goldilocks period’, says RBI Governor",
+    "summary": "Repo rate cut 25 bp to 5.25%; ‘rare Goldilocks period’, says RBI Governor",
+    "macro_shifts": [
+      {
+        "t_node": "monetary_policy",
+        "trajectory": "escalating",
+        "context": "Repo rate cut 25 bp to 5.25%; ‘rare Goldilocks period’, says RBI Governor"
+      }
+    ],
+    "expected_impacts": [
+      {
+        "i_node": "residential_rent_and_pg",
+        "rank": 1,
+        "reasoning": "Repo cut lowers floating-rate home loan EMIs for millions of borrowers, directly reducing monthly housing cost"
+      },
+      {
+        "i_node": "vehicle_purchase_cost",
+        "rank": 2,
+        "reasoning": "Auto loan interest rates fall with repo cut, reducing cost of financing car and two-wheeler purchases"
+      },
+      {
+        "i_node": "msme_factory_owner_income",
+        "rank": 3,
+        "reasoning": "Cheaper bank credit improves working capital costs and margins for MSME factory owners"
+      },
+      {
+        "i_node": "kirana_and_retail_income",
+        "rank": 4,
+        "reasoning": "Lower overdraft and business loan rates reduce financing costs for small retailers"
+      },
+      {
+        "i_node": "corporate_salaries",
+        "rank": 5,
+        "reasoning": "Easier corporate borrowing stimulates business expansion, supporting salary increments and new hiring"
+      }
+    ]
+  },
+  {
+    "id": "article_17",
+    "name": "8,000 candidates join PM internship scheme in 4 months since its launch",
+    "date": "2025-02-05",
+    "title": "8,000 candidates join PM internship scheme in 4 months since its launch",
+    "summary": "8,000 candidates join PM internship scheme in 4 months since its launch",
     "macro_shifts": [
       {
         "t_node": "fiscal_and_tax_policy",
         "trajectory": "escalating",
-        "context": "After 28% GST in 2023, India passed the Online Gaming Act 2025 banning all real money games. 85% of $3.2B gaming revenue wiped, $840M write-downs, 7000+ layoffs across Dream11, MPL, WinZO and others."
+        "context": "8,000 candidates join PM internship scheme in 4 months since its launch"
+      },
+      {
+        "t_node": "labor_and_employment_policy",
+        "trajectory": "escalating",
+        "context": "8,000 candidates join PM internship scheme in 4 months since its launch"
       }
     ],
     "expected_impacts": [
       {
-        "i_node": "real_money_gaming_and_betting",
+        "i_node": "corporate_hiring_and_layoffs",
         "rank": 1,
-        "reasoning": "Direct target of the ban \u2014 all RMG platforms shut down operations, 450M users lost access overnight"
+        "reasoning": "Scheme places interns in top corporations, creating direct entry-level employment pipeline for 8,000 youth"
       },
       {
-        "i_node": "startup_layoffs",
+        "i_node": "professional_upskilling",
         "rank": 2,
-        "reasoning": "MPL, WinZO, Gameskraft and others laid off 7000+ employees within weeks of the ban"
+        "reasoning": "Corporate exposure and structured internship provides professional skill development for weaker section youth"
       },
       {
-        "i_node": "venture_capital_and_pe_flows",
+        "i_node": "corporate_salaries",
         "rank": 3,
-        "reasoning": "$840M in write-downs by Tiger Global, Sequoia, and others. VC funding to Indian gaming sector went to zero"
+        "reasoning": "Stipend income during internship provides immediate earnings for candidates from low-income families"
       },
       {
-        "i_node": "startup_jobs",
+        "i_node": "vocational_and_iti_training",
         "rank": 4,
-        "reasoning": "Hiring freeze across gaming startups, adjacent ad-tech and payment companies also cut headcount"
+        "reasoning": "Internship scheme serves as practical vocational training bridging gap between education and employability"
       },
       {
-        "i_node": "creator_and_digital_earnings",
+        "i_node": "educational_scholarships",
         "rank": 5,
-        "reasoning": "Gaming streamers, esports pros, and fantasy sports influencers lost primary income source"
+        "reasoning": "Scheme targeting economically weaker sections functions as financial support for disadvantaged youth"
+      }
+    ]
+  },
+  {
+    "id": "article_18",
+    "name": "Maharashtra govt cancels Rs 3,000 crore insurance contract with UII",
+    "date": "2024-09-18",
+    "title": "Maharashtra govt cancels Rs 3,000 crore insurance contract with UII",
+    "summary": "Maharashtra govt cancels Rs 3,000 crore insurance contract with UII",
+    "macro_shifts": [
+      {
+        "t_node": "center_state_relations",
+        "trajectory": "escalating",
+        "context": "Maharashtra govt cancels Rs 3,000 crore insurance contract with UII"
+      }
+    ],
+    "expected_impacts": [
+      {
+        "i_node": "health_insurance_premium",
+        "rank": 1,
+        "reasoning": "Cancellation of state insurance contract disrupts health coverage for lakhs of Maharashtra govt employees"
       },
       {
-        "i_node": "indirect_taxes",
-        "rank": 6,
-        "reasoning": "States lost Rs 20,000 Cr annually in GST and income tax from the RMG sector"
+        "i_node": "hospital_and_medical_care",
+        "rank": 2,
+        "reasoning": "Gap in insurance coverage forces beneficiaries to pay out-of-pocket for hospital visits and procedures"
       },
       {
-        "i_node": "cricket_match_ticket",
-        "rank": 7,
-        "reasoning": "IPL and cricket sponsorship deals collapsed \u2014 Dream11, MPL were top sponsors. Reduced fan engagement without fantasy overlay"
+        "i_node": "medicines_and_pharmaceuticals",
+        "rank": 3,
+        "reasoning": "Without active insurance, beneficiaries bear direct cost of medicines previously covered"
       },
       {
-        "i_node": "direct_equity_portfolio",
-        "rank": 8,
-        "reasoning": "Listed gaming-adjacent companies (Nazara, Delta Corp) crashed 30-50%. Retail investors hit"
+        "i_node": "medical_tests_and_diagnostics",
+        "rank": 4,
+        "reasoning": "Diagnostic tests and lab work costs shift to individuals during coverage gap"
       },
       {
-        "i_node": "mental_health_conditions",
-        "rank": 9,
-        "reasoning": "Government cited 450M affected Indians, addiction, financial ruin, and suicides as ban rationale. Post-ban: withdrawal and income-loss anxiety"
+        "i_node": "maternal_and_child_health",
+        "rank": 5,
+        "reasoning": "Pregnant women and children among beneficiaries lose coverage for maternity and pediatric services"
+      }
+    ]
+  },
+  {
+    "id": "article_19",
+    "name": "Protectionist measures on steel imports will hurt MSMEs: EEPC",
+    "date": "2024-10-26",
+    "title": "Protectionist measures on steel imports will hurt MSMEs: EEPC",
+    "summary": "Protectionist measures on steel imports will hurt MSMEs: EEPC",
+    "macro_shifts": [
+      {
+        "t_node": "trade_and_tariff_policy",
+        "trajectory": "escalating",
+        "context": "Protectionist measures on steel imports will hurt MSMEs: EEPC"
+      }
+    ],
+    "expected_impacts": [
+      {
+        "i_node": "msme_factory_owner_income",
+        "rank": 1,
+        "reasoning": "Anti-dumping duties on steel raise raw material costs, directly squeezing margins for MSME manufacturers"
       },
       {
-        "i_node": "gig_worker_payouts",
-        "rank": 10,
-        "reasoning": "Laid-off gaming employees entered gig economy, increasing supply and suppressing per-worker payouts"
+        "i_node": "building_materials_and_labor",
+        "rank": 2,
+        "reasoning": "Higher steel prices increase construction costs for homes and infrastructure, passed on to homebuyers"
+      },
+      {
+        "i_node": "factory_worker_wages",
+        "rank": 3,
+        "reasoning": "Squeezed MSME margins may lead to wage stagnation or layoffs for factory workers"
+      },
+      {
+        "i_node": "vehicle_purchase_cost",
+        "rank": 4,
+        "reasoning": "Steel is a major input for automobiles; higher prices raise vehicle costs for consumers"
+      },
+      {
+        "i_node": "corporate_hiring_and_layoffs",
+        "rank": 5,
+        "reasoning": "MSMEs facing margin pressure reduce hiring or resort to layoffs in manufacturing sector"
+      }
+    ]
+  },
+  {
+    "id": "article_20",
+    "name": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand",
+    "date": "2024-09-28",
+    "title": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand",
+    "summary": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand",
+    "macro_shifts": [
+      {
+        "t_node": "precious_metals",
+        "trajectory": "escalating",
+        "context": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand"
+      },
+      {
+        "t_node": "foreign_central_bank_policy",
+        "trajectory": "escalating",
+        "context": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand"
+      }
+    ],
+    "expected_impacts": [
+      {
+        "i_node": "festivals_and_cultural_events",
+        "rank": 1,
+        "reasoning": "Record gold prices directly hit Indian wedding budgets where gold jewellery is a cultural necessity"
+      },
+      {
+        "i_node": "capital_gains_tax",
+        "rank": 2,
+        "reasoning": "All-time high gold prices trigger capital gains tax events for investors selling gold ETFs or physical gold"
+      },
+      {
+        "i_node": "life_insurance_premium",
+        "rank": 3,
+        "reasoning": "Gold-linked insurance products see altered returns, affecting household financial planning"
+      },
+      {
+        "i_node": "kirana_and_retail_income",
+        "rank": 4,
+        "reasoning": "Local jewellers face reduced footfall as consumers defer purchases due to record prices"
+      },
+      {
+        "i_node": "farmer_income_and_msp",
+        "rank": 5,
+        "reasoning": "Rural households using gold as collateral for crop loans see increased collateral value"
       }
     ]
   }

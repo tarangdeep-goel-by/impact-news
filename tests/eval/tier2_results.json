@@ -1,424 +1,2784 @@
 {
   "results": [
     {
-      "id": "bangalore_water_crisis_2024",
-      "name": "Bangalore Water Crisis",
-      "date": "2024-03",
-      "title": "Bangalore Water Crisis",
-      "summary": "Severe depletion of groundwater and failed monsoons led to a massive water shortage in Bangalore",
+      "id": "article_01",
+      "name": "LPG worries: Only 17 states hold briefings; Centre urges all to curb rumours, pr",
+      "date": "2026-04-03",
+      "title": "LPG worries: Only 17 states hold briefings; Centre urges all to curb rumours, prevent panic buying",
+      "summary": "MoPNG also calls for strict enforcement against those exploiting the situation for profit",
       "macro_shifts": [
         {
-          "t_node": "groundwater_aquifer_systems",
-          "trajectory": "deescalating",
-          "context": "Severe depletion of groundwater and failed monsoons led to a massive water shortage in Bangalore"
+          "t_node": "market_and_corporate_regulation",
+          "trajectory": "escalating",
+          "context": "LPG worries: Only 17 states hold briefings; Centre urges all to curb rumours, prevent panic buying"
+        },
+        {
+          "t_node": "energy_and_environment_policy",
+          "trajectory": "escalating",
+          "context": "LPG worries: Only 17 states hold briefings; Centre urges all to curb rumours, prevent panic buying"
         }
       ],
       "expected_impacts": [
         {
-          "i_node": "private_water_tanker",
+          "i_node": "lpg_cylinder",
           "rank": 1,
-          "reasoning": "Tanker prices surged 3x to Rs 2000+ as borewells dried up across the city"
+          "reasoning": "Direct subject \u2014 LPG supply disruption and panic buying means households face cylinder shortages and potential price spikes"
         },
         {
-          "i_node": "municipal_water_supply",
+          "i_node": "restaurant_and_street_food",
           "rank": 2,
-          "reasoning": "BWSSB cut piped supply by 20% to manage the severe shortage"
+          "reasoning": "Commercial kitchens \u2014 restaurants, dhabas, and street food vendors rely on commercial LPG; shortages raise their input costs"
         },
         {
-          "i_node": "rwa_maintenance_fees",
+          "i_node": "food_delivery_services",
           "rank": 3,
-          "reasoning": "Housing societies hiked monthly maintenance to cover exorbitant private tanker costs"
+          "reasoning": "Cloud kitchens and restaurant partners on Swiggy/Zomato face higher cooking fuel costs, reflected in delivery meal prices"
         },
         {
-          "i_node": "residential_rent",
+          "i_node": "piped_natural_gas",
           "rank": 4,
-          "reasoning": "Tenants began vacating severely affected IT corridors like Whitefield"
+          "reasoning": "LPG panic buying pushes households with dual access to switch to or increase PNG usage"
         },
         {
-          "i_node": "it_sector_jobs",
+          "i_node": "kirana_and_retail_income",
           "rank": 5,
-          "reasoning": "Tech parks mandated work-from-home as office facilities ran out of water"
-        },
-        {
-          "i_node": "vehicle_servicing_cost",
-          "rank": 6,
-          "reasoning": "Government banned the use of potable water for car washing, impacting service centers"
-        },
-        {
-          "i_node": "fine_dining_restaurants",
-          "rank": 7,
-          "reasoning": "Restaurants shifted to disposable plates and limited menus to save washing water"
-        },
-        {
-          "i_node": "private_schools",
-          "rank": 8,
-          "reasoning": "Several private schools shifted to online classes due to dry washrooms"
-        },
-        {
-          "i_node": "cholera_and_diarrhea",
-          "rank": 9,
-          "reasoning": "Consumption of contaminated tanker water led to a spike in water-borne diseases"
-        },
-        {
-          "i_node": "stray_animals",
-          "rank": 10,
-          "reasoning": "Severe lack of drinking water sources impacted urban fauna and stray dogs"
+          "reasoning": "LPG distributors face enforcement action against hoarding/black-marketing, disrupting their income"
         }
       ],
       "pred_impacts": [
         {
-          "i_node": "residential_borewells",
-          "trajectory": "deescalating",
-          "probability": 0.95,
-          "magnitude": 0.9,
-          "delay_days": 1,
-          "rationale": "Severe depletion of groundwater aquifers directly causes residential borewells and tubewells to dry up across the city.",
-          "driving_t_nodes": [
-            "groundwater_aquifer_systems"
-          ],
-          "score": 0.855
-        },
-        {
-          "i_node": "private_water_tanker",
+          "i_node": "lpg_cylinder",
           "trajectory": "escalating",
-          "probability": 0.95,
-          "magnitude": 0.9,
-          "delay_days": 1,
-          "rationale": "With borewells dry and municipal supply cut, citizens are forced to rely entirely on private water tankers, leading to massive price gouging and surge in demand.",
-          "driving_t_nodes": [
-            "groundwater_aquifer_systems"
-          ],
-          "score": 0.855
-        },
-        {
-          "i_node": "municipal_water_supply",
-          "trajectory": "deescalating",
           "probability": 0.9,
-          "magnitude": 0.8,
-          "delay_days": 1,
-          "rationale": "Failed monsoons lead to lower reservoir levels, forcing civic bodies to cut piped municipal water supply to neighborhoods.",
+          "magnitude": 0.85,
+          "delay_days": 2,
+          "rationale": "1st order: Rumours and panic buying lead to immediate artificial scarcity, delayed cylinder deliveries, and potential black market premiums for households.",
           "driving_t_nodes": [
-            "groundwater_aquifer_systems"
+            "market_and_corporate_regulation",
+            "energy_and_environment_policy"
           ],
-          "score": 0.7200000000000001
+          "score": 0.765
         },
         {
-          "i_node": "rwa_maintenance_fees",
+          "i_node": "street_vendor_income",
+          "trajectory": "deescalating",
+          "probability": 0.65,
+          "magnitude": 0.7,
+          "delay_days": 14,
+          "rationale": "2nd order: Small street food vendors who cannot afford inflated black market LPG prices or face supply cuts may lose working days, reducing their daily earnings.",
+          "driving_t_nodes": [
+            "market_and_corporate_regulation",
+            "energy_and_environment_policy"
+          ],
+          "score": 0.45499999999999996
+        },
+        {
+          "i_node": "restaurant_and_street_food",
+          "trajectory": "escalating",
+          "probability": 0.75,
+          "magnitude": 0.6,
+          "delay_days": 10,
+          "rationale": "2nd order: Commercial LPG shortages and black market rates increase operating costs for eateries, which are passed on to consumers as higher food prices.",
+          "driving_t_nodes": [
+            "market_and_corporate_regulation",
+            "energy_and_environment_policy"
+          ],
+          "score": 0.44999999999999996
+        },
+        {
+          "i_node": "electricity_tariff",
+          "trajectory": "escalating",
+          "probability": 0.6,
+          "magnitude": 0.5,
+          "delay_days": 30,
+          "rationale": "3rd order: To cope with cooking gas shortages, middle-class households will increase the use of induction cooktops and microwaves, leading to higher monthly electricity bills.",
+          "driving_t_nodes": [
+            "market_and_corporate_regulation",
+            "energy_and_environment_policy"
+          ],
+          "score": 0.3
+        },
+        {
+          "i_node": "packaged_foods_and_beverages",
+          "trajectory": "escalating",
+          "probability": 0.55,
+          "magnitude": 0.4,
+          "delay_days": 20,
+          "rationale": "3rd order: Households facing prolonged LPG delivery delays may temporarily shift to instant noodles and ready-to-eat packaged foods, increasing grocery expenses.",
+          "driving_t_nodes": [
+            "market_and_corporate_regulation",
+            "energy_and_environment_policy"
+          ],
+          "score": 0.22000000000000003
+        }
+      ],
+      "pred_nodes": [
+        "lpg_cylinder",
+        "street_vendor_income",
+        "restaurant_and_street_food",
+        "electricity_tariff",
+        "packaged_foods_and_beverages"
+      ],
+      "ndcg_10": 0.5796702712128641,
+      "recall_10": 0.4,
+      "recall_5": 0.4,
+      "precision_10": 0.4,
+      "error": null,
+      "ms": 19898
+    },
+    {
+      "id": "article_02",
+      "name": "To cushion Indian flyers, jet fuel price for domestic flights hiked only partial",
+      "date": "2026-04-01",
+      "title": "To cushion Indian flyers, jet fuel price for domestic flights hiked only partially; price for international flights more than doubles",
+      "summary": "To cushion Indian flyers, jet fuel price for domestic flights hiked only partially; price for international flights more than doubles",
+      "macro_shifts": [
+        {
+          "t_node": "energy_and_environment_policy",
+          "trajectory": "escalating",
+          "context": "To cushion Indian flyers, jet fuel price for domestic flights hiked only partially; price for international flights more than doubles"
+        },
+        {
+          "t_node": "transport_and_logistics_policy",
+          "trajectory": "escalating",
+          "context": "To cushion Indian flyers, jet fuel price for domestic flights hiked only partially; price for international flights more than doubles"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "domestic_flight_ticket",
+          "rank": 1,
+          "reasoning": "Partial ATF hike for domestic flights will be passed through as fuel surcharges, raising airfares"
+        },
+        {
+          "i_node": "intercity_bus_fare",
+          "rank": 2,
+          "reasoning": "As domestic flight tickets rise, price-sensitive travelers shift to Volvo and sleeper buses"
+        },
+        {
+          "i_node": "railway_ticketing_and_status",
+          "rank": 3,
+          "reasoning": "Higher airfares push travelers back to railways, worsening waitlist pressure on Tatkal and general quotas"
+        },
+        {
+          "i_node": "corporate_salaries",
+          "rank": 4,
+          "reasoning": "Companies with frequent domestic travel face higher T&E budgets, creating pressure on compensation budgets"
+        },
+        {
+          "i_node": "ride_hailing_cabs_bikes",
+          "rank": 5,
+          "reasoning": "Airport cab demand shifts as fewer international travelers arrive; domestic terminal cab queues grow"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "railway_ticketing_and_status",
           "trajectory": "escalating",
           "probability": 0.85,
-          "magnitude": 0.7,
-          "delay_days": 15,
-          "rationale": "Housing societies incur massive unbudgeted expenses to procure private tanker water, passing these costs onto residents via increased maintenance bills.",
+          "magnitude": 0.6,
+          "delay_days": 20,
+          "rationale": "2nd order: As domestic airfares rise, price-sensitive travelers shift to premium AC trains (like Rajdhani/Vande Bharat), worsening waitlists and ticket availability.",
           "driving_t_nodes": [
-            "groundwater_aquifer_systems"
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.51
+        },
+        {
+          "i_node": "domestic_flight_ticket",
+          "trajectory": "escalating",
+          "probability": 0.95,
+          "magnitude": 0.4,
+          "delay_days": 2,
+          "rationale": "1st order: Airlines immediately pass the partial domestic ATF hike to passengers via increased fuel surcharges on domestic flight tickets.",
+          "driving_t_nodes": [
+            "energy_and_environment_policy",
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.38
+        },
+        {
+          "i_node": "consumer_tech_hardware",
+          "trajectory": "escalating",
+          "probability": 0.75,
+          "magnitude": 0.5,
+          "delay_days": 14,
+          "rationale": "1st order: Doubled international ATF drastically raises inbound air freight costs, prompting immediate retail price hikes on imported smartphones and laptops.",
+          "driving_t_nodes": [
+            "energy_and_environment_policy",
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.375
+        },
+        {
+          "i_node": "corporate_hiring_and_layoffs",
+          "trajectory": "escalating",
+          "probability": 0.6,
+          "magnitude": 0.5,
+          "delay_days": 45,
+          "rationale": "2nd order: The massive spike in international airfares crushes outbound tourism demand, forcing travel agencies and tour operators to freeze hiring or cut staff.",
+          "driving_t_nodes": [
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.3
+        },
+        {
+          "i_node": "intercity_bus_fare",
+          "trajectory": "escalating",
+          "probability": 0.7,
+          "magnitude": 0.4,
+          "delay_days": 40,
+          "rationale": "3rd order: Spillover demand from fully booked trains (due to flyers shifting modes) allows premium intercity Volvo/sleeper bus operators to surge their ticket prices.",
+          "driving_t_nodes": [
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.27999999999999997
+        },
+        {
+          "i_node": "medicines_and_pharmaceuticals",
+          "trajectory": "escalating",
+          "probability": 0.65,
+          "magnitude": 0.4,
+          "delay_days": 30,
+          "rationale": "2nd order: Higher international air cargo rates increase the import cost of specialized life-saving drugs and active pharmaceutical ingredients (APIs), raising pharmacy bills.",
+          "driving_t_nodes": [
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.26
+        },
+        {
+          "i_node": "ride_hailing_earnings",
+          "trajectory": "deescalating",
+          "probability": 0.5,
+          "magnitude": 0.3,
+          "delay_days": 60,
+          "rationale": "3rd order: A sustained drop in international travel reduces lucrative airport drops and pickups, marginally lowering daily earnings for gig cab drivers operating in metro cities.",
+          "driving_t_nodes": [
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.15
+        }
+      ],
+      "pred_nodes": [
+        "railway_ticketing_and_status",
+        "domestic_flight_ticket",
+        "consumer_tech_hardware",
+        "corporate_hiring_and_layoffs",
+        "intercity_bus_fare",
+        "medicines_and_pharmaceuticals",
+        "ride_hailing_earnings"
+      ],
+      "ndcg_10": 0.7112343467996673,
+      "recall_10": 0.6,
+      "recall_5": 0.6,
+      "precision_10": 0.42857142857142855,
+      "error": null,
+      "ms": 83244
+    },
+    {
+      "id": "article_03",
+      "name": "Rupee logs biggest gain in 12 years",
+      "date": "2026-04-03",
+      "title": "Rupee logs biggest gain in 12 years",
+      "summary": "The Indian rupee saw a strong surge on Thursday, gaining nearly 1.8% against the dollar. This appreciation followed new regulations by the Reserve Bank of India aimed at curbing speculative trading. The currency reached its best single-day gain since September 2013. Traders anticipate the rupee to trade within a specific range next week as banks adjust their positions.",
+      "macro_shifts": [
+        {
+          "t_node": "inr_exchange_rates",
+          "trajectory": "escalating",
+          "context": "Rupee logs biggest gain in 12 years"
+        },
+        {
+          "t_node": "banking_and_credit_regulation",
+          "trajectory": "escalating",
+          "context": "Rupee logs biggest gain in 12 years"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "petrol_price",
+          "rank": 1,
+          "reasoning": "India imports 85% of crude oil priced in dollars \u2014 stronger rupee reduces import bill, easing petrol prices"
+        },
+        {
+          "i_node": "diesel_price",
+          "rank": 2,
+          "reasoning": "Same crude import mechanism \u2014 cheaper dollar-denominated crude in rupee terms eases diesel pricing pressure"
+        },
+        {
+          "i_node": "edible_oils",
+          "rank": 3,
+          "reasoning": "India imports ~60% of edible oil priced in dollars; rupee appreciation directly lowers cooking oil prices"
+        },
+        {
+          "i_node": "lpg_cylinder",
+          "rank": 4,
+          "reasoning": "LPG is partially imported and dollar-denominated \u2014 stronger rupee reduces import parity price"
+        },
+        {
+          "i_node": "capital_gains_tax",
+          "rank": 5,
+          "reasoning": "RBI curbs on speculative currency trading affect F&O traders, triggering capital gains/losses"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "edible_oils",
+          "trajectory": "deescalating",
+          "probability": 0.9,
+          "magnitude": 0.6,
+          "delay_days": 20,
+          "rationale": "1st order: India imports over 50% of its edible oil (palm, sunflower). A stronger INR makes these dollar-denominated imports cheaper, directly lowering retail prices.",
+          "driving_t_nodes": [
+            "inr_exchange_rates"
+          ],
+          "score": 0.54
+        },
+        {
+          "i_node": "consumer_tech_hardware",
+          "trajectory": "deescalating",
+          "probability": 0.85,
+          "magnitude": 0.5,
+          "delay_days": 15,
+          "rationale": "1st order: A stronger Rupee directly reduces the import cost of smartphones, laptops, and electronic components, allowing brands to pass on price cuts to consumers.",
+          "driving_t_nodes": [
+            "inr_exchange_rates"
+          ],
+          "score": 0.425
+        },
+        {
+          "i_node": "corporate_salaries",
+          "trajectory": "deescalating",
+          "probability": 0.75,
+          "magnitude": 0.5,
+          "delay_days": 90,
+          "rationale": "2nd order: Export-heavy sectors like IT earn in USD. A stronger Rupee reduces their INR-realized revenue, squeezing margins and leading to tighter appraisal budgets and lower salary increments.",
+          "driving_t_nodes": [
+            "inr_exchange_rates"
+          ],
+          "score": 0.375
+        },
+        {
+          "i_node": "factory_worker_wages",
+          "trajectory": "deescalating",
+          "probability": 0.65,
+          "magnitude": 0.5,
+          "delay_days": 120,
+          "rationale": "3rd order: Export-oriented manufacturing (textiles, leather, gems) loses global price competitiveness due to the strong Rupee, squeezing factory margins and suppressing wage growth for floor workers.",
+          "driving_t_nodes": [
+            "inr_exchange_rates"
+          ],
+          "score": 0.325
+        },
+        {
+          "i_node": "diesel_price",
+          "trajectory": "deescalating",
+          "probability": 0.65,
+          "magnitude": 0.4,
+          "delay_days": 10,
+          "rationale": "1st order: Crude oil imports become cheaper in Rupee terms, providing state-owned oil marketing companies the margin to potentially reduce pump prices.",
+          "driving_t_nodes": [
+            "inr_exchange_rates"
+          ],
+          "score": 0.26
+        },
+        {
+          "i_node": "packaged_foods_and_beverages",
+          "trajectory": "deescalating",
+          "probability": 0.6,
+          "magnitude": 0.3,
+          "delay_days": 45,
+          "rationale": "2nd order: Cheaper imported raw materials (like palm oil) and lower transport costs reduce manufacturing expenses for FMCG companies, leading to promotional discounts or price drops.",
+          "driving_t_nodes": [
+            "inr_exchange_rates"
+          ],
+          "score": 0.18
+        },
+        {
+          "i_node": "fresh_vegetables_and_fruits",
+          "trajectory": "deescalating",
+          "probability": 0.55,
+          "magnitude": 0.3,
+          "delay_days": 30,
+          "rationale": "2nd order: Stability or reduction in diesel prices lowers the freight and transportation costs for agricultural produce, easing retail inflation in local mandis.",
+          "driving_t_nodes": [
+            "inr_exchange_rates"
+          ],
+          "score": 0.165
+        },
+        {
+          "i_node": "restaurant_and_street_food",
+          "trajectory": "deescalating",
+          "probability": 0.45,
+          "magnitude": 0.2,
+          "delay_days": 60,
+          "rationale": "3rd order: Sustained lower costs for commercial cooking oil, raw ingredients, and transport stabilize the input costs for eateries, preventing menu price hikes.",
+          "driving_t_nodes": [
+            "inr_exchange_rates"
+          ],
+          "score": 0.09000000000000001
+        }
+      ],
+      "pred_nodes": [
+        "edible_oils",
+        "consumer_tech_hardware",
+        "corporate_salaries",
+        "factory_worker_wages",
+        "diesel_price",
+        "packaged_foods_and_beverages",
+        "fresh_vegetables_and_fruits",
+        "restaurant_and_street_food"
+      ],
+      "ndcg_10": 0.4590059182693002,
+      "recall_10": 0.4,
+      "recall_5": 0.4,
+      "precision_10": 0.25,
+      "error": null,
+      "ms": 30866
+    },
+    {
+      "id": "article_04",
+      "name": "Manmade fibre exporters flag concerns arising from West Asia conflict",
+      "date": "2026-04-03",
+      "title": "Manmade fibre exporters flag concerns arising from West Asia conflict",
+      "summary": "Rising crude oil prices due to the West Asian conflict are significantly increasing the cost of manmade fibre raw materials. This is creating immense pressure across the entire textile value chain. Customers are unable to absorb these higher costs, leading to a cautious approach from spinners and weavers.",
+      "macro_shifts": [
+        {
+          "t_node": "india_export_trends",
+          "trajectory": "escalating",
+          "context": "Manmade fibre exporters flag concerns arising from West Asia conflict"
+        },
+        {
+          "t_node": "global_crude_oil",
+          "trajectory": "escalating",
+          "context": "Manmade fibre exporters flag concerns arising from West Asia conflict"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "factory_worker_wages",
+          "rank": 1,
+          "reasoning": "Textile mills facing unviable input costs will cut shifts, directly threatening wages of factory workers in Surat, Bhilwara"
+        },
+        {
+          "i_node": "msme_factory_owner_income",
+          "rank": 2,
+          "reasoning": "Small textile manufacturers face margin squeeze as crude-linked raw material costs rise but customers refuse higher prices"
+        },
+        {
+          "i_node": "petrol_price",
+          "rank": 3,
+          "reasoning": "Rising crude oil prices from West Asia conflict increase upward pressure on retail petrol prices"
+        },
+        {
+          "i_node": "diesel_price",
+          "rank": 4,
+          "reasoning": "Same crude price surge pushes diesel prices up, raising transport costs affecting every supply chain"
+        },
+        {
+          "i_node": "packaged_foods_and_beverages",
+          "rank": 5,
+          "reasoning": "Crude-linked packaging materials (PET bottles, plastic wraps) become costlier, raising packaged food prices"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "msme_factory_owner_income",
+          "trajectory": "deescalating",
+          "probability": 0.9,
+          "magnitude": 0.75,
+          "delay_days": 15,
+          "rationale": "1st order: Surging crude oil prices immediately spike the cost of petrochemical-derived manmade fibres, squeezing profit margins for textile MSME owners as buyers resist price hikes.",
+          "driving_t_nodes": [
+            "global_crude_oil",
+            "india_export_trends"
+          ],
+          "score": 0.675
+        },
+        {
+          "i_node": "factory_worker_wages",
+          "trajectory": "deescalating",
+          "probability": 0.85,
+          "magnitude": 0.7,
+          "delay_days": 30,
+          "rationale": "2nd order: Margin pressure and cautious buying force textile MSMEs (spinners and weavers) to cut production shifts, directly reducing daily wages and hours for informal factory workers.",
+          "driving_t_nodes": [
+            "india_export_trends"
           ],
           "score": 0.595
         },
         {
-          "i_node": "drinking_water_quality",
-          "trajectory": "deescalating",
-          "probability": 0.75,
+          "i_node": "diesel_price",
+          "trajectory": "escalating",
+          "probability": 0.8,
           "magnitude": 0.6,
-          "delay_days": 7,
-          "rationale": "Desperation for water forces reliance on unregulated private tankers drawing from questionable sources, increasing the risk of contaminated drinking water.",
+          "delay_days": 14,
+          "rationale": "1st order: The West Asia conflict driving up global crude oil directly pressures Indian Oil Marketing Companies (OMCs) to hike retail diesel prices at the pump.",
           "driving_t_nodes": [
-            "groundwater_aquifer_systems"
+            "global_crude_oil"
           ],
-          "score": 0.44999999999999996
+          "score": 0.48
+        },
+        {
+          "i_node": "kirana_and_retail_income",
+          "trajectory": "deescalating",
+          "probability": 0.6,
+          "magnitude": 0.5,
+          "delay_days": 90,
+          "rationale": "3rd order: Wage cuts and reduced shifts among factory workers in major textile hubs (like Surat or Tirupur) lower household consumption, hurting sales and profits for local kirana stores.",
+          "driving_t_nodes": [
+            "india_export_trends"
+          ],
+          "score": 0.3
+        },
+        {
+          "i_node": "street_vendor_income",
+          "trajectory": "deescalating",
+          "probability": 0.65,
+          "magnitude": 0.45,
+          "delay_days": 90,
+          "rationale": "3rd order: Reduced disposable income and fewer active shifts for industrial workers mean fewer daily customers for street food vendors and hawkers operating near factory gates.",
+          "driving_t_nodes": [
+            "india_export_trends"
+          ],
+          "score": 0.29250000000000004
+        },
+        {
+          "i_node": "fresh_vegetables_and_fruits",
+          "trajectory": "escalating",
+          "probability": 0.55,
+          "magnitude": 0.5,
+          "delay_days": 60,
+          "rationale": "3rd order: Sustained high diesel costs structurally increase the transportation overhead for moving daily perishable agricultural supplies from rural farms to urban mandis, raising retail prices.",
+          "driving_t_nodes": [
+            "global_crude_oil"
+          ],
+          "score": 0.275
+        },
+        {
+          "i_node": "packaged_foods_and_beverages",
+          "trajectory": "escalating",
+          "probability": 0.65,
+          "magnitude": 0.4,
+          "delay_days": 45,
+          "rationale": "2nd order: Increased diesel prices raise freight and logistics costs across the country, which FMCG companies eventually pass on to consumers via higher MRPs on packaged goods.",
+          "driving_t_nodes": [
+            "global_crude_oil"
+          ],
+          "score": 0.26
         }
       ],
       "pred_nodes": [
-        "residential_borewells",
-        "private_water_tanker",
-        "municipal_water_supply",
-        "rwa_maintenance_fees",
-        "drinking_water_quality"
+        "msme_factory_owner_income",
+        "factory_worker_wages",
+        "diesel_price",
+        "kirana_and_retail_income",
+        "street_vendor_income",
+        "fresh_vegetables_and_fruits",
+        "packaged_foods_and_beverages"
       ],
-      "ndcg_10": 0.47569438801287395,
-      "recall_10": 0.3,
-      "recall_5": 0.3,
+      "ndcg_10": 0.831898699743231,
+      "recall_10": 0.8,
+      "recall_5": 0.6,
+      "precision_10": 0.5714285714285714,
       "error": null,
-      "ms": 19256
+      "ms": 29113
     },
     {
-      "id": "paytm_bank_ban_2024",
-      "name": "RBI bans Paytm Payments Bank",
-      "date": "2024-01",
-      "title": "RBI bans Paytm Payments Bank",
-      "summary": "RBI directed Paytm Payments Bank to stop accepting new deposits and credit transactions due to non-compliance",
+      "id": "article_05",
+      "name": "Delhi weather today: National capital wakes up to dust storm, haze \u2014 check IMD f",
+      "date": "2026-04-03",
+      "title": "Delhi weather today: National capital wakes up to dust storm, haze \u2014 check IMD forecast for Friday, 3 April 2026",
+      "summary": "Visuals from Delhi on Friday morning show dust storms sweeping across the city, obscuring visibility in several parts. The India Meteorological Department (IMD) had, in its latest bulletin, forecast a pleasant day for the national capital on Friday, 3 April. Check the forecast here.",
       "macro_shifts": [
         {
-          "t_node": "banking_and_credit_regulation",
+          "t_node": "regional_aerosol_systems",
           "trajectory": "escalating",
-          "context": "RBI directed Paytm Payments Bank to stop accepting new deposits and credit transactions due to non-compliance"
+          "context": "Delhi weather today: National capital wakes up to dust storm, haze \u2014 check IMD forecast for Friday, 3 April 2026"
         }
       ],
       "expected_impacts": [
         {
-          "i_node": "fastag_wallet",
+          "i_node": "air_pollution",
           "rank": 1,
-          "reasoning": "Millions of Paytm FASTags became invalid, forcing vehicle owners to buy replacements"
+          "reasoning": "Dust storm directly degrades Delhi's air quality to hazardous levels, exposing 20M+ residents to dangerous particulate matter"
         },
         {
-          "i_node": "upi_transaction_success",
+          "i_node": "respiratory_and_viral_infections",
           "rank": 2,
-          "reasoning": "Temporary disruption and confusion caused transaction failures for merchants"
+          "reasoning": "Fine dust particles trigger acute asthma attacks and respiratory distress \u2014 hospitals see immediate OPD spikes"
         },
         {
-          "i_node": "street_vendor_income",
+          "i_node": "road_traffic_accidents",
           "rank": 3,
-          "reasoning": "Street vendors heavily reliant on Paytm soundboxes faced settlement delays"
+          "reasoning": "Obscured visibility sharply increases accident risk for cars, two-wheelers, and pedestrians"
         },
         {
-          "i_node": "kirana_store_income",
+          "i_node": "traffic_congestion",
           "rank": 4,
-          "reasoning": "Local grocers had to rapidly switch QR codes to competitor banks to receive payments"
+          "reasoning": "Reduced visibility forces slower driving speeds, and accidents cause bottlenecks"
         },
         {
-          "i_node": "savings_account_balance",
+          "i_node": "domestic_flight_ticket",
           "rank": 5,
-          "reasoning": "Users were forced to transfer their balances out of PPBL before the deadline"
-        },
-        {
-          "i_node": "ncmc_smart_card",
-          "rank": 6,
-          "reasoning": "Paytm-issued transit cards for metros stopped working for commuters"
-        },
-        {
-          "i_node": "direct_equity_portfolio",
-          "rank": 7,
-          "reasoning": "One97 Communications stock crashed 50% in a month, wiping out retail wealth"
-        },
-        {
-          "i_node": "food_delivery_payouts",
-          "rank": 8,
-          "reasoning": "Gig workers using PPBL as their primary account faced delayed weekly payouts"
-        },
-        {
-          "i_node": "cab_driver_earnings",
-          "rank": 9,
-          "reasoning": "Uber and Ola drivers had to urgently update bank details to receive earnings"
-        },
-        {
-          "i_node": "startup_jobs",
-          "rank": 10,
-          "reasoning": "Regulatory chill led to hiring freezes across the Indian fintech startup ecosystem"
+          "reasoning": "Low visibility at IGI Airport causes flight delays and diversions, forcing rebookings at higher fares"
         }
       ],
       "pred_impacts": [
         {
-          "i_node": "fastag_wallet",
-          "trajectory": "deescalating",
+          "i_node": "air_pollution",
+          "trajectory": "escalating",
           "probability": 0.95,
           "magnitude": 0.8,
           "delay_days": 1,
-          "rationale": "Citizens using Paytm FASTags will be unable to recharge their wallets, forcing mass migration to other bank-issued tags to pay highway tolls.",
+          "rationale": "1st order: The dust storm immediately spikes PM10 and PM2.5 levels across the NCR, severely deteriorating outdoor air quality.",
           "driving_t_nodes": [
-            "banking_and_credit_regulation"
+            "regional_aerosol_systems"
           ],
           "score": 0.76
         },
         {
-          "i_node": "digital_payment_infrastructure",
+          "i_node": "traffic_congestion",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.6,
+          "delay_days": 1,
+          "rationale": "1st order: Haze and drastically reduced visibility force vehicles to slow down, causing immediate bumper-to-bumper traffic on major Delhi roads.",
+          "driving_t_nodes": [
+            "regional_aerosol_systems"
+          ],
+          "score": 0.51
+        },
+        {
+          "i_node": "street_vendor_income",
+          "trajectory": "deescalating",
+          "probability": 0.7,
+          "magnitude": 0.6,
+          "delay_days": 1,
+          "rationale": "2nd order: Dust storms ruin open-air merchandise and street food, while reduced pedestrian footfall directly cuts into the daily earnings of hawkers.",
+          "driving_t_nodes": [
+            "regional_aerosol_systems"
+          ],
+          "score": 0.42
+        },
+        {
+          "i_node": "respiratory_and_viral_infections",
+          "trajectory": "escalating",
+          "probability": 0.8,
+          "magnitude": 0.5,
+          "delay_days": 1,
+          "rationale": "1st order: The sudden influx of coarse dust particles triggers immediate allergic reactions, asthma flare-ups, and coughing among vulnerable citizens.",
+          "driving_t_nodes": [
+            "regional_aerosol_systems"
+          ],
+          "score": 0.4
+        },
+        {
+          "i_node": "ride_hailing_cabs_bikes",
+          "trajectory": "escalating",
+          "probability": 0.75,
+          "magnitude": 0.5,
+          "delay_days": 1,
+          "rationale": "2nd order: Bad weather and poor visibility lead to high demand for enclosed cabs over two-wheelers, triggering surge pricing on platforms like Uber and Ola.",
+          "driving_t_nodes": [
+            "regional_aerosol_systems"
+          ],
+          "score": 0.375
+        },
+        {
+          "i_node": "construction_worker_wages",
+          "trajectory": "deescalating",
+          "probability": 0.5,
+          "magnitude": 0.7,
+          "delay_days": 5,
+          "rationale": "3rd order: If the dust haze pushes the AQI into the 'Severe' category, authorities may invoke GRAP measures, halting construction and stopping daily wages for laborers.",
+          "driving_t_nodes": [
+            "regional_aerosol_systems"
+          ],
+          "score": 0.35
+        },
+        {
+          "i_node": "medicines_and_pharmaceuticals",
+          "trajectory": "escalating",
+          "probability": 0.6,
+          "magnitude": 0.3,
+          "delay_days": 2,
+          "rationale": "2nd order: The spike in respiratory distress drives increased pharmacy sales for antihistamines, inhalers, masks, and eye drops.",
+          "driving_t_nodes": [
+            "regional_aerosol_systems"
+          ],
+          "score": 0.18
+        },
+        {
+          "i_node": "fresh_vegetables_and_fruits",
+          "trajectory": "escalating",
+          "probability": 0.4,
+          "magnitude": 0.4,
+          "delay_days": 7,
+          "rationale": "3rd order: High-velocity dust storms in neighboring agricultural belts (Haryana/UP) can damage fragile crops and disrupt mandi supply chains, raising retail produce prices.",
+          "driving_t_nodes": [
+            "regional_aerosol_systems"
+          ],
+          "score": 0.16000000000000003
+        }
+      ],
+      "pred_nodes": [
+        "air_pollution",
+        "traffic_congestion",
+        "street_vendor_income",
+        "respiratory_and_viral_infections",
+        "ride_hailing_cabs_bikes",
+        "construction_worker_wages",
+        "medicines_and_pharmaceuticals",
+        "fresh_vegetables_and_fruits"
+      ],
+      "ndcg_10": 0.7312879197739797,
+      "recall_10": 0.6,
+      "recall_5": 0.6,
+      "precision_10": 0.375,
+      "error": null,
+      "ms": 28781
+    },
+    {
+      "id": "article_06",
+      "name": "LPG Crisis Triggers Another Exodus Of India\u2019s Gig And Manufacturing Workers",
+      "date": "2026-04-02",
+      "title": "LPG Crisis Triggers Another Exodus Of India\u2019s Gig And Manufacturing Workers",
+      "summary": "Six years ago, flyovers across India witnessed streams of migrant and gig workers walking miles to reach home. It was\u2026",
+      "macro_shifts": [
+        {
+          "t_node": "domestic_labor_migration",
+          "trajectory": "escalating",
+          "context": "LPG Crisis Triggers Another Exodus Of India\u2019s Gig And Manufacturing Workers"
+        },
+        {
+          "t_node": "macro_employment_trends",
+          "trajectory": "escalating",
+          "context": "LPG Crisis Triggers Another Exodus Of India\u2019s Gig And Manufacturing Workers"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "lpg_cylinder",
+          "rank": 1,
+          "reasoning": "LPG crisis directly raises cooking fuel costs for households, especially migrant worker families"
+        },
+        {
+          "i_node": "factory_worker_wages",
+          "rank": 2,
+          "reasoning": "Manufacturing workers losing wages as they abandon jobs during exodus"
+        },
+        {
+          "i_node": "food_and_grocery_delivery_payouts",
+          "rank": 3,
+          "reasoning": "Gig delivery workers leaving cities means lost daily earnings from platforms like Swiggy/Zomato"
+        },
+        {
+          "i_node": "ride_hailing_earnings",
+          "rank": 4,
+          "reasoning": "Gig ride-hailing drivers abandoning work lose daily income during exodus"
+        },
+        {
+          "i_node": "construction_worker_wages",
+          "rank": 5,
+          "reasoning": "Migrant construction workers walking home lose daily wages and ongoing site work stalls"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "lpg_cylinder",
+          "trajectory": "escalating",
+          "probability": 0.95,
+          "magnitude": 0.9,
+          "delay_days": 1,
+          "rationale": "1st order: The underlying LPG crisis directly hits urban poor and migrant households, making cooking gas unaffordable or unavailable, triggering the initial panic.",
+          "driving_t_nodes": [
+            "macro_employment_trends"
+          ],
+          "score": 0.855
+        },
+        {
+          "i_node": "railway_ticketing_and_status",
+          "trajectory": "escalating",
+          "probability": 0.9,
+          "magnitude": 0.8,
+          "delay_days": 2,
+          "rationale": "1st order: A sudden mass exodus of gig and manufacturing workers leads to immediate overwhelming of railway infrastructure, massive waitlists, and ticketing chaos at city stations.",
+          "driving_t_nodes": [
+            "domestic_labor_migration"
+          ],
+          "score": 0.7200000000000001
+        },
+        {
+          "i_node": "msme_factory_owner_income",
+          "trajectory": "deescalating",
+          "probability": 0.8,
+          "magnitude": 0.8,
+          "delay_days": 14,
+          "rationale": "2nd order: The sudden departure of manufacturing labor halts assembly lines and production, causing severe revenue drops and unfulfilled orders for small factory owners.",
+          "driving_t_nodes": [
+            "domestic_labor_migration",
+            "macro_employment_trends"
+          ],
+          "score": 0.6400000000000001
+        },
+        {
+          "i_node": "food_delivery_services",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.7,
+          "delay_days": 7,
+          "rationale": "2nd order: As gig workers flee the cities, urban platforms face severe rider shortages, leading to surge pricing, high delivery fees, and massive delays for urban consumers.",
+          "driving_t_nodes": [
+            "domestic_labor_migration",
+            "macro_employment_trends"
+          ],
+          "score": 0.595
+        },
+        {
+          "i_node": "mgnrega_wages",
+          "trajectory": "escalating",
+          "probability": 0.75,
+          "magnitude": 0.7,
+          "delay_days": 45,
+          "rationale": "3rd order: With no urban income, millions of returning migrants fall back on the rural job guarantee scheme, massively increasing demand for work and straining local panchayat funds.",
+          "driving_t_nodes": [
+            "domestic_labor_migration",
+            "macro_employment_trends"
+          ],
+          "score": 0.5249999999999999
+        },
+        {
+          "i_node": "farm_labor_wages",
+          "trajectory": "deescalating",
+          "probability": 0.7,
+          "magnitude": 0.6,
+          "delay_days": 30,
+          "rationale": "3rd order: Returning migrants flood the rural labor market, creating an oversupply of hands that depresses daily agricultural wage rates for existing rural workers.",
+          "driving_t_nodes": [
+            "domestic_labor_migration"
+          ],
+          "score": 0.42
+        }
+      ],
+      "pred_nodes": [
+        "lpg_cylinder",
+        "railway_ticketing_and_status",
+        "msme_factory_owner_income",
+        "food_delivery_services",
+        "mgnrega_wages",
+        "farm_labor_wages"
+      ],
+      "ndcg_10": 0.39977260083645794,
+      "recall_10": 0.2,
+      "recall_5": 0.2,
+      "precision_10": 0.16666666666666666,
+      "error": null,
+      "ms": 27253
+    },
+    {
+      "id": "article_07",
+      "name": "India faces second year of sugar deficit as mills close early",
+      "date": "2026-04-02",
+      "title": "India faces second year of sugar deficit as mills close early",
+      "summary": "India's sugar output will fall short of demand for the second year. Lower cane yields are causing mills to close early. This will reduce domestic stockpiles and support local prices. Exports are also contributing to lower availability. The next season will begin with reduced opening stocks. This situation is expected to firm up sugar prices.",
+      "macro_shifts": [
+        {
+          "t_node": "global_sugar_markets",
+          "trajectory": "escalating",
+          "context": "India faces second year of sugar deficit as mills close early"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "spices_sugar_salt",
+          "rank": 1,
+          "reasoning": "Sugar deficit directly raises retail sugar prices for households buying for daily chai, cooking, and festivals"
+        },
+        {
+          "i_node": "packaged_foods_and_beverages",
+          "rank": 2,
+          "reasoning": "Sugar is a key input for biscuits, sweets, soft drinks \u2014 higher costs passed to consumers"
+        },
+        {
+          "i_node": "farmer_income_and_msp",
+          "rank": 3,
+          "reasoning": "Lower cane yields reduce sugarcane farmer revenue; early mill closures mean less cane purchased"
+        },
+        {
+          "i_node": "factory_worker_wages",
+          "rank": 4,
+          "reasoning": "Early mill closures leave sugar mill workers unemployed months ahead of schedule"
+        },
+        {
+          "i_node": "farm_labor_wages",
+          "rank": 5,
+          "reasoning": "Reduced cane harvesting season means less work for agricultural laborers in cane-belt regions"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "farmer_income_and_msp",
+          "trajectory": "deescalating",
+          "probability": 0.8,
+          "magnitude": 0.75,
+          "delay_days": 30,
+          "rationale": "1st order: Lower sugarcane yields directly reduce the total output volume farmers can sell, hurting their overall seasonal earnings despite firm market prices.",
+          "driving_t_nodes": [
+            "global_sugar_markets"
+          ],
+          "score": 0.6000000000000001
+        },
+        {
+          "i_node": "factory_worker_wages",
           "trajectory": "deescalating",
           "probability": 0.85,
-          "magnitude": 0.8,
-          "delay_days": 1,
-          "rationale": "Merchants relying on Paytm QR codes and Soundboxes linked to PPBL will face settlement disruptions, requiring them to link new bank accounts.",
-          "driving_t_nodes": [
-            "banking_and_credit_regulation"
-          ],
-          "score": 0.68
-        },
-        {
-          "i_node": "savings_account_balance",
-          "trajectory": "deescalating",
-          "probability": 0.95,
           "magnitude": 0.7,
-          "delay_days": 1,
-          "rationale": "Citizens will actively withdraw or transfer their savings and wallet balances out of Paytm Payments Bank to avoid locked funds.",
+          "delay_days": 10,
+          "rationale": "1st order: Early closure of sugar mills means seasonal contract workers and daily wagers lose their expected income weeks ahead of schedule.",
           "driving_t_nodes": [
-            "banking_and_credit_regulation"
+            "global_sugar_markets"
           ],
-          "score": 0.6649999999999999
+          "score": 0.595
         },
         {
-          "i_node": "upi_transaction_success",
+          "i_node": "spices_sugar_salt",
+          "trajectory": "escalating",
+          "probability": 0.9,
+          "magnitude": 0.6,
+          "delay_days": 15,
+          "rationale": "1st order: Reduced domestic stockpiles and early mill closures directly cause retail sugar prices (chini) to firm up in local grocery markets.",
+          "driving_t_nodes": [
+            "global_sugar_markets"
+          ],
+          "score": 0.54
+        },
+        {
+          "i_node": "packaged_foods_and_beverages",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.5,
+          "delay_days": 45,
+          "rationale": "2nd order: Higher commercial sugar prices force FMCG brands to hike MRPs or reduce pack sizes (shrinkflation) on biscuits, soft drinks, and packaged sweets.",
+          "driving_t_nodes": [
+            "global_sugar_markets"
+          ],
+          "score": 0.425
+        },
+        {
+          "i_node": "msme_factory_owner_income",
           "trajectory": "deescalating",
+          "probability": 0.6,
+          "magnitude": 0.55,
+          "delay_days": 90,
+          "rationale": "3rd order: Sustained high input costs for sugar squeeze the profit margins of small-scale food processing units, local confectioners, and unorganized bakeries.",
+          "driving_t_nodes": [
+            "global_sugar_markets"
+          ],
+          "score": 0.33
+        },
+        {
+          "i_node": "farmer_agitations",
+          "trajectory": "escalating",
+          "probability": 0.5,
+          "magnitude": 0.65,
+          "delay_days": 120,
+          "rationale": "3rd order: Frustration over lower yields and inadequate compensation may trigger protests by sugarcane farmer unions demanding higher State Advised Prices (SAP) or Fair and Remunerative Prices (FRP).",
+          "driving_t_nodes": [
+            "global_sugar_markets"
+          ],
+          "score": 0.325
+        },
+        {
+          "i_node": "restaurant_and_street_food",
+          "trajectory": "escalating",
+          "probability": 0.75,
+          "magnitude": 0.4,
+          "delay_days": 30,
+          "rationale": "2nd order: Local bakeries, sweet shops (mithaiwalas), and tea stalls (chaiwalas) raise prices for consumers to offset the increased cost of commercial sugar.",
+          "driving_t_nodes": [
+            "global_sugar_markets"
+          ],
+          "score": 0.30000000000000004
+        }
+      ],
+      "pred_nodes": [
+        "farmer_income_and_msp",
+        "factory_worker_wages",
+        "spices_sugar_salt",
+        "packaged_foods_and_beverages",
+        "msme_factory_owner_income",
+        "farmer_agitations",
+        "restaurant_and_street_food"
+      ],
+      "ndcg_10": 0.8512197000249171,
+      "recall_10": 0.8,
+      "recall_5": 0.8,
+      "precision_10": 0.5714285714285714,
+      "error": null,
+      "ms": 46591
+    },
+    {
+      "id": "article_08",
+      "name": "New I-T Act marks new chapter in India's tax administration, step towards Viksit",
+      "date": "2026-04-01",
+      "title": "New I-T Act marks new chapter in India's tax administration, step towards Viksit Bharat: CBDT",
+      "summary": "India has a new Income Tax Act, 2025, effective April 1, 2026. This replaces the old 1961 Act, making tax rules simpler and easier to follow. The e-filing portal will support both old and new acts during the transition. Assessments for past years will follow the old Act. Advance tax payments from June 2026 will use the new Act.",
+      "macro_shifts": [
+        {
+          "t_node": "fiscal_and_tax_policy",
+          "trajectory": "escalating",
+          "context": "New I-T Act marks new chapter in India's tax administration, step towards Viksit Bharat: CBDT"
+        },
+        {
+          "t_node": "legislative_amendments",
+          "trajectory": "escalating",
+          "context": "New I-T Act marks new chapter in India's tax administration, step towards Viksit Bharat: CBDT"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "personal_income_tax",
+          "rank": 1,
+          "reasoning": "New I-T Act directly changes how every salaried Indian files and computes income tax from April 2026"
+        },
+        {
+          "i_node": "tds_and_compliance",
+          "rank": 2,
+          "reasoning": "Simplified Act changes TDS rules and compliance procedures for employers, freelancers, and businesses"
+        },
+        {
+          "i_node": "capital_gains_tax",
+          "rank": 3,
+          "reasoning": "New Act restructures capital gains provisions affecting investors selling property, stocks, mutual funds"
+        },
+        {
+          "i_node": "indirect_taxes_gst",
+          "rank": 4,
+          "reasoning": "Tax administration overhaul may harmonize procedures across direct and indirect tax compliance systems"
+        },
+        {
+          "i_node": "corporate_salaries",
+          "rank": 5,
+          "reasoning": "Simplified tax slabs and deductions change take-home pay calculations for salaried employees"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "personal_income_tax",
+          "trajectory": "escalating",
+          "probability": 1.0,
+          "magnitude": 0.8,
+          "delay_days": 30,
+          "rationale": "1st order: The announcement of the new IT Act 2025 requires citizens to immediately begin adjusting their long-term tax planning and investment strategies ahead of the 2026 rollout.",
+          "driving_t_nodes": [
+            "fiscal_and_tax_policy",
+            "legislative_amendments"
+          ],
+          "score": 0.8
+        },
+        {
+          "i_node": "tds_and_compliance",
+          "trajectory": "escalating",
           "probability": 0.9,
           "magnitude": 0.7,
-          "delay_days": 1,
-          "rationale": "UPI handles directly linked to Paytm Payments Bank accounts will experience payment failures as credit transactions are halted.",
+          "delay_days": 60,
+          "rationale": "1st order: The introduction of new advance tax rules and a dual-system e-filing portal creates an initial spike in compliance adaptation and friction for taxpayers and deductors.",
           "driving_t_nodes": [
-            "banking_and_credit_regulation"
+            "fiscal_and_tax_policy",
+            "legislative_amendments"
           ],
           "score": 0.63
         },
         {
-          "i_node": "e_mandate_autopay",
+          "i_node": "corporate_salaries",
+          "trajectory": "escalating",
+          "probability": 0.75,
+          "magnitude": 0.7,
+          "delay_days": 180,
+          "rationale": "2nd order: Anticipating the new tax regime, corporate HR departments will restructure salary components and allowances to optimize take-home pay under the new rules.",
+          "driving_t_nodes": [
+            "fiscal_and_tax_policy",
+            "legislative_amendments"
+          ],
+          "score": 0.5249999999999999
+        },
+        {
+          "i_node": "professional_upskilling",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.6,
+          "delay_days": 90,
+          "rationale": "2nd order: The complete overhaul of the 1961 Act forces CAs, corporate accountants, and finance professionals to urgently seek training and certification on the new tax code.",
+          "driving_t_nodes": [
+            "fiscal_and_tax_policy",
+            "legislative_amendments"
+          ],
+          "score": 0.51
+        },
+        {
+          "i_node": "msme_factory_owner_income",
+          "trajectory": "escalating",
+          "probability": 0.6,
+          "magnitude": 0.5,
+          "delay_days": 365,
+          "rationale": "3rd order: As the simplified tax code is fully implemented, small business owners will eventually benefit from reduced bureaucratic friction and lower accounting overheads, improving net margins.",
+          "driving_t_nodes": [
+            "fiscal_and_tax_policy",
+            "legislative_amendments"
+          ],
+          "score": 0.3
+        },
+        {
+          "i_node": "restaurant_and_street_food",
+          "trajectory": "escalating",
+          "probability": 0.5,
+          "magnitude": 0.4,
+          "delay_days": 365,
+          "rationale": "3rd order: If the new tax regime successfully lowers the tax burden for the salaried middle class, the resulting increase in disposable take-home pay will boost discretionary spending on dining out.",
+          "driving_t_nodes": [
+            "fiscal_and_tax_policy",
+            "legislative_amendments"
+          ],
+          "score": 0.2
+        }
+      ],
+      "pred_nodes": [
+        "personal_income_tax",
+        "tds_and_compliance",
+        "corporate_salaries",
+        "professional_upskilling",
+        "msme_factory_owner_income",
+        "restaurant_and_street_food"
+      ],
+      "ndcg_10": 0.7467099667647257,
+      "recall_10": 0.6,
+      "recall_5": 0.6,
+      "precision_10": 0.5,
+      "error": null,
+      "ms": 36661
+    },
+    {
+      "id": "article_09",
+      "name": "Govt gives full customs duty exemption on critical petrochemical products till J",
+      "date": "2026-04-02",
+      "title": "Govt gives full customs duty exemption on critical petrochemical products till June 30",
+      "summary": "Govt gives full customs duty exemption on critical petrochemical products till June 30",
+      "macro_shifts": [
+        {
+          "t_node": "trade_and_tariff_policy",
+          "trajectory": "escalating",
+          "context": "Govt gives full customs duty exemption on critical petrochemical products till June 30"
+        },
+        {
+          "t_node": "fiscal_and_tax_policy",
+          "trajectory": "escalating",
+          "context": "Govt gives full customs duty exemption on critical petrochemical products till June 30"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "packaged_foods_and_beverages",
+          "rank": 1,
+          "reasoning": "Petrochemicals are raw material for food packaging (PET bottles, wrappers) \u2014 duty exemption lowers packaging costs"
+        },
+        {
+          "i_node": "vehicle_purchase_cost",
+          "rank": 2,
+          "reasoning": "Cheaper petrochemical inputs reduce cost of plastic/rubber auto components, easing vehicle prices"
+        },
+        {
+          "i_node": "building_materials_and_labor",
+          "rank": 3,
+          "reasoning": "PVC pipes, paints, adhesives use petrochemical inputs \u2014 duty cut lowers construction material prices"
+        },
+        {
+          "i_node": "medicines_and_pharmaceuticals",
+          "rank": 4,
+          "reasoning": "Petrochemicals are precursors for pharma intermediates \u2014 lower duty reduces medicine production costs"
+        },
+        {
+          "i_node": "consumer_tech_hardware",
+          "rank": 5,
+          "reasoning": "Plastics and polymers in electronics housings and components become cheaper with duty exemption"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "msme_factory_owner_income",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.6,
+          "delay_days": 10,
+          "rationale": "1st order: Customs duty exemption immediately lowers raw material costs (polymers, resins, chemicals) for MSMEs manufacturing plastics, textiles, and packaging.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy",
+            "fiscal_and_tax_policy"
+          ],
+          "score": 0.51
+        },
+        {
+          "i_node": "building_materials_and_labor",
           "trajectory": "deescalating",
+          "probability": 0.75,
+          "magnitude": 0.4,
+          "delay_days": 15,
+          "rationale": "1st order: Cheaper petrochemical inputs reduce the production costs of PVC pipes, synthetic paints, and plastic fixtures, stabilizing building material prices.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy",
+            "fiscal_and_tax_policy"
+          ],
+          "score": 0.30000000000000004
+        },
+        {
+          "i_node": "farmer_income_and_msp",
+          "trajectory": "escalating",
+          "probability": 0.6,
+          "magnitude": 0.4,
+          "delay_days": 30,
+          "rationale": "2nd order: Petrochemicals are critical inputs for fertilizers, pesticides, and agricultural plastics (irrigation pipes, mulch films); lower costs improve farmer profit margins.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy",
+            "fiscal_and_tax_policy"
+          ],
+          "score": 0.24
+        },
+        {
+          "i_node": "packaged_foods_and_beverages",
+          "trajectory": "deescalating",
+          "probability": 0.65,
+          "magnitude": 0.3,
+          "delay_days": 45,
+          "rationale": "2nd order: Lower costs for plastic packaging (bottles, wrappers, containers) reduce FMCG manufacturing expenses, potentially easing retail prices or preventing hikes.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy",
+            "fiscal_and_tax_policy"
+          ],
+          "score": 0.195
+        },
+        {
+          "i_node": "factory_worker_wages",
+          "trajectory": "escalating",
+          "probability": 0.5,
+          "magnitude": 0.3,
+          "delay_days": 60,
+          "rationale": "3rd order: Sustained margin improvements in the plastic and chemical manufacturing sectors protect factory jobs and support wage stability or increments.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy",
+            "fiscal_and_tax_policy"
+          ],
+          "score": 0.15
+        },
+        {
+          "i_node": "kirana_and_retail_income",
+          "trajectory": "escalating",
+          "probability": 0.45,
+          "magnitude": 0.3,
+          "delay_days": 90,
+          "rationale": "3rd order: Stabilized prices for packaged goods and household plastic items maintain consumer demand, supporting steady sales volumes and revenues for retail store owners.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy",
+            "fiscal_and_tax_policy"
+          ],
+          "score": 0.135
+        }
+      ],
+      "pred_nodes": [
+        "msme_factory_owner_income",
+        "building_materials_and_labor",
+        "farmer_income_and_msp",
+        "packaged_foods_and_beverages",
+        "factory_worker_wages",
+        "kirana_and_retail_income"
+      ],
+      "ndcg_10": 0.37395543056458785,
+      "recall_10": 0.4,
+      "recall_5": 0.4,
+      "precision_10": 0.3333333333333333,
+      "error": null,
+      "ms": 27647
+    },
+    {
+      "id": "article_10",
+      "name": "National Highway quality complaints surge over 60% in FY26: MoRTH informs Rajya ",
+      "date": "2026-03-18",
+      "title": "National Highway quality complaints surge over 60% in FY26: MoRTH informs Rajya Sabha",
+      "summary": "National Highway quality complaints surge over 60% in FY26: MoRTH informs Rajya Sabha",
+      "macro_shifts": [
+        {
+          "t_node": "transport_and_logistics_policy",
+          "trajectory": "escalating",
+          "context": "National Highway quality complaints surge over 60% in FY26: MoRTH informs Rajya Sabha"
+        },
+        {
+          "t_node": "highway_expressway_network",
+          "trajectory": "escalating",
+          "context": "National Highway quality complaints surge over 60% in FY26: MoRTH informs Rajya Sabha"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "road_conditions_and_closures",
+          "rank": 1,
+          "reasoning": "60%+ surge in complaints directly reflects deteriorating highway surfaces citizens drive on daily"
+        },
+        {
+          "i_node": "road_traffic_accidents",
+          "rank": 2,
+          "reasoning": "Poor highway quality (potholes, uneven surfaces) is a leading cause of fatal road accidents in India"
+        },
+        {
+          "i_node": "highway_tolls",
+          "rank": 3,
+          "reasoning": "Citizens paying full toll on degraded highways face poor value \u2014 toll-vs-quality mismatch"
+        },
+        {
+          "i_node": "traffic_congestion",
+          "rank": 4,
+          "reasoning": "Highway repair work and poor surfaces slow traffic flow, increasing commute and freight transit times"
+        },
+        {
+          "i_node": "vehicle_purchase_cost",
+          "rank": 5,
+          "reasoning": "Bad road surfaces accelerate vehicle wear on suspension, tyres \u2014 raising effective ownership costs"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "road_conditions_and_closures",
+          "trajectory": "escalating",
+          "probability": 0.95,
+          "magnitude": 0.8,
+          "delay_days": 1,
+          "rationale": "1st order: The 60% surge in complaints directly reflects deteriorating highway surfaces, potholes, and poor maintenance affecting daily commuters and freight.",
+          "driving_t_nodes": [
+            "highway_expressway_network",
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.76
+        },
+        {
+          "i_node": "road_traffic_accidents",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.8,
+          "delay_days": 7,
+          "rationale": "1st order: Potholes and broken tarmac on high-speed national corridors immediately increase the risk of fatal crashes and vehicle damage.",
+          "driving_t_nodes": [
+            "highway_expressway_network"
+          ],
+          "score": 0.68
+        },
+        {
+          "i_node": "traffic_congestion",
+          "trajectory": "escalating",
+          "probability": 0.8,
+          "magnitude": 0.7,
+          "delay_days": 14,
+          "rationale": "2nd order: Damaged highway stretches force commercial and private vehicles to slow down, creating severe bottlenecks and increasing overall travel time.",
+          "driving_t_nodes": [
+            "highway_expressway_network"
+          ],
+          "score": 0.5599999999999999
+        },
+        {
+          "i_node": "transport_worker_movements",
+          "trajectory": "escalating",
+          "probability": 0.45,
+          "magnitude": 0.6,
+          "delay_days": 90,
+          "rationale": "3rd order: Sustained poor road conditions despite high toll collections trigger frustration, leading to strikes and protests by trucker and bus unions.",
+          "driving_t_nodes": [
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.27
+        },
+        {
+          "i_node": "fresh_vegetables_and_fruits",
+          "trajectory": "escalating",
+          "probability": 0.65,
+          "magnitude": 0.4,
+          "delay_days": 30,
+          "rationale": "2nd order: Bumpy rides and delayed transit times lead to higher spoilage of perishables during transport, increasing retail prices in urban markets.",
+          "driving_t_nodes": [
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.26
+        },
+        {
+          "i_node": "intercity_bus_fare",
+          "trajectory": "escalating",
+          "probability": 0.55,
+          "magnitude": 0.4,
+          "delay_days": 45,
+          "rationale": "2nd order: Fleet operators face higher maintenance costs due to vehicle wear and tear from bad roads, passing these costs to passengers via ticket hikes.",
+          "driving_t_nodes": [
+            "highway_expressway_network"
+          ],
+          "score": 0.22000000000000003
+        },
+        {
+          "i_node": "farmer_income_and_msp",
+          "trajectory": "deescalating",
+          "probability": 0.4,
+          "magnitude": 0.5,
+          "delay_days": 120,
+          "rationale": "3rd order: Increased transit damage to crops and higher freight charges demanded by transporters reduce the net income realization for farmers selling in distant mandis.",
+          "driving_t_nodes": [
+            "transport_and_logistics_policy"
+          ],
+          "score": 0.2
+        }
+      ],
+      "pred_nodes": [
+        "road_conditions_and_closures",
+        "road_traffic_accidents",
+        "traffic_congestion",
+        "transport_worker_movements",
+        "fresh_vegetables_and_fruits",
+        "intercity_bus_fare",
+        "farmer_income_and_msp"
+      ],
+      "ndcg_10": 0.7666985968065485,
+      "recall_10": 0.6,
+      "recall_5": 0.6,
+      "precision_10": 0.42857142857142855,
+      "error": null,
+      "ms": 25496
+    },
+    {
+      "id": "article_11",
+      "name": "Households must switch to piped gas where available, else lose LPG supply: Govt ",
+      "date": "2026-03-25",
+      "title": "Households must switch to piped gas where available, else lose LPG supply: Govt order",
+      "summary": "Households must switch to piped gas where available, else lose LPG supply: Govt order",
+      "macro_shifts": [
+        {
+          "t_node": "hydrocarbon_pipeline_network",
+          "trajectory": "escalating",
+          "context": "Households must switch to piped gas where available, else lose LPG supply: Govt order"
+        },
+        {
+          "t_node": "welfare_and_subsidy_schemes",
+          "trajectory": "escalating",
+          "context": "Households must switch to piped gas where available, else lose LPG supply: Govt order"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "piped_natural_gas",
+          "rank": 1,
+          "reasoning": "Households forced to switch to PNG where available \u2014 direct mandate changing their cooking fuel source"
+        },
+        {
+          "i_node": "lpg_cylinder",
+          "rank": 2,
+          "reasoning": "Loss of LPG subsidy and eventually supply for non-compliant households removes their current cooking fuel option"
+        },
+        {
+          "i_node": "building_materials_and_labor",
+          "rank": 3,
+          "reasoning": "Households may need internal plumbing modifications to connect PNG lines, incurring installation costs"
+        },
+        {
+          "i_node": "food_delivery_services",
+          "rank": 4,
+          "reasoning": "Restaurants and cloud kitchens in PNG areas also affected by fuel switch"
+        },
+        {
+          "i_node": "restaurant_and_street_food",
+          "rank": 5,
+          "reasoning": "Street food vendors relying on LPG cylinders in PNG areas face forced transition or loss of fuel supply"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "lpg_cylinder",
+          "trajectory": "escalating",
+          "probability": 0.9,
+          "magnitude": 0.8,
+          "delay_days": 30,
+          "rationale": "1st order: Households failing to switch in time lose their LPG supply and subsidy, facing immediate cooking fuel disruptions and higher costs if forced to buy non-subsidized cylinders.",
+          "driving_t_nodes": [
+            "welfare_and_subsidy_schemes"
+          ],
+          "score": 0.7200000000000001
+        },
+        {
+          "i_node": "piped_natural_gas",
+          "trajectory": "escalating",
+          "probability": 0.95,
+          "magnitude": 0.7,
+          "delay_days": 15,
+          "rationale": "1st order: Households in covered areas are forced to adopt PNG, leading to mandatory upfront connection charges and a shift to monthly piped gas billing.",
+          "driving_t_nodes": [
+            "hydrocarbon_pipeline_network",
+            "welfare_and_subsidy_schemes"
+          ],
+          "score": 0.6649999999999999
+        },
+        {
+          "i_node": "welfare_and_ration_cards",
+          "trajectory": "escalating",
+          "probability": 0.75,
+          "magnitude": 0.5,
+          "delay_days": 60,
+          "rationale": "2nd order: Citizens face bureaucratic friction at gas agencies to formally surrender LPG connections, claim security deposits, and update their government subsidy profiles.",
+          "driving_t_nodes": [
+            "welfare_and_subsidy_schemes"
+          ],
+          "score": 0.375
+        },
+        {
+          "i_node": "road_conditions_and_closures",
+          "trajectory": "escalating",
+          "probability": 0.7,
+          "magnitude": 0.5,
+          "delay_days": 60,
+          "rationale": "2nd order: Accelerated last-mile pipeline laying by city gas distributors to meet the mandate leads to dug-up local roads and neighborhood barricades.",
+          "driving_t_nodes": [
+            "hydrocarbon_pipeline_network"
+          ],
+          "score": 0.35
+        },
+        {
+          "i_node": "repair_and_pest_control",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.4,
+          "delay_days": 45,
+          "rationale": "2nd order: Transitioning to PNG requires households to hire local mechanics to change gas stove nozzles, drill holes, and modify kitchen countertops.",
+          "driving_t_nodes": [
+            "hydrocarbon_pipeline_network"
+          ],
+          "score": 0.34
+        },
+        {
+          "i_node": "rwa_and_maintenance_fees",
+          "trajectory": "escalating",
+          "probability": 0.6,
+          "magnitude": 0.3,
+          "delay_days": 90,
+          "rationale": "3rd order: Housing societies incur administrative and structural costs for facilitating building-wide pipeline installations, passing them on to residents as maintenance hikes.",
+          "driving_t_nodes": [
+            "hydrocarbon_pipeline_network"
+          ],
+          "score": 0.18
+        },
+        {
+          "i_node": "restaurant_and_street_food",
+          "trajectory": "escalating",
+          "probability": 0.5,
+          "magnitude": 0.3,
+          "delay_days": 120,
+          "rationale": "3rd order: Phasing out domestic LPG cylinders reduces their illegal diversion to street vendors, forcing vendors to buy expensive commercial cylinders and raising street food prices.",
+          "driving_t_nodes": [
+            "welfare_and_subsidy_schemes"
+          ],
+          "score": 0.15
+        }
+      ],
+      "pred_nodes": [
+        "lpg_cylinder",
+        "piped_natural_gas",
+        "welfare_and_ration_cards",
+        "road_conditions_and_closures",
+        "repair_and_pest_control",
+        "rwa_and_maintenance_fees",
+        "restaurant_and_street_food"
+      ],
+      "ndcg_10": 0.6919782894504708,
+      "recall_10": 0.6,
+      "recall_5": 0.4,
+      "precision_10": 0.42857142857142855,
+      "error": null,
+      "ms": 40552
+    },
+    {
+      "id": "article_12",
+      "name": "Zomato increases food delivery platform fee to Rs 14.90 per order; magicpin rule",
+      "date": "2026-03-20",
+      "title": "Zomato increases food delivery platform fee to Rs 14.90 per order; magicpin rules out hike",
+      "summary": "Zomato increases food delivery platform fee to Rs 14.90 per order; magicpin rules out hike",
+      "macro_shifts": [
+        {
+          "t_node": "unknown",
+          "trajectory": "escalating",
+          "context": "Zomato increases food delivery platform fee to Rs 14.90 per order; magicpin rules out hike"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "food_delivery_services",
+          "rank": 1,
+          "reasoning": "Direct cost increase \u2014 platform fee rises to Rs 14.90 per order, making every Zomato delivery more expensive"
+        },
+        {
+          "i_node": "restaurant_and_street_food",
+          "rank": 2,
+          "reasoning": "Higher platform fees may reduce order volumes, hurting restaurant revenue from delivery channel"
+        },
+        {
+          "i_node": "food_and_grocery_delivery_payouts",
+          "rank": 3,
+          "reasoning": "If order volumes drop due to higher consumer costs, delivery partners earn less from fewer deliveries"
+        },
+        {
+          "i_node": "packaged_foods_and_beverages",
+          "rank": 4,
+          "reasoning": "Some consumers may shift from ordering food delivery to buying packaged foods or cooking at home"
+        },
+        {
+          "i_node": "mobile_tariffs",
+          "rank": 5,
+          "reasoning": "Platform fee hikes stack on top of data costs consumers already pay to use food delivery apps"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "food_delivery_services",
+          "trajectory": "escalating",
+          "probability": 0.95,
+          "magnitude": 0.3,
+          "delay_days": 1,
+          "rationale": "1st order: Zomato's platform fee hike to Rs 14.90 directly increases the out-of-pocket expense for citizens ordering food online.",
+          "driving_t_nodes": [
+            "unknown"
+          ],
+          "score": 0.285
+        },
+        {
+          "i_node": "food_and_grocery_delivery_payouts",
+          "trajectory": "deescalating",
+          "probability": 0.6,
+          "magnitude": 0.4,
+          "delay_days": 30,
+          "rationale": "2nd order: Higher costs for consumers lead to a marginal drop in overall order volumes, which reduces the daily trip incentives and overall earnings for delivery gig workers.",
+          "driving_t_nodes": [
+            "unknown"
+          ],
+          "score": 0.24
+        },
+        {
+          "i_node": "restaurant_and_street_food",
+          "trajectory": "escalating",
+          "probability": 0.7,
+          "magnitude": 0.3,
+          "delay_days": 14,
+          "rationale": "2nd order: To avoid rising platform and delivery surcharges, price-sensitive consumers shift their behavior towards dining out or picking up food directly from restaurants.",
+          "driving_t_nodes": [
+            "unknown"
+          ],
+          "score": 0.21
+        },
+        {
+          "i_node": "labor_and_gig_unions",
+          "trajectory": "escalating",
+          "probability": 0.4,
+          "magnitude": 0.5,
+          "delay_days": 90,
+          "rationale": "3rd order: Stagnating order volumes and squeezed earnings prompt delivery partners to organize strikes or join gig worker unions demanding fairer payout structures from platforms.",
+          "driving_t_nodes": [
+            "unknown"
+          ],
+          "score": 0.2
+        },
+        {
+          "i_node": "street_vendor_income",
+          "trajectory": "escalating",
+          "probability": 0.5,
+          "magnitude": 0.3,
+          "delay_days": 60,
+          "rationale": "3rd order: As consumers increasingly substitute expensive online delivery with local alternatives, street food vendors and neighborhood eateries experience a sustained boost in footfall and income.",
+          "driving_t_nodes": [
+            "unknown"
+          ],
+          "score": 0.15
+        }
+      ],
+      "pred_nodes": [
+        "food_delivery_services",
+        "food_and_grocery_delivery_payouts",
+        "restaurant_and_street_food",
+        "labor_and_gig_unions",
+        "street_vendor_income"
+      ],
+      "ndcg_10": 0.7814530140371577,
+      "recall_10": 0.6,
+      "recall_5": 0.6,
+      "precision_10": 0.6,
+      "error": null,
+      "ms": 25910
+    },
+    {
+      "id": "article_13",
+      "name": "Customers to have zero liability in case of lender negligence: RBI\u2019s draft guide",
+      "date": "2026-03-06",
+      "title": "Customers to have zero liability in case of lender negligence: RBI\u2019s draft guidelines on digital fraud",
+      "summary": "Customers to have zero liability in case of lender negligence: RBI\u2019s draft guidelines on digital fraud",
+      "macro_shifts": [
+        {
+          "t_node": "banking_and_credit_regulation",
+          "trajectory": "escalating",
+          "context": "Customers to have zero liability in case of lender negligence: RBI\u2019s draft guidelines on digital fraud"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "spam_and_scams",
+          "rank": 1,
+          "reasoning": "Zero-liability protection directly shields citizens who fall victim to digital fraud caused by bank negligence"
+        },
+        {
+          "i_node": "cyber_crime_reporting",
+          "rank": 2,
+          "reasoning": "Clearer liability framework incentivizes citizens to report digital fraud knowing banks bear the burden"
+        },
+        {
+          "i_node": "digital_privacy_and_data",
+          "rank": 3,
+          "reasoning": "Banks must strengthen data protection and security protocols to avoid bearing fraud liability"
+        },
+        {
+          "i_node": "health_insurance_premium",
+          "rank": 4,
+          "reasoning": "Banks may pass increased fraud-related costs into financial product pricing including bancassurance"
+        },
+        {
+          "i_node": "personal_income_tax",
+          "rank": 5,
+          "reasoning": "Fraud losses previously borne by citizens were unrecoverable; zero liability means citizens retain more post-tax income"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "cyber_crime_reporting",
+          "trajectory": "deescalating",
+          "probability": 0.9,
+          "magnitude": 0.8,
+          "delay_days": 30,
+          "rationale": "1st order: Citizens filing online fraud complaints will face zero financial liability if lender negligence is proven, drastically reducing the financial damage of cyber crimes.",
+          "driving_t_nodes": [
+            "banking_and_credit_regulation"
+          ],
+          "score": 0.7200000000000001
+        },
+        {
+          "i_node": "spam_and_scams",
+          "trajectory": "deescalating",
+          "probability": 0.85,
+          "magnitude": 0.75,
+          "delay_days": 30,
+          "rationale": "1st order: The catastrophic financial impact of falling victim to phishing texts or promotional scam calls is mitigated by the RBI's protective safety net.",
+          "driving_t_nodes": [
+            "banking_and_credit_regulation"
+          ],
+          "score": 0.6375
+        },
+        {
+          "i_node": "digital_privacy_and_data",
+          "trajectory": "escalating",
           "probability": 0.8,
           "magnitude": 0.6,
-          "delay_days": 1,
-          "rationale": "Recurring subscriptions, OTT payments, and utility auto-debits mandated through PPBL accounts will fail to execute.",
+          "delay_days": 60,
+          "rationale": "2nd order: To avoid liability payouts, banks will enforce aggressive device binding, biometric checks, and stricter personal data privacy controls on consumer apps.",
           "driving_t_nodes": [
             "banking_and_credit_regulation"
           ],
           "score": 0.48
         },
         {
-          "i_node": "ncmc_smart_card",
-          "trajectory": "deescalating",
-          "probability": 0.75,
-          "magnitude": 0.6,
-          "delay_days": 1,
-          "rationale": "Commuters using Paytm-issued National Common Mobility Cards (NCMC) for metro and transit will be unable to top up their balances.",
+          "i_node": "identity_and_travel_documents",
+          "trajectory": "escalating",
+          "probability": 0.7,
+          "magnitude": 0.5,
+          "delay_days": 90,
+          "rationale": "2nd order: Stricter bank compliance to prevent account takeovers will lead to increased bureaucratic friction for citizens updating Aadhaar or PAN details for KYC.",
           "driving_t_nodes": [
             "banking_and_credit_regulation"
           ],
-          "score": 0.44999999999999996
+          "score": 0.35
+        },
+        {
+          "i_node": "kirana_and_retail_income",
+          "trajectory": "escalating",
+          "probability": 0.6,
+          "magnitude": 0.4,
+          "delay_days": 120,
+          "rationale": "3rd order: Enhanced security and zero-liability rules boost confidence among small shopkeepers, protecting their digital retail income streams from being wiped out by systemic fraud.",
+          "driving_t_nodes": [
+            "banking_and_credit_regulation"
+          ],
+          "score": 0.24
+        },
+        {
+          "i_node": "msme_factory_owner_income",
+          "trajectory": "deescalating",
+          "probability": 0.5,
+          "magnitude": 0.35,
+          "delay_days": 180,
+          "rationale": "3rd order: Lenders becoming hyper-cautious about digital fraud liability may introduce friction and delays in digital credit lines, slightly squeezing MSME cash flows and operations.",
+          "driving_t_nodes": [
+            "banking_and_credit_regulation"
+          ],
+          "score": 0.175
         }
       ],
       "pred_nodes": [
-        "fastag_wallet",
-        "digital_payment_infrastructure",
-        "savings_account_balance",
-        "upi_transaction_success",
-        "e_mandate_autopay",
-        "ncmc_smart_card"
+        "cyber_crime_reporting",
+        "spam_and_scams",
+        "digital_privacy_and_data",
+        "identity_and_travel_documents",
+        "kirana_and_retail_income",
+        "msme_factory_owner_income"
       ],
-      "ndcg_10": 0.6226075198220883,
-      "recall_10": 0.4,
-      "recall_5": 0.3,
+      "ndcg_10": 0.7719328096177623,
+      "recall_10": 0.6,
+      "recall_5": 0.6,
+      "precision_10": 0.5,
       "error": null,
-      "ms": 26312
+      "ms": 37280
     },
     {
-      "id": "gold_price_rally_2024",
-      "name": "Gold Price Rally to 73k",
-      "date": "2024-04",
-      "title": "Gold Price Rally to 73k",
-      "summary": "Domestic gold prices crossed Rs 73,000 per 10 grams tracking global geopolitical tensions",
+      "id": "article_14",
+      "name": "India\u2019s July retail inflation hits 8-year low of 1.55%, second-lowest ever",
+      "date": "2025-08-12",
+      "title": "India\u2019s July retail inflation hits 8-year low of 1.55%, second-lowest ever",
+      "summary": "India\u2019s July retail inflation hits 8-year low of 1.55%, second-lowest ever",
       "macro_shifts": [
         {
-          "t_node": "precious_metals",
+          "t_node": "retail_inflation",
           "trajectory": "escalating",
-          "context": "Domestic gold prices crossed Rs 73,000 per 10 grams tracking global geopolitical tensions"
+          "context": "India\u2019s July retail inflation hits 8-year low of 1.55%, second-lowest ever"
         }
       ],
       "expected_impacts": [
         {
-          "i_node": "retail_gold_investment",
+          "i_node": "staple_grains",
           "rank": 1,
-          "reasoning": "Physical gold buying volumes dropped significantly due to record high prices"
+          "reasoning": "Record-low CPI driven by falling food prices means staple grains are cheaper for households"
         },
         {
-          "i_node": "gold_loan_interest",
+          "i_node": "fresh_vegetables_and_fruits",
           "rank": 2,
-          "reasoning": "NBFCs offered higher loan amounts per gram, driving a surge in gold loan uptake"
+          "reasoning": "Low food inflation directly reflects reduced prices of perishables"
         },
         {
-          "i_node": "wedding_planning_service",
+          "i_node": "petrol_price",
           "rank": 3,
-          "reasoning": "Jewelry budgets squeezed, forcing families to cut back on other wedding expenses"
+          "reasoning": "Falling fuel prices contributed to the low CPI, meaning lower petrol costs at the pump"
         },
         {
-          "i_node": "wedding_venue",
+          "i_node": "diesel_price",
           "rank": 4,
-          "reasoning": "Spillover effect of reduced overall wedding budgets impacted venue bookings"
+          "reasoning": "Lower diesel prices reduce transport costs for consumers and supply chain logistics"
         },
         {
-          "i_node": "retail_silver_investment",
+          "i_node": "pulses_and_dals",
           "rank": 5,
-          "reasoning": "Retail investors shifted to silver as a relatively cheaper precious metal alternative"
-        },
-        {
-          "i_node": "india_trade_deficit",
-          "rank": 6,
-          "reasoning": "Higher import bill for gold widened the national trade deficit"
-        },
-        {
-          "i_node": "usd_inr_exchange",
-          "rank": 7,
-          "reasoning": "Rupee faced pressure due to the high dollar outflow for gold imports"
-        },
-        {
-          "i_node": "burglary_and_theft",
-          "rank": 8,
-          "reasoning": "Record prices incentivized a spike in chain-snatching and gold smuggling"
-        },
-        {
-          "i_node": "microfinance_loan",
-          "rank": 9,
-          "reasoning": "Increased reliance on gold pledging reduced demand for unsecured micro-credit"
-        },
-        {
-          "i_node": "festive_idol",
-          "rank": 10,
-          "reasoning": "Akshaya Tritiya sales volume for gold idols and coins dropped year-on-year"
+          "reasoning": "Low food inflation indicates reduced dal prices, easing protein costs for households"
         }
       ],
       "pred_impacts": [
         {
-          "i_node": "retail_gold_investment",
-          "trajectory": "escalating",
-          "probability": 0.95,
+          "i_node": "farmer_income_and_msp",
+          "trajectory": "deescalating",
+          "probability": 0.85,
           "magnitude": 0.8,
-          "delay_days": 1,
-          "rationale": "Record high domestic prices directly increase the acquisition cost of physical gold, jewellery, and sovereign gold bonds for retail investors.",
+          "delay_days": 30,
+          "rationale": "2nd order: The crash in retail food prices means wholesale mandi prices have plummeted, directly reducing the profit margins and income farmers realize for their harvest.",
           "driving_t_nodes": [
-            "precious_metals"
+            "retail_inflation"
           ],
-          "score": 0.76
+          "score": 0.68
         },
         {
-          "i_node": "weddings_and_milestones",
-          "trajectory": "escalating",
-          "probability": 0.9,
+          "i_node": "fresh_vegetables_and_fruits",
+          "trajectory": "deescalating",
+          "probability": 0.95,
           "magnitude": 0.7,
-          "delay_days": 14,
-          "rationale": "Gold jewellery is an inelastic cultural expense; price surges will significantly inflate overall wedding budgets for Indian families.",
+          "delay_days": 1,
+          "rationale": "1st order: A historic drop in retail inflation to 1.55% is heavily driven by a sharp decline in volatile food prices, immediately lowering the daily sabzi and fruit bills for households.",
           "driving_t_nodes": [
-            "precious_metals"
+            "retail_inflation"
           ],
-          "score": 0.63
+          "score": 0.6649999999999999
         },
         {
-          "i_node": "gold_loan_interest",
-          "trajectory": "escalating",
+          "i_node": "edible_oils",
+          "trajectory": "deescalating",
           "probability": 0.85,
           "magnitude": 0.6,
-          "delay_days": 3,
-          "rationale": "Higher gold prices increase the collateral value of household jewellery, allowing citizens to secure larger loan amounts from banks and NBFCs.",
+          "delay_days": 1,
+          "rationale": "1st order: Broad-based cooling of retail inflation reflects lower prices for daily kitchen staples like cooking oil, providing immediate relief to middle and low-income household budgets.",
           "driving_t_nodes": [
-            "precious_metals"
+            "retail_inflation"
           ],
           "score": 0.51
         },
         {
-          "i_node": "burglary_and_theft",
-          "trajectory": "escalating",
-          "probability": 0.65,
-          "magnitude": 0.5,
-          "delay_days": 30,
-          "rationale": "The soaring value of physical gold increases the lucrative nature of property crimes like chain snatching and house break-ins.",
+          "i_node": "farm_labor_wages",
+          "trajectory": "deescalating",
+          "probability": 0.7,
+          "magnitude": 0.6,
+          "delay_days": 90,
+          "rationale": "3rd order: Depressed farmer incomes reduce rural liquidity and surplus cash, making farm owners reluctant or unable to hike daily wages for agricultural laborers in upcoming seasons.",
           "driving_t_nodes": [
-            "precious_metals"
+            "retail_inflation"
           ],
-          "score": 0.325
+          "score": 0.42
+        },
+        {
+          "i_node": "corporate_salaries",
+          "trajectory": "deescalating",
+          "probability": 0.55,
+          "magnitude": 0.5,
+          "delay_days": 180,
+          "rationale": "3rd order: Sustained low retail inflation reduces the cost-of-living pressure on urban workers, giving corporate employers justification to offer lower annual increment percentages during appraisals.",
+          "driving_t_nodes": [
+            "retail_inflation"
+          ],
+          "score": 0.275
+        },
+        {
+          "i_node": "restaurant_and_street_food",
+          "trajectory": "deescalating",
+          "probability": 0.65,
+          "magnitude": 0.4,
+          "delay_days": 45,
+          "rationale": "2nd order: Cheaper vegetables, oils, and grains lower the input costs for street vendors and QSRs, allowing them to halt menu price hikes or offer discounts to attract more customers.",
+          "driving_t_nodes": [
+            "retail_inflation"
+          ],
+          "score": 0.26
         }
       ],
       "pred_nodes": [
-        "retail_gold_investment",
-        "weddings_and_milestones",
-        "gold_loan_interest",
-        "burglary_and_theft"
+        "farmer_income_and_msp",
+        "fresh_vegetables_and_fruits",
+        "edible_oils",
+        "farm_labor_wages",
+        "corporate_salaries",
+        "restaurant_and_street_food"
       ],
-      "ndcg_10": 0.5269963325244995,
-      "recall_10": 0.3,
-      "recall_5": 0.3,
+      "ndcg_10": 0.22700558567733034,
+      "recall_10": 0.2,
+      "recall_5": 0.2,
+      "precision_10": 0.16666666666666666,
       "error": null,
-      "ms": 18890
+      "ms": 45247
+    },
+    {
+      "id": "article_15",
+      "name": "Real estate, infra sectors short of 20 lakh skilled workers: NAREDCO chair Hiran",
+      "date": "2025-08-01",
+      "title": "Real estate, infra sectors short of 20 lakh skilled workers: NAREDCO chair Hiranandani",
+      "summary": "Real estate, infra sectors short of 20 lakh skilled workers: NAREDCO chair Hiranandani",
+      "macro_shifts": [
+        {
+          "t_node": "macro_employment_trends",
+          "trajectory": "escalating",
+          "context": "Real estate, infra sectors short of 20 lakh skilled workers: NAREDCO chair Hiranandani"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "construction_worker_wages",
+          "rank": 1,
+          "reasoning": "20 lakh worker shortage means construction workers have strong bargaining power \u2014 wages rise"
+        },
+        {
+          "i_node": "building_materials_and_labor",
+          "rank": 2,
+          "reasoning": "Labor shortage drives up construction costs for homebuyers as builders pass through higher labor expenses"
+        },
+        {
+          "i_node": "residential_rent_and_pg",
+          "rank": 3,
+          "reasoning": "Delayed housing projects due to worker shortage constrain supply, pushing up rents in high-demand areas"
+        },
+        {
+          "i_node": "vocational_and_iti_training",
+          "rank": 4,
+          "reasoning": "Massive skill gap creates strong demand for ITI and vocational training in plumbing, electrical, masonry"
+        },
+        {
+          "i_node": "corporate_hiring_and_layoffs",
+          "rank": 5,
+          "reasoning": "Real estate and infra firms actively hiring \u2014 20 lakh vacancies represent significant employment opportunity"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "construction_worker_wages",
+          "trajectory": "escalating",
+          "probability": 0.9,
+          "magnitude": 0.7,
+          "delay_days": 15,
+          "rationale": "1st order: A massive shortage of 20 lakh skilled workers directly increases the bargaining power and daily wages of available skilled masons, carpenters, and electricians.",
+          "driving_t_nodes": [
+            "macro_employment_trends"
+          ],
+          "score": 0.63
+        },
+        {
+          "i_node": "building_materials_and_labor",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.6,
+          "delay_days": 30,
+          "rationale": "1st order: Citizens building or renovating their own homes face immediate spikes in labor contracting costs due to the severe market-wide shortage.",
+          "driving_t_nodes": [
+            "macro_employment_trends"
+          ],
+          "score": 0.51
+        },
+        {
+          "i_node": "residential_rent_and_pg",
+          "trajectory": "escalating",
+          "probability": 0.75,
+          "magnitude": 0.6,
+          "delay_days": 90,
+          "rationale": "2nd order: Labor shortages delay the completion and handover of new residential projects, restricting housing supply and pushing up rental rates in urban hubs.",
+          "driving_t_nodes": [
+            "macro_employment_trends"
+          ],
+          "score": 0.44999999999999996
+        },
+        {
+          "i_node": "road_conditions_and_closures",
+          "trajectory": "escalating",
+          "probability": 0.7,
+          "magnitude": 0.5,
+          "delay_days": 120,
+          "rationale": "2nd order: The shortage of workers in the infra sector stalls public works (flyovers, metros, road repairs), leaving roads barricaded and dug up for longer periods.",
+          "driving_t_nodes": [
+            "macro_employment_trends"
+          ],
+          "score": 0.35
+        },
+        {
+          "i_node": "air_pollution",
+          "trajectory": "escalating",
+          "probability": 0.6,
+          "magnitude": 0.5,
+          "delay_days": 150,
+          "rationale": "3rd order: Prolonged and stalled construction sites due to labor shortages generate continuous dust, worsening PM 2.5/10 levels in surrounding neighborhoods.",
+          "driving_t_nodes": [
+            "macro_employment_trends"
+          ],
+          "score": 0.3
+        },
+        {
+          "i_node": "vocational_and_iti_training",
+          "trajectory": "escalating",
+          "probability": 0.65,
+          "magnitude": 0.4,
+          "delay_days": 60,
+          "rationale": "2nd order: High demand and rising wages for skilled construction roles incentivize youth and unskilled laborers to enroll in ITIs and skill development programs.",
+          "driving_t_nodes": [
+            "macro_employment_trends"
+          ],
+          "score": 0.26
+        },
+        {
+          "i_node": "farm_labor_wages",
+          "trajectory": "escalating",
+          "probability": 0.5,
+          "magnitude": 0.4,
+          "delay_days": 180,
+          "rationale": "3rd order: Lucrative urban construction wages draw rural workers away from agriculture, tightening the rural labor pool and forcing farmers to pay higher daily wages.",
+          "driving_t_nodes": [
+            "macro_employment_trends"
+          ],
+          "score": 0.2
+        }
+      ],
+      "pred_nodes": [
+        "construction_worker_wages",
+        "building_materials_and_labor",
+        "residential_rent_and_pg",
+        "road_conditions_and_closures",
+        "air_pollution",
+        "vocational_and_iti_training",
+        "farm_labor_wages"
+      ],
+      "ndcg_10": 0.8863685383871405,
+      "recall_10": 0.8,
+      "recall_5": 0.6,
+      "precision_10": 0.5714285714285714,
+      "error": null,
+      "ms": 127240
+    },
+    {
+      "id": "article_16",
+      "name": "Repo rate cut 25 bp to 5.25%; \u2018rare Goldilocks period\u2019, says RBI Governor",
+      "date": "2025-12-05",
+      "title": "Repo rate cut 25 bp to 5.25%; \u2018rare Goldilocks period\u2019, says RBI Governor",
+      "summary": "Repo rate cut 25 bp to 5.25%; \u2018rare Goldilocks period\u2019, says RBI Governor",
+      "macro_shifts": [
+        {
+          "t_node": "monetary_policy",
+          "trajectory": "escalating",
+          "context": "Repo rate cut 25 bp to 5.25%; \u2018rare Goldilocks period\u2019, says RBI Governor"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "residential_rent_and_pg",
+          "rank": 1,
+          "reasoning": "Repo cut lowers floating-rate home loan EMIs for millions of borrowers, directly reducing monthly housing cost"
+        },
+        {
+          "i_node": "vehicle_purchase_cost",
+          "rank": 2,
+          "reasoning": "Auto loan interest rates fall with repo cut, reducing cost of financing car and two-wheeler purchases"
+        },
+        {
+          "i_node": "msme_factory_owner_income",
+          "rank": 3,
+          "reasoning": "Cheaper bank credit improves working capital costs and margins for MSME factory owners"
+        },
+        {
+          "i_node": "kirana_and_retail_income",
+          "rank": 4,
+          "reasoning": "Lower overdraft and business loan rates reduce financing costs for small retailers"
+        },
+        {
+          "i_node": "corporate_salaries",
+          "rank": 5,
+          "reasoning": "Easier corporate borrowing stimulates business expansion, supporting salary increments and new hiring"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "vehicle_purchase_cost",
+          "trajectory": "deescalating",
+          "probability": 0.9,
+          "magnitude": 0.6,
+          "delay_days": 15,
+          "rationale": "1st order: A 25 bps repo rate cut prompts banks to lower auto loan interest rates, reducing the effective EMI burden and overall cost of purchasing a car or bike.",
+          "driving_t_nodes": [
+            "monetary_policy"
+          ],
+          "score": 0.54
+        },
+        {
+          "i_node": "msme_factory_owner_income",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.5,
+          "delay_days": 30,
+          "rationale": "1st order: Lower benchmark rates reduce the interest burden on working capital and business loans, immediately improving profit margins for small factory and business owners.",
+          "driving_t_nodes": [
+            "monetary_policy"
+          ],
+          "score": 0.425
+        },
+        {
+          "i_node": "corporate_hiring_and_layoffs",
+          "trajectory": "escalating",
+          "probability": 0.65,
+          "magnitude": 0.6,
+          "delay_days": 90,
+          "rationale": "2nd order: Cheaper corporate borrowing costs encourage private sector companies to expand operations and invest in new projects, leading to increased hiring.",
+          "driving_t_nodes": [
+            "monetary_policy"
+          ],
+          "score": 0.39
+        },
+        {
+          "i_node": "building_materials_and_labor",
+          "trajectory": "escalating",
+          "probability": 0.75,
+          "magnitude": 0.5,
+          "delay_days": 60,
+          "rationale": "2nd order: Cheaper home loans stimulate real estate demand and new housing projects, driving up the demand and prices for cement, steel, and construction labor.",
+          "driving_t_nodes": [
+            "monetary_policy"
+          ],
+          "score": 0.375
+        },
+        {
+          "i_node": "construction_worker_wages",
+          "trajectory": "escalating",
+          "probability": 0.55,
+          "magnitude": 0.5,
+          "delay_days": 120,
+          "rationale": "3rd order: The sustained boom in real estate and infrastructure driven by lower borrowing costs creates a systemic shortage of manual labor, raising daily wages for mistris and construction workers.",
+          "driving_t_nodes": [
+            "monetary_policy"
+          ],
+          "score": 0.275
+        },
+        {
+          "i_node": "factory_worker_wages",
+          "trajectory": "escalating",
+          "probability": 0.6,
+          "magnitude": 0.4,
+          "delay_days": 90,
+          "rationale": "2nd order: As MSMEs expand production capacity due to cheaper credit, the demand for shopfloor workers increases, leading to more shifts and upward pressure on wages.",
+          "driving_t_nodes": [
+            "monetary_policy"
+          ],
+          "score": 0.24
+        },
+        {
+          "i_node": "kirana_and_retail_income",
+          "trajectory": "escalating",
+          "probability": 0.5,
+          "magnitude": 0.4,
+          "delay_days": 150,
+          "rationale": "3rd order: Lower retail EMIs and better employment prospects leave households with higher disposable income, boosting sales and profits for local kirana stores and retail shops.",
+          "driving_t_nodes": [
+            "monetary_policy"
+          ],
+          "score": 0.2
+        }
+      ],
+      "pred_nodes": [
+        "vehicle_purchase_cost",
+        "msme_factory_owner_income",
+        "corporate_hiring_and_layoffs",
+        "building_materials_and_labor",
+        "construction_worker_wages",
+        "factory_worker_wages",
+        "kirana_and_retail_income"
+      ],
+      "ndcg_10": 0.6548583571056127,
+      "recall_10": 0.6,
+      "recall_5": 0.4,
+      "precision_10": 0.42857142857142855,
+      "error": null,
+      "ms": 25434
+    },
+    {
+      "id": "article_17",
+      "name": "8,000 candidates join PM internship scheme in 4 months since its launch",
+      "date": "2025-02-05",
+      "title": "8,000 candidates join PM internship scheme in 4 months since its launch",
+      "summary": "8,000 candidates join PM internship scheme in 4 months since its launch",
+      "macro_shifts": [
+        {
+          "t_node": "fiscal_and_tax_policy",
+          "trajectory": "escalating",
+          "context": "8,000 candidates join PM internship scheme in 4 months since its launch"
+        },
+        {
+          "t_node": "labor_and_employment_policy",
+          "trajectory": "escalating",
+          "context": "8,000 candidates join PM internship scheme in 4 months since its launch"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "corporate_hiring_and_layoffs",
+          "rank": 1,
+          "reasoning": "Scheme places interns in top corporations, creating direct entry-level employment pipeline for 8,000 youth"
+        },
+        {
+          "i_node": "professional_upskilling",
+          "rank": 2,
+          "reasoning": "Corporate exposure and structured internship provides professional skill development for weaker section youth"
+        },
+        {
+          "i_node": "corporate_salaries",
+          "rank": 3,
+          "reasoning": "Stipend income during internship provides immediate earnings for candidates from low-income families"
+        },
+        {
+          "i_node": "vocational_and_iti_training",
+          "rank": 4,
+          "reasoning": "Internship scheme serves as practical vocational training bridging gap between education and employability"
+        },
+        {
+          "i_node": "educational_scholarships",
+          "rank": 5,
+          "reasoning": "Scheme targeting economically weaker sections functions as financial support for disadvantaged youth"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "professional_upskilling",
+          "trajectory": "escalating",
+          "probability": 0.95,
+          "magnitude": 0.3,
+          "delay_days": 7,
+          "rationale": "1st order: 8,000 youth directly enter corporate environments, receiving on-the-job training, soft skills, and practical exposure under the PM scheme.",
+          "driving_t_nodes": [
+            "labor_and_employment_policy",
+            "fiscal_and_tax_policy"
+          ],
+          "score": 0.285
+        },
+        {
+          "i_node": "corporate_hiring_and_layoffs",
+          "trajectory": "escalating",
+          "probability": 0.9,
+          "magnitude": 0.2,
+          "delay_days": 15,
+          "rationale": "1st order: Top 500 companies absorb these candidates as interns, boosting entry-level corporate engagement and formal sector onboarding.",
+          "driving_t_nodes": [
+            "labor_and_employment_policy"
+          ],
+          "score": 0.18000000000000002
+        },
+        {
+          "i_node": "residential_rent_and_pg",
+          "trajectory": "escalating",
+          "probability": 0.75,
+          "magnitude": 0.2,
+          "delay_days": 30,
+          "rationale": "2nd order: As interns relocate from tier-2/3 towns to corporate hubs for their 12-month stints, localized demand for PG accommodations and shared rooms rises.",
+          "driving_t_nodes": [
+            "labor_and_employment_policy"
+          ],
+          "score": 0.15000000000000002
+        },
+        {
+          "i_node": "restaurant_and_street_food",
+          "trajectory": "escalating",
+          "probability": 0.65,
+          "magnitude": 0.2,
+          "delay_days": 45,
+          "rationale": "3rd order: The monthly government-backed stipend provides new disposable income, leading to increased spending at local tea stalls, QSRs, and street food vendors near office hubs.",
+          "driving_t_nodes": [
+            "fiscal_and_tax_policy",
+            "labor_and_employment_policy"
+          ],
+          "score": 0.13
+        },
+        {
+          "i_node": "city_bus_transit",
+          "trajectory": "escalating",
+          "probability": 0.8,
+          "magnitude": 0.1,
+          "delay_days": 20,
+          "rationale": "2nd order: Daily commuting to corporate offices by these newly inducted interns increases ridership on affordable city buses and local transit systems.",
+          "driving_t_nodes": [
+            "labor_and_employment_policy"
+          ],
+          "score": 0.08000000000000002
+        },
+        {
+          "i_node": "student_and_youth_unions",
+          "trajectory": "deescalating",
+          "probability": 0.4,
+          "magnitude": 0.1,
+          "delay_days": 90,
+          "rationale": "3rd order: Tangible placement of youth in formal internships provides a viable career pathway, marginally reducing frustration over unemployment and deescalating youth-led job protests.",
+          "driving_t_nodes": [
+            "labor_and_employment_policy"
+          ],
+          "score": 0.04000000000000001
+        }
+      ],
+      "pred_nodes": [
+        "professional_upskilling",
+        "corporate_hiring_and_layoffs",
+        "residential_rent_and_pg",
+        "restaurant_and_street_food",
+        "city_bus_transit",
+        "student_and_youth_unions"
+      ],
+      "ndcg_10": 0.6120237692831791,
+      "recall_10": 0.4,
+      "recall_5": 0.4,
+      "precision_10": 0.3333333333333333,
+      "error": null,
+      "ms": 40249
+    },
+    {
+      "id": "article_18",
+      "name": "Maharashtra govt cancels Rs 3,000 crore insurance contract with UII",
+      "date": "2024-09-18",
+      "title": "Maharashtra govt cancels Rs 3,000 crore insurance contract with UII",
+      "summary": "Maharashtra govt cancels Rs 3,000 crore insurance contract with UII",
+      "macro_shifts": [
+        {
+          "t_node": "center_state_relations",
+          "trajectory": "escalating",
+          "context": "Maharashtra govt cancels Rs 3,000 crore insurance contract with UII"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "health_insurance_premium",
+          "rank": 1,
+          "reasoning": "Cancellation of state insurance contract disrupts health coverage for lakhs of Maharashtra govt employees"
+        },
+        {
+          "i_node": "hospital_and_medical_care",
+          "rank": 2,
+          "reasoning": "Gap in insurance coverage forces beneficiaries to pay out-of-pocket for hospital visits and procedures"
+        },
+        {
+          "i_node": "medicines_and_pharmaceuticals",
+          "rank": 3,
+          "reasoning": "Without active insurance, beneficiaries bear direct cost of medicines previously covered"
+        },
+        {
+          "i_node": "medical_tests_and_diagnostics",
+          "rank": 4,
+          "reasoning": "Diagnostic tests and lab work costs shift to individuals during coverage gap"
+        },
+        {
+          "i_node": "maternal_and_child_health",
+          "rank": 5,
+          "reasoning": "Pregnant women and children among beneficiaries lose coverage for maternity and pediatric services"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "hospital_and_medical_care",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.8,
+          "delay_days": 2,
+          "rationale": "1st order: Cancellation of the massive state insurance contract immediately halts cashless hospital admissions and surgeries for low-income scheme beneficiaries.",
+          "driving_t_nodes": [
+            "center_state_relations"
+          ],
+          "score": 0.68
+        },
+        {
+          "i_node": "farmer_income_and_msp",
+          "trajectory": "deescalating",
+          "probability": 0.75,
+          "magnitude": 0.7,
+          "delay_days": 15,
+          "rationale": "1st order: If the UII contract covers state crop insurance, farmers face frozen claim settlements for seasonal crop damage, directly reducing their effective income.",
+          "driving_t_nodes": [
+            "center_state_relations"
+          ],
+          "score": 0.5249999999999999
+        },
+        {
+          "i_node": "medical_tests_and_diagnostics",
+          "trajectory": "escalating",
+          "probability": 0.8,
+          "magnitude": 0.6,
+          "delay_days": 7,
+          "rationale": "2nd order: Patients denied cashless scheme benefits must now pay out-of-pocket for expensive diagnostics like MRI scans and pathology tests.",
+          "driving_t_nodes": [
+            "center_state_relations"
+          ],
+          "score": 0.48
+        },
+        {
+          "i_node": "medicines_and_pharmaceuticals",
+          "trajectory": "escalating",
+          "probability": 0.8,
+          "magnitude": 0.6,
+          "delay_days": 7,
+          "rationale": "2nd order: Without bundled insurance coverage, the financial burden of life-saving drugs and in-hospital pharmacy bills shifts entirely to the citizens.",
+          "driving_t_nodes": [
+            "center_state_relations"
+          ],
+          "score": 0.48
+        },
+        {
+          "i_node": "farmer_agitations",
+          "trajectory": "escalating",
+          "probability": 0.6,
+          "magnitude": 0.6,
+          "delay_days": 60,
+          "rationale": "3rd order: Prolonged delays in crop insurance payouts due to the contract dispute trigger organized protests and road blockades by farmer unions against the state.",
+          "driving_t_nodes": [
+            "center_state_relations"
+          ],
+          "score": 0.36
+        },
+        {
+          "i_node": "health_insurance_premium",
+          "trajectory": "escalating",
+          "probability": 0.5,
+          "magnitude": 0.5,
+          "delay_days": 45,
+          "rationale": "3rd order: Repeated disruptions in government health schemes push vulnerable middle-class families to purchase private retail health policies, increasing their household premium burden.",
+          "driving_t_nodes": [
+            "center_state_relations"
+          ],
+          "score": 0.25
+        }
+      ],
+      "pred_nodes": [
+        "hospital_and_medical_care",
+        "farmer_income_and_msp",
+        "medical_tests_and_diagnostics",
+        "medicines_and_pharmaceuticals",
+        "farmer_agitations",
+        "health_insurance_premium"
+      ],
+      "ndcg_10": 0.7798557748646207,
+      "recall_10": 0.8,
+      "recall_5": 0.6,
+      "precision_10": 0.6666666666666666,
+      "error": null,
+      "ms": 36554
+    },
+    {
+      "id": "article_19",
+      "name": "Protectionist measures on steel imports will hurt MSMEs: EEPC",
+      "date": "2024-10-26",
+      "title": "Protectionist measures on steel imports will hurt MSMEs: EEPC",
+      "summary": "Protectionist measures on steel imports will hurt MSMEs: EEPC",
+      "macro_shifts": [
+        {
+          "t_node": "trade_and_tariff_policy",
+          "trajectory": "escalating",
+          "context": "Protectionist measures on steel imports will hurt MSMEs: EEPC"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "msme_factory_owner_income",
+          "rank": 1,
+          "reasoning": "Anti-dumping duties on steel raise raw material costs, directly squeezing margins for MSME manufacturers"
+        },
+        {
+          "i_node": "building_materials_and_labor",
+          "rank": 2,
+          "reasoning": "Higher steel prices increase construction costs for homes and infrastructure, passed on to homebuyers"
+        },
+        {
+          "i_node": "factory_worker_wages",
+          "rank": 3,
+          "reasoning": "Squeezed MSME margins may lead to wage stagnation or layoffs for factory workers"
+        },
+        {
+          "i_node": "vehicle_purchase_cost",
+          "rank": 4,
+          "reasoning": "Steel is a major input for automobiles; higher prices raise vehicle costs for consumers"
+        },
+        {
+          "i_node": "corporate_hiring_and_layoffs",
+          "rank": 5,
+          "reasoning": "MSMEs facing margin pressure reduce hiring or resort to layoffs in manufacturing sector"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "msme_factory_owner_income",
+          "trajectory": "deescalating",
+          "probability": 0.85,
+          "magnitude": 0.7,
+          "delay_days": 15,
+          "rationale": "1st order: Higher steel import tariffs immediately increase raw material costs for engineering and manufacturing MSMEs, squeezing owner profits.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy"
+          ],
+          "score": 0.595
+        },
+        {
+          "i_node": "building_materials_and_labor",
+          "trajectory": "escalating",
+          "probability": 0.9,
+          "magnitude": 0.6,
+          "delay_days": 10,
+          "rationale": "1st order: Protectionist measures restrict cheap steel imports, directly raising the retail price of sariya (steel rebars) and construction materials.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy"
+          ],
+          "score": 0.54
+        },
+        {
+          "i_node": "factory_worker_wages",
+          "trajectory": "deescalating",
+          "probability": 0.75,
+          "magnitude": 0.6,
+          "delay_days": 45,
+          "rationale": "2nd order: As MSME margins are squeezed by high steel costs, factory owners freeze wages, cut shifts, or lay off shopfloor workers to survive.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy"
+          ],
+          "score": 0.44999999999999996
+        },
+        {
+          "i_node": "construction_worker_wages",
+          "trajectory": "deescalating",
+          "probability": 0.55,
+          "magnitude": 0.5,
+          "delay_days": 90,
+          "rationale": "3rd order: Elevated building material costs (steel) cause delays or cancellations in private construction projects, reducing demand and daily wages for mistris and laborers.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy"
+          ],
+          "score": 0.275
+        },
+        {
+          "i_node": "vehicle_purchase_cost",
+          "trajectory": "escalating",
+          "probability": 0.65,
+          "magnitude": 0.4,
+          "delay_days": 60,
+          "rationale": "2nd order: Auto-ancillary MSMEs pass on higher steel costs to OEMs, eventually leading to price hikes for two-wheelers and cars.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy"
+          ],
+          "score": 0.26
+        },
+        {
+          "i_node": "residential_rent_and_pg",
+          "trajectory": "escalating",
+          "probability": 0.4,
+          "magnitude": 0.3,
+          "delay_days": 180,
+          "rationale": "3rd order: Higher construction costs slow down new housing supply, indirectly pushing up rents in urban areas over time.",
+          "driving_t_nodes": [
+            "trade_and_tariff_policy"
+          ],
+          "score": 0.12
+        }
+      ],
+      "pred_nodes": [
+        "msme_factory_owner_income",
+        "building_materials_and_labor",
+        "factory_worker_wages",
+        "construction_worker_wages",
+        "vehicle_purchase_cost",
+        "residential_rent_and_pg"
+      ],
+      "ndcg_10": 0.8949444338706979,
+      "recall_10": 0.8,
+      "recall_5": 0.8,
+      "precision_10": 0.6666666666666666,
+      "error": null,
+      "ms": 22014
+    },
+    {
+      "id": "article_20",
+      "name": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand",
+      "date": "2024-09-28",
+      "title": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand",
+      "summary": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand",
+      "macro_shifts": [
+        {
+          "t_node": "precious_metals",
+          "trajectory": "escalating",
+          "context": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand"
+        },
+        {
+          "t_node": "foreign_central_bank_policy",
+          "trajectory": "escalating",
+          "context": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "festivals_and_cultural_events",
+          "rank": 1,
+          "reasoning": "Record gold prices directly hit Indian wedding budgets where gold jewellery is a cultural necessity"
+        },
+        {
+          "i_node": "capital_gains_tax",
+          "rank": 2,
+          "reasoning": "All-time high gold prices trigger capital gains tax events for investors selling gold ETFs or physical gold"
+        },
+        {
+          "i_node": "life_insurance_premium",
+          "rank": 3,
+          "reasoning": "Gold-linked insurance products see altered returns, affecting household financial planning"
+        },
+        {
+          "i_node": "kirana_and_retail_income",
+          "rank": 4,
+          "reasoning": "Local jewellers face reduced footfall as consumers defer purchases due to record prices"
+        },
+        {
+          "i_node": "farmer_income_and_msp",
+          "rank": 5,
+          "reasoning": "Rural households using gold as collateral for crop loans see increased collateral value"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "festivals_and_cultural_events",
+          "trajectory": "escalating",
+          "probability": 0.9,
+          "magnitude": 0.7,
+          "delay_days": 5,
+          "rationale": "1st order: Gold is a mandatory purchase for Indian weddings and festivals. Record high prices immediately escalate the financial burden of these cultural milestones for families.",
+          "driving_t_nodes": [
+            "precious_metals",
+            "foreign_central_bank_policy"
+          ],
+          "score": 0.63
+        },
+        {
+          "i_node": "kirana_and_retail_income",
+          "trajectory": "deescalating",
+          "probability": 0.8,
+          "magnitude": 0.6,
+          "delay_days": 15,
+          "rationale": "1st order: Small neighborhood retail jewelers experience a drop in sales volume and footfall as middle-class consumers defer purchases or opt for lighter items.",
+          "driving_t_nodes": [
+            "precious_metals"
+          ],
+          "score": 0.48
+        },
+        {
+          "i_node": "factory_worker_wages",
+          "trajectory": "deescalating",
+          "probability": 0.75,
+          "magnitude": 0.6,
+          "delay_days": 30,
+          "rationale": "2nd order: Reduced retail sales volume leads to fewer new fabrication orders, directly reducing piece-rate wages and available work for informal jewelry artisans (karigars).",
+          "driving_t_nodes": [
+            "precious_metals"
+          ],
+          "score": 0.44999999999999996
+        },
+        {
+          "i_node": "msme_factory_owner_income",
+          "trajectory": "deescalating",
+          "probability": 0.6,
+          "magnitude": 0.5,
+          "delay_days": 90,
+          "rationale": "3rd order: Sustained low volume and consumer shift towards recycling old gold squeeze the profit margins of small-scale MSME jewelry manufacturing units.",
+          "driving_t_nodes": [
+            "precious_metals"
+          ],
+          "score": 0.3
+        },
+        {
+          "i_node": "capital_gains_tax",
+          "trajectory": "escalating",
+          "probability": 0.65,
+          "magnitude": 0.4,
+          "delay_days": 45,
+          "rationale": "2nd order: Citizens selling old gold jewelry or sovereign gold bonds to capitalize on record prices face increased capital gains tax liabilities.",
+          "driving_t_nodes": [
+            "precious_metals"
+          ],
+          "score": 0.26
+        },
+        {
+          "i_node": "tds_and_compliance",
+          "trajectory": "escalating",
+          "probability": 0.55,
+          "magnitude": 0.3,
+          "delay_days": 120,
+          "rationale": "3rd order: Higher gold valuations mean more routine purchases and sales cross mandatory PAN and TDS reporting thresholds, increasing tax compliance friction for citizens.",
+          "driving_t_nodes": [
+            "precious_metals"
+          ],
+          "score": 0.165
+        }
+      ],
+      "pred_nodes": [
+        "festivals_and_cultural_events",
+        "kirana_and_retail_income",
+        "factory_worker_wages",
+        "msme_factory_owner_income",
+        "capital_gains_tax",
+        "tds_and_compliance"
+      ],
+      "ndcg_10": 0.7155203384078488,
+      "recall_10": 0.6,
+      "recall_5": 0.6,
+      "precision_10": 0.5,
+      "error": null,
+      "ms": 39116
     }
   ]
 }

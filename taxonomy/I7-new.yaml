@@ -1,0 +1,373 @@
+nodes:
+- id: i7
+  aliases:
+  - Habitat & Surroundings
+  - Local Environment
+  - Aas-paas ka Mahol
+  - Neighborhood Quality
+  category: I7
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Air Quality & Thermal Environment ===
+- id: air_and_climate
+  aliases:
+  - Air Quality & Thermal Environment
+  - Hawa Aur Mausam
+  - Outdoor Air & Heat
+  - Atmospheric Conditions
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: air_pollution
+  aliases:
+  - Air Pollution
+  - AQI
+  - PM2.5 Levels
+  - Pradushan
+  - Poor Air Quality
+  - Toxic Air
+  category: I7
+  level: 3
+  status: active
+- id: winter_smog
+  aliases:
+  - Winter Smog
+  - Smog
+  - Kohra
+  - Zero Visibility
+  - Winter Haze
+  - Stubble Burning Smoke
+  category: I7
+  level: 3
+  status: active
+- id: extreme_heat
+  aliases:
+  - Extreme Heat
+  - Heatwave
+  - Loo
+  - Scorching Heat
+  - Bhishan Garmi
+  - High Temperatures
+  category: I7
+  level: 3
+  status: active
+- id: extreme_cold
+  aliases:
+  - Extreme Cold
+  - Cold Wave
+  - Sheet Lehar
+  - Freezing Temperatures
+  - Biting Cold
+  category: I7
+  level: 3
+  status: active
+
+# === L2: Hydrology, Drainage & Water Quality ===
+- id: water_and_drainage
+  aliases:
+  - Hydrology, Drainage & Water Quality
+  - Paani Aur Naali
+  - Water & Sewage Issues
+  - Local Water Problems
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: street_waterlogging
+  aliases:
+  - Street Waterlogging
+  - Jalbharav
+  - Flooded Streets
+  - Monsoon Waterlogging
+  - Submerged Roads
+  category: I7
+  level: 3
+  status: active
+- id: open_drains_and_sewage
+  aliases:
+  - Open Drains & Sewage
+  - Overflowing Sewers
+  - Khule Nali
+  - Stinking Drains
+  - Sewage Backup
+  category: I7
+  level: 3
+  status: active
+- id: drinking_water_contamination
+  aliases:
+  - Drinking Water Contamination
+  - Ganda Pani
+  - Dirty Tap Water
+  - Muddy Water Supply
+  - Foul-Smelling Water
+  category: I7
+  level: 3
+  status: active
+- id: polluted_surface_water
+  aliases:
+  - Polluted Surface Water
+  - Toxic River Foam
+  - Polluted Lakes
+  - Nala Discharge
+  - Frothing Lakes
+  category: I7
+  level: 3
+  status: active
+- id: stagnant_water_and_mosquitoes
+  aliases:
+  - Stagnant Water & Mosquitoes
+  - Dengue Breeding Grounds
+  - Ruka Hua Pani
+  - Mosquito Menace
+  - Puddle Water
+  category: I7
+  level: 3
+  status: active
+
+# === L2: Civic Cleanliness & Waste ===
+- id: waste_and_cleanliness
+  aliases:
+  - Civic Cleanliness & Waste
+  - Safai Aur Kachra
+  - Street Cleanliness
+  - Waste Management Issues
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: uncollected_street_garbage
+  aliases:
+  - Uncollected Street Garbage
+  - Kachra
+  - Overflowing Dustbins
+  - Unpicked Garbage
+  - Littering
+  - Sadak Par Kachra
+  category: I7
+  level: 3
+  status: active
+- id: landfills_and_dumpyards
+  aliases:
+  - Landfills & Dumpyards
+  - Garbage Mountains
+  - Kachre Ka Dher
+  - Landfill Fires
+  - Dumping Ground Stench
+  category: I7
+  level: 3
+  status: active
+- id: public_urination_and_odour
+  aliases:
+  - Public Urination & Odour
+  - Foul Smell
+  - Badboo
+  - Public Toilet Stench
+  - Public Urination Nuisance
+  category: I7
+  level: 3
+  status: active
+
+# === L2: Neighborhood Sensory Nuisance & Ecology ===
+- id: sensory_and_ecology
+  aliases:
+  - Neighborhood Sensory Nuisance & Ecology
+  - Shor Aur Vatavaran
+  - Noise & Local Ecology
+  - Neighborhood Disturbances
+  category: I7
+  level: 2
+  status: active
+  is_category: true
+- id: traffic_noise
+  aliases:
+  - Traffic Noise
+  - Honking
+  - Traffic Shor
+  - Vehicular Noise Pollution
+  category: I7
+  level: 3
+  status: active
+- id: loudspeaker_and_event_noise
+  aliases:
+  - Loudspeaker & Event Noise
+  - DJ Noise
+  - Festival Loudspeakers
+  - Construction Noise
+  - Azaan/Bhajan Noise
+  category: I7
+  level: 3
+  status: active
+- id: stray_animal_nuisance
+  aliases:
+  - Stray Animal Nuisance
+  - Awara Pashu
+  - Street Dog Menace
+  - Stray Cattle on Roads
+  - Monkey Nuisance
+  category: I7
+  level: 3
+  status: active
+- id: neighborhood_greenery
+  aliases:
+  - Neighborhood Greenery
+  - Tree Felling
+  - Ped Katna
+  - Lack of Shade
+  - Public Park Maintenance
+  category: I7
+  level: 3
+  status: active
+
+edges:
+# I7 → L2
+- from: i7
+  to: air_and_climate
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Habitat & Surroundings contains Air Quality & Thermal Environment
+- from: i7
+  to: water_and_drainage
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Habitat & Surroundings contains Hydrology, Drainage & Water Quality
+- from: i7
+  to: waste_and_cleanliness
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Habitat & Surroundings contains Civic Cleanliness & Waste
+- from: i7
+  to: sensory_and_ecology
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Habitat & Surroundings contains Neighborhood Sensory Nuisance & Ecology
+
+# Air Quality & Thermal Environment → L3
+- from: air_and_climate
+  to: air_pollution
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Air Quality & Thermal Environment contains Air Pollution
+- from: air_and_climate
+  to: winter_smog
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Air Quality & Thermal Environment contains Winter Smog
+- from: air_and_climate
+  to: extreme_heat
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Air Quality & Thermal Environment contains Extreme Heat
+- from: air_and_climate
+  to: extreme_cold
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Air Quality & Thermal Environment contains Extreme Cold
+
+# Hydrology, Drainage & Water Quality → L3
+- from: water_and_drainage
+  to: street_waterlogging
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrology, Drainage & Water Quality contains Street Waterlogging
+- from: water_and_drainage
+  to: open_drains_and_sewage
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrology, Drainage & Water Quality contains Open Drains & Sewage
+- from: water_and_drainage
+  to: drinking_water_contamination
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrology, Drainage & Water Quality contains Drinking Water Contamination
+- from: water_and_drainage
+  to: polluted_surface_water
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrology, Drainage & Water Quality contains Polluted Surface Water
+- from: water_and_drainage
+  to: stagnant_water_and_mosquitoes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrology, Drainage & Water Quality contains Stagnant Water & Mosquitoes
+
+# Civic Cleanliness & Waste → L3
+- from: waste_and_cleanliness
+  to: uncollected_street_garbage
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic Cleanliness & Waste contains Uncollected Street Garbage
+- from: waste_and_cleanliness
+  to: landfills_and_dumpyards
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic Cleanliness & Waste contains Landfills & Dumpyards
+- from: waste_and_cleanliness
+  to: public_urination_and_odour
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic Cleanliness & Waste contains Public Urination & Odour
+
+# Neighborhood Sensory Nuisance & Ecology → L3
+- from: sensory_and_ecology
+  to: traffic_noise
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Neighborhood Sensory Nuisance & Ecology contains Traffic Noise
+- from: sensory_and_ecology
+  to: loudspeaker_and_event_noise
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Neighborhood Sensory Nuisance & Ecology contains Loudspeaker & Event Noise
+- from: sensory_and_ecology
+  to: stray_animal_nuisance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Neighborhood Sensory Nuisance & Ecology contains Stray Animal Nuisance
+- from: sensory_and_ecology
+  to: neighborhood_greenery
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Neighborhood Sensory Nuisance & Ecology contains Neighborhood Greenery

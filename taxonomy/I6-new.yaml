@@ -1,0 +1,370 @@
+nodes:
+- id: i6
+  aliases:
+  - Civic & Legal Friction
+  - State Interactions
+  - Sarkar se Panga
+  - Government Interface
+  category: I6
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Taxation & Compliance ===
+- id: taxation_and_compliance
+  aliases:
+  - Taxation & Compliance
+  - Tax Burden
+  - Kar Anupalan
+  - Tax Filing
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: personal_income_tax
+  aliases:
+  - income tax
+  - ITR filing
+  - direct tax
+  - aaykar
+  category: I6
+  level: 3
+  status: active
+- id: capital_gains_tax
+  aliases:
+  - LTCG
+  - STCG
+  - capital gains return
+  - poonji laabh kar
+  category: I6
+  level: 3
+  status: active
+- id: tds_and_compliance
+  aliases:
+  - tax deducted at source
+  - TDS return
+  - tax notices
+  - compliance friction
+  category: I6
+  level: 3
+  status: active
+- id: indirect_taxes_gst
+  aliases:
+  - GST rates
+  - customs duty
+  - goods and services tax
+  - apratyaksh kar
+  category: I6
+  level: 3
+  status: active
+
+# === L2: Bureaucratic Services ===
+- id: bureaucratic_services
+  aliases:
+  - Bureaucratic Services
+  - Sarkari Kaam
+  - Government Paperwork
+  - Daftar ke Chakkar
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: identity_and_travel_documents
+  aliases:
+  - passport issuance
+  - Aadhaar update
+  - PAN card processing
+  - pehchaan patra
+  category: I6
+  level: 3
+  status: active
+- id: transport_and_licensing
+  aliases:
+  - driving license
+  - DL renewal
+  - RTO interaction
+  - parivahan vibhag
+  category: I6
+  level: 3
+  status: active
+- id: welfare_and_ration_cards
+  aliases:
+  - ration card application
+  - PDS distribution
+  - BPL card
+  - rashan card
+  category: I6
+  level: 3
+  status: active
+- id: property_and_civic_registration
+  aliases:
+  - property registration
+  - stamp duty payment
+  - land mutation
+  - sampatti panjikaran
+  category: I6
+  level: 3
+  status: active
+
+# === L2: Legal & Police Interface ===
+- id: legal_and_police_interface
+  aliases:
+  - Legal & Police Interface
+  - Kanoon aur Police
+  - Law & Order Interaction
+  - Thana Kachehri
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: fir_and_police_interaction
+  aliases:
+  - FIR registration
+  - police response time
+  - thana interaction
+  - police karyawahi
+  category: I6
+  level: 3
+  status: active
+- id: property_crime_response
+  aliases:
+  - theft investigation
+  - vehicle theft recovery
+  - burglary response
+  - chori ki shikayat
+  category: I6
+  level: 3
+  status: active
+- id: cyber_crime_reporting
+  aliases:
+  - online fraud complaint
+  - cyber cell response
+  - scam reporting
+  - cyber apradh
+  category: I6
+  level: 3
+  status: active
+- id: judicial_delays_and_litigation
+  aliases:
+  - court delays
+  - pending cases
+  - criminal litigation risk
+  - tarikh pe tarikh
+  category: I6
+  level: 3
+  status: active
+
+# === L2: Civic Movements ===
+- id: civic_movements
+  aliases:
+  - Civic Movements
+  - Janta ka Andolan
+  - Protest & Strikes
+  - Nagrik Andolan
+  category: I6
+  level: 2
+  status: active
+  is_category: true
+- id: labor_and_gig_unions
+  aliases:
+  - trade union strikes
+  - gig worker protest
+  - mazdoor sangh
+  - union demands
+  category: I6
+  level: 3
+  status: active
+- id: transport_worker_movements
+  aliases:
+  - trucker strike
+  - bus union protest
+  - chakka jam
+  - auto taxi union
+  category: I6
+  level: 3
+  status: active
+- id: farmer_agitations
+  aliases:
+  - farmer protests
+  - kisan andolan
+  - MSP demands
+  - kisan union
+  category: I6
+  level: 3
+  status: active
+- id: social_and_reservation_movements
+  aliases:
+  - caste reservation protest
+  - aarakshan andolan
+  - social equity movements
+  - samajik andolan
+  category: I6
+  level: 3
+  status: active
+- id: student_and_youth_unions
+  aliases:
+  - student protests
+  - university strike
+  - chhatra sangh
+  - paper leak agitation
+  category: I6
+  level: 3
+  status: active
+
+edges:
+# I6 → L2
+- from: i6
+  to: taxation_and_compliance
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic & Legal Friction contains Taxation & Compliance
+- from: i6
+  to: bureaucratic_services
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic & Legal Friction contains Bureaucratic Services
+- from: i6
+  to: legal_and_police_interface
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic & Legal Friction contains Legal & Police Interface
+- from: i6
+  to: civic_movements
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic & Legal Friction contains Civic Movements
+
+# Taxation & Compliance → L3
+- from: taxation_and_compliance
+  to: personal_income_tax
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Taxation & Compliance contains Personal Income Tax
+- from: taxation_and_compliance
+  to: capital_gains_tax
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Taxation & Compliance contains Capital Gains Tax
+- from: taxation_and_compliance
+  to: tds_and_compliance
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Taxation & Compliance contains TDS & Compliance
+- from: taxation_and_compliance
+  to: indirect_taxes_gst
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Taxation & Compliance contains Indirect Taxes & GST
+
+# Bureaucratic Services → L3
+- from: bureaucratic_services
+  to: identity_and_travel_documents
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Bureaucratic Services contains Identity & Travel Documents
+- from: bureaucratic_services
+  to: transport_and_licensing
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Bureaucratic Services contains Transport & Licensing
+- from: bureaucratic_services
+  to: welfare_and_ration_cards
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Bureaucratic Services contains Welfare & Ration Cards
+- from: bureaucratic_services
+  to: property_and_civic_registration
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Bureaucratic Services contains Property & Civic Registration
+
+# Legal & Police Interface → L3
+- from: legal_and_police_interface
+  to: fir_and_police_interaction
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Legal & Police Interface contains FIR & Police Interaction
+- from: legal_and_police_interface
+  to: property_crime_response
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Legal & Police Interface contains Property Crime Response
+- from: legal_and_police_interface
+  to: cyber_crime_reporting
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Legal & Police Interface contains Cyber Crime Reporting
+- from: legal_and_police_interface
+  to: judicial_delays_and_litigation
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Legal & Police Interface contains Judicial Delays & Litigation
+
+# Civic Movements → L3
+- from: civic_movements
+  to: labor_and_gig_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic Movements contains Labor & Gig Unions
+- from: civic_movements
+  to: transport_worker_movements
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic Movements contains Transport Worker Movements
+- from: civic_movements
+  to: farmer_agitations
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic Movements contains Farmer Agitations
+- from: civic_movements
+  to: social_and_reservation_movements
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic Movements contains Social & Reservation Movements
+- from: civic_movements
+  to: student_and_youth_unions
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Civic Movements contains Student & Youth Unions

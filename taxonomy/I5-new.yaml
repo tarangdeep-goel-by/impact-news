@@ -1,0 +1,359 @@
+nodes:
+- id: i5
+  aliases:
+  - Education & Skilling
+  - Learning
+  - Moving Up
+  - Shiksha
+  category: I5
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: School Education & Early Childhood ===
+- id: school_education
+  aliases:
+  - School Education & Early Childhood
+  - School Padhai
+  - K-12 Education
+  - School System
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: anganwadi_and_preschools
+  aliases:
+  - Anganwadi
+  - Play school
+  - Balvatika
+  - ECCE
+  - आंगनवाड़ी
+  category: I5
+  level: 3
+  status: active
+- id: government_schools
+  aliases:
+  - Sarkari school
+  - Kendriya Vidyalaya
+  - State government schools
+  - सरकारी स्कूल
+  category: I5
+  level: 3
+  status: active
+- id: private_schools
+  aliases:
+  - Private school admission
+  - Independent schools
+  - RTE admission
+  - प्राइवेट स्कूल
+  category: I5
+  level: 3
+  status: active
+- id: school_board_exams
+  aliases:
+  - CBSE exams
+  - State board exams
+  - Class 10/12 boards
+  - बोर्ड परीक्षा
+  category: I5
+  level: 3
+  status: active
+- id: school_welfare_programs
+  aliases:
+  - Mid-day meal
+  - PM POSHAN
+  - Free uniform/textbooks scheme
+  - मिड-डे मील
+  category: I5
+  level: 3
+  status: active
+
+# === L2: Higher Education & Degrees ===
+- id: higher_education
+  aliases:
+  - Higher Education & Degrees
+  - College Education
+  - University Padhai
+  - Ucch Shiksha
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: engineering_and_tech_education
+  aliases:
+  - Engineering colleges
+  - IITs/NITs
+  - BTech/MTech programs
+  - इंजीनियरिंग की पढ़ाई
+  category: I5
+  level: 3
+  status: active
+- id: medical_and_healthcare_education
+  aliases:
+  - Medical colleges
+  - MBBS/BDS degrees
+  - Nursing education
+  - मेडिकल की पढ़ाई
+  category: I5
+  level: 3
+  status: active
+- id: law_and_management_education
+  aliases:
+  - Law schools
+  - MBA programs
+  - IIMs, NLU degrees
+  - मैनेजमेंट/लॉ
+  category: I5
+  level: 3
+  status: active
+- id: general_degree_programs
+  aliases:
+  - BA BSc BCom
+  - University college
+  - Arts Science Commerce
+  - कॉलेज की पढ़ाई
+  category: I5
+  level: 3
+  status: active
+- id: phd_and_research
+  aliases:
+  - Doctoral programs
+  - PhD admission
+  - Research fellowship
+  - पीएचडी
+  category: I5
+  level: 3
+  status: active
+
+# === L2: Competitive Exams & Coaching ===
+- id: competitive_exams_and_coaching
+  aliases:
+  - Competitive Exams & Coaching
+  - Entrance Exams
+  - Pratiyogi Pariksha
+  - Test Preparation
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: college_entrance_exams
+  aliases:
+  - JEE Main
+  - NEET UG
+  - CUET
+  - University entrance tests
+  - प्रवेश परीक्षा
+  category: I5
+  level: 3
+  status: active
+- id: government_recruitment_exams
+  aliases:
+  - UPSC Civil Services
+  - SSC exams
+  - Bank PO/Clerk
+  - TET/Teacher exams
+  - सरकारी नौकरी परीक्षा
+  category: I5
+  level: 3
+  status: active
+- id: coaching_institutes
+  aliases:
+  - Kota coaching
+  - Offline test prep centers
+  - Tuition classes
+  - कोचिंग सेंटर
+  category: I5
+  level: 3
+  status: active
+
+# === L2: Vocational Skilling & EdTech ===
+- id: vocational_skilling_and_edtech
+  aliases:
+  - Vocational Skilling & EdTech
+  - Skills Training
+  - Kaushal Vikas
+  - Online Learning
+  category: I5
+  level: 2
+  status: active
+  is_category: true
+- id: vocational_and_iti_training
+  aliases:
+  - ITI courses
+  - Skill India
+  - Polytechnic
+  - PMKVY
+  - आईटीआई और कौशल विकास
+  category: I5
+  level: 3
+  status: active
+- id: professional_upskilling
+  aliases:
+  - Corporate training
+  - Professional certification
+  - Soft skills
+  - कॉर्पोरेट ट्रेनिंग
+  category: I5
+  level: 3
+  status: active
+- id: edtech_platforms
+  aliases:
+  - Online classes
+  - Edtech startups
+  - E-learning apps
+  - Distance learning
+  - ऑनलाइन पढ़ाई
+  category: I5
+  level: 3
+  status: active
+
+edges:
+# I5 → L2
+- from: i5
+  to: school_education
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Skilling contains School Education & Early Childhood
+- from: i5
+  to: higher_education
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Skilling contains Higher Education & Degrees
+- from: i5
+  to: competitive_exams_and_coaching
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Skilling contains Competitive Exams & Coaching
+- from: i5
+  to: vocational_skilling_and_edtech
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Skilling contains Vocational Skilling & EdTech
+
+# School Education & Early Childhood → L3
+- from: school_education
+  to: anganwadi_and_preschools
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School Education contains Anganwadi & Preschools
+- from: school_education
+  to: government_schools
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School Education contains Government Schools
+- from: school_education
+  to: private_schools
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School Education contains Private Schools
+- from: school_education
+  to: school_board_exams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School Education contains School Board Exams
+- from: school_education
+  to: school_welfare_programs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: School Education contains School Welfare Programs
+
+# Higher Education & Degrees → L3
+- from: higher_education
+  to: engineering_and_tech_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher Education contains Engineering & Tech Education
+- from: higher_education
+  to: medical_and_healthcare_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher Education contains Medical & Healthcare Education
+- from: higher_education
+  to: law_and_management_education
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher Education contains Law & Management Education
+- from: higher_education
+  to: general_degree_programs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher Education contains General Degree Programs
+- from: higher_education
+  to: phd_and_research
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Higher Education contains PhD & Research
+
+# Competitive Exams & Coaching → L3
+- from: competitive_exams_and_coaching
+  to: college_entrance_exams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Competitive Exams & Coaching contains College Entrance Exams
+- from: competitive_exams_and_coaching
+  to: government_recruitment_exams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Competitive Exams & Coaching contains Government Recruitment Exams
+- from: competitive_exams_and_coaching
+  to: coaching_institutes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Competitive Exams & Coaching contains Coaching Institutes
+
+# Vocational Skilling & EdTech → L3
+- from: vocational_skilling_and_edtech
+  to: vocational_and_iti_training
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vocational Skilling & EdTech contains Vocational & ITI Training
+- from: vocational_skilling_and_edtech
+  to: professional_upskilling
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vocational Skilling & EdTech contains Professional Upskilling
+- from: vocational_skilling_and_edtech
+  to: edtech_platforms
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Vocational Skilling & EdTech contains EdTech Platforms

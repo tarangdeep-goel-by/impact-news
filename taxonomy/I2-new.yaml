@@ -1,0 +1,654 @@
+nodes:
+- id: i2
+  aliases:
+  - Cost of Living
+  - Household Expenses
+  - Money OUT
+  - Ghar ka Kharcha
+  category: I2
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Groceries & Provisions ===
+- id: groceries_and_provisions
+  aliases:
+  - Groceries & Provisions
+  - Kirana & Ration
+  - Daily Groceries
+  - Ghar ka Ration
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: staple_grains
+  aliases:
+  - atta
+  - chawal
+  - rice price
+  - wheat flour
+  - gehu
+  category: I2
+  level: 3
+  status: active
+- id: pulses_and_dals
+  aliases:
+  - daal
+  - lentils
+  - tur dal
+  - arhar
+  - pulses price
+  category: I2
+  level: 3
+  status: active
+- id: retail_tomato
+  aliases:
+  - tamatar
+  - tomato price
+  - tamatar ka bhav
+  - retail tomato
+  category: I2
+  level: 3
+  status: active
+- id: retail_onion
+  aliases:
+  - pyaaz
+  - kanda
+  - onion price
+  - retail onion
+  category: I2
+  level: 3
+  status: active
+- id: retail_potato
+  aliases:
+  - aloo
+  - potato price
+  - aloo ka bhav
+  - retail potato
+  category: I2
+  level: 3
+  status: active
+- id: fresh_vegetables_and_fruits
+  aliases:
+  - sabzi
+  - phal
+  - fresh produce
+  - vegetable prices
+  - fruit market
+  category: I2
+  level: 3
+  status: active
+- id: dairy_and_eggs
+  aliases:
+  - doodh
+  - milk price
+  - anda
+  - paneer
+  - dairy products
+  category: I2
+  level: 3
+  status: active
+- id: meat_and_seafood
+  aliases:
+  - murgha
+  - chicken price
+  - mutton
+  - machhli
+  - seafood prices
+  category: I2
+  level: 3
+  status: active
+- id: edible_oils
+  aliases:
+  - tel
+  - mustard oil
+  - sarso tel
+  - cooking oil
+  - palm oil
+  category: I2
+  level: 3
+  status: active
+- id: spices_sugar_salt
+  aliases:
+  - chini
+  - namak
+  - masala
+  - sugar price
+  - spices
+  category: I2
+  level: 3
+  status: active
+- id: packaged_foods_and_beverages
+  aliases:
+  - biscuits
+  - chai patti
+  - coffee powder
+  - instant noodles
+  - packaged food
+  category: I2
+  level: 3
+  status: active
+
+# === L2: Housing & Accommodation ===
+- id: housing_and_accommodation
+  aliases:
+  - Housing & Accommodation
+  - Ghar ka Kharcha
+  - Rent & Housing Cost
+  - Makaan ka Kharcha
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: residential_rent_and_pg
+  aliases:
+  - kiraya
+  - house rent
+  - PG fees
+  - hostel rent
+  - room rent
+  category: I2
+  level: 3
+  status: active
+- id: building_materials_and_labor
+  aliases:
+  - cement price
+  - sariya
+  - construction labor
+  - building cost
+  - mazdoori
+  category: I2
+  level: 3
+  status: active
+- id: rwa_and_maintenance_fees
+  aliases:
+  - society charges
+  - maintenance fee
+  - RWA dues
+  - apartment maintenance
+  category: I2
+  level: 3
+  status: active
+
+# === L2: Household Energy & Utilities ===
+- id: household_energy_and_utilities
+  aliases:
+  - Household Energy & Utilities
+  - Ghar ki Bijli Gas Pani
+  - Home Energy Cost
+  - Utility Bills
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: lpg_cylinder
+  aliases:
+  - gas cylinder
+  - rasoi gas
+  - LPG price
+  - cooking gas
+  - gas subsidy
+  category: I2
+  level: 3
+  status: active
+- id: electricity_tariff
+  aliases:
+  - bijli bill
+  - power tariff
+  - electricity rates
+  - unit cost
+  category: I2
+  level: 3
+  status: active
+- id: piped_natural_gas
+  aliases:
+  - PNG rates
+  - piped gas
+  - city gas distribution
+  category: I2
+  level: 3
+  status: active
+- id: water_supply_and_tankers
+  aliases:
+  - pani ka bill
+  - water tanker cost
+  - municipal water tax
+  - drinking water cost
+  category: I2
+  level: 3
+  status: active
+
+# === L2: Household Services ===
+- id: household_services
+  aliases:
+  - Household Services
+  - Ghar ki Seva
+  - Home Services
+  - Domestic Services Cost
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: domestic_help_cost
+  aliases:
+  - maid salary expense
+  - bai ka kharcha
+  - cook wages
+  - driver salary
+  - domestic workers cost
+  category: I2
+  level: 3
+  status: active
+- id: waste_and_sanitation_charges
+  aliases:
+  - kachra collection fee
+  - garbage collection fee
+  - sewage tax
+  - sanitation charges
+  category: I2
+  level: 3
+  status: active
+- id: repair_and_pest_control
+  aliases:
+  - plumber cost
+  - electrician fee
+  - pest control
+  - home repair
+  category: I2
+  level: 3
+  status: active
+
+# === L2: Dining Out & Delivery ===
+- id: dining_out_and_delivery
+  aliases:
+  - Dining Out & Delivery
+  - Bahar ka Khana
+  - Food Delivery Cost
+  - Eating Out Expenses
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: food_delivery_services
+  aliases:
+  - Zomato
+  - Swiggy
+  - food delivery fee
+  - platform fee
+  - online food order
+  category: I2
+  level: 3
+  status: active
+- id: restaurant_and_street_food
+  aliases:
+  - bahar ka khana
+  - restaurant bill
+  - street food price
+  - eating out
+  - QSR
+  category: I2
+  level: 3
+  status: active
+
+# === L2: Insurance Premiums ===
+- id: insurance_premiums
+  aliases:
+  - Insurance Premiums
+  - Bima ka Kharcha
+  - Insurance Cost
+  - Premium Payments
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: health_insurance_premium
+  aliases:
+  - mediclaim
+  - health policy premium
+  - swasthya bima
+  - medical insurance cost
+  category: I2
+  level: 3
+  status: active
+- id: motor_insurance_premium
+  aliases:
+  - vehicle insurance
+  - car insurance
+  - bike bima
+  - third party premium
+  category: I2
+  level: 3
+  status: active
+- id: life_insurance_premium
+  aliases:
+  - term plan
+  - LIC premium
+  - jeevan bima
+  - life cover cost
+  category: I2
+  level: 3
+  status: active
+
+# === L2: Education & Childcare Costs ===
+- id: education_and_childcare_costs
+  aliases:
+  - Education & Childcare Costs
+  - Padhai ka Kharcha
+  - School & College Fees
+  - Education Expenses
+  category: I2
+  level: 2
+  status: active
+  is_category: true
+- id: school_fees
+  aliases:
+  - school fee
+  - admission fees
+  - tuition fee
+  - school ki fees
+  category: I2
+  level: 3
+  status: active
+- id: college_and_university_fees
+  aliases:
+  - semester fee
+  - hostel fee
+  - higher ed cost
+  - university dues
+  category: I2
+  level: 3
+  status: active
+- id: coaching_and_tuition_fees
+  aliases:
+  - coaching fee
+  - test prep cost
+  - institute charges
+  - tuition fees
+  category: I2
+  level: 3
+  status: active
+- id: educational_scholarships
+  aliases:
+  - student scholarship
+  - fee waiver
+  - merit scholarship
+  - chhatravriti
+  category: I2
+  level: 3
+  status: active
+
+edges:
+# I2 → L2
+- from: i2
+  to: groceries_and_provisions
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cost of Living contains Groceries & Provisions
+- from: i2
+  to: housing_and_accommodation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cost of Living contains Housing & Accommodation
+- from: i2
+  to: household_energy_and_utilities
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cost of Living contains Household Energy & Utilities
+- from: i2
+  to: household_services
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cost of Living contains Household Services
+- from: i2
+  to: dining_out_and_delivery
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cost of Living contains Dining Out & Delivery
+- from: i2
+  to: insurance_premiums
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cost of Living contains Insurance Premiums
+- from: i2
+  to: education_and_childcare_costs
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cost of Living contains Education & Childcare Costs
+
+# Groceries & Provisions → L3
+- from: groceries_and_provisions
+  to: staple_grains
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Staple Grains
+- from: groceries_and_provisions
+  to: pulses_and_dals
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Pulses & Dals
+- from: groceries_and_provisions
+  to: retail_tomato
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Retail Tomato
+- from: groceries_and_provisions
+  to: retail_onion
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Retail Onion
+- from: groceries_and_provisions
+  to: retail_potato
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Retail Potato
+- from: groceries_and_provisions
+  to: fresh_vegetables_and_fruits
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Fresh Vegetables & Fruits
+- from: groceries_and_provisions
+  to: dairy_and_eggs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Dairy & Eggs
+- from: groceries_and_provisions
+  to: meat_and_seafood
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Meat & Seafood
+- from: groceries_and_provisions
+  to: edible_oils
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Edible Oils
+- from: groceries_and_provisions
+  to: spices_sugar_salt
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Spices, Sugar & Salt
+- from: groceries_and_provisions
+  to: packaged_foods_and_beverages
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Groceries & Provisions contains Packaged Foods & Beverages
+
+# Housing & Accommodation → L3
+- from: housing_and_accommodation
+  to: residential_rent_and_pg
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Housing & Accommodation contains Residential Rent & PG
+- from: housing_and_accommodation
+  to: building_materials_and_labor
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Housing & Accommodation contains Building Materials & Labor
+- from: housing_and_accommodation
+  to: rwa_and_maintenance_fees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Housing & Accommodation contains RWA & Maintenance Fees
+
+# Household Energy & Utilities → L3
+- from: household_energy_and_utilities
+  to: lpg_cylinder
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Household Energy & Utilities contains LPG Cylinder
+- from: household_energy_and_utilities
+  to: electricity_tariff
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Household Energy & Utilities contains Electricity Tariff
+- from: household_energy_and_utilities
+  to: piped_natural_gas
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Household Energy & Utilities contains Piped Natural Gas
+- from: household_energy_and_utilities
+  to: water_supply_and_tankers
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Household Energy & Utilities contains Water Supply & Tankers
+
+# Household Services → L3
+- from: household_services
+  to: domestic_help_cost
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Household Services contains Domestic Help Cost
+- from: household_services
+  to: waste_and_sanitation_charges
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Household Services contains Waste & Sanitation Charges
+- from: household_services
+  to: repair_and_pest_control
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Household Services contains Repair & Pest Control
+
+# Dining Out & Delivery → L3
+- from: dining_out_and_delivery
+  to: food_delivery_services
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Dining Out & Delivery contains Food Delivery Services
+- from: dining_out_and_delivery
+  to: restaurant_and_street_food
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Dining Out & Delivery contains Restaurant & Street Food
+
+# Insurance Premiums → L3
+- from: insurance_premiums
+  to: health_insurance_premium
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Insurance Premiums contains Health Insurance Premium
+- from: insurance_premiums
+  to: motor_insurance_premium
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Insurance Premiums contains Motor Insurance Premium
+- from: insurance_premiums
+  to: life_insurance_premium
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Insurance Premiums contains Life Insurance Premium
+
+# Education & Childcare Costs → L3
+- from: education_and_childcare_costs
+  to: school_fees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Childcare Costs contains School Fees
+- from: education_and_childcare_costs
+  to: college_and_university_fees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Childcare Costs contains College & University Fees
+- from: education_and_childcare_costs
+  to: coaching_and_tuition_fees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Childcare Costs contains Coaching & Tuition Fees
+- from: education_and_childcare_costs
+  to: educational_scholarships
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Education & Childcare Costs contains Educational Scholarships
