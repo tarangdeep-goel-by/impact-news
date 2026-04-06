@@ -32,9 +32,9 @@
     "relevant": true,
     "reason": "Government intervention to prevent panic buying of LPG directly affects household cooking fuel availability and costs.",
     "triggers": [
-      "ministry_of_consumer_affairs",
-      "state_governments",
-      "public_distribution_system"
+      "market_and_corporate_regulation",
+      "energy_and_environment_policy",
+      "center_state_relations"
     ],
     "expected_impacts": [
       "lpg_cylinder",
@@ -72,13 +72,9 @@
     "summary": "Indian drug maker Sun Pharma faces significant exposure to potential US tariffs on medicines. Global brokerage Jefferies warns that while generics may be exempt, Sun Pharma's specialty and innovative products, manufactured in countries like South Korea and the EU, could face levies up to 15%. The US administration is reportedly preparing these tariffs, with an announcement possibly today.",
     "source": "ET Markets",
     "published_at": "2026-04-02",
-    "relevant": true,
+    "relevant": false,
     "reason": "India's largest pharma exporter facing sector-wide US tariffs \u2014 affects pharma employment and equity markets",
-    "triggers": [
-      "us_government",
-      "export_competitiveness",
-      "active_pharmaceutical_ingredients_supply"
-    ],
+    "triggers": [],
     "expected_impacts": [
       "factory_worker_jobs",
       "direct_equity_portfolio"
@@ -94,8 +90,7 @@
     "relevant": true,
     "reason": "Destruction of Gulf bridges would cripple oil/gas shipping routes to India",
     "triggers": [
-      "global_shipping_routes",
-      "brent_crude"
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -124,8 +119,8 @@
     "relevant": true,
     "reason": "Massive surge in global crude oil prices directly impacts Indian inflation, fuel costs, and transportation.",
     "triggers": [
-      "brent_crude",
-      "ministry_of_finance"
+      "global_crude_oil",
+      "global_equity_markets"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -143,10 +138,7 @@
     "relevant": true,
     "reason": "Major geopolitical conflict in the Gulf directly disrupts global oil supply chains and impacts the Indian diaspora, leading to macro shocks in India.",
     "triggers": [
-      "brent_crude",
-      "global_shipping_routes",
-      "us_government",
-      "geopolitical_states"
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "vehicle_fuel",
@@ -200,9 +192,8 @@
     "relevant": true,
     "reason": "Jet fuel price hike directly affects flight ticket prices for citizens.",
     "triggers": [
-      "aviation_turbine_fuel",
-      "ministry_of_civil_aviation",
-      "brent_crude"
+      "energy_and_environment_policy",
+      "transport_and_logistics_policy"
     ],
     "expected_impacts": [
       "domestic_flight_ticket",
@@ -219,8 +210,8 @@
     "relevant": true,
     "reason": "First ship through Hormuz since war \u2014 shipping routes normalizing, direct impact on oil/goods imports to India",
     "triggers": [
-      "global_shipping_routes",
-      "brent_crude"
+      "maritime_chokepoint_disruptions",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -237,8 +228,8 @@
     "relevant": true,
     "reason": "RBI regulations causing massive rupee appreciation affects import costs and inflation.",
     "triggers": [
-      "rbi",
-      "usd_inr_exchange"
+      "inr_exchange_rates",
+      "banking_and_credit_regulation"
     ],
     "expected_impacts": [
       "vehicle_fuel",
@@ -255,9 +246,8 @@
     "relevant": true,
     "reason": "Crude oil price rise impacting the textile value chain will affect retail clothing prices and sector employment.",
     "triggers": [
-      "brent_crude",
-      "global_shipping_routes",
-      "export_competitiveness"
+      "india_export_trends",
+      "global_crude_oil"
     ],
     "expected_impacts": [
       "small_factory_owner_income",
@@ -275,8 +265,7 @@
     "relevant": true,
     "reason": "Severe weather event affecting daily life, health, and commute of citizens in the NCR region.",
     "triggers": [
-      "atmospheric_temperature",
-      "regional_weather_phenomena"
+      "regional_aerosol_systems"
     ],
     "expected_impacts": [
       "traffic_congestion"
@@ -304,10 +293,8 @@
     "relevant": true,
     "reason": "LPG crisis triggering mass migration of gig and manufacturing workers, heavily impacting livelihoods and industry.",
     "triggers": [
-      "brent_crude",
-      "industrial_metals_index",
-      "ministry_of_finance",
-      "seasonal_migrant_labor"
+      "domestic_labor_migration",
+      "macro_employment_trends"
     ],
     "expected_impacts": [
       "gig_worker_payouts",
@@ -335,13 +322,9 @@
     "summary": "Iran war: The review will factor in revenue implications from duty relief measures announced to cushion industries from supply disruptions, alongside broader economic effects stemming from the geopolitical tensions, officials said.",
     "source": "ET Economy",
     "published_at": "2026-04-02",
-    "relevant": true,
+    "relevant": false,
     "reason": "Government review of tax concessions and duty reliefs directly impacts indirect tax revenues and consumer prices.",
-    "triggers": [
-      "global_supply_chains",
-      "industrial_metals_index",
-      "ministry_of_finance"
-    ],
+    "triggers": [],
     "expected_impacts": [
       "vehicle_fuel"
     ],
@@ -356,9 +339,9 @@
     "relevant": true,
     "reason": "Major legislative and infrastructure event establishing a state capital, unlocking massive development funds.",
     "triggers": [
-      "indian_union_government",
-      "state_governments",
-      "transport_logistics_infrastructure"
+      "legislative_amendments",
+      "land_and_real_estate_regulation",
+      "tier_city_emergence"
     ],
     "expected_impacts": [
       "investment_property_value",
@@ -372,12 +355,9 @@
     "summary": "India witnessed an all-time maximum demand of 250 GW in FY 2024-25. The government said on Tuesday that the country's peak power demand is expected to touch 388 GW in FY 2031-32.",
     "source": "Livemint",
     "published_at": "2026-04-02",
-    "relevant": true,
+    "relevant": false,
     "reason": "Government planning for peak power demand directly affects the national power grid and future electricity availability.",
-    "triggers": [
-      "ministry_of_power",
-      "national_power_grid"
-    ],
+    "triggers": [],
     "expected_impacts": [
       "electricity_tariff",
       "residential_power_supply"
@@ -393,9 +373,8 @@
     "relevant": true,
     "reason": "Regulatory exemption for chemical standards to prevent supply chain disruptions in pharma and rubber industries.",
     "triggers": [
-      "indian_regulatory_bodies",
-      "ministry_of_commerce_and_industry",
-      "global_supply_chains"
+      "trade_and_tariff_policy",
+      "global_shipping_freight"
     ],
     "expected_impacts": [
       "pharmaceuticals_and_supplies"
@@ -411,8 +390,8 @@
     "relevant": true,
     "reason": "De-dollarisation + war driving gold prices \u2014 real macro trend affecting retail gold/silver investment",
     "triggers": [
-      "international_gold_prices",
-      "usd_inr_exchange"
+      "precious_metals",
+      "foreign_central_bank_policy"
     ],
     "expected_impacts": [
       "retail_gold_investment",
@@ -429,9 +408,7 @@
     "relevant": true,
     "reason": "Agricultural shortfall in sugar production directly leads to higher retail prices for consumers.",
     "triggers": [
-      "global_sugar_supply",
-      "agricultural_commodities",
-      "ministry_of_consumer_affairs"
+      "global_sugar_markets"
     ],
     "expected_impacts": [
       "retail_sugar",
@@ -449,9 +426,8 @@
     "relevant": true,
     "reason": "Implementation of a new Income Tax Act fundamentally alters tax compliance and liability for citizens.",
     "triggers": [
-      "income_tax_department",
-      "ministry_of_finance",
-      "union_budget_framework"
+      "fiscal_and_tax_policy",
+      "legislative_amendments"
     ],
     "expected_impacts": [
       "personal_income_tax",
@@ -480,9 +456,8 @@
     "relevant": true,
     "reason": "RBI regulatory action on forex markets impacts the INR/USD exchange rate, affecting import costs.",
     "triggers": [
-      "rbi",
-      "usd_inr_exchange",
-      "currency_and_forex_markets"
+      "banking_and_credit_regulation",
+      "inr_exchange_rates"
     ],
     "expected_impacts": [
       "travel_and_tourism",
@@ -497,12 +472,9 @@
     "summary": "Association urges civil aviation minister to ensure that any pricing dispensation is applied in a fair, transparent, and non-discriminatory manner across all categories of commercial air operators",
     "source": "The Hindu Business",
     "published_at": "2026-04-03",
-    "relevant": true,
+    "relevant": false,
     "reason": "ATF price hikes directly impact commercial aviation costs and passenger ticket prices, even though the article focuses on charter companies' reactions.",
-    "triggers": [
-      "aviation_turbine_fuel",
-      "ministry_of_civil_aviation"
-    ],
+    "triggers": [],
     "expected_impacts": [
       "domestic_flight_ticket"
     ],
@@ -517,8 +489,8 @@
     "relevant": true,
     "reason": "Customs duty exemptions on critical raw materials lower manufacturing costs, which can reduce prices for end-consumer goods.",
     "triggers": [
-      "ministry_of_finance",
-      "fiscal_policies_and_councils"
+      "trade_and_tariff_policy",
+      "fiscal_and_tax_policy"
     ],
     "expected_impacts": [
       "building_materials_cost",
@@ -547,9 +519,8 @@
     "relevant": true,
     "reason": "Agricultural seed stock availability directly affects millions of farmers' sowing seasons and broader national food security.",
     "triggers": [
-      "global_supply_chains",
-      "ministry_of_agriculture",
-      "global_food_grain_supply"
+      "third_party_geopolitical_conflicts",
+      "trade_and_tariff_policy"
     ],
     "expected_impacts": [
       "agricultural_household_income"
@@ -565,9 +536,8 @@
     "relevant": true,
     "reason": "Industry lobbying for export bans and ethanol blending due to geopolitical conflict indicates severe supply chain stress that impacts raw material and fuel prices.",
     "triggers": [
-      "global_supply_chains",
-      "export_competitiveness",
-      "ministry_of_commerce_and_industry"
+      "trade_and_tariff_policy",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "retail_petrol"
@@ -619,9 +589,9 @@
     "relevant": true,
     "reason": "Government trade policy interventions and freight subsidies directly affect the export sector's viability and employment.",
     "triggers": [
-      "global_shipping_routes",
-      "export_competitiveness",
-      "ministry_of_commerce_and_industry"
+      "trade_and_tariff_policy",
+      "global_shipping_freight",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "manufacturing_and_core"
@@ -637,9 +607,9 @@
     "relevant": true,
     "reason": "Macroeconomic indicator (PMI) drop and rising oil costs directly signal inflation and slowing manufacturing growth affecting employment and consumer prices.",
     "triggers": [
-      "brent_crude",
-      "pmi_manufacturing",
-      "global_shipping_routes"
+      "industrial_production_metrics",
+      "global_crude_oil",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "manufacturing_and_core"
@@ -655,9 +625,8 @@
     "relevant": true,
     "reason": "US stocks dropping on Trump Iran escalation directly affects Indian markets next day via FII sentiment",
     "triggers": [
-      "global_equity_indices",
-      "us_government",
-      "fii_fpi_flows"
+      "global_equity_markets",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "direct_equity_portfolio",
@@ -674,8 +643,8 @@
     "relevant": true,
     "reason": "Trade policy negotiations with the US can affect export sectors, employment, and domestic prices.",
     "triggers": [
-      "ministry_of_commerce_and_industry",
-      "us_government"
+      "trade_and_tariff_policy",
+      "india_export_trends"
     ],
     "expected_impacts": [
       "factory_worker_jobs",
@@ -705,9 +674,8 @@
     "relevant": true,
     "reason": "Massive state infrastructure investment and capital city development affecting regional economy and real estate.",
     "triggers": [
-      "state_governments",
-      "highway_network",
-      "transport_logistics_infrastructure"
+      "local_and_municipal_governance",
+      "tier_city_emergence"
     ],
     "expected_impacts": [
       "investment_property_value",
@@ -724,9 +692,9 @@
     "relevant": true,
     "reason": "Government action against LPG black marketing directly impacts household cooking gas availability and prices.",
     "triggers": [
-      "ministry_of_consumer_affairs",
-      "state_governments",
-      "oil_gas_pipelines"
+      "welfare_and_subsidy_schemes",
+      "center_state_relations",
+      "energy_and_environment_policy"
     ],
     "expected_impacts": [
       "lpg_cylinder",
@@ -743,9 +711,8 @@
     "relevant": true,
     "reason": "Agricultural policy changes regarding fertilizer availability and MSP procurement directly affect millions of farmers.",
     "triggers": [
-      "state_governments",
-      "uidai",
-      "ministry_of_agriculture"
+      "welfare_and_subsidy_schemes",
+      "center_state_relations"
     ],
     "expected_impacts": [
       "agricultural_household_income",
@@ -762,9 +729,8 @@
     "relevant": true,
     "reason": "Trade expansion with China can significantly alter domestic manufacturing competitiveness and consumer goods prices.",
     "triggers": [
-      "chinese_government",
-      "international_trade_and_supply_chains",
-      "ministry_of_commerce_and_industry"
+      "trade_and_tariff_policy",
+      "india_trade_balance"
     ],
     "expected_impacts": [
       "consumer_tech_devices",
@@ -817,8 +783,8 @@
     "relevant": true,
     "reason": "Allied nations planning alternative shipping through Hormuz directly affects Indian oil imports",
     "triggers": [
-      "global_shipping_routes",
-      "brent_crude"
+      "maritime_chokepoint_disruptions",
+      "global_crude_oil"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -835,9 +801,8 @@
     "relevant": true,
     "reason": "NATO crisis over Iran directly escalates oil supply risk for India",
     "triggers": [
-      "brent_crude",
-      "global_shipping_routes",
-      "us_government"
+      "strategic_bloc_alignments",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -854,9 +819,9 @@
     "relevant": true,
     "reason": "US targeting Iranian infrastructure + Hormuz reopening efforts directly affect oil supply to India",
     "triggers": [
-      "global_shipping_routes",
-      "brent_crude",
-      "us_government"
+      "maritime_chokepoint_disruptions",
+      "third_party_geopolitical_conflicts",
+      "global_crude_oil"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -873,8 +838,8 @@
     "relevant": true,
     "reason": "ATF price hike directly increases flight ticket prices, affecting ordinary citizens who travel by air.",
     "triggers": [
-      "brent_crude",
-      "aviation_turbine_fuel"
+      "transport_and_logistics_policy",
+      "global_crude_oil"
     ],
     "expected_impacts": [
       "domestic_flight_ticket",
@@ -904,8 +869,7 @@
     "relevant": true,
     "reason": "Major macroeconomic indicator (PMI) drop reflects slowing manufacturing, which impacts employment and consumer goods availability/prices.",
     "triggers": [
-      "pmi_manufacturing",
-      "inflation_indices"
+      "industrial_production_metrics"
     ],
     "expected_impacts": [
       "employment_metrics_and_conditions"
@@ -981,8 +945,8 @@
     "relevant": true,
     "reason": "RBI intervention and significant forex movement directly affect import costs and inflation.",
     "triggers": [
-      "rbi",
-      "usd_inr_exchange"
+      "monetary_policy",
+      "inr_exchange_rates"
     ],
     "expected_impacts": [
       "consumer_tech_devices",
@@ -1000,8 +964,9 @@
     "relevant": true,
     "reason": "Disruption in global shipping routes and crude oil exceeding $100 directly impacts India's fuel prices and import bill.",
     "triggers": [
-      "global_shipping_routes",
-      "brent_crude"
+      "maritime_chokepoint_disruptions",
+      "global_crude_oil",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1054,9 +1019,7 @@
     "relevant": true,
     "reason": "Shooting down US F-35s escalates conflict, threatens oil supply disruption to India",
     "triggers": [
-      "brent_crude",
-      "global_shipping_routes",
-      "geopolitical_states"
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1122,9 +1085,7 @@
     "relevant": true,
     "reason": "Changes in Income Tax rules directly affect salaried citizens' take-home pay and tax liabilities.",
     "triggers": [
-      "union_budget_framework",
-      "ministry_of_finance",
-      "income_tax_department"
+      "fiscal_and_tax_policy"
     ],
     "expected_impacts": [
       "taxation_and_compliance",
@@ -1141,8 +1102,8 @@
     "relevant": true,
     "reason": "Oil shipments through critical straits affect domestic fuel availability and prices.",
     "triggers": [
-      "brent_crude",
-      "global_shipping_routes"
+      "global_crude_oil",
+      "maritime_chokepoint_disruptions"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1159,9 +1120,9 @@
     "relevant": true,
     "reason": "Global conflict disrupting auto supply chains affects vehicle prices and availability for consumers.",
     "triggers": [
-      "global_supply_chains",
-      "global_shipping_routes",
-      "ministry_of_finance"
+      "maritime_chokepoint_disruptions",
+      "industrial_production_metrics",
+      "global_shipping_freight"
     ],
     "expected_impacts": [
       "vehicle_acquisition"
@@ -1177,8 +1138,8 @@
     "relevant": true,
     "reason": "Trade policy actions by the US can impact Indian export industries and related employment.",
     "triggers": [
-      "export_competitiveness",
-      "us_government"
+      "india_export_trends",
+      "trade_wars_and_tariffs"
     ],
     "expected_impacts": [
       "manufacturing_and_core",
@@ -1195,8 +1156,8 @@
     "relevant": true,
     "reason": "Global oil price surges directly impact domestic retail fuel prices and inflation.",
     "triggers": [
-      "brent_crude",
-      "us_government"
+      "global_crude_oil",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1225,9 +1186,7 @@
     "relevant": true,
     "reason": "Government policy change removing airfare caps directly impacts flight ticket prices for citizens.",
     "triggers": [
-      "dgca",
-      "commercial_airports",
-      "ministry_of_civil_aviation"
+      "transport_and_logistics_policy"
     ],
     "expected_impacts": [
       "domestic_flight_ticket",
@@ -1244,8 +1203,9 @@
     "relevant": true,
     "reason": "Major spike in global crude prices and shipping route closures threaten future domestic fuel prices and inflation.",
     "triggers": [
-      "brent_crude",
-      "global_shipping_routes"
+      "maritime_chokepoint_disruptions",
+      "global_crude_oil",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1274,8 +1234,8 @@
     "relevant": true,
     "reason": "Infrastructure quality directly affects citizen travel, vehicle maintenance, and safety at scale.",
     "triggers": [
-      "ministry_of_road_transport",
-      "highway_network"
+      "transport_and_logistics_policy",
+      "highway_expressway_network"
     ],
     "expected_impacts": [
       "road_traffic_accidents",
@@ -1293,9 +1253,7 @@
     "relevant": true,
     "reason": "Parliamentary directives on road safety infrastructure aim to reduce fatalities, impacting citizen lives.",
     "triggers": [
-      "indian_union_government",
-      "highway_network",
-      "ministry_of_road_transport"
+      "transport_and_logistics_policy"
     ],
     "expected_impacts": [
       "road_traffic_accidents",
@@ -1312,9 +1270,9 @@
     "relevant": true,
     "reason": "Major stock market slump and currency depreciation affect retail wealth and increase import-driven inflation.",
     "triggers": [
-      "fii_fpi_flows",
-      "usd_inr_exchange",
-      "nifty_50"
+      "foreign_capital_flows",
+      "inr_exchange_rates",
+      "indian_equity_markets"
     ],
     "expected_impacts": [
       "market_investments",
@@ -1332,9 +1290,9 @@
     "relevant": true,
     "reason": "Disruption in global oil shipping routes impacts India's crude imports, threatening fuel price stability.",
     "triggers": [
-      "global_shipping_routes",
-      "russian_government",
-      "brent_crude"
+      "maritime_chokepoint_disruptions",
+      "india_trade_balance",
+      "global_crude_oil"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1351,8 +1309,8 @@
     "relevant": true,
     "reason": "Direct hike in LPG prices immediately affects household budgets and living costs.",
     "triggers": [
-      "ministry_of_consumer_affairs",
-      "brent_crude"
+      "welfare_and_subsidy_schemes",
+      "global_crude_oil"
     ],
     "expected_impacts": [
       "lpg_cylinder",
@@ -1369,9 +1327,8 @@
     "relevant": true,
     "reason": "Global conflict causing oil prices to soar directly impacts Indian inflation and retail fuel costs.",
     "triggers": [
-      "brent_crude",
-      "global_shipping_routes",
-      "us_government"
+      "global_crude_oil",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "vehicle_fuel",
@@ -1389,10 +1346,8 @@
     "relevant": true,
     "reason": "Broad stock market decline impacts retail investors' wealth and mutual fund returns.",
     "triggers": [
-      "nifty_50",
-      "sensex",
-      "fii_fpi_flows",
-      "brent_crude"
+      "indian_equity_markets",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "market_investments",
@@ -1409,9 +1364,9 @@
     "relevant": true,
     "reason": "Potential disruption to gas plants affects power generation, risking electricity availability and tariffs.",
     "triggers": [
-      "national_power_grid",
       "global_natural_gas",
-      "ministry_of_power"
+      "national_power_grid",
+      "energy_and_environment_policy"
     ],
     "expected_impacts": [
       "electricity_tariff",
@@ -1428,8 +1383,8 @@
     "relevant": true,
     "reason": "HDFC Bank chairman quitting over ethical concerns is systemically significant \u2014 affects depositor confidence and equity markets",
     "triggers": [
-      "bank_liquidity_and_credit",
-      "rbi"
+      "systemic_bank_liquidity",
+      "monetary_policy"
     ],
     "expected_impacts": [
       "direct_equity_portfolio",
@@ -1459,9 +1414,8 @@
     "relevant": true,
     "reason": "Government order directly affecting household cooking gas supply and mandating a switch to piped gas.",
     "triggers": [
-      "indian_union_government",
-      "oil_gas_pipelines",
-      "ministry_of_consumer_affairs"
+      "hydrocarbon_pipeline_network",
+      "welfare_and_subsidy_schemes"
     ],
     "expected_impacts": [
       "lpg_cylinder",
@@ -1479,9 +1433,8 @@
     "relevant": true,
     "reason": "Major infrastructure milestone improving essential foodgrain supply to a state.",
     "triggers": [
-      "public_distribution_system",
       "indian_railways_network",
-      "state_governments"
+      "railway_freight_movement"
     ],
     "expected_impacts": [
       "retail_rice"
@@ -1497,9 +1450,9 @@
     "relevant": true,
     "reason": "Government relief scheme for exporters affected by global crisis, impacting employment and businesses.",
     "triggers": [
-      "indian_union_government",
-      "global_shipping_routes",
-      "ministry_of_commerce_and_industry"
+      "india_export_trends",
+      "third_party_geopolitical_conflicts",
+      "trade_and_tariff_policy"
     ],
     "expected_impacts": [
       "self_employment_and_msme"
@@ -1515,8 +1468,8 @@
     "relevant": true,
     "reason": "Government advisory on cooking gas usage affecting household energy consumption.",
     "triggers": [
-      "indian_union_government",
-      "ministry_of_consumer_affairs"
+      "hydrocarbon_pipeline_network",
+      "welfare_and_subsidy_schemes"
     ],
     "expected_impacts": [
       "lpg_cylinder",
@@ -1534,9 +1487,8 @@
     "relevant": true,
     "reason": "Evacuation and flight operations affecting stranded Indian citizens due to a geopolitical crisis.",
     "triggers": [
-      "global_shipping_routes",
-      "commercial_airports",
-      "ministry_of_civil_aviation"
+      "transport_and_logistics_policy",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "air_travel"
@@ -1564,9 +1516,8 @@
     "relevant": true,
     "reason": "Macro-level oil stockpile status directly influences future retail fuel prices and inflation for citizens.",
     "triggers": [
-      "indian_union_government",
-      "brent_crude",
-      "ministry_of_petroleum_and_natural_gas"
+      "global_crude_oil",
+      "energy_and_environment_policy"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1596,10 +1547,9 @@
     "relevant": true,
     "reason": "Policy incentive for states to expand piped gas infrastructure, affecting commercial and household energy supply.",
     "triggers": [
-      "indian_union_government",
-      "state_governments",
-      "oil_gas_pipelines",
-      "ministry_of_consumer_affairs"
+      "hydrocarbon_pipeline_network",
+      "welfare_and_subsidy_schemes",
+      "center_state_relations"
     ],
     "expected_impacts": [
       "piped_natural_gas",
@@ -1616,8 +1566,8 @@
     "relevant": true,
     "reason": "Global crude oil price surge with direct implications for domestic retail fuel prices and inflation.",
     "triggers": [
-      "brent_crude",
-      "us_government"
+      "global_crude_oil",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1634,7 +1584,7 @@
     "relevant": true,
     "reason": "Macroeconomic estimates and US tariffs indicate broader economic trends and trade policies affecting inflation and employment.",
     "triggers": [
-      "us_government",
+      "trade_wars_and_tariffs",
       "india_gdp_growth"
     ],
     "expected_impacts": [
@@ -1651,8 +1601,7 @@
     "relevant": true,
     "reason": "Changes in fiscal policy and capital expenditure directly influence infrastructure development and job creation.",
     "triggers": [
-      "ministry_of_finance",
-      "fiscal_policies_and_councils"
+      "fiscal_and_tax_policy"
     ],
     "expected_impacts": [
       "employment_metrics_and_conditions"
@@ -1668,8 +1617,9 @@
     "relevant": true,
     "reason": "Rising shipping insurance costs due to conflict will increase import costs, leading to broader inflation.",
     "triggers": [
-      "global_shipping_routes",
-      "us_government"
+      "maritime_chokepoint_disruptions",
+      "third_party_geopolitical_conflicts",
+      "global_shipping_freight"
     ],
     "expected_impacts": [
       "vehicle_fuel",
@@ -1701,8 +1651,9 @@
     "relevant": true,
     "reason": "Surging crude tanker rates directly impact India's oil import bill, leading to higher domestic fuel prices.",
     "triggers": [
-      "brent_crude",
-      "global_shipping_routes"
+      "maritime_chokepoint_disruptions",
+      "global_crude_oil",
+      "global_shipping_freight"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1719,8 +1670,9 @@
     "relevant": true,
     "reason": "Flight cancellations and ministry interventions due to a global crisis directly disrupt travel for citizens.",
     "triggers": [
-      "ministry_of_civil_aviation",
-      "global_shipping_routes"
+      "transport_and_logistics_policy",
+      "commercial_airports",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "air_travel"
@@ -1736,8 +1688,8 @@
     "relevant": true,
     "reason": "Indian crude tanker directly involved in Fujairah terminal attack \u2014 signals real threat to India's oil supply chain",
     "triggers": [
-      "global_shipping_routes",
-      "brent_crude"
+      "maritime_chokepoint_disruptions",
+      "global_crude_oil"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -1754,7 +1706,8 @@
     "relevant": true,
     "reason": "Direct imposition of fuel surcharges increases travel costs for domestic and international passengers.",
     "triggers": [
-      "aviation_turbine_fuel"
+      "transport_and_logistics_policy",
+      "global_crude_oil"
     ],
     "expected_impacts": [
       "domestic_flight_ticket",
@@ -1783,7 +1736,7 @@
     "relevant": true,
     "reason": "RBI draft guidelines directly protect millions of retail banking customers from digital fraud liabilities.",
     "triggers": [
-      "rbi"
+      "banking_and_credit_regulation"
     ],
     "expected_impacts": [
       "digital_and_cyber_security"
@@ -1811,8 +1764,7 @@
     "relevant": true,
     "reason": "Changes or easing in GST inverted duty structures directly affect the cost of manufacturing and retail prices for consumers.",
     "triggers": [
-      "gst_council",
-      "ministry_of_finance"
+      "fiscal_and_tax_policy"
     ],
     "expected_impacts": [
       "retail_and_trade",
@@ -1841,8 +1793,8 @@
     "relevant": true,
     "reason": "Major trade policy change reducing tariffs on British products will directly lower prices of imported goods for Indian consumers.",
     "triggers": [
-      "ministry_of_commerce_and_industry",
-      "export_competitiveness"
+      "trade_and_tariff_policy",
+      "india_export_trends"
     ],
     "expected_impacts": [
       "consumer_tech_devices",
@@ -1859,8 +1811,7 @@
     "relevant": true,
     "reason": "Significant movement in retail inflation indices directly reflects and impacts the cost of living and purchasing power of citizens.",
     "triggers": [
-      "inflation_indices",
-      "retail_inflation_cpi"
+      "retail_inflation"
     ],
     "expected_impacts": [
       "cooking_fuel",
@@ -1914,7 +1865,7 @@
     "relevant": true,
     "reason": "Development of new SEZ norms is a regulatory change that will affect domestic market supply and manufacturing jobs.",
     "triggers": [
-      "ministry_of_commerce_and_industry"
+      "trade_and_tariff_policy"
     ],
     "expected_impacts": [
       "retail_and_trade"
@@ -1942,7 +1893,7 @@
     "relevant": true,
     "reason": "US pulling back on solar/EVs while China races ahead affects India's renewable energy strategy, solar manufacturing, and EV imports",
     "triggers": [
-      "us_government",
+      "trade_wars_and_tariffs",
       "renewable_energy_parks"
     ],
     "expected_impacts": [
@@ -1960,8 +1911,8 @@
     "relevant": true,
     "reason": "Changes in global trade policy (US tariffs) directly threatening Indian export sectors, which affects manufacturing jobs and economic growth.",
     "triggers": [
-      "us_government",
-      "global_macro_demand"
+      "trade_wars_and_tariffs",
+      "us_macro_demand"
     ],
     "expected_impacts": [
       "manufacturing_and_core"
@@ -1977,7 +1928,7 @@
     "relevant": true,
     "reason": "Macroeconomic growth downgrade reflecting broader economic slowdowns that causally affect job creation and income levels.",
     "triggers": [
-      "international_organizations",
+      "multilateral_financial_interventions",
       "india_gdp_growth"
     ],
     "expected_impacts": [
@@ -1994,8 +1945,8 @@
     "relevant": true,
     "reason": "Global trade tariffs directly impacting Indian economic growth and exacerbating unemployment rates.",
     "triggers": [
-      "us_government",
-      "indian_macroeconomic_indicators"
+      "trade_wars_and_tariffs",
+      "india_gdp_growth"
     ],
     "expected_impacts": [
       "employment_metrics_and_conditions"
@@ -2011,7 +1962,7 @@
     "relevant": true,
     "reason": "Large-scale labor shortage in infrastructure and real estate affecting project completion, housing availability, and wages.",
     "triggers": [
-      "employment_aggregates"
+      "macro_employment_trends"
     ],
     "expected_impacts": [
       "construction_worker_wages",
@@ -2040,8 +1991,7 @@
     "relevant": true,
     "reason": "Tax policy changes (GST cuts) directly affecting retail prices of goods and consumer spending power.",
     "triggers": [
-      "gst_council",
-      "ministry_of_finance"
+      "fiscal_and_tax_policy"
     ],
     "expected_impacts": [
       "retail_and_trade"
@@ -2057,8 +2007,8 @@
     "relevant": true,
     "reason": "Macroeconomic shifts leading to changes in household disposable income, affecting citizen living standards.",
     "triggers": [
-      "indian_macroeconomic_indicators",
-      "ministry_of_finance"
+      "india_gdp_growth",
+      "fiscal_and_tax_policy"
     ],
     "expected_impacts": [
       "savings_account_balance",
@@ -2075,8 +2025,8 @@
     "relevant": true,
     "reason": "Major infrastructure development improving connectivity, reducing travel time, and boosting regional economic opportunities.",
     "triggers": [
-      "highway_network",
-      "ministry_of_road_transport"
+      "highway_expressway_network",
+      "transport_and_logistics_policy"
     ],
     "expected_impacts": [
       "intercity_travel",
@@ -2094,8 +2044,8 @@
     "relevant": true,
     "reason": "Sovereign rating upgrade lowers national borrowing costs, influencing foreign investment, currency stability, and broader economic growth.",
     "triggers": [
-      "sovereign_credit_rating",
-      "fii_fpi_flows"
+      "sovereign_bond_yields",
+      "foreign_capital_flows"
     ],
     "expected_impacts": [
       "direct_equity_portfolio",
@@ -2124,7 +2074,7 @@
     "relevant": true,
     "reason": "Services PMI hitting 10-month high signals demand surge, hiring, and consumption growth \u2014 concrete macro indicator",
     "triggers": [
-      "pmi_manufacturing"
+      "industrial_production_metrics"
     ],
     "expected_impacts": [
       "employment_metrics_and_conditions",
@@ -2153,7 +2103,7 @@
     "relevant": true,
     "reason": "Actual RBI policy action (repo rate cut) that directly affects borrowing and saving rates for citizens.",
     "triggers": [
-      "rbi"
+      "monetary_policy"
     ],
     "expected_impacts": [
       "home_loan_emi",
@@ -2183,8 +2133,8 @@
     "relevant": true,
     "reason": "Foreign policy change (US remittance tax) that directly increases the cost of inward remittances for Indian citizens.",
     "triggers": [
-      "us_government",
-      "usd_inr_exchange"
+      "trade_wars_and_tariffs",
+      "inr_exchange_rates"
     ],
     "expected_impacts": [
       "savings_account_balance",
@@ -2249,8 +2199,8 @@
     "relevant": true,
     "reason": "A freeze in US export orders directly impacts employment, wages, and business continuity for Indian export-oriented sectors like MSMEs and textiles.",
     "triggers": [
-      "global_macro_demand",
-      "ministry_of_commerce_and_industry"
+      "us_macro_demand",
+      "trade_and_tariff_policy"
     ],
     "expected_impacts": [
       "self_employment_and_msme",
@@ -2303,9 +2253,9 @@
     "relevant": true,
     "reason": "Finalization of a major international trade deal is a significant policy event that will alter import/export prices, customs duties, and domestic employment.",
     "triggers": [
-      "indian_union_government",
-      "ministry_of_commerce_and_industry",
-      "us_government"
+      "fiscal_and_tax_policy",
+      "trade_and_tariff_policy",
+      "trade_wars_and_tariffs"
     ],
     "expected_impacts": [
       "indirect_taxes",
@@ -2347,8 +2297,8 @@
     "relevant": true,
     "reason": "The RBI Governor's forward guidance on easing food inflation signals central bank policy stance, directly affecting inflation expectations, market yields, and potential lending rate cuts.",
     "triggers": [
-      "rbi",
-      "inflation_indices"
+      "monetary_policy",
+      "retail_inflation"
     ],
     "expected_impacts": [
       "home_loan_emi"
@@ -2388,7 +2338,7 @@
     "relevant": true,
     "reason": "Composite PMI rising for first time in 3 quarters \u2014 concrete macro signal for employment and economic activity",
     "triggers": [
-      "pmi_manufacturing"
+      "industrial_production_metrics"
     ],
     "expected_impacts": [
       "employment_metrics_and_conditions"
@@ -2428,8 +2378,8 @@
     "relevant": true,
     "reason": "Shift in crude oil supply chains affects import costs, which causally impacts retail fuel prices and inflation.",
     "triggers": [
-      "brent_crude",
-      "geopolitical_states"
+      "global_crude_oil",
+      "third_party_geopolitical_conflicts"
     ],
     "expected_impacts": [
       "retail_petrol",
@@ -2458,8 +2408,8 @@
     "relevant": true,
     "reason": "US tariffs and subsequent trade policy responses directly affect export industries, employment, and imported goods prices.",
     "triggers": [
-      "us_government",
-      "ministry_of_commerce_and_industry"
+      "trade_wars_and_tariffs",
+      "trade_and_tariff_policy"
     ],
     "expected_impacts": [
       "manufacturing_and_core"
@@ -2499,8 +2449,8 @@
     "relevant": true,
     "reason": "Implementation of a national government employment scheme directly affecting youth employment and skills.",
     "triggers": [
-      "indian_union_government",
-      "labor_and_welfare_frameworks"
+      "fiscal_and_tax_policy",
+      "labor_and_employment_policy"
     ],
     "expected_impacts": [
       "employment_metrics_and_conditions",
@@ -2541,9 +2491,8 @@
     "relevant": true,
     "reason": "GST rate rationalisation is a major regulatory change that directly affects the prices of goods and services for all citizens.",
     "triggers": [
-      "gst_council",
-      "ministry_of_finance",
-      "state_governments"
+      "fiscal_and_tax_policy",
+      "center_state_relations"
     ],
     "expected_impacts": [
       "retail_and_trade"
@@ -2559,8 +2508,8 @@
     "relevant": true,
     "reason": "Trade deals between India and the UK impact export sectors, employment, and visa opportunities for Indian professionals.",
     "triggers": [
-      "export_competitiveness",
-      "ministry_of_commerce_and_industry"
+      "india_export_trends",
+      "trade_and_tariff_policy"
     ],
     "expected_impacts": [
       "it_sector_jobs",
@@ -2589,8 +2538,8 @@
     "relevant": true,
     "reason": "Changes to FDI policy and trade barriers directly impact domestic manufacturing, job creation, and market competition.",
     "triggers": [
-      "ministry_of_commerce_and_industry",
-      "export_competitiveness"
+      "trade_and_tariff_policy",
+      "india_export_trends"
     ],
     "expected_impacts": [
       "manufacturing_and_core",
@@ -2619,8 +2568,7 @@
     "relevant": true,
     "reason": "Retail inflation and food price movements directly dictate the cost of living and purchasing power for ordinary citizens.",
     "triggers": [
-      "retail_inflation_cpi",
-      "inflation_indices"
+      "retail_inflation"
     ],
     "expected_impacts": [
       "savings_and_deposits"
@@ -2636,8 +2584,8 @@
     "relevant": true,
     "reason": "Significant export growth impacts employment and wages in domestic manufacturing and export-oriented sectors.",
     "triggers": [
-      "trade_balance_metrics",
-      "export_competitiveness"
+      "india_trade_balance",
+      "india_export_trends"
     ],
     "expected_impacts": [
       "manufacturing_and_core",
@@ -2702,7 +2650,7 @@
     "relevant": true,
     "reason": "Cancellation of a major state government insurance contract directly affects healthcare or crop coverage for citizens.",
     "triggers": [
-      "state_governments"
+      "center_state_relations"
     ],
     "expected_impacts": [
       "health_insurance_premium",
@@ -2719,7 +2667,7 @@
     "relevant": true,
     "reason": "Currency depreciation impacts import costs, leading to broader inflation affecting ordinary citizens.",
     "triggers": [
-      "usd_inr_exchange"
+      "inr_exchange_rates"
     ],
     "expected_impacts": [
       "vehicle_fuel",
@@ -2737,7 +2685,7 @@
     "relevant": true,
     "reason": "Trade policy change affecting agricultural exports, impacting domestic food prices and farmer incomes.",
     "triggers": [
-      "indian_union_government"
+      "fiscal_and_tax_policy"
     ],
     "expected_impacts": [
       "retail_rice",
@@ -2778,7 +2726,7 @@
     "relevant": true,
     "reason": "Steel import protectionism directly affects building materials, vehicle manufacturing, and MSME input costs",
     "triggers": [
-      "ministry_of_commerce_and_industry"
+      "trade_and_tariff_policy"
     ],
     "expected_impacts": [
       "building_materials_cost",
@@ -2807,7 +2755,7 @@
     "relevant": true,
     "reason": "Central bank monetary policy decision directly impacts interest rates, loan EMIs, and credit availability.",
     "triggers": [
-      "rbi"
+      "monetary_policy"
     ],
     "expected_impacts": [
       "home_loan_emi",
@@ -2850,8 +2798,8 @@
     "relevant": true,
     "reason": "Record high gold prices directly affect household savings, wedding budgets, and retail consumer behavior in India.",
     "triggers": [
-      "international_gold_prices",
-      "global_central_banks"
+      "precious_metals",
+      "foreign_central_bank_policy"
     ],
     "expected_impacts": [
       "retail_gold_investment",
@@ -2881,7 +2829,7 @@
     "relevant": true,
     "reason": "Government PLI disbursements in the textile sector directly stimulate domestic manufacturing and factory employment for ordinary citizens.",
     "triggers": [
-      "economic_ministries"
+      "fiscal_and_tax_policy"
     ],
     "expected_impacts": [
       "manufacturing_and_core",

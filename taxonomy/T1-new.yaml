@@ -1,0 +1,680 @@
+nodes:
+- id: t1
+  aliases:
+  - Macroeconomic & Financial Markets
+  - Money & Markets
+  - Arthik Evam Vittiya Bazar
+  - Global Economy
+  category: T1
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Global Commodity Markets ===
+- id: global_commodity_markets
+  aliases:
+  - Global Commodity Markets
+  - International Commodities
+  - Vishwa Commodity Bazar
+  - Raw Material Markets
+  category: T1
+  level: 2
+  status: active
+  is_category: true
+- id: energy_commodities
+  aliases:
+  - Energy Commodities
+  - Global Energy Markets
+  - Urja Bazar
+  - Fossil Fuel Markets
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: global_crude_oil
+  aliases:
+  - Brent Crude
+  - Kachcha Tel
+  - WTI Crude
+  - Global Oil Prices
+  - Petroleum Markets
+  category: T1
+  level: 4
+  status: active
+  portal: true
+- id: global_natural_gas
+  aliases:
+  - LNG Prices
+  - Natural Gas Markets
+  - Prakritik Gas
+  - Henry Hub
+  - Global Gas Supply
+  category: T1
+  level: 4
+  status: active
+- id: global_coal_markets
+  aliases:
+  - Thermal Coal Prices
+  - International Coal
+  - Koyla Bazar
+  - Coking Coal Markets
+  - Newcastle Coal
+  category: T1
+  level: 4
+  status: active
+- id: agricultural_commodities
+  aliases:
+  - Agricultural Commodities
+  - Global Agri Markets
+  - Krishi Utpad Bazar
+  - Farm Commodity Markets
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: global_edible_oil
+  aliases:
+  - Palm Oil Prices
+  - Sunflower Oil Imports
+  - Khadya Tel
+  - Global Edible Oil Supply
+  - Cooking Oil Markets
+  category: T1
+  level: 4
+  status: active
+  portal: true
+- id: global_food_grains
+  aliases:
+  - International Wheat Prices
+  - Global Rice Markets
+  - Anaj Bazar
+  - Grain Supply
+  - Chicago Wheat
+  category: T1
+  level: 4
+  status: active
+  portal: true
+- id: global_sugar_markets
+  aliases:
+  - International Sugar Prices
+  - Raw Sugar Supply
+  - Chini Bazar
+  - Global Sugar Deficit
+  - Sugar Futures
+  category: T1
+  level: 4
+  status: active
+- id: metals_and_minerals
+  aliases:
+  - Metals & Minerals
+  - Global Metals Market
+  - Dhatu Bazar
+  - Commodities Metals
+  category: T1
+  level: 3
+  status: active
+  is_category: true
+- id: precious_metals
+  aliases:
+  - International Gold Prices
+  - Silver Prices
+  - Sona Chandi
+  - Bullion Market
+  - Safe Haven Assets
+  category: T1
+  level: 4
+  status: active
+  portal: true
+- id: industrial_metals
+  aliases:
+  - Copper Prices
+  - Global Steel Prices
+  - Audyogik Dhatu
+  - Base Metals
+  - LME Index
+  category: T1
+  level: 4
+  status: active
+
+# === L2: Domestic Macro Indicators ===
+- id: domestic_macro_indicators
+  aliases:
+  - Domestic Macro Indicators
+  - Indian Economy Metrics
+  - Rashtriya Arthik Ankde
+  - India Macro Data
+  category: T1
+  level: 2
+  status: active
+  is_category: true
+- id: wholesale_inflation
+  aliases:
+  - Wholesale Price Index
+  - WPI
+  - Thok Mahangai
+  - Factory Gate Prices
+  - Producer Price Trends
+  category: T1
+  level: 3
+  status: active
+  portal: true
+- id: retail_inflation
+  aliases:
+  - Consumer Price Index
+  - CPI
+  - Khudara Mahangai
+  - Retail Inflation Rate
+  - CPI Inflation
+  category: T1
+  level: 3
+  status: active
+  portal: true
+- id: india_gdp_growth
+  aliases:
+  - GDP Growth Rate
+  - Gross Domestic Product
+  - Arthik Vikas Dar
+  - National Economic Growth
+  - India GDP Data
+  category: T1
+  level: 3
+  status: active
+  portal: true
+- id: industrial_production_metrics
+  aliases:
+  - Index of Industrial Production
+  - IIP
+  - PMI Manufacturing
+  - Audyogik Utpadan
+  - Factory Output Data
+  category: T1
+  level: 3
+  status: active
+- id: macro_employment_trends
+  aliases:
+  - National Unemployment Rate
+  - EPFO Payroll Data
+  - Berozgari Dar
+  - Macro Job Creation
+  - CMIE Employment Data
+  category: T1
+  level: 3
+  status: active
+  portal: true
+
+# === L2: Financial & Capital Markets ===
+- id: financial_and_capital_markets
+  aliases:
+  - Financial & Capital Markets
+  - Stock & Bond Markets
+  - Vittiya Bazar
+  - Capital Markets
+  category: T1
+  level: 2
+  status: active
+  is_category: true
+- id: indian_equity_markets
+  aliases:
+  - Sensex
+  - Nifty 50
+  - Share Bazar
+  - Domestic Stock Indices
+  - Indian Stock Market
+  category: T1
+  level: 3
+  status: active
+  portal: true
+- id: global_equity_markets
+  aliases:
+  - Wall Street
+  - S&P 500
+  - Nasdaq
+  - Vaishvik Share Bazar
+  - Global Stock Indices
+  category: T1
+  level: 3
+  status: active
+- id: inr_exchange_rates
+  aliases:
+  - USD-INR Exchange Rate
+  - Rupee Depreciation
+  - Dollar Bhaw
+  - Rupaya Rate
+  - Forex Currency Rates
+  category: T1
+  level: 3
+  status: active
+  portal: true
+- id: forex_reserves_india
+  aliases:
+  - Foreign Exchange Reserves
+  - RBI Dollar Reserves
+  - Videshi Mudra Bhandar
+  - FX Reserves
+  - India Forex Stockpile
+  category: T1
+  level: 3
+  status: active
+- id: sovereign_bond_yields
+  aliases:
+  - India 10-Year Bond Yield
+  - G-Sec Yields
+  - Sarkari Bond
+  - Government Bond Rates
+  - Sovereign Credit Rating
+  category: T1
+  level: 3
+  status: active
+  portal: true
+- id: us_treasury_yields
+  aliases:
+  - US 10-Year Yield
+  - Treasury Bonds
+  - US Debt Market
+  - Fed Benchmark Rate
+  - American Bond Yields
+  category: T1
+  level: 3
+  status: active
+- id: systemic_bank_liquidity
+  aliases:
+  - Repo Rate
+  - RBI Monetary Policy
+  - Bank Taralta
+  - MCLR Benchmark
+  - Interbank Liquidity
+  category: T1
+  level: 3
+  status: active
+  portal: true
+- id: foreign_capital_flows
+  aliases:
+  - FII Flows
+  - Foreign Portfolio Investment
+  - Videshi Nivesh
+  - FPI Flows
+  - Foreign Institutional Flows
+  category: T1
+  level: 3
+  status: active
+  portal: true
+- id: domestic_institutional_flows
+  aliases:
+  - DII Flows
+  - Mutual Fund Inflows
+  - Gharelu Nivesh
+  - SIP Macro Flows
+  - Domestic Fund Flows
+  category: T1
+  level: 3
+  status: active
+- id: private_capital_flows
+  aliases:
+  - Venture Capital Funding
+  - Private Equity
+  - PE VC Flows
+  - Startup Nivesh
+  - Funding Winters
+  category: T1
+  level: 3
+  status: active
+
+# === L2: International Trade & Supply Chains ===
+- id: international_trade_and_supply_chains
+  aliases:
+  - International Trade & Supply Chains
+  - Global Trade
+  - Antarrashtriya Vyapar
+  - Trade & Logistics
+  category: T1
+  level: 2
+  status: active
+  is_category: true
+- id: india_trade_balance
+  aliases:
+  - Trade Deficit
+  - Current Account Deficit
+  - Vyapar Ghata
+  - CAD
+  - Import-Export Gap
+  category: T1
+  level: 3
+  status: active
+  portal: true
+- id: india_export_trends
+  aliases:
+  - Merchandise Exports
+  - IT Services Exports
+  - Niryat
+  - Export Volume Trends
+  - India Export Data
+  category: T1
+  level: 3
+  status: active
+- id: global_shipping_freight
+  aliases:
+  - Freight Rates
+  - Container Costs
+  - Shipping Kiraya
+  - Baltic Dry Index
+  - Maritime Logistics
+  category: T1
+  level: 3
+  status: active
+- id: semiconductor_supply_chain
+  aliases:
+  - Chip Shortage
+  - Semiconductor Cycle
+  - Microchip Supply
+  - Global Chip Supply
+  - Semi-Conductor Markets
+  category: T1
+  level: 3
+  status: active
+  portal: true
+- id: pharma_api_supply
+  aliases:
+  - Active Pharmaceutical Ingredients
+  - Bulk Drug Supply
+  - Farma API
+  - Pharma Raw Materials
+  - Drug Ingredient Supply
+  category: T1
+  level: 3
+  status: active
+- id: us_macro_demand
+  aliases:
+  - US Consumer Spending
+  - US Recession Risk
+  - Ameriki Arthvyavastha
+  - American Economic Demand
+  - Fed Soft Landing
+  category: T1
+  level: 3
+  status: active
+- id: china_macro_output
+  aliases:
+  - Chinese Manufacturing
+  - China Slowdown
+  - Chini Arthvyavastha
+  - China Factory Output
+  - China Industrial Production
+  category: T1
+  level: 3
+  status: active
+
+edges:
+# T1 → L2
+- from: t1
+  to: global_commodity_markets
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macroeconomic & Financial Markets contains Global Commodity Markets
+- from: t1
+  to: domestic_macro_indicators
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macroeconomic & Financial Markets contains Domestic Macro Indicators
+- from: t1
+  to: financial_and_capital_markets
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macroeconomic & Financial Markets contains Financial & Capital Markets
+- from: t1
+  to: international_trade_and_supply_chains
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Macroeconomic & Financial Markets contains International Trade & Supply Chains
+
+# Global Commodity Markets → L3
+- from: global_commodity_markets
+  to: energy_commodities
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Commodity Markets contains Energy Commodities
+- from: global_commodity_markets
+  to: agricultural_commodities
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Commodity Markets contains Agricultural Commodities
+- from: global_commodity_markets
+  to: metals_and_minerals
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Commodity Markets contains Metals & Minerals
+
+# Energy Commodities → L4
+- from: energy_commodities
+  to: global_crude_oil
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy Commodities contains Global Crude Oil
+- from: energy_commodities
+  to: global_natural_gas
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy Commodities contains Global Natural Gas
+- from: energy_commodities
+  to: global_coal_markets
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy Commodities contains Global Coal Markets
+
+# Agricultural Commodities → L4
+- from: agricultural_commodities
+  to: global_edible_oil
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Agricultural Commodities contains Global Edible Oil
+- from: agricultural_commodities
+  to: global_food_grains
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Agricultural Commodities contains Global Food Grains
+- from: agricultural_commodities
+  to: global_sugar_markets
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Agricultural Commodities contains Global Sugar Markets
+
+# Metals & Minerals → L4
+- from: metals_and_minerals
+  to: precious_metals
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Metals & Minerals contains Precious Metals
+- from: metals_and_minerals
+  to: industrial_metals
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Metals & Minerals contains Industrial Metals
+
+# Domestic Macro Indicators → L3
+- from: domestic_macro_indicators
+  to: wholesale_inflation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Macro Indicators contains Wholesale Inflation
+- from: domestic_macro_indicators
+  to: retail_inflation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Macro Indicators contains Retail Inflation
+- from: domestic_macro_indicators
+  to: india_gdp_growth
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Macro Indicators contains India GDP Growth
+- from: domestic_macro_indicators
+  to: industrial_production_metrics
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Macro Indicators contains Industrial Production Metrics
+- from: domestic_macro_indicators
+  to: macro_employment_trends
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Macro Indicators contains Macro Employment Trends
+
+# Financial & Capital Markets → L3
+- from: financial_and_capital_markets
+  to: indian_equity_markets
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial & Capital Markets contains Indian Equity Markets
+- from: financial_and_capital_markets
+  to: global_equity_markets
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial & Capital Markets contains Global Equity Markets
+- from: financial_and_capital_markets
+  to: inr_exchange_rates
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial & Capital Markets contains INR Exchange Rates
+- from: financial_and_capital_markets
+  to: forex_reserves_india
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial & Capital Markets contains Forex Reserves India
+- from: financial_and_capital_markets
+  to: sovereign_bond_yields
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial & Capital Markets contains Sovereign Bond Yields
+- from: financial_and_capital_markets
+  to: us_treasury_yields
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial & Capital Markets contains US Treasury Yields
+- from: financial_and_capital_markets
+  to: systemic_bank_liquidity
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial & Capital Markets contains Systemic Bank Liquidity
+- from: financial_and_capital_markets
+  to: foreign_capital_flows
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial & Capital Markets contains Foreign Capital Flows
+- from: financial_and_capital_markets
+  to: domestic_institutional_flows
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial & Capital Markets contains Domestic Institutional Flows
+- from: financial_and_capital_markets
+  to: private_capital_flows
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Financial & Capital Markets contains Private Capital Flows
+
+# International Trade & Supply Chains → L3
+- from: international_trade_and_supply_chains
+  to: india_trade_balance
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Trade & Supply Chains contains India Trade Balance
+- from: international_trade_and_supply_chains
+  to: india_export_trends
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Trade & Supply Chains contains India Export Trends
+- from: international_trade_and_supply_chains
+  to: global_shipping_freight
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Trade & Supply Chains contains Global Shipping Freight
+- from: international_trade_and_supply_chains
+  to: semiconductor_supply_chain
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Trade & Supply Chains contains Semiconductor Supply Chain
+- from: international_trade_and_supply_chains
+  to: pharma_api_supply
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Trade & Supply Chains contains Pharma API Supply
+- from: international_trade_and_supply_chains
+  to: us_macro_demand
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Trade & Supply Chains contains US Macro Demand
+- from: international_trade_and_supply_chains
+  to: china_macro_output
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: International Trade & Supply Chains contains China Macro Output

@@ -1,0 +1,483 @@
+nodes:
+- id: t2
+  aliases:
+  - Domestic Governance & Policy
+  - Rules (Internal)
+  - Gharelu Shasan Evam Niti
+  - Indian Policy Framework
+  category: T2
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Economic & Financial Policy ===
+- id: economic_and_financial_policy
+  aliases:
+  - Economic & Financial Policy
+  - Fiscal & Monetary Rules
+  - Arthik Niti
+  - Economic Governance
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: monetary_policy
+  aliases:
+  - RBI Rate Hike
+  - Repo Rate Change
+  - Maudrik Niti
+  - Liquidity Adjustment
+  - Interest Rate Decision
+  category: T2
+  level: 3
+  status: active
+  portal: true
+- id: fiscal_and_tax_policy
+  aliases:
+  - Union Budget
+  - GST Council Decision
+  - Rajkoshiya Niti
+  - Income Tax Slabs
+  - Direct Tax Changes
+  category: T2
+  level: 3
+  status: active
+  portal: true
+- id: market_and_corporate_regulation
+  aliases:
+  - SEBI Guidelines
+  - CCI Penalty
+  - Bazaar Niyaman
+  - Corporate Governance Norms
+  - Capital Market Rules
+  category: T2
+  level: 3
+  status: active
+  portal: true
+- id: banking_and_credit_regulation
+  aliases:
+  - Banking Sector Norms
+  - NPA Guidelines
+  - Banking Niyam
+  - Loan Restructuring Rules
+  - NBFC Regulation
+  category: T2
+  level: 3
+  status: active
+- id: trade_and_tariff_policy
+  aliases:
+  - Import Duty Changes
+  - Export Ban
+  - Aayat Niryaat Niti
+  - DGFT Notification
+  - PLI Scheme
+  category: T2
+  level: 3
+  status: active
+
+# === L2: Legal & Judicial Framework ===
+- id: legal_and_judicial_framework
+  aliases:
+  - Legal & Judicial Framework
+  - Law & Courts
+  - Kanoon Evam Nyay
+  - Legal Governance
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: apex_judicial_rulings
+  aliases:
+  - Supreme Court Verdict
+  - High Court Order
+  - Sarvochha Nyayalaya Faisla
+  - Judicial Mandate
+  - Constitutional Interpretation
+  category: T2
+  level: 3
+  status: active
+  portal: true
+- id: legislative_amendments
+  aliases:
+  - New Parliament Bill
+  - Statutory Amendment
+  - Kanooni Sanshodhan
+  - Government Ordinance
+  - Act of Parliament
+  category: T2
+  level: 3
+  status: active
+  portal: true
+- id: investigative_and_enforcement_actions
+  aliases:
+  - ED Raid
+  - CBI Investigation
+  - Chaapemari
+  - IT Department Search
+  - Anti-Corruption Drive
+  category: T2
+  level: 3
+  status: active
+- id: internal_security_and_policing
+  aliases:
+  - National Security Directive
+  - UAPA Charges
+  - Aantarik Suraksha
+  - Public Order Enforcement
+  - Anti-Terror Operations
+  category: T2
+  level: 3
+  status: active
+
+# === L2: Social & Welfare Policy ===
+- id: social_and_welfare_policy
+  aliases:
+  - Social & Welfare Policy
+  - Welfare Schemes
+  - Samajik Kalyan Niti
+  - Safety Net Policy
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: welfare_and_subsidy_schemes
+  aliases:
+  - DBT Policy
+  - Ration Subsidy Rules
+  - Kalyankari Yojana
+  - PM-Kisan Changes
+  - Direct Benefit Transfer
+  category: T2
+  level: 3
+  status: active
+  portal: true
+- id: labor_and_employment_policy
+  aliases:
+  - Labor Codes
+  - MGNREGA Wages
+  - Shram Kanoon
+  - EPFO Rules
+  - Minimum Wage Policy
+  category: T2
+  level: 3
+  status: active
+- id: reservation_and_affirmative_action
+  aliases:
+  - Caste Census
+  - Quota Policy
+  - Aarakshan Niti
+  - OBC SC ST Reservation
+  - Affirmative Action
+  category: T2
+  level: 3
+  status: active
+- id: public_health_policy
+  aliases:
+  - Ayushman Bharat Rules
+  - Drug Pricing
+  - Swasthya Niti
+  - NPPA Notification
+  - Public Health Mandate
+  category: T2
+  level: 3
+  status: active
+- id: education_and_skilling_policy
+  aliases:
+  - National Education Policy
+  - UGC Guidelines
+  - Shiksha Niti
+  - Board Exam Rules
+  - NEP Changes
+  category: T2
+  level: 3
+  status: active
+
+# === L2: Infrastructure & Resource Governance ===
+- id: infrastructure_and_resource_governance
+  aliases:
+  - Infrastructure & Resource Governance
+  - Resource Policy
+  - Buniyadi Dhanche Ki Niti
+  - Infrastructure Regulation
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: digital_and_telecom_regulation
+  aliases:
+  - TRAI Tariff Rules
+  - Data Protection Act
+  - Digital Niyaman
+  - IT Intermediary Rules
+  - DPDP Act
+  category: T2
+  level: 3
+  status: active
+- id: energy_and_environment_policy
+  aliases:
+  - Green Energy Mandates
+  - Emission Norms
+  - Paryavaran Niti
+  - Environmental Clearance
+  - Coal Block Allocation
+  category: T2
+  level: 3
+  status: active
+- id: land_and_real_estate_regulation
+  aliases:
+  - RERA Compliance
+  - Land Acquisition Law
+  - Bhoomi Niyam
+  - Zoning Ordinance
+  - Real Estate Rules
+  category: T2
+  level: 3
+  status: active
+- id: transport_and_logistics_policy
+  aliases:
+  - NHAI Toll Policy
+  - DGCA Aviation Rules
+  - Parivahan Niti
+  - Railway Tariffs
+  - Logistics Policy
+  category: T2
+  level: 3
+  status: active
+
+# === L2: Federal & Electoral Governance ===
+- id: federal_and_electoral_governance
+  aliases:
+  - Federal & Electoral Governance
+  - Elections & Federalism
+  - Sanghiya Evam Chunav Shasan
+  - Democratic Governance
+  category: T2
+  level: 2
+  status: active
+  is_category: true
+- id: center_state_relations
+  aliases:
+  - Federal Funding Dispute
+  - Finance Commission Grants
+  - Kendra Rajya Sambandh
+  - Governor CM Conflict
+  - Tax Devolution
+  category: T2
+  level: 3
+  status: active
+  portal: true
+- id: electoral_policy_and_conduct
+  aliases:
+  - ECI Ruling
+  - Model Code of Conduct
+  - Chunav Niti
+  - Election Schedule
+  - Poll Commission Directive
+  category: T2
+  level: 3
+  status: active
+- id: local_and_municipal_governance
+  aliases:
+  - Municipal Civic Mandates
+  - Panchayat Rules
+  - Sthaniya Prashasan
+  - Urban Local Body Policy
+  - Civic Body Orders
+  category: T2
+  level: 3
+  status: active
+
+edges:
+# T2 → L2
+- from: t2
+  to: economic_and_financial_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Governance & Policy contains Economic & Financial Policy
+- from: t2
+  to: legal_and_judicial_framework
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Governance & Policy contains Legal & Judicial Framework
+- from: t2
+  to: social_and_welfare_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Governance & Policy contains Social & Welfare Policy
+- from: t2
+  to: infrastructure_and_resource_governance
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Governance & Policy contains Infrastructure & Resource Governance
+- from: t2
+  to: federal_and_electoral_governance
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Domestic Governance & Policy contains Federal & Electoral Governance
+
+# Economic & Financial Policy → L3
+- from: economic_and_financial_policy
+  to: monetary_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic & Financial Policy contains Monetary Policy
+- from: economic_and_financial_policy
+  to: fiscal_and_tax_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic & Financial Policy contains Fiscal & Tax Policy
+- from: economic_and_financial_policy
+  to: market_and_corporate_regulation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic & Financial Policy contains Market & Corporate Regulation
+- from: economic_and_financial_policy
+  to: banking_and_credit_regulation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic & Financial Policy contains Banking & Credit Regulation
+- from: economic_and_financial_policy
+  to: trade_and_tariff_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic & Financial Policy contains Trade & Tariff Policy
+
+# Legal & Judicial Framework → L3
+- from: legal_and_judicial_framework
+  to: apex_judicial_rulings
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Legal & Judicial Framework contains Apex Judicial Rulings
+- from: legal_and_judicial_framework
+  to: legislative_amendments
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Legal & Judicial Framework contains Legislative Amendments
+- from: legal_and_judicial_framework
+  to: investigative_and_enforcement_actions
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Legal & Judicial Framework contains Investigative & Enforcement Actions
+- from: legal_and_judicial_framework
+  to: internal_security_and_policing
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Legal & Judicial Framework contains Internal Security & Policing
+
+# Social & Welfare Policy → L3
+- from: social_and_welfare_policy
+  to: welfare_and_subsidy_schemes
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social & Welfare Policy contains Welfare & Subsidy Schemes
+- from: social_and_welfare_policy
+  to: labor_and_employment_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social & Welfare Policy contains Labor & Employment Policy
+- from: social_and_welfare_policy
+  to: reservation_and_affirmative_action
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social & Welfare Policy contains Reservation & Affirmative Action
+- from: social_and_welfare_policy
+  to: public_health_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social & Welfare Policy contains Public Health Policy
+- from: social_and_welfare_policy
+  to: education_and_skilling_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social & Welfare Policy contains Education & Skilling Policy
+
+# Infrastructure & Resource Governance → L3
+- from: infrastructure_and_resource_governance
+  to: digital_and_telecom_regulation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure & Resource Governance contains Digital & Telecom Regulation
+- from: infrastructure_and_resource_governance
+  to: energy_and_environment_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure & Resource Governance contains Energy & Environment Policy
+- from: infrastructure_and_resource_governance
+  to: land_and_real_estate_regulation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure & Resource Governance contains Land & Real Estate Regulation
+- from: infrastructure_and_resource_governance
+  to: transport_and_logistics_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Infrastructure & Resource Governance contains Transport & Logistics Policy
+
+# Federal & Electoral Governance → L3
+- from: federal_and_electoral_governance
+  to: center_state_relations
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Federal & Electoral Governance contains Center-State Relations
+- from: federal_and_electoral_governance
+  to: electoral_policy_and_conduct
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Federal & Electoral Governance contains Electoral Policy & Conduct
+- from: federal_and_electoral_governance
+  to: local_and_municipal_governance
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Federal & Electoral Governance contains Local & Municipal Governance

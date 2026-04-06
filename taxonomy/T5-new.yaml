@@ -1,0 +1,357 @@
+nodes:
+- id: t5
+  aliases:
+  - Digital & Tech Infrastructure
+  - Bytes
+  - Digital Buniyadi Dhanche
+  - Tech Platforms
+  category: T5
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Telecom & Connectivity ===
+- id: telecom_and_connectivity
+  aliases:
+  - Telecom & Connectivity
+  - Communications Network
+  - Doorsanchar Pranali
+  - Network Infrastructure
+  category: T5
+  level: 2
+  status: active
+  is_category: true
+- id: telecom_spectrum_allocation
+  aliases:
+  - 5G Spectrum
+  - Telecom Airwaves
+  - Spectrum Nilami
+  - Mobile Frequencies
+  - Telecom Bandwidth
+  category: T5
+  level: 3
+  status: active
+  portal: true
+- id: cellular_tower_network
+  aliases:
+  - Mobile Towers
+  - Telecom Infrastructure
+  - Mobile Tower Network
+  - Cellular Grid
+  - Base Transceiver Stations
+  category: T5
+  level: 3
+  status: active
+- id: optical_fibre_network
+  aliases:
+  - BharatNet
+  - Broadband Fibre
+  - Optical Fiber Bichhana
+  - High-Speed Backbone
+  - Internet Fibre Network
+  category: T5
+  level: 3
+  status: active
+- id: submarine_internet_cables
+  aliases:
+  - Undersea Cables
+  - International Internet Gateways
+  - Samundari Internet Cable
+  - Offshore Data Cables
+  - Ocean Floor Cables
+  category: T5
+  level: 3
+  status: active
+- id: satellite_broadband_network
+  aliases:
+  - Space Internet
+  - LEO Satellites
+  - Antariksh Broadband
+  - Starlink OneWeb Network
+  - Satellite Internet
+  category: T5
+  level: 3
+  status: active
+
+# === L2: Digital Public Infrastructure ===
+- id: digital_public_infrastructure
+  aliases:
+  - Digital Public Infrastructure
+  - DPI
+  - India Stack
+  - Digital Public Goods
+  category: T5
+  level: 2
+  status: active
+  is_category: true
+- id: upi_payment_network
+  aliases:
+  - Unified Payments Interface
+  - UPI Platform
+  - UPI Bhugtan Pranali
+  - NPCI Network
+  - Digital Payments Grid
+  category: T5
+  level: 3
+  status: active
+  portal: true
+- id: aadhaar_identity_system
+  aliases:
+  - UIDAI Database
+  - Biometric Authentication
+  - Aadhaar Pranali
+  - Digital Identity Stack
+  - Aadhaar Infrastructure
+  category: T5
+  level: 3
+  status: active
+  portal: true
+- id: ondc_commerce_network
+  aliases:
+  - Open Network for Digital Commerce
+  - ONDC Platform
+  - ONDC Network
+  - Open E-Commerce Protocol
+  - Digital Commerce Grid
+  category: T5
+  level: 3
+  status: active
+- id: health_stack_abha
+  aliases:
+  - Ayushman Bharat Digital Mission
+  - National Health Stack
+  - ABHA ID System
+  - Digital Swasthya Card
+  - Health Data Infrastructure
+  category: T5
+  level: 3
+  status: active
+- id: digilocker_credential_ecosystem
+  aliases:
+  - Digital Locker System
+  - E-Document Infrastructure
+  - Digilocker Khata
+  - Verifiable Credentials
+  - Digital Civic Documents
+  category: T5
+  level: 3
+  status: active
+
+# === L2: Cloud, Compute & AI ===
+- id: cloud_compute_ai
+  aliases:
+  - Cloud, Compute & AI
+  - Data Infrastructure
+  - Computing Buniyadi Dhanche
+  - AI Platforms
+  category: T5
+  level: 2
+  status: active
+  is_category: true
+- id: commercial_data_centers
+  aliases:
+  - Data Centre Parks
+  - Server Farms
+  - Data Center Hub
+  - Data Storage Infrastructure
+  - Colocation Centers
+  category: T5
+  level: 3
+  status: active
+- id: ai_compute_infrastructure
+  aliases:
+  - GPU Clusters
+  - IndiaAI Mission
+  - AI Supercomputers
+  - AI Compute Grid
+  - Machine Learning Infrastructure
+  category: T5
+  level: 3
+  status: active
+- id: cloud_service_platforms
+  aliases:
+  - Cloud Hosting Platforms
+  - Enterprise Cloud Infra
+  - Cloud Computing Suvidha
+  - Public Cloud Platforms
+  - AWS Azure India
+  category: T5
+  level: 3
+  status: active
+
+# === L2: Strategic Digital Infrastructure ===
+- id: strategic_digital_infrastructure
+  aliases:
+  - Strategic Digital Infrastructure
+  - National Digital Security
+  - Suraksha Digital Dhanche
+  - Critical Digital Systems
+  category: T5
+  level: 2
+  status: active
+  is_category: true
+- id: national_cybersecurity_grid
+  aliases:
+  - CERT-In
+  - National Firewall
+  - Cyber Suraksha Grid
+  - Critical Info Infrastructure
+  - Digital Defense Systems
+  category: T5
+  level: 3
+  status: active
+  portal: true
+- id: navic_positioning_system
+  aliases:
+  - IRNSS
+  - Indian GPS
+  - NavIC Satellite System
+  - Swadeshi GPS
+  - Spatial Data Infrastructure
+  category: T5
+  level: 3
+  status: active
+
+edges:
+# T5 → L2
+- from: t5
+  to: telecom_and_connectivity
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Tech Infrastructure contains Telecom & Connectivity
+- from: t5
+  to: digital_public_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Tech Infrastructure contains Digital Public Infrastructure
+- from: t5
+  to: cloud_compute_ai
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Tech Infrastructure contains Cloud, Compute & AI
+- from: t5
+  to: strategic_digital_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Tech Infrastructure contains Strategic Digital Infrastructure
+
+# Telecom & Connectivity → L3
+- from: telecom_and_connectivity
+  to: telecom_spectrum_allocation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Connectivity contains Telecom Spectrum Allocation
+- from: telecom_and_connectivity
+  to: cellular_tower_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Connectivity contains Cellular Tower Network
+- from: telecom_and_connectivity
+  to: optical_fibre_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Connectivity contains Optical Fibre Network
+- from: telecom_and_connectivity
+  to: submarine_internet_cables
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Connectivity contains Submarine Internet Cables
+- from: telecom_and_connectivity
+  to: satellite_broadband_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Connectivity contains Satellite Broadband Network
+
+# Digital Public Infrastructure → L3
+- from: digital_public_infrastructure
+  to: upi_payment_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Public Infrastructure contains UPI Payment Network
+- from: digital_public_infrastructure
+  to: aadhaar_identity_system
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Public Infrastructure contains Aadhaar Identity System
+- from: digital_public_infrastructure
+  to: ondc_commerce_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Public Infrastructure contains ONDC Commerce Network
+- from: digital_public_infrastructure
+  to: health_stack_abha
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Public Infrastructure contains Health Stack ABHA
+- from: digital_public_infrastructure
+  to: digilocker_credential_ecosystem
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Public Infrastructure contains DigiLocker Credential Ecosystem
+
+# Cloud, Compute & AI → L3
+- from: cloud_compute_ai
+  to: commercial_data_centers
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cloud, Compute & AI contains Commercial Data Centers
+- from: cloud_compute_ai
+  to: ai_compute_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cloud, Compute & AI contains AI Compute Infrastructure
+- from: cloud_compute_ai
+  to: cloud_service_platforms
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Cloud, Compute & AI contains Cloud Service Platforms
+
+# Strategic Digital Infrastructure → L3
+- from: strategic_digital_infrastructure
+  to: national_cybersecurity_grid
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Strategic Digital Infrastructure contains National Cybersecurity Grid
+- from: strategic_digital_infrastructure
+  to: navic_positioning_system
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Strategic Digital Infrastructure contains NavIC Positioning System

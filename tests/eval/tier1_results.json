@@ -1,30 +1,24 @@
 {
   "metrics": {
-    "total": 100,
+    "total": 190,
     "errors": 0,
     "relevance": {
-      "tp": 59,
-      "fp": 4,
-      "fn": 4,
-      "tn": 33,
-      "precision": 0.9365079365079365,
-      "recall": 0.9365079365079365,
-      "f1": 0.9365079365079365
+      "tp": 94,
+      "fp": 31,
+      "fn": 9,
+      "tn": 56,
+      "precision": 0.752,
+      "recall": 0.912621359223301,
+      "f1": 0.8245614035087719
     },
     "triggers": {
-      "exact_precision": 0.717948717948718,
-      "exact_recall": 0.5316455696202531,
-      "ancestor_recall": 0.5569620253164557,
-      "total_expected": 158,
-      "total_predicted": 117,
-      "exact_hits": 84,
-      "ancestor_hits": 4
-    },
-    "trajectories": {
-      "escalating": 49,
-      "disruption": 56,
-      "deescalating": 7,
-      "status_quo": 5
+      "exact_precision": 0.6795580110497238,
+      "exact_recall": 0.6721311475409836,
+      "ancestor_recall": 0.6885245901639344,
+      "total_expected": 183,
+      "total_predicted": 181,
+      "exact_hits": 123,
+      "ancestor_hits": 3
     }
   },
   "results": [
@@ -41,11 +35,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is a market commentary/technical analysis piece discussing stock market volatility and trader sentiment, which is explicitly excluded by the instructions.",
+      "pred_reason": "The article is a technical market analysis/opinion piece regarding F&O levels and market sentiment. It contains no new realized economic data, policy actions, or systemic macro shifts, and explicitly relies on expert speculation rather than reporting on a material event.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1646
+      "ms": 1999
     },
     {
       "id": "0042fcd73ebfd8b6210d57f50f7e9cc2f8880cba7594a607e81436324be355e4",
@@ -60,11 +53,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article provides information regarding bank holidays, which is a routine administrative schedule and does not constitute a material shift in T-world systems or a causal impact on ordinary Indians at scale.",
+      "pred_reason": "The article provides a schedule for bank holidays, which is a routine administrative calendar update and does not constitute a material shift in macroeconomic, policy, or systemic state.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1056
+      "ms": 1524
     },
     {
       "id": "2381d4625b4b366d5e63af54939983fab754ca378eb0595b2f6804e3a54e22ee",
@@ -75,9 +67,9 @@
       "relevant": true,
       "reason": "Government intervention to prevent panic buying of LPG directly affects household cooking fuel availability and costs.",
       "triggers": [
-        "ministry_of_consumer_affairs",
-        "state_governments",
-        "public_distribution_system"
+        "market_and_corporate_regulation",
+        "energy_and_environment_policy",
+        "center_state_relations"
       ],
       "expected_impacts": [
         "lpg_cylinder",
@@ -86,13 +78,9 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_consumer_affairs",
-        "public_distribution_system"
+        "welfare_and_subsidy_schemes",
+        "economic_and_financial_policy"
       ],
-      "pred_trajectories": {
-        "ministry_of_consumer_affairs": "escalating",
-        "public_distribution_system": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
@@ -100,7 +88,7 @@
         "I10"
       ],
       "error": false,
-      "ms": 4141
+      "ms": 2031
     },
     {
       "id": "3cd64ac0fcfbb97e877978f95f9e8d4693b180223148bb588bae92940cbb5dad",
@@ -115,11 +103,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article provides an analytical commentary on the structural resilience of the Indian private credit market and AIF frameworks. It does not report a material shift in a T-world system, but rather offers a qualitative assessment of existing market conditions.",
+      "pred_reason": "The article is a descriptive analysis of the Indian private credit market's structural resilience and does not report on a specific, actionable macro event, policy change, or realized data shift.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2403
+      "ms": 1726
     },
     {
       "id": "0bc44975cadef8e7eb4a9cb987d33072dfbae99a725b02bbb93a26ee911bd896",
@@ -134,11 +121,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article discusses a private company's (SpaceX) potential IPO valuation. This is a corporate financial event and does not represent a material shift in Indian macro-systems, sovereign policy, or national infrastructure as defined in the T-world taxonomy.",
+      "pred_reason": "The article discusses a private company's IPO valuation and internal corporate restructuring, which does not constitute a material shift in India's macro-economic, governance, or infrastructure systems.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 4422
+      "ms": 1668
     },
     {
       "id": "aecbeaa7fb019bcbee078e1e0ea3ba1848db969f4f146374ec9c39c9c38a199a",
@@ -146,13 +132,9 @@
       "summary": "Indian drug maker Sun Pharma faces significant exposure to potential US tariffs on medicines. Global brokerage Jefferies warns that while generics may be exempt, Sun Pharma's specialty and innovative products, manufactured in countries like South Korea and the EU, could face levies up to 15%. The US administration is reportedly preparing these tariffs, with an announcement possibly today.",
       "source": "ET Markets",
       "published_at": "2026-04-02",
-      "relevant": true,
+      "relevant": false,
       "reason": "India's largest pharma exporter facing sector-wide US tariffs \u2014 affects pharma employment and equity markets",
-      "triggers": [
-        "us_government",
-        "export_competitiveness",
-        "active_pharmaceutical_ingredients_supply"
-      ],
+      "triggers": [],
       "expected_impacts": [
         "factory_worker_jobs",
         "direct_equity_portfolio"
@@ -160,13 +142,9 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "us_government",
-        "active_pharmaceutical_ingredients_supply"
+        "trade_wars_and_tariffs",
+        "india_export_trends"
       ],
-      "pred_trajectories": {
-        "us_government": "escalating",
-        "active_pharmaceutical_ingredients_supply": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -177,7 +155,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 2026
+      "ms": 2303
     },
     {
       "id": "7b77346cc7925e5891adfb8fbb4adcb452fd5f781bc7fcf6697cbb17f14de720",
@@ -188,8 +166,7 @@
       "relevant": true,
       "reason": "Destruction of Gulf bridges would cripple oil/gas shipping routes to India",
       "triggers": [
-        "global_shipping_routes",
-        "brent_crude"
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -198,18 +175,17 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes"
+        "third_party_geopolitical_conflicts",
+        "global_crude_oil"
       ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I11"
+        "I11",
+        "I10"
       ],
       "error": false,
-      "ms": 1607
+      "ms": 1819
     },
     {
       "id": "a7133a0ca5130813bb7fcf460ed5b0d9816c0c5688cdccb5aa23a7305e1cf4e5",
@@ -224,11 +200,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is an opinion-based market commentary and investment advice piece, which is explicitly excluded by the instructions. It does not report on a material shift in T-world systems, but rather provides individual trading recommendations.",
+      "pred_reason": "The article is a market commentary/opinion piece providing investment advice and technical trading recommendations. It does not report on a new, realized macro event, policy change, or systemic shift; it merely offers a personal perspective on existing market conditions.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1826
+      "ms": 1510
     },
     {
       "id": "2a49c60bc2416380d3b32d962eece3c862e045a6c8075edad07fb553c7488407",
@@ -239,8 +214,8 @@
       "relevant": true,
       "reason": "Massive surge in global crude oil prices directly impacts Indian inflation, fuel costs, and transportation.",
       "triggers": [
-        "brent_crude",
-        "ministry_of_finance"
+        "global_crude_oil",
+        "global_equity_markets"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -250,18 +225,16 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude"
+        "global_crude_oil",
+        "global_equity_markets"
       ],
-      "pred_trajectories": {
-        "brent_crude": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2256
+      "ms": 2001
     },
     {
       "id": "206a5ecab9a358437c5495cc73abfb431b96063cfc0c7a99d567e8804d8f61f5",
@@ -272,10 +245,7 @@
       "relevant": true,
       "reason": "Major geopolitical conflict in the Gulf directly disrupts global oil supply chains and impacts the Indian diaspora, leading to macro shocks in India.",
       "triggers": [
-        "brent_crude",
-        "global_shipping_routes",
-        "us_government",
-        "geopolitical_states"
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "vehicle_fuel",
@@ -285,20 +255,17 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "global_shipping_routes"
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts",
+        "maritime_chokepoint_disruptions"
       ],
-      "pred_trajectories": {
-        "brent_crude": "escalating",
-        "global_shipping_routes": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 22644
+      "ms": 2102
     },
     {
       "id": "73f87c505e2c99ff9a3e36f7dda859bce1a0b11846307b7db2b2e07389956c99",
@@ -313,11 +280,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is a market roundup/observation of Asian stock indices and global sentiment, which is explicitly excluded by the instructions as it does not report a material shift in an Indian T-world system.",
+      "pred_reason": "The article is a market roundup summarizing general sentiment and price movements without reporting a specific, actionable macro-level policy shift, realized economic data release, or structural disruption.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2022
+      "ms": 2448
     },
     {
       "id": "90e333f7c9ef613aa66498d03b3a43af38d39f6911e905a49092dde7a45841e4",
@@ -332,11 +298,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is a routine announcement regarding school board examination results, which does not constitute a material shift in any T-world macro systems or impact ordinary Indians at scale.",
+      "pred_reason": "The article pertains to routine academic examination schedules, which does not constitute a material macro-level shift in T-world systems.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1584
+      "ms": 1332
     },
     {
       "id": "7edb4a8d9c90642ac5214aa06b2289cca1ffdf60a613ef8b255ec6139b0100cd",
@@ -351,11 +316,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article describes a company-specific M&A deal (Mirza International acquiring Solethreads), which does not constitute a material shift in any T-world macro system or impact ordinary Indians at scale.",
+      "pred_reason": "The article describes a private corporate acquisition between two footwear companies, which is not a systemic macro-level shift or a policy action affecting the Indian economy at scale.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1502
+      "ms": 1273
     },
     {
       "id": "b418da0c51a582e9267418958d21b56849c3c23722c9a3eb299c4b2199ebfbfe",
@@ -366,9 +330,8 @@
       "relevant": true,
       "reason": "Jet fuel price hike directly affects flight ticket prices for citizens.",
       "triggers": [
-        "aviation_turbine_fuel",
-        "ministry_of_civil_aviation",
-        "brent_crude"
+        "energy_and_environment_policy",
+        "transport_and_logistics_policy"
       ],
       "expected_impacts": [
         "domestic_flight_ticket",
@@ -377,20 +340,19 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "aviation_turbine_fuel"
+        "global_crude_oil",
+        "transport_and_logistics_policy"
       ],
-      "pred_trajectories": {
-        "aviation_turbine_fuel": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I5",
+        "I6",
         "I7",
-        "I9",
         "I11"
       ],
       "error": false,
-      "ms": 1131
+      "ms": 1901
     },
     {
       "id": "c34511135a7041a2fd8f06e458c767be168214482dab81eed294adbb459d7213",
@@ -401,8 +363,8 @@
       "relevant": true,
       "reason": "First ship through Hormuz since war \u2014 shipping routes normalizing, direct impact on oil/goods imports to India",
       "triggers": [
-        "global_shipping_routes",
-        "brent_crude"
+        "maritime_chokepoint_disruptions",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -411,27 +373,16 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "brent_crude"
+        "maritime_chokepoint_disruptions",
+        "global_crude_oil"
       ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption",
-        "brent_crude": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
-        "I2",
-        "I4",
-        "I5",
-        "I6",
         "I7",
-        "I9",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 3073
+      "ms": 2649
     },
     {
       "id": "a738c9fee1db863cbe812f1db6b4fc4a5e8ad76f6d354d1cc21a9b87fc7f220d",
@@ -442,8 +393,8 @@
       "relevant": true,
       "reason": "RBI regulations causing massive rupee appreciation affects import costs and inflation.",
       "triggers": [
-        "rbi",
-        "usd_inr_exchange"
+        "inr_exchange_rates",
+        "banking_and_credit_regulation"
       ],
       "expected_impacts": [
         "vehicle_fuel",
@@ -452,25 +403,18 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "usd_inr_exchange",
-        "rbi"
+        "inr_exchange_rates",
+        "market_and_corporate_regulation"
       ],
-      "pred_trajectories": {
-        "usd_inr_exchange": "deescalating",
-        "rbi": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
-        "I2",
-        "I3",
         "I6",
         "I7",
-        "I9",
         "I11"
       ],
       "error": false,
-      "ms": 2544
+      "ms": 1240
     },
     {
       "id": "95529d7476cf09583de86931980be92a464cc827120fe1aac0e01ce428f0b499",
@@ -481,9 +425,8 @@
       "relevant": true,
       "reason": "Crude oil price rise impacting the textile value chain will affect retail clothing prices and sector employment.",
       "triggers": [
-        "brent_crude",
-        "global_shipping_routes",
-        "export_competitiveness"
+        "india_export_trends",
+        "global_crude_oil"
       ],
       "expected_impacts": [
         "small_factory_owner_income",
@@ -493,21 +436,18 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "global_shipping_routes"
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts"
       ],
-      "pred_trajectories": {
-        "brent_crude": "escalating",
-        "global_shipping_routes": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I6",
         "I7",
-        "I11",
-        "I6"
+        "I10",
+        "I11"
       ],
       "error": false,
-      "ms": 1906
+      "ms": 1947
     },
     {
       "id": "9d5bd8bae4d3a0e369bc3ce315333f5915c8cc54c680f889e0e35422e60e8c89",
@@ -518,30 +458,18 @@
       "relevant": true,
       "reason": "Severe weather event affecting daily life, health, and commute of citizens in the NCR region.",
       "triggers": [
-        "atmospheric_temperature",
-        "regional_weather_phenomena"
+        "regional_aerosol_systems"
       ],
       "expected_impacts": [
         "traffic_congestion"
       ],
       "difficulty": "easy",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "regional_weather_phenomena"
-      ],
-      "pred_trajectories": {
-        "regional_weather_phenomena": "disruption"
-      },
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I1",
-        "I4",
-        "I5",
-        "I7",
-        "I10"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article reports on local weather conditions (dust storm/haze) in Delhi, which is a localized meteorological event and does not constitute a material shift in any of the macro-level T-world systems.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 3061
+      "ms": 2212
     },
     {
       "id": "91297c1c951277ca13e472d74de294aa68f32a6b3a49528b9afc9631267256d0",
@@ -556,11 +484,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article concerns a sports-related dispute regarding a football match, which falls under entertainment and cultural events, and does not causally affect macro-level systems or ordinary Indian citizens at scale.",
+      "pred_reason": "The article concerns a dispute regarding a sports event and does not represent a material shift in any of the T-world macro systems.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1245
+      "ms": 1370
     },
     {
       "id": "cd03d716c8e446f47ecca3610d61094b125dabe360ac1abd318643c44eb3b8f6",
@@ -571,10 +498,8 @@
       "relevant": true,
       "reason": "LPG crisis triggering mass migration of gig and manufacturing workers, heavily impacting livelihoods and industry.",
       "triggers": [
-        "brent_crude",
-        "industrial_metals_index",
-        "ministry_of_finance",
-        "seasonal_migrant_labor"
+        "domestic_labor_migration",
+        "macro_employment_trends"
       ],
       "expected_impacts": [
         "gig_worker_payouts",
@@ -583,22 +508,12 @@
         "manufacturing_and_core"
       ],
       "difficulty": "easy",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "seasonal_migrant_labor",
-        "rural_urban_migration_corridors"
-      ],
-      "pred_trajectories": {
-        "seasonal_migrant_labor": "disruption",
-        "rural_urban_migration_corridors": "disruption"
-      },
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I7",
-        "I11"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a retrospective, anecdotal piece about past migration patterns (six years ago) and lacks a current, actionable macro-level event or policy shift.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2244
+      "ms": 1430
     },
     {
       "id": "f82ccb30be7c0c6ee7542b34ca74808856ad2f7d93e599651a359c480a6214b7",
@@ -613,11 +528,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is a market commentary/outlook report from a brokerage firm (Motilal Oswal) regarding equity market performance and stock picks. It does not report on a material shift in T-world systems, but rather provides speculative analysis and investment advice.",
+      "pred_reason": "The article is a market outlook/opinion piece by a brokerage firm (Motilal Oswal) regarding future stock market performance. It contains no new realized data, policy actions, or structural macro shifts, but rather speculative analysis and investment recommendations.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1363
+      "ms": 1036
     },
     {
       "id": "7e103d3013b25cdeb11f2b263651c81d1922cf6dfd6b51017eab554718e59d5f",
@@ -625,34 +539,26 @@
       "summary": "Iran war: The review will factor in revenue implications from duty relief measures announced to cushion industries from supply disruptions, alongside broader economic effects stemming from the geopolitical tensions, officials said.",
       "source": "ET Economy",
       "published_at": "2026-04-02",
-      "relevant": true,
+      "relevant": false,
       "reason": "Government review of tax concessions and duty reliefs directly impacts indirect tax revenues and consumer prices.",
-      "triggers": [
-        "global_supply_chains",
-        "industrial_metals_index",
-        "ministry_of_finance"
-      ],
+      "triggers": [],
       "expected_impacts": [
         "vehicle_fuel"
       ],
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "india_trade_deficit",
-        "global_shipping_routes"
+        "third_party_geopolitical_conflicts",
+        "fiscal_and_tax_policy",
+        "trade_and_tariff_policy"
       ],
-      "pred_trajectories": {
-        "india_trade_deficit": "escalating",
-        "global_shipping_routes": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I6",
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2725
+      "ms": 2035
     },
     {
       "id": "1ea242c869327df10226b660d4fe18417c49edb0a7a8b94d1c9283974fa7ca3c",
@@ -663,9 +569,9 @@
       "relevant": true,
       "reason": "Major legislative and infrastructure event establishing a state capital, unlocking massive development funds.",
       "triggers": [
-        "indian_union_government",
-        "state_governments",
-        "transport_logistics_infrastructure"
+        "legislative_amendments",
+        "land_and_real_estate_regulation",
+        "tier_city_emergence"
       ],
       "expected_impacts": [
         "investment_property_value",
@@ -674,24 +580,21 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "state_governments",
-        "tier_2_3_city_expansion"
+        "land_and_real_estate_regulation",
+        "tier_city_emergence"
       ],
-      "pred_trajectories": {
-        "state_governments": "disruption",
-        "tier_2_3_city_expansion": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I6",
         "I7",
         "I8",
+        "I9",
         "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2849
+      "ms": 2037
     },
     {
       "id": "93bfea943c81f56695310cc399b4c047e7bc9c1bcc9a460f6a03996ad4873f3e",
@@ -699,12 +602,9 @@
       "summary": "India witnessed an all-time maximum demand of 250 GW in FY 2024-25. The government said on Tuesday that the country's peak power demand is expected to touch 388 GW in FY 2031-32.",
       "source": "Livemint",
       "published_at": "2026-04-02",
-      "relevant": true,
+      "relevant": false,
       "reason": "Government planning for peak power demand directly affects the national power grid and future electricity availability.",
-      "triggers": [
-        "ministry_of_power",
-        "national_power_grid"
-      ],
+      "triggers": [],
       "expected_impacts": [
         "electricity_tariff",
         "residential_power_supply"
@@ -712,21 +612,17 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "national_power_grid",
-        "coal_power_plants"
+        "national_power_grid"
       ],
-      "pred_trajectories": {
-        "national_power_grid": "escalating",
-        "coal_power_plants": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I1",
         "I5",
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 1820
+      "ms": 1852
     },
     {
       "id": "eb01514096d9c2b1a5f33e8b683570c12d130d1c3481b466e838d279bef150db",
@@ -737,9 +633,8 @@
       "relevant": true,
       "reason": "Regulatory exemption for chemical standards to prevent supply chain disruptions in pharma and rubber industries.",
       "triggers": [
-        "indian_regulatory_bodies",
-        "ministry_of_commerce_and_industry",
-        "global_supply_chains"
+        "trade_and_tariff_policy",
+        "global_shipping_freight"
       ],
       "expected_impacts": [
         "pharmaceuticals_and_supplies"
@@ -747,23 +642,18 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "active_pharmaceutical_ingredients_supply",
-        "global_supply_chains"
+        "trade_and_tariff_policy",
+        "international_trade_and_supply_chains"
       ],
-      "pred_trajectories": {
-        "active_pharmaceutical_ingredients_supply": "disruption",
-        "global_supply_chains": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
-        "I3",
+        "I6",
         "I7",
-        "I8",
         "I11"
       ],
       "error": false,
-      "ms": 2418
+      "ms": 2092
     },
     {
       "id": "87c78bd436da6895ddd0f0cd388347f59cf777df466928addbde75b2b1d98c57",
@@ -774,21 +664,27 @@
       "relevant": true,
       "reason": "De-dollarisation + war driving gold prices \u2014 real macro trend affecting retail gold/silver investment",
       "triggers": [
-        "international_gold_prices",
-        "usd_inr_exchange"
+        "precious_metals",
+        "foreign_central_bank_policy"
       ],
       "expected_impacts": [
         "retail_gold_investment",
         "retail_silver_investment"
       ],
       "difficulty": "medium",
-      "pred_relevant": false,
-      "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is a market commentary/analysis piece on the long-term trend of gold as a reserve asset and de-dollarisation, rather than reporting on a specific, material, and immediate shift in Indian macro-systems or policy.",
-      "pred_exclude_l1s": [],
+      "pred_relevant": true,
+      "pred_triggers": [
+        "retail_gold_investment",
+        "global_equity_markets"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I11",
+        "I10"
+      ],
       "error": false,
-      "ms": 914
+      "ms": 2090
     },
     {
       "id": "a547256c4b7ff1f5398234cb6d2c77deb8d8c48c3891f9901ff0442704705d4b",
@@ -799,9 +695,7 @@
       "relevant": true,
       "reason": "Agricultural shortfall in sugar production directly leads to higher retail prices for consumers.",
       "triggers": [
-        "global_sugar_supply",
-        "agricultural_commodities",
-        "ministry_of_consumer_affairs"
+        "global_sugar_markets"
       ],
       "expected_impacts": [
         "retail_sugar",
@@ -811,22 +705,19 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_sugar_supply",
-        "agricultural_commodities"
+        "global_sugar_markets",
+        "retail_inflation"
       ],
-      "pred_trajectories": {
-        "global_sugar_supply": "disruption",
-        "agricultural_commodities": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I3",
         "I7",
         "I8",
         "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2303
+      "ms": 2107
     },
     {
       "id": "42fb684d6fc4df44dc49977de2f3478d7def302d708573c6d7c5ff7da0ff145b",
@@ -837,9 +728,8 @@
       "relevant": true,
       "reason": "Implementation of a new Income Tax Act fundamentally alters tax compliance and liability for citizens.",
       "triggers": [
-        "income_tax_department",
-        "ministry_of_finance",
-        "union_budget_framework"
+        "fiscal_and_tax_policy",
+        "legislative_amendments"
       ],
       "expected_impacts": [
         "personal_income_tax",
@@ -848,22 +738,21 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "income_tax_department"
+        "fiscal_and_tax_policy"
       ],
-      "pred_trajectories": {
-        "income_tax_department": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I3",
         "I6",
+        "I7",
+        "I8",
         "I9",
         "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2973
+      "ms": 1909
     },
     {
       "id": "25acdea789c533970c17d31e14336577eb155f4b48d488a0df8219164d683a1c",
@@ -878,11 +767,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article pertains to sports entertainment and celebrity commentary, which is explicitly excluded from the classification scope.",
+      "pred_reason": "The article is about sports entertainment and celebrity commentary, which does not constitute a material shift in any T-world macro system.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 800
+      "ms": 1899
     },
     {
       "id": "13b3d36c4470e3ccb7ce358ce673140a4ada9cb95c72e588cd6bd9e19901bf48",
@@ -893,9 +781,8 @@
       "relevant": true,
       "reason": "RBI regulatory action on forex markets impacts the INR/USD exchange rate, affecting import costs.",
       "triggers": [
-        "rbi",
-        "usd_inr_exchange",
-        "currency_and_forex_markets"
+        "banking_and_credit_regulation",
+        "inr_exchange_rates"
       ],
       "expected_impacts": [
         "travel_and_tourism",
@@ -905,25 +792,18 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "rbi",
-        "usd_inr_exchange"
+        "banking_and_credit_regulation",
+        "inr_exchange_rates"
       ],
-      "pred_trajectories": {
-        "rbi": "disruption",
-        "usd_inr_exchange": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
-        "I2",
-        "I3",
         "I6",
         "I7",
-        "I9",
         "I11"
       ],
       "error": false,
-      "ms": 1244
+      "ms": 2100
     },
     {
       "id": "d90f933811e18972d4cb02b91d51608475ba73aa076cb739a43495339fb03480",
@@ -931,37 +811,19 @@
       "summary": "Association urges civil aviation minister to ensure that any pricing dispensation is applied in a fair, transparent, and non-discriminatory manner across all categories of commercial air operators",
       "source": "The Hindu Business",
       "published_at": "2026-04-03",
-      "relevant": true,
+      "relevant": false,
       "reason": "ATF price hikes directly impact commercial aviation costs and passenger ticket prices, even though the article focuses on charter companies' reactions.",
-      "triggers": [
-        "aviation_turbine_fuel",
-        "ministry_of_civil_aviation"
-      ],
+      "triggers": [],
       "expected_impacts": [
         "domestic_flight_ticket"
       ],
       "difficulty": "medium",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "aviation_turbine_fuel",
-        "ministry_of_civil_aviation"
-      ],
-      "pred_trajectories": {
-        "aviation_turbine_fuel": "escalating",
-        "ministry_of_civil_aviation": "status_quo"
-      },
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I1",
-        "I2",
-        "I5",
-        "I6",
-        "I7",
-        "I9",
-        "I11"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article reports on an industry association's request for a policy review regarding aviation turbine fuel pricing. This is a stakeholder lobbying effort and does not constitute a material shift in policy, regulation, or market state.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 12624
+      "ms": 1123
     },
     {
       "id": "c5c34898172584629e000a36ad1e980156ec0a75589ff049cb39a70042c73527",
@@ -972,8 +834,8 @@
       "relevant": true,
       "reason": "Customs duty exemptions on critical raw materials lower manufacturing costs, which can reduce prices for end-consumer goods.",
       "triggers": [
-        "ministry_of_finance",
-        "fiscal_policies_and_councils"
+        "trade_and_tariff_policy",
+        "fiscal_and_tax_policy"
       ],
       "expected_impacts": [
         "building_materials_cost",
@@ -982,21 +844,17 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_finance",
-        "india_trade_deficit"
+        "trade_and_tariff_policy"
       ],
-      "pred_trajectories": {
-        "ministry_of_finance": "disruption",
-        "india_trade_deficit": "deescalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I1",
+        "I6",
         "I7",
-        "I11",
-        "I6"
+        "I11"
       ],
       "error": false,
-      "ms": 1286
+      "ms": 1679
     },
     {
       "id": "9f15af95195d10b4a3631d29ee6b5abc53e0c3f631fad121c804e22593ea7356",
@@ -1011,11 +869,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is an opinion piece/commentary on investment strategy and platform analytics, which is explicitly excluded by the instructions.",
+      "pred_reason": "The article is an opinion/advice piece by a private individual regarding investment strategy and platform features; it does not report on a systemic macro shift, policy action, or realized economic data.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 12331
+      "ms": 16902
     },
     {
       "id": "4fa8cdcc1119985c1a3668c1acbfec68cd80e2ac2582fa8923ddc6e55ee809a8",
@@ -1026,9 +883,8 @@
       "relevant": true,
       "reason": "Agricultural seed stock availability directly affects millions of farmers' sowing seasons and broader national food security.",
       "triggers": [
-        "global_supply_chains",
-        "ministry_of_agriculture",
-        "global_food_grain_supply"
+        "third_party_geopolitical_conflicts",
+        "trade_and_tariff_policy"
       ],
       "expected_impacts": [
         "agricultural_household_income"
@@ -1036,22 +892,18 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "agricultural_exports"
+        "third_party_geopolitical_conflicts",
+        "welfare_and_subsidy_schemes"
       ],
-      "pred_trajectories": {
-        "agricultural_exports": "status_quo"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I3",
         "I5",
         "I7",
-        "I8",
         "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2098
+      "ms": 2399
     },
     {
       "id": "9a8a7e42861ac35300847e708e60a1f7a3728a11cba1e7a5cc35541ae25ccb61",
@@ -1062,9 +914,8 @@
       "relevant": true,
       "reason": "Industry lobbying for export bans and ethanol blending due to geopolitical conflict indicates severe supply chain stress that impacts raw material and fuel prices.",
       "triggers": [
-        "global_supply_chains",
-        "export_competitiveness",
-        "ministry_of_commerce_and_industry"
+        "trade_and_tariff_policy",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "retail_petrol"
@@ -1072,22 +923,17 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "india_trade_deficit",
-        "ministry_of_commerce_and_industry"
+        "third_party_geopolitical_conflicts",
+        "trade_and_tariff_policy",
+        "energy_commodities"
       ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption",
-        "india_trade_deficit": "escalating",
-        "ministry_of_commerce_and_industry": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2250
+      "ms": 2559
     },
     {
       "id": "7ef5bded01ca5d52b77cf9937850a8137fc373bc4827f2cc0501d464ac539375",
@@ -1100,23 +946,12 @@
       "triggers": [],
       "expected_impacts": [],
       "difficulty": "easy",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "meity_regulations"
-      ],
-      "pred_trajectories": {
-        "meity_regulations": "disruption"
-      },
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I1",
-        "I2",
-        "I3",
-        "I6",
-        "I9"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article discusses the business strategy and market pivot of a specific private company (Dream Sports) following a past regulatory event. It does not report on a new, ongoing, or systemic macro-level shift in policy or market state.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2677
+      "ms": 1435
     },
     {
       "id": "258582a9299e76156f467c2612ab8230ede1c46b4a6e73da7fd2ba11dfe2fb23",
@@ -1131,11 +966,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article reports on a localized aviation accident in Mexico with no systemic impact on Indian macro-systems, infrastructure, or sovereign policy.",
+      "pred_reason": "The article reports on a localized plane crash in Mexico, which does not constitute a material shift in any of the T-world macro systems affecting the Indian economy or society.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1391
+      "ms": 1325
     },
     {
       "id": "e1c673584ed8696670fa3bd6ac9280b6bb778fe86f3120344ce72964f0162b8a",
@@ -1150,11 +984,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article pertains to entertainment and box office performance, which is explicitly excluded from the classification scope.",
+      "pred_reason": "The article reports on box office collections for a film, which is entertainment news and does not constitute a material shift in any macro-level T-world system.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1673
+      "ms": 1398
     },
     {
       "id": "e5b9fc9a031f2f7a0e00296963e00fa0ca936475503b88723de86f449b45b562",
@@ -1165,9 +998,9 @@
       "relevant": true,
       "reason": "Government trade policy interventions and freight subsidies directly affect the export sector's viability and employment.",
       "triggers": [
-        "global_shipping_routes",
-        "export_competitiveness",
-        "ministry_of_commerce_and_industry"
+        "trade_and_tariff_policy",
+        "global_shipping_freight",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "manufacturing_and_core"
@@ -1175,15 +1008,11 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "india_trade_deficit",
-        "ministry_of_commerce_and_industry"
+        "trade_and_tariff_policy",
+        "maritime_chokepoint_disruptions",
+        "india_trade_balance",
+        "india_export_trends"
       ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption",
-        "india_trade_deficit": "deescalating",
-        "ministry_of_commerce_and_industry": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -1192,7 +1021,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 4342
+      "ms": 2388
     },
     {
       "id": "269ccdab08d2421b055b23ab74a02e55108ffc25aa2531898786fc1f52a0e089",
@@ -1203,9 +1032,9 @@
       "relevant": true,
       "reason": "Macroeconomic indicator (PMI) drop and rising oil costs directly signal inflation and slowing manufacturing growth affecting employment and consumer prices.",
       "triggers": [
-        "brent_crude",
-        "pmi_manufacturing",
-        "global_shipping_routes"
+        "industrial_production_metrics",
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "manufacturing_and_core"
@@ -1213,22 +1042,17 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "global_shipping_routes",
-        "pmi_manufacturing"
+        "industrial_production_metrics",
+        "global_crude_oil",
+        "global_shipping_freight"
       ],
-      "pred_trajectories": {
-        "brent_crude": "escalating",
-        "global_shipping_routes": "disruption",
-        "pmi_manufacturing": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2099
+      "ms": 2255
     },
     {
       "id": "6977be1379ff434e326f554cb07a58a0ac094968722c1fb6c74b922b7edcb3f3",
@@ -1239,9 +1063,8 @@
       "relevant": true,
       "reason": "US stocks dropping on Trump Iran escalation directly affects Indian markets next day via FII sentiment",
       "triggers": [
-        "global_equity_indices",
-        "us_government",
-        "fii_fpi_flows"
+        "global_equity_markets",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "direct_equity_portfolio",
@@ -1250,20 +1073,21 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "global_shipping_routes"
+        "global_equity_markets",
+        "third_party_geopolitical_conflicts"
       ],
-      "pred_trajectories": {
-        "brent_crude": "escalating",
-        "global_shipping_routes": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I4",
+        "I6",
         "I7",
+        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 1253
+      "ms": 2234
     },
     {
       "id": "161e0a9456880f5a43d3f5740df8b7f6e6c9c54f11e086dbc511eb2f46e79637",
@@ -1274,8 +1098,8 @@
       "relevant": true,
       "reason": "Trade policy negotiations with the US can affect export sectors, employment, and domestic prices.",
       "triggers": [
-        "ministry_of_commerce_and_industry",
-        "us_government"
+        "trade_and_tariff_policy",
+        "india_export_trends"
       ],
       "expected_impacts": [
         "factory_worker_jobs",
@@ -1285,24 +1109,17 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_commerce_and_industry",
-        "wto"
+        "india_export_trends",
+        "trade_and_tariff_policy"
       ],
-      "pred_trajectories": {
-        "ministry_of_commerce_and_industry": "escalating",
-        "wto": "status_quo"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
-        "I2",
         "I6",
-        "I8",
-        "I9",
+        "I7",
         "I11"
       ],
       "error": false,
-      "ms": 1934
+      "ms": 1349
     },
     {
       "id": "35494cd9819c7b238dcf09432fe29333c6cf4cdc89837fed9411953cc121b9b5",
@@ -1317,13 +1134,9 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "income_tax_department",
-        "fii_fpi_flows"
+        "market_and_corporate_regulation",
+        "foreign_capital_flows"
       ],
-      "pred_trajectories": {
-        "income_tax_department": "disruption",
-        "fii_fpi_flows": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -1336,7 +1149,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 2410
+      "ms": 2646
     },
     {
       "id": "5ccc0e6f8932d32573663a601381237d063599220a92239cb3c77d3bcf4b6058",
@@ -1347,9 +1160,8 @@
       "relevant": true,
       "reason": "Massive state infrastructure investment and capital city development affecting regional economy and real estate.",
       "triggers": [
-        "state_governments",
-        "highway_network",
-        "transport_logistics_infrastructure"
+        "local_and_municipal_governance",
+        "tier_city_emergence"
       ],
       "expected_impacts": [
         "investment_property_value",
@@ -1358,21 +1170,18 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "highway_network",
-        "state_governments"
+        "land_and_real_estate_regulation",
+        "highway_expressway_network"
       ],
-      "pred_trajectories": {
-        "highway_network": "escalating",
-        "state_governments": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I6",
+        "I7",
         "I10"
       ],
       "error": false,
-      "ms": 1981
+      "ms": 2065
     },
     {
       "id": "4d480cbee82c9ab79e824025c4f4b5382fe105d14543c934b295ba8c931a5158",
@@ -1383,9 +1192,9 @@
       "relevant": true,
       "reason": "Government action against LPG black marketing directly impacts household cooking gas availability and prices.",
       "triggers": [
-        "ministry_of_consumer_affairs",
-        "state_governments",
-        "oil_gas_pipelines"
+        "welfare_and_subsidy_schemes",
+        "center_state_relations",
+        "energy_and_environment_policy"
       ],
       "expected_impacts": [
         "lpg_cylinder",
@@ -1394,21 +1203,17 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "public_distribution_system",
-        "ministry_of_consumer_affairs"
+        "welfare_and_subsidy_schemes",
+        "third_party_geopolitical_conflicts"
       ],
-      "pred_trajectories": {
-        "public_distribution_system": "disruption",
-        "ministry_of_consumer_affairs": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I10",
-        "I11"
+        "I11",
+        "I10"
       ],
       "error": false,
-      "ms": 1952
+      "ms": 1151
     },
     {
       "id": "f0ce2a7f66bc76499983bf5df69ed7e87d7dbb22591f8865ffac617bc1e943e6",
@@ -1419,9 +1224,8 @@
       "relevant": true,
       "reason": "Agricultural policy changes regarding fertilizer availability and MSP procurement directly affect millions of farmers.",
       "triggers": [
-        "state_governments",
-        "uidai",
-        "ministry_of_agriculture"
+        "welfare_and_subsidy_schemes",
+        "center_state_relations"
       ],
       "expected_impacts": [
         "agricultural_household_income",
@@ -1430,24 +1234,19 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_agriculture",
-        "aadhaar_database",
-        "public_distribution_system"
+        "welfare_and_subsidy_schemes",
+        "market_and_corporate_regulation"
       ],
-      "pred_trajectories": {
-        "ministry_of_agriculture": "escalating",
-        "aadhaar_database": "escalating",
-        "public_distribution_system": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I3",
+        "I5",
         "I7",
         "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2387
+      "ms": 2327
     },
     {
       "id": "5b119e00020399af6f3e99afcf01dfb0e4e87522c7aa95b878b4d1a84746e3e4",
@@ -1458,9 +1257,8 @@
       "relevant": true,
       "reason": "Trade expansion with China can significantly alter domestic manufacturing competitiveness and consumer goods prices.",
       "triggers": [
-        "chinese_government",
-        "international_trade_and_supply_chains",
-        "ministry_of_commerce_and_industry"
+        "trade_and_tariff_policy",
+        "india_trade_balance"
       ],
       "expected_impacts": [
         "consumer_tech_devices",
@@ -1469,24 +1267,18 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "chinese_government",
-        "india_trade_deficit"
+        "india_trade_balance",
+        "trade_wars_and_tariffs"
       ],
-      "pred_trajectories": {
-        "chinese_government": "disruption",
-        "india_trade_deficit": "status_quo"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
-        "I2",
         "I6",
         "I7",
-        "I8",
         "I11"
       ],
       "error": false,
-      "ms": 3679
+      "ms": 2253
     },
     {
       "id": "2e7369db52119b4f3413991503db747abb3620897cb38ebf759151dcd52b6e89",
@@ -1501,11 +1293,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article concerns a specific operational delay in a defense procurement contract (HAL/GE Aerospace) and the subsequent resolution, which does not constitute a material shift in macro-level systems or broad citizen impact.",
+      "pred_reason": "The article concerns a specific operational delay and maintenance issue for a single defense platform (Tejas Mk-1A) involving a commercial supplier (GE Aerospace). This is a company-level/project-specific operational update and does not constitute a material macro-level shift in India's defense infrastructure, national security, or industrial production metrics.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 3243
+      "ms": 2093
     },
     {
       "id": "821ce3abd86030c7ab00c01219b1d76431c93ef9009feb2f703f2dccf50e51dc",
@@ -1520,11 +1311,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article concerns a specific administrative clarification regarding exam paper security protocols and does not represent a material shift in any of the T-world macro systems.",
+      "pred_reason": "The article concerns a clarification regarding a specific school examination paper security issue, which does not constitute a material shift in any macro-level T-world system.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 9269
+      "ms": 2398
     },
     {
       "id": "f5d149cab053c50a23c5f3183a6af7bd1586cda5a0f83b057e16eb02b23c0693",
@@ -1539,11 +1329,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article reports a scheduled market holiday, which is a routine operational event and does not constitute a material shift in T-world systems or a causal impact on ordinary Indians at scale.",
+      "pred_reason": "The article reports a routine, scheduled stock market holiday. This is a non-event and does not constitute a material shift in any T-world system.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 4921
+      "ms": 1446
     },
     {
       "id": "4a434b522c3f354adb480982f31991ceeb223ae693f64312d69aa0439de1dcfd",
@@ -1554,8 +1343,8 @@
       "relevant": true,
       "reason": "Allied nations planning alternative shipping through Hormuz directly affects Indian oil imports",
       "triggers": [
-        "global_shipping_routes",
-        "brent_crude"
+        "maritime_chokepoint_disruptions",
+        "global_crude_oil"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -1564,20 +1353,16 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "brent_crude"
+        "global_crude_oil",
+        "maritime_chokepoint_disruptions"
       ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption",
-        "brent_crude": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2210
+      "ms": 2154
     },
     {
       "id": "ded2c92f67bd15bbdd29e4f784ccd153fd4b5380c2abf8e25543a930aa95d63c",
@@ -1588,22 +1373,27 @@
       "relevant": true,
       "reason": "NATO crisis over Iran directly escalates oil supply risk for India",
       "triggers": [
-        "brent_crude",
-        "global_shipping_routes",
-        "us_government"
+        "strategic_bloc_alignments",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "retail_petrol",
         "retail_diesel"
       ],
       "difficulty": "hard",
-      "pred_relevant": false,
-      "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article discusses geopolitical tensions within NATO and potential US policy shifts regarding the alliance. While these have long-term strategic implications, the article does not report a material shift in Indian T-world systems or a direct causal impact on ordinary Indians at this stage.",
-      "pred_exclude_l1s": [],
+      "pred_relevant": true,
+      "pred_triggers": [
+        "global_crude_oil",
+        "strategic_bloc_alignments",
+        "maritime_chokepoint_disruptions"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I11"
+      ],
       "error": false,
-      "ms": 2296
+      "ms": 2938
     },
     {
       "id": "fd390f72c5b5bb60fd24696c611730bcbf8f8dd95cf512f18a14e6950a88830a",
@@ -1614,9 +1404,9 @@
       "relevant": true,
       "reason": "US targeting Iranian infrastructure + Hormuz reopening efforts directly affect oil supply to India",
       "triggers": [
-        "global_shipping_routes",
-        "brent_crude",
-        "us_government"
+        "maritime_chokepoint_disruptions",
+        "third_party_geopolitical_conflicts",
+        "global_crude_oil"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -1625,20 +1415,17 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "brent_crude"
+        "global_crude_oil",
+        "maritime_chokepoint_disruptions",
+        "third_party_geopolitical_conflicts"
       ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption",
-        "brent_crude": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2399
+      "ms": 2383
     },
     {
       "id": "9e2b649e7b0c1a741317cf166d16cb25809b45b9c5306c887a4c4f395e7075ea",
@@ -1649,8 +1436,8 @@
       "relevant": true,
       "reason": "ATF price hike directly increases flight ticket prices, affecting ordinary citizens who travel by air.",
       "triggers": [
-        "brent_crude",
-        "aviation_turbine_fuel"
+        "transport_and_logistics_policy",
+        "global_crude_oil"
       ],
       "expected_impacts": [
         "domestic_flight_ticket",
@@ -1660,20 +1447,24 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "aviation_turbine_fuel"
+        "global_crude_oil",
+        "transport_and_logistics_policy"
       ],
-      "pred_trajectories": {
-        "aviation_turbine_fuel": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I2",
+        "I4",
+        "I5",
+        "I6",
         "I7",
+        "I8",
         "I9",
+        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2200
+      "ms": 2408
     },
     {
       "id": "1a7fa59098c8c23f478e96e12091804956f7b96708c98f465a36a640e518f859",
@@ -1686,23 +1477,12 @@
       "triggers": [],
       "expected_impacts": [],
       "difficulty": "medium",
-      "pred_relevant": true,
-      "pred_triggers": [
-        "global_shipping_routes",
-        "india_trade_deficit"
-      ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption",
-        "india_trade_deficit": "escalating"
-      },
-      "pred_reason": null,
-      "pred_exclude_l1s": [
-        "I7",
-        "I11",
-        "I6"
-      ],
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a summary of expert opinion and general business sentiment regarding the West Asia conflict. It contains no new, actionable data, policy changes, or specific market events, and thus fails the 'new fact' test for macro-level shifts.",
+      "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2885
+      "ms": 1519
     },
     {
       "id": "9874a475688bd15f61ee9e170ef1ff39b28c874f0bcb9e0bdfaeba1376806fa5",
@@ -1713,8 +1493,7 @@
       "relevant": true,
       "reason": "Major macroeconomic indicator (PMI) drop reflects slowing manufacturing, which impacts employment and consumer goods availability/prices.",
       "triggers": [
-        "pmi_manufacturing",
-        "inflation_indices"
+        "industrial_production_metrics"
       ],
       "expected_impacts": [
         "employment_metrics_and_conditions"
@@ -1722,18 +1501,18 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "pmi_manufacturing"
+        "industrial_production_metrics"
       ],
-      "pred_trajectories": {
-        "pmi_manufacturing": "deescalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I6",
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 9687
+      "ms": 1088
     },
     {
       "id": "23fb27b2a0e182d4a405a9ffe541fa9cd66d058346ae40820a74b5af06c7903f",
@@ -1748,11 +1527,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article describes a corporate investment and partnership between Microsoft and Japanese firms. This does not constitute a material shift in any Indian macro-system (T-world) or a causal impact on ordinary Indians at scale.",
+      "pred_reason": "The article describes a corporate investment by Microsoft in Japan. While significant for the tech sector, it does not constitute a material shift in India's macro-economic, governance, or infrastructure systems as defined by the taxonomy.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1686
+      "ms": 1634
     },
     {
       "id": "cc71c01647c3e67afc6b42cc047aecd2c036142afc3f2820d03e36ca6e552977",
@@ -1767,11 +1545,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article reports on a private equity funding round for a specific startup, which is explicitly excluded by the instructions unless it signals a sector-wide shift, which this does not.",
+      "pred_reason": "The article describes a private company funding round, which is explicitly excluded as it does not constitute a systemic macro shift or policy action.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1475
+      "ms": 1438
     },
     {
       "id": "0dcb113a58c8f2f08cea99438669b171d9fd48e47bd0a322ee67230fac7d6e3d",
@@ -1786,11 +1563,10 @@
       "difficulty": "medium",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is a market commentary/opinion piece regarding stock market sentiment and investment advice, which is explicitly excluded by the instructions.",
+      "pred_reason": "The article is a market opinion piece by an individual investor providing commentary on current market sentiment and investment strategy, rather than reporting on a new, actionable macro-level event or policy shift.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2218
+      "ms": 3378
     },
     {
       "id": "ab296badb243e8d1504b7047980318cbec05f7fd9a09f5487a525d2709dec365",
@@ -1805,11 +1581,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article reports on a private startup funding round, which is explicitly excluded by the instructions unless it signals a sector-wide shift, which this does not.",
+      "pred_reason": "The article reports on a private funding round for a single startup, which is explicitly excluded as per the instructions regarding company-specific news.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1889
+      "ms": 1304
     },
     {
       "id": "f3f68f82f1f59d8f1b6661038e1458e75b26fd1ec627572ff75267e946929e9a",
@@ -1824,11 +1599,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is a routine holiday announcement regarding closures of public and private institutions, which does not constitute a material shift in any T-world system.",
+      "pred_reason": "The article provides a routine list of holiday closures for banks and stock markets, which is a scheduled calendar event rather than a material shift in economic or systemic state.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 3343
+      "ms": 1524
     },
     {
       "id": "d1679cc777de89de04b98c078b633fe2ecd64c9b0b82929ee4f8bba609ec7b44",
@@ -1839,8 +1613,8 @@
       "relevant": true,
       "reason": "RBI intervention and significant forex movement directly affect import costs and inflation.",
       "triggers": [
-        "rbi",
-        "usd_inr_exchange"
+        "monetary_policy",
+        "inr_exchange_rates"
       ],
       "expected_impacts": [
         "consumer_tech_devices",
@@ -1850,22 +1624,19 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "usd_inr_exchange",
-        "rbi"
+        "inr_exchange_rates",
+        "monetary_policy"
       ],
-      "pred_trajectories": {
-        "usd_inr_exchange": "deescalating",
-        "rbi": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I6",
         "I7",
+        "I9",
         "I11"
       ],
       "error": false,
-      "ms": 2101
+      "ms": 3108
     },
     {
       "id": "31ec5ca34a65c5096f1ee82ee4f038f8997beee75afd718288b72ab2051ba2ec",
@@ -1876,8 +1647,9 @@
       "relevant": true,
       "reason": "Disruption in global shipping routes and crude oil exceeding $100 directly impacts India's fuel prices and import bill.",
       "triggers": [
-        "global_shipping_routes",
-        "brent_crude"
+        "maritime_chokepoint_disruptions",
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -1886,20 +1658,16 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "brent_crude"
+        "global_crude_oil",
+        "maritime_chokepoint_disruptions"
       ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption",
-        "brent_crude": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 3643
+      "ms": 2666
     },
     {
       "id": "f231947193cc428847ade9ec65766838c13acf8d5bb0c7194d70fa26b9e6943a",
@@ -1914,11 +1682,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article describes a company-specific IPO filing (Rediff.com), which is excluded under the provided rules as it does not signal a sector-wide shift or systemic macroeconomic impact.",
+      "pred_reason": "The article concerns a single company's IPO filing, which is a micro-level corporate event and does not constitute a material shift in any macro-level T-world system.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2148
+      "ms": 1327
     },
     {
       "id": "836dd085642e3dcb9bfd6667e7e9972f2149365f8c8356a08b6983a324bc867d",
@@ -1933,11 +1700,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article reports on company-specific performance (Tesla) and market commentary regarding US stock expectations, which falls under the exclusion criteria for individual company news and market roundups.",
+      "pred_reason": "The article discusses a company-specific event (Tesla's delivery miss) which is not systemically important to the Indian macro-economy or T-world systems.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 21917
+      "ms": 1805
     },
     {
       "id": "a91ca34b5053c228cdcd099b841f32edb3638c0b3eab3185055246d8f80b3e74",
@@ -1952,11 +1718,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article describes political personnel changes within the US government, which does not constitute a material shift in Indian macro systems or sovereign entities as defined in the T-world taxonomy.",
+      "pred_reason": "The article describes a personnel change within the US administration, which does not constitute a material shift in any of the T-world macro systems affecting the Indian citizen impact engine.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 2861
+      "ms": 1416
     },
     {
       "id": "31be9b85b6deaa1e3dddc36045ee5a7052174a7f526ae4852a4a779bfa23b514",
@@ -1967,9 +1732,7 @@
       "relevant": true,
       "reason": "Shooting down US F-35s escalates conflict, threatens oil supply disruption to India",
       "triggers": [
-        "brent_crude",
-        "global_shipping_routes",
-        "geopolitical_states"
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -1979,20 +1742,17 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "brent_crude"
+        "third_party_geopolitical_conflicts",
+        "global_crude_oil",
+        "maritime_chokepoint_disruptions"
       ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption",
-        "brent_crude": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2004
+      "ms": 3129
     },
     {
       "id": "efde41bf921da499a9ad17e960377b7e55c35dab09b3337865dbbf2c171a1e90",
@@ -2007,11 +1767,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article describes a private company's product offering for industrial water recycling. This is a commercial product announcement, not a systemic material shift in national infrastructure, policy, or macroeconomic indicators.",
+      "pred_reason": "The article describes a product offering from a private engineering firm (KEP Engineering) and does not report on a systemic macro-level policy change, market shift, or regulatory event.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 56271
+      "ms": 1533
     },
     {
       "id": "7ff6eda57bc90b616f37c35a72bc57f1af237d4d535bb5b1f2294326d7b8da1a",
@@ -2026,11 +1785,10 @@
       "difficulty": "medium",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article discusses cultural symbolism and political discourse regarding food habits, which does not constitute a material shift in any T-world macro system or a causal impact on ordinary Indians at scale.",
+      "pred_reason": "The article is a cultural/sociological commentary on the symbolic role of fish in West Bengal politics and does not report a material shift in any T-world macro system.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 3805
+      "ms": 1338
     },
     {
       "id": "d280336f7c57c712b70286f79500aed7e30b5e039f9afaf317e2f5a1e0120d09",
@@ -2045,11 +1803,10 @@
       "difficulty": "medium",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The commissioning of a naval warship is a routine defense procurement and capability enhancement event. It does not constitute a material shift in macro-level T-world systems (such as trade, economy, or infrastructure) that causally affects ordinary Indians at scale.",
+      "pred_reason": "The commissioning of a naval warship is a routine defense procurement and operational milestone, not a material shift in macro-economic, geopolitical, or systemic infrastructure states as defined by the taxonomy.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 940
+      "ms": 1322
     },
     {
       "id": "7a45a2236c8db3f60ccfd08dcdb5aeb356d38159a90f8e0bfeda4f75370c170d",
@@ -2064,11 +1821,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is a guide on social media growth and does not causally affect any T-world systems or Indian citizen impact categories.",
+      "pred_reason": "The article is a generic marketing/lifestyle piece about social media growth and does not report on any macroeconomic, policy, or systemic shifts affecting India.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1572
+      "ms": 1946
     },
     {
       "id": "27ec65ee7e6a7c04fb7fb195981e9e9d53fe46a6b760acf6aa87f1bfec1bd9a1",
@@ -2079,9 +1835,7 @@
       "relevant": true,
       "reason": "Changes in Income Tax rules directly affect salaried citizens' take-home pay and tax liabilities.",
       "triggers": [
-        "union_budget_framework",
-        "ministry_of_finance",
-        "income_tax_department"
+        "fiscal_and_tax_policy"
       ],
       "expected_impacts": [
         "taxation_and_compliance",
@@ -2090,11 +1844,8 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "union_budget_framework"
+        "fiscal_and_tax_policy"
       ],
-      "pred_trajectories": {
-        "union_budget_framework": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -2106,7 +1857,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 1764
+      "ms": 2559
     },
     {
       "id": "ae337ce409b4e926f85a0ac83486698b6580fb4d36b391d50940edd0d7dd6443",
@@ -2117,8 +1868,8 @@
       "relevant": true,
       "reason": "Oil shipments through critical straits affect domestic fuel availability and prices.",
       "triggers": [
-        "brent_crude",
-        "global_shipping_routes"
+        "global_crude_oil",
+        "maritime_chokepoint_disruptions"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -2127,20 +1878,16 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "global_shipping_routes"
+        "global_crude_oil",
+        "maritime_chokepoint_disruptions"
       ],
-      "pred_trajectories": {
-        "brent_crude": "deescalating",
-        "global_shipping_routes": "deescalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2555
+      "ms": 1946
     },
     {
       "id": "0bc4712c6b9fe799e3d64b4fad5176b520e630d99e8561a0310d28ee2bcbf2cf",
@@ -2151,9 +1898,9 @@
       "relevant": true,
       "reason": "Global conflict disrupting auto supply chains affects vehicle prices and availability for consumers.",
       "triggers": [
-        "global_supply_chains",
-        "global_shipping_routes",
-        "ministry_of_finance"
+        "maritime_chokepoint_disruptions",
+        "industrial_production_metrics",
+        "global_shipping_freight"
       ],
       "expected_impacts": [
         "vehicle_acquisition"
@@ -2161,23 +1908,18 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "india_trade_deficit",
-        "index_of_industrial_production"
+        "maritime_chokepoint_disruptions",
+        "global_shipping_freight"
       ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption",
-        "india_trade_deficit": "escalating",
-        "index_of_industrial_production": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I6",
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2666
+      "ms": 2353
     },
     {
       "id": "bafa0350ff317b2b5cd590b8d9f50e6fd037b74e7b1beb533fb957e43cfc939b",
@@ -2188,8 +1930,8 @@
       "relevant": true,
       "reason": "Trade policy actions by the US can impact Indian export industries and related employment.",
       "triggers": [
-        "export_competitiveness",
-        "us_government"
+        "india_export_trends",
+        "trade_wars_and_tariffs"
       ],
       "expected_impacts": [
         "manufacturing_and_core",
@@ -2198,24 +1940,19 @@
       "difficulty": "hard",
       "pred_relevant": true,
       "pred_triggers": [
-        "export_competitiveness",
-        "ministry_of_commerce_and_industry"
+        "economic_sanctions",
+        "trade_wars_and_tariffs"
       ],
-      "pred_trajectories": {
-        "export_competitiveness": "disruption",
-        "ministry_of_commerce_and_industry": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I2",
         "I6",
-        "I9",
-        "I10",
+        "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2149
+      "ms": 2150
     },
     {
       "id": "9f8079028d8626ea39ca2cb84f18f0e0a806437f7bb02e1ec5af869bdb020359",
@@ -2226,8 +1963,8 @@
       "relevant": true,
       "reason": "Global oil price surges directly impact domestic retail fuel prices and inflation.",
       "triggers": [
-        "brent_crude",
-        "us_government"
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -2236,22 +1973,16 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "india_trade_deficit",
-        "global_shipping_routes"
+        "global_crude_oil",
+        "inr_exchange_rates"
       ],
-      "pred_trajectories": {
-        "brent_crude": "escalating",
-        "india_trade_deficit": "escalating",
-        "global_shipping_routes": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2982
+      "ms": 1945
     },
     {
       "id": "b688bc5dab2c5707f1ea101a3ed6e1e478b32e6e9d9e9aba886004c356814d41",
@@ -2266,21 +1997,22 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "female_labor_force_participation"
+        "macro_employment_trends"
       ],
-      "pred_trajectories": {
-        "female_labor_force_participation": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I2",
         "I3",
         "I6",
+        "I7",
+        "I8",
         "I9",
-        "I10"
+        "I10",
+        "I11"
       ],
       "error": false,
-      "ms": 1728
+      "ms": 1740
     },
     {
       "id": "b8775a21957bd13378ecc78c222f14c51431e7f78903a197bc329222290b432e",
@@ -2291,9 +2023,7 @@
       "relevant": true,
       "reason": "Government policy change removing airfare caps directly impacts flight ticket prices for citizens.",
       "triggers": [
-        "dgca",
-        "commercial_airports",
-        "ministry_of_civil_aviation"
+        "transport_and_logistics_policy"
       ],
       "expected_impacts": [
         "domestic_flight_ticket",
@@ -2302,22 +2032,18 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "commercial_airports",
-        "aviation_turbine_fuel"
+        "third_party_geopolitical_conflicts",
+        "transport_and_logistics_policy"
       ],
-      "pred_trajectories": {
-        "commercial_airports": "disruption",
-        "aviation_turbine_fuel": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
+        "I6",
         "I7",
-        "I9",
         "I11"
       ],
       "error": false,
-      "ms": 2865
+      "ms": 2024
     },
     {
       "id": "c1c20a07e0ea05caa45ace7ad5ef2d3180670027105e2692a049742dda14ee78",
@@ -2328,8 +2054,9 @@
       "relevant": true,
       "reason": "Major spike in global crude prices and shipping route closures threaten future domestic fuel prices and inflation.",
       "triggers": [
-        "brent_crude",
-        "global_shipping_routes"
+        "maritime_chokepoint_disruptions",
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -2338,20 +2065,17 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "global_shipping_routes"
+        "global_crude_oil",
+        "maritime_chokepoint_disruptions",
+        "third_party_geopolitical_conflicts"
       ],
-      "pred_trajectories": {
-        "brent_crude": "escalating",
-        "global_shipping_routes": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2388
+      "ms": 2242
     },
     {
       "id": "3d8754a6cab083a7975351955d2bf5255539bb22ce9d46a26d44418023b72ff7",
@@ -2364,13 +2088,24 @@
       "triggers": [],
       "expected_impacts": [],
       "difficulty": "hard",
-      "pred_relevant": false,
-      "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article is an analytical observation from an RBI publication regarding the adequacy of forex reserves; it does not report a material shift or policy change, but rather a status assessment of existing macroeconomic buffers.",
-      "pred_exclude_l1s": [],
+      "pred_relevant": true,
+      "pred_triggers": [
+        "forex_reserves_india"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I6",
+        "I7",
+        "I9",
+        "I10",
+        "I11"
+      ],
       "error": false,
-      "ms": 2012
+      "ms": 1570
     },
     {
       "id": "1f58d58c0a0149824252cf85cf6f1c4205c3195fc5690b9c23418d14f4e5c6c4",
@@ -2381,8 +2116,8 @@
       "relevant": true,
       "reason": "Infrastructure quality directly affects citizen travel, vehicle maintenance, and safety at scale.",
       "triggers": [
-        "ministry_of_road_transport",
-        "highway_network"
+        "transport_and_logistics_policy",
+        "highway_expressway_network"
       ],
       "expected_impacts": [
         "road_traffic_accidents",
@@ -2392,11 +2127,8 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "highway_network"
+        "highway_expressway_network"
       ],
-      "pred_trajectories": {
-        "highway_network": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -2407,7 +2139,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 1620
+      "ms": 2311
     },
     {
       "id": "55ec79d4df957cec18f9a8bbf51e8e5ce296441884848d8b3f1363722c2b663b",
@@ -2418,9 +2150,7 @@
       "relevant": true,
       "reason": "Parliamentary directives on road safety infrastructure aim to reduce fatalities, impacting citizen lives.",
       "triggers": [
-        "indian_union_government",
-        "highway_network",
-        "ministry_of_road_transport"
+        "transport_and_logistics_policy"
       ],
       "expected_impacts": [
         "road_traffic_accidents",
@@ -2429,11 +2159,8 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "highway_network"
+        "transport_and_logistics_policy"
       ],
-      "pred_trajectories": {
-        "highway_network": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
@@ -2443,7 +2170,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 1035
+      "ms": 1785
     },
     {
       "id": "97890874ad4ace4ab81a105e128bf506d0bc6755d468237b744a65bef3d9cfc6",
@@ -2454,9 +2181,9 @@
       "relevant": true,
       "reason": "Major stock market slump and currency depreciation affect retail wealth and increase import-driven inflation.",
       "triggers": [
-        "fii_fpi_flows",
-        "usd_inr_exchange",
-        "nifty_50"
+        "foreign_capital_flows",
+        "inr_exchange_rates",
+        "indian_equity_markets"
       ],
       "expected_impacts": [
         "market_investments",
@@ -2466,27 +2193,19 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "fii_fpi_flows",
-        "usd_inr_exchange",
-        "nifty_50",
-        "sensex"
+        "indian_equity_markets",
+        "inr_exchange_rates",
+        "foreign_capital_flows"
       ],
-      "pred_trajectories": {
-        "fii_fpi_flows": "disruption",
-        "usd_inr_exchange": "escalating",
-        "nifty_50": "disruption",
-        "sensex": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
-        "I2",
         "I6",
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 2305
+      "ms": 2663
     },
     {
       "id": "332fdb5e838f2d7db8bd92dbdfa5f7577d46fd2108c81ddcff060ec4d6e7fc35",
@@ -2497,9 +2216,9 @@
       "relevant": true,
       "reason": "Disruption in global oil shipping routes impacts India's crude imports, threatening fuel price stability.",
       "triggers": [
-        "global_shipping_routes",
-        "russian_government",
-        "brent_crude"
+        "maritime_chokepoint_disruptions",
+        "india_trade_balance",
+        "global_crude_oil"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -2508,15 +2227,10 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "global_shipping_routes",
-        "india_trade_deficit"
+        "global_crude_oil",
+        "maritime_chokepoint_disruptions",
+        "india_trade_balance"
       ],
-      "pred_trajectories": {
-        "brent_crude": "disruption",
-        "global_shipping_routes": "disruption",
-        "india_trade_deficit": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
@@ -2524,7 +2238,7 @@
         "I10"
       ],
       "error": false,
-      "ms": 5219
+      "ms": 2248
     },
     {
       "id": "5f73c371ddf0bf3e81797b437b40452d5ba53723d63c46086fc6e58e6e261104",
@@ -2535,8 +2249,8 @@
       "relevant": true,
       "reason": "Direct hike in LPG prices immediately affects household budgets and living costs.",
       "triggers": [
-        "ministry_of_consumer_affairs",
-        "brent_crude"
+        "welfare_and_subsidy_schemes",
+        "global_crude_oil"
       ],
       "expected_impacts": [
         "lpg_cylinder",
@@ -2545,13 +2259,9 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "ministry_of_consumer_affairs",
-        "brent_crude"
+        "welfare_and_subsidy_schemes",
+        "retail_inflation"
       ],
-      "pred_trajectories": {
-        "ministry_of_consumer_affairs": "disruption",
-        "brent_crude": "status_quo"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
@@ -2559,7 +2269,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 4668
+      "ms": 2354
     },
     {
       "id": "4032e6ffeac6e4361a699f0f3e9653dfa32c9c8c67177696fb6842f7c0be8752",
@@ -2570,9 +2280,8 @@
       "relevant": true,
       "reason": "Global conflict causing oil prices to soar directly impacts Indian inflation and retail fuel costs.",
       "triggers": [
-        "brent_crude",
-        "global_shipping_routes",
-        "us_government"
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "vehicle_fuel",
@@ -2582,23 +2291,16 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "india_trade_deficit",
-        "usd_inr_exchange"
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts"
       ],
-      "pred_trajectories": {
-        "brent_crude": "escalating",
-        "india_trade_deficit": "escalating",
-        "usd_inr_exchange": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 12799
+      "ms": 2868
     },
     {
       "id": "3bd2a2023a7a3a33fd2941d7fc223830b27b62c589b1c17006fb594cabc378de",
@@ -2609,23 +2311,28 @@
       "relevant": true,
       "reason": "Broad stock market decline impacts retail investors' wealth and mutual fund returns.",
       "triggers": [
-        "nifty_50",
-        "sensex",
-        "fii_fpi_flows",
-        "brent_crude"
+        "indian_equity_markets",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "market_investments",
         "mutual_funds"
       ],
       "difficulty": "easy",
-      "pred_relevant": false,
-      "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article reports on daily stock market fluctuations, which are excluded under the 'Market roundups' rule as they are observations rather than causal events with a material shift in T-world systems.",
-      "pred_exclude_l1s": [],
+      "pred_relevant": true,
+      "pred_triggers": [
+        "indian_equity_markets",
+        "third_party_geopolitical_conflicts"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I11"
+      ],
       "error": false,
-      "ms": 3378
+      "ms": 2393
     },
     {
       "id": "281aa247b4adef98f9391b51716e39c48a1c6208e72c8c12624f9fb2c2e94db2",
@@ -2636,9 +2343,9 @@
       "relevant": true,
       "reason": "Potential disruption to gas plants affects power generation, risking electricity availability and tariffs.",
       "triggers": [
-        "national_power_grid",
         "global_natural_gas",
-        "ministry_of_power"
+        "national_power_grid",
+        "energy_and_environment_policy"
       ],
       "expected_impacts": [
         "electricity_tariff",
@@ -2648,19 +2355,15 @@
       "pred_relevant": true,
       "pred_triggers": [
         "global_natural_gas",
-        "ministry_of_power"
+        "energy_and_environment_policy"
       ],
-      "pred_trajectories": {
-        "global_natural_gas": "disruption",
-        "ministry_of_power": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 5019
+      "ms": 2975
     },
     {
       "id": "5309e9153b5719f0db612c0ee85767f1b0b6306e8f22c8fa7912f2cfb90ece8e",
@@ -2671,8 +2374,8 @@
       "relevant": true,
       "reason": "HDFC Bank chairman quitting over ethical concerns is systemically significant \u2014 affects depositor confidence and equity markets",
       "triggers": [
-        "bank_liquidity_and_credit",
-        "rbi"
+        "systemic_bank_liquidity",
+        "monetary_policy"
       ],
       "expected_impacts": [
         "direct_equity_portfolio",
@@ -2682,11 +2385,10 @@
       "difficulty": "hard",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The resignation of a bank chairman, even for a major institution like HDFC Bank, is categorized as a company-specific leadership change and does not constitute a material shift in macro-level T-world systems or a systemic economic event.",
+      "pred_reason": "The resignation of a bank chairman, even for a major institution like HDFC Bank, is classified as company-specific leadership news rather than a systemic macro-economic shift or policy change.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 935
+      "ms": 1795
     },
     {
       "id": "47fa4574c1371a71441df33cf9283eb9f23654a7862ad7896438bedce7a6f0a8",
@@ -2701,11 +2403,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The approval of a resolution plan for a specific company (Jaiprakash Associates) by the NCLT is a corporate-specific insolvency proceeding. It does not constitute a material shift in macro-level T-world systems or a systemic impact on ordinary Indians at scale.",
+      "pred_reason": "The article concerns a specific corporate resolution plan for a single entity (Jaiprakash Associates) and its approval by the NCLT. This is company-specific news and does not represent a systemic macro shift in the Indian economy or regulatory framework.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 8190
+      "ms": 1003
     },
     {
       "id": "f8c70155f9adbed1ca8ce497e56da60ff96b56b33468039b7d4fb171e5ec76c7",
@@ -2716,9 +2417,8 @@
       "relevant": true,
       "reason": "Government order directly affecting household cooking gas supply and mandating a switch to piped gas.",
       "triggers": [
-        "indian_union_government",
-        "oil_gas_pipelines",
-        "ministry_of_consumer_affairs"
+        "hydrocarbon_pipeline_network",
+        "welfare_and_subsidy_schemes"
       ],
       "expected_impacts": [
         "lpg_cylinder",
@@ -2728,24 +2428,17 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "public_distribution_system",
-        "ministry_of_consumer_affairs"
+        "welfare_and_subsidy_schemes",
+        "hydrocarbon_pipeline_network"
       ],
-      "pred_trajectories": {
-        "public_distribution_system": "disruption",
-        "ministry_of_consumer_affairs": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
-        "I1",
-        "I4",
-        "I5",
         "I7",
-        "I8",
-        "I11"
+        "I11",
+        "I8"
       ],
       "error": false,
-      "ms": 2237
+      "ms": 7498
     },
     {
       "id": "66d916cb65ee497e8bf1b7066f2ce5e4b7a231fab69566c9cdc92e637a4596eb",
@@ -2756,9 +2449,8 @@
       "relevant": true,
       "reason": "Major infrastructure milestone improving essential foodgrain supply to a state.",
       "triggers": [
-        "public_distribution_system",
         "indian_railways_network",
-        "state_governments"
+        "railway_freight_movement"
       ],
       "expected_impacts": [
         "retail_rice"
@@ -2766,22 +2458,17 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "indian_railways_network",
-        "public_distribution_system"
+        "railway_freight_movement"
       ],
-      "pred_trajectories": {
-        "indian_railways_network": "disruption",
-        "public_distribution_system": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I5",
+        "I6",
         "I7",
-        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2153
+      "ms": 1901
     },
     {
       "id": "bc251df8ff4bb63b8159f5b36587304986019ff8abd36d5c40675b080e311cbe",
@@ -2792,9 +2479,9 @@
       "relevant": true,
       "reason": "Government relief scheme for exporters affected by global crisis, impacting employment and businesses.",
       "triggers": [
-        "indian_union_government",
-        "global_shipping_routes",
-        "ministry_of_commerce_and_industry"
+        "india_export_trends",
+        "third_party_geopolitical_conflicts",
+        "trade_and_tariff_policy"
       ],
       "expected_impacts": [
         "self_employment_and_msme"
@@ -2802,13 +2489,9 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "global_shipping_routes",
-        "india_trade_deficit"
+        "trade_and_tariff_policy",
+        "third_party_geopolitical_conflicts"
       ],
-      "pred_trajectories": {
-        "global_shipping_routes": "disruption",
-        "india_trade_deficit": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I6",
@@ -2816,7 +2499,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 1942
+      "ms": 3114
     },
     {
       "id": "3429a79557c92853e13acee488d47f38aac178b5affe683f14eaa35b0426d62c",
@@ -2827,8 +2510,8 @@
       "relevant": true,
       "reason": "Government advisory on cooking gas usage affecting household energy consumption.",
       "triggers": [
-        "indian_union_government",
-        "ministry_of_consumer_affairs"
+        "hydrocarbon_pipeline_network",
+        "welfare_and_subsidy_schemes"
       ],
       "expected_impacts": [
         "lpg_cylinder",
@@ -2838,20 +2521,18 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "public_distribution_system",
-        "ministry_of_consumer_affairs"
+        "welfare_and_subsidy_schemes",
+        "hydrocarbon_pipeline_network"
       ],
-      "pred_trajectories": {
-        "public_distribution_system": "disruption",
-        "ministry_of_consumer_affairs": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I11"
+        "I11",
+        "I8",
+        "I10"
       ],
       "error": false,
-      "ms": 3529
+      "ms": 2151
     },
     {
       "id": "f6eaa5639e39d689f7dcbfab77027bf43024c1da9b13d8cd5f29bb639f3c3d4f",
@@ -2862,9 +2543,8 @@
       "relevant": true,
       "reason": "Evacuation and flight operations affecting stranded Indian citizens due to a geopolitical crisis.",
       "triggers": [
-        "global_shipping_routes",
-        "commercial_airports",
-        "ministry_of_civil_aviation"
+        "transport_and_logistics_policy",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "air_travel"
@@ -2872,18 +2552,13 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "commercial_airports",
-        "global_shipping_routes"
+        "third_party_geopolitical_conflicts",
+        "commercial_airports"
       ],
-      "pred_trajectories": {
-        "commercial_airports": "disruption",
-        "global_shipping_routes": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I1",
         "I2",
-        "I4",
         "I5",
         "I7",
         "I9",
@@ -2891,7 +2566,7 @@
         "I11"
       ],
       "error": false,
-      "ms": 3269
+      "ms": 2150
     },
     {
       "id": "54482ea230d2ac7606ccb811aff51ad2c834fb8447b3ceb87ead468d6092e337",
@@ -2904,13 +2579,24 @@
       "triggers": [],
       "expected_impacts": [],
       "difficulty": "easy",
-      "pred_relevant": false,
-      "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article reports on mutual fund investment trends (AMFI data), which is market commentary/observation rather than a material shift in a T-world system or a policy-driven event.",
-      "pred_exclude_l1s": [],
+      "pred_relevant": true,
+      "pred_triggers": [
+        "domestic_institutional_flows",
+        "retail_gold_investment"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I11"
+      ],
       "error": false,
-      "ms": 1599
+      "ms": 2147
     },
     {
       "id": "7d129e574fbf441be0f499057e52035ae58656214012d771cfc2f221ffee766c",
@@ -2921,9 +2607,8 @@
       "relevant": true,
       "reason": "Macro-level oil stockpile status directly influences future retail fuel prices and inflation for citizens.",
       "triggers": [
-        "indian_union_government",
-        "brent_crude",
-        "ministry_of_petroleum_and_natural_gas"
+        "global_crude_oil",
+        "energy_and_environment_policy"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -2933,20 +2618,17 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "global_shipping_routes"
+        "global_crude_oil",
+        "india_trade_balance"
       ],
-      "pred_trajectories": {
-        "brent_crude": "disruption",
-        "global_shipping_routes": "disruption"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
-        "I11"
+        "I11",
+        "I10"
       ],
       "error": false,
-      "ms": 2064
+      "ms": 2073
     },
     {
       "id": "e6773ab1ea0a237af6df641fe25761a424c1af7afbd8c61097007756f949877d",
@@ -2961,11 +2643,10 @@
       "difficulty": "easy",
       "pred_relevant": false,
       "pred_triggers": [],
-      "pred_trajectories": {},
-      "pred_reason": "The article describes an internal corporate disciplinary action regarding historical bond mis-selling, which is an individual company/legal matter and does not constitute a material shift in macro-level systems or systemic Indian impact.",
+      "pred_reason": "This is a company-specific disciplinary action regarding internal compliance and mis-selling. It does not constitute a systemic macro shift in the banking sector, regulatory policy, or financial markets.",
       "pred_exclude_l1s": [],
       "error": false,
-      "ms": 1656
+      "ms": 3968
     },
     {
       "id": "cd1cc886d9f4af445462cfd04b9ff745ed952b1eb225a85c5d1423016eab06ea",
@@ -2976,10 +2657,9 @@
       "relevant": true,
       "reason": "Policy incentive for states to expand piped gas infrastructure, affecting commercial and household energy supply.",
       "triggers": [
-        "indian_union_government",
-        "state_governments",
-        "oil_gas_pipelines",
-        "ministry_of_consumer_affairs"
+        "hydrocarbon_pipeline_network",
+        "welfare_and_subsidy_schemes",
+        "center_state_relations"
       ],
       "expected_impacts": [
         "piped_natural_gas",
@@ -2988,20 +2668,22 @@
       "difficulty": "medium",
       "pred_relevant": true,
       "pred_triggers": [
-        "oil_gas_pipelines",
-        "ministry_of_consumer_affairs"
+        "energy_and_environment_policy",
+        "hydrocarbon_pipeline_network"
       ],
-      "pred_trajectories": {
-        "oil_gas_pipelines": "escalating",
-        "ministry_of_consumer_affairs": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
+        "I1",
+        "I4",
+        "I5",
+        "I6",
         "I7",
+        "I8",
+        "I10",
         "I11"
       ],
       "error": false,
-      "ms": 2409
+      "ms": 2561
     },
     {
       "id": "a1a82c71233a201d9f9474136c389a9c7ba4e75c404fe24280ce042d0489d77e",
@@ -3012,8 +2694,8 @@
       "relevant": true,
       "reason": "Global crude oil price surge with direct implications for domestic retail fuel prices and inflation.",
       "triggers": [
-        "brent_crude",
-        "us_government"
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts"
       ],
       "expected_impacts": [
         "retail_petrol",
@@ -3022,20 +2704,2426 @@
       "difficulty": "easy",
       "pred_relevant": true,
       "pred_triggers": [
-        "brent_crude",
-        "india_trade_deficit"
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts"
       ],
-      "pred_trajectories": {
-        "brent_crude": "escalating",
-        "india_trade_deficit": "escalating"
-      },
       "pred_reason": null,
       "pred_exclude_l1s": [
         "I7",
         "I11"
       ],
       "error": false,
-      "ms": 1342
+      "ms": 1144
+    },
+    {
+      "id": "47854f0f1c066cb9d8750365d16afa6a6577da443e65a697ea9e32560bad7ac1",
+      "title": "GDP growth in FY26 expected at 7.4% despite US tariff troubles, show First Advanced Estimates",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2026-01-07",
+      "relevant": true,
+      "reason": "Macroeconomic estimates and US tariffs indicate broader economic trends and trade policies affecting inflation and employment.",
+      "triggers": [
+        "trade_wars_and_tariffs",
+        "india_gdp_growth"
+      ],
+      "expected_impacts": [
+        "employment_metrics_and_conditions"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth",
+        "trade_wars_and_tariffs"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1884
+    },
+    {
+      "id": "46fcd7cad194a49a42a2a67b3e106593eea9480e8225dced9fbd34a96b3d4c92",
+      "title": "New debt-GDP fiscal anchor will likely open space for higher capex",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2026-01-31",
+      "relevant": true,
+      "reason": "Changes in fiscal policy and capital expenditure directly influence infrastructure development and job creation.",
+      "triggers": [
+        "fiscal_and_tax_policy"
+      ],
+      "expected_impacts": [
+        "employment_metrics_and_conditions"
+      ],
+      "difficulty": "hard",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "fiscal_and_tax_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1578
+    },
+    {
+      "id": "a12a41b94479717f044b16c38825df5609ee4f0029b4feb03a75c7f51074e534",
+      "title": "War risk insurance costs spiral upwards as West Asia conflict escalates",
+      "summary": "",
+      "source": "IE Business",
+      "published_at": "2026-03-13",
+      "relevant": true,
+      "reason": "Rising shipping insurance costs due to conflict will increase import costs, leading to broader inflation.",
+      "triggers": [
+        "maritime_chokepoint_disruptions",
+        "third_party_geopolitical_conflicts",
+        "global_shipping_freight"
+      ],
+      "expected_impacts": [
+        "vehicle_fuel",
+        "edible_oils",
+        "generic_medicines"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "global_shipping_freight",
+        "third_party_geopolitical_conflicts"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1065
+    },
+    {
+      "id": "b0266b0497d3b47744889b1cf82ee1af00f3932d57cf6a3eb915d541f0a72f57",
+      "title": "Zomato increases food delivery platform fee to Rs 14.90 per order; magicpin rules out hike",
+      "summary": "",
+      "source": "IE Business",
+      "published_at": "2026-03-20",
+      "relevant": true,
+      "reason": "Platform fee hikes by a major duopoly player directly increase costs for millions of urban consumers.",
+      "triggers": [],
+      "expected_impacts": [
+        "food_delivery_services"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article discusses a company-specific pricing decision by Zomato, which does not constitute a systemic macroeconomic shift or a material change in national policy.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1493
+    },
+    {
+      "id": "8d5c9b52c547f3c89d5e85631f801ddb757c9bc3b77ed2466358b50f0521341c",
+      "title": "Crude tanker rates go through the roof amid West Asia conflict",
+      "summary": "",
+      "source": "IE Business",
+      "published_at": "2026-03-04",
+      "relevant": true,
+      "reason": "Surging crude tanker rates directly impact India's oil import bill, leading to higher domestic fuel prices.",
+      "triggers": [
+        "maritime_chokepoint_disruptions",
+        "global_crude_oil",
+        "global_shipping_freight"
+      ],
+      "expected_impacts": [
+        "retail_petrol",
+        "retail_diesel"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "global_shipping_freight",
+        "global_crude_oil",
+        "maritime_chokepoint_disruptions"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2174
+    },
+    {
+      "id": "0fc153ef27e38cf99e04cb34b793a9d610fa8fa4d259a9a094eba0fe942ff889",
+      "title": "Amid Middle East crisis, Air India, SpiceJet cancel flights again, aviation ministry issues helpline numbers",
+      "summary": "",
+      "source": "IE Business",
+      "published_at": "2026-03-02",
+      "relevant": true,
+      "reason": "Flight cancellations and ministry interventions due to a global crisis directly disrupt travel for citizens.",
+      "triggers": [
+        "transport_and_logistics_policy",
+        "commercial_airports",
+        "third_party_geopolitical_conflicts"
+      ],
+      "expected_impacts": [
+        "air_travel"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "maritime_chokepoint_disruptions",
+        "commercial_airports"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I5",
+        "I7",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2228
+    },
+    {
+      "id": "89aaa8c8e817d6889d816861ebb09a8b366ed1206062acc6c08bffd0bbb3f7ba",
+      "title": "Indian crude tanker was loading when Fujairah terminal was attacked; vessel and crew safe, returning to India",
+      "summary": "",
+      "source": "IE Business",
+      "published_at": "2026-03-15",
+      "relevant": true,
+      "reason": "Indian crude tanker directly involved in Fujairah terminal attack \u2014 signals real threat to India's oil supply chain",
+      "triggers": [
+        "maritime_chokepoint_disruptions",
+        "global_crude_oil"
+      ],
+      "expected_impacts": [
+        "retail_petrol",
+        "retail_diesel"
+      ],
+      "difficulty": "hard",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "maritime_chokepoint_disruptions",
+        "global_crude_oil"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2152
+    },
+    {
+      "id": "e47a397f8f7bbf4e11e4828dccc26271cade313b5d15191f299caf0679fcd109",
+      "title": "Air India to levy fuel surcharge on domestic flights, hike it on international flights",
+      "summary": "",
+      "source": "IE Business",
+      "published_at": "2026-03-10",
+      "relevant": true,
+      "reason": "Direct imposition of fuel surcharges increases travel costs for domestic and international passengers.",
+      "triggers": [
+        "transport_and_logistics_policy",
+        "global_crude_oil"
+      ],
+      "expected_impacts": [
+        "domestic_flight_ticket",
+        "air_travel"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "global_crude_oil",
+        "transport_and_logistics_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2354
+    },
+    {
+      "id": "3c80ebc2527680e315dc8cc012780c62909bbbfdbb36e1c647584b650ca09885",
+      "title": "Tuhin Kanta Pandey: \u2018We believe in optimal regulation, not too much, not too little\u2019",
+      "summary": "",
+      "source": "IE Business",
+      "published_at": "2026-03-01",
+      "relevant": false,
+      "reason": "Opinion/interview piece discussing general regulatory philosophy without announcing specific policy changes.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a general interview/opinion piece regarding regulatory philosophy without announcing a specific, actionable policy shift or material change in state.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1533
+    },
+    {
+      "id": "824abd60861a97379d25685409dbadee44e2c3da556c69d72e3ece68bb6f387d",
+      "title": "Customers to have zero liability in case of lender negligence: RBI\u2019s draft guidelines on digital fraud",
+      "summary": "",
+      "source": "IE Business",
+      "published_at": "2026-03-06",
+      "relevant": true,
+      "reason": "RBI draft guidelines directly protect millions of retail banking customers from digital fraud liabilities.",
+      "triggers": [
+        "banking_and_credit_regulation"
+      ],
+      "expected_impacts": [
+        "digital_and_cyber_security"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "banking_and_credit_regulation"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I3",
+        "I7",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2356
+    },
+    {
+      "id": "fc0cab162f5a404b2dcb5bfe11b649c308ccd258b0cfd3c6be990d6164e1ebda",
+      "title": "Monetary policy needs to remain watchful amid uncertainty on the external front, says RBI Governor Malhotra",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-20",
+      "relevant": false,
+      "reason": "General commentary and forward guidance by the RBI governor, lacking immediate policy changes that causally affect citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "monetary_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I3",
+        "I6",
+        "I7",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1738
+    },
+    {
+      "id": "0b797e87d7355f7c2de264ea1b6a94617515e2e35db3d233ac78968e6ac19697",
+      "title": "GST inversion eases but wide gap in input-output rates remains a worry for industry",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-09-07",
+      "relevant": true,
+      "reason": "Changes or easing in GST inverted duty structures directly affect the cost of manufacturing and retail prices for consumers.",
+      "triggers": [
+        "fiscal_and_tax_policy"
+      ],
+      "expected_impacts": [
+        "retail_and_trade",
+        "manufacturing_and_core"
+      ],
+      "difficulty": "hard",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "fiscal_and_tax_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I3",
+        "I6",
+        "I7",
+        "I8",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2353
+    },
+    {
+      "id": "be78bab2818629bc31f4abd6c375c9e7d2623bf013712c5f952c59bed89bf354",
+      "title": "RBI\u2019s financial inclusion index shows all-round growth, rises to 67 in March 2025: Here\u2019s what it means",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-07-22",
+      "relevant": false,
+      "reason": "Release of a financial inclusion index is a lagging measurement of past data, not a causal event.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "banking_and_credit_regulation"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I3",
+        "I8",
+        "I9"
+      ],
+      "error": false,
+      "ms": 3178
+    },
+    {
+      "id": "90696ff654637acc3530e02d3abb1e6e4b84775ccf04ae2634b3b70c1468cfdf",
+      "title": "India\u2019s average tariff on British products will drop from 15% to 3%, says UK govt",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-07-24",
+      "relevant": true,
+      "reason": "Major trade policy change reducing tariffs on British products will directly lower prices of imported goods for Indian consumers.",
+      "triggers": [
+        "trade_and_tariff_policy",
+        "india_export_trends"
+      ],
+      "expected_impacts": [
+        "consumer_tech_devices",
+        "retail_and_trade"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_and_tariff_policy",
+        "india_export_trends"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I6",
+        "I7",
+        "I8",
+        "I11"
+      ],
+      "error": false,
+      "ms": 3583
+    },
+    {
+      "id": "b95bc75b01f6117fd2b81da36bb0f792200307bf65766521cdfb11ad44d6b5ae",
+      "title": "India\u2019s July retail inflation hits 8-year low of 1.55%, second-lowest ever",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-12",
+      "relevant": true,
+      "reason": "Significant movement in retail inflation indices directly reflects and impacts the cost of living and purchasing power of citizens.",
+      "triggers": [
+        "retail_inflation"
+      ],
+      "expected_impacts": [
+        "cooking_fuel",
+        "retail_sugar",
+        "vehicle_fuel"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "retail_inflation"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I3",
+        "I7",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2746
+    },
+    {
+      "id": "8dfc336c7ca541252dde0a3c40b924f3b6c16bd751ad9867889a127a8c283b58",
+      "title": "Asian Development Bank lowers India\u2019s FY26 growth forecast to 6.5% over US tariffs",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-07-23",
+      "relevant": false,
+      "reason": "Economic growth forecasts by international bodies are analytical projections, not events that directly cause impacts.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth",
+        "trade_wars_and_tariffs"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2066
+    },
+    {
+      "id": "fe9e132f977f42ac45f6114bff7e242e0edcd65ad08979c3cbf9676618ae9bd9",
+      "title": "Macroeconomic data suggests there is scope for repo rate cut: RBI Governor",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-11-24",
+      "relevant": false,
+      "reason": "Statement suggesting scope for a rate cut is commentary/forward guidance, not an actual RBI policy action that changes EMIs.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "hard",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "monetary_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1843
+    },
+    {
+      "id": "74af6ddcdde17a0dab80e1370fef005fd135aae300204fd952bf6b17140b8dfe",
+      "title": "Trump\u2019s tariff blow to weigh on India, but will be shortlived: CEA V Anantha Nageswaran",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-09-04",
+      "relevant": false,
+      "reason": "Opinion and commentary by the CEA regarding foreign tariffs, rather than a direct policy action by the Indian government.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_wars_and_tariffs"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1844
+    },
+    {
+      "id": "4dafdb2d68b17a1712271c25ff39087e8f2e45b3bd1551495768a8e160deed58",
+      "title": "Govt panel working on new SEZ norms for exporters to access domestic market",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-11-05",
+      "relevant": true,
+      "reason": "Development of new SEZ norms is a regulatory change that will affect domestic market supply and manufacturing jobs.",
+      "triggers": [
+        "trade_and_tariff_policy"
+      ],
+      "expected_impacts": [
+        "retail_and_trade"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_and_tariff_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I8",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2048
+    },
+    {
+      "id": "d70d279f33ec258dd3fb9c18b0af3c133e891fcd0e8a09d5ac5f902b8bad0688",
+      "title": "Continued focus on macro fundamentals, reforms to enable economy to maintain high growth: RBI\u2019s State of The Economy article",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-12-23",
+      "relevant": false,
+      "reason": "Publication of an RBI bulletin article is an analytical/opinion piece, not a market-moving event or policy change.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a summary of the RBI's 'State of the Economy' report, which provides an outlook and assessment of existing trends rather than reporting a new, material shift or policy action.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1537
+    },
+    {
+      "id": "97416de6f268f3d4f1b7b507d1fe0c5c99595df1b6a2386a5073941b47277475",
+      "title": "Big, beautiful bill: US pulls back on solar, wind, EVs as China races ahead",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-07-05",
+      "relevant": true,
+      "reason": "US pulling back on solar/EVs while China races ahead affects India's renewable energy strategy, solar manufacturing, and EV imports",
+      "triggers": [
+        "trade_wars_and_tariffs",
+        "renewable_energy_parks"
+      ],
+      "expected_impacts": [
+        "electricity_tariff",
+        "ev_charging_tariff"
+      ],
+      "difficulty": "hard",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "energy_and_environment_policy",
+        "trade_wars_and_tariffs"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I6",
+        "I8"
+      ],
+      "error": false,
+      "ms": 4964
+    },
+    {
+      "id": "0a473c31b38a5cf0d07e9cac1df9d9989ed9c716116d2d916aad3feab14f8ddc",
+      "title": "Around $30-35 billion of India\u2019s merchandise exports to America at risk from Trump\u2019s tariffs, says UBS Chief India Economist",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-09",
+      "relevant": true,
+      "reason": "Changes in global trade policy (US tariffs) directly threatening Indian export sectors, which affects manufacturing jobs and economic growth.",
+      "triggers": [
+        "trade_wars_and_tariffs",
+        "us_macro_demand"
+      ],
+      "expected_impacts": [
+        "manufacturing_and_core"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_wars_and_tariffs",
+        "india_export_trends"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2404
+    },
+    {
+      "id": "a441ae1b98c29ef09b4f2771c7dacbb51ab86cb668109e7beddbb9538ac1ecc3",
+      "title": "World Bank cuts India\u2019s FY27 GDP forecast to 6.3%, sees reform \u2018urgency\u2019",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-10-07",
+      "relevant": true,
+      "reason": "Macroeconomic growth downgrade reflecting broader economic slowdowns that causally affect job creation and income levels.",
+      "triggers": [
+        "multilateral_financial_interventions",
+        "india_gdp_growth"
+      ],
+      "expected_impacts": [
+        "employment_metrics_and_conditions"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1945
+    },
+    {
+      "id": "21fa80d105941d96d686b0d1a55cee4a45e926beec2ceb7675ba59ca76090d53",
+      "title": "US tariffs could knock 50 bps off India\u2019s growth, deepen jobless recovery: Former RBI Governor Subbarao",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-12",
+      "relevant": true,
+      "reason": "Global trade tariffs directly impacting Indian economic growth and exacerbating unemployment rates.",
+      "triggers": [
+        "trade_wars_and_tariffs",
+        "india_gdp_growth"
+      ],
+      "expected_impacts": [
+        "employment_metrics_and_conditions"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_wars_and_tariffs",
+        "india_gdp_growth",
+        "macro_employment_trends"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2294
+    },
+    {
+      "id": "adce74a3c2f3e1b64e52c018f385788799cb6fc1a7099281c0ae6267eec3e985",
+      "title": "Real estate, infra sectors short of 20 lakh skilled workers: NAREDCO chair Hiranandani",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-01",
+      "relevant": true,
+      "reason": "Large-scale labor shortage in infrastructure and real estate affecting project completion, housing availability, and wages.",
+      "triggers": [
+        "macro_employment_trends"
+      ],
+      "expected_impacts": [
+        "construction_worker_wages",
+        "investment_property_value"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article reports on industry body (NAREDCO) claims regarding labor shortages, which falls under the 'industry body complaints/lobbying' exclusion criteria rather than a realized policy action or systemic macroeconomic data release.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1548
+    },
+    {
+      "id": "b45f3f769c453cb15cac98c564ffaa88aaee24f3ccd3f9766272d4359c1e0c1d",
+      "title": "Microsoft\u2019s \u2018legacy\u2019 automated system triggered suspension of Nayara\u2019s services",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-29",
+      "relevant": false,
+      "reason": "Company-specific IT issue without evidence of a scale impact on ordinary citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "This is a company-specific IT/operational issue involving Microsoft and Nayara Energy. It does not constitute a systemic macro shift in Indian infrastructure, policy, or financial markets.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1583
+    },
+    {
+      "id": "43cbbe64c3adac9b9c9ab19f33277023e11ddea00336cba8d09d1f73c1056a4f",
+      "title": "GST cuts passed on, spurred consumption, may show in GDP: Govt",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-10-18",
+      "relevant": true,
+      "reason": "Tax policy changes (GST cuts) directly affecting retail prices of goods and consumer spending power.",
+      "triggers": [
+        "fiscal_and_tax_policy"
+      ],
+      "expected_impacts": [
+        "retail_and_trade"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "fiscal_and_tax_policy",
+        "india_gdp_growth"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I8",
+        "I10"
+      ],
+      "error": false,
+      "ms": 2355
+    },
+    {
+      "id": "90e847e89fce615d28390e51de760bc20d313ebbd5070151cb2eaf39650f9cce",
+      "title": "Disposable income of Indian households to be significantly higher this year, says CEA Nageswaran",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-29",
+      "relevant": true,
+      "reason": "Macroeconomic shifts leading to changes in household disposable income, affecting citizen living standards.",
+      "triggers": [
+        "india_gdp_growth",
+        "fiscal_and_tax_policy"
+      ],
+      "expected_impacts": [
+        "savings_account_balance",
+        "retail_and_trade"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article reports on a projection or opinion by the Chief Economic Advisor regarding future household income, rather than a realized economic data release, policy action, or material shift in a T-world system.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 2150
+    },
+    {
+      "id": "8ce2220db6e6fe797e8fdf7c8927cc89f2dbe057e193d230a6f572788c3da8ed",
+      "title": "How Delhi-Jaipur Expressway will be a gamechanger for connectivity and economy",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-07-05",
+      "relevant": true,
+      "reason": "Major infrastructure development improving connectivity, reducing travel time, and boosting regional economic opportunities.",
+      "triggers": [
+        "highway_expressway_network",
+        "transport_and_logistics_policy"
+      ],
+      "expected_impacts": [
+        "intercity_travel",
+        "delivery_and_logistics",
+        "investment_property_value"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a descriptive piece about infrastructure connectivity and economic potential without reporting a specific, material, or actionable shift in state (e.g., project completion, policy change, or budget allocation).",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 2047
+    },
+    {
+      "id": "f71feadc90770f7cf9c9dacc76554796840affe94690945324cc392cbaa003b9",
+      "title": "18 years later, S&P upgrades India\u2019s sovereign rating, says US tariffs impact \u2018manageable\u2019",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-14",
+      "relevant": true,
+      "reason": "Sovereign rating upgrade lowers national borrowing costs, influencing foreign investment, currency stability, and broader economic growth.",
+      "triggers": [
+        "sovereign_bond_yields",
+        "foreign_capital_flows"
+      ],
+      "expected_impacts": [
+        "direct_equity_portfolio",
+        "home_loan_emi"
+      ],
+      "difficulty": "hard",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "sovereign_bond_yields",
+        "trade_wars_and_tariffs"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 27669
+    },
+    {
+      "id": "50d1ec984630db097034dc16ba719c022e700e993ba0b28baec52bcae7d87037",
+      "title": "World Bank Report: By 2030, Indian cities to create 70% of jobs but may lose $5 bn to floods; need greater autonomy to counter climate risks",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-07-22",
+      "relevant": false,
+      "reason": "Long-term projection report by the World Bank, not a current event with immediate causal impact on citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "urbanization_and_density",
+        "coastal_sea_level_dynamics"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I5",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 3769
+    },
+    {
+      "id": "032625455857414a91a6e6ebba56a552fbeccae71bfe188b764c7435dc71335e",
+      "title": "India services sector growth hits 10-month high as demand surges, PMI shows",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-07-03",
+      "relevant": true,
+      "reason": "Services PMI hitting 10-month high signals demand surge, hiring, and consumption growth \u2014 concrete macro indicator",
+      "triggers": [
+        "industrial_production_metrics"
+      ],
+      "expected_impacts": [
+        "employment_metrics_and_conditions",
+        "retail_and_trade"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "industrial_production_metrics"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2454
+    },
+    {
+      "id": "68b0c6165965ea6f45a1dba463006f0cb0e15ad5572beac2a722be2ec20ff94e",
+      "title": "The \u2018Turnberry system\u2019 \u2013 what the US\u2019 new global economic order looks like",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-10",
+      "relevant": false,
+      "reason": "Foreign affairs analysis and opinion piece with no direct causal chain to Indian citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a conceptual analysis of potential future US economic policy shifts ('Turnberry system') rather than a report on an enacted policy, realized economic data, or a specific, ongoing macro-event affecting India.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1021
+    },
+    {
+      "id": "300b29fca33a6f3885b655087549d7bc1695dba62e218e5625bd9b5d1290c5ba",
+      "title": "Repo rate cut 25 bp to 5.25%; \u2018rare Goldilocks period\u2019, says RBI Governor",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-12-05",
+      "relevant": true,
+      "reason": "Actual RBI policy action (repo rate cut) that directly affects borrowing and saving rates for citizens.",
+      "triggers": [
+        "monetary_policy"
+      ],
+      "expected_impacts": [
+        "home_loan_emi",
+        "auto_loan_emi",
+        "fixed_deposits"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "monetary_policy",
+        "systemic_bank_liquidity"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2150
+    },
+    {
+      "id": "1542f13649f718d3efdc3483631bc46be40704ffa9a160af2a8f94917055e2ba",
+      "title": "Credit upgrade, GST revamp and trade tariffs may redefine India\u2019s growth outlook, says HSBC",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-19",
+      "relevant": false,
+      "reason": "Analyst outlook and opinion piece by HSBC, not an actual policy change or event.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a speculative opinion piece by a financial institution regarding potential future scenarios ('may redefine') rather than reporting on a realized policy action, data release, or concrete market event.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 3381
+    },
+    {
+      "id": "8d612762e1953befd0e45a026613c28f15ede57bfa8672f8cfa4d01b690d5068",
+      "title": "US\u2019 1% remittance tax to have limited impact on India, but adds to cost of transfers",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-07-04",
+      "relevant": true,
+      "reason": "Foreign policy change (US remittance tax) that directly increases the cost of inward remittances for Indian citizens.",
+      "triggers": [
+        "trade_wars_and_tariffs",
+        "inr_exchange_rates"
+      ],
+      "expected_impacts": [
+        "savings_account_balance",
+        "savings_and_deposits"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "economic_sanctions",
+        "foreign_capital_flows"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I7",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1898
+    },
+    {
+      "id": "671657c2b773ca430815fade0ad896c99dd4eb074f886188983742cf76b4956b",
+      "title": "After stellar Q2 GDP data, CEA says FY26 growth could be \u2018north of 7%\u2019",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-11-28",
+      "relevant": false,
+      "reason": "Economic data reporting and future projection by CEA, not a causal event.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I8",
+        "I9",
+        "I10"
+      ],
+      "error": false,
+      "ms": 1933
+    },
+    {
+      "id": "03cbc25d5345f52a4e634eb6166a2822786a62c38cd157a2e674d170798047ba",
+      "title": "Ready to support growth, sectors impacted more by US tariffs: RBI Governor",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-25",
+      "relevant": false,
+      "reason": "Statement of intent by the RBI Governor, not an actual policy change or action.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "hard",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_wars_and_tariffs",
+        "india_gdp_growth"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2056
+    },
+    {
+      "id": "d5271808aad21f99efb10df4fdc2cb0d46b5e2ba6a7fca3cb9b872876db79ea0",
+      "title": "India can weather even a 50 bps growth sacrifice but for a year: Former RBI governor D Subbarao",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-08-07",
+      "relevant": false,
+      "reason": "Opinion piece by a former official.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a speculative opinion piece by a former official regarding hypothetical economic scenarios, not a report on a realized policy action, data release, or material shift in a T-world system.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1801
+    },
+    {
+      "id": "6d16bad6d18ee2af54cb7047545a339d24ef4cf88308c68d1f50f93f9f162740",
+      "title": "RBI Governor Malhotra says rate cut likely \u2018if inflation moderates or growth weakens\u2019",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-07-15",
+      "relevant": false,
+      "reason": "Conditional forward-looking statement by the RBI Governor, not an actual rate cut or policy change.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "monetary_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2040
+    },
+    {
+      "id": "0a9731c7934d5920fe4a9b68cd26a1425b7277cbe9e82692c2cc2afe3b108e08",
+      "title": "US buyers seek price cuts, freeze orders, exporters turn to Centre for relief",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-04-08",
+      "relevant": true,
+      "reason": "A freeze in US export orders directly impacts employment, wages, and business continuity for Indian export-oriented sectors like MSMEs and textiles.",
+      "triggers": [
+        "us_macro_demand",
+        "trade_and_tariff_policy"
+      ],
+      "expected_impacts": [
+        "self_employment_and_msme",
+        "manufacturing_and_core"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_export_trends",
+        "us_macro_demand"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2492
+    },
+    {
+      "id": "a7c406ece5e18894c81ad79b5237aa1281105df006bdaa9b6e8fc9ea6cf615c0",
+      "title": "Pressure on rupee to ease, India to grow at 6.6%: UN",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-01-09",
+      "relevant": false,
+      "reason": "This is a macroeconomic forecast by the UN, not a concrete event or policy change that immediately affects citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth",
+        "inr_exchange_rates"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I6",
+        "I7",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2132
+    },
+    {
+      "id": "256c43b661d902773b5de068b293131cdaa237434d387124a73cb0eeaede8444",
+      "title": "Over 30,000 taxpayers declare foreign assets worth Rs 29,208 crore",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-03-06",
+      "relevant": false,
+      "reason": "Tax compliance statistics regarding foreign assets affect only a tiny fraction of high-net-worth individuals, not ordinary citizens at scale.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "fiscal_and_tax_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I7",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1931
+    },
+    {
+      "id": "3f689c1c6a6ec81d581640faa043027ccd120e4928fee9847100638d2546fbc7",
+      "title": "India needs to grow 8% for progress, core sector must invest: SBI chairman",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-03-12",
+      "relevant": false,
+      "reason": "This is an opinion and motivational statement by a bank executive, lacking any actual policy change or market-moving event.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is an opinion piece/statement by an industry leader regarding long-term economic goals rather than a report on a realized policy action, data release, or material shift in a T-world system.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1327
+    },
+    {
+      "id": "e3d3edc126cb4cb85735a591a7289b269ad4f89a00cb284549a4f67ff9a7baca",
+      "title": "With Prime Minister\u2019s Office push, India finalises terms for US trade deal",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-04-01",
+      "relevant": true,
+      "reason": "Finalization of a major international trade deal is a significant policy event that will alter import/export prices, customs duties, and domestic employment.",
+      "triggers": [
+        "fiscal_and_tax_policy",
+        "trade_and_tariff_policy",
+        "trade_wars_and_tariffs"
+      ],
+      "expected_impacts": [
+        "indirect_taxes",
+        "factory_worker_jobs",
+        "consumer_tech_devices"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_and_tariff_policy",
+        "india_trade_balance"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 3073
+    },
+    {
+      "id": "ad0d3fbca17dd52a4211f742f3a6a5c92f78cf0865e3bedd9f8099cc36566752",
+      "title": "GDP shows an uptick, but Q4 holds the key for 6.5% growth in FY25",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-02-28",
+      "relevant": false,
+      "reason": "Reporting on macroeconomic GDP statistics and future growth forecasts, which does not translate to an immediate causal impact on ordinary citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1079
+    },
+    {
+      "id": "3c525ec62bfa0988526016bdc3fa75095be34358b3ed9b2cb499439145e8db30",
+      "title": "Billionaire wealth grew by $2 trillion in 2024, equivalent to $5.7 billion per day: Report",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-01-20",
+      "relevant": false,
+      "reason": "A global wealth report about billionaires does not causally affect ordinary Indian citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article reports on global billionaire wealth trends, which is a descriptive economic observation rather than a material shift in a T-world system (such as a policy change, market crash, or macroeconomic data release) that causally affects ordinary Indians at scale.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1068
+    },
+    {
+      "id": "165df43bca6377173a1af312543bdb2a09f047a1f2501187c82fcf6f5332316f",
+      "title": "Food inflation outlook pressures likely to witness significant easing: RBI Governor",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-02-21",
+      "relevant": true,
+      "reason": "The RBI Governor's forward guidance on easing food inflation signals central bank policy stance, directly affecting inflation expectations, market yields, and potential lending rate cuts.",
+      "triggers": [
+        "monetary_policy",
+        "retail_inflation"
+      ],
+      "expected_impacts": [
+        "home_loan_emi"
+      ],
+      "difficulty": "hard",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "retail_inflation",
+        "monetary_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I3",
+        "I8",
+        "I10"
+      ],
+      "error": false,
+      "ms": 6237
+    },
+    {
+      "id": "c5ccda74b5ff0666a87327648d6a968110bde554324660cf100beda131ed393f",
+      "title": "Inflation will be well aligned to the target during FY26: RBI Governor",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-04-23",
+      "relevant": false,
+      "reason": "This is a long-term macroeconomic forecast for FY26 by the RBI Governor, lacking an immediate actionable policy change or price movement.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "monetary_policy",
+        "retail_inflation"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I3",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 3119
+    },
+    {
+      "id": "9310360a5b9b4bf4e3b4e2b7baacb28e1642c6fab0bf751283b002e1bcf229e1",
+      "title": "India to be world\u2019s 4th largest electric car maker by 2030; must cut costs to compete with China: Rhodium",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-06-20",
+      "relevant": false,
+      "reason": "A long-term industry forecast for 2030 by a research group is not a current event that causally affects citizens today.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a speculative industry projection/forecast for 2030 rather than a report on a realized policy action, market shift, or systemic event.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 3031
+    },
+    {
+      "id": "be8963bc8850cd433a18aa89f8807625c067b274939f3446ac664f53ded8d072",
+      "title": "India\u2019s composite flash PMI rises for first time after three quarters",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-02-21",
+      "relevant": true,
+      "reason": "Composite PMI rising for first time in 3 quarters \u2014 concrete macro signal for employment and economic activity",
+      "triggers": [
+        "industrial_production_metrics"
+      ],
+      "expected_impacts": [
+        "employment_metrics_and_conditions"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "industrial_production_metrics"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I6",
+        "I7",
+        "I8",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2764
+    },
+    {
+      "id": "5d298842eae39606b4ceb3127f14ca4328aed7a52408f4071cb9d1618f799fed",
+      "title": "25 ultra-luxury homes valued over Rs 100 crore each sold in 2024",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-03-29",
+      "relevant": false,
+      "reason": "Niche luxury real estate market news, does not affect ordinary citizens at scale.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article reports on luxury real estate sales, which is a niche market segment and does not represent a material shift in macro-economic indicators, systemic policy, or national infrastructure.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 2259
+    },
+    {
+      "id": "d955175cbe1dea30172e007c9fa0fd0f498ce59e0bb13211fccdb191eef4e2ba",
+      "title": "Farmers\u2019 share in rabi crop consumer prices ranged from 40-67%: RBI survey",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-02-26",
+      "relevant": false,
+      "reason": "Retrospective survey data on crop prices, not a causal event altering current conditions.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "retail_inflation"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I3",
+        "I7",
+        "I8",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2388
+    },
+    {
+      "id": "061128f88dc39fc6a59a194be572fae3d16caa45a6a40b2637793caa6267d963",
+      "title": "As US sanctions cast shadow on India\u2019s Russian oil imports, smaller suppliers from Africa, Latin America cash in",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-03-06",
+      "relevant": true,
+      "reason": "Shift in crude oil supply chains affects import costs, which causally impacts retail fuel prices and inflation.",
+      "triggers": [
+        "global_crude_oil",
+        "third_party_geopolitical_conflicts"
+      ],
+      "expected_impacts": [
+        "retail_petrol",
+        "retail_diesel"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "global_crude_oil",
+        "india_trade_balance"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2348
+    },
+    {
+      "id": "db4e1a36c7cdd978b4345c671d7fe7ef23f828960d891b0cc85b786bd8c24d1a",
+      "title": "Why Indian economy is less susceptible to external headwinds: What RBI article says about state of the economy",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-04-22",
+      "relevant": false,
+      "reason": "Explanatory analysis piece based on an RBI article, not a specific event causing citizen-level impact.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is an analytical piece summarizing an RBI bulletin without reporting a new policy action, realized data shift, or external shock. It provides commentary on economic resilience rather than a material change in state.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1611
+    },
+    {
+      "id": "c85afa3393876f9eba90c31351e565779dc4a39751d5dd7cedd56f93f19b6366",
+      "title": "Govt weighing challenges, opportunities emerging from US tariffs: Commerce Secretary",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-03-17",
+      "relevant": true,
+      "reason": "US tariffs and subsequent trade policy responses directly affect export industries, employment, and imported goods prices.",
+      "triggers": [
+        "trade_wars_and_tariffs",
+        "trade_and_tariff_policy"
+      ],
+      "expected_impacts": [
+        "manufacturing_and_core"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article describes a government assessment/deliberation process ('weighing challenges') rather than a realized policy action, regulatory change, or market-moving event.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1723
+    },
+    {
+      "id": "c599c8b9ecda329f8e0f19bbce3f00e8911447e98a76c3b79c8ff591c6c6b7ad",
+      "title": "Global weakness, policy uncertainty: Why World Bank slashed India\u2019s growth forecast to 6.3% for FY26",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-04-23",
+      "relevant": false,
+      "reason": "Economic forecast revision by the World Bank is a prediction, not a direct causal event affecting citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth",
+        "us_macro_demand"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2062
+    },
+    {
+      "id": "efcbe758681d9cccd6145381d4af4cedbc9adac38dfaf9dc2188765dcf073b4c",
+      "title": "What Trump, wife Melania\u2019s \u2018meme coins\u2019 signal about crypto regulation in the US",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-01-21",
+      "relevant": false,
+      "reason": "Foreign celebrity and crypto news with no direct causal chain to ordinary Indian citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article discusses speculative 'meme coins' linked to a political figure, which does not constitute a material shift in macroeconomic, regulatory, or systemic infrastructure for India.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1567
+    },
+    {
+      "id": "b76bfba25a02aef1fe6e237faa14a2a7b2079f950e1ef7302f679ae9722d3e10",
+      "title": "8,000 candidates join PM internship scheme in 4 months since its launch",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-02-05",
+      "relevant": true,
+      "reason": "Implementation of a national government employment scheme directly affecting youth employment and skills.",
+      "triggers": [
+        "fiscal_and_tax_policy",
+        "labor_and_employment_policy"
+      ],
+      "expected_impacts": [
+        "employment_metrics_and_conditions",
+        "vocational_and_professional_skilling"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "labor_and_employment_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I5",
+        "I6",
+        "I8",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2217
+    },
+    {
+      "id": "4fd3ae7fcdfe925edd89b80e55e88c45a7998ed2537bd9aa5c5b74f12f588650",
+      "title": "India overtakes Japan to become the fourth-largest economy: NITI Aayog CEO",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-05-25",
+      "relevant": false,
+      "reason": "Macroeconomic milestone announcement, does not have a direct causal impact on daily life of citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 5939
+    },
+    {
+      "id": "8901ec4fbb40dc1585c76bb21cadccaf1c2f8462bace7a9849822c7d4b7152ce",
+      "title": "Two Trump executive orders, 4 years apart, and a reversal of TikTok\u2019s fortunes",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-01-20",
+      "relevant": false,
+      "reason": "US-specific political and corporate news regarding TikTok, which is already banned in India, having no direct causal impact on Indian citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article discusses the history of executive orders regarding TikTok, which is a company-specific/platform-specific regulatory issue. It does not constitute a material shift in India's macro-economic, geopolitical, or infrastructure systems.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 2323
+    },
+    {
+      "id": "1a45411efa4d0c16c6d600a188c358b48de20bf632b0ffeb88e08c5df8334c66",
+      "title": "GST rate rationalisation, simplification in the works; discussion between Centre, states underway",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-02-02",
+      "relevant": true,
+      "reason": "GST rate rationalisation is a major regulatory change that directly affects the prices of goods and services for all citizens.",
+      "triggers": [
+        "fiscal_and_tax_policy",
+        "center_state_relations"
+      ],
+      "expected_impacts": [
+        "retail_and_trade"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "fiscal_and_tax_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I8",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1874
+    },
+    {
+      "id": "e404f07169544655bec32416a03bbc53a51294d32bc17d0cd58c60cef9e995ec",
+      "title": "UK PM Starmer says British workers not sold out in India trade deal after Opposition complains about concessions",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-05-07",
+      "relevant": true,
+      "reason": "Trade deals between India and the UK impact export sectors, employment, and visa opportunities for Indian professionals.",
+      "triggers": [
+        "india_export_trends",
+        "trade_and_tariff_policy"
+      ],
+      "expected_impacts": [
+        "it_sector_jobs",
+        "factory_worker_jobs"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_wars_and_tariffs"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I6",
+        "I9"
+      ],
+      "error": false,
+      "ms": 1843
+    },
+    {
+      "id": "4bbcd7d0aac3f77883acdccb534769e0fd5e9b78668a1cdbf264a00a9a82b219",
+      "title": "India needs accelerated reforms to reach high income status by 2047: World Bank report",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-02-28",
+      "relevant": false,
+      "reason": "World Bank advisory report and long-term forecast, not a specific policy change or event with immediate causal impact.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a long-term economic projection/opinion piece by the World Bank without a specific, actionable policy trigger or immediate macro shift.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1560
+    },
+    {
+      "id": "3185237a6623f39089f64b1c8c05dc99931c73e5473454c263cf738a7a5276b4",
+      "title": "US tariffs looming, India looks at easing non-trade barriers, relaxing Chinese FDI",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-03-23",
+      "relevant": true,
+      "reason": "Changes to FDI policy and trade barriers directly impact domestic manufacturing, job creation, and market competition.",
+      "triggers": [
+        "trade_and_tariff_policy",
+        "india_export_trends"
+      ],
+      "expected_impacts": [
+        "manufacturing_and_core",
+        "consumer_tech_devices"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_wars_and_tariffs",
+        "trade_and_tariff_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1950
+    },
+    {
+      "id": "f539579917020e39af2f57d9c8a68afca687f8884f0da355d8718175cdc1955d",
+      "title": "Janmejaya Sinha: Make all pay for water, give a laptop to kids from 8-18, measure Indian missions by tourists from those countries",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-01-06",
+      "relevant": false,
+      "reason": "Opinion piece providing suggestions by an individual, not an actual policy or event.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is an opinion piece containing personal suggestions and policy recommendations from an individual, not a report on a material shift in state or an actionable macro event.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1487
+    },
+    {
+      "id": "5d1930fc775950eeaff480cc47f86d2fff926136b0826feb27342553be867f10",
+      "title": "Retail inflation at 5-month low of 4.31% in January on easing of key food prices",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-02-12",
+      "relevant": true,
+      "reason": "Retail inflation and food price movements directly dictate the cost of living and purchasing power for ordinary citizens.",
+      "triggers": [
+        "retail_inflation"
+      ],
+      "expected_impacts": [
+        "savings_and_deposits"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "retail_inflation"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I3",
+        "I7",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2699
+    },
+    {
+      "id": "a3b28f0bbad9a15317a0642b28eaa715b833784fc011c9fc277553b506447083",
+      "title": "India\u2019s goods exports in April jump 9%, driven by exports to US amid tariff uncertainty",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-05-15",
+      "relevant": true,
+      "reason": "Significant export growth impacts employment and wages in domestic manufacturing and export-oriented sectors.",
+      "triggers": [
+        "india_trade_balance",
+        "india_export_trends"
+      ],
+      "expected_impacts": [
+        "manufacturing_and_core",
+        "self_employment_and_msme"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_export_trends",
+        "us_macro_demand"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I6",
+        "I7",
+        "I8",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2542
+    },
+    {
+      "id": "cde3473160a96b0b99f5f4c2aec84fe884ab393e0a9678f47fc0d28ecb41d1de",
+      "title": "Ajay Seth: \u2018Higher revenue spending commitment constraining capex ability of some states\u2019",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-02-03",
+      "relevant": false,
+      "reason": "Commentary by an official on state finances, not a specific policy action or immediate trigger event.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "hard",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "center_state_relations"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1643
+    },
+    {
+      "id": "092da5d453f6deeb75b4003b730f5406816d1b1dda0937786aecdc95f9e9db62",
+      "title": "Growth to sustain momentum driven by robust domestic demand: RBI report",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2025-03-19",
+      "relevant": false,
+      "reason": "Macroeconomic forecast report by the RBI, not a direct policy action (like a rate change) that causally affects citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth",
+        "domestic_macro_indicators"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I8",
+        "I9",
+        "I10"
+      ],
+      "error": false,
+      "ms": 1834
+    },
+    {
+      "id": "b38780f9c0dde05d42250158a8b1edc589b6337ba17932d669d344cf701dab68",
+      "title": "RIL profit declines by 4.77% in September quarter",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-10-14",
+      "relevant": false,
+      "reason": "Company-specific earnings report, does not directly impact ordinary citizens at scale.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article reports on the quarterly financial results of a single private corporation (Reliance Industries). Per the instructions, individual company earnings are not considered macro-level shifts unless the company is systemically important in a way that triggers a broader market or policy event, which is not indicated here.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1599
+    },
+    {
+      "id": "77a1e033891066d89b34f78f18ad2781911bd9d991de0700f2ad3ab803f48f84",
+      "title": "Outstanding premium of hundreds of crores from state govt: United India Insurance",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-20",
+      "relevant": false,
+      "reason": "Corporate-government financial dispute over arrears, no immediate direct impact on citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "This is a company-specific dispute regarding outstanding payments between a state government and an insurance provider; it does not constitute a systemic macro-economic shift or a policy change affecting the broader Indian citizen base.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 2500
+    },
+    {
+      "id": "aff08beea768ce4771f44c4adb47794856fd9813920f20a59eee90d3916f7e98",
+      "title": "Maharashtra govt cancels Rs 3,000 crore insurance contract with UII",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-18",
+      "relevant": true,
+      "reason": "Cancellation of a major state government insurance contract directly affects healthcare or crop coverage for citizens.",
+      "triggers": [
+        "center_state_relations"
+      ],
+      "expected_impacts": [
+        "health_insurance_premium",
+        "general_insurance"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "market_and_corporate_regulation"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I3",
+        "I6",
+        "I7",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1738
+    },
+    {
+      "id": "6868f2ab58e7321ddebf6947edb5c0509ca7b6c6cca50972b3413e5906cb0676",
+      "title": "As rupee hits new lows, real effective exchange rate soars to an all-time high",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-12-25",
+      "relevant": true,
+      "reason": "Currency depreciation impacts import costs, leading to broader inflation affecting ordinary citizens.",
+      "triggers": [
+        "inr_exchange_rates"
+      ],
+      "expected_impacts": [
+        "vehicle_fuel",
+        "edible_oils",
+        "consumer_tech_devices"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "inr_exchange_rates",
+        "domestic_macro_indicators"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I7",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2185
+    },
+    {
+      "id": "601db9a0fd4de3f7ed93802558ee320ffcfb397e5c1d1fedc37356e336b7d0df",
+      "title": "Govt eases export curbs for non-basmati white rice",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-28",
+      "relevant": true,
+      "reason": "Trade policy change affecting agricultural exports, impacting domestic food prices and farmer incomes.",
+      "triggers": [
+        "fiscal_and_tax_policy"
+      ],
+      "expected_impacts": [
+        "retail_rice",
+        "agricultural_household_income"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_and_tariff_policy",
+        "global_food_grains"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I6",
+        "I7",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2013
+    },
+    {
+      "id": "e22865575a4e765ffa20100bbc89e21ad498929157b4e2310172ad36efbd221f",
+      "title": "Survey: Manufacturing industries\u2019 job growth at 12-year high in FY23",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-30",
+      "relevant": false,
+      "reason": "Retrospective economic survey report on past job growth, does not causally trigger new impacts.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "macro_employment_trends"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I8",
+        "I9",
+        "I10"
+      ],
+      "error": false,
+      "ms": 3685
+    },
+    {
+      "id": "a8ef986748bc1511ad7b69352dec5af79d57ee4477366f5da3f10e486bb927bd",
+      "title": "Steady growth in west, south states; decline in Bengal: EAC-PM report",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-17",
+      "relevant": false,
+      "reason": "Economic advisory report on past regional growth trends, no direct causal trigger for citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I8",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2559
+    },
+    {
+      "id": "6c45ebd721a162581f9100ff2408c320a81cdc486ab320f4359d17fd741527e2",
+      "title": "Protectionist measures on steel imports will hurt MSMEs: EEPC",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-10-26",
+      "relevant": true,
+      "reason": "Steel import protectionism directly affects building materials, vehicle manufacturing, and MSME input costs",
+      "triggers": [
+        "trade_and_tariff_policy"
+      ],
+      "expected_impacts": [
+        "building_materials_cost",
+        "small_factory_owner_income"
+      ],
+      "difficulty": "hard",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is an industry body (EEPC) expressing a stakeholder opinion/lobbying concern regarding potential steel import measures, rather than reporting on an enacted policy, a realized market shift, or a regulatory decision.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 933
+    },
+    {
+      "id": "bccd0d742371b90dac36abb0cc861e3d4ccfc198860580a959cbec3a8bf6bf75",
+      "title": "French economist Thomas Piketty calls for more detailed income tax data from India",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-12-13",
+      "relevant": false,
+      "reason": "Opinion/request by an economist, no causal impact on Indian citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is an opinion piece/call to action by an economist and does not report on a realized policy change, data release, or systemic shift.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 909
+    },
+    {
+      "id": "009fe69cb40e373d335648820d818b13883327533620d9509ed99f4ba159ee48",
+      "title": "RBI holds key rate, lowers growth forecast, moves to boost liquidity",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-12-06",
+      "relevant": true,
+      "reason": "Central bank monetary policy decision directly impacts interest rates, loan EMIs, and credit availability.",
+      "triggers": [
+        "monetary_policy"
+      ],
+      "expected_impacts": [
+        "home_loan_emi",
+        "auto_loan_emi",
+        "fixed_deposits",
+        "borrowing_and_credit"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "monetary_policy",
+        "india_gdp_growth",
+        "systemic_bank_liquidity"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2139
+    },
+    {
+      "id": "33b9cb2886143766e5411b244dad224d90251289c624d495c4d912ddbbb4bbd9",
+      "title": "Indian oil PSUs\u2019 dividends stuck in Russia swell to around $900 million as repatriation efforts flounder",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-18",
+      "relevant": false,
+      "reason": "Corporate finance issue regarding foreign dividends of PSUs; does not directly impact retail fuel prices or causally affect ordinary citizens at scale.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "foreign_capital_flows",
+        "economic_sanctions"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I7",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1957
+    },
+    {
+      "id": "16bb31e3282ca409a8eedafa128fe1a3c65e7b3b1f92b97e50647cfe3fb1c518",
+      "title": "With long delays and steep haircuts, chorus for revamping Insolvency and Bankruptcy Code grows louder",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-10-05",
+      "relevant": false,
+      "reason": "Opinion/industry demand for regulatory changes to corporate bankruptcy laws; no actual policy change enacted that affects ordinary citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "banking_and_credit_regulation"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I3",
+        "I6",
+        "I7",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1729
+    },
+    {
+      "id": "cf3c3e4c7b795834902c03298c1f22feeb0b6c18c1806a9fc0320c6b740a4424",
+      "title": "Gold prices at all-time high: Rate cuts, geopolitical conflicts drive demand",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-28",
+      "relevant": true,
+      "reason": "Record high gold prices directly affect household savings, wedding budgets, and retail consumer behavior in India.",
+      "triggers": [
+        "precious_metals",
+        "foreign_central_bank_policy"
+      ],
+      "expected_impacts": [
+        "retail_gold_investment",
+        "weddings_and_milestones",
+        "savings_and_deposits"
+      ],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "precious_metals",
+        "retail_gold_investment"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I4",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2026
+    },
+    {
+      "id": "921ef6161e24ed8c0a71776c65e35ce09a3b4724b2b0bc37d5c162a2f0e31e2c",
+      "title": "Economic Affairs Secretary Ajay Seth: \u2018No significant downside risk\u2019 to growth despite likely slowdown in Sept quarter",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-11-20",
+      "relevant": false,
+      "reason": "Macroeconomic commentary and growth forecasts by a government official; not a concrete event or policy change.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "india_gdp_growth"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I2",
+        "I3",
+        "I6",
+        "I7",
+        "I8",
+        "I9",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1978
+    },
+    {
+      "id": "5739cb57d1b8e0262aafe8ea15f11cacbafb84ee34a01c8cf1fce4b0a623c570",
+      "title": "First tranche of disbursements in textile PLI likely to begin this fiscal",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-27",
+      "relevant": true,
+      "reason": "Government PLI disbursements in the textile sector directly stimulate domestic manufacturing and factory employment for ordinary citizens.",
+      "triggers": [
+        "fiscal_and_tax_policy"
+      ],
+      "expected_impacts": [
+        "manufacturing_and_core",
+        "factory_worker_jobs"
+      ],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "trade_and_tariff_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I6",
+        "I8",
+        "I9",
+        "I11"
+      ],
+      "error": false,
+      "ms": 1980
+    },
+    {
+      "id": "31e0e542729e6ef0c5c8eb4ca76c1d5d8e87584fcf09dfdb0fb5fd1f44b7bfbf",
+      "title": "GST evasion doubles in FY24; Mumbai tops detection list",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-14",
+      "relevant": false,
+      "reason": "Statistical report on tax evasion detection; does not involve a change in tax rates or policies affecting ordinary consumers.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "medium",
+      "pred_relevant": true,
+      "pred_triggers": [
+        "fiscal_and_tax_policy"
+      ],
+      "pred_reason": null,
+      "pred_exclude_l1s": [
+        "I1",
+        "I3",
+        "I6",
+        "I7",
+        "I10",
+        "I11"
+      ],
+      "error": false,
+      "ms": 2166
+    },
+    {
+      "id": "95351a4eb7911156d6d5b5b65586b413497692e221b4bdbef38e8affb0d8f387",
+      "title": "Targeting US dollar is not India\u2019s economic policy but looking for \u2018workarounds\u2019: Jaishankar",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-10-02",
+      "relevant": false,
+      "reason": "Geopolitical and foreign policy commentary regarding currency trade; lacks a direct, immediate causal impact on ordinary citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article reports on a diplomatic stance and policy preference regarding currency usage rather than a material shift in economic policy, market state, or regulatory framework.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 1621
+    },
+    {
+      "id": "e864d54de3eda25440b718a67e06e2258a38f72e700a9d38bf6e0a40ffb2a1dc",
+      "title": "Rajiv Jain\u2019s GQG Partners settles US SEC charges with $ 5 mn penalty",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-27",
+      "relevant": false,
+      "reason": "Company-specific regulatory settlement in a foreign jurisdiction (US SEC) with no scale impact on Indian citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article concerns a private investment firm (GQG Partners) settling a regulatory charge with a foreign regulator (US SEC). This is a company-specific legal/regulatory matter and does not constitute a material shift in Indian macro-systems or domestic policy.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 886
+    },
+    {
+      "id": "541726f606c53f965454e6dc996a9dfb05eeadab699b5e8906fa25482937cc2f",
+      "title": "Energy transition demand has suddenly grown; need to have better planning: Hitachi Energy India CEO",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-09-14",
+      "relevant": false,
+      "reason": "Corporate executive commentary and opinion on industry trends; not a concrete event or policy change.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is an interview with a corporate CEO expressing a general opinion on the need for better planning in the energy transition. It does not report on a specific policy action, realized economic data, or a material shift in a T-world system.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 2458
+    },
+    {
+      "id": "9b25fcc8488e5ffab6d05e8182641f79ae249b9fd57131747f3193f6b5a95e0e",
+      "title": "Trump\u2019s return may fuel trade ties amid global uncertainty: India Inc",
+      "summary": "",
+      "source": "IE Economy",
+      "published_at": "2024-11-06",
+      "relevant": false,
+      "reason": "Speculative opinion piece by corporate groups regarding foreign election outcomes; no immediate causal chain to citizens.",
+      "triggers": [],
+      "expected_impacts": [],
+      "difficulty": "easy",
+      "pred_relevant": false,
+      "pred_triggers": [],
+      "pred_reason": "The article is a speculative opinion piece regarding the potential impact of a US political transition on India's trade ties. It lacks a realized policy action, a concrete economic data release, or a specific, actionable macro shift as defined in the taxonomy.",
+      "pred_exclude_l1s": [],
+      "error": false,
+      "ms": 3583
     }
   ]
 }

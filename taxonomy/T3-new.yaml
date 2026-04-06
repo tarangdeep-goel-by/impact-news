@@ -1,0 +1,377 @@
+nodes:
+- id: t3
+  aliases:
+  - Geopolitical & External Forces
+  - Shocks (External)
+  - Bhoo-Rajnitik Bahari Bal
+  - External Dynamics
+  category: T3
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Global Finance & Energy ===
+- id: global_finance_and_energy
+  aliases:
+  - Global Finance & Energy
+  - International Monetary Forces
+  - Vaishvik Vitta Evam Urja
+  - External Economic Forces
+  category: T3
+  level: 2
+  status: active
+  is_category: true
+- id: foreign_central_bank_policy
+  aliases:
+  - US Federal Reserve
+  - ECB Rate Decision
+  - Videshi Kendriya Bank Niti
+  - Global Interest Rates
+  - Fed Policy Shift
+  category: T3
+  level: 3
+  status: active
+  portal: true
+- id: energy_cartel_actions
+  aliases:
+  - OPEC Production Cuts
+  - OPEC+ Quota
+  - Tel Utpadak Sangathan
+  - Oil Supply Manipulation
+  - Petroleum Cartel
+  category: T3
+  level: 3
+  status: active
+  portal: true
+- id: multilateral_financial_interventions
+  aliases:
+  - IMF Bailout
+  - World Bank Loans
+  - Antarrashtriya Vittiya Sanstha
+  - WTO Ruling
+  - Sovereign Debt Crisis
+  category: T3
+  level: 3
+  status: active
+
+# === L2: Economic Warfare & Standards ===
+- id: economic_warfare_and_standards
+  aliases:
+  - Economic Warfare & Standards
+  - Trade Weapons
+  - Arthik Yuddh Evam Manak
+  - Non-Tariff Barriers
+  category: T3
+  level: 2
+  status: active
+  is_category: true
+- id: trade_wars_and_tariffs
+  aliases:
+  - US-China Decoupling
+  - Trade Protectionism
+  - Vyapar Yuddh
+  - Tariff Walls
+  - Trade War Escalation
+  category: T3
+  level: 3
+  status: active
+  portal: true
+- id: economic_sanctions
+  aliases:
+  - OFAC Sanctions
+  - SWIFT Bans
+  - Aarthik Pratibandh
+  - Trade Embargoes
+  - Financial Sanctions
+  category: T3
+  level: 3
+  status: active
+- id: tech_and_resource_export_controls
+  aliases:
+  - Semiconductor Bans
+  - Critical Mineral Controls
+  - Takniki Niryaat Niyantran
+  - Dual-Use Tech Restrictions
+  - Chip Export Bans
+  category: T3
+  level: 3
+  status: active
+- id: global_regulatory_mandates
+  aliases:
+  - EU Carbon Border Tax
+  - CBAM
+  - Vaishvik Niyamak Manak
+  - Global ESG Mandates
+  - International Compliance Standards
+  category: T3
+  level: 3
+  status: active
+
+# === L2: Strategic & Security Shocks ===
+- id: strategic_and_security_shocks
+  aliases:
+  - Strategic & Security Shocks
+  - Military Conflicts
+  - Rannitik Suraksha Aaghat
+  - Hard Power Dynamics
+  category: T3
+  level: 2
+  status: active
+  is_category: true
+- id: territorial_border_tensions
+  aliases:
+  - LAC Standoffs
+  - LoC Skirmishes
+  - Seema Vivad
+  - Border Military Buildup
+  - India-China Border
+  category: T3
+  level: 3
+  status: active
+  portal: true
+- id: third_party_geopolitical_conflicts
+  aliases:
+  - Middle East Conflict
+  - Russia-Ukraine War
+  - Kshetriya Yuddh
+  - South China Sea Tensions
+  - Global Armed Conflicts
+  category: T3
+  level: 3
+  status: active
+  portal: true
+- id: maritime_chokepoint_disruptions
+  aliases:
+  - Red Sea Crisis
+  - Suez Canal Blockage
+  - Samudri Marg Avrodh
+  - Malacca Strait Threats
+  - Shipping Lane Disruptions
+  category: T3
+  level: 3
+  status: active
+  portal: true
+- id: neighborhood_instability
+  aliases:
+  - South Asia Crises
+  - Regime Collapse
+  - Padosi Desh Asthirta
+  - Political Coups
+  - Sri Lanka Bangladesh Crisis
+  category: T3
+  level: 3
+  status: active
+- id: cross_border_terror_networks
+  aliases:
+  - State-Sponsored Terrorism
+  - FATF Grey List
+  - Seema Paar Aatankvaad
+  - Global Terror Syndicates
+  - Terror Financing Networks
+  category: T3
+  level: 3
+  status: active
+
+# === L2: Sovereign & Diplomatic Shifts ===
+- id: sovereign_and_diplomatic_shifts
+  aliases:
+  - Sovereign & Diplomatic Shifts
+  - International Relations
+  - Kootnitik Parivartan
+  - Foreign Policy Dynamics
+  category: T3
+  level: 2
+  status: active
+  is_category: true
+- id: foreign_elections_and_transitions
+  aliases:
+  - US Presidential Elections
+  - Foreign Regime Change
+  - Videshi Chunav
+  - UK Elections
+  - Global Democratic Transitions
+  category: T3
+  level: 3
+  status: active
+- id: strategic_bloc_alignments
+  aliases:
+  - BRICS Expansion
+  - QUAD Dynamics
+  - Rannitik Gathbandhan
+  - NATO Enlargement
+  - G20 Outcomes
+  category: T3
+  level: 3
+  status: active
+  portal: true
+- id: visa_and_immigration_regimes
+  aliases:
+  - H1B Rules
+  - Student Visa Caps
+  - Visa Aur Pravasan Niyam
+  - GCC Localization
+  - Work Permit Changes
+  category: T3
+  level: 3
+  status: active
+- id: diaspora_diplomatic_rows
+  aliases:
+  - Diplomatic Expulsions
+  - NRI Security Threats
+  - Pravasi Kootnitik Vivad
+  - Extradition Disputes
+  - Anti-India Foreign Lobbying
+  category: T3
+  level: 3
+  status: active
+
+edges:
+# T3 → L2
+- from: t3
+  to: global_finance_and_energy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geopolitical & External Forces contains Global Finance & Energy
+- from: t3
+  to: economic_warfare_and_standards
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geopolitical & External Forces contains Economic Warfare & Standards
+- from: t3
+  to: strategic_and_security_shocks
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geopolitical & External Forces contains Strategic & Security Shocks
+- from: t3
+  to: sovereign_and_diplomatic_shifts
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geopolitical & External Forces contains Sovereign & Diplomatic Shifts
+
+# Global Finance & Energy → L3
+- from: global_finance_and_energy
+  to: foreign_central_bank_policy
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Finance & Energy contains Foreign Central Bank Policy
+- from: global_finance_and_energy
+  to: energy_cartel_actions
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Finance & Energy contains Energy Cartel Actions
+- from: global_finance_and_energy
+  to: multilateral_financial_interventions
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Global Finance & Energy contains Multilateral Financial Interventions
+
+# Economic Warfare & Standards → L3
+- from: economic_warfare_and_standards
+  to: trade_wars_and_tariffs
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic Warfare & Standards contains Trade Wars & Tariffs
+- from: economic_warfare_and_standards
+  to: economic_sanctions
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic Warfare & Standards contains Economic Sanctions
+- from: economic_warfare_and_standards
+  to: tech_and_resource_export_controls
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic Warfare & Standards contains Tech & Resource Export Controls
+- from: economic_warfare_and_standards
+  to: global_regulatory_mandates
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Economic Warfare & Standards contains Global Regulatory Mandates
+
+# Strategic & Security Shocks → L3
+- from: strategic_and_security_shocks
+  to: territorial_border_tensions
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Strategic & Security Shocks contains Territorial Border Tensions
+- from: strategic_and_security_shocks
+  to: third_party_geopolitical_conflicts
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Strategic & Security Shocks contains Third-Party Geopolitical Conflicts
+- from: strategic_and_security_shocks
+  to: maritime_chokepoint_disruptions
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Strategic & Security Shocks contains Maritime Chokepoint Disruptions
+- from: strategic_and_security_shocks
+  to: neighborhood_instability
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Strategic & Security Shocks contains Neighborhood Instability
+- from: strategic_and_security_shocks
+  to: cross_border_terror_networks
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Strategic & Security Shocks contains Cross-Border Terror Networks
+
+# Sovereign & Diplomatic Shifts → L3
+- from: sovereign_and_diplomatic_shifts
+  to: foreign_elections_and_transitions
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sovereign & Diplomatic Shifts contains Foreign Elections & Transitions
+- from: sovereign_and_diplomatic_shifts
+  to: strategic_bloc_alignments
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sovereign & Diplomatic Shifts contains Strategic Bloc Alignments
+- from: sovereign_and_diplomatic_shifts
+  to: visa_and_immigration_regimes
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sovereign & Diplomatic Shifts contains Visa & Immigration Regimes
+- from: sovereign_and_diplomatic_shifts
+  to: diaspora_diplomatic_rows
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sovereign & Diplomatic Shifts contains Diaspora Diplomatic Rows

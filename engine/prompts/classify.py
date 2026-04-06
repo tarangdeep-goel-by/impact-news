@@ -59,21 +59,47 @@ I9: Local Environmental Quality
 I10: Digital Life & Connectivity
 I11: Leisure, Culture & Community
 
-Filter out:
-- Sports results, celebrity news, entertainment, arts & culture
-- Individual crimes, accidents, court cases (unless precedent-setting or policy-changing)
-- Opinion pieces, editorials, market commentary, investment advice, brokerage reports, lifestyle articles, personal finance tips
-- Market roundups ("Asian shares edge higher", "US stocks drop") — these are observations, not causal events
-- Foreign affairs with no India impact chain
-- Pure startup funding rounds, M&A, or IPOs unless they signal sector-wide shifts
-- Company-specific acquisitions, leadership changes, earnings reports (unless systemically important like top-3 banks)
+== RELEVANCE BIAS: WHEN IN DOUBT, INCLUDE ==
+Missing a relevant article is WORSE than including an irrelevant one. Err on the side of inclusion.
 
-DO NOT filter out — these ARE relevant:
-- Central bank actions (RBI rate changes, forex interventions, liquidity measures)
-- Price changes by dominant/major market players (tractors, cement, telecom, fuel, FMCG)
-- Trade policy changes (tariffs, WTO disputes, export bans) affecting India's major sectors
-- Government policy/regulation changes (GST, subsidies, labour law, IBC reforms)
-- Currency/forex policy — rupee movements directly affect import costs
+CLEARLY RELEVANT:
+- Policy actions, regulations, court orders, legislative changes
+- Realized economic data: GDP, exports, inflation, employment, forex reserves, commodity prices
+- Market movements with identifiable causes: oil surges, stock crashes, rupee moves
+- Crises, conflicts, natural disasters and their ripple effects on India
+- Foreign policy/legislation that affects Indian trade, diaspora, or supply chains
+- Government responses to crises (export bans, relief flights, price controls)
+- Draft regulations and proposals by RBI/SEBI (these WILL become policy)
+- Significant data releases even if retrospective (exports jumped 9%, complaints surged 60%)
+- Industry-wide distress or structural shifts (MSME shutdowns, worker exodus, sector-wide tariffs)
+
+CLEARLY NOT RELEVANT — filter these out:
+- Sports scores, celebrity gossip, entertainment, lifestyle
+- Individual company earnings, leadership changes, funding rounds (unless top-5 systemically important)
+- Personal finance tips, "check fuel price in your city today"
+- Individual crimes or accidents (unless systemic)
+
+ALSO FILTER — these look relevant but are NOT actionable macro shifts:
+- **Pure opinion/explainer pieces with NO underlying event:** "architecture of resilience", "how India managed disruptions better", F&O technical analysis, investment advice. Key test: remove the expert's opinion — is there still a NEW fact? If not, filter.
+- **Industry body complaints/lobbying without policy action:** "EEPC says steel import curbs will hurt MSMEs", "NAREDCO says sector short 20 lakh workers". These are stakeholder opinions, not shifts.
+- **Company-specific news:** One company's dispute/profile/pivot is not macro. "Sun Pharma exposed to tariffs" = company analysis. "India bans pharma exports" = macro shift.
+- **Market roundups without cause:** "Asian shares edge higher", "stocks gain in volatile week". No causal trigger = not relevant.
+
+DO NOT filter these even if they SOUND like analysis:
+- **Foreign legislation/policy that passed or is being enacted:** "US Big Beautiful Bill pulls back on solar/EVs" — this IS a law. "US imposes 1% remittance tax" — this IS enacted policy. The analytical framing doesn't make the underlying event less real.
+- **Quantified risk assessments tied to real events:** "$30B exports at risk from tariffs" — the tariffs ARE happening, the impact estimate is news. "US tariffs could knock 50bps off growth" — if tariffs exist, the GDP impact analysis is actionable.
+- **Trade deals in progress:** "India-UK FTA signed", "India talks trade with China for first time since RCEP" — diplomatic events even if reported analytically.
+- **Central bank/govt signaling that moves markets:** "RBI signals rate cut", "Food inflation likely to ease: RBI bulletin" — these move bond yields and expectations even without formal action.
+- **World Bank/IMF forecast revisions:** These change sovereign ratings, capital flows, and policy response. They ARE events.
+- Company-specific news (earnings, leadership, M&A) for non-systemically-important companies
+- Trivial daily updates: "check fuel price in your city", "bank holiday list"
+
+DO NOT filter out (even if they feel like commentary):
+- Central bank ACTIONS and draft regulations — these move markets (but filter RBI Governor speeches that don't announce action)
+- Government policy responses to crises — export bans, relief schemes, price controls
+- Realized data releases — export growth, employment data, inflation numbers, forex reserves
+- Industry-wide distress — MSME shutdowns, sector layoffs, supply chain disruptions
+- Draft regulations by RBI/SEBI/TRAI — markets price these in immediately
 
 {events_block}
 
@@ -90,7 +116,7 @@ If the article IS relevant:
 {{
     "relevant": true,
     "macro_shifts": [
-        {{"t_node": "brent_crude", "trajectory": "escalating", "context": "Crude oil prices surged 12% due to Red Sea shipping disruption"}}
+        {{"t_node": "global_crude_oil", "trajectory": "escalating", "context": "Crude oil prices surged 12% due to Red Sea shipping disruption"}}
     ],
     "exclude_l1s": ["I7", "I11"],
     "event_match": {{"event_id": "abc123", "confidence": 0.9}},
@@ -110,6 +136,26 @@ Rules for macro_shifts:
 - Find ALL T-world systems that experienced a material shift. Do NOT cap at 1-3.
 - If you cannot identify a SPECIFIC shift from the taxonomy, the article is NOT relevant.
 - The shift must be something the article REPORTS AS HAPPENING, not something tangentially related.
+
+T2 vs T3 disambiguation (IMPORTANT):
+- T2 = DOMESTIC governance. Use when INDIA'S government/regulator takes action.
+  - "India bans wheat exports" → trade_and_tariff_policy (T2, India enacted it)
+  - "RBI cuts repo rate" → monetary_policy (T2, RBI is domestic)
+  - "SEBI tightens F&O rules" → market_and_corporate_regulation (T2)
+- T3 = EXTERNAL forces. Use when a FOREIGN actor/event impacts India.
+  - "Trump imposes tariffs on Indian goods" → trade_wars_and_tariffs (T3, US action)
+  - "OPEC cuts production" → energy_cartel_actions (T3, foreign cartel)
+  - "US-Iran war disrupts Hormuz" → third_party_geopolitical_conflicts (T3)
+- If BOTH: India responds to a foreign event, tag BOTH T2 and T3 nodes.
+  - "India bans petrol exports amid Iran war" → trade_and_tariff_policy (T2) + third_party_geopolitical_conflicts (T3)
+
+T1 vs T2 disambiguation:
+- T1 = MARKET OUTCOMES (measured data). Use for realized prices, indices, flows.
+  - "Forex reserves drop $10B" → forex_reserves_india (T1, measured outcome)
+  - "Rupee gains 1.8%" → inr_exchange_rates (T1, market movement)
+- T2 = POLICY ACTIONS (decisions). Use for rules, regulations, interventions.
+  - "RBI bans NDF rebooking" → banking_and_credit_regulation (T2, regulatory action)
+  - If an article covers BOTH the action AND its market outcome, tag both.
 
 Rules for exclude_l1s:
 - List I-world L1 category codes that are DEFINITELY NOT causally affected by the identified triggers
