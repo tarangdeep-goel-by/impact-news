@@ -19,15 +19,14 @@
 | I7 | Habitat & Surroundings | Local environment | Old I9 + I2 (utilities) |
 | I8 | Digital & Leisure | Downtime | Old I10 + I11 |
 
-## Architecture Change: Enum Matrix
+## Architecture: Keep Granular Leaves (No Enum Matrix)
 
-Current: 321 leaf nodes, each a unique ID → bloats prompt with 500+ lines.
-New: ~150-200 L3 nodes with enum parameters. Example:
-```json
-{"node": "fuel_costs", "valid_enums": ["petrol", "diesel", "cng", "lpg", "ev_charging"]}
-```
-Backend concatenates: `cost_of_living.fuel_costs.petrol`
-Benefit: smaller prompt (~60% reduction), LLM picks the concept then the variant.
+I-world stays specific because it's the user-facing output. "Crude oil is going up" isn't useful — the user needs to know "retail petrol price is rising" vs "LPG cylinder cost is rising" because different users care about different fuels.
+
+Current: 321 leaf nodes across 11 categories.
+Target: ~200-250 leaf nodes across 8 categories. Prune redundant/dead nodes, merge categories, but keep leaf specificity (retail_petrol, lpg_cylinder, cng_price stay separate).
+
+The prompt gets smaller through category merges and pruning (~30% reduction), not through abstraction.
 
 ## Phases
 
@@ -106,22 +105,17 @@ Based on eval results and bridge test:
 
 ## Key Decisions for Next Session
 
-1. **Enum matrix format:** How does the prompt present enums to the LLM? Options:
-   - Inline: `fuel_costs [petrol|diesel|cng|lpg|ev_charging]`
-   - Separate table after the tree
-   - Let LLM output just the L3 node, enum selected by backend heuristic
+1. **Prompt token budget:** Current ~19K. Target ~14K. Category merges (11→8) + pruning should get us there. If still too big, use Tier 1 `exclude_l1s` to only show relevant I-branches to Tier 2.
 
-2. **Prompt token budget:** Current ~19K. Target ~12K. If new I-trees are still too big, may need to use the Tier 1 `exclude_l1s` more aggressively to only show relevant I-branches to Tier 2.
+2. **Ground truth depth:** The 16 events have 10 ranked impacts each. Should we expand to 20+ events? Or is 16 enough for a baseline?
 
-3. **Ground truth depth:** The 16 events have 10 ranked impacts each. Should we expand to 20+ events? Or is 16 enough for a baseline?
+3. **Leaf specificity cutoff:** Some old nodes are very niche (e.g., `stray_animals`, `ncmc_smart_card`). Keep if they appear in ground truth, prune if never triggered in real articles.
 
 ## Files to Modify
 
 | File | Change |
 |------|--------|
-| `taxonomy/I1-new.yaml` through `I8-new.yaml` | New I-world YAMLs |
-| `data/merged_graph.yaml` | Rebuilt from new files |
-| `engine/taxonomy_context.py` | May need enum support |
-| `engine/prompts/analyze_new.py` | Updated for new I-world + enums |
+| `taxonomy/I1-new.yaml` through `I8-new.yaml` | New I-world YAMLs (granular leaves, 8 categories) |
+| `data/merged_graph.yaml` | Rebuilt from new T + new I files |
+| `engine/prompts/analyze_new.py` | Updated I-world category names in prompt |
 | `tests/eval/tier2_cases.json` | Remapped I-node IDs |
-| `tests/eval/tier2_eval.py` | May need enum-aware matching |
