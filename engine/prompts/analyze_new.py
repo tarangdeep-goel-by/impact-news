@@ -67,6 +67,11 @@ Target: 6-10 impacts total across all three orders. Aim for 2-4 per order.
 4. Do NOT skip 2nd and 3rd order effects — this is the most important part.
 5. driving_t_nodes must reference T-nodes from the macro shifts above.
 6. Think about INDIAN citizens specifically — rickshaw drivers, housewives, factory workers, farmers, students, gig workers.
+7. For each impact, assign a geographic "scope":
+   - "national" — policy/price changes that affect all of India (petrol price, income tax, RBI rate, food commodities)
+   - "state:<StateName>" — state-level policy (electricity tariff, state board exams, state govt jobs). Use official state name.
+   - "city:<CityName>" — city-specific disruption (traffic diversion, metro delay, local flooding, rent trends). Use common city name.
+   Default to "national" if the impact is not geographically limited.
 
 If the article has NO mass citizen impact, return:
 {{"no_impact": true, "reason": "brief reason"}}
@@ -83,7 +88,8 @@ Return ONLY valid JSON:
       "magnitude": 0.8,
       "delay_days": 3,
       "rationale": "1st order: Crude spike directly raises OMC import costs, passed to pump prices within days",
-      "driving_t_nodes": ["brent_crude"]
+      "driving_t_nodes": ["brent_crude"],
+      "scope": "national"
     }},
     {{
       "i_node": "packaged_foods_and_beverages",
@@ -93,7 +99,8 @@ Return ONLY valid JSON:
       "magnitude": 0.4,
       "delay_days": 30,
       "rationale": "2nd order: Higher diesel raises transport costs for FMCG distribution, passed to MRP in 2-4 weeks",
-      "driving_t_nodes": ["brent_crude"]
+      "driving_t_nodes": ["brent_crude"],
+      "scope": "national"
     }},
     {{
       "i_node": "factory_worker_wages",
@@ -103,7 +110,8 @@ Return ONLY valid JSON:
       "magnitude": 0.3,
       "delay_days": 90,
       "rationale": "3rd order: Sustained cost pressure squeezes MSME margins, leading to wage stagnation or cuts",
-      "driving_t_nodes": ["brent_crude"]
+      "driving_t_nodes": ["brent_crude"],
+      "scope": "national"
     }}
   ],
   "summary": "2-3 line summary of the event and its citizen-level cascade.",

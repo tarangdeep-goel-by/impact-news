@@ -1,0 +1,200 @@
+segment: 2
+name: "Fine-tuning"
+trigger:
+  condition: "(days_since_signup >= 7 AND delivered_stories >= 10) OR event_triggered_node_unresolved"
+  message: "You've been using Impact News for a week! A few more questions to sharpen your feed."
+questions:
+  - id: s2_govt
+    text: "Which government services do you deal with?"
+    type: multi_choice
+    telegram_ux: inline_keyboard_multi
+    max_selections: 4
+    options:
+      - label: "Income Tax / GST"
+        value: tax
+        activations:
+          personal_income_tax: 1.0
+          indirect_taxes_gst: 0.9
+          capital_gains_tax: 0.8
+          tds_and_compliance: 0.9
+      - label: "Aadhaar / Passport"
+        value: docs
+        activations:
+          identity_and_travel_documents: 1.0
+          property_and_civic_registration: 0.4
+      - label: "RTO / Driving License"
+        value: rto
+        activations:
+          transport_and_licensing: 1.0
+          traffic_fines: 0.7
+      - label: "Ration / Welfare Cards"
+        value: ration
+        activations:
+          welfare_and_ration_cards: 1.0
+          staple_grains: 0.8
+          school_welfare_programs: 0.6
+      - label: "Property Registration"
+        value: property
+        activations:
+          property_and_civic_registration: 1.0
+          building_materials_and_labor: 0.6
+      - label: "Police / Courts"
+        value: legal
+        activations:
+          fir_and_police_interaction: 1.0
+          judicial_delays_and_litigation: 1.0
+          property_crime_response: 0.8
+          cyber_crime_reporting: 0.6
+
+  - id: s2_safety
+    text: "Which safety issues concern you locally?"
+    type: multi_choice
+    telegram_ux: inline_keyboard_multi
+    max_selections: 3
+    options:
+      - label: "Thefts & Street Crime"
+        value: crime
+        activations:
+          violent_crime_and_assault: 0.9
+          property_crime_response: 1.0
+          fir_and_police_interaction: 0.8
+      - label: "Women's Safety"
+        value: women
+        activations:
+          sexual_assault_and_harassment: 1.0
+          domestic_violence: 0.9
+          violent_crime_and_assault: 0.8
+          fir_and_police_interaction: 0.7
+      - label: "Waterlogging / Floods"
+        value: flood
+        activations:
+          street_waterlogging: 1.0
+          polluted_surface_water: 0.8
+          stagnant_water_and_mosquitoes: 0.8
+          open_drains_and_sewage: 0.7
+      - label: "Stray Animals"
+        value: strays
+        activations:
+          stray_animal_nuisance: 1.0
+          animal_and_wildlife_attacks: 1.0
+      - label: "Noise Pollution"
+        value: noise
+        activations:
+          loudspeaker_and_event_noise: 1.0
+          traffic_noise: 0.9
+      - label: "None"
+        value: none
+        activations: {}
+
+  - id: s2_environment
+    text: "Which environment issues affect your area?"
+    type: multi_choice
+    telegram_ux: inline_keyboard_multi
+    max_selections: 3
+    options:
+      - label: "Dirty drinking water"
+        value: water
+        activations:
+          drinking_water_contamination: 1.0
+          water_supply_and_tankers: 0.9
+          water_and_foodborne_diseases: 0.8
+      - label: "Uncollected garbage"
+        value: garbage
+        activations:
+          uncollected_street_garbage: 1.0
+          landfills_and_dumpyards: 0.9
+          waste_and_sanitation_charges: 0.8
+          public_urination_and_odour: 0.7
+      - label: "No parks / No greenery"
+        value: greenery
+        activations:
+          neighborhood_greenery: 1.0
+          recreational_parks: 0.9
+          extreme_heat: 0.5
+      - label: "Polluted rivers / lakes"
+        value: river
+        activations:
+          polluted_surface_water: 1.0
+          open_drains_and_sewage: 0.8
+      - label: "Mosquitoes / Open drains"
+        value: mosquito
+        activations:
+          stagnant_water_and_mosquitoes: 1.0
+          vector_borne_diseases: 1.0
+          open_drains_and_sewage: 0.9
+      - label: "None"
+        value: none
+        activations: {}
+
+  - id: s2_recreation
+    text: "What do you do for fun outside?"
+    type: multi_choice
+    telegram_ux: inline_keyboard_multi
+    max_selections: 3
+    options:
+      - label: "Watch live sports"
+        value: sports
+        activations:
+          live_sports_events: 1.0
+          sports_and_fitness_access: 0.6
+      - label: "Movies / Theatre"
+        value: movies
+        activations:
+          cinema_and_movies: 1.0
+          theatre_and_performing_arts: 0.8
+          ott_platforms: 0.5
+      - label: "Concerts / Festivals"
+        value: concerts
+        activations:
+          live_music_and_concerts: 1.0
+          theatre_and_performing_arts: 1.0
+          festivals_and_cultural_events: 0.8
+      - label: "Gym / Fitness"
+        value: fitness
+        activations:
+          sports_and_fitness_access: 1.0
+          recreational_parks: 0.6
+      - label: "Temples / Religious places"
+        value: religious
+        activations:
+          places_of_worship: 1.0
+          religious_pilgrimages: 1.0
+          festivals_and_cultural_events: 0.8
+      - label: "Parks / Outdoors"
+        value: parks
+        activations:
+          recreational_parks: 1.0
+          neighborhood_greenery: 0.8
+          sports_and_fitness_access: 0.5
+
+  - id: s2_movements
+    text: "Which social movements affect your community?"
+    type: multi_choice
+    telegram_ux: inline_keyboard_multi
+    max_selections: 2
+    options:
+      - label: "Labor / Gig worker strikes"
+        value: labor
+        activations:
+          labor_and_gig_unions: 1.0
+          transport_worker_movements: 0.8
+      - label: "Farmer protests"
+        value: farmer
+        activations:
+          farmer_agitations: 1.0
+          farmer_income_and_msp: 0.7
+      - label: "Caste / Reservation rallies"
+        value: reservation
+        activations:
+          social_and_reservation_movements: 1.0
+          riots_and_mob_violence: 0.4
+          curfews_and_public_emergencies: 0.4
+      - label: "Student protests"
+        value: student
+        activations:
+          student_and_youth_unions: 1.0
+          college_entrance_exams: 0.6
+          government_recruitment_exams: 0.5
+      - label: "None"
+        value: none
+        activations: {}

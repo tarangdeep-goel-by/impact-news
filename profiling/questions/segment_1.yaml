@@ -1,0 +1,204 @@
+segment: 1
+name: "Your Household"
+trigger:
+  condition: "delivered_stories >= 3 AND any_feedback_given"
+  message: "Want more relevant news? 5 quick questions about your household."
+questions:
+  - id: s1_cooking
+    text: "How do you cook at home?"
+    type: single_choice
+    telegram_ux: inline_keyboard
+    options:
+      - label: "LPG cylinder"
+        value: lpg
+        activations:
+          lpg_cylinder: 1.0
+      - label: "Piped gas (PNG)"
+        value: png
+        activations:
+          piped_natural_gas: 1.0
+          lpg_cylinder: 0.2
+      - label: "Electric / Induction"
+        value: electric
+        activations:
+          electricity_tariff: 0.8
+      - label: "Chulha / Firewood"
+        value: chulha
+        activations:
+          lpg_cylinder: 0.5
+          respiratory_and_viral_infections: 0.7
+          welfare_and_ration_cards: 0.6
+
+  - id: s1_diet
+    text: "Your household diet?"
+    type: single_choice
+    telegram_ux: inline_keyboard
+    options:
+      - label: "Vegetarian"
+        value: veg
+        activations:
+          fresh_vegetables_and_fruits: 1.0
+          pulses_and_dals: 1.0
+          retail_tomato: 0.8
+          retail_onion: 0.8
+          retail_potato: 0.7
+          dairy_and_eggs: 0.7
+          edible_oils: 0.8
+          spices_sugar_salt: 0.8
+          meat_and_seafood: 0.0
+      - label: "Non-vegetarian"
+        value: nonveg
+        activations:
+          meat_and_seafood: 1.0
+          dairy_and_eggs: 0.9
+          fresh_vegetables_and_fruits: 0.8
+          retail_tomato: 0.7
+          retail_onion: 0.7
+          edible_oils: 0.8
+          spices_sugar_salt: 0.8
+      - label: "Mostly eat outside / order"
+        value: outside
+        activations:
+          restaurant_and_street_food: 1.0
+          food_delivery_services: 1.0
+          packaged_foods_and_beverages: 0.7
+          water_and_foodborne_diseases: 0.7
+          retail_tomato: 0.2
+          retail_onion: 0.2
+
+  - id: s1_health
+    text: "Any ongoing health concerns in your family?"
+    type: multi_choice
+    telegram_ux: inline_keyboard_multi
+    max_selections: 3
+    options:
+      - label: "Diabetes / BP / Heart"
+        value: chronic
+        activations:
+          chronic_and_lifestyle_diseases: 1.0
+          medicines_and_pharmaceuticals: 0.9
+          medical_tests_and_diagnostics: 0.9
+          hospital_and_medical_care: 0.8
+          health_insurance_premium: 0.7
+      - label: "Asthma / Respiratory"
+        value: respiratory
+        activations:
+          respiratory_and_viral_infections: 1.0
+          air_pollution: 0.9
+          winter_smog: 0.9
+          medicines_and_pharmaceuticals: 0.8
+          hospital_and_medical_care: 0.7
+      - label: "Pregnancy / Young child"
+        value: maternity
+        activations:
+          maternal_and_child_health: 1.0
+          maternity_and_leave_pay: 0.9
+          hospital_and_medical_care: 0.8
+          medical_tests_and_diagnostics: 0.7
+          vector_borne_diseases: 0.7
+          water_and_foodborne_diseases: 0.7
+      - label: "Mental health"
+        value: mental
+        activations:
+          mental_health_and_substance_abuse: 1.0
+          medicines_and_pharmaceuticals: 0.5
+      - label: "None in particular"
+        value: none
+        activations: {}
+
+  - id: s1_insurance
+    text: "Which insurance do you have?"
+    type: multi_choice
+    telegram_ux: inline_keyboard_multi
+    max_selections: 3
+    options:
+      - label: "Health insurance"
+        value: health
+        activations:
+          health_insurance_premium: 1.0
+          hospital_and_medical_care: 0.7
+      - label: "Vehicle insurance"
+        value: motor
+        activations:
+          motor_insurance_premium: 1.0
+          road_traffic_accidents: 0.5
+      - label: "Life / Term insurance"
+        value: life
+        activations:
+          life_insurance_premium: 1.0
+      - label: "None"
+        value: none
+        activations:
+          hospital_and_medical_care: 0.9
+
+  - id: s1_digital
+    text: "What do you spend time on online?"
+    type: multi_choice
+    telegram_ux: inline_keyboard_multi
+    max_selections: 3
+    options:
+      - label: "Social media (Insta/X)"
+        value: social
+        activations:
+          social_media_platforms: 1.0
+          messaging_apps: 1.0
+          digital_privacy_and_data: 0.7
+          spam_and_scams: 0.8
+      - label: "OTT (Netflix/Prime)"
+        value: ott
+        activations:
+          ott_platforms: 1.0
+          broadband_and_wifi: 0.8
+          cinema_and_movies: 0.6
+          network_connectivity: 0.7
+      - label: "Gaming"
+        value: gaming
+        activations:
+          video_games_and_esports: 1.0
+          real_money_gaming: 0.9
+          broadband_and_wifi: 0.7
+          consumer_tech_hardware: 0.6
+      - label: "News / WhatsApp"
+        value: news
+        activations:
+          messaging_apps: 0.8
+          internet_shutdowns: 0.6
+          digital_privacy_and_data: 0.5
+      - label: "Work tools only"
+        value: work
+        activations:
+          broadband_and_wifi: 1.0
+          network_connectivity: 0.9
+          internet_shutdowns: 0.8
+          digital_privacy_and_data: 0.6
+
+  - id: s1_intercity
+    text: "How often do you travel between cities?"
+    type: single_choice
+    telegram_ux: inline_keyboard
+    options:
+      - label: "Weekly (work commute)"
+        value: weekly
+        activations:
+          railway_ticketing_and_status: 1.0
+          domestic_flight_ticket: 0.9
+          intercity_bus_fare: 0.9
+          highway_tolls: 0.9
+          railway_and_transit_accidents: 0.7
+      - label: "Monthly"
+        value: monthly
+        activations:
+          railway_ticketing_and_status: 0.8
+          domestic_flight_ticket: 0.7
+          intercity_bus_fare: 0.7
+          highway_tolls: 0.7
+      - label: "Few times a year"
+        value: occasional
+        activations:
+          railway_ticketing_and_status: 0.6
+          domestic_flight_ticket: 0.5
+          intercity_bus_fare: 0.5
+          highway_tolls: 0.4
+      - label: "Rarely"
+        value: rare
+        activations: {}
