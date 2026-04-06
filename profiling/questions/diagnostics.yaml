@@ -1,0 +1,590 @@
+# Diagnostic questions: triggered on negative feedback to understand WHY
+# Depth questions: follow-ups from diagnostic answers
+# Deepening questions: triggered on positive feedback to learn more
+
+diagnostic_questions:
+  # I1: Income & Livelihood
+  - id: diag_income
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [corporate_hiring_and_layoffs, corporate_salaries, professional_upskilling]
+      profile_missing: industry
+    text: "This didn't seem relevant. Was it because..."
+    options:
+      - label: "Not my industry"
+        action: follow_up
+        follow_up_id: depth_industry
+      - label: "My job is stable"
+        adjustments:
+          corporate_hiring_and_layoffs: -0.3
+      - label: "I run a business / I'm a founder"
+        depth_update: {role_level: founder}
+        adjustments:
+          corporate_hiring_and_layoffs: -0.4
+          msme_factory_owner_income: +0.3
+          kirana_and_retail_income: +0.2
+      - label: "I'm retired / not working"
+        depth_update: {employment_status: retired}
+        adjustments:
+          corporate_hiring_and_layoffs: -0.8
+          corporate_salaries: -0.8
+
+  - id: diag_gig_income
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [food_and_grocery_delivery_payouts, ride_hailing_earnings, home_services_payouts]
+      profile_missing: gig_platform
+    text: "Why wasn't this gig/delivery news relevant?"
+    options:
+      - label: "I'm not a gig worker"
+        adjustments:
+          food_and_grocery_delivery_payouts: -0.8
+          ride_hailing_earnings: -0.8
+          home_services_payouts: -0.8
+      - label: "I work on a different platform"
+        action: follow_up
+        follow_up_id: depth_gig_type
+      - label: "Wrong city"
+        action: flag_location
+
+  - id: diag_farm_income
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [farmer_income_and_msp, farm_labor_wages, farmer_agitations]
+    text: "Why wasn't this farming news relevant?"
+    options:
+      - label: "I'm not in agriculture"
+        adjustments:
+          farmer_income_and_msp: -0.8
+          farm_labor_wages: -0.8
+          farmer_agitations: -0.6
+      - label: "I grow different crops"
+        depth_update: {farming_detail: different_crops}
+      - label: "I'm a farm laborer, not landowner"
+        depth_update: {farming_role: laborer}
+        adjustments:
+          farmer_income_and_msp: -0.3
+          farm_labor_wages: +0.3
+
+  # I2: Cost of Living
+  - id: diag_grocery_prices
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [retail_tomato, retail_onion, retail_potato, fresh_vegetables_and_fruits, meat_and_seafood, edible_oils]
+    text: "Why wasn't this price news useful?"
+    options:
+      - label: "I mostly eat outside / order in"
+        depth_update: {cooks_at_home: false}
+        adjustments:
+          retail_tomato: -0.4
+          retail_onion: -0.4
+          food_delivery_services: +0.4
+          restaurant_and_street_food: +0.4
+      - label: "I don't consume this item"
+        adjustments:
+          meat_and_seafood: -0.3
+      - label: "Prices don't affect my budget"
+        depth_update: {price_sensitive: false}
+
+  - id: diag_housing_cost
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [residential_rent_and_pg, building_materials_and_labor, rwa_and_maintenance_fees]
+    text: "Why wasn't this housing news relevant?"
+    options:
+      - label: "I own my home outright"
+        depth_update: {owns_home: true, has_home_loan: false}
+        adjustments:
+          residential_rent_and_pg: -0.8
+      - label: "Wrong city / different rent market"
+        action: flag_location
+      - label: "I live with family"
+        adjustments:
+          residential_rent_and_pg: -0.5
+          rwa_and_maintenance_fees: -0.3
+
+  # I3: Transport
+  - id: diag_fuel_price
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [petrol_price, diesel_price, cng_price, ev_charging_tariff]
+    text: "Why wasn't this fuel/vehicle news relevant?"
+    options:
+      - label: "I use a different fuel type"
+        action: follow_up
+        follow_up_id: depth_fuel_type
+      - label: "I use public transit / cab"
+        depth_update: {has_vehicle: false}
+        adjustments:
+          petrol_price: -0.5
+          diesel_price: -0.5
+          traffic_fines: -0.4
+          parking_fees: -0.4
+      - label: "I work from home"
+        depth_update: {commute_type: wfh}
+        adjustments:
+          petrol_price: -0.3
+          traffic_congestion: -0.5
+      - label: "Wrong city"
+        action: flag_location
+
+  - id: diag_transit
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [metro_and_local_train, city_bus_transit, auto_e_rickshaw, ride_hailing_cabs_bikes]
+    text: "Why wasn't this transit news relevant?"
+    options:
+      - label: "I drive my own vehicle"
+        adjustments:
+          metro_and_local_train: -0.4
+          city_bus_transit: -0.5
+      - label: "Wrong city's transit"
+        action: flag_location
+      - label: "I don't use this mode"
+        adjustments:
+          metro_and_local_train: -0.3
+
+  # I4: Health & Safety
+  - id: diag_health
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [chronic_and_lifestyle_diseases, hospital_and_medical_care, medicines_and_pharmaceuticals]
+    text: "Why wasn't this health news relevant?"
+    options:
+      - label: "Nobody in my family has this condition"
+        action: follow_up
+        follow_up_id: depth_health_conditions
+      - label: "I use private hospitals only"
+        depth_update: {hospital_type: private}
+        adjustments:
+          hospital_and_medical_care: -0.2
+      - label: "We're generally healthy"
+        adjustments:
+          chronic_and_lifestyle_diseases: -0.3
+          medicines_and_pharmaceuticals: -0.2
+
+  - id: diag_safety
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [violent_crime_and_assault, sexual_assault_and_harassment, road_traffic_accidents]
+    text: "Why wasn't this safety news relevant?"
+    options:
+      - label: "Wrong city / my area is safe"
+        action: flag_location
+      - label: "This type of crime doesn't concern me"
+        adjustments:
+          violent_crime_and_assault: -0.2
+      - label: "Not relevant to my family situation"
+        adjustments:
+          sexual_assault_and_harassment: -0.2
+
+  # I5: Education
+  - id: diag_education
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [school_fees, school_board_exams, coaching_and_tuition_fees, college_and_university_fees, college_entrance_exams]
+    text: "Why wasn't this education news relevant?"
+    options:
+      - label: "I don't have kids in school/college"
+        depth_update: {has_school_kids: false}
+        adjustments:
+          school_fees: -0.8
+          school_board_exams: -0.8
+          coaching_and_tuition_fees: -0.6
+      - label: "Different board (CBSE/ICSE/State)"
+        action: follow_up
+        follow_up_id: depth_school_board
+      - label: "Different exam (JEE/NEET/UPSC)"
+        action: follow_up
+        follow_up_id: depth_exam_track
+      - label: "Different education stage"
+        action: follow_up
+        follow_up_id: depth_education_stage
+
+  # I6: Civic & Legal
+  - id: diag_tax
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [personal_income_tax, capital_gains_tax, tds_and_compliance, indirect_taxes_gst]
+    text: "Why wasn't this tax/fiscal news relevant?"
+    options:
+      - label: "I don't pay income tax"
+        depth_update: {pays_income_tax: false}
+        adjustments:
+          personal_income_tax: -0.7
+          tds_and_compliance: -0.5
+          capital_gains_tax: -0.6
+      - label: "I don't invest (no capital gains)"
+        depth_update: {has_investments: false}
+        adjustments:
+          capital_gains_tax: -0.7
+      - label: "GST doesn't affect me directly"
+        adjustments:
+          indirect_taxes_gst: -0.3
+
+  # I7: Habitat
+  - id: diag_environment
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [air_pollution, winter_smog, street_waterlogging, drinking_water_contamination]
+    text: "Why wasn't this environment news relevant?"
+    options:
+      - label: "Wrong city / not my area"
+        action: flag_location
+      - label: "My area doesn't have this problem"
+        adjustments:
+          air_pollution: -0.2
+          street_waterlogging: -0.3
+      - label: "I have backup (water tank, air purifier)"
+        depth_update: {has_utility_backup: true}
+        adjustments:
+          drinking_water_contamination: -0.3
+
+  # I8: Digital & Leisure
+  - id: diag_telecom
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [mobile_tariffs, broadband_and_wifi, network_connectivity]
+    text: "Why wasn't this telecom news relevant?"
+    options:
+      - label: "I'm on a different plan (prepaid/postpaid)"
+        depth_update: {telecom_plan: other}
+      - label: "I only use mobile data, no broadband"
+        depth_update: {has_broadband: false}
+        adjustments:
+          broadband_and_wifi: -0.5
+      - label: "My connection is fine, not affected"
+        adjustments:
+          network_connectivity: -0.2
+
+  - id: diag_entertainment
+    trigger:
+      feedback: irrelevant
+      matched_nodes_any: [cinema_and_movies, ott_platforms, live_sports_events, video_games_and_esports, real_money_gaming]
+    text: "Why wasn't this entertainment/sports news relevant?"
+    options:
+      - label: "I don't follow this sport"
+        adjustments:
+          live_sports_events: -0.4
+      - label: "I don't use OTT / streaming"
+        adjustments:
+          ott_platforms: -0.5
+      - label: "I don't play games"
+        adjustments:
+          video_games_and_esports: -0.6
+          real_money_gaming: -0.6
+      - label: "Not my kind of entertainment"
+        adjustments:
+          cinema_and_movies: -0.3
+
+# DEPTH FOLLOW-UP QUESTIONS (triggered by diagnostic options)
+depth_questions:
+  - id: depth_industry
+    text: "What industry are you in?"
+    type: single_choice
+    options:
+      - label: "IT / Software Services"
+        value: it_services
+        depth_update: {industry: it_services}
+        adjustments:
+          corporate_hiring_and_layoffs: +0.2
+          professional_upskilling: +0.3
+      - label: "Fintech / Payments"
+        value: fintech
+        depth_update: {industry: fintech}
+        adjustments:
+          corporate_hiring_and_layoffs: -0.1
+      - label: "Banking / BFSI"
+        value: bfsi
+        depth_update: {industry: bfsi}
+        adjustments:
+          psu_and_bank_jobs: +0.4
+      - label: "E-commerce / D2C"
+        value: ecommerce
+        depth_update: {industry: ecommerce}
+        adjustments:
+          food_and_grocery_delivery_payouts: +0.3
+      - label: "Manufacturing"
+        value: manufacturing
+        depth_update: {industry: manufacturing}
+        adjustments:
+          factory_worker_wages: +0.3
+      - label: "Healthcare"
+        value: healthcare
+        depth_update: {industry: healthcare}
+        adjustments:
+          hospital_and_medical_care: +0.2
+      - label: "Education"
+        value: education
+        depth_update: {industry: education}
+      - label: "Other"
+        value: other
+        depth_update: {industry: other}
+
+  - id: depth_gig_type
+    text: "What kind of gig work do you do?"
+    type: single_choice
+    options:
+      - label: "Food / Grocery delivery"
+        value: food_delivery
+        depth_update: {gig_platform: food_delivery}
+        adjustments:
+          food_and_grocery_delivery_payouts: +0.3
+          ride_hailing_earnings: -0.3
+      - label: "Ride hailing (Ola/Uber)"
+        value: ride_hailing
+        depth_update: {gig_platform: ride_hailing}
+        adjustments:
+          ride_hailing_earnings: +0.3
+          food_and_grocery_delivery_payouts: -0.3
+      - label: "Home services (Urban Company)"
+        value: home_services
+        depth_update: {gig_platform: home_services}
+        adjustments:
+          home_services_payouts: +0.3
+      - label: "Freelance / Online"
+        value: freelance
+        depth_update: {gig_platform: freelance}
+        adjustments:
+          freelance_and_creator_income: +0.3
+
+  - id: depth_fuel_type
+    text: "What fuel does your vehicle use?"
+    type: single_choice
+    options:
+      - label: "Petrol"
+        value: petrol
+        depth_update: {fuel_type: petrol}
+        adjustments:
+          petrol_price: +0.3
+          diesel_price: -0.5
+          cng_price: -0.5
+      - label: "Diesel"
+        value: diesel
+        depth_update: {fuel_type: diesel}
+        adjustments:
+          diesel_price: +0.3
+          petrol_price: -0.5
+      - label: "CNG"
+        value: cng
+        depth_update: {fuel_type: cng}
+        adjustments:
+          cng_price: +0.3
+          petrol_price: -0.3
+          diesel_price: -0.5
+      - label: "Electric"
+        value: ev
+        depth_update: {fuel_type: ev}
+        adjustments:
+          ev_charging_tariff: +0.5
+          petrol_price: -0.7
+          diesel_price: -0.7
+
+  - id: depth_health_conditions
+    text: "What health concerns does your family have?"
+    type: multi_choice
+    options:
+      - label: "Diabetes / BP / Heart"
+        value: chronic
+        depth_update: {health_conditions: chronic}
+        adjustments:
+          chronic_and_lifestyle_diseases: +0.3
+          medicines_and_pharmaceuticals: +0.2
+      - label: "Asthma / Respiratory"
+        value: respiratory
+        depth_update: {health_conditions: respiratory}
+        adjustments:
+          respiratory_and_viral_infections: +0.3
+          air_pollution: +0.2
+      - label: "Mental health"
+        value: mental
+        depth_update: {health_conditions: mental}
+        adjustments:
+          mental_health_and_substance_abuse: +0.3
+      - label: "None, we're healthy"
+        value: none
+        depth_update: {health_conditions: none}
+        adjustments:
+          chronic_and_lifestyle_diseases: -0.3
+
+  - id: depth_school_board
+    text: "Which school board?"
+    type: single_choice
+    options:
+      - label: "CBSE"
+        value: cbse
+        depth_update: {school_board: cbse}
+      - label: "ICSE"
+        value: icse
+        depth_update: {school_board: icse}
+      - label: "State Board"
+        value: state_board
+        depth_update: {school_board: state_board}
+      - label: "International (IB/Cambridge)"
+        value: international
+        depth_update: {school_board: international}
+
+  - id: depth_exam_track
+    text: "Which exam are you / your child preparing for?"
+    type: single_choice
+    options:
+      - label: "JEE (Engineering)"
+        value: jee
+        depth_update: {exam_track: jee}
+        adjustments:
+          college_entrance_exams: +0.3
+          engineering_and_tech_education: +0.3
+      - label: "NEET (Medical)"
+        value: neet
+        depth_update: {exam_track: neet}
+        adjustments:
+          college_entrance_exams: +0.3
+          medical_and_healthcare_education: +0.3
+      - label: "UPSC / SSC (Govt jobs)"
+        value: upsc
+        depth_update: {exam_track: upsc}
+        adjustments:
+          government_recruitment_exams: +0.5
+          upsc_and_ssc_jobs: +0.3
+      - label: "CAT / MBA"
+        value: cat
+        depth_update: {exam_track: cat}
+        adjustments:
+          law_and_management_education: +0.3
+      - label: "None"
+        value: none
+        depth_update: {exam_track: none}
+
+  - id: depth_education_stage
+    text: "What education stage?"
+    type: single_choice
+    options:
+      - label: "Pre-school / Kindergarten"
+        value: preschool
+        depth_update: {education_stage: preschool}
+        adjustments:
+          anganwadi_and_preschools: +0.3
+          school_board_exams: -0.5
+      - label: "School (Class 1-12)"
+        value: school
+        depth_update: {education_stage: school}
+        adjustments:
+          school_fees: +0.2
+          school_board_exams: +0.2
+      - label: "College / University"
+        value: college
+        depth_update: {education_stage: college}
+        adjustments:
+          college_and_university_fees: +0.3
+          school_fees: -0.5
+      - label: "Competitive exam prep"
+        value: competitive
+        depth_update: {education_stage: competitive}
+        adjustments:
+          coaching_institutes: +0.3
+          coaching_and_tuition_fees: +0.3
+
+# DEEPENING QUESTIONS (triggered on positive feedback, rate-limited)
+deepening_questions:
+  - id: deepen_loans
+    trigger:
+      feedback: relevant
+      matched_nodes_any: [residential_rent_and_pg, building_materials_and_labor, rwa_and_maintenance_fees]
+      profile_missing: has_home_loan
+      min_feedback_count: 3
+    text: "Since housing costs matter to you — do you have a home loan?"
+    options:
+      - label: "Yes, paying EMI"
+        depth_update: {has_home_loan: true}
+        adjustments:
+          building_materials_and_labor: +0.3
+          capital_gains_tax: +0.3
+      - label: "No"
+        depth_update: {has_home_loan: false}
+
+  - id: deepen_investments
+    trigger:
+      feedback: relevant
+      matched_nodes_any: [personal_income_tax, capital_gains_tax, tds_and_compliance]
+      profile_missing: investment_type
+      min_feedback_count: 3
+    text: "Since financial news matters to you — where do you invest?"
+    options:
+      - label: "Mutual funds / Stocks"
+        depth_update: {investment_type: equity}
+        adjustments:
+          capital_gains_tax: +0.3
+      - label: "FD / PPF / Safe assets"
+        depth_update: {investment_type: fixed}
+        adjustments:
+          capital_gains_tax: -0.2
+      - label: "Gold / Real estate"
+        depth_update: {investment_type: physical}
+      - label: "I don't invest"
+        depth_update: {investment_type: none}
+        adjustments:
+          capital_gains_tax: -0.5
+
+  - id: deepen_income_band
+    trigger:
+      feedback: relevant
+      matched_nodes_any: [personal_income_tax, tds_and_compliance]
+      profile_missing: income_band
+      min_feedback_count: 5
+    text: "Quick one — what's your approximate annual income?"
+    options:
+      - label: "Under 5 lakh"
+        depth_update: {income_band: below_5l}
+        adjustments:
+          personal_income_tax: -0.5
+          welfare_and_ration_cards: +0.3
+      - label: "5-15 lakh"
+        depth_update: {income_band: 5_15l}
+      - label: "15-30 lakh"
+        depth_update: {income_band: 15_30l}
+        adjustments:
+          capital_gains_tax: +0.2
+      - label: "30 lakh+"
+        depth_update: {income_band: above_30l}
+        adjustments:
+          capital_gains_tax: +0.3
+
+  - id: deepen_vehicle_type
+    trigger:
+      feedback: relevant
+      matched_nodes_any: [petrol_price, diesel_price, motor_insurance_premium, vehicle_purchase_cost]
+      profile_missing: vehicle_class
+      min_feedback_count: 3
+    text: "What type of vehicle do you drive?"
+    options:
+      - label: "Two-wheeler (bike/scooter)"
+        depth_update: {vehicle_class: two_wheeler}
+        adjustments:
+          vehicle_purchase_cost: -0.2
+          parking_fees: -0.2
+      - label: "Four-wheeler (car/SUV)"
+        depth_update: {vehicle_class: four_wheeler}
+        adjustments:
+          vehicle_purchase_cost: +0.2
+          highway_tolls: +0.2
+      - label: "Both"
+        depth_update: {vehicle_class: both}
+
+  - id: deepen_specific_sport
+    trigger:
+      feedback: relevant
+      matched_nodes_any: [live_sports_events, sports_and_fitness_access]
+      profile_missing: sport_preference
+      min_feedback_count: 3
+    text: "Which sport do you follow?"
+    options:
+      - label: "Cricket"
+        depth_update: {sport_preference: cricket}
+      - label: "Football"
+        depth_update: {sport_preference: football}
+      - label: "Kabaddi / Wrestling"
+        depth_update: {sport_preference: kabaddi}
+      - label: "Fitness / Gym"
+        depth_update: {sport_preference: fitness}
+        adjustments:
+          sports_and_fitness_access: +0.3

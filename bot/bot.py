@@ -25,6 +25,7 @@ from telegram.ext import (
 )
 
 from profiling.engine import ProfileEngine
+from profiling.diagnostics import DiagnosticsEngine
 from pipeline.database import Database
 from config import settings
 
@@ -102,6 +103,64 @@ def _answer_emoji(question_id: str, value: str | list[str], engine: ProfileEngin
         labels = [option_map.get(v, v) for v in value]
         return f"{icon} {', '.join(labels)}"
     return f"{icon} {option_map.get(value, value)}"
+
+
+def _get_match_nodes(db: Database, match_id: int) -> list[str]:
+    """Get matched node IDs from an article_matches record."""
+    row = db.conn.execute(
+        "SELECT matched_nodes_json FROM article_matches WHERE id = ?", (match_id,)
+    ).fetchone()
+    if not row or not row["matched_nodes_json"]:
+        return []
+    try:
+        nodes = json.loads(row["matched_nodes_json"])
+    except (json.JSONDecodeError, TypeError):
+        return []
+    return [n.get("node", "") for n in nodes if isinstance(n, dict) and n.get("node")]
+
+
+def _get_depth_answers(db: Database, user_id: str) -> dict:
+    """Load depth_answers from user profile (stored in raw_answers_json['_depth'])."""
+    profile = db.get_user_profile(user_id)
+    if not profile:
+        return {}
+    raw = profile.get("raw_answers_json", {})
+    return raw.get("_depth", {})
+
+
+def _save_depth_answers(db: Database, user_id: str, depth_answers: dict) -> None:
+    """Persist depth_answers into raw_answers_json['_depth']."""
+    profile = db.get_user_profile(user_id)
+    if not profile:
+        return
+    raw = profile.get("raw_answers_json", {})
+    raw["_depth"] = depth_answers
+    db.conn.execute(
+        "UPDATE user_profiles SET raw_answers_json = ?, updated_at = datetime('now') WHERE user_id = ?",
+        (json.dumps(raw), user_id),
+    )
+    db.conn.commit()
+
+
+def _get_feedback_count(db: Database, user_id: str) -> int:
+    """Count total feedback events for a user."""
+    row = db.conn.execute(
+        "SELECT COUNT(*) as cnt FROM profile_feedback_log WHERE user_id = ?", (user_id,)
+    ).fetchone()
+    return row["cnt"] if row else 0
+
+
+def _apply_adjustments(db: Database, user_id: str, adjustments: dict[str, float]) -> None:
+    """Apply node weight deltas to user profile."""
+    if not adjustments:
+        return
+    profile = db.get_user_profile(user_id)
+    if not profile:
+        return
+    weights = profile.get("node_weights_json", {})
+    for node, delta in adjustments.items():
+        weights[node] = weights.get(node, 0.0) + delta
+    db.update_user_weights(user_id, weights)
 
 
 # ---------------------------------------------------------------------------
@@ -406,7 +465,11 @@ def build_feedback_keyboard(match_id: int) -> InlineKeyboardMarkup:
 
 
 async def handle_feedback(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    """Handle feedback button callbacks (fb|{match_id}|{type})."""
+    """Handle feedback button callbacks (fb|{match_id}|{type}).
+
+    On thumbs-down: present a diagnostic question if available.
+    On thumbs-up: occasionally present a deepening question.
+    """
     query = update.callback_query
     await query.answer()
 
@@ -427,11 +490,239 @@ async def handle_feedback(update: Update, context: ContextTypes.DEFAULT_TYPE) ->
     feedback_map = {"rel": "relevant", "not": "not_relevant"}
     fb = feedback_map.get(feedback_type, feedback_type)
     db.save_feedback(match_id, fb)
-
-    emoji = "\U0001f44d" if feedback_type == "rel" else "\U0001f44e"
     await query.edit_message_reply_markup(reply_markup=None)
+
+    user_id = str(update.effective_chat.id)
+    diagnostics: DiagnosticsEngine | None = context.bot_data.get("diagnostics")
+
+    if feedback_type == "not" and diagnostics:
+        try:
+            matched_nodes = _get_match_nodes(db, match_id)
+            depth_answers = _get_depth_answers(db, user_id)
+            diag = diagnostics.select_diagnostic(matched_nodes, depth_answers)
+            if diag:
+                buttons = [
+                    [InlineKeyboardButton(
+                        opt.label,
+                        callback_data=f"diag|{match_id}|{diag.id}|{i}",
+                    )]
+                    for i, opt in enumerate(diag.options)
+                ]
+                await query.message.reply_text(
+                    f"\U0001f44e {diag.text}",
+                    reply_markup=InlineKeyboardMarkup(buttons),
+                )
+                db.append_feedback_log(user_id, match_id, fb)
+                logger.info("Feedback: match=%d type=%s diag=%s", match_id, fb, diag.id)
+                return
+        except Exception:
+            logger.exception("Diagnostic selection failed for match=%d", match_id)
+
+    elif feedback_type == "rel" and diagnostics:
+        try:
+            matched_nodes = _get_match_nodes(db, match_id)
+            depth_answers = _get_depth_answers(db, user_id)
+            feedback_count = _get_feedback_count(db, user_id)
+            deep = diagnostics.select_deepening(matched_nodes, depth_answers, feedback_count)
+            if deep:
+                buttons = [
+                    [InlineKeyboardButton(
+                        opt.label,
+                        callback_data=f"deep|{match_id}|{deep.id}|{i}",
+                    )]
+                    for i, opt in enumerate(deep.options)
+                ]
+                await query.message.reply_text(
+                    f"\U0001f44d {deep.text}",
+                    reply_markup=InlineKeyboardMarkup(buttons),
+                )
+                db.append_feedback_log(user_id, match_id, fb)
+                logger.info("Feedback: match=%d type=%s deep=%s", match_id, fb, deep.id)
+                return
+        except Exception:
+            logger.exception("Deepening selection failed for match=%d", match_id)
+
+    # Fallback: simple confirmation
+    emoji = "\U0001f44d" if feedback_type == "rel" else "\U0001f44e"
     await query.message.reply_text(f"{emoji} Feedback saved. Thanks!")
+    db.append_feedback_log(user_id, match_id, fb)
     logger.info("Feedback: match=%d type=%s", match_id, fb)
+
+
+async def handle_diagnostic(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle diagnostic option selection (diag|{match_id}|{diag_id}|{option_index})."""
+    query = update.callback_query
+    await query.answer()
+
+    parts = query.data.split("|")
+    if len(parts) != 4:
+        return
+
+    _, match_id_str, diag_id, opt_idx_str = parts
+    try:
+        match_id = int(match_id_str)
+        opt_idx = int(opt_idx_str)
+    except ValueError:
+        return
+
+    db: Database = context.bot_data.get("db")
+    diagnostics: DiagnosticsEngine | None = context.bot_data.get("diagnostics")
+    if not db or not diagnostics:
+        return
+
+    user_id = str(update.effective_chat.id)
+
+    # Look up the question and option
+    diag = next((d for d in diagnostics.diagnostics if d.id == diag_id), None)
+    if not diag or opt_idx >= len(diag.options):
+        await query.edit_message_text("Got it, thanks!")
+        return
+
+    opt = diag.options[opt_idx]
+    await query.edit_message_reply_markup(reply_markup=None)
+
+    # Apply depth_update
+    if opt.depth_update:
+        depth_answers = _get_depth_answers(db, user_id)
+        depth_answers.update(opt.depth_update)
+        _save_depth_answers(db, user_id, depth_answers)
+
+    # Apply weight adjustments
+    if opt.adjustments:
+        _apply_adjustments(db, user_id, opt.adjustments)
+
+    # Log
+    db.append_feedback_log(
+        user_id, match_id, "diagnostic",
+        diagnostic_question_id=diag_id,
+        diagnostic_answer=opt.label,
+        node_adjustments=opt.adjustments or None,
+    )
+
+    # Handle action
+    if opt.action == "follow_up" and opt.follow_up_id:
+        depth_q = diagnostics.get_depth_question(opt.follow_up_id)
+        if depth_q:
+            buttons = [
+                [InlineKeyboardButton(
+                    dopt.label,
+                    callback_data=f"depth|{match_id}|{depth_q.id}|{i}",
+                )]
+                for i, dopt in enumerate(depth_q.options)
+            ]
+            await query.message.reply_text(
+                depth_q.text,
+                reply_markup=InlineKeyboardMarkup(buttons),
+            )
+            return
+
+    if opt.action == "flag_location":
+        await query.message.reply_text("Thanks! We'll improve location matching.")
+        return
+
+    await query.message.reply_text("Got it, we'll tune your feed!")
+
+
+async def handle_depth_answer(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle depth follow-up answer (depth|{match_id}|{depth_id}|{option_index})."""
+    query = update.callback_query
+    await query.answer()
+
+    parts = query.data.split("|")
+    if len(parts) != 4:
+        return
+
+    _, match_id_str, depth_id, opt_idx_str = parts
+    try:
+        match_id = int(match_id_str)
+        opt_idx = int(opt_idx_str)
+    except ValueError:
+        return
+
+    db: Database = context.bot_data.get("db")
+    diagnostics: DiagnosticsEngine | None = context.bot_data.get("diagnostics")
+    if not db or not diagnostics:
+        return
+
+    user_id = str(update.effective_chat.id)
+    depth_q = diagnostics.get_depth_question(depth_id)
+    if not depth_q or opt_idx >= len(depth_q.options):
+        await query.edit_message_text("Profile updated!")
+        return
+
+    opt = depth_q.options[opt_idx]
+    await query.edit_message_reply_markup(reply_markup=None)
+
+    # Apply depth_update
+    if opt.depth_update:
+        depth_answers = _get_depth_answers(db, user_id)
+        depth_answers.update(opt.depth_update)
+        _save_depth_answers(db, user_id, depth_answers)
+
+    # Apply weight adjustments
+    if opt.adjustments:
+        _apply_adjustments(db, user_id, opt.adjustments)
+
+    # Log
+    db.append_feedback_log(
+        user_id, match_id, "depth_answer",
+        depth_question_id=depth_id,
+        depth_answer=opt.label,
+        node_adjustments=opt.adjustments or None,
+    )
+
+    await query.message.reply_text("Profile updated! Your feed will be more precise.")
+
+
+async def handle_deepening_answer(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    """Handle deepening question answer (deep|{match_id}|{deep_id}|{option_index})."""
+    query = update.callback_query
+    await query.answer()
+
+    parts = query.data.split("|")
+    if len(parts) != 4:
+        return
+
+    _, match_id_str, deep_id, opt_idx_str = parts
+    try:
+        match_id = int(match_id_str)
+        opt_idx = int(opt_idx_str)
+    except ValueError:
+        return
+
+    db: Database = context.bot_data.get("db")
+    diagnostics: DiagnosticsEngine | None = context.bot_data.get("diagnostics")
+    if not db or not diagnostics:
+        return
+
+    user_id = str(update.effective_chat.id)
+    deep = next((d for d in diagnostics.deepening if d.id == deep_id), None)
+    if not deep or opt_idx >= len(deep.options):
+        await query.edit_message_text("Profile updated!")
+        return
+
+    opt = deep.options[opt_idx]
+    await query.edit_message_reply_markup(reply_markup=None)
+
+    # Apply depth_update
+    if opt.depth_update:
+        depth_answers = _get_depth_answers(db, user_id)
+        depth_answers.update(opt.depth_update)
+        _save_depth_answers(db, user_id, depth_answers)
+
+    # Apply weight adjustments
+    if opt.adjustments:
+        _apply_adjustments(db, user_id, opt.adjustments)
+
+    # Log
+    db.append_feedback_log(
+        user_id, match_id, "deepening_answer",
+        diagnostic_question_id=deep_id,
+        diagnostic_answer=opt.label,
+        node_adjustments=opt.adjustments or None,
+    )
+
+    await query.message.reply_text("Profile updated! Your feed will be more precise.")
 
 
 # ---------------------------------------------------------------------------
@@ -533,6 +824,7 @@ def main(db: Database | None = None) -> None:
         db.init_schema()
     app.bot_data["db"] = db
     app.bot_data["engine"] = ProfileEngine()
+    app.bot_data["diagnostics"] = DiagnosticsEngine()
 
     # Onboarding conversation
     conv_handler = ConversationHandler(
@@ -559,6 +851,9 @@ def main(db: Database | None = None) -> None:
 
     # Feedback handler (outside conversation)
     app.add_handler(CallbackQueryHandler(handle_feedback, pattern=r"^fb\|"))
+    app.add_handler(CallbackQueryHandler(handle_diagnostic, pattern=r"^diag\|"))
+    app.add_handler(CallbackQueryHandler(handle_depth_answer, pattern=r"^depth\|"))
+    app.add_handler(CallbackQueryHandler(handle_deepening_answer, pattern=r"^deep\|"))
 
     # Delivery jobs
     job_queue = app.job_queue

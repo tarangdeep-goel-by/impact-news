@@ -155,3 +155,60 @@ class ProfileEngine:
             if seg.segment == segment:
                 return seg.questions
         return []
+
+    def apply_feedback_adjustments(
+        self,
+        current_weights: dict[str, float],
+        adjustments: dict[str, float],
+    ) -> dict[str, float]:
+        """Apply relative weight adjustments from feedback.
+
+        Args:
+            current_weights: Current node weight profile.
+            adjustments: {node_id: delta} — positive boosts, negative suppresses.
+
+        Returns:
+            Updated weights dict (mutated in place).
+        """
+        for node, delta in adjustments.items():
+            current = current_weights.get(node, 0.5 if delta > 0 else 0.0)
+            new = max(0.0, min(1.0, current + delta))
+
+            # Universal floor still applies
+            if node in UNIVERSAL_NODES:
+                new = max(new, UNIVERSAL_FLOOR)
+
+            if new > 0:
+                current_weights[node] = round(new, 2)
+            elif node in current_weights and node not in UNIVERSAL_NODES:
+                del current_weights[node]
+
+        return current_weights
+
+    def recompute_profile(
+        self,
+        raw_answers: dict[str, str | list[str]],
+        depth_answers: dict | None = None,
+        adjustments_log: list[dict[str, float]] | None = None,
+    ) -> dict[str, float]:
+        """Full layered profile recomputation.
+
+        Layers applied in order:
+        1. Base profile from intake answers (compute_profile)
+        2. Depth answer adjustments (from diagnostic follow-ups)
+        3. Cumulative feedback adjustments
+        4. Universal floor
+        """
+        # Layer 1: base profile
+        weights = self.compute_profile(raw_answers)
+
+        # Layer 2: depth adjustments (if any)
+        # Depth answers don't have direct node adjustments stored —
+        # they're applied at feedback time and accumulated in adjustments_log
+
+        # Layer 3: accumulated adjustments
+        if adjustments_log:
+            for adj in adjustments_log:
+                self.apply_feedback_adjustments(weights, adj)
+
+        return weights

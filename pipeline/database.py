@@ -232,6 +232,21 @@ CREATE TABLE IF NOT EXISTS user_profiles (
 );
 
 CREATE INDEX IF NOT EXISTS idx_user_profiles_chat_id ON user_profiles(telegram_chat_id);
+
+CREATE TABLE IF NOT EXISTS profile_feedback_log (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id TEXT NOT NULL,
+    match_id INTEGER,
+    feedback TEXT,
+    diagnostic_question_id TEXT,
+    diagnostic_answer TEXT,
+    depth_question_id TEXT,
+    depth_answer TEXT,
+    node_adjustments_json TEXT,
+    created_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_feedback_log_user ON profile_feedback_log(user_id);
 """
 
 
@@ -475,6 +490,29 @@ class Database:
         self.conn.execute(
             "UPDATE user_profiles SET node_weights_json = ?, updated_at = ? WHERE user_id = ?",
             (json.dumps(node_weights), datetime.utcnow().isoformat(), user_id),
+        )
+        self.conn.commit()
+
+    def append_feedback_log(
+        self,
+        user_id: str,
+        match_id: int | None,
+        feedback: str,
+        diagnostic_question_id: str | None = None,
+        diagnostic_answer: str | None = None,
+        depth_question_id: str | None = None,
+        depth_answer: str | None = None,
+        node_adjustments: dict | None = None,
+    ) -> None:
+        """Log a feedback event with optional diagnostic details."""
+        self.conn.execute(
+            """INSERT INTO profile_feedback_log
+               (user_id, match_id, feedback, diagnostic_question_id, diagnostic_answer,
+                depth_question_id, depth_answer, node_adjustments_json, created_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'))""",
+            (user_id, match_id, feedback, diagnostic_question_id, diagnostic_answer,
+             depth_question_id, depth_answer,
+             json.dumps(node_adjustments) if node_adjustments else None),
         )
         self.conn.commit()
 
