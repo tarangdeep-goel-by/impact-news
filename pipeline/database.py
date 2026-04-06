@@ -218,6 +218,20 @@ CREATE INDEX IF NOT EXISTS idx_micro_revisions_event ON micro_impact_revisions(e
 CREATE INDEX IF NOT EXISTS idx_micro_revisions_inode ON micro_impact_revisions(i_node);
 CREATE INDEX IF NOT EXISTS idx_impact_drivers_shift ON impact_drivers(macro_shift_id);
 CREATE INDEX IF NOT EXISTS idx_shift_support_article ON shift_support(article_id);
+
+CREATE TABLE IF NOT EXISTS user_profiles (
+    user_id TEXT PRIMARY KEY,
+    telegram_chat_id TEXT UNIQUE NOT NULL,
+    city TEXT,
+    city_tier TEXT,
+    raw_answers_json TEXT,
+    node_weights_json TEXT,
+    completed_segments TEXT,
+    created_at TEXT DEFAULT (datetime('now')),
+    updated_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_user_profiles_chat_id ON user_profiles(telegram_chat_id);
 """
 
 
@@ -398,6 +412,69 @@ class Database:
         self.conn.execute(
             "UPDATE article_matches SET feedback = ? WHERE id = ?",
             (feedback_type, match_id),
+        )
+        self.conn.commit()
+
+    # -- user profiles ----------------------------------------------------
+
+    def save_user_profile(
+        self,
+        user_id: str,
+        chat_id: str,
+        city: str | None,
+        city_tier: str | None,
+        raw_answers: dict,
+        node_weights: dict[str, float],
+        completed_segments: list[int],
+    ) -> None:
+        """Insert or replace a full user profile."""
+        now = datetime.utcnow().isoformat()
+        self.conn.execute(
+            """INSERT OR REPLACE INTO user_profiles
+               (user_id, telegram_chat_id, city, city_tier,
+                raw_answers_json, node_weights_json, completed_segments,
+                created_at, updated_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?, COALESCE(
+                   (SELECT created_at FROM user_profiles WHERE user_id = ?), ?
+               ), ?)""",
+            (
+                user_id,
+                chat_id,
+                city,
+                city_tier,
+                json.dumps(raw_answers),
+                json.dumps(node_weights),
+                json.dumps(completed_segments),
+                user_id,
+                now,
+                now,
+            ),
+        )
+        self.conn.commit()
+
+    def get_user_profile(self, user_id: str) -> dict | None:
+        """Load a user profile by user_id. Returns dict or None."""
+        row = self.conn.execute(
+            "SELECT * FROM user_profiles WHERE user_id = ?", (user_id,)
+        ).fetchone()
+        if not row:
+            return None
+        result = dict(row)
+        result["raw_answers_json"] = json.loads(result["raw_answers_json"] or "{}")
+        result["node_weights_json"] = json.loads(result["node_weights_json"] or "{}")
+        result["completed_segments"] = json.loads(result["completed_segments"] or "[]")
+        return result
+
+    def get_all_user_ids(self) -> list[str]:
+        """Return all user IDs with profiles."""
+        rows = self.conn.execute("SELECT user_id FROM user_profiles").fetchall()
+        return [row["user_id"] for row in rows]
+
+    def update_user_weights(self, user_id: str, node_weights: dict[str, float]) -> None:
+        """Update only the node weights and updated_at for a user."""
+        self.conn.execute(
+            "UPDATE user_profiles SET node_weights_json = ?, updated_at = ? WHERE user_id = ?",
+            (json.dumps(node_weights), datetime.utcnow().isoformat(), user_id),
         )
         self.conn.commit()
 

@@ -1,0 +1,440 @@
+cities:
+  # METROS
+  - name: Mumbai
+    aliases: [Bombay, मुंबई]
+    tier: metro
+    state: Maharashtra
+    seasonal:
+      winter_smog: false
+      extreme_heat: false
+      street_waterlogging: true
+      extreme_cold: false
+  - name: Delhi
+    aliases: [New Delhi, दिल्ली, NCR]
+    tier: metro
+    state: Delhi
+    seasonal:
+      winter_smog: true
+      extreme_heat: true
+      street_waterlogging: false
+      extreme_cold: false
+  - name: Bangalore
+    aliases: [Bengaluru, बैंगलोर, ಬೆಂಗಳೂರು]
+    tier: metro
+    state: Karnataka
+    seasonal:
+      winter_smog: false
+      extreme_heat: false
+      street_waterlogging: true
+      extreme_cold: false
+  - name: Chennai
+    aliases: [Madras, चेन्नई, சென்னை]
+    tier: metro
+    state: Tamil Nadu
+    seasonal:
+      winter_smog: false
+      extreme_heat: false
+      street_waterlogging: true
+      extreme_cold: false
+  - name: Hyderabad
+    aliases: [Cyberabad, हैदराबाद, హైదరాబాద్]
+    tier: metro
+    state: Telangana
+    seasonal:
+      winter_smog: false
+      extreme_heat: true
+      street_waterlogging: true
+      extreme_cold: false
+  - name: Kolkata
+    aliases: [Calcutta, कोलकाता, কলকাতা]
+    tier: metro
+    state: West Bengal
+    seasonal:
+      winter_smog: true
+      extreme_heat: false
+      street_waterlogging: true
+      extreme_cold: false
+  - name: Pune
+    aliases: [Poona, पुणे]
+    tier: metro
+    state: Maharashtra
+    seasonal:
+      winter_smog: false
+      extreme_heat: false
+      street_waterlogging: false
+      extreme_cold: false
+  - name: Ahmedabad
+    aliases: [Amdavad, अहमदाबाद, અમદાવાદ]
+    tier: metro
+    state: Gujarat
+    seasonal:
+      winter_smog: false
+      extreme_heat: true
+      street_waterlogging: false
+      extreme_cold: false
+
+  # TIER 2 CITIES (sorted roughly by population descending)
+  - name: Surat
+    aliases: [Suryapur, सूरत, સુરત]
+    tier: tier2
+    state: Gujarat
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: true, extreme_cold: false}
+  - name: Jaipur
+    aliases: [Pink City, जयपुर]
+    tier: tier2
+    state: Rajasthan
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Lucknow
+    aliases: [Nawab City, लखनऊ]
+    tier: tier2
+    state: Uttar Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Kanpur
+    aliases: [Cawnpore, कानपुर]
+    tier: tier2
+    state: Uttar Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Nagpur
+    aliases: [Orange City, नागपुर]
+    tier: tier2
+    state: Maharashtra
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Indore
+    aliases: [Mini Mumbai, इंदौर]
+    tier: tier2
+    state: Madhya Pradesh
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Thane
+    aliases: [Thana, ठाणे]
+    tier: tier2
+    state: Maharashtra
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Bhopal
+    aliases: [City of Lakes, भोपाल]
+    tier: tier2
+    state: Madhya Pradesh
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Visakhapatnam
+    aliases: [Vizag, विशाखापत्तनम, విశాఖపట్నం]
+    tier: tier2
+    state: Andhra Pradesh
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: false}
+  - name: Patna
+    aliases: [Pataliputra, पटना]
+    tier: tier2
+    state: Bihar
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: true, extreme_cold: false}
+  - name: Vadodara
+    aliases: [Baroda, वडोदरा, વડોદરા]
+    tier: tier2
+    state: Gujarat
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Ghaziabad
+    aliases: [GZB, गाज़ियाबाद]
+    tier: tier2
+    state: Uttar Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Ludhiana
+    aliases: [लुधियाना, ਲੁਧਿਆਣਾ]
+    tier: tier2
+    state: Punjab
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Agra
+    aliases: [Taj City, आगरा]
+    tier: tier2
+    state: Uttar Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Nashik
+    aliases: [Nasik, नाशिक]
+    tier: tier2
+    state: Maharashtra
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: false}
+  - name: Faridabad
+    aliases: [फरीदाबाद]
+    tier: tier2
+    state: Haryana
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Meerut
+    aliases: [मेरठ]
+    tier: tier2
+    state: Uttar Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Rajkot
+    aliases: [राजकोट, રાજકોટ]
+    tier: tier2
+    state: Gujarat
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Varanasi
+    aliases: [Benares, Kashi, वाराणसी]
+    tier: tier2
+    state: Uttar Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Srinagar
+    aliases: [श्रीनगर, سِری نَگَر]
+    tier: tier2
+    state: Jammu and Kashmir
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: true}
+  - name: Aurangabad
+    aliases: [Chhatrapati Sambhajinagar, औरंगाबाद]
+    tier: tier2
+    state: Maharashtra
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Dhanbad
+    aliases: [Coal Capital, धनबाद]
+    tier: tier2
+    state: Jharkhand
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Amritsar
+    aliases: [Ambarsar, अमृतसर, ਅੰਮ੍ਰਿਤਸਰ]
+    tier: tier2
+    state: Punjab
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Navi Mumbai
+    aliases: [New Bombay, नवी मुंबई]
+    tier: tier2
+    state: Maharashtra
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Allahabad
+    aliases: [Prayagraj, प्रयागराज]
+    tier: tier2
+    state: Uttar Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Howrah
+    aliases: [Haora, हावड़ा, হাওড়া]
+    tier: tier2
+    state: West Bengal
+    seasonal: {winter_smog: true, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Ranchi
+    aliases: [रांची]
+    tier: tier2
+    state: Jharkhand
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: false}
+  - name: Gwalior
+    aliases: [ग्वालियर]
+    tier: tier2
+    state: Madhya Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Jabalpur
+    aliases: [Sanskardhani, जबलपुर]
+    tier: tier2
+    state: Madhya Pradesh
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Coimbatore
+    aliases: [Kovai, कोयंबतूर, கோயம்புத்தூர்]
+    tier: tier2
+    state: Tamil Nadu
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: false}
+  - name: Vijayawada
+    aliases: [Bezawada, विजयवाड़ा, విజయవాడ]
+    tier: tier2
+    state: Andhra Pradesh
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Jodhpur
+    aliases: [Blue City, जोधपुर]
+    tier: tier2
+    state: Rajasthan
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Madurai
+    aliases: [Temple City, मदुरै, மதுரை]
+    tier: tier2
+    state: Tamil Nadu
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Raipur
+    aliases: [रायपुर]
+    tier: tier2
+    state: Chhattisgarh
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Kota
+    aliases: [कोटा]
+    tier: tier2
+    state: Rajasthan
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Guwahati
+    aliases: [Gauhati, गुवाहाटी, গুৱাহাটী]
+    tier: tier2
+    state: Assam
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Chandigarh
+    aliases: [City Beautiful, चंडीगढ़, ਚੰਡੀਗੜ੍ਹ]
+    tier: tier2
+    state: Chandigarh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Solapur
+    aliases: [Sholapur, सोलापूर]
+    tier: tier2
+    state: Maharashtra
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Hubli-Dharwad
+    aliases: [Hubballi, हुबली-धारवाड़, ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ]
+    tier: tier2
+    state: Karnataka
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: false}
+  - name: Bareilly
+    aliases: [बरेली]
+    tier: tier2
+    state: Uttar Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Mysore
+    aliases: [Mysuru, मैसूर, ಮೈಸೂರು]
+    tier: tier2
+    state: Karnataka
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: false}
+  - name: Gurgaon
+    aliases: [Gurugram, गुरुग्राम]
+    tier: tier2
+    state: Haryana
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Noida
+    aliases: [नोएडा, Gautam Buddha Nagar]
+    tier: tier2
+    state: Uttar Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Jalandhar
+    aliases: [Jullundur, जालंधर, ਜਲੰਧਰ]
+    tier: tier2
+    state: Punjab
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Tiruchirappalli
+    aliases: [Trichy, तिरुचिरापल्ली, திருச்சிராப்பள்ளி]
+    tier: tier2
+    state: Tamil Nadu
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Bhubaneswar
+    aliases: [भुवनेश्वर, ଭୁବନେଶ୍ୱର]
+    tier: tier2
+    state: Odisha
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Kochi
+    aliases: [Cochin, कोच्चि, കൊച്ചി]
+    tier: tier2
+    state: Kerala
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Dehradun
+    aliases: [Doon, देहरादून]
+    tier: tier2
+    state: Uttarakhand
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: true}
+  - name: Jamshedpur
+    aliases: [Tatanagar, जमशेदपुर]
+    tier: tier2
+    state: Jharkhand
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Bikaner
+    aliases: [बीकानेर]
+    tier: tier2
+    state: Rajasthan
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Mangalore
+    aliases: [Mangaluru, मैंगलोर, ಮಂಗಳೂರು]
+    tier: tier2
+    state: Karnataka
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Kozhikode
+    aliases: [Calicut, कोझिकोड, കോഴിക്കോട്]
+    tier: tier2
+    state: Kerala
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Udaipur
+    aliases: [City of Lakes, उदयपुर]
+    tier: tier2
+    state: Rajasthan
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Jammu
+    aliases: [City of Temples, जम्मू]
+    tier: tier2
+    state: Jammu and Kashmir
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: true}
+  - name: Shimla
+    aliases: [Simla, शिमला]
+    tier: tier2
+    state: Himachal Pradesh
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: true}
+  - name: Thrissur
+    aliases: [Trichur, त्रिशूर, തൃശൂർ]
+    tier: tier2
+    state: Kerala
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Tirupati
+    aliases: [तिरुपति, తిరుపతి]
+    tier: tier2
+    state: Andhra Pradesh
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Patiala
+    aliases: [पटियाला, ਪਟਿਆਲਾ]
+    tier: tier2
+    state: Punjab
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Rohtak
+    aliases: [रोहतक]
+    tier: tier2
+    state: Haryana
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Belgaum
+    aliases: [Belagavi, बेलगाम, ಬೆಳಗಾವಿ]
+    tier: tier2
+    state: Karnataka
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: false}
+  - name: Panipat
+    aliases: [पानीपत]
+    tier: tier2
+    state: Haryana
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Kollam
+    aliases: [Quilon, कोल्लम, കൊല്ലം]
+    tier: tier2
+    state: Kerala
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Bathinda
+    aliases: [बठिंडा, ਬਠਿੰਡਾ]
+    tier: tier2
+    state: Punjab
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Siliguri
+    aliases: [सिलीगुड़ी, শিলিগুড়ি]
+    tier: tier2
+    state: West Bengal
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Haridwar
+    aliases: [हरिद्वार]
+    tier: tier2
+    state: Uttarakhand
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Gandhinagar
+    aliases: [गांधीनगर, ગાંધીનગર]
+    tier: tier2
+    state: Gujarat
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Gorakhpur
+    aliases: [गोरखपुर]
+    tier: tier2
+    state: Uttar Pradesh
+    seasonal: {winter_smog: true, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Ajmer
+    aliases: [अजमेर]
+    tier: tier2
+    state: Rajasthan
+    seasonal: {winter_smog: false, extreme_heat: true, street_waterlogging: false, extreme_cold: false}
+  - name: Agartala
+    aliases: [अगरतला, আগরতলা]
+    tier: tier2
+    state: Tripura
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: true, extreme_cold: false}
+  - name: Imphal
+    aliases: [इम्फाल]
+    tier: tier2
+    state: Manipur
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: true}
+  - name: Aizawl
+    aliases: [आइजोल]
+    tier: tier2
+    state: Mizoram
+    seasonal: {winter_smog: false, extreme_heat: false, street_waterlogging: false, extreme_cold: true}
+
+  # DEFAULT RURAL FALLBACK
+  - name: _default_rural
+    tier: rural
+    seasonal:
+      winter_smog: false
+      extreme_heat: false
+      street_waterlogging: false
+      extreme_cold: false

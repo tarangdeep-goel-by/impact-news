@@ -107,6 +107,7 @@ class MicroImpact(TypedDict, total=False):
     delay_days: int
     rationale: str         # WHY this impact exists (synthesized from multiple shifts)
     driving_t_nodes: list[str]  # T-node IDs that drive this impact
+    scope: str             # "national" | "state:<Name>" | "city:<Name>" — geographic scope
 
 
 class MicroImpactRevision(TypedDict):

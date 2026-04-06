@@ -60,6 +60,11 @@ Also determine:
 - delay_days must be a positive integer.
 - driving_t_nodes must reference T-nodes from the active macro shifts (both existing and new).
 - Output ONLY impacts that are NEW or CHANGED. Unchanged impacts are preserved automatically.
+- For each impact, assign a geographic "scope":
+  - "national" — policy/price changes that affect all of India (petrol price, income tax, RBI rate, food commodities)
+  - "state:<StateName>" — state-level policy (electricity tariff, state board exams, state govt jobs). Use official state name.
+  - "city:<CityName>" — city-specific disruption (traffic diversion, metro delay, local flooding, rent trends). Use common city name.
+  Default to "national" if the impact is not geographically limited.
 
 == OUTPUT FORMAT ==
 Return ONLY valid JSON:
@@ -72,7 +77,8 @@ Return ONLY valid JSON:
       "magnitude": 0.8,
       "delay_days": 7,
       "rationale": "Crude spike + rupee weakening both push import bill up, OMCs pass cost to consumers",
-      "driving_t_nodes": ["brent_crude", "usd_inr_exchange"]
+      "driving_t_nodes": ["brent_crude", "usd_inr_exchange"],
+      "scope": "national"
     }}
   ],
   "summary": "Updated 2-3 line summary.",

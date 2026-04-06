@@ -1,0 +1,302 @@
+segment: 0
+name: "The Essentials"
+questions:
+  - id: s0_city
+    text: "Which city do you live in?"
+    type: autocomplete_text
+    telegram_ux: text_input
+    options: []  # City-tier lookup handled by engine via cities.yaml
+
+  - id: s0_work
+    text: "What best describes your work?"
+    type: single_choice
+    telegram_ux: inline_keyboard
+    options:
+      - label: "Private company job"
+        value: corporate
+        activations:
+          corporate_salaries: 1.0
+          corporate_hiring_and_layoffs: 0.9
+          personal_income_tax: 0.9
+          tds_and_compliance: 0.6
+          professional_upskilling: 0.6
+          workplace_and_industrial_accidents: 0.2
+      - label: "Government / PSU job"
+        value: govt
+        activations:
+          state_govt_jobs: 1.0
+          upsc_and_ssc_jobs: 0.8
+          psu_and_bank_jobs: 0.8
+          railway_rrb_jobs: 0.7
+          defense_agniveer_jobs: 0.5
+          personal_income_tax: 0.8
+          maternity_and_leave_pay: 0.5
+          statutory_minimum_wage: 0.4
+      - label: "Freelance / Creator"
+        value: freelance
+        activations:
+          freelance_and_creator_income: 1.0
+          digital_privacy_and_data: 0.6
+          broadband_and_wifi: 0.7
+          personal_income_tax: 0.7
+          tds_and_compliance: 0.7
+          edtech_platforms: 0.4
+          labor_and_gig_unions: 0.5
+      - label: "Own business / Shop"
+        value: business
+        activations:
+          msme_factory_owner_income: 1.0
+          kirana_and_retail_income: 0.8
+          indirect_taxes_gst: 1.0
+          tds_and_compliance: 0.9
+          personal_income_tax: 0.7
+          corporate_salaries: 0.6
+          corporate_hiring_and_layoffs: 0.6
+          building_materials_and_labor: 0.4
+      - label: "Gig work (delivery/driving)"
+        value: gig
+        activations:
+          food_and_grocery_delivery_payouts: 1.0
+          ride_hailing_earnings: 1.0
+          home_services_payouts: 0.9
+          labor_and_gig_unions: 1.0
+          traffic_fines: 0.8
+          petrol_price: 0.8
+          cng_price: 0.7
+          road_traffic_accidents: 0.7
+          statutory_minimum_wage: 0.7
+          extreme_heat: 0.6
+          winter_smog: 0.6
+      - label: "Daily wage / Labor"
+        value: labor
+        activations:
+          construction_worker_wages: 1.0
+          factory_worker_wages: 1.0
+          domestic_help_wages: 0.5
+          mgnrega_wages: 0.9
+          statutory_minimum_wage: 1.0
+          labor_and_gig_unions: 0.8
+          workplace_and_industrial_accidents: 0.7
+          welfare_and_ration_cards: 0.8
+      - label: "Farming"
+        value: farming
+        activations:
+          farmer_income_and_msp: 1.0
+          farm_labor_wages: 0.9
+          farmer_agitations: 1.0
+          extreme_heat: 0.8
+          water_supply_and_tankers: 0.8
+          mgnrega_wages: 0.7
+          street_vendor_income: 0.3
+      - label: "Student"
+        value: student
+        activations:
+          general_degree_programs: 1.0
+          college_entrance_exams: 0.9
+          engineering_and_tech_education: 0.8
+          medical_and_healthcare_education: 0.8
+          law_and_management_education: 0.8
+          student_and_youth_unions: 0.9
+          coaching_institutes: 0.8
+          government_recruitment_exams: 0.7
+          educational_scholarships: 0.8
+          college_and_university_fees: 0.7
+          residential_rent_and_pg: 0.5
+      - label: "Homemaker"
+        value: homemaker
+        activations:
+          domestic_help_cost: 0.8
+          domestic_help_wages: 0.8
+          lpg_cylinder: 0.9
+          fresh_vegetables_and_fruits: 0.9
+          staple_grains: 0.9
+          water_supply_and_tankers: 0.6
+          maternal_and_child_health: 0.6
+          school_fees: 0.6
+      - label: "Retired"
+        value: retired
+        activations:
+          hospital_and_medical_care: 0.9
+          medicines_and_pharmaceuticals: 0.9
+          chronic_and_lifestyle_diseases: 0.8
+          health_insurance_premium: 0.8
+          life_insurance_premium: 0.6
+          capital_gains_tax: 0.6
+          personal_income_tax: 0.5
+          places_of_worship: 0.5
+
+  - id: s0_transport
+    text: "How do you mostly get around?"
+    type: multi_choice
+    telegram_ux: inline_keyboard_multi
+    max_selections: 2
+    options:
+      - label: "Car/Bike (petrol)"
+        value: petrol_vehicle
+        activations:
+          petrol_price: 1.0
+          traffic_fines: 0.9
+          parking_fees: 0.9
+          motor_insurance_premium: 0.8
+          traffic_congestion: 0.8
+          road_conditions_and_closures: 0.7
+          vehicle_purchase_cost: 0.6
+          road_traffic_accidents: 0.6
+          highway_tolls: 0.5
+      - label: "Car/Bike (diesel)"
+        value: diesel_vehicle
+        activations:
+          diesel_price: 1.0
+          traffic_fines: 0.9
+          parking_fees: 0.9
+          motor_insurance_premium: 0.8
+          traffic_congestion: 0.8
+          road_conditions_and_closures: 0.7
+          vehicle_purchase_cost: 0.6
+          highway_tolls: 0.5
+      - label: "CNG auto/car"
+        value: cng
+        activations:
+          cng_price: 1.0
+          traffic_fines: 0.8
+          motor_insurance_premium: 0.7
+          parking_fees: 0.8
+          traffic_congestion: 0.7
+      - label: "EV"
+        value: ev
+        activations:
+          ev_charging_tariff: 1.0
+          motor_insurance_premium: 0.7
+          traffic_fines: 0.6
+          parking_fees: 0.7
+          vehicle_purchase_cost: 0.5
+      - label: "Metro / Local train"
+        value: metro
+        activations:
+          metro_and_local_train: 1.0
+          railway_and_transit_accidents: 0.6
+          crowd_stampedes: 0.5
+      - label: "Bus"
+        value: bus
+        activations:
+          city_bus_transit: 1.0
+          transport_worker_movements: 0.8
+          road_traffic_accidents: 0.5
+          intercity_bus_fare: 0.4
+      - label: "Auto / E-rickshaw"
+        value: auto
+        activations:
+          auto_e_rickshaw: 1.0
+          cng_price: 0.5
+          traffic_congestion: 0.6
+      - label: "Cab (Ola/Uber)"
+        value: cab
+        activations:
+          ride_hailing_cabs_bikes: 1.0
+          traffic_congestion: 0.7
+          petrol_price: 0.5
+          highway_tolls: 0.5
+      - label: "Walk / Cycle"
+        value: walk
+        activations:
+          road_conditions_and_closures: 0.9
+          street_waterlogging: 0.9
+          air_pollution: 0.8
+          extreme_heat: 0.8
+          stray_animal_nuisance: 0.9
+          uncollected_street_garbage: 0.8
+
+  - id: s0_housing
+    text: "Your housing situation?"
+    type: single_choice
+    telegram_ux: inline_keyboard
+    options:
+      - label: "Renting"
+        value: rent
+        activations:
+          residential_rent_and_pg: 1.0
+          property_and_civic_registration: 0.5
+          water_supply_and_tankers: 0.6
+          electricity_tariff: 0.7
+      - label: "Own home (paying loan)"
+        value: own_loan
+        activations:
+          residential_rent_and_pg: 0.0
+          rwa_and_maintenance_fees: 0.8
+          property_and_civic_registration: 0.8
+          building_materials_and_labor: 0.5
+          capital_gains_tax: 0.4
+          electricity_tariff: 0.7
+      - label: "Own home (fully paid)"
+        value: own_free
+        activations:
+          residential_rent_and_pg: 0.0
+          rwa_and_maintenance_fees: 0.8
+          property_and_civic_registration: 0.7
+          building_materials_and_labor: 0.6
+          capital_gains_tax: 0.4
+          electricity_tariff: 0.7
+      - label: "Hostel / PG"
+        value: hostel
+        activations:
+          residential_rent_and_pg: 0.9
+          food_delivery_services: 0.8
+          college_and_university_fees: 0.6
+          broadband_and_wifi: 0.6
+      - label: "Living with family"
+        value: family
+        activations:
+          residential_rent_and_pg: 0.2
+          rwa_and_maintenance_fees: 0.4
+          domestic_help_cost: 0.5
+
+  - id: s0_family
+    text: "Who depends on you?"
+    type: multi_choice
+    telegram_ux: inline_keyboard_multi
+    max_selections: 4
+    options:
+      - label: "School-age kids"
+        value: kids_school
+        activations:
+          school_fees: 1.0
+          private_schools: 0.9
+          government_schools: 0.6
+          school_board_exams: 0.9
+          coaching_and_tuition_fees: 0.8
+          crimes_against_children: 0.9
+          school_welfare_programs: 0.6
+          maternal_and_child_health: 0.5
+      - label: "College-age kids"
+        value: kids_college
+        activations:
+          college_and_university_fees: 1.0
+          college_entrance_exams: 0.9
+          coaching_institutes: 0.8
+          coaching_and_tuition_fees: 0.6
+          general_degree_programs: 0.7
+          engineering_and_tech_education: 0.6
+          educational_scholarships: 0.7
+      - label: "Toddlers / Infants"
+        value: toddlers
+        activations:
+          anganwadi_and_preschools: 1.0
+          maternal_and_child_health: 0.9
+          medicines_and_pharmaceuticals: 0.7
+          crimes_against_children: 0.7
+          dairy_and_eggs: 0.8
+          domestic_help_cost: 0.6
+          maternity_and_leave_pay: 0.6
+      - label: "Elderly parents"
+        value: elderly
+        activations:
+          hospital_and_medical_care: 0.9
+          medicines_and_pharmaceuticals: 0.9
+          chronic_and_lifestyle_diseases: 0.9
+          health_insurance_premium: 0.8
+          medical_tests_and_diagnostics: 0.7
+          extreme_heat: 0.6
+          extreme_cold: 0.6
+      - label: "Just me / No dependents"
+        value: none
+        activations: {}
