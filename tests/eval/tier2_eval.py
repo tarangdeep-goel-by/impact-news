@@ -82,6 +82,15 @@ def recall_at_k(predicted_nodes: list[str], ground_truth: list[dict], k: int = 1
     return len(gt_nodes & pred_set) / len(gt_nodes)
 
 
+def precision_at_k(predicted_nodes: list[str], ground_truth: list[dict], k: int = 10) -> float:
+    """Precision@k — fraction of top-k predictions that are in ground truth."""
+    gt_nodes = {gt["i_node"] for gt in ground_truth}
+    pred_top = predicted_nodes[:k]
+    if not pred_top:
+        return 0.0
+    return len(gt_nodes & set(pred_top)) / len(pred_top)
+
+
 def run_eval(cases: list[dict], analyzer: ImpactAnalyzer, taxonomy: TaxonomyContext) -> list[dict]:
     """Run Tier 2 on all cases and collect results."""
     results = []
@@ -114,20 +123,23 @@ def run_eval(cases: list[dict], analyzer: ImpactAnalyzer, taxonomy: TaxonomyCont
         for imp in pred_impacts:
             imp["score"] = imp.get("probability", 0) * imp.get("magnitude", 0)
         pred_impacts.sort(key=lambda x: x["score"], reverse=True)
-        pred_nodes = [imp["i_node"] for imp in pred_impacts if "i_node" in imp]
+        # Filter to valid leaf nodes only (exclude L2 category IDs)
+        valid_leaves = taxonomy.get_all_i_leaf_ids()
+        pred_nodes = [imp["i_node"] for imp in pred_impacts if imp.get("i_node") in valid_leaves]
 
         # Compute metrics
         gt = case["expected_impacts"]
         ndcg_10 = ndcg(pred_nodes, gt, k=10)
         recall_10 = recall_at_k(pred_nodes, gt, k=10)
         recall_5 = recall_at_k(pred_nodes, gt, k=5)
+        prec_10 = precision_at_k(pred_nodes, gt, k=10)
 
         # Show results
         gt_nodes = [g["i_node"] for g in gt[:5]]
         pred_top5 = pred_nodes[:5]
         hits = set(pred_nodes[:10]) & {g["i_node"] for g in gt}
 
-        print(f"  NDCG@10: {ndcg_10:.3f} | Recall@10: {recall_10:.1%} | Recall@5: {recall_5:.1%} ({elapsed_ms}ms)")
+        print(f"  NDCG@10: {ndcg_10:.3f} | R@10: {recall_10:.1%} | P@10: {prec_10:.1%} ({elapsed_ms}ms)")
         print(f"  GT top-5:   {gt_nodes}")
         print(f"  Pred top-5: {pred_top5}")
         print(f"  Hits@10:    {hits}")
@@ -139,6 +151,7 @@ def run_eval(cases: list[dict], analyzer: ImpactAnalyzer, taxonomy: TaxonomyCont
             "ndcg_10": ndcg_10,
             "recall_10": recall_10,
             "recall_5": recall_5,
+            "precision_10": prec_10,
             "error": None,
             "ms": elapsed_ms,
         })
@@ -162,17 +175,20 @@ def print_report(results: list[dict]) -> None:
     avg_ndcg = sum(r["ndcg_10"] for r in valid) / len(valid)
     avg_recall_10 = sum(r["recall_10"] for r in valid) / len(valid)
     avg_recall_5 = sum(r["recall_5"] for r in valid) / len(valid)
+    avg_prec_10 = sum(r.get("precision_10", 0) for r in valid) / len(valid)
 
     print(f"\n--- Aggregate Metrics ---")
-    print(f"  NDCG@10:    {avg_ndcg:.3f}")
-    print(f"  Recall@10:  {avg_recall_10:.1%}")
-    print(f"  Recall@5:   {avg_recall_5:.1%}")
+    print(f"  NDCG@10:       {avg_ndcg:.3f}")
+    print(f"  Recall@10:     {avg_recall_10:.1%}")
+    print(f"  Precision@10:  {avg_prec_10:.1%}")
+    print(f"  Recall@5:      {avg_recall_5:.1%}")
 
     # Per-event breakdown
     print(f"\n--- Per-Event ---")
-    print(f"  {'Event':45s} {'NDCG':>6s} {'R@10':>6s} {'R@5':>5s} {'ms':>6s}")
+    print(f"  {'Event':45s} {'NDCG':>6s} {'R@10':>6s} {'P@10':>6s} {'#pred':>5s} {'ms':>6s}")
     for r in sorted(valid, key=lambda x: x["ndcg_10"]):
-        print(f"  {r['name']:45s} {r['ndcg_10']:6.3f} {r['recall_10']:5.0%} {r['recall_5']:5.0%} {r['ms']:5d}ms")
+        n_pred = len(r.get("pred_nodes", []))
+        print(f"  {r['name']:45s} {r['ndcg_10']:6.3f} {r['recall_10']:5.0%} {r.get('precision_10',0):5.0%} {n_pred:5d} {r['ms']:5d}ms")
 
     # Latency
     times = [r["ms"] for r in valid]

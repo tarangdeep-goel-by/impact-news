@@ -42,16 +42,6 @@
         "i_node": "kirana_and_retail_income",
         "rank": 5,
         "reasoning": "LPG distributors face enforcement action against hoarding/black-marketing, disrupting their income"
-      },
-      {
-        "i_node": "packaged_foods_and_beverages",
-        "rank": 6,
-        "reasoning": "Food processing units using LPG face higher energy costs, pushing up prices of packaged snacks and beverages"
-      },
-      {
-        "i_node": "street_vendor_income",
-        "rank": 7,
-        "reasoning": "Chaat, momos, samosa vendors who depend on small commercial LPG cylinders face acute shortage and cost spikes"
       }
     ]
   },
@@ -98,16 +88,6 @@
         "i_node": "ride_hailing_cabs_bikes",
         "rank": 5,
         "reasoning": "Airport cab demand shifts as fewer international travelers arrive; domestic terminal cab queues grow"
-      },
-      {
-        "i_node": "food_delivery_services",
-        "rank": 6,
-        "reasoning": "International ATF doubling sharply raises air cargo costs for imported food ingredients"
-      },
-      {
-        "i_node": "packaged_foods_and_beverages",
-        "rank": 7,
-        "reasoning": "Air-freighted perishable imports become significantly more expensive, raising premium packaged food prices"
       }
     ]
   },
@@ -154,21 +134,6 @@
         "i_node": "capital_gains_tax",
         "rank": 5,
         "reasoning": "RBI curbs on speculative currency trading affect F&O traders, triggering capital gains/losses"
-      },
-      {
-        "i_node": "consumer_tech_hardware",
-        "rank": 6,
-        "reasoning": "Smartphones and laptops are largely imported — a stronger rupee lowers landed costs for electronics"
-      },
-      {
-        "i_node": "domestic_flight_ticket",
-        "rank": 7,
-        "reasoning": "Airlines' dollar-denominated costs (aircraft leases, ATF) decrease in rupee terms, easing airfares"
-      },
-      {
-        "i_node": "medicines_and_pharmaceuticals",
-        "rank": 8,
-        "reasoning": "Bulk drug intermediates imported from China are dollar-priced — stronger rupee lowers medicine costs"
       }
     ]
   },
@@ -215,16 +180,6 @@
         "i_node": "packaged_foods_and_beverages",
         "rank": 5,
         "reasoning": "Crude-linked packaging materials (PET bottles, plastic wraps) become costlier, raising packaged food prices"
-      },
-      {
-        "i_node": "corporate_hiring_and_layoffs",
-        "rank": 6,
-        "reasoning": "Textile exporters losing orders and facing margin pressure will freeze hiring — sector employs 45 million people"
-      },
-      {
-        "i_node": "lpg_cylinder",
-        "rank": 7,
-        "reasoning": "Rising crude prices increase LPG import parity pricing, putting upward pressure on cooking gas costs"
       }
     ]
   },
@@ -266,21 +221,6 @@
         "i_node": "domestic_flight_ticket",
         "rank": 5,
         "reasoning": "Low visibility at IGI Airport causes flight delays and diversions, forcing rebookings at higher fares"
-      },
-      {
-        "i_node": "ride_hailing_cabs_bikes",
-        "rank": 6,
-        "reasoning": "Surge pricing kicks in as fewer drivers operate during hazardous visibility"
-      },
-      {
-        "i_node": "extreme_heat",
-        "rank": 7,
-        "reasoning": "Dust storms in Delhi typically accompany pre-monsoon heat waves — combination creates dangerous outdoor conditions"
-      },
-      {
-        "i_node": "construction_worker_wages",
-        "rank": 8,
-        "reasoning": "Open-air construction sites halt work during dust storms, costing daily-wage workers a day's income"
       }
     ]
   },
@@ -327,21 +267,6 @@
         "i_node": "construction_worker_wages",
         "rank": 5,
         "reasoning": "Migrant construction workers walking home lose daily wages and ongoing site work stalls"
-      },
-      {
-        "i_node": "domestic_help_wages",
-        "rank": 6,
-        "reasoning": "Migrant domestic workers leaving cities lose employment; urban households lose help"
-      },
-      {
-        "i_node": "restaurant_and_street_food",
-        "rank": 7,
-        "reasoning": "Worker exodus depletes restaurant and street food labor, raising costs and reducing availability"
-      },
-      {
-        "i_node": "corporate_hiring_and_layoffs",
-        "rank": 8,
-        "reasoning": "Mass worker departure forces factories and logistics firms into effective workforce shortages"
       }
     ]
   },
@@ -383,16 +308,6 @@
         "i_node": "farm_labor_wages",
         "rank": 5,
         "reasoning": "Reduced cane harvesting season means less work for agricultural laborers in cane-belt regions"
-      },
-      {
-        "i_node": "restaurant_and_street_food",
-        "rank": 6,
-        "reasoning": "Mithai shops, chai stalls, and restaurants face higher sugar input costs"
-      },
-      {
-        "i_node": "edible_oils",
-        "rank": 7,
-        "reasoning": "Sugar deficit may push ethanol blending policy changes affecting edible oil crop acreage competition"
       }
     ]
   },
@@ -439,16 +354,6 @@
         "i_node": "corporate_salaries",
         "rank": 5,
         "reasoning": "Simplified tax slabs and deductions change take-home pay calculations for salaried employees"
-      },
-      {
-        "i_node": "kirana_and_retail_income",
-        "rank": 6,
-        "reasoning": "Simpler tax rules reduce compliance burden and CA costs for small shopkeepers"
-      },
-      {
-        "i_node": "msme_factory_owner_income",
-        "rank": 7,
-        "reasoning": "MSME owners benefit from clearer tax provisions reducing audit risk and compliance costs"
       }
     ]
   },
@@ -495,16 +400,6 @@
         "i_node": "consumer_tech_hardware",
         "rank": 5,
         "reasoning": "Plastics and polymers in electronics housings and components become cheaper with duty exemption"
-      },
-      {
-        "i_node": "factory_worker_wages",
-        "rank": 6,
-        "reasoning": "Cheaper raw materials improve margins for petrochemical and plastics factories, stabilizing employment"
-      },
-      {
-        "i_node": "msme_factory_owner_income",
-        "rank": 7,
-        "reasoning": "Small plastics and packaging MSMEs benefit from lower input costs, improving margins"
       }
     ]
   },
@@ -551,16 +446,6 @@
         "i_node": "vehicle_purchase_cost",
         "rank": 5,
         "reasoning": "Bad road surfaces accelerate vehicle wear on suspension, tyres — raising effective ownership costs"
-      },
-      {
-        "i_node": "intercity_bus_fare",
-        "rank": 6,
-        "reasoning": "Poor highway conditions increase bus operator maintenance costs, eventually passed to passengers"
-      },
-      {
-        "i_node": "diesel_price",
-        "rank": 7,
-        "reasoning": "Trucks and buses burn more fuel on damaged highways due to braking and slow speeds"
       }
     ]
   },
@@ -607,11 +492,6 @@
         "i_node": "restaurant_and_street_food",
         "rank": 5,
         "reasoning": "Street food vendors relying on LPG cylinders in PNG areas face forced transition or loss of fuel supply"
-      },
-      {
-        "i_node": "kirana_and_retail_income",
-        "rank": 6,
-        "reasoning": "LPG distributors and dealers lose business as customers migrate to piped gas"
       }
     ]
   },
@@ -694,11 +574,6 @@
         "i_node": "personal_income_tax",
         "rank": 5,
         "reasoning": "Fraud losses previously borne by citizens were unrecoverable; zero liability means citizens retain more post-tax income"
-      },
-      {
-        "i_node": "tds_and_compliance",
-        "rank": 6,
-        "reasoning": "Stronger KYC and compliance processes may follow as banks tighten verification"
       }
     ]
   },
@@ -740,16 +615,6 @@
         "i_node": "pulses_and_dals",
         "rank": 5,
         "reasoning": "Low food inflation indicates reduced dal prices, easing protein costs for households"
-      },
-      {
-        "i_node": "edible_oils",
-        "rank": 6,
-        "reasoning": "Edible oil prices falling as part of broader food deflation reduces a key kitchen expense"
-      },
-      {
-        "i_node": "lpg_cylinder",
-        "rank": 7,
-        "reasoning": "Fuel price decline reflected in CPI suggests lower LPG costs or stable subsidized pricing"
       }
     ]
   },
@@ -791,16 +656,6 @@
         "i_node": "corporate_hiring_and_layoffs",
         "rank": 5,
         "reasoning": "Real estate and infra firms actively hiring — 20 lakh vacancies represent significant employment opportunity"
-      },
-      {
-        "i_node": "farm_labor_wages",
-        "rank": 6,
-        "reasoning": "Construction sector pulling rural labor away from agriculture, driving up farm labor wages"
-      },
-      {
-        "i_node": "factory_worker_wages",
-        "rank": 7,
-        "reasoning": "Worker shortage creates cross-sector competition for semi-skilled labor, pushing up factory wages too"
       }
     ]
   },
@@ -842,11 +697,6 @@
         "i_node": "corporate_salaries",
         "rank": 5,
         "reasoning": "Easier corporate borrowing stimulates business expansion, supporting salary increments and new hiring"
-      },
-      {
-        "i_node": "building_materials_and_labor",
-        "rank": 6,
-        "reasoning": "Cheaper home loans spur housing demand, increasing construction activity and demand for building materials"
       }
     ]
   },
@@ -934,11 +784,6 @@
         "i_node": "maternal_and_child_health",
         "rank": 5,
         "reasoning": "Pregnant women and children among beneficiaries lose coverage for maternity and pediatric services"
-      },
-      {
-        "i_node": "state_govt_jobs",
-        "rank": 6,
-        "reasoning": "Government employee compensation effectively reduced as health insurance benefit is disrupted"
       }
     ]
   },
@@ -980,11 +825,6 @@
         "i_node": "corporate_hiring_and_layoffs",
         "rank": 5,
         "reasoning": "MSMEs facing margin pressure reduce hiring or resort to layoffs in manufacturing sector"
-      },
-      {
-        "i_node": "construction_worker_wages",
-        "rank": 6,
-        "reasoning": "If construction activity slows due to higher steel costs, demand for construction labor may decline"
       }
     ]
   },
@@ -1031,11 +871,6 @@
         "i_node": "farmer_income_and_msp",
         "rank": 5,
         "reasoning": "Rural households using gold as collateral for crop loans see increased collateral value"
-      },
-      {
-        "i_node": "personal_income_tax",
-        "rank": 6,
-        "reasoning": "Higher gold valuations affect wealth declarations and inherited gold taxation calculations"
       }
     ]
   }
