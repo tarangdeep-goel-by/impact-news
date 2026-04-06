@@ -1,0 +1,459 @@
+nodes:
+- id: i8
+  aliases:
+  - Digital & Leisure
+  - Downtime
+  - Online Life & Entertainment
+  - Digital Duniya
+  category: I8
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Telecom & Internet Access ===
+- id: telecom_and_internet_access
+  aliases:
+  - Telecom & Internet Access
+  - Mobile & Broadband
+  - Internet Connectivity
+  - Telecom Sewa
+  category: I8
+  level: 2
+  status: active
+  is_category: true
+- id: mobile_tariffs
+  aliases:
+  - Mobile Recharge
+  - Data Pack Price
+  - Telecom Tariff
+  - "मोबाइल रिचार्ज"
+  category: I8
+  level: 3
+  status: active
+- id: broadband_and_wifi
+  aliases:
+  - Broadband Bill
+  - Fiber Internet
+  - Public Wifi Access
+  - "ब्रॉडबैंड"
+  category: I8
+  level: 3
+  status: active
+- id: network_connectivity
+  aliases:
+  - Call Drops
+  - Poor Network
+  - Internet Speed
+  - 5G Coverage
+  - "नेटवर्क कवरेज"
+  category: I8
+  level: 3
+  status: active
+- id: internet_shutdowns
+  aliases:
+  - Internet Ban
+  - Net Blockade
+  - Telecom Suspension
+  - "इंटरनेट बैन"
+  category: I8
+  level: 3
+  status: active
+
+# === L2: Digital Life & Security ===
+- id: digital_life_and_security
+  aliases:
+  - Digital Life & Security
+  - Online Safety
+  - Digital Privacy
+  - Digital Suraksha
+  category: I8
+  level: 2
+  status: active
+  is_category: true
+- id: social_media_platforms
+  aliases:
+  - Instagram Access
+  - Facebook
+  - Twitter Ban
+  - Content Moderation
+  - "सोशल मीडिया"
+  category: I8
+  level: 3
+  status: active
+- id: messaging_apps
+  aliases:
+  - WhatsApp Outage
+  - Telegram Ban
+  - Secure Messaging
+  - "व्हाट्सएप"
+  category: I8
+  level: 3
+  status: active
+- id: digital_privacy_and_data
+  aliases:
+  - Data Breach
+  - Personal Data Privacy
+  - Hacking Leak
+  - "डेटा लीक"
+  category: I8
+  level: 3
+  status: active
+- id: spam_and_scams
+  aliases:
+  - Spam Calls
+  - Phishing Text
+  - Promotional Calls
+  - "स्पैम कॉल"
+  category: I8
+  level: 3
+  status: active
+- id: consumer_tech_hardware
+  aliases:
+  - Smartphone Price
+  - Laptop Cost
+  - Consumer Electronics
+  - "स्मार्टफोन"
+  category: I8
+  level: 3
+  status: active
+
+# === L2: Entertainment & Gaming ===
+- id: entertainment_and_gaming
+  aliases:
+  - Entertainment & Gaming
+  - Movies & Games
+  - Manoranjan
+  - Fun & Leisure
+  category: I8
+  level: 2
+  status: active
+  is_category: true
+- id: cinema_and_movies
+  aliases:
+  - Movie Tickets
+  - Multiplex Release
+  - Box Office
+  - "सिनेमा टिकट"
+  category: I8
+  level: 3
+  status: active
+- id: ott_platforms
+  aliases:
+  - Netflix Subscription
+  - Prime Video
+  - Web Series
+  - "ओटीटी"
+  category: I8
+  level: 3
+  status: active
+- id: video_games_and_esports
+  aliases:
+  - PC Gaming
+  - Console Games
+  - BGMI Ban
+  - "पबजी/गेमिंग"
+  category: I8
+  level: 3
+  status: active
+- id: real_money_gaming
+  aliases:
+  - Dream11
+  - Online Rummy
+  - Fantasy Sports Betting
+  - "ऑनलाइन सट्टा"
+  category: I8
+  level: 3
+  status: active
+- id: theatre_and_performing_arts
+  aliases:
+  - Theatre Play
+  - Natak
+  - Standup Comedy
+  - Cultural Show
+  - "नाटक"
+  category: I8
+  level: 3
+  status: active
+
+# === L2: Sports & Recreation ===
+- id: sports_and_recreation
+  aliases:
+  - Sports & Recreation
+  - Outdoor Fun
+  - Khel Kud
+  - Leisure Activities
+  category: I8
+  level: 2
+  status: active
+  is_category: true
+- id: live_sports_events
+  aliases:
+  - IPL Tickets
+  - Stadium Match
+  - Cricket Match
+  - Football Game
+  - "मैच टिकट"
+  category: I8
+  level: 3
+  status: active
+- id: live_music_and_concerts
+  aliases:
+  - Music Festival
+  - Live Gig
+  - Event Tickets
+  - "कॉन्सर्ट"
+  category: I8
+  level: 3
+  status: active
+- id: recreational_parks
+  aliases:
+  - Amusement Park
+  - Water Park
+  - Theme Park Entry
+  - "एम्यूजमेंट पार्क"
+  category: I8
+  level: 3
+  status: active
+- id: sports_and_fitness_access
+  aliases:
+  - Sports Club Membership
+  - Gym Access
+  - Local Tournaments
+  - "स्पोर्ट्स क्लब"
+  category: I8
+  level: 3
+  status: active
+
+# === L2: Culture & Religion ===
+- id: culture_and_religion
+  aliases:
+  - Culture & Religion
+  - Festivals & Faith
+  - Sanskriti Aur Dharm
+  - Religious & Cultural Life
+  category: I8
+  level: 2
+  status: active
+  is_category: true
+- id: festivals_and_cultural_events
+  aliases:
+  - Puja Pandal
+  - Diwali Firecrackers
+  - Festival Idol
+  - "त्योहार/पूजा"
+  category: I8
+  level: 3
+  status: active
+- id: religious_pilgrimages
+  aliases:
+  - Char Dham Yatra
+  - Hajj
+  - Pilgrimage Access
+  - "तीर्थयात्रा"
+  category: I8
+  level: 3
+  status: active
+- id: places_of_worship
+  aliases:
+  - Temple Donation
+  - Mosque Access
+  - Religious Site Entry
+  - "मंदिर दर्शन"
+  category: I8
+  level: 3
+  status: active
+
+edges:
+# I8 → L2
+- from: i8
+  to: telecom_and_internet_access
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Leisure contains Telecom & Internet Access
+- from: i8
+  to: digital_life_and_security
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Leisure contains Digital Life & Security
+- from: i8
+  to: entertainment_and_gaming
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Leisure contains Entertainment & Gaming
+- from: i8
+  to: sports_and_recreation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Leisure contains Sports & Recreation
+- from: i8
+  to: culture_and_religion
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital & Leisure contains Culture & Religion
+
+# Telecom & Internet Access → L3
+- from: telecom_and_internet_access
+  to: mobile_tariffs
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Internet Access contains Mobile Tariffs
+- from: telecom_and_internet_access
+  to: broadband_and_wifi
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Internet Access contains Broadband & Wifi
+- from: telecom_and_internet_access
+  to: network_connectivity
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Internet Access contains Network Connectivity
+- from: telecom_and_internet_access
+  to: internet_shutdowns
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Telecom & Internet Access contains Internet Shutdowns
+
+# Digital Life & Security → L3
+- from: digital_life_and_security
+  to: social_media_platforms
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Security contains Social Media Platforms
+- from: digital_life_and_security
+  to: messaging_apps
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Security contains Messaging Apps
+- from: digital_life_and_security
+  to: digital_privacy_and_data
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Security contains Digital Privacy & Data
+- from: digital_life_and_security
+  to: spam_and_scams
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Security contains Spam & Scams
+- from: digital_life_and_security
+  to: consumer_tech_hardware
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Digital Life & Security contains Consumer Tech Hardware
+
+# Entertainment & Gaming → L3
+- from: entertainment_and_gaming
+  to: cinema_and_movies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entertainment & Gaming contains Cinema & Movies
+- from: entertainment_and_gaming
+  to: ott_platforms
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entertainment & Gaming contains OTT Platforms
+- from: entertainment_and_gaming
+  to: video_games_and_esports
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entertainment & Gaming contains Video Games & Esports
+- from: entertainment_and_gaming
+  to: real_money_gaming
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entertainment & Gaming contains Real Money Gaming
+- from: entertainment_and_gaming
+  to: theatre_and_performing_arts
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Entertainment & Gaming contains Theatre & Performing Arts
+
+# Sports & Recreation → L3
+- from: sports_and_recreation
+  to: live_sports_events
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sports & Recreation contains Live Sports Events
+- from: sports_and_recreation
+  to: live_music_and_concerts
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sports & Recreation contains Live Music & Concerts
+- from: sports_and_recreation
+  to: recreational_parks
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sports & Recreation contains Recreational Parks
+- from: sports_and_recreation
+  to: sports_and_fitness_access
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Sports & Recreation contains Sports & Fitness Access
+
+# Culture & Religion → L3
+- from: culture_and_religion
+  to: festivals_and_cultural_events
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Culture & Religion contains Festivals & Cultural Events
+- from: culture_and_religion
+  to: religious_pilgrimages
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Culture & Religion contains Religious Pilgrimages
+- from: culture_and_religion
+  to: places_of_worship
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Culture & Religion contains Places of Worship

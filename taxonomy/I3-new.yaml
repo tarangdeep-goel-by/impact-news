@@ -1,0 +1,393 @@
+nodes:
+- id: i3
+  aliases:
+  - Mobility & Transport
+  - Getting Around
+  - Commute
+  - Yatayat
+  category: I3
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Private Vehicle & Running Costs ===
+- id: private_vehicle_running_costs
+  aliases:
+  - Private Vehicle & Running Costs
+  - Personal Vehicle Expenses
+  - Gaadi Ka Kharcha
+  - Vehicle Running Costs
+  category: I3
+  level: 2
+  status: active
+  is_category: true
+- id: petrol_price
+  aliases:
+  - Petrol Price
+  - petrol rate
+  - fuel cost
+  - petrol ka bhav
+  - fuel price hike
+  category: I3
+  level: 3
+  status: active
+- id: diesel_price
+  aliases:
+  - Diesel Price
+  - diesel rate
+  - fuel cost
+  - diesel ka bhav
+  - diesel price hike
+  category: I3
+  level: 3
+  status: active
+- id: cng_price
+  aliases:
+  - CNG Price
+  - CNG rate
+  - auto gas price
+  - CNG ka daam
+  - green fuel cost
+  category: I3
+  level: 3
+  status: active
+- id: ev_charging_tariff
+  aliases:
+  - EV Charging Tariff
+  - EV charging cost
+  - electric vehicle charging
+  - EV unit rate
+  category: I3
+  level: 3
+  status: active
+- id: vehicle_purchase_cost
+  aliases:
+  - Vehicle Purchase Cost
+  - car price
+  - bike price
+  - gaadi ki keemat
+  - auto loan impact
+  category: I3
+  level: 3
+  status: active
+- id: traffic_fines
+  aliases:
+  - Traffic Fines
+  - challan
+  - traffic penalty
+  - e-challan
+  - traffic fine
+  category: I3
+  level: 3
+  status: active
+- id: parking_fees
+  aliases:
+  - Parking Fees
+  - parking charge
+  - car parking rate
+  - parking ka kharcha
+  - pay and park
+  category: I3
+  level: 3
+  status: active
+
+# === L2: Local Public & Hired Transit ===
+- id: local_public_and_hired_transit
+  aliases:
+  - Local Public & Hired Transit
+  - City Transport
+  - Sheher Ki Sawari
+  - Local Transit
+  category: I3
+  level: 2
+  status: active
+  is_category: true
+- id: metro_and_local_train
+  aliases:
+  - Metro & Local Train
+  - metro ticket
+  - local train pass
+  - metro kiraya
+  - local fare
+  - suburban rail
+  category: I3
+  level: 3
+  status: active
+- id: city_bus_transit
+  aliases:
+  - City Bus Transit
+  - bus ticket
+  - city bus pass
+  - bus kiraya
+  - BEST/DTC fare
+  category: I3
+  level: 3
+  status: active
+- id: ride_hailing_cabs_bikes
+  aliases:
+  - Ride Hailing Cabs & Bikes
+  - Uber fare
+  - Ola rate
+  - Rapido bike taxi
+  - cab surge pricing
+  category: I3
+  level: 3
+  status: active
+- id: auto_e_rickshaw
+  aliases:
+  - Auto & E-Rickshaw
+  - auto fare
+  - e-rickshaw ride
+  - auto kiraya
+  - meter fare
+  - sharing auto
+  category: I3
+  level: 3
+  status: active
+
+# === L2: Intercity Travel ===
+- id: intercity_travel
+  aliases:
+  - Intercity Travel
+  - Long Distance Travel
+  - Lambi Doori Ki Yatra
+  - Outstation Travel
+  category: I3
+  level: 2
+  status: active
+  is_category: true
+- id: railway_ticketing_and_status
+  aliases:
+  - Railway Ticketing & Status
+  - train ticket
+  - IRCTC booking
+  - train delay
+  - train cancel
+  - train ka kiraya
+  category: I3
+  level: 3
+  status: active
+- id: domestic_flight_ticket
+  aliases:
+  - Domestic Flight Ticket
+  - airfare
+  - flight ticket
+  - hawai yatra
+  - flight cancellation
+  - aviation fare
+  category: I3
+  level: 3
+  status: active
+- id: intercity_bus_fare
+  aliases:
+  - Intercity Bus Fare
+  - Volvo bus fare
+  - sleeper bus ticket
+  - state transport bus
+  - ST bus kiraya
+  category: I3
+  level: 3
+  status: active
+- id: highway_tolls
+  aliases:
+  - Highway Tolls
+  - toll tax
+  - FASTag deduction
+  - toll plaza fee
+  - highway toll
+  - NHAI toll
+  category: I3
+  level: 3
+  status: active
+
+# === L2: Road & Traffic Conditions ===
+- id: road_and_traffic_conditions
+  aliases:
+  - Road & Traffic Conditions
+  - Sadak Ki Halat
+  - Traffic Situation
+  - Road Quality
+  category: I3
+  level: 2
+  status: active
+  is_category: true
+- id: traffic_congestion
+  aliases:
+  - Traffic Congestion
+  - traffic jam
+  - road block
+  - bumper to bumper
+  - bhid-bhad
+  - bottleneck
+  category: I3
+  level: 3
+  status: active
+- id: road_conditions_and_closures
+  aliases:
+  - Road Conditions & Closures
+  - potholes
+  - khadde
+  - road repair
+  - route diversion
+  - waterlogging
+  category: I3
+  level: 3
+  status: active
+
+edges:
+# I3 → L2
+- from: i3
+  to: private_vehicle_running_costs
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mobility & Transport contains Private Vehicle & Running Costs
+- from: i3
+  to: local_public_and_hired_transit
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mobility & Transport contains Local Public & Hired Transit
+- from: i3
+  to: intercity_travel
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mobility & Transport contains Intercity Travel
+- from: i3
+  to: road_and_traffic_conditions
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Mobility & Transport contains Road & Traffic Conditions
+
+# Private Vehicle & Running Costs → L3
+- from: private_vehicle_running_costs
+  to: petrol_price
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Private Vehicle & Running Costs contains Petrol Price
+- from: private_vehicle_running_costs
+  to: diesel_price
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Private Vehicle & Running Costs contains Diesel Price
+- from: private_vehicle_running_costs
+  to: cng_price
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Private Vehicle & Running Costs contains CNG Price
+- from: private_vehicle_running_costs
+  to: ev_charging_tariff
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Private Vehicle & Running Costs contains EV Charging Tariff
+- from: private_vehicle_running_costs
+  to: vehicle_purchase_cost
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Private Vehicle & Running Costs contains Vehicle Purchase Cost
+- from: private_vehicle_running_costs
+  to: traffic_fines
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Private Vehicle & Running Costs contains Traffic Fines
+- from: private_vehicle_running_costs
+  to: parking_fees
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Private Vehicle & Running Costs contains Parking Fees
+
+# Local Public & Hired Transit → L3
+- from: local_public_and_hired_transit
+  to: metro_and_local_train
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Public & Hired Transit contains Metro & Local Train
+- from: local_public_and_hired_transit
+  to: city_bus_transit
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Public & Hired Transit contains City Bus Transit
+- from: local_public_and_hired_transit
+  to: ride_hailing_cabs_bikes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Public & Hired Transit contains Ride Hailing Cabs & Bikes
+- from: local_public_and_hired_transit
+  to: auto_e_rickshaw
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Local Public & Hired Transit contains Auto & E-Rickshaw
+
+# Intercity Travel → L3
+- from: intercity_travel
+  to: railway_ticketing_and_status
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intercity Travel contains Railway Ticketing & Status
+- from: intercity_travel
+  to: domestic_flight_ticket
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intercity Travel contains Domestic Flight Ticket
+- from: intercity_travel
+  to: intercity_bus_fare
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intercity Travel contains Intercity Bus Fare
+- from: intercity_travel
+  to: highway_tolls
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Intercity Travel contains Highway Tolls
+
+# Road & Traffic Conditions → L3
+- from: road_and_traffic_conditions
+  to: traffic_congestion
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Road & Traffic Conditions contains Traffic Congestion
+- from: road_and_traffic_conditions
+  to: road_conditions_and_closures
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Road & Traffic Conditions contains Road Conditions & Closures

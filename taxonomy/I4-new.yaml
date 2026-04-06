@@ -1,0 +1,490 @@
+nodes:
+- id: i4
+  aliases:
+  - Health & Bodily Safety
+  - Staying Safe
+  - Swasthya aur Suraksha
+  category: I4
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Healthcare Access & Medicine ===
+- id: healthcare_access_and_medicine
+  aliases:
+  - Healthcare Access & Medicine
+  - Medical Services
+  - Chikitsa Suvidha
+  - Health Infrastructure
+  category: I4
+  level: 2
+  status: active
+  is_category: true
+- id: hospital_and_medical_care
+  aliases:
+  - Hospital & Medical Care
+  - hospital admission
+  - ilaj
+  - aspatal
+  - medical treatment
+  - surgery
+  category: I4
+  level: 3
+  status: active
+- id: medicines_and_pharmaceuticals
+  aliases:
+  - Medicines & Pharmaceuticals
+  - dawa
+  - generic medicines
+  - medical store
+  - dawai
+  - life-saving drugs
+  category: I4
+  level: 3
+  status: active
+- id: medical_tests_and_diagnostics
+  aliases:
+  - Medical Tests & Diagnostics
+  - blood test
+  - path lab
+  - MRI scan
+  - x-ray
+  - janch
+  category: I4
+  level: 3
+  status: active
+- id: maternal_and_child_health
+  aliases:
+  - Maternal & Child Health
+  - pregnancy care
+  - tikakaran
+  - malnutrition
+  - kuposhan
+  - pediatric care
+  category: I4
+  level: 3
+  status: active
+- id: mental_health_and_substance_abuse
+  aliases:
+  - Mental Health & Substance Abuse
+  - depression
+  - nashe ki lat
+  - drug de-addiction
+  - mental trauma
+  - suicide prevention
+  category: I4
+  level: 3
+  status: active
+
+# === L2: Diseases & Public Health ===
+- id: diseases_and_public_health
+  aliases:
+  - Diseases & Public Health
+  - Epidemics
+  - Bimari aur Jan Swasthya
+  - Public Health Threats
+  category: I4
+  level: 2
+  status: active
+  is_category: true
+- id: vector_borne_diseases
+  aliases:
+  - Vector-Borne Diseases
+  - dengue
+  - malaria
+  - machhar
+  - mosquito-borne diseases
+  - outbreak
+  category: I4
+  level: 3
+  status: active
+- id: water_and_foodborne_diseases
+  aliases:
+  - Water & Foodborne Diseases
+  - typhoid
+  - haiza
+  - cholera
+  - food poisoning
+  - contaminated water
+  category: I4
+  level: 3
+  status: active
+- id: respiratory_and_viral_infections
+  aliases:
+  - Respiratory & Viral Infections
+  - tuberculosis
+  - TB
+  - influenza
+  - khasi-zukham
+  - viral fever
+  category: I4
+  level: 3
+  status: active
+- id: chronic_and_lifestyle_diseases
+  aliases:
+  - Chronic & Lifestyle Diseases
+  - diabetes
+  - heart attack
+  - cancer
+  - blood pressure
+  - madhumeh
+  category: I4
+  level: 3
+  status: active
+
+# === L2: Physical Violence & Crime ===
+- id: physical_violence_and_crime
+  aliases:
+  - Physical Violence & Crime
+  - Violent Crime
+  - Hinsa aur Apradh
+  - Bodily Harm
+  category: I4
+  level: 2
+  status: active
+  is_category: true
+- id: violent_crime_and_assault
+  aliases:
+  - Violent Crime & Assault
+  - murder
+  - hatya
+  - maar-peet
+  - physical assault
+  - stabbing
+  category: I4
+  level: 3
+  status: active
+- id: sexual_assault_and_harassment
+  aliases:
+  - Sexual Assault & Harassment
+  - rape
+  - balatkar
+  - eve-teasing
+  - molestation
+  - chhedchad
+  category: I4
+  level: 3
+  status: active
+- id: domestic_violence
+  aliases:
+  - Domestic Violence
+  - gharelu hinsa
+  - dowry harassment
+  - marital abuse
+  - domestic abuse
+  category: I4
+  level: 3
+  status: active
+- id: crimes_against_children
+  aliases:
+  - Crimes Against Children
+  - POCSO
+  - child kidnapping
+  - bacchon ka apharan
+  - bal shoshan
+  category: I4
+  level: 3
+  status: active
+
+# === L2: Accidents & Hazards ===
+- id: accidents_and_hazards
+  aliases:
+  - Accidents & Hazards
+  - Durghatna
+  - Hadse aur Khatre
+  - Physical Hazards
+  category: I4
+  level: 2
+  status: active
+  is_category: true
+- id: road_traffic_accidents
+  aliases:
+  - Road Traffic Accidents
+  - sadak hadsa
+  - car crash
+  - highway accident
+  - hit and run
+  - durghatna
+  category: I4
+  level: 3
+  status: active
+- id: railway_and_transit_accidents
+  aliases:
+  - Railway & Transit Accidents
+  - train derailment
+  - railway accident
+  - level crossing crash
+  - train collision
+  category: I4
+  level: 3
+  status: active
+- id: fire_and_structural_hazards
+  aliases:
+  - Fire & Structural Hazards
+  - aag lagna
+  - building collapse
+  - aagjani
+  - electrocution
+  - short circuit fire
+  category: I4
+  level: 3
+  status: active
+- id: animal_and_wildlife_attacks
+  aliases:
+  - Animal & Wildlife Attacks
+  - stray dog bite
+  - awara kutte
+  - leopard attack
+  - wild animal encounter
+  - snakebite
+  category: I4
+  level: 3
+  status: active
+- id: workplace_and_industrial_accidents
+  aliases:
+  - Workplace & Industrial Accidents
+  - factory blast
+  - mine collapse
+  - boiler explosion
+  - construction accident
+  category: I4
+  level: 3
+  status: active
+
+# === L2: Public Order & Emergencies ===
+- id: public_order_and_emergencies
+  aliases:
+  - Public Order & Emergencies
+  - Civil Unrest
+  - Kanoon Vyavastha aur Aapada
+  - Public Safety
+  category: I4
+  level: 2
+  status: active
+  is_category: true
+- id: riots_and_mob_violence
+  aliases:
+  - Riots & Mob Violence
+  - dange
+  - mob lynching
+  - communal clashes
+  - pathrav
+  - stone pelting
+  category: I4
+  level: 3
+  status: active
+- id: crowd_stampedes
+  aliases:
+  - Crowd Stampedes
+  - bhagdar
+  - temple stampede
+  - mela rush
+  - crowd crush
+  category: I4
+  level: 3
+  status: active
+- id: curfews_and_public_emergencies
+  aliases:
+  - Curfews & Public Emergencies
+  - section 144
+  - curfew
+  - lockdown
+  - emergency public safety order
+  category: I4
+  level: 3
+  status: active
+
+edges:
+# i4 → L2
+- from: i4
+  to: healthcare_access_and_medicine
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Bodily Safety contains Healthcare Access & Medicine
+- from: i4
+  to: diseases_and_public_health
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Bodily Safety contains Diseases & Public Health
+- from: i4
+  to: physical_violence_and_crime
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Bodily Safety contains Physical Violence & Crime
+- from: i4
+  to: accidents_and_hazards
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Bodily Safety contains Accidents & Hazards
+- from: i4
+  to: public_order_and_emergencies
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Health & Bodily Safety contains Public Order & Emergencies
+
+# Healthcare Access & Medicine → L3
+- from: healthcare_access_and_medicine
+  to: hospital_and_medical_care
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Healthcare Access & Medicine contains Hospital & Medical Care
+- from: healthcare_access_and_medicine
+  to: medicines_and_pharmaceuticals
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Healthcare Access & Medicine contains Medicines & Pharmaceuticals
+- from: healthcare_access_and_medicine
+  to: medical_tests_and_diagnostics
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Healthcare Access & Medicine contains Medical Tests & Diagnostics
+- from: healthcare_access_and_medicine
+  to: maternal_and_child_health
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Healthcare Access & Medicine contains Maternal & Child Health
+- from: healthcare_access_and_medicine
+  to: mental_health_and_substance_abuse
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Healthcare Access & Medicine contains Mental Health & Substance Abuse
+
+# Diseases & Public Health → L3
+- from: diseases_and_public_health
+  to: vector_borne_diseases
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Diseases & Public Health contains Vector-Borne Diseases
+- from: diseases_and_public_health
+  to: water_and_foodborne_diseases
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Diseases & Public Health contains Water & Foodborne Diseases
+- from: diseases_and_public_health
+  to: respiratory_and_viral_infections
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Diseases & Public Health contains Respiratory & Viral Infections
+- from: diseases_and_public_health
+  to: chronic_and_lifestyle_diseases
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Diseases & Public Health contains Chronic & Lifestyle Diseases
+
+# Physical Violence & Crime → L3
+- from: physical_violence_and_crime
+  to: violent_crime_and_assault
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical Violence & Crime contains Violent Crime & Assault
+- from: physical_violence_and_crime
+  to: sexual_assault_and_harassment
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical Violence & Crime contains Sexual Assault & Harassment
+- from: physical_violence_and_crime
+  to: domestic_violence
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical Violence & Crime contains Domestic Violence
+- from: physical_violence_and_crime
+  to: crimes_against_children
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical Violence & Crime contains Crimes Against Children
+
+# Accidents & Hazards → L3
+- from: accidents_and_hazards
+  to: road_traffic_accidents
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accidents & Hazards contains Road Traffic Accidents
+- from: accidents_and_hazards
+  to: railway_and_transit_accidents
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accidents & Hazards contains Railway & Transit Accidents
+- from: accidents_and_hazards
+  to: fire_and_structural_hazards
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accidents & Hazards contains Fire & Structural Hazards
+- from: accidents_and_hazards
+  to: animal_and_wildlife_attacks
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accidents & Hazards contains Animal & Wildlife Attacks
+- from: accidents_and_hazards
+  to: workplace_and_industrial_accidents
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Accidents & Hazards contains Workplace & Industrial Accidents
+
+# Public Order & Emergencies → L3
+- from: public_order_and_emergencies
+  to: riots_and_mob_violence
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public Order & Emergencies contains Riots & Mob Violence
+- from: public_order_and_emergencies
+  to: crowd_stampedes
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public Order & Emergencies contains Crowd Stampedes
+- from: public_order_and_emergencies
+  to: curfews_and_public_emergencies
+  type: CONTAINS
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+  description: Public Order & Emergencies contains Curfews & Public Emergencies

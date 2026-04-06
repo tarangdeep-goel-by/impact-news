@@ -14,53 +14,43 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "private_water_tanker",
+        "i_node": "water_supply_and_tankers",
         "rank": 1,
         "reasoning": "Tanker prices surged 3x to Rs 2000+ as borewells dried up across the city"
       },
       {
-        "i_node": "municipal_water_supply",
+        "i_node": "rwa_and_maintenance_fees",
         "rank": 2,
-        "reasoning": "BWSSB cut piped supply by 20% to manage the severe shortage"
-      },
-      {
-        "i_node": "rwa_maintenance_fees",
-        "rank": 3,
         "reasoning": "Housing societies hiked monthly maintenance to cover exorbitant private tanker costs"
       },
       {
-        "i_node": "residential_rent",
-        "rank": 4,
+        "i_node": "residential_rent_and_pg",
+        "rank": 3,
         "reasoning": "Tenants began vacating severely affected IT corridors like Whitefield"
       },
       {
-        "i_node": "it_sector_jobs",
-        "rank": 5,
+        "i_node": "corporate_hiring_and_layoffs",
+        "rank": 4,
         "reasoning": "Tech parks mandated work-from-home as office facilities ran out of water"
       },
       {
-        "i_node": "vehicle_servicing_cost",
-        "rank": 6,
-        "reasoning": "Government banned the use of potable water for car washing, impacting service centers"
-      },
-      {
-        "i_node": "fine_dining_restaurants",
-        "rank": 7,
+        "i_node": "restaurant_and_street_food",
+        "rank": 5,
         "reasoning": "Restaurants shifted to disposable plates and limited menus to save washing water"
       },
       {
         "i_node": "private_schools",
-        "rank": 8,
+        "rank": 6,
         "reasoning": "Several private schools shifted to online classes due to dry washrooms"
       },
       {
-        "i_node": "cholera_and_diarrhea",
-        "rank": 9,
+        "i_node": "water_and_foodborne_diseases",
+        "rank": 7,
         "reasoning": "Consumption of contaminated tanker water led to a spike in water-borne diseases"
       },
       {
-        "i_node": "stray_animals",
-        "rank": 10,
+        "i_node": "stray_animal_nuisance",
+        "rank": 8,
         "reasoning": "Severe lack of drinking water sources impacted urban fauna and stray dogs"
       }
     ]
@@ -80,53 +70,38 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "fastag_wallet",
+        "i_node": "highway_tolls",
         "rank": 1,
         "reasoning": "Millions of Paytm FASTags became invalid, forcing vehicle owners to buy replacements"
       },
       {
-        "i_node": "upi_transaction_success",
-        "rank": 2,
-        "reasoning": "Temporary disruption and confusion caused transaction failures for merchants"
-      },
-      {
         "i_node": "street_vendor_income",
-        "rank": 3,
+        "rank": 2,
         "reasoning": "Street vendors heavily reliant on Paytm soundboxes faced settlement delays"
       },
       {
-        "i_node": "kirana_store_income",
-        "rank": 4,
+        "i_node": "kirana_and_retail_income",
+        "rank": 3,
         "reasoning": "Local grocers had to rapidly switch QR codes to competitor banks to receive payments"
       },
       {
-        "i_node": "savings_account_balance",
-        "rank": 5,
-        "reasoning": "Users were forced to transfer their balances out of PPBL before the deadline"
-      },
-      {
-        "i_node": "ncmc_smart_card",
-        "rank": 6,
+        "i_node": "metro_and_local_train",
+        "rank": 4,
         "reasoning": "Paytm-issued transit cards for metros stopped working for commuters"
       },
       {
-        "i_node": "direct_equity_portfolio",
-        "rank": 7,
-        "reasoning": "One97 Communications stock crashed 50% in a month, wiping out retail wealth"
-      },
-      {
-        "i_node": "food_delivery_payouts",
-        "rank": 8,
+        "i_node": "food_and_grocery_delivery_payouts",
+        "rank": 5,
         "reasoning": "Gig workers using PPBL as their primary account faced delayed weekly payouts"
       },
       {
-        "i_node": "cab_driver_earnings",
-        "rank": 9,
+        "i_node": "ride_hailing_earnings",
+        "rank": 6,
         "reasoning": "Uber and Ola drivers had to urgently update bank details to receive earnings"
       },
       {
-        "i_node": "startup_jobs",
-        "rank": 10,
+        "i_node": "corporate_hiring_and_layoffs",
+        "rank": 7,
         "reasoning": "Regulatory chill led to hiring freezes across the Indian fintech startup ecosystem"
       }
     ]
@@ -146,53 +121,13 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "retail_gold_investment",
+        "i_node": "property_crime_response",
         "rank": 1,
-        "reasoning": "Physical gold buying volumes dropped significantly due to record high prices"
-      },
-      {
-        "i_node": "gold_loan_interest",
-        "rank": 2,
-        "reasoning": "NBFCs offered higher loan amounts per gram, driving a surge in gold loan uptake"
-      },
-      {
-        "i_node": "wedding_planning_service",
-        "rank": 3,
-        "reasoning": "Jewelry budgets squeezed, forcing families to cut back on other wedding expenses"
-      },
-      {
-        "i_node": "wedding_venue",
-        "rank": 4,
-        "reasoning": "Spillover effect of reduced overall wedding budgets impacted venue bookings"
-      },
-      {
-        "i_node": "retail_silver_investment",
-        "rank": 5,
-        "reasoning": "Retail investors shifted to silver as a relatively cheaper precious metal alternative"
-      },
-      {
-        "i_node": "india_trade_deficit",
-        "rank": 6,
-        "reasoning": "Higher import bill for gold widened the national trade deficit"
-      },
-      {
-        "i_node": "usd_inr_exchange",
-        "rank": 7,
-        "reasoning": "Rupee faced pressure due to the high dollar outflow for gold imports"
-      },
-      {
-        "i_node": "burglary_and_theft",
-        "rank": 8,
         "reasoning": "Record prices incentivized a spike in chain-snatching and gold smuggling"
       },
       {
-        "i_node": "microfinance_loan",
-        "rank": 9,
-        "reasoning": "Increased reliance on gold pledging reduced demand for unsecured micro-credit"
-      },
-      {
-        "i_node": "festive_idol",
-        "rank": 10,
+        "i_node": "festivals_and_cultural_events",
+        "rank": 2,
         "reasoning": "Akshaya Tritiya sales volume for gold idols and coins dropped year-on-year"
       }
     ]
@@ -212,53 +147,38 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "video_game",
+        "i_node": "video_games_and_esports",
         "rank": 1,
         "reasoning": "Real-money gaming platforms passed the massive 28% tax burden directly to users"
       },
       {
-        "i_node": "startup_layoffs",
+        "i_node": "corporate_hiring_and_layoffs",
         "rank": 2,
         "reasoning": "Gaming unicorns laid off hundreds of staff due to immediate margin compression"
       },
       {
-        "i_node": "startup_jobs",
+        "i_node": "live_sports_events",
         "rank": 3,
-        "reasoning": "Complete hiring freeze in the real-money gaming and fantasy sports sector"
-      },
-      {
-        "i_node": "fii_fpi_flows",
-        "rank": 4,
-        "reasoning": "Foreign investors wrote off investments in Indian gaming startups, halting capital inflow"
-      },
-      {
-        "i_node": "cricket_match_ticket",
-        "rank": 5,
         "reasoning": "Fantasy sports sponsorships for cricket tournaments reduced significantly"
       },
       {
-        "i_node": "ott_subscription",
-        "rank": 6,
+        "i_node": "ott_platforms",
+        "rank": 4,
         "reasoning": "Users shifted entertainment budgets away from gaming to OTT platforms"
       },
       {
-        "i_node": "social_media_accounts",
-        "rank": 7,
+        "i_node": "social_media_platforms",
+        "rank": 5,
         "reasoning": "Gaming ad spends on social media plummeted, impacting influencer revenues"
       },
       {
-        "i_node": "upi_transaction_limits",
-        "rank": 8,
-        "reasoning": "Volume of micro-transactions (Rs 10-50) on gaming apps dropped drastically"
-      },
-      {
-        "i_node": "investment_and_job_scams",
-        "rank": 9,
+        "i_node": "spam_and_scams",
+        "rank": 6,
         "reasoning": "Rise in illegal offshore betting apps evading GST, leading to user fraud"
       },
       {
         "i_node": "personal_income_tax",
-        "rank": 10,
+        "rank": 7,
         "reasoning": "TDS rules were simultaneously tightened for net winnings from online games"
       }
     ]
@@ -278,12 +198,12 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "railway_accidents",
+        "i_node": "railway_and_transit_accidents",
         "rank": 1,
         "reasoning": "Direct event impact with massive loss of life and destruction of rolling stock"
       },
       {
-        "i_node": "irctc_train_ticket",
+        "i_node": "railway_ticketing_and_status",
         "rank": 2,
         "reasoning": "Hundreds of trains on the eastern corridor were cancelled or diverted for weeks"
       },
@@ -298,34 +218,24 @@
         "reasoning": "Private bus operators hiked fares on affected routes to exploit stranded passengers"
       },
       {
-        "i_node": "seasonal_migrant_labor",
-        "rank": 5,
-        "reasoning": "Coromandel Express is a key route for migrant workers; severe impact on their mobility"
-      },
-      {
         "i_node": "construction_worker_wages",
-        "rank": 6,
+        "rank": 5,
         "reasoning": "Delayed arrival of migrant labor affected construction projects in South India"
       },
       {
-        "i_node": "hospital_beds",
-        "rank": 7,
+        "i_node": "hospital_and_medical_care",
+        "rank": 6,
         "reasoning": "Local hospitals in Odisha were completely overwhelmed with over 1,000 casualties"
       },
       {
-        "i_node": "blood_tests",
-        "rank": 8,
+        "i_node": "medical_tests_and_diagnostics",
+        "rank": 7,
         "reasoning": "Massive blood donation drives organized locally required rapid screening and testing"
       },
       {
-        "i_node": "term_insurance_premium",
-        "rank": 9,
+        "i_node": "life_insurance_premium",
+        "rank": 8,
         "reasoning": "Spike in claims and public awareness drove up demand for travel and life insurance"
-      },
-      {
-        "i_node": "index_of_industrial_production",
-        "rank": 10,
-        "reasoning": "Coal and iron ore freight delayed on the critical eastern freight corridor"
       }
     ]
   },
@@ -344,17 +254,17 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "residential_power_supply",
+        "i_node": "electricity_tariff",
         "rank": 1,
         "reasoning": "Thousands of villages in Gujarat lost power due to downed electricity poles"
       },
       {
-        "i_node": "telecom_towers_network",
+        "i_node": "network_connectivity",
         "rank": 2,
         "reasoning": "Mobile networks were severely disrupted in Kutch and Saurashtra coastal districts"
       },
       {
-        "i_node": "marine_fish",
+        "i_node": "meat_and_seafood",
         "rank": 3,
         "reasoning": "Fishing suspended for weeks, causing local supply shortages and price spikes"
       },
@@ -364,33 +274,13 @@
         "reasoning": "Agricultural activity halted completely in the Saurashtra region"
       },
       {
-        "i_node": "structural_collapse",
+        "i_node": "fire_and_structural_hazards",
         "rank": 5,
         "reasoning": "Kutcha houses, hoardings, and temporary structures destroyed by 115 kmph winds"
       },
       {
-        "i_node": "tourist_attraction_ticket",
+        "i_node": "stray_animal_nuisance",
         "rank": 6,
-        "reasoning": "Major tourist sites like Dwarka and Somnath temples closed to visitors"
-      },
-      {
-        "i_node": "hotel_room",
-        "rank": 7,
-        "reasoning": "Mass cancellations in Gujarat coastal tourism and hospitality sector"
-      },
-      {
-        "i_node": "major_seaports",
-        "rank": 8,
-        "reasoning": "Kandla and Mundra ports suspended operations, delaying cargo ships"
-      },
-      {
-        "i_node": "india_trade_deficit",
-        "rank": 9,
-        "reasoning": "Export and import delays due to port closures temporarily impacted trade metrics"
-      },
-      {
-        "i_node": "stray_animals",
-        "rank": 10,
         "reasoning": "Thousands of livestock and stray animals were displaced or killed in the floods"
       }
     ]
@@ -410,12 +300,12 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "wheat_flour",
+        "i_node": "staple_grains",
         "rank": 1,
         "reasoning": "Domestic atta prices immediately stabilized after the export ban was announced"
       },
       {
-        "i_node": "biscuits_and_snacks",
+        "i_node": "packaged_foods_and_beverages",
         "rank": 2,
         "reasoning": "FMCG companies faced lower input cost pressure for baked goods and biscuits"
       },
@@ -425,39 +315,14 @@
         "reasoning": "Reduced export demand impacted farmer realizations and their wage-paying capacity"
       },
       {
-        "i_node": "global_food_grain_supply",
+        "i_node": "restaurant_and_street_food",
         "rank": 4,
-        "reasoning": "Global wheat prices spiked further as India restricted a critical supply source"
-      },
-      {
-        "i_node": "rural_unemployment_rate",
-        "rank": 5,
-        "reasoning": "Agrarian distress from lower profits slightly increased rural unemployment"
-      },
-      {
-        "i_node": "street_food",
-        "rank": 6,
         "reasoning": "Cost of bread, pav, and rotis stabilized for street vendors, protecting margins"
       },
       {
-        "i_node": "quick_service_restaurants",
-        "rank": 7,
-        "reasoning": "Burger and pizza chains benefited from stable flour costs in their supply chain"
-      },
-      {
-        "i_node": "wpi",
-        "rank": 8,
-        "reasoning": "Wholesale inflation for food articles cooled down due to the supply glut"
-      },
-      {
         "i_node": "mgnrega_wages",
-        "rank": 9,
+        "rank": 5,
         "reasoning": "Rural distress led to higher demand for MGNREGA work in wheat-belt states"
-      },
-      {
-        "i_node": "retail_rice",
-        "rank": 10,
-        "reasoning": "Substitution effect as government pushed rice through PDS to save wheat stocks"
       }
     ]
   },
@@ -476,53 +341,43 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "social_media_accounts",
+        "i_node": "social_media_platforms",
         "rank": 1,
         "reasoning": "Platforms like Meta and X forced to remove deepfakes within 24 hours of reporting"
       },
       {
-        "i_node": "cyberbullying_and_trolling",
+        "i_node": "cyber_crime_reporting",
         "rank": 2,
         "reasoning": "Increased reporting and awareness of AI-generated harassment against women"
       },
       {
-        "i_node": "fir_registration",
+        "i_node": "fir_and_police_interaction",
         "rank": 3,
         "reasoning": "Delhi Police and cyber cells registered multiple FIRs against deepfake creators"
       },
       {
-        "i_node": "investment_and_job_scams",
+        "i_node": "spam_and_scams",
         "rank": 4,
         "reasoning": "Scammers increasingly used AI voice clones for financial fraud, prompting RBI warnings"
       },
       {
-        "i_node": "upi_and_bank_scams",
+        "i_node": "messaging_apps",
         "rank": 5,
-        "reasoning": "Fraudsters used deepfake video calls on WhatsApp to extort money from victims"
-      },
-      {
-        "i_node": "whatsapp_messaging",
-        "rank": 6,
         "reasoning": "Spread of deepfake videos led to platforms introducing new warning labels"
       },
       {
-        "i_node": "personal_data_privacy",
-        "rank": 7,
+        "i_node": "digital_privacy_and_data",
+        "rank": 6,
         "reasoning": "Heightened public awareness about biometric data scraping from social media"
       },
       {
-        "i_node": "criminal_litigation_risk",
-        "rank": 8,
+        "i_node": "judicial_delays_and_litigation",
+        "rank": 7,
         "reasoning": "Government threatened legal action and loss of safe harbor for non-compliant platforms"
       },
       {
-        "i_node": "police_response_time",
-        "rank": 9,
-        "reasoning": "Cyber cells were overwhelmed with complex AI fraud complaints, slowing response"
-      },
-      {
-        "i_node": "cinema_ticket",
-        "rank": 10,
+        "i_node": "cinema_and_movies",
+        "rank": 8,
         "reasoning": "Actors sought legal protection for their digital likeness, impacting film marketing"
       }
     ]
@@ -542,7 +397,7 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "highway_toll_fare",
+        "i_node": "highway_tolls",
         "rank": 1,
         "reasoning": "Protesters blocked toll plazas, making them free for commuters in Punjab and Haryana"
       },
@@ -557,39 +412,29 @@
         "reasoning": "Buses between Delhi and Punjab/Haryana were cancelled or heavily rerouted"
       },
       {
-        "i_node": "mobile_network_quality",
+        "i_node": "network_connectivity",
         "rank": 4,
         "reasoning": "Government suspended mobile internet in several Haryana districts to curb mobilization"
       },
       {
-        "i_node": "green_vegetables",
+        "i_node": "fresh_vegetables_and_fruits",
         "rank": 5,
         "reasoning": "Supply chains disrupted, raising perishable vegetable prices in Delhi NCR"
       },
       {
-        "i_node": "poultry_eggs",
+        "i_node": "dairy_and_eggs",
         "rank": 6,
         "reasoning": "Supply of eggs and poultry from Punjab to Delhi was severely restricted"
       },
       {
-        "i_node": "liquid_milk",
+        "i_node": "curfews_and_public_emergencies",
         "rank": 7,
-        "reasoning": "Dairy supply trucks faced massive delays at the Singhu and Tikri borders"
-      },
-      {
-        "i_node": "curfews_and_section_144",
-        "rank": 8,
         "reasoning": "Section 144 imposed across Delhi NCR to prevent tractor rallies from entering"
       },
       {
-        "i_node": "riots_and_clashes",
-        "rank": 9,
+        "i_node": "riots_and_mob_violence",
+        "rank": 8,
         "reasoning": "Police used tear gas and drones during clashes with farmers at the Shambhu border"
-      },
-      {
-        "i_node": "dedicated_freight_corridors",
-        "rank": 10,
-        "reasoning": "Rail roko agitations delayed freight movement across northern railway networks"
       }
     ]
   },
@@ -608,53 +453,38 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "pilgrimage_package",
+        "i_node": "religious_pilgrimages",
         "rank": 1,
         "reasoning": "Massive surge in Ayodhya tour bookings and religious tourism nationwide"
       },
       {
-        "i_node": "hotel_room",
-        "rank": 2,
-        "reasoning": "Ayodhya and Lucknow hotel rates surged 5-10x due to unprecedented demand"
-      },
-      {
         "i_node": "domestic_flight_ticket",
-        "rank": 3,
+        "rank": 2,
         "reasoning": "Flights to the newly opened Ayodhya airport were fully booked at premium rates"
       },
       {
-        "i_node": "temple_donation",
-        "rank": 4,
+        "i_node": "places_of_worship",
+        "rank": 3,
         "reasoning": "Record-breaking UPI and cash donations flowed to the temple trust"
       },
       {
-        "i_node": "festive_idol",
-        "rank": 5,
+        "i_node": "festivals_and_cultural_events",
+        "rank": 4,
         "reasoning": "Huge retail demand for Ram Lalla idols, saffron flags, and merchandise across India"
       },
       {
-        "i_node": "firecracker",
-        "rank": 6,
-        "reasoning": "Unseasonal spike in firecracker sales as citizens celebrated a second Diwali"
-      },
-      {
-        "i_node": "retail_sugar",
-        "rank": 7,
+        "i_node": "spices_sugar_salt",
+        "rank": 5,
         "reasoning": "Increased demand for prasad and sweets drove up local sugar and dairy consumption"
       },
       {
-        "i_node": "irctc_train_ticket",
-        "rank": 8,
+        "i_node": "railway_ticketing_and_status",
+        "rank": 6,
         "reasoning": "Indian Railways launched hundreds of Aastha special trains to Ayodhya"
       },
       {
-        "i_node": "investment_property_value",
-        "rank": 9,
-        "reasoning": "Real estate and property prices in Ayodhya skyrocketed due to investor interest"
-      },
-      {
-        "i_node": "curfews_and_section_144",
-        "rank": 10,
+        "i_node": "curfews_and_public_emergencies",
+        "rank": 7,
         "reasoning": "Security tightened and public holidays declared in many states to manage crowds"
       }
     ]
@@ -679,48 +509,38 @@
         "reasoning": "Consumers shifted to buyer apps like Paytm and Magicpin for cheaper food delivery"
       },
       {
-        "i_node": "quick_service_restaurants",
+        "i_node": "restaurant_and_street_food",
         "rank": 2,
         "reasoning": "Brands like McDonald's and Domino's joined ONDC to save on 25% aggregator commissions"
       },
       {
-        "i_node": "cab_aggregator_fare",
+        "i_node": "ride_hailing_cabs_bikes",
         "rank": 3,
         "reasoning": "Namma Yatri on ONDC challenged Ola/Uber pricing with zero-commission rides"
       },
       {
-        "i_node": "auto_rickshaw_fare",
+        "i_node": "auto_e_rickshaw",
         "rank": 4,
         "reasoning": "Zero-commission auto rides gained massive traction among drivers in Bangalore"
       },
       {
-        "i_node": "food_delivery_payouts",
+        "i_node": "food_and_grocery_delivery_payouts",
         "rank": 5,
         "reasoning": "Delivery partners explored direct-to-restaurant logistics apps like Shadowfax"
       },
       {
-        "i_node": "kirana_store_income",
+        "i_node": "kirana_and_retail_income",
         "rank": 6,
         "reasoning": "Local grocers started receiving digital orders directly without aggregator fees"
       },
       {
-        "i_node": "upi_transaction_success",
-        "rank": 7,
-        "reasoning": "Increased volume of direct UPI payments to merchants via the open network"
-      },
-      {
-        "i_node": "fine_dining_restaurants",
-        "rank": 8,
-        "reasoning": "Premium restaurants pushed ONDC to avoid high discounting forced by aggregators"
-      },
-      {
         "i_node": "street_vendor_income",
-        "rank": 9,
+        "rank": 7,
         "reasoning": "Pilot programs successfully onboarded street food vendors to digital delivery"
       },
       {
-        "i_node": "startup_jobs",
-        "rank": 10,
+        "i_node": "corporate_hiring_and_layoffs",
+        "rank": 8,
         "reasoning": "Surge in hiring for logistics and tech roles at ONDC-focused buyer/seller apps"
       }
     ]
@@ -740,54 +560,9 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "direct_equity_portfolio",
+        "i_node": "corporate_hiring_and_layoffs",
         "rank": 1,
-        "reasoning": "Retail investors saw portfolio values drop sharply as HDFC carries high weightage"
-      },
-      {
-        "i_node": "equity_mutual_funds",
-        "rank": 2,
-        "reasoning": "Large-cap mutual fund NAVs dropped significantly due to heavy HDFC exposure"
-      },
-      {
-        "i_node": "nifty_50",
-        "rank": 3,
-        "reasoning": "The benchmark index was dragged down by 3% entirely due to HDFC's 14% weight"
-      },
-      {
-        "i_node": "sensex",
-        "rank": 4,
-        "reasoning": "Corresponding massive point drop in the BSE benchmark index"
-      },
-      {
-        "i_node": "fixed_deposits",
-        "rank": 5,
-        "reasoning": "Bank aggressively hiked FD rates to fix its strained credit-deposit ratio"
-      },
-      {
-        "i_node": "savings_account_balance",
-        "rank": 6,
-        "reasoning": "Intense push by the bank to acquire CASA deposits to lower cost of funds"
-      },
-      {
-        "i_node": "private_bank_jobs",
-        "rank": 7,
         "reasoning": "Extreme pressure on bank employees and branch managers to mobilize deposits"
-      },
-      {
-        "i_node": "personal_loan_emi",
-        "rank": 8,
-        "reasoning": "Unsecured lending rates tightened to manage margins and regulatory scrutiny"
-      },
-      {
-        "i_node": "credit_card_dues",
-        "rank": 9,
-        "reasoning": "Stricter issuance and lower limits for new credit cards to control risk"
-      },
-      {
-        "i_node": "india_10yr_bond_yield",
-        "rank": 10,
-        "reasoning": "Liquidity deficit in the banking system pushed up short-term bond yields"
       }
     ]
   },
@@ -806,54 +581,24 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "global_shipping_freight_rates",
+        "i_node": "edible_oils",
         "rank": 1,
-        "reasoning": "Freight costs from India to Europe and the US spiked 300% due to longer routes"
-      },
-      {
-        "i_node": "india_trade_deficit",
-        "rank": 2,
-        "reasoning": "Export competitiveness hit by high freight costs, widening the trade deficit"
-      },
-      {
-        "i_node": "active_pharmaceutical_ingredients_supply",
-        "rank": 3,
-        "reasoning": "Delays in pharma exports to Europe and raw material imports impacted drug makers"
-      },
-      {
-        "i_node": "global_edible_oil_supply",
-        "rank": 4,
-        "reasoning": "Sunflower oil imports from the Black Sea region faced severe transit delays"
-      },
-      {
-        "i_node": "sunflower_oil",
-        "rank": 5,
         "reasoning": "Retail prices of sunflower oil edged up due to supply chain risk premiums"
       },
       {
-        "i_node": "retail_rice",
-        "rank": 6,
+        "i_node": "staple_grains",
+        "rank": 2,
         "reasoning": "Premium basmati rice exports to the Middle East and Europe faced margin pressure"
       },
       {
-        "i_node": "factory_worker_jobs",
-        "rank": 7,
+        "i_node": "factory_worker_wages",
+        "rank": 3,
         "reasoning": "Textile and handicraft exporters cut shifts due to delayed shipments and inventory pile-up"
       },
       {
-        "i_node": "brent_crude",
-        "rank": 8,
-        "reasoning": "Oil prices remained volatile due to Middle East tensions and rerouted tankers"
-      },
-      {
-        "i_node": "retail_diesel",
-        "rank": 9,
+        "i_node": "diesel_price",
+        "rank": 4,
         "reasoning": "Under-recoveries for oil marketing companies increased due to higher crude transit costs"
-      },
-      {
-        "i_node": "major_seaports",
-        "rank": 10,
-        "reasoning": "Container pile-ups at JNPT and Mundra due to vessel delays and schedule disruptions"
       }
     ]
   },
@@ -872,54 +617,29 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "personal_data_privacy",
+        "i_node": "digital_privacy_and_data",
         "rank": 1,
         "reasoning": "Massive violation of privacy as demographic data became available to cybercriminals"
       },
       {
-        "i_node": "aadhaar_authentication",
+        "i_node": "identity_and_travel_documents",
         "rank": 2,
         "reasoning": "Severe concerns raised over biometric and OTP security for financial transactions"
       },
       {
-        "i_node": "upi_and_bank_scams",
+        "i_node": "spam_and_scams",
         "rank": 3,
         "reasoning": "Leaked data was weaponized for highly targeted phishing and financial fraud"
       },
       {
-        "i_node": "pan_aadhaar_linkage",
+        "i_node": "cyber_crime_reporting",
         "rank": 4,
-        "reasoning": "Compromised linked PAN data increased the risk of severe identity theft"
-      },
-      {
-        "i_node": "deepfake_and_identity_theft",
-        "rank": 5,
         "reasoning": "Scammers used real Aadhaar details to build trust in deepfake video frauds"
       },
       {
-        "i_node": "spam_calls",
-        "rank": 6,
-        "reasoning": "Surge in targeted telemarketing and scam calls using leaked demographic data"
-      },
-      {
-        "i_node": "epramaan_and_sso",
-        "rank": 7,
-        "reasoning": "Government mandated stricter security audits for all state SSO portals"
-      },
-      {
-        "i_node": "digilocker_documents",
-        "rank": 8,
-        "reasoning": "Users were advised to monitor unauthorized access to their digital lockers"
-      },
-      {
-        "i_node": "fir_registration",
-        "rank": 9,
+        "i_node": "fir_and_police_interaction",
+        "rank": 5,
         "reasoning": "CBI and CERT-In launched investigations, leading to multiple FIRs against hackers"
-      },
-      {
-        "i_node": "personal_loan_emi",
-        "rank": 10,
-        "reasoning": "Fraudulent instant loans were taken out using stolen identities, ruining credit scores"
       }
     ]
   },
@@ -943,48 +663,43 @@
         "reasoning": "Arterial roads including the Ring Road and ITO were completely submerged for days"
       },
       {
-        "i_node": "municipal_water_supply",
+        "i_node": "water_supply_and_tankers",
         "rank": 2,
         "reasoning": "Three major water treatment plants flooded, causing a severe drinking water shortage"
       },
       {
-        "i_node": "private_water_tanker",
-        "rank": 3,
-        "reasoning": "Demand surged as piped supply stopped for millions of residents"
-      },
-      {
         "i_node": "traffic_congestion",
-        "rank": 4,
+        "rank": 3,
         "reasoning": "Massive gridlock across the city as key bridges and roads were closed"
       },
       {
         "i_node": "intercity_bus_fare",
-        "rank": 5,
+        "rank": 4,
         "reasoning": "ISBT Kashmere Gate flooded, halting interstate buses and stranding passengers"
       },
       {
-        "i_node": "residential_power_supply",
-        "rank": 6,
+        "i_node": "electricity_tariff",
+        "rank": 5,
         "reasoning": "Power was preemptively cut off in low-lying areas to prevent accidents"
       },
       {
-        "i_node": "electrocution_hazard",
-        "rank": 7,
+        "i_node": "fire_and_structural_hazards",
+        "rank": 6,
         "reasoning": "Severe risk of electrocution in flooded unauthorized colonies and slums"
       },
       {
-        "i_node": "stray_animals",
-        "rank": 8,
+        "i_node": "stray_animal_nuisance",
+        "rank": 7,
         "reasoning": "Hundreds of cows and street dogs drowned or were displaced by the rising waters"
       },
       {
-        "i_node": "dengue",
-        "rank": 9,
+        "i_node": "vector_borne_diseases",
+        "rank": 8,
         "reasoning": "Post-flood stagnant water led to a massive spike in vector-borne diseases"
       },
       {
         "i_node": "polluted_surface_water",
-        "rank": 10,
+        "rank": 9,
         "reasoning": "Sewage mixed with floodwaters, contaminating neighborhoods and groundwater"
       }
     ]
@@ -1004,53 +719,38 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "real_money_gaming_and_betting",
+        "i_node": "real_money_gaming",
         "rank": 1,
-        "reasoning": "Direct target of the ban \u2014 all RMG platforms shut down operations, 450M users lost access overnight"
+        "reasoning": "Direct target of the ban — all RMG platforms shut down operations, 450M users lost access overnight"
       },
       {
-        "i_node": "startup_layoffs",
+        "i_node": "corporate_hiring_and_layoffs",
         "rank": 2,
         "reasoning": "MPL, WinZO, Gameskraft and others laid off 7000+ employees within weeks of the ban"
       },
       {
-        "i_node": "venture_capital_and_pe_flows",
+        "i_node": "freelance_and_creator_income",
         "rank": 3,
-        "reasoning": "$840M in write-downs by Tiger Global, Sequoia, and others. VC funding to Indian gaming sector went to zero"
-      },
-      {
-        "i_node": "startup_jobs",
-        "rank": 4,
-        "reasoning": "Hiring freeze across gaming startups, adjacent ad-tech and payment companies also cut headcount"
-      },
-      {
-        "i_node": "creator_and_digital_earnings",
-        "rank": 5,
         "reasoning": "Gaming streamers, esports pros, and fantasy sports influencers lost primary income source"
       },
       {
-        "i_node": "indirect_taxes",
-        "rank": 6,
+        "i_node": "indirect_taxes_gst",
+        "rank": 4,
         "reasoning": "States lost Rs 20,000 Cr annually in GST and income tax from the RMG sector"
       },
       {
-        "i_node": "cricket_match_ticket",
-        "rank": 7,
-        "reasoning": "IPL and cricket sponsorship deals collapsed \u2014 Dream11, MPL were top sponsors. Reduced fan engagement without fantasy overlay"
+        "i_node": "live_sports_events",
+        "rank": 5,
+        "reasoning": "IPL and cricket sponsorship deals collapsed — Dream11, MPL were top sponsors. Reduced fan engagement without fantasy overlay"
       },
       {
-        "i_node": "direct_equity_portfolio",
-        "rank": 8,
-        "reasoning": "Listed gaming-adjacent companies (Nazara, Delta Corp) crashed 30-50%. Retail investors hit"
-      },
-      {
-        "i_node": "mental_health_conditions",
-        "rank": 9,
+        "i_node": "mental_health_and_substance_abuse",
+        "rank": 6,
         "reasoning": "Government cited 450M affected Indians, addiction, financial ruin, and suicides as ban rationale. Post-ban: withdrawal and income-loss anxiety"
       },
       {
-        "i_node": "gig_worker_payouts",
-        "rank": 10,
+        "i_node": "food_and_grocery_delivery_payouts",
+        "rank": 7,
         "reasoning": "Laid-off gaming employees entered gig economy, increasing supply and suppressing per-worker payouts"
       }
     ]
