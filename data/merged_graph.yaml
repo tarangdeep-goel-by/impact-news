@@ -1,0 +1,6346 @@
+nodes:
+- id: aadhaar_identity_system
+  aliases:
+  - UIDAI Database
+  - Biometric Authentication
+  - Aadhaar Pranali
+  - Digital Identity Stack
+  - Aadhaar Infrastructure
+  category: T5
+  is_category: false
+  portal: true
+  level: 3
+- id: accidents_and_hazards
+  aliases:
+  - Accidents & Hazards
+  - Durghatna
+  - Hadse aur Khatre
+  - Physical Hazards
+  category: I4
+  is_category: true
+  level: 2
+- id: aging_population_trends
+  aliases:
+  - Senior Demographics
+  - Elderly Care Burden
+  - Vriddha Aabadi
+  - Silver Economy
+  - Aging Workforce
+  category: T6
+  is_category: false
+  level: 3
+- id: agricultural_commodities
+  aliases:
+  - Agricultural Commodities
+  - Global Agri Markets
+  - Krishi Utpad Bazar
+  - Farm Commodity Markets
+  category: T1
+  is_category: true
+  level: 3
+- id: ai_compute_infrastructure
+  aliases:
+  - GPU Clusters
+  - IndiaAI Mission
+  - AI Supercomputers
+  - AI Compute Grid
+  - Machine Learning Infrastructure
+  category: T5
+  is_category: false
+  level: 3
+- id: air_and_climate
+  aliases:
+  - Air Quality & Thermal Environment
+  - Hawa Aur Mausam
+  - Outdoor Air & Heat
+  - Atmospheric Conditions
+  category: I7
+  is_category: true
+  level: 2
+- id: air_pollution
+  aliases:
+  - Air Pollution
+  - AQI
+  - PM2.5 Levels
+  - Pradushan
+  - Poor Air Quality
+  - Toxic Air
+  category: I7
+  is_category: false
+  level: 3
+- id: anganwadi_and_preschools
+  aliases:
+  - Anganwadi
+  - Play school
+  - Balvatika
+  - ECCE
+  - आंगनवाड़ी
+  category: I5
+  is_category: false
+  level: 3
+- id: animal_and_wildlife_attacks
+  aliases:
+  - Animal & Wildlife Attacks
+  - stray dog bite
+  - awara kutte
+  - leopard attack
+  - wild animal encounter
+  - snakebite
+  category: I4
+  is_category: false
+  level: 3
+- id: apex_judicial_rulings
+  aliases:
+  - Supreme Court Verdict
+  - High Court Order
+  - Sarvochha Nyayalaya Faisla
+  - Judicial Mandate
+  - Constitutional Interpretation
+  category: T2
+  is_category: false
+  portal: true
+  level: 3
+- id: arabian_sea_dynamics
+  aliases:
+  - Arabian Sea Marine System
+  - Arab Sagar Pranali
+  - Western Seaboard Waters
+  - Arabian Sea Surface Temperature
+  - West Coast Ocean Dynamics
+  category: T7
+  is_category: false
+  level: 3
+- id: atmospheric_and_climate_systems
+  aliases:
+  - Atmospheric & Climate Systems
+  - Weather & Climate
+  - Mausam Evam Jalvayu Pranali
+  - Atmospheric Dynamics
+  category: T7
+  is_category: true
+  level: 2
+- id: atmospheric_thermal_systems
+  aliases:
+  - Heat Dome Dynamics
+  - Global Warming Trends
+  - Tapman Pranali
+  - High-Pressure Thermal Systems
+  - Extreme Heat Patterns
+  category: T7
+  is_category: false
+  level: 3
+- id: auto_e_rickshaw
+  aliases:
+  - Auto & E-Rickshaw
+  - auto fare
+  - e-rickshaw ride
+  - auto kiraya
+  - meter fare
+  - sharing auto
+  category: I3
+  is_category: false
+  level: 3
+- id: banking_and_credit_regulation
+  aliases:
+  - Banking Sector Norms
+  - NPA Guidelines
+  - Banking Niyam
+  - Loan Restructuring Rules
+  - NBFC Regulation
+  category: T2
+  is_category: false
+  level: 3
+- id: bay_of_bengal_dynamics
+  aliases:
+  - Bay of Bengal Marine System
+  - Bengal Ki Khadi Pranali
+  - Eastern Seaboard Waters
+  - Bay of Bengal Surface Temperature
+  - East Coast Ocean Dynamics
+  category: T7
+  is_category: false
+  level: 3
+- id: broadband_and_wifi
+  aliases:
+  - Broadband Bill
+  - Fiber Internet
+  - Public Wifi Access
+  - ब्रॉडबैंड
+  category: I8
+  is_category: false
+  level: 3
+- id: building_materials_and_labor
+  aliases:
+  - cement price
+  - sariya
+  - construction labor
+  - building cost
+  - mazdoori
+  category: I2
+  is_category: false
+  level: 3
+- id: bureaucratic_services
+  aliases:
+  - Bureaucratic Services
+  - Sarkari Kaam
+  - Government Paperwork
+  - Daftar ke Chakkar
+  category: I6
+  is_category: true
+  level: 2
+- id: canal_irrigation_networks
+  aliases:
+  - Agricultural Canals
+  - Irrigation Grid
+  - Nahar Sichai Yojana
+  - Farm Water Supply
+  - Canal Systems
+  category: T4
+  is_category: false
+  level: 3
+- id: capital_gains_tax
+  aliases:
+  - LTCG
+  - STCG
+  - capital gains return
+  - poonji laabh kar
+  category: I6
+  is_category: false
+  level: 3
+- id: cellular_tower_network
+  aliases:
+  - Mobile Towers
+  - Telecom Infrastructure
+  - Mobile Tower Network
+  - Cellular Grid
+  - Base Transceiver Stations
+  category: T5
+  is_category: false
+  level: 3
+- id: center_state_relations
+  aliases:
+  - Federal Funding Dispute
+  - Finance Commission Grants
+  - Kendra Rajya Sambandh
+  - Governor CM Conflict
+  - Tax Devolution
+  category: T2
+  is_category: false
+  portal: true
+  level: 3
+- id: china_macro_output
+  aliases:
+  - Chinese Manufacturing
+  - China Slowdown
+  - Chini Arthvyavastha
+  - China Factory Output
+  - China Industrial Production
+  category: T1
+  is_category: false
+  level: 3
+- id: chronic_and_lifestyle_diseases
+  aliases:
+  - Chronic & Lifestyle Diseases
+  - diabetes
+  - heart attack
+  - cancer
+  - blood pressure
+  - madhumeh
+  category: I4
+  is_category: false
+  level: 3
+- id: cinema_and_movies
+  aliases:
+  - Movie Tickets
+  - Multiplex Release
+  - Box Office
+  - सिनेमा टिकट
+  category: I8
+  is_category: false
+  level: 3
+- id: city_bus_transit
+  aliases:
+  - City Bus Transit
+  - bus ticket
+  - city bus pass
+  - bus kiraya
+  - BEST/DTC fare
+  category: I3
+  is_category: false
+  level: 3
+- id: civic_movements
+  aliases:
+  - Civic Movements
+  - Janta ka Andolan
+  - Protest & Strikes
+  - Nagrik Andolan
+  category: I6
+  is_category: true
+  level: 2
+- id: cloud_compute_ai
+  aliases:
+  - Cloud, Compute & AI
+  - Data Infrastructure
+  - Computing Buniyadi Dhanche
+  - AI Platforms
+  category: T5
+  is_category: true
+  level: 2
+- id: cloud_service_platforms
+  aliases:
+  - Cloud Hosting Platforms
+  - Enterprise Cloud Infra
+  - Cloud Computing Suvidha
+  - Public Cloud Platforms
+  - AWS Azure India
+  category: T5
+  is_category: false
+  level: 3
+- id: cng_price
+  aliases:
+  - CNG Price
+  - CNG rate
+  - auto gas price
+  - CNG ka daam
+  - green fuel cost
+  category: I3
+  is_category: false
+  level: 3
+- id: coaching_and_tuition_fees
+  aliases:
+  - coaching fee
+  - test prep cost
+  - institute charges
+  - tuition fees
+  category: I2
+  is_category: false
+  level: 3
+- id: coaching_institutes
+  aliases:
+  - Kota coaching
+  - Offline test prep centers
+  - Tuition classes
+  - कोचिंग सेंटर
+  category: I5
+  is_category: false
+  level: 3
+- id: coastal_sea_level_dynamics
+  aliases:
+  - Sea Level Rise
+  - Coastal Erosion Mechanics
+  - Samudra Star Pranali
+  - Shoreline Displacement
+  - Tidal Boundary Shifts
+  category: T7
+  is_category: false
+  level: 3
+- id: collective_civic_behavior
+  aliases:
+  - Collective Civic Behavior
+  - Public Behavior
+  - Samuhik Nagrik Vyavhar
+  - Societal Engagement
+  category: T6
+  is_category: true
+  level: 2
+- id: collective_social_dissent
+  aliases:
+  - Mass Protest Movements
+  - Civil Unrest Trends
+  - Jan Andolan
+  - Societal Agitation
+  - Collective Outrage
+  category: T6
+  is_category: false
+  portal: true
+  level: 3
+- id: college_and_university_fees
+  aliases:
+  - semester fee
+  - hostel fee
+  - higher ed cost
+  - university dues
+  category: I2
+  is_category: false
+  level: 3
+- id: college_entrance_exams
+  aliases:
+  - JEE Main
+  - NEET UG
+  - CUET
+  - University entrance tests
+  - प्रवेश परीक्षा
+  category: I5
+  is_category: false
+  level: 3
+- id: commercial_airports
+  aliases:
+  - Airport Infrastructure
+  - Aviation Hubs
+  - Hawai Adda Network
+  - Civilian Airports
+  - Runways and Terminals
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: commercial_data_centers
+  aliases:
+  - Data Centre Parks
+  - Server Farms
+  - Data Center Hub
+  - Data Storage Infrastructure
+  - Colocation Centers
+  category: T5
+  is_category: false
+  level: 3
+- id: competitive_exams_and_coaching
+  aliases:
+  - Competitive Exams & Coaching
+  - Entrance Exams
+  - Pratiyogi Pariksha
+  - Test Preparation
+  category: I5
+  is_category: true
+  level: 2
+- id: construction_worker_wages
+  aliases:
+  - Construction Worker Wages
+  - Mistri Wage
+  - Construction Labor Pay
+  - Dihari Majdoori
+  - Building Worker Income
+  - Mason Daily Wage
+  category: I1
+  is_category: false
+  level: 3
+- id: consumer_tech_hardware
+  aliases:
+  - Smartphone Price
+  - Laptop Cost
+  - Consumer Electronics
+  - स्मार्टफोन
+  category: I8
+  is_category: false
+  level: 3
+- id: corporate_hiring_and_layoffs
+  aliases:
+  - Corporate Hiring & Layoffs
+  - IT Sector Jobs
+  - Startup Layoffs
+  - Private Sector Hiring
+  - Naukri
+  - Job Cuts
+  - Tech Layoffs
+  category: I1
+  is_category: false
+  level: 3
+- id: corporate_salaries
+  aliases:
+  - Corporate Salaries
+  - Private Sector Salary
+  - IT Sector Pay
+  - Vetan
+  - Corporate Increments
+  - Annual Appraisal Hike
+  category: I1
+  is_category: false
+  level: 3
+- id: crimes_against_children
+  aliases:
+  - Crimes Against Children
+  - POCSO
+  - child kidnapping
+  - bacchon ka apharan
+  - bal shoshan
+  category: I4
+  is_category: false
+  level: 3
+- id: cross_border_terror_networks
+  aliases:
+  - State-Sponsored Terrorism
+  - FATF Grey List
+  - Seema Paar Aatankvaad
+  - Global Terror Syndicates
+  - Terror Financing Networks
+  category: T3
+  is_category: false
+  level: 3
+- id: crowd_stampedes
+  aliases:
+  - Crowd Stampedes
+  - bhagdar
+  - temple stampede
+  - mela rush
+  - crowd crush
+  category: I4
+  is_category: false
+  level: 3
+- id: culture_and_religion
+  aliases:
+  - Culture & Religion
+  - Festivals & Faith
+  - Sanskriti Aur Dharm
+  - Religious & Cultural Life
+  category: I8
+  is_category: true
+  level: 2
+- id: curfews_and_public_emergencies
+  aliases:
+  - Curfews & Public Emergencies
+  - section 144
+  - curfew
+  - lockdown
+  - emergency public safety order
+  category: I4
+  is_category: false
+  level: 3
+- id: cyber_crime_reporting
+  aliases:
+  - online fraud complaint
+  - cyber cell response
+  - scam reporting
+  - cyber apradh
+  category: I6
+  is_category: false
+  level: 3
+- id: cyclonic_storm_dynamics
+  aliases:
+  - Tropical Cyclones
+  - Cyclonic Storm Systems
+  - Chakravat Pranali
+  - Bay of Bengal Cyclones
+  - Arabian Sea Cyclones
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: dairy_and_eggs
+  aliases:
+  - doodh
+  - milk price
+  - anda
+  - paneer
+  - dairy products
+  category: I2
+  is_category: false
+  level: 3
+- id: dam_and_reservoir_infrastructure
+  aliases:
+  - Major Dams
+  - Water Reservoirs
+  - Bandh Aur Jalashay
+  - Hydro Reservoirs
+  - Storage Dams
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: dedicated_freight_corridors
+  aliases:
+  - DFC Network
+  - Freight Only Lines
+  - Freight Corridor
+  - EDFC WDFC
+  - Industrial Freight Lines
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: defense_agniveer_jobs
+  aliases:
+  - Defense & Agniveer Jobs
+  - Army Recruitment
+  - Agnipath Scheme
+  - Defense Jobs
+  - Sena Bharti
+  - Agniveer Recruitment
+  category: I1
+  is_category: false
+  level: 3
+- id: diaspora_diplomatic_rows
+  aliases:
+  - Diplomatic Expulsions
+  - NRI Security Threats
+  - Pravasi Kootnitik Vivad
+  - Extradition Disputes
+  - Anti-India Foreign Lobbying
+  category: T3
+  is_category: false
+  level: 3
+- id: diesel_price
+  aliases:
+  - Diesel Price
+  - diesel rate
+  - fuel cost
+  - diesel ka bhav
+  - diesel price hike
+  category: I3
+  is_category: false
+  level: 3
+- id: digilocker_credential_ecosystem
+  aliases:
+  - Digital Locker System
+  - E-Document Infrastructure
+  - Digilocker Khata
+  - Verifiable Credentials
+  - Digital Civic Documents
+  category: T5
+  is_category: false
+  level: 3
+- id: digital_and_telecom_regulation
+  aliases:
+  - TRAI Tariff Rules
+  - Data Protection Act
+  - Digital Niyaman
+  - IT Intermediary Rules
+  - DPDP Act
+  category: T2
+  is_category: false
+  level: 3
+- id: digital_life_and_security
+  aliases:
+  - Digital Life & Security
+  - Online Safety
+  - Digital Privacy
+  - Digital Suraksha
+  category: I8
+  is_category: true
+  level: 2
+- id: digital_privacy_and_data
+  aliases:
+  - Data Breach
+  - Personal Data Privacy
+  - Hacking Leak
+  - डेटा लीक
+  category: I8
+  is_category: false
+  level: 3
+- id: digital_public_infrastructure
+  aliases:
+  - Digital Public Infrastructure
+  - DPI
+  - India Stack
+  - Digital Public Goods
+  category: T5
+  is_category: true
+  level: 2
+- id: dining_out_and_delivery
+  aliases:
+  - Dining Out & Delivery
+  - Bahar ka Khana
+  - Food Delivery Cost
+  - Eating Out Expenses
+  category: I2
+  is_category: true
+  level: 2
+- id: diseases_and_public_health
+  aliases:
+  - Diseases & Public Health
+  - Epidemics
+  - Bimari aur Jan Swasthya
+  - Public Health Threats
+  category: I4
+  is_category: true
+  level: 2
+- id: domestic_flight_ticket
+  aliases:
+  - Domestic Flight Ticket
+  - airfare
+  - flight ticket
+  - hawai yatra
+  - flight cancellation
+  - aviation fare
+  category: I3
+  is_category: false
+  level: 3
+- id: domestic_help_cost
+  aliases:
+  - maid salary expense
+  - bai ka kharcha
+  - cook wages
+  - driver salary
+  - domestic workers cost
+  category: I2
+  is_category: false
+  level: 3
+- id: domestic_help_wages
+  aliases:
+  - Domestic Help Wages
+  - Maid Salary
+  - House Help Pay
+  - Kaamwali Bai Salary
+  - Domestic Worker Wages
+  - Household Staff Pay
+  category: I1
+  is_category: false
+  level: 3
+- id: domestic_institutional_flows
+  aliases:
+  - DII Flows
+  - Mutual Fund Inflows
+  - Gharelu Nivesh
+  - SIP Macro Flows
+  - Domestic Fund Flows
+  category: T1
+  is_category: false
+  level: 3
+- id: domestic_labor_migration
+  aliases:
+  - Rural-Urban Migration
+  - Seasonal Migrant Labor
+  - Pravasi Mazdoor
+  - Inter-State Migration
+  - Palayan
+  category: T6
+  is_category: false
+  portal: true
+  level: 3
+- id: domestic_macro_indicators
+  aliases:
+  - Domestic Macro Indicators
+  - Indian Economy Metrics
+  - Rashtriya Arthik Ankde
+  - India Macro Data
+  category: T1
+  is_category: true
+  level: 2
+- id: domestic_violence
+  aliases:
+  - Domestic Violence
+  - gharelu hinsa
+  - dowry harassment
+  - marital abuse
+  - domestic abuse
+  category: I4
+  is_category: false
+  level: 3
+- id: drinking_water_contamination
+  aliases:
+  - Drinking Water Contamination
+  - Ganda Pani
+  - Dirty Tap Water
+  - Muddy Water Supply
+  - Foul-Smelling Water
+  category: I7
+  is_category: false
+  level: 3
+- id: ecological_and_biome_systems
+  aliases:
+  - Ecological & Biome Systems
+  - Ecosystem Dynamics
+  - Paristhitiki Pranali
+  - Natural Biomes
+  category: T7
+  is_category: true
+  level: 2
+- id: economic_and_financial_policy
+  aliases:
+  - Economic & Financial Policy
+  - Fiscal & Monetary Rules
+  - Arthik Niti
+  - Economic Governance
+  category: T2
+  is_category: true
+  level: 2
+- id: economic_sanctions
+  aliases:
+  - OFAC Sanctions
+  - SWIFT Bans
+  - Aarthik Pratibandh
+  - Trade Embargoes
+  - Financial Sanctions
+  category: T3
+  is_category: false
+  level: 3
+- id: economic_warfare_and_standards
+  aliases:
+  - Economic Warfare & Standards
+  - Trade Weapons
+  - Arthik Yuddh Evam Manak
+  - Non-Tariff Barriers
+  category: T3
+  is_category: true
+  level: 2
+- id: edible_oils
+  aliases:
+  - tel
+  - mustard oil
+  - sarso tel
+  - cooking oil
+  - palm oil
+  category: I2
+  is_category: false
+  level: 3
+- id: edtech_platforms
+  aliases:
+  - Online classes
+  - Edtech startups
+  - E-learning apps
+  - Distance learning
+  - ऑनलाइन पढ़ाई
+  category: I5
+  is_category: false
+  level: 3
+- id: education_and_childcare_costs
+  aliases:
+  - Education & Childcare Costs
+  - Padhai ka Kharcha
+  - School & College Fees
+  - Education Expenses
+  category: I2
+  is_category: true
+  level: 2
+- id: education_and_skilling_policy
+  aliases:
+  - National Education Policy
+  - UGC Guidelines
+  - Shiksha Niti
+  - Board Exam Rules
+  - NEP Changes
+  category: T2
+  is_category: false
+  level: 3
+- id: educational_scholarships
+  aliases:
+  - student scholarship
+  - fee waiver
+  - merit scholarship
+  - chhatravriti
+  category: I2
+  is_category: false
+  level: 3
+- id: electoral_policy_and_conduct
+  aliases:
+  - ECI Ruling
+  - Model Code of Conduct
+  - Chunav Niti
+  - Election Schedule
+  - Poll Commission Directive
+  category: T2
+  is_category: false
+  level: 3
+- id: electricity_tariff
+  aliases:
+  - bijli bill
+  - power tariff
+  - electricity rates
+  - unit cost
+  category: I2
+  is_category: false
+  level: 3
+- id: energy_and_environment_policy
+  aliases:
+  - Green Energy Mandates
+  - Emission Norms
+  - Paryavaran Niti
+  - Environmental Clearance
+  - Coal Block Allocation
+  category: T2
+  is_category: false
+  level: 3
+- id: energy_cartel_actions
+  aliases:
+  - OPEC Production Cuts
+  - OPEC+ Quota
+  - Tel Utpadak Sangathan
+  - Oil Supply Manipulation
+  - Petroleum Cartel
+  category: T3
+  is_category: false
+  portal: true
+  level: 3
+- id: energy_commodities
+  aliases:
+  - Energy Commodities
+  - Global Energy Markets
+  - Urja Bazar
+  - Fossil Fuel Markets
+  category: T1
+  is_category: true
+  level: 3
+- id: energy_power_infrastructure
+  aliases:
+  - Energy & Power Infrastructure
+  - Power Systems
+  - Urja Buniyadi Dhanche
+  - Energy Grid
+  category: T4
+  is_category: true
+  level: 2
+- id: engineering_and_tech_education
+  aliases:
+  - Engineering colleges
+  - IITs/NITs
+  - BTech/MTech programs
+  - इंजीनियरिंग की पढ़ाई
+  category: I5
+  is_category: false
+  level: 3
+- id: enso_cycle
+  aliases:
+  - El Nino Southern Oscillation
+  - ENSO
+  - El Nino
+  - La Nina
+  - Pacific Ocean Warming
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: entertainment_and_gaming
+  aliases:
+  - Entertainment & Gaming
+  - Movies & Games
+  - Manoranjan
+  - Fun & Leisure
+  category: I8
+  is_category: true
+  level: 2
+- id: ev_charging_tariff
+  aliases:
+  - EV Charging Tariff
+  - EV charging cost
+  - electric vehicle charging
+  - EV unit rate
+  category: I3
+  is_category: false
+  level: 3
+- id: extreme_cold
+  aliases:
+  - Extreme Cold
+  - Cold Wave
+  - Sheet Lehar
+  - Freezing Temperatures
+  - Biting Cold
+  category: I7
+  is_category: false
+  level: 3
+- id: extreme_heat
+  aliases:
+  - Extreme Heat
+  - Heatwave
+  - Loo
+  - Scorching Heat
+  - Bhishan Garmi
+  - High Temperatures
+  category: I7
+  is_category: false
+  level: 3
+- id: factory_worker_wages
+  aliases:
+  - Factory Worker Wages
+  - Manufacturing Worker Pay
+  - Industrial Labor Wages
+  - Karkhana Majdoori
+  - Shopfloor Salary
+  - Assembly Line Worker Pay
+  category: I1
+  is_category: false
+  level: 3
+- id: farm_labor_wages
+  aliases:
+  - Farm Labor Wages
+  - Khet Mazdoori
+  - Agricultural Worker Pay
+  - Farm Hand Daily Wage
+  - Krishi Mazdoor
+  - Rural Farm Wages
+  category: I1
+  is_category: false
+  level: 3
+- id: farmer_agitations
+  aliases:
+  - farmer protests
+  - kisan andolan
+  - MSP demands
+  - kisan union
+  category: I6
+  is_category: false
+  level: 3
+- id: farmer_income_and_msp
+  aliases:
+  - Farmer Income & MSP
+  - Kisan Aay
+  - MSP Hikes
+  - Agricultural Household Income
+  - Fasal Daam
+  - Crop Selling Price
+  category: I1
+  is_category: false
+  level: 3
+- id: federal_and_electoral_governance
+  aliases:
+  - Federal & Electoral Governance
+  - Elections & Federalism
+  - Sanghiya Evam Chunav Shasan
+  - Democratic Governance
+  category: T2
+  is_category: true
+  level: 2
+- id: female_labor_force_participation
+  aliases:
+  - FLFP
+  - Women in Workforce
+  - Mahila Shram Bal Bhagidari
+  - Female Employment Trends
+  - Women Economic Participation
+  category: T6
+  is_category: false
+  portal: true
+  level: 3
+- id: fertility_and_mortality_shifts
+  aliases:
+  - Birth Rate Decline
+  - Death Rates
+  - Prajanan Dar
+  - Replacement Level Fertility
+  - Demographic Transition
+  category: T6
+  is_category: false
+  level: 3
+- id: festivals_and_cultural_events
+  aliases:
+  - Puja Pandal
+  - Diwali Firecrackers
+  - Festival Idol
+  - त्योहार/पूजा
+  category: I8
+  is_category: false
+  level: 3
+- id: festive_demand_cycles
+  aliases:
+  - Festival Economy
+  - Wedding Season Surge
+  - Tyohari Mang
+  - Seasonal Consumption Cycles
+  - Diwali Eid Season
+  category: T6
+  is_category: false
+  portal: true
+  level: 3
+- id: financial_and_capital_markets
+  aliases:
+  - Financial & Capital Markets
+  - Stock & Bond Markets
+  - Vittiya Bazar
+  - Capital Markets
+  category: T1
+  is_category: true
+  level: 2
+- id: fir_and_police_interaction
+  aliases:
+  - FIR registration
+  - police response time
+  - thana interaction
+  - police karyawahi
+  category: I6
+  is_category: false
+  level: 3
+- id: fire_and_structural_hazards
+  aliases:
+  - Fire & Structural Hazards
+  - aag lagna
+  - building collapse
+  - aagjani
+  - electrocution
+  - short circuit fire
+  category: I4
+  is_category: false
+  level: 3
+- id: fiscal_and_tax_policy
+  aliases:
+  - Union Budget
+  - GST Council Decision
+  - Rajkoshiya Niti
+  - Income Tax Slabs
+  - Direct Tax Changes
+  category: T2
+  is_category: false
+  portal: true
+  level: 3
+- id: food_and_grocery_delivery_payouts
+  aliases:
+  - Food & Grocery Delivery Payouts
+  - Zomato Swiggy Earnings
+  - Zepto Blinkit Payouts
+  - Delivery Boy Income
+  - Gig Work Payout
+  - Quick Commerce Delivery Pay
+  category: I1
+  is_category: false
+  level: 3
+- id: food_delivery_services
+  aliases:
+  - Zomato
+  - Swiggy
+  - food delivery fee
+  - platform fee
+  - online food order
+  category: I2
+  is_category: false
+  level: 3
+- id: foreign_capital_flows
+  aliases:
+  - FII Flows
+  - Foreign Portfolio Investment
+  - Videshi Nivesh
+  - FPI Flows
+  - Foreign Institutional Flows
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: foreign_central_bank_policy
+  aliases:
+  - US Federal Reserve
+  - ECB Rate Decision
+  - Videshi Kendriya Bank Niti
+  - Global Interest Rates
+  - Fed Policy Shift
+  category: T3
+  is_category: false
+  portal: true
+  level: 3
+- id: foreign_elections_and_transitions
+  aliases:
+  - US Presidential Elections
+  - Foreign Regime Change
+  - Videshi Chunav
+  - UK Elections
+  - Global Democratic Transitions
+  category: T3
+  is_category: false
+  level: 3
+- id: forest_biome_systems
+  aliases:
+  - Macro Forest Cover
+  - Terrestrial Ecosystems
+  - Van Pranali
+  - Jungle Ecology
+  - Deforestation Dynamics
+  category: T7
+  is_category: false
+  level: 3
+- id: forex_reserves_india
+  aliases:
+  - Foreign Exchange Reserves
+  - RBI Dollar Reserves
+  - Videshi Mudra Bhandar
+  - FX Reserves
+  - India Forex Stockpile
+  category: T1
+  is_category: false
+  level: 3
+- id: formal_sector_employment
+  aliases:
+  - Formal Sector Employment
+  - Organized Sector Jobs
+  - Sarkari Aur Corporate Naukri
+  - Regular Employment
+  category: I1
+  is_category: true
+  level: 2
+- id: freelance_and_creator_income
+  aliases:
+  - Freelance & Creator Income
+  - YouTube Earnings
+  - Influencer Income
+  - Freelance Tech Work
+  - Creator Economy Monetization
+  - Independent Contractor Pay
+  category: I1
+  is_category: false
+  level: 3
+- id: fresh_vegetables_and_fruits
+  aliases:
+  - sabzi
+  - phal
+  - fresh produce
+  - vegetable prices
+  - fruit market
+  category: I2
+  is_category: false
+  level: 3
+- id: general_degree_programs
+  aliases:
+  - BA BSc BCom
+  - University college
+  - Arts Science Commerce
+  - कॉलेज की पढ़ाई
+  category: I5
+  is_category: false
+  level: 3
+- id: geological_and_cryosphere_systems
+  aliases:
+  - Geological & Cryosphere Systems
+  - Earth & Ice Systems
+  - Bhugarbhik Evam Himanad Pranali
+  - Tectonic & Glacial Systems
+  category: T7
+  is_category: true
+  level: 2
+- id: gig_and_platform_earnings
+  aliases:
+  - Gig & Platform Earnings
+  - Platform Worker Income
+  - Gig Economy Pay
+  - App-Based Earnings
+  - Digital Platform Kamai
+  category: I1
+  is_category: true
+  level: 2
+- id: global_coal_markets
+  aliases:
+  - Thermal Coal Prices
+  - International Coal
+  - Koyla Bazar
+  - Coking Coal Markets
+  - Newcastle Coal
+  category: T1
+  is_category: false
+  level: 4
+- id: global_commodity_markets
+  aliases:
+  - Global Commodity Markets
+  - International Commodities
+  - Vishwa Commodity Bazar
+  - Raw Material Markets
+  category: T1
+  is_category: true
+  level: 2
+- id: global_crude_oil
+  aliases:
+  - Brent Crude
+  - Kachcha Tel
+  - WTI Crude
+  - Global Oil Prices
+  - Petroleum Markets
+  category: T1
+  is_category: false
+  portal: true
+  level: 4
+- id: global_edible_oil
+  aliases:
+  - Palm Oil Prices
+  - Sunflower Oil Imports
+  - Khadya Tel
+  - Global Edible Oil Supply
+  - Cooking Oil Markets
+  category: T1
+  is_category: false
+  portal: true
+  level: 4
+- id: global_equity_markets
+  aliases:
+  - Wall Street
+  - S&P 500
+  - Nasdaq
+  - Vaishvik Share Bazar
+  - Global Stock Indices
+  category: T1
+  is_category: false
+  level: 3
+- id: global_finance_and_energy
+  aliases:
+  - Global Finance & Energy
+  - International Monetary Forces
+  - Vaishvik Vitta Evam Urja
+  - External Economic Forces
+  category: T3
+  is_category: true
+  level: 2
+- id: global_food_grains
+  aliases:
+  - International Wheat Prices
+  - Global Rice Markets
+  - Anaj Bazar
+  - Grain Supply
+  - Chicago Wheat
+  category: T1
+  is_category: false
+  portal: true
+  level: 4
+- id: global_natural_gas
+  aliases:
+  - LNG Prices
+  - Natural Gas Markets
+  - Prakritik Gas
+  - Henry Hub
+  - Global Gas Supply
+  category: T1
+  is_category: false
+  level: 4
+- id: global_regulatory_mandates
+  aliases:
+  - EU Carbon Border Tax
+  - CBAM
+  - Vaishvik Niyamak Manak
+  - Global ESG Mandates
+  - International Compliance Standards
+  category: T3
+  is_category: false
+  level: 3
+- id: global_shipping_freight
+  aliases:
+  - Freight Rates
+  - Container Costs
+  - Shipping Kiraya
+  - Baltic Dry Index
+  - Maritime Logistics
+  category: T1
+  is_category: false
+  level: 3
+- id: global_sugar_markets
+  aliases:
+  - International Sugar Prices
+  - Raw Sugar Supply
+  - Chini Bazar
+  - Global Sugar Deficit
+  - Sugar Futures
+  category: T1
+  is_category: false
+  level: 4
+- id: government_recruitment_exams
+  aliases:
+  - UPSC Civil Services
+  - SSC exams
+  - Bank PO/Clerk
+  - TET/Teacher exams
+  - सरकारी नौकरी परीक्षा
+  category: I5
+  is_category: false
+  level: 3
+- id: government_schools
+  aliases:
+  - Sarkari school
+  - Kendriya Vidyalaya
+  - State government schools
+  - सरकारी स्कूल
+  category: I5
+  is_category: false
+  level: 3
+- id: groceries_and_provisions
+  aliases:
+  - Groceries & Provisions
+  - Kirana & Ration
+  - Daily Groceries
+  - Ghar ka Ration
+  category: I2
+  is_category: true
+  level: 2
+- id: groundwater_aquifer_systems
+  aliases:
+  - Water Table Dynamics
+  - Subsurface Aquifers
+  - Bhujal Pranali
+  - Underground Water Reserves
+  - Aquifer Depletion
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: health_insurance_premium
+  aliases:
+  - mediclaim
+  - health policy premium
+  - swasthya bima
+  - medical insurance cost
+  category: I2
+  is_category: false
+  level: 3
+- id: health_stack_abha
+  aliases:
+  - Ayushman Bharat Digital Mission
+  - National Health Stack
+  - ABHA ID System
+  - Digital Swasthya Card
+  - Health Data Infrastructure
+  category: T5
+  is_category: false
+  level: 3
+- id: healthcare_access_and_medicine
+  aliases:
+  - Healthcare Access & Medicine
+  - Medical Services
+  - Chikitsa Suvidha
+  - Health Infrastructure
+  category: I4
+  is_category: true
+  level: 2
+- id: higher_education
+  aliases:
+  - Higher Education & Degrees
+  - College Education
+  - University Padhai
+  - Ucch Shiksha
+  category: I5
+  is_category: true
+  level: 2
+- id: highway_expressway_network
+  aliases:
+  - National Highways
+  - Expressways
+  - Rashtriya Rajmarg
+  - Bharatmala Roads
+  - NHAI Infrastructure
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: highway_tolls
+  aliases:
+  - Highway Tolls
+  - toll tax
+  - FASTag deduction
+  - toll plaza fee
+  - highway toll
+  - NHAI toll
+  category: I3
+  is_category: false
+  level: 3
+- id: himalayan_cryosphere
+  aliases:
+  - Himalayan Glaciers
+  - Himanad
+  - Glacial Melt Dynamics
+  - Third Pole Ice Systems
+  - High-Altitude Snowpack
+  category: T7
+  is_category: false
+  level: 3
+- id: himalayan_river_basins
+  aliases:
+  - Ganga-Brahmaputra-Indus Basins
+  - Perennial River Systems
+  - Himalayi Nadiya
+  - Northern River Basins
+  - Glacier-Fed Rivers
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: himalayan_tectonic_system
+  aliases:
+  - Himalayan Fault Lines
+  - Eurasian Plate Boundary
+  - Bhukampiya Kshetr
+  - Seismic Zone V
+  - Himalayan Earthquake Zone
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: home_services_payouts
+  aliases:
+  - Home Services Payouts
+  - Urban Company Partner
+  - At-Home Salon Earnings
+  - Gig Service Payouts
+  - Platform Service Income
+  - Home Repair Gig Pay
+  category: I1
+  is_category: false
+  level: 3
+- id: hospital_and_medical_care
+  aliases:
+  - Hospital & Medical Care
+  - hospital admission
+  - ilaj
+  - aspatal
+  - medical treatment
+  - surgery
+  category: I4
+  is_category: false
+  level: 3
+- id: household_energy_and_utilities
+  aliases:
+  - Household Energy & Utilities
+  - Ghar ki Bijli Gas Pani
+  - Home Energy Cost
+  - Utility Bills
+  category: I2
+  is_category: true
+  level: 2
+- id: household_services
+  aliases:
+  - Household Services
+  - Ghar ki Seva
+  - Home Services
+  - Domestic Services Cost
+  category: I2
+  is_category: true
+  level: 2
+- id: housing_and_accommodation
+  aliases:
+  - Housing & Accommodation
+  - Ghar ka Kharcha
+  - Rent & Housing Cost
+  - Makaan ka Kharcha
+  category: I2
+  is_category: true
+  level: 2
+- id: hydrocarbon_pipeline_network
+  aliases:
+  - Oil Pipelines
+  - Gas Distribution Grid
+  - Tel Gas Pipeline
+  - Petroleum Pipelines
+  - Natural Gas Grid
+  category: T4
+  is_category: false
+  level: 3
+- id: hydrological_and_oceanic_systems
+  aliases:
+  - Hydrological & Oceanic Systems
+  - Water & Ocean Systems
+  - Jal Evam Samudri Pranali
+  - Freshwater & Marine Systems
+  category: T7
+  is_category: true
+  level: 2
+- id: i1
+  aliases:
+  - Income & Livelihood
+  - Aay Evam Aajivika
+  - Earnings & Employment
+  - Money Coming In
+  - Kamai Aur Rozgar
+  category: I1
+  is_category: true
+  level: 1
+- id: i2
+  aliases:
+  - Cost of Living
+  - Household Expenses
+  - Money OUT
+  - Ghar ka Kharcha
+  category: I2
+  is_category: true
+  level: 1
+- id: i3
+  aliases:
+  - Mobility & Transport
+  - Getting Around
+  - Commute
+  - Yatayat
+  category: I3
+  is_category: true
+  level: 1
+- id: i4
+  aliases:
+  - Health & Bodily Safety
+  - Staying Safe
+  - Swasthya aur Suraksha
+  category: I4
+  is_category: true
+  level: 1
+- id: i5
+  aliases:
+  - Education & Skilling
+  - Learning
+  - Moving Up
+  - Shiksha
+  category: I5
+  is_category: true
+  level: 1
+- id: i6
+  aliases:
+  - Civic & Legal Friction
+  - State Interactions
+  - Sarkar se Panga
+  - Government Interface
+  category: I6
+  is_category: true
+  level: 1
+- id: i7
+  aliases:
+  - Habitat & Surroundings
+  - Local Environment
+  - Aas-paas ka Mahol
+  - Neighborhood Quality
+  category: I7
+  is_category: true
+  level: 1
+- id: i8
+  aliases:
+  - Digital & Leisure
+  - Downtime
+  - Online Life & Entertainment
+  - Digital Duniya
+  category: I8
+  is_category: true
+  level: 1
+- id: identity_and_travel_documents
+  aliases:
+  - passport issuance
+  - Aadhaar update
+  - PAN card processing
+  - pehchaan patra
+  category: I6
+  is_category: false
+  level: 3
+- id: india_export_trends
+  aliases:
+  - Merchandise Exports
+  - IT Services Exports
+  - Niryat
+  - Export Volume Trends
+  - India Export Data
+  category: T1
+  is_category: false
+  level: 3
+- id: india_gdp_growth
+  aliases:
+  - GDP Growth Rate
+  - Gross Domestic Product
+  - Arthik Vikas Dar
+  - National Economic Growth
+  - India GDP Data
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: india_trade_balance
+  aliases:
+  - Trade Deficit
+  - Current Account Deficit
+  - Vyapar Ghata
+  - CAD
+  - Import-Export Gap
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: indian_equity_markets
+  aliases:
+  - Sensex
+  - Nifty 50
+  - Share Bazar
+  - Domestic Stock Indices
+  - Indian Stock Market
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: indian_ocean_dipole
+  aliases:
+  - Indian Ocean Dipole
+  - IOD
+  - Indian Nino
+  - Hind Mahasagar Dipole
+  - Ocean Temperature Gradient
+  category: T7
+  is_category: false
+  level: 3
+- id: indian_railways_network
+  aliases:
+  - Indian Railways
+  - Railway Tracks
+  - Bharatiya Rail
+  - Railway Infrastructure
+  - Passenger Rail Network
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: indirect_taxes_gst
+  aliases:
+  - GST rates
+  - customs duty
+  - goods and services tax
+  - apratyaksh kar
+  category: I6
+  is_category: false
+  level: 3
+- id: industrial_metals
+  aliases:
+  - Copper Prices
+  - Global Steel Prices
+  - Audyogik Dhatu
+  - Base Metals
+  - LME Index
+  category: T1
+  is_category: false
+  level: 4
+- id: industrial_production_metrics
+  aliases:
+  - Index of Industrial Production
+  - IIP
+  - PMI Manufacturing
+  - Audyogik Utpadan
+  - Factory Output Data
+  category: T1
+  is_category: false
+  level: 3
+- id: informal_and_daily_wages
+  aliases:
+  - Informal & Daily Wages
+  - Unorganized Sector Wages
+  - Dihari Mazdoori
+  - Daily Wage Labor
+  - Asangathit Kshetra Vetan
+  category: I1
+  is_category: true
+  level: 2
+- id: infrastructure_and_resource_governance
+  aliases:
+  - Infrastructure & Resource Governance
+  - Resource Policy
+  - Buniyadi Dhanche Ki Niti
+  - Infrastructure Regulation
+  category: T2
+  is_category: true
+  level: 2
+- id: inr_exchange_rates
+  aliases:
+  - USD-INR Exchange Rate
+  - Rupee Depreciation
+  - Dollar Bhaw
+  - Rupaya Rate
+  - Forex Currency Rates
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: insurance_premiums
+  aliases:
+  - Insurance Premiums
+  - Bima ka Kharcha
+  - Insurance Cost
+  - Premium Payments
+  category: I2
+  is_category: true
+  level: 2
+- id: intercity_bus_fare
+  aliases:
+  - Intercity Bus Fare
+  - Volvo bus fare
+  - sleeper bus ticket
+  - state transport bus
+  - ST bus kiraya
+  category: I3
+  is_category: false
+  level: 3
+- id: intercity_travel
+  aliases:
+  - Intercity Travel
+  - Long Distance Travel
+  - Lambi Doori Ki Yatra
+  - Outstation Travel
+  category: I3
+  is_category: true
+  level: 2
+- id: internal_security_and_policing
+  aliases:
+  - National Security Directive
+  - UAPA Charges
+  - Aantarik Suraksha
+  - Public Order Enforcement
+  - Anti-Terror Operations
+  category: T2
+  is_category: false
+  level: 3
+- id: international_diaspora_trends
+  aliases:
+  - NRI Outflow
+  - Brain Drain
+  - Videshi Pravas
+  - Remittance Flows
+  - Skilled Emigration
+  category: T6
+  is_category: false
+  level: 3
+- id: international_trade_and_supply_chains
+  aliases:
+  - International Trade & Supply Chains
+  - Global Trade
+  - Antarrashtriya Vyapar
+  - Trade & Logistics
+  category: T1
+  is_category: true
+  level: 2
+- id: internet_shutdowns
+  aliases:
+  - Internet Ban
+  - Net Blockade
+  - Telecom Suspension
+  - इंटरनेट बैन
+  category: I8
+  is_category: false
+  level: 3
+- id: investigative_and_enforcement_actions
+  aliases:
+  - ED Raid
+  - CBI Investigation
+  - Chaapemari
+  - IT Department Search
+  - Anti-Corruption Drive
+  category: T2
+  is_category: false
+  level: 3
+- id: judicial_delays_and_litigation
+  aliases:
+  - court delays
+  - pending cases
+  - criminal litigation risk
+  - tarikh pe tarikh
+  category: I6
+  is_category: false
+  level: 3
+- id: kirana_and_retail_income
+  aliases:
+  - Kirana & Retail Income
+  - Kirana Store Profit
+  - Retail Trade Income
+  - Dukandaar Aay
+  - Shopkeeper Earnings
+  - Small Retail Business Income
+  category: I1
+  is_category: false
+  level: 3
+- id: labor_and_employment_policy
+  aliases:
+  - Labor Codes
+  - MGNREGA Wages
+  - Shram Kanoon
+  - EPFO Rules
+  - Minimum Wage Policy
+  category: T2
+  is_category: false
+  level: 3
+- id: labor_and_gig_unions
+  aliases:
+  - trade union strikes
+  - gig worker protest
+  - mazdoor sangh
+  - union demands
+  category: I6
+  is_category: false
+  level: 3
+- id: land_and_real_estate_regulation
+  aliases:
+  - RERA Compliance
+  - Land Acquisition Law
+  - Bhoomi Niyam
+  - Zoning Ordinance
+  - Real Estate Rules
+  category: T2
+  is_category: false
+  level: 3
+- id: landfills_and_dumpyards
+  aliases:
+  - Landfills & Dumpyards
+  - Garbage Mountains
+  - Kachre Ka Dher
+  - Landfill Fires
+  - Dumping Ground Stench
+  category: I7
+  is_category: false
+  level: 3
+- id: language_and_regional_identity
+  aliases:
+  - Linguistic Sub-Nationalism
+  - Regional Pride
+  - Bhashayi Asmita
+  - Language Preservation
+  - State Nativism
+  category: T6
+  is_category: false
+  level: 3
+- id: law_and_management_education
+  aliases:
+  - Law schools
+  - MBA programs
+  - IIMs, NLU degrees
+  - मैनेजमेंट/लॉ
+  category: I5
+  is_category: false
+  level: 3
+- id: legal_and_judicial_framework
+  aliases:
+  - Legal & Judicial Framework
+  - Law & Courts
+  - Kanoon Evam Nyay
+  - Legal Governance
+  category: T2
+  is_category: true
+  level: 2
+- id: legal_and_police_interface
+  aliases:
+  - Legal & Police Interface
+  - Kanoon aur Police
+  - Law & Order Interaction
+  - Thana Kachehri
+  category: I6
+  is_category: true
+  level: 2
+- id: legislative_amendments
+  aliases:
+  - New Parliament Bill
+  - Statutory Amendment
+  - Kanooni Sanshodhan
+  - Government Ordinance
+  - Act of Parliament
+  category: T2
+  is_category: false
+  portal: true
+  level: 3
+- id: life_insurance_premium
+  aliases:
+  - term plan
+  - LIC premium
+  - jeevan bima
+  - life cover cost
+  category: I2
+  is_category: false
+  level: 3
+- id: live_music_and_concerts
+  aliases:
+  - Music Festival
+  - Live Gig
+  - Event Tickets
+  - कॉन्सर्ट
+  category: I8
+  is_category: false
+  level: 3
+- id: live_sports_events
+  aliases:
+  - IPL Tickets
+  - Stadium Match
+  - Cricket Match
+  - Football Game
+  - मैच टिकट
+  category: I8
+  is_category: false
+  level: 3
+- id: local_and_municipal_governance
+  aliases:
+  - Municipal Civic Mandates
+  - Panchayat Rules
+  - Sthaniya Prashasan
+  - Urban Local Body Policy
+  - Civic Body Orders
+  category: T2
+  is_category: false
+  level: 3
+- id: local_public_and_hired_transit
+  aliases:
+  - Local Public & Hired Transit
+  - City Transport
+  - Sheher Ki Sawari
+  - Local Transit
+  category: I3
+  is_category: true
+  level: 2
+- id: logistics_and_freight
+  aliases:
+  - Logistics & Freight Movement
+  - Supply Chain Networks
+  - Maal Dhulai Pranali
+  - Freight Systems
+  category: T4
+  is_category: true
+  level: 2
+- id: loudspeaker_and_event_noise
+  aliases:
+  - Loudspeaker & Event Noise
+  - DJ Noise
+  - Festival Loudspeakers
+  - Construction Noise
+  - Azaan/Bhajan Noise
+  category: I7
+  is_category: false
+  level: 3
+- id: lpg_cylinder
+  aliases:
+  - gas cylinder
+  - rasoi gas
+  - LPG price
+  - cooking gas
+  - gas subsidy
+  category: I2
+  is_category: false
+  level: 3
+- id: macro_civic_participation
+  aliases:
+  - Voter Turnout Trends
+  - Democratic Engagement
+  - Matdan Bhagidari
+  - Electoral Mobilization
+  - Civic Volunteerism
+  category: T6
+  is_category: false
+  level: 3
+- id: macro_employment_trends
+  aliases:
+  - National Unemployment Rate
+  - EPFO Payroll Data
+  - Berozgari Dar
+  - Macro Job Creation
+  - CMIE Employment Data
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: macro_pest_population_dynamics
+  aliases:
+  - Locust Swarms
+  - Migratory Pest Populations
+  - Tiddi Dal
+  - Agricultural Pest Migrations
+  - Invasive Species Dynamics
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: major_seaports
+  aliases:
+  - Maritime Ports
+  - Shipping Terminals
+  - Bandargah
+  - Cargo Ports
+  - Coastal Port Infrastructure
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: marine_biomass_systems
+  aliases:
+  - Marine Fish Stocks
+  - Oceanic Biodiversity
+  - Samudri Jeev Pranali
+  - Wild Fish Populations
+  - Coastal Fishery Dynamics
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: maritime_chokepoint_disruptions
+  aliases:
+  - Red Sea Crisis
+  - Suez Canal Blockage
+  - Samudri Marg Avrodh
+  - Malacca Strait Threats
+  - Shipping Lane Disruptions
+  category: T3
+  is_category: false
+  portal: true
+  level: 3
+- id: market_and_corporate_regulation
+  aliases:
+  - SEBI Guidelines
+  - CCI Penalty
+  - Bazaar Niyaman
+  - Corporate Governance Norms
+  - Capital Market Rules
+  category: T2
+  is_category: false
+  portal: true
+  level: 3
+- id: maternal_and_child_health
+  aliases:
+  - Maternal & Child Health
+  - pregnancy care
+  - tikakaran
+  - malnutrition
+  - kuposhan
+  - pediatric care
+  category: I4
+  is_category: false
+  level: 3
+- id: maternity_and_leave_pay
+  aliases:
+  - Maternity & Leave Pay
+  - Maternity Leave Benefits
+  - Paid Sick Leave
+  - Chutti Allowance
+  - Paid Time Off Benefits
+  - Maternity Benefit Act
+  category: I1
+  is_category: false
+  level: 3
+- id: meat_and_seafood
+  aliases:
+  - murgha
+  - chicken price
+  - mutton
+  - machhli
+  - seafood prices
+  category: I2
+  is_category: false
+  level: 3
+- id: medical_and_healthcare_education
+  aliases:
+  - Medical colleges
+  - MBBS/BDS degrees
+  - Nursing education
+  - मेडिकल की पढ़ाई
+  category: I5
+  is_category: false
+  level: 3
+- id: medical_tests_and_diagnostics
+  aliases:
+  - Medical Tests & Diagnostics
+  - blood test
+  - path lab
+  - MRI scan
+  - x-ray
+  - janch
+  category: I4
+  is_category: false
+  level: 3
+- id: medicines_and_pharmaceuticals
+  aliases:
+  - Medicines & Pharmaceuticals
+  - dawa
+  - generic medicines
+  - medical store
+  - dawai
+  - life-saving drugs
+  category: I4
+  is_category: false
+  level: 3
+- id: mental_health_and_substance_abuse
+  aliases:
+  - Mental Health & Substance Abuse
+  - depression
+  - nashe ki lat
+  - drug de-addiction
+  - mental trauma
+  - suicide prevention
+  category: I4
+  is_category: false
+  level: 3
+- id: messaging_apps
+  aliases:
+  - WhatsApp Outage
+  - Telegram Ban
+  - Secure Messaging
+  - व्हाट्सएप
+  category: I8
+  is_category: false
+  level: 3
+- id: metals_and_minerals
+  aliases:
+  - Metals & Minerals
+  - Global Metals Market
+  - Dhatu Bazar
+  - Commodities Metals
+  category: T1
+  is_category: true
+  level: 3
+- id: metro_and_local_train
+  aliases:
+  - Metro & Local Train
+  - metro ticket
+  - local train pass
+  - metro kiraya
+  - local fare
+  - suburban rail
+  category: I3
+  is_category: false
+  level: 3
+- id: mgnrega_wages
+  aliases:
+  - MGNREGA Wages
+  - NREGA Pay
+  - 100 Days Work Wage
+  - Rural Job Guarantee
+  - NREGA Haziri
+  - Mahatma Gandhi Rozgar Guarantee
+  category: I1
+  is_category: false
+  level: 3
+- id: mobile_tariffs
+  aliases:
+  - Mobile Recharge
+  - Data Pack Price
+  - Telecom Tariff
+  - मोबाइल रिचार्ज
+  category: I8
+  is_category: false
+  level: 3
+- id: monetary_policy
+  aliases:
+  - RBI Rate Hike
+  - Repo Rate Change
+  - Maudrik Niti
+  - Liquidity Adjustment
+  - Interest Rate Decision
+  category: T2
+  is_category: false
+  portal: true
+  level: 3
+- id: motor_insurance_premium
+  aliases:
+  - vehicle insurance
+  - car insurance
+  - bike bima
+  - third party premium
+  category: I2
+  is_category: false
+  level: 3
+- id: msme_factory_owner_income
+  aliases:
+  - MSME & Factory Owner Income
+  - Small Factory Profit
+  - MSME Business Earnings
+  - Laghu Udyog Aay
+  - Small Enterprise Revenue
+  - Micro Business Owner Income
+  category: I1
+  is_category: false
+  level: 3
+- id: multilateral_financial_interventions
+  aliases:
+  - IMF Bailout
+  - World Bank Loans
+  - Antarrashtriya Vittiya Sanstha
+  - WTO Ruling
+  - Sovereign Debt Crisis
+  category: T3
+  is_category: false
+  level: 3
+- id: national_cybersecurity_grid
+  aliases:
+  - CERT-In
+  - National Firewall
+  - Cyber Suraksha Grid
+  - Critical Info Infrastructure
+  - Digital Defense Systems
+  category: T5
+  is_category: false
+  portal: true
+  level: 3
+- id: national_power_grid
+  aliases:
+  - National Power Grid
+  - Electricity Transmission
+  - Rashtriya Power Grid
+  - Bijli Grid
+  - Power Distribution Network
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: navic_positioning_system
+  aliases:
+  - IRNSS
+  - Indian GPS
+  - NavIC Satellite System
+  - Swadeshi GPS
+  - Spatial Data Infrastructure
+  category: T5
+  is_category: false
+  level: 3
+- id: neighborhood_greenery
+  aliases:
+  - Neighborhood Greenery
+  - Tree Felling
+  - Ped Katna
+  - Lack of Shade
+  - Public Park Maintenance
+  category: I7
+  is_category: false
+  level: 3
+- id: neighborhood_instability
+  aliases:
+  - South Asia Crises
+  - Regime Collapse
+  - Padosi Desh Asthirta
+  - Political Coups
+  - Sri Lanka Bangladesh Crisis
+  category: T3
+  is_category: false
+  level: 3
+- id: network_connectivity
+  aliases:
+  - Call Drops
+  - Poor Network
+  - Internet Speed
+  - 5G Coverage
+  - नेटवर्क कवरेज
+  category: I8
+  is_category: false
+  level: 3
+- id: northeast_monsoon_system
+  aliases:
+  - Northeast Monsoon
+  - Winter Monsoon
+  - Retreating Monsoon
+  - Uttar-Purvi Monsoon
+  - Post-Monsoon Rains
+  category: T7
+  is_category: false
+  level: 3
+- id: nuclear_power_plants
+  aliases:
+  - Atomic Energy Stations
+  - Nuclear Reactors
+  - Parmanu Urja Plant
+  - NPCIL Plants
+  - Nuclear Generation
+  category: T4
+  is_category: false
+  level: 3
+- id: ondc_commerce_network
+  aliases:
+  - Open Network for Digital Commerce
+  - ONDC Platform
+  - ONDC Network
+  - Open E-Commerce Protocol
+  - Digital Commerce Grid
+  category: T5
+  is_category: false
+  level: 3
+- id: open_drains_and_sewage
+  aliases:
+  - Open Drains & Sewage
+  - Overflowing Sewers
+  - Khule Nali
+  - Stinking Drains
+  - Sewage Backup
+  category: I7
+  is_category: false
+  level: 3
+- id: optical_fibre_network
+  aliases:
+  - BharatNet
+  - Broadband Fibre
+  - Optical Fiber Bichhana
+  - High-Speed Backbone
+  - Internet Fibre Network
+  category: T5
+  is_category: false
+  level: 3
+- id: ott_platforms
+  aliases:
+  - Netflix Subscription
+  - Prime Video
+  - Web Series
+  - ओटीटी
+  category: I8
+  is_category: false
+  level: 3
+- id: packaged_foods_and_beverages
+  aliases:
+  - biscuits
+  - chai patti
+  - coffee powder
+  - instant noodles
+  - packaged food
+  category: I2
+  is_category: false
+  level: 3
+- id: parking_fees
+  aliases:
+  - Parking Fees
+  - parking charge
+  - car parking rate
+  - parking ka kharcha
+  - pay and park
+  category: I3
+  is_category: false
+  level: 3
+- id: peninsular_river_basins
+  aliases:
+  - Deccan Rivers
+  - Rain-Fed Southern Basins
+  - Praydwipiya Nadiya
+  - Godavari-Krishna-Cauvery Basins
+  - Seasonal River Systems
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: peninsular_tectonic_system
+  aliases:
+  - Deccan Fault Lines
+  - Interior Plate Seismic Activity
+  - Praydwipiya Bhukamp
+  - Stable Continental Region
+  - Peninsular Earthquake Zone
+  category: T7
+  is_category: false
+  level: 3
+- id: personal_income_tax
+  aliases:
+  - income tax
+  - ITR filing
+  - direct tax
+  - aaykar
+  category: I6
+  is_category: false
+  level: 3
+- id: petrol_price
+  aliases:
+  - Petrol Price
+  - petrol rate
+  - fuel cost
+  - petrol ka bhav
+  - fuel price hike
+  category: I3
+  is_category: false
+  level: 3
+- id: pharma_api_supply
+  aliases:
+  - Active Pharmaceutical Ingredients
+  - Bulk Drug Supply
+  - Farma API
+  - Pharma Raw Materials
+  - Drug Ingredient Supply
+  category: T1
+  is_category: false
+  level: 3
+- id: phd_and_research
+  aliases:
+  - Doctoral programs
+  - PhD admission
+  - Research fellowship
+  - पीएचडी
+  category: I5
+  is_category: false
+  level: 3
+- id: physical_violence_and_crime
+  aliases:
+  - Physical Violence & Crime
+  - Violent Crime
+  - Hinsa aur Apradh
+  - Bodily Harm
+  category: I4
+  is_category: true
+  level: 2
+- id: piped_natural_gas
+  aliases:
+  - PNG rates
+  - piped gas
+  - city gas distribution
+  category: I2
+  is_category: false
+  level: 3
+- id: places_of_worship
+  aliases:
+  - Temple Donation
+  - Mosque Access
+  - Religious Site Entry
+  - मंदिर दर्शन
+  category: I8
+  is_category: false
+  level: 3
+- id: polluted_surface_water
+  aliases:
+  - Polluted Surface Water
+  - Toxic River Foam
+  - Polluted Lakes
+  - Nala Discharge
+  - Frothing Lakes
+  category: I7
+  is_category: false
+  level: 3
+- id: population_and_demographics
+  aliases:
+  - Population & Demographics
+  - Demographic Trends
+  - Janasankhya Evam Janganna
+  - Human Capital Metrics
+  category: T6
+  is_category: true
+  level: 2
+- id: precious_metals
+  aliases:
+  - International Gold Prices
+  - Silver Prices
+  - Sona Chandi
+  - Bullion Market
+  - Safe Haven Assets
+  category: T1
+  is_category: false
+  portal: true
+  level: 4
+- id: private_capital_flows
+  aliases:
+  - Venture Capital Funding
+  - Private Equity
+  - PE VC Flows
+  - Startup Nivesh
+  - Funding Winters
+  category: T1
+  is_category: false
+  level: 3
+- id: private_schools
+  aliases:
+  - Private school admission
+  - Independent schools
+  - RTE admission
+  - प्राइवेट स्कूल
+  category: I5
+  is_category: false
+  level: 3
+- id: private_vehicle_running_costs
+  aliases:
+  - Private Vehicle & Running Costs
+  - Personal Vehicle Expenses
+  - Gaadi Ka Kharcha
+  - Vehicle Running Costs
+  category: I3
+  is_category: true
+  level: 2
+- id: professional_upskilling
+  aliases:
+  - Corporate training
+  - Professional certification
+  - Soft skills
+  - कॉर्पोरेट ट्रेनिंग
+  category: I5
+  is_category: false
+  level: 3
+- id: property_and_civic_registration
+  aliases:
+  - property registration
+  - stamp duty payment
+  - land mutation
+  - sampatti panjikaran
+  category: I6
+  is_category: false
+  level: 3
+- id: property_crime_response
+  aliases:
+  - theft investigation
+  - vehicle theft recovery
+  - burglary response
+  - chori ki shikayat
+  category: I6
+  is_category: false
+  level: 3
+- id: psu_and_bank_jobs
+  aliases:
+  - PSU & Bank Jobs
+  - SBI Recruitment
+  - IBPS Exams
+  - Public Sector Bank Jobs
+  - PSU Vacancies
+  - Bank PO Jobs
+  category: I1
+  is_category: false
+  level: 3
+- id: public_health_policy
+  aliases:
+  - Ayushman Bharat Rules
+  - Drug Pricing
+  - Swasthya Niti
+  - NPPA Notification
+  - Public Health Mandate
+  category: T2
+  is_category: false
+  level: 3
+- id: public_order_and_emergencies
+  aliases:
+  - Public Order & Emergencies
+  - Civil Unrest
+  - Kanoon Vyavastha aur Aapada
+  - Public Safety
+  category: I4
+  is_category: true
+  level: 2
+- id: public_urination_and_odour
+  aliases:
+  - Public Urination & Odour
+  - Foul Smell
+  - Badboo
+  - Public Toilet Stench
+  - Public Urination Nuisance
+  category: I7
+  is_category: false
+  level: 3
+- id: pulses_and_dals
+  aliases:
+  - daal
+  - lentils
+  - tur dal
+  - arhar
+  - pulses price
+  category: I2
+  is_category: false
+  level: 3
+- id: railway_and_transit_accidents
+  aliases:
+  - Railway & Transit Accidents
+  - train derailment
+  - railway accident
+  - level crossing crash
+  - train collision
+  category: I4
+  is_category: false
+  level: 3
+- id: railway_freight_movement
+  aliases:
+  - Rail Cargo
+  - Freight Trains
+  - Maal Gadi Network
+  - Railway Logistics
+  - Bulk Rail Transport
+  category: T4
+  is_category: false
+  level: 3
+- id: railway_rrb_jobs
+  aliases:
+  - Railway RRB Jobs
+  - Railway Recruitment
+  - RRB Exams
+  - Loco Pilot Jobs
+  - Group D Jobs
+  - Railway Bharti
+  category: I1
+  is_category: false
+  level: 3
+- id: railway_ticketing_and_status
+  aliases:
+  - Railway Ticketing & Status
+  - train ticket
+  - IRCTC booking
+  - train delay
+  - train cancel
+  - train ka kiraya
+  category: I3
+  is_category: false
+  level: 3
+- id: real_money_gaming
+  aliases:
+  - Dream11
+  - Online Rummy
+  - Fantasy Sports Betting
+  - ऑनलाइन सट्टा
+  category: I8
+  is_category: false
+  level: 3
+- id: recreational_parks
+  aliases:
+  - Amusement Park
+  - Water Park
+  - Theme Park Entry
+  - एम्यूजमेंट पार्क
+  category: I8
+  is_category: false
+  level: 3
+- id: regional_aerosol_systems
+  aliases:
+  - Particulate Matter Blankets
+  - Macro Smog Systems
+  - Pradushan Pranali
+  - Indo-Gangetic Air Quality
+  - Atmospheric Pollution Dynamics
+  category: T7
+  is_category: false
+  level: 3
+- id: religious_institutional_economics
+  aliases:
+  - Temple Trust Wealth
+  - Waqf Asset Management
+  - Dharmik Sansthan Arthvyavastha
+  - Religious Endowments
+  - Faith-Based Economy
+  category: T6
+  is_category: false
+  level: 3
+- id: religious_pilgrimages
+  aliases:
+  - Char Dham Yatra
+  - Hajj
+  - Pilgrimage Access
+  - तीर्थयात्रा
+  category: I8
+  is_category: false
+  level: 3
+- id: renewable_energy_parks
+  aliases:
+  - Solar Parks
+  - Wind Energy Farms
+  - Saur Urja Park
+  - Green Energy Grid
+  - Renewable Capacity
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: repair_and_pest_control
+  aliases:
+  - plumber cost
+  - electrician fee
+  - pest control
+  - home repair
+  category: I2
+  is_category: false
+  level: 3
+- id: reservation_and_affirmative_action
+  aliases:
+  - Caste Census
+  - Quota Policy
+  - Aarakshan Niti
+  - OBC SC ST Reservation
+  - Affirmative Action
+  category: T2
+  is_category: false
+  level: 3
+- id: residential_rent_and_pg
+  aliases:
+  - kiraya
+  - house rent
+  - PG fees
+  - hostel rent
+  - room rent
+  category: I2
+  is_category: false
+  level: 3
+- id: respiratory_and_viral_infections
+  aliases:
+  - Respiratory & Viral Infections
+  - tuberculosis
+  - TB
+  - influenza
+  - khasi-zukham
+  - viral fever
+  category: I4
+  is_category: false
+  level: 3
+- id: restaurant_and_street_food
+  aliases:
+  - bahar ka khana
+  - restaurant bill
+  - street food price
+  - eating out
+  - QSR
+  category: I2
+  is_category: false
+  level: 3
+- id: retail_inflation
+  aliases:
+  - Consumer Price Index
+  - CPI
+  - Khudara Mahangai
+  - Retail Inflation Rate
+  - CPI Inflation
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: retail_onion
+  aliases:
+  - pyaaz
+  - kanda
+  - onion price
+  - retail onion
+  category: I2
+  is_category: false
+  level: 3
+- id: retail_potato
+  aliases:
+  - aloo
+  - potato price
+  - aloo ka bhav
+  - retail potato
+  category: I2
+  is_category: false
+  level: 3
+- id: retail_tomato
+  aliases:
+  - tamatar
+  - tomato price
+  - tamatar ka bhav
+  - retail tomato
+  category: I2
+  is_category: false
+  level: 3
+- id: ride_hailing_cabs_bikes
+  aliases:
+  - Ride Hailing Cabs & Bikes
+  - Uber fare
+  - Ola rate
+  - Rapido bike taxi
+  - cab surge pricing
+  category: I3
+  is_category: false
+  level: 3
+- id: ride_hailing_earnings
+  aliases:
+  - Ride Hailing Earnings
+  - Ola Uber Earnings
+  - Rapido Driver Income
+  - Cab Driver Payout
+  - Auto Driver Gig Earnings
+  - App Taxi Driver Pay
+  category: I1
+  is_category: false
+  level: 3
+- id: riots_and_mob_violence
+  aliases:
+  - Riots & Mob Violence
+  - dange
+  - mob lynching
+  - communal clashes
+  - pathrav
+  - stone pelting
+  category: I4
+  is_category: false
+  level: 3
+- id: road_and_traffic_conditions
+  aliases:
+  - Road & Traffic Conditions
+  - Sadak Ki Halat
+  - Traffic Situation
+  - Road Quality
+  category: I3
+  is_category: true
+  level: 2
+- id: road_conditions_and_closures
+  aliases:
+  - Road Conditions & Closures
+  - potholes
+  - khadde
+  - road repair
+  - route diversion
+  - waterlogging
+  category: I3
+  is_category: false
+  level: 3
+- id: road_freight_movement
+  aliases:
+  - Trucking Networks
+  - Road Cargo
+  - Truck Dhulai
+  - Highway Freight
+  - Commercial Road Transport
+  category: T4
+  is_category: false
+  level: 3
+- id: road_traffic_accidents
+  aliases:
+  - Road Traffic Accidents
+  - sadak hadsa
+  - car crash
+  - highway accident
+  - hit and run
+  - durghatna
+  category: I4
+  is_category: false
+  level: 3
+- id: rwa_and_maintenance_fees
+  aliases:
+  - society charges
+  - maintenance fee
+  - RWA dues
+  - apartment maintenance
+  category: I2
+  is_category: false
+  level: 3
+- id: satellite_broadband_network
+  aliases:
+  - Space Internet
+  - LEO Satellites
+  - Antariksh Broadband
+  - Starlink OneWeb Network
+  - Satellite Internet
+  category: T5
+  is_category: false
+  level: 3
+- id: school_board_exams
+  aliases:
+  - CBSE exams
+  - State board exams
+  - Class 10/12 boards
+  - बोर्ड परीक्षा
+  category: I5
+  is_category: false
+  level: 3
+- id: school_education
+  aliases:
+  - School Education & Early Childhood
+  - School Padhai
+  - K-12 Education
+  - School System
+  category: I5
+  is_category: true
+  level: 2
+- id: school_fees
+  aliases:
+  - school fee
+  - admission fees
+  - tuition fee
+  - school ki fees
+  category: I2
+  is_category: false
+  level: 3
+- id: school_welfare_programs
+  aliases:
+  - Mid-day meal
+  - PM POSHAN
+  - Free uniform/textbooks scheme
+  - मिड-डे मील
+  category: I5
+  is_category: false
+  level: 3
+- id: self_employment_and_agriculture
+  aliases:
+  - Self Employment & Agriculture
+  - Swa-Rozgar Aur Krishi
+  - Own Business Income
+  - Farmer & Trader Earnings
+  - Khud Ka Kaam Kamai
+  category: I1
+  is_category: true
+  level: 2
+- id: semiconductor_fabs
+  aliases:
+  - Chip Manufacturing Plants
+  - Silicon Foundries
+  - Semiconductor Plant
+  - Chip Factory
+  - Wafer Fab Infrastructure
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: semiconductor_supply_chain
+  aliases:
+  - Chip Shortage
+  - Semiconductor Cycle
+  - Microchip Supply
+  - Global Chip Supply
+  - Semi-Conductor Markets
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: sensory_and_ecology
+  aliases:
+  - Neighborhood Sensory Nuisance & Ecology
+  - Shor Aur Vatavaran
+  - Noise & Local Ecology
+  - Neighborhood Disturbances
+  category: I7
+  is_category: true
+  level: 2
+- id: sexual_assault_and_harassment
+  aliases:
+  - Sexual Assault & Harassment
+  - rape
+  - balatkar
+  - eve-teasing
+  - molestation
+  - chhedchad
+  category: I4
+  is_category: false
+  level: 3
+- id: social_and_reservation_movements
+  aliases:
+  - caste reservation protest
+  - aarakshan andolan
+  - social equity movements
+  - samajik andolan
+  category: I6
+  is_category: false
+  level: 3
+- id: social_and_welfare_policy
+  aliases:
+  - Social & Welfare Policy
+  - Welfare Schemes
+  - Samajik Kalyan Niti
+  - Safety Net Policy
+  category: T2
+  is_category: true
+  level: 2
+- id: social_media_platforms
+  aliases:
+  - Instagram Access
+  - Facebook
+  - Twitter Ban
+  - Content Moderation
+  - सोशल मीडिया
+  category: I8
+  is_category: false
+  level: 3
+- id: social_stratification_dynamics
+  aliases:
+  - Caste Mobility
+  - Affirmative Action Demands
+  - Jati Gatishilta
+  - Reservation Quotas
+  - Social Hierarchy Shifts
+  category: T6
+  is_category: false
+  level: 3
+- id: socio_cultural_forces
+  aliases:
+  - Socio-Cultural Forces
+  - Cultural Dynamics
+  - Samajik Sanskritik Bal
+  - Identity & Tradition
+  category: T6
+  is_category: true
+  level: 2
+- id: soil_and_land_systems
+  aliases:
+  - Topsoil Ecology
+  - Land Degradation
+  - Mitti Pranali
+  - Desertification Dynamics
+  - Soil Nutrient Cycles
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: southwest_monsoon_system
+  aliases:
+  - Southwest Monsoon
+  - Summer Monsoon
+  - Dakshin-Pashchim Monsoon
+  - Indian Monsoon
+  - SW Monsoon
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: sovereign_and_diplomatic_shifts
+  aliases:
+  - Sovereign & Diplomatic Shifts
+  - International Relations
+  - Kootnitik Parivartan
+  - Foreign Policy Dynamics
+  category: T3
+  is_category: true
+  level: 2
+- id: sovereign_bond_yields
+  aliases:
+  - India 10-Year Bond Yield
+  - G-Sec Yields
+  - Sarkari Bond
+  - Government Bond Rates
+  - Sovereign Credit Rating
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: spam_and_scams
+  aliases:
+  - Spam Calls
+  - Phishing Text
+  - Promotional Calls
+  - स्पैम कॉल
+  category: I8
+  is_category: false
+  level: 3
+- id: spatial_dynamics_and_mobility
+  aliases:
+  - Spatial Dynamics & Mobility
+  - Population Movement
+  - Sthaan Evam Gatishilta
+  - Migration Systems
+  category: T6
+  is_category: true
+  level: 2
+- id: spices_sugar_salt
+  aliases:
+  - chini
+  - namak
+  - masala
+  - sugar price
+  - spices
+  category: I2
+  is_category: false
+  level: 3
+- id: sports_and_fitness_access
+  aliases:
+  - Sports Club Membership
+  - Gym Access
+  - Local Tournaments
+  - स्पोर्ट्स क्लब
+  category: I8
+  is_category: false
+  level: 3
+- id: sports_and_recreation
+  aliases:
+  - Sports & Recreation
+  - Outdoor Fun
+  - Khel Kud
+  - Leisure Activities
+  category: I8
+  is_category: true
+  level: 2
+- id: stagnant_water_and_mosquitoes
+  aliases:
+  - Stagnant Water & Mosquitoes
+  - Dengue Breeding Grounds
+  - Ruka Hua Pani
+  - Mosquito Menace
+  - Puddle Water
+  category: I7
+  is_category: false
+  level: 3
+- id: staple_grains
+  aliases:
+  - atta
+  - chawal
+  - rice price
+  - wheat flour
+  - gehu
+  category: I2
+  is_category: false
+  level: 3
+- id: state_govt_jobs
+  aliases:
+  - State Government Jobs
+  - State Police Jobs
+  - Government Teacher Jobs
+  - Patwari Recruitment
+  - State PSC
+  - Rajya Sarkari Naukri
+  category: I1
+  is_category: false
+  level: 3
+- id: statutory_minimum_wage
+  aliases:
+  - Statutory Minimum Wage
+  - Nyuntam Mazdoori
+  - Minimum Pay Hike
+  - Basic Wage Limit
+  - Legal Minimum Daily Wage
+  - Minimum Wages Act
+  category: I1
+  is_category: false
+  level: 3
+- id: statutory_pay_and_benefits
+  aliases:
+  - Statutory Pay & Benefits
+  - Vaidhanik Vetan Aur Labh
+  - Legal Wage Entitlements
+  - Mandatory Pay Benefits
+  - Kanuni Mazdoori Adhikar
+  category: I1
+  is_category: true
+  level: 2
+- id: strategic_and_security_shocks
+  aliases:
+  - Strategic & Security Shocks
+  - Military Conflicts
+  - Rannitik Suraksha Aaghat
+  - Hard Power Dynamics
+  category: T3
+  is_category: true
+  level: 2
+- id: strategic_bloc_alignments
+  aliases:
+  - BRICS Expansion
+  - QUAD Dynamics
+  - Rannitik Gathbandhan
+  - NATO Enlargement
+  - G20 Outcomes
+  category: T3
+  is_category: false
+  portal: true
+  level: 3
+- id: strategic_digital_infrastructure
+  aliases:
+  - Strategic Digital Infrastructure
+  - National Digital Security
+  - Suraksha Digital Dhanche
+  - Critical Digital Systems
+  category: T5
+  is_category: true
+  level: 2
+- id: stray_animal_nuisance
+  aliases:
+  - Stray Animal Nuisance
+  - Awara Pashu
+  - Street Dog Menace
+  - Stray Cattle on Roads
+  - Monkey Nuisance
+  category: I7
+  is_category: false
+  level: 3
+- id: street_vendor_income
+  aliases:
+  - Street Vendor Income
+  - Thela Aay
+  - Hawker Earnings
+  - Rehri Patri Income
+  - Street Seller Profit
+  - Footpath Vendor Kamai
+  category: I1
+  is_category: false
+  level: 3
+- id: street_waterlogging
+  aliases:
+  - Street Waterlogging
+  - Jalbharav
+  - Flooded Streets
+  - Monsoon Waterlogging
+  - Submerged Roads
+  category: I7
+  is_category: false
+  level: 3
+- id: student_and_youth_unions
+  aliases:
+  - student protests
+  - university strike
+  - chhatra sangh
+  - paper leak agitation
+  category: I6
+  is_category: false
+  level: 3
+- id: submarine_internet_cables
+  aliases:
+  - Undersea Cables
+  - International Internet Gateways
+  - Samundari Internet Cable
+  - Offshore Data Cables
+  - Ocean Floor Cables
+  category: T5
+  is_category: false
+  level: 3
+- id: systemic_bank_liquidity
+  aliases:
+  - Repo Rate
+  - RBI Monetary Policy
+  - Bank Taralta
+  - MCLR Benchmark
+  - Interbank Liquidity
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: t1
+  aliases:
+  - Macroeconomic & Financial Markets
+  - Money & Markets
+  - Arthik Evam Vittiya Bazar
+  - Global Economy
+  category: T1
+  is_category: true
+  level: 1
+- id: t2
+  aliases:
+  - Domestic Governance & Policy
+  - Rules (Internal)
+  - Gharelu Shasan Evam Niti
+  - Indian Policy Framework
+  category: T2
+  is_category: true
+  level: 1
+- id: t3
+  aliases:
+  - Geopolitical & External Forces
+  - Shocks (External)
+  - Bhoo-Rajnitik Bahari Bal
+  - External Dynamics
+  category: T3
+  is_category: true
+  level: 1
+- id: t4
+  aliases:
+  - Physical Infrastructure & Logistics
+  - Atoms
+  - Bhautik Buniyadi Dhanche
+  - Physical Systems
+  category: T4
+  is_category: true
+  level: 1
+- id: t5
+  aliases:
+  - Digital & Tech Infrastructure
+  - Bytes
+  - Digital Buniyadi Dhanche
+  - Tech Platforms
+  category: T5
+  is_category: true
+  level: 1
+- id: t6
+  aliases:
+  - Social & Demographic Systems
+  - Human Capital
+  - Samajik Evam Janasankhyikiy Pranali
+  - Population Dynamics
+  category: T6
+  is_category: true
+  level: 1
+- id: t7
+  aliases:
+  - Ecological & Planetary Systems
+  - Nature Systems
+  - Prakriti Pranali
+  - Earth & Climate Systems
+  category: T7
+  is_category: true
+  level: 1
+- id: taxation_and_compliance
+  aliases:
+  - Taxation & Compliance
+  - Tax Burden
+  - Kar Anupalan
+  - Tax Filing
+  category: I6
+  is_category: true
+  level: 2
+- id: tds_and_compliance
+  aliases:
+  - tax deducted at source
+  - TDS return
+  - tax notices
+  - compliance friction
+  category: I6
+  is_category: false
+  level: 3
+- id: tech_and_resource_export_controls
+  aliases:
+  - Semiconductor Bans
+  - Critical Mineral Controls
+  - Takniki Niryaat Niyantran
+  - Dual-Use Tech Restrictions
+  - Chip Export Bans
+  category: T3
+  is_category: false
+  level: 3
+- id: telecom_and_connectivity
+  aliases:
+  - Telecom & Connectivity
+  - Communications Network
+  - Doorsanchar Pranali
+  - Network Infrastructure
+  category: T5
+  is_category: true
+  level: 2
+- id: telecom_and_internet_access
+  aliases:
+  - Telecom & Internet Access
+  - Mobile & Broadband
+  - Internet Connectivity
+  - Telecom Sewa
+  category: I8
+  is_category: true
+  level: 2
+- id: telecom_spectrum_allocation
+  aliases:
+  - 5G Spectrum
+  - Telecom Airwaves
+  - Spectrum Nilami
+  - Mobile Frequencies
+  - Telecom Bandwidth
+  category: T5
+  is_category: false
+  portal: true
+  level: 3
+- id: territorial_border_tensions
+  aliases:
+  - LAC Standoffs
+  - LoC Skirmishes
+  - Seema Vivad
+  - Border Military Buildup
+  - India-China Border
+  category: T3
+  is_category: false
+  portal: true
+  level: 3
+- id: theatre_and_performing_arts
+  aliases:
+  - Theatre Play
+  - Natak
+  - Standup Comedy
+  - Cultural Show
+  - नाटक
+  category: I8
+  is_category: false
+  level: 3
+- id: thermal_power_plants
+  aliases:
+  - Coal Power Plants
+  - Thermal Generation
+  - Koyla Power Plant
+  - NTPC Thermal Stations
+  - Gas Power Plants
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: third_party_geopolitical_conflicts
+  aliases:
+  - Middle East Conflict
+  - Russia-Ukraine War
+  - Kshetriya Yuddh
+  - South China Sea Tensions
+  - Global Armed Conflicts
+  category: T3
+  is_category: false
+  portal: true
+  level: 3
+- id: tier_city_emergence
+  aliases:
+  - Tier 2/3 City Growth
+  - Rurbanization
+  - Chhote Shaharon Ka Vikas
+  - Non-Metro Expansion
+  - Emerging Cities
+  category: T6
+  is_category: false
+  portal: true
+  level: 3
+- id: trade_and_tariff_policy
+  aliases:
+  - Import Duty Changes
+  - Export Ban
+  - Aayat Niryaat Niti
+  - DGFT Notification
+  - PLI Scheme
+  category: T2
+  is_category: false
+  level: 3
+- id: trade_wars_and_tariffs
+  aliases:
+  - US-China Decoupling
+  - Trade Protectionism
+  - Vyapar Yuddh
+  - Tariff Walls
+  - Trade War Escalation
+  category: T3
+  is_category: false
+  portal: true
+  level: 3
+- id: traffic_congestion
+  aliases:
+  - Traffic Congestion
+  - traffic jam
+  - road block
+  - bumper to bumper
+  - bhid-bhad
+  - bottleneck
+  category: I3
+  is_category: false
+  level: 3
+- id: traffic_fines
+  aliases:
+  - Traffic Fines
+  - challan
+  - traffic penalty
+  - e-challan
+  - traffic fine
+  category: I3
+  is_category: false
+  level: 3
+- id: traffic_noise
+  aliases:
+  - Traffic Noise
+  - Honking
+  - Traffic Shor
+  - Vehicular Noise Pollution
+  category: I7
+  is_category: false
+  level: 3
+- id: transport_and_licensing
+  aliases:
+  - driving license
+  - DL renewal
+  - RTO interaction
+  - parivahan vibhag
+  category: I6
+  is_category: false
+  level: 3
+- id: transport_and_logistics_policy
+  aliases:
+  - NHAI Toll Policy
+  - DGCA Aviation Rules
+  - Parivahan Niti
+  - Railway Tariffs
+  - Logistics Policy
+  category: T2
+  is_category: false
+  level: 3
+- id: transport_networks
+  aliases:
+  - Transport Networks
+  - Mobility Infrastructure
+  - Parivahan Network
+  - Transport Systems
+  category: T4
+  is_category: true
+  level: 2
+- id: transport_worker_movements
+  aliases:
+  - trucker strike
+  - bus union protest
+  - chakka jam
+  - auto taxi union
+  category: I6
+  is_category: false
+  level: 3
+- id: uncollected_street_garbage
+  aliases:
+  - Uncollected Street Garbage
+  - Kachra
+  - Overflowing Dustbins
+  - Unpicked Garbage
+  - Littering
+  - Sadak Par Kachra
+  category: I7
+  is_category: false
+  level: 3
+- id: upi_payment_network
+  aliases:
+  - Unified Payments Interface
+  - UPI Platform
+  - UPI Bhugtan Pranali
+  - NPCI Network
+  - Digital Payments Grid
+  category: T5
+  is_category: false
+  portal: true
+  level: 3
+- id: upsc_and_ssc_jobs
+  aliases:
+  - UPSC & SSC Jobs
+  - Central Government Jobs
+  - Civil Services
+  - SSC Recruitment
+  - Sarkari Naukri
+  - UPSC Vacancies
+  category: I1
+  is_category: false
+  level: 3
+- id: upward_social_mobility
+  aliases:
+  - Middle Class Expansion
+  - Poverty Alleviation Trends
+  - Samajik Unnati
+  - Neo-Middle Class
+  - Aspirational Mobility
+  category: T6
+  is_category: false
+  level: 3
+- id: urban_mass_transit_systems
+  aliases:
+  - Metro Rail Networks
+  - City Rapid Transit
+  - Metro Train Network
+  - Urban Commuter Rail
+  - MRTS Infrastructure
+  category: T4
+  is_category: false
+  level: 3
+- id: urban_water_grid
+  aliases:
+  - Municipal Water Supply
+  - City Water Infrastructure
+  - Shahar Jal Aapurti
+  - Water Treatment Plants
+  - Drinking Water Network
+  category: T4
+  is_category: false
+  portal: true
+  level: 3
+- id: urbanization_and_density
+  aliases:
+  - City Expansion
+  - Urban Sprawl
+  - Shaharikaran
+  - Metropolitan Growth
+  - Urban Carrying Capacity
+  category: T6
+  is_category: false
+  portal: true
+  level: 3
+- id: us_macro_demand
+  aliases:
+  - US Consumer Spending
+  - US Recession Risk
+  - Ameriki Arthvyavastha
+  - American Economic Demand
+  - Fed Soft Landing
+  category: T1
+  is_category: false
+  level: 3
+- id: us_treasury_yields
+  aliases:
+  - US 10-Year Yield
+  - Treasury Bonds
+  - US Debt Market
+  - Fed Benchmark Rate
+  - American Bond Yields
+  category: T1
+  is_category: false
+  level: 3
+- id: vector_borne_diseases
+  aliases:
+  - Vector-Borne Diseases
+  - dengue
+  - malaria
+  - machhar
+  - mosquito-borne diseases
+  - outbreak
+  category: I4
+  is_category: false
+  level: 3
+- id: vehicle_purchase_cost
+  aliases:
+  - Vehicle Purchase Cost
+  - car price
+  - bike price
+  - gaadi ki keemat
+  - auto loan impact
+  category: I3
+  is_category: false
+  level: 3
+- id: video_games_and_esports
+  aliases:
+  - PC Gaming
+  - Console Games
+  - BGMI Ban
+  - पबजी/गेमिंग
+  category: I8
+  is_category: false
+  level: 3
+- id: violent_crime_and_assault
+  aliases:
+  - Violent Crime & Assault
+  - murder
+  - hatya
+  - maar-peet
+  - physical assault
+  - stabbing
+  category: I4
+  is_category: false
+  level: 3
+- id: visa_and_immigration_regimes
+  aliases:
+  - H1B Rules
+  - Student Visa Caps
+  - Visa Aur Pravasan Niyam
+  - GCC Localization
+  - Work Permit Changes
+  category: T3
+  is_category: false
+  level: 3
+- id: vocational_and_iti_training
+  aliases:
+  - ITI courses
+  - Skill India
+  - Polytechnic
+  - PMKVY
+  - आईटीआई और कौशल विकास
+  category: I5
+  is_category: false
+  level: 3
+- id: vocational_skilling_and_edtech
+  aliases:
+  - Vocational Skilling & EdTech
+  - Skills Training
+  - Kaushal Vikas
+  - Online Learning
+  category: I5
+  is_category: true
+  level: 2
+- id: warehousing_logistics_parks
+  aliases:
+  - Godown Networks
+  - Cold Chain Infrastructure
+  - Logistics Park
+  - Bhandaran Suvidha
+  - Supply Chain Hubs
+  category: T4
+  is_category: false
+  level: 3
+- id: waste_and_cleanliness
+  aliases:
+  - Civic Cleanliness & Waste
+  - Safai Aur Kachra
+  - Street Cleanliness
+  - Waste Management Issues
+  category: I7
+  is_category: true
+  level: 2
+- id: waste_and_sanitation_charges
+  aliases:
+  - kachra collection fee
+  - garbage collection fee
+  - sewage tax
+  - sanitation charges
+  category: I2
+  is_category: false
+  level: 3
+- id: water_and_drainage
+  aliases:
+  - Hydrology, Drainage & Water Quality
+  - Paani Aur Naali
+  - Water & Sewage Issues
+  - Local Water Problems
+  category: I7
+  is_category: true
+  level: 2
+- id: water_and_foodborne_diseases
+  aliases:
+  - Water & Foodborne Diseases
+  - typhoid
+  - haiza
+  - cholera
+  - food poisoning
+  - contaminated water
+  category: I4
+  is_category: false
+  level: 3
+- id: water_civic_infrastructure
+  aliases:
+  - Water, Civic & Industrial Infrastructure
+  - Municipal Systems
+  - Nagrik Buniyadi Dhanche
+  - Civic Infrastructure
+  category: T4
+  is_category: true
+  level: 2
+- id: water_supply_and_tankers
+  aliases:
+  - pani ka bill
+  - water tanker cost
+  - municipal water tax
+  - drinking water cost
+  category: I2
+  is_category: false
+  level: 3
+- id: welfare_and_ration_cards
+  aliases:
+  - ration card application
+  - PDS distribution
+  - BPL card
+  - rashan card
+  category: I6
+  is_category: false
+  level: 3
+- id: welfare_and_subsidy_schemes
+  aliases:
+  - DBT Policy
+  - Ration Subsidy Rules
+  - Kalyankari Yojana
+  - PM-Kisan Changes
+  - Direct Benefit Transfer
+  category: T2
+  is_category: false
+  portal: true
+  level: 3
+- id: western_disturbance_patterns
+  aliases:
+  - Western Disturbances
+  - Pashchimi Vikshobh
+  - Mediterranean Extratropical Storms
+  - Winter Rain System
+  - Winter Cyclonic Circulation
+  category: T7
+  is_category: false
+  portal: true
+  level: 3
+- id: wholesale_inflation
+  aliases:
+  - Wholesale Price Index
+  - WPI
+  - Thok Mahangai
+  - Factory Gate Prices
+  - Producer Price Trends
+  category: T1
+  is_category: false
+  portal: true
+  level: 3
+- id: winter_smog
+  aliases:
+  - Winter Smog
+  - Smog
+  - Kohra
+  - Zero Visibility
+  - Winter Haze
+  - Stubble Burning Smoke
+  category: I7
+  is_category: false
+  level: 3
+- id: workplace_and_industrial_accidents
+  aliases:
+  - Workplace & Industrial Accidents
+  - factory blast
+  - mine collapse
+  - boiler explosion
+  - construction accident
+  category: I4
+  is_category: false
+  level: 3
+- id: youth_demographic_dividend
+  aliases:
+  - Working-Age Population
+  - Youth Bulge
+  - Yuva Aabadi
+  - Demographic Dividend
+  - Human Capital Dividend
+  category: T6
+  is_category: false
+  portal: true
+  level: 3
+edges:
+- from: accidents_and_hazards
+  to: animal_and_wildlife_attacks
+  type: CONTAINS
+  description: Accidents & Hazards contains Animal & Wildlife Attacks
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: accidents_and_hazards
+  to: fire_and_structural_hazards
+  type: CONTAINS
+  description: Accidents & Hazards contains Fire & Structural Hazards
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: accidents_and_hazards
+  to: railway_and_transit_accidents
+  type: CONTAINS
+  description: Accidents & Hazards contains Railway & Transit Accidents
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: accidents_and_hazards
+  to: road_traffic_accidents
+  type: CONTAINS
+  description: Accidents & Hazards contains Road Traffic Accidents
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: accidents_and_hazards
+  to: workplace_and_industrial_accidents
+  type: CONTAINS
+  description: Accidents & Hazards contains Workplace & Industrial Accidents
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: agricultural_commodities
+  to: global_edible_oil
+  type: CONTAINS
+  description: Agricultural Commodities contains Global Edible Oil
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: agricultural_commodities
+  to: global_food_grains
+  type: CONTAINS
+  description: Agricultural Commodities contains Global Food Grains
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: agricultural_commodities
+  to: global_sugar_markets
+  type: CONTAINS
+  description: Agricultural Commodities contains Global Sugar Markets
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: air_and_climate
+  to: air_pollution
+  type: CONTAINS
+  description: Air Quality & Thermal Environment contains Air Pollution
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: air_and_climate
+  to: extreme_cold
+  type: CONTAINS
+  description: Air Quality & Thermal Environment contains Extreme Cold
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: air_and_climate
+  to: extreme_heat
+  type: CONTAINS
+  description: Air Quality & Thermal Environment contains Extreme Heat
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: air_and_climate
+  to: winter_smog
+  type: CONTAINS
+  description: Air Quality & Thermal Environment contains Winter Smog
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: atmospheric_and_climate_systems
+  to: atmospheric_thermal_systems
+  type: CONTAINS
+  description: Atmospheric & Climate Systems contains Atmospheric Thermal Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: atmospheric_and_climate_systems
+  to: cyclonic_storm_dynamics
+  type: CONTAINS
+  description: Atmospheric & Climate Systems contains Cyclonic Storm Dynamics
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: atmospheric_and_climate_systems
+  to: enso_cycle
+  type: CONTAINS
+  description: Atmospheric & Climate Systems contains ENSO Cycle
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: atmospheric_and_climate_systems
+  to: indian_ocean_dipole
+  type: CONTAINS
+  description: Atmospheric & Climate Systems contains Indian Ocean Dipole
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: atmospheric_and_climate_systems
+  to: northeast_monsoon_system
+  type: CONTAINS
+  description: Atmospheric & Climate Systems contains Northeast Monsoon System
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: atmospheric_and_climate_systems
+  to: regional_aerosol_systems
+  type: CONTAINS
+  description: Atmospheric & Climate Systems contains Regional Aerosol Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: atmospheric_and_climate_systems
+  to: southwest_monsoon_system
+  type: CONTAINS
+  description: Atmospheric & Climate Systems contains Southwest Monsoon System
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: atmospheric_and_climate_systems
+  to: western_disturbance_patterns
+  type: CONTAINS
+  description: Atmospheric & Climate Systems contains Western Disturbance Patterns
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: bureaucratic_services
+  to: identity_and_travel_documents
+  type: CONTAINS
+  description: Bureaucratic Services contains Identity & Travel Documents
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: bureaucratic_services
+  to: property_and_civic_registration
+  type: CONTAINS
+  description: Bureaucratic Services contains Property & Civic Registration
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: bureaucratic_services
+  to: transport_and_licensing
+  type: CONTAINS
+  description: Bureaucratic Services contains Transport & Licensing
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: bureaucratic_services
+  to: welfare_and_ration_cards
+  type: CONTAINS
+  description: Bureaucratic Services contains Welfare & Ration Cards
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: civic_movements
+  to: farmer_agitations
+  type: CONTAINS
+  description: Civic Movements contains Farmer Agitations
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: civic_movements
+  to: labor_and_gig_unions
+  type: CONTAINS
+  description: Civic Movements contains Labor & Gig Unions
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: civic_movements
+  to: social_and_reservation_movements
+  type: CONTAINS
+  description: Civic Movements contains Social & Reservation Movements
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: civic_movements
+  to: student_and_youth_unions
+  type: CONTAINS
+  description: Civic Movements contains Student & Youth Unions
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: civic_movements
+  to: transport_worker_movements
+  type: CONTAINS
+  description: Civic Movements contains Transport Worker Movements
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: cloud_compute_ai
+  to: ai_compute_infrastructure
+  type: CONTAINS
+  description: Cloud, Compute & AI contains AI Compute Infrastructure
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: cloud_compute_ai
+  to: cloud_service_platforms
+  type: CONTAINS
+  description: Cloud, Compute & AI contains Cloud Service Platforms
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: cloud_compute_ai
+  to: commercial_data_centers
+  type: CONTAINS
+  description: Cloud, Compute & AI contains Commercial Data Centers
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: collective_civic_behavior
+  to: collective_social_dissent
+  type: CONTAINS
+  description: Collective Civic Behavior contains Collective Social Dissent
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: collective_civic_behavior
+  to: macro_civic_participation
+  type: CONTAINS
+  description: Collective Civic Behavior contains Macro Civic Participation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: collective_civic_behavior
+  to: upward_social_mobility
+  type: CONTAINS
+  description: Collective Civic Behavior contains Upward Social Mobility
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: competitive_exams_and_coaching
+  to: coaching_institutes
+  type: CONTAINS
+  description: Competitive Exams & Coaching contains Coaching Institutes
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: competitive_exams_and_coaching
+  to: college_entrance_exams
+  type: CONTAINS
+  description: Competitive Exams & Coaching contains College Entrance Exams
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: competitive_exams_and_coaching
+  to: government_recruitment_exams
+  type: CONTAINS
+  description: Competitive Exams & Coaching contains Government Recruitment Exams
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: culture_and_religion
+  to: festivals_and_cultural_events
+  type: CONTAINS
+  description: Culture & Religion contains Festivals & Cultural Events
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: culture_and_religion
+  to: places_of_worship
+  type: CONTAINS
+  description: Culture & Religion contains Places of Worship
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: culture_and_religion
+  to: religious_pilgrimages
+  type: CONTAINS
+  description: Culture & Religion contains Religious Pilgrimages
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: digital_life_and_security
+  to: consumer_tech_hardware
+  type: CONTAINS
+  description: Digital Life & Security contains Consumer Tech Hardware
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: digital_life_and_security
+  to: digital_privacy_and_data
+  type: CONTAINS
+  description: Digital Life & Security contains Digital Privacy & Data
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: digital_life_and_security
+  to: messaging_apps
+  type: CONTAINS
+  description: Digital Life & Security contains Messaging Apps
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: digital_life_and_security
+  to: social_media_platforms
+  type: CONTAINS
+  description: Digital Life & Security contains Social Media Platforms
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: digital_life_and_security
+  to: spam_and_scams
+  type: CONTAINS
+  description: Digital Life & Security contains Spam & Scams
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: digital_public_infrastructure
+  to: aadhaar_identity_system
+  type: CONTAINS
+  description: Digital Public Infrastructure contains Aadhaar Identity System
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: digital_public_infrastructure
+  to: digilocker_credential_ecosystem
+  type: CONTAINS
+  description: Digital Public Infrastructure contains DigiLocker Credential Ecosystem
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: digital_public_infrastructure
+  to: health_stack_abha
+  type: CONTAINS
+  description: Digital Public Infrastructure contains Health Stack ABHA
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: digital_public_infrastructure
+  to: ondc_commerce_network
+  type: CONTAINS
+  description: Digital Public Infrastructure contains ONDC Commerce Network
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: digital_public_infrastructure
+  to: upi_payment_network
+  type: CONTAINS
+  description: Digital Public Infrastructure contains UPI Payment Network
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: dining_out_and_delivery
+  to: food_delivery_services
+  type: CONTAINS
+  description: Dining Out & Delivery contains Food Delivery Services
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: dining_out_and_delivery
+  to: restaurant_and_street_food
+  type: CONTAINS
+  description: Dining Out & Delivery contains Restaurant & Street Food
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: diseases_and_public_health
+  to: chronic_and_lifestyle_diseases
+  type: CONTAINS
+  description: Diseases & Public Health contains Chronic & Lifestyle Diseases
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: diseases_and_public_health
+  to: respiratory_and_viral_infections
+  type: CONTAINS
+  description: Diseases & Public Health contains Respiratory & Viral Infections
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: diseases_and_public_health
+  to: vector_borne_diseases
+  type: CONTAINS
+  description: Diseases & Public Health contains Vector-Borne Diseases
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: diseases_and_public_health
+  to: water_and_foodborne_diseases
+  type: CONTAINS
+  description: Diseases & Public Health contains Water & Foodborne Diseases
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: domestic_macro_indicators
+  to: india_gdp_growth
+  type: CONTAINS
+  description: Domestic Macro Indicators contains India GDP Growth
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: domestic_macro_indicators
+  to: industrial_production_metrics
+  type: CONTAINS
+  description: Domestic Macro Indicators contains Industrial Production Metrics
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: domestic_macro_indicators
+  to: macro_employment_trends
+  type: CONTAINS
+  description: Domestic Macro Indicators contains Macro Employment Trends
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: domestic_macro_indicators
+  to: retail_inflation
+  type: CONTAINS
+  description: Domestic Macro Indicators contains Retail Inflation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: domestic_macro_indicators
+  to: wholesale_inflation
+  type: CONTAINS
+  description: Domestic Macro Indicators contains Wholesale Inflation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: ecological_and_biome_systems
+  to: forest_biome_systems
+  type: CONTAINS
+  description: Ecological & Biome Systems contains Forest Biome Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: ecological_and_biome_systems
+  to: macro_pest_population_dynamics
+  type: CONTAINS
+  description: Ecological & Biome Systems contains Macro Pest Population Dynamics
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: ecological_and_biome_systems
+  to: marine_biomass_systems
+  type: CONTAINS
+  description: Ecological & Biome Systems contains Marine Biomass Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: ecological_and_biome_systems
+  to: soil_and_land_systems
+  type: CONTAINS
+  description: Ecological & Biome Systems contains Soil & Land Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: economic_and_financial_policy
+  to: banking_and_credit_regulation
+  type: CONTAINS
+  description: Economic & Financial Policy contains Banking & Credit Regulation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: economic_and_financial_policy
+  to: fiscal_and_tax_policy
+  type: CONTAINS
+  description: Economic & Financial Policy contains Fiscal & Tax Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: economic_and_financial_policy
+  to: market_and_corporate_regulation
+  type: CONTAINS
+  description: Economic & Financial Policy contains Market & Corporate Regulation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: economic_and_financial_policy
+  to: monetary_policy
+  type: CONTAINS
+  description: Economic & Financial Policy contains Monetary Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: economic_and_financial_policy
+  to: trade_and_tariff_policy
+  type: CONTAINS
+  description: Economic & Financial Policy contains Trade & Tariff Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: economic_warfare_and_standards
+  to: economic_sanctions
+  type: CONTAINS
+  description: Economic Warfare & Standards contains Economic Sanctions
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: economic_warfare_and_standards
+  to: global_regulatory_mandates
+  type: CONTAINS
+  description: Economic Warfare & Standards contains Global Regulatory Mandates
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: economic_warfare_and_standards
+  to: tech_and_resource_export_controls
+  type: CONTAINS
+  description: Economic Warfare & Standards contains Tech & Resource Export Controls
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: economic_warfare_and_standards
+  to: trade_wars_and_tariffs
+  type: CONTAINS
+  description: Economic Warfare & Standards contains Trade Wars & Tariffs
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: education_and_childcare_costs
+  to: coaching_and_tuition_fees
+  type: CONTAINS
+  description: Education & Childcare Costs contains Coaching & Tuition Fees
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: education_and_childcare_costs
+  to: college_and_university_fees
+  type: CONTAINS
+  description: Education & Childcare Costs contains College & University Fees
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: education_and_childcare_costs
+  to: educational_scholarships
+  type: CONTAINS
+  description: Education & Childcare Costs contains Educational Scholarships
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: education_and_childcare_costs
+  to: school_fees
+  type: CONTAINS
+  description: Education & Childcare Costs contains School Fees
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: energy_commodities
+  to: global_coal_markets
+  type: CONTAINS
+  description: Energy Commodities contains Global Coal Markets
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: energy_commodities
+  to: global_crude_oil
+  type: CONTAINS
+  description: Energy Commodities contains Global Crude Oil
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: energy_commodities
+  to: global_natural_gas
+  type: CONTAINS
+  description: Energy Commodities contains Global Natural Gas
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: energy_power_infrastructure
+  to: hydrocarbon_pipeline_network
+  type: CONTAINS
+  description: Energy & Power Infrastructure contains Hydrocarbon Pipeline Network
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: energy_power_infrastructure
+  to: national_power_grid
+  type: CONTAINS
+  description: Energy & Power Infrastructure contains National Power Grid
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: energy_power_infrastructure
+  to: nuclear_power_plants
+  type: CONTAINS
+  description: Energy & Power Infrastructure contains Nuclear Power Plants
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: energy_power_infrastructure
+  to: renewable_energy_parks
+  type: CONTAINS
+  description: Energy & Power Infrastructure contains Renewable Energy Parks
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: energy_power_infrastructure
+  to: thermal_power_plants
+  type: CONTAINS
+  description: Energy & Power Infrastructure contains Thermal Power Plants
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: entertainment_and_gaming
+  to: cinema_and_movies
+  type: CONTAINS
+  description: Entertainment & Gaming contains Cinema & Movies
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: entertainment_and_gaming
+  to: ott_platforms
+  type: CONTAINS
+  description: Entertainment & Gaming contains OTT Platforms
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: entertainment_and_gaming
+  to: real_money_gaming
+  type: CONTAINS
+  description: Entertainment & Gaming contains Real Money Gaming
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: entertainment_and_gaming
+  to: theatre_and_performing_arts
+  type: CONTAINS
+  description: Entertainment & Gaming contains Theatre & Performing Arts
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: entertainment_and_gaming
+  to: video_games_and_esports
+  type: CONTAINS
+  description: Entertainment & Gaming contains Video Games & Esports
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: federal_and_electoral_governance
+  to: center_state_relations
+  type: CONTAINS
+  description: Federal & Electoral Governance contains Center-State Relations
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: federal_and_electoral_governance
+  to: electoral_policy_and_conduct
+  type: CONTAINS
+  description: Federal & Electoral Governance contains Electoral Policy & Conduct
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: federal_and_electoral_governance
+  to: local_and_municipal_governance
+  type: CONTAINS
+  description: Federal & Electoral Governance contains Local & Municipal Governance
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: financial_and_capital_markets
+  to: domestic_institutional_flows
+  type: CONTAINS
+  description: Financial & Capital Markets contains Domestic Institutional Flows
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: financial_and_capital_markets
+  to: foreign_capital_flows
+  type: CONTAINS
+  description: Financial & Capital Markets contains Foreign Capital Flows
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: financial_and_capital_markets
+  to: forex_reserves_india
+  type: CONTAINS
+  description: Financial & Capital Markets contains Forex Reserves India
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: financial_and_capital_markets
+  to: global_equity_markets
+  type: CONTAINS
+  description: Financial & Capital Markets contains Global Equity Markets
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: financial_and_capital_markets
+  to: indian_equity_markets
+  type: CONTAINS
+  description: Financial & Capital Markets contains Indian Equity Markets
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: financial_and_capital_markets
+  to: inr_exchange_rates
+  type: CONTAINS
+  description: Financial & Capital Markets contains INR Exchange Rates
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: financial_and_capital_markets
+  to: private_capital_flows
+  type: CONTAINS
+  description: Financial & Capital Markets contains Private Capital Flows
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: financial_and_capital_markets
+  to: sovereign_bond_yields
+  type: CONTAINS
+  description: Financial & Capital Markets contains Sovereign Bond Yields
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: financial_and_capital_markets
+  to: systemic_bank_liquidity
+  type: CONTAINS
+  description: Financial & Capital Markets contains Systemic Bank Liquidity
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: financial_and_capital_markets
+  to: us_treasury_yields
+  type: CONTAINS
+  description: Financial & Capital Markets contains US Treasury Yields
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: formal_sector_employment
+  to: corporate_hiring_and_layoffs
+  type: CONTAINS
+  description: Formal Sector Employment contains Corporate Hiring & Layoffs
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: formal_sector_employment
+  to: corporate_salaries
+  type: CONTAINS
+  description: Formal Sector Employment contains Corporate Salaries
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: formal_sector_employment
+  to: defense_agniveer_jobs
+  type: CONTAINS
+  description: Formal Sector Employment contains Defense & Agniveer Jobs
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: formal_sector_employment
+  to: psu_and_bank_jobs
+  type: CONTAINS
+  description: Formal Sector Employment contains PSU & Bank Jobs
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: formal_sector_employment
+  to: railway_rrb_jobs
+  type: CONTAINS
+  description: Formal Sector Employment contains Railway RRB Jobs
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: formal_sector_employment
+  to: state_govt_jobs
+  type: CONTAINS
+  description: Formal Sector Employment contains State Government Jobs
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: formal_sector_employment
+  to: upsc_and_ssc_jobs
+  type: CONTAINS
+  description: Formal Sector Employment contains UPSC & SSC Jobs
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: geological_and_cryosphere_systems
+  to: himalayan_cryosphere
+  type: CONTAINS
+  description: Geological & Cryosphere Systems contains Himalayan Cryosphere
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: geological_and_cryosphere_systems
+  to: himalayan_tectonic_system
+  type: CONTAINS
+  description: Geological & Cryosphere Systems contains Himalayan Tectonic System
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: geological_and_cryosphere_systems
+  to: peninsular_tectonic_system
+  type: CONTAINS
+  description: Geological & Cryosphere Systems contains Peninsular Tectonic System
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: gig_and_platform_earnings
+  to: food_and_grocery_delivery_payouts
+  type: CONTAINS
+  description: Gig & Platform Earnings contains Food & Grocery Delivery Payouts
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: gig_and_platform_earnings
+  to: freelance_and_creator_income
+  type: CONTAINS
+  description: Gig & Platform Earnings contains Freelance & Creator Income
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: gig_and_platform_earnings
+  to: home_services_payouts
+  type: CONTAINS
+  description: Gig & Platform Earnings contains Home Services Payouts
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: gig_and_platform_earnings
+  to: ride_hailing_earnings
+  type: CONTAINS
+  description: Gig & Platform Earnings contains Ride Hailing Earnings
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: global_commodity_markets
+  to: agricultural_commodities
+  type: CONTAINS
+  description: Global Commodity Markets contains Agricultural Commodities
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: global_commodity_markets
+  to: energy_commodities
+  type: CONTAINS
+  description: Global Commodity Markets contains Energy Commodities
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: global_commodity_markets
+  to: metals_and_minerals
+  type: CONTAINS
+  description: Global Commodity Markets contains Metals & Minerals
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: global_finance_and_energy
+  to: energy_cartel_actions
+  type: CONTAINS
+  description: Global Finance & Energy contains Energy Cartel Actions
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: global_finance_and_energy
+  to: foreign_central_bank_policy
+  type: CONTAINS
+  description: Global Finance & Energy contains Foreign Central Bank Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: global_finance_and_energy
+  to: multilateral_financial_interventions
+  type: CONTAINS
+  description: Global Finance & Energy contains Multilateral Financial Interventions
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: dairy_and_eggs
+  type: CONTAINS
+  description: Groceries & Provisions contains Dairy & Eggs
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: edible_oils
+  type: CONTAINS
+  description: Groceries & Provisions contains Edible Oils
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: fresh_vegetables_and_fruits
+  type: CONTAINS
+  description: Groceries & Provisions contains Fresh Vegetables & Fruits
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: meat_and_seafood
+  type: CONTAINS
+  description: Groceries & Provisions contains Meat & Seafood
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: packaged_foods_and_beverages
+  type: CONTAINS
+  description: Groceries & Provisions contains Packaged Foods & Beverages
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: pulses_and_dals
+  type: CONTAINS
+  description: Groceries & Provisions contains Pulses & Dals
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: retail_onion
+  type: CONTAINS
+  description: Groceries & Provisions contains Retail Onion
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: retail_potato
+  type: CONTAINS
+  description: Groceries & Provisions contains Retail Potato
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: retail_tomato
+  type: CONTAINS
+  description: Groceries & Provisions contains Retail Tomato
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: spices_sugar_salt
+  type: CONTAINS
+  description: Groceries & Provisions contains Spices, Sugar & Salt
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: groceries_and_provisions
+  to: staple_grains
+  type: CONTAINS
+  description: Groceries & Provisions contains Staple Grains
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: healthcare_access_and_medicine
+  to: hospital_and_medical_care
+  type: CONTAINS
+  description: Healthcare Access & Medicine contains Hospital & Medical Care
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: healthcare_access_and_medicine
+  to: maternal_and_child_health
+  type: CONTAINS
+  description: Healthcare Access & Medicine contains Maternal & Child Health
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: healthcare_access_and_medicine
+  to: medical_tests_and_diagnostics
+  type: CONTAINS
+  description: Healthcare Access & Medicine contains Medical Tests & Diagnostics
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: healthcare_access_and_medicine
+  to: medicines_and_pharmaceuticals
+  type: CONTAINS
+  description: Healthcare Access & Medicine contains Medicines & Pharmaceuticals
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: healthcare_access_and_medicine
+  to: mental_health_and_substance_abuse
+  type: CONTAINS
+  description: Healthcare Access & Medicine contains Mental Health & Substance Abuse
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: higher_education
+  to: engineering_and_tech_education
+  type: CONTAINS
+  description: Higher Education contains Engineering & Tech Education
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: higher_education
+  to: general_degree_programs
+  type: CONTAINS
+  description: Higher Education contains General Degree Programs
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: higher_education
+  to: law_and_management_education
+  type: CONTAINS
+  description: Higher Education contains Law & Management Education
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: higher_education
+  to: medical_and_healthcare_education
+  type: CONTAINS
+  description: Higher Education contains Medical & Healthcare Education
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: higher_education
+  to: phd_and_research
+  type: CONTAINS
+  description: Higher Education contains PhD & Research
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: household_energy_and_utilities
+  to: electricity_tariff
+  type: CONTAINS
+  description: Household Energy & Utilities contains Electricity Tariff
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: household_energy_and_utilities
+  to: lpg_cylinder
+  type: CONTAINS
+  description: Household Energy & Utilities contains LPG Cylinder
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: household_energy_and_utilities
+  to: piped_natural_gas
+  type: CONTAINS
+  description: Household Energy & Utilities contains Piped Natural Gas
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: household_energy_and_utilities
+  to: water_supply_and_tankers
+  type: CONTAINS
+  description: Household Energy & Utilities contains Water Supply & Tankers
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: household_services
+  to: domestic_help_cost
+  type: CONTAINS
+  description: Household Services contains Domestic Help Cost
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: household_services
+  to: repair_and_pest_control
+  type: CONTAINS
+  description: Household Services contains Repair & Pest Control
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: household_services
+  to: waste_and_sanitation_charges
+  type: CONTAINS
+  description: Household Services contains Waste & Sanitation Charges
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: housing_and_accommodation
+  to: building_materials_and_labor
+  type: CONTAINS
+  description: Housing & Accommodation contains Building Materials & Labor
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: housing_and_accommodation
+  to: residential_rent_and_pg
+  type: CONTAINS
+  description: Housing & Accommodation contains Residential Rent & PG
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: housing_and_accommodation
+  to: rwa_and_maintenance_fees
+  type: CONTAINS
+  description: Housing & Accommodation contains RWA & Maintenance Fees
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: hydrological_and_oceanic_systems
+  to: arabian_sea_dynamics
+  type: CONTAINS
+  description: Hydrological & Oceanic Systems contains Arabian Sea Dynamics
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: hydrological_and_oceanic_systems
+  to: bay_of_bengal_dynamics
+  type: CONTAINS
+  description: Hydrological & Oceanic Systems contains Bay of Bengal Dynamics
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: hydrological_and_oceanic_systems
+  to: coastal_sea_level_dynamics
+  type: CONTAINS
+  description: Hydrological & Oceanic Systems contains Coastal Sea Level Dynamics
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: hydrological_and_oceanic_systems
+  to: groundwater_aquifer_systems
+  type: CONTAINS
+  description: Hydrological & Oceanic Systems contains Groundwater Aquifer Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: hydrological_and_oceanic_systems
+  to: himalayan_river_basins
+  type: CONTAINS
+  description: Hydrological & Oceanic Systems contains Himalayan River Basins
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: hydrological_and_oceanic_systems
+  to: peninsular_river_basins
+  type: CONTAINS
+  description: Hydrological & Oceanic Systems contains Peninsular River Basins
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i1
+  to: formal_sector_employment
+  type: CONTAINS
+  description: Income & Livelihood contains Formal Sector Employment
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i1
+  to: gig_and_platform_earnings
+  type: CONTAINS
+  description: Income & Livelihood contains Gig & Platform Earnings
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i1
+  to: informal_and_daily_wages
+  type: CONTAINS
+  description: Income & Livelihood contains Informal & Daily Wages
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i1
+  to: self_employment_and_agriculture
+  type: CONTAINS
+  description: Income & Livelihood contains Self Employment & Agriculture
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i1
+  to: statutory_pay_and_benefits
+  type: CONTAINS
+  description: Income & Livelihood contains Statutory Pay & Benefits
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i2
+  to: dining_out_and_delivery
+  type: CONTAINS
+  description: Cost of Living contains Dining Out & Delivery
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i2
+  to: education_and_childcare_costs
+  type: CONTAINS
+  description: Cost of Living contains Education & Childcare Costs
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i2
+  to: groceries_and_provisions
+  type: CONTAINS
+  description: Cost of Living contains Groceries & Provisions
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i2
+  to: household_energy_and_utilities
+  type: CONTAINS
+  description: Cost of Living contains Household Energy & Utilities
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i2
+  to: household_services
+  type: CONTAINS
+  description: Cost of Living contains Household Services
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i2
+  to: housing_and_accommodation
+  type: CONTAINS
+  description: Cost of Living contains Housing & Accommodation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i2
+  to: insurance_premiums
+  type: CONTAINS
+  description: Cost of Living contains Insurance Premiums
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i3
+  to: intercity_travel
+  type: CONTAINS
+  description: Mobility & Transport contains Intercity Travel
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i3
+  to: local_public_and_hired_transit
+  type: CONTAINS
+  description: Mobility & Transport contains Local Public & Hired Transit
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i3
+  to: private_vehicle_running_costs
+  type: CONTAINS
+  description: Mobility & Transport contains Private Vehicle & Running Costs
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i3
+  to: road_and_traffic_conditions
+  type: CONTAINS
+  description: Mobility & Transport contains Road & Traffic Conditions
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i4
+  to: accidents_and_hazards
+  type: CONTAINS
+  description: Health & Bodily Safety contains Accidents & Hazards
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i4
+  to: diseases_and_public_health
+  type: CONTAINS
+  description: Health & Bodily Safety contains Diseases & Public Health
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i4
+  to: healthcare_access_and_medicine
+  type: CONTAINS
+  description: Health & Bodily Safety contains Healthcare Access & Medicine
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i4
+  to: physical_violence_and_crime
+  type: CONTAINS
+  description: Health & Bodily Safety contains Physical Violence & Crime
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i4
+  to: public_order_and_emergencies
+  type: CONTAINS
+  description: Health & Bodily Safety contains Public Order & Emergencies
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i5
+  to: competitive_exams_and_coaching
+  type: CONTAINS
+  description: Education & Skilling contains Competitive Exams & Coaching
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i5
+  to: higher_education
+  type: CONTAINS
+  description: Education & Skilling contains Higher Education & Degrees
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i5
+  to: school_education
+  type: CONTAINS
+  description: Education & Skilling contains School Education & Early Childhood
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i5
+  to: vocational_skilling_and_edtech
+  type: CONTAINS
+  description: Education & Skilling contains Vocational Skilling & EdTech
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i6
+  to: bureaucratic_services
+  type: CONTAINS
+  description: Civic & Legal Friction contains Bureaucratic Services
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i6
+  to: civic_movements
+  type: CONTAINS
+  description: Civic & Legal Friction contains Civic Movements
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i6
+  to: legal_and_police_interface
+  type: CONTAINS
+  description: Civic & Legal Friction contains Legal & Police Interface
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i6
+  to: taxation_and_compliance
+  type: CONTAINS
+  description: Civic & Legal Friction contains Taxation & Compliance
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i7
+  to: air_and_climate
+  type: CONTAINS
+  description: Habitat & Surroundings contains Air Quality & Thermal Environment
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i7
+  to: sensory_and_ecology
+  type: CONTAINS
+  description: Habitat & Surroundings contains Neighborhood Sensory Nuisance & Ecology
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i7
+  to: waste_and_cleanliness
+  type: CONTAINS
+  description: Habitat & Surroundings contains Civic Cleanliness & Waste
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i7
+  to: water_and_drainage
+  type: CONTAINS
+  description: Habitat & Surroundings contains Hydrology, Drainage & Water Quality
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i8
+  to: culture_and_religion
+  type: CONTAINS
+  description: Digital & Leisure contains Culture & Religion
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i8
+  to: digital_life_and_security
+  type: CONTAINS
+  description: Digital & Leisure contains Digital Life & Security
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i8
+  to: entertainment_and_gaming
+  type: CONTAINS
+  description: Digital & Leisure contains Entertainment & Gaming
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i8
+  to: sports_and_recreation
+  type: CONTAINS
+  description: Digital & Leisure contains Sports & Recreation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: i8
+  to: telecom_and_internet_access
+  type: CONTAINS
+  description: Digital & Leisure contains Telecom & Internet Access
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: informal_and_daily_wages
+  to: construction_worker_wages
+  type: CONTAINS
+  description: Informal & Daily Wages contains Construction Worker Wages
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: informal_and_daily_wages
+  to: domestic_help_wages
+  type: CONTAINS
+  description: Informal & Daily Wages contains Domestic Help Wages
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: informal_and_daily_wages
+  to: factory_worker_wages
+  type: CONTAINS
+  description: Informal & Daily Wages contains Factory Worker Wages
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: informal_and_daily_wages
+  to: farm_labor_wages
+  type: CONTAINS
+  description: Informal & Daily Wages contains Farm Labor Wages
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: informal_and_daily_wages
+  to: mgnrega_wages
+  type: CONTAINS
+  description: Informal & Daily Wages contains MGNREGA Wages
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: infrastructure_and_resource_governance
+  to: digital_and_telecom_regulation
+  type: CONTAINS
+  description: Infrastructure & Resource Governance contains Digital & Telecom Regulation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: infrastructure_and_resource_governance
+  to: energy_and_environment_policy
+  type: CONTAINS
+  description: Infrastructure & Resource Governance contains Energy & Environment
+    Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: infrastructure_and_resource_governance
+  to: land_and_real_estate_regulation
+  type: CONTAINS
+  description: Infrastructure & Resource Governance contains Land & Real Estate Regulation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: infrastructure_and_resource_governance
+  to: transport_and_logistics_policy
+  type: CONTAINS
+  description: Infrastructure & Resource Governance contains Transport & Logistics
+    Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: insurance_premiums
+  to: health_insurance_premium
+  type: CONTAINS
+  description: Insurance Premiums contains Health Insurance Premium
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: insurance_premiums
+  to: life_insurance_premium
+  type: CONTAINS
+  description: Insurance Premiums contains Life Insurance Premium
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: insurance_premiums
+  to: motor_insurance_premium
+  type: CONTAINS
+  description: Insurance Premiums contains Motor Insurance Premium
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: intercity_travel
+  to: domestic_flight_ticket
+  type: CONTAINS
+  description: Intercity Travel contains Domestic Flight Ticket
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: intercity_travel
+  to: highway_tolls
+  type: CONTAINS
+  description: Intercity Travel contains Highway Tolls
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: intercity_travel
+  to: intercity_bus_fare
+  type: CONTAINS
+  description: Intercity Travel contains Intercity Bus Fare
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: intercity_travel
+  to: railway_ticketing_and_status
+  type: CONTAINS
+  description: Intercity Travel contains Railway Ticketing & Status
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: international_trade_and_supply_chains
+  to: china_macro_output
+  type: CONTAINS
+  description: International Trade & Supply Chains contains China Macro Output
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: international_trade_and_supply_chains
+  to: global_shipping_freight
+  type: CONTAINS
+  description: International Trade & Supply Chains contains Global Shipping Freight
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: international_trade_and_supply_chains
+  to: india_export_trends
+  type: CONTAINS
+  description: International Trade & Supply Chains contains India Export Trends
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: international_trade_and_supply_chains
+  to: india_trade_balance
+  type: CONTAINS
+  description: International Trade & Supply Chains contains India Trade Balance
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: international_trade_and_supply_chains
+  to: pharma_api_supply
+  type: CONTAINS
+  description: International Trade & Supply Chains contains Pharma API Supply
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: international_trade_and_supply_chains
+  to: semiconductor_supply_chain
+  type: CONTAINS
+  description: International Trade & Supply Chains contains Semiconductor Supply Chain
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: international_trade_and_supply_chains
+  to: us_macro_demand
+  type: CONTAINS
+  description: International Trade & Supply Chains contains US Macro Demand
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: legal_and_judicial_framework
+  to: apex_judicial_rulings
+  type: CONTAINS
+  description: Legal & Judicial Framework contains Apex Judicial Rulings
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: legal_and_judicial_framework
+  to: internal_security_and_policing
+  type: CONTAINS
+  description: Legal & Judicial Framework contains Internal Security & Policing
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: legal_and_judicial_framework
+  to: investigative_and_enforcement_actions
+  type: CONTAINS
+  description: Legal & Judicial Framework contains Investigative & Enforcement Actions
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: legal_and_judicial_framework
+  to: legislative_amendments
+  type: CONTAINS
+  description: Legal & Judicial Framework contains Legislative Amendments
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: legal_and_police_interface
+  to: cyber_crime_reporting
+  type: CONTAINS
+  description: Legal & Police Interface contains Cyber Crime Reporting
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: legal_and_police_interface
+  to: fir_and_police_interaction
+  type: CONTAINS
+  description: Legal & Police Interface contains FIR & Police Interaction
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: legal_and_police_interface
+  to: judicial_delays_and_litigation
+  type: CONTAINS
+  description: Legal & Police Interface contains Judicial Delays & Litigation
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: legal_and_police_interface
+  to: property_crime_response
+  type: CONTAINS
+  description: Legal & Police Interface contains Property Crime Response
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: local_public_and_hired_transit
+  to: auto_e_rickshaw
+  type: CONTAINS
+  description: Local Public & Hired Transit contains Auto & E-Rickshaw
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: local_public_and_hired_transit
+  to: city_bus_transit
+  type: CONTAINS
+  description: Local Public & Hired Transit contains City Bus Transit
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: local_public_and_hired_transit
+  to: metro_and_local_train
+  type: CONTAINS
+  description: Local Public & Hired Transit contains Metro & Local Train
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: local_public_and_hired_transit
+  to: ride_hailing_cabs_bikes
+  type: CONTAINS
+  description: Local Public & Hired Transit contains Ride Hailing Cabs & Bikes
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: logistics_and_freight
+  to: dedicated_freight_corridors
+  type: CONTAINS
+  description: Logistics & Freight Movement contains Dedicated Freight Corridors
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: logistics_and_freight
+  to: railway_freight_movement
+  type: CONTAINS
+  description: Logistics & Freight Movement contains Railway Freight Movement
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: logistics_and_freight
+  to: road_freight_movement
+  type: CONTAINS
+  description: Logistics & Freight Movement contains Road Freight Movement
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: logistics_and_freight
+  to: warehousing_logistics_parks
+  type: CONTAINS
+  description: Logistics & Freight Movement contains Warehousing & Logistics Parks
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: metals_and_minerals
+  to: industrial_metals
+  type: CONTAINS
+  description: Metals & Minerals contains Industrial Metals
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: metals_and_minerals
+  to: precious_metals
+  type: CONTAINS
+  description: Metals & Minerals contains Precious Metals
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: physical_violence_and_crime
+  to: crimes_against_children
+  type: CONTAINS
+  description: Physical Violence & Crime contains Crimes Against Children
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: physical_violence_and_crime
+  to: domestic_violence
+  type: CONTAINS
+  description: Physical Violence & Crime contains Domestic Violence
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: physical_violence_and_crime
+  to: sexual_assault_and_harassment
+  type: CONTAINS
+  description: Physical Violence & Crime contains Sexual Assault & Harassment
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: physical_violence_and_crime
+  to: violent_crime_and_assault
+  type: CONTAINS
+  description: Physical Violence & Crime contains Violent Crime & Assault
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: population_and_demographics
+  to: aging_population_trends
+  type: CONTAINS
+  description: Population & Demographics contains Aging Population Trends
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: population_and_demographics
+  to: female_labor_force_participation
+  type: CONTAINS
+  description: Population & Demographics contains Female Labor Force Participation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: population_and_demographics
+  to: fertility_and_mortality_shifts
+  type: CONTAINS
+  description: Population & Demographics contains Fertility & Mortality Shifts
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: population_and_demographics
+  to: youth_demographic_dividend
+  type: CONTAINS
+  description: Population & Demographics contains Youth Demographic Dividend
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: private_vehicle_running_costs
+  to: cng_price
+  type: CONTAINS
+  description: Private Vehicle & Running Costs contains CNG Price
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: private_vehicle_running_costs
+  to: diesel_price
+  type: CONTAINS
+  description: Private Vehicle & Running Costs contains Diesel Price
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: private_vehicle_running_costs
+  to: ev_charging_tariff
+  type: CONTAINS
+  description: Private Vehicle & Running Costs contains EV Charging Tariff
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: private_vehicle_running_costs
+  to: parking_fees
+  type: CONTAINS
+  description: Private Vehicle & Running Costs contains Parking Fees
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: private_vehicle_running_costs
+  to: petrol_price
+  type: CONTAINS
+  description: Private Vehicle & Running Costs contains Petrol Price
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: private_vehicle_running_costs
+  to: traffic_fines
+  type: CONTAINS
+  description: Private Vehicle & Running Costs contains Traffic Fines
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: private_vehicle_running_costs
+  to: vehicle_purchase_cost
+  type: CONTAINS
+  description: Private Vehicle & Running Costs contains Vehicle Purchase Cost
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: public_order_and_emergencies
+  to: crowd_stampedes
+  type: CONTAINS
+  description: Public Order & Emergencies contains Crowd Stampedes
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: public_order_and_emergencies
+  to: curfews_and_public_emergencies
+  type: CONTAINS
+  description: Public Order & Emergencies contains Curfews & Public Emergencies
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: public_order_and_emergencies
+  to: riots_and_mob_violence
+  type: CONTAINS
+  description: Public Order & Emergencies contains Riots & Mob Violence
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: road_and_traffic_conditions
+  to: road_conditions_and_closures
+  type: CONTAINS
+  description: Road & Traffic Conditions contains Road Conditions & Closures
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: road_and_traffic_conditions
+  to: traffic_congestion
+  type: CONTAINS
+  description: Road & Traffic Conditions contains Traffic Congestion
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: school_education
+  to: anganwadi_and_preschools
+  type: CONTAINS
+  description: School Education contains Anganwadi & Preschools
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: school_education
+  to: government_schools
+  type: CONTAINS
+  description: School Education contains Government Schools
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: school_education
+  to: private_schools
+  type: CONTAINS
+  description: School Education contains Private Schools
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: school_education
+  to: school_board_exams
+  type: CONTAINS
+  description: School Education contains School Board Exams
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: school_education
+  to: school_welfare_programs
+  type: CONTAINS
+  description: School Education contains School Welfare Programs
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: self_employment_and_agriculture
+  to: farmer_income_and_msp
+  type: CONTAINS
+  description: Self Employment & Agriculture contains Farmer Income & MSP
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: self_employment_and_agriculture
+  to: kirana_and_retail_income
+  type: CONTAINS
+  description: Self Employment & Agriculture contains Kirana & Retail Income
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: self_employment_and_agriculture
+  to: msme_factory_owner_income
+  type: CONTAINS
+  description: Self Employment & Agriculture contains MSME & Factory Owner Income
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: self_employment_and_agriculture
+  to: street_vendor_income
+  type: CONTAINS
+  description: Self Employment & Agriculture contains Street Vendor Income
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: sensory_and_ecology
+  to: loudspeaker_and_event_noise
+  type: CONTAINS
+  description: Neighborhood Sensory Nuisance & Ecology contains Loudspeaker & Event
+    Noise
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: sensory_and_ecology
+  to: neighborhood_greenery
+  type: CONTAINS
+  description: Neighborhood Sensory Nuisance & Ecology contains Neighborhood Greenery
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: sensory_and_ecology
+  to: stray_animal_nuisance
+  type: CONTAINS
+  description: Neighborhood Sensory Nuisance & Ecology contains Stray Animal Nuisance
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: sensory_and_ecology
+  to: traffic_noise
+  type: CONTAINS
+  description: Neighborhood Sensory Nuisance & Ecology contains Traffic Noise
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: social_and_welfare_policy
+  to: education_and_skilling_policy
+  type: CONTAINS
+  description: Social & Welfare Policy contains Education & Skilling Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: social_and_welfare_policy
+  to: labor_and_employment_policy
+  type: CONTAINS
+  description: Social & Welfare Policy contains Labor & Employment Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: social_and_welfare_policy
+  to: public_health_policy
+  type: CONTAINS
+  description: Social & Welfare Policy contains Public Health Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: social_and_welfare_policy
+  to: reservation_and_affirmative_action
+  type: CONTAINS
+  description: Social & Welfare Policy contains Reservation & Affirmative Action
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: social_and_welfare_policy
+  to: welfare_and_subsidy_schemes
+  type: CONTAINS
+  description: Social & Welfare Policy contains Welfare & Subsidy Schemes
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: socio_cultural_forces
+  to: festive_demand_cycles
+  type: CONTAINS
+  description: Socio-Cultural Forces contains Festive Demand Cycles
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: socio_cultural_forces
+  to: language_and_regional_identity
+  type: CONTAINS
+  description: Socio-Cultural Forces contains Language & Regional Identity
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: socio_cultural_forces
+  to: religious_institutional_economics
+  type: CONTAINS
+  description: Socio-Cultural Forces contains Religious Institutional Economics
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: socio_cultural_forces
+  to: social_stratification_dynamics
+  type: CONTAINS
+  description: Socio-Cultural Forces contains Social Stratification Dynamics
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: sovereign_and_diplomatic_shifts
+  to: diaspora_diplomatic_rows
+  type: CONTAINS
+  description: Sovereign & Diplomatic Shifts contains Diaspora Diplomatic Rows
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: sovereign_and_diplomatic_shifts
+  to: foreign_elections_and_transitions
+  type: CONTAINS
+  description: Sovereign & Diplomatic Shifts contains Foreign Elections & Transitions
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: sovereign_and_diplomatic_shifts
+  to: strategic_bloc_alignments
+  type: CONTAINS
+  description: Sovereign & Diplomatic Shifts contains Strategic Bloc Alignments
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: sovereign_and_diplomatic_shifts
+  to: visa_and_immigration_regimes
+  type: CONTAINS
+  description: Sovereign & Diplomatic Shifts contains Visa & Immigration Regimes
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: spatial_dynamics_and_mobility
+  to: domestic_labor_migration
+  type: CONTAINS
+  description: Spatial Dynamics & Mobility contains Domestic Labor Migration
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: spatial_dynamics_and_mobility
+  to: international_diaspora_trends
+  type: CONTAINS
+  description: Spatial Dynamics & Mobility contains International Diaspora Trends
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: spatial_dynamics_and_mobility
+  to: tier_city_emergence
+  type: CONTAINS
+  description: Spatial Dynamics & Mobility contains Tier City Emergence
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: spatial_dynamics_and_mobility
+  to: urbanization_and_density
+  type: CONTAINS
+  description: Spatial Dynamics & Mobility contains Urbanization & Density
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: sports_and_recreation
+  to: live_music_and_concerts
+  type: CONTAINS
+  description: Sports & Recreation contains Live Music & Concerts
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: sports_and_recreation
+  to: live_sports_events
+  type: CONTAINS
+  description: Sports & Recreation contains Live Sports Events
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: sports_and_recreation
+  to: recreational_parks
+  type: CONTAINS
+  description: Sports & Recreation contains Recreational Parks
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: sports_and_recreation
+  to: sports_and_fitness_access
+  type: CONTAINS
+  description: Sports & Recreation contains Sports & Fitness Access
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: statutory_pay_and_benefits
+  to: maternity_and_leave_pay
+  type: CONTAINS
+  description: Statutory Pay & Benefits contains Maternity & Leave Pay
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: statutory_pay_and_benefits
+  to: statutory_minimum_wage
+  type: CONTAINS
+  description: Statutory Pay & Benefits contains Statutory Minimum Wage
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: strategic_and_security_shocks
+  to: cross_border_terror_networks
+  type: CONTAINS
+  description: Strategic & Security Shocks contains Cross-Border Terror Networks
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: strategic_and_security_shocks
+  to: maritime_chokepoint_disruptions
+  type: CONTAINS
+  description: Strategic & Security Shocks contains Maritime Chokepoint Disruptions
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: strategic_and_security_shocks
+  to: neighborhood_instability
+  type: CONTAINS
+  description: Strategic & Security Shocks contains Neighborhood Instability
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: strategic_and_security_shocks
+  to: territorial_border_tensions
+  type: CONTAINS
+  description: Strategic & Security Shocks contains Territorial Border Tensions
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: strategic_and_security_shocks
+  to: third_party_geopolitical_conflicts
+  type: CONTAINS
+  description: Strategic & Security Shocks contains Third-Party Geopolitical Conflicts
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: strategic_digital_infrastructure
+  to: national_cybersecurity_grid
+  type: CONTAINS
+  description: Strategic Digital Infrastructure contains National Cybersecurity Grid
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: strategic_digital_infrastructure
+  to: navic_positioning_system
+  type: CONTAINS
+  description: Strategic Digital Infrastructure contains NavIC Positioning System
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t1
+  to: domestic_macro_indicators
+  type: CONTAINS
+  description: Macroeconomic & Financial Markets contains Domestic Macro Indicators
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t1
+  to: financial_and_capital_markets
+  type: CONTAINS
+  description: Macroeconomic & Financial Markets contains Financial & Capital Markets
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t1
+  to: global_commodity_markets
+  type: CONTAINS
+  description: Macroeconomic & Financial Markets contains Global Commodity Markets
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t1
+  to: international_trade_and_supply_chains
+  type: CONTAINS
+  description: Macroeconomic & Financial Markets contains International Trade & Supply
+    Chains
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t2
+  to: economic_and_financial_policy
+  type: CONTAINS
+  description: Domestic Governance & Policy contains Economic & Financial Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t2
+  to: federal_and_electoral_governance
+  type: CONTAINS
+  description: Domestic Governance & Policy contains Federal & Electoral Governance
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t2
+  to: infrastructure_and_resource_governance
+  type: CONTAINS
+  description: Domestic Governance & Policy contains Infrastructure & Resource Governance
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t2
+  to: legal_and_judicial_framework
+  type: CONTAINS
+  description: Domestic Governance & Policy contains Legal & Judicial Framework
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t2
+  to: social_and_welfare_policy
+  type: CONTAINS
+  description: Domestic Governance & Policy contains Social & Welfare Policy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t3
+  to: economic_warfare_and_standards
+  type: CONTAINS
+  description: Geopolitical & External Forces contains Economic Warfare & Standards
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t3
+  to: global_finance_and_energy
+  type: CONTAINS
+  description: Geopolitical & External Forces contains Global Finance & Energy
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t3
+  to: sovereign_and_diplomatic_shifts
+  type: CONTAINS
+  description: Geopolitical & External Forces contains Sovereign & Diplomatic Shifts
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t3
+  to: strategic_and_security_shocks
+  type: CONTAINS
+  description: Geopolitical & External Forces contains Strategic & Security Shocks
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t4
+  to: energy_power_infrastructure
+  type: CONTAINS
+  description: Physical Infrastructure & Logistics contains Energy & Power Infrastructure
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t4
+  to: logistics_and_freight
+  type: CONTAINS
+  description: Physical Infrastructure & Logistics contains Logistics & Freight Movement
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t4
+  to: transport_networks
+  type: CONTAINS
+  description: Physical Infrastructure & Logistics contains Transport Networks
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t4
+  to: water_civic_infrastructure
+  type: CONTAINS
+  description: Physical Infrastructure & Logistics contains Water, Civic & Industrial
+    Infrastructure
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t5
+  to: cloud_compute_ai
+  type: CONTAINS
+  description: Digital & Tech Infrastructure contains Cloud, Compute & AI
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t5
+  to: digital_public_infrastructure
+  type: CONTAINS
+  description: Digital & Tech Infrastructure contains Digital Public Infrastructure
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t5
+  to: strategic_digital_infrastructure
+  type: CONTAINS
+  description: Digital & Tech Infrastructure contains Strategic Digital Infrastructure
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t5
+  to: telecom_and_connectivity
+  type: CONTAINS
+  description: Digital & Tech Infrastructure contains Telecom & Connectivity
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t6
+  to: collective_civic_behavior
+  type: CONTAINS
+  description: Social & Demographic Systems contains Collective Civic Behavior
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t6
+  to: population_and_demographics
+  type: CONTAINS
+  description: Social & Demographic Systems contains Population & Demographics
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t6
+  to: socio_cultural_forces
+  type: CONTAINS
+  description: Social & Demographic Systems contains Socio-Cultural Forces
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t6
+  to: spatial_dynamics_and_mobility
+  type: CONTAINS
+  description: Social & Demographic Systems contains Spatial Dynamics & Mobility
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t7
+  to: atmospheric_and_climate_systems
+  type: CONTAINS
+  description: Ecological & Planetary Systems contains Atmospheric & Climate Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t7
+  to: ecological_and_biome_systems
+  type: CONTAINS
+  description: Ecological & Planetary Systems contains Ecological & Biome Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t7
+  to: geological_and_cryosphere_systems
+  type: CONTAINS
+  description: Ecological & Planetary Systems contains Geological & Cryosphere Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: t7
+  to: hydrological_and_oceanic_systems
+  type: CONTAINS
+  description: Ecological & Planetary Systems contains Hydrological & Oceanic Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: taxation_and_compliance
+  to: capital_gains_tax
+  type: CONTAINS
+  description: Taxation & Compliance contains Capital Gains Tax
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: taxation_and_compliance
+  to: indirect_taxes_gst
+  type: CONTAINS
+  description: Taxation & Compliance contains Indirect Taxes & GST
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: taxation_and_compliance
+  to: personal_income_tax
+  type: CONTAINS
+  description: Taxation & Compliance contains Personal Income Tax
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: taxation_and_compliance
+  to: tds_and_compliance
+  type: CONTAINS
+  description: Taxation & Compliance contains TDS & Compliance
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: telecom_and_connectivity
+  to: cellular_tower_network
+  type: CONTAINS
+  description: Telecom & Connectivity contains Cellular Tower Network
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: telecom_and_connectivity
+  to: optical_fibre_network
+  type: CONTAINS
+  description: Telecom & Connectivity contains Optical Fibre Network
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: telecom_and_connectivity
+  to: satellite_broadband_network
+  type: CONTAINS
+  description: Telecom & Connectivity contains Satellite Broadband Network
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: telecom_and_connectivity
+  to: submarine_internet_cables
+  type: CONTAINS
+  description: Telecom & Connectivity contains Submarine Internet Cables
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: telecom_and_connectivity
+  to: telecom_spectrum_allocation
+  type: CONTAINS
+  description: Telecom & Connectivity contains Telecom Spectrum Allocation
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: telecom_and_internet_access
+  to: broadband_and_wifi
+  type: CONTAINS
+  description: Telecom & Internet Access contains Broadband & Wifi
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: telecom_and_internet_access
+  to: internet_shutdowns
+  type: CONTAINS
+  description: Telecom & Internet Access contains Internet Shutdowns
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: telecom_and_internet_access
+  to: mobile_tariffs
+  type: CONTAINS
+  description: Telecom & Internet Access contains Mobile Tariffs
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: telecom_and_internet_access
+  to: network_connectivity
+  type: CONTAINS
+  description: Telecom & Internet Access contains Network Connectivity
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: transport_networks
+  to: commercial_airports
+  type: CONTAINS
+  description: Transport Networks contains Commercial Airports
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: transport_networks
+  to: highway_expressway_network
+  type: CONTAINS
+  description: Transport Networks contains Highway & Expressway Network
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: transport_networks
+  to: indian_railways_network
+  type: CONTAINS
+  description: Transport Networks contains Indian Railways Network
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: transport_networks
+  to: major_seaports
+  type: CONTAINS
+  description: Transport Networks contains Major Seaports
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: transport_networks
+  to: urban_mass_transit_systems
+  type: CONTAINS
+  description: Transport Networks contains Urban Mass Transit Systems
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: vocational_skilling_and_edtech
+  to: edtech_platforms
+  type: CONTAINS
+  description: Vocational Skilling & EdTech contains EdTech Platforms
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: vocational_skilling_and_edtech
+  to: professional_upskilling
+  type: CONTAINS
+  description: Vocational Skilling & EdTech contains Professional Upskilling
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: vocational_skilling_and_edtech
+  to: vocational_and_iti_training
+  type: CONTAINS
+  description: Vocational Skilling & EdTech contains Vocational & ITI Training
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: waste_and_cleanliness
+  to: landfills_and_dumpyards
+  type: CONTAINS
+  description: Civic Cleanliness & Waste contains Landfills & Dumpyards
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: waste_and_cleanliness
+  to: public_urination_and_odour
+  type: CONTAINS
+  description: Civic Cleanliness & Waste contains Public Urination & Odour
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: waste_and_cleanliness
+  to: uncollected_street_garbage
+  type: CONTAINS
+  description: Civic Cleanliness & Waste contains Uncollected Street Garbage
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: water_and_drainage
+  to: drinking_water_contamination
+  type: CONTAINS
+  description: Hydrology, Drainage & Water Quality contains Drinking Water Contamination
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: water_and_drainage
+  to: open_drains_and_sewage
+  type: CONTAINS
+  description: Hydrology, Drainage & Water Quality contains Open Drains & Sewage
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: water_and_drainage
+  to: polluted_surface_water
+  type: CONTAINS
+  description: Hydrology, Drainage & Water Quality contains Polluted Surface Water
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: water_and_drainage
+  to: stagnant_water_and_mosquitoes
+  type: CONTAINS
+  description: Hydrology, Drainage & Water Quality contains Stagnant Water & Mosquitoes
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: water_and_drainage
+  to: street_waterlogging
+  type: CONTAINS
+  description: Hydrology, Drainage & Water Quality contains Street Waterlogging
+  weight: 0.9
+  polarity: 1
+  delay: IMMEDIATE
+- from: water_civic_infrastructure
+  to: canal_irrigation_networks
+  type: CONTAINS
+  description: Water, Civic & Industrial Infrastructure contains Canal Irrigation
+    Networks
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: water_civic_infrastructure
+  to: dam_and_reservoir_infrastructure
+  type: CONTAINS
+  description: Water, Civic & Industrial Infrastructure contains Dam & Reservoir Infrastructure
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: water_civic_infrastructure
+  to: semiconductor_fabs
+  type: CONTAINS
+  description: Water, Civic & Industrial Infrastructure contains Semiconductor Fabs
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+- from: water_civic_infrastructure
+  to: urban_water_grid
+  type: CONTAINS
+  description: Water, Civic & Industrial Infrastructure contains Urban Water Grid
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
