@@ -1,0 +1,466 @@
+nodes:
+- id: t7
+  aliases:
+  - Ecological & Planetary Systems
+  - Nature Systems
+  - Prakriti Pranali
+  - Earth & Climate Systems
+  category: T7
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Atmospheric & Climate Systems ===
+- id: atmospheric_and_climate_systems
+  aliases:
+  - Atmospheric & Climate Systems
+  - Weather & Climate
+  - Mausam Evam Jalvayu Pranali
+  - Atmospheric Dynamics
+  category: T7
+  level: 2
+  status: active
+  is_category: true
+- id: southwest_monsoon_system
+  aliases:
+  - Southwest Monsoon
+  - Summer Monsoon
+  - Dakshin-Pashchim Monsoon
+  - Indian Monsoon
+  - SW Monsoon
+  category: T7
+  level: 3
+  status: active
+  portal: true
+- id: northeast_monsoon_system
+  aliases:
+  - Northeast Monsoon
+  - Winter Monsoon
+  - Retreating Monsoon
+  - Uttar-Purvi Monsoon
+  - Post-Monsoon Rains
+  category: T7
+  level: 3
+  status: active
+- id: enso_cycle
+  aliases:
+  - El Nino Southern Oscillation
+  - ENSO
+  - El Nino
+  - La Nina
+  - Pacific Ocean Warming
+  category: T7
+  level: 3
+  status: active
+  portal: true
+- id: indian_ocean_dipole
+  aliases:
+  - Indian Ocean Dipole
+  - IOD
+  - Indian Nino
+  - Hind Mahasagar Dipole
+  - Ocean Temperature Gradient
+  category: T7
+  level: 3
+  status: active
+- id: western_disturbance_patterns
+  aliases:
+  - Western Disturbances
+  - Pashchimi Vikshobh
+  - Mediterranean Extratropical Storms
+  - Winter Rain System
+  - Winter Cyclonic Circulation
+  category: T7
+  level: 3
+  status: active
+  portal: true
+- id: cyclonic_storm_dynamics
+  aliases:
+  - Tropical Cyclones
+  - Cyclonic Storm Systems
+  - Chakravat Pranali
+  - Bay of Bengal Cyclones
+  - Arabian Sea Cyclones
+  category: T7
+  level: 3
+  status: active
+  portal: true
+- id: atmospheric_thermal_systems
+  aliases:
+  - Heat Dome Dynamics
+  - Global Warming Trends
+  - Tapman Pranali
+  - High-Pressure Thermal Systems
+  - Extreme Heat Patterns
+  category: T7
+  level: 3
+  status: active
+- id: regional_aerosol_systems
+  aliases:
+  - Particulate Matter Blankets
+  - Macro Smog Systems
+  - Pradushan Pranali
+  - Indo-Gangetic Air Quality
+  - Atmospheric Pollution Dynamics
+  category: T7
+  level: 3
+  status: active
+
+# === L2: Geological & Cryosphere Systems ===
+- id: geological_and_cryosphere_systems
+  aliases:
+  - Geological & Cryosphere Systems
+  - Earth & Ice Systems
+  - Bhugarbhik Evam Himanad Pranali
+  - Tectonic & Glacial Systems
+  category: T7
+  level: 2
+  status: active
+  is_category: true
+- id: himalayan_tectonic_system
+  aliases:
+  - Himalayan Fault Lines
+  - Eurasian Plate Boundary
+  - Bhukampiya Kshetr
+  - Seismic Zone V
+  - Himalayan Earthquake Zone
+  category: T7
+  level: 3
+  status: active
+  portal: true
+- id: peninsular_tectonic_system
+  aliases:
+  - Deccan Fault Lines
+  - Interior Plate Seismic Activity
+  - Praydwipiya Bhukamp
+  - Stable Continental Region
+  - Peninsular Earthquake Zone
+  category: T7
+  level: 3
+  status: active
+- id: himalayan_cryosphere
+  aliases:
+  - Himalayan Glaciers
+  - Himanad
+  - Glacial Melt Dynamics
+  - Third Pole Ice Systems
+  - High-Altitude Snowpack
+  category: T7
+  level: 3
+  status: active
+
+# === L2: Hydrological & Oceanic Systems ===
+- id: hydrological_and_oceanic_systems
+  aliases:
+  - Hydrological & Oceanic Systems
+  - Water & Ocean Systems
+  - Jal Evam Samudri Pranali
+  - Freshwater & Marine Systems
+  category: T7
+  level: 2
+  status: active
+  is_category: true
+- id: himalayan_river_basins
+  aliases:
+  - Ganga-Brahmaputra-Indus Basins
+  - Perennial River Systems
+  - Himalayi Nadiya
+  - Northern River Basins
+  - Glacier-Fed Rivers
+  category: T7
+  level: 3
+  status: active
+  portal: true
+- id: peninsular_river_basins
+  aliases:
+  - Deccan Rivers
+  - Rain-Fed Southern Basins
+  - Praydwipiya Nadiya
+  - Godavari-Krishna-Cauvery Basins
+  - Seasonal River Systems
+  category: T7
+  level: 3
+  status: active
+  portal: true
+- id: groundwater_aquifer_systems
+  aliases:
+  - Water Table Dynamics
+  - Subsurface Aquifers
+  - Bhujal Pranali
+  - Underground Water Reserves
+  - Aquifer Depletion
+  category: T7
+  level: 3
+  status: active
+  portal: true
+- id: arabian_sea_dynamics
+  aliases:
+  - Arabian Sea Marine System
+  - Arab Sagar Pranali
+  - Western Seaboard Waters
+  - Arabian Sea Surface Temperature
+  - West Coast Ocean Dynamics
+  category: T7
+  level: 3
+  status: active
+- id: bay_of_bengal_dynamics
+  aliases:
+  - Bay of Bengal Marine System
+  - Bengal Ki Khadi Pranali
+  - Eastern Seaboard Waters
+  - Bay of Bengal Surface Temperature
+  - East Coast Ocean Dynamics
+  category: T7
+  level: 3
+  status: active
+- id: coastal_sea_level_dynamics
+  aliases:
+  - Sea Level Rise
+  - Coastal Erosion Mechanics
+  - Samudra Star Pranali
+  - Shoreline Displacement
+  - Tidal Boundary Shifts
+  category: T7
+  level: 3
+  status: active
+
+# === L2: Ecological & Biome Systems ===
+- id: ecological_and_biome_systems
+  aliases:
+  - Ecological & Biome Systems
+  - Ecosystem Dynamics
+  - Paristhitiki Pranali
+  - Natural Biomes
+  category: T7
+  level: 2
+  status: active
+  is_category: true
+- id: forest_biome_systems
+  aliases:
+  - Macro Forest Cover
+  - Terrestrial Ecosystems
+  - Van Pranali
+  - Jungle Ecology
+  - Deforestation Dynamics
+  category: T7
+  level: 3
+  status: active
+- id: soil_and_land_systems
+  aliases:
+  - Topsoil Ecology
+  - Land Degradation
+  - Mitti Pranali
+  - Desertification Dynamics
+  - Soil Nutrient Cycles
+  category: T7
+  level: 3
+  status: active
+  portal: true
+- id: macro_pest_population_dynamics
+  aliases:
+  - Locust Swarms
+  - Migratory Pest Populations
+  - Tiddi Dal
+  - Agricultural Pest Migrations
+  - Invasive Species Dynamics
+  category: T7
+  level: 3
+  status: active
+  portal: true
+- id: marine_biomass_systems
+  aliases:
+  - Marine Fish Stocks
+  - Oceanic Biodiversity
+  - Samudri Jeev Pranali
+  - Wild Fish Populations
+  - Coastal Fishery Dynamics
+  category: T7
+  level: 3
+  status: active
+  portal: true
+
+edges:
+# T7 → L2
+- from: t7
+  to: atmospheric_and_climate_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ecological & Planetary Systems contains Atmospheric & Climate Systems
+- from: t7
+  to: geological_and_cryosphere_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ecological & Planetary Systems contains Geological & Cryosphere Systems
+- from: t7
+  to: hydrological_and_oceanic_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ecological & Planetary Systems contains Hydrological & Oceanic Systems
+- from: t7
+  to: ecological_and_biome_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ecological & Planetary Systems contains Ecological & Biome Systems
+
+# Atmospheric & Climate Systems → L3
+- from: atmospheric_and_climate_systems
+  to: southwest_monsoon_system
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Atmospheric & Climate Systems contains Southwest Monsoon System
+- from: atmospheric_and_climate_systems
+  to: northeast_monsoon_system
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Atmospheric & Climate Systems contains Northeast Monsoon System
+- from: atmospheric_and_climate_systems
+  to: enso_cycle
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Atmospheric & Climate Systems contains ENSO Cycle
+- from: atmospheric_and_climate_systems
+  to: indian_ocean_dipole
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Atmospheric & Climate Systems contains Indian Ocean Dipole
+- from: atmospheric_and_climate_systems
+  to: western_disturbance_patterns
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Atmospheric & Climate Systems contains Western Disturbance Patterns
+- from: atmospheric_and_climate_systems
+  to: cyclonic_storm_dynamics
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Atmospheric & Climate Systems contains Cyclonic Storm Dynamics
+- from: atmospheric_and_climate_systems
+  to: atmospheric_thermal_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Atmospheric & Climate Systems contains Atmospheric Thermal Systems
+- from: atmospheric_and_climate_systems
+  to: regional_aerosol_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Atmospheric & Climate Systems contains Regional Aerosol Systems
+
+# Geological & Cryosphere Systems → L3
+- from: geological_and_cryosphere_systems
+  to: himalayan_tectonic_system
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geological & Cryosphere Systems contains Himalayan Tectonic System
+- from: geological_and_cryosphere_systems
+  to: peninsular_tectonic_system
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geological & Cryosphere Systems contains Peninsular Tectonic System
+- from: geological_and_cryosphere_systems
+  to: himalayan_cryosphere
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Geological & Cryosphere Systems contains Himalayan Cryosphere
+
+# Hydrological & Oceanic Systems → L3
+- from: hydrological_and_oceanic_systems
+  to: himalayan_river_basins
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrological & Oceanic Systems contains Himalayan River Basins
+- from: hydrological_and_oceanic_systems
+  to: peninsular_river_basins
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrological & Oceanic Systems contains Peninsular River Basins
+- from: hydrological_and_oceanic_systems
+  to: groundwater_aquifer_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrological & Oceanic Systems contains Groundwater Aquifer Systems
+- from: hydrological_and_oceanic_systems
+  to: arabian_sea_dynamics
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrological & Oceanic Systems contains Arabian Sea Dynamics
+- from: hydrological_and_oceanic_systems
+  to: bay_of_bengal_dynamics
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrological & Oceanic Systems contains Bay of Bengal Dynamics
+- from: hydrological_and_oceanic_systems
+  to: coastal_sea_level_dynamics
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Hydrological & Oceanic Systems contains Coastal Sea Level Dynamics
+
+# Ecological & Biome Systems → L3
+- from: ecological_and_biome_systems
+  to: forest_biome_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ecological & Biome Systems contains Forest Biome Systems
+- from: ecological_and_biome_systems
+  to: soil_and_land_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ecological & Biome Systems contains Soil & Land Systems
+- from: ecological_and_biome_systems
+  to: macro_pest_population_dynamics
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ecological & Biome Systems contains Macro Pest Population Dynamics
+- from: ecological_and_biome_systems
+  to: marine_biomass_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Ecological & Biome Systems contains Marine Biomass Systems

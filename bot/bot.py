@@ -187,22 +187,12 @@ async def send_daily_digest(context: ContextTypes.DEFAULT_TYPE) -> None:
 
 def main(
     db: Database | None = None,
-    graph: ImpactGraph | None = None,
-    node_matcher=None,
-    gemini=None,
 ) -> None:
     """Start the bot with optional shared pipeline state."""
     app = Application.builder().token(settings.telegram_bot_token).build()
 
-    # Store shared state in bot_data
     if db:
         app.bot_data["db"] = db
-    if graph:
-        app.bot_data["graph"] = graph
-    if node_matcher:
-        app.bot_data["matcher"] = node_matcher
-    if gemini:
-        app.bot_data["gemini"] = gemini
 
     # Feedback handler
     app.add_handler(CallbackQueryHandler(handle_feedback, pattern=r"^fb\|"))

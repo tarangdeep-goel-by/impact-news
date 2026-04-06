@@ -1,0 +1,415 @@
+nodes:
+- id: t4
+  aliases:
+  - Physical Infrastructure & Logistics
+  - Atoms
+  - Bhautik Buniyadi Dhanche
+  - Physical Systems
+  category: T4
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Energy & Power Infrastructure ===
+- id: energy_power_infrastructure
+  aliases:
+  - Energy & Power Infrastructure
+  - Power Systems
+  - Urja Buniyadi Dhanche
+  - Energy Grid
+  category: T4
+  level: 2
+  status: active
+  is_category: true
+- id: national_power_grid
+  aliases:
+  - National Power Grid
+  - Electricity Transmission
+  - Rashtriya Power Grid
+  - Bijli Grid
+  - Power Distribution Network
+  category: T4
+  level: 3
+  status: active
+  portal: true
+- id: thermal_power_plants
+  aliases:
+  - Coal Power Plants
+  - Thermal Generation
+  - Koyla Power Plant
+  - NTPC Thermal Stations
+  - Gas Power Plants
+  category: T4
+  level: 3
+  status: active
+  portal: true
+- id: renewable_energy_parks
+  aliases:
+  - Solar Parks
+  - Wind Energy Farms
+  - Saur Urja Park
+  - Green Energy Grid
+  - Renewable Capacity
+  category: T4
+  level: 3
+  status: active
+  portal: true
+- id: nuclear_power_plants
+  aliases:
+  - Atomic Energy Stations
+  - Nuclear Reactors
+  - Parmanu Urja Plant
+  - NPCIL Plants
+  - Nuclear Generation
+  category: T4
+  level: 3
+  status: active
+- id: hydrocarbon_pipeline_network
+  aliases:
+  - Oil Pipelines
+  - Gas Distribution Grid
+  - Tel Gas Pipeline
+  - Petroleum Pipelines
+  - Natural Gas Grid
+  category: T4
+  level: 3
+  status: active
+
+# === L2: Transport Networks ===
+- id: transport_networks
+  aliases:
+  - Transport Networks
+  - Mobility Infrastructure
+  - Parivahan Network
+  - Transport Systems
+  category: T4
+  level: 2
+  status: active
+  is_category: true
+- id: indian_railways_network
+  aliases:
+  - Indian Railways
+  - Railway Tracks
+  - Bharatiya Rail
+  - Railway Infrastructure
+  - Passenger Rail Network
+  category: T4
+  level: 3
+  status: active
+  portal: true
+- id: highway_expressway_network
+  aliases:
+  - National Highways
+  - Expressways
+  - Rashtriya Rajmarg
+  - Bharatmala Roads
+  - NHAI Infrastructure
+  category: T4
+  level: 3
+  status: active
+  portal: true
+- id: commercial_airports
+  aliases:
+  - Airport Infrastructure
+  - Aviation Hubs
+  - Hawai Adda Network
+  - Civilian Airports
+  - Runways and Terminals
+  category: T4
+  level: 3
+  status: active
+  portal: true
+- id: major_seaports
+  aliases:
+  - Maritime Ports
+  - Shipping Terminals
+  - Bandargah
+  - Cargo Ports
+  - Coastal Port Infrastructure
+  category: T4
+  level: 3
+  status: active
+  portal: true
+- id: urban_mass_transit_systems
+  aliases:
+  - Metro Rail Networks
+  - City Rapid Transit
+  - Metro Train Network
+  - Urban Commuter Rail
+  - MRTS Infrastructure
+  category: T4
+  level: 3
+  status: active
+
+# === L2: Logistics & Freight Movement ===
+- id: logistics_and_freight
+  aliases:
+  - Logistics & Freight Movement
+  - Supply Chain Networks
+  - Maal Dhulai Pranali
+  - Freight Systems
+  category: T4
+  level: 2
+  status: active
+  is_category: true
+- id: railway_freight_movement
+  aliases:
+  - Rail Cargo
+  - Freight Trains
+  - Maal Gadi Network
+  - Railway Logistics
+  - Bulk Rail Transport
+  category: T4
+  level: 3
+  status: active
+- id: road_freight_movement
+  aliases:
+  - Trucking Networks
+  - Road Cargo
+  - Truck Dhulai
+  - Highway Freight
+  - Commercial Road Transport
+  category: T4
+  level: 3
+  status: active
+- id: dedicated_freight_corridors
+  aliases:
+  - DFC Network
+  - Freight Only Lines
+  - Freight Corridor
+  - EDFC WDFC
+  - Industrial Freight Lines
+  category: T4
+  level: 3
+  status: active
+  portal: true
+- id: warehousing_logistics_parks
+  aliases:
+  - Godown Networks
+  - Cold Chain Infrastructure
+  - Logistics Park
+  - Bhandaran Suvidha
+  - Supply Chain Hubs
+  category: T4
+  level: 3
+  status: active
+
+# === L2: Water, Civic & Industrial Infrastructure ===
+- id: water_civic_infrastructure
+  aliases:
+  - Water, Civic & Industrial Infrastructure
+  - Municipal Systems
+  - Nagrik Buniyadi Dhanche
+  - Civic Infrastructure
+  category: T4
+  level: 2
+  status: active
+  is_category: true
+- id: urban_water_grid
+  aliases:
+  - Municipal Water Supply
+  - City Water Infrastructure
+  - Shahar Jal Aapurti
+  - Water Treatment Plants
+  - Drinking Water Network
+  category: T4
+  level: 3
+  status: active
+  portal: true
+- id: dam_and_reservoir_infrastructure
+  aliases:
+  - Major Dams
+  - Water Reservoirs
+  - Bandh Aur Jalashay
+  - Hydro Reservoirs
+  - Storage Dams
+  category: T4
+  level: 3
+  status: active
+  portal: true
+- id: canal_irrigation_networks
+  aliases:
+  - Agricultural Canals
+  - Irrigation Grid
+  - Nahar Sichai Yojana
+  - Farm Water Supply
+  - Canal Systems
+  category: T4
+  level: 3
+  status: active
+- id: semiconductor_fabs
+  aliases:
+  - Chip Manufacturing Plants
+  - Silicon Foundries
+  - Semiconductor Plant
+  - Chip Factory
+  - Wafer Fab Infrastructure
+  category: T4
+  level: 3
+  status: active
+  portal: true
+
+edges:
+# T4 → L2
+- from: t4
+  to: energy_power_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical Infrastructure & Logistics contains Energy & Power Infrastructure
+- from: t4
+  to: transport_networks
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical Infrastructure & Logistics contains Transport Networks
+- from: t4
+  to: logistics_and_freight
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical Infrastructure & Logistics contains Logistics & Freight Movement
+- from: t4
+  to: water_civic_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Physical Infrastructure & Logistics contains Water, Civic & Industrial Infrastructure
+
+# Energy & Power → L3
+- from: energy_power_infrastructure
+  to: national_power_grid
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy & Power Infrastructure contains National Power Grid
+- from: energy_power_infrastructure
+  to: thermal_power_plants
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy & Power Infrastructure contains Thermal Power Plants
+- from: energy_power_infrastructure
+  to: renewable_energy_parks
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy & Power Infrastructure contains Renewable Energy Parks
+- from: energy_power_infrastructure
+  to: nuclear_power_plants
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy & Power Infrastructure contains Nuclear Power Plants
+- from: energy_power_infrastructure
+  to: hydrocarbon_pipeline_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Energy & Power Infrastructure contains Hydrocarbon Pipeline Network
+
+# Transport Networks → L3
+- from: transport_networks
+  to: indian_railways_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport Networks contains Indian Railways Network
+- from: transport_networks
+  to: highway_expressway_network
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport Networks contains Highway & Expressway Network
+- from: transport_networks
+  to: commercial_airports
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport Networks contains Commercial Airports
+- from: transport_networks
+  to: major_seaports
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport Networks contains Major Seaports
+- from: transport_networks
+  to: urban_mass_transit_systems
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Transport Networks contains Urban Mass Transit Systems
+
+# Logistics & Freight → L3
+- from: logistics_and_freight
+  to: railway_freight_movement
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Logistics & Freight Movement contains Railway Freight Movement
+- from: logistics_and_freight
+  to: road_freight_movement
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Logistics & Freight Movement contains Road Freight Movement
+- from: logistics_and_freight
+  to: dedicated_freight_corridors
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Logistics & Freight Movement contains Dedicated Freight Corridors
+- from: logistics_and_freight
+  to: warehousing_logistics_parks
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Logistics & Freight Movement contains Warehousing & Logistics Parks
+
+# Water, Civic & Industrial → L3
+- from: water_civic_infrastructure
+  to: urban_water_grid
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Water, Civic & Industrial Infrastructure contains Urban Water Grid
+- from: water_civic_infrastructure
+  to: dam_and_reservoir_infrastructure
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Water, Civic & Industrial Infrastructure contains Dam & Reservoir Infrastructure
+- from: water_civic_infrastructure
+  to: canal_irrigation_networks
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Water, Civic & Industrial Infrastructure contains Canal Irrigation Networks
+- from: water_civic_infrastructure
+  to: semiconductor_fabs
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Water, Civic & Industrial Infrastructure contains Semiconductor Fabs

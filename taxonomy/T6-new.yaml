@@ -1,0 +1,360 @@
+nodes:
+- id: t6
+  aliases:
+  - Social & Demographic Systems
+  - Human Capital
+  - Samajik Evam Janasankhyikiy Pranali
+  - Population Dynamics
+  category: T6
+  level: 1
+  status: active
+  is_category: true
+
+# === L2: Population & Demographics ===
+- id: population_and_demographics
+  aliases:
+  - Population & Demographics
+  - Demographic Trends
+  - Janasankhya Evam Janganna
+  - Human Capital Metrics
+  category: T6
+  level: 2
+  status: active
+  is_category: true
+- id: youth_demographic_dividend
+  aliases:
+  - Working-Age Population
+  - Youth Bulge
+  - Yuva Aabadi
+  - Demographic Dividend
+  - Human Capital Dividend
+  category: T6
+  level: 3
+  status: active
+  portal: true
+- id: aging_population_trends
+  aliases:
+  - Senior Demographics
+  - Elderly Care Burden
+  - Vriddha Aabadi
+  - Silver Economy
+  - Aging Workforce
+  category: T6
+  level: 3
+  status: active
+- id: female_labor_force_participation
+  aliases:
+  - FLFP
+  - Women in Workforce
+  - Mahila Shram Bal Bhagidari
+  - Female Employment Trends
+  - Women Economic Participation
+  category: T6
+  level: 3
+  status: active
+  portal: true
+- id: fertility_and_mortality_shifts
+  aliases:
+  - Birth Rate Decline
+  - Death Rates
+  - Prajanan Dar
+  - Replacement Level Fertility
+  - Demographic Transition
+  category: T6
+  level: 3
+  status: active
+
+# === L2: Spatial Dynamics & Mobility ===
+- id: spatial_dynamics_and_mobility
+  aliases:
+  - Spatial Dynamics & Mobility
+  - Population Movement
+  - Sthaan Evam Gatishilta
+  - Migration Systems
+  category: T6
+  level: 2
+  status: active
+  is_category: true
+- id: urbanization_and_density
+  aliases:
+  - City Expansion
+  - Urban Sprawl
+  - Shaharikaran
+  - Metropolitan Growth
+  - Urban Carrying Capacity
+  category: T6
+  level: 3
+  status: active
+  portal: true
+- id: tier_city_emergence
+  aliases:
+  - Tier 2/3 City Growth
+  - Rurbanization
+  - Chhote Shaharon Ka Vikas
+  - Non-Metro Expansion
+  - Emerging Cities
+  category: T6
+  level: 3
+  status: active
+  portal: true
+- id: domestic_labor_migration
+  aliases:
+  - Rural-Urban Migration
+  - Seasonal Migrant Labor
+  - Pravasi Mazdoor
+  - Inter-State Migration
+  - Palayan
+  category: T6
+  level: 3
+  status: active
+  portal: true
+- id: international_diaspora_trends
+  aliases:
+  - NRI Outflow
+  - Brain Drain
+  - Videshi Pravas
+  - Remittance Flows
+  - Skilled Emigration
+  category: T6
+  level: 3
+  status: active
+
+# === L2: Socio-Cultural Forces ===
+- id: socio_cultural_forces
+  aliases:
+  - Socio-Cultural Forces
+  - Cultural Dynamics
+  - Samajik Sanskritik Bal
+  - Identity & Tradition
+  category: T6
+  level: 2
+  status: active
+  is_category: true
+- id: festive_demand_cycles
+  aliases:
+  - Festival Economy
+  - Wedding Season Surge
+  - Tyohari Mang
+  - Seasonal Consumption Cycles
+  - Diwali Eid Season
+  category: T6
+  level: 3
+  status: active
+  portal: true
+- id: language_and_regional_identity
+  aliases:
+  - Linguistic Sub-Nationalism
+  - Regional Pride
+  - Bhashayi Asmita
+  - Language Preservation
+  - State Nativism
+  category: T6
+  level: 3
+  status: active
+- id: social_stratification_dynamics
+  aliases:
+  - Caste Mobility
+  - Affirmative Action Demands
+  - Jati Gatishilta
+  - Reservation Quotas
+  - Social Hierarchy Shifts
+  category: T6
+  level: 3
+  status: active
+- id: religious_institutional_economics
+  aliases:
+  - Temple Trust Wealth
+  - Waqf Asset Management
+  - Dharmik Sansthan Arthvyavastha
+  - Religious Endowments
+  - Faith-Based Economy
+  category: T6
+  level: 3
+  status: active
+
+# === L2: Collective Civic Behavior ===
+- id: collective_civic_behavior
+  aliases:
+  - Collective Civic Behavior
+  - Public Behavior
+  - Samuhik Nagrik Vyavhar
+  - Societal Engagement
+  category: T6
+  level: 2
+  status: active
+  is_category: true
+- id: macro_civic_participation
+  aliases:
+  - Voter Turnout Trends
+  - Democratic Engagement
+  - Matdan Bhagidari
+  - Electoral Mobilization
+  - Civic Volunteerism
+  category: T6
+  level: 3
+  status: active
+- id: collective_social_dissent
+  aliases:
+  - Mass Protest Movements
+  - Civil Unrest Trends
+  - Jan Andolan
+  - Societal Agitation
+  - Collective Outrage
+  category: T6
+  level: 3
+  status: active
+  portal: true
+- id: upward_social_mobility
+  aliases:
+  - Middle Class Expansion
+  - Poverty Alleviation Trends
+  - Samajik Unnati
+  - Neo-Middle Class
+  - Aspirational Mobility
+  category: T6
+  level: 3
+  status: active
+
+edges:
+# T6 → L2
+- from: t6
+  to: population_and_demographics
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social & Demographic Systems contains Population & Demographics
+- from: t6
+  to: spatial_dynamics_and_mobility
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social & Demographic Systems contains Spatial Dynamics & Mobility
+- from: t6
+  to: socio_cultural_forces
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social & Demographic Systems contains Socio-Cultural Forces
+- from: t6
+  to: collective_civic_behavior
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Social & Demographic Systems contains Collective Civic Behavior
+
+# Population & Demographics → L3
+- from: population_and_demographics
+  to: youth_demographic_dividend
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Population & Demographics contains Youth Demographic Dividend
+- from: population_and_demographics
+  to: aging_population_trends
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Population & Demographics contains Aging Population Trends
+- from: population_and_demographics
+  to: female_labor_force_participation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Population & Demographics contains Female Labor Force Participation
+- from: population_and_demographics
+  to: fertility_and_mortality_shifts
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Population & Demographics contains Fertility & Mortality Shifts
+
+# Spatial Dynamics & Mobility → L3
+- from: spatial_dynamics_and_mobility
+  to: urbanization_and_density
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spatial Dynamics & Mobility contains Urbanization & Density
+- from: spatial_dynamics_and_mobility
+  to: tier_city_emergence
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spatial Dynamics & Mobility contains Tier City Emergence
+- from: spatial_dynamics_and_mobility
+  to: domestic_labor_migration
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spatial Dynamics & Mobility contains Domestic Labor Migration
+- from: spatial_dynamics_and_mobility
+  to: international_diaspora_trends
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Spatial Dynamics & Mobility contains International Diaspora Trends
+
+# Socio-Cultural Forces → L3
+- from: socio_cultural_forces
+  to: festive_demand_cycles
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Socio-Cultural Forces contains Festive Demand Cycles
+- from: socio_cultural_forces
+  to: language_and_regional_identity
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Socio-Cultural Forces contains Language & Regional Identity
+- from: socio_cultural_forces
+  to: social_stratification_dynamics
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Socio-Cultural Forces contains Social Stratification Dynamics
+- from: socio_cultural_forces
+  to: religious_institutional_economics
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Socio-Cultural Forces contains Religious Institutional Economics
+
+# Collective Civic Behavior → L3
+- from: collective_civic_behavior
+  to: macro_civic_participation
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Collective Civic Behavior contains Macro Civic Participation
+- from: collective_civic_behavior
+  to: collective_social_dissent
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Collective Civic Behavior contains Collective Social Dissent
+- from: collective_civic_behavior
+  to: upward_social_mobility
+  type: CONTAINS
+  weight: 1.0
+  polarity: 1
+  delay: IMMEDIATE
+  description: Collective Civic Behavior contains Upward Social Mobility

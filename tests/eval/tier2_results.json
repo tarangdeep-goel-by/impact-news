@@ -1,0 +1,424 @@
+{
+  "results": [
+    {
+      "id": "bangalore_water_crisis_2024",
+      "name": "Bangalore Water Crisis",
+      "date": "2024-03",
+      "title": "Bangalore Water Crisis",
+      "summary": "Severe depletion of groundwater and failed monsoons led to a massive water shortage in Bangalore",
+      "macro_shifts": [
+        {
+          "t_node": "groundwater_aquifer_systems",
+          "trajectory": "deescalating",
+          "context": "Severe depletion of groundwater and failed monsoons led to a massive water shortage in Bangalore"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "private_water_tanker",
+          "rank": 1,
+          "reasoning": "Tanker prices surged 3x to Rs 2000+ as borewells dried up across the city"
+        },
+        {
+          "i_node": "municipal_water_supply",
+          "rank": 2,
+          "reasoning": "BWSSB cut piped supply by 20% to manage the severe shortage"
+        },
+        {
+          "i_node": "rwa_maintenance_fees",
+          "rank": 3,
+          "reasoning": "Housing societies hiked monthly maintenance to cover exorbitant private tanker costs"
+        },
+        {
+          "i_node": "residential_rent",
+          "rank": 4,
+          "reasoning": "Tenants began vacating severely affected IT corridors like Whitefield"
+        },
+        {
+          "i_node": "it_sector_jobs",
+          "rank": 5,
+          "reasoning": "Tech parks mandated work-from-home as office facilities ran out of water"
+        },
+        {
+          "i_node": "vehicle_servicing_cost",
+          "rank": 6,
+          "reasoning": "Government banned the use of potable water for car washing, impacting service centers"
+        },
+        {
+          "i_node": "fine_dining_restaurants",
+          "rank": 7,
+          "reasoning": "Restaurants shifted to disposable plates and limited menus to save washing water"
+        },
+        {
+          "i_node": "private_schools",
+          "rank": 8,
+          "reasoning": "Several private schools shifted to online classes due to dry washrooms"
+        },
+        {
+          "i_node": "cholera_and_diarrhea",
+          "rank": 9,
+          "reasoning": "Consumption of contaminated tanker water led to a spike in water-borne diseases"
+        },
+        {
+          "i_node": "stray_animals",
+          "rank": 10,
+          "reasoning": "Severe lack of drinking water sources impacted urban fauna and stray dogs"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "residential_borewells",
+          "trajectory": "deescalating",
+          "probability": 0.95,
+          "magnitude": 0.9,
+          "delay_days": 1,
+          "rationale": "Severe depletion of groundwater aquifers directly causes residential borewells and tubewells to dry up across the city.",
+          "driving_t_nodes": [
+            "groundwater_aquifer_systems"
+          ],
+          "score": 0.855
+        },
+        {
+          "i_node": "private_water_tanker",
+          "trajectory": "escalating",
+          "probability": 0.95,
+          "magnitude": 0.9,
+          "delay_days": 1,
+          "rationale": "With borewells dry and municipal supply cut, citizens are forced to rely entirely on private water tankers, leading to massive price gouging and surge in demand.",
+          "driving_t_nodes": [
+            "groundwater_aquifer_systems"
+          ],
+          "score": 0.855
+        },
+        {
+          "i_node": "municipal_water_supply",
+          "trajectory": "deescalating",
+          "probability": 0.9,
+          "magnitude": 0.8,
+          "delay_days": 1,
+          "rationale": "Failed monsoons lead to lower reservoir levels, forcing civic bodies to cut piped municipal water supply to neighborhoods.",
+          "driving_t_nodes": [
+            "groundwater_aquifer_systems"
+          ],
+          "score": 0.7200000000000001
+        },
+        {
+          "i_node": "rwa_maintenance_fees",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.7,
+          "delay_days": 15,
+          "rationale": "Housing societies incur massive unbudgeted expenses to procure private tanker water, passing these costs onto residents via increased maintenance bills.",
+          "driving_t_nodes": [
+            "groundwater_aquifer_systems"
+          ],
+          "score": 0.595
+        },
+        {
+          "i_node": "drinking_water_quality",
+          "trajectory": "deescalating",
+          "probability": 0.75,
+          "magnitude": 0.6,
+          "delay_days": 7,
+          "rationale": "Desperation for water forces reliance on unregulated private tankers drawing from questionable sources, increasing the risk of contaminated drinking water.",
+          "driving_t_nodes": [
+            "groundwater_aquifer_systems"
+          ],
+          "score": 0.44999999999999996
+        }
+      ],
+      "pred_nodes": [
+        "residential_borewells",
+        "private_water_tanker",
+        "municipal_water_supply",
+        "rwa_maintenance_fees",
+        "drinking_water_quality"
+      ],
+      "ndcg_10": 0.47569438801287395,
+      "recall_10": 0.3,
+      "recall_5": 0.3,
+      "error": null,
+      "ms": 19256
+    },
+    {
+      "id": "paytm_bank_ban_2024",
+      "name": "RBI bans Paytm Payments Bank",
+      "date": "2024-01",
+      "title": "RBI bans Paytm Payments Bank",
+      "summary": "RBI directed Paytm Payments Bank to stop accepting new deposits and credit transactions due to non-compliance",
+      "macro_shifts": [
+        {
+          "t_node": "banking_and_credit_regulation",
+          "trajectory": "escalating",
+          "context": "RBI directed Paytm Payments Bank to stop accepting new deposits and credit transactions due to non-compliance"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "fastag_wallet",
+          "rank": 1,
+          "reasoning": "Millions of Paytm FASTags became invalid, forcing vehicle owners to buy replacements"
+        },
+        {
+          "i_node": "upi_transaction_success",
+          "rank": 2,
+          "reasoning": "Temporary disruption and confusion caused transaction failures for merchants"
+        },
+        {
+          "i_node": "street_vendor_income",
+          "rank": 3,
+          "reasoning": "Street vendors heavily reliant on Paytm soundboxes faced settlement delays"
+        },
+        {
+          "i_node": "kirana_store_income",
+          "rank": 4,
+          "reasoning": "Local grocers had to rapidly switch QR codes to competitor banks to receive payments"
+        },
+        {
+          "i_node": "savings_account_balance",
+          "rank": 5,
+          "reasoning": "Users were forced to transfer their balances out of PPBL before the deadline"
+        },
+        {
+          "i_node": "ncmc_smart_card",
+          "rank": 6,
+          "reasoning": "Paytm-issued transit cards for metros stopped working for commuters"
+        },
+        {
+          "i_node": "direct_equity_portfolio",
+          "rank": 7,
+          "reasoning": "One97 Communications stock crashed 50% in a month, wiping out retail wealth"
+        },
+        {
+          "i_node": "food_delivery_payouts",
+          "rank": 8,
+          "reasoning": "Gig workers using PPBL as their primary account faced delayed weekly payouts"
+        },
+        {
+          "i_node": "cab_driver_earnings",
+          "rank": 9,
+          "reasoning": "Uber and Ola drivers had to urgently update bank details to receive earnings"
+        },
+        {
+          "i_node": "startup_jobs",
+          "rank": 10,
+          "reasoning": "Regulatory chill led to hiring freezes across the Indian fintech startup ecosystem"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "fastag_wallet",
+          "trajectory": "deescalating",
+          "probability": 0.95,
+          "magnitude": 0.8,
+          "delay_days": 1,
+          "rationale": "Citizens using Paytm FASTags will be unable to recharge their wallets, forcing mass migration to other bank-issued tags to pay highway tolls.",
+          "driving_t_nodes": [
+            "banking_and_credit_regulation"
+          ],
+          "score": 0.76
+        },
+        {
+          "i_node": "digital_payment_infrastructure",
+          "trajectory": "deescalating",
+          "probability": 0.85,
+          "magnitude": 0.8,
+          "delay_days": 1,
+          "rationale": "Merchants relying on Paytm QR codes and Soundboxes linked to PPBL will face settlement disruptions, requiring them to link new bank accounts.",
+          "driving_t_nodes": [
+            "banking_and_credit_regulation"
+          ],
+          "score": 0.68
+        },
+        {
+          "i_node": "savings_account_balance",
+          "trajectory": "deescalating",
+          "probability": 0.95,
+          "magnitude": 0.7,
+          "delay_days": 1,
+          "rationale": "Citizens will actively withdraw or transfer their savings and wallet balances out of Paytm Payments Bank to avoid locked funds.",
+          "driving_t_nodes": [
+            "banking_and_credit_regulation"
+          ],
+          "score": 0.6649999999999999
+        },
+        {
+          "i_node": "upi_transaction_success",
+          "trajectory": "deescalating",
+          "probability": 0.9,
+          "magnitude": 0.7,
+          "delay_days": 1,
+          "rationale": "UPI handles directly linked to Paytm Payments Bank accounts will experience payment failures as credit transactions are halted.",
+          "driving_t_nodes": [
+            "banking_and_credit_regulation"
+          ],
+          "score": 0.63
+        },
+        {
+          "i_node": "e_mandate_autopay",
+          "trajectory": "deescalating",
+          "probability": 0.8,
+          "magnitude": 0.6,
+          "delay_days": 1,
+          "rationale": "Recurring subscriptions, OTT payments, and utility auto-debits mandated through PPBL accounts will fail to execute.",
+          "driving_t_nodes": [
+            "banking_and_credit_regulation"
+          ],
+          "score": 0.48
+        },
+        {
+          "i_node": "ncmc_smart_card",
+          "trajectory": "deescalating",
+          "probability": 0.75,
+          "magnitude": 0.6,
+          "delay_days": 1,
+          "rationale": "Commuters using Paytm-issued National Common Mobility Cards (NCMC) for metro and transit will be unable to top up their balances.",
+          "driving_t_nodes": [
+            "banking_and_credit_regulation"
+          ],
+          "score": 0.44999999999999996
+        }
+      ],
+      "pred_nodes": [
+        "fastag_wallet",
+        "digital_payment_infrastructure",
+        "savings_account_balance",
+        "upi_transaction_success",
+        "e_mandate_autopay",
+        "ncmc_smart_card"
+      ],
+      "ndcg_10": 0.6226075198220883,
+      "recall_10": 0.4,
+      "recall_5": 0.3,
+      "error": null,
+      "ms": 26312
+    },
+    {
+      "id": "gold_price_rally_2024",
+      "name": "Gold Price Rally to 73k",
+      "date": "2024-04",
+      "title": "Gold Price Rally to 73k",
+      "summary": "Domestic gold prices crossed Rs 73,000 per 10 grams tracking global geopolitical tensions",
+      "macro_shifts": [
+        {
+          "t_node": "precious_metals",
+          "trajectory": "escalating",
+          "context": "Domestic gold prices crossed Rs 73,000 per 10 grams tracking global geopolitical tensions"
+        }
+      ],
+      "expected_impacts": [
+        {
+          "i_node": "retail_gold_investment",
+          "rank": 1,
+          "reasoning": "Physical gold buying volumes dropped significantly due to record high prices"
+        },
+        {
+          "i_node": "gold_loan_interest",
+          "rank": 2,
+          "reasoning": "NBFCs offered higher loan amounts per gram, driving a surge in gold loan uptake"
+        },
+        {
+          "i_node": "wedding_planning_service",
+          "rank": 3,
+          "reasoning": "Jewelry budgets squeezed, forcing families to cut back on other wedding expenses"
+        },
+        {
+          "i_node": "wedding_venue",
+          "rank": 4,
+          "reasoning": "Spillover effect of reduced overall wedding budgets impacted venue bookings"
+        },
+        {
+          "i_node": "retail_silver_investment",
+          "rank": 5,
+          "reasoning": "Retail investors shifted to silver as a relatively cheaper precious metal alternative"
+        },
+        {
+          "i_node": "india_trade_deficit",
+          "rank": 6,
+          "reasoning": "Higher import bill for gold widened the national trade deficit"
+        },
+        {
+          "i_node": "usd_inr_exchange",
+          "rank": 7,
+          "reasoning": "Rupee faced pressure due to the high dollar outflow for gold imports"
+        },
+        {
+          "i_node": "burglary_and_theft",
+          "rank": 8,
+          "reasoning": "Record prices incentivized a spike in chain-snatching and gold smuggling"
+        },
+        {
+          "i_node": "microfinance_loan",
+          "rank": 9,
+          "reasoning": "Increased reliance on gold pledging reduced demand for unsecured micro-credit"
+        },
+        {
+          "i_node": "festive_idol",
+          "rank": 10,
+          "reasoning": "Akshaya Tritiya sales volume for gold idols and coins dropped year-on-year"
+        }
+      ],
+      "pred_impacts": [
+        {
+          "i_node": "retail_gold_investment",
+          "trajectory": "escalating",
+          "probability": 0.95,
+          "magnitude": 0.8,
+          "delay_days": 1,
+          "rationale": "Record high domestic prices directly increase the acquisition cost of physical gold, jewellery, and sovereign gold bonds for retail investors.",
+          "driving_t_nodes": [
+            "precious_metals"
+          ],
+          "score": 0.76
+        },
+        {
+          "i_node": "weddings_and_milestones",
+          "trajectory": "escalating",
+          "probability": 0.9,
+          "magnitude": 0.7,
+          "delay_days": 14,
+          "rationale": "Gold jewellery is an inelastic cultural expense; price surges will significantly inflate overall wedding budgets for Indian families.",
+          "driving_t_nodes": [
+            "precious_metals"
+          ],
+          "score": 0.63
+        },
+        {
+          "i_node": "gold_loan_interest",
+          "trajectory": "escalating",
+          "probability": 0.85,
+          "magnitude": 0.6,
+          "delay_days": 3,
+          "rationale": "Higher gold prices increase the collateral value of household jewellery, allowing citizens to secure larger loan amounts from banks and NBFCs.",
+          "driving_t_nodes": [
+            "precious_metals"
+          ],
+          "score": 0.51
+        },
+        {
+          "i_node": "burglary_and_theft",
+          "trajectory": "escalating",
+          "probability": 0.65,
+          "magnitude": 0.5,
+          "delay_days": 30,
+          "rationale": "The soaring value of physical gold increases the lucrative nature of property crimes like chain snatching and house break-ins.",
+          "driving_t_nodes": [
+            "precious_metals"
+          ],
+          "score": 0.325
+        }
+      ],
+      "pred_nodes": [
+        "retail_gold_investment",
+        "weddings_and_milestones",
+        "gold_loan_interest",
+        "burglary_and_theft"
+      ],
+      "ndcg_10": 0.5269963325244995,
+      "recall_10": 0.3,
+      "recall_5": 0.3,
+      "error": null,
+      "ms": 18890
+    }
+  ]
+}
