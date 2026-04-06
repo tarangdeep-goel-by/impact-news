@@ -123,12 +123,27 @@
       {
         "i_node": "property_crime_response",
         "rank": 1,
-        "reasoning": "Record prices incentivized a spike in chain-snatching and gold smuggling"
+        "reasoning": "Record prices incentivized a spike in chain-snatching, gold shop robberies, and smuggling"
       },
       {
         "i_node": "festivals_and_cultural_events",
         "rank": 2,
-        "reasoning": "Akshaya Tritiya sales volume for gold idols and coins dropped year-on-year"
+        "reasoning": "Akshaya Tritiya and wedding season gold buying volume dropped as prices crossed 73K"
+      },
+      {
+        "i_node": "places_of_worship",
+        "rank": 3,
+        "reasoning": "Temple gold donation weights declined as devotees switched to smaller offerings"
+      },
+      {
+        "i_node": "kirana_and_retail_income",
+        "rank": 4,
+        "reasoning": "Neighbourhood jewellers saw revenue surge but volume drop; smaller shops lost footfall to branded chains"
+      },
+      {
+        "i_node": "building_materials_and_labor",
+        "rank": 5,
+        "reasoning": "Construction workers who store savings in gold jewellery saw paper wealth rise but couldn't liquidate easily"
       }
     ]
   },
@@ -147,39 +162,39 @@
     ],
     "expected_impacts": [
       {
-        "i_node": "video_games_and_esports",
+        "i_node": "real_money_gaming",
         "rank": 1,
-        "reasoning": "Real-money gaming platforms passed the massive 28% tax burden directly to users"
+        "reasoning": "28% GST on full face value of bets made real-money gaming drastically more expensive for users"
       },
       {
         "i_node": "corporate_hiring_and_layoffs",
         "rank": 2,
-        "reasoning": "Gaming unicorns laid off hundreds of staff due to immediate margin compression"
+        "reasoning": "Gaming unicorns like Dream11, MPL laid off hundreds due to immediate margin compression"
+      },
+      {
+        "i_node": "freelance_and_creator_income",
+        "rank": 3,
+        "reasoning": "Gaming streamers and esports content creators saw sponsorship revenue collapse"
+      },
+      {
+        "i_node": "indirect_taxes_gst",
+        "rank": 4,
+        "reasoning": "GST Council decision directly changed the tax compliance burden for the entire sector"
       },
       {
         "i_node": "live_sports_events",
-        "rank": 3,
-        "reasoning": "Fantasy sports sponsorships for cricket tournaments reduced significantly"
-      },
-      {
-        "i_node": "ott_platforms",
-        "rank": 4,
-        "reasoning": "Users shifted entertainment budgets away from gaming to OTT platforms"
-      },
-      {
-        "i_node": "social_media_platforms",
         "rank": 5,
-        "reasoning": "Gaming ad spends on social media plummeted, impacting influencer revenues"
+        "reasoning": "Fantasy sports sponsorships for IPL and other cricket tournaments reduced significantly"
       },
       {
         "i_node": "spam_and_scams",
         "rank": 6,
-        "reasoning": "Rise in illegal offshore betting apps evading GST, leading to user fraud"
+        "reasoning": "Rise in illegal offshore betting apps evading GST, leading to increased user fraud"
       },
       {
-        "i_node": "personal_income_tax",
+        "i_node": "video_games_and_esports",
         "rank": 7,
-        "reasoning": "TDS rules were simultaneously tightened for net winnings from online games"
+        "reasoning": "Broader gaming ecosystem affected as investors pulled back from all gaming verticals"
       }
     ]
   },
@@ -562,7 +577,22 @@
       {
         "i_node": "corporate_hiring_and_layoffs",
         "rank": 1,
-        "reasoning": "Extreme pressure on bank employees and branch managers to mobilize deposits"
+        "reasoning": "HDFC Bank froze lateral hiring and pressured employees to mobilize deposits after the crash"
+      },
+      {
+        "i_node": "corporate_salaries",
+        "rank": 2,
+        "reasoning": "Performance bonuses and increments at HDFC Bank came under immediate review pressure"
+      },
+      {
+        "i_node": "psu_and_bank_jobs",
+        "rank": 3,
+        "reasoning": "Competing PSU banks saw increased applications from nervous HDFC Bank staff"
+      },
+      {
+        "i_node": "health_insurance_premium",
+        "rank": 4,
+        "reasoning": "HDFC Ergo cross-sell targets tightened, pushing aggressive insurance upselling to bank customers"
       }
     ]
   },
