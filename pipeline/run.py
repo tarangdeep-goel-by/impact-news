@@ -90,10 +90,12 @@ def run_pipeline(
 
     # ── Telegram bot (for delivery) ──
     bot = None
+    _loop = None
     if not dry_run:
         try:
             from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
             bot = Bot(token=settings.telegram_bot_token)
+            _loop = asyncio.new_event_loop()
         except Exception as e:
             logger.warning("Telegram bot init failed: %s — will log only", e)
 
@@ -234,12 +236,12 @@ def run_pipeline(
             why_text = "\n".join(why_parts)
 
             url = article.get("url", "")
-            url_line = f"\n\n[Read Article]({url})" if url else ""
+            url_line = f'\n\n<a href="{url}">Read Article</a>' if url else ""
 
             text = (
                 f"{emoji} {tier_label} | Score: {score:.2f}\n\n"
-                f"*{title}*\n"
-                f"_{source}_\n\n"
+                f"<b>{title}</b>\n"
+                f"<i>{source}</i>\n\n"
                 f"Why this affects you:\n"
                 f"{why_text}"
                 f"{url_line}"
@@ -261,8 +263,8 @@ def run_pipeline(
                     ]
                 ])
 
-                asyncio.run(bot.send_message(
-                    chat_id=chat_id, text=text, parse_mode="Markdown",
+                _loop.run_until_complete(bot.send_message(
+                    chat_id=chat_id, text=text, parse_mode="HTML",
                     disable_web_page_preview=True, reply_markup=keyboard,
                 ))
                 db.mark_delivered(match_id)
