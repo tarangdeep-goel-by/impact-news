@@ -32,7 +32,7 @@ def parse_json_response(text: str) -> list | dict:
     """Strip markdown fences, find JSON boundaries, parse.
 
     Handles both JSON arrays and objects. Reuses pattern from
-    n8n-news-agent/src/analyzer.py parse_ai_response().
+    the news agent analyzer parse_ai_response().
     """
     cleaned = text.strip()
     cleaned = re.sub(r"^```json\s*", "", cleaned)
