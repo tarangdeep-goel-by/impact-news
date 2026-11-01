@@ -1,5 +1,7 @@
 # Graph V2: Taxonomy Separation + Edge Weights — Implementation Plan
 
+> **Historical (noted 2026-11-01):** design plan written on 2026-03-10 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
 ## Context
 
 The graph has 1,629 nodes, 2,585 edges. 29% of edges (729) are taxonomy (CONTAINS/LOCATED_IN), not causal. 558 leaf nodes have no causal edges. BFS without weights lights up the entire graph. This plan addresses all three problems.

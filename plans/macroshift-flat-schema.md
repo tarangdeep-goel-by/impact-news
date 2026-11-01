@@ -1,5 +1,7 @@
 # Plan: MacroShift + MicroImpact — Flat M:N Schema Rebuild
 
+> **Historical (noted 2026-11-01):** design plan written on 2026-04-04 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
 ## Why
 
 The hierarchical model (Event → TriggerInstance → ImpactEdge) assumes 1:1 causation inherited from graph traversal. In reality, citizen impacts are multi-causal: retail_petrol goes up because of brent_crude AND usd_inr_exchange AND ministry_of_finance subsidy removal. The hierarchical grouping can't represent this. Also, "trigger" is a graph-era concept — in the LLM world, T-nodes are macro-level state changes, not traversal entry points.

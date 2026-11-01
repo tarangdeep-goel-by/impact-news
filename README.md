@@ -29,34 +29,35 @@ That requires more than topic matching. The separate trigger and impact taxonomi
   and a current-state view.
 - Telegram onboarding that turns five answers into weighted impact-node preferences, including
   city-tier and seasonal defaults.
-- Location-aware article scoring, immediate push and daily digest tiers, and feedback-driven profile
-  adjustments with diagnostic follow-up questions.
+- Article scoring against profile weights, immediate push and daily digest tiers, and feedback-driven
+  profile adjustments with diagnostic follow-up questions. A city/state scope filter exists in the
+  matcher, but Tier 2's `scope` field is currently dropped during validation, so it has no effect yet.
 - Offline evaluation code for relevance, trigger selection, impact recall, precision, and ranking.
 
 ## Architecture
 
 ```mermaid
 flowchart TD
-    RSS[12 RSS feeds] --> COL[Async collector]
-    COL --> DEDUP[URL, fingerprint, MinHash<br/>and recent-title dedup]
-    DEDUP --> ART[(SQLite articles)]
+    RSS["12 RSS feeds"] --> COL["Async collector"]
+    COL --> DEDUP["URL, fingerprint, MinHash and recent-title dedup"]
+    DEDUP --> ART[("SQLite articles")]
 
-    ART --> T1[Tier 1: Gemini Flash Lite<br/>relevance, macro shifts, event match]
-    T1 -->|irrelevant| REJ[(Rejection reason)]
-    T1 -->|relevant| TREE[Exclude unrelated I-world roots]
-    TREE --> T2[Tier 2: Gemini Pro<br/>micro impacts and causal rationale]
+    ART --> T1["Tier 1: Gemini Flash Lite + T-tree: relevance, macro shifts, event match"]
+    T1 -->|"irrelevant"| REJ[("Rejection reason")]
+    T1 -->|"relevant"| TREE["Drop I-world roots Tier 1 marked unrelated"]
+    TREE --> T2["Tier 2: Gemini Pro: micro impacts and causal rationale"]
 
-    T2 --> EVT[(Events, macro shifts,<br/>impact revisions, provenance)]
-    T2 --> IMP[(Article impacts)]
+    T2 --> EVT[("Events, macro shifts, impact revisions, provenance")]
+    T2 --> IMP[("Article impacts")]
 
-    TG[Telegram onboarding] --> PROF[(User profile weights)]
-    IMP --> SCORE[Location-aware personal scoring]
+    TG["Telegram onboarding"] --> PROF[("User profile weights")]
+    IMP --> SCORE["Personal scoring"]
     PROF --> SCORE
-    SCORE -->|score >= 0.5| PUSH[Immediate push]
-    SCORE -->|score >= 0.2| DIGEST[Daily digest]
-    SCORE -->|score < 0.2| SKIP[Skip]
+    SCORE -->|"score >= 0.5"| PUSH["Immediate push"]
+    SCORE -->|"0.2 to 0.5"| DIGEST["Daily digest"]
+    SCORE -->|"below 0.2"| SKIP["Skip"]
 
-    PUSH --> FB[Relevant / not relevant feedback]
+    PUSH --> FB["Relevant / not relevant feedback"]
     DIGEST --> FB
     FB --> PROF
 ```
@@ -71,7 +72,9 @@ The taxonomy separates two kinds of concepts:
   commute disruption, job availability, or healthcare access.
 
 Tier 1 receives the T-world tree and emits one or more `macro_shifts` with a trajectory and context.
-It can exclude irrelevant I-world root categories before Tier 2 runs. Tier 2 then emits flat
+It can exclude irrelevant I-world root categories before Tier 2 runs. (Known issue: the Tier 1 prompt
+still lists the older 11 I-world categories, while the runtime taxonomy has 8, so the excluded codes
+can remove the wrong subtree. See `docs/NOTES.md`.) Tier 2 then emits flat
 `micro_impacts`, each with an I-node, probability, magnitude, delay, trajectory, rationale,
 geographic scope, and the T-nodes that drive it. Outputs are validated against
 `data/merged_graph.yaml` before storage.
@@ -95,9 +98,22 @@ personal score = impact score × user weight
 article score  = min(sum(top 3 personal scores) / 2, 1)
 ```
 
-City- and state-scoped impacts are filtered against the profile location. Scores of `0.5` or more
+City- and state-scoped impacts are meant to be filtered against the profile location (see the
+`scope` caveat above). Scores of `0.5` or more
 are push notifications, scores from `0.2` to `0.5` enter the digest tier, and lower scores are not
 delivered. Feedback can adjust node weights while preserving a floor for universal needs.
+
+## How it got here
+
+Impact News is the second stage of a news project; the first is
+[n8n-news-agent](https://github.com/tarangdeep-goel-by/n8n-news-agent) (January to March 2026), an
+interest-based Telegram digest on n8n and then FastAPI. Full history with evidence: `docs/NOTES.md` section 3.
+
+- **2026-03-10, causal graph v1** ([1ecd03c](https://github.com/tarangdeep-goel-by/impact-news/commit/1ecd03c), [5af232a](https://github.com/tarangdeep-goel-by/impact-news/commit/5af232a)): five domain YAMLs merged into one graph (1,688 nodes); Gemini only tagged articles, FAISS matched tags to nodes, a modified Dijkstra walked the graph (the tagging and matching pipeline landed in [203eca8](https://github.com/tarangdeep-goel-by/impact-news/commit/203eca8) on 03-13). The master plan's bet: "Don't ask the LLM to reason causally."
+- **2026-03-13 to 03-19, T/I worlds and PageRank** ([203eca8](https://github.com/tarangdeep-goel-by/impact-news/commit/203eca8), [8211e87](https://github.com/tarangdeep-goel-by/impact-news/commit/8211e87), [353da85](https://github.com/tarangdeep-goel-by/impact-news/commit/353da85)): rebuilt as separate Trigger and Impact trees with typed, weighted causal edges under a written constitution. Personalized PageRank replaced Dijkstra, which flooded most of the graph; a citizen impact score lifted event-replay NDCG@10 from 0.16 to 0.41.
+- **2026-03-25 to 03-28, edge surgery and shock propagation** ([52d16e4](https://github.com/tarangdeep-goel-by/impact-news/commit/52d16e4), [05429a4](https://github.com/tarangdeep-goel-by/impact-news/commit/05429a4), [4beb73d](https://github.com/tarangdeep-goel-by/impact-news/commit/4beb73d)): about 760 nodes and 1,500 to 1,600 edges, 133 edges killed for bypassing intermediate causes, PPR replaced by a max-product "causal shock propagation" search. NDCG stayed at 0.31 to 0.33.
+- **2026-04-02 to 04-03, the LLM replaces the graph** ([f6f7c02](https://github.com/tarangdeep-goel-by/impact-news/commit/f6f7c02), [d2a1643](https://github.com/tarangdeep-goel-by/impact-news/commit/d2a1643), [ecf7aa7](https://github.com/tarangdeep-goel-by/impact-news/commit/ecf7aa7)): Gemini given the same taxonomy as text scored NDCG 0.454 against the graph's 0.313 on 16 ground-truth events. The graph engine, FAISS and all causal edge files were deleted; the trees stayed as a controlled vocabulary.
+- **2026-04-03 to 04-07, two tiers, events and profiles** ([9df0c3e](https://github.com/tarangdeep-goel-by/impact-news/commit/9df0c3e), [5de0f1d](https://github.com/tarangdeep-goel-by/impact-news/commit/5de0f1d), [2b5dc6c](https://github.com/tarangdeep-goel-by/impact-news/commit/2b5dc6c), [e51b810](https://github.com/tarangdeep-goel-by/impact-news/commit/e51b810), [e1303b0](https://github.com/tarangdeep-goel-by/impact-news/commit/e1303b0)): the system described above. The per-event model (macro shifts driving micro impacts) is what is left of the causal graph, built per event by the LLM. The old engine can be read with `git show 4beb73d:graph/markov_engine.py`.
 
 ## Technology
 
@@ -133,6 +149,9 @@ delivered. Feedback can adjust node weights while preserving a floor for univers
 | `taxonomy/` | Source T- and I-world YAML files |
 | `data/merged_graph.yaml` | Runtime taxonomy artifact |
 | `tests/eval/` | Tier 1 and Tier 2 labeled cases, runners, and checked-in result snapshots |
+| `scripts/pipeline_trace.py` | Markdown trace of one run for a synthetic profile |
+| `plans/` | Design notes written during the build, including the graph-engine plans |
+| `docs/NOTES.md` | Detailed research notes: history, decisions, known bugs |
 
 ## Setup
 
@@ -196,8 +215,9 @@ python -m pipeline.ingest --events
 ```
 
 This path performs event matching and updates existing event state when Tier 1 returns a confident
-match. API and parse failures are retried up to four times; rate-limit and service-unavailable
-responses use exponential backoff.
+match. Each Gemini call gets up to four attempts, with 5/10/20 second backoff on rate-limit and
+service-unavailable errors. Tier 1 JSON parse failures share the same four attempts; Tier 2 retries
+a parse failure once.
 
 ### 3. Create a Telegram profile
 
@@ -283,6 +303,15 @@ taxonomy, and the labeled set.
   I-node IDs, but it does not establish factual truth or verify an article's claims.
 - RSS availability and third-party preview model names can change. Feed failures are logged and the
   collector continues with the remaining sources.
+- The Telegram bot sends with Markdown parse mode, which LLM rationale can break; `pipeline.run`
+  already uses HTML.
+- `pipeline/delivery.py` (score stored impacts for all users) is not wired into any entry point.
+- The daily digest job uses a time without a timezone, so `DIGEST_HOUR` is interpreted as UTC.
+- The collector stores RSS summaries only; both tiers reason from headline plus summary, not full text.
+- `requirements.txt` still lists graph-era packages (`sentence-transformers`, `faiss-cpu`) that no
+  current code imports, and does not request the `python-telegram-bot[job-queue]` extra that the bot's
+  scheduled jobs rely on.
+- `CLAUDE.md` describes an earlier single-call engine and is out of date.
 - The repository has evaluation runners rather than a conventional unit-test suite. Live evals
   require network access, API quota, and can vary across runs.
 

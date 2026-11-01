@@ -1,5 +1,7 @@
 # PPR/Markov Scoring Engine — Implementation Plan
 
+> **Historical (noted 2026-11-01):** design plan written on 2026-03-19 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
 **Status:** DRAFT — Pending review
 **Date:** 2026-03-15
 **Replaces:** Modified Dijkstra traversal (`graph/traverse.py`)
@@ -9,7 +11,7 @@
 
 ## 1. Architecture Overview
 
-### Current Pipeline
+### Pipeline at the Time (2026-03-15)
 ```
 News → Gemini tags → FAISS match → Dijkstra (max-product) → user relevance (dot product)
 ```

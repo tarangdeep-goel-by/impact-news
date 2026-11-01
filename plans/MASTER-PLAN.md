@@ -1,5 +1,7 @@
 # Impact News — Master Plan
 
+> **Historical (noted 2026-11-01):** design plan written on 2026-03-10 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
 > **Not what interests you. What affects you.**
 
 A system that traces how world events impact individual lives through multi-hop causal chains, scored against a personal life dependency graph.

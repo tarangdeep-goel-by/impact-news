@@ -1,14 +1,16 @@
 # Product Vision: Impact News
 
+> **Historical (noted 2026-11-01):** design plan written on 2026-04-03 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
 ## Core Idea
 
 "Not what interests you. What affects you."
 
 A causal news engine that tells Indian citizens what's happening in the world that will impact their daily life — their wallet, their commute, their job, their food prices. Not engagement-driven recommendations, but causal chain reasoning from macro events to personal impact.
 
-## Architecture (Current + Planned)
+## Architecture (as of 2026-04-03: built + planned)
 
-### What's Built
+### What Was Built (as of 2026-04-03)
 
 **Ingestion pipeline:** 14 RSS feeds → async collection → MinHash dedup → SQLite. Articles classified by Gemini LLM in one call: relevant (with T-triggers + I-impacts) or no_impact (with reason). 22% of articles pass the relevance filter.
 

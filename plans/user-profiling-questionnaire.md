@@ -1,5 +1,7 @@
 # User Profiling Questionnaire: Design Spec
 
+> **Historical (noted 2026-11-01):** design plan written on 2026-04-07 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
 ## Context
 
 Impact News classifies articles into 160 I-world leaf nodes (8 categories). We need a questionnaire that maps each user to the leaf nodes that affect them, enabling rule-based matching: `user_weights * article_impacts → relevance_score`. Progressive disclosure: show value early, ask more later.

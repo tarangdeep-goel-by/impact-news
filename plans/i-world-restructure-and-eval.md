@@ -1,6 +1,8 @@
 # Plan: I-world Restructure + Tier 2 Eval
 
-## Current State
+> **Historical (noted 2026-11-01):** design plan written on 2026-04-06 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
+## State at the Time (2026-04-06)
 
 **T-world (done):** 7 categories, 136 leaf nodes. Tier 1 eval: P=75%, R=91%, F1=82.5%.
 **I-world (todo):** 11 categories (I1-I11), 321 leaf nodes across 532 total nodes. Needs restructuring to 8 categories (I1-I8), ~150-200 L3 nodes with enum matrix.

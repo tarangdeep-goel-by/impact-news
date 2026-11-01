@@ -1,5 +1,7 @@
 # Plan: LLM Impact Engine (v0)
 
+> **Historical (noted 2026-11-01):** design plan written on 2026-04-05 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
 ## Context
 
 The impact-news project uses a hand-coded causal graph (738 nodes, 1831 edges) + Causal Shock Propagation engine to score article impacts. This is rigid and expensive to maintain. We want an LLM engine that reasons about impacts directly, using the same taxonomy as a controlled vocabulary.

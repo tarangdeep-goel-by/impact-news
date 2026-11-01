@@ -1,5 +1,7 @@
 # Plan: Causal Edges Refactor — Tier Split + Spotlight Taxonomy
 
+> **Historical (noted 2026-11-01):** design plan written on 2026-04-03 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
 ## Context
 
 After running 392 articles through the two-tier pipeline, one event ("Middle East Conflict") absorbed 64 articles, 45 triggers, and 49 impacts. Root cause: flat `triggers_json`/`impacts_json` on events with append-only updates.

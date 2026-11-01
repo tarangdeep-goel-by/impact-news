@@ -1,5 +1,7 @@
 # Bridge Architecture Redesign — v5 Plan
 
+> **Historical (noted 2026-11-01):** design plan written on 2026-03-19 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
 ## Problem Statement
 
 L2→L2 bridge mandate (Rule 18) creates false causal links. `global_commodity_markets` lumps energy, agriculture, and metals — a gold price article scores as affecting wheat flour. The elevator pattern + ancestor seeding amplifies this: ANY leaf under a source L2 reaches ALL leaves under ALL target L2s.
@@ -8,7 +10,7 @@ L2→L2 bridge mandate (Rule 18) creates false causal links. `global_commodity_m
 
 **Second gap:** No upward aggregation exists. If 3 of 4 fuel types are hit, the system doesn't recognize that `vehicle_fuel` (L3) is broadly affected, or that `private_vehicle_ownership` (L2) is under systemic pressure.
 
-## Current State
+## State at the Time (2026-03-19)
 
 | Metric | Count |
 |--------|-------|

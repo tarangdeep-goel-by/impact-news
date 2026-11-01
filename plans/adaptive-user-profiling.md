@@ -1,5 +1,7 @@
 # Adaptive User Profiling: Feedback-Driven Personalization Loop
 
+> **Historical (noted 2026-11-01):** design plan written on 2026-04-07 during the build, kept for reference. Counts, file paths, commands and "current" descriptions below reflect that date, not the code today; the graph engine, FAISS, scenario/canary suites and `tests/golden/` were deleted in April 2026. Current state is in `README.md` and `docs/NOTES.md`.
+
 ## Context
 
 The static questionnaire (segment 0/1/2) gives L1-depth profiling — "corporate worker" vs "farmer" — but can't distinguish a Bangalore PM at a fintech startup from a TCS developer in Pune. Both match `corporate_hiring_and_layoffs`, but only one cares about IT-sector layoffs.
